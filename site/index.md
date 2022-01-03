@@ -45,7 +45,7 @@ more robust installation. Documentation is provided.
 
 **Libreboot excludes binary blobs, shipping only Free Software and, as such,
 only supports a handful of machines from coreboot. You can read Libreboot's
-zero-blobs policy on the [Libreboot blob policy page](policy.md).**
+zero-blobs policy on the [Libreboot blob policy page](news/policy.md).**
 
 How does Libreboot differ from regular coreboot?
 ------------------------------------------------

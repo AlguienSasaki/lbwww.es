@@ -24,6 +24,7 @@ Information for developers
 ==========================
 
 -   [How to compile the libreboot source code](build/)
+-   [Build system developer documentation](maintain/)
 -   [Depthcharge payload](depthcharge/) (**Libreboot 20160907 only**)
 -   [GRUB payload](grub/)
 
