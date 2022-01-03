@@ -156,12 +156,9 @@ To be clear: it is preferable that microcode be free. The microcode on Intel
 and AMD systems *are* non-free. Facts and feelings rarely coincide; the
 purpose of this section is to spread *facts*.
 
-Libreboot will not include the updates, because FSF compliance is still a
-policy, in spite of the FSF's flaws. Complying with a policy does not mean it
-should be agreed with; it's possible in life to do things contrary to ones own
-beliefs. However, this promise to the FSF is the only thing preventing it.
-It would otherwise be perfectly acceptable for *CPU microcode updates* to be
-inserted in Libreboot (and just microcode. no other blobs). Again: FSF RYF.
+Not including CPU microcode updates is an absolute disaster for system
+stability and security, and yet, this is one of Libreboot's key policies, to
+comply with FSF criteria.
 
 Making matters worse, that very same text quoted from the FSF RYF criteria in
 fact specifically mentions microcode. Quoted again for posterity:
@@ -241,7 +238,8 @@ Libreboot ROM image. A fork of Libreboot, named osboot, includes them by
 default; it does this, even on libreboot-compatible hardware. Not adding the
 updates is *irresponsible*, but a promise was made to the FSF back in 2013
 when the Libreboot project started, precisely that it would not add microcode
-to ROM images by default. It is Libreboot's policy to keep that promise.
+to ROM images by default. It is Libreboot's policy to keep that promise,
+despite the *obvious* flaw of that policy.
 
 More info about osboot is available on <https://osboot.org/> - osboot's policy
 is the same as Libreboot, except that it does *not* delete blobs; the goal is
@@ -251,28 +249,9 @@ otherwise fully proprietary *vendor* firmware. osboot and libreboot are two
 sides of a coin; libreboot is the "light", and osboot is the dark side. Both
 projects are maintained and were founded by Leah Rowe.
 
-I am **this** close to adding microcode updates in Libreboot, on a weekly basis,
-for *years*. The only reason I don't add them is due to my own stubborn refusal
-to betray my original agreement with the FSF; I no longer have commercial ties
-with them (my company, Minifree, now ships with osboot, not libreboot, even on
-libreboot-compatible hardware, but still offers libreboot on request). I even
-do quite well for myself, but still: I made a promise to FSF where *libreboot*
-is concerned, and I decided that I would stick to the agreement.
-
-But I do not agree with that agreement. I never did. If you agree with my
-assessment about microcode, I wholeheartedly recommend osboot instead of
-Libreboot, on all libreboot-compatible hardware.
-
-My other reason that I will simply comply with FSF criteria is *precisely*
-that osboot exists. I created it *specifically* because I do not agree with the
-policy of Libreboot, my own project. I am horrified by the technically
-incorrect monstrosity that I created, so I did osboot to make me feel better.
-It is far superior to Libreboot, in every way, because it still can (*and does*)
-support the same hardware, but it lacks dogma. The osboot project takes a more
-pragmatic approach to freedom, that is completely in line with my actual views.
-*Libreboot is inferior*.
-
-However, I will say:
+The osboot firmware is far superior to Libreboot, in terms of reliability, due
+to the presence of microcode updates in the firmware, and with zero practical
+change to your freedom, on libreboot-compatible hardware. However, I will say:
 
 People have been using Libreboot for years, on these machines, and most people
 don't really have *that* many issues, most of the time. My opposition to FSF's
