@@ -224,7 +224,7 @@ more!
 
 These processors provide a way to supply microcode *updates*. These updates
 are volatile, and consequently must be applied during every boot cycle. The
-updates fix stability/reliably/security bugs, and their *absence*
+updates fix stability/reliability/security bugs, and their *absence*
 is *technically incorrect*, but Libreboot excludes them anyway, because that is
 FSF policy. Examples of where these updates fix bugs: on ASUS KCMA-D8/KGPE-D16
 and ThinkPad X200/T400/T500/W500/X200T/X200/R500/X301, the updates make
