@@ -234,11 +234,6 @@ high CPU usage and I/O (RAM usage), without crashing (otherwise, it's very
 likely to encounter a kernel panic caused by a
 [Machine Check Exception](faq.html#machine-check-exceptions-on-some-montevina-penryn-cpu-laptops)).
 
-Leah Rowe policy is to include microcode updates, *by default*, because they
-do not affect software freedom in practise, since the only other "choice" is
-*broken, buggy* microcode. This is not a choice, it is a prison, and a less
-comfortable prison is clearly inferior.
-
 Not including these updates will result in an unstable/undefined state. Intel
 themselves define which bugs affect which CPUs, and they define workarounds, or
 provide fixes in microcode. Based on this, software such as the Linux kernel
@@ -297,7 +292,7 @@ policy of Libreboot, my own project. I am horrified by the technically
 incorrect monstrosity that I created, so I did osboot to make me feel better.
 It is far superior to Libreboot, in every way, because it still can (*and does*)
 support the same hardware, but it lacks dogma. The osboot project takes a more
-pragmatic approach to freedom, that is completely in line with my action views.
+pragmatic approach to freedom, that is completely in line with my actual views.
 *Libreboot is inferior*.
 
 However, I will say:
