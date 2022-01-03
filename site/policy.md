@@ -131,8 +131,7 @@ largely non-existent outside of firmware development, or kernel development.
 Most typical application/system software is high level and portable, but boot
 firmware has to be written for each specific machine, and due to the way
 hardware works, there are many trade-offs made, including by the FSF when
-defining what standards should apply *in practise*. Different lines in different
-sands. Different *battle grounds*.
+defining what standards should apply *in practise*.
 
 The fact that almost nobody talks about the EC firmware is *because* of the
 Respects Your Freedom certification. In reality, the EC firmware is crucial
@@ -317,7 +316,7 @@ some cases even actively discourage/dis-incentivize because it makes compromises
 based on assumptions that are no longer true.
 
 Sad truth: RYF actively encourages *less* freedom, by not being bold enough.
-It pitches a victory flag and says *mission accomplished*, despite the fact
+It sets a victory flag and says *mission accomplished*, despite the fact
 that the work is *far* from complete!
 
 If followed *with exemptions unchallenged*, RYF may in some cases encourage
