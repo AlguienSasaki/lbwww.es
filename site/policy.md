@@ -149,29 +149,6 @@ indeed critical, but again, currently outside the scope of what lbmk does.
 At the moment, lbmk concerns itself just with coreboot, but this ought to
 change in the future.
 
-Examples of FSF inconsistency
-=============================
-
-Another example of FSF inconsistency: the ThinkPad T400 supported by Libreboot,
-often comes with both an ATI *and* Intel graphics chipset, but coreboot can be
-configured to use one or the other. If using the ATI chipset, there is currently
-no free initialization code available, but you can disable it and use the Intel
-one, where completely free initialization code exists in coreboot, plus free
-drivers in linux. Under strict interpretation of the RYF guidelines, the T400
-should not be endorsed by the FSF at all, but the FSF made an exception and
-endorsed it *in configurations where the Intel chipset is used exclusively as
-per software configuration*. They endorsed the T400 as sold by Leah Rowe, with
-Libreboot pre-installed.
-
-To be clear: use of the ATI video chipset on a ThinkPad T400 currently requires
-loading a proprietary *VGA option ROM*, loaded into the coreboot ROM image.
-Libreboot simply disables that chip and uses coreboot's init code for the Intel
-chip instead, with that chip in use exclusively. It can therefore be said that
-the ThinkPad T400 is not fully usable in freedom, even by the FSF's conservative
-standards. It is *especially* not free by Libreboot standards, because the EC
-firmware is non-free, and it is a non-free hardware design, even if it is
-nominally free with Libreboot installed.
-
 More detailed insight about microcode
 =====================================
 
@@ -309,22 +286,8 @@ digress.
 
 **I will continue to develop Libreboot and osboot, in parallel.**
 
-Moral of the story
-==================
-
-Compromise and nuance is the name of the game, even if you're the FSF. As of
-January 2nd, 2022, [Richard Stallman himself](http://web.archive.org/web/20220102082138/https://stallman.org/stallman-computing.html)
-used a ThinkPad T400S with Libreboot installed onto it, with the Intel video
-chipset in use. He may not even be aware of the issue with ATI chips, though it
-should be said that T400*S* only ever comes with the Intel video chipset (not
-ATI). The ATI chipset is only ever available on the regular T400! Libreboot
-however would greatly benefit if those ATI chipsets had free init code in
-coreboot, because then users could make use of that and have superior performance
-for graphical applications, by using the ATI chip instead of the Intel one.
-It is currently not possible to do that in freedom.
-
 Other considerations
---------------------
+====================
 
 Also not covered strictly by Libreboot: OSHW and Right To Repair. Freedom at
 the silicon level would however be amazing, and efforts already exist; for
@@ -334,11 +297,6 @@ design that companies can use, instead of having to use proprietary ARM/x86 and
 so on). Similarly, Right To Repair (ability to repair your own device, which
 implies free access to schematics and diagrams) is critical, for the same
 reason that Free Software (Right To Hack) is critical!
-
-There ought to be a defined scope, in any project, and Libreboot currently has
-a very clearly defined scope, but it goes without saying that Libreboot could
-be *improved* and *do more* in the future. *RYF is garbage, and should be
-replaced; it is far too conservative by modern standards. FSDG is still OK.*
 
 OSHW and Right To Repair are not covered at all by RYF (FSF's Respects Your
 Freedom criteria), the criteria which Libreboot was created to comply with.
@@ -352,6 +310,13 @@ to replace stand-alone mask ROM ICs with compatible flash memory.
 Conclusion
 ==========
 
+Compromise and nuance is the name of the game, even if you're the FSF. It is
+completely unavoidable, but there are some who try to deny this fact and
+pretend like things are as they'd prefer them to be, rather than how they
+actually are in the real world.
+
+Facts and *feelings* are usually very different things, and contradictory.
+
 RYF isn't *wrong* per se, just flawed. It is correct in some ways and if
 complied with, the result *does* give many freedoms to the user, but RYF
 completely disregards many things that are now possible, including freedoms at
@@ -359,9 +324,6 @@ the hardware level (the RYF criteria only covers *software*). Those guidelines
 are written with assumptions that were still true in the 1990s, but the world
 has since evolved. As of 2 January 2022, Libreboot still complies strictly with
 RYF, and will continue to do so, at least for the time being.
-
-Facts and *feelings* are usually very different things, and contradictory.
-Such is the nature of life.
 
 The conclusion that should be drawn from all of this is as follows:
 
@@ -374,16 +336,6 @@ the Libreboot project does not see RYF as a *gold standard*. There are levels
 of freedom possible now that the RYF guidelines do not cover at all, and in
 some cases even actively discourage/dis-incentivize because it makes compromises
 based on assumptions that are no longer true.
-
-Maintaining Libreboot, under the FSF's strict (and simultaneously lax: see
-EC loophole) policies, is a fun technical challenge, and it is a *worthwhile*
-pursuit. Having free boot firmware on the **host CPU** is very important!!
-Freedom is important, at all levels, including what runs merely on the host
-CPU, but that is not the *only* level to take into account. All levels should
-be considered, and *explored*, with or without the FSF's strict requirement
-(currently without). FSF currently looks at Libreboot and thinks that the work
-is *done*, when that is far from true, precisely because of the EC firmware
-and other freedom issues that remain, on all currently supported mainboards.
 
 Sad truth: RYF actively encourages *less* freedom, by not being bold enough.
 It pitches a victory flag and says *mission accomplished*, despite the fact
@@ -407,5 +359,3 @@ software!
 
 In the year 2022 onwards, we can do better. The RYF program should be cancelled.
 It is no longer fit for purpose.
-
-Think for yourself, and do not let perfection become the enemy of the good.
