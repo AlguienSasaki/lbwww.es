@@ -46,7 +46,7 @@ So what *is* Libreboot's policy?
 ================================
 
 Libreboot follows a very conservative and *light touch* approach, when it comes
-to deblobbing coreboot. It is a very *correct* approach.
+to deblobbing coreboot.
 
 Libreboot only excludes *software* binary blobs, plus CPU microcode updates,
 completely in line with FSF policy. *In practise, it is mostly microcode
