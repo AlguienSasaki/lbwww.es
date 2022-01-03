@@ -176,7 +176,7 @@ More detailed insight about microcode
 =====================================
 
 To be clear: it is preferable that microcode be free. The microcode on Intel
-and AMD systems *are* non-free. Facts and feelings rarely coincidence; the
+and AMD systems *are* non-free. Facts and feelings rarely coincide; the
 purpose of this section is to spread *facts*.
 
 Libreboot will not include the updates, because FSF compliance is still a

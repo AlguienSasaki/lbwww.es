@@ -10,7 +10,7 @@ entirely *free*, on all supported mainboards.
 
 Libreboot is designed to comply with the Free Software Foundation's
 [Respects Your Freedom criteria](https://ryf.fsf.org/about/criteria) and
-the [GNU Free System Distribution (GNU FSDG) guidelines](https://www.gnu.org/distros/free-system-distribution-guidelines.en.html),
+the [GNU Free System Distribution Guidelines (GNU FSDG)](https://www.gnu.org/distros/free-system-distribution-guidelines.en.html),
 ensuring that it is entirely [Free Software](https://www.gnu.org/philosophy/free-sw.html).
 
 Libreboot's operational policy regarding blobs has not changed, and will not
