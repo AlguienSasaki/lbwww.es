@@ -27,7 +27,7 @@ Background information
 
 Libreboot concerns itself only with what goes in the main boot flash IC, but
 there are other pieces of firmware to take into consideration, as covered
-in the [Libreboot FAQ](faq.md#what-other-firmware-exists-outside-of-libreboot).
+in the [Libreboot FAQ](../faq.md#what-other-firmware-exists-outside-of-libreboot).
 
 Most critical of these are:
 
@@ -204,7 +204,7 @@ hardware-based virtualization (via `kvm`) completely stable, where it would
 otherwise lead to a kernel panic. They allow those same thinkpads to be run with
 high CPU usage and I/O (RAM usage), without crashing (otherwise, it's very
 likely to encounter a kernel panic caused by a
-[Machine Check Exception](faq.html#machine-check-exceptions-on-some-montevina-penryn-cpu-laptops)).
+[Machine Check Exception](../faq.html#machine-check-exceptions-on-some-montevina-penryn-cpu-laptops)).
 
 Not including these updates will result in an unstable/undefined state. Intel
 themselves define which bugs affect which CPUs, and they define workarounds, or
