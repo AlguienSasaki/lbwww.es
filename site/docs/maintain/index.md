@@ -490,21 +490,6 @@ Even if your board doesn't actually use `libgfxinit`, the config for it should
 still be named as such. From a user's perspective, it really makes no
 difference.
 
-NOTE: In practise, most VGA option ROMs are proprietary, so Libreboot would
-never actually include them, but both coreboot and SeaBIOS are capable of
-executing option ROMs stored in CBFS, or on the add-on card (the card will
-have its own flash memory or ROM, containing the file). As such, in Libreboot,
-the `vgarom` setup will always only be for executing option ROMs stored on
-a card; this is perfectly OK to enable in Libreboot, because they could in
-theory be free, and Libreboot shouldn't dictate to the user what they can and
-cannot run; Libreboot itself merely doesn't include non-free software, but it
-will not try to stop you from running it, should you so choose. It's a very
-different story in [osboot](https://osboot.org/) which is a fork of Libreboot
-without the no-blob policy, where the only question is whether such a blob
-would be legally redistributable by the project, but with the added nuance:
-osboot policy is to still try, whenever possible, to educate users as much as
-possible about these issues, and about the *right* to freedom.
-
 COREBOOT build system
 ---------------------
 
@@ -605,22 +590,6 @@ for the sake of efficiency, because deblobbing is actually only a very minor
 aspect of what Libreboot is, and time is better spent on other areas of
 development. Deblobbing is done in the most low-effort way possible, just so as
 to comply with the *GNU Free System Distribution Guidelines*.
-
-*Freedom of choice* is just as important as freedom over the software *itself*.
-For example, if Trisquel were to *prevent* you from running Nvidia's proprietary
-graphics drivers, that would hurt your freedom of *choice*. At the same time,
-it is desirable that all software should be free, so you should always avoid
-non-free software whenever possible. Libreboot's policy is simply to *exclude*
-proprietary software in releases, but not to stop you from running it if you
-wish to add it in your own modified version of the firmware. This level of
-nuance is something lacking in some projects; for example, the `linux-libre`
-kernel actually removes the code for loading binary blobs, and removes the
-code warning you about missing firmware; this is wrong, and an attack on your
-freedom to choose. It is even counter-productive, because such warnings (in
-dmesg) may infact educate the user about such blobs and provide a warning that
-they should be replaced, whereas hiding their existence reduces the chance that
-someone will see the problem and fix it (by reverse engineering the blob in
-question).
 
 Of course, deleting blobs from coreboot *breaks* coreboot, in situations where
 you actually want to build for a board where those blobs are used, but since
