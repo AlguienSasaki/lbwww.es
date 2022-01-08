@@ -23,7 +23,7 @@ You will see the term *Free Software* used in this article, but some people
 call it Open Source Software. [However, you should call it Free
 Software.](https://www.gnu.org/philosophy/open-source-misses-the-point.html)
 The word "free" refers to freedom, not price, though the software is usually
-also usually free as in gratis / zero price.
+also free as in gratis / zero price.
 
 The opposite of Free Software is called *proprietary software*, or *non-free
 software*. Proponents of Open Source sometimes call it *Closed Source*, but
