@@ -26,9 +26,9 @@ The word "free" refers to freedom, not price, though the software is usually
 also free as in gratis / zero price.
 
 The opposite of Free Software is called *proprietary software*, or *non-free
-software*. Proponents of Open Source sometimes call it *Closed Source*, but
-you should call it *non-free* or proprietary, to highlight the fact that it
-isn't free.
+software*. Proponents of Open Source sometimes call non-free software *Closed
+Source*, but you should call it *non-free* or proprietary, to highlight the
+fact that it isn't free.
 
 What's happening in New Hampshire?
 ==================================
