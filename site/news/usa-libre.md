@@ -1,4 +1,4 @@
-% New Hampshire (USA) may soon make Software Freedom the law. YOUR HELP IS NEEDED!
+% New Hampshire (USA) may soon enshrine Software Freedom into law. YOUR HELP IS NEEDED!
 % Leah Rowe
 % 8 January 2022
 
