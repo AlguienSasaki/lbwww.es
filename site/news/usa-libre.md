@@ -198,7 +198,7 @@ They will try to trick the law makers by claiming things such as:
 * **"Free software is insecure / you will get hacked"** - nothing could be
   further from the truth! Free operating systems such as GNU+Linux, FreeBSD and
   especially OpenBSD, are among the most secure operating systems available.
-* "Free software is used by criminal hackers" - here, they use the
+* **"Free software is used by criminal hackers"** - here, they use the
   term *hacker* to describe someone who illegally gains access to someone
   elses computer. Don't fall for it. Maintainers of free operating systems
   like GNU+Linux distros or the BSDs are actively working to make the internet
