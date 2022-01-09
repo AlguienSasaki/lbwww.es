@@ -121,8 +121,8 @@ me, and they can be bought/corrupted; Microsoft, Apple and many others (such as
 IBM) have done this for years, having the national infrastructures governing us
 run on their proprietary systems, instead of systems that respect freedom; it
 is essential that these systems run free software, because a free and democratic
-should expect nothing less. Those companies buy influence *and they own your
-politicians*.
+society should expect nothing less. Those companies buy influence *and they own
+your politicians*.
 
 All of this could change very soon. Something is happening in New Hampshire,
 which could redefine our movement and give *free software* real power
