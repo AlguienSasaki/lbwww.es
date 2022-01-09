@@ -5,11 +5,12 @@
 Introduction
 ============
 
-This event of such global importance to Free Software projects, and the movement
-as a whole, has made me decide to write this article. **The events in question,
-covered by this article, will occur on 11 January 2022. This is just three days
-away, so if you make a decision, you should make it now, today, and prepare.
-Please continue reading.**
+This event of such global importance to [Free
+Software](https://www.gnu.org/philosophy/free-sw.html) projects, and the Free
+Software movement as a whole, has made me decide to write an article. **The
+events in question, covered by this article, will occur on 11 January 2022.
+This is just three days away, so if you make a decision, you should make it
+now, today, and prepare. Please continue reading.**
 
 If you live in New Hampshire or in one of the neighbouring states, especially
 Massachusetts, please listen up! If you are further away and unable to reach
