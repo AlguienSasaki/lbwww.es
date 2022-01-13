@@ -143,7 +143,7 @@ should go to New Hampshire.**
 The organizer of the proposed bill, *Eric Gallager*, has left instructions on
 Twitter. The following is a *nitter* link, which lets you view the relevant
 Twitter thread without running non-free Javascript in your browser:\
-<https://nitter.domain.glass/cooljeanius/status/1479663133207764992>
+<https://nitter.net/cooljeanius/status/1479663133207764992>
 
 The original Twitter URL is:\
 <https://twitter.com/cooljeanius/status/1479663133207764992>
@@ -151,7 +151,7 @@ The original Twitter URL is:\
 Further instructions for what room to go to, when you get there:\
 
 See Nitter link:\
-<https://nitter.domain.glass/cooljeanius/status/1479062316532604930>
+<https://nitter.net/cooljeanius/status/1479062316532604930>
 
 (original twitter link: <https://twitter.com/cooljeanius/status/1479062316532604930>)
 
