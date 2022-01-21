@@ -147,6 +147,101 @@ indeed critical, but again, currently outside the scope of what lbmk does.
 At the moment, lbmk concerns itself just with coreboot, but this ought to
 change in the future.
 
+Examples of FSF *sweeping blobs under the rug*
+----------------------------------------------
+
+Over the years, there have been numerous cases where the FSF actively fails to
+provide incentive for levels of software freedom, such as:
+
+* TALOS II "OpenPOWER" workstation from Raptor Engineering USA. It contains a
+  broadcom NIC inside it which requires firmware, and that firmware was non-free.
+  The FSF were willing to ignore it, and certify the TALOS II product under RYF,
+  but Timothy Pearson of Raptor Engineering had it freed anyway, without being
+  told to. Hugo Landau reverse engineered the specification and Evan Lojewski
+  wrote a free driver. See:
+  See: <https://www.devever.net/~hl/ortega> and <https://github.com/meklort/bcm5719-fw>
+* FSF once endorsed the ThinkPad X200, as sold by [Minifree Ltd](https://minifree.org),
+  which contains the Intel ME; the bootrom is still there, as is the ME
+  coprocessor, but the ME is put into a disabled state via the Intel Flash
+  Descriptor, and the ME firmware in flash is removed. However, the ME is an
+  entire coprocessor which, with free firmware, could be used for a great many
+  things. In the Libreboot and coreboot projects, there has always been interest
+  in this but the FSF disregards it entirely. The X200 product they certified
+  came with Libreboot pre-installed.
+* Libreboot has a utility written by I, Leah Rowe, that generates ICH9M flash
+  descriptors and GbE NVM images from scratch. This is necessary to configure
+  the machine, but these are binary blobs otherwise; the FSF would have been
+  quite content to certify the hardware anyway since these were non-software
+  blobs in a format fully documented by Intel (they are just binary configuration
+  files), but I went ahead and wrote ich9gen anyway. With ich9gen, you can
+  more easily modify the descriptor/gbe regions for your firmware image. See:
+  <https://libreboot.org/docs/install/ich9utils.html> - osboot also has this
+* FSF once endorsed the ThinkPad T400 with Libreboot, as sold by Minifree. This
+  machine comes in two versions: with ATI+Intel GPU, or only Intel GPU. If ATI
+  GPU, it's possible to configure the machine so that either GPU is used. If the
+  ATI GPU is to be used, a firmware blob is needed for initialization, though the
+  driver for it is completely free. FSF ignored this fact and endorsed the
+  hardware, so long as Libreboot does not enable the ATI GPU or tell people how
+  to enable it. The *Intel* GPU on that machine has free initialization code by
+  the coreboot project, and a fully free driver in both Linux and BSD kernels.
+  In the configuration provided by Libreboot, the ATI GPU is completely disabled
+  and powered down.
+* All Libreboot-compatible ThinkPads contain non-free Embedded Controller
+  firmware, which is user-flashable (*and intended for update by the
+  manufacturer*). The FSF chose to ignore the EC firmware, under
+  their *secondary processor* exemption. See:
+  <http://libreboot.localhost/faq.html#ec-embedded-controller-firmware>
+
+In all of the above cases, the FSF could have been stricter, and bolder, by
+insisting that these *additional* problems for freedom were solved. They did
+not. There are many other examples of this, but the purpose of this article is
+not to list all of them (otherwise, a book could be written on the subject).
+
+Problems with FSDG
+------------------
+
+The FSDG criteria is separate from RYF, but has similar problems. FSDG is
+what the FSF-endorsed GNU+Linux distros comply with. Thoughts:
+
+* Excluding firmware blobs in the linux kernel is *bad*. Non-free firmware
+  is *also bad*. Including them is a wiser choice, if strong education is also
+  provided about *why they are bad* (lack of freedom). If you expose them to
+  the user, and tell them about it, there is greater incentive (by simple
+  reminder of their existence) to reverse engineer and replace them.
+* Firmware *in your OS kernel* is *good*. The FSF simultaneously gives the OK
+  for hardware *with those same firmware blobs* if the firmware is embedded
+  into a ROM/flash chip on the device, or embedded in some processor. If the
+  firmware is on separate ROM/flash, it could still be replaced by the user via
+  reverse engineering, but then you would probably have to do some soldering
+  (replace the chip on the card/device). *If the firmware is loaded by the
+  OS kernel, then the firmware is exposed to the user and it can be more
+  easily replaced. FSF criteria in this regard encourages hardware designers
+  to hide the firmware instead, making actual freedom less likely!*
+
+Besides this, FSDG seems OK. Any free operating system should ideally not
+have non-free *drivers* or *applications*.
+
+Hardware manufacturers like to shove everything into firmware because their
+product is often poorly designed, so they later want to provide workarounds in
+firmware to fix issues. In many cases, a device will already have firmware on it
+but require an update supplied to it by your OS kernel.
+
+The most common example of non-free firmware in Linux is for wifi devices.
+This is an interesting use-case scenario, if freed, because it could be used
+for owner-controlled *software defined radio*.
+
+The *Debian* way is ideal. The Debian GNU+Linux distribution is entirely free
+by default, and lacks any of the non-free firmware, but they have a separate
+repository containing non-free software. If you only want firmware, it is
+trivial to get installer images with it included, or add that to your installed
+system.
+
+*Banning* linux-firmware specifically is a threat to freedom in the long term,
+because new users of GNU+Linux might be discouraged from using the OS if their
+hardware doesn't work. You might say: just buy new hardware! This is often not
+possible for users, and the user might not have the skill to reverse engineer
+it either.
+
 More detailed insight about microcode
 =====================================
 
@@ -336,3 +431,28 @@ software!
 
 In the year 2022 onwards, we can do better. The RYF program should be cancelled.
 It is no longer fit for purpose.
+
+Other resources
+===============
+
+Hector Martin, leader of the *Asahi Linux* project (for booting linux kernels
+on M1 macbooks) wrote a very robust twitter thread criticizing the RYF criteria
+and much of what he wrote inspired *this* article that you are reading. See:
+
+<https://twitter.com/marcan42/status/1040626210999431168>
+
+If you wish to avoid non-free javascript, you can read this thread using
+nitter:
+
+<https://nitter.net/marcan42/status/1040626210999431168>
+
+Article updates
+===============
+
+This article was updated on 21 January 2022, to add the section with examples
+in the real world of FSF sweeping blobs under the rug (ATI T400 thinkpads,
+ICH9M descriptors and TALOS II NIC firmware).
+
+Also on 21 January 2022: added section about FSDG (criticisms of it).
+
+Also on 21 January 2022: added link to Hector Martin's twitter thread.
