@@ -158,7 +158,7 @@ provide incentive for levels of software freedom, such as:
   The FSF were willing to ignore it, and certify the TALOS II product under RYF,
   but Timothy Pearson of Raptor Engineering had it freed anyway, without being
   told to. Hugo Landau reverse engineered the specification and Evan Lojewski
-  wrote a free driver. See:
+  wrote free firmware. See:
   See: <https://www.devever.net/~hl/ortega> and <https://github.com/meklort/bcm5719-fw>
 * FSF once endorsed the ThinkPad X200, as sold by [Minifree Ltd](https://minifree.org),
   which contains the Intel ME; the bootrom is still there, as is the ME
