@@ -190,7 +190,7 @@ provide incentive for levels of software freedom, such as:
   firmware, which is user-flashable (*and intended for update by the
   manufacturer*). The FSF chose to ignore the EC firmware, under
   their *secondary processor* exemption. See:
-  <http://libreboot.localhost/faq.html#ec-embedded-controller-firmware>
+  <http://libreboot.org/faq.html#ec-embedded-controller-firmware>
 
 In all of the above cases, the FSF could have been stricter, and bolder, by
 insisting that these *additional* problems for freedom were solved. They did
