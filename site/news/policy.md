@@ -1,6 +1,6 @@
-% Binary blob policy
+% Binary blob extermination policy
 % Leah Rowe
-% 2 January 2022
+% 2 January 2022 (updated 23 January 2022)
 
 This article was written by Leah Rowe, the founder and current lead developer
 of Libreboot.
@@ -435,6 +435,22 @@ It is no longer fit for purpose.
 Other resources
 ===============
 
+Ariadne Conill's RYF blog post
+------------------------------
+
+Ariadne Conill, security team chair of *Alpine Linux*, posted a very robust
+article about RYF, with similar points made when compared to *this* article.
+However, Ariadne goes into detail on several other examples of problems with
+the FSF RYF criteria; for example, it talks about the *Novena* product by
+Bunnie.
+
+It's worth a read! Link:
+
+<https://ariadne.space/2022/01/22/the-fsfs-relationship-with-firmware-is-harmful-to-free-software-users/>
+
+Hector Martin's RYF thread
+--------------------------
+
 Hector Martin, leader of the *Asahi Linux* project (for booting linux kernels
 on M1 macbooks) wrote a very robust twitter thread criticizing the RYF criteria
 and much of what he wrote inspired *this* article that you are reading. See:
@@ -448,6 +464,14 @@ nitter:
 
 Article updates
 ===============
+
+23 January 2022
+---------------
+
+Added link to Ariadne Conill's article.
+
+21 January 2022
+---------------
 
 This article was updated on 21 January 2022, to add the section with examples
 in the real world of FSF sweeping blobs under the rug (ATI T400 thinkpads,
