@@ -99,23 +99,24 @@ The FSF RYF guidelines state the following:
 
 *"However, there is one exception for secondary embedded processors. The exception applies to software delivered inside auxiliary and low-level processors and FPGAs, within which software installation is not intended after the user obtains the product. This can include, for instance, microcode inside a processor, firmware built into an I/O device, or the gate pattern of an FPGA. The software in such secondary processors does not count as product software."*
 
-This is absolute pure nonsense, and should be rejected on ideological grounds.
-The rest of libreboot's policy and overall ideology expressed, in this article,
-will be based largely on that rejection. The term *product software* is
-completely asinine; software is software, and software should always be *free*.
-Instead of making such exceptions, more hardware should be encouraged, with
-help given to provide as much freedom as possible, while providing education
-to users about any pitfalls they may encounter, and encourage freedom at all
-levels. When an organisation like the FSF makes such bold exceptions as above,
-it sends the wrong message, by telling people essentially to sweep these other
-problems under the rug, just because they involve software that happens to run
-on a "secondary processor". If the software is possible to update by the user,
-then it should be free, regardless of whether the manufacturer *intended* for
-it to be upgraded or not. Where it really *isn't* possible to update such
-software, proprietary or not, advice should be given to that effect. Education
-is important, and the FSF's criteria actively discourages such education; it
-creates a false hope that everything is great and wonderful, just because the
-software on one arbitrary level is all free.
+This is a violation of every principle the FSF stands for, *and it should be
+rejected on ideological grounds*. The rest of libreboot's policy and overall
+ideology expressed, in this article, will be based largely on that rejection.
+The definition of *product software* is completely arbitrary; software is
+software, and software should always be *free*. Instead of making such
+exceptions, more hardware should be encouraged, with help given to provide as
+much freedom as possible, while providing education to users about any pitfalls
+they may encounter, and encourage freedom at all levels. When an organisation
+like the FSF makes such bold exceptions as above, it sends the wrong message,
+by telling people essentially to sweep these other problems under the rug, just
+because they involve software that happens to run on a "secondary processor".
+If the software is possible to update by the user, then it should be free,
+regardless of whether the manufacturer *intended* for it to be upgraded or not.
+Where it really *isn't* possible to update such software, proprietary or not,
+advice should be given to that effect. Education is important, and the FSF's
+criteria actively discourages such education; it creates a false hope that
+everything is great and wonderful, just because the software on one arbitrary
+level is all free.
 
 This view of the FSF's, as expressed in the quoted paragraph, assumes that
 there is primarily *one* main processor controlling your system. On many
