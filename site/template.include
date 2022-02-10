@@ -4,6 +4,19 @@
   <meta charset="utf-8">
   <meta name="generator" content="pandoc">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<!-- anti-social media tags -->
+$if(title-prefix)$
+  <meta property="og:title" content="$title-prefix$">
+  <meta property="og:type" content="article" />
+  <meta property="og:image" content="https://av.vimuser.org/bootmenu.jpg">
+  <meta property="og:url" content="$antisocialurl$">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta property="og:description" content="$pagetitle$">
+  <meta property="og:site_name" content="$title-prefix$">
+  <meta name="twitter:image:alt" content="$pagetitle$">
+$endif$
+
 $for(author-meta)$
   <meta name="author" content="$author-meta$">
 $endfor$
