@@ -340,8 +340,7 @@ is the same as Libreboot, except that it does *not* delete blobs; the goal is
 still software freedom, but it provides those users who are not willing/able
 to use libreboot hardware to otherwise still have some freedoms compared to
 otherwise fully proprietary *vendor* firmware. osboot and libreboot are two
-sides of a coin; libreboot is the "light", and osboot is the dark side. Both
-projects are maintained and were founded by Leah Rowe.
+sides of a coin; neither should exist alone.
 
 The osboot firmware is far superior to Libreboot, in terms of reliability, due
 to the presence of microcode updates in the firmware, and with zero practical
