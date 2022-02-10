@@ -73,9 +73,10 @@ was scrapped during March of 2021, in favour of lbmk which is a fork of osbmk.
 back into feature parity. so you can fork your forks of your forks, and
 maybe fork the fork of your fork of your fork)
 
-Libreboot and osboot are two sides of a coin. Libreboot is the "light", and
-osboot is the *dark side*; osboot scrapts Libreboot's
-[zero blobs policy](../../policy.md) and it is targeted at those who don't
+Libreboot and osboot are two sides of a coin; neither should exist alone.
+The osboot project scrapts
+Libreboot's [zero blobs policy](https://libreboot.org/news/policy.html)
+and it is targeted at those who don't
 want to (or can't) use Libreboot, but who still want some freedoms compared
 to otherwise fully non-free vendor firmware.
 
