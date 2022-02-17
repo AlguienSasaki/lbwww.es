@@ -22,10 +22,10 @@ Libreboot supports the following systems in this release:
 ### Desktops (AMD, Intel, x86)
 
 -   [Gigabyte GA-G41M-ES2L motherboard](ga-g41m-es2l.md)
+-   Acer G43T-AM3 (**Libreboot 20210522 and later**)
 -   [Intel D510MO and D410PT motherboards](d510mo.md)
 -   [Intel D945GCLF](d945gclf.md) (D945GCLF2D also reported working by a user)
 -   [Apple iMac 5,2](imac52.md)
--   Acer G43T-AM3 (**Libreboot 20210522 and later**)
 
 ### Servers/workstations (AMD, x86)
 
@@ -42,12 +42,12 @@ Libreboot supports the following systems in this release:
 -   ThinkPad X60 / X60S / X60 Tablet
 -   ThinkPad T60 (with Intel GPU)
 -   [Lenovo ThinkPad X200 / X200S / X200 Tablet](x200.md)
+-   Lenovo ThinkPad X301 (**Libreboot 20210522 and later**)
 -   [Lenovo ThinkPad R400](r400.md)
 -   [Lenovo ThinkPad T400 / T400S](t400.md)
 -   [Lenovo ThinkPad T500](t500.md)
 -   [Lenovo ThinkPad W500](t500.md)
 -   [Lenovo ThinkPad R500](r500.md)
--   Lenovo ThinkPad X301 (**Libreboot 20210522 and later**)
 -   [Apple MacBook1,1 and MacBook2,1](macbook21.md)
 
 'Supported' means that the build scripts know how to build ROM images
@@ -55,7 +55,7 @@ for these systems, and that the systems have been tested (confirmed
 working). There may be exceptions; in other words, this is a list of
 'officially' supported systems.
 
-EC update on i945 (X60, T60) and GM45 (X200, T400, T500, R400, W500, R500)
+EC update on i945 (X60, T60) and GM45 (X200, X301, T400, T500, R400, W500, R500)
 ==============================================================
 
 It is recommended that you update to the latest EC firmware version. The
