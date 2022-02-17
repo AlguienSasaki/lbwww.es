@@ -25,6 +25,7 @@ Libreboot supports the following systems in this release:
 -   [Intel D510MO and D410PT motherboards](d510mo.md)
 -   [Intel D945GCLF](d945gclf.md) (D945GCLF2D also reported working by a user)
 -   [Apple iMac 5,2](imac52.md)
+-   Acer G43T-AM3 (**Libreboot 20210522 and later**)
 
 ### Servers/workstations (AMD, x86)
 
@@ -46,6 +47,7 @@ Libreboot supports the following systems in this release:
 -   [Lenovo ThinkPad T500](t500.md)
 -   [Lenovo ThinkPad W500](t500.md)
 -   [Lenovo ThinkPad R500](r500.md)
+-   Lenovo ThinkPad X301 (**Libreboot 20210522 and later**)
 -   [Apple MacBook1,1 and MacBook2,1](macbook21.md)
 
 'Supported' means that the build scripts know how to build ROM images
