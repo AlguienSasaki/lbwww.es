@@ -26,6 +26,9 @@ $if(keywords)$
 $endif$
   <title>$if(title-prefix)$$title-prefix$ – $endif$$pagetitle$</title>
 <style type="text/css">
+:not(p) {max-width:60em; margin:0 auto}
+img,video,iframe,pre {max-width:100%; overflow:auto}
+
 html {
 	background:#111; color:#eee;
 	font-family:sans-serif; line-height:1.4;
@@ -33,9 +36,6 @@ html {
 }
 code,pre, #TOC, a:hover {background:#333}
 a {color:#fcc}
-
-:not(p),a:hover {max-width:60em; margin:0 auto}
-img,video,iframe,pre {max-width:100%; overflow:auto}
 
 .title>*, header ul>li, .nav ul>li,
 #footer ul>li, .h:hover>* {
