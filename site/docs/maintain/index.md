@@ -966,6 +966,19 @@ on all coreboot source trees.
 
 Command: `./build release src`
 
+resources/scripts/build/release/u-boot-libre
+============================================
+This builds a release of u-boot-libre. Once released officially, the
+files produced by the command below are then expected to be used by
+FSDG distributions packages.
+
+While this isn't useful as-is for Libreboot, it enables to share the
+deblobbing code between various FSDG distributions and also enables
+Libreboot to reuse that deblobbing process to support boards with
+u-boot in the future.
+
+Command: `./build release u-boot-libre`
+
 resources/scripts/download/coreboot
 ===================================
 
