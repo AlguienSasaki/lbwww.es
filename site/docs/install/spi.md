@@ -433,7 +433,16 @@ to MISO).
 On that page, look at the *P9 header*. It is what you will use to wire up your
 chip for flashing.
 
-GPIO pins on Raspberry Pi (RPi)
+GPIO pins on Raspberry Pi (RPi) 40 Pin
+--------------------------------------
+
+This diagram shows the pinout for most modern Pi's and Pi derivatives.
+The diagram shows the pins of an RPi on the left and the two SOIC clips
+on the left.
+
+![](https://av.osboot.org/rpi/wiring.webp)
+
+GPIO pins on Raspberry Pi (RPi) 26 Pin
 -------------------------------
 
 Diagram of the 26 GPIO Pins of the Raspberry Pi Model B (for the Model
