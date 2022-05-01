@@ -199,30 +199,6 @@ What systems are compatible with libreboot?
 
 See the [hardware compatibility list](docs/hardware/).
 
-Will the Purism laptops be supported?
-----------------------------------------------------------------------
-
-Short answer: no.
-
-There are severe privacy, security and freedom issues with these laptops, due
-to the Intel chipsets that they use. See:
-
-- [Intel Management Engine](#intelme)
-- [More freedom issues on modern Intel hardware](#intel)
-
-Most notably, these laptops also use the Intel FSP binary blob, for the entire
-hardware initialization. Coreboot does support a particular revision of one of
-their laptops, but most are either unsupported or rely on binary blobs for most
-of the hardware initialization.
-
-In particular, the Intel Management Engine is a severe threat to privacy and
-security, not to mention freedom, since it is a remote backdoor that provides
-Intel remote access to a computer where it is present.
-
-Intel themselves even admitted it, publicly.
-
-The Libreboot project recommends avoiding all hardware sold by Purism.
-
 Why is the latest Intel hardware unsupported in libreboot? {#intel}
 -----------------------------------------------------------
 
@@ -240,12 +216,10 @@ architecture, with the ME firware written for x86 based on the Minix operating
 system. However, the overall design philosophy and operation is mostly the
 same.
 
-On *most* current Intel platforms that have Intel ME, it is possible to
-partly disable it. See:
+On *most* current Intel platforms that have Intel ME, it is now possible
+to disable Intel ME after BringUp. See:
 
 <https://github.com/corna/me_cleaner>\
-NOTE: on those systems, the ME firmware is still needed in the boot flash, and
-since it is a binary blob, those systems are not supported in Libreboot.
 
 On all Libreboot systems that have an Intel ME in it (GM45+ICH9M laptops and
 X4X+ICH10 desktops), the ME firmware is not needed in the boot flash. Either a
