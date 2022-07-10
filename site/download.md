@@ -14,13 +14,18 @@ Libreboot from source, [read this page](docs/build/).
 GPG signing key
 ---------------
 
-**The latest release is Libreboot 20211122, under the `testing` directory.**
+**The latest release is Libreboot 20220710, under the `stable` directory.**
+
+NOTE: KGPE-D16, KCMA-D8 and GA-G41M-ES2L ROM images are excluded in that
+release; use an older release, unless these are re-added in future releases.
+You can still compile ROM images for these boards yourself, from the latest
+version of Libreboot in the Git repository.
 
 ### NEW KEY
 
 Full key fingerprint: `98CC DDF8 E560 47F4 75C0  44BD D0C6 2464 FA8B 4856`
 
-The above key is for Libreboot 20211122, and subsequent releases.
+The above key is for Libreboot 20220710, and subsequent releases.
 
 Download the key here: [lbkey.asc](lbkey.asc)
 
@@ -51,7 +56,7 @@ there is a Git repository that you can download from. Go here:
 HTTPS mirrors {#https}
 -------------
 
-**The latest release is Libreboot 20211122, under the `testing` directory.**
+**The latest release is Libreboot 20220710, under the `stable` directory.**
 
 These mirrors are recommended, since they use TLS (https://) encryption.
 
@@ -129,7 +134,7 @@ that show you how to set up an rsync server.
 HTTP mirrors {#http}
 ------------
 
-**The latest release is Libreboot 20211122, under the `testing` directory.**
+**The latest release is Libreboot 20220710, under the `stable` directory.**
 
 WARNING: these mirrors are non-HTTPS which means that they are
 unencrypted. Your traffic could be subject to interference by
@@ -143,7 +148,7 @@ if using HTTPS.
 FTP mirrors {#ftp}
 -----------
 
-**The latest release is Libreboot 20211122, under the `testing` directory.**
+**The latest release is Libreboot 20220710, under the `stable` directory.**
 
 WARNING: FTP is also unencrypted, like HTTP. The same risks are present.
 

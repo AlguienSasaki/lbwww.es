@@ -1,5 +1,5 @@
 ---
-title: Free your BIOS today!
+title: Libreboot project
 ...
 
 Libreboot is
@@ -12,11 +12,11 @@ firmware. Help is available
 via [\#libreboot](https://web.libera.chat/#libreboot)
 on [Libera](https://libera.chat/) IRC.
 
-The latest version is [Libreboot 20211122](news/libreboot20211122.md), released
-on 22 November 2021.
+The latest version is [Libreboot 20220710](news/libreboot20220710.md), released
+on 10 July 2022.
 
-Join us now and flash the firmware!
------------------------------------
+Why use Libreboot?
+------------------
 
 You have rights. The right to privacy, freedom of thought, freedom of speech
 and the right to read. [Free

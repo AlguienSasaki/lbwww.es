@@ -27,7 +27,7 @@ About ROM image file names
 Init types and display mode
 ---------------------------
 
-NOTE: On Libreboot 20211122, `libgfxinit` in the only init type provided on
+NOTE: On Libreboot 20220710, `libgfxinit` is the only init type provided on
 the pre-compiled ROM images, but the build system does support other types
 defined below.
 
@@ -88,7 +88,7 @@ In this setup, coreboot is neither implementing libgfxinit / native graphics
 initialization nor is it finding/loading/executing VGA option ROMs. In this
 setup, SeaBIOS would most likely be used for that.
 
-The `normal` setup is supported in the Libreboot 20211122 build system, but not
+The `normal` setup is supported in the Libreboot 20220710 build system, but not
 currently used. It is there for desktop hardware that will be added in the
 future, where those desktop boards do not have an onboard GPU and therefore an
 add-on GPU is always used..

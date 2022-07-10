@@ -11,8 +11,8 @@ Libreboot це
 через [\#libreboot](https://web.libera.chat/#libreboot)
 на [Libera](https://libera.chat/) IRC.
 
-Остання версія [Libreboot 20211122](news/libreboot20211122.md), була випущена
-22 листопада 2021 року.
+Остання версія [Libreboot 20220710](news/libreboot20220710.md), була випущена
+10 липень 2022 року.
 
 Приєднуйтесь до нас зараз і прошивайте прошивку!
 -----------------------------------
