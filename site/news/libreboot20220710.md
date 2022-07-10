@@ -21,7 +21,7 @@ mirrors. If you check in the `stable` directory, you'll still only find
 the 20160907 release in there, so please ensure that you check the `testing`
 directory!
 
-This is a *bug fix* release, relative to 20210522. No new boards or major
+This is a *bug fix* release, relative to 20211122. No new boards or major
 features have been added, but several problems that existed in the previous
 release have now been fixed.
 
