@@ -67,7 +67,7 @@ If you were to build regular coreboot, without using Libreboot's automated
 build system, it would require a lot more intervention and decent technical
 knowledge to produce a working configuration.
 
-Reguar binary releases of Libreboot provide these
+Regular binary releases of Libreboot provide these
 ROM images pre-compiled, and you can simply install them, with no special
 knowledge or skill except the ability to
 follow [simplified instructions, written for non-technical
