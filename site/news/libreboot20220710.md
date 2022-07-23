@@ -90,8 +90,8 @@ consider using upstream coreboot or the September 2016 Libreboot release.
 The boards listed above can still be compiled, from the source code archive
 in this release and from the Libreboot git repository; additionally, ROM images
 are provided for these in the previous release. D8/D16 continue to have raminit
-issues and Dasharo has been doing excellent work bringing the D16 up to date;
-see <https://docs.dasharo.com/variants/asus_kgpe_d16/releases/> - their work
+issues and Dasharo has been doing excellent work bringing the D16 up to
+date - their work
 will be integrated in the next Libreboot release. In particular, I've been
 informed that raminit is more reliable there. If you wish to use a KGPE-D16
 with coreboot, it is recommended that you use *Dasharo* firmware which is
