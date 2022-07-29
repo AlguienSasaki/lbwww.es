@@ -86,17 +86,16 @@ available in the Libreboot 20220710 release:
 GA-G41M-ES2L works *for me* but jxself on FSF IRC reported video init issues.
 If you have this board, and the 2021 releases don't work either, you might
 consider using upstream coreboot or the September 2016 Libreboot release.
+I will investigate this, and re-include ROMs for this board on the next
+release of Libreboot.
 
 The boards listed above can still be compiled, from the source code archive
 in this release and from the Libreboot git repository; additionally, ROM images
 are provided for these in the previous release. D8/D16 continue to have raminit
-issues and Dasharo has been doing excellent work bringing the D16 up to
-date - their work
-will be integrated in the next Libreboot release. In particular, I've been
-informed that raminit is more reliable there. If you wish to use a KGPE-D16
-with coreboot, it is recommended that you use *Dasharo* firmware which is
-based on coreboot, and provides binary releases in a similar fashion to
-Libreboot.
+issues; for now, use the 2021 releases. The next Libreboot release will
+merge newer patches that are available for this board, improving raminit
+reliability (among other things); that new release will, when available, have
+D16 ROMs included.
 
 All other boards are reasonably stable, and shouldn't provide any issues (no
 major issues reported, and/or non-blocking issues only).
