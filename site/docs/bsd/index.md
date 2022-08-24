@@ -3,78 +3,139 @@ title: BSD operating systems
 x-toc-enable: true
 ...
 
-This section is largely x86-centric, pertaining to use of BSD operating systems.
-Although not as popular, BSD systems are also (in most cases) *Free Software*,
-but they are non-copyleft.
+Guide last updated on 24 August 2022.
 
-Libreboot is capable of booting many BSD systems. This section mostly documents
-the peculiarities of Libreboot as it pertains to BSD; you can otherwise refer to
+osboot is capable of booting many BSD systems. This section mostly documents
+the peculiarities of osboot as it pertains to BSD; you can otherwise refer to
 the official documentation for whatever BSD system you would like to use.
 
-Video modes
-===========
+Kernel Mode Setting
+===================
 
-For BSD systems, it is desirable that you boot in *text mode*. ROM images
-with `txtmode` in the file name, on x86 systems, boot up with int10h text mode
-in use. This is the most "compatible" option, and BSD operating systems have
-excellent support for text-mode startup. Many of them also support *kernel mode
-setting* (KMS) nowadays, which you *need* if you want a graphical desktop on
-the X window system. The reason is that Libreboot does not currently implement
-int10h VGA modes on x86 systems. However, basic video initialization is
-provided on all platforms (int10h text mode, or coreboot framebuffer).
+Your BSD system *must* support Kernel Mode Setting for your graphics
+device (most of them do nowadays). The reasons will become apparent, as
+you read this article.
 
-Combined with the use of SeaBIOS payload, BSD systems (and any other OS that
-can boot in text mode) will *just work*. If your BSD system supports kernel
-mode setting, it can set up a framebuffer without making use of int10h VGA
-modes. In this case, the driver (e.g. Intel video driver) will set modes
-directly, and implement its own framebuffer.
+Boot BSD, using SeaBIOS
+=======================
 
-Booting with a coreboot framebuffer will also work well on most BSD systems.
-These ROM images have `corebootfb` in the filename, on recent Libreboot releases.
-In this setup, you should make sure that your BSD system has a `corebootfb`
-driver (to make use of the coreboot framebuffer), but when switching to X, your
-video driver (e.g. Intel video driver) may already support kernel mode setting
-which means that the coreboot framebuffer will no longer be used at that point.
+On x86 platforms, osboot/libreboot both provide the choice of GNU GRUB and/or
+SeaBIOS payload. GRUB can technically boot BSD kernels, but the code is
+poorly maintained and unreliable for this use-case scenario; on BIOS systems,
+GRUB can chainload BSD bootloaders, but on bare metal (as coreboot payload),
+GRUB can only chainload other coreboot payloads or boot Linux/BSD kernels
+directly (but direct booting is only really reliable for Linux, in GRUB).
 
-Booting BSD
-===========
+It is recommended that you boot in text mode, with SeaBIOS. You can literally
+just follow the official installation guides for your BSD system, whether it
+be FreeBSD, OpenBSD or others.
 
-On x86 platforms, Libreboot currently provides the choice of GNU GRUB and/or
-SeaBIOS payload. You can use *either* payload, to boot BSD operating systems.
+If you don't plan to set up Xorg/Wayland, then that's all you really need to
+do. For example, you might want to run a headless server, in which case you
+probably don't mind running in text mode all the time.
 
-SeaBIOS payload
----------------
+Warnings for X11 users
+----------------------
 
-It is highly recommended that you use the SeaBIOS payload. ROM images are
-available in the latest Libreboot release, which start with the SeaBIOS payload.
+One important peculiarity of most libreboot and osboot systems is: VGA mode
+support exists, if booting with corebootfb (coreboot's own framebuffer) and
+the SeaVGABIOS option ROM used in the SeaBIOS payload; however, the ability
+to switch modes is not present, which means you can't switch to text mode
+either.
 
-The ROM images with GNU GRUB *also* have SeaBIOS available in the boot menu.
-GNU GRUB, when compiled as a coreboot payload, runs on *bare metal* and it can
-boot any other coreboot payload if you use the `chainloader` command.
+Coreboot can start in framebuffer (corebootfb) or INT10H text mode, and it
+stays in whatever mode was set, unless KMS is used to change the mode. It
+should be noted that the coreboot framebuffer is not a VGA mode, but instead
+coreboot implements minimal drivers for hardware that it supports, providing
+a framebuffer directly in memory, which software (such as GRUB) can simply
+use.
 
-The way to use SeaBIOS is fairly self-explanatory. SeaBIOS functions the way
-you would expect on a typical computer. Libreboot currently lacks any sort of
-documentation for SeaBIOS, but you can refer to their
-website: <https://seabios.org/SeaBIOS>
+The BSD bootloaders on x86, in BIOS systems, typically expect text mode
+startup. It is usually possible to set the console to higher VGA modes,
+on most systems, but not on most coreboot systems with native video
+initialisation used, due to the quirks already described. If you see any
+documentation (in BSD land) pertaining to VESA modes, ignore it entirely;
+unless you're using the proprietary VGA ROM for your device, it won't work,
+and osboot/libreboot don't distribute these (instead, coreboot's own video
+initialisation is used where possible, or a headless SeaBIOS payload setup
+is provided, where you would either run it headless or install a graphics
+card).
 
-SeaBIOS is *especially* recommended if you're doing an encrypted installation.
+Now, this would otherwise mean: no X11/Wayland. If you start in corebootfb
+mode with SeaVGABIOS, you won't get a display in BSD bootloaders, and if you
+boot in text mode, you can't set VESA modes from BSD. However, you're in luck:
 
-The benefit to using SeaBIOS is that it's basically more reliable. For example,
-ZFS support is less reliable in GRUB, but a FreeBSD system booted in SeaBIOS
-would work just fine because you'd be using FreeBSD's own bootloader in that
-instance.
+At least OpenBSD and FreeBSD (possibly others) all have excellent KMS
+support nowadays; short for `Kernel Mode Setting`. This avoids the inefficiency
+of BIOS/UEFI methods, by having the kernel set modes directly. It is based on
+KMS drivers that the BSD projects ported over from the Linux kernel. With this,
+you can use X11/Wayland in FreeBSD (and just X11 in OpenBSD, for now).
 
-GNU GRUB payload
-----------------
+For example: on FreeBSD, you can install `graphics/drm-kmod` as a package
+or from ports, and (for Intel GPUs) do this:
 
-GRUB can directly boot many BSD kernels, but support for this is quite unreliable
-compared to its support for booting Linux kernels. However, you *can* use GRUB.
+    sysrc kld_list+="i915kms"
 
-When you use GNU GRUB directly, in this way, the various BSD bootloaders are
-bypassed entirely.
+This creates the following entry in `/etc/rc.conf`:
 
-We have separate pages for each BSD system:
+    kld_list="i915kms"
 
-* [How to install NetBSD on x86 GNU GRUB payload](netbsd.md)
-* [How to install OpenBSD on x86 GNU GRUB payload](openbsd.md)
-* [How to install FreeBSD on a x86 GNU GRUB payload](freebsd.md)
+On FreeBSD it is also recommended that you switch to KMS on the console/TTY;
+add this to `/boot/loader.conf` so that you can still use the console after
+terminating Xorg:
+
+    kern.vty=vt
+
+You should not rely on the above instruction (for FreeBSD), because the exact
+step might change, and it does not go into full detail either. Refer to the
+documentation provided by your system, to know how KMS is configured.
+
+ALWAYS READ THE MANUAL
+----------------------
+
+All of the BSDs have *excellent* documentation; it's one of the defining
+characteristics, versus typical Linux distros.
+
+Aside from this quirk in coreboot, regarding *BIOS* video modes, the BSDs
+otherwise work in exactly the same way as you would expect, and you can
+follow along to their official documentation without much fuss.
+
+No specific or detailed guides will be provided here, because SeaBIOS is
+fairly self-explanatory; you can otherwise refer to the SeaBIOS
+documentation.
+
+If you're flashing a ROM for a machine where `seabios_withgrub`
+and `seabios_grubfirst` ROMs are available, choose `seabios_withgrub`.
+
+Dubious mention: Tianocore
+--------------------------
+
+Tianocore is extremely bloated, and unauditable, so it is not included
+in libreboot or osboot, but it is the reference UEFI implementation by
+Intel and contributors. It can boot most BSD systems very well.
+
+More robust ways to provide UEFI services in Libreboot and Osboot are
+being explored. Tianocore integration will not be provided officially,
+in any current or future releases of either project.
+
+Desktop users
+-------------
+
+Desktop users on libreboot/osboot should just install a graphics card,
+and again boot with SeaBIOS in text mode; however, when you do this,
+SeaBIOS will execute the VGA option ROM on the card which will provide
+early video initialisation instead of coreboot's initialisation, and that
+VGA ROM will usually implement full INT10H modes, including the ability
+to set modes in the BIOS (using interrupts), in which case you don't
+need to worry about Kernel Mode Setting, but you should still use KMS
+anyway.
+
+The reason to use KMS is because it's more efficient. The INT10H service can
+only be called in Real Mode or Virtual 8086 mode; v8086 is unavailable in
+long mode (x86\_64) and switching into Real Mode just to set VGA modes is
+extremely expensive computationally speaking. This is why modern kernels
+(Linux and BSD one) do mode setting themselves.
+
+You can learn more about INT10H text/VGA modes here:
+
+<https://en.wikipedia.org/wiki/INT_10H>
