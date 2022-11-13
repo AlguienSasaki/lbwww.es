@@ -6,22 +6,22 @@ x-toc-enable: true
 Introduction
 ============
 
-The `ich9utils` utility in Libreboot is used to manipulate Intel Flash
+The `ich9utils` utility from Libreboot is used to manipulate Intel Flash
 Descriptors for ICH9M on laptops such as ThinkPad X200 or T400. Specifically,
 the `ich9gen` utility can generate 12KiB descriptor+GbE files for inserting
 into the start of a ROM, where everything after that is the BIOS region. These
 are special descriptors with the Intel ME region disabled, and Intel ME itself
 fully disabled.
 
-ich9utils is handled by the `lbmk` (libreboot-make) build system, but the code
+ich9utils is handled by the `osbmk` (osboot-make) build system, but the code
 itself is hosted in a separate repository. You can check the Git repositories
 linked on [../../git.md](../../git.md) if you wish to download and use it.
 
 It is very *uncommon*, on GM45/ICH9M systems, to have an Intel Flash Descriptor
-and GbE but *without* an Intel ME. On *most* of these systems (without Libreboot,
+and GbE but *without* an Intel ME. On *most* of these systems (without osboot,
 Libreboot or coreboot), there is either descriptor+GbE+ME+BIOS or just BIOS,
 where on systems with just the BIOS region an Intel GbE NIC is not present.
-In Libreboot (and Libreboot), we provide descriptor+GbE images with Intel ME
+In osboot (and Libreboot), we provide descriptor+GbE images with Intel ME
 disabled and not present in the ROM; this enables the Intel GbE NIC to be used,
 while not having an Intel ME present. A consequence of this is that the
 malicious features of ME (such as AMT) are not present, however the Intel ME
@@ -55,17 +55,17 @@ ich9utils
 =========
 
 You can find `ich9utils` on the [Git page](../../git.md) or you can download
-`lbmk` from the same page and run the following command in there:
+`osbmk` from the same page and run the following command in there:
 
     ./build module ich9utils
 
-You can also find it in the source code tar archives, on Libreboot releases.
+You may also find it in the source code tar archives, on releases.
 
-In `lbmk`, you can use the following command to generate descriptors:
+In `osbmk`, you can use the following command to generate descriptors:
 
     ./build descriptors ich9m
 
-The Libreboot build system will use the descriptors under `descriptors/ich9m`
+The osboot build system will use the descriptors under `descriptors/ich9m`
 when building ROM images for these machines.
 
 Alternatively, you can just clone `ich9utils` directly and run `make` in the
@@ -104,7 +104,7 @@ These files contain the descriptor+GbE region and are suitable for systems
 that have an Intel GbE NIC present. The flash regions (as defined by the
 Intel Flash Descriptor) are set *read-write* which means that you can also
 re-flash using `flashrom -p internal` in your operating system running on
-that machine. This is the default setup used when Libreboot's build system
+that machine. This is the default setup used when osboot's build system
 compiles ROM images.
 
 Alternative versions of these files are also created, which have `ro` in the
@@ -117,27 +117,27 @@ The region setup created by these descriptors is as follows:
 
 * First 4KiB of flash is: Intel Flash Descriptor
 * Next 8KiB after Descriptor: Intel GbE region
-* Rest of the flash, after GbE: BIOS region (BIOS region will have Libreboot)
+* Rest of the flash, after GbE: BIOS region (BIOS region will have osboot)
 
 The GbE region contains configuration data for your Intel GbE NIC. You can
 find information about this in Intel datasheets, and it is very well described
 in the `ich9utils` source code.
 
-Assuming that your Libreboot image is named **libreboot.rom**, copy the
-file to where **libreboot.rom** is located and then insert the
+Assuming that your osboot image is named **osboot.rom**, copy the
+file to where **osboot.rom** is located and then insert the
 descriptor+gbe file into the ROM image.
 
 For 16MiB flash chips:
 
-    dd if=ich9fdgbe_16m.bin of=libreboot.rom bs=12k count=1 conv=notrunc
+    dd if=ich9fdgbe_16m.bin of=osboot.rom bs=12k count=1 conv=notrunc
 
 For 8MiB flash chips:
 
-    dd if=ich9fdgbe_8m.bin of=libreboot.rom bs=12k count=1 conv=notrunc
+    dd if=ich9fdgbe_8m.bin of=osboot.rom bs=12k count=1 conv=notrunc
 
 For 4MiB flash chips:
 
-    dd if=ich9fdgbe_4m.bin of=libreboot.rom bs=12k count=1 conv=notrunc
+    dd if=ich9fdgbe_4m.bin of=osboot.rom bs=12k count=1 conv=notrunc
 
 If you wish to have read-only flash (write protected flash), substitute the
 above examples with descriptor+GbE images that have `ro` in the filename. RO
@@ -154,13 +154,13 @@ will just supply a descriptor-less setup. Those GbE-less descriptor images
 created by `ich9gen` are only 4KiB in size, and should *never be used* except
 for fun, like, basically shits and/or giggles.
 
-For shits and giggles, R500 ROM images in Libreboot use these no-GbE descriptor
+For shits and giggles, R500 ROM images in osboot use these no-GbE descriptor
 images generated by ich9gen. However, a descriptorless setup would also work
 just fine. ThinkPad R500 doesn't have an Intel PHY in it, and it instead uses
 a Broadcom NIC for ethernet. In descriptorless mode, ICH9M works very similarly
 to older ICH7 chipsets.
 
-Your libreboot.rom image is now ready to be flashed on the system. Refer
+Your osboot.rom image is now ready to be flashed on the system. Refer
 back to [../install/\#flashrom](../install/#flashrom) for how to flash
 it.
 
@@ -176,7 +176,7 @@ Read on for more information. Use the `ro` files mentioned below, and your
 flash will be read-only in software (you can still externally re-flash and read
 the contents of flash).
 
-For ease of use, Libreboot provides ROMs that are read-write by default. In
+For ease of use, osboot provides ROMs that are read-write by default. In
 practise, you can boot a Linux kernel with access to lower memory disabled
 which will make software re-flashing impossible (unless you reboot with such
 memory protections disabled, e.g. `iomem=relaxed` kernel parameter).
@@ -223,16 +223,16 @@ appear, if no GbE region was detected inside the ROM image. This is
 usually the case, when a discrete NIC is used (eg Broadcom) instead of
 Intel. Only the Intel NICs need a GbE region in the flash chip.
 
-Assuming that your Libreboot image is named **libreboot.rom**, copy the
-**deblobbed\_descriptor.bin** file to where **libreboot.rom** is located
+Assuming that your osboot image is named **osboot.rom**, copy the
+**deblobbed\_descriptor.bin** file to where **osboot.rom** is located
 and then run:
 
-    dd if=deblobbed_descriptor.bin of=libreboot.rom bs=12k count=1 conv=notrunc
+    dd if=deblobbed_descriptor.bin of=osboot.rom bs=12k count=1 conv=notrunc
 
 Alternatively, if you got a the **deblobbed\_4kdescriptor.bin** file (no
 GbE defined), do this:
 
-    dd if=deblobbed_4kdescriptor.bin of=libreboot.rom bs=4k count=1 conv=notrunc
+    dd if=deblobbed_4kdescriptor.bin of=osboot.rom bs=4k count=1 conv=notrunc
 
 (it's very unlikely that you would ever see this. Descriptor without GbE is
 very rare, probably non-existant, but theoretically possible and this functionality
@@ -255,7 +255,7 @@ build `ich9gen` executable will be able to re-create the very same 12KiB
 file from scratch, based on the C structs, this time **without** the
 need for a` factory.rom` dump!
 
-You should now have a **libreboot.rom** image containing the correct 4K
+You should now have a **osboot.rom** image containing the correct 4K
 descriptor and 8K gbe regions, which will then be safe to flash. Refer
 back to [index.md/\#gm45](index.md/#gm45) for how to flash
 it.
@@ -285,7 +285,7 @@ Keep the original factory.rom stored safely somewhere):
 
 Use-case: a factory.rom image modified in this way would theoretically
 have no flash protections whatsoever, making it easy to quickly switch
-between factory/Libreboot in software, without ever having to
+between factory/osboot in software, without ever having to
 disassemble and re-flash externally unless you brick the device.
 
 The sections below are adapted from (mostly) IRC logs related to early
@@ -429,7 +429,7 @@ way through the 8K area, and the rest is all 0xFF. This is all
 documented in the datasheet.
 
 The GBe region starts at 0x20A000 bytes from the \*end\* of a factory
-image and is 0x2000 bytes long. In Libreboot (deblobbed) the descriptor
+image and is 0x2000 bytes long. In osboot (deblobbed) the descriptor
 is set to put gbe directly after the initial 4K flash descriptor. So the
 first 4K of the ROM is the descriptor, and then the next 8K is the gbe
 region.
@@ -450,7 +450,7 @@ not making this stuff up...
 regions on the X200 factory.rom dumps. The checksums of the backup
 regions match BABA, however. We think `0xBABA` is the only correct checksum,
 because those other, similar checksums were only ever found in the "backup"
-GbE regions on factory ROM dumps. In Libreboot, we simply use `0xBABA` and
+GbE regions on factory ROM dumps. In osboot, we simply use `0xBABA` and
 ensure that both 4KiB regions in GbE NVM have that checksum.
 
 By default, the X200 (as shipped by Lenovo) actually has an invalid main
@@ -471,7 +471,7 @@ Flash descriptor region {#flash_descriptor_region}
 
 <http://www.intel.co.uk/content/dam/doc/datasheet/io-controller-hub-9-datasheet.pdf>
 from page 850 onwards. This explains everything that is in the flash
-descriptor, which can be used to understand what Libreboot is doing
+descriptor, which can be used to understand what osboot is doing
 about modifying it.
 
 How to deblob:
@@ -495,7 +495,7 @@ There's an interesting parameter called 'ME Alternate disable', which
 allows the ME to only handle hardware errata in the southbridge, but
 disables any other functionality. This is similar to the 'ignition' in
 the 5 series and higher but using the standard firmware instead of a
-small 128K version. Useless for Libreboot, though.
+small 128K version. Useless for osboot, though.
 
 To deblob GM45, you chop out the platform and ME regions and correct the
 addresses in flReg1-4. Then you set meDisable to 1 in ICHSTRAP0 and
@@ -514,7 +514,7 @@ How to patch the descriptor from the factory.rom dump
 -   Then it can be dd'd into the first 12K part of a coreboot image.
 -   the GBe region always starts 0x20A000 bytes from the end of the ROM
 
-This means that Libreboot's descriptor region will simply define the
+This means that osboot's descriptor region will simply define the
 following regions:
 
 -   descriptor (4K)
@@ -532,8 +532,8 @@ If it's in descriptor mode, then the first 4 bytes will be 5A A5 F0 0F.
 platform data partition in boot flash (factory.rom / lenovo bios) {#platform_data_region}
 -----------------------------------------------------------------
 
-Basically useless for Libreboot, since it appears to be a blob. Removing
-it didn't cause any issues in Libreboot. We think it's just random data that
+Basically useless for osboot, since it appears to be a blob. Removing
+it didn't cause any issues in osboot. We think it's just random data that
 the manufacturer can put there, to use in their firmware. Intel datasheets seem
 to suggest that the platform region serves no specific function except to
 provide a region in flash for the hardware manufacturer to use, for whatever

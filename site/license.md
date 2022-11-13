@@ -4,12 +4,21 @@ x-toc-enable: true
 ...
 
 Unless otherwise stated, every page and image (e.g. JPG/PNG files) on
-libreboot.org or in the repository that it is built on, is released under the
+osboot.org or in the repository that it is built on, is released under the
 terms of the GNU Free Documentation License, either version 1.3 or (at your
 option) any newer version as published by the [Free Software
 Foundation](https://www.fsf.org/), with no Invariant Sections, no Front Cover
 Texts and no Back Cover
 Texts.
+
+The *logo* for osboot is Copyright (C) 2022 Ioan Moldovan, released under an
+Expat license which you can find here:
+<https://av.osboot.org/logo/COPYING>
+
+The original logo files are here: <https://av.osboot.org/logo/>
+
+You can download the logo files from `osbwww-img.git`. See:
+<https://osboot.org/git.html>
 
 These pages are static HTML, generated from Markdown files, which you can find
 a link to at the bottom of each HTML page, for the corresponding Markdown file.

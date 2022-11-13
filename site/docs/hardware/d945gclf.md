@@ -14,7 +14,7 @@ Introduction
 This board is a mini-itx desktop board for 2008. It uses an atom 230,
 which is a singe core CPU but it is hyperthreaded so it appears to have
 2 thread to the OS. The flash chip is very small, 512KiB, so grub2 does
-not fit, which is why libreboot has to use seabios on this target. Full
+not fit, which is why osboot has to use seabios on this target. Full
 disk encryption like on other supported targets will not be possible, so
 plan accordingly.
 
@@ -35,13 +35,13 @@ that it should also work but this is untested.
 Remarks about vendor bios:
 --------------------------
 
--   Without coreboot/libreboot this board is utery useless, since the
+-   Without coreboot/osboot this board is completely useless, since the
     vendor bios is very bad. It cannot boot from any HDD whether it is
-    connected to the SATA port or USB. With libreboot it works just
+    connected to the SATA port or USB. With osboot it works just
     fine.
 
 -   The vendor bios write protects the flash so it requires external
-    flashing to install libreboot on this device. Once libreboot is
+    flashing to install osboot on this device. Once osboot is
     flashed there is no problem to update the firmware internally
 
 Here is an image of the board:\

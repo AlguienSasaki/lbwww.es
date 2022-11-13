@@ -6,8 +6,8 @@ x-toc-enable: true
 There is an Apple laptop called the macbook1,1 from 2006 which uses the
 same i945 chipset as the ThinkPad X60/T60. A developer (Mono Moosbart) ported
 the Macbook2,1 to coreboot, working alongside Vladimir Serbinenko. The ROM
-images also work on the macbook1,1. Libreboot's support and documentation for
-this is based on the Libreboot project, which also supports macbook2,1
+images also work on the macbook1,1. osboot's support and documentation for
+this is based on the osboot project, which also supports macbook2,1
 
 Some macbook2,1 models are late 2006, others are early 2007.
 You do not need to use external flashing equipment when flashing the MacBook2,1
@@ -64,7 +64,7 @@ External flashing
 
 macbook1,1 requires external flashing, if running the default Apple firmware.
 macbook2,1 can be flased internally, regardless.
-If running coreboot, libreboot or Libreboot, you can already internally re-flash.
+If running coreboot, osboot or osboot, you can already internally re-flash.
 
 [This page shows disassembly
 guides](https://www.ifixit.com/Device/MacBook_Core_2_Duo)
@@ -79,9 +79,9 @@ motherboard](https://www.ifixit.com/Guide/MacBook+Core+2+Duo+PRAM+Battery+Replac
 Refer to the following guide:\
 [Externally rewrite 25xx NOR flash via SPI protocol](../install/spi.md)
 
-You need to replace OS X with GNU+Linux before flashing Libreboot. (OSX
-won't run at all in Libreboot), if you wish to internally flash on a macbook21.
-Libreboot won't boot OSX either (well, maybe with Tianocore it would, but that's
+You need to replace OS X with GNU+Linux before flashing osboot. (OSX
+won't run at all in osboot), if you wish to internally flash on a macbook21.
+osboot won't boot OSX either (well, maybe with Tianocore it would, but that's
 untested and OSX is inferior to GNU+Linux). In general you should think of
 your Macbook like a regular laptop, for the purposes of anything coreboot.
 
@@ -113,7 +113,7 @@ There is one mouse button only, however multiple finger tapping
 works. Battery life is poor compared to X60/T60. The Apple logo on the
 back is a hole, exposing the backlight, which means that it glows. You
 should [cover it up](http://cweiske.de/tagebuch/tuxbook.htm).
-The MacBook2,1 consumes more power with libreboot than with the Apple EFI firmware, which means it overheats a lot.
+The MacBook2,1 consumes more power with osboot than with the Apple EFI firmware, which means it overheats a lot.
 
 *The MacBook2,1 comes with a webcam which does not work with free
 software. Webcams are a privacy and security risk; cover it up! Or
@@ -122,13 +122,11 @@ remove it.*
 Make it overheat less
 ---------------------
 
-*This section is less relevant for Libreboot 20211122 and newer, because cstate
-level 3 support was added, thanks to vitali64 on IRC. This means that the CPU
-temperature is much lower most of the time, as is power consumption. However,
-you might still benefit from the steps below, just not as much as you would have
-previously benefited.*
+NOTE: on newer osboot revisions, this section is less relevant, because C3
+states are supported now. However, this section may still be useful, so it will
+be retained.
 
-The MacBook2,1 overheats a lot with libreboot, we still don't know why but a simple workaround is to install macfanctld.
+The MacBook2,1 overheats a lot with osboot, we still don't know why but a simple workaround is to install macfanctld.
 
 Macfanctld is available on the default repos of many distributions.
 
@@ -184,13 +182,6 @@ manually. Simply add the line
     KEYMAP_TOGGLE=lv3:enter_switch
 
 to the file /etc/vconsole.conf and then restart the computer.
-
-Enable 3-finger tap
--------------------
-
-A user submitted a utility to enable 3-finger tap on this laptop. It's
-available at *resources/utils/macbook21-three-finger-tap* in the
-Libreboot git repository.
 
 Make touchpad more responsive
 -----------------------------

@@ -2,7 +2,7 @@
 title: GA-G41M-ES2L flashing tutorial 
 ...
 
-This guide is for those who want libreboot on their Intel GA-G41M-ES2L
+This guide is for those who want osboot on their Intel GA-G41M-ES2L
 motherboard while they still have the original BIOS present.
 
 Flash chip size {#flashchips}
@@ -40,15 +40,15 @@ GNU+Linux. There are 2 flash chips (one is backup).
 
 Flash the first chip:
 
-    ./flashrom -p internal:dualbiosindex=0 -w libreboot.rom
+    ./flashrom -p internal:dualbiosindex=0 -w osboot.rom
 
 Flash the second chip:
 
-    ./flashrom -p internal:dualbiosindex=1 -w libreboot.rom
+    ./flashrom -p internal:dualbiosindex=1 -w osboot.rom
 
 NOTE: you can still boot the system with just the main flash chip
 connected, after desoldering the backup chip. This has been tested while
-libreboot was already installed onto the main chip.
+osboot was already installed onto the main chip.
 
 NOTE: If you don't flash both chips, the recovery program from the default
 factory BIOS will kick in and your board will be soft bricked. Make sure that

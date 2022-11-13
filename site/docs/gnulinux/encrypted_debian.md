@@ -18,13 +18,13 @@ and no other coreboot payload provides this functionality.
 If booting in text mode
 =======================
 
-Libreboot ROM images are provided, which will either boot the system in classic
+osboot ROM images are provided, which will either boot the system in classic
 text mode, or with a framebuffer implemented by coreboot for video display
 initialization (not to be confused with int10h VGA modes).
 
 *Text mode* is the default video mode on *most* x86 platforms, using `INT 10H`
 functions. It's an interrupt service that text-mode applications use, a hangover
-from the days of CS/M and DOS. In this mode, no framebuffer exists and Libreboot
+from the days of CS/M and DOS. In this mode, no framebuffer exists and onboot
 currently does not implement VGA modes. The Debian net installer will attempt
 to use VGA modes that most implementations of INT 10H provide. Therefore, you
 must force Debian's installation program to operate in text mode.
@@ -44,10 +44,10 @@ would presumably handle INT10H VGA modes.
 Boot the installer
 ==================
 
-Libreboot on x86 can use the GNU GRUB bootloader as a bare metal coreboot
+osboot on x86 can use the GNU GRUB bootloader as a bare metal coreboot
 [payload](http://www.coreboot.org/Payloads#GRUB_2) if you wish, which
 means that the GRUB configuration file (where your GRUB menu comes from)
-is stored directly alongside Libreboot and its GRUB payload executable,
+is stored directly alongside osboot and its GRUB payload executable,
 inside the flash chip. In context, this means that installing
 distributions and managing them is handled slightly differently compared
 to traditional BIOS or UEFI systems.
@@ -55,7 +55,7 @@ to traditional BIOS or UEFI systems.
 On most systems, the `/boot/` partition has to be left unencrypted while
 the others are encrypted. This is so that GRUB, and therefore the
 kernel, can be loaded and executed since the firmware can't open a LUKS
-volume. Not so with Libreboot! Since GRUB is already included directly
+volume. Not so with osboot! Since GRUB is already included directly
 as a payload, even `/boot/` can be encrypted. This protects /boot from
 tampering by someone with physical access to the system.
 
@@ -163,7 +163,7 @@ Tasksel
 =======
 
 For Debian, use the *MATE* option, or one of the others if you want. The
-Libreboot project recommends MATE, unless you're saavy enough to choose
+osboot project recommends MATE, unless you're saavy enough to choose
 something else.
 
 If you want debian-testing, then you should only select barebones
@@ -208,7 +208,7 @@ Booting your system
 
 If you didn't install GRUB during the net installation process, don't worry.
 You can boot your installed system manually, using the *terminal* in GRUB on
-your boot flash (the version that Libreboot gives you).
+your boot flash (the version that osboot gives you).
 
 At this point, you will have finished the installation. At your GRUB
 payload, press C to get to reach the GRUB terminal and enter these commands:
@@ -245,15 +245,13 @@ somewhere secret. Ideally, you should memorize it and then burn the note
 LUKSv2
 ======
 
-LUKSv2 is fully supported nowadays, in recent Libreboot releases. The old
-Libreboot release, version 20160907 (and earlier releases), did not support
-LUKSv2 in GNU GRUB. By default, modern Debian distributions will use LUKSv2.
-
 You do not need to downgrade LUKSv2 to v1, but you shouldn't use any of the special features that LUKSv2 offers. Basically, the partitioning should be done exactly the same way as with LUKSv1 (but with newer encryption/hashing algorithms used by LUKSv2 partitions). This is because of limitations in the implementation of LUKSv2 in GNU GRUB. GRUB uses its own custom implementation, instead of directly adapting the Linux kernel implementation. At the moment it is [only the PBKDF2](https://www.gnu.org/software/grub/manual/grub/grub.html#cryptomount) key derivation function supported. Argon2i, is not yet supported. That's the point, you must convert it from Argon2i to PBKDF2, if you wish to use LUKSv2. Therefor you can use any live distribution with the package, that include dm-crypt. 
 
 If the installation is finished, boot with a live CD and change it with:
 
     cryptsetup luksConvertKey --pbkdf pbkdf2 /dev/sdX 
+
+If you do find that LUKSv2 is broken, just downgrade to LUKSv1.
 
 Generate distro's grub.cfg
 ==========================

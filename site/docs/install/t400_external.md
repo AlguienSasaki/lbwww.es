@@ -5,7 +5,7 @@ x-toc-enable: true
 
 Initial flashing instructions for T400.
 
-This guide is for those who want libreboot on their ThinkPad T400 while
+This guide is for those who want osboot on their ThinkPad T400 while
 they still have the original Lenovo BIOS present. This guide can also be
 followed (adapted) if you brick your T400, to know how to recover.
 
@@ -29,7 +29,7 @@ A note about CPUs
 
 [ThinkWiki](http://www.thinkwiki.org/wiki/Category:T400) has a list of
 CPUs for this system. The Core 2 Duo P8400, P8600 and P8700 are believed
-to work in libreboot.
+to work in osboot.
 
 T9600, T9500, T9550 and T9900 are all compatible, as reported by users.
 
@@ -51,7 +51,7 @@ Intel GPU; this is referred to as "switchable graphics". In the *BIOS
 setup* program for lenovobios, you can specify that the system will use
 one or the other (but not both).
 
-Libreboot is known to work on systems with only the Intel GPU, using
+osboot is known to work on systems with only the Intel GPU, using
 native graphics initialization. On systems with switchable graphics, the
 Intel GPU is used and the ATI GPU is disabled, so native graphics
 initialization works all the same.
@@ -171,7 +171,7 @@ also fine:\
 Of course, make sure to turn on your PSU:\
 ![](https://av.libreboot.org/x200/disassembly/0013.jpg)
 
-Now, you should be ready to install libreboot.
+Now, you should be ready to install osboot.
 
 Refer to the external flashing instructions [here](spi.md), and when you're
 done, re-assemble your laptop.

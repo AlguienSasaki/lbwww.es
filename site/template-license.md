@@ -16,7 +16,7 @@ The file `template.include` is the modified version (modified by Leah Rowe).
 The original version can be found here: [/template.original](/template.original)
 
 Other modified templates may be used, on specific pages. Check for this on the
-Git repository for the Libreboot website.
+Git repository for the osboot website.
 
 The original template file named `template.original` by John MacFarlane was
 released under these conditions:
