@@ -41,33 +41,11 @@ these nuances, when working on *libreboot*.
 
 [Please read the blob reduction guidelines](../../news/policy.md)
 
-lbmk
-====
-
-Libreboot *bans* binary blobs outright, in its build system. This is in stark
-contrast to libreboot's more pragmatic policies.
-
-Libreboot's own build system is named `lbmk`. The `lbmk` build system is a
-direct fork of `lbmk`. For your reference:
-
-* [Libreboot's lbmk maintenance manual](https://libreboot.org/docs/maintain/)
-* [Libreboot's blob deletion policy](https://libreboot.org/news/policy.html)
-
-These should have no bearing on libreboot development, but you may wish to
-educate yourself about the differences. Any changes that you submit to libreboot
-may in fact be used in Libreboot aswell, and vice versa, if those changes are
-either not board-specific (such as build system changes), or they are changes
-made to hardware supported by both libreboot and libreboot.
-
-The reason is simple: Libreboot and libreboot both have the same fundamental
-design in their build system. They differ in only very minor aspects, but the
-core logic is identical. Documentation is also shared between both projects,
-lead by Leah Rowe who founded *both* projects.
 
 What is lbmk?
 ==============
 
-In the same way that Trisquel and Debian are GNU+Linux distributions, OSboot
+In the same way that Trisquel and Debian are GNU+Linux distributions, Libreboot 
 is a **coreboot distribution**. The `lbmk` build system *is* that distro,
 providing the glue necessary to integrate coreboot plus anything else that's
 needed, unifying everything in a completely automated and pre-configured
@@ -116,7 +94,7 @@ entire build system in libreboot, so that you can contribute patches or
 otherwise make whatever changes you like. As such, this is a reference guide
 for libreboot development.
 
-OSboot is a *coreboot distro*, focusing on integration. As such, direct
+Libreboot is a *coreboot distro*, focusing on integration. As such, direct
 development on software such as coreboot, GNU GRUB, SeaBIOS etc should ideally
 be done upstream, or if it's a project hosted by libreboot (such as ich9utils)
 developed in the corresponding separate repository.
@@ -145,7 +123,7 @@ home page that libreboot is a *coreboot distribution* in much the same way that
 Trisquel is a *GNU+Linux distribution*, and `lbmk` is what implements that!
 
 Continue reading, and you will learn of each file contained in `lbmk`. This
-document largely pertains to the version of `lbmk` as hosted in `osbmk.git`,
+document largely pertains to the version of `lbmk` as hosted in `lbmk.git`,
 but this manual also covers source code archives containing the full downloaded
 set of modules such as coreboot and GRUB.
 
@@ -175,10 +153,10 @@ Another example: if you run `./build boot roms` and crossgcc isn't yet built
 for the revision used on each given board, it will automatically compile that
 version of it, using *that* coreboot tree's own build system to do it.
 
-This level of automation means that modern `lbmk` and `lbmk` are both much
+This level of automation means that modern `lbmk` is much
 easier to use, compared to the build system present in Libreboot 20160907.
 Massive improvements to that build system were made, during most of 2021, when
-implementing both the `lbmk` *and* `lbmk` build systems.
+implementing the `lbmk` build system.
 
 All sections below pertain to actual files in lbmk:
 
@@ -877,13 +855,10 @@ Command: `./build release src`
 resources/scripts/download/coreboot
 ===================================
 
-This downloads, patches and deblobs coreboot, as per `board.cfg` files
+This downloads, and patches coreboot, as per `board.cfg` files
 in `resources/coreboot/`.
 
 Command: `./download coreboot`
-
-NOTE: Unlike `lbmk`, the version of this in `lbmk` does not delete blobs at
-all. It also does not delete Git history. Everything is fully preserved.
 
 NOTE: This version of the script also performs the full git checkout in each
 coreboot tree, like so:

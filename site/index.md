@@ -50,54 +50,18 @@ otherwise have to perform expert-level configuration of coreboot, GRUB and
 whatever other software you need, to prepare the ROM image. With *libreboot*,
 you can literally download from Git or a source archive, and run `make`, and it
 will build entire ROM images. An automated build system, named `lbmk`
-(OSBoot MaKe), builds these ROM images automatically, without any user input
+(Libreboot MaKe), builds these ROM images automatically, without any user input
 or intervention required. Configuration has already been performed in advance.
 
 If you were to build regular coreboot, without using libreboot's automated
 build system, it would require a lot more intervention and decent technical
 knowledge to produce a working configuration.
 
-Reguar binary releases of `libreboot` provide these
+Regular binary releases of `libreboot` provide these
 ROM images pre-compiled, and you can simply install them, with no special
 knowledge or skill except the ability to
 follow [simplified instructions, written for non-technical
 users](docs/install/).
-
-How does libreboot differ from *Libreboot*?
-----------------------------------------
-
-Libreboot and libreboot are both developed in parallel. Both projects were founded
-by Leah Rowe, who leads both projects.
-
-**The libreboot project is a fork of Libreboot, but it has scrapped the [Libreboot
-zero-blob policy](news/policy.md). It comes with CPU microcode updates turned
-on by default, even on libreboot-compatible hardware (on libreboot-compatible
-hardware, that is the only difference). The libreboot build system automatically
-downloads the entire set of `3rdparty` submodules from coreboot. The coreboot
-software is nominally free, but does require some binary blobs on certain
-machines, and those are included in the `3rdparty` submodules.**
-
-[CPU microcode updates do not hurt your freedom, because your CPU already has
-older, buggier microcode in mask ROM anyway. You should choose libreboot, not
-Libreboot, even on Libreboot-compatible hardware, because the microcode updates
-improve system stability and reliability.](news/policy.md) Out of principle,
-`libreboot` will always enable microcode updates. Libreboot is inferior to libreboot,
-in every way, but it will continue to be developed and polished, alongside
-libreboot development.
-
-The purpose of `libreboot` is to provide as
-much freedom as possible, to those who wish to move away from their otherwise
-fully proprietary firmware. The `libreboot` build system does not delete binary
-blobs like Libreboot's one does, because it *wants* to provide help for all
-those who wish to have some freedoms over their hardware, even if that hardware
-isn't supported by Libreboot yet. Libreboot compatibility is still very much
-desirable, on all hardware, and work to this end is highly encouraged!
-
-You can learn more by reading libreboot's enlightened [binary blobs
-policy](news/policy.md) which is in stark contrast to Libreboot's policy.
-The libreboot project removes all restrictions in its fork of the Libreboot
-build system, allowing any board from coreboot to be supported (the goal
-is literally to support all of them).
 
 How to help
 -----------

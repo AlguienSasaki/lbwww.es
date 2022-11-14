@@ -11,7 +11,7 @@ most systems that it has support for. Libreboot's
 entirely *"free"* version of coreboot consequently supported fewer mainboards.
 
 Libreboot's zero blobs policy has
-been scrapped, entirely. The goal of *libreboot* is simply to support every single
+been scrapped, entirely. The goal of current libreboot is simply to support every single
 system from coreboot, to provide pre-configured, automated compiling of ROM
 images for *all* of them. This is quite a lot more ambitious in terms of sheer
 workload, and maintenance. It is expected that the project will *grow* in the
@@ -27,7 +27,7 @@ The libreboot position is more like an opinion, as opposed to an actual policy.
 That opinion is this: *some* freedom is better than *zero* freedom. There are
 plenty of people with coreboot-compatible hardware, who wish to move away from
 otherwise fully proprietary boot firmware (usually supplied by the manufacturer
-of the hardware). The *libreboot* project is here to help! It provides a fully
+of the hardware). The libreboot project is here to help! It provides a fully
 automated build system, making coreboot much easier to use, and it provides
 user-friendly [installation guides](../docs/install/) to help you get started.
 
@@ -54,9 +54,7 @@ Most critical of these are:
 * Intel Management Engine / AMD PSP firmware
 
 Specific binary blobs are also problematic, on most coreboot systems, but they
-differ per machine. The *libreboot* project has a *blob minimalization* policy
-(as opposed to Libreboot's *blob deletion policy*), which you can read about
-in the following section.
+differ per machine. 
 
 For information about Intel Management Engine and AMD PSP, refer to the FAQ.
 
@@ -66,7 +64,7 @@ Blob *minimalization* policy
 Default configurations
 ----------------------
 
-The *libreboot* project has the following policy:
+The libreboot project has the following policy:
 
 * If a blob *can* be avoided, it should be avoided. For example, if VGA ROM
   initialization otherwise does a better job but coreboot has *free* init code
@@ -152,7 +150,7 @@ You can read those guidelines by following these hyperlinks:
 
 The FSF RYF guidelines state the following:
 
-*"However, there is one exception for secondary embedded processors. The exception applies to software delivered inside auxiliary and low-level processors and FPGAs, within which software installation is not intended after the user obtains the product. This can include, for instance, microcode inside a processor, firmware built into an I/O device, or the gate pattern of an FPGA. The software in such secondary processors does not count as product software."*
+* "However, there is one exception for secondary embedded processors. The exception applies to software delivered inside auxiliary and low-level processors and FPGAs, within which software installation is not intended after the user obtains the product. This can include, for instance, microcode inside a processor, firmware built into an I/O device, or the gate pattern of an FPGA. The software in such secondary processors does not count as product software."
 
 This is a violation of every principle the FSF stands for, *and it should be
 rejected on ideological grounds*. The rest of libreboot's policy and overall
@@ -194,11 +192,11 @@ to user freedom, and ought to be free, but it is completely disregarded by
 the FSF as *part of the hardware*. This is wrong, and the FSF should actively
 actively encourage people to free it, on every laptop!
 
-Other firmware currently outside the reach of the *libreboot* project are covered
+Other firmware currently outside the reach of the libreboot project are covered
 in the libreboot FAQ page. For example, HDD/SSD firmware is covered in the FAQ.
 Again, completely disregarded and shrugged off by the FSF.
 
-The *libreboot* project will not hide or overlook these issues, because they are
+The libreboot project will not hide or overlook these issues, because they are
 indeed critical, but again, currently outside the scope of what lbmk does.
 At the moment, lbmk concerns itself just with coreboot, but this ought to
 change in the future.
@@ -305,8 +303,7 @@ To be clear: it is preferable that microcode be free. The microcode on Intel
 and AMD systems *are* non-free. Facts and feelings rarely coincide; the
 purpose of this section is to spread *facts*.
 
-The *libreboot* build system enables microcode updates *by default*, even on
-boards that Libreboot supports. Libreboot *excludes* microcode updates.
+The libreboot build system enables microcode updates *by default.*
 
 Not including CPU microcode updates is an absolute disaster for system
 stability and security.
@@ -374,11 +371,11 @@ Pick your poison. Not adding the updates is *irresponsible*, and ultimately
 futile, because you still end up with non-free microcode anyway, just you get
 an older, buggier version instead!
 
-The *libreboot* build system does not apply the two patches linked above! Instead,
+The libreboot build system does not apply the two patches linked above! Instead,
 CPU microcode updates are enabled by default, on the affected boards. The
 result is superior IA32 feature control and added PECI support.
 
-The *libreboot* project rejects the FSF's narrow, dogmatic view entirely.
+The libreboot project rejects the FSF's narrow, dogmatic view entirely.
 
 The libreboot firmware is far superior to Libreboot, in terms of reliability, due
 to the presence of microcode updates in the firmware, and with zero practical
@@ -447,7 +444,7 @@ completely disregards many things that are now possible, including freedoms at
 the hardware level (the RYF criteria only covers *software*). Those guidelines
 are written with assumptions that were still true in the 1990s, but the world
 has since evolved. As of 2 January 2022, Libreboot still complies strictly with
-RYF, and will continue to do so, at least for the time being. The *libreboot*
+RYF, and will continue to do so, at least for the time being. The libreboot
 project rejects those policies in their entirety, and instead takes a pragmatic
 approach.
 
@@ -461,8 +458,7 @@ As has always been the case, Libreboot tries to always go above and beyond, but
 the Libreboot project does not see RYF as a *gold standard*. There are levels
 of freedom possible now that the RYF guidelines do not cover at all, and in
 some cases even actively discourage/dis-incentivize because it makes compromises
-based on assumptions that are no longer true. The *libreboot* project, again,
-takes a pragmatic approach, rejecting Libreboot's dogmatic approach entirely.
+based on assumptions that are no longer true. 
 
 Sad truth: RYF actively encourages *less* freedom, by not being bold enough.
 It sets a victory flag and says *mission accomplished*, despite the fact
