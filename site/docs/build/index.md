@@ -138,7 +138,7 @@ If your board does not have blob sources available, then you must extract them f
 You must point libreboot to the backup rom and tell the build system which board you want to extract blobs for.
 For example, to extract blobs for the t440p you must run:
 
-	./build descriptors intel_blobs t440p_12mb /path/to/12mb_backup.rom
+	./blobutil extract t440p_12mb /path/to/12mb_backup.rom
 
 You can then build the rom for this board as normal:
 
