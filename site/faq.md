@@ -8,15 +8,15 @@ AKA Frequently Questioned Answers
 Important issues
 ================
 
-How to compile osboot from source
+How to compile libreboot from source
 ------------------------------------
 
-Refer to the [osbmk build instructions](docs/build/).
+Refer to the [lbmk build instructions](docs/build/).
 
 How does the build system work?
 -------------------------------
 
-Refer to the [osbmk maintenance manual](docs/maintain/).
+Refer to the [lbmk maintenance manual](docs/maintain/).
 
 Do not use CH341A!
 ------------------
@@ -62,7 +62,7 @@ The ethernet doesn't work on my X200/T400/X60/T60 when I plug in it
 -------------------------------------------------------------------
 
 This was observed on some systems using network-manager. This happens
-both on the original BIOS and in osboot. It's a quirk in the
+both on the original BIOS and in libreboot. It's a quirk in the
 hardware. On debian systems, a workaround is to restart the networking
 service when you connect the ethernet cable:
 
@@ -87,7 +87,7 @@ module without loading the option ROM.
 
 Refer to the [linuxboot website](https://www.linuxboot.org/). This is a special
 busybox+linux system, which goes in the boot flash as a coreboot payload. You
-can insert it into your osboot ROM image using cbfstool, if it's big enough.
+can insert it into your libreboot ROM image using cbfstool, if it's big enough.
 On KCMA-D8/KGPE-D16 it's trivial to upgrade the boot flash to 16MiB, which is
 more than enough to fit Linuxboot. See:\
 [External flashing guide](docs/install/spi.md)
@@ -97,14 +97,14 @@ which can boot other Linux kernels using kexec. It can parse GNU GRUB configs,
 and it can also provide some basic UEFI features. Because it's using the Linux
 kernel, this means that LinuxBoot can make use of the PIKE2008 module.
 
-TODO: Integrate this in osboot, as a payload option, but also:
+TODO: Integrate this in libreboot, as a payload option, but also:
 
 TODO: Fork LinuxBoot, and make a version of it that uses linux-libre. Ensure
 that it is a fully free distribution, so that the FSF can endorse it.
 
 LinuxBoot is *perfect*, especially if you're setting up one of these systems to
 be used as a server. LinuxBoot is *much* more flexible and configurable than
-GNU GRUB, which right now is the payload that osboot prefers.
+GNU GRUB, which right now is the payload that libreboot prefers.
 
 How to save kernel panic logs on thinkpad laptops?
 --------------------------------------------------
@@ -174,11 +174,11 @@ the target (`target$`):
 Hardware compatibility
 ======================
 
-What systems are compatible with osboot?
+What systems are compatible with libreboot?
 -----------------------------------------------------------------------------------
 
 Any system can easily be added, so *compatibility* merely refers to whatever
-boards are integrated in the `osbmk` build system, which osboot uses.
+boards are integrated in the `lbmk` build system, which libreboot uses.
 
 Please read the [hardware compatibility list](docs/hardware/).
 
@@ -271,7 +271,7 @@ application introduced in Q2 2013 with ME firmware version 9.0 on 4th
 Generation Intel Core i3/i5/i7 (Haswell) CPUs. It allows a PC OEM to
 generate an asymmetric cryptographic keypair, install the public key in
 the CPU, and prevent the CPU from executing boot firmware that isn't
-signed with their private key. This means that ***coreboot and osboot
+signed with their private key. This means that ***coreboot and libreboot
 are impossible to port*** to such PCs, without the OEM's private
 signing key. Note that systems assembled from separately purchased
 mainboard and CPU parts are unaffected, since the vendor of the
@@ -309,7 +309,7 @@ privacy that can't be ignored.
 Before version 6.0 (that is, on systems from 2008/2009 and earlier), the
 ME can be disabled by setting a couple of values in the SPI flash
 memory. The ME firmware can then be removed entirely from the flash
-memory space. The osboot project [does this](docs/install/ich9utils.md) on
+memory space. The libreboot project [does this](docs/install/ich9utils.md) on
 the Intel 4 Series systems that it supports, such as the [ThinkPad
 X200](../docs/install/x200_external.md) and [ThinkPad
 T400](../docs/install/t400_external.md). ME firmware versions 6.0 and
@@ -331,7 +331,7 @@ hopelessly proprietary and "tivoized".
 
 **In summary, the Intel Management Engine and its applications are a
 backdoor with total access to and control over the rest of the PC. The
-ME is a threat to freedom, security, and privacy, and the osboot
+ME is a threat to freedom, security, and privacy, and the libreboot
 project strongly recommends avoiding it entirely. Since recent versions
 of it can't be removed, this means avoiding all recent generations of
 Intel hardware.**
@@ -405,7 +405,7 @@ most cases (they will just integrate the blobs that Intel provides).
 Newer Intel graphics chipsets also [require firmware
 blobs](https://01.org/linuxgraphics/intel-linux-graphics-firmwares?langredirect=1).
 
-The `osboot` project *does* provide some support for newer Intel platforms, but
+The `libreboot` project *does* provide some support for newer Intel platforms, but
 you should be aware of these issues if you choose to run those machines.
 
 Freedom pitfalls to consider on AMD hardware {#amd}
@@ -452,7 +452,7 @@ machine completely outside of the user's knowledge.
 Much like with the Intel Boot Guard (an application of the Intel
 Management Engine), AMD's PSP can also act as a tyrant by checking
 signatures on any boot firmware that you flash, making replacement boot
-firmware (e.g. osboot, coreboot) impossible on some boards. Early
+firmware (e.g. libreboot, coreboot) impossible on some boards. Early
 anecdotal reports indicate that AMD's boot guard counterpart will be
 used on most OEM hardware, disabled only on so-called "enthusiast"
 CPUs.
@@ -500,7 +500,7 @@ practically the same, though it was found with much later hardware in
 AMD that you could run without microcode updates. It's unknown whether
 the updates are needed on all AMD boards (depends on CPU).
 
-The osboot project does not consider microcode updates a problem, and it
+The libreboot project does not consider microcode updates a problem, and it
 enables them by default on all supported hardware, even libreboot-compatible
 hardware.
 
@@ -537,7 +537,7 @@ Hi, I have &lt;insert random system here&gt;, is it supported?
 If it's supported by coreboot, you can add it immediately.
 Read the [porting guide](/docs/maintain/porting.html) for how to port for a new board.
 If you are able to generate a working rom for your system, please read
-[osbmk maintenance manual](docs/maintain/) for how to add it to osboot.
+[lbmk maintenance manual](docs/maintain/) for how to add it to libreboot.
 
 If coreboot lacks support for your hardware, you must add support for it.
 Please consult the coreboot project for guidance.
@@ -545,7 +545,7 @@ Please consult the coreboot project for guidance.
 General questions
 =================
 
-How do I install osboot?
+How do I install libreboot?
 -------------------------------------------------------
 
 See [installation guide](docs/install/)
@@ -562,7 +562,7 @@ align the pins properly. The connection is generally more sturdy.
 How do I write-protect the flash chip?
 ----------------------------------------------------------------------------
 
-By default, there is no write-protection on a osboot system. This is
+By default, there is no write-protection on a libreboot system. This is
 for usability reasons, because most people do not have easy access to an
 external programmer for re-flashing their firmware, or they find it
 inconvenient to use an external programmer.
@@ -573,7 +573,7 @@ possible, using dedicated hardware). For example, on current GM45
 laptops (e.g. ThinkPad X200, T400), you can write-protect (see
 [ICH9 gen utility](docs/install/ich9utils.md#ich9gen)).
 
-It's possible to write-protect on all osboot systems, but the instructions
+It's possible to write-protect on all libreboot systems, but the instructions
 need to be written. The documentation is in the main git repository, so you are
 welcome to submit patches adding these instructions.
 
@@ -583,17 +583,17 @@ other methods on AMD systems.
 How do I change the BIOS settings?
 ------------------------------------------------------------------------
 
-Most osboot setups actually use the [GRUB
+Most libreboot setups actually use the [GRUB
 payload](http://www.coreboot.org/GRUB2). More information about payloads
 can be found at
 [coreboot.org/Payloads](http://www.coreboot.org/Payloads). SeaBIOS is also
-available. The *CMOS* config is hardcoded in osboot.
+available. The *CMOS* config is hardcoded in libreboot.
 
-The osboot project inherits the modular payload concept from coreboot, which
+The libreboot project inherits the modular payload concept from coreboot, which
 means that pre-OS bare-metal *BIOS setup* programs are not very
-practical. Coreboot (and osboot) does include a utility called
+practical. Coreboot (and libreboot) does include a utility called
 *nvramtool*, which can be used to change some settings. You can find
-nvramtool under *coreboot/util/nvramtool/*, in the osboot source
+nvramtool under *coreboot/util/nvramtool/*, in the libreboot source
 archives.
 
 The *-a* option in nvramtool will list the available options, and *-w*
@@ -603,7 +603,7 @@ coreboot wiki for more information.
 In practise, you don't need to change any of those settings, in most
 cases.
 
-Default osboot setups lock the CMOS table, to ensure consistent functionality
+Default libreboot setups lock the CMOS table, to ensure consistent functionality
 for all users. You can use:
 
     nvramtool -C yourrom.rom -w somesetting=somevalue
@@ -620,10 +620,10 @@ How do I pad a ROM before flashing?
 
 It is advisable to simply use a larger ROM image. This section was written
 mostly for ASUS KCMA-D8 and KGPE-D16 mainboards, where previously we only
-provided 2MiB ROM images in osboot, but we now provide 16MiB ROM images.
+provided 2MiB ROM images in libreboot, but we now provide 16MiB ROM images.
 Other sizes are not provided because in practise, someone upgrading one of
 these chips will just use a 16MiB one. Larger sizes are available, but 16MiB
-is the maximum that you can use on all currently supported osboot systems
+is the maximum that you can use on all currently supported libreboot systems
 that use SPI flash.
 
 Required for ROMs where the ROM image is smaller than the flash chip
@@ -658,17 +658,17 @@ With padding removed cbfstool will be able to operate on the image as usual.
 Do I need to install a bootloader when installing a distribution?
 ---------------------------------------------------------------------------------------------------
 
-Most osboot setups integrate the GRUB bootloader already, as a
+Most libreboot setups integrate the GRUB bootloader already, as a
 *[payload](http://www.coreboot.org/Payloads)*. This means that the GRUB
 bootloader is actually *flashed*, as part of the boot firmware
-(osboot). This means that you do not have to install a boot loader on
+(libreboot). This means that you do not have to install a boot loader on
 the HDD or SSD, when installing a new distribution. You'll be able to
 boot just fine, using the bootloader (GRUB) that is in the flash chip.
 
 This also means that even if you remove the HDD or SSD, you'll still
 have a functioning bootloader installed which could be used to boot a
 live distribution installer from a USB flash drive. See
-[How to install GNU+Linux on a osboot system](../docs/gnulinux/grub_boot_installer.md)
+[How to install GNU+Linux on a libreboot system](../docs/gnulinux/grub_boot_installer.md)
 
 Nowadays, other payloads are also provided. If you're using the SeaBIOS payload,
 then the normal MBR bootsector is used on your HDD or SSD, like you would
@@ -677,12 +677,12 @@ expect. So the above paragraphs only apply to the GNU GRUB payload.
 Do I need to re-flash when I re-install a distribution?
 -------------------------------------------------------------------------------------------
 
-Not anymore. Recent versions of osboot (using the GRUB payload) will
+Not anymore. Recent versions of libreboot (using the GRUB payload) will
 automatically switch to a GRUB configuration on the HDD or SSD, if it
 exists. You can also load a different GRUB configuration, from any kind
 of device that is supported in GRUB (such as a USB flash drive). For
 more information, see
-[Modifying the GRUB Configuration in osboot Systems](../docs/gnulinux/grub_cbfs.md)
+[Modifying the GRUB Configuration in libreboot Systems](../docs/gnulinux/grub_cbfs.md)
 
 If you're using the SeaBIOS payload, it's even easier. It works just like you
 would expect. SeaBIOS implements a normal x86 BIOS interface.
@@ -693,10 +693,10 @@ What does a flash chip look like?
 You can find photos of various chip types on the following page:\
 [External 25xx NOR flashing guide](docs/install/spi.md)
 
-What other firmware exists outside of osboot?
+What other firmware exists outside of libreboot?
 ==================================================
 
-You can also read information about these in the [osboot binary blob
+You can also read information about these in the [libreboot binary blob
 reduction policy](docs/policy.md), where it goes into more detail about some
 of them.
 
@@ -711,7 +711,7 @@ in a coreboot ROM image and have coreboot executes it, if you use a
 different payload, such as GRUB).
 
 The *coreboot project* provides free initialization code, on many boards, and
-osboot will use this code when it is available, depending on the configuration.
+libreboot will use this code when it is available, depending on the configuration.
 
 In configurations where SeaBIOS and native GPU init are used together,
 a special shim VBIOS is added that uses coreboot linear framebuffer.
@@ -832,7 +832,7 @@ Other links:
 
 It is recommended that you use full disk encryption, on HDDs connected
 via USB. There are several adapters available online, that allow you to
-connect SATA HDDs via USB. The osboot documentation says how to install
+connect SATA HDDs via USB. The libreboot documentation says how to install
 several distributions with full disk encryption. You can adapt these for
 use with USB drives:
 
@@ -863,7 +863,7 @@ Microcode configures logic gate arrays in a microprocessor, to implement the
 instruction set architecture. Special *decoders* in the microprocessor will
 configure the circuitry, based on that microcode.
 
-The [osboot blob reduction policy](news/policy.md) goes into great detail
+The [libreboot blob reduction policy](news/policy.md) goes into great detail
 about microcode.
 
 ### Sound card 
@@ -877,7 +877,7 @@ workaround.
 Webcams have firmware integrated into them that process the image input
 into the camera; adjusting focus, white balancing and so on. Can use USB
 webcam hardware, to work around potential DMA issues; integrated webcams
-(on laptops, for instance) are discouraged by the osboot project, for
+(on laptops, for instance) are discouraged by the libreboot project, for
 security reasons.
 
 ### USB host controller 
@@ -902,7 +902,7 @@ by the GSM network, by triangulating the signal).
 
 On some laptops, these cards use USB (internally), so won't have DMA,
 but it's still a massive freedom and privacy issue. If you have an
-internal WWAN chip/card, the osboot project recommends that you
+internal WWAN chip/card, the libreboot project recommends that you
 disable and (ideally, if possible) physically remove the hardware. If
 you absolutely must use this technology, an external USB dongle is much
 better because it can be easily removed when you don't need it, thereby
@@ -917,7 +917,7 @@ Operating Systems
 Can I use GNU+Linux?
 --------------------------------------------------
 
-Absolutely! It is well-tested in osboot, and highly recommended. See
+Absolutely! It is well-tested in libreboot, and highly recommended. See
 [installing GNU+Linux](../docs/gnulinux/grub_boot_installer.md) and
 [booting GNU+Linux](../docs/gnulinux/grub_cbfs.md).
 
@@ -934,7 +934,7 @@ Refer to [the GNU+Linux page](docs/gnulinux/).
 Can I use BSD?
 ----------------------------------
 
-Absolutely! The osboot firmware has native support for NetBSD, OpenBSD and
+Absolutely! The libreboot firmware has native support for NetBSD, OpenBSD and
 LibertyBSD. Other distros are untested.
 
 See:
@@ -945,15 +945,15 @@ Are other operating systems compatible?
 
 Unknown. Probably not.
 
-What level of software freedom does osboot give me?
+What level of software freedom does libreboot give me?
 ===================================================
 
 TODO: Re-write this section. It has been adapted, poorly, from the Libreboot
 FAQ section.
 
-Please read the [osboot binary blob minimization policy](docs/policy.md).
+Please read the [libreboot binary blob minimization policy](docs/policy.md).
 
-The osboot firmware provides host hardware init firmware images,
+The libreboot firmware provides host hardware init firmware images,
 that can be written 25XX SPI NOR Flash. But on many systems there are
 a lot more computers running blob firmware.
 Some of them are not practicable to replace due to being located on Mask ROM.

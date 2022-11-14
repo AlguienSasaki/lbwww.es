@@ -5,7 +5,7 @@ x-toc-enable: true
 
 Initial flashing instructions for T500.
 
-This guide is for those who want osboot on their ThinkPad T500 while
+This guide is for those who want libreboot on their ThinkPad T500 while
 they still have the original Lenovo BIOS present. This guide can also be
 followed (adapted) if you brick your T500, to know how to recover.
 
@@ -23,7 +23,7 @@ A note about CPUs
 
 [ThinkWiki](http://www.thinkwiki.org/wiki/Category:T500) has a list of
 CPUs for this system. The Core 2 Duo P8400, P8600 and P8700 are believed
-to work in osboot. The T9600 was also tested on the T400 and
+to work in libreboot. The T9600 was also tested on the T400 and
 confirmed working.
 
 T9550 and T9900 was tested by a user, and is compatible as reported in the IRC channel.
@@ -53,7 +53,7 @@ Intel GPU; this is referred to as "switchable graphics". In the *BIOS
 setup* program for lenovobios, you can specify that the system will use
 one or the other (but not both).
 
-osboot is known to work on systems with only the Intel GPU, using
+libreboot is known to work on systems with only the Intel GPU, using
 native graphics initialization. On systems with switchable graphics, the
 Intel GPU is used and the ATI GPU is disabled, so native graphics
 initialization works all the same.
@@ -217,7 +217,7 @@ also fine:\
 Of course, make sure to turn on your PSU:\
 ![](https://av.libreboot.org/x200/disassembly/0013.jpg)
 
-Now, you should be ready to install osboot.
+Now, you should be ready to install libreboot.
 
 Log in as root on your BBB, using the instructions in
 [bbb\_setup.html\#bbb\_access](bbb_setup.html#bbb_access).
@@ -246,7 +246,7 @@ chip):
 
     ./flashrom -p linux_spi:dev=/dev/spidev1.0,spispeed=512 -r factory2.rom
 
-Note: the `-c` option is not required in osboot's patched
+Note: the `-c` option is not required in libreboot's patched
 flashrom, because the redundant flash chip definitions in *flashchips.c*
 have been removed.\
 Now compare the 3 images:
@@ -257,7 +257,7 @@ If the hashes match, then just copy one of them (the factory.rom) to a
 safe place (on a drive connected to another system, not the BBB). This
 is useful for reverse engineering work, if there is a desirable
 behaviour in the original firmware that could be replicated in coreboot
-and osboot.
+and libreboot.
 
 While there is a default MAC address inside the gbe region of flash image,
 it is not one you want to use. Make sure to change the MAC address to the one
@@ -265,11 +265,11 @@ that is correct for your system, for **later internal flash**,
 but always remember to **flash unmodfied txtmode image first** as it is known
 to work and only this variant provides memtest. You can follow instructions
 at [ich9utils.md#ich9gen](ich9utils.md#ich9gen)
-to change the MAC address inside the osboot image.
+to change the MAC address inside the libreboot image.
 
 Now flash it:
 
-    ./flashrom -p linux_spi:dev=/dev/spidev1.0,spispeed=512 -w path/to/osboot/rom/image.rom -V
+    ./flashrom -p linux_spi:dev=/dev/spidev1.0,spispeed=512 -w path/to/libreboot/rom/image.rom -V
 
 ![](https://av.libreboot.org/x200/disassembly/0015.jpg)
 
@@ -321,7 +321,7 @@ Some T500 laptops might come with an Atheros chipset, but this is
 802.11g only.
 
 It is recommended that you install a new wifi chipset. This can only be
-done after installing osboot, because the original firmware has a
+done after installing libreboot, because the original firmware has a
 whitelist of approved chips, and it will refuse to boot if you use an
 'unauthorized' wifi card.
 

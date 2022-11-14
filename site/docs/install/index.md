@@ -3,18 +3,18 @@ title: Installation instructions
 x-toc-enable: true
 ...
 
-This section relates to installing osboot on supported targets.
+This section relates to installing libreboot on supported targets.
 
 NOTE: if running `flashrom -p internal` for software based flashing, and you
 get an error related to `/dev/mem` access, you should reboot with
 `iomem=relaxed` kernel parameter before running flashrom, or use a kernel that
 has `CONFIG_STRICT_DEVMEM` not enabled.
 
-osboot flashing can be risky business. Please ensure that you have external
+libreboot flashing can be risky business. Please ensure that you have external
 flashing equipment, in case anything goes wrong. The general rule of thumb with
 firmware is this: if it's non-free, replace it, but if you're already running
 free firmware and it works nicely for you, you do not need to update it.
-However, you might want to tweak it or try out newer releases of osboot if
+However, you might want to tweak it or try out newer releases of libreboot if
 they have bug fixes for your board, and/or new security fixes.
 
 If you're already running libre firmware on your board, you should decide for
@@ -28,7 +28,7 @@ Init types and display mode
 ---------------------------
 
 NOTE: regardless of init type, on desktops, an external/add-on GPU can always
-be used. On laptop hardware in osboot, libgfxinit will always be used. On
+be used. On laptop hardware in libreboot, libgfxinit will always be used. On
 desktop/server hardware, if available, libgfxinit will also always be used by
 default (but in that setup, SeaBIOS can be used if you want to use an add-on
 graphics card, e.g. on KCMA-D8, KGPE-D16, GA-G41M-ES2L)
@@ -60,11 +60,11 @@ int10h text mode is used on startup.
 
 ### vgarom
 
-NOTE: no configs in osboot are currently available that use this method.
+NOTE: no configs in libreboot are currently available that use this method.
 
 With this method, coreboot is finding, loading and executing a VGA option ROM
 for your graphics hardware. This would not be done on laptops, because that
-implies supplying non-free binary blobs in osboot, so this setup would only
+implies supplying non-free binary blobs in libreboot, so this setup would only
 ever be provided on desktop hardware where no GPU exists or where it is
 desirable for you to use an external/add-on graphics card
 
@@ -84,7 +84,7 @@ In this setup, coreboot is neither implementing libgfxinit / native graphics
 initialization nor is it finding/loading/executing VGA option ROMs. In this
 setup, SeaBIOS would most likely be used for that.
 
-The `normal` setup is supported in the osboot build system, but not
+The `normal` setup is supported in the libreboot build system, but not
 currently used. It is there for desktop hardware that will be added in the
 future, where those desktop boards do not have an onboard GPU and therefore an
 add-on GPU is always used..
@@ -132,9 +132,9 @@ following article:
 
 [ich9utils documentation](ich9utils.md)
 
-osboot puts a default MAC address in the available ROM images, but this is
+libreboot puts a default MAC address in the available ROM images, but this is
 a generic MAC address and it's identical on every ROM image. Technically, you
-can use it but if you encounter other osboot users on the same ethernet
+can use it but if you encounter other libreboot users on the same ethernet
 switch, using the same physical network as you, you will encounter a MAC
 address conflict.
 
@@ -142,7 +142,7 @@ NOTE: R500 thinkpads do not have an Intel gigabit ethernet NIC, so on that
 laptop you can just flash the default ROM and you do not have to worry.
 
 There are also some Intel X4X platforms that use an ICH10 southbridge,
-supported in osboot, but these are flashed in a *descriptorless* setup,
+supported in libreboot, but these are flashed in a *descriptorless* setup,
 which means that the MAC address is irrelevant (either there will be an Intel
 PHY module that is now unusable, and you use an add-on card, or it doesn't use
 an Intel PHY module and the onboard NIC is usable).
@@ -170,7 +170,7 @@ carefully.
 Run flashrom on host CPU
 ------------------------
 
-You can simply take any ROM image from the osboot project, and flash it.
+You can simply take any ROM image from the libreboot project, and flash it.
 Boot a GNU+Linux distribution on the target device, and install flashrom.
 
 In some cases, this is not possible or there are other considerations. Please
@@ -195,7 +195,7 @@ ensure that you get the same checksums. Check each dump using `sha1sum`
 
 How to erase and rewrite the chip contents:
 
-    sudo flashrom -p internal:laptop=force_I_want_a_brick,boardmismatch=force -w osboot.rom
+    sudo flashrom -p internal:laptop=force_I_want_a_brick,boardmismatch=force -w libreboot.rom
 
 If you are re-flashing a GM45+ICH9M laptop (e.g. ThinkPad X200/X200S/X200T,
 T400, T500, R400, W500 etc - but not R500), you should run the ich9gen utility
@@ -244,7 +244,7 @@ Intel NIC.
 [You must flash it externally](spi.md)
 
 D410PT is more or less the same board as D510MO, but we would like more info
-about this board. If you have a D410PT mainboard, please contact the osboot
+about this board. If you have a D410PT mainboard, please contact the libreboot
 project via IRC and ping `leah` before you flash it. When you do so, please
 reference this paragraph on this web page.
 
@@ -257,7 +257,7 @@ and you must flash both chips. Refer to the guide:\
 #### Macbook1,1 running non-free Apple EFI firmware
 
 This laptop requires external flashing. Remove the mainboard and refer to
-the [external flashing guide](spi.md); if osboot is already running, you
+the [external flashing guide](spi.md); if libreboot is already running, you
 can flash internally.
 
 MacBook2,1 can be flashed internally.
@@ -287,7 +287,7 @@ example of the push pin as a proof of concept:
 
 #### ThinkPad X60/X60S/X60T/T60 with Lenovo BIOS {#flashrom_lenovobios}
 
-You can just get bucts from the osboot project, same thing for the patched
+You can just get bucts from the libreboot project, same thing for the patched
 flashrom. In the Libreboot 20160907 release, there is a *utility* archive, which
 has statically compiled executables. They still work just fine on modern
 systems, and they can be used for this purpose.
@@ -307,7 +307,7 @@ Download and build flashrom, using the instructions
 on [the Git page](../../git.md), and download the `bucts` software using the
 notes on that very same page.
 
-You can replace Lenovo BIOS with osboot, using flashrom running on the host
+You can replace Lenovo BIOS with libreboot, using flashrom running on the host
 CPU. However, there are some considerations.
 
 Firstly, make sure that the yellow CMOS battery is installed, and functioning
@@ -330,10 +330,10 @@ can set the machine to boot using that lower 64KiB bootblock, which is
 read-write. You do this by setting the BUC.TS register to 1, using the `bucts`
 program referenced below.
 
-The osboot ROM images already have the upper 64KiB bootblock copied to the lower
+The libreboot ROM images already have the upper 64KiB bootblock copied to the lower
 one, so you don't have to worry about copying it yourself.
 
-If you build flashrom using the osboot build system, there will be three
+If you build flashrom using the libreboot build system, there will be three
 binaries:
 
 * `flashrom`
@@ -408,7 +408,7 @@ Assuming that everything went well:
 Flash the ROM for a second time. For this second flashing attempt, the upper
 64KiB bootblock is now read-write. Use the *unpatched* flashrom binary:
 
-    sudo ./flashrom -p internal -w osboot.rom
+    sudo ./flashrom -p internal -w libreboot.rom
 
 To reset bucts, do this:
 
@@ -419,10 +419,10 @@ flashed. It is flashed if flashrom said VERIFIED when running the above
 command.
 
 If it said VERIFIED, shut down. If it didn't say VERIFIED, make sure bucts is
-still set to 1, and consult the osboot project on IRC for advice, and avoid
+still set to 1, and consult the libreboot project on IRC for advice, and avoid
 shutting down your system until you get help.
 
-If all went well, osboot should now be booting and you should be able to
+If all went well, libreboot should now be booting and you should be able to
 boot into your operating system.
 
 If you messed up, there are external flashing instructions. See main navigation
@@ -463,7 +463,7 @@ TARGET: Apple Macbook2,1, Macbook1,1 and iMac5,2 (i945 platform)
 ----------------------------------------------------------------
 
 iMac5,2 is essentially the same board as Macbook2,1, and it is compatible with
-osboot.
+libreboot.
 
 Refer to the following article:\
 [Macbook2,1 and MacBook1,1 installation guide](../hardware/macbook21.md)

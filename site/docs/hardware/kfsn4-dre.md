@@ -4,7 +4,7 @@ x-toc-enable: true
 ...
 
 This is a server board using AMD hardware (Fam10h). It can also be used
-for building a high-powered workstation. Powered by osboot.
+for building a high-powered workstation. Powered by libreboot.
 
 Flashing instructions can be found at
 [../install/\#flashrom](../install/#flashrom)
@@ -68,7 +68,7 @@ the same as the non-iKVM ones.
 
 The SAS versions have a 4-port SAS controller and a four 7-pin SAS connectors
 instead of the PCI-E 8x slot which is present in all the other board configurations.
-Note: the SAS functionality is **not supported** by osboot.
+Note: the SAS functionality is **not supported** by libreboot.
 
 The IST versions with PCB revision 1.05G are the ones who are believed to
 support the six core Opteron Istanbul processors (2400 and 8400 series).

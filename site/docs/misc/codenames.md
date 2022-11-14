@@ -10,7 +10,7 @@ Introduction
 
 This document lists product codenames for some hardware.
 Please note that just because a certain device is listed here does NOT mean
-that it is supported in osboot. For supported devices refer to the
+that it is supported in libreboot. For supported devices refer to the
 installation documentation.
 
 ### A note on GPUs

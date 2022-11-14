@@ -8,7 +8,7 @@ If you're using SeaBIOS, the boot process will work similarly to traditional
 BIOS systems; refer to the SeaBIOS documentation
 on <https://seabios.org/SeaBIOS>
 
-GNU+Linux is the operating system of choice, for osboot development. It is
+GNU+Linux is the operating system of choice, for libreboot development. It is
 highly recommended over any other operating system, precisely because it consists
 of [Free Software](https://www.gnu.org/philosophy/free-sw.html) (free as in
 freedom). There *are* other free operating systems, such as BSD, but most of
@@ -21,8 +21,8 @@ Useful links
 
 Refer to the following pages:
 
-* [How to Prepare and Boot a USB Installer in osboot Systems](grub_boot_installer.md)
-* [Modifying the GRUB Configuration in osboot Systems](grub_cbfs.md)
+* [How to Prepare and Boot a USB Installer in libreboot Systems](grub_boot_installer.md)
+* [Modifying the GRUB Configuration in libreboot Systems](grub_cbfs.md)
 * [Installing Hyperbola GNU+Linux, with Full-Disk Encryption (including /boot)](https://wiki.hyperbola.info/en:guide:encrypted_installation)
 * [Installing Debian or Devuan GNU+Linux-Libre, with Full-Disk Encryption (including /boot)](encrypted_debian.md)
 * [Installing Guix System, with Full-Disk Encryption (including /boot)](guix.md)
@@ -42,7 +42,7 @@ In general, it is recommended that you use SeaBIOS but if you want extra securit
 GRUB payload is recommended where you can then have a fully encrypted /boot
 directory.
 
-TODO: Nuke *all* distro-specific guides on osboot.org. Instead, move these
+TODO: Nuke *all* distro-specific guides on libreboot.org. Instead, move these
 instructions to the wiki pages of these projects, on their websites. The reasons
 are explained in the above issue page.
 
@@ -73,9 +73,9 @@ This may also apply to CentOS or Redhat. Chroot guide can be found on
 linux16 issue
 -------------
 
-When you use osboot's default GRUB config, and osboot's grub uses fedora's
-default `grub.cfg` (in `/boot/grub2/grub.cfg`), fedora by default makes use of the
-`linux16` command, whereas it should be saying `linux`
+Libreboot's default GRUB config sources fedora's grub config
+`grub.cfg` (in `/boot/grub2/grub.cfg`), fedora by default makes use of the
+`linux16` command, where it should be saying `linux`
 
 Do this in fedora:
 

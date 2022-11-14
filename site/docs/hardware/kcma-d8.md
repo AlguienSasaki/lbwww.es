@@ -16,9 +16,9 @@ CPU cores).
 
 This is a desktop board using AMD hardware (Fam10h *and Fam15h* CPUs
 available). It can also be used for building a high-powered workstation.
-osboot also supports it. The coreboot port was done by Timothy Pearson of
+libreboot also supports it. The coreboot port was done by Timothy Pearson of
 Raptor Engineering Inc. and, working with them, merged into libreboot many
-years ago. It is also supported by osboot.
+years ago. It is also supported by libreboot.
 
 Note that not all boards are compatible. See [board status](#boardstatus)
 below to determine compatibility with your board.
@@ -26,7 +26,7 @@ below to determine compatibility with your board.
 Flashing instructions can be found at
 [../install/](../install/) - note that external
 flashing is required (e.g. RPi), if the proprietary (ASUS) firmware is
-currently installed. If you already have libreboot/osboot/coreboot, by default
+currently installed. If you already have libreboot/libreboot/coreboot, by default
 it is possible to re-flash using software running in GNU+Linux on the kcma-d8,
 without using external hardware.
 
@@ -46,7 +46,7 @@ this:
 
 The default chip is a 2MiB one, but we recommend upgrading it to a 16MiB chip.
 
-NOTE: If you're already running osboot, you probably don't
+NOTE: If you're already running libreboot, you probably don't
 need to re-flash externally. Refer instead to the generic instructions on
 this page: [../install/](../install/)
 
@@ -58,7 +58,7 @@ PCI option ROMs
 
 Unlike Libreboot 20160907, Libreboot in newer releases now supports finding and
 loading PCI option ROMs automatically, both in GRUB and SeaBIOS on this machine.
-This was inherited by osboot, when the Libreboot project was forked.
+This was inherited by libreboot, when the Libreboot project was forked.
 
 So for example, if you wish to use an add-on graphics card, you can! It's no
 problem, and should work just fine.
@@ -88,7 +88,7 @@ There are two ways to identify a supported KCMA-D8 board:
 Supported boards begin with a serial number of **B9S2xxxxxxxx** or above where
 the first character refers to the year of manufacture (A = 2010, B = 2011, etc.)
 and the following character the month in hexadecimal (1...9, A, B, C). Thus, any
-board produced September 2011 *or later* are compatible with osboot. Boards
+board produced September 2011 *or later* are compatible with libreboot. Boards
 originally shipped with BIOS version **2001** or higher are also compatible.
 
 For help locating these identifying markers, see [ASUS documentation for determining Opteron 4200 series compatibility](https://web.archive.org/web/20200710022605/https://dlcdnets.asus.com/pub/ASUS/mb/SocketC%281027%29/KCMA-D8/Manual&QVL/How_to_identify_MB_supporting_Opteron_4200_CPU.pdf)
@@ -138,7 +138,7 @@ framebuffer display (if it has KMS - kernel mode setting).
 
 NOTE: This section relates to the onboard ASpeed GPU. You *can* use an add-on
 PCI-E GPU in one of the available slots on the mainboard. Nvidia GTX 780 cards
-are what osboot recommends; it has excellent support in Nouveau (free Linux
+are what libreboot recommends; it has excellent support in Nouveau (free Linux
 kernel / mesa driver for Nvidia cards) and generally works well; however, the
 performance won't be as high in Nouveau, compared to the non-free Nvidia driver
 because the Nouveau driver can't increase the GPU clock (it doesn't know how,
@@ -166,7 +166,7 @@ considerations:
     and as such a workaround using SGABIOS is necessary. You can find
     instructions on how to do this on the
     [Notabug issue tracker](http://web.archive.org/web/20210416011941/https://notabug.org/libreboot/libreboot/issues/736)
-    TODO: test whether this is still the case in osboot, which uses a newer
+    TODO: test whether this is still the case in libreboot, which uses a newer
     version of coreboot nowadays)
 -   SAS (via PIKE 2008 module) requires non-free option ROM (and
     SeaBIOS) to boot from it (theoretically possible to replace, but you
@@ -174,7 +174,7 @@ considerations:
     can be on a SAS drive. The linux kernel can use those SAS drives
     (via PIKE module) without an option ROM).
     NOTE: SeaBIOS can load PCI-E option ROMs, and by default it will do so in
-    osboot, so you could use it. However, you could *also* simply
+    libreboot, so you could use it. However, you could *also* simply
     install 16MiB NOR flash with linuxboot payload in it, and use linuxboot
     which has the Linux kernel, which can use SAS drives without needing that
     option ROM; then it can kexec another linux kernel, which in turn also can
@@ -184,7 +184,7 @@ considerations:
     Since it's for remote out-of-band management, it's theoretically a
     backdoor similar to the Intel Management Engine. Fortunately, unlike
     the ME, this firmware is unsigned which means that a free
-    replacement is theoretically possible. For now, the osboot
+    replacement is theoretically possible. For now, the libreboot
     project recommends not installing the module. [This
     project](https://github.com/facebook/openbmc) might be interesting
     to derive from, for those who want to work on a free replacement. In

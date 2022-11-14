@@ -10,7 +10,7 @@ High Pitched Whining Noise on Idle in Debian or Devuan
 
 Start powertop automatically at boot time.
 
-Included with osboot is a script called 'powertop.debian'. Run this
+Included with libreboot is a script called 'powertop.debian'. Run this
 as root and it will setup powertop to run with --auto-tune at boot
 time. Load the file in your text editor to see how it does that.
 
@@ -34,7 +34,7 @@ is a step towards that. Also, in some instances you will need to run
 'sudo powertop --auto-tune' again. This needs to be implemented
 properly in coreboot itself!
 
-On the X60 with coreboot or osboot, there is a high pitched sound
+On the X60 with coreboot or libreboot, there is a high pitched sound
 when idle. So far we have use processor.max\_cstate=2 or idle=halt in
 GRUB. These consume power. Stop using them!
 
@@ -84,7 +84,7 @@ X60 Tablet it is called X6 Tablet UltraBase). For the ThinkPad T60, you
 can use the "Advanced Mini Dock".
 
 If you are using one of the ROM images with 'serial' in the name, then
-you have serial port enabled in osboot and you have memtest86+
+you have serial port enabled in libreboot and you have memtest86+
 included inside the ROM. Connect your null modem cable to the serial
 port on the dock and connect the other end to a 2nd system using your
 USB Serial adapter.
@@ -99,7 +99,7 @@ Y.
 There are also others like Minicom but I like GNU Screen
 
 By doing this before booting the X60/T60, you will see console output
-from osboot. You will also see GRUB displaying on the serial output,
+from libreboot. You will also see GRUB displaying on the serial output,
 and you will be able to see MemTest86+ on the serial output aswell. You
 can also configure your distro so that a terminal (TTY) is accessible
 from the serial console.
@@ -117,7 +117,7 @@ change the `linux` line to add instructions for enabling getty. See
 Finetune backlight control on intel gpu's
 =========================================
 
-Sometimes the backlight control value (BLC\_PWM\_CTL) set by osboot
+Sometimes the backlight control value (BLC\_PWM\_CTL) set by libreboot
 is not ideal. The result is either flicker, which could cause nausea or
 epilepsy or an uneven backlight and/or coil whine coming from the
 display. To fix this a different value for the gpu reg BLC\_PWM\_CTL
@@ -209,34 +209,34 @@ Power Management Beeps on Thinkpads
 
 When disconnecting or connecting the charger, a beep occurs. When the
 battery goes to a critically low charge level, a beep occurs. Nvramtool
-is included in osboot, and can be used to enable or disable this
+is included in libreboot, and can be used to enable or disable this
 behaviour.
 
-You need to write changes in a osboot rom image, and flash it, in order
+You need to write changes in a libreboot rom image, and flash it, in order
 to apply them. You can either use a pre-compiled rom image, or create an image
 from the current one in your computer. See here 
-<https://osboot.org/docs/gnulinux/grub_cbfs.html#get-the-rom-image> for 
+<https://libreboot.org/docs/gnulinux/grub_cbfs.html#get-the-rom-image> for 
 more information on how to do that.
 
-Once you have a osboot rom image, say 'osboot.rom', you can write
+Once you have a libreboot rom image, say 'libreboot.rom', you can write
 changes on the image with the following commands.
 
 Disable or enable beeps when removing/adding the charger:
 
-    sudo ./nvramtool -C osboot.rom -w power_management_beeps=Enable
-    sudo ./nvramtool -C osboot.rom -w power_management_beeps=Disable
+    sudo ./nvramtool -C libreboot.rom -w power_management_beeps=Enable
+    sudo ./nvramtool -C libreboot.rom -w power_management_beeps=Disable
 
 Disable or enable beeps when battery is low:
 
-    sudo ./nvramtool -C osboot.rom -w low_battery_beep=Enable
-    sudo ./nvramtool -C osboot.rom -w low_battery_beep=Disable
+    sudo ./nvramtool -C libreboot.rom -w low_battery_beep=Enable
+    sudo ./nvramtool -C libreboot.rom -w low_battery_beep=Disable
 
 You can check that the parameters are set in the image with :
 
-    sudo ./nvramtool -C osboot.rom -a
+    sudo ./nvramtool -C libreboot.rom -a
 
 Finally, you need to flash the rom with this new image. See here
-<https://osboot.org/docs/gnulinux/grub_cbfs.html#with-re-flashing-the-rom>
+<https://libreboot.org/docs/gnulinux/grub_cbfs.html#with-re-flashing-the-rom>
 for a detailed explanation.
 
 Get EDID: Find out the name (model) of your LCD panel

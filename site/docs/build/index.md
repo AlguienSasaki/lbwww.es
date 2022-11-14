@@ -3,27 +3,27 @@ title: Build from source
 x-toc-enable: true
 ...
 
-osboot's build system is named `osbmk`, short for `osboot Make`, and this
+libreboot's build system is named `lbmk`, short for `Libreboot Make`, and this
 document describes how to use it. With this guide, you can know how to compile
-osboot from the available source code.
-This version, if hosted live on osboot.org, assumes that you are using
-the `osbmk` git repository, which
+libreboot from the available source code.
+This version, if hosted live on libreboot.org, assumes that you are using
+the `lbmk` git repository, which
 you can download using the instructions on [the code review page](../../git.md).
 
-If you're using a release archive of osboot, please refer to the
-documentation included with *that* release. osboot releases are only intended
+If you're using a release archive of libreboot, please refer to the
+documentation included with *that* release. libreboot releases are only intended
 as *snapshots*, not for development. For proper development, you should always
-be working directly in the osboot git repository.
+be working directly in the libreboot git repository.
 
-The following document describes how `osbmk` works, and how you can make changes
-to it: [osboot maintenance manual](../maintain/)
+The following document describes how `lbmk` works, and how you can make changes
+to it: [libreboot maintenance manual](../maintain/)
 
 GNU Make
 ========
 
-osboot Make includes a file called `Makefile`. You can still use
-the `osbmk` build system directly, or you can use GNU Make. The `Makefile`
-simply runs `osbmk` commands. However, using `osbmk` directly will offer you
+libreboot Make includes a file called `Makefile`. You can still use
+the `lbmk` build system directly, or you can use GNU Make. The `Makefile`
+simply runs `lbmk` commands. However, using `osbmk` directly will offer you
 much more flexibility; for example, the Makefile currently cannot build single
 ROM images (it just builds all of them, for all boards).
 
@@ -45,7 +45,7 @@ Now, simply build the coreboot images like so:
     make
 
 This single command will build ROM images for *every* board integrated in
-osboot. If you only wish to build a limited set, you can use `osbmk` directly:
+libreboot. If you only wish to build a limited set, you can use `lbmk` directly:
 
     ./build boot roms x200_8mb
 
@@ -56,7 +56,7 @@ You can specify more than one argument:
 ROM images appear under the newly created `bin/` directory in the build system.
 
 For other commands, simply read the `Makefile` in your favourite text editor.
-The `Makefile` is simple, because it merely runs `osbmk` commands, so it's very
+The `Makefile` is simple, because it merely runs `lbmk` commands, so it's very
 easy to know what commands are available by simply reading it.
 
 Standard `clean` command available (cleans all modules except `crossgcc`):
@@ -77,14 +77,14 @@ Build without using GNU Make
 The `Makefile` is included just for *compatibility*, so that someone who
 instictively types `make` will get a result.
 
-Actual development/testing is always done using `osbmk` directly, and this
+Actual development/testing is always done using `lbmk` directly, and this
 includes when building from source. Here are some instructions to get you
 started:
 
 First, install build dependencies
 ---------------------------------
 
-osboot includes a script that automatically installs apt-get dependencies
+libreboot includes a script that automatically installs apt-get dependencies
 in Ubuntu 20.04. It works well in other apt-get distros (such as Trisquel and
 Debian):
     
@@ -98,11 +98,11 @@ Separate scripts also exist:
 
     sudo ./build dependencies void
 
-Technically, any GNU+Linux distribution can be used to build osboot.
+Technically, any GNU+Linux distribution can be used to build libreboot.
 However, you will have to write your own script for installing build
 dependencies. 
 
-osboot Make (osbmk) automatically runs all necessary commands; for example
+libreboot Make (lbmk) automatically runs all necessary commands; for example
 `./build payload grub` will automatically run `./build module grub` if the
 required utilities for GRUB are not built, to produce payloads.
 
@@ -124,7 +124,7 @@ If you wish to build payloads, you can also do that. For example:
 Previous steps will be performed automatically. However, you can *still* run
 individual parts of the build system manually, if you choose. This may be
 beneficial when you're making changes, and you wish to test a specific part of
-osbmk.
+lbmk.
 
 Therefore, if you only want to build ROM images, just do the above. Otherwise,
 please continue reading!
@@ -132,10 +132,10 @@ please continue reading!
 Optional: extract binary blobs
 ------------------------------
 
-Some boards, including all sandy/ivybridge boards require nonfree blobs which cannot be included in osboot.
-For boards requiring these blobs, osboot will attempt to download the blobs itself.
+Some boards, including all sandy/ivybridge boards require nonfree blobs which cannot be included in libreboot.
+For boards requiring these blobs, libreboot will attempt to download the blobs itself.
 If your board does not have blob sources available, then you must extract them from a backup of you vendor rom.
-You must point osboot to the backup rom and tell the build system which board you want to extract blobs for.
+You must point libreboot to the backup rom and tell the build system which board you want to extract blobs for.
 For example, to extract blobs for the t440p you must run:
 
 	./build descriptors intel_blobs t440p_12mb /path/to/12mb_backup.rom
@@ -150,8 +150,8 @@ Second, download all of the required software components
 
 If you didn't simply run `./build boot roms` (with or without extra
 arguments), you can still perform the rest of the build process manually. Read
-on! You can read about all available scripts in `osbmk` by reading
-the [osboot maintenance manual](../maintain/); osbmk is designed to be modular
+on! You can read about all available scripts in `lbmk` by reading
+the [libreboot maintenance manual](../maintain/); lbmk is designed to be modular
 which means that each script *can* be used on its own (if that's not true, for
 any script, it's a bug that should be fixed).
 
@@ -159,7 +159,7 @@ It's as simple as that:
 
     ./download all
 
-The above command downloads all modules defined in the osboot build system.
+The above command downloads all modules defined in the libreboot build system.
 However, you can download modules individually.
 
 This command shows you the list of available modules:
@@ -187,7 +187,7 @@ Again, very simple:
 
     ./build module all
 
-This builds every module defined in the osboot build system, but you can
+This builds every module defined in the libreboot build system, but you can
 build modules individually.
 
 The following command lists available modules:
@@ -243,7 +243,7 @@ Run this command:
 
     ./build boot roms
 
-Each board has its own configuration in `osbmk` under `resources/coreboot/`
+Each board has its own configuration in `lbmk` under `resources/coreboot/`
 which specifies which payloads are supported.
 
 By default, all ROM images are built, for all boards. If you wish to build just

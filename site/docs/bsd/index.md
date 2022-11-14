@@ -5,8 +5,8 @@ x-toc-enable: true
 
 Guide last updated on 24 August 2022.
 
-osboot is capable of booting many BSD systems. This section mostly documents
-the peculiarities of osboot as it pertains to BSD; you can otherwise refer to
+libreboot is capable of booting many BSD systems. This section mostly documents
+the peculiarities of libreboot as it pertains to BSD; you can otherwise refer to
 the official documentation for whatever BSD system you would like to use.
 
 Kernel Mode Setting
@@ -19,7 +19,7 @@ you read this article.
 Boot BSD, using SeaBIOS
 =======================
 
-On x86 platforms, osboot/libreboot both provide the choice of GNU GRUB and/or
+On x86 platforms, libreboot/libreboot both provide the choice of GNU GRUB and/or
 SeaBIOS payload. GRUB can technically boot BSD kernels, but the code is
 poorly maintained and unreliable for this use-case scenario; on BIOS systems,
 GRUB can chainload BSD bootloaders, but on bare metal (as coreboot payload),
@@ -37,7 +37,7 @@ probably don't mind running in text mode all the time.
 Warnings for X11 users
 ----------------------
 
-One important peculiarity of most libreboot and osboot systems is: VGA mode
+One important peculiarity of most libreboot and libreboot systems is: VGA mode
 support exists, if booting with corebootfb (coreboot's own framebuffer) and
 the SeaVGABIOS option ROM used in the SeaBIOS payload; however, the ability
 to switch modes is not present, which means you can't switch to text mode
@@ -56,7 +56,7 @@ on most systems, but not on most coreboot systems with native video
 initialisation used, due to the quirks already described. If you see any
 documentation (in BSD land) pertaining to VESA modes, ignore it entirely;
 unless you're using the proprietary VGA ROM for your device, it won't work,
-and osboot/libreboot don't distribute these (instead, coreboot's own video
+and libreboot/libreboot don't distribute these (instead, coreboot's own video
 initialisation is used where possible, or a headless SeaBIOS payload setup
 is provided, where you would either run it headless or install a graphics
 card).
@@ -111,7 +111,7 @@ Dubious mention: Tianocore
 --------------------------
 
 Tianocore is extremely bloated, and unauditable, so it is not included
-in libreboot or osboot, but it is the reference UEFI implementation by
+in libreboot or libreboot, but it is the reference UEFI implementation by
 Intel and contributors. It can boot most BSD systems very well.
 
 More robust ways to provide UEFI services in Libreboot and Osboot are
@@ -121,7 +121,7 @@ in any current or future releases of either project.
 Desktop users
 -------------
 
-Desktop users on libreboot/osboot should just install a graphics card,
+Desktop users on libreboot/libreboot should just install a graphics card,
 and again boot with SeaBIOS in text mode; however, when you do this,
 SeaBIOS will execute the VGA option ROM on the card which will provide
 early video initialisation instead of coreboot's initialisation, and that

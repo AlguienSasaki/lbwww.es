@@ -3,7 +3,7 @@ title: First-time ThinkPad X200 flashing
 x-toc-enable: true
 ...
 
-This guide is for those who want osboot on their ThinkPad X200 while
+This guide is for those who want libreboot on their ThinkPad X200 while
 they still have the original Lenovo BIOS present. This guide can also be
 followed (adapted) if you brick your X200, to know how to recover.
 
@@ -13,7 +13,7 @@ underneath the palm rest. You will then connect an external SPI programmer, to
 re-flash the chip externally while it is powered off with the battery removed.
 
 NOTE: This guide only applies to the regular X200. For X200S and X200 Tablet
-flashing, please read other guides available on osboot.org.
+flashing, please read other guides available on libreboot.org.
 
 Flash chip size
 ===============
@@ -55,7 +55,7 @@ Lift back the tape that covers a part of the flash chip, and then
 connect the clip:\
 ![](https://av.libreboot.org/x200/disassembly/0008.jpg)
 
-Now, you should be ready to install osboot.
+Now, you should be ready to install libreboot.
 
 Refer to the [SPI programming instructions](spi.md).
 
@@ -138,13 +138,13 @@ could discover how this works, by debugging the Lenovo BIOS update utility (in
 Windows), and then replicate what it is doing, with some tool for GNU+Linux,
 then load a flashrom binary into memory and the ROM to flash (for the BIOS
 region). You would do this with GPIO33 grounded, and the payload program would
-actually flash the entire chip, with just a normal osboot image.
+actually flash the entire chip, with just a normal libreboot image.
 
 It's possible. The above is likely the only way that the Lenovo BIOS updater
 program works. So if we discover precisely how to do that, then you could
 just connect some pogo pins to ground GPIO33, then boot up, run some software
 (which would have to be written) that does the above.
 
-On a related note, osboot has a utility that could help with
+On a related note, libreboot has a utility that could help with
 investigating this:
 [ich9utils.md#demefactory](ich9utils.md#demefactory)

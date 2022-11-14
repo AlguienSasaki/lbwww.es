@@ -3,20 +3,20 @@ title: Hardware compatibility list
 x-toc-enable: true
 ...
 
-**The osboot project was rebooted on January 4th, 2022. Some boards were
+**The libreboot project was rebooted on January 4th, 2022. Some boards were
 deleted as a result, but they will be re-added later, with documentation also
-re-added. The Libreboot and osboot projects went completely out of sync, but
-the Libreboot project was more up to date, so osboot, itself a fork of
+re-added. The Libreboot and libreboot projects went completely out of sync, but
+the Libreboot project was more up to date, so libreboot, itself a fork of
 Libreboot originally, was PURGED and then RE-FORKED once again, but from
 Libreboot in late 2021. From now on, greater care will be taken to keep the
 two projects in sync. Both projects are lead and were also founded by Leah
 Rowe.**
 
-The current version of osboot already has several major differences. For
+The current version of libreboot already has several major differences. For
 example, microcode updates are enabled by default, on all boards, even those
 that Libreboot supports (this greatly increases system stability).
 
-This sections relates to known hardware compatibility in osboot.
+This sections relates to known hardware compatibility in libreboot.
 
 For installation instructions, refer to [../install/](../install/).
 
@@ -25,12 +25,12 @@ because coreboot lacks native video initialization for the ATI GPUs on these
 machines.
 
 (for later machines like T500, T400, ATI GPU doesn't matter, because it also
-has an Intel GPU, and osboot uses the Intel one)
+has an Intel GPU, and libreboot uses the Intel one)
 
 Supported hardware
 ==================
 
-osboot currently supports the following systems in this release:
+libreboot currently supports the following systems in this release:
 
 ### Desktops (AMD, Intel, x86)
 
@@ -67,7 +67,7 @@ osboot currently supports the following systems in this release:
 -   [Lenovo Thinkpad X230](../install/x230_external.md)
 -   [Lenovo Thinkpad X230t](../install/x230_external.md)
 
-TODO: More hardware is supported. See `resources/coreboot/` in osbmk. Update
+TODO: More hardware is supported. See `resources/coreboot/` in lbmk. Update
 the above list!
 
 'Supported' means that the build scripts know how to build ROM images
@@ -80,7 +80,7 @@ EC update on i945 (X60, T60) and GM45 (X200, X301, T400, T500, R400, W500, R500)
 
 It is recommended that you update to the latest EC firmware version. The
 [EC firmware](../../faq.md#ec-embedded-controller-firmware) is separate from
-osboot, so we don't actually provide that, but if you still have
+libreboot, so we don't actually provide that, but if you still have
 Lenovo BIOS then you can just run the Lenovo BIOS update utility, which
 will update both the BIOS and EC version. See:
 
@@ -88,7 +88,7 @@ will update both the BIOS and EC version. See:
 -   <http://www.thinkwiki.org/wiki/BIOS_update_without_optical_disk>
 
 NOTE: this can only be done when you are using Lenovo BIOS. How to
-update the EC firmware while running osboot is unknown. osboot
+update the EC firmware while running libreboot is unknown. libreboot
 only replaces the BIOS firmware, not EC.
 
 Updated EC firmware has several advantages e.g. better battery

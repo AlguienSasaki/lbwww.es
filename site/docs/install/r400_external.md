@@ -5,13 +5,13 @@ x-toc-enable: true
 
 Initial flashing instructions for R400.
 
-This guide is for those who want osboot on their ThinkPad R400 while
+This guide is for those who want libreboot on their ThinkPad R400 while
 they still have the original Lenovo BIOS present. This guide can also be
 followed (adapted) if you brick your R400, to know how to recover.
 
-Before following this section, please make sure to setup your osboot
+Before following this section, please make sure to setup your libreboot
 ROM properly first. Although ROM images are provided pre-built in
-osboot, there are some modifications that you need to make to the one
+libreboot, there are some modifications that you need to make to the one
 you chose before flashing. (instructions referenced later in this guide)
 
 Serial port {#serial_port}
@@ -26,7 +26,7 @@ A note about CPUs
 
 [ThinkWiki](http://www.thinkwiki.org/wiki/Category:R400) has a list of
 CPUs for this system. The Core 2 Duo P8400 and P8600 are believed to
-work in osboot. The Core 2 Duo T9600 was confirmed to work, so the
+work in libreboot. The Core 2 Duo T9600 was confirmed to work, so the
 T9400 probably also works. *The Core 2 Duo T5870/5670 and Celeron M
 575/585 are untested!*
 
@@ -44,7 +44,7 @@ Intel GPU; this is referred to as "Dual Graphics" (previously
 you can specify that the system will use one or the other (but not
 both).
 
-osboot is known to work on systems with only the Intel GPU, using
+libreboot is known to work on systems with only the Intel GPU, using
 native graphics initialization. On systems with switchable graphics, the
 Intel GPU is used and the ATI GPU is disabled, so native graphics
 initialization works all the same.
@@ -152,7 +152,7 @@ Remove the motherboard from the cage, and the SPI flash chip will be
 next to the memory slots:\
 ![](https://av.libreboot.org/r400/0051.jpg) ![](https://av.libreboot.org/r400/0052.jpg)
 
-Now, you should be ready to install osboot.
+Now, you should be ready to install libreboot.
 
 Read [this article](spi.md) to learn how you may flash the chip, which is near
 to the RAM.

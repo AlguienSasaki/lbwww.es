@@ -6,7 +6,7 @@ x-toc-enable: true
 This section documents how to recover from a bad flash that prevents
 your ThinkPad X60 Tablet from booting.
 
-ROM images for this machine are well-tested in osboot, so bricks are rare.
+ROM images for this machine are well-tested in libreboot, so bricks are rare.
 The most common cause of a brick is operator error, when flashing a ROM image.
 In *most* cases, the cause will be that there is no bootblock, or an invalid
 one.
@@ -14,9 +14,9 @@ one.
 Brick type 1: bucts not reset. {#bucts_brick}
 ==============================
 
-You still have Lenovo BIOS, or you had osboot running and you flashed
+You still have Lenovo BIOS, or you had libreboot running and you flashed
 another ROM; and you had bucts 1 set and the ROM wasn't dd'd.\* or if
-Lenovo BIOS was present and osboot wasn't flashed.
+Lenovo BIOS was present and libreboot wasn't flashed.
 
 There are *2* 64KiB bootblocks possible, in the upper part of the ROM image.
 By default (bucts set to 0), the top one is used. If bucts is set to 1, the
@@ -41,7 +41,7 @@ two:\
 ![](https://av.libreboot.org/x60t_unbrick/0008.JPG)\
 
 \*Those dd commands should be applied to all newly compiled X60 ROM
-images (the ROM images in osboot binary archives already have this
+images (the ROM images in libreboot binary archives already have this
 applied!):
 
     dd if=coreboot.rom of=top64k.bin bs=1 skip=$[$(stat -c %s coreboot.rom) - 0x10000] count=64k
@@ -68,7 +68,7 @@ will not boot at all.
 "Unbricking" means flashing a known-good (working) ROM. The problem:
 you can't boot the system, making this difficult. In this situation,
 external hardware (see hardware requirements above) is needed which can
-flash the SPI chip (where osboot resides).
+flash the SPI chip (where libreboot resides).
 
 ![](https://av.libreboot.org/x60t_unbrick/0000.JPG)
 
@@ -121,7 +121,7 @@ which all draw a lot of current, more than most flashers can provide.
 
 Example command:
 
-    sudo ./flashrom -p linux_spi:dev=/dev/spidev0.0,spispeed=4096 -w osboot.rom -V
+    sudo ./flashrom -p linux_spi:dev=/dev/spidev0.0,spispeed=4096 -w libreboot.rom -V
 
 If flashrom complains about multiple flash chips detected, just pass the `-c`
 option as it suggests, and pick any of the chips it lists. `spispeed=4096` or

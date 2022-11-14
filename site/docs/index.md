@@ -2,28 +2,28 @@
 title: Documentation
 ...
 
-Always check [osboot.org](https://osboot.org/) for the latest updates to
-osboot. News, including release announcements, can be found in
+Always check [libreboot.org](https://libreboot.org/) for the latest updates to
+libreboot. News, including release announcements, can be found in
 the [main news section](../news/).
 
-[Answers to Frequently Asked Questions about osboot](../faq.md).
+[Answers to Frequently Asked Questions about libreboot](../faq.md).
 
-Installing osboot
+Installing libreboot
 ====================
 
--   [What systems can I use osboot on?](hardware/)
--   [How to install osboot](install/)
+-   [What systems can I use libreboot on?](hardware/)
+-   [How to install libreboot](install/)
 
 Documentation related to operating systems
 ============================
 
 -   [GNU+Linux Guides](gnulinux/)
--   [How to install BSD on a osboot system](bsd/)
+-   [How to install BSD on a libreboot system](bsd/)
 
 Information for developers
 ==========================
 
--   [How to compile the osboot source code](build/)
+-   [How to compile the libreboot source code](build/)
 -   [Build system developer documentation](maintain/)
 -   [GRUB payload](grub/)
 

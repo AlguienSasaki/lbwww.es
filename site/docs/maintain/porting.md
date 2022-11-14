@@ -4,7 +4,7 @@ title: Porting Guide
 
 This guide is intended for those with very little knowledge of firmware
 in general and coreboot in particular.
-Most boards in coreboot can be quite easily ported to osboot.
+Most boards in coreboot can be quite easily ported to libreboot.
 You don't need any knowledge of a particular programming language or
 technology in general to port a board.
 If you want to make more major contributions to the build system,
@@ -21,29 +21,29 @@ or it's name (ex: thinkpad t420).
 Because we're targeting chips on the PCB, we refer to all of the above terms
 synonymously as `board.`
 The rest of this article will refer to the board you wish to port to
-osboot as `board.`
+libreboot as `board.`
 
 If `board` is not supported in coreboot then you need to start there first.
 Osboot developers will generally not port new boards to coreboot on request.
 If you're not sure whether your board is in coreboot check the [coreboot table of hardware.](https://coreboot.org/status/board-status.html)
 
 If you have determined that `board` is supported by coreboot, but is not
-supported by osboot, then follow the rest of this guide to try to port it yourself.
+supported by libreboot, then follow the rest of this guide to try to port it yourself.
 If you're still unable to port the board, or anything in this guide is
-unclear, then contact osboot developers.
-The best way to get in touch is via [osboot irc.](/contact.html#irc-chatroom)
+unclear, then contact libreboot developers.
+The best way to get in touch is via [libreboot irc.](/contact.html#irc-chatroom)
 
 Cloning Osbmk
 =============
 
-Before you try to get any work done, you'll need to clone the osbmk (osboot make)
+Before you try to get any work done, you'll need to clone the lbmk (libreboot make)
 project.
 To do so, you'll need to have git installed on your machine. You can then clone
 the project.
 
-	git clone https://notabug.org/osboot/osbmk
+	git clone https://notabug.org/libreboot/lbmk
 
-If you want more information on building osbmk see [the build instructions.](/docs/build/index.html)
+If you want more information on building lbmk see [the build instructions.](/docs/build/index.html)
 
 Coreboot Config
 ===============
@@ -59,7 +59,7 @@ starting point.
 
 	cp -r resources/coreboot/t420_12mb/ resources/coreboot/t420s_12mb
 
-You can then easily modify the existing coreboot configs for you board via osbmk.
+You can then easily modify the existing coreboot configs for you board via lbmk.
 
 	./modify coreboot configs t420s_12mb
 
@@ -113,7 +113,7 @@ binary blobs from a backup of your vendor rom.
 You'll need a unified rom for dual chip setups; see [the ivybridge haswell guide](/docs/install/ivy_has_common.html)
 for instructions on creating a unified rom image.
 
-Extracting the blobs from a vendor rom image is automated in osbmk.
+Extracting the blobs from a vendor rom image is automated in lbmk.
 Simply run `./blobutil extract [board] [/path/to/backup.bin]`
 For example:
 
@@ -127,13 +127,13 @@ Getting Help
 
 Once you have tried everything above, you might find that the board still doesn't
 work.
-If that is the case, then you should contact osboot developers for more help.
+If that is the case, then you should contact libreboot developers for more help.
 You can ping `shmalebx9` and/or `leah` on irc or submit an issue on git.
 In either case, make sure to include a detailed description of everything you
 tried, and what exactly happened when you tried to flash the rom.
-If your board is not supported in osboot, then you can assume that osboot
+If your board is not supported in libreboot, then you can assume that our
 developers don't have it.
-You'll therefore be expected to test roms created by osboot developers on
+You'll therefore be expected to test roms created by libreboot developers on
 your own machine.
 
 In the meantime, you can always externally flash a backup of your vendor rom

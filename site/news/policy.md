@@ -5,49 +5,33 @@
 Introduction
 ============
 
-The `osboot` project is a *fork* of the Libreboot project.
-Libreboot is designed to comply with the Free Software Foundation's
-[Respects Your Freedom criteria](https://ryf.fsf.org/about/criteria) and
-the [GNU Free System Distribution Guidelines (GNU FSDG)](https://www.gnu.org/distros/free-system-distribution-guidelines.en.html),
-ensuring that it is entirely [Free Software](https://www.gnu.org/philosophy/free-sw.html).
+In the beginning Libreboot intentionally *de-blobbed* coreboot, which is to say that it did not
+include binary blobs. Coreboot, on the other hand, requires binary blobs on
+most systems that it has support for. Libreboot's
+entirely *"free"* version of coreboot consequently supported fewer mainboards.
 
-It was decided that a formal policy should be written, because there is quite
-a bit of nuance that would otherwise not be covered. The policies of `osboot`
-are fundamentally different than those of Libreboot.
-
-Libreboot intentionally *de-blobs* coreboot, which is to say that it does not
-include binary blobs. The coreboot software otherwise requires binary blobs on
-most systems that it has support for. Libreboot's version of coreboot is
-entirely *free*, on its consequently reduced set of supported mainboards.
-
-The `osboot` project is *fundamentally* different:
-Libreboot's [zero blobs policy](https://libreboot.org/news/policy.html) has
-been scrapped, entirely. The goal of *osboot* is simply to support every single
+Libreboot's zero blobs policy has
+been scrapped, entirely. The goal of *libreboot* is simply to support every single
 system from coreboot, to provide pre-configured, automated compiling of ROM
 images for *all* of them. This is quite a lot more ambitious in terms of sheer
 workload, and maintenance. It is expected that the project will *grow* in the
 future, to accomodate *board maintainers*, just like you have *package
 maintainers* in Debian; the analogy is highly appropriate, given the nature
-of the osboot build system, which you can learn more about on the [osbmk
-maintenance manual](../docs/maintain/).
+of the libreboot build system, which you can learn more about on the [lbmk maintenance manual](../docs/maintain/).
 
 **Freedom is very much preferable and a world where everyone can use Free
 Software, exclusively, is to be welcomed. However, we do not yet live in that
-world. The osboot project wishes to see more hardware become suitable for
-entry into Libreboot, in the future. Both osboot and Libreboot are lead by
-Leah Rowe, who is also the founder of both projects.**
+world.**
 
-The osboot position is more like an opinion, as opposed to an actual policy.
+The libreboot position is more like an opinion, as opposed to an actual policy.
 That opinion is this: *some* freedom is better than *zero* freedom. There are
 plenty of people with coreboot-compatible hardware, who wish to move away from
 otherwise fully proprietary boot firmware (usually supplied by the manufacturer
-of the hardware). The *osboot* project is here to help! It provides a fully
+of the hardware). The *libreboot* project is here to help! It provides a fully
 automated build system, making coreboot much easier to use, and it provides
 user-friendly [installation guides](../docs/install/) to help you get started.
 
-The position of the osboot project is basically the same as that of Libreboot,
-except that it takes a far more *pragmatic* approach, as opposed to Libreboot's
-*dogmatic* approach. Supporting more hardware, even if the hardware is less
+Supporting more hardware, even if the hardware is less
 friendly to software freedom, will provide a path towards coreboot for more
 people, and it may lead to more coreboot development in the future.
 
@@ -59,9 +43,9 @@ a level of computing freedom that they would otherwise not have.
 Current project scope
 =====================
 
-The osboot project is concerned with what goes in the main boot flash IC, but
+The libreboot project is concerned with what goes in the main boot flash IC, but
 there are other pieces of firmware to take into consideration, as covered
-in the [osboot FAQ](../faq.md#what-other-firmware-exists-outside-of-osboot).
+in the [libreboot FAQ](../faq.md#what-other-firmware-exists-outside-of-osboot).
 
 Most critical of these are:
 
@@ -70,7 +54,7 @@ Most critical of these are:
 * Intel Management Engine / AMD PSP firmware
 
 Specific binary blobs are also problematic, on most coreboot systems, but they
-differ per machine. The *osboot* project has a *blob minimalization* policy
+differ per machine. The *libreboot* project has a *blob minimalization* policy
 (as opposed to Libreboot's *blob deletion policy*), which you can read about
 in the following section.
 
@@ -82,41 +66,38 @@ Blob *minimalization* policy
 Default configurations
 ----------------------
 
-*Libreboot* has a blob *deletion* policy; it contains no binary blobs, not even
-CPU microcode updates.
-
-The *osboot* project has the following policy, by contrast:
+The *libreboot* project has the following policy:
 
 * If a blob *can* be avoided, it should be avoided. For example, if VGA ROM
   initialization otherwise does a better job but coreboot has *free* init code
-  for a given graphics device, that code should be used in osboot, when
+  for a given graphics device, that code should be used in libreboot, when
   building a ROM image. Similarly, if *memory controller initialization* is
   possible with a binary blob *or* free code in coreboot, the *free* code
-  should be used in ROMs built by `osbmk`, and the *blob* for raminit should
+  should be used in ROMs built by `lbmk`, and the *blob* for raminit should
   not be used; however, if no free init code is available for said raminit,
-  it is permitted and osbmk will use the *blob*.
+  it is permitted and lbmk will use the *blob*.
 * Some nuance is to be observed: on some laptop or desktop configurations, it's
   common that there will be *two* graphics devices (for example, an nvidia and
   an intel chip, using nvidia optimus technology, on a laptop). It may be that
   one of them has free init code in coreboot, but the other one does not. It's
-  perfectly acceptable, and desirable, for osboot to support both devices,
+  perfectly acceptable, and desirable, for libreboot to support both devices,
   and accomodate the required binary blob on the one that lacks native
   initialization.
 * An exception is made for CPU microcode updates: they are permitted, and in
-  fact *required* as per osboot policy. These updates fix CPU bugs, including
+  fact *required* as per libreboot policy. These updates fix CPU bugs, including
   security bugs, and since the CPU already has non-free microcode burned into
-  ROM anyway, the only choice is either *x86* or *broken x86*. Thus, osboot
+  ROM anyway, the only choice is either *x86* or *broken x86*. Thus, libreboot
   will only allow coreboot mainboard configurations where microcode updates
   are *enabled*, if available for the CPU on that mainboard.
-* Intel Management Engine: in the osboot documentation, words *must* be written
+* Intel Management Engine: in the libreboot documentation, words *must* be written
   to tell people how to *neuter* the ME, if possible on a given board.
   The `me_cleaner` program is very useful, and provides a much more secure ME
   configuration.
 * Binary blobs should *never* be deleted, even if they are unused. In the
   coreboot project, a set of `3rdparty` submodules are available, with binary
-  blobs for init tasks on many boards. These must *all* be included in osboot
-  releases, even if unused. That way, even if `osbmk` does not yet integrate
-  support for a given board, someone who downloads osboot can still make
+  blobs for init tasks on many boards. These must *all* be included in libreboot
+  releases, even if unused. That way, even if `lbmk` does not yet integrate
+  support for a given board, someone who downloads libreboot can still make
   changes to their local version of the build system, if they wish, to provide
   a configuration for their hardware.
 
@@ -124,28 +105,28 @@ Generally speaking, common sense is applied. For example, an exception to the
 minimalization might be if *blob* raminit and *free* raminit are available, but
 the *free* one is so broken so as to be unusable. In that situation, the blob
 one should be used instead, because otherwise the user might switch back to an
-otherwise fully proprietary system, instead of using coreboot (via osboot).
+otherwise fully proprietary system, instead of using coreboot (via libreboot).
 
 Configuration
 -------------
 
-The principles above should apply to *default* configurations. However, osboot
+The principles above should apply to *default* configurations. However, libreboot
 is to be *configurable*, allowing the user to do whatever they like.
 
 It's natural that the user may want to create a setup that is *less* free than
-the default one in osboot. This is perfectly acceptable; freedom is superior,
+the default one in libreboot. This is perfectly acceptable; freedom is superior,
 and should be encouraged, but the user's freedom to choose should also be
 respected, and accomodated.
 
 In other words, do not lecture the user. Just try to help them with their
-problem! The goal of the osboot project is simply to make coreboot more
+problem! The goal of the libreboot project is simply to make coreboot more
 accessible for otherwise non-technical users.
 
 FREEDOM CATALOG
 ===============
 
 A *blob status* page should also be made available, educating people about the
-status of binary blobs on each machine supported by `osbmk`.
+status of binary blobs on each machine supported by `lbmk`.
 
 It is desirable to see a world where all hardware and software is free.
 Hardware!?
@@ -174,7 +155,7 @@ The FSF RYF guidelines state the following:
 *"However, there is one exception for secondary embedded processors. The exception applies to software delivered inside auxiliary and low-level processors and FPGAs, within which software installation is not intended after the user obtains the product. This can include, for instance, microcode inside a processor, firmware built into an I/O device, or the gate pattern of an FPGA. The software in such secondary processors does not count as product software."*
 
 This is a violation of every principle the FSF stands for, *and it should be
-rejected on ideological grounds*. The rest of osboot's policy and overall
+rejected on ideological grounds*. The rest of libreboot's policy and overall
 ideology expressed, in this article, will be based largely on that rejection.
 The definition of *product software* is completely arbitrary; software is
 software, and software should always be *free*. Instead of making such
@@ -213,13 +194,13 @@ to user freedom, and ought to be free, but it is completely disregarded by
 the FSF as *part of the hardware*. This is wrong, and the FSF should actively
 actively encourage people to free it, on every laptop!
 
-Other firmware currently outside the reach of the *osboot* project are covered
-in the osboot FAQ page. For example, HDD/SSD firmware is covered in the FAQ.
+Other firmware currently outside the reach of the *libreboot* project are covered
+in the libreboot FAQ page. For example, HDD/SSD firmware is covered in the FAQ.
 Again, completely disregarded and shrugged off by the FSF.
 
-The *osboot* project will not hide or overlook these issues, because they are
-indeed critical, but again, currently outside the scope of what osbmk does.
-At the moment, osbmk concerns itself just with coreboot, but this ought to
+The *libreboot* project will not hide or overlook these issues, because they are
+indeed critical, but again, currently outside the scope of what lbmk does.
+At the moment, lbmk concerns itself just with coreboot, but this ought to
 change in the future.
 
 Examples of FSF *sweeping blobs under the rug*
@@ -250,7 +231,7 @@ provide incentive for levels of software freedom, such as:
   blobs in a format fully documented by Intel (they are just binary configuration
   files), but I went ahead and wrote ich9gen anyway. With ich9gen, you can
   more easily modify the descriptor/gbe regions for your firmware image. See:
-  <https://libreboot.org/docs/install/ich9utils.html> - osboot also has this
+  <https://libreboot.org/docs/install/ich9utils.html> - libreboot also has this
 * FSF once endorsed the ThinkPad T400 with Libreboot, as sold by Minifree. This
   machine comes in two versions: with ATI+Intel GPU, or only Intel GPU. If ATI
   GPU, it's possible to configure the machine so that either GPU is used. If the
@@ -324,7 +305,7 @@ To be clear: it is preferable that microcode be free. The microcode on Intel
 and AMD systems *are* non-free. Facts and feelings rarely coincide; the
 purpose of this section is to spread *facts*.
 
-The *osboot* build system enables microcode updates *by default*, even on
+The *libreboot* build system enables microcode updates *by default*, even on
 boards that Libreboot supports. Libreboot *excludes* microcode updates.
 
 Not including CPU microcode updates is an absolute disaster for system
@@ -393,19 +374,19 @@ Pick your poison. Not adding the updates is *irresponsible*, and ultimately
 futile, because you still end up with non-free microcode anyway, just you get
 an older, buggier version instead!
 
-The *osboot* build system does not apply the two patches linked above! Instead,
+The *libreboot* build system does not apply the two patches linked above! Instead,
 CPU microcode updates are enabled by default, on the affected boards. The
 result is superior IA32 feature control and added PECI support.
 
-The *osboot* project rejects the FSF's narrow, dogmatic view entirely.
+The *libreboot* project rejects the FSF's narrow, dogmatic view entirely.
 
-The osboot firmware is far superior to Libreboot, in terms of reliability, due
+The libreboot firmware is far superior to Libreboot, in terms of reliability, due
 to the presence of microcode updates in the firmware, and with zero practical
 change to your freedom, on libreboot-compatible hardware.
 
 However:
 
-**I will continue to develop Libreboot and osboot, in parallel.**
+**I will continue to develop Libreboot and libreboot, in parallel.**
 
 There are some people who still want Libreboot, who believe in FSF principles
 on this subject, and I believe it would ultimately be damaging if I were to
@@ -422,8 +403,8 @@ people, *because I want everyone to have freedom*. I also believe in freedom of
 choice, and Libreboot is an excellent choice for those who wish to use something
 that complies with FSF criteria.
 
-Thus, I continue developing Libreboot in parallel with osboot, even though
-Libreboot is technically *inferior* to osboot. The *osboot* project is where
+Thus, I continue developing Libreboot in parallel with libreboot, even though
+Libreboot is technically *inferior* to libreboot. The *osboot* project is where
 my heart truly lies. I'm completely in it, whereas Libreboot is something I
 also maintain on the side. I try to do my best, when working on both projects.
 I really don't mind maintaining both of them, because they are actually very
@@ -466,7 +447,7 @@ completely disregards many things that are now possible, including freedoms at
 the hardware level (the RYF criteria only covers *software*). Those guidelines
 are written with assumptions that were still true in the 1990s, but the world
 has since evolved. As of 2 January 2022, Libreboot still complies strictly with
-RYF, and will continue to do so, at least for the time being. The *osboot*
+RYF, and will continue to do so, at least for the time being. The *libreboot*
 project rejects those policies in their entirety, and instead takes a pragmatic
 approach.
 
@@ -480,7 +461,7 @@ As has always been the case, Libreboot tries to always go above and beyond, but
 the Libreboot project does not see RYF as a *gold standard*. There are levels
 of freedom possible now that the RYF guidelines do not cover at all, and in
 some cases even actively discourage/dis-incentivize because it makes compromises
-based on assumptions that are no longer true. The *osboot* project, again,
+based on assumptions that are no longer true. The *libreboot* project, again,
 takes a pragmatic approach, rejecting Libreboot's dogmatic approach entirely.
 
 Sad truth: RYF actively encourages *less* freedom, by not being bold enough.

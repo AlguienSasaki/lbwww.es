@@ -12,10 +12,10 @@ on *bare metal* as a native coreboot payload and does *not* use BIOS or UEFI
 services (but it *can* load and execute SeaBIOS, in addition to any other
 coreboot payload, by chainloading it).
 
-In most circumstances, this guide will not benefit you. osboot's default
+In most circumstances, this guide will not benefit you. libreboot's default
 GRUB configuration file contains scripting logic within it that intelligently
 searches for GRUB partitions installed onto a partition on your SSD, HDD or
-USB drive installed on your computer. If such a file is found, osboot's
+USB drive installed on your computer. If such a file is found, libreboot's
 default GRUB configuration is configured to switch automatically to that
 configuration. While not perfect, the logic *does* work with most
 configurations.
@@ -30,31 +30,31 @@ a known state.
 Compile flashrom and cbfstool
 =============================
 
-osboot does not currently distribute utilities pre-compiled. It only
+libreboot does not currently distribute utilities pre-compiled. It only
 provides ROM images pre-compiled, where feasible. Therefore, you have to build
 the utilities from source.
 
-As for the ROM, there are mainly three methods for obtaining a osboot ROM
+As for the ROM, there are mainly three methods for obtaining a libreboot ROM
 image:
 
 1. Dump the contents of the the main *boot flash* on your system, which already
-   has osboot installed (with GNU GRUB as the default payload). Extract the
+   has libreboot installed (with GNU GRUB as the default payload). Extract the
    GRUB configuration from *that* ROM image.
-2. Extract it from a osboot ROM image supplied by the osboot project, on
-   the osboot website or mirrors of the osboot website.
-3. Build the ROM yourself, using the osboot build system. Instructions for
+2. Extract it from a libreboot ROM image supplied by the libreboot project, on
+   the libreboot website or mirrors of the libreboot website.
+3. Build the ROM yourself, using the libreboot build system. Instructions for
    how to do this are covered in the following article:
-   [How to build osboot from source](../build/)
+   [How to build libreboot from source](../build/)
 
-In either case, you will use the `cbfstool` supplied in the osboot build
+In either case, you will use the `cbfstool` supplied in the libreboot build
 system.
 This can be found under `coreboot/*/util/cbfstool/` as source code,
 where `*` can be any coreboot source code directory for a given mainboard.
 The directory named `default` should suffice.
 
 Install the build dependencies. For Ubuntu 20.04 and similar, you can run
-the following command in the osboot build system, from the root directory
-of the osboot Git repository.
+the following command in the libreboot build system, from the root directory
+of the libreboot Git repository.
 
     ./build dependencies ubuntu2004
 
@@ -73,10 +73,10 @@ For example: `coreboot/default/util/cbfstool/cbfstool`
 
 The `cbfstool` utility is what you shall use. It is used to manipulate CBFS
 (coreboot file system) which is a file system contained within the coreboot
-ROM image; as a *coreboot distribution*, osboot inherits this technology.
+ROM image; as a *coreboot distribution*, libreboot inherits this technology.
 
-You will also want to build `flashrom` which osboot recommends for reading
-from and/or writing to the boot flash. In the osboot build system, you can
+You will also want to build `flashrom` which libreboot recommends for reading
+from and/or writing to the boot flash. In the libreboot build system, you can
 build it by running this command:
 
     ./build module flashrom
@@ -87,10 +87,10 @@ this.
 Dump the boot flash
 ===================
 
-If you wish to modify your *existing* osboot ROM, which was installed on
+If you wish to modify your *existing* libreboot ROM, which was installed on
 your computer, you can use `flashrom` to acquire it.
 
-Simply run the following, after using osboot's build system to compile
+Simply run the following, after using libreboot's build system to compile
 flashrom:
 
     sudo ./flashrom/flashrom -p internal -r dump.bin
@@ -117,7 +117,7 @@ machine powered down) and read the contents of the boot flash.
 Extract grub.cfg
 ================
 
-osboot images that use the GNU GRUB bootloader will have *two* configuration
+libreboot images that use the GNU GRUB bootloader will have *two* configuration
 files in CBFS:
 
 * `grub.cfg`
@@ -130,7 +130,7 @@ When that it done, copy the changes over to `grub.cfg
 
 You can use the following commands to modify the contents of CBFS, where
 GRUB's configuration file is concerned (dump.bin is the ROM that you dumped,
-or it could refer to the osboot ROM image that you compiled or otherwise
+or it could refer to the libreboot ROM image that you compiled or otherwise
 acquired).
 
 Show the contents of CBFS, in your ROM:
@@ -160,7 +160,7 @@ Add your modified `grub.cfg` (substitute with `grubtest.cfg` as desired):
 Flash the modified ROM image
 ============================
 
-Your modified `dump.bin` or other modified osboot ROM can then be re-flashed
+Your modified `dump.bin` or other modified libreboot ROM can then be re-flashed
 using:
 
     sudo ./flashrom -p internal -w dump.bin

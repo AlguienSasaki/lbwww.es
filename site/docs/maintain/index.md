@@ -1,33 +1,33 @@
 ---
-title: osbmk maintenance manual
+title: lbmk maintenance manual
 x-toc-enable: true
 ...
 
 Automated pragmatism
 ====================
 
-This manual describes the nature of `osbmk` (OSBoot MaKe), the automated
-build system used to produce osboot releases. It is intended as a reference
-for *osboot development*.
+This manual describes the nature of `lbmk` (OSBoot MaKe), the automated
+build system used to produce libreboot releases. It is intended as a reference
+for *libreboot development*.
 
-If you simply wish to compile osboot from source, you should instead refer
+If you simply wish to compile libreboot from source, you should instead refer
 to the [build instructions](../build/)
 
-Generally speaking, *testing* releases of osboot will not come with
+Generally speaking, *testing* releases of libreboot will not come with
 documentation; if you're later using *old* testing releases, it is prudent to
 check the `osbwww.git` repository on a revision from around the same time as
-those releases. Future stable releases of osboot will come with a snapshot of
+those releases. Future stable releases of libreboot will come with a snapshot of
 the `osbwww.git` repository, for documentation pertaining to such releases. One
-way to do this, all testing releases of osboot, will be to simply run `git log`
+way to do this, all testing releases of libreboot, will be to simply run `git log`
 on the `news/` section of `osbwww.git` and find the revision that added
 the *announcement* for a given release (when available), and then you can
 just reset to that revision.
 
 As such, you should always refer to the *live* version of this page, on
-osboot.org, when working on the `osbmk.git` repository; the live version is
+libreboot.org, when working on the `lbmk.git` repository; the live version is
 intended for development on the Git repository!
 
-osboot blob reduction policy
+libreboot blob reduction policy
 ============================
 
 The coreboot software is nominally free, but it requires additional binary
@@ -35,9 +35,9 @@ blobs on many supported systems. These *blobs* lack source code, and the
 coreboot project does not control them, but they can be used to perform
 specific initialization tasks.
 
-The osboot project *allows* binary blobs from coreboot, but there is *still* a
+The libreboot project *allows* binary blobs from coreboot, but there is *still* a
 lot of nuance to precisely what is allowed. It is important that you understand
-these nuances, when working on *osboot*.
+these nuances, when working on *libreboot*.
 
 [Please read the blob reduction guidelines](../../news/policy.md)
 
@@ -45,30 +45,30 @@ lbmk
 ====
 
 Libreboot *bans* binary blobs outright, in its build system. This is in stark
-contrast to osboot's more pragmatic policies.
+contrast to libreboot's more pragmatic policies.
 
-Libreboot's own build system is named `lbmk`. The `osbmk` build system is a
+Libreboot's own build system is named `lbmk`. The `lbmk` build system is a
 direct fork of `lbmk`. For your reference:
 
 * [Libreboot's lbmk maintenance manual](https://libreboot.org/docs/maintain/)
 * [Libreboot's blob deletion policy](https://libreboot.org/news/policy.html)
 
-These should have no bearing on osboot development, but you may wish to
-educate yourself about the differences. Any changes that you submit to osboot
+These should have no bearing on libreboot development, but you may wish to
+educate yourself about the differences. Any changes that you submit to libreboot
 may in fact be used in Libreboot aswell, and vice versa, if those changes are
 either not board-specific (such as build system changes), or they are changes
-made to hardware supported by both osboot and libreboot.
+made to hardware supported by both libreboot and libreboot.
 
-The reason is simple: Libreboot and osboot both have the same fundamental
+The reason is simple: Libreboot and libreboot both have the same fundamental
 design in their build system. They differ in only very minor aspects, but the
 core logic is identical. Documentation is also shared between both projects,
 lead by Leah Rowe who founded *both* projects.
 
-What is osbmk?
+What is lbmk?
 ==============
 
 In the same way that Trisquel and Debian are GNU+Linux distributions, OSboot
-is a **coreboot distribution**. The `osbmk` build system *is* that distro,
+is a **coreboot distribution**. The `lbmk` build system *is* that distro,
 providing the glue necessary to integrate coreboot plus anything else that's
 needed, unifying everything in a completely automated and pre-configured
 fashion, so as to provide a distribution that is ease to install and use by
@@ -76,18 +76,18 @@ non-technical users.
 
 In the past, installation of coreboot **required** extensive amounts of
 configuration by the user, because there was no automation available. It was a
-problem, and one that `osbmk` has *solved*; it is a problem, because most users
-simply want to *install* coreboot without giving it much thought. The `osbmk`
+problem, and one that `lbmk` has *solved*; it is a problem, because most users
+simply want to *install* coreboot without giving it much thought. The `lbmk`
 build system is written for *those* people, while also providing some
 flexibility for those who do want to tinker and get their hands dirty.
 
-The `osbmk` build system is designed to be simple. Each part of it is its own
+The `lbmk` build system is designed to be simple. Each part of it is its own
 separate program, which is to run independently. *Write one program that does
 one thing well*.
 
-Technically, `osbmk` isn't necessarily a build system, but rather, a handful of
+Technically, `lbmk` isn't necessarily a build system, but rather, a handful of
 small scripts that run other scripts, or even C programs if you wish. What
-makes `osbmk` *be* `osbmk` is what each individual script does, and how scripts
+makes `lbmk` *be* `osbmk` is what each individual script does, and how scripts
 interact with or call each other to produce working ROM images. It takes
 a *light touch* approach, providing only the most minimal glue necessary to
 build working ROM images that the user can install, with sane defaults, while
@@ -96,60 +96,60 @@ describing how to do just that. User-friendly documentation is provided, with
 simple installation steps, automating as much of it as possible.
 
 *This* document is different. The document you're reading right now is written
-for *technical* users who want to know how osboot is put together.
+for *technical* users who want to know how libreboot is put together.
 
-The osbmk design also helps to ease copyright licensing and compliance, because
-each part of osbmk is literally its own separate program. With this design, it
+The lbmk design also helps to ease copyright licensing and compliance, because
+each part of lbmk is literally its own separate program. With this design, it
 means that most scripts do not directly link/embed/include each other. Because
 of this, it's much easier to have different licenses in use for different
-files. Generally speaking, osbmk is GNU GPLv3+, but it's perfectly OK, for
+files. Generally speaking, lbmk is GNU GPLv3+, but it's perfectly OK, for
 example, to add files that are GPLv2 or other licenses. By comparison, if you
 were to have a C program under GPLv3, you could not \#include C libraries that
 are GPLv2, at least not directly, or there would be many pitfalls to avoid at
-the very least. With osbmk's design, you can think of it as like when you have
+the very least. With lbmk's design, you can think of it as like when you have
 many programs running in your operating system, and not all of those programs
 are under the same license, and most of those different licenses are not
 compatible with each other; this is perfectly OK there, and it's OK here too.
 
 The purpose of this document is to (hopefully) cause you to understand the
-entire build system in osboot, so that you can contribute patches or
+entire build system in libreboot, so that you can contribute patches or
 otherwise make whatever changes you like. As such, this is a reference guide
-for osboot development.
+for libreboot development.
 
 OSboot is a *coreboot distro*, focusing on integration. As such, direct
 development on software such as coreboot, GNU GRUB, SeaBIOS etc should ideally
-be done upstream, or if it's a project hosted by osboot (such as ich9utils)
+be done upstream, or if it's a project hosted by libreboot (such as ich9utils)
 developed in the corresponding separate repository.
 
 This document is written for developers and power users alike, or otherwise for
-anyone who is curious enough to learn more about what *makes* osboot!
+anyone who is curious enough to learn more about what *makes* libreboot!
 
-A major planned addition to osbmk in the future is: use it to implement a small
+A major planned addition to lbmk in the future is: use it to implement a small
 busybox+linux distribution, with musl libc, plus u-root, and implement a
-linux-based bootloader setup similar to Heads, but do it *osbmk-style*. The
-osbmk build system is designed for absolute simplicity and modularity, making
+linux-based bootloader setup similar to Heads, but do it *lbmk-style*. The
+lbmk build system is designed for absolute simplicity and modularity, making
 it easy to understand and maintain. It intentionally avoids use of rather
-complicated programs such as GNU Autoconf; the Makefile in osbmk is just bolted
-on but it not required. The `osbmk` build system is a *non-design*; it evolved
+complicated programs such as GNU Autoconf; the Makefile in lbmk is just bolted
+on but it not required. The `lbmk` build system is a *non-design*; it evolved
 over time, into what it is today. Its modularity and simplicity of non-design
 allows you to easily rewrite large parts of it, whenever you want to do so.
 
-osbmk is largely written in GNU BASH, and this is unlikely to change in the
-future. However, osbmk integrates several projects such as coreboot, GNU GRUB
-or SeaBIOS, and these all have *their* own build systems aswell. The `osbmk`
+lbmk is largely written in GNU BASH, and this is unlikely to change in the
+future. However, lbmk integrates several projects such as coreboot, GNU GRUB
+or SeaBIOS, and these all have *their* own build systems aswell. The `lbmk`
 build system is the glue that puts all of these together to produce ROM images
-for users, in a completely automated fashion. The purpose of `osbmk` is to
+for users, in a completely automated fashion. The purpose of `lbmk` is to
 provide an *unattended* build process, with as little user interaction as
-possible. Thus, `osbmk` is an *automated build system*. It says on the osboot
-home page that osboot is a *coreboot distribution* in much the same way that
-Trisquel is a *GNU+Linux distribution*, and `osbmk` is what implements that!
+possible. Thus, `lbmk` is an *automated build system*. It says on the libreboot
+home page that libreboot is a *coreboot distribution* in much the same way that
+Trisquel is a *GNU+Linux distribution*, and `lbmk` is what implements that!
 
-Continue reading, and you will learn of each file contained in `osbmk`. This
-document largely pertains to the version of `osbmk` as hosted in `osbmk.git`,
+Continue reading, and you will learn of each file contained in `lbmk`. This
+document largely pertains to the version of `lbmk` as hosted in `osbmk.git`,
 but this manual also covers source code archives containing the full downloaded
 set of modules such as coreboot and GRUB.
 
-In general, it is advisable to open *every* file in osbmk, after you downloaded
+In general, it is advisable to open *every* file in lbmk, after you downloaded
 it (from the Git repository), and study the logic in great detail. This manual
 attempts to explain all of it, and provide a general idea, but nothing beats
 simply *studying* the logic directly.
@@ -157,15 +157,15 @@ simply *studying* the logic directly.
 AUTOMATED automation
 ====================
 
-Every part of osbmk checks if the prerequisite steps are done, and does them
+Every part of lbmk checks if the prerequisite steps are done, and does them
 automatically if not. The `roms_helper` script is no different; for example, it
 automatically downloads coreboot if not present, aswell as GRUB and everything
-else. You can run each and every part of osbmk without having to worry about
+else. You can run each and every part of lbmk without having to worry about
 running something before it, because it is handled automatically; if that is
 ever not the case, it's a bug that should be fixed immediately (in Libreboot
 20160907, such fine tuned automation did not exist and you did have to run
 specific parts of the build system manually, in a precise order, but this is
-no longer the case in modern `lbmk` or `osbmk`).
+no longer the case in modern `lbmk` or `lbmk`).
 
 Another example: if you run `./build payload grub` but `./build module grub` is
 not completed, it will automatically run that first, to produce
@@ -175,40 +175,40 @@ Another example: if you run `./build boot roms` and crossgcc isn't yet built
 for the revision used on each given board, it will automatically compile that
 version of it, using *that* coreboot tree's own build system to do it.
 
-This level of automation means that modern `lbmk` and `osbmk` are both much
+This level of automation means that modern `lbmk` and `lbmk` are both much
 easier to use, compared to the build system present in Libreboot 20160907.
 Massive improvements to that build system were made, during most of 2021, when
-implementing both the `osbmk` *and* `lbmk` build systems.
+implementing both the `lbmk` *and* `lbmk` build systems.
 
-All sections below pertain to actual files in osbmk:
+All sections below pertain to actual files in lbmk:
 
 COPYING
 =======
 
 This file contains a copy of the GNU General Public License, version 3.0. It is
-the license that most parts of `osbmk` are released under.
+the license that most parts of `lbmk` are released under.
 
 Makefile
 ========
 
-For use with GNU Make, this is a frontend to `osbmk`, which can be used to run
-various commands in `osbmk`.
+For use with GNU Make, this is a frontend to `lbmk`, which can be used to run
+various commands in `lbmk`.
 
 Use of this file is purely optional, and largely beneficial if you simply want
-to build all of `osbmk` (just run `make` when the current work directory is the
-root directory of `osbmk`).
+to build all of `lbmk` (just run `make` when the current work directory is the
+root directory of `lbmk`).
 
 README.md
 =========
 
-This file contains a brief description of osboot, along with information
+This file contains a brief description of libreboot, along with information
 about the project
 
 build
 =====
 
-This is the main BASH script, part of `osbmk`, used for running most `osbmk`
-commands. You could say that this file *is* `osbmk`. Run `./build help` for
+This is the main BASH script, part of `lbmk`, used for running most `osbmk`
+commands. You could say that this file *is* `lbmk`. Run `./build help` for
 usage instructions.
 
 It calls scripts in `resources/scripts/build/`. For example, the
@@ -246,7 +246,7 @@ You may also refer to the [build instructions](../build)
 download
 ========
 
-This is the main BASH script for downloading various components used by `osbmk`.
+This is the main BASH script for downloading various components used by `lbmk`.
 For example, this script downloads coreboot. Scripts called by `download` may
 also apply patches and such, to the corresponding project; for example, it will
 apply custom patches to GNU GRUB.
@@ -294,18 +294,18 @@ This would run:
 projectname
 ===========
 
-This file contains a single line of text, with the string "osboot".
+This file contains a single line of text, with the string "libreboot".
 
-If you were to fork osboot, you could very easily just modify this file, so
-as to rename your fork in a largely automated way. Many parts of osbmk use this
+If you were to fork libreboot, you could very easily just modify this file, so
+as to rename your fork in a largely automated way. Many parts of lbmk use this
 file.
 
 resources/coreboot/
 ===================
 
 This directory contains configuration, patches and so on, for each mainboard
-supported in the `osbmk` build system. These directories contain such
-configuration, so that `osbmk` can build working ROM images.
+supported in the `lbmk` build system. These directories contain such
+configuration, so that `lbmk` can build working ROM images.
 
 The scripts in `resources/scripts/build/boot/` make heavy use of this
 directory.
@@ -348,9 +348,9 @@ be `coreboot/bar/`. ALSO:
 
 FUN FACT: such references are infinitely checked until resolved. For
 example, `foo` can refer to `bar` and `bar` can refer to `baz` but if there is
-an infinite loop, this is detected and handled by `osbmk`. For example,
+an infinite loop, this is detected and handled by `lbmk`. For example,
 if `bar` refers to `foo` which refers back to `bar`, this is not permitted
-and will throw an error in `osbmk`.
+and will throw an error in `lbmk`.
 
 The `romtype` entry largely defines what `./build boot roms` does once the ROM
 is built; for example, `romtype="4MiB ICH9 IFD NOR flash"` would specify that
@@ -358,13 +358,13 @@ an Intel Flash Descriptor for ICH9M, generated by `ich9gen`, would have to be
 inserted.
 
 The `cbrevision` entry defines which coreboot revision to use, from the
-coreboot Git repository. *At present, osbmk only supports use of the official
+coreboot Git repository. *At present, lbmk only supports use of the official
 repository from the upstream coreboot project*.
 
 The `arch` entry specifies which CPU architecture is to be used: currently
 recognized entries are `x86_32`, `x86_64` and `ARMv7`. *At present, setting it
 to ARMv7 only means that crossgcc-arm will be compiled, but no support for
-actually building ROMs exists in osbmk exists yet, except for 32-bit and 64-bit
+actually building ROMs exists in lbmk exists yet, except for 32-bit and 64-bit
 x86 machines.*
 
 The `payload_grub` entry specifies whether or not GNU GRUB is to be included in
@@ -408,7 +408,7 @@ Configuration file names can be as follows:
 Information pertaining to this can be found on
 the [installation manual](../install/)
 
-In `osbmk`, a board-specific directory under `resources/coreboot/` should never
+In `lbmk`, a board-specific directory under `resources/coreboot/` should never
 specify a coreboot revision. Rather, a directory *without* coreboot configs
 should be created, specifying a coreboot revision. For example, the
 directory `resources/coreboot/default/` specifies a coreboot revision. In the
@@ -417,7 +417,7 @@ specify `cbtree="default"` but without specifying a coreboot revision (this
 is specified by `resources/coreboot/default/board.cfg`).
 
 When you create a coreboot configuration, you should set the payload to *none*
-because `osbmk` itself will assume that is the case, and insert payloads itself.
+because `lbmk` itself will assume that is the case, and insert payloads itself.
 
 Configurations with `libgfxinit` will use coreboot's native graphics init code
 if available on that board. If the file name has `txtmode` in it, coreboot
@@ -438,7 +438,7 @@ the VGA ROM (on an add-on graphics card, as opposed to onboard chipset), you
 should have a *separate* directory just for that, under `resources/coreboot/`;
 another directory for that board will have configs with `libgfxinit`. HOWEVER:
 
-It *is* supported in osbmk to have SeaBIOS used, on either setup. In the
+It *is* supported in lbmk to have SeaBIOS used, on either setup. In the
 directory `resources/seabios/` there are SeaBIOS configs for both; the vgarom
 one sets VGA hardware type to *none* while the libgfxinit one sets it
 to *coreboot linear framebuffer*. However, if you use SeaBIOS on a setup with
@@ -448,7 +448,7 @@ SeaBIOS, but the board has libgfxinit, it is recommended that you do it from
 a `libgfxinit` ROM.
 
 HOWEVER: there's no hard and fast rule. For example, you could make a vgarom
-configuration, on a board in osbmk, but in its coreboot configuration, don't
+configuration, on a board in lbmk, but in its coreboot configuration, don't
 enable native init *or* oproms, and do SeaBIOS-only on that board.
 
 On `vgarom` setups, coreboot can be configured to start with a high resolution
@@ -481,7 +481,7 @@ This and other documents from coreboot shall help you to understand *coreboot*.
 
 You create a config, for `resources/coreboot/BOARDNAME/configs`, by running
 the `make menuconfig` command in the *coreboot* build system. You should do
-this after running `./download coreboot` in osbmk.
+this after running `./download coreboot` in lbmk.
 
 You can simply clone coreboot upstream, add whatever patches you want, and
 then you can make your config. It will appear afterwards in a file
@@ -495,15 +495,15 @@ The *base* revision, upon which any custom patches you wrote are applied,
 shall be the `cbrevision` entry.
 
 REMINDER: Do not enable a payload in coreboot's build system. Set it
-to *none*, and enable whatever payload you want in osbmk.
+to *none*, and enable whatever payload you want in lbmk.
 
-If a payload is not supported in osbmk, patches are very much welcome! It is
-the policy of osboot, to only ever use the *coreboot* build system inside
+If a payload is not supported in lbmk, patches are very much welcome! It is
+the policy of libreboot, to only ever use the *coreboot* build system inside
 coreboot, but not use any of *coreboot's* own integration for payloads. It is
 far more flexible and *robust* to handle payloads externally, relative to the
 coreboot build system.
 
-Scripts exist in `osbmk` for automating the modification/updating of *existing*
+Scripts exist in `lbmk` for automating the modification/updating of *existing*
 configs, but not for adding them. Adding them is to be done manually, based on
 the above guidance.
 
@@ -524,8 +524,8 @@ the command `./download coreboot`, those patches will be applied chronologically
 in alphanumerical order as per patch file names.
 
 The patch files should be named with `.patch` file extensions. All other files
-will be ignored. By having `osbmk` do it this way, you could add a `README` file
-for instance, and `osbmk` will not erroneously try to apply `README` as though
+will be ignored. By having `lbmk` do it this way, you could add a `README` file
+for instance, and `lbmk` will not erroneously try to apply `README` as though
 it were a patch file. This might be useful if you have a *lot* of patches, and
 you want to provide some explanations about specific files.
 
@@ -556,7 +556,7 @@ resources/grub/keymap/
 ======================
 
 This directory contains keymaps for GRUB. They allow for different keyboard
-layouts to be used. The `osbmk` build system uses these to produce ROM images
+layouts to be used. The `lbmk` build system uses these to produce ROM images
 with various keyboard layouts used by default, when the GRUB payload is to be
 used.
 
@@ -627,7 +627,7 @@ for `romtype`:
 
 * `4MiB IFD BIOS region` will cause only the upper 4MB section of the ROM
   to be included in a release. This option is largely deprecated, a hangover
-  from osboot, which also no longer uses this option on any boards, and it is
+  from libreboot, which also no longer uses this option on any boards, and it is
   thus subject for removal.
 * `d8d16sas` will cause *fake* (empty) files named `pci1000,0072.rom`
   and `pci1000,3050.rom` to be inserted in CBFS. This prevents SeaBIOS from
@@ -654,7 +654,7 @@ for `romtype`:
   part). In all cases, the default *ME* (Intel Management Engine) region is
   disabled, as is the ME itself, based on bits set to disable it in the Intel
   Flash Descriptor. The descriptor is used in such a setup, because on all
-  such boards in osboot, GbE NVM is needed to get gigabit ethernet working
+  such boards in libreboot, GbE NVM is needed to get gigabit ethernet working
   correctly; it is the sole reason `ich9gen` was written, because it is
   otherwise possible to boot these machines in a *descriptorless* setup, where
   ICH9M behaves similarly to ICH7: all one region of flash, for the boot
@@ -690,14 +690,14 @@ used, in which case the option is set to *0* (disabled) because coreboot is
 then expected to handle option ROMs, and SeaBIOS should not do it.
 
 Essentially, the `roms_helper` script makes use of each and every part of
-osbmk. It is the heart of osboot.
+lbmk. It is the heart of libreboot.
 
 When the ROM is finished compiling, it will appear under a directory in `bin/`
 
 resources/scripts/build/clean/cbutils
 =====================================
 
-This simply runs `make clean` on various utilities from coreboot, which osbmk
+This simply runs `make clean` on various utilities from coreboot, which lbmk
 makes use of.
 
 Command: `./build clean cbutils`
@@ -706,7 +706,7 @@ resources/scripts/build/clean/crossgcc
 ======================================
 
 This runs `make crossgcc-clean` on all of the coreboot revisions present in
-osbmk.
+lbmk.
 
 Command: `./build clean crossgcc`
 
@@ -882,7 +882,7 @@ in `resources/coreboot/`.
 
 Command: `./download coreboot`
 
-NOTE: Unlike `lbmk`, the version of this in `osbmk` does not delete blobs at
+NOTE: Unlike `lbmk`, the version of this in `lbmk` does not delete blobs at
 all. It also does not delete Git history. Everything is fully preserved.
 
 NOTE: This version of the script also performs the full git checkout in each
@@ -895,7 +895,7 @@ The `lbmk` version only does this:
     git submodule update --init
 
 The coreboot project sets up its Git repository, in such a way where most blobs
-are skipped if you omit `--checkout`. Since osbmk's policy is to *include*
+are skipped if you omit `--checkout`. Since lbmk's policy is to *include*
 these in its distribution, it makes sense to use `--checkout`.
 
 resources/scripts/download/flashrom
@@ -980,7 +980,7 @@ resources/scripts/update/seabios/configs
 ========================================
 
 This runs `make oldconfig` on SeaBIOS configs. It is most useful when updating
-the version of SeaBIOS used by osbmk.
+the version of SeaBIOS used by lbmk.
 
 Command: `./update seabios configs`
 

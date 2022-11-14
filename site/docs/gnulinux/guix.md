@@ -7,7 +7,7 @@ Objective
 =========
 
 To provide step-by-step guide for setting up guix system (stand-alone guix) with
-full disk encryption (including /boot) on devices powered by osboot.
+full disk encryption (including /boot) on devices powered by libreboot.
 
 Scope
 =====
@@ -317,7 +317,7 @@ Post-Installation
 On reboot, as soon as you see the GNU GRUB menu, choose the option
 'Load Operating System [o]'
 
-Enter LUKS Key, for osboot's grub, as prompted.
+Enter LUKS Key, for libreboot's grub, as prompted.
 
 You may have to go through warning prompts by repeatedly pressing the
 "enter/return" key.
@@ -362,7 +362,7 @@ update/upgrade part of post-installation section, to keep your guix distribution
 and guix system updated.
 
 That is it! You have now setup guix system with full-disk encryption on your
-device powered by osboot. Enjoy!
+device powered by libreboot. Enjoy!
 
 References
 ==========
@@ -376,14 +376,14 @@ Acknowledgements
 for helping me with the Guile Scheme Code for the Bootloader Configuration.
 
 This guide was originally written for the Libreboot project, and later adapted
-for the osboot project. This fact is clearly stated, out of respect to the
+for the libreboot project. This fact is clearly stated, out of respect to the
 Guix project; it is a GNU project, and therefore probably does not agree with
-the policies of the osboot project. Rather, they most likely agree with the
+the policies of the libreboot project. Rather, they most likely agree with the
 Libreboot policies instead. This paragraph is written simply to provide such
 clarification, so that people do not think the GNU project (or FSF) endorse or
-condone osboot in any way; they do not.
+condone libreboot in any way; they do not.
 
-The osboot project respects GNU, and it is itself a project that aims to bring
+The libreboot project respects GNU, and it is itself a project that aims to bring
 as much free software as possible to everyone, on as much hardware as possible.
 Without the GNU project, it is unlikely that we would have much Free Software
 today; there were others that started around the same time, but GNU was the
@@ -392,7 +392,7 @@ Today, GNU is still a driving force in the Free Software movement.
 
 Respect the GNU project. Cherish it.
 
-The osboot policies are written here: [binary blob reduction
+The libreboot policies are written here: [binary blob reduction
 policy](../../news/policy.md)
 
 The *libreboot* policies are here: [binary blob deletion

@@ -18,7 +18,7 @@ and no other coreboot payload provides this functionality.
 If booting in text mode
 =======================
 
-osboot ROM images are provided, which will either boot the system in classic
+libreboot ROM images are provided, which will either boot the system in classic
 text mode, or with a framebuffer implemented by coreboot for video display
 initialization (not to be confused with int10h VGA modes).
 
@@ -44,10 +44,10 @@ would presumably handle INT10H VGA modes.
 Boot the installer
 ==================
 
-osboot on x86 can use the GNU GRUB bootloader as a bare metal coreboot
+libreboot on x86 can use the GNU GRUB bootloader as a bare metal coreboot
 [payload](http://www.coreboot.org/Payloads#GRUB_2) if you wish, which
 means that the GRUB configuration file (where your GRUB menu comes from)
-is stored directly alongside osboot and its GRUB payload executable,
+is stored directly alongside libreboot and its GRUB payload executable,
 inside the flash chip. In context, this means that installing
 distributions and managing them is handled slightly differently compared
 to traditional BIOS or UEFI systems.
@@ -55,7 +55,7 @@ to traditional BIOS or UEFI systems.
 On most systems, the `/boot/` partition has to be left unencrypted while
 the others are encrypted. This is so that GRUB, and therefore the
 kernel, can be loaded and executed since the firmware can't open a LUKS
-volume. Not so with osboot! Since GRUB is already included directly
+volume. Not so with libreboot! Since GRUB is already included directly
 as a payload, even `/boot/` can be encrypted. This protects /boot from
 tampering by someone with physical access to the system.
 
@@ -163,7 +163,7 @@ Tasksel
 =======
 
 For Debian, use the *MATE* option, or one of the others if you want. The
-osboot project recommends MATE, unless you're saavy enough to choose
+libreboot project recommends MATE, unless you're saavy enough to choose
 something else.
 
 If you want debian-testing, then you should only select barebones
@@ -208,7 +208,7 @@ Booting your system
 
 If you didn't install GRUB during the net installation process, don't worry.
 You can boot your installed system manually, using the *terminal* in GRUB on
-your boot flash (the version that osboot gives you).
+your boot flash (the version that libreboot gives you).
 
 At this point, you will have finished the installation. At your GRUB
 payload, press C to get to reach the GRUB terminal and enter these commands:

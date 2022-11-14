@@ -22,11 +22,11 @@ Instructions are also on that page for sending patches (via pull requests).
 IRC chatroom
 ============
 
-IRC is the main way to contact the osboot project. `#osboot` on Libera
+IRC is the main way to contact the libreboot project. `#libreboot` on Libera
 IRC.
 
 Webchat:
-<https://web.libera.chat/#osboot>
+<https://web.libera.chat/#libreboot>
 
 Libera is one of the largest IRC networks, used for Free Software projects.
 Find more about them here: <https://libera.chat/>
@@ -35,7 +35,7 @@ If you wish to connect using your preferred client (such as weechat or irssi),
 the connection info is as follows:
 
 * Server: `irc.libera.chat`
-* Channel: `#osboot`
+* Channel: `#libreboot`
 * Port (TLS): `6697`
 * Port (non-TLS): `6667`
 
@@ -53,12 +53,12 @@ In general, you should check the documentation provided by your IRC software.
 Social media
 ============
 
-osboot exists officially on many places.
+libreboot exists officially on many places.
 
 Twitter and Mastodon
 --------------------
 
-News announcements: <https://twitter.com/OSBootFirmware/>
+News announcements: <https://twitter.com/libreboot/>
 
 The founder and lead developer, Leah Rowe, is also on Twitter and Mastodon:
 
@@ -72,4 +72,4 @@ Reddit
 ------
 
 Mostly used as a support channel, and also for news announcements:
-<https://www.reddit.com/r/osboot/>
+<https://www.reddit.com/r/libreboot/>

@@ -3,19 +3,19 @@ title: Code review
 x-toc-enable: true
 ...
 
-osboot repositories
+libreboot repositories
 ===================
 
-Information about who works on osboot and who runs the project can be
+Information about who works on libreboot and who runs the project can be
 found on [who.md](who.md)
 
-The `osboot` project has 3 main Git repositories:
+The `libreboot` project has 3 main Git repositories:
 
-* Build system: <https://notabug.org/osboot/osbmk>
-* Website (+docs): <https://notabug.org/osboot/osbwww>
-* Images (for website): <https://notabug.org/osboot/osbwww-img>
+* Build system: <https://notabug.org/libreboot/lbmk>
+* Website (+docs): <https://notabug.org/libreboot/osbwww>
+* Images (for website): <https://notabug.org/libreboot/osbwww-img>
 
-There is also these programs, hosted by the Libreboot project, and osboot
+There is also these programs, hosted by the Libreboot project, and libreboot
 either recommends them or makes use of them:
 
 * Bucts (utility): <https://notabug.org/libreboot/bucts>
@@ -24,78 +24,78 @@ either recommends them or makes use of them:
 You can download any of these repositories, make whatever changes you like, and
 then submit your changes using the instructions below.
 
-It is recommended that you build osboot (all parts of it) in a GNU+Linux
-distribution. For example, the build system (osbmk) is untested on BSD systems.
+It is recommended that you build libreboot (all parts of it) in a GNU+Linux
+distribution. For example, the build system (lbmk) is untested on BSD systems.
 Install `git` in your GNU+Linux system, and download one of the repositories.
 
-Development of osboot is done using the Git version control system.
+Development of libreboot is done using the Git version control system.
 Refer to the [official Git documentation](https://git-scm.com/doc) if you don't
 know how to use Git.
 
-The `bucts` repository is hosted by the osboot project, because the original
+The `bucts` repository is hosted by the libreboot project, because the original
 repository on `stuge.se` is no longer available, last time we checked. The
 `bucts` program was written by Peter Stuge. You need `bucts` if you're flashing
-internally an osboot ROM onto a ThinkPad X60 or T60 that is currently running
+internally an libreboot ROM onto a ThinkPad X60 or T60 that is currently running
 the non-free Lenovo BIOS. Instructions for that are available here:\
-[osboot installation guides](docs/install/)
+[libreboot installation guides](docs/install/)
 
-The `ich9utils` repository is used heavily, by the `osbmk` build system. However,
+The `ich9utils` repository is used heavily, by the `lbmk` build system. However,
 you can also download `ich9utils` on its own and use it. It generates ICH9M
 descriptor+GbE images for GM45 ThinkPads that use the ICH9M southbridge. It may
 also work for other systems using the same platform/chipset.
 Documentation for `ich9utils` is available here:\
 [ich9utils documentation](docs/install/ich9utils.md)
 
-osbmk (osboot-make)
+lbmk (libreboot-make)
 ---------------------
 
-This is the core build system in osboot. You could say that `osbmk` *is*
-osboot! Download the Git repository:
+This is the core build system in libreboot. You could say that `lbmk` *is*
+libreboot! Download the Git repository:
 
-    git clone https://notabug.org/osboot/osbmk
+    git clone https://notabug.org/libreboot/lbmk
 
-The `git` command, seen above, will download the osboot build system `osbmk`.
+The `git` command, seen above, will download the libreboot build system `lbmk`.
 You can then go into it like so:
 
-    cd osbmk
+    cd lbmk
 
 Make whatever changes you like, or simply build it. For instructions on how to
-build `osbmk`, refer to the [build instructions](docs/build/).
+build `lbmk`, refer to the [build instructions](docs/build/).
 
 Information about the build system itself, and how it works, is available in
-the [osbmk maintenance guide](docs/maintain/).
+the [lbmk maintenance guide](docs/maintain/).
 
 osbwww and osbwww-img
 -------------------
 
-The *entire* osboot website and documentation is hosted in a Git repository.
+The *entire* libreboot website and documentation is hosted in a Git repository.
 Download it like so:
 
-    git clone https://notabug.org/osboot/osbwww
+    git clone https://notabug.org/libreboot/osbwww
 
-Images are hosted on <https://av.osboot.org/> and available in a separate
+Images are hosted on <https://av.libreboot.org/> and available in a separate
 repository:
 
-    git clone https://notabug.org/osboot/osbwww-img
+    git clone https://notabug.org/libreboot/osbwww-img
 
 Make whatever changes you like. See notes below about how to send patches.
 
 The entire website is written in Markdown, specifically the Pandoc version of
 it. The static HTML pages are generated with [Untitled](https://untitled.vimuser.org/).
-Leah Rowe, the founder of osboot, is also the founder of the Untitled static
+Leah Rowe, the founder of libreboot, is also the founder of the Untitled static
 site generator project.
 
 If you like, you can set up a local HTTP server and build your own local
 version of the website. Please note that images will still link to the ones
-hosted on <https://av.osboot.org/>, so any images that you add to `osbwww-img`
+hosted on <https://av.libreboot.org/>, so any images that you add to `osbwww-img`
 will not show up on your local `lbwww` site if you make the image links (for
-images that you add) link to `av.osboot.org`. However, it is required that such
-images be hosted on av.osboot.org.
+images that you add) link to `av.libreboot.org`. However, it is required that such
+images be hosted on av.libreboot.org.
 
 Therefore, if you wish to add images to the website, please also submit to the
 `lbwww-img` repository, with the links to them being
-<https://av.osboot.org/path/to/your/new/image/in/osbwww-img> for each one.
-When it is merged on the osboot website, your images will appear live.
+<https://av.libreboot.org/path/to/your/new/image/in/osbwww-img> for each one.
+When it is merged on the libreboot website, your images will appear live.
 
 For development purposes, you might make your images local links first, and
 then adjust the URLs when you submit your documentation/website patches.
@@ -115,8 +115,8 @@ everyone can access. This includes the name and email address of the
 contributor.
 
 In Git, for author name and email address, you do not have to use identifying
-data. You can use `osboot Contributor` and your email address could be
-specified as contributor@osboot.org. You are permitted to do this, if
+data. You can use `libreboot Contributor` and your email address could be
+specified as contributor@libreboot.org. You are permitted to do this, if
 you wish to maintain privacy. We believe in privacy. If you choose to remain
 anonymous, we will honour this.
 
@@ -146,29 +146,29 @@ We require all patches to be submitted under a free license:
 the default, restrictive copyright laws apply, which would make your work
 non-free.
 
-GNU+Linux is generally recommended as the OS of choice, for osboot
-development. However, BSD operating systems also boot on osboot machines.
+GNU+Linux is generally recommended as the OS of choice, for libreboot
+development. However, BSD operating systems also boot on libreboot machines.
 
 Send patches
 ------------
 
 Make an account on <https://notabug.org/> and navigate (while logged in) to the
 repository that you wish to work on. Click *Fork* and in your account,
-you will have your own repository of osboot. Clone your repository, make
+you will have your own repository of libreboot. Clone your repository, make
 whatever changes you like to it and then push to your repository, in your
 account on NotABug. You can also do this on a new branch, if you wish.
 
-In your Notabug account, you can then navigate to the official osboot
+In your Notabug account, you can then navigate to the official libreboot
 repository and submit a Pull Request. The way it works is similar to other
 popular web-based Git platforms that people use these days.
 
-You can submit your patches there. Alternative, you can log onto the osboot
+You can submit your patches there. Alternative, you can log onto the libreboot
 IRC channel and notify the channel of which patches you want reviewed, if you
 have your own Git repository with the patches.
 
-Once you have issued a Pull Request, the osboot maintainers will be notified
+Once you have issued a Pull Request, the libreboot maintainers will be notified
 via email. If you do not receive a fast enough response from the project, then
-you could also notify the project via the `#osboot` channel on Libera Chat.
+you could also notify the project via the `#libreboot` channel on Libera Chat.
 
 Another way to submit patches is to email Leah Rowe directly:
 [leah@libreboot.org](mailto:leah@libreboot.org) is Leah's project email address.

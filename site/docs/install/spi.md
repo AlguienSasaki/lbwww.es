@@ -6,7 +6,7 @@ x-toc-enable: true
 This guide will teach you how to use various tools for externally reprogramming
 a 25xx NOR flash via SPI protocol. This is the most common type of flash IC for
 computers that coreboot runs on. Almost every system currently supported by
-osboot uses this type of boot flash; the only exception is ASUS KFSN4-DRE,
+libreboot uses this type of boot flash; the only exception is ASUS KFSN4-DRE,
 which uses LPC flash in a PLCC32 socket, which you can simply hot-swap after
 booting the vendor firmware, and then flash internally. Simple!
 
@@ -14,7 +14,7 @@ We will be using
 the [flashrom](https://flashrom.org/Flashrom) software which is written to
 dump, erase and rewrite these flash chips.
 
-osboot currently documents how to use these SPI programmers:
+libreboot currently documents how to use these SPI programmers:
 
 * Raspberry Pi (RPi)
 * BeagleBone Black (BBB)
@@ -22,10 +22,10 @@ osboot currently documents how to use these SPI programmers:
 Many other SPI programmers exist. More of them will be documented on this page,
 at a date in the future.
 
-Most systems in osboot have to be re-flashed externally, using instructions
+Most systems in libreboot have to be re-flashed externally, using instructions
 on this and similar guides, the first time you flash. However, on all currently
 supported systems, it's possible that you can re-flash *internally* when
-osboot is running.
+libreboot is running.
 
 *Internal* flashing means that the host CPU on your system can re-program the
 SPI flash, using an on-board SPI programmer (which all boards have). You do this
@@ -37,7 +37,7 @@ is called *external* because it's not the *internal* one on your mainboard.
 Do not use CH341A!
 ==================
 
-NOR flashes on osboot systems run on 3.3V DC, and this includes data lines.
+NOR flashes on libreboot systems run on 3.3V DC, and this includes data lines.
 CH341A has 5V logic levels on data lines, which will damage your SPI flash and
 also the southbridge that it's connected to, plus anything else that it's
 connected to.
@@ -222,11 +222,11 @@ If you're using a BBB or RPi, you will do this while SSH'd into those.
 Flashrom is the software that you will use, for dumping, erasing and rewriting
 the contents of your NOR flash.
 
-In the osboot build system, from the Git repository, you can download and
+In the libreboot build system, from the Git repository, you can download and
 install flashrom. Do this after downloading the
-[osbmk Git repository](https://notabug.org/osboot/osbmk):
+[lbmk Git repository](https://notabug.org/libreboot/osbmk):
 
-    cd osbmk
+    cd lbmk
     sudo ./build dependencies ubuntu2004
 
 NOTE: debian, arch or void can be written instead of ubuntu2004. the debian
@@ -258,7 +258,7 @@ binary is also available that you can simply run. Pass the `--workaround-mx`
 argument in flashrom. This mitigates stability issues.
 
 If you downloaded the flashrom source code directly, you can go into the
-directory and simply type `make`. In the osboot build system, build
+directory and simply type `make`. In the libreboot build system, build
 dependencies are documented in script located
 at `resources/scripts/build/dependencies/` which you can install
 using the `apt-get` software.
@@ -334,11 +334,11 @@ Writing
 
 Next, run this command (RPi):
 
-    sudo ./flashrom -p linux_spi:dev=/dev/spidev0.0,spispeed=32768 -w /path/to/osboot.rom
+    sudo ./flashrom -p linux_spi:dev=/dev/spidev0.0,spispeed=32768 -w /path/to/libreboot.rom
 
 If using BBB:
 
-    sudo ./flashrom -p linux_spi:dev=/dev/spidev1.0,spispeed=512 -w /path/to/osboot.rom
+    sudo ./flashrom -p linux_spi:dev=/dev/spidev1.0,spispeed=512 -w /path/to/libreboot.rom
 
 If using BBB, you may have to use a lower speed than 512. You may also have to
 re-flash several times before it works fully.
@@ -359,8 +359,8 @@ If the board you are writing to has two chips you'll need to split the rom into
 two sections.
 For example, to split a rom for the x230, t430, t530, or t440p run:
 
-	dd if=osboot_12mb.rom bs=1M of=bottom.rom count=8
-	dd if=osboot_12mb.rom bs=1M of=top.rom skip=8
+	dd if=libreboot_12mb.rom bs=1M of=bottom.rom count=8
+	dd if=libreboot_12mb.rom bs=1M of=top.rom skip=8
 
 Flash the resulting roms to each of their respective chips according to the above instructions.
 
@@ -381,7 +381,7 @@ Do not *disconnect* your chip from the flasher until you've disconnected or
 turned off the 3.3V DC power source.
 
 BE CAREFUL that you are indeed supplying 3.3V DC to the chip. All SPI flashes
-on all currently supported osboot hardware run on 3.3V DC and logic at that
+on all currently supported libreboot hardware run on 3.3V DC and logic at that
 level too.
 
 It is important to CHECK that you are running on the correct voltage, when you
@@ -405,7 +405,7 @@ ISP programming and VCC diode
 -----------------------------
 
 ISP means in-system programming. It's when you flash a chip that is already
-mounted to the mainboard of your computer that you wish to install osboot
+mounted to the mainboard of your computer that you wish to install libreboot
 on.
 
 It may be beneficial to modify the mainboard so that the SPI flash is powered
@@ -437,8 +437,8 @@ the SOIC8/WSON8 if it uses that, and replace with an IC socket (for SOIC8,
 WSON8 or DIP8, whatever you want), because then you could easily just insert
 the flash into a breadboard when flashing.
 
-TODO: Make a page on osboot.org, showing how to do this on all mainboards
-supported by osboot.
+TODO: Make a page on libreboot.org, showing how to do this on all mainboards
+supported by libreboot.
 
 GPIO pins on BeagleBone Black (BBB)
 -----------------------------------
@@ -457,7 +457,7 @@ This diagram shows the pinout for most modern Pi's and Pi derivatives.
 The diagram shows the pins of an RPi on the left and the two SOIC clips
 on the left.
 
-![](https://av.osboot.org/rpi/wiring.webp)
+![](https://av.libreboot.org/rpi/wiring.webp)
 
 GPIO pins on Raspberry Pi (RPi) 26 Pin
 -------------------------------
@@ -592,7 +592,7 @@ SOIC8/WSON8/DIP8/SOIC16 not mounted to a mainboard
 
 If your system has lower capacity SPI flash, you can upgrade. On *most* systems,
 SPI flash is memory mapped and the maximum (in practise) that you can use is a
-16MiB chip. For example, KGPE-D16 and KCMA-D8 mainboards in osboot have
+16MiB chip. For example, KGPE-D16 and KCMA-D8 mainboards in libreboot have
 2MiB flash by default, but you can easily upgrade these. Another example is the
 ThinkPad X200S, X200 Tablet and T400S, all of which have WSON8 where the best
 course of action is to replace it with a SOIC8 flash chip.
@@ -697,7 +697,7 @@ for flashing. You might want to de-solder the chip, using a solder vacuum
 (extractor) tool, and then you can install a socket in its place. You can then
 insert the DIP8 IC into the socket.
 
-In the osboot project, we have never heard of a board where the DIP8 is
+In the libreboot project, we have never heard of a board where the DIP8 is
 directly soldered. It is almost always mounted in a socket.
 
 Your DIP8 IC has the same pinout as a SOIC8 IC.
@@ -713,7 +713,7 @@ can easily damage the pads that way.
 WSON8 has the same pinout as SOIC8, but it's a ball mounted QFN (quad flat
 pack, no leads). There are no clips for it. Sometimes referred to as QFN8
 
-On all currently supported osboot hardware, boards that have WSON8 can also
+On all currently supported libreboot hardware, boards that have WSON8 can also
 have a SOIC8 because the pads are long enough to accomodate either type of
 chip.
 
@@ -825,14 +825,14 @@ This page and the photos on it are available under
 Check the Git repository for history of who owns what part of the document.
 
 Some of these resources originate from the *old* Libreboot git repository,
-before Libreboot split into separate repositories that include its `osbmk`
+before Libreboot split into separate repositories that include its `lbmk`
 repository.
 
 Photos showing a BeagleBone Black are under the normal GNU Free Documentation
 license like other pages and images on this website, or you can use them under
 the CC-BY-SA 4.0 license if you wish (I, Leah Rowe, own all BBB photos shown
 on this page, except for the one on the beaglebone website, and that one is
-merely linked here, instead of being hosted on the av.osboot.org server).
+merely linked here, instead of being hosted on the av.libreboot.org server).
 
 This version of the page is hosted in the `osbwww` git repository, with images
 for it hosted in the `lbwww-img` repository (from libreboot).
