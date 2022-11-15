@@ -7,7 +7,12 @@ Long live Libreboot!
 
 The former `osboot` project, started by the same founder as Libreboot, Leah
 Rowe, has today shut down; the osboot website now automatically redirects, via
-HTTP 301, to the libreboot website.
+HTTP 301, to the libreboot website. Everything osboot had, has now been added
+to Libreboot, and development will now occur exclusively in Libreboot from now
+on.
+
+The result of this decision is that Libreboot does (and can) now support newer
+hardware, such as the ThinkPad X230 or T440p.
 
 Such was alluded to in the previous Libreboot release announcement:
 
