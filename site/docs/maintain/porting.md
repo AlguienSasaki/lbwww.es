@@ -15,7 +15,7 @@ See the [flashing guide](/docs/install/spi.html) to find out what you'll need.
 
 Coreboot is replacement firmware for the firmware chips on the printed
 circuit board (PCB) of the machine in question.
-Osboot is a *distribution* of Coreboot.
+Libreboot is a *distribution* of Coreboot.
 You may be used to referring to your machine as *machine, device, laptop*
 or it's name (ex: thinkpad t420).
 Because we're targeting chips on the PCB, we refer to all of the above terms
@@ -24,7 +24,7 @@ The rest of this article will refer to the board you wish to port to
 libreboot as `board.`
 
 If `board` is not supported in coreboot then you need to start there first.
-Osboot developers will generally not port new boards to coreboot on request.
+Libreboot developers will generally not port new boards to coreboot on request.
 If you're not sure whether your board is in coreboot check the [coreboot table of hardware.](https://coreboot.org/status/board-status.html)
 
 If you have determined that `board` is supported by coreboot, but is not
@@ -33,8 +33,8 @@ If you're still unable to port the board, or anything in this guide is
 unclear, then contact libreboot developers.
 The best way to get in touch is via [libreboot irc.](/contact.html#irc-chatroom)
 
-Cloning Osbmk
-=============
+Cloning lbmk
+============
 
 Before you try to get any work done, you'll need to clone the lbmk (libreboot make)
 project.

@@ -114,9 +114,9 @@ Tianocore is extremely bloated, and unauditable, so it is not included
 in libreboot or libreboot, but it is the reference UEFI implementation by
 Intel and contributors. It can boot most BSD systems very well.
 
-More robust ways to provide UEFI services in Libreboot and Osboot are
-being explored. Tianocore integration will not be provided officially,
-in any current or future releases of either project.
+More robust ways to provide UEFI services in Libreboot are to be investigated.
+Tianocore integration will not be provided officially, in any current or future
+releases of Libreboot.
 
 Desktop users
 -------------

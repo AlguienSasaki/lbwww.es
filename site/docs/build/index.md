@@ -23,7 +23,7 @@ GNU Make
 
 libreboot Make includes a file called `Makefile`. You can still use
 the `lbmk` build system directly, or you can use GNU Make. The `Makefile`
-simply runs `lbmk` commands. However, using `osbmk` directly will offer you
+simply runs `lbmk` commands. However, using `lbmk` directly will offer you
 much more flexibility; for example, the Makefile currently cannot build single
 ROM images (it just builds all of them, for all boards).
 

@@ -374,26 +374,3 @@ Acknowledgements
 
 [1] Thanks to Guix Developer, Clement Lassieur (clement@lassieur.org),
 for helping me with the Guile Scheme Code for the Bootloader Configuration.
-
-This guide was originally written for the Libreboot project, and later adapted
-for the libreboot project. This fact is clearly stated, out of respect to the
-Guix project; it is a GNU project, and therefore probably does not agree with
-the policies of the libreboot project. Rather, they most likely agree with the
-Libreboot policies instead. This paragraph is written simply to provide such
-clarification, so that people do not think the GNU project (or FSF) endorse or
-condone libreboot in any way; they do not.
-
-The libreboot project respects GNU, and it is itself a project that aims to bring
-as much free software as possible to everyone, on as much hardware as possible.
-Without the GNU project, it is unlikely that we would have much Free Software
-today; there were others that started around the same time, but GNU was the
-project that provided the most momentum in the very early days of the movement.
-Today, GNU is still a driving force in the Free Software movement.
-
-Respect the GNU project. Cherish it.
-
-The libreboot policies are written here: [binary blob reduction
-policy](../../news/policy.md)
-
-The *libreboot* policies are here: [binary blob deletion
-policy](https://libreboot.org/news/policy.html)

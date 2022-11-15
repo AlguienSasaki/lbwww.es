@@ -224,7 +224,7 @@ the contents of your NOR flash.
 
 In the libreboot build system, from the Git repository, you can download and
 install flashrom. Do this after downloading the
-[lbmk Git repository](https://notabug.org/libreboot/osbmk):
+[lbmk Git repository](https://notabug.org/libreboot/lbmk):
 
     cd lbmk
     sudo ./build dependencies ubuntu2004

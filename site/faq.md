@@ -934,8 +934,8 @@ Refer to [the GNU+Linux page](docs/gnulinux/).
 Can I use BSD?
 ----------------------------------
 
-Absolutely! The libreboot firmware has native support for NetBSD, OpenBSD and
-LibertyBSD. Other distros are untested.
+Absolutely! The libreboot firmware has good support for FreeBSD, NetBSD and
+OpenBSD. Other systems are untested, but should work just fine.
 
 See:
 [docs/bsd/](docs/bsd/)
@@ -943,24 +943,22 @@ See:
 Are other operating systems compatible?
 -------------------------------------------------------------------
 
-Unknown. Probably not.
+Unknown. Perhaps so, but it's impossible to say without further testing.
 
 What level of software freedom does libreboot give me?
 ===================================================
 
-TODO: Re-write this section. It has been adapted, poorly, from the Libreboot
-FAQ section.
+Please read the [libreboot binary blob minimalisation policy](docs/policy.md).
 
-Please read the [libreboot binary blob minimization policy](docs/policy.md).
-
-The libreboot firmware provides host hardware init firmware images,
-that can be written 25XX SPI NOR Flash. But on many systems there are
-a lot more computers running blob firmware.
+The libreboot firmware provides host hardware initialisation inside ROM files,
+that can be written to NOR flash, but on many systems there exist
+a lot more small computers on the mainboard running blob firmware.
 Some of them are not practicable to replace due to being located on Mask ROM.
-Some devices have EC firmware being build as well.
-Additionally, besides software components, there are hardware ones
-(from ICs to boards) that are not released on OSHW licenses.
-We do not have a single device that would be "100% free",
+Most laptops have EC (Embedded Controller) firmware, for example.
+
+Besides software itself (embedded in ROM or not), most hardware
+(from ICs to circuit boards) are not released under open source licenses.
+We do not have a single device that can be considered be "100% free",
 and such absolutes are nearly impossible to reach.
 
 Notable proprietary blobs (not a complete list):
@@ -981,6 +979,17 @@ Notable proprietary blobs (not a complete list):
 	* Battery BMS, bq30z55
 	* Elan Touchpad
 	* eMMC [flash memory controller](https://en.wikipedia.org/wiki/Flash_memory_controller) firmware
+
+One day, we will live in a world where anyone can get their own chips made,
+including CPUs but also every other type of IC. Efforts to make homemade
+chip fabrication a reality are now in their infancy, but such efforts do
+exist, for example, the work done by Sam Zeloof and the Libre Silicon project:
+
+* <https://www.youtube.com/channel/UC7E8-0Ou69hwScPW1_fQApA>
+* <http://sam.zeloof.xyz/>
+* <https://libresilicon.com/>
+
+(Sam literally makes CPUs in his garage)
 
 Where can I learn more about electronics
 ==========================================

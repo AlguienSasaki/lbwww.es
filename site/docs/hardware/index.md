@@ -3,19 +3,6 @@ title: Hardware compatibility list
 x-toc-enable: true
 ...
 
-**The libreboot project was rebooted on January 4th, 2022. Some boards were
-deleted as a result, but they will be re-added later, with documentation also
-re-added. The Libreboot and libreboot projects went completely out of sync, but
-the Libreboot project was more up to date, so libreboot, itself a fork of
-Libreboot originally, was PURGED and then RE-FORKED once again, but from
-Libreboot in late 2021. From now on, greater care will be taken to keep the
-two projects in sync. Both projects are lead and were also founded by Leah
-Rowe.**
-
-The current version of libreboot already has several major differences. For
-example, microcode updates are enabled by default, on all boards, even those
-that Libreboot supports (this greatly increases system stability).
-
 This sections relates to known hardware compatibility in libreboot.
 
 For installation instructions, refer to [../install/](../install/).

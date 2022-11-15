@@ -58,7 +58,7 @@ Release roms cannot include certain blobs for legal reasons.
 You therefore **cannot** directly flash a release rom to your board.
 You must patch the release rom with the necessary blobs *and then* flash it to your board.
 
-Osbmk includes a script that will automatically inject the necessary blobs into a rom file.
+Lbmk includes a script that will automatically inject the necessary blobs into a rom file.
 The script can determine the board automatically if you have not changed the name, but you can also manually set the board name with the `-b` flag.
 
 In order to inject the necessary blobs into a rom image, run the script from the root of lbmk and point to the rom image.

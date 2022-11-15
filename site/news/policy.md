@@ -1,23 +1,31 @@
 % Binary blob minimalisation policy
 % Leah Rowe
-% 4 January 2022 (updated 23 January 2022)
+% 4 January 2022 (updated 15 November 2022)
 
 Introduction
 ============
 
-In the beginning Libreboot intentionally *de-blobbed* coreboot, which is to say that it did not
-include binary blobs. Coreboot, on the other hand, requires binary blobs on
-most systems that it has support for. Libreboot's
+In the beginning Libreboot intentionally *de-blobbed* coreboot, which is to say
+that it did not include binary blobs. Coreboot, on the other hand, requires
+binary blobs on most systems that it has support for. Libreboot's
 entirely *"free"* version of coreboot consequently supported fewer mainboards.
 
 Libreboot's zero blobs policy has
-been scrapped, entirely. The goal of current libreboot is simply to support every single
-system from coreboot, to provide pre-configured, automated compiling of ROM
+been scrapped, entirely. The goal of current libreboot is simply to support
+every single system from coreboot, to provide pre-configured, automated compiling of ROM
 images for *all* of them. This is quite a lot more ambitious in terms of sheer
 workload, and maintenance. It is expected that the project will *grow* in the
 future, to accomodate *board maintainers*, just like you have *package
 maintainers* in Debian; the analogy is highly appropriate, given the nature
 of the libreboot build system, which you can learn more about on the [lbmk maintenance manual](../docs/maintain/).
+
+This policy change was implemented, by *merging* osboot with Libreboot. The
+osboot project was a fork of Libreboot lead by the same founder, Leah Rowe, and
+initially maintained in parallel with Libreboot. *On November 15th, 2022, the
+two projects merged into a single project, continuing under the Libreboot
+banner. The osboot project existed between December 2020 (as retroboot, months
+later renamed to osboot) and November 2022; osboot has been assimilated by
+Libreboot!*
 
 **Freedom is very much preferable and a world where everyone can use Free
 Software, exclusively, is to be welcomed. However, we do not yet live in that
@@ -40,12 +48,16 @@ to the user compared to fully proprietary vendor firmware. Making coreboot
 easier to use is a noble goal, and the result is that more people can achieve
 a level of computing freedom that they would otherwise not have.
 
+The following diagram shall set the tone for the rest of this article:
+
+<img tabindex=1 src="https://av.libreboot.org/firmware.png" /><span class="f"><img src="https://av.libreboot.org/firmware.png" /></span>
+
 Current project scope
 =====================
 
 The libreboot project is concerned with what goes in the main boot flash IC, but
 there are other pieces of firmware to take into consideration, as covered
-in the [libreboot FAQ](../faq.md#what-other-firmware-exists-outside-of-osboot).
+in the [libreboot FAQ](../faq.md#what-other-firmware-exists-outside-of-libreboot).
 
 Most critical of these are:
 
@@ -140,6 +152,17 @@ the silicon level). Movements like OSHW and Right To Repair are extremely
 important, including to the Free Software movement which otherwise will
 typically think less about hardware freedom (even though it really, really
 should!)
+
+One day, we will live in a world where anyone can get their own chips made,
+including CPUs but also every other type of IC. Efforts to make homemade
+chip fabrication a reality are now in their infancy, but such efforts do
+exist, for example, the work done by Sam Zeloof and the Libre Silicon project:
+
+* <https://www.youtube.com/channel/UC7E8-0Ou69hwScPW1_fQApA>
+* <http://sam.zeloof.xyz/>
+* <https://libresilicon.com/>
+
+(Sam literally makes CPUs in his garage)
 
 Problems with RYF criteria
 ==========================
@@ -285,10 +308,19 @@ This is an interesting use-case scenario, if freed, because it could be used
 for owner-controlled *software defined radio*.
 
 The *Debian* way is ideal. The Debian GNU+Linux distribution is entirely free
-by default, and lacks any of the non-free firmware, but they have a separate
-repository containing non-free software. If you only want firmware, it is
+by default, and they include extra firmware if needed, which they have in a
+separate repository containing it. If you only want firmware, it is
 trivial to get installer images with it included, or add that to your installed
-system.
+system. They tell you how to do it, which means that they are helping people
+to get *some* freedom *rather than none*. This is an inherently pragmatic
+way to do things, and it's now how Libreboot does it.
+
+OpenBSD is very much the same, but they go a step further: during the initial
+boot, after installation, it tells you exactly what firmware is needed and
+updates that for you. It's handled in a very transparent way, by
+their `fw_update` program which you can read about here:
+
+<https://man.openbsd.org/fw_update>
 
 *Banning* linux-firmware specifically is a threat to freedom in the long term,
 because new users of GNU+Linux might be discouraged from using the OS if their
@@ -303,7 +335,7 @@ To be clear: it is preferable that microcode be free. The microcode on Intel
 and AMD systems *are* non-free. Facts and feelings rarely coincide; the
 purpose of this section is to spread *facts*.
 
-The libreboot build system enables microcode updates *by default.*
+The libreboot build system now enables microcode updates *by default.*
 
 Not including CPU microcode updates is an absolute disaster for system
 stability and security.
@@ -333,8 +365,8 @@ implement x86, or *broken* x86, and the default microcode is almost always
 these processors.
 
 The basis of the FSF's disagreement about microcode *updates* is that they do
-believe otherwise; Stallman himself expressed such ignorance to me, in a recent
-email conversation I had with him, as of January 2nd, 2022. The FSF believes
+believe otherwise; Stallman himself expressed such ignorance to me, in an email
+conversation that I had with him as of January 2nd, 2022. The FSF believes
 that these x86 microcode updates (on Intel/AMD) allow you to completely create
 a new CPU that is fundamentally different than x86. This is not true. It is also
 not true that *all* instructions in x86 ISA are implemented with microcode. In
@@ -371,41 +403,20 @@ Pick your poison. Not adding the updates is *irresponsible*, and ultimately
 futile, because you still end up with non-free microcode anyway, just you get
 an older, buggier version instead!
 
-The libreboot build system does not apply the two patches linked above! Instead,
-CPU microcode updates are enabled by default, on the affected boards. The
-result is superior IA32 feature control and added PECI support.
+The libreboot build system *no longer* applies the two patches linked above!
+Instead, CPU microcode updates are enabled by default, on the affected boards.
+The result is superior IA32 feature control and added PECI support.
 
-The libreboot project rejects the FSF's narrow, dogmatic view entirely.
+The *libreboot project* rejects the FSF's narrow, dogmatic view entirely.
 
-The libreboot firmware is far superior to Libreboot, in terms of reliability, due
-to the presence of microcode updates in the firmware, and with zero practical
-change to your freedom, on libreboot-compatible hardware.
+This shift in project policy does not affect your freedom at all, because you
+still otherwise have older, buggier microcode anyway. However, it does improve
+system reliability by including the updates!
 
-However:
-
-**I will continue to develop Libreboot and libreboot, in parallel.**
-
-There are some people who still want Libreboot, who believe in FSF principles
-on this subject, and I believe it would ultimately be damaging if I were to
-just *shut down* the Libreboot project. I do not agree with the policies of
-the Libreboot project; I was only following the FSF's instructions when I made
-it, all those years ago.
-
-If I were to cancel Libreboot, my fear is that such people would be stubborn
-and end up, ironically, being less likely to use coreboot-based firmware. This
-is for a very human reason: such people might try (fail) to make their *own*
-Libreboot instead. I believe I'm in the best position to run such a project, to
-ensure that a good job is being performed. I *want* to help people, even those
-people, *because I want everyone to have freedom*. I also believe in freedom of
-choice, and Libreboot is an excellent choice for those who wish to use something
-that complies with FSF criteria.
-
-Thus, I continue developing Libreboot in parallel with libreboot, even though
-Libreboot is technically *inferior* to libreboot. The *osboot* project is where
-my heart truly lies. I'm completely in it, whereas Libreboot is something I
-also maintain on the side. I try to do my best, when working on both projects.
-I really don't mind maintaining both of them, because they are actually very
-similar anyway, on relevant hardware.
+Such pragmatic policy is *superior* to the *dogma* that Libreboot users once
+had to endure. Simply put, the Libreboot project aims to give users as much
+freedom as is possible for their hardware; this was always the case, but this
+mentality is now applied to [a lot] more hardware.
 
 Other considerations
 ====================

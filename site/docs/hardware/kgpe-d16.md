@@ -10,7 +10,7 @@ This is a server board using AMD hardware (Fam10h *and Fam15h* CPUs
 available). It can also be used for building a high-powered workstation.
 Powered by libreboot. The coreboot port was done by Timothy Pearson of
 Raptor Engineering Inc. and, working with them (and sponsoring the
-work), merged into libreboot. It is also supported by libreboot.
+work), merged into libreboot.
 
 *Memory initialization is still problematic, for some modules. We
 recommend avoiding Kingston modules.*

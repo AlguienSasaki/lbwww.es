@@ -65,7 +65,7 @@ one thing well*.
 
 Technically, `lbmk` isn't necessarily a build system, but rather, a handful of
 small scripts that run other scripts, or even C programs if you wish. What
-makes `lbmk` *be* `osbmk` is what each individual script does, and how scripts
+makes `lbmk` *be* `lbmk` is what each individual script does, and how scripts
 interact with or call each other to produce working ROM images. It takes
 a *light touch* approach, providing only the most minimal glue necessary to
 build working ROM images that the user can install, with sane defaults, while
@@ -185,7 +185,7 @@ about the project
 build
 =====
 
-This is the main BASH script, part of `lbmk`, used for running most `osbmk`
+This is the main BASH script, part of `lbmk`, used for running most `lbmk`
 commands. You could say that this file *is* `lbmk`. Run `./build help` for
 usage instructions.
 

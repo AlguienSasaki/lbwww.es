@@ -6,8 +6,7 @@ x-toc-enable: true
 There is an Apple laptop called the macbook1,1 from 2006 which uses the
 same i945 chipset as the ThinkPad X60/T60. A developer (Mono Moosbart) ported
 the Macbook2,1 to coreboot, working alongside Vladimir Serbinenko. The ROM
-images also work on the macbook1,1. libreboot's support and documentation for
-this is based on the libreboot project, which also supports macbook2,1
+images also work on the macbook1,1.
 
 Some macbook2,1 models are late 2006, others are early 2007.
 You do not need to use external flashing equipment when flashing the MacBook2,1

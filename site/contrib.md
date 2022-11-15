@@ -29,21 +29,16 @@ works on all aspects of libreboot, such as:
   in her lab.
 * Leah has the final say on all decisions, taking input via discussion with
   members of the public, mostly on IRC. Leah oversees releases of libreboot,
-  and generally keeps the project going. Without Leah, there would be no Osboot!
+  and generally keeps the project going. Without Leah, there would be no Libreboot!
 * The build system (lbmk, short for libreboot Make). This is the automated build
   system that sits at the heart of libreboot; it downloads, patches, configures
   and compiles the relevant components like coreboot, GNU GRUB and generates
-  the libreboot ROM images that you can find in release archives (as of 23 March
-  2022, there are not yet any binary releases, it's rolling release, built from
-  source. see: <https://libreboot.org/docs/build/>)
+  the libreboot ROM images that you can find in release archives.
 * Upstream work on coreboot, when necessary (and other projects that libreboot
   uses). This means also working with people from outside of the libreboot
   project, to get patches merged (among other things) on the upstream projects
   that libreboot uses
 * Providing user support on IRC
-
-Leah is also responsible for [libreboot.org](https://libreboot.org/) which is heavily
-based on Osboot, but with different project goals.
 
 Caleb La Grange
 ---------------
@@ -208,17 +203,6 @@ Klemens Nanni
 
 Made many fixes and improvements to the GRUB configuration used in
 libreboot, and several tweaks to the build system.
-
-Leah Rowe initially helped Klemens get his project, autoboot, off the ground.
-Autoboot (website autoboot.org) is no longer online, but was a fork of Libreboot
-with different project goals; in late 2020, Leah Rowe decided to create her
-own new fork of Libreboot called *osboot*, heavily inspired by Klemens's earlier
-work. See: <https://osboot.org/>
-
-The following is an archive of autoboot.org, from when it was online back in
-2016: <http://web.archive.org/web/20160414205513/http://autoboot.org/> (the
-autoboot website went offline a few months later, after Klemens abandoned the
-project)
 
 Lisa Marie Maginnis
 -------------------

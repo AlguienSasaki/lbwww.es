@@ -18,7 +18,7 @@ This is a desktop board using AMD hardware (Fam10h *and Fam15h* CPUs
 available). It can also be used for building a high-powered workstation.
 libreboot also supports it. The coreboot port was done by Timothy Pearson of
 Raptor Engineering Inc. and, working with them, merged into libreboot many
-years ago. It is also supported by libreboot.
+years ago.
 
 Note that not all boards are compatible. See [board status](#boardstatus)
 below to determine compatibility with your board.
