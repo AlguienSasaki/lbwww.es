@@ -3,88 +3,50 @@ title: lbmk maintenance manual
 x-toc-enable: true
 ...
 
-Automated freedom
-=================
+Automated pragmatism
+====================
 
-This manual describes the nature of `lbmk` (LibreBoot MaKe), the automated
-build system used to produce Libreboot releases. It is intended as a reference
+This manual describes the nature of `lbmk` (OSBoot MaKe), the automated
+build system used to produce libreboot releases. It is intended as a reference
 for *libreboot development*.
 
-If you simply wish to compile Libreboot from source, you should instead refer
+If you simply wish to compile libreboot from source, you should instead refer
 to the [build instructions](../build/)
 
-This documentation covers *modern* Libreboot; version 20160907 and below use a
-much older, less polished version, from before it was actually
-called `lbmk` (it was simply called "the libreboot build system" back then).
-Information about those build systems are provided in the documentation
-provided with those releases.
-
-Generally speaking, *testing* releases of Libreboot do not come with
-documentation; if you're using *old* testing releases, it is prudent to check
-the `lbwww.git` repository on a revision from around the same time as those
-releases. Future stable releases of Libreboot will come with a snapshot of
-the `lbwww.git` repository, for documentation pertaining to such releases. One
-way to do this, for releases from 2021 onwards, is to simply run `git log` on
-the `news/` section of `lbwww.git` and find the revision that added
-the *announcement* for a given release (again, 2021 onwards), and then you can
+Generally speaking, *testing* releases of libreboot will not come with
+documentation; if you're later using *old* testing releases, it is prudent to
+check the `osbwww.git` repository on a revision from around the same time as
+those releases. Future stable releases of libreboot will come with a snapshot of
+the `osbwww.git` repository, for documentation pertaining to such releases. One
+way to do this, all testing releases of libreboot, will be to simply run `git log`
+on the `news/` section of `osbwww.git` and find the revision that added
+the *announcement* for a given release (when available), and then you can
 just reset to that revision.
 
 As such, you should always refer to the *live* version of this page, on
 libreboot.org, when working on the `lbmk.git` repository; the live version is
 intended for development on the Git repository!
 
-Libreboot blob policy
-=====================
+libreboot blob reduction policy
+============================
 
-Libreboot has a strict policy of *excluding* non-free software. It is to only
-distribute *free software*. Please keep this in mind, when you work on the
-Libreboot build system, if you will later submit patches to the project.
+The coreboot software is nominally free, but it requires additional binary
+blobs on many supported systems. These *blobs* lack source code, and the
+coreboot project does not control them, but they can be used to perform
+specific initialization tasks.
 
-[Learn more about Libreboot's policies](../../news/policy.md)
+The libreboot project *allows* binary blobs from coreboot, but there is *still* a
+lot of nuance to precisely what is allowed. It is important that you understand
+these nuances, when working on *libreboot*.
 
-osbmk
-=====
+[Please read the blob reduction guidelines](../../news/policy.md)
 
-Another project, named osboot, is also maintained by Leah Rowe, forked from
-Libreboot: <https://osboot.org/> - this project is just the same as Libreboot,
-with the same build system, except for some tweaks: *all* blobs are allowed,
-and CPU microcode updates are enabled by default, and the build system is
-modified accordingly, but mostly the same.
-
-The libreboot build system is `lbmk`. The osboot build system is `osbmk`.
-These two build systems are almost identical, except for a few differences.
-They are both actively maintained, in parallel, and lead/founded by Leah Rowe.
-
-Why bring up osboot? Because it's relevant for licensing and compliance, in
-case of audit in the future.
-
-The `osboot` project was forked from Libreboot 20160907's build system (which
-did not have a name back then), but with Libreboot documentation from December
-in 2020. It was then expanded upon, fixing many flaws in the 20160907 build
-system. At that time, a failed experimental re-write of Libreboot's build
-system had to either be revived and succeed (but that build system was very
-badly designed), or scrapped; the latter was decided, and osboot-libre was
-born, which was used to create `lbmk`. With this act, the Libreboot project,
-formerly a *dead project* for all intents and purposes, was completely restored.
-All of these acts took place during the early months of the year 2021; the
-failed Libreboot re-write took place after the Libreboot 20160907 release, and
-was scrapped during March of 2021, in favour of lbmk which is a fork of osbmk.
-(and lbmk is now, as of 2 January 2021, being re-forked to bring osbmk/lbmk
-back into feature parity. so you can fork your forks of your forks, and
-maybe fork the fork of your fork of your fork)
-
-Libreboot and osboot are two sides of a coin; neither should exist alone.
-The osboot project scrapts
-Libreboot's [zero blobs policy](https://libreboot.org/news/policy.html)
-and it is targeted at those who don't
-want to (or can't) use Libreboot, but who still want some freedoms compared
-to otherwise fully non-free vendor firmware.
 
 What is lbmk?
-=============
+==============
 
-In the same way that Trisquel and Debian are GNU+Linux distributions, Libreboot
-is a **coreboot distribution**. The `lbmk` build system *is* that distribution,
+In the same way that Trisquel and Debian are GNU+Linux distributions, Libreboot 
+is a **coreboot distribution**. The `lbmk` build system *is* that distro,
 providing the glue necessary to integrate coreboot plus anything else that's
 needed, unifying everything in a completely automated and pre-configured
 fashion, so as to provide a distribution that is ease to install and use by
@@ -103,7 +65,7 @@ one thing well*.
 
 Technically, `lbmk` isn't necessarily a build system, but rather, a handful of
 small scripts that run other scripts, or even C programs if you wish. What
-makes `lbmk` *be* `lbmk` is what each individual script does, and how scripts
+makes `lbmk` *be* `osbmk` is what each individual script does, and how scripts
 interact with or call each other to produce working ROM images. It takes
 a *light touch* approach, providing only the most minimal glue necessary to
 build working ROM images that the user can install, with sane defaults, while
@@ -112,7 +74,7 @@ describing how to do just that. User-friendly documentation is provided, with
 simple installation steps, automating as much of it as possible.
 
 *This* document is different. The document you're reading right now is written
-for *technical* users who want to know how Libreboot is put together.
+for *technical* users who want to know how libreboot is put together.
 
 The lbmk design also helps to ease copyright licensing and compliance, because
 each part of lbmk is literally its own separate program. With this design, it
@@ -128,17 +90,17 @@ are under the same license, and most of those different licenses are not
 compatible with each other; this is perfectly OK there, and it's OK here too.
 
 The purpose of this document is to (hopefully) cause you to understand the
-entire build system in Libreboot, so that you can contribute patches or
+entire build system in libreboot, so that you can contribute patches or
 otherwise make whatever changes you like. As such, this is a reference guide
-for Libreboot development.
+for libreboot development.
 
 Libreboot is a *coreboot distro*, focusing on integration. As such, direct
 development on software such as coreboot, GNU GRUB, SeaBIOS etc should ideally
-be done upstream, or if it's a project hosted by Libreboot (such as ich9utils)
+be done upstream, or if it's a project hosted by libreboot (such as ich9utils)
 developed in the corresponding separate repository.
 
 This document is written for developers and power users alike, or otherwise for
-anyone who is curious enough to learn more about what *makes* Libreboot!
+anyone who is curious enough to learn more about what *makes* libreboot!
 
 A major planned addition to lbmk in the future is: use it to implement a small
 busybox+linux distribution, with musl libc, plus u-root, and implement a
@@ -156,13 +118,13 @@ or SeaBIOS, and these all have *their* own build systems aswell. The `lbmk`
 build system is the glue that puts all of these together to produce ROM images
 for users, in a completely automated fashion. The purpose of `lbmk` is to
 provide an *unattended* build process, with as little user interaction as
-possible. Thus, `lbmk` is an *automated build system*. It says on the Libreboot
-home page that Libreboot is a *coreboot distribution* in much the same way that
+possible. Thus, `lbmk` is an *automated build system*. It says on the libreboot
+home page that libreboot is a *coreboot distribution* in much the same way that
 Trisquel is a *GNU+Linux distribution*, and `lbmk` is what implements that!
 
 Continue reading, and you will learn of each file contained in `lbmk`. This
-document largely pertains to the version of `lbmk` as hosted in `lbmk.git`, but
-this manual also covers source code archives containing the full downloaded
+document largely pertains to the version of `lbmk` as hosted in `lbmk.git`,
+but this manual also covers source code archives containing the full downloaded
 set of modules such as coreboot and GRUB.
 
 In general, it is advisable to open *every* file in lbmk, after you downloaded
@@ -173,7 +135,7 @@ simply *studying* the logic directly.
 AUTOMATED automation
 ====================
 
-Every part of lbmk checks if the prerequisite steps are done, and performs them
+Every part of lbmk checks if the prerequisite steps are done, and does them
 automatically if not. The `roms_helper` script is no different; for example, it
 automatically downloads coreboot if not present, aswell as GRUB and everything
 else. You can run each and every part of lbmk without having to worry about
@@ -181,7 +143,7 @@ running something before it, because it is handled automatically; if that is
 ever not the case, it's a bug that should be fixed immediately (in Libreboot
 20160907, such fine tuned automation did not exist and you did have to run
 specific parts of the build system manually, in a precise order, but this is
-no longer the case in `lbmk` for Libreboot from 2021 onwards).
+no longer the case in modern `lbmk` or `lbmk`).
 
 Another example: if you run `./build payload grub` but `./build module grub` is
 not completed, it will automatically run that first, to produce
@@ -191,10 +153,10 @@ Another example: if you run `./build boot roms` and crossgcc isn't yet built
 for the revision used on each given board, it will automatically compile that
 version of it, using *that* coreboot tree's own build system to do it.
 
-This level of automation means that `lbmk` from 2021 onwards is much easier to
-use, compared to the build system present in Libreboot 20160907. Massive
-improvements to that build system were made, during most of 2021, when
-implementing both the `osbmk` *and* `lbmk` build systems.
+This level of automation means that modern `lbmk` is much
+easier to use, compared to the build system present in Libreboot 20160907.
+Massive improvements to that build system were made, during most of 2021, when
+implementing the `lbmk` build system.
 
 All sections below pertain to actual files in lbmk:
 
@@ -217,13 +179,13 @@ root directory of `lbmk`).
 README.md
 =========
 
-This file contains a brief description of Libreboot, along with information
+This file contains a brief description of libreboot, along with information
 about the project
 
 build
 =====
 
-This is the main BASH script, part of `lbmk`, used for running most `lbmk`
+This is the main BASH script, part of `lbmk`, used for running most `osbmk`
 commands. You could say that this file *is* `lbmk`. Run `./build help` for
 usage instructions.
 
@@ -312,13 +274,9 @@ projectname
 
 This file contains a single line of text, with the string "libreboot".
 
-This file exists because of [osboot](https://osboot.org/) existing, which uses
-a modified version of `lbmk`. Leah Rowe, the founder of Libreboot, is also the
-founder of osboot and actively maintains both projects. A lot of scripts
-in `lbmk` make use of the `projectname` file.
-
-If you were to fork Libreboot, you could very easily just modify this file, so
-as to rename your fork in a largely automated way.
+If you were to fork libreboot, you could very easily just modify this file, so
+as to rename your fork in a largely automated way. Many parts of lbmk use this
+file.
 
 resources/coreboot/
 ===================
@@ -518,7 +476,7 @@ REMINDER: Do not enable a payload in coreboot's build system. Set it
 to *none*, and enable whatever payload you want in lbmk.
 
 If a payload is not supported in lbmk, patches are very much welcome! It is
-the policy of Libreboot, to only ever use the *coreboot* build system inside
+the policy of libreboot, to only ever use the *coreboot* build system inside
 coreboot, but not use any of *coreboot's* own integration for payloads. It is
 far more flexible and *robust* to handle payloads externally, relative to the
 coreboot build system.
@@ -534,70 +492,6 @@ all DRAM upon boot. This is for security reasons. An exception is made when
 such functionality is not available, on the specific board/revision that you're
 configuring in coreboot.
 
-resources/coreboot/DEFAULT/blobs.list
-=====================================
-
-For directories in `resources/coreboot/` that specify `cbrevision`,
-a `blobs.list` file can be included. When running `./download coreboot`, lbmk
-will delete whatever files are listed in `blobs.list` for that coreboot tree.
-
-When downloading coreboot, lbmk checks out coreboot 3rdparty submodules, but
-only does `git submodule update --init`; on coreboot's side, it is set up so
-that this doesn't download most of the non-free software that coreboot
-distributes (for that, you run `git submodule --init --checkout` (you'll note
-that the `--checkout` option is included).
-
-However, some binary blobs still remain even when only doing `--init`. These
-are discovered, whenever a new coreboot revision is added to lbmk, by running
-the *linux-libre* deblob script on the coreboot source tree, *after* doing
-the `git submodule update --init` command.
-
-See `deblob-check` from the fsfla website:\
-<https://www.fsfla.org/ikiwiki/selibre/linux-libre/>
-
-The `deblob-check` script in fact *does* work quite well on the coreboot
-source tree! However, coreboot is far simpler than the Linux kernel, and much
-more conservative in its general scope, that the script was never actually
-forked specifically for Libreboot. Simply speaking, the way deblobbing is
-handled in Libreboot is as follows:
-
-* Copy the `blobs.list` from the *last* deblobbed coreboot revision
-* Run `deblob-check` on the *new* coreboot revision
-* Run `deblob-check` on the *last* deblobbed coreboot revision
-* Diff the results
-* Any file that was deleted on coreboot side, remove from the new `blobs.list`
-* Any new files get added to the new `blobs.list`
-
-Doing it manually, and in such a crude fashion as this, is perfectly acceptable
-because coreboot makes a good habit of always separating binary code blobs into
-completely *separate* files.
-
-There is some nuance in exactly how Libreboot handles binary blobs. As far as
-Libreboot is concerned, only *software* is deleted if a blob. Non-software
-blobs are retained, so long as they are in a well-understood format or are
-otherwise trivial. Of course, such data must not be under a non-free license!
-On the other hand, blobs such as CPU microcode are always to be deleted.
-
-For example: DDR training data is retained. These are data patterns used for
-memory controller initialization, specifically during *training* (bruteforcing
-the precise timings required at boot time).
-
-More nuance: lbmk does *not* disable any code for *loading* blobs, but rather,
-it only deletes the actual blobs. For example, you can still add CPU microcode
-updates to Libreboot ROM images, and libreboot's version of coreboot will still
-use them, if present. This has always been the case. Libreboot will never try
-to prevent you from running blobs; it merely does not *include* them. This is
-for the sake of efficiency, because deblobbing is actually only a very minor
-aspect of what Libreboot is, and time is better spent on other areas of
-development. Deblobbing is done in the most low-effort way possible, just so as
-to comply with the *GNU Free System Distribution Guidelines*.
-
-Of course, deleting blobs from coreboot *breaks* coreboot, in situations where
-you actually want to build for a board where those blobs are used, but since
-those boards are not to be supported in lbmk anyway, it's moot (the boards that
-lbmk does support will all boot just fine, because all of the required files
-exist, and are free).
-
 resources/coreboot/BOARDNAME/patches/\*
 =======================================
 
@@ -612,14 +506,6 @@ will be ignored. By having `lbmk` do it this way, you could add a `README` file
 for instance, and `lbmk` will not erroneously try to apply `README` as though
 it were a patch file. This might be useful if you have a *lot* of patches, and
 you want to provide some explanations about specific files.
-
-FUN FACT: If you run `NODELETE= ./download coreboot`, lbmk will *skip* deleting
-blobs, and also skip deleting the `.git` files and directories in those
-coreboot clones. By default, the Git history is deleted, because it contains
-blobs. However, you may want to make changes and then create a patch
-using `git format-patch`, and you can do just that! Afterwards, you would
-simply delete the blobs manually and delete the Git history (or you could just
-run `./download coreboot` again, without `NODELETE`).
 
 resources/grub/background/
 ==========================
@@ -719,7 +605,7 @@ for `romtype`:
 
 * `4MiB IFD BIOS region` will cause only the upper 4MB section of the ROM
   to be included in a release. This option is largely deprecated, a hangover
-  from osboot, which also no longer uses this option on any boards, and it is
+  from libreboot, which also no longer uses this option on any boards, and it is
   thus subject for removal.
 * `d8d16sas` will cause *fake* (empty) files named `pci1000,0072.rom`
   and `pci1000,3050.rom` to be inserted in CBFS. This prevents SeaBIOS from
@@ -746,7 +632,7 @@ for `romtype`:
   part). In all cases, the default *ME* (Intel Management Engine) region is
   disabled, as is the ME itself, based on bits set to disable it in the Intel
   Flash Descriptor. The descriptor is used in such a setup, because on all
-  such boards in Libreboot, GbE NVM is needed to get gigabit ethernet working
+  such boards in libreboot, GbE NVM is needed to get gigabit ethernet working
   correctly; it is the sole reason `ich9gen` was written, because it is
   otherwise possible to boot these machines in a *descriptorless* setup, where
   ICH9M behaves similarly to ICH7: all one region of flash, for the boot
@@ -781,8 +667,8 @@ the default anyway) to enable *all* option ROMs, unless `vgarom` setups are
 used, in which case the option is set to *0* (disabled) because coreboot is
 then expected to handle option ROMs, and SeaBIOS should not do it.
 
-Essentially, the `roms_helper` script makes use of each and every part of lbmk.
-It is the heart of Libreboot.
+Essentially, the `roms_helper` script makes use of each and every part of
+lbmk. It is the heart of libreboot.
 
 When the ROM is finished compiling, it will appear under a directory in `bin/`
 
@@ -966,26 +852,26 @@ on all coreboot source trees.
 
 Command: `./build release src`
 
-resources/scripts/build/release/u-boot-libre
-============================================
-This builds a release of u-boot-libre. Once released officially, the
-files produced by the command below are then expected to be used by
-FSDG distributions packages.
-
-While this isn't useful as-is for Libreboot, it enables to share the
-deblobbing code between various FSDG distributions and also enables
-Libreboot to reuse that deblobbing process to support boards with
-u-boot in the future.
-
-Command: `./build release u-boot-libre`
-
 resources/scripts/download/coreboot
 ===================================
 
-This downloads, patches and deblobs coreboot, as per `board.cfg` files
+This downloads, and patches coreboot, as per `board.cfg` files
 in `resources/coreboot/`.
 
 Command: `./download coreboot`
+
+NOTE: This version of the script also performs the full git checkout in each
+coreboot tree, like so:
+
+    git submodule update --init --checkout
+
+The `lbmk` version only does this:
+
+    git submodule update --init
+
+The coreboot project sets up its Git repository, in such a way where most blobs
+are skipped if you omit `--checkout`. Since lbmk's policy is to *include*
+these in its distribution, it makes sense to use `--checkout`.
 
 resources/scripts/download/flashrom
 ===================================

@@ -51,7 +51,7 @@ Intel GPU; this is referred to as "switchable graphics". In the *BIOS
 setup* program for lenovobios, you can specify that the system will use
 one or the other (but not both).
 
-Libreboot is known to work on systems with only the Intel GPU, using
+libreboot is known to work on systems with only the Intel GPU, using
 native graphics initialization. On systems with switchable graphics, the
 Intel GPU is used and the ATI GPU is disabled, so native graphics
 initialization works all the same.

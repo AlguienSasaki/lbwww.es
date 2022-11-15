@@ -5,21 +5,21 @@ x-toc-enable: true
 
 This article only applies to those people who use the GNU GRUB bootloader as
 their default payload (options besides GNU GRUB are also available in
-Libreboot). Whenever this article refers to GNU GRUB, or configuration files
+libreboot). Whenever this article refers to GNU GRUB, or configuration files
 used in GNU GRUB, it is referring exclusively to those files hosted in CBFS
-(coreboot file system) in the Libreboot ROM image. In this configuration, GNU
+(coreboot file system) in the libreboot ROM image. In this configuration, GNU
 GRUB is running on *bare metal* as a coreboot payload (instead of relying on
 BIOS or UEFI services, like it does on *most* x86 based configurations).
 
 This guide deals with various ways in which you can harden your GNU GRUB
 configuration, for security purposes. These steps are optional, but *strongly*
-recommended by the Libreboot project.
+recommended by the libreboot project.
 
 GNU GRUB provides *many* advanced security features, which most people don't
-know about but are fully documented on the Libreboot website. Read on!
+know about but are fully documented on the libreboot website. Read on!
 
 This article doesn't cover how to dump your ROM, or flash a new one. Please
-read other sections in the Libreboot documentation if you don't know how to do
+read other sections in the libreboot documentation if you don't know how to do
 that. As such, this is an *expert only* guide. There is a great possibility for
 bricking your system if you follow this guide incorrectly, or otherwise don't
 know what you're doing.
@@ -32,7 +32,7 @@ PGP signatures on *any* type of file, on any storage medium supported by
 GNU GRUB (it supports basically everything, including CBFS which is short
 for coreboot file system and it is what we will focus on in this article).
 We will be using this functionality to verify the signature of a Linux kernel,
-at boot time. In conjunction with reproducible builds (both Libreboot and your
+at boot time. In conjunction with reproducible builds (both libreboot and your
 Linux kernel), this can greatly improve system security; Debian is an excellent
 example of a GNU+Linux distribution that is fully reproducible nowadays (in
 stable releases).
@@ -49,9 +49,9 @@ repository). More information about reproducible builds can be found here:
 
 <https://reproducible-builds.org/>
 
-Reproducibility is a key goal of the Libreboot project, though it has not yet
+Reproducibility is a key goal of the libreboot project, though it has not yet
 achieved that goal. However, it is an important part of any secure system. We
-suggest that, when securing your Libreboot system as instructed by this guide,
+suggest that, when securing your libreboot system as instructed by this guide,
 you should also use a reproducible GNU+Linux distribution (because checking GPG
 signatures on a non-reproducible binary, such as a Linux kernel, is meaningless
 if that binary can be compromised as a result of literally not being able to
@@ -63,7 +63,7 @@ they gave you. Based on these facts, we can observe that checking GPG
 signatures will improve your *operational* security, but only in specific
 circumstances under *controlled conditions*.
 
-This tutorial assumes you have a Libreboot image (ROM) that you wish to modify,
+This tutorial assumes you have a libreboot image (ROM) that you wish to modify,
 which from now on we will refer to simply as *`my.rom`*. It should go without
 saying that this ROM uses the GNU GRUB bootloader as payload. This page shows
 how to modify grubtest.cfg, which means that signing and password protection
@@ -72,13 +72,13 @@ incorrect configuration will be impossible. After you are satisfied with the
 new setup, you should transfer the new settings to grub.cfg to make your
 machine truly secure.
 
-First, extract the old grubtest.cfg and remove it from the Libreboot
+First, extract the old grubtest.cfg and remove it from the libreboot
 image:
 
     cbfstool my.rom extract -n grubtest.cfg -f my.grubtest.cfg
     cbfstool my.rom remove -n grubtest.cfg
 
-You can build `cbfstool` in the Libreboot build system. Run this command:
+You can build `cbfstool` in the libreboot build system. Run this command:
 
     ./build module cbutils
 
@@ -87,13 +87,13 @@ This assumes that you already downloaded coreboot:
     ./download coreboot
 
 This, in turn, assumes that you have installed the build dependencies for
-Libreboot. On Ubuntu 20.04 and other apt-get distros, you can do this:
+libreboot. On Ubuntu 20.04 and other apt-get distros, you can do this:
 
     ./build dependencies ubuntu2004
 
 The `cbfstool` executables will be under each coreboot directory, under
 each `coreboot/boardname/` directory for each board. Just pick one, presumably
-from the coreboot directory for your board. Libreboot creates multiple coreboot
+from the coreboot directory for your board. libreboot creates multiple coreboot
 archives for different board revisions, on different boards.
 
 References:
@@ -152,9 +152,9 @@ done using the `grub-mkpasswd-pbkdf2` utility. You can get it by
 installing GRUB version 2. Generate a key by giving it a password:
 
 NOTE: This utility is included under the `grub/` directory, when you build
-GRUB using the Libreboot build system. Run the following commands (assuming
+GRUB using the libreboot build system. Run the following commands (assuming
 you have the correct build dependencies installed) to build GNU GRUB, from the
-Libreboot Git repository:
+libreboot Git repository:
 
     ./download grub
 
@@ -208,9 +208,9 @@ function try\_user\_config:
 
 The `unset superusers` command disables password authentication, which will
 allow the attacker to boot an arbitrary operating system, regardless of
-signature checking. The default Libreboot configuration is tweaked for *easy of
+signature checking. The default libreboot configuration is tweaked for *easy of
 use* by end users, and it is *not* done with security in mind (though security
-is preferred). Thus, Libreboot is less restrictive by default. What you are
+is preferred). Thus, libreboot is less restrictive by default. What you are
 doing, per this article, is making your system *more secure* but at the expense
 of user-friendliness.
 
@@ -255,7 +255,7 @@ entries):
     trust (cbfsdisk)/boot.key
     set check_signatures=enforce
 
-What remains now is to include the modifications into the Libreboot image
+What remains now is to include the modifications into the libreboot image
 (ROM):
 
     cbfstool my.rom add -n boot.key -f boot.key -t raw

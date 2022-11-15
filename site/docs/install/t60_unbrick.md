@@ -9,7 +9,7 @@ your ThinkPad T60 from booting.
 This section documents how to recover from a bad flash that prevents
 your ThinkPad X60 from booting.
 
-ROM images for this machine are well-tested in Libreboot, so bricks are rare.
+ROM images for this machine are well-tested in libreboot, so bricks are rare.
 The most common cause of a brick is operator error, when flashing a ROM image.
 In *most* cases, the cause will be that there is no bootblock, or an invalid
 one.

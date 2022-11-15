@@ -14,12 +14,6 @@ ROM properly first. Although ROM images are provided pre-built in
 libreboot, there are some modifications that you need to make to the one
 you chose before flashing. (instructions referenced later in this guide)
 
-Libreboot T400 {#t400}
-==============
-
-You may also be interested in the smaller, more portable [Libreboot
-T400](t400_external.md).
-
 Serial port {#serial_port}
 -----------
 
@@ -50,7 +44,7 @@ Intel GPU; this is referred to as "Dual Graphics" (previously
 you can specify that the system will use one or the other (but not
 both).
 
-Libreboot is known to work on systems with only the Intel GPU, using
+libreboot is known to work on systems with only the Intel GPU, using
 native graphics initialization. On systems with switchable graphics, the
 Intel GPU is used and the ATI GPU is disabled, so native graphics
 initialization works all the same.

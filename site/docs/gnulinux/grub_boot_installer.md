@@ -9,7 +9,7 @@ This guide assumes that you are using the GNU GRUB bootloader directly.
 If you're using SeaBIOS, it's quite intuitive and works similarly to other BIOS
 software; refer to the documentation on <https://seabios.org/SeaBIOS>.
 
-This guide explains how to prepare a bootable USB for Libreboot systems that
+This guide explains how to prepare a bootable USB for libreboot systems that
 can be used to install several GNU+Linux distributions. For this guide, you
 will only need a USB flash drive and the `dd` utility (it's installed into all
 GNU+Linux distributions, by default).
@@ -156,7 +156,7 @@ to distro. If you did all of that correctly, then it should now be booting your
 USB drive in the way that you specified.
 
 ## Troubleshooting
-Most of these issues occur when using Libreboot with coreboot's `text-mode`
+Most of these issues occur when using libreboot with coreboot's `text-mode`
 with libgfxinit for video initialization. This mode is useful for text mode
 payloads, like `MemTest86+`, which expect `text-mode`, but for GNU+Linux
 distributions it can be problematic when they are trying to switch to a

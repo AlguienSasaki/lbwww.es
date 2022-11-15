@@ -10,7 +10,7 @@ Introduction
 
 This document lists product codenames for some hardware.
 Please note that just because a certain device is listed here does NOT mean
-that it is supported in Libreboot. For supported devices refer to the
+that it is supported in libreboot. For supported devices refer to the
 installation documentation.
 
 ### A note on GPUs
@@ -67,9 +67,6 @@ under RAM sticks.
     appended based on the type of graphics they have:
     -   with dGPU: SWG (SWitchable Graphics)
     -   with only iGPU: UMA (Unified Memory Access)
-
-*Note that Intel platforms newer than Montevina are not supported by libreboot
-yet!. Currently only Calistoga and Montevina platforms are supported.
 
 -   These are the known model codenames:
     -   ThinkPad T410: NOZOMI-1 # EXT/INT

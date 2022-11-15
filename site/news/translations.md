@@ -1,12 +1,12 @@
 % Translations wanted
 % Leah Rowe
-% 11 December 2021
+% 4 January 2022
 
 The libreboot website is currently only available in English.
 
 I've recently added support for translations to
 the [Untitled Static Site Generator](https://untitled.vimuser.org/), which the
-Libreboot website uses. Pages on libreboot.org are written in Markdown, and
+libreboot website uses. Pages on libreboot.org are written in Markdown, and
 this software generates HTML pages.
 
 This very page that you are reading was created this way!
@@ -14,16 +14,16 @@ This very page that you are reading was created this way!
 Getting started
 ===============
 
-The Libreboot website is available, in Markdown, from a Git repository:\
-<https://notabug.org/libreboot/lbwww>
+The libreboot website is available, in Markdown, from a Git repository:\
+<https://notabug.org/libreboot/osbwww>
 
 Instructions for how to send patches are available here:\
 <https://libreboot.org/git.html>
 
-If you're working on a translation, make note of the commit ID from `lbwww.git`
+If you're working on a translation, make note of the commit ID from `osbwww.git`
 and keep track of further changes (to the English website) in that repository.
 
-When you send the translation, please specify what commit ID in `lbwww.git` it
+When you send the translation, please specify what commit ID in `osbwww.git` it
 is up to date with. From then on, I will keep track of changes to the English
 website, which is what I work on. My native language is English. When the first
 translation is made available on libreboot.org, I will create a new page (in

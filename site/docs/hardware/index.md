@@ -3,6 +3,19 @@ title: Hardware compatibility list
 x-toc-enable: true
 ...
 
+**The libreboot project was rebooted on January 4th, 2022. Some boards were
+deleted as a result, but they will be re-added later, with documentation also
+re-added. The Libreboot and libreboot projects went completely out of sync, but
+the Libreboot project was more up to date, so libreboot, itself a fork of
+Libreboot originally, was PURGED and then RE-FORKED once again, but from
+Libreboot in late 2021. From now on, greater care will be taken to keep the
+two projects in sync. Both projects are lead and were also founded by Leah
+Rowe.**
+
+The current version of libreboot already has several major differences. For
+example, microcode updates are enabled by default, on all boards, even those
+that Libreboot supports (this greatly increases system stability).
+
 This sections relates to known hardware compatibility in libreboot.
 
 For installation instructions, refer to [../install/](../install/).
@@ -12,17 +25,17 @@ because coreboot lacks native video initialization for the ATI GPUs on these
 machines.
 
 (for later machines like T500, T400, ATI GPU doesn't matter, because it also
-has an Intel GPU, and Libreboot uses the Intel one)
+has an Intel GPU, and libreboot uses the Intel one)
 
 Supported hardware
 ==================
 
-Libreboot supports the following systems in this release:
+libreboot currently supports the following systems in this release:
 
 ### Desktops (AMD, Intel, x86)
 
 -   [Gigabyte GA-G41M-ES2L motherboard](ga-g41m-es2l.md)
--   Acer G43T-AM3 (**Libreboot 20210522 and later**)
+-   Acer G43T-AM3
 -   [Intel D510MO and D410PT motherboards](d510mo.md)
 -   [Intel D945GCLF](d945gclf.md) (D945GCLF2D also reported working by a user)
 -   [Apple iMac 5,2](imac52.md)
@@ -33,22 +46,29 @@ Libreboot supports the following systems in this release:
 -   [ASUS KGPE-D16 motherboard](kgpe-d16.md)
 -   [ASUS KFSN4-DRE motherboard](kfsn4-dre.md)
 
-### Laptops (ARM)
-
--   [ASUS Chromebook C201](c201.md) (**Libreboot 20160907 only**)
-
 ### Laptops (Intel, x86)
 
 -   ThinkPad X60 / X60S / X60 Tablet
 -   ThinkPad T60 (with Intel GPU)
 -   [Lenovo ThinkPad X200 / X200S / X200 Tablet](x200.md)
--   Lenovo ThinkPad X301 (**Libreboot 20210522 and later**)
+-   Lenovo ThinkPad X230 (documentation needs to be re-added, ever since the
+    purge on 4 January 2022. It will be done asap)
+-   Lenovo ThinkPad X301
 -   [Lenovo ThinkPad R400](r400.md)
 -   [Lenovo ThinkPad T400 / T400S](t400.md)
 -   [Lenovo ThinkPad T500](t500.md)
 -   [Lenovo ThinkPad W500](t500.md)
 -   [Lenovo ThinkPad R500](r500.md)
 -   [Apple MacBook1,1 and MacBook2,1](macbook21.md)
+-   [Lenovo ThinkPad T440p](../install/t440p_external.md)
+-   [Lenovo Thinkpad X220](../install/ivy_has_common.md)
+-   [Lenovo Thinkpad X220t](../install/ivy_has_common.md)
+-   [Lenovo Thinkpad T420](../install/ivy_has_common.md)
+-   [Lenovo Thinkpad X230](../install/x230_external.md)
+-   [Lenovo Thinkpad X230t](../install/x230_external.md)
+
+TODO: More hardware is supported. See `resources/coreboot/` in lbmk. Update
+the above list!
 
 'Supported' means that the build scripts know how to build ROM images
 for these systems, and that the systems have been tested (confirmed
@@ -68,7 +88,7 @@ will update both the BIOS and EC version. See:
 -   <http://www.thinkwiki.org/wiki/BIOS_update_without_optical_disk>
 
 NOTE: this can only be done when you are using Lenovo BIOS. How to
-update the EC firmware while running libreboot is unknown. Libreboot
+update the EC firmware while running libreboot is unknown. libreboot
 only replaces the BIOS firmware, not EC.
 
 Updated EC firmware has several advantages e.g. better battery

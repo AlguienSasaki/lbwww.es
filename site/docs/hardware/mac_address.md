@@ -6,7 +6,7 @@ x-toc-enable: true
 Introduction (GM45+e1000)
 =========================
 
-This section is applicable to all Libreboot-supported laptops with the
+This section is applicable to all libreboot-supported laptops with the
 mobile 4 series chipset (as shown in `$ lspci`)
 that use the e1000 ethernet controller (e.g. T400, X200).
 The R500 is an exception to this as it does not use the built-in e1000.
@@ -14,20 +14,20 @@ The R500 is an exception to this as it does not use the built-in e1000.
 On all these laptops, the
 [MAC address](https://en.wikipedia.org/wiki/MAC_address)
 for the built-in gigabit ethernet controller is stored inside the flash chip,
-along with Libreboot and other configuration data. Therefore, installing
-Libreboot will overwrite it.
+along with libreboot and other configuration data. Therefore, installing
+libreboot will overwrite it.
 
-Thus, for these laptops, prebuilt Libreboot already contains a generic
+Thus, for these laptops, prebuilt libreboot already contains a generic
 MAC address in the configuration section. This address is `00:f5:f0:40:71:fe
 in builds before 2018-01-16 and `00:4c:69:62:72:65` (see the ascii character
 set) afterwards.
 Unless you change it, your computer will boot and use it. This can lead
-to network problems if you have more than one Libreboot computer on
+to network problems if you have more than one libreboot computer on
 the same layer2 network (e.g. on the same network switch). The switch
 (postman) will simply not know who to deliver to as the MAC (house) addresses
 will be the same.
 
-To prevent these address clashes, you can either modify prebuilt Libreboot
+To prevent these address clashes, you can either modify prebuilt libreboot
 to use an address of your own choosing or you can change the address in your
 operating system's boot scripts.
 

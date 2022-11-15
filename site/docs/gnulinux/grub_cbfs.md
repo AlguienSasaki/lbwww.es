@@ -12,7 +12,7 @@ on *bare metal* as a native coreboot payload and does *not* use BIOS or UEFI
 services (but it *can* load and execute SeaBIOS, in addition to any other
 coreboot payload, by chainloading it).
 
-In most circumstances, this guide will not benefit you. Libreboot's default
+In most circumstances, this guide will not benefit you. libreboot's default
 GRUB configuration file contains scripting logic within it that intelligently
 searches for GRUB partitions installed onto a partition on your SSD, HDD or
 USB drive installed on your computer. If such a file is found, libreboot's
@@ -30,7 +30,7 @@ a known state.
 Compile flashrom and cbfstool
 =============================
 
-Libreboot does not currently distribute utilities pre-compiled. It only
+libreboot does not currently distribute utilities pre-compiled. It only
 provides ROM images pre-compiled, where feasible. Therefore, you have to build
 the utilities from source.
 
@@ -46,7 +46,7 @@ image:
    how to do this are covered in the following article:
    [How to build libreboot from source](../build/)
 
-In either case, you will use the `cbfstool` supplied in the Libreboot build
+In either case, you will use the `cbfstool` supplied in the libreboot build
 system.
 This can be found under `coreboot/*/util/cbfstool/` as source code,
 where `*` can be any coreboot source code directory for a given mainboard.
@@ -117,7 +117,7 @@ machine powered down) and read the contents of the boot flash.
 Extract grub.cfg
 ================
 
-Libreboot images that use the GNU GRUB bootloader will have *two* configuration
+libreboot images that use the GNU GRUB bootloader will have *two* configuration
 files in CBFS:
 
 * `grub.cfg`

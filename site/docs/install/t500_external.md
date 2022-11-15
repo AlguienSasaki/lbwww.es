@@ -11,12 +11,6 @@ followed (adapted) if you brick your T500, to know how to recover.
 
 W500 is also mostly compatible with this guide.
 
-Libreboot T400 {#t400}
-==============
-
-You may also be interested in the smaller, more portable [Libreboot
-T400](t400_external.md).
-
 Serial port {#serial_port}
 -----------
 
@@ -59,7 +53,7 @@ Intel GPU; this is referred to as "switchable graphics". In the *BIOS
 setup* program for lenovobios, you can specify that the system will use
 one or the other (but not both).
 
-Libreboot is known to work on systems with only the Intel GPU, using
+libreboot is known to work on systems with only the Intel GPU, using
 native graphics initialization. On systems with switchable graphics, the
 Intel GPU is used and the ATI GPU is disabled, so native graphics
 initialization works all the same.
@@ -224,10 +218,6 @@ Of course, make sure to turn on your PSU:\
 ![](https://av.libreboot.org/x200/disassembly/0013.jpg)
 
 Now, you should be ready to install libreboot.
-
-Flashrom binaries for ARM (tested on a BBB) are distributed in
-libreboot\_util. Alternatively, libreboot also distributes flashrom
-source code which can be built.
 
 Log in as root on your BBB, using the instructions in
 [bbb\_setup.html\#bbb\_access](bbb_setup.html#bbb_access).

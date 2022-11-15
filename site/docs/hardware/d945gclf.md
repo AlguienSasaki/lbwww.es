@@ -35,7 +35,7 @@ that it should also work but this is untested.
 Remarks about vendor bios:
 --------------------------
 
--   Without coreboot/libreboot this board is utery useless, since the
+-   Without coreboot/libreboot this board is completely useless, since the
     vendor bios is very bad. It cannot boot from any HDD whether it is
     connected to the SATA port or USB. With libreboot it works just
     fine.

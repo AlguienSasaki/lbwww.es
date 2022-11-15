@@ -22,7 +22,7 @@ Instructions are also on that page for sending patches (via pull requests).
 IRC chatroom
 ============
 
-IRC is the main way to contact the Libreboot project. `#libreboot` on Libera
+IRC is the main way to contact the libreboot project. `#libreboot` on Libera
 IRC.
 
 Webchat:
@@ -53,7 +53,7 @@ In general, you should check the documentation provided by your IRC software.
 Social media
 ============
 
-Libreboot exists officially on many places.
+libreboot exists officially on many places.
 
 Twitter and Mastodon
 --------------------

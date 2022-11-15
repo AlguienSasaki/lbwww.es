@@ -292,10 +292,3 @@ across subnets on the same interface (NIC).
 
 More information, including logs, can be found on [this
 page](http://web.archive.org/web/20210416010634/https://notabug.org/libreboot/libreboot/issues/23).
-
-USB keyboard wakeup on GM45 laptops
-===================================
-
-Look at resources/scripts/helpers/misc/libreboot\_usb\_bugfix
-
-Put this script in /etc/init.d/ on debian-based systems.

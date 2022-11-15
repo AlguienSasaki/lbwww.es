@@ -11,6 +11,15 @@ Foundation](https://www.fsf.org/), with no Invariant Sections, no Front Cover
 Texts and no Back Cover
 Texts.
 
+The *logo* for libreboot is Copyright (C) 2022 Ioan Moldovan, released under an
+Expat license which you can find here:
+<https://av.libreboot.org/logo/COPYING>
+
+The original logo files are here: <https://av.libreboot.org/logo/>
+
+You can download the logo files from `osbwww-img.git`. See:
+<https://libreboot.org/git.html>
+
 These pages are static HTML, generated from Markdown files, which you can find
 a link to at the bottom of each HTML page, for the corresponding Markdown file.
 

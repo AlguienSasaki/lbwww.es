@@ -138,7 +138,7 @@ could discover how this works, by debugging the Lenovo BIOS update utility (in
 Windows), and then replicate what it is doing, with some tool for GNU+Linux,
 then load a flashrom binary into memory and the ROM to flash (for the BIOS
 region). You would do this with GPIO33 grounded, and the payload program would
-actually flash the entire chip, with just a normal Libreboot image.
+actually flash the entire chip, with just a normal libreboot image.
 
 It's possible. The above is likely the only way that the Lenovo BIOS updater
 program works. So if we discover precisely how to do that, then you could
