@@ -82,6 +82,14 @@ html, ul, #TOC
 
 @media (min-width:60em)
 {
+	.title-logo{display:none}
+	div.title,h1.title {
+		background:url("/favicon.ico") no-repeat;
+		background-size:auto 99%;
+		min-height:2em
+	}
+	div.title {background-position:right}
+	h1.title {padding:0 4em}
 	#TOC
 	{
 		float: left;
