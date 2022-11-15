@@ -24,7 +24,7 @@ Your freedom matters.
 Many people use [proprietary](https://www.gnu.org/proprietary/proprietary.html)
 boot firmware, even if they use [GNU+Linux](https://www.gnu.org/distros/).
 Non-free firmware often [contains](faq.html#intel) [backdoors](faq.html#amd),
-and can be buggy. The libreboot project was founded in in December 2020, with the
+and can be buggy. The libreboot project was founded in in December 2013, with the
 express purpose of making Free Software accessible for non-technical users at
 the firmware level. It's true that `libreboot` can be called Open Source, [but you
 should call it Free
