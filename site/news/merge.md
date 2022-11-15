@@ -6,7 +6,7 @@ Long live Libreboot!
 ====================
 
 The former `osboot` project, started by the same founder as Libreboot, Leah
-Rowe, has today shut down; the osboot website now automatically directly, via
+Rowe, has today shut down; the osboot website now automatically redirects, via
 HTTP 301, to the libreboot website.
 
 Such was alluded to in the previous Libreboot release announcement:
