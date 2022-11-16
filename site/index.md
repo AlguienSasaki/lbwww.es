@@ -78,7 +78,7 @@ the [bug tracker](https://notabug.org/libreboot/lbmk/issues).
 If you spot a bug and have a fix, [here are instructions for how to send
 patches](git.md), and you can also report it. Also, this entire website is
 written in Markdown and hosted in a [separate
-repository](https://notabug.org/libreboot/osbwww) where you can send patches.
+repository](https://notabug.org/libreboot/lbwww) where you can send patches.
 
 Any and all development discussion and user support are all done on the IRC
 channel. More information is on the [contact page](contact.md).

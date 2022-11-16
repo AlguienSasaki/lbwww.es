@@ -834,5 +834,5 @@ the CC-BY-SA 4.0 license if you wish (I, Leah Rowe, own all BBB photos shown
 on this page, except for the one on the beaglebone website, and that one is
 merely linked here, instead of being hosted on the av.libreboot.org server).
 
-This version of the page is hosted in the `osbwww` git repository, with images
+This version of the page is hosted in the `lbwww` git repository, with images
 for it hosted in the `lbwww-img` repository (from libreboot).

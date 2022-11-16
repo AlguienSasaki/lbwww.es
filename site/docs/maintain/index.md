@@ -15,11 +15,11 @@ to the [build instructions](../build/)
 
 Generally speaking, *testing* releases of libreboot will not come with
 documentation; if you're later using *old* testing releases, it is prudent to
-check the `osbwww.git` repository on a revision from around the same time as
+check the `lbwww.git` repository on a revision from around the same time as
 those releases. Future stable releases of libreboot will come with a snapshot of
-the `osbwww.git` repository, for documentation pertaining to such releases. One
+the `lbwww.git` repository, for documentation pertaining to such releases. One
 way to do this, all testing releases of libreboot, will be to simply run `git log`
-on the `news/` section of `osbwww.git` and find the revision that added
+on the `news/` section of `lbwww.git` and find the revision that added
 the *announcement* for a given release (when available), and then you can
 just reset to that revision.
 

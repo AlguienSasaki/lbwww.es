@@ -17,7 +17,7 @@ Creative Common Zero license, version 1.0:
 
 The original logo files are here: <https://av.libreboot.org/logo/>
 
-You can download the logo files from `osbwww-img.git`. See:
+You can download the logo files from `lbwww-img.git`. See:
 <https://libreboot.org/git.html>
 
 These pages are static HTML, generated from Markdown files, which you can find

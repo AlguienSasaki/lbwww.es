@@ -12,8 +12,8 @@ found on [who.md](who.md)
 The `libreboot` project has 3 main Git repositories:
 
 * Build system: <https://notabug.org/libreboot/lbmk>
-* Website (+docs): <https://notabug.org/libreboot/osbwww>
-* Images (for website): <https://notabug.org/libreboot/osbwww-img>
+* Website (+docs): <https://notabug.org/libreboot/lbwww>
+* Images (for website): <https://notabug.org/libreboot/lbwww-img>
 
 There is also these programs, hosted by the Libreboot project, and libreboot
 either recommends them or makes use of them:
@@ -65,18 +65,18 @@ build `lbmk`, refer to the [build instructions](docs/build/).
 Information about the build system itself, and how it works, is available in
 the [lbmk maintenance guide](docs/maintain/).
 
-osbwww and osbwww-img
+lbwww and lbwww-img
 -------------------
 
 The *entire* libreboot website and documentation is hosted in a Git repository.
 Download it like so:
 
-    git clone https://notabug.org/libreboot/osbwww
+    git clone https://notabug.org/libreboot/lbwww
 
 Images are hosted on <https://av.libreboot.org/> and available in a separate
 repository:
 
-    git clone https://notabug.org/libreboot/osbwww-img
+    git clone https://notabug.org/libreboot/lbwww-img
 
 Make whatever changes you like. See notes below about how to send patches.
 
@@ -87,14 +87,14 @@ site generator project.
 
 If you like, you can set up a local HTTP server and build your own local
 version of the website. Please note that images will still link to the ones
-hosted on <https://av.libreboot.org/>, so any images that you add to `osbwww-img`
+hosted on <https://av.libreboot.org/>, so any images that you add to `lbwww-img`
 will not show up on your local `lbwww` site if you make the image links (for
 images that you add) link to `av.libreboot.org`. However, it is required that such
 images be hosted on av.libreboot.org.
 
 Therefore, if you wish to add images to the website, please also submit to the
 `lbwww-img` repository, with the links to them being
-<https://av.libreboot.org/path/to/your/new/image/in/osbwww-img> for each one.
+<https://av.libreboot.org/path/to/your/new/image/in/lbwww-img> for each one.
 When it is merged on the libreboot website, your images will appear live.
 
 For development purposes, you might make your images local links first, and
