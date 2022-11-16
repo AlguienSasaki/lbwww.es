@@ -3,7 +3,10 @@ title: BSD operating systems
 x-toc-enable: true
 ...
 
-Guide last updated on 24 August 2022.
+Guide last updated on 16 November 2022.
+
+NOTE: This guide pertains to x86 hosts, and does not cover supported CrOS/ARM
+chromebooks. For ARM targets, you should refer to u-boot documentation.
 
 libreboot is capable of booting many BSD systems. This section mostly documents
 the peculiarities of libreboot as it pertains to BSD; you can otherwise refer to

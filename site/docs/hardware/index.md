@@ -54,6 +54,28 @@ libreboot currently supports the following systems in this release:
 -   [Lenovo Thinkpad X230](../install/x230_external.md)
 -   [Lenovo Thinkpad X230t](../install/x230_external.md)
 
+### Laptops (ARM, u-boot, MOSTLY UNTESTED AS OF NOVEMBER 16, 2022)
+
+-   Samsung Chromebook 2 13" (peach-pi)
+-   Samsung Chromebook 2 11" (based on `peach_pit` in coreboot)
+-   HP Chromebook 11 G1 (google/daisy)
+-   Samsung Chromebook XE303 (google/daisy)
+-   HP Chromebook 14 G3 (google/nyan\_blaze)
+-   Acer Chromebook 13 (CB5-311, C810) (google/nyan\_big)
+-   ASUS Chromebit CS10 (google/veyron\_mickey)
+-   ASUS Chromebook Flip C100PA (google/veyron)
+-   ASUS Chromebook C201PA (google/veyron\_speedy)
+-   ASUS Chromebook Flip C101 (google/gru)
+-   Samsung Chromebook Plus (v1) (google/gru)
+
+NOTE: ARM hardware is currently undocumented in Libreboot, both for
+installation of Libreboot and the installation of an operating system. If you
+have one of these machines configured with Libreboot, you should consult
+u-boot documentation to learn how it's operated. You might ping `alpernebbi` on
+Libera IRC, who ported these boards to Libreboot. Extensive work was
+performed, to make u-boot work correctly. **TODO: installation instructions
+must be added to documentation!**
+
 TODO: More hardware is supported. See `resources/coreboot/` in lbmk. Update
 the above list!
 

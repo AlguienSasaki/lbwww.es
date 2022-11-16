@@ -6,8 +6,8 @@ x-toc-enable: true
 The `libreboot` project provides
 [freedom-respecting](https://www.gnu.org/philosophy/free-sw.html) *boot
 firmware* that initializes the hardware (e.g. memory controller, CPU,
-peripherals) on [specific Intel/AMD x86 computers](docs/hardware/) and starts
-a bootloader for your operating system. [GNU+Linux](docs/gnulinux/)
+peripherals) on [specific Intel/AMD x86 and ARM targets](docs/hardware/), which
+then starts a bootloader for your operating system. [GNU+Linux](docs/gnulinux/)
 and [BSD](docs/bsd/) are well-supported. It replaces proprietary BIOS/UEFI
 firmware. Help is available
 via [\#libreboot](https://web.libera.chat/#libreboot)

@@ -18,7 +18,8 @@ Documentation related to operating systems
 ============================
 
 -   [GNU+Linux Guides](gnulinux/)
--   [How to install BSD on a libreboot system](bsd/)
+-   [How to install BSD on an x86 host system](bsd/)
+-   [How to install BSD or Linux on ARM/uboot](uboot/) (TODO: write this section)
 
 Information for developers
 ==========================

@@ -3,6 +3,9 @@ title: GNU+Linux guides
 x-toc-enable: true
 ...
 
+NOTE: This guide pertains to x86 hosts, and does not cover supported CrOS/ARM
+chromebooks. For ARM targets, you should refer to u-boot documentation.
+
 This page is useful for those who wish to use the GRUB GRUB payload directly.
 If you're using SeaBIOS, the boot process will work similarly to traditional
 BIOS systems; refer to the SeaBIOS documentation
