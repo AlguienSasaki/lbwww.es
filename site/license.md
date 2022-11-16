@@ -11,9 +11,9 @@ Foundation](https://www.fsf.org/), with no Invariant Sections, no Front Cover
 Texts and no Back Cover
 Texts.
 
-The *logo* for libreboot is Copyright (C) 2022 Ioan Moldovan, released under an
-Expat license which you can find here:
-<https://av.libreboot.org/logo/COPYING>
+The *logo* for libreboot is Copyright (C) 2014 Marcus Moeller, released under
+Creative Common Zero license, version 1.0:
+<https://creativecommons.org/share-your-work/public-domain/cc0/>
 
 The original logo files are here: <https://av.libreboot.org/logo/>
 
