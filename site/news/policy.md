@@ -517,12 +517,7 @@ Hector Martin, leader of the *Asahi Linux* project (for booting linux kernels
 on M1 macbooks) wrote a very robust twitter thread criticizing the RYF criteria
 and much of what he wrote inspired *this* article that you are reading. See:
 
-<https://twitter.com/marcan42/status/1040626210999431168>
-
-If you wish to avoid non-free javascript, you can read this thread using
-nitter:
-
-<https://nitter.net/marcan42/status/1040626210999431168>
+<http://web.archive.org/web/20220326234344/https://twitter.com/marcan42/status/1040626210999431168>
 
 Article updates
 ===============
