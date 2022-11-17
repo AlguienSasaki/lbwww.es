@@ -4,6 +4,10 @@ x-toc-enable: true
 ...
 
 This sections relates to known hardware compatibility in libreboot.
+**Osboot merged with and became part of Libreboot on November 15th, 2022. As
+of this day, November 16th, many new boards have been added as a result, but
+some may not be documented or even listed at all (on this page). If any are
+missing, please tell us on IRC.**
 
 For installation instructions, refer to [../install/](../install/).
 
