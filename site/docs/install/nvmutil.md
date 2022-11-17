@@ -1,5 +1,5 @@
 ---
-title: nvmutil: MAC address changer and/or randomiser for IFD/GbE
+title: nvmutil manual
 x-toc-enable: true
 ...
 
