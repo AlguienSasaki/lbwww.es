@@ -592,6 +592,10 @@ TARGET: Thinkpad X230t
 Refer to the [ivybridge/haswell common guide.](ivy_has_common.md) for how to
 make the rom image usable for external flashing.
 
+Read [board documentation](/docs/install/x230_external.html) for disassembly.
+(same instructions as X230, for this purpose of external flashing, but
+full disassembly will differ slightly)
+
 TARGET: Thinkpad t440p
 ---------------------
 

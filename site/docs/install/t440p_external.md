@@ -1,5 +1,5 @@
 ---
-title: ThinkPad X230/X230T external flashing
+title: ThinkPad T440p external flashing
 x-toc-enable: true
 ...
 
