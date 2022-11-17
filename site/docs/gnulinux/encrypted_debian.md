@@ -3,6 +3,8 @@ title: Encrypted Debian GNU+Linux
 x-toc-enable: true
 ...
 
+**TODO: This article is obsolete, and a target for future deletion.**
+
 This guide is written for the Debian distribution, but it should also
 work for Devuan with the net installer. Other Debian based GNU+Linux
 distributions may also work, using these instructions.
