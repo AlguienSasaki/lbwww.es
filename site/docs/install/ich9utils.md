@@ -3,6 +3,9 @@ title: ich9utils
 x-toc-enable: true
 ...
 
+If all you want to do is change the MAC address, you might use `nvmutil`
+instead. See: [nvmutil documentation](../install/nvmutil.md).
+
 Introduction
 ============
 

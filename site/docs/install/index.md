@@ -123,6 +123,12 @@ Which systems are supported?
 
 [Refer to the hardware compatibility page](../hardware/)
 
+MAC address on Sandybridge/Ivybridge/Haswell (e.g. X230, X220, T440p)
+=====================================================================
+
+You can change the MAC address in flash, on these machines. See:
+[nvmutil documentation](nvmutil.md)
+
 MAC address on GM45+ICH9M hardware (ThinkPad X200/R400/T400/T500/W500)
 ======================================================================
 
@@ -130,7 +136,8 @@ The MAC address is stored in a region of the boot flashed called *GbE NVM*
 which is short for *gigabit ethernet non-volatile memory*. Refer to the
 following article:
 
-[ich9utils documentation](ich9utils.md)
+[ich9utils documentation](ich9utils.md) (you can also use nvmutil, see link
+above)
 
 libreboot puts a default MAC address in the available ROM images, but this is
 a generic MAC address and it's identical on every ROM image. Technically, you

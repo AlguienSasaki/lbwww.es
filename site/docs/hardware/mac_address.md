@@ -97,3 +97,29 @@ On GM45 laptops with ICH9M southbridge and Intel PHY module, the MAC address
 is hardcoded in boot flash, which means it can be changed if you re-flash.
 
 See [ich9utils documentation](../install/ich9utils.md)
+
+If *all* you want to do is change the MAC address, you might try `nvmutil`
+instead. See notes below:
+
+Changing the MAC address on ivybridge/sandybridge/haswell (e.g. X230/T440p)
+=========================================================
+
+See [nvmutil documentation](../install/nvmutil.md)
+
+This tool was originally written for changing the MAC address on Intel
+Sandybridge, Ivybridge and Haswell platforms, but it can be used on any
+platform with a valid GbE region in flash, where an Intel Flash Descriptor
+is used; this includes older GM45+ICH9M machines supported by Libreboot.
+
+The `ich9utils` program is more useful in an lbmk context, because it
+generates an entire Intel Flash Descriptor and GbE region from scratch;
+coreboot has a similar method in its build system, using its own utility
+called bincfg, but this tool is unused in lbmk.
+
+No tool like ich9utils exists for these boards yet, but lbmk includes the IFD
+and GbE files in-tree (Intel ME is handled by extracting from Lenovo updates,
+which the build system automatically fetches from the internet).
+
+You can use `nvmutil` to change the existing MAC address in a GbE region. This
+sets the "hardcoded" MAC address, typically a globally assigned one set by
+the vendor.

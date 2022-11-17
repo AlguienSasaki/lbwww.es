@@ -71,6 +71,9 @@ For example:
 
 	./blobutil inject -r x230_libreboot.rom -b x230_12mb -m 00:f6:f0:40:71:fd
 
+NOTE: this makes use of `nvmutil`, which you can read more about in
+the [nvmutil documentation](nvmutil.md).
+
 Splitting The Rom
 -----------------
 
