@@ -9,6 +9,11 @@ of this day, November 16th, many new boards have been added as a result, but
 some may not be documented or even listed at all (on this page). If any are
 missing, please tell us on IRC.**
 
+**If a target doesn't yet have ROM images in the release (ones present as a
+result of the osboot merge), please know that the Libreboot 20220710 release
+was conducted before the merge. The next release after Libreboot 20220710 shall
+contain ROM images for these additional boards.**
+
 For installation instructions, refer to [../install/](../install/).
 
 NOTE: For T60/R60 thinkpads, make sure that it has an Intel GPU, not an ATI GPU
