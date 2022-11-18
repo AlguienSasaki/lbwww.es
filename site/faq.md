@@ -697,7 +697,7 @@ What other firmware exists outside of libreboot?
 ==================================================
 
 You can also read information about these in the [libreboot binary blob
-reduction policy](docs/policy.md), where it goes into more detail about some
+reduction policy](news/policy.md), where it goes into more detail about some
 of them.
 
 ### External GPUs
@@ -948,7 +948,7 @@ Unknown. Perhaps so, but it's impossible to say without further testing.
 What level of software freedom does libreboot give me?
 ===================================================
 
-Please read the [libreboot binary blob minimalisation policy](docs/policy.md).
+Please read the [libreboot binary blob minimalisation policy](news/policy.md).
 
 The libreboot firmware provides host hardware initialisation inside ROM files,
 that can be written to NOR flash, but on many systems there exist
