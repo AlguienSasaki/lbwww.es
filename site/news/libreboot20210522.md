@@ -140,6 +140,11 @@ days. It first started as an experimental fork named *osboot*, which you can
 see here: <https://osboot.org/> (I, Leah Rowe, am the founder and lead developer
 of both libreboot *and* osboot. osboot is the younger sibling of libreboot)
 
+**NOTE: As of November 2022,
+[osboot has merged with and become part of Libreboot](merge.md), but
+the old repos at <https://notabug.org/osboot/> still exist and shall be
+preserved.**
+
 The osboot Git repository was then forked into osboot-libre, available in the
 branch named `libre`. *That* branch was then forked to create this Libreboot
 release. The osboot build system is named osbmk (osboot-make) and the one in

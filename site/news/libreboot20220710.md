@@ -140,6 +140,11 @@ payload, on x86 and ARM platforms.
 Planned osboot/Libreboot merger
 -------------------------------
 
+**NOTE: As of November 2022,
+[osboot has merged with and become part of Libreboot](merge.md), but
+the old repos at <https://notabug.org/osboot/> still exist and shall be
+preserved.**
+
 *The plans below are a guiding principle, but the details may change, when
 or if (most likely when) this decision is implemented.*
 

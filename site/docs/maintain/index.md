@@ -6,7 +6,7 @@ x-toc-enable: true
 Automated pragmatism
 ====================
 
-This manual describes the nature of `lbmk` (OSBoot MaKe), the automated
+This manual describes the nature of `lbmk` (LibreBoot MaKe), the automated
 build system used to produce libreboot releases. It is intended as a reference
 for *libreboot development*.
 
