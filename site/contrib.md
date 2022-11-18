@@ -20,7 +20,7 @@ general how the project was created (and who helped create it).
 Leah Rowe
 ---------
 
-**Founder of the librebootboot project, and currently the lead developer.** Leah
+**Founder of the Libreboot project, and currently the lead developer.** Leah
 works on all aspects of libreboot, such as:
 
 * General management. Leah handles all outside contributions to libreboot,
