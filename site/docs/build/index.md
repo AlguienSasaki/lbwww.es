@@ -18,6 +18,48 @@ be working directly in the libreboot git repository.
 The following document describes how `lbmk` works, and how you can make changes
 to it: [libreboot maintenance manual](../maintain/)
 
+Git
+===
+
+Libreboot's build system uses Git, extensively. You should perform the steps
+below, *even if you're using a release archive*.
+
+Before you use the build system, please know: the build system itself uses
+Git extensively, when downloading software like coreboot and patching it.
+
+You should make sure to initialize your Git properly, before you begin or else
+the build system will not work properly. Do this:
+
+    git config --global user.name "John Doe"
+    git config --global user.email johndoe@example.com
+
+Change the name and email address to whatever you want, when doing this.
+
+You may also want to follow more of the steps here:
+<https://git-scm.com/book/en/v2/Getting-Started-First-Time-Git-Setup>
+
+Python
+======
+
+Python 2 *and* 3 are used by different parts of the build system, not directly
+but because certain projects Libreboot depends upon uses it.
+
+You should have this configuration on your OS:
+
+    python
+
+    python2
+
+    python3
+
+Running `python` should give you python 3.x.
+
+Running `python2` should give you python 2.x.
+
+Running `python3` should give you python 3.x.
+
+Therefore, you should install both python2 and python3 in your distro.
+
 GNU Make
 ========
 
