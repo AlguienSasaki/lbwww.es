@@ -247,8 +247,6 @@ building; a normal libc, C compiler and linker should be enough.
 GCC and LLVM have all these things included, so use whichever one
 you want.
 
-As of nvmutil 20220808, OpenBSD `pledge(2)` is used in the code.
-
 If the code is compiled on OpenBSD,
 [pledge(2)](https://man.openbsd.org/pledge.2) is used.
 This is done with an `ifdef` rule, so that the code still compiles
