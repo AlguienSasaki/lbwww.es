@@ -248,6 +248,9 @@ GCC and LLVM have all these things included, so use whichever one
 you want.
 
 As of nvmutil 20220808, OpenBSD `pledge(2)` is used in the code.
+
+If the code is compiled on OpenBSD,
+[pledge(2)](https://man.openbsd.org/pledge.2) is used.
 This is done with an `ifdef` rule, so that the code still compiles
 on other systems. When the `dump` command is specified, pledge
 will use these promises: `stdio rpath`. When any other command
@@ -323,10 +326,7 @@ part if the existing checksum is correct. It will exit with zero
 status if at least one part is modified; otherwise, it will
 exit with non-zero status.
 
-On release 20220808 and below, validation merely
-checks whether `xx:xx:xx:xx:xx:xx` is given, where each
-nibble is a hexademical number. On release 20220810 and above,
-the following additional rules are *also enforced*:
+The following rules are enforced in code:
 
 * User cannot specify multicast addresses
 * User cannot specify `00:00:00:00:00:00`
@@ -367,9 +367,7 @@ You can also pass it without a MAC address:
     nvm gbe.bin setmac
 
 If you only type `setmac` without specifying a MAC address,
-it will do the same thing as `setmac ??:??:??:??:??:??`. This
-behaviour is not present in 20220808, but is available in
-release 20220810 and above.
+it will do the same thing as `setmac ??:??:??:??:??:??`.
 
 This will set the last three bytes randomly, while the
 MAC address would begin with `00:1f:16`.
