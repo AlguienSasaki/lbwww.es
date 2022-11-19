@@ -58,5 +58,5 @@ NOTE: You need the latest flashrom. Just get it on flashrom.org from
 their SVN or Git repos.
 
 NOTE: due to a bug in the hardware, the MAC address is hardcoded in
-coreboot-libre. Therefore, you must set your own MAC address in your
+coreboot. Therefore, you must set your own MAC address in your
 operating system.
