@@ -85,6 +85,11 @@ Libera IRC, who ported these boards to Libreboot. Extensive work was
 performed, to make u-boot work correctly. **TODO: installation instructions
 must be added to documentation!**
 
+### Emulation
+
+-   [Qemu x86](../misc/emulation.md)
+
+
 TODO: More hardware is supported. See `resources/coreboot/` in lbmk. Update
 the above list!
 
