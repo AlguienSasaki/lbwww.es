@@ -597,6 +597,9 @@ SPI flash is memory mapped and the maximum (in practise) that you can use is a
 ThinkPad X200S, X200 Tablet and T400S, all of which have WSON8 where the best
 course of action is to replace it with a SOIC8 flash chip.
 
+**D16 support was removed on 19 November 2022. You can still use older
+revisions of Libreboot, and older release versions.**
+
 In all such cases, flashing a new chip should be done using a breadboard, not
 a test clip. You will use 2.54mm dupont leads to connect your Raspberry Pi.
 For data lines, make sure that all wires are the same length, and about 10cm

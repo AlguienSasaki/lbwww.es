@@ -38,9 +38,9 @@ libreboot currently supports the following systems in this release:
 
 ### Servers/workstations (AMD, x86)
 
--   [ASUS KCMA-D8 motherboard](kcma-d8.md)
--   [ASUS KGPE-D16 motherboard](kgpe-d16.md)
--   [ASUS KFSN4-DRE motherboard](kfsn4-dre.md)
+-   [ASUS KCMA-D8 motherboard](kcma-d8.md) (removed on 2022-11-19)
+-   [ASUS KGPE-D16 motherboard](kgpe-d16.md) (removed on 2022-11-19)
+-   [ASUS KFSN4-DRE motherboard](kfsn4-dre.md) (removed on 2022-11-19)
 
 ### Laptops (Intel, x86)
 

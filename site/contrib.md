@@ -255,6 +255,9 @@ The <https://www.gnu.org/> and <https://www.fsf.org/> websites now run on
 Librebooted ASUS KGPE-D16 based servers, on a fully free GNU+Linux distro. This
 means that the FSF now has full software freedom for their hosting infrastructure.
 
+**NOTE: D16/D8 and KFSN4-DRE boards were removed from Libreboot on November
+19th, 2022.**
+
 The FSF also provides access to this infrastructure for many other projects
 (besides GNU projects); for example, Trisquel uses a D16 provided by the FSF
 for their development server used for building Trisquel releases and testing
@@ -403,8 +406,10 @@ Ported the ASUS KGPE-D16 board to coreboot for the company Raptor
 Engineering of which Timothy is the CEO.
 Timothy maintains this code in coreboot,
 helping the project with the libreboot integration for it. This person's
-contact details are on the raptor site, or you can ping **tpearson** on
-the Libera IRC network.
+contact details are on the raptor site.
+
+**D16 support was removed on 19 November 2022. You can still use older
+revisions of Libreboot, and older release versions.**
 
 vitali64
 --------
