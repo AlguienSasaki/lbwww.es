@@ -1,9 +1,21 @@
 ---
-title: GA-G41M-ES2L flashing tutorial 
+title: GA-G41M-ES2L flashing tutorial
+x-toc-enable: true
 ...
 
 This guide is for those who want libreboot on their Intel GA-G41M-ES2L
 motherboard while they still have the original BIOS present.
+
+MAC ADDRESS
+===========
+
+NOTE: due to a bug in the hardware, the MAC address is hardcoded in
+coreboot. Therefore, you must set your own MAC address in your
+operating system.
+
+Use [macchanger](http://www.gnu.org/software/macchanger) in your
+distro, to set a valid MAC address. By doing this, your NIC should
+work nicely.
 
 Flash chip size {#flashchips}
 ===============
@@ -56,7 +68,3 @@ you flash both chips!
 
 NOTE: You need the latest flashrom. Just get it on flashrom.org from
 their SVN or Git repos.
-
-NOTE: due to a bug in the hardware, the MAC address is hardcoded in
-coreboot. Therefore, you must set your own MAC address in your
-operating system.
