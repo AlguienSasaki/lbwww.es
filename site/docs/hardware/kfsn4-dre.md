@@ -3,11 +3,57 @@ title: ASUS KFSN4-DRE server/workstation board
 x-toc-enable: true
 ...
 
+<div style="float: right;">
+<center>
+![ASUS KFSN4-DRE]()
+</center>
+
+| ***Specifications***       |                                                |
+|----------------------------|------------------------------------------------|
+| **Manufacturer**           | ASUS                                           |
+| **Name**                   | KFSN4-DRE                                      |
+| **Released**               | ?                                              |
+| **Chipset**                | nVIDIA nForce Professional 2200                |
+| **CPU**                    | AMD Opteron 2000 series (Barcelona Family)     |
+| **Graphics**               | XGI Z9s VGA Controller                         |
+| **Display**                | None.                                          |
+| **Memory**                 | 512MB, 1GB, 2GB, 4GB                           |
+| **Architecture**           | x86_64                                         |
+| **EC**                     | Proprietary                                    |
+| **Original boot firmware** | AMIBIOS                                        |
+| **Intel ME/AMD PSP**       | Not present.                                   |
+| **Flash chip**             | PLCC 1MiB (Upgradable to 2MiB)                 |
+
+```
+W+: Works without blobs; 
+N: Doesn't work; 
+W*: Works with blobs; 
+U: Untested; 
+P+: Partially works; 
+P*: Partially works with blobs
+```
+
+| ***Features*** |                                       |
+|----------------|---------------------------------------|
+| **Internal flashing with original boot firmware** | W+ |
+| **Display**                                       | -  | 
+| **Audio**                                         | W+ |
+| **RAM Init**                                      | W+ |
+| **External output**                               | W+ |
+| **Display brightness**                            | -  |
+
+| ***Payloads supported***  |                 |
+|---------------------------|-----------------|
+| **GNU GRUB**              | Partially works |
+| **SeaBIOS**               | Partially works |
+| **SeaBIOS with GNU GRUB** | Partially works |
+</div>
+
 This is a server board using AMD hardware (Fam10h). It can also be used
 for building a high-powered workstation. Powered by libreboot.
 
 Flashing instructions can be found at
-[../install/\#flashrom](../install/#flashrom)
+[../install/\#flashrom](../install/)
 
 Form factor {#formfactor}
 ===========

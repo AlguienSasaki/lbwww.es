@@ -3,6 +3,51 @@ title: Intel D945GCLF desktop board
 x-toc-enable: true
 ...
 
+<div style="float: right;">
+<center>
+![D945GCLF](https://av.libreboot.org/d945gclf/d945gclf.jpg){width=200px}
+</center>
+
+| ***Specifications***       |                                                |
+|----------------------------|------------------------------------------------|
+| **Manufacturer**           | Intel                                          |
+| **Name**                   | D945GCLF/D945GCLF2D                            | 
+| **Released**               | 2008                                           |
+| **Chipset**                | Intel Calistoga 945GC                          |
+| **CPU**                    | Intel Atom                                     | 
+| **Graphics**               | ?                                              |
+| **Display**                | None.                                          |
+| **Memory**                 | Up to 2GB                                      |
+| **Architecture**           | x86_64                                         |
+| **EC**                     | Proprietary                                    |
+| **Original boot firmware** | Intel BIOS                                     |
+| **Intel ME/AMD PSP**       | Not present.                                   |
+| **Flash chip**             | SOIC-8 512KiB                                  |
+
+```
+W+: Works without blobs; 
+N: Doesn't work; 
+W*: Works with blobs; 
+U: Untested; 
+P+: Partially works; 
+P*: Partially works with blobs
+```
+
+| ***Features*** |                                       | Notes |
+|----------------|---------------------------------------|-------|
+| **Internal flashing with original boot firmware** | N  |       |
+| **Display**                                       | -  |       |
+| **Audio**                                         | W+ |       |
+| **RAM Init**                                      | W+ |       |
+| **External output**                               | W+ |       |
+| **Display brightness**                            | -  |       |
+
+| ***Payloads supported***  |              |
+|---------------------------|--------------|
+| **GNU GRUB**              | Doesn't work |
+| **SeaBIOS**               | Works        |
+| **SeaBIOS with GNU GRUB** | Doesn't work |
+</div>
 If you just want flashing instructions, go to
 [../install/d945gclf.md](../install/d945gclf.md)
 

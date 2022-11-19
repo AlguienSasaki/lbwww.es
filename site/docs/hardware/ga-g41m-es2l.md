@@ -2,6 +2,52 @@
 title: Gigabyte GA-G41M-ES2L desktop board 
 ...
 
+<div style="float: right;">
+<center>
+![GA-G41M-ES2L]()
+</center>
+
+| ***Specifications***       |                                                |
+|----------------------------|------------------------------------------------|
+| **Manufacturer**           | Gigabyte                                       |
+| **Name**                   | GA-G41M-ES2L                                   |
+| **Released**               | 2009                                           |
+| **Chipset**                | Intel G41                                      |
+| **CPU**                    | Intel Core 2 Extreme/Quad/Duo, 
+                                        Pentium Extreme/D/4 Extreme/4/Celeron |
+| **Graphics**               | Integrated                                     |
+| **Display**                | None.                                          |
+| **Memory**                 | Up to 16GB                                     |
+| **Architecture**           | x86_64                                         |
+| **EC**                     | Proprietary                                    |
+| **Original boot firmware** | AWARD BIOS                                     |
+| **Intel ME/AMD PSP**       | Present. Can be disabled                       |
+| **Flash chip**             | 2x8Mbit                                        |
+
+```
+W+: Works without blobs; 
+N: Doesn't work; 
+W*: Works with blobs; 
+U: Untested; 
+P+: Partially works; 
+P*: Partially works with blobs
+```
+
+| ***Features*** |                                       |
+|----------------|---------------------------------------|
+| **Internal flashing with original boot firmware** | W+ |
+| **Display**                                       | -  |
+| **Audio**                                         | W+ |
+| **RAM Init**                                      | P+ |
+| **External output**                               | P+ |
+| **Display brightness**                            | -  |
+
+| ***Payloads supported***  |       |
+|---------------------------|-------|
+| **GNU GRUB**              | Works |
+| **SeaBIOS**               | Works |
+| **SeaBIOS with GNU GRUB** | Works |
+</div>
 This is a desktop board using intel hardware (circa \~2009, ICH7
 southbridge, similar performance-wise to the ThinkPad X200. It can make
 for quite a nifty desktop. Powered by libreboot.

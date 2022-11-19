@@ -28,7 +28,7 @@ $endif$
 <style type="text/css">
 :not(p)
 {
-	max-width: 60em;
+	max-width: 85em;
 	margin: 0 auto;
 }
 
