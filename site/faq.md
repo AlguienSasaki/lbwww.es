@@ -1024,6 +1024,7 @@ Where can I learn more about electronics
 * Boardview files can be open with [OpenBoardview](https://github.com/OpenBoardView/OpenBoardView),
 which is free software under MIT license.
 
-Use of youtube-dl with mpv would be recommended for youtube links
+Use of `yt-dlp` (an enhanced fork of `youtube-dl`) is recommended for links
+to `youtube.com`. See: <https://github.com/yt-dlp/yt-dlp>
 
 Lastly the most important message to everybody gaining this wonderful new hobby - [Secret to Learning Electronics](https://vid.puffyan.us/watch?v=xhQ7d3BK3KQ)
