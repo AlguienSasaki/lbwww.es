@@ -31,7 +31,7 @@ libreboot currently supports the following systems in this release:
 ### Desktops (AMD, Intel, x86)
 
 -   [Gigabyte GA-G41M-ES2L motherboard](ga-g41m-es2l.md)
--   Acer G43T-AM3
+-   [Acer G43T-AM3](acer_g43t-am3.md)
 -   [Intel D510MO and D410PT motherboards](d510mo.md)
 -   [Intel D945GCLF](d945gclf.md) (D945GCLF2D also reported working by a user)
 -   [Apple iMac 5,2](imac52.md)
