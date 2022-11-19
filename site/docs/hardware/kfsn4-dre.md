@@ -3,7 +3,7 @@ title: ASUS KFSN4-DRE server/workstation board
 x-toc-enable: true
 ...
 
-<div style="float: right;">
+<div class="specs">
 <center>
 ![ASUS KFSN4-DRE]()
 </center>

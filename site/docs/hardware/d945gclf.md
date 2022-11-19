@@ -3,7 +3,7 @@ title: Intel D945GCLF desktop board
 x-toc-enable: true
 ...
 
-<div style="float: right;">
+<div class="specs">
 <center>
 ![D945GCLF](https://av.libreboot.org/d945gclf/d945gclf.jpg){width=200px}
 </center>

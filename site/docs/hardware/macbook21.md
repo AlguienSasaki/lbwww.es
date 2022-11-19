@@ -3,7 +3,7 @@ title: MacBook2,1 and MacBook1,1
 x-toc-enable: true
 ...
 
-<div style="float: right;">
+<div class="specs">
 <center>
 ![MacBook2,1]()
 </center>

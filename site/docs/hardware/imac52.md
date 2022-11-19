@@ -2,7 +2,7 @@
 title: Apple iMac 5,2 
 ...
 
-<div style="float: right;">
+<div class="specs">
 <center>
 ![iMac5,2]()
 </center>

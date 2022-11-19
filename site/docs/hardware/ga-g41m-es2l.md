@@ -2,7 +2,7 @@
 title: Gigabyte GA-G41M-ES2L desktop board 
 ...
 
-<div style="float: right;">
+<div class="specs">
 <center>
 ![GA-G41M-ES2L]()
 </center>
