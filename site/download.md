@@ -16,14 +16,6 @@ GPG signing key
 
 **The latest release is Libreboot 20220710, under the `stable` directory.**
 
-NOTE: KGPE-D16, KCMA-D8 and GA-G41M-ES2L ROM images are excluded in that
-release; use an older release, unless these are re-added in future releases.
-You can still compile ROM images for these boards yourself, from the latest
-version of Libreboot in the Git repository.
-
-**D16 support was removed on 19 November 2022. You can still use older
-revisions of Libreboot, and older release versions.**
-
 ### NEW KEY
 
 Full key fingerprint: `98CC DDF8 E560 47F4 75C0  44BD D0C6 2464 FA8B 4856`
