@@ -26,28 +26,38 @@ Refer to the following pages:
 
 * [How to Prepare and Boot a USB Installer in libreboot Systems](grub_boot_installer.md)
 * [Modifying the GRUB Configuration in libreboot Systems](grub_cbfs.md)
-* [Installing Hyperbola GNU+Linux, with Full-Disk Encryption (including /boot)](https://wiki.hyperbola.info/en:guide:encrypted_installation)
-* [Installing Debian or Devuan GNU+Linux-Libre, with Full-Disk Encryption (including /boot)](encrypted_debian.md)
-* [Installing Guix System, with Full-Disk Encryption (including /boot)](guix.md)
 * [How to Harden Your GRUB Configuration, for Security](grub_hardening.md)
 
-Guix, Parabola, Trisquel
-========================
+Encrypted (LUKS/dm-crypt) installations
+=======================================
 
-These guides were outdated, so they were deleted. You can find links to them
-here: <https://notabug.org/libreboot/lbwww/issues/4>
+You should install with unencrypted `/boot` partition, but everything else
+encrypted. The GRUB payload has LUKSv1 support and (buggy) LUKSv2 support.
 
-The Debian guide has been retained, because it's currently up to date. The
-Hyperbola guide is already on the Hyperbola website, and the above is just a
-link.
+There used to be guides for encrypted `/boot` on libreboot.org, but it's not
+really viable to do that anymore (with GRUB), due to buggy/incomplete LUKS
+support in GRUB.
 
-In general, it is recommended that you use SeaBIOS but if you want extra security,
-GRUB payload is recommended where you can then have a fully encrypted /boot
-directory.
+A better solution for that would be a Linux payload in flash, handling the
+encryption, at least if you want to use Linux, because then it'll have
+perfect LUKS support.
 
-TODO: Nuke *all* distro-specific guides on libreboot.org. Instead, move these
-instructions to the wiki pages of these projects, on their websites. The reasons
-are explained in the above issue page.
+GRUB otherwise has good filesystem support, so if you have a valid `grub.cfg`
+in `/boot/grub` on your installed system, Libreboot's GRUB configuration has
+logic in it that will try to automatically use whatever you have installed,
+by switching to it. In this way, most installations Just Work, so long as
+the `/boot` partition is accessible.
+
+If you do want encrypted /boot in your distro, please ensure that you have
+downgraded to LUKSv1, and generic advice for booting is this (press C to
+access a GRUB terminal, when you're in the GRUB payload):
+
+    set root=`lvm/bla-bla`
+    linux /vmlinuz root=/dev/mapper/bla-bla cryptdevice=/dev/mapper/bla-bla:root
+    initrd /initrd.img
+    boot
+
+Adapt according to your configuration.
 
 Rebooting system in case of freeze
 ===================================
