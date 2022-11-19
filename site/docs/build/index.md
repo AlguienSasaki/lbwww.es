@@ -41,24 +41,8 @@ You may also want to follow more of the steps here:
 Python
 ======
 
-Python 2 *and* 3 are used by different parts of the build system, not directly
-but because certain projects Libreboot depends upon uses it.
-
-You should have this configuration on your OS:
-
-    python
-
-    python2
-
-    python3
-
-Running `python` should give you python 3.x.
-
-Running `python2` should give you python 2.x.
-
-Running `python3` should give you python 3.x.
-
-Therefore, you should install both python2 and python3 in your distro.
+Python2 is unused by lbmk or anything that it pulls down as modules. You
+should ensure that the `python` command runs python 3, on your system.
 
 GNU Make
 ========
