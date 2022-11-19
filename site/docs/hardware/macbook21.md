@@ -3,6 +3,56 @@ title: MacBook2,1 and MacBook1,1
 x-toc-enable: true
 ...
 
+<div class="specs">
+<center>
+![MacBook2,1]()
+</center>
+
+| ***Specifications***       |                                                |
+|----------------------------|------------------------------------------------|
+| **Manufacturer**           | Apple                                          |
+| **Name**                   | Late 2006/Mid 2007 MacBook "Core 2 Duo" / Early 
+                                                      2006 MacBook "Core Duo" |
+| **Released**               | 2006/2007                                      |
+| **Chipset**                | Intel Calistoga 945GM                          |
+| **CPU**                    | Intel Core 2 Duo or Intel Core Duo on 
+                                                            original MacBooks |
+| **Graphics**               | Intel GMA 950                                  |
+| **Display**                | 1280x800 TFT                                   |
+| **Memory**                 | 512MB, 1GB (upgradable to 4GB with 3GB usable) |
+| **Architecture**           | x86_64                                         |
+| **EC**                     | Proprietary                                    |
+| **Original boot firmware** | Apple EFI                                      |
+| **Intel ME/AMD PSP**       | Not present.                                   |
+| **Flash chip**             | SOIC-8 2MiB (Upgradable to 16MiB)              |
+
+```
+W+: Works without blobs; 
+N: Doesn't work; 
+W*: Works with blobs; 
+U: Untested; 
+P+: Partially works; 
+P*: Partially works with blobs
+```
+
+| ***Features*** |                                       | Notes |
+|----------------|---------------------------------------|-------|
+| **Internal flashing with original boot firmware** | W+ | MacBook1,1 does 
+                                                not support this |
+| **Display**                                       | W+ |       |
+| **Audio**                                         | W+ | Audio quality is 
+                                     better when using Libreboot |
+| **RAM Init**                                      | W+ |       |
+| **External output**                               | W+ |       |
+| **Display brightness**                            | P+ | [Finetune backlight 
+control](../misc/#finetune-backlight-control-on-intel-gpus)      |
+
+| ***Payloads supported***  |           |
+|---------------------------|-----------|
+| **GNU GRUB**              | Works     |
+| **SeaBIOS**               | Works     |
+| **SeaBIOS with GNU GRUB** | Works     |
+</div>
 There is an Apple laptop called the macbook1,1 from 2006 which uses the
 same i945 chipset as the ThinkPad X60/T60. A developer (Mono Moosbart) ported
 the Macbook2,1 to coreboot, working alongside Vladimir Serbinenko. The ROM
@@ -62,7 +112,7 @@ External flashing
 =================
 
 macbook1,1 requires external flashing, if running the default Apple firmware.
-macbook2,1 can be flased internally, regardless.
+macbook2,1 can be flashed internally, regardless.
 If running coreboot or libreboot you can already internally re-flash.
 
 [This page shows disassembly
@@ -72,7 +122,7 @@ Locate the flash. It'll be a SOIC8, which looks like this:
 
 ![](https://av.libreboot.org/chip/soic8.jpg)
 
-motherboard. [How to remove the
+The chip is located under the motherboard. [How to remove the
 motherboard](https://www.ifixit.com/Guide/MacBook+Core+2+Duo+PRAM+Battery+Replacement/529).
 
 Refer to the following guide:\

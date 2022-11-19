@@ -26,9 +26,14 @@ $if(keywords)$
 $endif$
   <title>$if(title-prefix)$$title-prefix$ – $endif$$pagetitle$</title>
 <style type="text/css">
+.specs
+{
+	float: right;
+}
+
 :not(p)
 {
-	max-width: 60em;
+	max-width: 85em;
 	margin: 0 auto;
 }
 
