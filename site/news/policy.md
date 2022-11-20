@@ -5,52 +5,23 @@
 Introduction
 ============
 
-In the beginning Libreboot intentionally *de-blobbed* coreboot, which is to say
-that it did not include binary blobs. Coreboot, on the other hand, requires
-binary blobs on most systems that it has support for. Libreboot's
-entirely *"free"* version of coreboot consequently supported fewer mainboards.
+**[Osboot merged with and became part of Libreboot](merge.md) on 16
+November 2022. This page contains the new Libreboot policy, which is derived
+from the osboot one.**
 
-Libreboot's zero blobs policy has
-been scrapped, entirely. The goal of current libreboot is simply to support
-every single system from coreboot, to provide pre-configured, automated compiling of ROM
-images for *all* of them. This is quite a lot more ambitious in terms of sheer
-workload, and maintenance. It is expected that the project will *grow* in the
-future, to accomodate *board maintainers*, just like you have *package
-maintainers* in Debian; the analogy is highly appropriate, given the nature
-of the libreboot build system, which you can learn more about on the [lbmk maintenance manual](../docs/maintain/).
+Libreboot's policy is to provide as much software freedom as possible to each
+user, on each and every bit of hardware supported, and to *support as much
+hardware from coreboot as is feasible*. The *goal* of Libreboot is
+to do exactly this, and help as many people as possible by automating the
+configuration, compilation and installation of *coreboot* for *non-technical*
+users, easing it further for the average user by providing user-friendly
+instructions for everything. Essentially, Libreboot is a *coreboot distrubion*,
+in much the same way *Alpine Linux* is a Linux distribution!
 
-This policy change was implemented, by *merging* osboot with Libreboot. The
-osboot project was a fork of Libreboot lead by the same founder, Leah Rowe, and
-initially maintained in parallel with Libreboot. *On November 15th, 2022, the
-two projects merged into a single project, continuing under the Libreboot
-banner. The osboot project existed between December 2020 (as retroboot, months
-later renamed to osboot) and November 2022; osboot has been assimilated by
-Libreboot!*
-
-**Freedom is very much preferable and a world where everyone can use Free
-Software, exclusively, is to be welcomed. However, we do not yet live in that
-world.**
-
-The libreboot position is more like an opinion, as opposed to an actual policy.
-That opinion is this: *some* freedom is better than *zero* freedom. There are
-plenty of people with coreboot-compatible hardware, who wish to move away from
-otherwise fully proprietary boot firmware (usually supplied by the manufacturer
-of the hardware). The libreboot project is here to help! It provides a fully
-automated build system, making coreboot much easier to use, and it provides
-user-friendly [installation guides](../docs/install/) to help you get started.
-
-Supporting more hardware, even if the hardware is less
-friendly to software freedom, will provide a path towards coreboot for more
-people, and it may lead to more coreboot development in the future.
-
-Freedom is still the ultimate goal, and *coreboot* provides a lot more freedom
-to the user compared to fully proprietary vendor firmware. Making coreboot
-easier to use is a noble goal, and the result is that more people can achieve
-a level of computing freedom that they would otherwise not have.
-
-The following diagram shall set the tone for the rest of this article:
-
-<img tabindex=1 src="https://av.libreboot.org/firmware.png" /><span class="f"><img src="https://av.libreboot.org/firmware.png" /></span>
+The purpose of this document it to outline how that is brought about, and how
+the project operates along this basis. *This* document is largely about the
+ideology and it is therefore (mostly) non-technical; for technical information,
+you can refer to the [Libreboot build system documentation](../docs/maintain/).
 
 Current project scope
 =====================
@@ -66,7 +37,8 @@ Most critical of these are:
 * Intel Management Engine / AMD PSP firmware
 
 Specific binary blobs are also problematic, on most coreboot systems, but they
-differ per machine. 
+differ per machine. Read more on the FAQ, and on this page, for how we deal
+with binary blobs in the Libreboot project.
 
 For information about Intel Management Engine and AMD PSP, refer to the FAQ.
 
@@ -75,6 +47,16 @@ Blob *minimalization* policy
 
 Default configurations
 ----------------------
+
+Coreboot, upon which Libreboot is based, is mostly libre software but does
+require binary blobs on some platforms. A most common example might be raminit
+(memory controller initialisation) or video framebuffer initialisation. The
+coreboot firmware uses binary blobs for some of these tasks, on some mainboards,
+but some mainboards from coreboot can be initialised with 100% libre source
+code, which you can inspect, and compile for your use.
+
+Libreboot deals with this situation in a *strict* and *principled* way. The
+nature of this is what you're about to read.
 
 The libreboot project has the following policy:
 
@@ -276,6 +258,8 @@ not to list all of them (otherwise, a book could be written on the subject).
 
 Problems with FSDG
 ------------------
+
+<img tabindex=1 src="https://av.libreboot.org/firmware.png" /><span class="f"><img src="https://av.libreboot.org/firmware.png" /></span>
 
 The FSDG criteria is separate from RYF, but has similar problems. FSDG is
 what the FSF-endorsed GNU+Linux distros comply with. Thoughts:
