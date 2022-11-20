@@ -240,6 +240,10 @@ to your configuration.
 How to compile source code
 ==========================
 
+The nvmutil source code is located under `util/nvmutil/` in the
+lbmk repository. A makefile is included there, for you to build an
+executable.
+
 The nvmutil programs will work just fine, on any BSD operating
 system, or unix-like system such as GNU+Linux, Chimera Linux or
 Alpine Linux. You must be sure to have toolchains installed, for
