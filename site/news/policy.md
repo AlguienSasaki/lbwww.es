@@ -277,6 +277,11 @@ Problems with FSDG
 
 <img tabindex=1 src="https://av.libreboot.org/firmware.png" /><span class="f"><img src="https://av.libreboot.org/firmware.png" /></span>
 
+The FSF maintains another set of criteria, dubbed [Free System Distribution
+Guidelines (GNU
+FSDG)](https://www.gnu.org/distros/free-system-distribution-guidelines.en.html)
+or just *FSDG* for short.
+
 The FSDG criteria is separate from RYF, but has similar problems. FSDG is
 what the FSF-endorsed GNU+Linux distros comply with. Thoughts:
 
