@@ -99,6 +99,22 @@ the *free* one is so broken so as to be unusable. In that situation, the blob
 one should be used instead, because otherwise the user might switch back to an
 otherwise fully proprietary system, instead of using coreboot (via libreboot).
 
+The *old* Libreboot policy was quite austere, banning *all* firmware blobs and,
+consequently, Libreboot supported less hardware. The libreboot project merged
+osboot into it, adopting its more pragmatic policy. The underlying message
+behind Libreboot's new policy is this:
+
+*Some* freedom is *better than none*. The old way Libreboot operated resulted
+in less freedom for everyone, because Libreboot is really the *only* firmware
+that's easy for the average person, but it only supported a limited amount of
+hardware before. Lots of people have hardware that coreboot supports, and it
+provides a lot more freedom than otherwise fully proprietary firmware, even if
+the user does have to install a blob or two as part of their coreboot image.
+
+Libreboot's newly pragmatic policy may also result in more people becoming
+coreboot developers in the future, by acting as that crucial *bridge* between
+*it* and non-technical people who just need a bit of help to get started.
+
 Configuration
 -------------
 
