@@ -110,6 +110,13 @@ documentation.
 If you're flashing a ROM for a machine where `seabios_withgrub`
 and `seabios_grubfirst` ROMs are available, choose `seabios_withgrub`.
 
+DO NOT USE ROM IMAGES WITH `seabios_grubfirst` IN THE FILE NAME! These were
+present in older Libreboot releases, and supported in previous revisions
+of the build system, but they did not work for the intended purpose. More
+info is written on the [Libreboot installation guide](../install/). ROM
+images with `seabios_grubfirst` in the filename will NOT be included in
+future Libreboot releases.
+
 Dubious mention: Tianocore
 --------------------------
 

@@ -109,14 +109,41 @@ an option in the boot menu.
 ROM images that have `seabios_withgrub` in the file name start with SeaBIOS
 first, but also have GNU GRUB available in the boot menu when you press ESC.
 
-### seabios\_grubfirst
+### seabios\_grubfirst (DEFUNCT, WAS INTENDED ONLY FOR DESKTOPS)
 
-ROM images that have `seabios_grubfirst` in the file name start with SeaBIOS,
-but SeaBIOS is configured via special `bootorder` file in CBFS so as to ONLY
-load GNU GRUB. This setup would be most useful on desktops, where you wish to
-only have GNU GRUB available, but want to use an add-on GPU while also having
-the option to use libgfxinit, if a supported GPU/framebuffer chip is present
-on your board.
+**DEFUNCT**
+
+This build option is obsolete, and should not be used. It was deleted
+in lbmk revision `e1bbdadc9584291cf062660d67128e9f17ab788e`.
+
+It was believed, in earlier theory, that VGA ROM initialisation could
+be used in SeaBIOS and then SeaBIOS boots into a GRUB payload (built
+for coreboot), where the initialisation would continue to be used, but
+it didn't work that way.
+
+It's best to use PC GRUB (normal BIOS GRUB), but compile it into a floppy
+image to insert inside CBFS, to then be executed by SeaBIOS. This is referred
+to as SeaGRUB by the Libreboot project, and it would be quite useful
+for desktop users, but it's largely irrelevant on laptops where
+coreboot's own `libgfxinit` is usually available (or the option ROM is
+easy to extract from vendor firmware and insert).
+
+Where direct bare metal GRUB is desired, but you use a desktop system with
+an add-on graphics card, you must extract the VGA ROM for your card and
+insert it into the coreboot ROM, for coreboot itself to execute. This will
+require custom configuration on your part, and it is thus beyond the scope
+of the Libreboot project, in context of lbmk (automated build system).
+
+Some older Libreboot releases included ROM images built using this option,
+and those specific ROM images (`seabios_grubfirst` ones) should not be
+used; you should only use `seabios_grubfirst` or `seabios`, in most
+scenarios, if SeaBIOS is required.
+
+For most desktop users, if running an external graphics card, it's easier
+to simply boot in text mode with a SeaBIOS payload and use only that. This
+will Just Work with almost all graphics cards, allowing you to use an
+operating system with a full display and (drivers permitting) full 2D/3D
+acceleration.
 
 Which systems are supported?
 ============================
