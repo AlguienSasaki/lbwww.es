@@ -180,7 +180,7 @@ that, the solution was clear:
 
 A project needed to exist, providing a fully free version of coreboot, without
 any binary blobs. At the time (and this is still true today), coreboot was not
-entirely free software and shipped with binary blobs by default. In particular,
+entirely libre software and shipped with binary blobs by default. In particular,
 CPU microcode updates were included by default, on all x86 machines. Working
 with Joshua who reviewed my work, I created a fully free version of coreboot.
 At first, it wasn't called Libreboot, and the work was purely intended for my
@@ -251,7 +251,7 @@ and forth with Lisa around mid 2016, mostly raminit patches, to get the board
 running at the FSF offices. This work ultimately lead to a most wonderful
 achievement:
 
-The <https://www.gnu.org/> and <https://www.fsf.org/> websites now run on
+The FSF and GNU websites now run on
 Librebooted ASUS KGPE-D16 based servers, on a fully free GNU+Linux distro. This
 means that the FSF now has full software freedom for their hosting infrastructure.
 

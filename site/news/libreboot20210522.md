@@ -320,8 +320,8 @@ Anyway, Libreboot 20160907 used GRUB at git commit ID
 This new Libreboot releases used GRUB c0e647eb0e2bd09315612446cb4d90f7f75cb44c
 from May 10th, 2021.
 
-Download GNU GRUB from the Git repository shown on
-<https://www.gnu.org/software/grub/> and check every commit since then.
+Download GNU GRUB from the upstream repository and check every commit
+since then.
 
 GM45/X4X now set 352MiB VRAM by default
 =======================================

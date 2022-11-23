@@ -5,9 +5,8 @@
 Introduction
 ============
 
-This event of such global importance to [Free
-Software](https://www.gnu.org/philosophy/free-sw.html) projects, and the Free
-Software movement as a whole, has made me decide to write an article. **The
+This event of such global importance to libre software projects, and the
+libre movement as a whole, has made me decide to write an article. **The
 events in question, covered by this article, will occur on 11 January 2022.
 This is just three days away from today, 8 January 2022 when this article was
 written, so if you make a decision, you should make it now, today, and prepare.
@@ -17,75 +16,77 @@ If you live in New Hampshire or in one of the neighbouring states, especially
 Massachusetts, please listen up! If you are further away and unable to reach
 New Hampshire all that easily, please spread the following news anyway. It's
 important. As alien as it may seem to many of my readers, I'm actually writing
-parts of this article as though someone who has never heard of Free Software is
+parts of this article as though someone who has never heard of Libre Software
+(often referred to as *Open Source Software*) is
 reading it, because I expect precisely that such people *will* read this
 particular article.
 
-You will see the term *Free Software* used in this article, but some people
-call it Open Source Software. [However, you should call it Free
-Software.](https://www.gnu.org/philosophy/open-source-misses-the-point.html)
-The word "free" refers to freedom, not price, though the software is usually
-also free as in gratis / zero price.
+When we say libre software, we mean software that gives people the ability to
+freely study, adapt, share, use and re-use all code or documentation, so as to
+enable the free exchange of ideas and, simply speaking, democracy. This is your
+Linux distros, BSD projects, and accompanying software that typically comes
+packaged. It is sometimes referred to as *Open Source Software*. The word libre
+is Spanish for "liberty", meaning freedom. With such software, you, the user,
+are able to control your own computing according to your own priorities, which
+you otherwise would not be able to do.
 
-The opposite of Free Software is called *proprietary software*, or *non-free
-software*. Proponents of Open Source sometimes call non-free software *Closed
-Source*, but you should call it *non-free* or proprietary, to highlight the
-fact that it isn't free.
+The opposite of libre software is called *proprietary software*. The purpose
+of Libreboot is to help users *avoid* proprietary software at the firmware
+level, whenever feasible.
 
 What's happening in New Hampshire?
 ==================================
 
 An important bill is being proposed in New Hampshire, which would enshrine
-much of what we know as Free Software *into law*. Here is the proposed bill,
+much of what we know as Open Source *into law*. Here is the proposed bill,
 technically named "HB1273":\
 <https://gencourt.state.nh.us/bill_status/legacy/bs2016/billText.aspx?sy=2022&id=1363&txtFormat=html>
 
 You can read it for yourself, but here is a paraphrasing of what it proposes:
 
-* *Specifically* bans state-run websites from serving non-free javascript to
+* *Specifically* bans state-run websites from serving proprietary javascript to
   clients
-* Creates a commission to provide oversight, watching the use of Free Software by state agencies
+* Creates a commission to provide oversight, watching the use of libre code  by state agencies
 * Bans state agencies from using proprietary software - maybe this could include schools, in the future!
 * If a person is tried in a criminal case, they have the right to audit the source code of any proprietary software that collects evidence against them
 * Encourages data portability (able to transfer data from one program to another)
-* Bans certain non-compete clauses and NDAs (non-disclosure agreements) pertaining to Free Software projects
-* Bans state/local law enforcement from assisting with the enforcement of copyright claims against Free Software projects
-* Bans state agencies from purchasing non-free software if free software exists, for a given task
+* Bans certain non-compete clauses and NDAs (non-disclosure agreements) pertaining to Libre Software projects
+* Bans state/local law enforcement from assisting with the enforcement of copyright claims against libre software projects
+* Bans state agencies from purchasing proprietary software if libre software exists, for a given task
 
 However, this is only a short summary. You are advised to read the bill in
 detail. It's not very long.
 
 At first glance, it may not seem that the bill affects individuals, but don't
 be fooled; this is a hugely positive step forward for everyone! If the state is
-using Free Software, that most likely means it'll be used in education aswell.
+using Libre Software, that most likely means it'll be used in education aswell.
 
 Although perhaps not immediately and readily apparent, this is a stake in the
 heart of proprietary software's current dominance, because it would remove one
 key element of its attack against us; its abuse of education services.
 
-If education services are using Free Software, that means they'll probably have
+If education services are using Libre Software, that means they'll probably have
 children (the ones being educated) using it too. This is a *huge* step, and it
-will result in more Free Software developers in the future. Free Software will
+will result in more Libre Software developers in the future. Libre Software will
 become more and more mainstream to the masses, which can surely only be a good
 thing!
 
 Freedom is always superior. The more people that have it, the better off we all
 are, because freedom is also collective; it relies on others around us also
 having it, so that we can defend each other. If more people have it, especially
-if it results in more Free Software developers in the future, that's one thing,
+if it results in more Libre Software developers in the future, that's one thing,
 but imagine if *more* states like what they see and start to copy the new
 legislation.
 
 Now imagine that countries besides the US start doing it, inspired by the US's
 success (and I think it will be a resounding success).
 
-Imagine a world where [Free
-Software](https://www.gnu.org/philosophy/free-sw.html), free as in freedom, is
-the default everywhere. Imagine a world where [Free Software
-licensing](https://www.gnu.org/licenses/license-list.html) is required reading
+Imagine a world where such liberties over software are commonplace, actually
+the default everywhere! Imagine a world where it's considered as important as
+the ability to freely learn mathematics, or physics, as required reading
 material in schools. *Imagine a world where any five year old can install a
-free operating system such as GNU+Linux, and Computer Science is mandatory in
-schools from a young age. Imagine filing your tax returns with Free Software,
+libre operating system such as GNU+Linux, and Computer Science is mandatory in
+schools from a young age. Imagine filing your tax returns with Libre Software,
 exclusively. Imagine not even thinking about that, because it became the norm.*
 
 *Imagine a world where proprietary software doesn't exist, because it is
@@ -98,34 +99,18 @@ Imagine a world where you're no longer being spied on because NSA, Apple and
 Microsoft no longer have backdoor access to your computer. *Imagine having the
 ability to say no, because that's what freedom is. Try to imagine it!*
 
-Free Software is a revolution that we in the Free Software movement have
-rigorously upheld and fought for, over many years, but we still face an uphill
-battle because children are not taught in schools about free computing, nor are
-they encouraged to learn; they are taught to view computers as *products* to
-throw away every 1-2 years, that they can run a few *apps* on but otherwise are
-not allowed to do anything with. The *concept* of a *general purpose, fully
-reprogrammable computer* is heavily suppressed in mainstream culture. *Most*
-people in the world do not run a free operating system; the idea of a computer
-being a mere *appliance* is normalized (as opposed to the idea of it being a
-highly liberating tool for development and the expansion of human knowledge).
-
-*This* is what we in the Free Software movement have fought for over the years.
-We believe that knowledge is a human right, that the ability to share, study,
-learn, adapt and modify the software is an inalienable right that everyone must
-have. [The four freedoms are absolute.](https://www.gnu.org/philosophy/free-sw.html)
-
 One of our biggest problem has been simply that schools and governments do not
 teach people about free computing. The right to learn, the right to read and
 the right to hack. Our governments are made up of human beings just like you or
 me, and they can be bought/corrupted; Microsoft, Apple and many others (such as
 IBM) have done this for years, having the national infrastructures governing us
 run on their proprietary systems, instead of systems that respect freedom; it
-is essential that these systems run free software, because a free and democratic
+is essential that these systems run libre software, because a free and democratic
 society should expect nothing less. Those companies buy influence *and they own
 your politicians*.
 
 All of this could change very soon. Something is happening in New Hampshire,
-which could redefine our movement and give *free software* real power
+which could redefine our movement and give *libre software* real power
 instead.
 
 HOW TO HELP
@@ -142,7 +127,7 @@ should go to New Hampshire.**
 
 The organizer of the proposed bill, *Eric Gallager*, has left instructions on
 Twitter. The following is a *nitter* link, which lets you view the relevant
-Twitter thread without running non-free Javascript in your browser:\
+Twitter thread without running libre Javascript in your browser:\
 <https://nitter.net/cooljeanius/status/1479663133207764992>
 
 The original Twitter URL is:\
@@ -175,7 +160,7 @@ If this bill is passed in New Hampshire, more states will likely follow. It
 will lead to a massively renewed drive to liberate all computer users, and US
 laws tend to be copied/pasted around the world too.
 
-This bill, if passed, will have a hugely positive impact on Free Software at a
+This bill, if passed, will have a hugely positive impact on Libre Software at a
 global level.
 
 You *must* support this bill. If you want to see it pass, please go to New
@@ -185,7 +170,7 @@ OUR ENEMIES WILL BE THERE
 -------------------------
 
 The *proprietary* software companies like Microsoft and Apple will also be
-there, trying to argue the case *against* the use of Free Software.
+there, trying to argue the case *against* the use of Libre Software.
 
 There is already precedent; please watch this video, which shows how Microsoft
 (for example) might behave in the reading of the bill. This video is from a
@@ -195,48 +180,48 @@ javascript enabled, if you wish)
 
 They will try to trick the law makers by claiming things such as:
 
-* **"Free software is insecure / you will get hacked"** - nothing could be
+* **"Open Source is insecure / you will get hacked"** - nothing could be
   further from the truth! Free operating systems such as GNU+Linux, FreeBSD and
   especially OpenBSD, are among the most secure operating systems available.
-* **"Free software is used by criminal hackers"** - here, they use the
+* **"Open Source is used by criminal hackers"** - here, they use the
   term *hacker* to describe someone who illegally gains access to someone
-  elses computer. Don't fall for it. Maintainers of free operating systems
+  elses computer. Don't fall for it. Maintainers of libre operating systems
   like GNU+Linux distros or the BSDs are actively working to make the internet
   and computers in general *more secure*
-* **"Software authors deserve to be paid!"** -  In fact, many free software devs
-  are *paid* to work on Free Software! Many companies, including big ones,
+* **"Software authors deserve to be paid!"** -  In fact, many libre software devs
+  are *paid* to work on Open Source! Many companies, including big ones,
   work on it. There are also hobbyists or otherwise unpaid people, who might
-  work on Free Software for a number of reasons (wanting to make the world a
+  work on Libre Software for a number of reasons (wanting to make the world a
   better place, wanting the glory of recognition for solving a major problem,
   and more often than not, simply because *it is fun to do so and you make a
   lot of friends too!*) - No, these companies (e.g. Microsoft) are only arguing
   in reality for the ability to pay their *shareholders*, and they control the
-  software exclusively. In fact, free software has repeatedly and consistently
+  software exclusively. In fact, libre software has repeatedly and consistently
   over the years *defined* the computing industry, creating all kinds of new
   employment opportunities; for example, docker is widely used today and it is
-  free software, used by millions of companies for commercial gain, and the
+  libre software, used by millions of companies for commercial gain, and the
   apache web server revolutionized the web back in the day, enabling lots of
   ISPs to easily host websites - many of the common protocols that we depend
   upon today, that businesses depend upon (and get paid to maintain or provide
   services/support for) are in fact free as in freedom!
-* **"Developers should get recognition for their work"** - in free software, you
+* **"Developers should get recognition for their work"** - in libre software, you
   can easily make a name for yourself with relatively few resources except your
   own computer and an internet connection, plus some cheap hosting. When most
   developers work on *proprietary* software such as Windows, they don't get
   recognition; their copyright is assigned to their employer (e.g. Microsoft)
   who will take all the credit!
 * **"Free software is unreliable / costly to maintain"** - actually, it has been
-  well known for years that free software is generally more stable and reliable
+  well known for years that libre software is generally more stable and reliable
   than proprietary. In cases where it isn't, it is quickly improved, and in
   complete freedom. Free software has a lower cost to maintain and service, and
   you have a free market where you can choose who you hire to write/maintain it
   for you (if you won't do that yourself); meanwhile, proprietary software
   such as Windows is often full of bugs, crashes often and there is only one
   provider of support most of the time, who will charge a heavy price, while
-  also charging a lot of money for the software itself - free software
+  also charging a lot of money for the software itself - libre software
   is *free as in freedom*, but also usually *free as in zero price*.
-* **"Free software comes from potentially untrustworthy sources"** - This is
-  pure nonsense, because the very freedoms provided by free software (access
+* **"Libre software comes from potentially untrustworthy sources"** - This is
+  pure nonsense, because the very freedoms provided by libre software (access
   to source code, ability to work on it yourself, and see what others did)
   means that people generally do not add malware to public software sources,
   because they'd be discovered instantly. *Distributions* of GNU+Linux and
@@ -249,16 +234,16 @@ They will try to trick the law makers by claiming things such as:
   malware on a free system, precisely because security is handled much better;
   the design of unix-like operating systems in particular is also naturally
   more secure, due to better separation of root/user privileges.
-* **"Free software isn't controlled, and is unknown."** - this is completely
-  false. These non-free software companies are only talking about *their*
+* **"Libre software isn't controlled, and is unknown."** - this is completely
+  false. These non-libre software companies are only talking about *their*
   control, and it's quite telling that they completely disregard yours, in this
-  very sentence. In fact, Free Software *is* controlled, but it's not controlled
-  by some external entity; *your* installation of free software is controlled
+  very sentence. In fact, Libre Software *is* controlled, but it's not controlled
+  by some external entity; *your* installation of libre software is controlled
   by *you*.
 
 If you're familiar with the *Matrix* films, proprietary operating systems like
 Windows/MacOS are basically like the Matrix; bland, no individuality, no
-independent thought, everything tightly controlled. By contrast, free operating
+independent thought, everything tightly controlled. By contrast, libre operating
 systems (such as GNU+Linux distributions or the BSDs) are like zion/io; vibrant,
 full of life, buzzing with activity, everything loose and free, and everyone
 is different (a highly diverse culture of people from all walks of life, acting
@@ -278,13 +263,13 @@ your own computer, and they actively pursue tactics (such as DRM) to thwart you.
 
 Microsoft and Apple are not your friends. There is no such thing as the
 Windows community. When you use proprietary systems, you are isolated from
-everyone around you, and so are they. *You* are the product, for the non-free
+everyone around you, and so are they. *You* are the product, for the proprietary
 software to exploit at the behest of their developers who only care
 about *money*.
 
-However, there *is* such a thing as the Free Software community. It is a
+However, there *is* such a thing as the Libre Software community. It is a
 vibrant community, consisting of millions of people collectively all over the
 world, and they are all free to work with each other infinitely. It gave us
 most of the technology that we take for granted today, including *the modern
-internet, where ISPs run free software almost exclusively!*
+internet, where ISPs run libre software almost exclusively!*
 

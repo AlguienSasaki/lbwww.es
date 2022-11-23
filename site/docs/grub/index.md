@@ -6,13 +6,13 @@ x-toc-enable: true
 TODO: this guide should be reviewed and updated. Some info might be out of
 date.
 
-[GNU GRUB](https://www.gnu.org/software/grub/) already has excellent
+[GRUB](https://www.gnu.org/software/grub/) already has excellent
 documentation, but there are aspects of libreboot that deserve special
 treatment. libreboot provides the option to boot GNU GRUB directly, running on
 bare metal (instead of using BIOS or UEFI services).
 
-[The GNU+Linux section](../gnulinux/) also has libreboot-specific guides for
-dealing with GNU+Linux distributions when using GNU GRUB directly, in this
+[The Linux section](../gnulinux/) also has libreboot-specific guides for
+dealing with Linux distributions when using GRUB directly, in this
 setup. [A similar section exists for BSD operating systems](../bsd/)
 
 GRUB keyboard layouts

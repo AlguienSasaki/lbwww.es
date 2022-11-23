@@ -28,7 +28,7 @@ IRC.
 Webchat:
 <https://web.libera.chat/#libreboot>
 
-Libera is one of the largest IRC networks, used for Free Software projects.
+Libera is one of the largest IRC networks, used for Libre Software projects.
 Find more about them here: <https://libera.chat/>
 
 If you wish to connect using your preferred client (such as weechat or irssi),
@@ -62,7 +62,7 @@ News announcements: <https://twitter.com/libreboot/>
 
 The founder and lead developer, Leah Rowe, is also on Twitter and Mastodon:
 
-* <https://twitter.com/n4of7> (use nitter to avoid non-free JavaScript)
+* <https://twitter.com/n4of7> (use nitter to avoid proprietary JavaScript)
 * <https://mas.to/@libreleah>
 
 Leah can also be contacted by her email address:

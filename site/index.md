@@ -4,7 +4,7 @@ x-toc-enable: true
 ...
 
 The `libreboot` project provides
-[freedom-respecting](https://www.gnu.org/philosophy/free-sw.html) *boot
+[libre](https://en.wikipedia.org/wiki/Open_source) *boot
 firmware* that initializes the hardware (e.g. memory controller, CPU,
 peripherals) on [specific Intel/AMD x86 and ARM targets](docs/hardware/), which
 then starts a bootloader for your operating system. [GNU+Linux](docs/gnulinux/)
@@ -22,22 +22,21 @@ can be completed as soon as possible.**
 Why should you use *libreboot*?
 ----------------------------
 
+Libreboot gives you freedoms that you otherwise can't get with most other
+boot firmware. It's extremely powerful and configurable for many use cases.
+
 You have rights. The right to privacy, freedom of thought, freedom of speech
-and the right to read. [Free
-software](https://www.gnu.org/philosophy/free-sw.html) gives you these rights.
+and the right to read. In this context, Libreboot gives you these rights.
 Your freedom matters.
 [Right to repair](https://vid.puffyan.us/watch?v=Npd_xDuNi9k) matters.
-Many people use [proprietary](https://www.gnu.org/proprietary/proprietary.html)
-boot firmware, even if they use [GNU+Linux](https://www.gnu.org/distros/).
-Non-free firmware often [contains](faq.html#intel) [backdoors](faq.html#amd),
+Many people use proprietary (non-libre)
+boot firmware, even if they use [a libre OS](https://www.openbsd.org/).
+Proprietary firmware often [contains](faq.html#intel) [backdoors](faq.html#amd),
 and can be buggy. The libreboot project was founded in in December 2013, with the
-express purpose of making Free Software accessible for non-technical users at
-the firmware level. It's true that `libreboot` can be called Open Source, [but you
-should call it Free
-Software](https://www.gnu.org/philosophy/open-source-misses-the-point.en.html).
+express purpose of making coreboot firmware accessible for non-technical users.
 
 The `libreboot` project uses [coreboot](https://www.coreboot.org/) for [hardware
-initialization](https://doc.coreboot.org/getting_started/architecture.html).
+initialisation](https://doc.coreboot.org/getting_started/architecture.html).
 Coreboot is notoriously difficult to install for most non-technical users; it
 handles only basic initialization and jumps to a separate
 [payload](https://doc.coreboot.org/payloads.html) program (e.g.

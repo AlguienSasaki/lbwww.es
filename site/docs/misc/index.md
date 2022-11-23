@@ -106,9 +106,7 @@ from the serial console.
 
 The following guide is for Ubuntu, but it should work in Debian and
 Devuan, to enable a serial console using GeTTY:\
-<https://help.ubuntu.com/community/SerialConsoleHowto> (we DO NOT
-recommend Ubuntu, because it contains non-free software in the default
-repos. Use Debian or Devuan)
+<https://help.ubuntu.com/community/SerialConsoleHowto>
 
 Note: part of the tutorial above requires changing your grub.cfg. Just
 change the `linux` line to add instructions for enabling getty. See

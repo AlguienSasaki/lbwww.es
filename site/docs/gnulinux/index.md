@@ -11,13 +11,8 @@ If you're using SeaBIOS, the boot process will work similarly to traditional
 BIOS systems; refer to the SeaBIOS documentation
 on <https://seabios.org/SeaBIOS>
 
-GNU+Linux is the operating system of choice, for libreboot development. It is
-highly recommended over any other operating system, precisely because it consists
-of [Free Software](https://www.gnu.org/philosophy/free-sw.html) (free as in
-freedom). There *are* other free operating systems, such as BSD, but most of
-the software in a typical GNU+Linux system is also *copylefted*. To learn more
-about the importance of copyleft, read this page on the GNU website:
-<https://www.gnu.org/licenses/copyleft.html>
+Linux is generally assumed, especially for Libreboot development, but Libreboot
+also works quite nicely with [BSD systems](../bsd/).
 
 Useful links
 ============

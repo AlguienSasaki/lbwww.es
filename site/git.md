@@ -133,21 +133,35 @@ should be fairly anonymous. Use
 and [git show](https://git-scm.com/docs/git-show) to confirm that before you
 push changes to a public Git repository.
 
-Licenses
+Licenses (for contributors)
 --------
 
-We require all patches to be submitted under a free license:
-<https://www.gnu.org/licenses/license-list.html>.
-
-- GNU General Public License v3 is highly recommended
-- For documentation, we require GNU Free Documentation License v1.3 or higher
+Make sure to freely license your work, under a libre license. Libreboot no
+longer sets arbitrary restrictions on what licenses are accepted, and many
+licenses out there already exist. We will audit your contribution and tell
+you if there are problems with it (e.g. no license).
 
 *Always* declare a license on your work! Not declaring a license means that
 the default, restrictive copyright laws apply, which would make your work
-non-free.
+proprietary, subject to all of the same restrictions.
 
-GNU+Linux is generally recommended as the OS of choice, for libreboot
-development. However, BSD operating systems also boot on libreboot machines.
+The MIT license is a good one to start with, and it is the preferred license
+for all new works in Libreboot, but we're not picky. Libreboot has historically
+used GNU licensing such as GPL; much of that remains, and is likely to remain.
+It's your work; obviously, if you're deriving from an existing work,
+it may make sense to use the same license on your contribution, for license
+compatibility.
+
+You can find common examples of licenses
+[here](https://opensource.org/licenses).
+
+If you *are* deriving from an existing work, it's important that your license
+(for your contribution) be compatible with the licensing of the work from which
+yours was derived. The MIT license is good because it's widely compatible
+with many other licenses, and permits many freedoms (such as the freedom to
+sublicense) that other licenses do not:
+
+<https://opensource.org/licenses/MIT>
 
 Send patches
 ------------

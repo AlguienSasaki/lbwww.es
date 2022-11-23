@@ -11,7 +11,12 @@ from the osboot one.**
 
 Libreboot's policy is to provide as much software freedom as possible to each
 user, on each and every bit of hardware supported, and to *support as much
-hardware from coreboot as is feasible*. The *goal* of Libreboot is
+hardware from coreboot as is feasible*; what this means is that you should
+have the potential to study, modify and *share* all source code, documentation
+or other such resources that make Libreboot what it is. Put simply, you should
+have *control* of your own computing.
+
+The *goal* of Libreboot is
 to do exactly this, and help as many people as possible by automating the
 configuration, compilation and installation of *coreboot* for *non-technical*
 users, easing it further for the average user by providing user-friendly
@@ -35,6 +40,13 @@ Most critical of these are:
 * Embedded controller firmware
 * HDD/SSD firmware
 * Intel Management Engine / AMD PSP firmware
+
+What is a binary blob?
+----------------------
+
+A binary blob, in this context, is any executable for which no source code
+exists, that you cannot study and modify in a reasonable manner. By definition,
+all such blobs are *proprietary* in nature, and should be avoided if possible.
 
 Specific binary blobs are also problematic, on most coreboot systems, but they
 differ per machine. Read more on the FAQ, and on this page, for how we deal
@@ -61,23 +73,23 @@ nature of this is what you're about to read.
 The libreboot project has the following policy:
 
 * If a blob *can* be avoided, it should be avoided. For example, if VGA ROM
-  initialization otherwise does a better job but coreboot has *free* init code
+  initialization otherwise does a better job but coreboot has *libre* init code
   for a given graphics device, that code should be used in libreboot, when
   building a ROM image. Similarly, if *memory controller initialization* is
-  possible with a binary blob *or* free code in coreboot, the *free* code
+  possible with a binary blob *or* libre code in coreboot, the *libre* code
   should be used in ROMs built by `lbmk`, and the *blob* for raminit should
-  not be used; however, if no free init code is available for said raminit,
+  not be used; however, if no libre init code is available for said raminit,
   it is permitted and lbmk will use the *blob*.
 * Some nuance is to be observed: on some laptop or desktop configurations, it's
   common that there will be *two* graphics devices (for example, an nvidia and
   an intel chip, using nvidia optimus technology, on a laptop). It may be that
-  one of them has free init code in coreboot, but the other one does not. It's
+  one of them has libre init code in coreboot, but the other one does not. It's
   perfectly acceptable, and desirable, for libreboot to support both devices,
   and accomodate the required binary blob on the one that lacks native
   initialization.
 * An exception is made for CPU microcode updates: they are permitted, and in
   fact *required* as per libreboot policy. These updates fix CPU bugs, including
-  security bugs, and since the CPU already has non-free microcode burned into
+  security bugs, and since the CPU already has non-libre microcode burned into
   ROM anyway, the only choice is either *x86* or *broken x86*. Thus, libreboot
   will only allow coreboot mainboard configurations where microcode updates
   are *enabled*, if available for the CPU on that mainboard.
@@ -94,8 +106,8 @@ The libreboot project has the following policy:
   a configuration for their hardware.
 
 Generally speaking, common sense is applied. For example, an exception to the
-minimalization might be if *blob* raminit and *free* raminit are available, but
-the *free* one is so broken so as to be unusable. In that situation, the blob
+minimalization might be if *blob* raminit and *libre* raminit are available, but
+the *libre* one is so broken so as to be unusable. In that situation, the blob
 one should be used instead, because otherwise the user might switch back to an
 otherwise fully proprietary system, instead of using coreboot (via libreboot).
 
@@ -121,9 +133,9 @@ Configuration
 The principles above should apply to *default* configurations. However, libreboot
 is to be *configurable*, allowing the user to do whatever they like.
 
-It's natural that the user may want to create a setup that is *less* free than
+It's natural that the user may want to create a setup that is *less* libre than
 the default one in libreboot. This is perfectly acceptable; freedom is superior,
-and should be encouraged, but the user's freedom to choose should also be
+and should be encouraged, but the user's *freedom to choose* should also be
 respected, and accomodated.
 
 In other words, do not lecture the user. Just try to help them with their
@@ -136,19 +148,20 @@ FREEDOM CATALOG
 A *blob status* page should also be made available, educating people about the
 status of binary blobs on each machine supported by `lbmk`.
 
-It is desirable to see a world where all hardware and software is free.
-Hardware!?
+It is desirable to see a world where all hardware and software is libre, under
+the same ideology as the Libreboot project. Hardware!?
 
-Yes, hardware. RISC-V is a great example of a modern attempt at free hardware.
-It is a free ISA for the manufacture of a microprocessor. Many real-world
+Yes, hardware. RISC-V is a great example of a modern attempt at libre hardware,
+often called *Open Source Hardware*.
+It is a an ISA for the manufacture of a microprocessor. Many real-world
 implementations of it already exist, that can be used, and there will only be
 more.
 
-Free *hardware* is still in its infancy. We should start a project that will
+Such *hardware* is still in its infancy. We should start a project that will
 catalog the status of various efforts, including at the hardware level (even
 the silicon level). Movements like OSHW and Right To Repair are extremely
-important, including to the Free Software movement which otherwise will
-typically think less about hardware freedom (even though it really, really
+important, including to our own movement which otherwise will
+typically think less about hardware freedoms (even though it really, really
 should!)
 
 One day, we will live in a world where anyone can get their own chips made,
@@ -165,9 +178,11 @@ exist, for example, the work done by Sam Zeloof and the Libre Silicon project:
 Problems with RYF criteria
 ==========================
 
-You can read those guidelines by following these hyperlinks:
+Libreboot previously complied with FSF RYF criteria, but it now adheres to a
+much more pragmatic policy aimed at providing more freedom to more people, in a
+more pragmatic way. You can read those guidelines by following this URL:
 
-* [FSF Respects Your Freedom (RYF) guidelines](https://ryf.fsf.org/about/criteria)
+* FSF Respects Your Freedom (RYF) guidelines: **https://ryf.fsf.org/about/criteria**
 
 The FSF RYF guidelines state the following:
 
@@ -177,29 +192,29 @@ This is a violation of every principle the FSF stands for, *and it should be
 rejected on ideological grounds*. The rest of libreboot's policy and overall
 ideology expressed, in this article, will be based largely on that rejection.
 The definition of *product software* is completely arbitrary; software is
-software, and software should always be *free*. Instead of making such
+software, and software should always be *libre*. Instead of making such
 exceptions, more hardware should be encouraged, with help given to provide as
 much freedom as possible, while providing education to users about any pitfalls
 they may encounter, and encourage freedom at all levels. When an organisation
 like the FSF makes such bold exceptions as above, it sends the wrong message,
 by telling people essentially to sweep these other problems under the rug, just
 because they involve software that happens to run on a "secondary processor".
-If the software is possible to update by the user, then it should be free,
+If the software is possible to update by the user, then it should be libre,
 regardless of whether the manufacturer *intended* for it to be upgraded or not.
 Where it really *isn't* possible to update such software, proprietary or not,
 advice should be given to that effect. Education is important, and the FSF's
 criteria actively discourages such education; it creates a false hope that
 everything is great and wonderful, just because the software on one arbitrary
-level is all free.
+level is all perfect.
 
 This view of the FSF's, as expressed in the quoted paragraph, assumes that
 there is primarily *one* main processor controlling your system. On many
 modern computers, this is *no longer true*.
 
-Free *software* does not exist in a vacuum, but we had less freedom in the
+Libre *software* does not exist in a vacuum, but we had less freedom in the
 past, especially when it came to hardware, so *software* was our primary focus.
 
-[The four freedoms are absolute](https://www.gnu.org/philosophy/free-sw.html),
+The ability to study, adapt, share and use/re-use software freely is important,
 but there is a lot of nuance when it comes to *boot firmware*, nuance which is
 largely non-existent outside of firmware development, or kernel development.
 Most typical application/system software is high level and portable, but boot
@@ -233,13 +248,13 @@ provide incentive for levels of software freedom, such as:
   The FSF were willing to ignore it, and certify the TALOS II product under RYF,
   but Timothy Pearson of Raptor Engineering had it freed anyway, without being
   told to. Hugo Landau reverse engineered the specification and Evan Lojewski
-  wrote free firmware. See:
+  wrote libre firmware. See:
   See: <https://www.devever.net/~hl/ortega> and <https://github.com/meklort/bcm5719-fw>
 * FSF once endorsed the ThinkPad X200, as sold by [Minifree Ltd](https://minifree.org),
   which contains the Intel ME; the bootrom is still there, as is the ME
   coprocessor, but the ME is put into a disabled state via the Intel Flash
   Descriptor, and the ME firmware in flash is removed. However, the ME is an
-  entire coprocessor which, with free firmware, could be used for a great many
+  entire coprocessor which, with libre firmware, could be used for a great many
   things. In the Libreboot and coreboot projects, there has always been interest
   in this but the FSF disregards it entirely. The X200 product they certified
   came with Libreboot pre-installed.
@@ -255,13 +270,13 @@ provide incentive for levels of software freedom, such as:
   machine comes in two versions: with ATI+Intel GPU, or only Intel GPU. If ATI
   GPU, it's possible to configure the machine so that either GPU is used. If the
   ATI GPU is to be used, a firmware blob is needed for initialization, though the
-  driver for it is completely free. FSF ignored this fact and endorsed the
+  driver for it is entirely libre. *The FSF* ignored this fact and endorsed the
   hardware, so long as Libreboot does not enable the ATI GPU or tell people how
-  to enable it. The *Intel* GPU on that machine has free initialization code by
-  the coreboot project, and a fully free driver in both Linux and BSD kernels.
+  to enable it. The *Intel* GPU on that machine has libre initialization code by
+  the coreboot project, and a fully libre driver in both Linux and BSD kernels.
   In the configuration provided by Libreboot, the ATI GPU is completely disabled
   and powered down.
-* All Libreboot-compatible ThinkPads contain non-free Embedded Controller
+* All Libreboot-compatible ThinkPads contain proprietary Embedded Controller
   firmware, which is user-flashable (*and intended for update by the
   manufacturer*). The FSF chose to ignore the EC firmware, under
   their *secondary processor* exemption. See:
@@ -277,17 +292,15 @@ Problems with FSDG
 
 <img tabindex=1 src="https://av.libreboot.org/firmware.png" /><span class="f"><img src="https://av.libreboot.org/firmware.png" /></span>
 
-The FSF maintains another set of criteria, dubbed [Free System Distribution
-Guidelines (GNU
-FSDG)](https://www.gnu.org/distros/free-system-distribution-guidelines.en.html)
-or just *FSDG* for short.
+The FSF maintains another set of criteria, dubbed Free System Distribution
+Guidelines (GNU FSDG)]
 
 The FSDG criteria is separate from RYF, but has similar problems. FSDG is
 what the FSF-endorsed GNU+Linux distros comply with. Thoughts:
 
-* Excluding firmware blobs in the linux kernel is *bad*. Non-free firmware
+* Excluding firmware blobs in the linux kernel is *bad*. Proprietary firmware
   is *also bad*. Including them is a wiser choice, if strong education is also
-  provided about *why they are bad* (lack of freedom). If you expose them to
+  provided about *why they are bad* (less freedom). If you expose them to
   the user, and tell them about it, there is greater incentive (by simple
   reminder of their existence) to reverse engineer and replace them.
 * Firmware *in your OS kernel* is *good*. The FSF simultaneously gives the OK
@@ -298,21 +311,21 @@ what the FSF-endorsed GNU+Linux distros comply with. Thoughts:
   (replace the chip on the card/device). *If the firmware is loaded by the
   OS kernel, then the firmware is exposed to the user and it can be more
   easily replaced. FSF criteria in this regard encourages hardware designers
-  to hide the firmware instead, making actual freedom less likely!*
+  to hide the firmware instead, making actual (software) freedom less likely!*
 
-Besides this, FSDG seems OK. Any free operating system should ideally not
-have non-free *drivers* or *applications*.
+Besides this, FSDG seems OK. Any libre operating system should ideally not
+have proprietary *drivers* or *applications*.
 
 Hardware manufacturers like to shove everything into firmware because their
 product is often poorly designed, so they later want to provide workarounds in
 firmware to fix issues. In many cases, a device will already have firmware on it
 but require an update supplied to it by your OS kernel.
 
-The most common example of non-free firmware in Linux is for wifi devices.
-This is an interesting use-case scenario, if freed, because it could be used
-for owner-controlled *software defined radio*.
+The most common example of proprietary firmware in Linux is for wifi devices.
+This is an interesting use-case scenario, with source code, because it could be
+used for owner-controlled *software defined radio*.
 
-The *Debian* way is ideal. The Debian GNU+Linux distribution is entirely free
+The *Debian* way is ideal. The Debian GNU+Linux distribution is entirely libre
 by default, and they include extra firmware if needed, which they have in a
 separate repository containing it. If you only want firmware, it is
 trivial to get installer images with it included, or add that to your installed
@@ -336,8 +349,8 @@ it either.
 More detailed insight about microcode
 =====================================
 
-To be clear: it is preferable that microcode be free. The microcode on Intel
-and AMD systems *are* non-free. Facts and feelings rarely coincide; the
+To be clear: it is preferable that microcode be libre. The microcode on Intel
+and AMD systems *are* proprietary. Facts and feelings rarely coincide; the
 purpose of this section is to spread *facts*.
 
 The libreboot build system now enables microcode updates *by default.*
@@ -405,7 +418,7 @@ technically correct solution is to *not* apply the above patches, and instead
 supply microcode updates!
 
 Pick your poison. Not adding the updates is *irresponsible*, and ultimately
-futile, because you still end up with non-free microcode anyway, just you get
+futile, because you still end up with proprietary microcode, but you just get
 an older, buggier version instead!
 
 The libreboot build system *no longer* applies the two patches linked above!
@@ -429,11 +442,11 @@ Other considerations
 Also not covered strictly by Libreboot: OSHW and Right To Repair. Freedom at
 the silicon level would however be amazing, and efforts already exist; for
 example, look at the RISCV ISA (in practise, actual fabrication is still
-proprietary and not under your control, but RISCV is a completely free CPU
+proprietary and not under your control, but RISCV is a completely libre CPU
 design that companies can use, instead of having to use proprietary ARM/x86 and
 so on). Similarly, Right To Repair (ability to repair your own device, which
 implies free access to schematics and diagrams) is critical, for the same
-reason that Free Software (Right To Hack) is critical!
+reason that Libre Software (Right To Hack) is critical!
 
 OSHW and Right To Repair are not covered at all by RYF (FSF's Respects Your
 Freedom criteria), the criteria which Libreboot was created to comply with.
@@ -482,12 +495,12 @@ that the work is *far* from complete!
 
 If followed *with exemptions unchallenged*, RYF may in some cases encourage
 companies to *sweep under the rug* any freedom issues that exist, where it
-concerns non-free firmware not running on the host CPU (such as the
+concerns proprietary firmware not running on the host CPU (such as the
 Embedded Controller firmware).
 
 I propose that new guidelines be written, to replace RYF. These new guidelines
 will do away with all exemptions/loopholes, and demand that *all* software be
-free on the machine, or as much as possible. Instead of only promoting products
+libre on the machine, or as much as possible. Instead of only promoting products
 that meet some arbitrary standard, simply catalog all systems on a grand
 *database* of sorts (like h-node.org, but better). Include Right to Repair and
 OSHW (including things like RISCV) in the most "ideal" standard machine.
