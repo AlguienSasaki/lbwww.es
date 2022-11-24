@@ -52,7 +52,7 @@ The backlight is darker on the left side of the screen when lowering the brightn
 ---------------------------------------------------------------------------------------------------------------
 
 We don't know how to detect the correct PWM value to use in
-coreboot-libre, so we just use the default one in coreboot which has
+coreboot, so we just use the default one in coreboot which has
 this issue on some CCFL panels, but not LED panels.
 
 You can work around this in your distribution, by following the notes at
