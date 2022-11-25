@@ -37,6 +37,26 @@ If you don't plan to set up Xorg/Wayland, then that's all you really need to
 do. For example, you might want to run a headless server, in which case you
 probably don't mind running in text mode all the time.
 
+OpenBSD and corebootfb
+----------------------
+
+It's still recommended to use SeaBIOS in text mode, but OpenBSD specifically
+can work with SeaBIOS booting in a coreboot framebuffer, with SeaVGABIOS. In
+Libreboot ROM images, this would be SeaBIOS images with `corebootfb` in the
+file name.
+
+Make sure to select MBR-style partitioning on the installer, and it will
+Just Work.
+
+If you're using the GRUB payload but SeaBIOS is available in the boot menu,
+you can just select SeaBIOS at said menu, and OpenBSD will work fine.
+
+FreeBSD and corebootfb
+----------------------
+
+Assumed broken, so please ensure that you boot with SeaBIOS payload in text
+mode (lbmk ROM images with `txtmode` in the file name, not `corebootfb`).
+
 Warnings for X11 users
 ----------------------
 
