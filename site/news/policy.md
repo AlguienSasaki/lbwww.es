@@ -296,7 +296,9 @@ The FSF maintains another set of criteria, dubbed Free System Distribution
 Guidelines (GNU FSDG)]
 
 The FSDG criteria is separate from RYF, but has similar problems. FSDG is
-what the FSF-endorsed GNU+Linux distros comply with. Thoughts:
+what the FSF-endorsed GNU+Linux distros comply with. Basically, it bans
+all proprietary software, including device firmware. This may seem noble, but
+it's extremely problematic in the context of firmware. Food for thought:
 
 * Excluding firmware blobs in the linux kernel is *bad*. Proprietary firmware
   is *also bad*. Including them is a wiser choice, if strong education is also
@@ -333,7 +335,15 @@ system. They tell you how to do it, which means that they are helping people
 to get *some* freedom *rather than none*. This is an inherently pragmatic
 way to do things, and it's now how Libreboot does it.
 
-OpenBSD is very much the same, but they go a step further: during the initial
+More context regarding Debian is available in this blog post:
+<https://blog.einval.com/2022/04/19#firmware-what-do-we-do> - in it, the
+author, a prominent Debian developer, makes excellent points about device
+firmware similar to the (Libreboot) article that you're reading now. It's
+worth a read! As of October 2022, Debian has voted to include device firmware
+by *default*, in following Debian releases. It used to be that Debian excluded
+such firmware, but allowed you to add it.
+
+OpenBSD is very much the same, but they're clever about it: during the initial
 boot, after installation, it tells you exactly what firmware is needed and
 updates that for you. It's handled in a very transparent way, by
 their `fw_update` program which you can read about here:
