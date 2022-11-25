@@ -41,7 +41,7 @@ flash protections set in the Intel Flash Descriptor.
 
 On ivybridge platforms specifically, coreboot supports what's called
 the *ME Soft Temporary Disable*, which disables the ME after BringUp, similar
-to `me_cleaner`. You can do this by setting `me_state=Disabled` in nvmramtool.
+to `me_cleaner`. You can do this by setting `me_state=Disabled` in nvramtool.
 
 Now boot with HDA\_SDO strapped. On the HDA (audio) chip, there is a pin that
 you can short, to disable IFD-based flash protections. You simply HOLD it in
