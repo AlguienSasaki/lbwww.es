@@ -459,7 +459,7 @@ implies free access to schematics and diagrams) is critical, for the same
 reason that Libre Software (Right To Hack) is critical!
 
 OSHW and Right To Repair are not covered at all by RYF (FSF's Respects Your
-Freedom criteria), the criteria which Libreboot was created to comply with.
+Freedom criteria), the criteria which Libreboot previously complied with.
 RYF also makes several concessions that are ultimately damaging, such as
 the *software as circuitry* policy which is, frankly, nonsensical. ROM is still
 software. There was a time when the FSF didn't consider BIOS software a freedom
@@ -512,8 +512,17 @@ I propose that new guidelines be written, to replace RYF. These new guidelines
 will do away with all exemptions/loopholes, and demand that *all* software be
 libre on the machine, or as much as possible. Instead of only promoting products
 that meet some arbitrary standard, simply catalog all systems on a grand
-*database* of sorts (like h-node.org, but better). Include Right to Repair and
-OSHW (including things like RISCV) in the most "ideal" standard machine.
+*database* of sorts (like h-node.org, but better), which will define exactly
+what *hardware* **and** software issues exist on each device. Include Right to
+Repair and OSHW (including things like RISCV) in the most "ideal"
+standard machine; the gold standard is libre *silicon*, like what Sam Zeloof
+and others are working on nowadays.
+
+This new set of criteria should not attempt to hide or ignore *anything*. It
+should encourage people to push the envelope and innovate, so that we can have
+much *more* freedom than is currently possible. Necessity is the mother of all
+invention, and freedom is an important goal in every aspect of life, not just
+computing.
 
 Don't call it "Respects Your Freedom" or something similar. Instead, call it
 something like: the freedom catalog. And actually focus on hardware, not just
