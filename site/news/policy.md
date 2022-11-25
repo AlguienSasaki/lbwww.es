@@ -20,8 +20,8 @@ The *goal* of Libreboot is
 to do exactly this, and help as many people as possible by automating the
 configuration, compilation and installation of *coreboot* for *non-technical*
 users, easing it further for the average user by providing user-friendly
-instructions for everything. Essentially, Libreboot is a *coreboot distrubion*,
-in much the same way *Alpine Linux* is a Linux distribution!
+instructions for everything. Essentially, Libreboot is a *coreboot
+distribution*, in much the same way *Alpine Linux* is a Linux distribution!
 
 The purpose of this document it to outline how that is brought about, and how
 the project operates along this basis. *This* document is largely about the
