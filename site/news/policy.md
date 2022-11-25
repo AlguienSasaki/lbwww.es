@@ -482,10 +482,8 @@ complied with, the result *does* give many freedoms to the user, but RYF
 completely disregards many things that are now possible, including freedoms at
 the hardware level (the RYF criteria only covers *software*). Those guidelines
 are written with assumptions that were still true in the 1990s, but the world
-has since evolved. As of 2 January 2022, Libreboot still complies strictly with
-RYF, and will continue to do so, at least for the time being. The libreboot
-project rejects those policies in their entirety, and instead takes a pragmatic
-approach.
+has since evolved. The libreboot project rejects those policies in their
+entirety, and instead takes a pragmatic approach.
 
 The conclusion that should be drawn from all of this is as follows:
 
