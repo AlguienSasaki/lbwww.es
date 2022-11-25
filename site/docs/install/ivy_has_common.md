@@ -28,6 +28,18 @@ Neither of these blobs are redistributable, so roms for these boards must be bui
 If you're planning to flash a release rom to your board then you need only patch the existing rom.
 Alternatively, you can attempt to build a rom from source for your board.
 
+Internal flashing
+-----------------
+
+For ivybridge specifically (e.g. thinkpad X230, T430) on Lenovo ThinkPads,
+it is possible to flash from vendor firmware to Libreboot, without using a
+clip, but some disassembly is still required. This can be beneficial if you
+want to save money by not buying external flashing equipment. All you need is
+a pain of metal tweezers or something similar that can be used to create
+a short circuit between two conductors.
+
+See: [ivybridge internal flashing](ivy_internal.md)
+
 Obtaining Binary Blobs
 ----------------------
 

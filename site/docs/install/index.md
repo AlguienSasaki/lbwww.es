@@ -615,8 +615,12 @@ Refer to the following laptop:\
 TARGET: Thinkpad X230
 ---------------------
 
+NOTE: Internal flashing is also possible, on this machine, from vendor firmware,
+but it's still recommended to use a clip and a SPI flasher. However, follow
+[internal X230 flashing from Lenovo firmware](ivy_internal.md) if you wish.
+
 Refer to the [ivybridge/haswell common guide.](ivy_has_common.md) for how to
-make the rom image usable for external flashing.
+make the rom image usable for external flashing (with a clip).
 
 Read [board documentation](/docs/install/x230_external.html) for disassembly.
 

@@ -3,7 +3,11 @@ title: ThinkPad X230/X230T external flashing
 x-toc-enable: true
 ...
 
-Read the [Ivybridge/Haswell common guide](/docs/install/ivy_has_common.html) if you want more information.
+NOTE: Internal flashing (from vendor firmware) to Libreboot is possible, on
+this board, but the steps are a bit more complex than using an external flasher.
+See: [internal ivybridge flashing](ivy_internal.md)
+
+Read the [Ivybridge/Haswell common guide](ivy_has_common.md) if you want more information.
 All of the following instructions assume that you've cloned lbmk and are operating from the
 root of that project. To do so, run
 
