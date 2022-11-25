@@ -1,4 +1,4 @@
-% Binary blob minimalisation policy
+% Binary blob reduction policy
 % Leah Rowe
 % 4 January 2022 (updated 15 November 2022)
 
@@ -54,8 +54,8 @@ with binary blobs in the Libreboot project.
 
 For information about Intel Management Engine and AMD PSP, refer to the FAQ.
 
-Blob *minimalization* policy
-============================
+Blob *reduction* policy
+=======================
 
 Default configurations
 ----------------------

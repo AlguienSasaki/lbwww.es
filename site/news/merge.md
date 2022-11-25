@@ -21,7 +21,7 @@ Such was alluded to in the previous Libreboot release announcement:
 The exact method proposed in that previous announcement has not been adopted.
 Instead, Libreboot essentially now *is* osboot, under the Libreboot name.
 
-The *binary blob minimalisation* policy of osboot has replaced the previous
+The *binary blob reduction* policy of osboot has replaced the previous
 policy used by Libreboot. It is a pragmatic policy revolved around providing
 as much freedom as possible per platform, while no longer sticking only to
 those *"pure"* platforms; all platforms from coreboot can now be supported, if
