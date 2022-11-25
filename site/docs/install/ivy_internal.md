@@ -37,7 +37,9 @@ upstream coreboot from scratch. Coreboot instructions here:
 <https://doc.coreboot.org/tutorial/index.html>
 
 You can then strap HDA\_SDO (soft descriptor override), which will disable
-flash protections set in the Intel Flash Descriptor.
+flash protections set in the Intel Flash Descriptor. More info about that is
+available here:
+<https://winraid.level1techs.com/t/guide-unlock-intel-flash-descriptor-read-write-access-permissions-for-spi-servicing/32449>
 
 On ivybridge platforms specifically, coreboot supports what's called
 the *ME Soft Temporary Disable*, which disables the ME after BringUp, similar
