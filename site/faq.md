@@ -505,8 +505,7 @@ AMD that you could run without microcode updates. It's unknown whether
 the updates are needed on all AMD boards (depends on CPU).
 
 The libreboot project does not consider microcode updates a problem, and it
-enables them by default on all supported hardware, even libreboot-compatible
-hardware.
+enables them by default on all supported hardware.
 
 ### AMD is uncooperative
 
