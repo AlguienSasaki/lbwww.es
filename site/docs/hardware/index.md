@@ -85,6 +85,15 @@ Libera IRC, who ported these boards to Libreboot. Extensive work was
 performed, to make u-boot work correctly. **TODO: installation instructions
 must be added to documentation!**
 
+NOTE: As of 11 December 2022, building of u-boot images has been tested on
+Debian Linux. Make sure you have the latest lbmk from the Git repository, and
+the build dependencies are installed like so, from `lbmk/` as root:
+
+    ./build dependencies debian
+
+This installs everything needed for cross-compiling, and part of the build
+process makes use of coreboot's own cross-compile toolchain.
+
 ### Emulation
 
 -   [Qemu x86](../misc/emulation.md)
