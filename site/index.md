@@ -13,6 +13,10 @@ firmware. Help is available
 via [\#libreboot](https://web.libera.chat/#libreboot)
 on [Libera](https://libera.chat/) IRC.
 
+**NEW RELEASE: The latest release is Libreboot 20221214, released on
+14 December 2022.
+See: [Libreboot 20221214 release announcement](news/libreboot20221214.md).**
+
 Why should you use *libreboot*?
 ----------------------------
 
