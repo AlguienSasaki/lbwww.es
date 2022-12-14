@@ -63,14 +63,9 @@ of Kent, UK)
 * <https://mirrors.mit.edu/libreboot/> (MIT university, USA)
 * <https://mirror.math.princeton.edu/pub/libreboot/> (Princeton
 university, USA)
-* <https://mirror.libremind.org/libreboot/> (libremind.org, Iceland)
-* <https://mirror.splentity.com/libreboot/> (Splentity Software, USA)
 * <https://mirror.sugol.org/libreboot/> (sugol.org)
 (formerly nephelai.zanity.net/mirror/libreboot)
-* <https://mirrors.qorg11.net/libreboot/> (qorg11.net, Spain)
-* <https://elgrande74.net/libreboot/> (elgrande74.net, France)
 * <https://mirror.koddos.net/libreboot/> (koddos.net, Netherlands)
-* <https://mirror.swordarmor.fr/libreboot/> (swordarmor.fr, France)
 * <https://mirror-hk.koddos.net/libreboot/> (koddos.net, Hong Kong)
 * <https://mirror.cyberbits.eu/libreboot/> (cyberbits.eu, France)
 
@@ -113,8 +108,6 @@ The following rsync mirrors are available:
 * <rsync://rsync.mirrorservice.org/libreboot.org/release/> (University of Kent,
 UK)
 * <rsync://mirror.math.princeton.edu/pub/libreboot/> (Princeton university, USA)
-* <rsync://rsync.libremind.org/libreboot/> (libremind.org, Iceland)
-* <rsync://qorg11.net/mirrors/libreboot/> (qorg11.net, Spain)
 * <rsync://ftp.linux.ro/libreboot/> (linux.ro, Romania)
 * <rsync://mirror.koddos.net/libreboot/> (koddos.net, Netherlands)
 * <rsync://mirror-hk.koddos.net/libreboot/> (koddos.net, Hong Kong)
