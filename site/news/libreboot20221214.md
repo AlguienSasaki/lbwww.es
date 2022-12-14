@@ -3,7 +3,7 @@
 % 14 December 2022
 
 The last Libreboot release, version 20220710, was released on 10 July
-in 2021. *This* new release, Libreboot 20221214, is released today on December
+in 2022. *This* new release, Libreboot 20221214, is released today on December
 14th, 2022. This is intended to be a *testing* release.
 
 This release is based on the osboot merger that happened last month. Many
