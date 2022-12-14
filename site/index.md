@@ -13,12 +13,6 @@ firmware. Help is available
 via [\#libreboot](https://web.libera.chat/#libreboot)
 on [Libera](https://libera.chat/) IRC.
 
-**[Osboot recently merged with and became part of Libreboot.](news/merge.md)
-Many new targets are now supported but as of this date, 16 November 2022, you
-should (for now) expect bugs in the build system and some documentation is
-missing. This is being worked on, so that a new testing release of Libreboot
-can be completed as soon as possible.**
-
 Why should you use *libreboot*?
 ----------------------------
 

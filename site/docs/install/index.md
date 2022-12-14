@@ -21,6 +21,22 @@ If you're already running libre firmware on your board, you should decide for
 sure whether you wish to risk it. See changelogs on
 the [release announcements via the news page](/news/) and decide for yourself.
 
+Haswell/Ivybridge/Sandybridge machines
+======================================
+
+BLOBS MISSING IN RELEASE ROMs
+-----------------------------
+
+E.g. ThinkPad X220, X230, T440p, W541.
+
+The lbmk build system automatically fetches required blobs for these
+boards, when building, and sets them up properly, e.g. `me_cleaner`
+is used. The same process is also available in a script, which can
+insert them into ROM images.
+
+**If you're using release ROMs, these blobs are missing, and must be
+added. See: [ivy_has_common.md](ivy_has_common.md).**
+
 About ROM image file names
 ==========================
 
@@ -612,6 +628,22 @@ TARGET: Lenovo ThinkPad R500 laptop
 Refer to the following laptop:\
 [ThinkPad R500](../hardware/r500.md)
 
+sandybridge/ivybridge/haswell
+=================
+
+**If using release ROMs, neutered ME must be inserted. Refer to the info
+below.**
+
+TARGET: ThinkPad X220/T420/T420s
+--------------------------------
+
+Similar to X230 but there's only 1 flash. Intel ME image must be inserted
+if using release ROMs. See: [guide](ivy_has_common.md) (says ivy/haswell but
+the insert script for ME works with sandybridge aswell).
+
+**If using release ROMs, neutered ME must be inserted. Refer to the above
+guide.**
+
 TARGET: Thinkpad X230
 ---------------------
 
@@ -620,7 +652,8 @@ but it's still recommended to use a clip and a SPI flasher. However, follow
 [internal X230 flashing from Lenovo firmware](ivy_internal.md) if you wish.
 
 Refer to the [ivybridge/haswell common guide.](ivy_has_common.md) for how to
-make the rom image usable for external flashing (with a clip).
+make the rom image usable for external flashing (with a clip). **If using
+release ROMs, you must insert the neutered ME. Look at the info on that page.**
 
 Read [board documentation](/docs/install/x230_external.html) for disassembly.
 
@@ -634,6 +667,9 @@ Read [board documentation](/docs/install/x230_external.html) for disassembly.
 (same instructions as X230, for this purpose of external flashing, but
 full disassembly will differ slightly)
 
+**If using release ROMs, neutered ME must be inserted. Refer to the above
+guide.**
+
 TARGET: Thinkpad t440p
 ---------------------
 
@@ -641,3 +677,6 @@ Refer to the [ivybridge/haswell common guide.](ivy_has_common.md) for how to
 make the rom image usable for external flashing.
 
 Read [board documentation](/docs/install/t440p_external.html) for disassembly.
+
+**If using release ROMs, neutered ME must be inserted. Refer to the above
+guide.**

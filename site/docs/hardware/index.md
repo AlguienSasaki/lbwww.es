@@ -4,15 +4,6 @@ x-toc-enable: true
 ...
 
 This sections relates to known hardware compatibility in libreboot.
-**Osboot merged with and became part of Libreboot on November 15th, 2022. As
-of this day, November 16th, many new boards have been added as a result, but
-some may not be documented or even listed at all (on this page). If any are
-missing, please tell us on IRC.**
-
-**If a target doesn't yet have ROM images in the release (ones present as a
-result of the osboot merge), please know that the Libreboot 20220710 release
-was conducted before the merge. The next release after Libreboot 20220710 shall
-contain ROM images for these additional boards.**
 
 For installation instructions, refer to [../install/](../install/).
 
@@ -76,6 +67,9 @@ libreboot currently supports the following systems in this release:
 -   ASUS Chromebook C201PA (google/veyron\_speedy)
 -   ASUS Chromebook Flip C101 (google/gru)
 -   Samsung Chromebook Plus (v1) (google/gru)
+
+NOTE: the above list may be incomplete. For example, `gru_kevin`
+is also present in lbmk. This needs to be tidied up.
 
 NOTE: ARM hardware is currently undocumented in Libreboot, both for
 installation of Libreboot and the installation of an operating system. If you
