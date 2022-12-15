@@ -130,9 +130,6 @@ Twitter. The following is a *nitter* link, which lets you view the relevant
 Twitter thread without running libre Javascript in your browser:\
 <https://nitter.net/cooljeanius/status/1479663133207764992>
 
-The original Twitter URL is:\
-<https://twitter.com/cooljeanius/status/1479663133207764992>
-
 Further instructions for what room to go to, when you get there:\
 
 See Nitter link:\

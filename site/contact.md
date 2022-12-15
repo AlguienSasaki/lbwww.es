@@ -55,17 +55,14 @@ Social media
 
 libreboot exists officially on many places.
 
-Twitter and Mastodon
---------------------
+Mastodon
+--------
 
-News announcements: <https://twitter.com/libreboot/>
+The founder and lead developer, Leah Rowe, is on Mastodon:
 
-The founder and lead developer, Leah Rowe, is also on Twitter and Mastodon:
-
-* <https://twitter.com/n4of7> (use nitter to avoid proprietary JavaScript)
 * <https://mas.to/@libreleah>
 
-Leah can also be contacted by her email address:
+Leah can also be contacted by this email address:
 [leah@libreboot.org](mailto:leah@libreboot.org)
 
 Reddit
