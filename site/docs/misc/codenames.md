@@ -32,7 +32,18 @@ List of models and codenames
 
 ### Codenames
 
--   Asus Chromebook C201PA: speedy\_rk3288, veyron-speedy
+-   Samsung Chromebook 2 13": peach-pi
+-   Samsung Chromebook 2 11": peach-pit
+-   HP Chromebook 11 G1: spring
+-   Samsung Chromebook XE303: snow
+-   HP Chromebook 14 G3: nyan-blaze
+-   Acer Chromebook 13: (CB5-311, C810) nyan-big
+-   ASUS Chromebit CS10: veyron-mickey
+-   ASUS Chromebook Flip C100PA: veyron-minnie
+-   ASUS Chromebook C201PA: veyron-speedy
+-   Hisense Chromebook C11 and more: veyron-jerry
+-   ASUS Chromebook Flip C101: bob
+-   Samsung Chromebook Plus (v1): kevin
 
 -   ThinkPad X60: KS Note (Sumo)
 -   ThinkPad X60s (slim): KS Note-2 / KS-2 (Kabuki)
@@ -112,3 +123,5 @@ See also
     [Wikipedia](https://en.wikipedia.org/wiki/List_of_Intel_codenames).
 -   For ThinkPads see [Documentation/thinkpad/codenames.csv @ Coreboot]
 (https://review.coreboot.org/cgit/coreboot.git/tree/Documentation/thinkpad/codenames.csv)
+-   For Chromebooks see [Developer information for ChromeOS devices]
+(https://www.chromium.org/chromium-os/developer-information-for-chrome-os-devices/)
