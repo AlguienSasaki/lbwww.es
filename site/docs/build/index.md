@@ -147,6 +147,8 @@ If you wish to build payloads, you can also do that. For example:
 
     ./build payload seabios
 
+    ./build payload u-boot qemu_x86_12mb
+
 Previous steps will be performed automatically. However, you can *still* run
 individual parts of the build system manually, if you choose. This may be
 beneficial when you're making changes, and you wish to test a specific part of
@@ -201,6 +203,8 @@ Example of downloading an individual module:
     ./download grub
 
     ./download flashrom
+
+    ./download u-boot
 
 Third, build all of the modules:
 --------------------------------
@@ -259,6 +263,17 @@ Example of building specific payloads:
     ./build payload grub
 
     ./build payload seabios
+
+Each board has its own U-Boot build configuration in `lbmk` under
+`resources/u-boot`. To build U-Boot payloads, you need to specify the
+target board and maybe a cross compiler for its CPU architecture. These
+are handled automatically when building ROM images, but for example:
+
+    ./build payload u-boot qemu_x86_12mb	# on x86 hosts
+
+    CROSS_COMPILE=aarch64-linux-gnu- ./build payload u-boot gru_kevin
+
+    CROSS_COMPILE=arm-linux-gnueabi- ./build payload u-boot veyron_speedy
 
 The build-payload command is is a prerequsite for building ROM images.
 
