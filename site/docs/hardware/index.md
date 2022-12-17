@@ -91,6 +91,7 @@ process makes use of coreboot's own cross-compile toolchain.
 ### Emulation
 
 -   [Qemu x86](../misc/emulation.md)
+-   [Qemu arm64](../misc/emulation.md)
 
 
 TODO: More hardware is supported. See `resources/coreboot/` in lbmk. Update

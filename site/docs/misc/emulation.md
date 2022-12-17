@@ -25,6 +25,15 @@ For example:
 
 `qemu-system-x86_64 -bios bin/qemu_x86_12mb/grub_qemu_x86_12mb_libgfxinit_corebootfb_usqwerty.rom`
 
+`qemu-system-x86_64 -bios bin/qemu_x86_12mb/uboot_payload_qemu_x86_12mb_libgfxinit_corebootfb.rom -serial stdio`
+
+There is basic support for an arm64 virtual machine as well, although the payloads are not as developed as the x86 one:
+
+    ./build boot roms qemu_arm64_12mb
+
+    qemu-system-aarch64 -bios bin/qemu_arm64_12mb/uboot_payload_qemu_arm64_12mb_libgfxinit_corebootfb.rom \
+        -M virt,secure=on,virtualization=on,acpi=on -cpu cortex-a53 -m 768M -serial stdio -vga none -display none
+
 Use Cases
 =========
 
