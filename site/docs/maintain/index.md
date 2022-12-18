@@ -252,8 +252,8 @@ For a full list of all `download` commands, run:
 modify
 ======
 
-This can be used to modify SeaBIOS and coreboot configs. It calls scripts
-in `resources/scripts/modify/`, for example:
+This can be used to modify SeaBIOS, coreboot and U-Boot configs. It calls
+scripts in `resources/scripts/modify/`, for example:
 
     ./modify coreboot configs
 
@@ -309,8 +309,10 @@ as:
 * `payload_grub_withseabios="y"` (example entry)
 * `payload_seabios="y"` (example entry)
 * `payload_memtest="y"` (example entry)
+* `payload_uboot="y"` (example entry)
 * `payload_seabios_withgrub="y"` (example entry)
 * `grub_scan_disk="ata"`
+* `uboot_config=default`
 
 More information about these and other variables will be provided throughout
 this document.
@@ -340,10 +342,10 @@ coreboot Git repository. *At present, lbmk only supports use of the official
 repository from the upstream coreboot project*.
 
 The `arch` entry specifies which CPU architecture is to be used: currently
-recognized entries are `x86_32`, `x86_64` and `ARMv7`. *At present, setting it
-to ARMv7 only means that crossgcc-arm will be compiled, but no support for
-actually building ROMs exists in lbmk exists yet, except for 32-bit and 64-bit
-x86 machines.*
+recognized entries are `x86_32`, `x86_64`, `ARMv7` and `AArch64`. *Setting it
+to a non-native arch means that necessary crossgcc-arch will be compiled and be
+available when building roms, but not necessarily built or discovered when
+individual scripts are called manually.*
 
 The `payload_grub` entry specifies whether or not GNU GRUB is to be included in
 ROM images.
@@ -360,6 +362,13 @@ on.
 The `payload_memtest` entry specifies whether or not MemTest86+ is to be
 included in ROM images; it will only be included in ROM images for *text mode*
 startup, on x86 machines.
+
+The `payload_uboot` entry specifies whether or not U-Boot is to be included in
+ROM images.
+
+The `uboot_config` option specifies which U-Boot board configuration file
+variant should be used. It currently doesn't make sense for this to be anything
+other than `default`, which is the default if the option is missing.
 
 The `grub_scan_disk` option specifies can be `ahci`, `ata` or `both`, and it
 determines which types of disks are to be scanned, when the `grub.cfg` file in
@@ -507,6 +516,137 @@ for instance, and `lbmk` will not erroneously try to apply `README` as though
 it were a patch file. This might be useful if you have a *lot* of patches, and
 you want to provide some explanations about specific files.
 
+resources/u-boot/
+=================
+
+This directory contains configuration, patches and so on, for each mainboard
+that can use U-Boot as a payload in the `lbmk` build system. U-Boot doesn't yet
+have reliable generic configurations that can work across all coreboot boards
+(per-architecture), so these are used to build it per-board.
+
+resources/u-boot/BOARDNAME/
+===========================
+
+Each `BOARDNAME` directory defines configuration for a corresponding mainboard.
+It doesn't actually have to be for a board; it can also be used to just define
+a U-Boot revision, with patches and so on. To enable use as a payload in ROM
+images, this must have the same name as its `resources/coreboot/BOARDNAME/`
+counterpart.
+
+resources/u-boot/BOARDNAME/board.cfg
+====================================
+
+This file can contain several configuration lines, each being a string, such
+as:
+
+* `ubtree="default"` (example entry)
+* `ubrevision="4debc57a3da6c3f4d3f89a637e99206f4cea0a96"` (example entry)
+* `arch="AArch64"` (example entry)
+
+These are similar in meaning to their coreboot counterparts.
+
+The `ubtree` entry is actually a link, where its value is a directory name
+under `resources/u-boot`. For example, `ubtree="default"` would refer to
+`resources/u-boot/default` and the corresponding U-Boot source tree created
+(when running `./download u-boot`, which makes use of `board.cfg`) would be
+`u-boot/default/`. In other words: a `board.cfg` file in `resources/u-boot/foo`
+might refer to `resources/u-boot/bar` by specifying `ubtree="bar"`, and the
+created u-boot source tree would be `u-boot/bar/`. ALSO:
+
+FUN FACT: such references are infinitely checked until resolved. For
+example, `foo` can refer to `bar` and `bar` can refer to `baz` but if there is
+an infinite loop, this is detected and handled by `lbmk`. For example,
+if `bar` refers to `foo` which refers back to `bar`, this is not permitted
+and will throw an error in `lbmk`.
+
+The `ubrevision` entry defines which U-Boot revision to use, from the U-Boot
+Git repository. *At present, lbmk only supports use of the official repository
+from the upstream U-Boot project*.
+
+The `arch` entry specifies which CPU architecture is to be used: currently
+recognized entries are `x86_32`, `x86_64`, `ARMv7` and `AArch64`. *Setting it
+to a non-native arch means that necessary crossgcc-arch will be compiled and be
+available when building roms, but not necessarily built or discovered when
+individual scripts are called manually.*
+
+resources/u-boot/BOARDNAME/config/\*
+====================================
+
+Files in this directory are *U-Boot* configuration files. Configuration file
+names can be anything, but for now `default` is the only one used.
+
+In `lbmk`, a board-specific directory under `resources/u-boot/` should never
+specify a U-Boot revision. Rather, a directory *without* U-Boot configs should
+be created, specifying a U-Boot revision. For example, the directory
+`resources/u-boot/default/` specifies a U-Boot revision. In the board-specific
+directory, your `board.cfg` could then specify `ubtree="default"` but without
+specifying a U-Boot revision (this is specified by
+`resources/u-boot/default/board.cfg`).
+
+Normally, the U-Boot build process results in the U-Boot executable and a
+device-tree file for the target board, which must further be packaged together
+to make things work. When you create a U-Boot configuration, you should enable
+`CONFIG_REMAKE_ELF` or `CONFIG_OF_EMBED` that handles this. The former option
+enables creation of a `u-boot.elf` that bundles them together after the build,
+and the latter option embeds it into the `u-boot` executable.
+
+When making a U-Boot configuration, you should also pay special attention to
+the `CONFIG_SYS_TEXT_BASE` (`CONFIG_TEXT_BASE` in later versions), whose defaults
+may cause it to overlap coreboot, in which case it won't boot. Normally, the
+upstream coreboot build system checks for this when given `CONFIG_PAYLOAD_ELF`,
+but `lbmk` injects the payload itself and doesn't check for this yet.
+
+Another interesting config option is `CONFIG_POSITION_INDEPENDENT` for ARM
+boards, which has been so far enabled in the ones `lbmk` supports, just to be
+safe.
+
+U-Boot build system
+-------------------
+
+If you wish to know about U-Boot, refer here:\
+<https://u-boot.readthedocs.io/en/latest/>
+
+This and other documents from U-Boot shall help you to understand *U-Boot*.
+
+You create a config, for `resources/u-boot/BOARDNAME/configs`, by finding the
+corresponding board name in the upstream U-Boot `configs` directory, and
+running `make BOARDNAME_defconfig` and `make menuconfig` commands in the
+*U-Boot* build system. You should do this after running `./download u-boot` in
+`lbmk`.
+
+You might want to consider basing your config on the upstream `coreboot` boards
+when possible, but such a board is not available upstream for ARM yet.
+
+You can simply clone U-Boot upstream, add whatever patches you want, and
+then you can make your config. It will appear afterwards in a file
+named `.config` which is your config for inside `resources/u-boot/BOARDNAME/`.
+
+You can then use `git format-patch -nX` where `X` is however many patches you
+added to that U-Boot tree. You can put them in the patches directory
+under `resources/u-boot/BOARDNAME`.
+
+The *base* revision, upon which any custom patches you wrote are applied,
+shall be the `ubrevision` entry.
+
+Scripts exist in `lbmk` for automating the modification/updating of *existing*
+configs, but not for adding them. Adding them is to be done manually, based on
+the above guidance.
+
+resources/u-boot/BOARDNAME/patches/\*
+=====================================
+
+In cases where `ubrevision` is specified, where the given directory
+under `resources/u-boot/` does in fact define a version of U-Boot to
+download, you can add custom *patches* on top of that revision. When you run
+the command `./download u-boot`, those patches will be applied chronologically
+in alphanumerical order as per patch file names.
+
+The patch files should be named with `.patch` file extensions. All other files
+will be ignored. By having `lbmk` do it this way, you could add a `README` file
+for instance, and `lbmk` will not erroneously try to apply `README` as though
+it were a patch file. This might be useful if you have a *lot* of patches, and
+you want to provide some explanations about specific files.
+
 resources/grub/background/
 ==========================
 
@@ -595,7 +735,7 @@ It automatically detects if `crossgcc` is to be compiled, on a given coreboot
 tree (in cases where it has not yet been compiled), and compiles it for a
 target based on the `arch` entry in `board.cfg`.
 
-It creates ROM images with GRUB and/or SeaBIOS, optionally with Memtest86+
+It creates ROM images with GRUB, SeaBIOS, U-Boot, optionally with Memtest86+
 also included, in various separate configurations in many different ROM images
 for user installation.
 
@@ -739,6 +879,14 @@ This runs `make clean` in the `seabios/` directory.
 
 Command: `./build clean seabios`
 
+resources/scripts/build/clean/u-boot
+======================================
+
+This runs `make distclean` and `git clean -fdx` on all of the U-Boot revisions
+present in lbmk.
+
+Command: `./build clean u-boot`
+
 resources/scripts/build/dependencies/arch
 =========================================
 
@@ -836,6 +984,17 @@ This builds the SeaBIOS payloads.
 
 Command: `./build payload seabios`
 
+resources/scripts/build/payload/u-boot
+======================================
+
+This builds the U-Boot payloads. Usually a target board and a cross-compiler
+appropriate for the board must be specified for it to work, because trying to
+build for all boards of varying architectures using only the host compiler will
+not work.
+
+Command: `CROSS_COMPILE=aarch64-gnu-linux- ./build payload u-boot qemu_arm64_12mb`
+
+
 resources/scripts/build/release/roms
 ====================================
 
@@ -908,6 +1067,14 @@ This downloads and patches SeaBIOS.
 
 Command: `./download seabios`
 
+resources/scripts/download/u-boot
+=================================
+
+This downloads, and patches U-Boot, as per `board.cfg` files
+in `resources/u-boot/`.
+
+Command: `./download u-boot`
+
 resources/scripts/misc/versioncheck
 ===================================
 
@@ -937,6 +1104,20 @@ This lets you modify SeaBIOS configs.
 
 Command: `./modify seabios configs`
 
+resources/scripts/modify/u-boot/configs
+=======================================
+
+Loads U-Boot configs into U-Boot trees, and runs `make menuconfig`, so
+that you can easily modify them in an ncurses interface. Additional parameters
+are accepted, for example:
+
+    ./modify u-boot configs gru_kevin gru_bob
+
+With no additional parameters given, it simply cycles through all configs
+under `resources/u-boot/`.
+
+Command: `./modify u-boot configs`
+
 resources/scripts/update/coreboot/configs
 =========================================
 
@@ -959,6 +1140,29 @@ the version of SeaBIOS used by lbmk.
 
 Command: `./update seabios configs`
 
+resources/scripts/update/u-boot/configs
+=========================================
+
+This runs `make oldconfig` on U-Boot configs under `resources/u-boot/`.
+It is most useful when updating a U-Boot revision, per `board.cfg`. It allows
+additional parameters, for example:
+
+    ./update u-boot configs gru_kevin gru_bob
+
+With no additional parameters given, it simply cycles through all configs
+under `resources/u-boot/`.
+
+However, using `make oldconfig` is not optimal for U-Boot, as their Kconfig
+dependencies/defaults are not as well specified as coreboot's is. When updating
+configs for an upstream board, it's usually better (but not automated) to:
+
+- Turn `lbmk` config into a defconfig in the old version
+- Compare it with the old version's upstream defconfig
+- Apply the difference to the new version's upstream defconfig
+- Create an updated config in the new version
+
+Command: `./update u-boot configs`
+
 resources/seabios/config/libgfxinit
 ===================================
 
@@ -975,8 +1179,8 @@ to be used.
 update
 ======
 
-This can be used to update SeaBIOS and coreboot configs. It calls scripts
-in `resources/scripts/update/`, for example:
+This can be used to update SeaBIOS, coreboot and U-Boot configs. It calls
+scripts in `resources/scripts/update/`, for example:
 
     ./update coreboot configs
 
