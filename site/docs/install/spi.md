@@ -37,10 +37,10 @@ is called *external* because it's not the *internal* one on your mainboard.
 Do not use CH341A!
 ==================
 
-NOR flashes on libreboot systems run on 3.3V DC, and this includes data lines.
-CH341A has 5V logic levels on data lines, which will damage your SPI flash and
-also the southbridge that it's connected to, plus anything else that it's
-connected to.
+NOR flashes on libreboot systems run on 3.3V DC or 1.8V DC, and this includes
+data lines. CH341A has 5V logic levels on data lines, which will damage your
+SPI flash and also the southbridge that it's connected to, plus anything else
+that it's connected to.
 
 These ch341a programmers are unfortunately very popular. DO NOT use it unless
 you have fixed the issue. You CAN fix it so that the data lines are 3.3v, if
@@ -53,6 +53,10 @@ so no documentation will be provided for ch341a on this website. It is best
 to discourage use of that device.
 
 **Not covered on that eevblog page: the WP/HOLD pins (pins 3 and 7) must be held high via pull-up resistors, but on CH341A dongles, they are directly connected to 3.3V DC (continuity with pin 8). It is advisable to cut these two connections, to the WP and HOLD pins, and jump the cuts using pull-up resistors instead. A value between 1k to 10k (ohms) should be fine.**
+
+Alternatively, you might work around this by using an adapter or logic-level
+converter that can tolerate the overvoltage (which you would need for 1.8V chips
+anyway).
 
 In case it's not clear:
 
@@ -100,6 +104,19 @@ DIP8
 ----
 
 ![](https://av.libreboot.org/dip8/dip8.jpg)
+
+Supply Voltage
+--------------
+
+Historically, all boards that Libreboot supports happened to have SPI NOR chips
+which work at 3.3V DC. With the recent addition of Chromebooks whose chips are
+rated for 1.8V DC, this can no longer be assumed.
+
+Inspect the chip on your board for a part number, look up the datasheet for it.
+Find out and make note of the power supply voltage it needs. If it doesn't
+match the voltage output by your external flashing hardware, you should only
+connect it to the chip through an adapter or logic level converter, never
+directly.
 
 Software configuration
 ======================
@@ -312,7 +329,7 @@ It is advisable to take a *2nd* dump, e.g. `dump2.bin`, and then check sha1sum:
 
 If the checksums match, it indicates that you have a good dump. If they do not,
 check your wiring. Wires should be within 10cm length for best stability, and
-they should all be the same length (3.3V VCC and GND wires can be longer).
+they should all be the same length (VCC and GND wires can be longer).
 
 This advice is *especially* applicable to the BBB, which is highly unreliable.
 
@@ -374,20 +391,24 @@ will teach you how to wire each type of flash chip.
 WARNINGS
 --------
 
-Do not connect a 3.3V DC power source until your chip is otherwise properly
-wired. For instance, do not connect a test clip that has 3.3V DC attached.
+Do not connect the power source until your chip is otherwise properly
+wired. For instance, do not connect a test clip that has power attached.
 
 Do not *disconnect* your chip from the flasher until you've disconnected or
-turned off the 3.3V DC power source.
+turned off the power source.
 
-BE CAREFUL that you are indeed supplying 3.3V DC to the chip. All SPI flashes
-on all currently supported libreboot hardware run on 3.3V DC and logic at that
-level too.
+BE CAREFUL that you are indeed supplying the appropriate supply voltage to the
+chip. SPI flashes on most of the currently supported libreboot hardware run on
+3.3V DC and logic at that level too. Some of them (at least Chromebooks) can
+have chips that run on 1.8V DC. You should make sure to check the part number
+and datasheet of the SPI flash chip for the supply voltage it requires. If your
+external flashing hardware doesn't match it, use an adapter or logic level
+converter to flash.
 
 It is important to CHECK that you are running on the correct voltage, when you
-do anything with these chips. Lower than 3.3V won't damage anything, but higher
-will fry your chip (on most chips, the tolerated voltage range is between 2.7V
-and 3.6V, but 3.3V is the most ideal level).
+do anything with these chips. Lower than the rated supply voltage won't damage
+anything, but higher will fry your chip (on most 3.3V chips, the tolerated
+voltage range is between 2.7V and 3.6V, but 3.3V is the most ideal level).
 
 DO NOT connect more than 1 DC power source to your flash chip either!
 Mixing voltages like that can easily cause damage to your equipment, and to
@@ -397,7 +418,7 @@ MISO/MOSI/CS/CLK lines
 ----------------------
 
 You may want to add 47ohm series resistors on these lines, when flashing the
-chips. Only do it on those lines (NOT the 3.3V or GND lines). This provides
+chips. Only do it on those lines (NOT the VCC or GND lines). This provides
 some protection from over-current. On Intel platforms, the SPI flash is usually
 connected via such resistors, directly to the Southbridge chipset.
 
@@ -410,12 +431,13 @@ on.
 
 It may be beneficial to modify the mainboard so that the SPI flash is powered
 (on the VCC pin) through a diode, but please note: a diode will cause a voltage
-drop. The tolerated range for VCC on these chips is 2.7V to 3.6V DC. If you do
+drop. The tolerated range for a chip expecting 3.3V VCC is usually around 2.7V
+to 3.6V DC, and the drop may cause the voltage to fall outside that. If you do
 this, please also ensure that the WP and HOLD pins are still held to a high
 logic state; each via their own resistor (1K to 10K ohms) connected to the
-*same* 3.3V DC source going through the diode.
+*same* power source going through the diode.
 
-The reason is simple: on most systems, the flash shares a common 3.3V DC rail
+The reason is simple: on most systems, the flash shares a common power rail
 with many other components on the board, which draw a lot of current. Further,
 if you accidentally provide too much voltage or cause an overcurrent, you could
 fry those other components but if there is diode protection, you'll only fry
@@ -423,14 +445,15 @@ the boot flash (and it is very easy to replace, if you have good soldering
 skills).
 
 When you've placed the diode, ensure that VCC on the chip is isolated from all
-other components on that board, which share the same 3.3V DC rail. Further,
+other components on that board, which share the same power rail. Further,
 ensure that the pull-up resistors for WP/HOLD are *only* connected to the side
 of the diode that has continuity with the VCC pin (this is important because if
 they're not, they won't be held high while doing ISP flashing, even if they're
 still held high when the mainboard is fully powered on).
 
-Furthermore: ensure that the SPI flash is operating at 2.7 to 3.6V when fully
-powered on, after installing the diode.
+Furthermore: ensure that the SPI flash is operating at the appropriate supply
+voltage (2.7V to 3.6V for a 3.3V chip) when fully powered on, after installing
+the diode.
 
 If it's a desktop/workstation/server board (not a laptop), you could de-solder
 the SOIC8/WSON8 if it uses that, and replace with an IC socket (for SOIC8,
@@ -483,7 +506,7 @@ Refer to this diagram:
   5      MOSI        19         18
   6      CLK         23         22
   7      *not used*  *not used* *not used*
-  8      3.3V        1          3
+  8      VCC         1          3
 
 On your SOIC8, there will be a dot in one of the corners. The dot is pin 1.
 
@@ -512,7 +535,7 @@ Refer to this diagram:
   Pin \#   25xx signal    RPi(GPIO)   BBB(P9 header)
   -------- -------------- ----------- --------------
   1        *not used*     *not used*  *not used*
-  2        3.3V           1           3
+  2        VCC            1           3
   3        *not used*     *not used*  *not used*
   4        *not used*     *not used*  *not used*
   5        *not used*     *not used*  *not used*
@@ -547,8 +570,7 @@ mounted to a mainboard. You need pull-up resistors on the WP and HOLD pins,
 and decoupling capacitors on the VCC pin. If the chip is already mounted to a
 board, whether soldered or in a socket, these capacitors and resistors will
 probably already exist on the board and you can just flash it without pulling
-WP/HOLD high, and without capacitors(just connect your external 3.3V DC power
-source).
+WP/HOLD high, and without capacitors(just connect your external power source).
 
 The best way is as follows:
 
@@ -559,13 +581,12 @@ The best way is as follows:
   the correct wiring (see link to SPI flashing guides below)
 
 SOIC8/WSON8/DIP8: pin 3 and 7 must be held to a high logic state, which means
-that each pin
-has its own pull-up resistor to VCC (from the 3.3v voltage plane that pin 8
-connects to); anything from 1Kohm to 10Kohm will do. When you're flashing a chip
-that's already on a laptop/desktop/server mainboard, pin 3 and 7 are likely
-already held high, so you don't need to bother.
+that each pin has its own pull-up resistor to VCC (from the voltage plane that
+pin 8 connects to); anything from 1Kohm to 10Kohm will do. When you're flashing
+a chip that's already on a laptop/desktop/server mainboard, pin 3 and 7 are
+likely already held high, so you don't need to bother.
 
-SOIC8/WSON8/DIP8: pin 8, which is 3.3v VCC, will already have decoupling capacitors on it
+SOIC8/WSON8/DIP8: pin 8, which is VCC, will already have decoupling capacitors on it
 if the chip is on a mainboard, but lone chip flashing means that these capacitors
 do not exist. A capacitor passes AC but blocks DC. Due to electromagnetic
 indunctance, and RF noise from high-speed switching ICs, a DC voltage line isn't
@@ -584,8 +605,8 @@ seen on an oscilloscope).
 
 SOIC16: same as above, but use a SOIC16 socked on a breadboard. On SOIC16,
 WP/HOLD are not pin 3/7 like above, but instead pins 1 and 9, so wire your 
-pull-up resistors on those. 3.3v VCC on SOIC16 is pin 2, so wire your
-decoupling capacitors up on that.
+pull-up resistors on those. VCC on SOIC16 is pin 2, so wire your decoupling
+capacitors up on that.
 
 SOIC8/WSON8/DIP8/SOIC16 not mounted to a mainboard
 --------------------------------------------------
@@ -674,7 +695,7 @@ Pomona 5250 is a SOIC8 test clip. There are others available, but this is the
 best one. Use that. Use the SOIC8 diagram (see above) to wire up your Raspberry
 Pi.
 Your mainboard likely already pulls WP/HOLD (pins 3 and 7) high, so don't
-connect these. 3.3v VCC on SOIC8's pin 8 probably already has decoupling
+connect these. VCC on SOIC8's pin 8 probably already has decoupling
 capacitors on the mainboard, so just hook that up without using a capacitor.
 
 SOIC16:\
