@@ -71,10 +71,10 @@ SeaBIOS payload is enabled, on this board.
 No lbmk changes were done for this, because the ROMs were simply excluded
 in the previous release, but this board was not deleted from lbmk.
 
-This board is known to be problematic in general, so don't expect flawless
-operation. Issues like slow boot, unreliable raminit, video issues, etc.
-Only ATA emulation is supported, on the SATA connectors (no AHCI) so don't
-expect to make a nice RAID10 SSD virtual server host or something like that.
+**UPDATE ON 20 December 2022: per many user reports, these ROMs work very
+well. GA-G41M-ES2L support is therefore stable, for all intents and purposes.
+This section of the release announcement previously alluding to issues, but
+those speculations were premature, based on limited prior testing.**
 
 New boards, ARM
 ----------
