@@ -83,8 +83,28 @@ For example:
 
 	./blobutil inject -r x230_libreboot.rom -b x230_12mb -m 00:f6:f0:40:71:fd
 
-NOTE: this makes use of `nvmutil`, which you can read more about in
+NOTE: the MAC changer makes use of `nvmutil`, which you can read more about in
 the [nvmutil documentation](nvmutil.md).
+
+**WARNING: This is broken in Libreboot 20221214's src archive. It fails when
+attempting to use cbfstool, due to a faulty check in a script. The fix is as
+follows (and has been applied already in the lbmk Git repository, as of 22
+December 2022):**
+
+Edit line 137 in `resources/scripts/blobs/inject`. The line in 20221214 says
+this:
+
+    make -C cd coreboot/default/util/cbfstool || Fail 'could not build ifdtool'
+
+Modify it to say this:
+
+    make -C coreboot/default/util/cbfstool || Fail 'could not build cbfstool'
+
+Until this is edited accordingly, the inject script will *exit* with non-zero
+status, and no blobs will be injected.
+
+This has been fixed, following the Libreboot 20221214 release, but you must
+apply this fix yourself, if using *that* release.
 
 Splitting The Rom
 -----------------
