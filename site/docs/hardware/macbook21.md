@@ -35,17 +35,14 @@ P+: Partially works;
 P*: Partially works with blobs
 ```
 
-| ***Features*** |                                       | Notes |
-|----------------|---------------------------------------|-------|
-| **Internal flashing with original boot firmware** | W+ | MacBook1,1 does 
-                                                not support this |
-| **Display**                                       | W+ |       |
-| **Audio**                                         | W+ | Audio quality is 
-                                     better when using Libreboot |
-| **RAM Init**                                      | W+ |       |
-| **External output**                               | W+ |       |
-| **Display brightness**                            | P+ | [Finetune backlight 
-control](../misc/#finetune-backlight-control-on-intel-gpus)      |
+| ***Features*** |                                       |
+|----------------|---------------------------------------|
+| **Internal flashing with original boot firmware** | W+ |
+| **Display**                                       | W+ |
+| **Audio**                                         | W+ |
+| **RAM Init**                                      | W+ |
+| **External output**                               | W+ |
+| **Display brightness**                            | P+ |
 
 | ***Payloads supported***  |           |
 |---------------------------|-----------|
@@ -53,17 +50,14 @@ control](../misc/#finetune-backlight-control-on-intel-gpus)      |
 | **SeaBIOS**               | Works     |
 | **SeaBIOS with GNU GRUB** | Works     |
 </div>
-There is an Apple laptop called the macbook1,1 from 2006 which uses the
-same i945 chipset as the ThinkPad X60/T60. A developer (Mono Moosbart) ported
-the Macbook2,1 to coreboot, working alongside Vladimir Serbinenko. The ROM
-images also work on the macbook1,1.
+The MacBook1,1 and MacBook2,1 are very similar to the 
+ThinkPad X60. It shares some hardware with the X60 such as the chipset.
 
-Some macbook2,1 models are late 2006, others are early 2007.
 You do not need to use external flashing equipment when flashing the MacBook2,1
 but the MacBook1,1 requires external flashing equipment while running Apple EFI
 firmware.
 
-Macbook2,1 laptops come with Core 2 Duo processors
+MacBook2,1 laptops come with Core 2 Duo processors
 which support 64-bit operating systems (and 32-bit). The MacBook1,1
 uses Core Duo processors (supports 32-bit OS but not 64-bit), and it is
 believed that this is the only difference.
@@ -79,13 +73,13 @@ The following pages list many models of MacBook1,1 and MacBook2,1:
 Models
 ------
 
-Specifically (Order No. / Model No. / CPU) for macbook 1,1:
+Specifically (Order No. / Model No. / CPU) for the MacBook1,1:
 
 * MA255LL/A / A1181 (EMC 2092) / Core Duo T2500 *(tested - working)*
 * MA254LL/A / A1181 (EMC 2092) / Core Duo T2400 *(tested - working)*
 * MA472LL/A / A1181 (EMC 2092) / Core Duo T2500 (untested)
 
-For macbook 2,1:
+For the MacBook2,1:
 
 * MA699LL/A / A1181 (EMC 2121) / Intel Core 2 Duo T5600 *(tested -
     working)*
@@ -94,25 +88,31 @@ For macbook 2,1:
 * MB061LL/A / A1181 (EMC 2139) / Intel Core 2 Duo T7200 (untested)
 * MA700LL/A / A1181 (EMC 2121) / Intel Core 2 Duo T7200 *(tested -
     working)*
-* MB063LL/A / A1181 (EMC 2139) / Intel Core 2 Duo T7400 (works)
+* MB063LL/A / A1181 (EMC 2139) / Intel Core 2 Duo T7400 *(tested - working)*
 * MB062LL/A / A1181 (EMC 2139) / Intel Core 2 Duo T7400 *(tested -
     working)*
+
+It's believed that all MacBook2,1 and MacBook1,1 models work fine with 
+Libreboot. If there's a model not in the list or not confirmed working 
+here and you happen to have that model and that model works with Libreboot 
+then don't forget to [send a patch](../../git.md), confirming that it 
+actually works!
 
 Internal flashing
 =================
 
-Macbook2,1 can always be flashed internally, even if running Apple firmware:
+MacBook2,1 can always be flashed internally, even if running Apple firmware:
 
     sudo flashrom -p internal:laptop=force_I_want_a_brick,boardmismatch=force -w your.rom
 
-Macbook1,1 same as above, but if running Apple firmware see below for
-external flashing.
+The MacBook1,1 can't be flashed internally if running the Apple EFI firmware. 
+You must flash externally.
 
 External flashing
 =================
 
-macbook1,1 requires external flashing, if running the default Apple firmware.
-macbook2,1 can be flashed internally, regardless.
+MacBook1,1 requires external flashing, if running the default Apple firmware.
+MacBook2,1 can be flashed internally, regardless.
 If running coreboot or libreboot you can already internally re-flash.
 
 [This page shows disassembly
@@ -128,25 +128,84 @@ motherboard](https://www.ifixit.com/Guide/MacBook+Core+2+Duo+PRAM+Battery+Replac
 Refer to the following guide:\
 [Externally rewrite 25xx NOR flash via SPI protocol](../install/spi.md)
 
-You need to replace OS X with GNU+Linux before flashing libreboot. (OSX
-won't run at all in libreboot), if you wish to internally flash on a macbook21.
-libreboot won't boot OSX either (well, maybe with Tianocore it would, but that's
-untested and OSX is inferior to GNU+Linux). In general you should think of
-your Macbook like a regular laptop, for the purposes of anything coreboot.
+OSes using Linux on Apple EFI firmware
+======================================
 
-If it's a macbook2,1 with the core2duo processors, you can run
-a 64-bit distro. For macbook 1,1 the CPU probably only has 32-bit support.
+You have 2 choices for booting up OSes using Linux as their kernel 
+on the MacBook:
 
-GNU+Linux on Apple EFI firmware
-===============================
+* Boot via USB ;
 
-How to boot an ISO: burn it to a CD (like you would normally) and hold
-down the Alt/Control key while booting. The bootloader will detect the
-GNU+Linux CD as 'Windows' (because Apple doesn't think GNU+Linux
-exists). Install it like you normally would. When you boot up again,
-hold Alt/Control once more. The installation (on the HDD) will once
-again be seen as 'Windows'. (it's not actually Windows, but Apple
-likes to think that Apple and Microsoft are all that exist.)
+* Boot via a CD or DVD.
+
+Boot via a CD or DVD
+--------------------
+
+The Apple EFI firmware contains a PC BIOS emulation layer for booting 
+Microsoft Windows on CDs and DVDs. That emulation layer **only** works 
+if booting from a CD/DVD or from the hard drive. The MacBook will **not** 
+boot MBR bootloaders from USB, which is why booting from a CD or DVD is 
+easier than booting from a USB.
+
+* First, burn your ISO to a CD or DVD ;
+
+* Reboot and while rebooting, hold down the Alt/Control key, a boot menu 
+should pop up, requesting you to choose which device to boot from ;
+
+* Select the CD/DVD icon with 'Windows' as the label (the Apple EFI firmware 
+elways recognises CDs/DVDs using MBR as 'Windows', because the emulation 
+layer was made specifically for booting Microsoft Windows as part of 
+BootCamp, a tool which allowed dual-booting Windows and OS X) ;
+
+* Install it like you normally would (If there's an OS X installation then 
+it's highly recommended to save all your data and wipe it. Libreboot isn't 
+able and will never be able to boot OS X) ;
+
+* While rebooting, hold Alt/Control once again, and select the hard disk 
+icon with the 'Windows' label, after each subsequent boot, the Apple EFI 
+should boot up properly automatically.
+
+*If you installed your OS alongside OS X then you won't be able to boot 
+to it using GRUB, despite the fact that it does sometimes show up. You 
+also won't be able to boot it up when using Libreboot.*
+
+Boot via USB
+------------
+
+This method is harder than booting from a CD/DVD and may soft-brick your 
+MacBook but it's the only way to boot up successfully from a USB.
+
+The PC BIOS emulation layer found in the Apple EFI firmware doesn't work 
+when booting up from a USB stick. Despite the fact that the 
+MacBook2,1 does use a 64-Bit processor, the firmware only supports booting 
+32-Bit EFI devices, meaning you're stuck with 32-Bit OSes and rare 
+64-Bit OSes which have ISOs that still support booting from 32-Bit EFI. 
+Meanwhile, GRUB fully supports booting up 64-Bit OSes on 32-Bit EFI.
+
+* First, search for an ISO that supports 32-Bit EFI while being 64-Bit or 
+a normal 32-Bit ISO and put it in your USB stick ;
+
+* Reboot and while rebooting, hold down the Alt/Control key, a boot menu 
+should pop up, requesting you to choose which device to boot from ;
+
+* Select the USB icon ;
+
+* Install it like you normally would (If there's an OS X installation then 
+it's highly recommended to save all your data and wipe it. Libreboot isn't 
+able and will never be able to boot OS X) ;
+
+* Reboot. It should boot up to your newly-installed system if you wiped OS X, 
+else, hold Alt/Control and select the correct boot device ;
+
+* Flash Libreboot. DO NOT REBOOT AGAIN BEFORE FLASHING. Sometimes the 
+firmware can get confused, because Apple never intended to boot other 
+EFI OSes other than OS X, as such there's a chance that your MacBook can 
+become [soft-bricked](https://apple.stackexchange.com/questions/408104/late-2006-macbook-doesnt-turn-on-fan-spinning-but-no-chime/409754). 
+If that is the case then dissassemble it and remove 
+the CMOS/PRAM battery, wait a few minutes, and put it back in.
+
+*If you want to install Libreboot with the SeaBIOS payload then be sure 
+to reconfigure GRUB2 correctly, else your system won't boot.*
 
 Coreboot wiki page
 ==================
@@ -159,10 +218,9 @@ Issues and solutions/workarounds
 ================================
 
 There is one mouse button only, however multiple finger tapping
-works. Battery life is poor compared to X60/T60. The Apple logo on the
+works. The Apple logo on the
 back is a hole, exposing the backlight, which means that it glows. You
 should [cover it up](http://cweiske.de/tagebuch/tuxbook.htm).
-The MacBook2,1 consumes more power with libreboot than with the Apple EFI firmware, which means it overheats a lot.
 
 *The MacBook2,1 comes with a webcam which does not work with free
 software. Webcams are a privacy and security risk; cover it up! Or
