@@ -56,20 +56,18 @@ libreboot currently supports the following systems in this release:
 
 ### Laptops (ARM, u-boot, MOSTLY UNTESTED AS OF NOVEMBER 16, 2022)
 
--   Samsung Chromebook 2 13" (peach-pi)
--   Samsung Chromebook 2 11" (based on `peach_pit` in coreboot)
--   HP Chromebook 11 G1 (google/daisy)
--   Samsung Chromebook XE303 (google/daisy)
--   HP Chromebook 14 G3 (google/nyan\_blaze)
--   Acer Chromebook 13 (CB5-311, C810) (google/nyan\_big)
--   ASUS Chromebit CS10 (google/veyron\_mickey)
--   ASUS Chromebook Flip C100PA (google/veyron)
--   ASUS Chromebook C201PA (google/veyron\_speedy)
--   ASUS Chromebook Flip C101 (google/gru)
--   Samsung Chromebook Plus (v1) (google/gru)
-
-NOTE: the above list may be incomplete. For example, `gru_kevin`
-is also present in lbmk. This needs to be tidied up.
+-   [Samsung Chromebook 2 13" (peach-pi)](../install/chromebooks.md)
+-   [Samsung Chromebook 2 11" (peach-pit)](../install/chromebooks.md)
+-   [HP Chromebook 11 G1 (daisy-spring)](../install/chromebooks.md)
+-   [Samsung Chromebook XE303 (daisy-snow)](../install/chromebooks.md)
+-   [HP Chromebook 14 G3 (nyan-blaze)](../install/chromebooks.md)
+-   [Acer Chromebook 13 (CB5-311, C810) (nyan-big)](../install/chromebooks.md)
+-   [ASUS Chromebit CS10 (veyron-mickey)](../install/chromebooks.md)
+-   [ASUS Chromebook Flip C100PA (veyron-minnie)](../install/chromebooks.md)
+-   [ASUS Chromebook C201PA (veyron-speedy)](../install/chromebooks.md)
+-   [Hisense Chromebook C11 and more (veyron-jerry)](../install/chromebooks.md)
+-   [ASUS Chromebook Flip C101 (gru-bob)](../install/chromebooks.md)
+-   [Samsung Chromebook Plus (v1) (gru-kevin)](../install/chromebooks.md)
 
 NOTE: ARM hardware is currently undocumented in Libreboot, both for
 installation of Libreboot and the installation of an operating system. If you
