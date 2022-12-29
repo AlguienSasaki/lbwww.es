@@ -29,6 +29,16 @@ and documentation.
 You can learn more about Caleb's involvement with libreboot, by reading his
 entry on the [page listing all contributors, past and present](contrib.md)
 
+Alper Nebi Yasak
+================
+
+Alper handles development of the U-Boot payload support in Libreboot,
+coordinates testing on Chromebooks that use it, and does any necessary
+upstream work on U-Boot itself. `alpernebbi` on Libera IRC.
+
+You can learn more about Alper's involvement with Libreboot, by reading his
+entry on the [page listing all contributors, past and present](contrib.md)
+
 Developers wanted!
 ==================
 

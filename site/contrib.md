@@ -61,6 +61,9 @@ using libreboot or in need of help.
 * Project goals. Caleb collaborates with Leah on determining project goals.
 Leah has the final say in every decision.
 
+External projects
+=================
+
 Coreboot project
 ----------------
 
@@ -86,6 +89,19 @@ U-Boot
 ------
 
 Libreboot uses U-Boot as the coreboot payload on supported ARM Chromebooks.
+
+Contributors in alphabetical order
+==================================
+
+Alper Nebi Yasak
+----------------
+
+Contributed the build system integration and documentation for using
+U-Boot as payload, and initial Libreboot ports of some ARM Chromebooks
+based on that.
+
+Alper also does upstream development on U-Boot, e.g. continued an almost
+complete port of the `gru-kevin` board and got it merged upstream.
 
 Alyssa Rosenzweig
 -----------------
