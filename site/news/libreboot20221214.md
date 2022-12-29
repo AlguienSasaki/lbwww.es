@@ -80,27 +80,24 @@ New boards, ARM
 ----------
 
 NOTE: These boards use u-boot payload, instead of depthcharge.
-As of this release day, no documentation yet exists for these
-boards in Libreboot, but they are as follows (list may not be
-complete):
 
 * Samsung Chromebook 2 13" (peach-pi)
-* Samsung Chromebook 2 11" (based on peach\_pit in coreboot)
-* HP Chromebook 11 G1 (google/daisy)
-* Samsung Chromebook XE303 (google/daisy)
-* HP Chromebook 14 G3 (google/nyan\_blaze)
-* Acer Chromebook 13 (CB5-311, C810) (google/nyan\_big)
-* ASUS Chromebit CS10 (google/veyron\_mickey)
-* ASUS Chromebook Flip C100PA (google/veyron)
-* ASUS Chromebook C201PA (google/veyron\_speedy)
-* ASUS Chromebook Flip C101 (google/gru)
-* Samsung Chromebook Plus (v1) (google/gru)
+* Samsung Chromebook 2 11" (peach-pit)
+* HP Chromebook 11 G1 (daisy-spring)
+* Samsung Chromebook XE303 (daisy-snow)
+* HP Chromebook 14 G3 (nyan-blaze)
+* Acer Chromebook 13 (CB5-311, C810) (nyan-big)
+* ASUS Chromebit CS10 (veyron-mickey)
+* ASUS Chromebook Flip C100PA (veyron-minnie)
+* ASUS Chromebook C201PA (veyron-speedy)
+* Hisense Chromebook C11 and more (veyron-jerry)
+* ASUS Chromebook Flip C101 (gru-bob)
+* Samsung Chromebook Plus (v1) (gru-kevin)
 
 These ARM boards are all Chromebooks.
 
 This work on the Chromebooks and u-boot integration is courtesy
-of Alper Nebi Yasak (`alpernebbi` on libreboot IRC), who made
-extensive changes to the u-boot source code to make this work.
+of Alper Nebi Yasak (`alpernebbi` on libreboot IRC).
 
 In these configurations, u-boot is a *payload of coreboot*.
 
