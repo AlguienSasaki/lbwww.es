@@ -82,6 +82,11 @@ SeaBIOS
 The libreboot firmware provides SeaBIOS as a payload option. SeaBIOS provides a
 legacy x86 BIOS implementation.
 
+U-Boot
+------
+
+Libreboot uses U-Boot as the coreboot payload on supported ARM Chromebooks.
+
 Alyssa Rosenzweig
 -----------------
 
