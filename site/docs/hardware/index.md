@@ -54,7 +54,7 @@ libreboot currently supports the following systems in this release:
 -   [Lenovo Thinkpad X230](../install/x230_external.md)
 -   [Lenovo Thinkpad X230t](../install/x230_external.md)
 
-### Laptops (ARM, u-boot, MOSTLY UNTESTED AS OF NOVEMBER 16, 2022)
+### Laptops (ARM, with U-Boot payload)
 
 -   [Samsung Chromebook 2 13" (peach-pi)](../install/chromebooks.md)
 -   [Samsung Chromebook 2 11" (peach-pit)](../install/chromebooks.md)
@@ -69,22 +69,8 @@ libreboot currently supports the following systems in this release:
 -   [ASUS Chromebook Flip C101 (gru-bob)](../install/chromebooks.md)
 -   [Samsung Chromebook Plus (v1) (gru-kevin)](../install/chromebooks.md)
 
-NOTE: ARM hardware is currently undocumented in Libreboot, both for
-installation of Libreboot and the installation of an operating system. If you
-have one of these machines configured with Libreboot, you should consult
-u-boot documentation to learn how it's operated. You might ping `alpernebbi` on
-Libera IRC, who ported these boards to Libreboot. Extensive work was
-performed, to make u-boot work correctly. **TODO: installation instructions
-must be added to documentation!**
-
-NOTE: As of 11 December 2022, building of u-boot images has been tested on
-Debian Linux. Make sure you have the latest lbmk from the Git repository, and
-the build dependencies are installed like so, from `lbmk/` as root:
-
-    ./build dependencies debian
-
-This installs everything needed for cross-compiling, and part of the build
-process makes use of coreboot's own cross-compile toolchain.
+WARNING: Support for these boards is at a proof-of-concept stage. Refer
+to [docs/u-boot/](../u-boot/) for more info about the U-Boot payload.
 
 ### Emulation
 

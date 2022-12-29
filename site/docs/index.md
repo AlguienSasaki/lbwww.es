@@ -19,7 +19,6 @@ Documentation related to operating systems
 
 -   [GNU+Linux Guides](gnulinux/)
 -   [How to install BSD on an x86 host system](bsd/)
--   [How to install BSD or Linux on ARM/uboot](uboot/) (TODO: write this section)
 
 Information for developers
 ==========================
@@ -27,6 +26,7 @@ Information for developers
 -   [How to compile the libreboot source code](build/)
 -   [Build system developer documentation](maintain/)
 -   [GRUB payload](grub/)
+-   [U-Boot payload](uboot/)
 
 Other information
 =================
