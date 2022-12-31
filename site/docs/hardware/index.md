@@ -70,7 +70,7 @@ libreboot currently supports the following systems in this release:
 -   [Samsung Chromebook Plus (v1) (gru-kevin)](../install/chromebooks.md)
 
 WARNING: Support for these boards is at a proof-of-concept stage. Refer
-to [docs/u-boot/](../u-boot/) for more info about the U-Boot payload.
+to [docs/uboot/](../uboot/) for more info about the U-Boot payload.
 
 ### Emulation
 
