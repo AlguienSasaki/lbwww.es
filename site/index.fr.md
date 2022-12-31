@@ -1,5 +1,6 @@
 ---
-title: Libérez votre BIOS aujourd'hui!
+title: Projet du Libreboot
+x-toc-enable: true
 ...
 
 Libreboot est un micrologiciel de démarrage [libéré](https://en.wikipedia.org/wiki/Open_source)
