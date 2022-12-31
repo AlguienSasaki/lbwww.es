@@ -1,0 +1,83 @@
+---
+title: Libérez votre BIOS aujourd'hui!
+...
+
+Libreboot est un micrologiciel de démarrage [libéré](https://en.wikipedia.org/wiki/Open_source)
+qui initialise le matériel (càd le contrôleur mémoire, CPU,
+périphériques) sur [des ordinateurs Intel/AMD x86 spécifiques](docs/hardware/)
+et lance un chargeur d'amorçage pour votre système d'exploitation. [GNU+Linux](docs/gnulinux/) et [BSD](docs/bsd/) sont bien supportés. C'est un
+remplacement pour le micrologiciel UEFI/BIOS propriétaire.
+Des canaux d'aide sont disponibles 
+dans le canal [\#libreboot](https://web.libera.chat/#libreboot) sur le serveur IRC [Libera](https://libera.chat/).
+
+**NOUVELLE VERSION: La dernière version est [Libreboot 20221214](news/libreboot20221214.md), sortie
+le 14 Décembre 2022.**
+
+Pourquoi devriez-vous utiliser Libreboot?
+-----------------------------------
+
+Libreboot vous donne des libertés que nous n'auriez pas autrement avec d'autre
+micrologiciel de démarrage. Il est extremement puissant et configurable pour 
+plein de cas d'utilisations.
+
+Vous avez des droits. Un droit à la vie privée, liberté de pensée, liberté d'espression et le droit de lire. Dans ce contexte là, Libreboot vous permet d'avoir ces droits.
+Votre liberté compte.
+Le [Droit à la réparation](https://vid.puffyan.us/watch?v=Npd_xDuNi9k) est important.
+Beaucoup de personnes utilisent un micrologiciel de 
+démarrage propriétare (non libre), même
+si ils utilisent [un système d'exploitation libre](https://www.openbsd.org/).
+Les micrologiciels propriétaires [contiennent](faq.html#intel) souvent 
+des [portes dérobées](faq.html#amd) et peuvent être instable. Libreboot 
+a été fondé en Décembre 2013 avec le but de rendre le libre
+au niveau du micrologiciel accessible pour les utilisateurs non-techniques. 
+
+Libreboot utilise [coreboot](https://www.coreboot.org) pour
+[l'initialisation matérielle](https://doc.coreboot.org/getting_started/architecture.html)
+Coreboot est renommé comme être difficilement installable par des utilisateurs 
+non technique; il se charge seulement de l'initialisation basique
+puis bascule sur un programme de [charge utile](https://doc.coreboot.org/payloads.html)
+(par ex. [GRUB](https://www.gnu.org/software/grub/),
+[Tianocore](https://www.tianocore.org/)), qui doit lui aussi être configuré.
+*Libreboot règle ce problème*; c'est une *distribution de coreboot* avec
+un [système de compilation automatisé](docs/builds/), crééant des 
+*images ROM* complètes pour une installation plus robuste. De la documentation est disponible.
+
+De quelle façon Libreboot diffère de Coreboot?
+------------------------------------------------
+
+Contrairement à l'opinion populaire, le but principal de Libreboot n'est
+pas de fournir un Coreboot déblobbé; ceci n'est simplement qu'une
+des politiques de Libreboot, une importante certes, mais qui n'est qu'un
+aspect mineur de Libreboot.
+
+De la même façon que *Debian* est une distribution GNU+Linux, Libreboot 
+est une *distribution coreboot*. Si vous voulez compilé une image ROM
+en partant des bases, vous devez alors effectuer une configuration experte 
+de Coreboot, GRUB et n'importe quel autre logiciel dont vous avez besoin 
+afin de préparer la ROM. Avec *Libreboot*,
+vous pouvez télécharger la source depuis Git ou une archive, exécuter
+`make` etça compilera une image ROM entières. Le système de compilation 
+automatisé de Libreboot nommé `lbmk` (Libreboot MaKe), compile ces images 
+ROM automatiquement, sans besoin d'entrées utilisateur or intervention
+requise. La configuration est faite à l'avance.
+
+Si vous devriez compiler du coreboot classique sans utiliser le système 
+de build automatisé de Libreboot, ça demanderait bien plus d'effort et 
+de connaissances techniques décente pour écrire une configuration qui marche.
+
+Les versions de Libreboot fournissent ces images ROM pré-compilés et vous 
+pouvez les installez simplement, sans connaissance ou compétence particulière 
+à savoir, sauf [suivre des instructions simplifiés écrite pour des utilisateurs non techniques](docs/install/).
+
+Comment aider
+-----------
+
+Vous pouvez allez voir les bugs listés sur le [traqueur de bugs](https://notabug.org/libreboot/lbmk/issues).
+
+Si vous trouvez un bug et avez un correctif, [voici les instructions pour envoyer des patchs](git.md), et vous pouvez aussi nous les signaler.
+Par ailleurs, ce site est écrit en Markdown et hébergé dans un [dépôt séparé](https://notabug.org/libreboot/lbwww) où
+vous pouvez envoyer vos patchs.
+
+La discussion sur le dévéloppement de Libreboot et le support utilisateur
+se font toutes sur le canal IRC. Plus d'information est disponible sur 
+la [page de contact](contact.md).
