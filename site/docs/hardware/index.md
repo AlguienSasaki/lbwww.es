@@ -110,11 +110,11 @@ How to find what EC version you have (i945/GM45)
 
 In GNU+Linux, you can try this:
 
-    grep 'at EC' /proc/asound/cards
+	grep 'at EC' /proc/asound/cards
 
 Sample output:
 
-    ThinkPad Console Audio Control at EC reg 0x30, fw 7WHT19WW-3.6
+	ThinkPad Console Audio Control at EC reg 0x30, fw 7WHT19WW-3.6
 
 7WHT19WW is the version in different notation, use search engine to find
 out regular version - in this case it's a 1.06 for x200 tablet

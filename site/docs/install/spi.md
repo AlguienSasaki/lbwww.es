@@ -132,18 +132,20 @@ on the BBB)
 
 Run the following commands as root to enable spidev:
 
-    config-pin P9.17 spi_cs
-    config-pin P9.18 spi
-    config-pin P9.21 spi
-    config-pin P9.22 spi_sclk
+```
+config-pin P9.17 spi_cs
+config-pin P9.18 spi
+config-pin P9.21 spi
+config-pin P9.22 spi_sclk
+```
 
 Verify that the spidev devices now exist:
 
-    ls /dev/spidev*
+	ls /dev/spidev*
 
 Output:
 
-    /dev/spidev1.0  /dev/spidev1.1  /dev/spidev2.0  /dev/spidev2.1
+	/dev/spidev1.0  /dev/spidev1.1  /dev/spidev2.0  /dev/spidev2.1
 
 Now the BBB is ready to be used for flashing. The following systemd service
 file can optionally be enabled to make this persistent across reboots.
@@ -166,16 +168,18 @@ WantedBy=multi-user.target
 
 Now test flashrom:
 
-    ./flashrom -p linux_spi:dev=/dev/spidev1.0,spispeed=512
+	./flashrom -p linux_spi:dev=/dev/spidev1.0,spispeed=512
 
 It is important to use `spispeed=512` or a lower number such as 256 or 128,
 because otherwise the BBB will be quite unstable.
 
 Example output:
 
-    Calibrating delay loop... OK.
-    No EEPROM/flash device found.
-    Note: flashrom can never write if the flash chip isn't found automatically.
+```
+Calibrating delay loop... OK.
+No EEPROM/flash device found.
+Note: flashrom can never write if the flash chip isn't found automatically.
+```
 
 This means that it's working (the clip isn't connected to any flash
 chip, so the error is fine).
@@ -204,7 +208,7 @@ This page has info:\
 In your Raspberry Pi, which we assume you're running the latest Raspbian version
 on, do this:
 
-    sudo raspi-config
+	sudo raspi-config
 
 Under the Interface section, you can enable SPI.
 
@@ -243,14 +247,14 @@ In the libreboot build system, from the Git repository, you can download and
 install flashrom. Do this after downloading the
 [lbmk Git repository](https://notabug.org/libreboot/lbmk):
 
-    cd lbmk
-    sudo ./build dependencies ubuntu2004
+	cd lbmk
+	sudo ./build dependencies ubuntu2004
 
 NOTE: debian, arch or void can be written instead of ubuntu2004. the debian
 script is also applicable to newer ubuntu versions
 
-    ./download flashrom
-    ./build module flashrom
+	./download flashrom
+	./build module flashrom
 
 If the `ubuntu2004` script complains about missing dependencies, just modify
 the script and remove those dependencies. The script is located
@@ -295,11 +299,11 @@ current chip contents to a file.
 Run this command to see if 25xx flash is detected, with your RPi properly
 wired.
 
-    sudo ./flashrom -p linux_spi:dev=/dev/spidev0.0,spispeed=32768
+	sudo ./flashrom -p linux_spi:dev=/dev/spidev0.0,spispeed=32768
 
 For BBB, you must use a lower speed and a different device path:
 
-    sudo ./flashrom -p linux_spi:dev=/dev/spidev1.0,spispeed=512
+	sudo ./flashrom -p linux_spi:dev=/dev/spidev1.0,spispeed=512
 
 On BBB, never use a speed higher than `spispeed=512`. In some cases, you may
 even need to go as low as `spispeed=128`. The BBB is highly unstable and
@@ -317,15 +321,15 @@ or you can try flashing it with a new ROM.
 
 Dump it like so (RPi):
 
-    sudo ./flashrom -p linux_spi:dev=/dev/spidev0.0,spispeed=32768 -r dump.bin
+	sudo ./flashrom -p linux_spi:dev=/dev/spidev0.0,spispeed=32768 -r dump.bin
 
 For BBB, do this:
 
-    sudo ./flashrom -p linux_spi:dev=/dev/spidev1.0,spispeed=512 -r dump.bin
+	sudo ./flashrom -p linux_spi:dev=/dev/spidev1.0,spispeed=512 -r dump.bin
 
 It is advisable to take a *2nd* dump, e.g. `dump2.bin`, and then check sha1sum:
 
-    sha1sum dump*.bin
+	sha1sum dump*.bin
 
 If the checksums match, it indicates that you have a good dump. If they do not,
 check your wiring. Wires should be within 10cm length for best stability, and
@@ -351,11 +355,11 @@ Writing
 
 Next, run this command (RPi):
 
-    sudo ./flashrom -p linux_spi:dev=/dev/spidev0.0,spispeed=32768 -w /path/to/libreboot.rom
+	sudo ./flashrom -p linux_spi:dev=/dev/spidev0.0,spispeed=32768 -w /path/to/libreboot.rom
 
 If using BBB:
 
-    sudo ./flashrom -p linux_spi:dev=/dev/spidev1.0,spispeed=512 -w /path/to/libreboot.rom
+	sudo ./flashrom -p linux_spi:dev=/dev/spidev1.0,spispeed=512 -w /path/to/libreboot.rom
 
 If using BBB, you may have to use a lower speed than 512. You may also have to
 re-flash several times before it works fully.
@@ -365,9 +369,11 @@ Again, use a lower `spispeed` value if you need to, for stability.
 Once that command outputs the following, the flash has completed
 successfully. If not, just flash again.
 
-    Reading old flash chip contents... done.
-    Erasing and writing flash chip... Erase/write done.
-    Verifying flash... VERIFIED.
+```
+Reading old flash chip contents... done.
+Erasing and writing flash chip... Erase/write done.
+Verifying flash... VERIFIED.
+```
 
 If it says "VERIFIED" or says that the chip contents are identical to the
 requested image, then the chip is properly flashed.

@@ -46,8 +46,8 @@ goes live.
 unless you actually want it to be publicly accessible. The `ufw` software is
 quite nice:**
 
-    sudo apt-get install ufw
-    sudo ufw enable
+	sudo apt-get install ufw
+	sudo ufw enable
 
 This will block all unsolicited incoming traffic. It's good practise anyway,
 for workstations. You don't have to use ufw, but it's a nice frontend for

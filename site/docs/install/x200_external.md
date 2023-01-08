@@ -20,7 +20,7 @@ Flash chip size
 
 Run this command on x200 to find out flash chip model and its size:
 
-    flashrom -p internal
+	flashrom -p internal
 
 MAC address
 ===========
@@ -104,21 +104,27 @@ Look just above the 7 in TP37 (that's GPIO33):
 By default we would see this in lenovobios, when trying flashrom -p
 internal -w rom.rom:
 
-    FREG0: Warning: Flash Descriptor region (0x00000000-0x00000fff) is read-only.
-    FREG2: Warning: Management Engine region (0x00001000-0x005f5fff) is locked.
+```
+FREG0: Warning: Flash Descriptor region (0x00000000-0x00000fff) is read-only.
+FREG2: Warning: Management Engine region (0x00001000-0x005f5fff) is locked.
+```
 
 With GPIO33 grounded during boot, this disabled the flash protections as
 set by descriptor, and stopped the ME from starting. The output changed
 to:
 
-    The Flash Descriptor Override Strap-Pin is set. Restrictions implied by
-    the Master Section of the flash descriptor are NOT in effect. Please note
-    that Protected Range (PR) restrictions still apply.
+```
+The Flash Descriptor Override Strap-Pin is set. Restrictions implied by
+the Master Section of the flash descriptor are NOT in effect. Please note
+that Protected Range (PR) restrictions still apply.
+```
 
 The part in bold is what got us. This was still observed:
 
-    PR0: Warning: 0x007e0000-0x01ffffff is read-only.
-    PR4: Warning: 0x005f8000-0x005fffff is locked.
+```
+PR0: Warning: 0x007e0000-0x01ffffff is read-only.
+PR4: Warning: 0x005f8000-0x005fffff is locked.
+```
 
 It is actually possible to disable these protections. Lenovobios does,
 when updating the BIOS (proprietary one). One possible way to go about

@@ -67,7 +67,7 @@ Work done since the 20211122 release:
   condition when rebuilding SeaBIOS with a high CPU count, resulting in failure
   with the error message (fix courtesy of John Doe):
 
-    cc1: fatal error: can't open 'out/src/asm-offsets.s' for writing: No such file or directory
+	cc1: fatal error: can't open 'out/src/asm-offsets.s' for writing: No such file or directory
 
 * lbmk: Specifically call python3, when python3 is to be used instead of 2.
 * lbmk: Preliminary fix for git credentials check. Set a placeholder name/email
@@ -183,11 +183,11 @@ under current Libreboot policy.
 
 Example, Libreboot-style, blobless:
 
-    FSDG= ./build boot roms all
+	FSDG= ./build boot roms all
 
 Example, Osboot-style:
 
-    ./build boot roms all
+	./build boot roms all
 
 An option in `board.cfg` for each board would specify whether the given board
 can actually be built and booted this way, per current Libreboot policy.

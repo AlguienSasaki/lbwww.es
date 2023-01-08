@@ -30,8 +30,8 @@ Git extensively, when downloading software like coreboot and patching it.
 You should make sure to initialize your Git properly, before you begin or else
 the build system will not work properly. Do this:
 
-    git config --global user.name "John Doe"
-    git config --global user.email johndoe@example.com
+	git config --global user.name "John Doe"
+	git config --global user.email johndoe@example.com
 
 Change the name and email address to whatever you want, when doing this.
 
@@ -56,28 +56,28 @@ ROM images (it just builds all of them, for all boards).
 You must ensure that all build dependencies are installed. If you're running
 Ubuntu or similar distribution (Debian, Trisquel, etc) you can do this:
 
-    sudo make install-dependencies-ubuntu
+	sudo make install-dependencies-ubuntu
 
 One exists specifically for Debian:
 
-    sudo make install-dependencies-debian
+	sudo make install-dependencies-debian
 
 Another exists for Arch:
 
-    sudo make install-dependencies-arch
+	sudo make install-dependencies-arch
 
 Now, simply build the coreboot images like so:
 
-    make
+	make
 
 This single command will build ROM images for *every* board integrated in
 libreboot. If you only wish to build a limited set, you can use `lbmk` directly:
 
-    ./build boot roms x200_8mb
+	./build boot roms x200_8mb
 
 You can specify more than one argument:
 
-    ./build boot roms x200_8mb x60
+	./build boot roms x200_8mb x60
 
 ROM images appear under the newly created `bin/` directory in the build system.
 
@@ -87,15 +87,15 @@ easy to know what commands are available by simply reading it.
 
 Standard `clean` command available (cleans all modules except `crossgcc`):
 
-    make clean
+	make clean
 
 To clean your `crossgcc` builds:
 
-    make crossgcc-clean
+	make crossgcc-clean
 
 To build release archives:
 
-    make release
+	make release
 
 Build without using GNU Make
 ============================
@@ -113,41 +113,41 @@ First, install build dependencies
 libreboot includes a script that automatically installs apt-get dependencies
 in Ubuntu 20.04. It works well in other apt-get distros (such as Trisquel and
 Debian):
-    
-    sudo ./build dependencies ubuntu2004
+
+	sudo ./build dependencies ubuntu2004
 
 Separate scripts also exist:
 
-    sudo ./build dependencies debian
+	sudo ./build dependencies debian
 
-    sudo ./build dependencies arch
+	sudo ./build dependencies arch
 
-    sudo ./build dependencies void
+	sudo ./build dependencies void
 
 Technically, any GNU+Linux distribution can be used to build libreboot.
 However, you will have to write your own script for installing build
 dependencies. 
 
-libreboot Make (lbmk) automatically runs all necessary commands; for example
-`./build payload grub` will automatically run `./build module grub` if the
-required utilities for GRUB are not built, to produce payloads.
+libreboot Make (lbmk) automatically runs all necessary commands; for
+example, `./build payload grub` will automatically run `./build module grub`
+if the required utilities for GRUB are not built, to produce payloads.
 
 As a result, you can now (after installing the correct build dependencies) run
 just a single command, from a fresh Git clone, to build the ROM images:
 
-    ./build boot roms
+	./build boot roms
 
 or even just build specific ROM images, e.g.:
 
-    ./build boot roms x60
+	./build boot roms x60
 
 If you wish to build payloads, you can also do that. For example:
 
-    ./build payload grub
+	./build payload grub
 
-    ./build payload seabios
+	./build payload seabios
 
-    ./build payload u-boot qemu_x86_12mb
+	./build payload u-boot qemu_x86_12mb
 
 Previous steps will be performed automatically. However, you can *still* run
 individual parts of the build system manually, if you choose. This may be
@@ -185,26 +185,26 @@ any script, it's a bug that should be fixed).
 
 It's as simple as that:
 
-    ./download all
+	./download all
 
 The above command downloads all modules defined in the libreboot build system.
 However, you can download modules individually.
 
 This command shows you the list of available modules:
 
-    ./download list
+	./download list
 
 Example of downloading an individual module:
 
-    ./download coreboot
+	./download coreboot
 
-    ./download seabios
+	./download seabios
 
-    ./download grub
+	./download grub
 
-    ./download flashrom
+	./download flashrom
 
-    ./download u-boot
+	./download u-boot
 
 Third, build all of the modules:
 --------------------------------
@@ -215,65 +215,65 @@ such as this, so you must verify this yourself.
 
 Again, very simple:
 
-    ./build module all
+	./build module all
 
 This builds every module defined in the libreboot build system, but you can
 build modules individually.
 
 The following command lists available modules:
 
-    ./build module list
+	./build module list
 
 Example of building specific modules:
 
-    ./build module grub
+	./build module grub
 
-    ./build module seabios
+	./build module seabios
 
-    ./build module flashrom
+	./build module flashrom
 
 Commands are available to *clean* a module, which basically runs make-clean.
 You can list these commands:
 
-    ./build clean list
+	./build clean list
 
 Clean all modules like so:
 
-    ./build clean all
+	./build clean all
 
 Example of cleaning specific modules:
 
-    ./build clean grub
+	./build clean grub
 
-    ./build clean cbutils
+	./build clean cbutils
 
 Fourth, build all of the payloads:
 ---------------------------------
 
 Very straight forward:
 
-    ./build payload all
+	./build payload all
 
 You can list available payloads like so:
 
-    ./build payload list
+	./build payload list
 
 Example of building specific payloads:
 
-    ./build payload grub
+	./build payload grub
 
-    ./build payload seabios
+	./build payload seabios
 
 Each board has its own U-Boot build configuration in `lbmk` under
 `resources/u-boot`. To build U-Boot payloads, you need to specify the
 target board and maybe a cross compiler for its CPU architecture. These
 are handled automatically when building ROM images, but for example:
 
-    ./build payload u-boot qemu_x86_12mb	# on x86 hosts
+	./build payload u-boot qemu_x86_12mb	# on x86 hosts
 
-    CROSS_COMPILE=aarch64-linux-gnu- ./build payload u-boot gru_kevin
+	CROSS_COMPILE=aarch64-linux-gnu- ./build payload u-boot gru_kevin
 
-    CROSS_COMPILE=arm-linux-gnueabi- ./build payload u-boot veyron_speedy
+	CROSS_COMPILE=arm-linux-gnueabi- ./build payload u-boot veyron_speedy
 
 The build-payload command is is a prerequsite for building ROM images.
 
@@ -282,7 +282,7 @@ Fifth, build the ROMs!
 
 Run this command:
 
-    ./build boot roms
+	./build boot roms
 
 Each board has its own configuration in `lbmk` under `resources/coreboot/`
 which specifies which payloads are supported.
@@ -291,7 +291,7 @@ By default, all ROM images are built, for all boards. If you wish to build just
 a specific board, you can specify the board name based on the directory name
 for it under `resources/coreboot/`. For example:
 
-    ./build boot roms x60
+	./build boot roms x60
 
 Board names, like above, are the same as the directory names for each board,
 under `resources/coreboot/` in the build system.

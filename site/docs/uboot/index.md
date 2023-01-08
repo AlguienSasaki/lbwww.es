@@ -19,7 +19,7 @@ As of 14 December 2022, building of U-Boot images has been tested on
 Debian. Make sure you have the latest `lbmk` from the Git repository,
 and the build dependencies are installed like so, from `lbmk/` as root:
 
-    ./build dependencies debian
+	./build dependencies debian
 
 This installs everything needed for `./build boot roms`, and part of the
 build process makes use of coreboot's own cross-compile toolchain.

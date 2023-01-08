@@ -29,10 +29,12 @@ For example:
 
 There is basic support for an arm64 virtual machine as well, although the payloads are not as developed as the x86 one:
 
-    ./build boot roms qemu_arm64_12mb
+	./build boot roms qemu_arm64_12mb
 
-    qemu-system-aarch64 -bios bin/qemu_arm64_12mb/uboot_payload_qemu_arm64_12mb_libgfxinit_corebootfb.rom \
-        -M virt,secure=on,virtualization=on,acpi=on -cpu cortex-a53 -m 768M -serial stdio -vga none -display none
+```
+qemu-system-aarch64 -bios bin/qemu_arm64_12mb/uboot_payload_qemu_arm64_12mb_libgfxinit_corebootfb.rom \
+	-M virt,secure=on,virtualization=on,acpi=on -cpu cortex-a53 -m 768M -serial stdio -vga none -display none
+```
 
 Use Cases
 =========
@@ -40,7 +42,8 @@ Use Cases
 While development is the primary motivation for qemu support, the board makes it easy to test minor changes to release roms.
 For example one can use *cbfstool* from coreboot to edit the background image in a libreboot rom as follows:
 
-```cbfstool /path/to/rom remove -n background.png
+```
+cbfstool /path/to/rom remove -n background.png
 cbfstool /path/to/rom add -f mynewbackground.png -n background.png -t raw
 ```
 

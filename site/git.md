@@ -52,12 +52,12 @@ lbmk (libreboot-make)
 This is the core build system in libreboot. You could say that `lbmk` *is*
 libreboot! Download the Git repository:
 
-    git clone https://notabug.org/libreboot/lbmk
+	git clone https://notabug.org/libreboot/lbmk
 
 The `git` command, seen above, will download the libreboot build system `lbmk`.
 You can then go into it like so:
 
-    cd lbmk
+	cd lbmk
 
 Make whatever changes you like, or simply build it. For instructions on how to
 build `lbmk`, refer to the [build instructions](docs/build/).
@@ -71,12 +71,12 @@ lbwww and lbwww-img
 The *entire* libreboot website and documentation is hosted in a Git repository.
 Download it like so:
 
-    git clone https://notabug.org/libreboot/lbwww
+	git clone https://notabug.org/libreboot/lbwww
 
 Images are hosted on <https://av.libreboot.org/> and available in a separate
 repository:
 
-    git clone https://notabug.org/libreboot/lbwww-img
+	git clone https://notabug.org/libreboot/lbwww-img
 
 Make whatever changes you like. See notes below about how to send patches.
 

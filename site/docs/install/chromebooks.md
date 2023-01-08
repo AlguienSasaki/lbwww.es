@@ -53,8 +53,8 @@ Make sure you back up the original firmware before trying to replace it.
 The version of flashrom in ChromeOS understands `host` as a programmer
 to flash firmware internally. To back up stock firmware you can run:
 
-    sudo flashrom -p host -r depthcharge.rom
-    sudo flashrom -p host -v depthcharge.rom
+	sudo flashrom -p host -r depthcharge.rom
+	sudo flashrom -p host -v depthcharge.rom
 
 Keep the resulting `depthcharge.rom` file safe and properly backed up on
 another device.
@@ -102,9 +102,9 @@ Disabling the write-protect signal doesn't directly make the chip stop
 protecting its data, it just allows you to disable its write-protection
 in software. That also needs to be done in ChromeOS afterwards:
 
-    sudo flashrom -p host --wp-status
-    sudo flashrom -p host --wp-disable
-    sudo flashrom -p host --wp-range 0x0,0x0
+	sudo flashrom -p host --wp-status
+	sudo flashrom -p host --wp-disable
+	sudo flashrom -p host --wp-range 0x0,0x0
 
 The *--wp* arguments are only available on the
 [ChromiumOS fork of flashrom](https://sites.google.com/a/chromium.org/dev/chromium-os/packages/cros-flashrom).
@@ -141,14 +141,15 @@ documentation if your board supports it.
 
 To flash the entire ROM image internally, run within ChromeOS:
 
-    sudo flashrom -p host -w libreboot.rom
-    sudo flashrom -p host -v libreboot.rom
+	sudo flashrom -p host -w libreboot.rom
+	sudo flashrom -p host -v libreboot.rom
 
 If you can already boot a conventional Linux distro on your Chromebook,
 you may be able to use `flashrom -p linux_mtd` on that system instead.
 
 See also
 ========
+
 * [ChromiumOS Documentation](https://chromium.googlesource.com/chromiumos/docs/+/HEAD/)
 * [ChromiumOS Firmware Test Manual](https://chromium.googlesource.com/chromiumos/docs/+/HEAD/firmware_test_manual.md)
 * [ChromiumOS Flashrom Fork Information](https://www.chromium.org/chromium-os/packages/cros-flashrom/)

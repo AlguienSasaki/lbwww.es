@@ -35,8 +35,8 @@ Full key fingerprint: CDC9 CAE3 2CB4 B7FC 84FD  C804 969A 9795 05E8 C5B2
 The GPG key can also be downloaded with this exported dump of the
 pubkey: [lbkeyold.asc](lbkeyold.asc).
 
-    sha512sum -c sha512sum.txt
-    gpg --verify sha512sum.txt.sig
+	sha512sum -c sha512sum.txt
+	gpg --verify sha512sum.txt.sig
 
 Git repository
 --------------
@@ -89,11 +89,11 @@ libreboot.org.
 Before you create the mirror, make a directory on your web server. For 
 example:
 
-    mkdir /var/www/html/libreboot/
+	mkdir /var/www/html/libreboot/
 
 Now you can run rsync, for instance:
 
-    rsync -avz --delete-after rsync://rsync.libreboot.org/mirrormirror/ /var/www/html/libreboot/
+	rsync -avz --delete-after rsync://rsync.libreboot.org/mirrormirror/ /var/www/html/libreboot/
 
 **It's extremely important to have the final forward slash (/) at the end of each path,
 in the above rsync command. Otherwise, rsync will behave very strangely.**

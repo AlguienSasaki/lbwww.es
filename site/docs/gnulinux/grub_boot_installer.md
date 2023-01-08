@@ -24,18 +24,18 @@ to create the bootable GNU+Linux USB drive:
 Connect the USB drive. Check `lsblk`, to confirm its device name 
 (e.g., **/dev/sdX**):
 
-    lsblk
+	lsblk
 
 For this example, let's assume that our drive's name is `sdb`. Make sure that
 it's not mounted:
 
-    sudo umount /dev/sdb
+	sudo umount /dev/sdb
 
 Overwrite the drive, writing your distro ISO to it with `dd`. For example, if
 we are installing *Foobarbaz* GNU+Linux, and it's located in our Downloads
 folder, this is the command we would run:
 
-    sudo dd if=~/Downloads/foobarbaz.iso of=/dev/sdb bs=8M; sync
+	sudo dd if=~/Downloads/foobarbaz.iso of=/dev/sdb bs=8M; sync
 
 That's it! You should now be able to boot the installer from your USB drive
 (the instructions for doing so will be given later).
@@ -58,22 +58,22 @@ create the bootable GNU+Linux USB drive:
 
 Connect the USB drive. Run `lsblk` to determine which drive it is:
 
-    lsblk
+	lsblk
 
 To confirm that you have the correct drive, use `disklabel`. For example,
 if you thought the correct drive were **sd3**, run this command:
 
-    disklabel sd3
+	disklabel sd3
 
 Make sure that the device isn't mounted, with `doas`; if it is, this command
 will unmount it:
 
-    doas umount /dev/sd3i
+	doas umount /dev/sd3i
 
 The `lsblk` command told you what device it is. Overwrite the drive, writing
 the OpenBSD installer to it with `dd`. Here's an example:
 
-    doas dd if=gnulinux.iso of=/dev/rsdXc bs=1M; sync
+	doas dd if=gnulinux.iso of=/dev/rsdXc bs=1M; sync
 
 That's it! You should now be able to boot the installer from your USB drive
 (the instructions for doing so will be given later).
@@ -89,18 +89,18 @@ Secondly, create a bootable USB drive using the commands in
 Thirdly, boot the USB and enter these commands in the GRUB terminal
 (for 64-bit Intel or AMD):
 
-    set root='usb0'
-    linux /install.amd/vmlinuz
-    initrd /install.amd/initrd.gz
-    boot
+	set root='usb0'
+	linux /install.amd/vmlinuz
+	initrd /install.amd/initrd.gz
+	boot
 
 If you are on a 32-bit system (e.g. some Thinkpad X60's) then you will need to
 use these commands (this is also true for 32-bit running on 64-bit machines):
 
-    set root='usb0'
-    linux /install.386/vmlinuz
-    initrd /install.386/initrd.gz
-    boot
+	set root='usb0'
+	linux /install.386/vmlinuz
+	initrd /install.386/initrd.gz
+	boot
 
 ## Booting ISOLINUX Images (Automatic Method)
 Boot it in GRUB using the `Parse ISOLINUX config (USB)` option. A new menu
@@ -115,17 +115,17 @@ distribution it is that you are trying to install.
 If the `ISOLINUX parser` or `Search for GRUB configuration` options won't work,
 then press `C` in GRUB to access the command line, then run the `ls` command:
 
-    ls
+	ls
 
 Get the device name from the above output (e.g., `usb0`). Here's an example:
 
-    cat (usb0)/isolinux/isolinux.cfg
+	cat (usb0)/isolinux/isolinux.cfg
 
 Either the output of this command will be the ISOLINUX menuentries for that
 ISO, or link to other `.cfg` files (e.g, **/isolinux/foo.cfg**). For example,
 if the file found were **foo.cfg**, you would use this command:
 
-    cat (usb0)/isolinux/foo.cg`
+	cat (usb0)/isolinux/foo.cg`
 
 And so on, until you find the correct menuentries for ISOLINUX.
 
@@ -141,14 +141,16 @@ based on Debian 8.x may also have the same issue.**
 
 Now, look at the ISOLINUX menuentry; it'll look like this:
 
-    kernel /path/to/kernel append PARAMETERS initrd=/path/to/initrd ...
+	kernel /path/to/kernel append PARAMETERS initrd=/path/to/initrd ...
 
 GRUB works similarly; here are some example GRUB commands:
 
-    set root='usb0'
-    linux /path/to/kernel PARAMETERS MAYBE_MORE_PARAMETERS
-    initrd /path/to/initrd
-    boot
+```
+set root='usb0'
+linux /path/to/kernel PARAMETERS MAYBE_MORE_PARAMETERS
+initrd /path/to/initrd
+boot
+```
 
 Note: `usb0` may be incorrect. Check the output of the `ls` command (in GRUB),
 to see a list of USB devices/partitions. Of course, this will vary from distro
@@ -171,7 +173,7 @@ installer results in graphical corruption, because it is trying to switch to a
 framebuffer while no mode switching support is present. Use this kernel
 parameter on the `linux` line, when booting it:
 
-    fb=false
+	fb=false
 
 This forces debian-installer to start in `text-mode`, instead of trying to
 switch to a framebuffer.

@@ -47,10 +47,12 @@ If you do want encrypted /boot in your distro, please ensure that you have
 downgraded to LUKSv1, and generic advice for booting is this (press C to
 access a GRUB terminal, when you're in the GRUB payload):
 
-    set root=`lvm/bla-bla`
-    linux /vmlinuz root=/dev/mapper/bla-bla cryptdevice=/dev/mapper/bla-bla:root
-    initrd /initrd.img
-    boot
+```
+set root=`lvm/bla-bla`
+linux /vmlinuz root=/dev/mapper/bla-bla cryptdevice=/dev/mapper/bla-bla:root
+initrd /initrd.img
+boot
+```
 
 Adapt according to your configuration.
 
@@ -91,7 +93,7 @@ Open `/etc/grub.d/10_linux`
 
 Set the `sixteenbit` variable to an empty string, then run:
 
-    grub2-mkconfig -o /boot/grub2/grub.cfg
+	grub2-mkconfig -o /boot/grub2/grub.cfg
 
 BLS issue
 ---------
@@ -101,8 +103,8 @@ scripts from grub package default to generating [BLS](https://www.freedesktop.or
 instead of `grub.cfg`. To change that behaviour add following line
 to `/etc/default/grub` (or modify existing one if it already exists):
 
-    GRUB_ENABLE_BLSCFG=false
+	GRUB_ENABLE_BLSCFG=false
 
 Then generate `grub.cfg` with:
 
-    grub2-mkconfig -o /boot/grub2/grub.cfg
+	grub2-mkconfig -o /boot/grub2/grub.cfg

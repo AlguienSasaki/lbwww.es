@@ -60,13 +60,13 @@ ich9utils
 You can find `ich9utils` on the [Git page](../../git.md) or you can download
 `lbmk` from the same page and run the following command in there:
 
-    ./build module ich9utils
+	./build module ich9utils
 
 You may also find it in the source code tar archives, on releases.
 
 In `lbmk`, you can use the following command to generate descriptors:
 
-    ./build descriptors ich9m
+	./build descriptors ich9m
 
 The libreboot build system will use the descriptors under `descriptors/ich9m`
 when building ROM images for these machines.
@@ -89,7 +89,7 @@ When you simply run `ich9gen` without any arguments, it generates
 descriptor+GbE images with a default MAC address in the GbE region. If you wish
 to use a custom macaddress, you can supply an argument like so:
 
-    ich9gen --macaddress 00:1f:16:80:80:80
+	ich9gen --macaddress 00:1f:16:80:80:80
 
 The above MAC address is just an example. It is recommended that you use the
 MAC address officially assigned to your NIC.
@@ -132,15 +132,15 @@ descriptor+gbe file into the ROM image.
 
 For 16MiB flash chips:
 
-    dd if=ich9fdgbe_16m.bin of=libreboot.rom bs=12k count=1 conv=notrunc
+	dd if=ich9fdgbe_16m.bin of=libreboot.rom bs=12k count=1 conv=notrunc
 
 For 8MiB flash chips:
 
-    dd if=ich9fdgbe_8m.bin of=libreboot.rom bs=12k count=1 conv=notrunc
+	dd if=ich9fdgbe_8m.bin of=libreboot.rom bs=12k count=1 conv=notrunc
 
 For 4MiB flash chips:
 
-    dd if=ich9fdgbe_4m.bin of=libreboot.rom bs=12k count=1 conv=notrunc
+	dd if=ich9fdgbe_4m.bin of=libreboot.rom bs=12k count=1 conv=notrunc
 
 If you wish to have read-only flash (write protected flash), substitute the
 above examples with descriptor+GbE images that have `ro` in the filename. RO
@@ -203,7 +203,7 @@ The GbE region is largely unedited when using this utility.
 
 Run it like so, with `factory.rom` in the same directory:
 
-    ./ich9deblob
+	./ich9deblob
 
 The `factory.rom` file is your dump of the vendor boot flash. Older versions
 of this utility have this file name hardcoded, and for compatibility reasons
@@ -212,7 +212,7 @@ name.
 
 For example:
 
-    ./ich9deblob lenovo.rom
+	./ich9deblob lenovo.rom
 
 A 12kiB file named **deblobbed\_descriptor.bin** will now appear. **Keep
 this and the factory.rom stored in a safe location!** The first 4KiB
@@ -230,12 +230,12 @@ Assuming that your libreboot image is named **libreboot.rom**, copy the
 **deblobbed\_descriptor.bin** file to where **libreboot.rom** is located
 and then run:
 
-    dd if=deblobbed_descriptor.bin of=libreboot.rom bs=12k count=1 conv=notrunc
+	dd if=deblobbed_descriptor.bin of=libreboot.rom bs=12k count=1 conv=notrunc
 
 Alternatively, if you got a the **deblobbed\_4kdescriptor.bin** file (no
 GbE defined), do this:
 
-    dd if=deblobbed_4kdescriptor.bin of=libreboot.rom bs=4k count=1 conv=notrunc
+	dd if=deblobbed_4kdescriptor.bin of=libreboot.rom bs=4k count=1 conv=notrunc
 
 (it's very unlikely that you would ever see this. Descriptor without GbE is
 very rare, probably non-existant, but theoretically possible and this functionality
@@ -278,13 +278,13 @@ all of those restrictions.
 
 Simply run (with `factory.rom` in the same directory):
 
-    ./demefactory
+	./demefactory
 
 It will generate a 4KiB descriptor file (only the descriptor, no GbE).
 Insert that into a factory.rom image (NOTE: do this on a copy of it.
 Keep the original factory.rom stored safely somewhere):
 
-    dd if=demefactory_4kdescriptor.bin of=factory_nome.rom bs=4k count=1 conv=notrunc
+	dd if=demefactory_4kdescriptor.bin of=factory_nome.rom bs=4k count=1 conv=notrunc
 
 Use-case: a factory.rom image modified in this way would theoretically
 have no flash protections whatsoever, making it easy to quickly switch
@@ -339,63 +339,65 @@ Flash chips {#flashchips}
 Early development notes {#early_development_notes}
 -----------------------
 
-    Start (hex) End (hex)   Length (hex)    Area Name
-    ----------- ---------   ------------    ---------
-    00000000    003FFFFF    00400000    Flash Image
+```
+Start (hex) End (hex)   Length (hex)    Area Name
+----------- ---------   ------------    ---------
+00000000    003FFFFF    00400000    Flash Image
 
-    00000000    00000FFF    00001000    Descriptor Region
-    00000004    0000000F    0000000C        Descriptor Map
-    00000010    0000001B    0000000C        Component Section
-    00000040    0000004F    00000010        Region Section
-    00000060    0000006B    0000000C        Master Access Section
-    00000060    00000063    00000004            CPU/BIOS
-    00000064    00000067    00000004            Manageability Engine (ME)
-    00000068    0000006B    00000004            GbE LAN
-    00000100    00000103    00000004        ICH Strap 0
-    00000104    00000107    00000004        ICH Strap 1
-    00000200    00000203    00000004        MCH Strap 0
-    00000EFC    00000EFF    00000004        Descriptor Map 2
-    00000ED0    00000EF7    00000028        ME VSCC Table
-    00000ED0    00000ED7    00000008            Flash device 1
-    00000ED8    00000EDF    00000008            Flash device 2
-    00000EE0    00000EE7    00000008            Flash device 3
-    00000EE8    00000EEF    00000008            Flash device 4
-    00000EF0    00000EF7    00000008            Flash device 5
-    00000F00    00000FFF    00000100        OEM Section
-    00001000    001F5FFF    001F5000    ME Region
-    001F6000    001F7FFF    00002000    GbE Region
-    001F8000    001FFFFF    00008000    PDR Region
-    00200000    003FFFFF    00200000    BIOS Region
+00000000    00000FFF    00001000    Descriptor Region
+00000004    0000000F    0000000C        Descriptor Map
+00000010    0000001B    0000000C        Component Section
+00000040    0000004F    00000010        Region Section
+00000060    0000006B    0000000C        Master Access Section
+00000060    00000063    00000004            CPU/BIOS
+00000064    00000067    00000004            Manageability Engine (ME)
+00000068    0000006B    00000004            GbE LAN
+00000100    00000103    00000004        ICH Strap 0
+00000104    00000107    00000004        ICH Strap 1
+00000200    00000203    00000004        MCH Strap 0
+00000EFC    00000EFF    00000004        Descriptor Map 2
+00000ED0    00000EF7    00000028        ME VSCC Table
+00000ED0    00000ED7    00000008            Flash device 1
+00000ED8    00000EDF    00000008            Flash device 2
+00000EE0    00000EE7    00000008            Flash device 3
+00000EE8    00000EEF    00000008            Flash device 4
+00000EF0    00000EF7    00000008            Flash device 5
+00000F00    00000FFF    00000100        OEM Section
+00001000    001F5FFF    001F5000    ME Region
+001F6000    001F7FFF    00002000    GbE Region
+001F8000    001FFFFF    00008000    PDR Region
+00200000    003FFFFF    00200000    BIOS Region
 
-    Start (hex) End (hex)   Length (hex)    Area Name
-    ----------- ---------   ------------    ---------
-    00000000    003FFFFF    00400000    Flash Image
+Start (hex) End (hex)   Length (hex)    Area Name
+----------- ---------   ------------    ---------
+00000000    003FFFFF    00400000    Flash Image
 
-    00000000    00000FFF    00001000    Descriptor Region
-    00000004    0000000F    0000000C        Descriptor Map
-    00000010    0000001B    0000000C        Component Section
-    00000040    0000004F    00000010        Region Section
-    00000060    0000006B    0000000C        Master Access Section
-    00000060    00000063    00000004            CPU/BIOS
-    00000064    00000067    00000004            Manageability Engine (ME)
-    00000068    0000006B    00000004            GbE LAN
-    00000100    00000103    00000004        ICH Strap 0
-    00000104    00000107    00000004        ICH Strap 1
-    00000200    00000203    00000004        MCH Strap 0
-    00000ED0    00000EF7    00000028        ME VSCC Table
-    00000ED0    00000ED7    00000008            Flash device 1
-    00000ED8    00000EDF    00000008            Flash device 2
-    00000EE0    00000EE7    00000008            Flash device 3
-    00000EE8    00000EEF    00000008            Flash device 4
-    00000EF0    00000EF7    00000008            Flash device 5
-    00000EFC    00000EFF    00000004        Descriptor Map 2
-    00000F00    00000FFF    00000100        OEM Section
-    00001000    00002FFF    00002000    GbE Region
-    00003000    00202FFF    00200000    BIOS Region
+00000000    00000FFF    00001000    Descriptor Region
+00000004    0000000F    0000000C        Descriptor Map
+00000010    0000001B    0000000C        Component Section
+00000040    0000004F    00000010        Region Section
+00000060    0000006B    0000000C        Master Access Section
+00000060    00000063    00000004            CPU/BIOS
+00000064    00000067    00000004            Manageability Engine (ME)
+00000068    0000006B    00000004            GbE LAN
+00000100    00000103    00000004        ICH Strap 0
+00000104    00000107    00000004        ICH Strap 1
+00000200    00000203    00000004        MCH Strap 0
+00000ED0    00000EF7    00000028        ME VSCC Table
+00000ED0    00000ED7    00000008            Flash device 1
+00000ED8    00000EDF    00000008            Flash device 2
+00000EE0    00000EE7    00000008            Flash device 3
+00000EE8    00000EEF    00000008            Flash device 4
+00000EF0    00000EF7    00000008            Flash device 5
+00000EFC    00000EFF    00000004        Descriptor Map 2
+00000F00    00000FFF    00000100        OEM Section
+00001000    00002FFF    00002000    GbE Region
+00003000    00202FFF    00200000    BIOS Region
 
-    Build Settings
-    --------------
-    Flash Erase Size = 0x1000
+Build Settings
+--------------
+Flash Erase Size = 0x1000
+```
 
 It's a utility called 'Flash Image Tool' for ME 4.x that was used for
 this. You drag a complete image into in and the utility decomposes the
@@ -415,17 +417,19 @@ documented in this public datasheet:
 
 The only actual content found was:
 
-    00  1F  1F  1F  1F  1F  00  08  FF  FF  83  10  FF  FF  FF  FF  
-    08  10  FF  FF  C3  10  EE  20  AA  17  F5  10  86  80  00  00  
-    01  0D  00  00  00  00  05  06  20  30  00  0A  00  00  8B  8D  
-    02  06  40  2B  43  00  00  00  F5  10  AD  BA  F5  10  BF  10  
-    AD  BA  CB  10  AD  BA  AD  BA  00  00  00  00  00  00  00  00  
-    00  00  00  00  00  00  00  00  00  00  00  00  00  00  00  00  
-    00  01  00  40  28  12  07  40  FF  FF  FF  FF  FF  FF  FF  FF  
-    FF  FF  FF  FF  FF  FF  FF  FF  FF  FF  FF  FF  FF  FF  D9  F0  
-    20  60  1F  00  02  00  13  00  00  80  1D  00  FF  00  16  00  
-    DD  CC  18  00  11  20  17  00  DD  DD  18  00  12  20  17  00  
-    00  80  1D  00  00  00  1F  
+```
+00  1F  1F  1F  1F  1F  00  08  FF  FF  83  10  FF  FF  FF  FF  
+08  10  FF  FF  C3  10  EE  20  AA  17  F5  10  86  80  00  00  
+01  0D  00  00  00  00  05  06  20  30  00  0A  00  00  8B  8D  
+02  06  40  2B  43  00  00  00  F5  10  AD  BA  F5  10  BF  10  
+AD  BA  CB  10  AD  BA  AD  BA  00  00  00  00  00  00  00  00  
+00  00  00  00  00  00  00  00  00  00  00  00  00  00  00  00  
+00  01  00  40  28  12  07  40  FF  FF  FF  FF  FF  FF  FF  FF  
+FF  FF  FF  FF  FF  FF  FF  FF  FF  FF  FF  FF  FF  FF  D9  F0  
+20  60  1F  00  02  00  13  00  00  80  1D  00  FF  00  16  00  
+DD  CC  18  00  11  20  17  00  DD  DD  18  00  12  20  17  00  
+00  80  1D  00  00  00  1F  
+```
 
 The first part is the MAC address set to all 0x1F. It's repeated haly
 way through the 8K area, and the rest is all 0xFF. This is all

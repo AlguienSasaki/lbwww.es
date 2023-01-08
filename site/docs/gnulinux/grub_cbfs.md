@@ -56,15 +56,15 @@ Install the build dependencies. For Ubuntu 20.04 and similar, you can run
 the following command in the libreboot build system, from the root directory
 of the libreboot Git repository.
 
-    ./build dependencies ubuntu2004
+	./build dependencies ubuntu2004
 
 Then, download coreboot:
 
-    ./download coreboot
+	./download coreboot
 
 Finally, compile the `cbutils` module:
 
-    ./build module cbutils
+	./build module cbutils
 
 Among other things, this will produce a `cbfstool` executable under any of the
 subdirectories in `coreboot/` under `util/cbfstool/cbfstool
@@ -79,7 +79,7 @@ You will also want to build `flashrom` which libreboot recommends for reading
 from and/or writing to the boot flash. In the libreboot build system, you can
 build it by running this command:
 
-    ./build module flashrom
+	./build module flashrom
 
 An executable will be available at `flashrom/flashrom` after you have done
 this.
@@ -93,7 +93,7 @@ your computer, you can use `flashrom` to acquire it.
 Simply run the following, after using libreboot's build system to compile
 flashrom:
 
-    sudo ./flashrom/flashrom -p internal -r dump.bin
+	sudo ./flashrom/flashrom -p internal -r dump.bin
 
 If flashrom complains about multiple flash chip definitions, do what it says to
 rectify your command and run it again.
@@ -135,11 +135,11 @@ acquired).
 
 Show the contents of CBFS, in your ROM:
 
-    cbfstool dump.bin print
+	cbfstool dump.bin print
 
 Extract `grub.cfg` (substitude with `grubtest.cfg` as desired):
 
-    cbfstool dump.bin extract -n grub.cfg -f grub.cfg
+	cbfstool dump.bin extract -n grub.cfg -f grub.cfg
 
 You will now have a file named `grub.cfg`.
 
@@ -151,11 +151,11 @@ Insert new grub.cfg
 
 Remove the old `grub.cfg` (substitute with `grubtest.cfg` as desired):
 
-    cbfstool dump.bin remove -n grub.cfg
+	cbfstool dump.bin remove -n grub.cfg
 
 Add your modified `grub.cfg` (substitute with `grubtest.cfg` as desired):
 
-    cbfstool dump.bin add -f grub.cfg -n grub.cfg -t raw
+	cbfstool dump.bin add -f grub.cfg -n grub.cfg -t raw
 
 Flash the modified ROM image
 ============================
@@ -163,7 +163,7 @@ Flash the modified ROM image
 Your modified `dump.bin` or other modified libreboot ROM can then be re-flashed
 using:
 
-    sudo ./flashrom -p internal -w dump.bin
+	sudo ./flashrom -p internal -w dump.bin
 
 If a `-c` option is required, use it and specify a flash chip name. This is
 only useful when `flashrom` complains about multiple flash chips being
@@ -173,7 +173,7 @@ If flashrom complains about wrong chip/board, make sure that your ROM is for
 the correct system. If you're sure, you can disable the safety checks by running
 this instead:
 
-    sudo ./flashrom -p internal:laptop=force_I_want_a_brick,boardmismatch=force -w dump.bin
+	sudo ./flashrom -p internal:laptop=force_I_want_a_brick,boardmismatch=force -w dump.bin
 
 If you need to use external flashing equipment, see the link above to the
 Raspberry Pi page.

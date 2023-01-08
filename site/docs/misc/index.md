@@ -14,7 +14,7 @@ Included with libreboot is a script called 'powertop.debian'. Run this
 as root and it will setup powertop to run with --auto-tune at boot
 time. Load the file in your text editor to see how it does that.
 
-    sudo ./resources/scripts/misc/powertop.debian
+	sudo ./resources/scripts/misc/powertop.debian
 
 Might want to run with --calibrate first
 
@@ -40,31 +40,33 @@ GRUB. These consume power. Stop using them!
 
 Be root
 
-    su -
+	su -
 
 Installed powertop:
 
-    pacman -S powertop
+	pacman -S powertop
 
 and added the following to /etc/systemd/system/powertop.service :
 
-    [Unit]
-    Description=Powertop tunings
+```
+[Unit]
+Description=Powertop tunings
 
-    [Service]
-    Type=oneshot
-    RemainAfterExit=no
-    ExecStart=/usr/bin/powertop --auto-tune
-    "powertop --auto-tune" still needs a terminal for some reason. Possibly a bug?
-    Environment="TERM=xterm"
+[Service]
+Type=oneshot
+RemainAfterExit=no
+ExecStart=/usr/bin/powertop --auto-tune
+"powertop --auto-tune" still needs a terminal for some reason. Possibly a bug?
+Environment="TERM=xterm"
 
-    [Install]
-    WantedBy=multi-user.target
+[Install]
+WantedBy=multi-user.target
+```
 
 Finally, as root do that:
 
-    systemctl enable powertop
-    systemctl start powertop
+	systemctl enable powertop
+	systemctl start powertop
 
 The next time you boot the system, the buzz will be gone.
 
@@ -91,7 +93,7 @@ USB Serial adapter.
 
 On the 2nd system, you can try this (using GNU Screen):
 
-    sudo screen /dev/ttyUSB0 115200
+	sudo screen /dev/ttyUSB0 115200
 
 How to quit GNU Screen: Ctrl+A then release and press K, and then press
 Y.
@@ -124,11 +126,11 @@ needs to be set. See p94 of
 for more information on this reg. The tool for setting registry values
 on intel gpu's is included in intel-gpu-tools. Install intel-gpu-tools:
 
-    sudo apt-get install intel-gpu-tools
+	sudo apt-get install intel-gpu-tools
 
 You can set values:
 
-    sudo intel_reg write 0x00061254 your_value_in_C_hex_format
+	sudo intel_reg write 0x00061254 your_value_in_C_hex_format
 
 NOTE: on older versions of this utility, use `intel_reg_write` instead.
 
@@ -164,25 +166,27 @@ highest good working value.
 
 Next this value should be set at boot: either add
 
-    intel_reg write 0x00061254 &ltyour_ideal_value>
+	intel_reg write 0x00061254 <your_ideal_value>
 
 NOTE: on older versions of this utility, use `intel_reg_write` instead.
 
 before exit 0 in /etc/rc.local or create a systemd service file
 /etc/systemd/system/backlight.service:
-    [Unit]
-    Description=Set BLC_PWM_CTL to a good value
-    [Service]
-    Type=oneshot
-    RemainAfterExit=no
-    ExecStart=/usr/bin/intel_reg write 0x00061254 &ltyour_value>
-    [Install]
-    WantedBy=multi-user.target
-            
+
+```
+[Unit]
+Description=Set BLC_PWM_CTL to a good value
+[Service]
+Type=oneshot
+RemainAfterExit=no
+ExecStart=/usr/bin/intel_reg write 0x00061254 <your_value>
+[Install]
+WantedBy=multi-user.target
+```         
 
 Now start and enable it:
 
-    sudo systemctl start backlight && sudo systemctl enable backlight
+	sudo systemctl start backlight && sudo systemctl enable backlight
 
 Special note on i945:
 
@@ -221,17 +225,17 @@ changes on the image with the following commands.
 
 Disable or enable beeps when removing/adding the charger:
 
-    sudo ./nvramtool -C libreboot.rom -w power_management_beeps=Enable
-    sudo ./nvramtool -C libreboot.rom -w power_management_beeps=Disable
+	sudo ./nvramtool -C libreboot.rom -w power_management_beeps=Enable
+	sudo ./nvramtool -C libreboot.rom -w power_management_beeps=Disable
 
 Disable or enable beeps when battery is low:
 
-    sudo ./nvramtool -C libreboot.rom -w low_battery_beep=Enable
-    sudo ./nvramtool -C libreboot.rom -w low_battery_beep=Disable
+	sudo ./nvramtool -C libreboot.rom -w low_battery_beep=Enable
+	sudo ./nvramtool -C libreboot.rom -w low_battery_beep=Disable
 
 You can check that the parameters are set in the image with :
 
-    sudo ./nvramtool -C libreboot.rom -a
+	sudo ./nvramtool -C libreboot.rom -a
 
 Finally, you need to flash the rom with this new image. See here
 <https://libreboot.org/docs/gnulinux/grub_cbfs.html#with-re-flashing-the-rom>
@@ -242,19 +246,17 @@ Get EDID: Find out the name (model) of your LCD panel
 
 Get the panel name:
 
-    sudo get-edid | strings
+	sudo get-edid | strings
 
 Or look in `/sys/class/drm/card0-LVDS-1/edid`
 
 Alternatively you can use i2cdump. In Debian and Devuan, this is in the
 package i2c-tools.
 
-    sudo modprobe i2c-dev
-    sudo i2cdump -y 5 0x50 (you might have to change the value for
+	sudo modprobe i2c-dev
+	sudo i2cdump -y 5 0x50 (you might have to change the value for -y)
 
--y)
-
-    sudo rmmod i2c-dev
+	sudo rmmod i2c-dev
 
 You'll see the panel name in the output (from the EDID dump).
 
@@ -268,7 +270,7 @@ e1000e driver trouble shooting (Intel NICs)
 Example error, ¿may happen on weird and complex routing schemes(citation
 needed for cause):
 
-    e1000e 0000:00:19.0 enp0s25: Detected Hardware Unit Hang
+	e1000e 0000:00:19.0 enp0s25: Detected Hardware Unit Hang
 
 Possible workaround, tested by Nazara: Disable C-STATES.
 
@@ -280,10 +282,12 @@ laptop. If power usage is a concern, then you should not use this.
 
 To disable c-states, do this in GNU+Linux:
 
-    for i in /sys/devices/system/cpu/cpu/cpuidle/state/disable;
-    do
-        echo 1 > $i;
-    done
+```
+for i in /sys/devices/system/cpu/cpu/cpuidle/state/disable;
+do
+	echo 1 > $i;
+done
+```
 
 You can reproduce this issue more easily by sending lots of traffic
 across subnets on the same interface (NIC).

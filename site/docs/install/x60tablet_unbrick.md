@@ -44,9 +44,9 @@ two:\
 images (the ROM images in libreboot binary archives already have this
 applied!):
 
-    dd if=coreboot.rom of=top64k.bin bs=1 skip=$[$(stat -c %s coreboot.rom) - 0x10000] count=64k
-    dd if=coreboot.rom bs=1 skip=$[$(stat -c %s coreboot.rom) - 0x20000] count=64k | hexdump
-    dd if=top64k.bin of=coreboot.rom bs=1 seek=$[$(stat -c %s coreboot.rom) - 0x20000] count=64k conv=notrunc
+	dd if=coreboot.rom of=top64k.bin bs=1 skip=$[$(stat -c %s coreboot.rom) - 0x10000] count=64k
+	dd if=coreboot.rom bs=1 skip=$[$(stat -c %s coreboot.rom) - 0x20000] count=64k | hexdump
+	dd if=top64k.bin of=coreboot.rom bs=1 seek=$[$(stat -c %s coreboot.rom) - 0x20000] count=64k conv=notrunc
 
 (doing this makes the ROM suitable for use when flashing a system that
 still has Lenovo BIOS running, using those instructions:
@@ -121,7 +121,7 @@ which all draw a lot of current, more than most flashers can provide.
 
 Example command:
 
-    sudo ./flashrom -p linux_spi:dev=/dev/spidev0.0,spispeed=4096 -w libreboot.rom -V
+	sudo ./flashrom -p linux_spi:dev=/dev/spidev0.0,spispeed=4096 -w libreboot.rom -V
 
 If flashrom complains about multiple flash chips detected, just pass the `-c`
 option as it suggests, and pick any of the chips it lists. `spispeed=4096` or

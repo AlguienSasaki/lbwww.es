@@ -97,17 +97,17 @@ you can use X11/Wayland in FreeBSD (and just X11 in OpenBSD, for now).
 For example: on FreeBSD, you can install `graphics/drm-kmod` as a package
 or from ports, and (for Intel GPUs) do this:
 
-    sysrc kld_list+="i915kms"
+	sysrc kld_list+="i915kms"
 
 This creates the following entry in `/etc/rc.conf`:
 
-    kld_list="i915kms"
+	kld_list="i915kms"
 
 On FreeBSD it is also recommended that you switch to KMS on the console/TTY;
 add this to `/boot/loader.conf` so that you can still use the console after
 terminating Xorg:
 
-    kern.vty=vt
+	kern.vty=vt
 
 You should not rely on the above instruction (for FreeBSD), because the exact
 step might change, and it does not go into full detail either. Refer to the

@@ -103,7 +103,7 @@ Internal flashing
 
 MacBook2,1 can always be flashed internally, even if running Apple firmware:
 
-    sudo flashrom -p internal:laptop=force_I_want_a_brick,boardmismatch=force -w your.rom
+	sudo flashrom -p internal:laptop=force_I_want_a_brick,boardmismatch=force -w your.rom
 
 The MacBook1,1 can't be flashed internally if running the Apple EFI firmware. 
 You must flash externally.
@@ -239,29 +239,31 @@ Macfanctld is available on the default repos of many distributions.
 
 For example, to install macfanctld on an Arch-based distro (Parabola, ...), you would run as root
 
-    pacman -S macfanctld
+	pacman -S macfanctld
 
 and don't forget to enable it by using `systemctl` or by a script that will run macfanctld if using runit.
 
 Then, you want to install powertop and tlp.
 And then, run the following on battery
 
-    sudo tlp start && sudo powertop --calibrate
+	sudo tlp start && sudo powertop --calibrate
 
 Then, after quitting powertop, run :
 
-    sudo powertop --auto-tune
+	sudo powertop --auto-tune
 
 Now, configure tlp, edit the `/etc/tlp.conf` and uncomment/add/modify the following:
 
-    CPU_BOOST_ON_AC=1
-    CPU_BOOST_ON_BAT=0
+```
+CPU_BOOST_ON_AC=1
+CPU_BOOST_ON_BAT=0
 
-    SCHED_POWERSAVE_ON_AC=0
-    SCHED_POWERSAVE_ON_BAT=1
+SCHED_POWERSAVE_ON_AC=0
+SCHED_POWERSAVE_ON_BAT=1
 
-    PLATFORM_PROFILE_ON_AC=performance
-    PLATFORM_PROFILE_ON_BAT=low-power
+PLATFORM_PROFILE_ON_AC=performance
+PLATFORM_PROFILE_ON_BAT=low-power
+```
 
 The MacBook will still overheat, just less.
 
@@ -275,7 +277,7 @@ right is the keypad enter. We can make it act as an AltGr.
 If your operating system is Trisquel or other dpkg-based distribution,
 there is an easy solution. Under root (or sudo) run
 
-    dpkg-reconfigure keyboard-configuration
+	dpkg-reconfigure keyboard-configuration
 
 and select the option "apple laptop", leave other settings as their
 defaults until you are given the option "Use Keypad Enter as
@@ -286,7 +288,7 @@ everywhere.
 For Parabola or other systemd-based distributions you can enable AltGr
 manually. Simply add the line
 
-    KEYMAP_TOGGLE=lv3:enter_switch
+	KEYMAP_TOGGLE=lv3:enter_switch
 
 to the file /etc/vconsole.conf and then restart the computer.
 
@@ -297,44 +299,45 @@ Linux kernels of version 3.15 or lower might make the touchpad
 extremely sluggish. A user reported that they could get better
 response from the touchpad with the following in their xorg.conf:
 
-    Section "InputClass"
-     Identifier "Synaptics Touchpad"
-     Driver "synaptics"
-     MatchIsTouchpad "on"
-     MatchDevicePath "/dev/input/event*"
-     Driver "synaptics"
-    The next two values determine how much pressure one needs
-    for tapping, moving the cursor and other events.
-     Option "FingerLow" "10"
-     Option "FingerHigh" "15"
-    Do not emulate mouse buttons in the touchpad corners.
-     Option "RTCornerButton" "0"
-     Option "RBCornerButton" "0"
-     Option "LTCornerButton" "0"
-     Option "LBCornerButton" "0"
-    One finger tap = left-click
-     Option "TapButton1" "1"
-    Two fingers tap = right-click
-     Option "TapButton2" "3"
-    Three fingers tap = middle-mouse
-     Option "TapButton3" "2"
-    Try to not count the palm of the hand landing on the touchpad
-    as a tap. Not sure if helps.
-     Option "PalmDetect" "1"
-    The following modifies how long and how fast scrolling continues
-    after lifting the finger when scrolling
-     Option "CoastingSpeed" "20"
-     Option "CoastingFriction" "200"
-    Smaller number means that the finger has to travel less distance
-    for it to count as cursor movement. Larger number prevents cursor
-    shaking.
-     Option "HorizHysteresis" "10"
-     Option "VertHysteresis" "10"
-    Prevent two-finger scrolling. Very jerky movement
-     Option "HorizTwoFingerScroll" "0"
-     Option "VertTwoFingerScroll" "0"
-    Use edge scrolling
-     Option "HorizEdgeScroll" "1"
-     Option "VertEdgeScroll" "1"
-    EndSection
-
+```
+	Section "InputClass"
+		Identifier "Synaptics Touchpad"
+		Driver "synaptics"
+		MatchIsTouchpad "on"
+		MatchDevicePath "/dev/input/event*"
+		Driver "synaptics"
+	The next two values determine how much pressure one needs
+	for tapping, moving the cursor and other events.
+		Option "FingerLow" "10"
+		Option "FingerHigh" "15"
+	Do not emulate mouse buttons in the touchpad corners.
+ 		Option "RTCornerButton" "0"
+ 		Option "RBCornerButton" "0"
+ 		Option "LTCornerButton" "0"
+		Option "LBCornerButton" "0"
+	One finger tap = left-click
+		Option "TapButton1" "1"
+	Two fingers tap = right-click
+		Option "TapButton2" "3"
+	Three fingers tap = middle-mouse
+		Option "TapButton3" "2"
+	Try to not count the palm of the hand landing on the touchpad
+	as a tap. Not sure if helps.
+		Option "PalmDetect" "1"
+	The following modifies how long and how fast scrolling continues
+	after lifting the finger when scrolling
+		Option "CoastingSpeed" "20"
+		Option "CoastingFriction" "200"
+	Smaller number means that the finger has to travel less distance
+	for it to count as cursor movement. Larger number prevents cursor
+	shaking.
+		Option "HorizHysteresis" "10"
+		Option "VertHysteresis" "10"
+	Prevent two-finger scrolling. Very jerky movement
+		Option "HorizTwoFingerScroll" "0"
+		Option "VertTwoFingerScroll" "0"
+	Use edge scrolling
+		Option "HorizEdgeScroll" "1"
+		Option "VertEdgeScroll" "1"
+	EndSection
+```

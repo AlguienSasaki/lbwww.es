@@ -182,7 +182,7 @@ My test setup is an x86\_64 machine with `tcc` used
 as the compiler; the libc doesn't really matter, if
 you use dynamic linking. Command:
 
-    make CC=tcc
+	make CC=tcc
 
 Observations (dynamic linking with libc files):
 

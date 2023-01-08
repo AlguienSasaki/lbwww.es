@@ -75,21 +75,21 @@ machine truly secure.
 First, extract the old grubtest.cfg and remove it from the libreboot
 image:
 
-    cbfstool my.rom extract -n grubtest.cfg -f my.grubtest.cfg
-    cbfstool my.rom remove -n grubtest.cfg
+	cbfstool my.rom extract -n grubtest.cfg -f my.grubtest.cfg
+	cbfstool my.rom remove -n grubtest.cfg
 
 You can build `cbfstool` in the libreboot build system. Run this command:
 
-    ./build module cbutils
+	./build module cbutils
 
 This assumes that you already downloaded coreboot:
 
-    ./download coreboot
+	./download coreboot
 
 This, in turn, assumes that you have installed the build dependencies for
 libreboot. On Ubuntu 20.04 and other apt-get distros, you can do this:
 
-    ./build dependencies ubuntu2004
+	./build dependencies ubuntu2004
 
 The `cbfstool` executables will be under each coreboot directory, under
 each `coreboot/boardname/` directory for each board. Just pick one, presumably
@@ -109,7 +109,7 @@ GRUB Password
 The security of this setup depends on a good GRUB password as GPG signature
 checking can be disabled through the interactive console:
 
-    set check_signatures=no
+	set check_signatures=no
 
 This is useful because it allows you to occasionally boot unsigned live CD/USB
 media and such. You might consider supplying signatures on a USB stick, but the
@@ -156,24 +156,24 @@ GRUB using the libreboot build system. Run the following commands (assuming
 you have the correct build dependencies installed) to build GNU GRUB, from the
 libreboot Git repository:
 
-    ./download grub
+	./download grub
 
-    ./build module grub
+	./build module grub
 
 The following executable will then be available under the `grub/` directory:
 
-    grub-mkpasswd-pbkdf2
+	grub-mkpasswd-pbkdf2
 
 Its output will be a string of the following form:
 
-    grub.pbkdf2.sha512.10000.HEXDIGITS.MOREHEXDIGITS
+	grub.pbkdf2.sha512.10000.HEXDIGITS.MOREHEXDIGITS
 
 Now open my.grubtest.cfg and put the following before the menu entries
 (prefered above the functions and after other directives). Of course use
 the pbdkf string that you had generated yourself:
 
-    set superusers="root"
-    password_pbkdf2 root grub.pbkdf2.sha512.10000.711F186347156BC105CD83A2ED7AF1EB971AA2B1EB2640172F34B0DEFFC97E654AF48E5F0C3B7622502B76458DA494270CC0EA6504411D676E6752FD1651E749.8DD11178EB8D1F633308FD8FCC64D0B243F949B9B99CCEADE2ECA11657A757D22025986B0FA116F1D5191E0A22677674C994EDBFADE62240E9D161688266A711
+	set superusers="root"
+	password_pbkdf2 root grub.pbkdf2.sha512.10000.711F186347156BC105CD83A2ED7AF1EB971AA2B1EB2640172F34B0DEFFC97E654AF48E5F0C3B7622502B76458DA494270CC0EA6504411D676E6752FD1651E749.8DD11178EB8D1F633308FD8FCC64D0B243F949B9B99CCEADE2ECA11657A757D22025986B0FA116F1D5191E0A22677674C994EDBFADE62240E9D161688266A711
 
 Obviously, replace it with the correct hash that you actually obtained for the
 password you entered. In other words, *do not use the hash that you see above!*
@@ -194,17 +194,19 @@ Another good thing to do, if we chose to load signed on-disk GRUB
 configurations, is to remove (or comment out) `unset superusers` in
 function try\_user\_config:
 
-    function try_user_config {
-       set root="${1}"
-       for dir in boot grub grub2 boot/grub boot/grub2; do
-          for name in '' autoboot_ libreboot_ coreboot_; do
-             if [ -f /"${dir}"/"${name}"grub.cfg ]; then
-                #unset superusers
-                configfile /"${dir}"/"${name}"grub.cfg
-             fi
-          done
-       done
-    }
+```
+function try_user_config {
+	set root="${1}"
+	for dir in boot grub grub2 boot/grub boot/grub2; do
+		for name in '' autoboot_ libreboot_ coreboot_; do
+			if [ -f /"${dir}"/"${name}"grub.cfg ]; then
+            			#unset superusers
+            			configfile /"${dir}"/"${name}"grub.cfg
+         		fi
+		done
+	done
+}
+```
 
 The `unset superusers` command disables password authentication, which will
 allow the attacker to boot an arbitrary operating system, regardless of
@@ -225,10 +227,12 @@ is ok.
 WARNING: GRUB does not read ASCII armored keys. When attempting to
 trust ... a key filename it will print `error: bad signature` on the screen.
 
-    mkdir --mode 0700 keys
-    gpg --homedir keys --gen-key
-    gpg --homedir keys --export-secret-keys --armor > boot.secret.key # backup
-    gpg --homedir keys --export > boot.key
+```
+mkdir --mode 0700 keys
+gpg --homedir keys --gen-key
+gpg --homedir keys --export-secret-keys --armor > boot.secret.key # backup
+gpg --homedir keys --export > boot.key
+```
 
 Now that we have a key, we can sign some files with it. We must sign:
 
@@ -243,23 +247,29 @@ Suppose that we have a pair of `my.kernel` and `my.initramfs` and an
 on-disk `libreboot_grub.cfg`. We will sign them by running the following
 commands:
 
-    gpg --homedir keys --detach-sign my.initramfs
-    gpg --homedir keys --detach-sign my.kernel
-    gpg --homedir keys --detach-sign libreboot_grub.cfg
-    gpg --homedir keys --detach-sign my.grubtest.cfg
+```
+gpg --homedir keys --detach-sign my.initramfs
+gpg --homedir keys --detach-sign my.kernel
+gpg --homedir keys --detach-sign libreboot_grub.cfg
+gpg --homedir keys --detach-sign my.grubtest.cfg
+```
 
 Of course, some further modifications to my.grubtest.cfg will be required. We
 need to *trust* the key and enable signature enforcement (put this before menu
 entries):
 
-    trust (cbfsdisk)/boot.key
-    set check_signatures=enforce
+```
+trust (cbfsdisk)/boot.key
+set check_signatures=enforce
+```
 
 What remains now is to include the modifications into the libreboot image
 (ROM):
 
-    cbfstool my.rom add -n boot.key -f boot.key -t raw
-    cbfstool my.rom add -n grubtest.cfg -f my.grubtest.cfg -t raw
-    cbfstool my.rom add -n grubtest.cfg.sig -f my.grubtest.cfg.sig -t raw
+```
+cbfstool my.rom add -n boot.key -f boot.key -t raw
+cbfstool my.rom add -n grubtest.cfg -f my.grubtest.cfg -t raw
+cbfstool my.rom add -n grubtest.cfg.sig -f my.grubtest.cfg.sig -t raw
+```
 
 Now, flash it. If it works, copy it over to `grub.cfg` in CBFS.

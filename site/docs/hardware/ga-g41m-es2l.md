@@ -68,19 +68,19 @@ hwaddress ether macaddressgoeshere
 
 Alternatively:
 
-    cbfstool libreboot.rom extract -n rt8168-macaddress -f rt8168-macaddress
+	cbfstool libreboot.rom extract -n rt8168-macaddress -f rt8168-macaddress
 
 Modify the MAC address in the file `rt8168-macaddress` and then:
 
-    cbfstool libreboot.rom remove -n rt8168-macaddress
-    cbfstool libreboot.rom add -f rt8168-macaddress -n rt8168-macaddress -t raw
+	cbfstool libreboot.rom remove -n rt8168-macaddress
+	cbfstool libreboot.rom add -f rt8168-macaddress -n rt8168-macaddress -t raw
 
 Now you have a different MAC address hardcoded. In the above example, the ROM
 image is named `libreboot.rom` for your board. You can find cbfstool
 under `coreboot/default/util/cbfstool/` after running the following command
 in the build system:
 
-    ./build module cbutils
+	./build module cbutils
 
 You can learn more about using the build system, lbmk, here:\
 [libreboot build instructions](../build/)

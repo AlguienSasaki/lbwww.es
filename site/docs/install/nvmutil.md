@@ -127,7 +127,7 @@ Using recent flashrom versions, you can extract this region. If
 your regions are unlocked, you can run flashrom on the target
 system, like so:
 
-    flashrom -p internal -r rom.bin
+	flashrom -p internal -r rom.bin
 
 If your system has two flash chips, the GbE region is usually
 stored on SPI1 (not SPI2). Otherwise, it may be that you have
@@ -135,7 +135,7 @@ a single-flash setup. In that case, it's recommended to dump
 both chips, as `spi1.rom` and `spi2.rom`; you can then cat
 them together:
 
-    cat spi1.rom spi2.rom > rom.bin
+	cat spi1.rom spi2.rom > rom.bin
 
 If your GbE region is locked (per IFD settings), you can dump
 and flash it using external flashing equipment. The Libreboot
@@ -167,7 +167,7 @@ with `make`, to get an ifdtool binary.
 
 To make internal flashing possible later on, you might do:
 
-    ifdtool --unlock rom.bin
+	ifdtool --unlock rom.bin
 
 Running this command will create a modified image,
 named `rom.bin.new`. This file will have all regions set
@@ -185,7 +185,7 @@ article, so you should read their documentation.
 
 Now run this:
 
-    ifdtool -x rom.bin
+	ifdtool -x rom.bin
 
 Several files will be created, and the one you need to
 operate on is named `flashregion_3_gbe.bin` so please
@@ -195,7 +195,7 @@ Read the notes below about how to use the `nvmutil` program,
 operating on this file. When you're done, you can insert the
 modified GbE file back into your ROM image, like so:
 
-    ifdtool -i gbe:flashregion_3_gbe.bin rom.bin
+	ifdtool -i gbe:flashregion_3_gbe.bin rom.bin
 
 This will create the file `rom.bin.new`, which contains
 your modified GbE section with the NVM images inside; this
@@ -205,12 +205,12 @@ Refer to flashrom documentation. You may flash the new ROM
 like so, if running on the same system and the regions are
 read-write:
 
-    flashrom -p internal -w rom.bin.new
+	flashrom -p internal -w rom.bin.new
 
 Newer versions of flashrom support flashing just the specified
 region, like so:
 
-    flashrom -p internal --ifd -i gbe -w rom.bin.new
+	flashrom -p internal --ifd -i gbe -w rom.bin.new
 
 If you're running flashrom from host CPU on the target
 system, and it's dual flash, you can just flash the
@@ -270,7 +270,7 @@ copy of the nvmutil source code!
 
 You may run this in your terminal:
 
-    make
+	make
 
 This will result in a binary being created named `nvm`.
 Install this to wherever you want, such as `/usr/bin` (or
@@ -289,7 +289,7 @@ In these examples, it is assumed that you have installed
 the `nvm` binary to somewhere in your `$PATH`. If you haven't
 done that, you could still run it in cwd for instance:
 
-    ./nvm bla bla bla
+	./nvm bla bla bla
 
 Exit status
 -----------
@@ -348,25 +348,25 @@ you can do that. For example, if your MAC address
 was `00:de:ad:be:ef:69` as assigned by the manufacturer,
 which is a global unicast MAC address, you would type:
 
-    nvm gbe.bin setmac 00:de:ad:be:ef:69
+	nvm gbe.bin setmac 00:de:ad:be:ef:69
 
 How to use (the MAC address in just an example):
 
-    nvm gbe.bin setmac 00:de:ad:be:ef:00
+	nvm gbe.bin setmac 00:de:ad:be:ef:00
 
 You can also set random MAC addresses:
 
-    nvm gbe.bin setmac ??:??:??:??:??:??
+	nvm gbe.bin setmac ??:??:??:??:??:??
 
 In this example, every character is random. However, you
 can mix and match random characters with static ones. For
 example:
 
-    nvm gbe.bin setmac 00:1f:16:??:??:??
+	nvm gbe.bin setmac 00:1f:16:??:??:??
 
 You can also pass it without a MAC address:
 
-    nvm gbe.bin setmac
+	nvm gbe.bin setmac
 
 If you only type `setmac` without specifying a MAC address,
 it will do the same thing as `setmac ??:??:??:??:??:??`.
@@ -395,7 +395,7 @@ It also prints the MAC address from each part.
 
 How to use:
 
-    nvm gbe.bin dump
+	nvm gbe.bin dump
 
 NOTE: This will exit with zero status if at least one part
 contains a valid checksum. If both parts are invalid, nvmutil
@@ -411,11 +411,11 @@ the *entire* 4KB part, within the 8KB file.
 
 Overwrite part 0 with the contents of part 1:
 
-    nvm gbe.bin copy 1
+	nvm gbe.bin copy 1
 
 Overwrite part 1 with the contents of part 0:
 
-    nvm gbe.bin copy 0
+	nvm gbe.bin copy 0
 
 NOTE: If the part to be copied has a bad checksum, no operation
 will be performed, and nvmutil will exit with non-zero status.
@@ -432,7 +432,7 @@ file. It does this, via simple XOR swaps.
 
 How to use:
 
-    nvm gbe.bin swap
+	nvm gbe.bin swap
 
 NOTE: This operation will be aborted if BOTH checksums
 are invalid. This is to guard against accidentally
@@ -452,11 +452,11 @@ the desired NVM part. Usage:
 
 Fix part 0:
 
-    nvm gbe.bin setchecksum 0
+	nvm gbe.bin setchecksum 0
 
 Fix part 1:
 
-    nvm gbe.bin setchecksum 1
+	nvm gbe.bin setchecksum 1
 
 *WARNING: NO validity checks are performed. This will simply
 set the checksum. There is no feasible way to guard against
@@ -473,11 +473,11 @@ the desired NVM part. Usage:
 
 Invalidate part 0:
 
-    nvm gbe.bin brick 0
+	nvm gbe.bin brick 0
 
 Invalidate part 1:
 
-    nvm gbe.bin brick 1
+	nvm gbe.bin brick 1
 
 NOTE: If the part already has an invalid checksum, no operation
 will be performed, and nvmutil will exit with non-zero status.

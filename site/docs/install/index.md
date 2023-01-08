@@ -230,7 +230,7 @@ read this section *carefully*.
 
 Use this to find out:
 
-    flashrom -p internal
+	flashrom -p internal
 
 In the output will be information pertaining to your boot flash.
 
@@ -238,14 +238,14 @@ In the output will be information pertaining to your boot flash.
 
 How to read the current chip contents:
 
-    sudo flashrom -p internal:laptop=force_I_want_a_brick,boardmismatch=force -r dump.bin
+	sudo flashrom -p internal:laptop=force_I_want_a_brick,boardmismatch=force -r dump.bin
 
 You should still make several dumps, even if you're flashing internally, to
 ensure that you get the same checksums. Check each dump using `sha1sum`
 
 How to erase and rewrite the chip contents:
 
-    sudo flashrom -p internal:laptop=force_I_want_a_brick,boardmismatch=force -w libreboot.rom
+	sudo flashrom -p internal:laptop=force_I_want_a_brick,boardmismatch=force -w libreboot.rom
 
 If you are re-flashing a GM45+ICH9M laptop (e.g. ThinkPad X200/X200S/X200T,
 T400, T500, R400, W500 etc - but not R500), you should run the ich9gen utility
@@ -395,7 +395,7 @@ run `make` in the bucts source directory).
 
 Run the bucts tool:
 
-    sudo ./bucts 1
+	sudo ./bucts 1
 
 Ensure that your CMOS battery is connected too. Now you must determine whether
 you have Macronix or SST. An X60/T60 thinkpad will have either an SST or a
@@ -405,35 +405,37 @@ Macronix chip.
 
 Now run flashrom (for SST):
 
-    sudo ./flashrom_i945_sst -p internal -w coreboot.rom
+	sudo ./flashrom_i945_sst -p internal -w coreboot.rom
 
 Or Macronix:
 
-    sudo ./flashrom_i945_mx -p internal -w coreboot.rom
+	sudo ./flashrom_i945_mx -p internal -w coreboot.rom
 
 NOTE: you *can* just run both. One of them will succeed. It is perfectly
 harmless to run both versions of flashrom. In fact, you should do so!
 
 You'll see a lot of errors. This is normal. You should see something like:
 
-    Reading old flash chip contents... done.
-    Erasing and writing flash chip... spi_block_erase_20 failed during command execution at address 0x0
-    Reading current flash chip contents... done. Looking for another erase function.
-    spi_block_erase_52 failed during command execution at address 0x0
-    Reading current flash chip contents... done. Looking for another erase function.
-    Transaction error!
-    spi_block_erase_d8 failed during command execution at address 0x1f0000
-    Reading current flash chip contents... done. Looking for another erase function.
-    spi_chip_erase_60 failed during command execution
-    Reading current flash chip contents... done. Looking for another erase function.
-    spi_chip_erase_c7 failed during command execution
-    Looking for another erase function.
-    No usable erase functions left.
-    FAILED!
-    Uh oh. Erase/write failed. Checking if anything has changed.
-    Reading current flash chip contents... done.
-    Apparently at least some data has changed.
-    Your flash chip is in an unknown state.
+```
+Reading old flash chip contents... done.
+Erasing and writing flash chip... spi_block_erase_20 failed during command execution at address 0x0
+Reading current flash chip contents... done. Looking for another erase function.
+spi_block_erase_52 failed during command execution at address 0x0
+Reading current flash chip contents... done. Looking for another erase function.
+Transaction error!
+spi_block_erase_d8 failed during command execution at address 0x1f0000
+Reading current flash chip contents... done. Looking for another erase function.
+spi_chip_erase_60 failed during command execution
+Reading current flash chip contents... done. Looking for another erase function.
+spi_chip_erase_c7 failed during command execution
+Looking for another erase function.
+No usable erase functions left.
+FAILED!
+Uh oh. Erase/write failed. Checking if anything has changed.
+Reading current flash chip contents... done.
+Apparently at least some data has changed.
+Your flash chip is in an unknown state.
+```
 
 If you see this, rejoice! It means that the flash was successful. Please do not
 panic. Shut down now, and wait a few seconds, then turn back on again.
@@ -458,11 +460,11 @@ Assuming that everything went well:
 Flash the ROM for a second time. For this second flashing attempt, the upper
 64KiB bootblock is now read-write. Use the *unpatched* flashrom binary:
 
-    sudo ./flashrom -p internal -w libreboot.rom
+	sudo ./flashrom -p internal -w libreboot.rom
 
 To reset bucts, do this:
 
-    sudo ./bucts 0
+	sudo ./bucts 0
 
 ONLY set bucts back to 0 if you're sure that the upper 64KiB bootblock is
 flashed. It is flashed if flashrom said VERIFIED when running the above

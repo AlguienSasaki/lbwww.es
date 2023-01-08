@@ -66,7 +66,7 @@ Flash chip size {#flashchips}
 
 Use this to find out:
 
-    flashrom -p internal
+	flashrom -p internal
 
 MAC address {#macaddress}
 ===========

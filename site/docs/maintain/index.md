@@ -194,26 +194,28 @@ command `./build boot roms` will execute `resources/scripts/build/boot/roms`.
 When running such commands, additional parameters can be given, which will
 be passed along to the corresponding script. For example, try:
 
-    ./build boot roms x60 x200_8mb w500_16mb
+	./build boot roms x60 x200_8mb w500_16mb
 
 This will run:
 
-    ./resources/scripts/build/boot/roms x60 x200_8mb w500_16mB
+	./resources/scripts/build/boot/roms x60 x200_8mb w500_16mB
 
 The `list` function is very helpful. For example:
 
-    ./build boot list
+	./build boot list
 
-At the time of writing this section, this would have outputted:
+At the time of writing this section, this would output something like:
 
-    Available options for mode 'boot':
-    
-    roms
-    roms_helper
+````
+Available options for mode 'boot':
+
+roms
+roms_helper
+```
 
 Another use of `list` would be:
 
-    ./build boot roms list
+	./build boot roms list
 
 However, the `roms` script merely happens to implement a `list` command. For
 example, `./build payload grub list` does nothing differently
@@ -231,23 +233,23 @@ apply custom patches to GNU GRUB.
 
 This runs scripts in `resources/scripts/download`. For example:
 
-    ./download coreboot
+	./download coreboot
 
 This would run:
 
-    ./resources/scripts/download/coreboot
+	./resources/scripts/download/coreboot
 
 Additional parameters can be given, for example:
 
-    ./download coreboot default
+	./download coreboot default
 
 This would run:
 
-    ./resources/scripts/download/coreboot default
+	./resources/scripts/download/coreboot default
 
 For a full list of all `download` commands, run:
 
-    ./download help
+	./download help
 
 modify
 ======
@@ -255,19 +257,19 @@ modify
 This can be used to modify SeaBIOS, coreboot and U-Boot configs. It calls
 scripts in `resources/scripts/modify/`, for example:
 
-    ./modify coreboot configs
+	./modify coreboot configs
 
 This runs:
 
-    ./resources/scripts/modify/coreboot/configs
+	./resources/scripts/modify/coreboot/configs
 
 Additional parameters can be given, for example:
 
-    ./modify coreboot configs x200_8mb x60
+	./modify coreboot configs x200_8mb x60
 
 This would run:
 
-    ./resources/scripts/modify/coreboot/configs x200_8mb x60
+	./resources/scripts/modify/coreboot/configs x200_8mb x60
 
 projectname
 ===========
@@ -711,12 +713,12 @@ Command: `./build boot roms`
 
 Additional parameters can be provided. This lists all boards available:
 
-    ./build boot roms list
+	./build boot roms list
 
 Pass several board names if you wish to build only for specific targets. For
 example:
 
-    ./build boot roms x60 x200_8mb
+	./build boot roms x60 x200_8mb
 
 resources/scripts/build/boot/roms\_helper
 =========================================
@@ -1022,11 +1024,7 @@ Command: `./download coreboot`
 NOTE: This version of the script also performs the full git checkout in each
 coreboot tree, like so:
 
-    git submodule update --init --checkout
-
-The `lbmk` version only does this:
-
-    git submodule update --init
+	git submodule update --init --checkout
 
 The coreboot project sets up its Git repository, in such a way where most blobs
 are skipped if you omit `--checkout`. Since lbmk's policy is to *include*
@@ -1090,7 +1088,7 @@ Loads coreboot configs into coreboot trees, and runs `make menuconfig`, so
 that you can easily modify them in an ncurses interface. Additional parameters
 are accepted, for example:
 
-    ./modify coreboot configs x60 x200_8mb
+	./modify coreboot configs x60 x200_8mb
 
 With no additional parameters given, it simply cycles through all configs
 under `resources/coreboot/`.
@@ -1111,7 +1109,7 @@ Loads U-Boot configs into U-Boot trees, and runs `make menuconfig`, so
 that you can easily modify them in an ncurses interface. Additional parameters
 are accepted, for example:
 
-    ./modify u-boot configs gru_kevin gru_bob
+	./modify u-boot configs gru_kevin gru_bob
 
 With no additional parameters given, it simply cycles through all configs
 under `resources/u-boot/`.
@@ -1125,7 +1123,7 @@ This runs `make oldconfig` on coreboot configs under `resources/coreboot/`.
 It is most useful when updating a coreboot revision, per `board.cfg`. It allows
 additional parameters, for example:
 
-    ./update coreboot configs x60 x200_8mb
+	./update coreboot configs x60 x200_8mb
 
 With no additional parameters given, it simply cycles through all configs
 under `resources/coreboot/`.
@@ -1147,7 +1145,7 @@ This runs `make oldconfig` on U-Boot configs under `resources/u-boot/`.
 It is most useful when updating a U-Boot revision, per `board.cfg`. It allows
 additional parameters, for example:
 
-    ./update u-boot configs gru_kevin gru_bob
+	./update u-boot configs gru_kevin gru_bob
 
 With no additional parameters given, it simply cycles through all configs
 under `resources/u-boot/`.
@@ -1182,17 +1180,17 @@ update
 This can be used to update SeaBIOS, coreboot and U-Boot configs. It calls
 scripts in `resources/scripts/update/`, for example:
 
-    ./update coreboot configs
+	./update coreboot configs
 
 This runs:
 
-    ./resources/scripts/update/coreboot/configs
+	./resources/scripts/update/coreboot/configs
 
 Additional parameters can be given, for example:
 
-    ./update coreboot configs x200_8mb x60
+	./update coreboot configs x200_8mb x60
 
 This would run:
 
-    ./resources/scripts/update/coreboot/configs x200_8mb x60
+	./resources/scripts/update/coreboot/configs x200_8mb x60
 

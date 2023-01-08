@@ -94,11 +94,11 @@ December 2022):**
 Edit line 137 in `resources/scripts/blobs/inject`. The line in 20221214 says
 this:
 
-    make -C cd coreboot/default/util/cbfstool || Fail 'could not build ifdtool'
+	make -C cd coreboot/default/util/cbfstool || Fail 'could not build ifdtool'
 
 Modify it to say this:
 
-    make -C coreboot/default/util/cbfstool || Fail 'could not build cbfstool'
+	make -C coreboot/default/util/cbfstool || Fail 'could not build cbfstool'
 
 Until this is edited accordingly, the inject script will *exit* with non-zero
 status, and no blobs will be injected.

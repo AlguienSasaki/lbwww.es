@@ -66,11 +66,11 @@ both on the original BIOS and in libreboot. It's a quirk in the
 hardware. On debian systems, a workaround is to restart the networking
 service when you connect the ethernet cable:
 
-    sudo service network-manager restart
+	sudo service network-manager restart
 
 On Parabola, you can try:
 
-    sudo systemctl restart network-manager
+	sudo systemctl restart network-manager
 
 (the service name might be different for you, depending on your
 configuration)
@@ -123,51 +123,51 @@ the target (`target$`):
 
 1.  Start a listener server on the target machine (netcat works well):
 
-    `target$ nc -u -l -p 6666`
+	`target$ nc -u -l -p 6666`
 
 2.  Mount configfs (only once per boot, you can check if it is already mounted
     with `mount | grep /sys/kernel/config`. This will return no output
     if it is not).
 
-    `source# modprobe configfs`
+	`source# modprobe configfs`
 
-    `source# mkdir -p /sys/kernel/config`
+	`source# mkdir -p /sys/kernel/config`
 
-    `source# mount none -t configfs /sys/kernel/config`
+	`source# mount none -t configfs /sys/kernel/config`
 
 3.  find source's ethernet interface name, it should be of the form `enp*` or
     `eth*`, see `ip address` or `ifconfig` output.
 
-    `source# iface="enp0s29f8u1"` change this
+	`source# iface="enp0s29f8u1"` change this
 
     Fill the target machine's IPv4 address here:
 
-    `source# tgtip="192.168.1.2"` change this
+	`source# tgtip="192.168.1.2"` change this
 
 
 3.  Create netconsole logging target on the source machine:
 
-    `source# modprobe netconsole`
+	`source# modprobe netconsole`
 
-    `source# cd /sys/kernel/config/netconsole`
+	`source# cd /sys/kernel/config/netconsole`
 
-    `source# mkdir target1; cd target1`
+ 	`source# mkdir target1; cd target1`
 
-    `source# srcip=$(ip -4 addr show dev "$iface" | grep -Eo '[0-9]+\.[0-9]+\.[0-9]+\.[0-9]+')`
+	`source# srcip=$(ip -4 addr show dev "$iface" | grep -Eo '[0-9]+\.[0-9]+\.[0-9]+\.[0-9]+')`
 
-    `source# echo "$srcip" > local_ip`
+	`source# echo "$srcip" > local_ip`
 
-    `source# echo "$tgtip" > remote_ip`
+	`source# echo "$tgtip" > remote_ip`
 
-    `source# echo "$iface" > dev_name`
+	`source# echo "$iface" > dev_name`
 
-    `source# arping -I "$iface" "$tgtip" -f | grep -o '..:..:..:..:..:..' > remote_mac`
+	`source# arping -I "$iface" "$tgtip" -f | grep -o '..:..:..:..:..:..' > remote_mac`
 
-    `source# echo 1 > enabled`
+	`source# echo 1 > enabled`
 
 4.  Change console loglevel to debugging:
 
-    `source# dmesg -n debug`
+	`source# dmesg -n debug`
 
 5.  Test if the logging works by e.g. inserting or removing an USB
     device on the source. There should be a few lines appearing in the
@@ -609,11 +609,11 @@ cases.
 Default libreboot setups lock the CMOS table, to ensure consistent functionality
 for all users. You can use:
 
-    nvramtool -C yourrom.rom -w somesetting=somevalue
+	nvramtool -C yourrom.rom -w somesetting=somevalue
 
 To get a full list of available options, do this:
 
-    nvramtool -C yourrom.rom -a
+	nvramtool -C yourrom.rom -a
 
 This will change the default inside that ROM image, and then you can
 re-flash it.
@@ -635,15 +635,15 @@ Required for ROMs where the ROM image is smaller than the flash chip
 Create an empty (00 bytes) file with a size the difference between
 the ROM and flash chip. The case above, for example:
 
-    truncate -s +14MiB pad.bin
+	truncate -s +14MiB pad.bin
 
 For x86 descriptorless images you need to pad from the *beginning* of the ROM:
 
-    cat pad.bin yourrom.rom > yourrom.rom.new
+	cat pad.bin yourrom.rom > yourrom.rom.new
 
 For ARM and x86 with intel flash descriptor, you need to pad after the image:
 
-    cat yourrom.rom pad.bin > yourrom.rom.new
+	cat yourrom.rom pad.bin > yourrom.rom.new
 
 Flash the resulting file. Note that cbfstool will not be able to
 operate on images padded this way so make sure to make all changes to
@@ -654,7 +654,7 @@ simply use dd(1) to extract only the non-padded portion. Continuing with the
 examples above, in order to extract a 2MiB x86 descriptorless ROM from a
 padded 16MiB image do the following:
 
-    dd if=flashromread.rom of=yourrom.rom ibs=14MiB skip=1
+	dd if=flashromread.rom of=yourrom.rom ibs=14MiB skip=1
 
 With padding removed cbfstool will be able to operate on the image as usual.
 
