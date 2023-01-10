@@ -100,6 +100,21 @@ Modify it to say this:
 
 	make -C coreboot/default/util/cbfstool || Fail 'could not build cbfstool'
 
+ALSO:
+
+*When generating a MAC address*, the same script tries to build `nvmutil`
+from `/util/nvmutil`, in Libreboot 20221214. This was discovered on 10 January
+2023, based on user report on IRC. Fix it like so (already fixed, in latest
+Libreboot from Git):
+
+Line 30, it says:
+
+	make -C /util/nvmutil || Fail 'failed to build nvmutil'
+
+Change it to say:
+
+	make -C util/nvmutil || Fail 'failed to build nvmutil'
+
 Until this is edited accordingly, the inject script will *exit* with non-zero
 status, and no blobs will be injected.
 
