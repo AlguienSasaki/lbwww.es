@@ -132,7 +132,7 @@ Arthur Heymans
 
 Merged a patch from coreboot into libreboot, enabling C3 and C4 power
 states to work correctly on GM45 laptops. This was a long-standing issue
-before Athur's contribution. Arthur also fixed VRAM size on i945 on
+before Arthur's contribution. Arthur also fixed VRAM size on i945 on
 GM45 systems, allowing maximum VRAM allocation for the onboard GPUs on
 these systems, another longstanding issue in libreboot.
 
@@ -155,13 +155,13 @@ Damien's upstream work on coreboot.
 Denis Carikli
 -------------
 
-Based on the work done by Peter Stuge, Vladimir Serbineko and others in
+Based on the work done by Peter Stuge, Vladimir Serbinenko and others in
 the coreboot project, got native graphics initialization to work on the
 ThinkPad X60, allowing it to be supported in libreboot. Denis gave
 a lot of advice and helped found the libreboot project.
 
 Denis was a mentor to Leah Rowe in the early days, when she founded the
-Libreboot project. A lot of the decision decisions taken, especially with the
+Libreboot project. A lot of the decisions taken, especially with the
 Libreboot build system (lbmk), were inspired from talks with Denis.
 
 Denis taught Leah about registers used by Intel GPUs for backlight control. In
