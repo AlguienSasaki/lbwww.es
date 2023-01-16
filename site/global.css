@@ -28,13 +28,6 @@
 		font-size: 1.05em;
 	}
 }
-@media (min-width:100em)
-{
-	html
-	{
-		font-size: 1.1em;
-	}
-}
 
 html
 {
