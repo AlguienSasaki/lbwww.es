@@ -19,7 +19,6 @@ title: Gigabyte GA-G41M-ES2L desktop board
 | **Display**                | None.                                          |
 | **Memory**                 | Up to 16GB                                     |
 | **Architecture**           | x86_64                                         |
-| **EC**                     | Proprietary                                    |
 | **Original boot firmware** | AWARD BIOS                                     |
 | **Intel ME/AMD PSP**       | Present. Can be disabled                       |
 | **Flash chip**             | 2x8Mbit                                        |

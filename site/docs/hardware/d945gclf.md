@@ -19,7 +19,6 @@ x-toc-enable: true
 | **Display**                | None.                                          |
 | **Memory**                 | Up to 2GB                                      |
 | **Architecture**           | x86_64                                         |
-| **EC**                     | Proprietary                                    |
 | **Original boot firmware** | Intel BIOS                                     |
 | **Intel ME/AMD PSP**       | Not present.                                   |
 | **Flash chip**             | SOIC-8 512KiB                                  |

@@ -19,7 +19,6 @@ x-toc-enable: true
 | **Display**                | None.                                          |
 | **Memory**                 | 512MB, 1GB, 2GB, 4GB                           |
 | **Architecture**           | x86_64                                         |
-| **EC**                     | Proprietary                                    |
 | **Original boot firmware** | AMIBIOS                                        |
 | **Intel ME/AMD PSP**       | Not present.                                   |
 | **Flash chip**             | PLCC 1MiB (Upgradable to 2MiB)                 |
