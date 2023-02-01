@@ -69,6 +69,24 @@ university, USA)
 RSYNC mirrors {#rsync}
 -------------
 
+The following rsync mirrors are available publicly:
+
+* <rsync://rsync.mirrorservice.org/libreboot.org/release/> (University of Kent,
+UK)
+* <rsync://mirror.math.princeton.edu/pub/libreboot/> (Princeton university, USA)
+* <rsync://ftp.linux.ro/libreboot/> (linux.ro, Romania)
+* <rsync://mirror.koddos.net/libreboot/> (koddos.net, Netherlands)
+* <rsync://mirror-hk.koddos.net/libreboot/> (koddos.net, Hong Kong)
+
+Are you running a mirror? Contact the libreboot project, and the link will be
+added to this page!
+
+You can make your rsync mirror available via your web server, and also configure
+your *own* mirror to be accessible via rsync. There are many resources online
+that show you how to set up an rsync server.
+
+How to create your own rsync mirror:
+
 Useful for mirroring Libreboot's entire set of release archives. You can put
 an rsync command into crontab and pull the files into a directory on your
 web server.
@@ -92,29 +110,32 @@ Now you can run rsync, for instance:
 
 	rsync -avz --delete-after rsync://rsync.libreboot.org/mirrormirror/ /var/www/html/libreboot/
 
+You might put this in an hourly crontab. For example:
+
+	crontab -e
+
+Then in crontab, add this line and save/exit (hourly crontab):
+
+	0 * * * * rsync -avz --delete-after rsync://rsync.libreboot.org/mirrormirror/ /var/www/html/libreboot/
+
 **It's extremely important to have the final forward slash (/) at the end of each path,
 in the above rsync command. Otherwise, rsync will behave very strangely.**
+
+**NOTE: `rsync.libreboot.org` is not directly accessible by the public, except
+those whose IPs are whitelisted. For bandwidth reasons, the firewall running
+on libreboot.org blocks incoming rsync requests, except by specific IPs.**
+
+**If you wish to run an rsync mirror, sync from one of the third party mirrors
+below and set up your mirror. You can then contact Leah Rowe, to have your IP
+addresses whitelisted for rsync usage - if the IP addresses match DNS A/AAAA
+records for your rsync host, this can be used. A script runs in an hourly
+crontab on libreboot.org, that fetches the A/AAAA records of whitelisted
+rsync mirrors, automatically adding rules permitting them to get through the
+firewall.**
 
 If you wish to regularly keep your rsync mirror updated, you can add it to a
 crontab. This page tells you how to use crontab:
 <https://man7.org/linux/man-pages/man5/crontab.5.html>
-
-The following rsync mirrors are available:
-
-* <rsync://rsync.libreboot.org/mirrormirror/> (Libreboot project official mirror)
-* <rsync://rsync.mirrorservice.org/libreboot.org/release/> (University of Kent,
-UK)
-* <rsync://mirror.math.princeton.edu/pub/libreboot/> (Princeton university, USA)
-* <rsync://ftp.linux.ro/libreboot/> (linux.ro, Romania)
-* <rsync://mirror.koddos.net/libreboot/> (koddos.net, Netherlands)
-* <rsync://mirror-hk.koddos.net/libreboot/> (koddos.net, Hong Kong)
-
-Are you running a mirror? Contact the libreboot project, and the link will be
-added to this page!
-
-You can make your rsync mirror available via your web server, and also configure
-your *own* mirror to be accessible via rsync. There are many resources online
-that show you how to set up an rsync server.
 
 HTTP mirrors {#http}
 ------------
