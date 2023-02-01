@@ -126,7 +126,7 @@ those whose IPs are whitelisted. For bandwidth reasons, the firewall running
 on libreboot.org blocks incoming rsync requests, except by specific IPs.**
 
 **If you wish to run an rsync mirror, sync from one of the third party mirrors
-below and set up your mirror. You can then contact Leah Rowe, to have your IP
+above and set up your mirror. You can then contact Leah Rowe, to have your IP
 addresses whitelisted for rsync usage - if the IP addresses match DNS A/AAAA
 records for your rsync host, this can be used. A script runs in an hourly
 crontab on libreboot.org, that fetches the A/AAAA records of whitelisted
