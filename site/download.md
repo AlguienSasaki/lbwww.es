@@ -62,8 +62,6 @@ of Kent, UK)
 * <https://mirrors.mit.edu/libreboot/> (MIT university, USA)
 * <https://mirror.math.princeton.edu/pub/libreboot/> (Princeton
 university, USA)
-* <https://mirror.sugol.org/libreboot/> (sugol.org)
-(formerly nephelai.zanity.net/mirror/libreboot)
 * <https://mirror.koddos.net/libreboot/> (koddos.net, Netherlands)
 * <https://mirror-hk.koddos.net/libreboot/> (koddos.net, Hong Kong)
 * <https://mirror.cyberbits.eu/libreboot/> (cyberbits.eu, France)
