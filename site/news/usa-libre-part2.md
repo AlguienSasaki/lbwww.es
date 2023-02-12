@@ -51,7 +51,7 @@ The text of the proposed bill can be read here: \
 <https://gencourt.state.nh.us/lsr_search/billText.aspx?id=188&type=4>
 
 It is critical that as many people show up as possible, to express support for
-the bill, and to defend it against any opposition that may appear, on each day.
+the bill, and to defend it against any opposition.
 
 **Location of hearing: Legislative Office Building in Concord, New Hampshire:\
 <https://en.wikipedia.org/wiki/New_Hampshire_Legislative_Office_Building>**
