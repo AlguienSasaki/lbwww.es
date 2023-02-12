@@ -1,4 +1,4 @@
-% New Hampshire once again on the cusp of enshrining Software Freedom into law
+% New Hampshire once again on the cusp of enshrining Software Freedom into law. YOUR HELP IS NEEDED.
 % Leah Rowe
 % 12 February 2023
 
