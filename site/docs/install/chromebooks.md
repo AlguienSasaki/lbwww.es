@@ -7,6 +7,16 @@ This page attempts to give a brief, general overview of how to flash
 custom firmware on ChromeOS devices. This guide usually refers to all of
 them as "Chromebook"s since it's the most common form factor.
 
+Flashrom
+========
+
+A special fork of flashrom, maintained by Google, is required for flashing
+these Chromebook devices. See:
+
+<https://chromium.googlesource.com/chromiumos/third_party/flashrom/>
+
+You must then compile this from source, and run it.
+
 Enable ChromeOS "Developer Mode"
 ================================
 
@@ -146,6 +156,17 @@ To flash the entire ROM image internally, run within ChromeOS:
 
 If you can already boot a conventional Linux distro on your Chromebook,
 you may be able to use `flashrom -p linux_mtd` on that system instead.
+
+Install an operating system
+===========================
+
+Libreboot currently lacks any good documentation about this, but there
+is this page which refers to Debian:
+
+[Debian installation](https://wiki.debian.org/InstallingDebianOn/Asus/C201)
+
+In general, ARM-compatible distros targeting U-boot can be used. You can
+follow their instructions, once you have Libreboot up and running.
 
 See also
 ========

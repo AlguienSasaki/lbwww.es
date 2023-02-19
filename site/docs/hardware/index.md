@@ -64,7 +64,7 @@ libreboot currently supports the following systems in this release:
 -   [Acer Chromebook 13 (CB5-311, C810) (nyan-big)](../install/chromebooks.md)
 -   [ASUS Chromebit CS10 (veyron-mickey)](../install/chromebooks.md)
 -   [ASUS Chromebook Flip C100PA (veyron-minnie)](../install/chromebooks.md)
--   [ASUS Chromebook C201PA (veyron-speedy)](../install/chromebooks.md)
+-   [ASUS Chromebook C201PA (veyron-speedy)](../install/c201.md)
 -   [Hisense Chromebook C11 and more (veyron-jerry)](../install/chromebooks.md)
 -   [ASUS Chromebook Flip C101 (gru-bob)](../install/chromebooks.md)
 -   [Samsung Chromebook Plus (v1) (gru-kevin)](../install/chromebooks.md)
