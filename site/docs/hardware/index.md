@@ -69,9 +69,21 @@ libreboot currently supports the following systems in this release:
 -   [ASUS Chromebook Flip C101 (gru-bob)](../install/chromebooks.md)
 -   [Samsung Chromebook Plus (v1) (gru-kevin)](../install/chromebooks.md)
 
-WARNING: veyron speedy boards (e.g. C201) have non-functional video init as
+**WARNING: veyron speedy boards (e.g. C201) have non-functional video init as
 of 19 February 2023, and no fix is yet available on that date. See:
-<https://notabug.org/libreboot/lbmk/issues/136>
+<https://notabug.org/libreboot/lbmk/issues/136> - the last tested revision
+from 2021.01 is known to work, for u-boot on this board. See:\
+<https://wiki.postmarketos.org/wiki/ASUS_Chromebook_C201_(google-veyron-speedy)>
+(alpernebbi on IRC is looking into this, to bisect uboot and update the latest
+revisions) - for now, ROM images deleted from the Libreboot 20221214 release.**
+
+**WARNING: daisy- and peach- boards require a BL1 bootloader blob, but the
+one from coreboot 3rdparty is a fake/placeholder blob. We need logic in the
+Libreboot build system for properly fetching/extracting these, plus docs to
+cover it. For now, assume that these are broken - ROM images are excluded,
+for now, and have been retroactively deleted from the Libreboot 20221214
+release. - see: <https://review.coreboot.org/plugins/gitiles/blobs/+/4c0dcf96ae73ba31bf9aa689768a5ecd47bac19e>
+and <https://review.coreboot.org/plugins/gitiles/blobs/+/b36cc7e08f7337f76997b25ee7344ab8824e268d>**
 
 WARNING: Support for these boards is at a proof-of-concept stage. Refer
 to [docs/uboot/](../uboot/) for more info about the U-Boot payload.
