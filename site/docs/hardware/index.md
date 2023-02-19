@@ -69,6 +69,10 @@ libreboot currently supports the following systems in this release:
 -   [ASUS Chromebook Flip C101 (gru-bob)](../install/chromebooks.md)
 -   [Samsung Chromebook Plus (v1) (gru-kevin)](../install/chromebooks.md)
 
+WARNING: veyron speedy boards (e.g. C201) have non-functional video init as
+of 19 February 2023, and no fix is yet available on that date. See:
+<https://notabug.org/libreboot/lbmk/issues/136>
+
 WARNING: Support for these boards is at a proof-of-concept stage. Refer
 to [docs/uboot/](../uboot/) for more info about the U-Boot payload.
 
