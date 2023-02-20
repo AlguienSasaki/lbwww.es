@@ -64,7 +64,7 @@ What does house bill 556-FN say?
 The actual text of the bill is provided here:\
 <https://gencourt.state.nh.us/lsr_search/billText.aspx?id=193&type=4>
 
-If passed, the New Hampshire Information Technolocy Council would then be
+If passed, the New Hampshire Information Technology Council would then be
 required, by law, to promote software freedom to the Department of Information
 Technology Commissioner. This would include analysis of practical issues such
 as cost, and deployment strategies for libre systems to replace current
