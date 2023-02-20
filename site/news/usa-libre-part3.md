@@ -1,4 +1,4 @@
-% NEW New Hampshire software freedom bill needs your support!
+% NEW New Hampshire software freedom bill hearing on 21 February 2023 needs your support!
 % Leah Rowe
 % 20 February 2023
 
