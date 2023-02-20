@@ -1,4 +1,4 @@
-% *New* New Hampshire software freedom bill needs your support!
+% NEW New Hampshire software freedom bill needs your support!
 % Leah Rowe
 % 20 February 2023
 
