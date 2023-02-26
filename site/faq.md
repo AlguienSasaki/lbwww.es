@@ -1015,11 +1015,19 @@ Where can I learn more about electronics
 * [How to accurately measure header/connector pitch](https://www.microcontrollertips.com/accurately-measure-headerconnector-pitch/)
 * Other YouTube channels with useful content about electronics
     * [EEVblog](https://vid.puffyan.us/channel/UC2DjFE7Xf11URZqWBigcVOQ)
+	(generally about electronics, reviews about equipment, etc, some
+	repair videos)
     * [Louis Rossmann](https://vid.puffyan.us/channel/UCl2mFZoRqjw_ELax4Yisf6w)
+	(right to repair advocacy, lots of macbook repair videos)
     * [mikeselectricstuff](https://vid.puffyan.us/channel/UCcs0ZkP_as4PpHDhFcmCHyA)
     * [bigclive](https://vid.puffyan.us/channel/UCtM5z2gkrGRuWd0JQMx76qA)
     * [ElectroBOOM](https://vid.puffyan.us/channel/UCJ0-OtVpF0wOKEqT2Z1HEtA)
+	(he blows stuff up, and shows you how not to do that)
     * [Jeri Ellsworth](https://vid.puffyan.us/user/jeriellsworth/playlists)
+	(has a video showing how to make a *transistor* yourself)
+    * [Sam Zeloof](https://piped.kavin.rocks/channel/UC7E8-0Ou69hwScPW1_fQApA)
+	(Sam literally makes CPUs in his garage, inspired by Jeri Ellsworth's
+	work with transistors)
 * Boardview files can be open with [OpenBoardview](https://github.com/OpenBoardView/OpenBoardView),
 which is libre software under MIT license.
 
