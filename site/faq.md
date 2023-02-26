@@ -1001,6 +1001,12 @@ Where can I learn more about electronics
     Both series of videos are mandatory regardless of your soldering skill.
     * [Basic Soldering](https://vid.puffyan.us/watch?v=vIT4ra6Mo0s&list=PL926EC0F1F93C1837)
     * [Rework and Repair](https://vid.puffyan.us/watch?v=HKX-GBe_lUI&list=PL958FF32927823D12)
+    The PACE series above covers classic techniques, but does not cover much
+    about *modern* electronics. For that, see:
+    * [iFixit microsoldering lessons, featuring Jessa
+	Jones](https://piped.kavin.rocks/playlist?list=PL4INaL5vWobD_CltiZXr7K46oJ33KvwBt)
+    * Also see youtube links below, especially Louis Rossman videos, to learn
+      a (lot) more.
 * [edX course on basics of electronics](https://www.edx.org/course/circuits-and-electronics-1-basic-circuit-analysi-2)  
     In most countries contents of this course is covered during
     middle and high school. It will also serve well to refresh your memory
@@ -1028,6 +1034,9 @@ Where can I learn more about electronics
     * [Sam Zeloof](https://piped.kavin.rocks/channel/UC7E8-0Ou69hwScPW1_fQApA)
 	(Sam literally makes CPUs in his garage, inspired by Jeri Ellsworth's
 	work with transistors)
+    * [iPad Rehab with Jessa Jones](https://piped.kavin.rocks/channel/UCPjp41qeXe1o_lp1US9TpWA)
+	(very precise soldering. she does repairs on mobile phones and such, also
+	featured in iFixit's series about getting into component repairs)
 * Boardview files can be open with [OpenBoardview](https://github.com/OpenBoardView/OpenBoardView),
 which is libre software under MIT license.
 
