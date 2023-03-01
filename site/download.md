@@ -62,6 +62,7 @@ of Kent, UK)
 * <https://mirrors.mit.edu/libreboot/> (MIT university, USA)
 * <https://mirror.math.princeton.edu/pub/libreboot/> (Princeton
 university, USA)
+* <https://mirror.shapovalov.tech/libreboot/> (shapovalov.tech, Ukraine)
 * <https://mirror.koddos.net/libreboot/> (koddos.net, Netherlands)
 * <https://mirror-hk.koddos.net/libreboot/> (koddos.net, Hong Kong)
 * <https://mirror.cyberbits.eu/libreboot/> (cyberbits.eu, France)
@@ -74,6 +75,7 @@ The following rsync mirrors are available publicly:
 * <rsync://rsync.mirrorservice.org/libreboot.org/release/> (University of Kent,
 UK)
 * <rsync://mirror.math.princeton.edu/pub/libreboot/> (Princeton university, USA)
+* <rsync://rsync.shapovalov.tech/libreboot/> (shapovalov.tech, Ukraine)
 * <rsync://ftp.linux.ro/libreboot/> (linux.ro, Romania)
 * <rsync://mirror.koddos.net/libreboot/> (koddos.net, Netherlands)
 * <rsync://mirror-hk.koddos.net/libreboot/> (koddos.net, Hong Kong)
