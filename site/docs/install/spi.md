@@ -750,12 +750,12 @@ chip.
 
 A good choice of soldering iron would be a T12-D08 or T12-K tip, on a T12
 soldering station. KSGER makes nice soldering stations:\
-<https://vid.puffyan.us/watch?v=w0nZCK7B-0U>
+<https://yewtu.be/watch?v=w0nZCK7B-0U>
 
 The case on that KSGER station is not grounded by default, so you should
 modify it to ground the case, in case of an electrical fault. This is for your
 safety. This video shows how to do it:\
-<https://vid.puffyan.us/watch?v=-6IZ_sBgw8I>
+<https://yewtu.be/watch?v=-6IZ_sBgw8I>
 
 Use quality 60/40 or 63/37 lead+tin solder. Do not use lead-free! Lead-free is
 not suitable for hobbyist use such as this. Use quality *rosin* flux. Fluxes

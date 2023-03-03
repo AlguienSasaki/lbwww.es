@@ -43,7 +43,7 @@ channel
 This video from FrostKiwi (Libera IRC) does a nice illustration and explains
 everything nicely:
 
-<https://vid.puffyan.us/watch?v=Fs4GjDiOie8>
+<https://yewtu.be/watch?v=Fs4GjDiOie8>
 
 A note about GPUs
 =================

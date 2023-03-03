@@ -23,7 +23,7 @@ plein de cas d'utilisations.
 
 Vous avez des droits. Un droit à la vie privée, liberté de pensée, liberté d'espression et le droit de lire. Dans ce contexte là, Libreboot vous permet d'avoir ces droits.
 Votre liberté compte.
-Le [Droit à la réparation](https://vid.puffyan.us/watch?v=Npd_xDuNi9k) est important.
+Le [Droit à la réparation](https://yewtu.be/watch?v=Npd_xDuNi9k) est important.
 Beaucoup de personnes utilisent un micrologiciel de 
 démarrage propriétare (non libre), même
 si ils utilisent [un système d'exploitation libre](https://www.openbsd.org/).

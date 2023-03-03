@@ -999,12 +999,12 @@ Where can I learn more about electronics
 
 * Basics of soldering and rework by PACE  
     Both series of videos are mandatory regardless of your soldering skill.
-    * [Basic Soldering](https://vid.puffyan.us/watch?v=vIT4ra6Mo0s&list=PL926EC0F1F93C1837)
-    * [Rework and Repair](https://vid.puffyan.us/watch?v=HKX-GBe_lUI&list=PL958FF32927823D12)
+    * [Basic Soldering](https://yewtu.be/watch?v=vIT4ra6Mo0s&list=PL926EC0F1F93C1837)
+    * [Rework and Repair](https://yewtu.be/watch?v=HKX-GBe_lUI&list=PL958FF32927823D12)
     The PACE series above covers classic techniques, but does not cover much
     about *modern* electronics. For that, see:
     * [iFixit microsoldering lessons, featuring Jessa
-	Jones](https://piped.kavin.rocks/playlist?list=PL4INaL5vWobD_CltiZXr7K46oJ33KvwBt)
+	Jones](https://yewtu.be/playlist?list=PL4INaL5vWobD_CltiZXr7K46oJ33KvwBt)
     * Also see youtube links below, especially Louis Rossman videos, to learn
       a (lot) more.
 * [edX course on basics of electronics](https://www.edx.org/course/circuits-and-electronics-1-basic-circuit-analysi-2)  
@@ -1012,29 +1012,29 @@ Where can I learn more about electronics
     middle and high school. It will also serve well to refresh your memory
     if you haven't used that knowledge ever since.
 * Impedance intro
-    * [Similiarities of Wave Behavior](https://vid.puffyan.us/watch?v=DovunOxlY1k)
-    * [Reflections in tranmission line](https://vid.puffyan.us/watch?v=y8GMH7vMAsQ)
+    * [Similiarities of Wave Behavior](https://yewtu.be/watch?v=DovunOxlY1k)
+    * [Reflections in tranmission line](https://yewtu.be/watch?v=y8GMH7vMAsQ)
     * Stubs:
         * [Wikipedia article on stubs](https://en.wikipedia.org/wiki/Stub_(electronics))
         * [Polar Instruments article on stubs](http://www.polarinstruments.com/support/si/AP8166.html)  
         With external SPI flashing we only care about unintended PCB stubs
 * [How to accurately measure header/connector pitch](https://www.microcontrollertips.com/accurately-measure-headerconnector-pitch/)
 * Other YouTube channels with useful content about electronics
-    * [EEVblog](https://vid.puffyan.us/channel/UC2DjFE7Xf11URZqWBigcVOQ)
+    * [EEVblog](https://yewtu.be/channel/UC2DjFE7Xf11URZqWBigcVOQ)
 	(generally about electronics, reviews about equipment, etc, some
 	repair videos)
-    * [Louis Rossmann](https://vid.puffyan.us/channel/UCl2mFZoRqjw_ELax4Yisf6w)
+    * [Louis Rossmann](https://yewtu.be/channel/UCl2mFZoRqjw_ELax4Yisf6w)
 	(right to repair advocacy, lots of macbook repair videos)
-    * [mikeselectricstuff](https://vid.puffyan.us/channel/UCcs0ZkP_as4PpHDhFcmCHyA)
-    * [bigclive](https://vid.puffyan.us/channel/UCtM5z2gkrGRuWd0JQMx76qA)
-    * [ElectroBOOM](https://vid.puffyan.us/channel/UCJ0-OtVpF0wOKEqT2Z1HEtA)
+    * [mikeselectricstuff](https://yewtu.be/channel/UCcs0ZkP_as4PpHDhFcmCHyA)
+    * [bigclive](https://yewtu.be/channel/UCtM5z2gkrGRuWd0JQMx76qA)
+    * [ElectroBOOM](https://yewtu.be/channel/UCJ0-OtVpF0wOKEqT2Z1HEtA)
 	(he blows stuff up, and shows you how not to do that)
-    * [Jeri Ellsworth](https://vid.puffyan.us/user/jeriellsworth/playlists)
+    * [Jeri Ellsworth](https://yewtu.be/user/jeriellsworth/playlists)
 	(has a video showing how to make a *transistor* yourself)
-    * [Sam Zeloof](https://piped.kavin.rocks/channel/UC7E8-0Ou69hwScPW1_fQApA)
+    * [Sam Zeloof](https://yewtu.be/channel/UC7E8-0Ou69hwScPW1_fQApA)
 	(Sam literally makes CPUs in his garage, inspired by Jeri Ellsworth's
 	work with transistors)
-    * [iPad Rehab with Jessa Jones](https://piped.kavin.rocks/channel/UCPjp41qeXe1o_lp1US9TpWA)
+    * [iPad Rehab with Jessa Jones](https://yewtu.be/channel/UCPjp41qeXe1o_lp1US9TpWA)
 	(very precise soldering. she does repairs on mobile phones and such, also
 	featured in iFixit's series about getting into component repairs)
 * Boardview files can be open with [OpenBoardview](https://github.com/OpenBoardView/OpenBoardView),
@@ -1043,4 +1043,4 @@ which is libre software under MIT license.
 Use of `yt-dlp` (an enhanced fork of `youtube-dl`) is recommended for links
 to `youtube.com`. See: <https://github.com/yt-dlp/yt-dlp>
 
-Lastly the most important message to everybody gaining this wonderful new hobby - [Secret to Learning Electronics](https://vid.puffyan.us/watch?v=xhQ7d3BK3KQ)
+Lastly the most important message to everybody gaining this wonderful new hobby - [Secret to Learning Electronics](https://yewtu.be/watch?v=xhQ7d3BK3KQ)

@@ -26,7 +26,7 @@ boot firmware. It's extremely powerful and configurable for many use cases.
 You have rights. The right to privacy, freedom of thought, freedom of speech
 and the right to read. In this context, Libreboot gives you these rights.
 Your freedom matters.
-[Right to repair](https://vid.puffyan.us/watch?v=Npd_xDuNi9k) matters.
+[Right to repair](https://yewtu.be/watch?v=Npd_xDuNi9k) matters.
 Many people use proprietary (non-libre)
 boot firmware, even if they use [a libre OS](https://www.openbsd.org/).
 Proprietary firmware often [contains](faq.html#intel) [backdoors](faq.html#amd),

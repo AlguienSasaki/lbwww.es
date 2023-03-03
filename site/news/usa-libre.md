@@ -172,7 +172,7 @@ there, trying to argue the case *against* the use of Libre Software.
 There is already precedent; please watch this video, which shows how Microsoft
 (for example) might behave in the reading of the bill. This video is from a
 discussion within the European Union, several years ago:\
-<https://vid.puffyan.us/watch?v=W_S0k1sx8EM> (invidious link. works without
+<https://yewtu.be/watch?v=W_S0k1sx8EM> (invidious link. works without
 javascript enabled, if you wish)
 
 They will try to trick the law makers by claiming things such as:
