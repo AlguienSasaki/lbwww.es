@@ -999,8 +999,8 @@ Where can I learn more about electronics
 
 * Basics of soldering and rework by PACE  
     Both series of videos are mandatory regardless of your soldering skill.
-    * [Basic Soldering](https://yewtu.be/watch?v=vIT4ra6Mo0s&list=PL926EC0F1F93C1837)
-    * [Rework and Repair](https://yewtu.be/watch?v=HKX-GBe_lUI&list=PL958FF32927823D12)
+    * [Basic Soldering](https://yewtu.be/playlist?list=PL926EC0F1F93C1837)
+    * [Rework and Repair](https://yewtu.be/playlist?list=PL958FF32927823D12)
     The PACE series above covers classic techniques, but does not cover much
     about *modern* electronics. For that, see:
     * [iFixit microsoldering lessons, featuring Jessa
