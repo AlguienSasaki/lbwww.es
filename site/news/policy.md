@@ -184,11 +184,18 @@ more pragmatic way. You can read those guidelines by following this URL:
 
 * FSF Respects Your Freedom (RYF) guidelines: **https://ryf.fsf.org/about/criteria**
 
-The FSF RYF guidelines state the following:
+Put simply, the RYF guidelines pertain to commercial products, with the
+stipulation that they must not contain proprietary software, or known privacy
+issues like backdoors.
+
+The total exclusion of all proprietary software is currently not feasible. For
+example, proprietary SDR firmware in WiFi chipsets, firmware in AHCI devices
+like HDDs or SSDs, and the like. The FSF RYF guidelines state the following
+exception, to mitigate this fact:
 
 * "However, there is one exception for secondary embedded processors. The exception applies to software delivered inside auxiliary and low-level processors and FPGAs, within which software installation is not intended after the user obtains the product. This can include, for instance, microcode inside a processor, firmware built into an I/O device, or the gate pattern of an FPGA. The software in such secondary processors does not count as product software."
 
-This is a violation of every principle the FSF stands for, *and it should be
+This exception violates every principle the FSF stands for, *and it should be
 rejected on ideological grounds*. The rest of libreboot's policy and overall
 ideology expressed, in this article, will be based largely on that rejection.
 The definition of *product software* is completely arbitrary; software is
