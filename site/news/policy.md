@@ -77,9 +77,10 @@ The libreboot project has the following policy:
   for a given graphics device, that code should be used in libreboot, when
   building a ROM image. Similarly, if *memory controller initialization* is
   possible with a binary blob *or* libre code in coreboot, the *libre* code
-  should be used in ROMs built by `lbmk`, and the *blob* for raminit should
-  not be used; however, if no libre init code is available for said raminit,
-  it is permitted and lbmk will use the *blob*.
+  should be used in ROMs built by the Libreboot build system, and the *blob*
+  for raminit should not be used; however, if no libre init code is available
+  for said raminit, it is permitted and Libreboot build system will use the
+  *blob*.
 * Some nuance is to be observed: on some laptop or desktop configurations, it's
   common that there will be *two* graphics devices (for example, an nvidia and
   an intel chip, using nvidia optimus technology, on a laptop). It may be that
@@ -100,10 +101,10 @@ The libreboot project has the following policy:
 * Binary blobs should *never* be deleted, even if they are unused. In the
   coreboot project, a set of `3rdparty` submodules are available, with binary
   blobs for init tasks on many boards. These must *all* be included in libreboot
-  releases, even if unused. That way, even if `lbmk` does not yet integrate
-  support for a given board, someone who downloads libreboot can still make
-  changes to their local version of the build system, if they wish, to provide
-  a configuration for their hardware.
+  releases, even if unused. That way, even if the Libreboot build system does
+  not yet integrate support for a given board, someone who downloads libreboot
+  can still make changes to their local version of the build system, if they
+  wish, to provide a configuration for their hardware.
 
 Generally speaking, common sense is applied. For example, an exception to the
 minimalization might be if *blob* raminit and *libre* raminit are available, but
@@ -146,7 +147,7 @@ FREEDOM CATALOG
 ===============
 
 A *blob status* page should also be made available, educating people about the
-status of binary blobs on each machine supported by `lbmk`.
+status of binary blobs on each machine supported by the Libreboot build system.
 
 It is desirable to see a world where all hardware and software is libre, under
 the same ideology as the Libreboot project. Hardware!?
@@ -240,9 +241,9 @@ in the libreboot FAQ page. For example, HDD/SSD firmware is covered in the FAQ.
 Again, completely disregarded and shrugged off by the FSF.
 
 The libreboot project will not hide or overlook these issues, because they are
-indeed critical, but again, currently outside the scope of what lbmk does.
-At the moment, lbmk concerns itself just with coreboot, but this ought to
-change in the future.
+indeed critical, but again, currently outside the scope of what the Libreboot
+build system does. At the moment, the Libreboot build system concerns itself
+just with coreboot (and payloads), but this ought to change in the future.
 
 Examples of FSF *sweeping blobs under the rug*
 ----------------------------------------------
