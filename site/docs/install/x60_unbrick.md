@@ -139,23 +139,8 @@ This will provide adequate 3.3v DC at correct current levels. The SPI flash on a
 X60 shares a common 3.3V rail with many other components on the mainboard,
 which all draw a lot of current, more than your programmer can provide.
 
-Example RPi command:
-
-	sudo ./flashrom -p linux_spi:dev=/dev/spidev0.0,spispeed=4096 -w libreboot.rom -V
-
-If flashrom complains about multiple flash chips detected, just pass the `-c`
-option as it suggests, and pick any of the chips it lists. `spispeed=4096` or
-lower (e.g. `spispeed=512`) is recommended on this board. The flashing becomes
-unstable, on this machine, when you use higher speeds.
-
-Reverse the steps to re-assemble your system, after you've flashed the chip.
-
-It should be `Verifying flash... VERIFIED` at the end. If flashrom
-complains about multiple flash chip definitions detected, then choose
-one of them following the instructions in the output.
-
-Remove the programmer and put it away somewhere. Put back the tape and
-press firmly over it:\
+When you're finished flashing, remove the programmer and put it away somewhere.
+Put back the tape and press firmly over it:\
 ![](https://av.libreboot.org/x60_unbrick/0026.jpg)
 
 Your empty chassis:\

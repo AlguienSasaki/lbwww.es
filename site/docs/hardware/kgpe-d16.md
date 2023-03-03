@@ -22,7 +22,7 @@ recommend avoiding Kingston modules.*
 
 Flashing instructions can be found at
 [../install/\#flashrom](../install/#flashrom) - note that external
-flashing is required (e.g. BBB), if the proprietary (ASUS) firmware is
+flashing is required, if the proprietary (ASUS) firmware is
 currently installed. If you already have libreboot, by default it is
 possible to re-flash using software running in GNU+Linux on the
 KGPE-D16, without using external hardware.

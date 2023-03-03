@@ -1,5 +1,5 @@
 ---
-title: Flashing the T500 with a BeagleBone Black
+title: ThinkPad T500 external flashing
 x-toc-enable: true
 ...
 
@@ -75,43 +75,10 @@ MAC address {#macaddress}
 
 Refer to [mac\_address.md](../hardware/mac_address.md).
 
-Initial BBB configuration
-=========================
+Clip wiring
+===========
 
 Refer to [spi.md](spi.md) as a guide for external re-flashing.
-
-The following shows how to connect clip to the BBB (on the P9 header),
-for SOIC-16 (clip: Pomona 5252):
-
-```
-POMONA 5252 (correlate with the BBB guide)
-===  ethernet jack and VGA port ====
- NC              -       - 21
- 1               -       - 17
- NC              -       - NC
- NC              -       - NC
- NC              -       - NC
- NC              -       - NC
- 18              -       - 3.3V (PSU)
- 22              -       - NC - this is pin 1 on the flash chip
-===  SATA port ===
-This is how you will connect. Numbers refer to pin numbers on the BBB, on the plugs near the DC jack.
-```
-
-The following shows how to connect clip to the BBB (on the P9 header),
-for SOIC-8 (clip: Pomona 5250):
-
-```
-POMONA 5250 (correlate with the BBB guide)
-===  RAM slots ====
- 18              -       - 1
- 22              -       - NC
- NC              -       - 21
- 3.3V (PSU)      -       - 17 - this is pin 1 on the flash chip
-===  slot where the AC jack is connected ===
-```
-
-This is how you will connect. Numbers refer to pin numbers on the BBB, on the plugs near the DC jack.
 
 The procedure
 -------------
@@ -214,91 +181,7 @@ Connect your programmer, then connect GND and 3.3V\
 ![](https://av.libreboot.org/t400/0067.jpg) ![](https://av.libreboot.org/t400/0069.jpg)
 ![](https://av.libreboot.org/t400/0070.jpg) ![](https://av.libreboot.org/t400/0071.jpg)
 
-A dedicated 3.3V PSU was used to create this guide, but at ATX PSU is
-also fine:\
-![](https://av.libreboot.org/t400/0072.jpg)
-
-Of course, make sure to turn on your PSU:\
-![](https://av.libreboot.org/x200/disassembly/0013.jpg)
-
-Now, you should be ready to install libreboot.
-
-Log in as root on your BBB, using the instructions in
-[bbb\_setup.html\#bbb\_access](bbb_setup.html#bbb_access).
-
-Test that flashrom works:
-
-	./flashrom -p linux_spi:dev=/dev/spidev1.0,spispeed=512
-
-In this case, the output was:
-
-```
-flashrom v0.9.7-r1854 on Linux 3.8.13-bone47 (armv7l)
-flashrom is free software, get the source code at http://www.flashrom.org
-Calibrating delay loop... OK.
-Found Macronix flash chip "MX25L6405(D)" (8192 kB, SPI) on linux_spi.
-Found Macronix flash chip "MX25L6406E/MX25L6436E" (8192 kB, SPI) on linux_spi.
-Found Macronix flash chip "MX25L6445E/MX25L6473E" (8192 kB, SPI) on linux_spi.
-Multiple flash chip definitions match the detected chip(s): "MX25L6405(D)", "MX25L6406E/MX25L6436E", "MX25L6445E/MX25L6473E"
-Please specify which chip definition to use with the -c <chipname> option.
-```
-
-How to backup factory.rom (change the -c option as neeed, for your flash
-chip):
-
-```
-./flashrom -p linux_spi:dev=/dev/spidev1.0,spispeed=512 -r factory.rom
-./flashrom -p linux_spi:dev=/dev/spidev1.0,spispeed=512 -r factory1.rom
-./flashrom -p linux_spi:dev=/dev/spidev1.0,spispeed=512 -r factory2.rom
-```
-
-Note: the `-c` option is not required in libreboot's patched
-flashrom, because the redundant flash chip definitions in *flashchips.c*
-have been removed.\
-Now compare the 3 images:
-
-	sha512sum factory\*.rom
-
-If the hashes match, then just copy one of them (the factory.rom) to a
-safe place (on a drive connected to another system, not the BBB). This
-is useful for reverse engineering work, if there is a desirable
-behaviour in the original firmware that could be replicated in coreboot
-and libreboot.
-
-While there is a default MAC address inside the gbe region of flash image,
-it is not one you want to use. Make sure to change the MAC address to the one
-that is correct for your system, for **later internal flash**,
-but always remember to **flash unmodfied txtmode image first** as it is known
-to work and only this variant provides memtest. You can follow instructions
-at [ich9utils.md#ich9gen](ich9utils.md#ich9gen)
-to change the MAC address inside the libreboot image.
-
-Now flash it:
-
-	./flashrom -p linux_spi:dev=/dev/spidev1.0,spispeed=512 -w path/to/libreboot/rom/image.rom -V
-
-![](https://av.libreboot.org/x200/disassembly/0015.jpg)
-
-You might see errors, but if it says `Verifying flash... VERIFIED` at
-the end, then it's flashed and should boot. If you see errors, try
-again (and again, and again); the message `Chip content is identical to
-the requested image` is also an indication of a successful
-installation.
-
-Example output from running the command (see above):
-
-```
-flashrom v0.9.7-r1854 on Linux 3.8.13-bone47 (armv7l)
-flashrom is free software, get the source code at http://www.flashrom.org
-Calibrating delay loop... OK.
-Found Macronix flash chip "MX25L6405(D)" (8192 kB, SPI) on linux_spi.
-Reading old flash chip contents... done.
-Erasing and writing flash chip... FAILED at 0x00001000! Expected=0xff, Found=0x00, failed byte count from 0x00000000-0x0000ffff: 0xd716
-ERASE FAILED!
-Reading current flash chip contents... done. Looking for another erase function.
-Erase/write done.
-Verifying flash... VERIFIED.
-```
+Now flash Libreboot.
 
 Thermal paste (IMPORTANT)
 =========================

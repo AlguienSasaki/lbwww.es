@@ -119,13 +119,4 @@ This will provide adequate 3.3v DC at correct current levels. The SPI flash on a
 X60 Tablet shares a common 3.3V rail with many other components on the mainboard,
 which all draw a lot of current, more than most flashers can provide.
 
-Example command:
-
-	sudo ./flashrom -p linux_spi:dev=/dev/spidev0.0,spispeed=4096 -w libreboot.rom -V
-
-If flashrom complains about multiple flash chips detected, just pass the `-c`
-option as it suggests, and pick any of the chips it lists. `spispeed=4096` or
-lower (e.g. `spispeed=512`) is recommended on this board. The flashing becomes
-unstable, on this machine, when you use higher speeds.
-
 Reverse the steps to re-assemble your system, after you've flashed the chip.

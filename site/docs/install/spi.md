@@ -20,7 +20,9 @@ libreboot currently documents how to use these SPI programmers:
 * BeagleBone Black (BBB)
 
 Many other SPI programmers exist. More of them will be documented on this page,
-at a date in the future.
+at a date in the future. You can otherwise figure it out on your own; certain
+parts of this page are still useful, even if you're using a programmer that
+Libreboot does not yet document.
 
 Most systems in libreboot have to be re-flashed externally, using instructions
 on this and similar guides, the first time you flash. However, on all currently
