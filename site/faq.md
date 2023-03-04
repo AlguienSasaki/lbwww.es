@@ -391,6 +391,18 @@ the general reliability of your system.
 Microcode is already discussed in great detail, on the [binary blobs
 policy](news/policy.md).
 
+This interesting video talks about how a group of people reverse engineered
+the microcode on AMD processors:
+
+<https://yewtu.be/watch?v=W3FbTMqYi4U>
+
+The git repository for that project is here:
+
+<https://github.com/RUB-SysSec/Microcode>
+
+Both the video and the repository give some further insight about CPU
+microcode. The way it works on AMD will be very similar to Intel.
+
 ### Intel is uncooperative 
 
 For years, coreboot has been struggling against Intel. Intel has been
