@@ -245,6 +245,10 @@ libre firmware. This may be a useful additional step, for some users. See:
 
 <https://github.com/librerpi/>
 
+Website:
+
+<https://librerpi.github.io/>
+
 Install flashrom
 ----------------
 
