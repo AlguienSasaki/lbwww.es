@@ -237,6 +237,14 @@ They then removed it, after a public backlash, via the following commits:
 * <https://github.com/RPi-Distro/raspberrypi-sys-mods/commit/ed96790e6de281bc393b575c38aa8071ce39b555>
 * <https://github.com/RPi-Distro/raspberrypi-sys-mods/commit/4d1afece91008f3787495b520ac03b53fef754c6>
 
+Libre firmware on RPi
+---------------------
+
+The boot firmware on older Raspberry Pi models can be replaced, with entirely
+libre firmware. This may be a useful additional step, for some users. See:
+
+<https://github.com/librerpi/>
+
 Install flashrom
 ----------------
 
