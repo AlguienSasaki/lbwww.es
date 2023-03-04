@@ -708,6 +708,32 @@ What does a flash chip look like?
 You can find photos of various chip types on the following page:\
 [External 25xx NOR flashing guide](docs/install/spi.md)
 
+Inability to modprobe thinkpad\_acpi on Haswell
+===============================================
+
+This was reported by a user, running Debian 11 with
+kernel `5.19.0-0.deb11.2-amd64`. This may not be a problem on all Libreboot
+versions. The `thinkpad_acpi` module was not loading, with the following
+message in `dmesg`:
+
+```
+modprobe: ERROR: could not insert 'thinkpad_acpi': "No such device"
+```
+
+Battery info in `/sys` was absent, because of this. The user reported that
+the following workaround was effective (in Debian).
+
+Add this line to `/etc/modprobe.d/thinkpad_acpi.conf`:
+
+```
+options thinkpad_acpi force_load=1
+```
+
+TODO: test on latest lbmk revisions, after the update to coreboot revisions
+from February 2023 for Haswell boards. This issue was reported on Libreboot
+20221214, which was based on a much older revision of coreboot for those
+mainboards.
+
 What other firmware exists outside of libreboot?
 ==================================================
 
