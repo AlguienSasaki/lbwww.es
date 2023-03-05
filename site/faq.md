@@ -712,9 +712,8 @@ Inability to modprobe thinkpad\_acpi on Haswell
 ===============================================
 
 This was reported by a user, running Debian 11 with
-kernel `5.19.0-0.deb11.2-amd64`. This may not be a problem on all Libreboot
-versions. The `thinkpad_acpi` module was not loading, with the following
-message in `dmesg`:
+kernel `5.19.0-0.deb11.2-amd64`. The `thinkpad_acpi` module was not loading,
+with the following message:
 
 ```
 modprobe: ERROR: could not insert 'thinkpad_acpi': "No such device"
@@ -729,10 +728,31 @@ Add this line to `/etc/modprobe.d/thinkpad_acpi.conf`:
 options thinkpad_acpi force_load=1
 ```
 
-TODO: test on latest lbmk revisions, after the update to coreboot revisions
-from February 2023 for Haswell boards. This issue was reported on Libreboot
-20221214, which was based on a much older revision of coreboot for those
-mainboards.
+tlp
+---
+
+You can install the `tlp` package and start that service. For example, on
+Debian:
+
+```
+apt-get install tlp tlp-rdw
+systemctl enable tlp
+systemctl start tlp
+```
+
+Now read the manual:
+
+```
+man tlp-stat
+```
+
+As root, you can do:
+
+```
+tlp-stat -b
+```
+
+This will provide information about the battery.
 
 What other firmware exists outside of libreboot?
 ==================================================
