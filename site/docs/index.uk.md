@@ -2,7 +2,7 @@
 title: Документація
 ...
 
-Завжди перевіряйте [libreboot.org](https://libreboot.org/index.uk.md) для останніх оновлень
+Завжди перевіряйте [libreboot.org](https://libreboot.org/index.uk.html) для останніх оновлень
 libreboot. Новини, включаючи оголошення про випуски, може бути знайдено
 в [основній секції новин](../news/).
 
