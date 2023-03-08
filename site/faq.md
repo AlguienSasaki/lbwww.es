@@ -834,7 +834,7 @@ project may be interesting.
 
 Apparently, SATA drives themselves don't have DMA but can make use of
 it through the controller. This
-<http://www.lttconn.com/res/lttconn/pdres/201005/20100521170123066.pdf>
+<http://web.archive.org/web/20170319043915/http://www.lttconn.com/res/lttconn/pdres/201005/20100521170123066.pdf>
 (pages 388-414, 420-421, 427, 446-465, 492-522, 631-638) and this
 <http://www.intel.co.uk/content/dam/www/public/us/en/documents/technical-specifications/serial-ata-ahci-spec-rev1_3.pdf>
 (pages 59, 67, 94, 99).
