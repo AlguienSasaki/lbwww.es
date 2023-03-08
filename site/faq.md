@@ -893,12 +893,9 @@ Other links:
 
 It is recommended that you use full disk encryption, on HDDs connected
 via USB. There are several adapters available online, that allow you to
-connect SATA HDDs via USB. The libreboot documentation says how to install
-several distributions with full disk encryption. You can adapt these for
-use with USB drives:
-
--   [Full disk encryption with Debian](../docs/gnulinux/encrypted_debian.md)
--   [Full disk encryption with Parabola](../docs/gnulinux/encrypted_parabola.md)
+connect SATA HDDs via USB, and Libreboot is capable of booting from them the
+normal way. Consult the documentation for your Linux/BSD operating system, so
+that you can know how to install it with *full disk encryption*.
 
 The current theory (unproven) is that this will at least prevent
 malicious drives from wrongly manipulating data being read from or
