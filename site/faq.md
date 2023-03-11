@@ -145,7 +145,7 @@ the target (`target$`):
 	`source# tgtip="192.168.1.2"` change this
 
 
-3.  Create netconsole logging target on the source machine:
+4.  Create netconsole logging target on the source machine:
 
 	`source# modprobe netconsole`
 
@@ -165,15 +165,15 @@ the target (`target$`):
 
 	`source# echo 1 > enabled`
 
-4.  Change console loglevel to debugging:
+5.  Change console loglevel to debugging:
 
 	`source# dmesg -n debug`
 
-5.  Test if the logging works by e.g. inserting or removing an USB
+6.  Test if the logging works by e.g. inserting or removing an USB
     device on the source. There should be a few lines appearing in the
     terminal, in which you started netcat (nc), on the target host.
 
-6.  Try to reproduce the kernel panic.
+7.  Try to reproduce the kernel panic.
 
 Hardware compatibility
 ======================
@@ -196,7 +196,7 @@ targets that it supports, on both Intel and AMD.
 
 NOTE: The information below is slightly out of date. Nowadays, Intel ME does
 not run on an ARC coprocessor, but instead runs on a modified Intel 486 based
-architecture, with the ME firware written for x86 based on the Minix operating
+architecture, with the ME firmware written for x86 based on the Minix operating
 system. However, the overall design philosophy and operation is mostly the
 same.
 
