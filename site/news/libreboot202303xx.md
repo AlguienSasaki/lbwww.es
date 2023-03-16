@@ -5,7 +5,7 @@
 Introduction
 ============
 
-iDevelopment on Libreboot has largely focused on fixing issues since the
+Development on Libreboot has largely focused on fixing issues since the
 December 2022 release, and I very recently updated coreboot revisions (for
 x86 boards) to a newer February 2023 revision. The GRUB and SeaBIOS payloads
 have also been updated to newer revisions from upstream. A few minor fixes
