@@ -55,7 +55,7 @@ differences in their firmware, compared to Libreboot, is as follows:
 * IFD changes, related to read/write bits. Most likely irrelevant for the
 purpose of this
 * CBFS size on theirs is set to 8MB, and the reasoning is explained here:
-  <https://github.com/osresearch/heads/pull/1282#issuecomment-1400634600>
+  <https://github.com/osresearch/heads/pull/1282/commits/f0792117efa177ded19878f652c5a28e8cc62a71>
 
 Basically, the `mrc.bin` blob provided for raminit on Haswell (T440p/W541 etc)
 caches the coreboot code in ways that Libreboot currently screws up. At the
@@ -65,6 +65,9 @@ tests. I believe their changes will fix it.
 However, 8MB CBFS is far from ideal, as Libreboot currently provides much
 larger size of ~11.7MB CBFS size (same size as that of the BIOS region, per
 rules set in the intel flash descriptor).
+
+Heads also has unrelated differences in its IFD, which you can read about here:
+<https://github.com/osresearch/heads/pull/1282#issuecomment-1400634600>
 
 Libre MRC replacement
 ---------------------
