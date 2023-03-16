@@ -38,7 +38,7 @@ The problem
 -----------
 
 The S3 suspend/resume feature on Haswell (ThinkPad T440p/W541) is still
-broken. Resuming from suspend results in a cold boot. This is due quirks in
+broken. Resuming from suspend results in a cold boot. This is due to quirks in
 how Intel's MRC blob works (for raminit), coupled with how Libreboot configures
 both the IFD and CBFS size in coreboot.
 
