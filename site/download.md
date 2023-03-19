@@ -14,13 +14,13 @@ Libreboot from source, [read this page](docs/build/).
 GPG signing key
 ---------------
 
-**The latest release is Libreboot 20221214, under the `testing` directory.**
+**The latest release is Libreboot 20230319, under the `testing` directory.**
 
 ### NEW KEY
 
 Full key fingerprint: `98CC DDF8 E560 47F4 75C0  44BD D0C6 2464 FA8B 4856`
 
-The above key is for Libreboot 20221214, and subsequent releases.
+This key is for Libreboot releases *after* the 20160907 release.
 
 Download the key here: [lbkey.asc](lbkey.asc)
 
@@ -28,7 +28,7 @@ Libreboot releases are signed using GPG.
 
 ### OLD KEY:
 
-This key is for Libreboot 20160907 and all older releases:
+This key is for Libreboot 20160907, and releases older than 20160907:
 
 Full key fingerprint: CDC9 CAE3 2CB4 B7FC 84FD  C804 969A 9795 05E8 C5B2
 
@@ -51,7 +51,7 @@ there is a Git repository that you can download from. Go here:
 HTTPS mirrors {#https}
 -------------
 
-**The latest release is Libreboot 20221214, under the `testing` directory.**
+**The latest release is Libreboot 20230319, under the `testing` directory.**
 
 These mirrors are recommended, since they use TLS (https://) encryption.
 
@@ -142,7 +142,7 @@ crontab. This page tells you how to use crontab:
 HTTP mirrors {#http}
 ------------
 
-**The latest release is Libreboot 20221214, under the `testing` directory.**
+**The latest release is Libreboot 20230319, under the `testing` directory.**
 
 WARNING: these mirrors are non-HTTPS which means that they are
 unencrypted. Your traffic could be subject to interference by
@@ -156,7 +156,7 @@ if using HTTPS.
 FTP mirrors {#ftp}
 -----------
 
-**The latest release is Libreboot 20221214, under the `testing` directory.**
+**The latest release is Libreboot 20230319, under the `testing` directory.**
 
 WARNING: FTP is also unencrypted, like HTTP. The same risks are present.
 

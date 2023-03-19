@@ -83,13 +83,22 @@ For example:
 
 	./blobutil inject -r x230_libreboot.rom -b x230_12mb -m 00:f6:f0:40:71:fd
 
+**NOTE: Haswell machines come with `mrc.bin` or without, depending on the
+ROM image configuration. These ROM configs have `mrc.bin`: `t440pmrc_12mb`
+and `w541mrc_12mb`. These ROM configs have libre MRC: `t440p_12mb`
+and `w541_12mb` - it is critical that you choose the right one, when using
+the `-b` flag in the `blobutil inject` command. For example, if you
+used `-b t440p_12mb` on a ROM image that actually corresponds
+to `t440pmrc_12mb`, then the required `mrc.bin` file would not be added
+and that ROM would not boot when flashed.**
+
 NOTE: the MAC changer makes use of `nvmutil`, which you can read more about in
 the [nvmutil documentation](nvmutil.md).
 
 **WARNING: This is broken in Libreboot 20221214's src archive. It fails when
-attempting to use cbfstool, due to a faulty check in a script. The fix is as
-follows (and has been applied already in the lbmk Git repository, as of 22
-December 2022):**
+attempting to use cbfstool, due to a faulty check in a script. This is fixed in
+recent Libreboot releases or revisions. The fix is as
+follows:
 
 Edit line 137 in `resources/scripts/blobs/inject`. The line in 20221214 says
 this:

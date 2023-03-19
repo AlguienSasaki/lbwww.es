@@ -13,9 +13,8 @@ x-toc-enable: true
 через [\#libreboot](https://web.libera.chat/#libreboot)
 на [Libera](https://libera.chat/) IRC.
 
-**НОВИЙ ВИПУСК: Останній випуск Libreboot 20221214, випущено
-14 грудня 2022.
-Дивіться: [Оголошення про випуск Libreboot 20221214](news/libreboot20221214.md).**
+**НОВИЙ ВИПУСК: Останній випуск Libreboot 20230319, випущено 19 березня 2023.
+Дивіться: [Оголошення про випуск Libreboot 20230319](news/libreboot20230319.md).**
 
 Чому вам варто використовувати *libreboot*?
 ----------------------------
