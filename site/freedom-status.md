@@ -246,7 +246,7 @@ More about Intel ME removal/disabling
 ----------------------------------
 
 *Libreboot* provides a way to fully remove the ME firmware, while retaining
-full of the machine, on GM45 platforms with ICH9M southbridge. These are
+full use of the machine, on GM45 platforms with ICH9M southbridge. These are
 laptops: ThinkPad X200/T400/T500/W500 and so on of that generation. See:
 [docs/install/ich9utils.md](docs/install/ich9utils.md)
 
