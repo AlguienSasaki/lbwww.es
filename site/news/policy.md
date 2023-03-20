@@ -5,9 +5,10 @@
 Introduction
 ============
 
-**[Osboot merged with and became part of Libreboot](merge.md) on 16
-November 2022. This page contains the new Libreboot policy, which is derived
-from the osboot one.**
+This article describes the *principles* that govern the Libreboot project. For
+information about *how those principles are applied in practise*, please read
+this article instead: [Software and hardware freedom status for each mainboard
+supported by Libreboot](../freedom-status.md)
 
 Libreboot's policy is to provide as much software freedom as possible to each
 user, on each and every bit of hardware supported, and to *support as much

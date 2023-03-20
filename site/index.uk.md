@@ -4,7 +4,7 @@ x-toc-enable: true
 ...
 
 Проект `libreboot` надає
-[вільну](https://uk.wikipedia.org/wiki/%D0%92%D1%96%D0%BB%D1%8C%D0%BD%D0%B5_%D0%BF%D1%80%D0%BE%D0%B3%D1%80%D0%B0%D0%BC%D0%BD%D0%B5_%D0%B7%D0%B0%D0%B1%D0%B5%D0%B7%D0%BF%D0%B5%D1%87%D0%B5%D0%BD%D0%BD%D1%8F) *завантажувальну
+[вільну](freedom-status.md) *завантажувальну
 прошивку*, яка ініціалізує апаратне забезпечення (наприклад, контролер пам'яті, ЦП,
 периферію) на [конкретних цілях Intel/AMD x86 та ARM](docs/hardware/), що
 потім розпочинає завантажувач для вашої операційної системи. [GNU+Linux](docs/gnulinux/)
