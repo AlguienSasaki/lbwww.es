@@ -1,4 +1,4 @@
-% Ways that Libreboot protects and enhances software freedom
+% What level of Software Freedom does Libreboot give me?
 % Leah Rowe
 % 20 March 2023
 
