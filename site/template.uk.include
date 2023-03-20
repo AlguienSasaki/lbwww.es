@@ -69,8 +69,8 @@ $endif$
 <ul>
 <li><a href="/index.uk.html">Домашня</a></li>
 <li><a href="/faq.html">FAQ</a></li>
-<li><a href="/freedom-status.html">Freedom status</a></li>
-<li><a href="/download.uk.html">Завантаження</a></li>
+<li><strong><a href="/freedom-status.html">Freedom status</a></strong></li>
+<li><strong><a href="/download.uk.html">Завантаження</a></strong></li>
 <li><a href="/docs/install/">Встановлення</a></li>
 <li><a href="/docs/index.uk.html">Документація</a></li>
 <li><a href="/news/">Новини</a></li>
