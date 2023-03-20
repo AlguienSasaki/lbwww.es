@@ -26,7 +26,7 @@ various components of Libreboot. It is the *goal* of Libreboot to promote
 *software freedom*, helping as many people as possible achieve a level of
 sovereignty in their personal computing, reducing (or eliminating) the power
 that proprietary software developers would otherwise have over them. Libreboot
-makes great strides to private *boot firmware*, based on coreboot, with as much
+makes great strides to provide *boot firmware*, based on coreboot, with as much
 libre *source code* as possible. It is the goal of the Libreboot project to
 help bring about a world where software freedom is the *default* for everyone.
 
