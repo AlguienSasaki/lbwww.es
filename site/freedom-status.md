@@ -392,7 +392,7 @@ like. You could not manufacture your own replacements of these machines.
 
 Some schematics and boardview files describing the circuit boards of each
 machine are available online, through various channels. You have to search for
-them yourself; one day, the Righdt To Repair movement will hopefully bring
+them yourself; one day, the Right To Repair movement will hopefully bring
 about universal access to such documents by the public.
 
 Further reading
