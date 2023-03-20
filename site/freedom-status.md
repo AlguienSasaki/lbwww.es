@@ -229,7 +229,7 @@ the Libreboot project.
 If these assumptions are held, and you agreed with Libreboot's article about
 microcode as linked above, and you considered the *fact* that (at least as of
 now) Libreboot is capable of purely libre initialisation within coreboot, then
-we can reasably assert that Libreboot provides a decent level of software
+we can reasonably assert that Libreboot provides a decent level of software
 freedom. This, in spite of how some may otherwise feel if they *don't* have
 such perspective.
 
