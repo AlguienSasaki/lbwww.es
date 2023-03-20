@@ -8,6 +8,22 @@ AKA Frequently Questioned Answers
 Important issues
 ================
 
+What is the status of software freedom in Libreboot?
+----------------------------------------------------
+
+An article was written for Libreboot, to be maintained over time, that
+accurately describes the current status Libreboot in terms of software freedom,
+describing any caveats that exist for specific hardware platforms.
+
+Please read the article, thus:
+
+[Software and hardware freedom status for each mainboard supported by
+Libreboot](freedom-status.md)
+
+You may also find this other section of the FAQ useful:
+[What level of software freedom does Libreboot give
+me?](#what-level-of-software-freedom-does-libreboot-give-me)
+
 How to compile libreboot from source
 ------------------------------------
 
@@ -1007,6 +1023,10 @@ What level of software freedom does libreboot give me?
 ===================================================
 
 Please read the [libreboot binary blob minimalisation policy](news/policy.md).
+
+Please also read:
+[Software and hardware freedom status for each mainboard supported by
+Libreboot](software-freedom.md)
 
 The libreboot firmware provides host hardware initialisation inside ROM files,
 that can be written to NOR flash, but on many systems there exist
