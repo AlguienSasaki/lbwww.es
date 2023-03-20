@@ -2,12 +2,12 @@
 % Leah Rowe
 % 20 March 2023
 
-Quite a while ago, I wrote a *policy* in Libreboot that defines, precisely, the
-standards of what Libreboot will accept in releases as it pertains to *Software
-Freedom*. This policy was written, because a *lack of clarity* existed, so I
-wanted to make sure that people knew exactly what the Libreboot project is all
-about, and what they can expect. It is essentially a *manifesto*, describing
-the *ideology* of the Libreboot project.
+Quite a while ago, I [wrote a policy](policy.md) in Libreboot that defines,
+precisely, the standards of what Libreboot will accept in releases as it
+pertains to *Software Freedom*. This policy was written, because a *lack of
+clarity* existed, so I wanted to make sure that people knew exactly what the
+Libreboot project is all about, and what they can expect. It is essentially
+a *manifesto*, describing the *ideology* of the Libreboot project.
 
 Now, *ideology* is all well and good, but it must be translated into something
 concrete that exists in the real world. You can't get there with thought!
