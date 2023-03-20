@@ -350,6 +350,8 @@ not *software* blobs. They are configurations provided in a binary format,
 fully readable by libre software. For example:
 
 * Libreboot's `ich9gen` program generates ICH9M flash descriptors from scratch.
+* Coreboot's `ifdtool` program has extensive features for manipulating Intel
+  flash descriptors.
 * Corebot's `bincfg` program generates any sort of binary from a `.spec` file
   which can describe any binary format in a human readable format. It contains
   several flash descriptors for several platforms, but Libreboot does not use
