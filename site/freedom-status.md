@@ -335,6 +335,11 @@ Neutered ME required on these targets: `t420_8mb`, `t420s_8mb`, `t430_12mb`,
 `w541_12mb`, `w541mrc_12mb`, `x220_8mb`, `x230_12mb`, `x230_16mb`,
 `x230edp_12mb`, `x230t_12mb` and `x230t_16mb`.
 
+As stated, Libreboot provides this in a state where the ME is no longer a
+threat to security. It initialises itself, but then does nothing, so it's
+disabled. This is done using `me_cleaner`. See:
+<https://github.com/corna/me_cleaner/wiki/How-does-it-work%3F>
+
 *Microcode* updates for CPU provided on *all* x86 platforms, by default. Not
 technically required, but highly recommended. To remove, do:
 
