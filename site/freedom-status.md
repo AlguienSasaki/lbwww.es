@@ -147,7 +147,7 @@ In a *descriptor* configuration, the flash is divided into regions such as:
   either removes it or (with the `me_cleaner` program) reconfigures it in such
   a way where it is disabled during machine initialisation.
 * Platform region: non-program data, usually just a bunch of strings put there
-  be the hardware vendor.
+  by the hardware vendor.
 * BIOS region: this contains the main boot firmware, responsible for
   initialising the CPU, memory controller and peripherals, putting the
   machine into a state where it can run programs (most likely a bootloader,
