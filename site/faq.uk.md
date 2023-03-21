@@ -8,21 +8,21 @@ x-toc-enable: true
 Важливі питання
 ================
 
-What is the status of software freedom in Libreboot?
+Який статус свободи програмного забезпечення в Libreboot?
 ----------------------------------------------------
 
-An article was written for Libreboot, to be maintained over time, that
-accurately describes the current status Libreboot in terms of software freedom,
-describing any caveats that exist for specific hardware platforms.
+Стаття була написана для Libreboot, для підтримки протягом часу, яка
+ретельно описує поточний статус Libreboot с точки зору свободи програмного забезпечення,
+пояснюючи будь-які підводні камені, які існують для конкретних платформ апаратного забезпечення.
 
-Please read the article, thus:
+Будь-ласка, прочитайте статтю щодо цього:
 
-[Software and hardware freedom status for each mainboard supported by
+[Статус свободи програмного та апаратного забезпечення для кожної плати, яка підтримується
 Libreboot](freedom-status.md)
 
-You may also find this other section of the FAQ useful:
-[What level of software freedom does Libreboot give
-me?](#який-рівень-програмної-свободи-дає-мені-libreboot)
+Ви також можете знайти цю іншу секцію сторінки поширених запитань корисною:
+[Який рівень свободи програмного забезпечення Libreboot дає
+мені?](#який-рівень-програмної-свободи-дає-мені-libreboot)
 
 Як скомпілювати libreboot з джерельного коду
 ------------------------------------
