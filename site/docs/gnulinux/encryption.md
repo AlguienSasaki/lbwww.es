@@ -87,7 +87,7 @@ You can obtain the UUID from `blkid` or simply use the linux block device name `
 lsblk -o 'PATH,LABEL,UUID' # to get UUID
 sudo vim /etc/crypttab
 
-> boot_crypt UUID=YOUR_UUID /etc/keys/boot.key luks,discard,key-slot=1
+> boot_crypt UUID=YOUR_UUID /etc/keys/boot.key luks,key-slot=1
 ```
 **Step 3:**
 Add the crypt device to your fstab.

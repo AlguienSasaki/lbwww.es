@@ -26,14 +26,7 @@ Refer to the following pages:
 Encrypted (LUKS/dm-crypt) installations
 =======================================
 
-You should install with unencrypted `/boot` partition, but everything else
-encrypted. The GRUB payload has LUKSv1 support and (buggy) LUKSv2 support.
-
-There used to be guides for encrypted `/boot` on libreboot.org, but it's not
-really viable to do that anymore (with GRUB), due to buggy/incomplete LUKS
-support in GRUB.
-
-A better solution for that would be a Linux payload in flash, handling the
+A better solution for encryption would be a Linux payload in flash, handling the
 encryption, at least if you want to use Linux, because then it'll have
 perfect LUKS support.
 
@@ -43,18 +36,8 @@ logic in it that will try to automatically use whatever you have installed,
 by switching to it. In this way, most installations Just Work, so long as
 the `/boot` partition is accessible.
 
-If you do want encrypted /boot in your distro, please ensure that you have
-downgraded to LUKSv1, and generic advice for booting is this (press C to
-access a GRUB terminal, when you're in the GRUB payload):
-
-```
-set root=`lvm/bla-bla`
-linux /vmlinuz root=/dev/mapper/bla-bla cryptdevice=/dev/mapper/bla-bla:root
-initrd /initrd.img
-boot
-```
-
-Adapt according to your configuration.
+Full encryption for basic LUKS2 is supported in libreboot.
+See [the guide](encryption.md) for more detail.
 
 Rebooting system in case of freeze
 ===================================
