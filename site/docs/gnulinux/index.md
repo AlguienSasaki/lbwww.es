@@ -39,6 +39,8 @@ the `/boot` partition is accessible.
 Full encryption for basic LUKS2 is supported in libreboot.
 See [the guide](encryption.md) for more detail.
 
+[The ZFSbootmenu guide](zfsbootmenu.md) builds upon the main encryption guide but describes a setup with ZFS native encryption and ZFSbootmenu.
+
 Rebooting system in case of freeze
 ===================================
 
