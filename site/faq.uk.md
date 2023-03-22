@@ -846,7 +846,7 @@ LUKS і зберігати їх у незашифрованому вигляді
 
 Про існування життєздатної вільної заміни прошивки наразі невідомо. Для
 SSD проект
-[OpenSSD](http://www.openssd-project.org/wiki/The_OpenSSD_Project)
+[OpenSSD](https://web.archive.org/web/20220425071606/http://www.openssd-project.org/wiki/The_OpenSSD_Project)
 може бути цікавим.
 
 Очевидно, диски SATA самі по собі не мають DMA, але можуть використовувати його

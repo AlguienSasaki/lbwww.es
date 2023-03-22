@@ -845,7 +845,7 @@ Some proof of concepts have been demonstrated. For HDDs:
 
 Viable free replacement firmware is currently unknown to exist. For
 SSDs, the
-[OpenSSD](http://www.openssd-project.org/wiki/The_OpenSSD_Project)
+[OpenSSD](https://web.archive.org/web/20220425071606/http://www.openssd-project.org/wiki/The_OpenSSD_Project)
 project may be interesting.
 
 Apparently, SATA drives themselves don't have DMA but can make use of
