@@ -1,4 +1,4 @@
-% T440p ROMs using mrc.bin deleted from release (libre MRC setups retained)
+% T440p ROMs using mrc.bin deleted (libre MRC setups retained)
 % Leah Rowe
 % 23 March 2023
 
