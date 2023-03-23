@@ -2,6 +2,16 @@
 % Leah Rowe
 % 19 March 2023
 
+**UPDATE: `t440pmrc_12mb` and `w541mrc_12mb` images were deleted from the
+release; PLEASE DO NOT USE THEM AS THEY DO NOT BOOT.**
+
+**The images of target `t440p_12mb` and `w541_12mb` boot just fine, and these
+use the libre MRC replacement for raminit. The `t440pmrc_12mb`
+and `w541mrc_12mb` images use blob MRC. More info about that is below, and
+you can read this follow-up news article about the retroactive deletion, see:**
+
+**[libreboot20230319_update.md](libreboot2023019_update.md)**
+
 Libreboot provides boot firmware for supported x86/ARM machines, starting a
 bootloader that then loads your operating system. It replaces proprietary
 BIOS/UEFI firmware on x86 machines, and provides an *improved* configuration
