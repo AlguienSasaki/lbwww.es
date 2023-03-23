@@ -10,7 +10,7 @@ use the libre MRC replacement for raminit. The `t440pmrc_12mb`
 and `w541mrc_12mb` images use blob MRC. More info about that is below, and
 you can read this follow-up news article about the retroactive deletion, see:**
 
-**[libreboot20230319_update.md](libreboot2023019_update.md)**
+**[libreboot20230319_update.md](libreboot20230319_update.md)**
 
 Libreboot provides boot firmware for supported x86/ARM machines, starting a
 bootloader that then loads your operating system. It replaces proprietary
