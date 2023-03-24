@@ -2,6 +2,17 @@
 % Leah Rowe
 % 23 March 2023
 
+**UPDATE: I think I fixed the issue mentioned in the update below. As I write
+this note, I need to wait until I can access my flashing gear. Will re-add
+t440pmrc/w541mrc to rsync if i'm right. on irc last night i discovered mrc
+needs to be in a fixed offset, after looking at coreboot src. i replicated
+that offset using `-b` switch in cbfstool. what i need to know is whether it's
+always the same offse tfor anyone who compiles it, then i can adjust in the
+blobtool script**
+
+note above and/or this page will be amended/deleted if fix works, and then i
+will just re-add mrc-based images to rsync. sorry for inconvenience.
+
 Introduction, and warning
 =========================
 

@@ -2,6 +2,16 @@
 % Leah Rowe
 % 19 March 2023
 
+**UPDATE: I think I fixed the issue mentioned in the update below. As I write
+this note, I need to wait until I can access my flashing gear. Will re-add
+t440pmrc/w541mrc to rsync if i'm right. on irc last night i discovered mrc
+needs to be in a fixed offset, after looking at coreboot src. i replicated
+that offset using `-b` switch in cbfstool. what i need to know is whether it's
+always the same offse tfor anyone who compiles it, then i can adjust in the
+blobtool script**
+
+Original update announcement below:
+
 **UPDATE: `t440pmrc_12mb` and `w541mrc_12mb` images were deleted from the
 release; PLEASE DO NOT USE THEM AS THEY DO NOT BOOT.**
 
@@ -9,6 +19,8 @@ release; PLEASE DO NOT USE THEM AS THEY DO NOT BOOT.**
 use the libre MRC replacement for raminit. The `t440pmrc_12mb`
 and `w541mrc_12mb` images use blob MRC. More info about that is below, and
 you can read this follow-up news article about the retroactive deletion, see:**
+
+^ The notes above will be updated once this is cleared up.
 
 **[libreboot20230319_update.md](libreboot20230319_update.md)**
 
