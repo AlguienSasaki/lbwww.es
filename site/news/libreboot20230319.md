@@ -2,27 +2,17 @@
 % Leah Rowe
 % 19 March 2023
 
-**UPDATE: I think I fixed the issue mentioned in the update below. As I write
-this note, I need to wait until I can access my flashing gear. Will re-add
-t440pmrc/w541mrc to rsync if i'm right. on irc last night i discovered mrc
-needs to be in a fixed offset, after looking at coreboot src. i replicated
-that offset using `-b` switch in cbfstool. what i need to know is whether it's
-always the same offse tfor anyone who compiles it, then i can adjust in the
-blobtool script**
+**UPDATE ON 24 MARCH 2023:
+T440p/W541 ROM images using blob `mrc.bin` for raminit, were deleted
+from the rsync mirrors for this release. The ones with libre MRC are still
+available. This was due to a bug that has now been fixed. For more information,
+see:  [libreboot20230319_update.md](libreboot20230319_update.md) - you should
+build from `lbmk.git` directly if you want to use those images, or use the ones
+with the libre MRC code in it, for which ROM images (as stated) are still
+available. Thanks.**
 
-Original update announcement below:
-
-**UPDATE: `t440pmrc_12mb` and `w541mrc_12mb` images were deleted from the
-release; PLEASE DO NOT USE THEM AS THEY DO NOT BOOT.**
-
-**The images of target `t440p_12mb` and `w541_12mb` boot just fine, and these
-use the libre MRC replacement for raminit. The `t440pmrc_12mb`
-and `w541mrc_12mb` images use blob MRC. More info about that is below, and
-you can read this follow-up news article about the retroactive deletion, see:**
-
-^ The notes above will be updated once this is cleared up.
-
-**[libreboot20230319_update.md](libreboot20230319_update.md)**
+Introduction
+============
 
 Libreboot provides boot firmware for supported x86/ARM machines, starting a
 bootloader that then loads your operating system. It replaces proprietary
