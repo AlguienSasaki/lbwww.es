@@ -23,8 +23,8 @@ Libreboot *also* has these images:
 * `t440p_12mb`
 * `w541_12mb`
 
-These ones, the ones without `mrc` in the name, use experiment source code from
-Angel Pons of coreboot (`hell` on IRC), removing the need for `mrc.bin`
+These ones, the ones without `mrc` in the name, use experimental source code
+from Angel Pons of coreboot (`hell` on IRC), removing the need for `mrc.bin`
 entirely. *These* ROM images are still available, in the rsync mirrors, for the
 Libreboot 20230319 release.
 
