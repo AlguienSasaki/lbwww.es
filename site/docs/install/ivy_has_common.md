@@ -92,6 +92,13 @@ used `-b t440p_12mb` on a ROM image that actually corresponds
 to `t440pmrc_12mb`, then the required `mrc.bin` file would not be added
 and that ROM would not boot when flashed.**
 
+**NOTE: In the Libreboot 20230319 src archive or git tag, the `blobutil`
+insert method is broken on Haswell configs that need `mrc.bin`, because it does
+not insert `mrc.bin` at the correct offset. This was fixed in revisions after
+the release, and will be available in the next release after that. Read
+the [Libreboot 20230319 update
+announcement](../../news/libreboot20230319_update.md) for more information.**
+
 NOTE: the MAC changer makes use of `nvmutil`, which you can read more about in
 the [nvmutil documentation](nvmutil.md).
 
