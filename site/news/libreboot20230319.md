@@ -83,7 +83,10 @@ The changes can be summarised, thus:
 
 NOTE: T440p/W541 images with `mrc.bin` must be compiled from source. They were
 removed from the release, due to a bug reported in scripts used for preparing
-them post-build, when users install them. The bug was fixed, see:
+them post-build, when users install them. The bug was fixed in a revision
+after the release. If you still have those ROM images from prior to deletion,
+and want to use them, you should apply the following patch to your archive
+of the release, or just use latest `lbmk` from the Git repository; see:
 
 <https://browse.libreboot.org/lbmk.git/commit/?id=883967160c4cfec3387a7406f29438752e2ad9b2>
 
