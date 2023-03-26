@@ -2,15 +2,6 @@
 % Leah Rowe
 % 19 March 2023
 
-**UPDATE ON 24 MARCH 2023:
-T440p/W541 ROM images using blob `mrc.bin` for raminit, were deleted
-from the rsync mirrors for this release. The ones with libre MRC are still
-available. This was due to a bug that has now been fixed. For more information,
-see:  [libreboot20230319_update.md](libreboot20230319_update.md) - you should
-build from `lbmk.git` directly if you want to use those images, or use the ones
-with the libre MRC code in it, for which ROM images (as stated) are still
-available. Thanks.**
-
 Introduction
 ============
 
@@ -89,6 +80,16 @@ The changes can be summarised, thus:
   coreboot utilities are needed (e.g. cbfstool, ifdtool)
 * util/nvmutil: Massively re-factored the codebase, making it more efficient
   and *correct*.
+
+NOTE: T440p/W541 images with `mrc.bin` must be compiled from source. They were
+removed from the release, due to a bug reported in scripts used for preparing
+them post-build, when users install them. The bug was fixed, see:
+
+<https://browse.libreboot.org/lbmk.git/commit/?id=883967160c4cfec3387a7406f29438752e2ad9b2>
+
+Pre-compiled ROM images will for the `t440pmrc_12mb` and `w541mrc_12mb` targets
+will be available in the next release; the `t440p_12mb` and `w541_12mb` images
+are still available in this release, pre-compiled.
 
 REMARK: libre raminit on Haswell
 --------------------------------
