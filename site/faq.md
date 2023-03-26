@@ -891,8 +891,9 @@ as well as a computer.
 Based on this, it's safe to say that use of USB instead of SATA is
 advisable if security is a concern. USB 2.0 has plenty of bandwidth for
 many HDDs (a few high-end ones can use more bandwidth than USB 2.0 is
-capable of), but for SSDs it might be problematic (unless you're using
-USB 3.0, which is not yet usable in freedom. See
+capable of), but for SSDs it might be problematic. USB 3.0 will provide more
+reasonable performance, though note that depending on the system, you may have
+to deal with binary blob XHCI firmware in your kernel (if that bothers you).
 
 Use of USB is also not an absolute guarantee of safety, so do beware.
 The attack surface becomes much smaller, but a malicious drive could
