@@ -88,7 +88,7 @@ after the release. If you still have those ROM images from prior to deletion,
 and want to use them, you should apply the following patch to your archive
 of the release, or just use latest `lbmk` from the Git repository; see:
 
-<https://browse.libreboot.org/lbmk.git/commit/?id=883967160c4cfec3387a7406f29438752e2ad9b2>
+<https://browse.libreboot.org/lbmk.git/commit/?id=da6bf57a3f57f2625a4903cafb5cfd10ea4a1dae>
 
 Pre-compiled ROM images will for the `t440pmrc_12mb` and `w541mrc_12mb` targets
 will be available in the next release; the `t440p_12mb` and `w541_12mb` images
