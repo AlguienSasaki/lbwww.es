@@ -70,6 +70,14 @@ like they will ever fix it.
 If you see someone talking about CH341A, please direct them to this page and
 tell them why the CH341A is bad.
 
+These photos show both modifications (3.3v logic and WP/HOLD pull-up
+resistors) performed, on the black CH341A:\
+<img tabindex=1 src="https://av.libreboot.org/ch341a/0000_th.jpg" /><span class="f"><img src="https://av.libreboot.org/ch341a/0000.jpg" /></span>
+<img tabindex=1 src="https://av.libreboot.org/ch341a/0001_th.jpg" /><span class="f"><img src="https://av.libreboot.org/ch341a/0001.jpg" /></span>
+
+The green version (not shown above) may come with 3.3v logic already wired, but
+still needs to have pull-up resistors placed for WP/HOLD.
+
 Identify which flash type you have
 ==================================
 
