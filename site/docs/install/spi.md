@@ -54,18 +54,40 @@ In practise, most people will not fix their ch341a and instead just risk it,
 so no documentation will be provided for ch341a on this website. It is best
 to discourage use of that device.
 
-**Not covered on that eevblog page: the WP/HOLD pins (pins 3 and 7) must be held high via pull-up resistors, but on CH341A dongles, they are directly connected to 3.3V DC (continuity with pin 8). It is advisable to cut these two connections, to the WP and HOLD pins, and jump the cuts using pull-up resistors instead. A value between 1k to 10k (ohms) should be fine.**
+**Not covered on that eevblog page: the WP/HOLD pins (pins 3 and 7) must be
+held high via pull-up resistors, but on CH341A dongles, they are directly
+connected to 3.3V DC (continuity with pin 8). It is advisable to cut these
+two connections, to the WP and HOLD pins, and jump the cuts using pull-up
+resistors instead. A value between 1k to 10k (ohms) should be fine.**
 
-Alternatively, you might work around this by using an adapter or logic-level
-converter that can tolerate the overvoltage (which you would need for 1.8V chips
-anyway).
+**In the event of a surge, like for example you connect the clip wrongly and
+cause a short circuit between two pins, lack of pull-up resistors on WP/HOLD
+could cause a direct short between VCC/ground, which would cause a lot of heat
+build up and possibly fire (and definitely damaged circuitry). On SOIC8, pin 3
+is WP and 4 is GND, so a direct 3.3v connection there is quite hazardous for
+that reason; all the more reason to use a pull-up resistor.**
+
+The mainboard that you want to flash (if using e.g. pomona clip) will probably
+have pull-up resistors on it already for WP/HOLD, so simply cutting WP/HOLD
+on the CH341A would also be acceptable. The pull-up resistors that you
+place (in such a mod) on the CH341A are only useful if you also want to flash
+chips in the ZIF socket. If pull-up resistors exist both on e.g. the laptop
+mainboard and on the CH341A, it just means the equivalent series resistance
+will be of the two resistors (on each line) in parallel. If we assume that
+a laptop is likely to have a resistor size of ~3.3k for pull-ups, then a value
+of ~5.6k ohms on the CH341A side seems reasonable.
+
+Alternatively, you might work around the voltage issue by using an adapter with
+logic-level converter, making sure to have matching vcc going into the flash.
+Use of a logic level converter would be quite flexible, in this scenario, and
+you could use it to set many voltages such as 1.8v or 3.3v.
 
 In case it's not clear:
 
-Please do not buy the ch341a! It is incorrectly engineered for the purpose of
-ROM flashing on systems with 3.3v SPI (which is most coreboot systems). DO NOT
-USE IT! This issue still isn't fixed by the manufacturer, and it doesn't look
-like they will ever fix it.
+**Please do not buy the ch341a!** It is incorrectly engineered for the purpose
+of ROM flashing on systems with 3.3v SPI (which is most coreboot systems). DO
+NOT USE IT! This issue still isn't fixed by the manufacturer, and it doesn't
+look like they will ever fix it.
 
 If you see someone talking about CH341A, please direct them to this page and
 tell them why the CH341A is bad.
