@@ -17,7 +17,7 @@ have enough testers to be confident in providing ROM images for it.
 I would like to re-add support for ASUS KGPE-D16 in a future Libreboot release,
 but this time I'd like to be able to test it myself.
 
-I don't currently have a KGPE-D16 set up at my lab, because fing parts
+I don't currently have a KGPE-D16 set up at my lab, because finding parts
 and (especially) the coolers is a challenge, to say the least.
 
 If you would like to help, and have a machine to spare, please can you contact
