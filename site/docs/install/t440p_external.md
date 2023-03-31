@@ -21,7 +21,7 @@ Lbmk includes a script that will automatically inject the necessary blobs into a
 The script can determine the board automatically if you have not changed the name, but you can also manually set the board name with the `-b` flag.
 
 In order to inject the necessary blobs into a rom image, run the script from the root of lbmk and point to the rom image.
-For example:
+For example (libre replacement of `mrc.bin`):
 
 	./blobutil inject -r t440p_libreboot.rom -b t440p_12mb
 
@@ -29,6 +29,15 @@ Optionally, you can use this script to modify the mac address of the rom with th
 For example:
 
 	./blobutil inject -r t440p_libreboot.rom -b t440p_12mb -m 00:f6:f0:40:71:fd
+
+If you're flashing a ROM that needs blob `mrc.bin`, you would do one of these
+instead, for example:
+
+	./blobutil inject -r t440p_libreboot.rom -b t440pmrc_12mb
+
+or (inserting a different MAC address)
+
+	./blobutil inject -r t440p_libreboot.rom -b t440pmrc_12mb -m 00:f6:f0:40:71:fd
 
 NOTE: this makes use of `nvmutil`, which you can read more about in
 the [nvmutil documentation](nvmutil.md).
