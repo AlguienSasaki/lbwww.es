@@ -135,3 +135,10 @@ Sample output:
 
 7WHT19WW is the version in different notation, use search engine to find
 out regular version - in this case it's a 1.06 for x200 tablet
+
+Alternatively, if `dmidecode` is available, run the following command (as `root`) to
+find the currently flashed BIOS version:
+
+	dmidecode -s bios-version
+
+On a T400 running the latest BIOS this would give `7UET94WW (3.24 )` as result.
