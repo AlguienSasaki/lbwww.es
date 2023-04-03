@@ -105,27 +105,6 @@ or to boot (with SeaGRUB and/or SeaBIOS) from regular SATA and then use
 it in GNU+Linux. The Linux kernel is capable of using the PIKE2008
 module without loading the option ROM.
 
-Refer to the [linuxboot website](https://www.linuxboot.org/). This is a special
-busybox+linux system, which goes in the boot flash as a coreboot payload. You
-can insert it into your libreboot ROM image using cbfstool, if it's big enough.
-On KCMA-D8/KGPE-D16 it's trivial to upgrade the boot flash to 16MiB, which is
-more than enough to fit Linuxboot. See:\
-[External flashing guide](docs/install/spi.md)
-
-LinuxBoot has many advanced features. It provides a bootloader called uroot,
-which can boot other Linux kernels using kexec. It can parse GNU GRUB configs,
-and it can also provide some basic UEFI features. Because it's using the Linux
-kernel, this means that LinuxBoot can make use of the PIKE2008 module.
-
-TODO: Integrate this in libreboot, as a payload option, but also:
-
-TODO: Fork LinuxBoot, and make a version of it that uses linux-libre. Ensure
-that it is a fully free distribution, so that the FSF can endorse it.
-
-LinuxBoot is *perfect*, especially if you're setting up one of these systems to
-be used as a server. LinuxBoot is *much* more flexible and configurable than
-GNU GRUB, which right now is the payload that libreboot prefers.
-
 How to save kernel panic logs on thinkpad laptops?
 --------------------------------------------------
 
