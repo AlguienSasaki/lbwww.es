@@ -44,8 +44,12 @@ handles only basic initialization and jumps to a separate
 an [automated build system](docs/build/) that builds complete *ROM images*, for
 more robust installation. Documentation is provided.
 
-How does libreboot differ from regular coreboot?
----------------------------------------------
+Libreboot is not a fork of coreboot
+-----------------------------------
+
+In fact, Libreboot tries to stay as close to *stock* coreboot as possible,
+for each board, but with many different types of configuration provided
+automatically by the Libreboot build system.
 
 In the same way that *Debian* is a GNU+Linux distribution, `libreboot` is
 a *coreboot distribution*. If you want to build a ROM image from scratch, you
