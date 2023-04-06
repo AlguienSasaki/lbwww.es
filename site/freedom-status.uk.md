@@ -208,7 +208,7 @@ Git, ні в випусках. Де необхідно, Libreboot надає
 оригінального образа продавця, в регіоні ME інтегральної схеми флеш-пам'яті).
 
 Ви можете дізнатись про це більше на наступній сторінці:
-[docs/install/ivy_has_common.md](docs/install/ivy_has_common.md)
+[docs/install/ivy_has_common.uk.md](docs/install/ivy_has_common.uk.md)
 
 Прошивка ME є *обов'язковою* на майже всіх платформах Intel, або машина
 *вимкнеться* після 30 хвилин. В нейтралізованому налаштуванні, код BringUp
