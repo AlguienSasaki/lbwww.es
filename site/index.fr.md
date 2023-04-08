@@ -73,10 +73,10 @@ pouvez les installez simplement, sans connaissance ou compétence particulière
 Comment aider
 -----------
 
-Vous pouvez allez voir les bugs listés sur le [traqueur de bugs](https://notabug.org/libreboot/lbmk/issues).
+Vous pouvez allez voir les bugs listés sur le [traqueur de bugs](https://codeberg.org/libreboot/lbmk/issues).
 
 Si vous trouvez un bug et avez un correctif, [voici les instructions pour envoyer des patchs](git.md), et vous pouvez aussi nous les signaler.
-Par ailleurs, ce site est écrit en Markdown et hébergé dans un [dépôt séparé](https://notabug.org/libreboot/lbwww) où
+Par ailleurs, ce site est écrit en Markdown et hébergé dans un [dépôt séparé](https://codeberg.org/libreboot/lbwww) où
 vous pouvez envoyer vos patchs.
 
 La discussion sur le dévéloppement de Libreboot et le support utilisateur

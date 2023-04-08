@@ -11,12 +11,22 @@ x-toc-enable: true
 
 Проект `libreboot` має 3 основні сховища Git:
 
-* Система побудови: <https://notabug.org/libreboot/lbmk>
-* Веб-сайт (+документація): <https://notabug.org/libreboot/lbwww>
-* Зображення (для веб-сайта): <https://notabug.org/libreboot/lbwww-img>
+* Система побудови: <https://codeberg.org/libreboot/lbmk>
+* Веб-сайт (+документація): <https://codeberg.org/libreboot/lbwww>
+* Зображення (для веб-сайта): <https://codeberg.org/libreboot/lbwww-img>
+
+Libreboot was previously using NotABug, but it had continued reliability
+issues due to HTTP 500 errors being returned, largely in the evenings, most
+likely because too many people were on it; it was decided that Libreboot
+needed something more stable, so now Libreboot is hosted on codeberg. See:
+[announcement of move to codeberg, 8 April 2023](news/codeberg.md)
 
 Є також ці програми, розміщені в проекті Libreboot, і libreboot
 або рекомендує їх, або використовує їх:
+
+The `ich9utils` project is now available under `util/ich9utils` in lbmk, and
+lbmk uses *that*, but the old standalone repository is still available on
+notabug (bucts is also there):
 
 * Bucts (утиліта): <https://notabug.org/libreboot/bucts>
 * ich9utils (утиліта): <https://notabug.org/libreboot/ich9utils>
@@ -52,7 +62,7 @@ lbmk (libreboot-make)
 Це основна система збирання в libreboot. Можна сказати, що `lbmk` *це*
 libreboot! Завантажте репозиторій Git:
 
-	git clone https://notabug.org/libreboot/lbmk
+	git clone https://codeberg.org/libreboot/lbmk
 
 Команда `git`, показана вище, завантажить систему збірки libreboot `lbmk`.
 Потім ви можете перейти до цього так:
@@ -71,12 +81,12 @@ lbwww та lbwww-img
 *Весь* веб-сайт і документація libreboot розміщені в репозиторії Git.
 Завантажте так:
 
-	git clone https://notabug.org/libreboot/lbwww
+	git clone https://codeberg.org/libreboot/lbwww
 
 Зображення розміщені на <https://av.libreboot.org/> і доступні в окремому
 сховищі:
 
-	git clone https://notabug.org/libreboot/lbwww-img
+	git clone https://codeberg.org/libreboot/lbwww-img
 
 Вносьте будь-які зміни, які забажаєте. Дивіться нотатки нижче про те, як надсилати виправлення.
 
@@ -166,13 +176,13 @@ Untitled.
 Надсилайте виправлення
 ------------
 
-Створіть обліковий запис на <https://notabug.org/> і перейдіть (увійшовши в систему) до
+Створіть обліковий запис на <https://codeberg.org/> і перейдіть (увійшовши в систему) до
 репозиторію, над яким ви хочете працювати. Натисніть *Fork*, і у вашому обліковому записі,
 ви матимете власне сховище libreboot. Клонуйте свій репозиторій, внесіть у нього
 будь-які зміни, а потім надішліть їх у свій репозиторій у своєму обліковому
 записі на NotABug. Ви також можете зробити це на новій гілці, якщо хочете.
 
-У своєму обліковому записі Notabug, ви можете перейти до офіційного репозиторія libreboot
+У своєму обліковому записі Codeberg, ви можете перейти до офіційного репозиторія libreboot
 і надіслати запит на отримання. Принцип роботи подібний до інших популярних веб-платформ
 Git, якими люди користуються сьогодні.
 
@@ -188,4 +198,26 @@ IRC-канал libreboot і повідомити канал, які виправ
 [leah@libreboot.org](mailto:leah@libreboot.org) - це адреса електронної пошти проекту Лії.
 
 Однак, для прозорості процесу перевірки коду, ми рекомендуємо на даний момент
-використовувати Notabug.
+використовувати Codeberg.
+
+Notabug repositories
+====================
+
+OLD notabug repos are still pushed to as backup, but the codeberg mirror is
+considered to be main/official now, as of the [announcement on 8
+April 2023](news/codeberg.md). See:
+
+* Build system: <https://notabug.org/libreboot/lbmk>
+* Website (+docs): <https://notabug.org/libreboot/lbwww>
+* Images (for website): <https://notabug.org/libreboot/lbwww-img>
+
+For sending patches, it is now preferred that you use *codeberg*. Technically,
+pull requests are still possible via Notabug. While Notabug still exists,
+Libreboot patches will continue be pushed there, mirroring what gets pushed
+on Notabug.
+
+The Notabug repository also contains some historical git repositories,
+including the old Libreboot git repository from before build system, website
+and images were split into separate repos. Leah Rowe has copies of these and
+will push them to codeberg if Notabug ever goes down permanently. Same goes
+for osboot repositories, which were merged with Libreboot in November 2022.

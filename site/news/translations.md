@@ -15,7 +15,7 @@ Getting started
 ===============
 
 The libreboot website is available, in Markdown, from a Git repository:\
-<https://notabug.org/libreboot/lbwww>
+<https://codeberg.org/libreboot/lbwww>
 
 Instructions for how to send patches are available here:\
 <https://libreboot.org/git.html>

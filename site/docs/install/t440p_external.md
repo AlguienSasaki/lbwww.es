@@ -7,7 +7,7 @@ Read the [Ivybridge/Haswell common guide](/docs/install/ivy_has_common.html) if 
 All of the following instructions assume that you've cloned lbmk and are operating from the
 root of that project. To do so, run
 
-	git clone https://notabug.org/libreboot/lbmk
+	git clone https://codeberg.org/libreboot/lbmk
 	cd lbmk
 
 You can now follow the rest of the instructions.

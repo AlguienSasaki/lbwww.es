@@ -41,7 +41,7 @@ project.
 To do so, you'll need to have git installed on your machine. You can then clone
 the project.
 
-	git clone https://notabug.org/libreboot/lbmk
+	git clone https://codeberg.org/libreboot/lbmk
 
 If you want more information on building lbmk see [the build instructions.](/docs/build/index.html)
 
