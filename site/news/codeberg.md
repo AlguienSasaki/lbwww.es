@@ -32,6 +32,11 @@ Codeberg:
 * Website (markdown files): <https://codeberg.org/libreboot/lbwww>
 * Images (av.libreboot.org): <https://codeberg.org/libreboot/lbwww-img>
 
+The `ich9utils` repository is now part of lbmk,
+under `util/ich9utils`, so the ich9utils repository was not
+needed on Codeberg (it still exists on Notabug). I'll add bucts
+to Libreboot's lbmk repo too (under `util/bucts/`).
+
 Codeberg has nicer features
 ---------------------------
 
