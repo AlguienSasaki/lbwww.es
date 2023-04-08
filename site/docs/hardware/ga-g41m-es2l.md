@@ -94,5 +94,7 @@ Kingston 8 GiB Kit  KVR800D2N6/8G with Elpida Chips E2108ABSE-8G-E
 
 this is a 2x4GB setup and these work quite well, according to a user on IRC.
 
+Nanya NT2GT64U8HD0BY-AD with 2 GiB of NT5TU128M8DE-AD chips works too.
+
 Many other modules will probably work just fine, but raminit is very picky on
 this board. Your mileage *will* fluctuate, wildly.
