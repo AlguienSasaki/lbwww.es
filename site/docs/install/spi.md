@@ -246,6 +246,64 @@ Under the Interface section, you can enable SPI.
 
 The device for communicating via SPI as at `/dev/spidev0.0`
 
+RPi Drive Strength
+------------------
+Flashrom on the RPi may not be able to detect the SPI flash chip on some
+systems, even if your wiring and clip are set up perfectly. This may be due to
+the drive strength of the Raspberry Pi GPIOs, which is 8mA by default. Drive
+strength is essentially the maximum current the pin can output while also
+maintaining the minimum high-level voltage. In the case of the Pi, this voltage
+is 3.0V.
+
+Similarly, the SPI flash chip has a minimum voltage it will accept as a high
+logic value. This is commonly 0.7\*VCC for SPI flash, which is 2.31V for 3.3V
+chips.  If the drive strength is too low, the voltage at the pins of the flash
+chip may fall below this minimum voltage, causing it to register as a low logic
+value instead of the high value that was sent.
+
+On many systems, the VCC pin of the SPI flash is shared with other chips on the
+system, causing them to be powered through the voltage supplied through your
+programming clip. In this case, parts of the chipset may power up, and it may
+attempt to set the SPI lines high or low, interfering with the data the Pi is
+trying to send. If the Pi and chipset are trying to set a pin to different
+values, the side with a greater drive strength will be able to "pull" the
+voltage toward the level it wants to set.
+
+Fortunately, the drive strength of the Raspberry Pi can be increased up to
+16mA.  There are a few tools that can set this, such as the pigs utility from
+the pigpio project. On the Raspberry Pi OS, the following commands should
+install pigpio and set the drive strength to 16mA:
+
+Install pigpio:
+
+	sudo apt install pigpio
+
+Start the pigpiod daemon, which the pigs utility communicates with to interact
+with the gpios:
+
+	sudo pigpiod
+
+Set the drive strength of GPIO group 0, which contains the spi0 pins, to 16mA:
+
+	pigs pads 0 16 
+
+Note that the drive strength hardware works in multiples of 2mA, and pigs will
+round odd values up to the next multiple of 2. You can check the current drive
+strength using
+
+	pigs padg 0
+
+WARNING: If the chipset is very strongly trying to drive a pin to a value
+opposite that of the Pi, more than 16mA pass through the Pi's GPIO pins, which
+may damage them as they are only designed for 16mA. The drive strength is NOT a
+current limit. That said, this is a risk to the Pi regardless of the drive
+strength. Resistors between the chipset and the flash should protect against
+this, though not all boards have these.
+
+See
+<https://www.raspberrypi.com/documentation/computers/raspberry-pi.html#gpio-pads-control>
+for more information about the drive strength control on the Pi.
+
 Caution about RPi
 -----------------
 
