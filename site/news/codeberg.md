@@ -9,7 +9,7 @@ Git repositories provided by Libreboot are still available via Notabug, but
 the Notabug site has been quite unreliable for some time now. I notice it
 mostly in the evenings, when more people are likely using it. Essentially, the
 service is overloaded all the time and this results in regular HTTP 500 errors,
-preventing pull requests, git clone, issue reports and other things to go
+causing pull requests, git clone, issue reports and other things to go
 offline at random times.
 
 I kept Libreboot on Notabug for as long as possible, because I hoped that the
