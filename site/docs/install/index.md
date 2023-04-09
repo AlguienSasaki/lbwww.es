@@ -166,7 +166,7 @@ Which systems are supported?
 
 [Refer to the hardware compatibility page](../hardware/)
 
-MAC address on Sandybridge/Ivybridge/Haswell (e.g. X230, X220, T440p)
+MAC address on Sandybridge/Ivybridge/Haswell (e.g. X230, X220, T440p, W541)
 =====================================================================
 
 You can change the MAC address in flash, on these machines. See:
@@ -646,8 +646,10 @@ the insert script for ME works with sandybridge aswell).
 **If using release ROMs, neutered ME must be inserted. Refer to the above
 guide.**
 
-TARGET: Thinkpad X230
+TARGET: Thinkpad X230/T430/T530
 ---------------------
+
+NOTE: no install docs for T430/T530 yet, but check coreboot wiki.
 
 NOTE: Internal flashing is also possible, on this machine, from vendor firmware,
 but it's still recommended to use a clip and a SPI flasher. However, follow
@@ -672,7 +674,7 @@ full disassembly will differ slightly)
 **If using release ROMs, neutered ME must be inserted. Refer to the above
 guide.**
 
-TARGET: Thinkpad t440p
+TARGET: Thinkpad t440p/w541
 ---------------------
 
 Refer to the [ivybridge/haswell common guide.](ivy_has_common.md) for how to

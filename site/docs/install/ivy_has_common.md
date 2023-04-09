@@ -1,5 +1,5 @@
 ---
-title: Ivybridge/Haswell Common 
+title: Insert binary blobs on Sandybridge/Ivybridge/Haswell
 x-toc-enable: true
 ...
 

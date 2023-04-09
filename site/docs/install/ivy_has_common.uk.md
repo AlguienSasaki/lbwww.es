@@ -1,5 +1,5 @@
 ---
-title: Спільне Ivybridge/Haswell 
+title: Спільне Sandybridge/Ivybridge/Haswell 
 x-toc-enable: true
 ...
 
