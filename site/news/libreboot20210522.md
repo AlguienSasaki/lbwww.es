@@ -13,7 +13,7 @@ Libreboot is free (as in freedom) boot firmware, which initializes the hardware
 can run. Libreboot then starts a bootloader to load your operating system. It
 replaces the proprietary BIOS/UEFI firmware typically found on a computer.
 Libreboot is compatible with specifical computer models that use the Intel/AMD
-x86 architecture. Libreboot works well with GNU+Linux and BSD operating systems.
+x86 architecture. Libreboot works well with Linux and BSD operating systems.
 
 The last Libreboot release, version 20160907, was released on September 7th
 in 2016. *This* new release, Libreboot 20210522, is being released today on May
@@ -224,9 +224,9 @@ compared to the Libreboot 20160907 build system:
   and on those it completely stalls (it gets to the logo screen, but crashes,
   so it never reaches the UEFI shell program). Getting Tianocore to work is
   a priority for the *next* Libreboot release; Tianocore is free software, and
-  can work quite well but it does need some maintenance first. GNU+Linux distros
+  can work quite well but it does need some maintenance first. Linux distros
   expect it nowadays (on x86), though the linux kernel can still run on bare
-  metal and that is unlikely to change (so, GNU GRUB payload will always be
+  metal and that is unlikely to change (so, GRUB payload will always be
   possible on x86). lbmk doesn't actually build tianocore. Instead, it modifies
   the *coreboot* build system, and uses the coreboot build system with a dummy
   board config, selecting Tianocore as the payload, and then it copies the
@@ -282,7 +282,7 @@ are greatly improved and there are *more* systems documented now.
 GRUB
 ====
 
-In GNU GRUB payloads, a much more recent version is used. The difference is
+In GRUB payloads, a much more recent version is used. The difference is
 literally: the GRUB version that Libreboot 20160907 uses was released 5 years
 ago. The version that this new Libreboot release uses is from *a few days ago*.
 
@@ -293,7 +293,7 @@ payload complaining about missing modules.
 
 In particular, GRUB now supports LUKSv2. In the Libreboot 20160907 release, it
 was necessary to downgrade LUKSv2 to LUKSv1 if you were doing a fully encrypted
-GNU+Linux installation (where the GRUB payload was expected to decrypt the /boot
+Linux installation (where the GRUB payload was expected to decrypt the /boot
 directory).
 
 Keymaps are mostly the same, but now Colemak keyboard layout is supported. It
@@ -303,7 +303,7 @@ documentation and then re-build the ROM from source.
 The default GRUB configuration in Libreboot is much more automated now, with
 less hardcoded functionality. It's more optimized in general, especially on
 ICH7 platforms (e.g. ThinkPad X60, T60). Other features are implemented, such
-as automatically booting an installed GNU+Linux distro from an external USB
+as automatically booting an installed Linux distro from an external USB
 HDD or SSD (or flash drive!)
 
 In GRUB payloads, SeaBIOS is no longer used to start GRUB, on any platform in
@@ -312,7 +312,7 @@ produce a so-called "SeaGRUB" payload has been abandoned. We simply use a
 standard SeaBIOS setup now. SeaBIOS is available in the GRUB menu (GRUB can
 load and execute any other coreboot payload).
 
-One could argue that it's a GNU GRUB setup!
+One could argue that it's a GRUB setup!
 
 Anyway, Libreboot 20160907 used GRUB at git commit ID
 7f2a856faec951b7ab816880bd26e1e10b17a596 March 2016.
@@ -320,7 +320,7 @@ Anyway, Libreboot 20160907 used GRUB at git commit ID
 This new Libreboot releases used GRUB c0e647eb0e2bd09315612446cb4d90f7f75cb44c
 from May 10th, 2021.
 
-Download GNU GRUB from the upstream repository and check every commit
+Download GRUB from the upstream repository and check every commit
 since then.
 
 GM45/X4X now set 352MiB VRAM by default
@@ -686,7 +686,7 @@ coreboot 4.12
   This is relevant for Tianocore, a UEFI payload, which libreboot currently
   does not integrate for any boards, but Tianocore integration is planned in
   the future. Tianocore provides the option to use any UEFI-compliant operating
-  system, and this benefits GNU+Linux distributions aswell (it Just Works).
+  system, and this benefits Linux distributions aswell (it Just Works).
   SMMSTORE is basically UEFI's answer to CMOS "NVRAM". it is a way to store
   configurations, in SPI flash. it's handled via SMM interrupts (SMIs). NOTE:
   SMMSTOREv2 is also becoming a thing now

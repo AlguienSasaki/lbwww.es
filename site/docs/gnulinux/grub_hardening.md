@@ -1,21 +1,21 @@
 ---
-title: Hardening GNU GRUB
+title: Hardening GRUB
 x-toc-enable: true
 ...
 
-This article only applies to those people who use the GNU GRUB bootloader as
-their default payload (options besides GNU GRUB are also available in
-libreboot). Whenever this article refers to GNU GRUB, or configuration files
-used in GNU GRUB, it is referring exclusively to those files hosted in CBFS
-(coreboot file system) in the libreboot ROM image. In this configuration, GNU
+This article only applies to those people who use the GRUB bootloader as
+their default payload (options besides GRUB are also available in
+libreboot). Whenever this article refers to GRUB, or configuration files
+used in GRUB, it is referring exclusively to those files hosted in CBFS
+(coreboot file system) in the libreboot ROM image. In this configuration,
 GRUB is running on *bare metal* as a coreboot payload (instead of relying on
 BIOS or UEFI services, like it does on *most* x86 based configurations).
 
-This guide deals with various ways in which you can harden your GNU GRUB
+This guide deals with various ways in which you can harden your GRUB
 configuration, for security purposes. These steps are optional, but *strongly*
 recommended by the libreboot project.
 
-GNU GRUB provides *many* advanced security features, which most people don't
+GRUB provides *many* advanced security features, which most people don't
 know about but are fully documented on the libreboot website. Read on!
 
 This article doesn't cover how to dump your ROM, or flash a new one. Please
@@ -27,14 +27,14 @@ know what you're doing.
 GRUB secure boot with GPG
 =========================
 
-GNU GRUB contains code, based on [GnuPG](https://gnupg.org/), that can verify
+GRUB contains code, based on [GPG](https://gnupg.org/), that can verify
 PGP signatures on *any* type of file, on any storage medium supported by
-GNU GRUB (it supports basically everything, including CBFS which is short
+GRUB (it supports basically everything, including CBFS which is short
 for coreboot file system and it is what we will focus on in this article).
 We will be using this functionality to verify the signature of a Linux kernel,
 at boot time. In conjunction with reproducible builds (both libreboot and your
 Linux kernel), this can greatly improve system security; Debian is an excellent
-example of a GNU+Linux distribution that is fully reproducible nowadays (in
+example of a Linux distribution that is fully reproducible nowadays (in
 stable releases).
 
 For your reference: a reproducible build is one where, given a precise (and
@@ -52,7 +52,7 @@ repository). More information about reproducible builds can be found here:
 Reproducibility is a key goal of the libreboot project, though it has not yet
 achieved that goal. However, it is an important part of any secure system. We
 suggest that, when securing your libreboot system as instructed by this guide,
-you should also use a reproducible GNU+Linux distribution (because checking GPG
+you should also use a reproducible Linux distribution (because checking GPG
 signatures on a non-reproducible binary, such as a Linux kernel, is meaningless
 if that binary can be compromised as a result of literally not being able to
 verify that the source code *actually* corresponds to the provided binary,
@@ -65,7 +65,7 @@ circumstances under *controlled conditions*.
 
 This tutorial assumes you have a libreboot image (ROM) that you wish to modify,
 which from now on we will refer to simply as *`my.rom`*. It should go without
-saying that this ROM uses the GNU GRUB bootloader as payload. This page shows
+saying that this ROM uses the GRUB bootloader as payload. This page shows
 how to modify grubtest.cfg, which means that signing and password protection
 will work after switching to it in the main boot menu and bricking due to
 incorrect configuration will be impossible. After you are satisfied with the
@@ -119,13 +119,13 @@ signatures in any other location (unless the software is modified accordingly).
 
 It's worth noting that this is not your LUKS password but, rather, a password
 that you must enter in order to use *restricted* functionality (such as the
-GNU GRUB terminal for executing commands). This behaviour protects your system
-from an attacker simply booting a live USB key (e.g. live GNU+Linux
+GRUB terminal for executing commands). This behaviour protects your system
+from an attacker simply booting a live USB key (e.g. live Linux
 distribution) for the purpose of flashing modified boot firmware, which from
 your perspective is *compromised* boot firmware. *This should be different than
 your LUKS passphrase and user password.*
 
-GNU GRUB supports storing salted, hashed passwords in the configuration file.
+GRUB supports storing salted, hashed passwords in the configuration file.
 This is a far more secure configuration, because an attacker cannot simply read
 your password as *plain text* inside said file.
 
@@ -153,7 +153,7 @@ installing GRUB version 2. Generate a key by giving it a password:
 
 NOTE: This utility is included under the `grub/` directory, when you build
 GRUB using the libreboot build system. Run the following commands (assuming
-you have the correct build dependencies installed) to build GNU GRUB, from the
+you have the correct build dependencies installed) to build GRUB, from the
 libreboot Git repository:
 
 	./download grub

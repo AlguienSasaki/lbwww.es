@@ -46,9 +46,9 @@ P*: Partially works with blobs
 
 | ***Payloads supported***  |           |
 |---------------------------|-----------|
-| **GNU GRUB**              | Works     |
+| **GRUB**              | Works     |
 | **SeaBIOS**               | Works     |
-| **SeaBIOS with GNU GRUB** | Works     |
+| **SeaBIOS with GRUB** | Works     |
 </div>
 The MacBook1,1 and MacBook2,1 are very similar to the 
 ThinkPad X60. It shares some hardware with the X60 such as the chipset.
@@ -237,7 +237,7 @@ The MacBook2,1 overheats a lot with libreboot, we still don't know why but a sim
 
 Macfanctld is available on the default repos of many distributions.
 
-For example, to install macfanctld on an Arch-based distro (Parabola, ...), you would run as root
+For example, to install macfanctld on an Arch-based distro, you would run as root
 
 	pacman -S macfanctld
 
@@ -285,8 +285,8 @@ AltGr". Select this. The keypad enter key will then act as an AltGr
 everywhere.
 
 
-For Parabola or other systemd-based distributions you can enable AltGr
-manually. Simply add the line
+For Arch-based distributions you can enable AltGr manually. Simply add the
+line:
 
 	KEYMAP_TOGGLE=lv3:enter_switch
 

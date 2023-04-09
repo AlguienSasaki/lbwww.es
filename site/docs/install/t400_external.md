@@ -221,4 +221,4 @@ You should see something like this:
 
 ![](https://av.libreboot.org/t400/boot0.jpg) ![](https://av.libreboot.org/t400/boot1.jpg)
 
-Now [install GNU+Linux](../gnulinux/).
+Now [install Linux](../gnulinux/).

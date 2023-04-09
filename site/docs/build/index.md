@@ -44,11 +44,11 @@ Python
 Python2 is unused by lbmk or anything that it pulls down as modules. You
 should ensure that the `python` command runs python 3, on your system.
 
-GNU Make
+Make
 ========
 
 libreboot Make includes a file called `Makefile`. You can still use
-the `lbmk` build system directly, or you can use GNU Make. The `Makefile`
+the `lbmk` build system directly, or you can use Make. The `Makefile`
 simply runs `lbmk` commands. However, using `lbmk` directly will offer you
 much more flexibility; for example, the Makefile currently cannot build single
 ROM images (it just builds all of them, for all boards).
@@ -97,7 +97,7 @@ To build release archives:
 
 	make release
 
-Build without using GNU Make
+Build without using Make
 ============================
 
 The `Makefile` is included just for *compatibility*, so that someone who
@@ -123,7 +123,7 @@ Separate scripts also exist:
 
 	sudo ./build dependencies void
 
-Technically, any GNU+Linux distribution can be used to build libreboot.
+Technically, any Linux distribution can be used to build libreboot.
 However, you will have to write your own script for installing build
 dependencies. 
 

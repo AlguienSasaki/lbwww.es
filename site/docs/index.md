@@ -17,7 +17,7 @@ Installing libreboot
 Documentation related to operating systems
 ============================
 
--   [GNU+Linux Guides](gnulinux/)
+-   [Linux Guides](gnulinux/)
 -   [How to install BSD on an x86 host system](bsd/)
 
 Information for developers

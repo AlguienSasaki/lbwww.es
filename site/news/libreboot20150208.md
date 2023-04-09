@@ -55,7 +55,7 @@ installed r20150126 don't really need to update to this release.
 -   docs/hardware/: update list of compatible T60 LCD panels
 -   docs/: more clarification of libreboot's stated purpose.
 -   build-release: include the commitid file in the release archives
--   docs/: Further emphasize the GNU+Linux requirement.
+-   docs/: Further emphasize the Linux requirement.
 -   lenovobios\_firstflash: fix BASH errors
 -   lenovobios\_secondflash: fix BASH errors
 -   docs/install/x200\_external.html: Tell user to switch MAC address.

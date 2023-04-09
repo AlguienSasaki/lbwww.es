@@ -244,9 +244,10 @@ The nvmutil source code is located under `util/nvmutil/` in the
 lbmk repository. A makefile is included there, for you to build an
 executable.
 
-The nvmutil programs will work just fine, on any BSD operating
-system, or unix-like system such as GNU+Linux, Chimera Linux or
-Alpine Linux. You must be sure to have toolchains installed, for
+The nvmutil programs will work just fine, on any modern BSD Unix operating
+system, or unix-like system such as Linux.
+
+You must be sure to have toolchains installed, for
 building; a normal libc, C compiler and linker should be enough.
 GCC and LLVM have all these things included, so use whichever one
 you want.

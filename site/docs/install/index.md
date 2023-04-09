@@ -110,7 +110,7 @@ Payload names
 
 ### grub
 
-ROM images with just `grub` in the file name will start first with the GNU GRUB
+ROM images with just `grub` in the file name will start first with the GRUB
 payload. They may or may not also provide other payloads in the menu, such as
 memtest86+, SeaBIOS, Tianacore and so on.
 
@@ -123,7 +123,7 @@ an option in the boot menu.
 ### seabios\_withgrub
 
 ROM images that have `seabios_withgrub` in the file name start with SeaBIOS
-first, but also have GNU GRUB available in the boot menu when you press ESC.
+first, but also have GRUB available in the boot menu when you press ESC.
 
 ### seabios\_grubfirst (DEFUNCT, WAS INTENDED ONLY FOR DESKTOPS)
 
@@ -221,7 +221,7 @@ Run flashrom on host CPU
 ------------------------
 
 You can simply take any ROM image from the libreboot project, and flash it.
-Boot a GNU+Linux distribution on the target device, and install flashrom.
+Boot a Linux distribution on the target device, and install flashrom.
 
 In some cases, this is not possible or there are other considerations. Please
 read this section *carefully*.
@@ -314,10 +314,10 @@ MacBook2,1 can be flashed internally.
 
 #### ASUS KFSN4-DRE?
 
-Simply boot GNU+Linux with the default vendor firmware, and flash it internally,
+Simply boot Linux with the default vendor firmware, and flash it internally,
 but before you do: take a push pin, remove the metal pin, and superglue the
 plastic part to the chip. Then remove the chip after you booting your
-GNU+Linux system. Install a new chip, and flash *that*.
+Linux system. Install a new chip, and flash *that*.
 
 This board uses LPC flash in a PLCC32 socket. This coreboot page shows an
 example of the push pin as a proof of concept:
@@ -349,8 +349,8 @@ Here are a list of targets:
 * ThinkPad T60 with ATI GPU: flash the Headless T60 ROM (no video init, but you
   can get a serial console on the RS232 port if you use the Advanced Dock or
   Advanced Mini Dock. Connect to it from another machine, using null modem
-  cable and USB serial adapter; GNU Screen can connect to the serial console
-  and you will run it at 115200 baud rate. agetty/fgetty in GNU+Linux can give
+  cable and USB serial adapter; *Screen* can connect to the serial console
+  and you will run it at 115200 baud rate. agetty/fgetty in Linux can give
   you a serial console in your OS)
 
 Download and build flashrom, using the instructions

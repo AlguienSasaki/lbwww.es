@@ -43,9 +43,9 @@ P*: Partially works with blobs
 
 | ***Payloads supported***  |              |
 |---------------------------|--------------|
-| **GNU GRUB**              | Doesn't work |
+| **GRUB**              | Doesn't work |
 | **SeaBIOS**               | Works        |
-| **SeaBIOS with GNU GRUB** | Doesn't work |
+| **SeaBIOS with GRUB** | Doesn't work |
 </div>
 If you just want flashing instructions, go to
 [../install/d945gclf.md](../install/d945gclf.md)

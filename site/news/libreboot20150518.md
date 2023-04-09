@@ -139,7 +139,7 @@ Changes for this release, relative to r20150208 (earliest changes last, recent c
 -   coreboot-libre: don't delete the .spd.hex files (they are not
     blobs)
 -   build/release/archives: don't put rmodtool in libreboot\_util
--   docs/install/x200\_external.html: recommend installing GNU+Linux at
+-   docs/install/x200\_external.html: recommend installing Linux at
     the end
 -   docs/install/x200\_external.html: add more photos, improve
     instructions

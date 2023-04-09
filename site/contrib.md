@@ -32,7 +32,7 @@ works on all aspects of libreboot, such as:
   and generally keeps the project going. Without Leah, there would be no Libreboot!
 * The build system (lbmk, short for libreboot Make). This is the automated build
   system that sits at the heart of libreboot; it downloads, patches, configures
-  and compiles the relevant components like coreboot, GNU GRUB and generates
+  and compiles the relevant components like coreboot, GRUB and generates
   the libreboot ROM images that you can find in release archives.
 * Upstream work on coreboot, when necessary (and other projects that libreboot
   uses). This means also working with people from outside of the libreboot
@@ -73,7 +73,7 @@ The people and companies that work on coreboot are numerous, and they make the
 libreboot project what it is. The libreboot project makes heavy use of coreboot, to
 provide hardware initialization.
 
-GNU GRUB
+GRUB
 --------
 
 GRUB is the bootloader used by libreboot. It goes without saying that the GRUB
@@ -178,7 +178,8 @@ Jeroen Quint
 ------------
 
 Contributed several fixes to the libreboot documentation, relating to
-installing Parabola with full disk encryption on libreboot systems.
+installing on Arch-based systems with full disk encryption on libreboot
+systems.
 
 Joshua Gay
 ----------
@@ -234,9 +235,7 @@ created Libreboot IRC channel, when Leah did not know how to
 use IRC, and also handed +F founder status to Leah for the channel. As an FSF
 sysadmin, it was Lisa's job to maintain a lot of the infrastructure used by
 Libreboot; at the time, mailing lists on the GNU Savannah website were used by
-the Libreboot project. Lisa was also the one who originally encouraged Leah to
-have Libreboot join the GNU project (a decision that was later, rather
-regrettably, reversed). When Paul Kocialkowski was a member of the project in
+the Libreboot project. When Paul Kocialkowski was a member of the project in
 2016, she helped him get help from the FSF; he was the leader of the Replicant
 project at the time, which had funding from the FSF, and the FSF authorized him
 to use some of that funding for his work on Libreboot, thanks to Lisa's
@@ -409,7 +408,7 @@ low level.
 
 When Swift Geek was a member of the project, his role was largely providing
 user support (in the IRC channel), and conducting research. Swift Geek knows a
-lot about hardware. Swift Geek also did some upstream development on GNU GRUB.
+lot about hardware. Swift Geek also did some upstream development on GRUB.
 
 Swift Geek has provided technical advice on numerous occasions, to Leah Rowe,
 and helped her to improve her soldering skills in addition to teaching her

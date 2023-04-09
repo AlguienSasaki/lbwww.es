@@ -24,7 +24,7 @@ Flashing instructions can be found at
 [../install/\#flashrom](../install/#flashrom) - note that external
 flashing is required, if the proprietary (ASUS) firmware is
 currently installed. If you already have libreboot, by default it is
-possible to re-flash using software running in GNU+Linux on the
+possible to re-flash using software running in Linux on the
 KGPE-D16, without using external hardware.
 
 CPU compatibility
@@ -85,7 +85,7 @@ Current issues {#issues}
 -   LRDIMM memory modules are currently incompatible
 -   SAS (via PIKE 2008 module) requires non-free option ROM (and
     SeaBIOS) to boot from it (theoretically possible to replace, but you
-    can put a kernel in CBFS or on SATA and use that to boot GNU, which
+    can put a kernel in CBFS or on SATA and boot from that, which
     can be on a SAS drive. The linux kernel can use those SAS drives
     (via PIKE module) without an option ROM).
 -   SeaBIOS lacked serial console support out-of-the-box in release 20160907

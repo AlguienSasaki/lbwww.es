@@ -120,7 +120,7 @@ LVDS higher resolution LCD panels (T400, T500). (thanks Arthur Heymans)
 Massively improved GRUB configuration, making it easier to boot more
 encrypted systems automatically, and generally a more useful menu for
 booting the system (thanks go to Klemens Nanni of the autoboot project).
-Libreboot now uses the grub.cfg provided by the installed GNU+Linux
+Libreboot now uses the grub.cfg provided by the installed Linux
 distribution automatically, if present, switching to that configuration.
 This is done across many partitions, where libreboot actively searches
 for a configuration file (also on LVM volumes and encrypted volumes).

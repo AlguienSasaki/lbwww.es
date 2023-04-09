@@ -1,5 +1,5 @@
 ---
-title: GNU+Linux guides
+title: Linux guides
 x-toc-enable: true
 ...
 

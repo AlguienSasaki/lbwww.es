@@ -43,9 +43,9 @@ P*: Partially works with blobs
 
 | ***Payloads supported***  |           |
 |---------------------------|-----------|
-| **GNU GRUB**              | Works     |
+| **GRUB**              | Works     |
 | **SeaBIOS**               | Works     |
-| **SeaBIOS with GNU GRUB** | Works     |
+| **SeaBIOS with GRUB** | Works     |
 </div>
 Information to be written soon, but this board is merged in libreboot.
 

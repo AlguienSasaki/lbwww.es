@@ -7,7 +7,7 @@ The `libreboot` project provides
 [libre](freedom-status.md) *boot
 firmware* that initializes the hardware (e.g. memory controller, CPU,
 peripherals) on [specific Intel/AMD x86 and ARM targets](docs/hardware/), which
-then starts a bootloader for your operating system. [GNU+Linux](docs/gnulinux/)
+then starts a bootloader for your operating system. [Linux](docs/gnulinux/)
 and [BSD](docs/bsd/) are well-supported. It replaces proprietary BIOS/UEFI
 firmware. Help is available
 via [\#libreboot](https://web.libera.chat/#libreboot)
@@ -51,7 +51,7 @@ In fact, Libreboot tries to stay as close to *stock* coreboot as possible,
 for each board, but with many different types of configuration provided
 automatically by the Libreboot build system.
 
-In the same way that *Debian* is a GNU+Linux distribution, `libreboot` is
+In the same way that *Alpine Linux* is a *Linux distribution*, `libreboot` is
 a *coreboot distribution*. If you want to build a ROM image from scratch, you
 otherwise have to perform expert-level configuration of coreboot, GRUB and
 whatever other software you need, to prepare the ROM image. With *libreboot*,

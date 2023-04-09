@@ -55,15 +55,10 @@ Changes for this release (latest changes first, earliest changes last)
     links to info about the ethernet controller (Intel 82573).
 -   Documentation: x60\_security.html and t60\_security.html: added
     notes about DMA and the docking station.
--   Documentation: configuring\_parabola.html: basic post-install steps
-    for Parabola GNU+Linux (helpful, since libreboot development is
-    being moved to Parabola at the time of writing).
 -   builddeps-coreboot: use 'make crossgcc-i386' instead of 'make
     crossgcc'. Libreboot only targets x86 at the time of writing.
 -   ROM images no longer include SeaBIOS. Instead, the user adds it
     afterwards. Documentation and scripts updated.
 -   docs/images/encrypted\_parabola.html: Notes about linux-libre-grsec
--   Documentation: encrypted\_parabola.html: add tutorial for encrypted
-    Parabola GNU+Linux installation.
 -   Documentation: added more info about wifi chipsets
 

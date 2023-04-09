@@ -137,7 +137,7 @@ handling.
 How to find what EC version you have (i945/GM45)
 ------------------------------------------------
 
-In GNU+Linux, you can try this:
+In Linux, you can try this:
 
 	grep 'at EC' /proc/asound/cards
 

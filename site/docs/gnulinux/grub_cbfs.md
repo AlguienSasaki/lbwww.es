@@ -6,8 +6,8 @@ x-toc-enable: true
 Before you follow this guide, it is advisable that you have the ability to
 flash externally, just in case something goes wrong.
 
-This guide assumes that you use the GNU GRUB bootloader as your default
-payload. In this configuration, GNU GRUB is flashed alongside coreboot and runs
+This guide assumes that you use the GRUB bootloader as your default
+payload. In this configuration, GRUB is flashed alongside coreboot and runs
 on *bare metal* as a native coreboot payload and does *not* use BIOS or UEFI
 services (but it *can* load and execute SeaBIOS, in addition to any other
 coreboot payload, by chainloading it).
@@ -38,7 +38,7 @@ As for the ROM, there are mainly three methods for obtaining a libreboot ROM
 image:
 
 1. Dump the contents of the the main *boot flash* on your system, which already
-   has libreboot installed (with GNU GRUB as the default payload). Extract the
+   has libreboot installed (with GRUB as the default payload). Extract the
    GRUB configuration from *that* ROM image.
 2. Extract it from a libreboot ROM image supplied by the libreboot project, on
    the libreboot website or mirrors of the libreboot website.
@@ -107,7 +107,7 @@ flashed, versus the new ROM image.
 
 The `internal` option assumes that internal read/write is possible; this is
 when you read from and/or write to the boot flash from an operating systems
-(usually GNU+Linux) that is *running on* the target system.
+(usually Linux) that is *running on* the target system.
 
 In other cases, you may need to connect an SPI programmer externally (with the
 machine powered down) and read the contents of the boot flash.
@@ -117,7 +117,7 @@ machine powered down) and read the contents of the boot flash.
 Extract grub.cfg
 ================
 
-libreboot images that use the GNU GRUB bootloader will have *two* configuration
+libreboot images that use the GRUB bootloader will have *two* configuration
 files in CBFS:
 
 * `grub.cfg`

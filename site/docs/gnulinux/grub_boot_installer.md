@@ -1,25 +1,25 @@
 ---
-title: Installing GNU+Linux
+title: Installing Linux
 x-toc-enable: true
 ...
 
 # Introduction
 
-This guide assumes that you are using the GNU GRUB bootloader directly.
+This guide assumes that you are using the GRUB bootloader directly.
 If you're using SeaBIOS, it's quite intuitive and works similarly to other BIOS
 software; refer to the documentation on <https://seabios.org/SeaBIOS>.
 
 This guide explains how to prepare a bootable USB for libreboot systems that
-can be used to install several GNU+Linux distributions. For this guide, you
+can be used to install several Linux distributions. For this guide, you
 will only need a USB flash drive and the `dd` utility (it's installed into all
-GNU+Linux distributions, by default).
+Linux distributions, by default).
 
 These instructions are intended to be generic, applicable to just about any
-GNU+Linux distribution.
+Linux distribution.
 
-## Prepare the USB Drive in GNU+Linux
-If you downloaded your ISO while on an existing GNU+Linux system, here is how
-to create the bootable GNU+Linux USB drive:
+## Prepare the USB Drive in Linux
+If you downloaded your ISO while on an existing Linux system, here is how
+to create the bootable Linux USB drive:
 
 Connect the USB drive. Check `lsblk`, to confirm its device name 
 (e.g., **/dev/sdX**):
@@ -32,7 +32,7 @@ it's not mounted:
 	sudo umount /dev/sdb
 
 Overwrite the drive, writing your distro ISO to it with `dd`. For example, if
-we are installing *Foobarbaz* GNU+Linux, and it's located in our Downloads
+we are installing *Foobarbaz* Linux, and it's located in our Downloads
 folder, this is the command we would run:
 
 	sudo dd if=~/Downloads/foobarbaz.iso of=/dev/sdb bs=8M; sync
@@ -44,17 +44,17 @@ That's it! You should now be able to boot the installer from your USB drive
 [This page](https://wiki.netbsd.org/tutorials/how_to_install_netbsd_from_an_usb_memory_stick/)
 on the NetBSD website shows how to create a NetBSD bootable USB drive, from
 within NetBSD itself. You should the `dd` method documented there. This will
-work with any GNU+Linux ISO image.
+work with any Linux ISO image.
 
 ## Prepare the USB drive in FreeBSD
 [This page](https://www.freebsd.org/doc/handbook/bsdinstall-pre.html) on the
 FreeBSD website shows how to create a bootable USB drive for installing
-FreeBSD. Use the `dd` method documented. This will work with any GNU+Linux ISO
+FreeBSD. Use the `dd` method documented. This will work with any Linux ISO
 image.
 
 ## Prepare the USB drive in LibertyBSD or OpenBSD
 If you downloaded your ISO on a LibertyBSD or OpenBSD system, here is how to
-create the bootable GNU+Linux USB drive:
+create the bootable Linux USB drive:
 
 Connect the USB drive. Run `lsblk` to determine which drive it is:
 
@@ -109,7 +109,7 @@ menu, converted from the usual ISOLINUX menu provided by that distro.
 
 ## Booting ISOLINUX Images (Manual Method)
 These are generic instructions. They may or may not be correct for your
-distribution. You must adapt them appropriately, for whatever GNU+Linux
+distribution. You must adapt them appropriately, for whatever Linux
 distribution it is that you are trying to install.
 
 If the `ISOLINUX parser` or `Search for GRUB configuration` options won't work,
@@ -160,7 +160,7 @@ USB drive in the way that you specified.
 ## Troubleshooting
 Most of these issues occur when using libreboot with coreboot's `text-mode`
 with libgfxinit for video initialization. This mode is useful for text mode
-payloads, like `MemTest86+`, which expect `text-mode`, but for GNU+Linux
+payloads, like `MemTest86+`, which expect `text-mode`, but for Linux
 distributions it can be problematic when they are trying to switch to a
 framebuffer, because no mode switching support is present (Linux/BSD kernels
 do Kernel Mode Setting, so they are able to initialize a frame buffer in bare

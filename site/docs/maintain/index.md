@@ -80,7 +80,7 @@ The lbmk design also helps to ease copyright licensing and compliance, because
 each part of lbmk is literally its own separate program. With this design, it
 means that most scripts do not directly link/embed/include each other. Because
 of this, it's much easier to have different licenses in use for different
-files. Generally speaking, lbmk is GNU GPLv3+, but it's perfectly OK, for
+files. Generally speaking, lbmk is GPLv3+, but it's perfectly OK, for
 example, to add files that are GPLv2 or other licenses. By comparison, if you
 were to have a C program under GPLv3, you could not \#include C libraries that
 are GPLv2, at least not directly, or there would be many pitfalls to avoid at
@@ -95,7 +95,7 @@ otherwise make whatever changes you like. As such, this is a reference guide
 for libreboot development.
 
 Libreboot is a *coreboot distro*, focusing on integration. As such, direct
-development on software such as coreboot, GNU GRUB, SeaBIOS etc should ideally
+development on software such as coreboot, GRUB, SeaBIOS etc should ideally
 be done upstream, or if it's a project hosted by libreboot (such as ich9utils)
 developed in the corresponding separate repository.
 
@@ -107,20 +107,20 @@ busybox+linux distribution, with musl libc, plus u-root, and implement a
 linux-based bootloader setup similar to Heads, but do it *lbmk-style*. The
 lbmk build system is designed for absolute simplicity and modularity, making
 it easy to understand and maintain. It intentionally avoids use of rather
-complicated programs such as GNU Autoconf; the Makefile in lbmk is just bolted
+complicated programs such as Autoconf; the Makefile in lbmk is just bolted
 on but it not required. The `lbmk` build system is a *non-design*; it evolved
 over time, into what it is today. Its modularity and simplicity of non-design
 allows you to easily rewrite large parts of it, whenever you want to do so.
 
-lbmk is largely written in GNU BASH, and this is unlikely to change in the
-future. However, lbmk integrates several projects such as coreboot, GNU GRUB
+lbmk is written in POSIX shell scripts, and this is unlikely to change in the
+future. However, lbmk integrates several projects such as coreboot, GRUB
 or SeaBIOS, and these all have *their* own build systems aswell. The `lbmk`
 build system is the glue that puts all of these together to produce ROM images
 for users, in a completely automated fashion. The purpose of `lbmk` is to
 provide an *unattended* build process, with as little user interaction as
 possible. Thus, `lbmk` is an *automated build system*. It says on the libreboot
 home page that libreboot is a *coreboot distribution* in much the same way that
-Debian is a *GNU+Linux distribution*, and `lbmk` is what implements that!
+Alpine Linux is a *Linux distribution*, and `lbmk` is what implements that!
 
 Continue reading, and you will learn of each file contained in `lbmk`. This
 document largely pertains to the version of `lbmk` as hosted in `lbmk.git`,
@@ -169,7 +169,7 @@ the license that most parts of `lbmk` are released under.
 Makefile
 ========
 
-For use with GNU Make, this is a frontend to `lbmk`, which can be used to run
+For use with *GNU* Make, this is a frontend to `lbmk`, which can be used to run
 various commands in `lbmk`.
 
 Use of this file is purely optional, and largely beneficial if you simply want
@@ -229,7 +229,7 @@ download
 This is the main BASH script for downloading various components used by `lbmk`.
 For example, this script downloads coreboot. Scripts called by `download` may
 also apply patches and such, to the corresponding project; for example, it will
-apply custom patches to GNU GRUB.
+apply custom patches to GRUB.
 
 This runs scripts in `resources/scripts/download`. For example:
 
@@ -349,7 +349,7 @@ to a non-native arch means that necessary crossgcc-arch will be compiled and be
 available when building roms, but not necessarily built or discovered when
 individual scripts are called manually.*
 
-The `payload_grub` entry specifies whether or not GNU GRUB is to be included in
+The `payload_grub` entry specifies whether or not GRUB is to be included in
 ROM images.
 
 The `payload_grub_withseabios` entry specifies whether or not SeaBIOS is to
@@ -375,7 +375,7 @@ other than `default`, which is the default if the option is missing.
 The `grub_scan_disk` option specifies can be `ahci`, `ata` or `both`, and it
 determines which types of disks are to be scanned, when the `grub.cfg` file in
 GRUB payloads tries to automatically find other `grub.cfg` files supplied by
-your GNU+Linux distribution. On some machines, setting it to `ata` or `ahci`
+your Linux distribution. On some machines, setting it to `ata` or `ahci`
 can improve boot speed by reducing delays; for example, trying to scan `ata0`
 on a ThinkPad X60 with the optical drive may cause GRUB to hang, so on that
 machine it is advisable to set this option to `ahci` (becuse the default HDD
@@ -652,7 +652,7 @@ you want to provide some explanations about specific files.
 resources/grub/background/
 ==========================
 
-Splash screen images applied duing startup when using the GNU GRUB payload.
+Splash screen images applied duing startup when using the GRUB payload.
 
 resources/grub/config/grub.cfg
 ==============================
@@ -690,13 +690,13 @@ code.
 resources/grub/modules.list
 ===========================
 
-This file defines all modules that are to be included in builds of GNU GRUB.
+This file defines all modules that are to be included in builds of GRUB.
 They are standalone builds, created using the `grub-mkstandalone` utility.
 
 resources/grub/patches/
 =======================
 
-This directory contains custom patches for GNU GRUB.
+This directory contains custom patches for GRUB.
 
 resources/memtest86plus/patch/
 ==============================
@@ -1038,7 +1038,7 @@ Command: `./download flashrom`
 resources/scripts/download/grub
 ===============================
 
-This downloads and patches GNU GRUB.
+This downloads and patches GRUB.
 
 Command: `./download grub`
 

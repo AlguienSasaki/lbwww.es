@@ -31,7 +31,7 @@ libreboot is running.
 
 *Internal* flashing means that the host CPU on your system can re-program the
 SPI flash, using an on-board SPI programmer (which all boards have). You do this
-from GNU+Linux, with flashrom.
+from Linux, with flashrom.
 
 *This* guide that you're reading now is for using an *external* programmer. It
 is called *external* because it's not the *internal* one on your mainboard.
@@ -314,7 +314,7 @@ the problem here is that it gave Microsoft free reign to define whatever
 dependencies they liked (as per apt-get rules), and every time you updated,
 you would be pinging Microsoft servers. Do you think that is strange?
 
-Microsoft shouldn't have *any* access to your GNU+Linux system! This was the
+Microsoft shouldn't have *any* access to your Linux system! This was the
 commit that Raspbian added to their distro, which added this what should rightly
 be called a security vulnerability, intentionally:
 
@@ -361,7 +361,7 @@ script is also applicable to newer ubuntu versions
 If the `ubuntu2004` script complains about missing dependencies, just modify
 the script and remove those dependencies. The script is located
 at `resources/scripts/build/dependencies/ubuntu2004` and it is written for
-Ubuntu 20.04, but it should work fine in other GNU+Linux distributions that use
+Ubuntu 20.04, but it should work fine in other Linux distributions that use
 the `apt-get` package manager.
 
 A `flashrom/` directory will be present, with a `flashrom` executable inside

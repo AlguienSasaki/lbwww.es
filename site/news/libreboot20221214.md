@@ -26,17 +26,7 @@ Build from source
 -----------------
 
 *This* release was build-tested on Debian 11. Your mileage may vary, with
-other distros. Portability is very much a goal for a future release; in
-particular, I want to port the Libreboot build system and everything it uses
-to build properly on OpenBSD, but I'm also interested in non-GNU Linux distros
-such as Alpine Linux.
-
-Much of the Libreboot build system relies on GNU-specific features, in the
-BASH implementation of `sh`.
-
-Build-testing of x86 ROM images has been done on Arch Linux, latest version
-as of November 2022, but ARM was not tested at that time; it should simply be
-a matter of dependencies needed in pacman, so it should be possible to use it.
+other distros.
 
 Work done since last release
 ============================

@@ -6,7 +6,7 @@ x-toc-enable: true
 Libreboot est un micrologiciel de démarrage [libéré](freedom-status.md)
 qui initialise le matériel (càd le contrôleur mémoire, CPU,
 périphériques) sur [des ordinateurs x86/ARM spécifiques](docs/hardware/)
-et lance un chargeur d'amorçage pour votre système d'exploitation. [GNU+Linux](docs/gnulinux/) et [BSD](docs/bsd/) sont bien supportés. C'est un
+et lance un chargeur d'amorçage pour votre système d'exploitation. [Linux](docs/gnulinux/) et [BSD](docs/bsd/) sont bien supportés. C'est un
 remplacement pour le micrologiciel UEFI/BIOS propriétaire.
 Des canaux d'aide sont disponibles 
 dans le canal [\#libreboot](https://web.libera.chat/#libreboot) sur le serveur IRC [Libera](https://libera.chat/).
@@ -51,7 +51,7 @@ pas de fournir un Coreboot déblobbé; ceci n'est simplement qu'une
 des politiques de Libreboot, une importante certes, mais qui n'est qu'un
 aspect mineur de Libreboot.
 
-De la même façon que *Debian* est une distribution GNU+Linux, Libreboot 
+De la même façon que *Alpine Linux* est une distribution Linux, Libreboot 
 est une *distribution coreboot*. Si vous voulez compilé une image ROM
 en partant des bases, vous devez alors effectuer une configuration experte 
 de Coreboot, GRUB et n'importe quel autre logiciel dont vous avez besoin 

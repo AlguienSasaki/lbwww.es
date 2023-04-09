@@ -10,7 +10,7 @@ Libreboot is free (as in freedom) boot firmware, which initializes the hardware
 can run. Libreboot then starts a bootloader to load your operating system. It
 replaces the proprietary BIOS/UEFI firmware typically found on a computer.
 Libreboot is compatible with specifical computer models that use the Intel/AMD
-x86 architecture. Libreboot works well with GNU+Linux and BSD operating systems.
+x86 architecture. Libreboot works well with Linux and BSD operating systems.
 
 The last Libreboot release, version 20210522, was released on May 22nd
 in 2021. *This* new release, Libreboot 20211122, is released today on November

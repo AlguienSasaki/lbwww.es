@@ -87,7 +87,7 @@ You should see something like this:
 
 ![](https://av.libreboot.org/x200/disassembly/0019.jpg)
 
-Now [install GNU+Linux](../gnulinux/).
+Now [install Linux](../gnulinux/).
 
 X200S and X200 Tablet users: GPIO33 trick will not work.
 --------------------------------------------------------
@@ -141,7 +141,7 @@ probably setting something in memory and loading the ROM, plus a payload program
 that does the flashing; Lenovo BIOS then probably sees that and runs that, instead
 of setting PRx and going for normal boot. It is theoretically possible that we
 could discover how this works, by debugging the Lenovo BIOS update utility (in
-Windows), and then replicate what it is doing, with some tool for GNU+Linux,
+Windows), and then replicate what it is doing, with some tool for Linux,
 then load a flashrom binary into memory and the ROM to flash (for the BIOS
 region). You would do this with GPIO33 grounded, and the payload program would
 actually flash the entire chip, with just a normal libreboot image.

@@ -36,7 +36,6 @@ Revision notes (22nd June 2014)
     April 2014)
 -   Made "DeJavu Sans Mono" the default font in GRUB (fixes border
     corruption).
--   re-added background image in GRUB (meditating GNU)
 -   added 6 more images:
     -   coreboot\_ukqwerty.rom (UK Qwerty keyboard layout in GRUB)
     -   coreboot\_serial\_ukqwerty.rom (UK Qwerty keyboard layout in
@@ -60,8 +59,7 @@ Revision notes (22nd June 2014)
     modifying it easier)
 -   Renamed X60\_binary.tar.gz and X60\_source.tar.gz to
     libreboot\_bin.tar.gz and libreboot\_src.tar.gz, respectively.
--   Replaced "GNU GRUB version" with "FREE AS IN FREEDOM" on GNU
-    GRUB start screen.
+-   Replaced GRUB version with "FREE AS IN FREEDOM" on the GRUB start screen.
 -   Added sha512.txt files in libreboot\_src and libreboot\_bin. (inside
     the archives)
 -   Added libreboot\_bin.tar.gz.sha512.txt and

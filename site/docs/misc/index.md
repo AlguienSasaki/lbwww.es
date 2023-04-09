@@ -22,7 +22,7 @@ If powertop doesn't work, another way (reduces battery life slightly)
 is to add *processor.max\_cstate=2* to the *linux* line in grub.cfg,
 using [this guide](../gnulinux/grub_cbfs.md).
 
-High Pitched Whining Noise on Idle in Parabola
+High Pitched Whining Noise on Idle in Arch-based distros
 ==============================================================
 
 The following removes most of the noise. It reduces what is a high
@@ -91,14 +91,14 @@ included inside the ROM. Connect your null modem cable to the serial
 port on the dock and connect the other end to a 2nd system using your
 USB Serial adapter.
 
-On the 2nd system, you can try this (using GNU Screen):
+On the 2nd system, you can try this (using `screen`):
 
 	sudo screen /dev/ttyUSB0 115200
 
-How to quit GNU Screen: Ctrl+A then release and press K, and then press
+How to quit Screen: Ctrl+A then release and press K, and then press
 Y.
 
-There are also others like Minicom but I like GNU Screen
+There are also others like Minicom but Screen works nicely.
 
 By doing this before booting the X60/T60, you will see console output
 from libreboot. You will also see GRUB displaying on the serial output,
@@ -280,7 +280,7 @@ using more power) non-stop, which will drain battery life if this is a
 laptop. If power usage is a concern, then you should not use this.
 (we're also not sure whether this workaround is appropriate)*
 
-To disable c-states, do this in GNU+Linux:
+To disable c-states, do this in Linux:
 
 ```
 for i in /sys/devices/system/cpu/cpu/cpuidle/state/disable;

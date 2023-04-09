@@ -85,7 +85,7 @@ Imagine a world where such liberties over software are commonplace, actually
 the default everywhere! Imagine a world where it's considered as important as
 the ability to freely learn mathematics, or physics, as required reading
 material in schools. *Imagine a world where any five year old can install a
-libre operating system such as GNU+Linux, and Computer Science is mandatory in
+libre operating system such as Linux/BSD, and Computer Science is mandatory in
 schools from a young age. Imagine filing your tax returns with Libre Software,
 exclusively. Imagine not even thinking about that, because it became the norm.*
 
@@ -178,12 +178,12 @@ javascript enabled, if you wish)
 They will try to trick the law makers by claiming things such as:
 
 * **"Open Source is insecure / you will get hacked"** - nothing could be
-  further from the truth! Free operating systems such as GNU+Linux, FreeBSD and
+  further from the truth! Free operating systems such as Linux, FreeBSD and
   especially OpenBSD, are among the most secure operating systems available.
 * **"Open Source is used by criminal hackers"** - here, they use the
   term *hacker* to describe someone who illegally gains access to someone
   elses computer. Don't fall for it. Maintainers of libre operating systems
-  like GNU+Linux distros or the BSDs are actively working to make the internet
+  like Linux distros or the BSDs are actively working to make the internet
   and computers in general *more secure*
 * **"Software authors deserve to be paid!"** -  In fact, many libre software devs
   are *paid* to work on Open Source! Many companies, including big ones,
@@ -221,7 +221,7 @@ They will try to trick the law makers by claiming things such as:
   pure nonsense, because the very freedoms provided by libre software (access
   to source code, ability to work on it yourself, and see what others did)
   means that people generally do not add malware to public software sources,
-  because they'd be discovered instantly. *Distributions* of GNU+Linux and
+  because they'd be discovered instantly. *Distributions* of Linux and
   other free operating systems are often maintained by many people, who verify
   the safety of each software package that they provide; they are also usually
   provided by each *distro*, in a central repository unlike with, say, Windows
@@ -241,7 +241,7 @@ They will try to trick the law makers by claiming things such as:
 If you're familiar with the *Matrix* films, proprietary operating systems like
 Windows/MacOS are basically like the Matrix; bland, no individuality, no
 independent thought, everything tightly controlled. By contrast, libre operating
-systems (such as GNU+Linux distributions or the BSDs) are like zion/io; vibrant,
+systems (such as Linux distributions or the BSDs) are like zion/io; vibrant,
 full of life, buzzing with activity, everything loose and free, and everyone
 is different (a highly diverse culture of people from all walks of life, acting
 in common cause but nonetheless individuals).

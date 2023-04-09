@@ -113,8 +113,8 @@ Changes for this release (latest changes first, earliest changes last)
 -   build: Only generate the GRUB configurations once (re-use on all
     images)
 -   Only build 2 GRUB payload executables, re-use on all boards.
--   resources/utilities/grub-assemble/gen.txtmode.sh: Use GNU BASH\
-    resources/utilities/grub-assemble/gen.vesafb.sh: Use GNU BASH
+-   resources/utilities/grub-assemble/gen.txtmode.sh: Use BASH\
+    resources/utilities/grub-assemble/gen.vesafb.sh: Use BASH
 -   scripts (error handling): Replace exit with exit 1 (make debugging
     easier)
 -   Move most files in CBFS to GRUB memdisk, except grub.cfg and

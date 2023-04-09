@@ -34,9 +34,9 @@ notabug (bucts is also there):
 You can download any of these repositories, make whatever changes you like, and
 then submit your changes using the instructions below.
 
-It is recommended that you build libreboot (all parts of it) in a GNU+Linux
+It is recommended that you build libreboot (all parts of it) in a Linux
 distribution. For example, the build system (lbmk) is untested on BSD systems.
-Install `git` in your GNU+Linux system, and download one of the repositories.
+Install `git` in your Linux system, and download one of the repositories.
 
 Development of libreboot is done using the Git version control system.
 Refer to the [official Git documentation](https://git-scm.com/doc) if you don't

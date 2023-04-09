@@ -84,7 +84,7 @@ service when you connect the ethernet cable:
 
 	sudo service network-manager restart
 
-On Parabola, you can try:
+On systemd-based distros, you might try:
 
 	sudo systemctl restart network-manager
 
@@ -102,7 +102,7 @@ Loading the option ROM from the PIKE2008 module on either ASUS KCMA-D8
 or KGPE-D16 causes the system to hang at boot. It's possible to use
 this in the payload (if you use a linux kernel payload, like linuxboot),
 or to boot (with SeaGRUB and/or SeaBIOS) from regular SATA and then use
-it in GNU+Linux. The Linux kernel is capable of using the PIKE2008
+it in Linux. The Linux kernel is capable of using the PIKE2008
 module without loading the option ROM.
 
 How to save kernel panic logs on thinkpad laptops?
@@ -678,11 +678,11 @@ boot just fine, using the bootloader (GRUB) that is in the flash chip.
 This also means that even if you remove the HDD or SSD, you'll still
 have a functioning bootloader installed which could be used to boot a
 live distribution installer from a USB flash drive. See
-[How to install GNU+Linux on a libreboot system](../docs/gnulinux/grub_boot_installer.md)
+[How to install Linux on a libreboot system](../docs/gnulinux/grub_boot_installer.md)
 
 Nowadays, other payloads are also provided. If you're using the SeaBIOS payload,
 then the normal MBR bootsector is used on your HDD or SSD, like you would
-expect. So the above paragraphs only apply to the GNU GRUB payload.
+expect. So the above paragraphs only apply to the GRUB payload.
 
 Do I need to re-flash when I re-install a distribution?
 -------------------------------------------------------------------------------------------
@@ -802,7 +802,7 @@ is transparent to the user of the drive.
 HDDs and SSDs are quite complex, and these days contain quite complex
 hardware which is even capable of running an entire operating system (by
 this, we mean that the drive itself is capable of running its own
-embedded OS), even GNU+Linux or BusyBox/Linux.
+embedded OS), even Linux.
 
 SSDs and HDDs are a special case, since they are persistent storage
 devices as well as computers.
@@ -968,12 +968,12 @@ as these are generally much safer.
 Operating Systems
 =================
 
-Can I use GNU+Linux?
+Can I use Linux?
 --------------------------------------------------
 
 Absolutely! It is well-tested in libreboot, and highly recommended. See
-[installing GNU+Linux](../docs/gnulinux/grub_boot_installer.md) and
-[booting GNU+Linux](../docs/gnulinux/grub_cbfs.md).
+[installing Linux](../docs/gnulinux/grub_boot_installer.md) and
+[booting Linux](../docs/gnulinux/grub_cbfs.md).
 
 Any recent distribution should work, as long as it uses KMS (kernel mode
 setting) for the graphics.
@@ -983,7 +983,7 @@ Fedora won't boot? (may also be applicable to Redhat/CentOS)
 
 On Fedora, by default the grub.cfg tries to boot linux in 16-bit mode. You
 just have to modify Fedora's GRUB configuration.
-Refer to [the GNU+Linux page](docs/gnulinux/).
+Refer to [the Linux page](docs/gnulinux/).
 
 Can I use BSD?
 ----------------------------------

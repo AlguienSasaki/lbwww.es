@@ -5,7 +5,7 @@
 Revisions for r20140903 (6th beta) (3rd September 2014)
 -------------------------------------------------------
 
--   Added modified builddeb\* scripts for Parabola GNU+Linux-libre:
+-   Added modified builddeb\* scripts for Arch-based distros:
     buildpac, buildpac-flashrom, buildpac-bucts (courtesy of Noah
     Vesely)
 -   Documentation: updated all relevant areas to mention use of

@@ -27,7 +27,7 @@ Flashing instructions can be found at
 [../install/](../install/) - note that external
 flashing is required (e.g. RPi), if the proprietary (ASUS) firmware is
 currently installed. If you already have libreboot/libreboot/coreboot, by default
-it is possible to re-flash using software running in GNU+Linux on the kcma-d8,
+it is possible to re-flash using software running in Linux on the kcma-d8,
 without using external hardware.
 
 If you currently have the ASUS firmware, please ignore the above link and
@@ -170,7 +170,7 @@ considerations:
     version of coreboot nowadays)
 -   SAS (via PIKE 2008 module) requires non-free option ROM (and
     SeaBIOS) to boot from it (theoretically possible to replace, but you
-    can put a kernel in CBFS or on SATA and use that to boot GNU, which
+    can put a kernel in CBFS or on SATA and boot from that, which
     can be on a SAS drive. The linux kernel can use those SAS drives
     (via PIKE module) without an option ROM).
     NOTE: SeaBIOS can load PCI-E option ROMs, and by default it will do so in

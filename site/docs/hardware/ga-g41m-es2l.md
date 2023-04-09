@@ -43,9 +43,9 @@ P*: Partially works with blobs
 
 | ***Payloads supported***  |       |
 |---------------------------|-------|
-| **GNU GRUB**              | Slow! |
+| **GRUB**              | Slow! |
 | **SeaBIOS**               | Works |
-| **SeaBIOS with GNU GRUB** | Works |
+| **SeaBIOS with GRUB** | Works |
 </div>
 This is a desktop board using intel hardware (circa \~2009, ICH7
 southbridge, similar performance-wise to the ThinkPad X200. It can make
@@ -60,7 +60,7 @@ using an IDE SATA adapter. The SATA ports do work, but it's IDE emulation. The
 emulation is slow in DMA mode sia SeaBIOS, so SeaBIOS is configured to use PIO
 mode on this board. This SeaBIOS configuration does not affect the Linux kernel.
 
-You need to set a custom MAC address in GNU+Linux for the NIC to work.
+You need to set a custom MAC address in Linux for the NIC to work.
 In /etc/network/interfaces on debian-based systems like Debian or
 Devuan, this would be in the entry for your NIC:\
 hwaddress ether macaddressgoeshere

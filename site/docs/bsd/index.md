@@ -22,7 +22,7 @@ you read this article.
 Boot BSD, using SeaBIOS
 =======================
 
-On x86 platforms, libreboot/libreboot both provide the choice of GNU GRUB and/or
+On x86 platforms, libreboot/libreboot both provide the choice of GRUB and/or
 SeaBIOS payload. GRUB can technically boot BSD kernels, but the code is
 poorly maintained and unreliable for this use-case scenario; on BIOS systems,
 GRUB can chainload BSD bootloaders, but on bare metal (as coreboot payload),

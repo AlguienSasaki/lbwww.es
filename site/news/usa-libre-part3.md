@@ -76,7 +76,7 @@ as cost, and deployment strategies for libre systems to replace current
 proprietary systems; more importantly, it would require them to study ways of
 reducing (or eliminating) the need for citizens to use proprietary software
 for interactions with the state. The bill also promotes the principle
-of *copyleft* licensing, such as GNU GPL; regardless of how you feel about
+of *copyleft* licensing, such as the GPL; regardless of how you feel about
 copyleft versus permissive (BSD-style) licensing, the advancement of *any*
 libre software on such massive scale will help the entire movement.
 

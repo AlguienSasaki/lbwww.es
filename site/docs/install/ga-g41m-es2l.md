@@ -48,7 +48,7 @@ Here is an image of the flash chip:\
 ![](https://av.libreboot.org/ga-g41m-es2l/ga-g41m-es2l.jpg)
 
 Internal flashing is possible. Boot with the proprietary BIOS and
-GNU+Linux. There are 2 flash chips (one is backup).
+Linux. There are 2 flash chips (one is backup).
 
 Flash the first chip:
 

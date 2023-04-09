@@ -43,9 +43,9 @@ P*: Partially works with blobs
 
 | ***Payloads supported***  |                 |
 |---------------------------|-----------------|
-| **GNU GRUB**              | Partially works |
+| **GRUB**              | Partially works |
 | **SeaBIOS**               | Partially works |
-| **SeaBIOS with GNU GRUB** | Partially works |
+| **SeaBIOS with GRUB** | Partially works |
 </div>
 
 This is a server board using AMD hardware (Fam10h). It can also be used
