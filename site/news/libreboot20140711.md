@@ -179,7 +179,7 @@ Revisions for r20140711 (1st beta) (11th July 2014)
         to accomodate the above.
     -   Documentation: added notes about cbfstool (standalone) in
         libreboot\_bin
--   Documentation: made docs/gnulinux/grub\_cbfs.html slightly easier to
+-   Documentation: made docs/linux/grub\_cbfs.html slightly easier to
     follow.
 -   Annotate the 'build\*' scripts with 'echo' commands, to help the
     user understand what it actually happening during the build process.

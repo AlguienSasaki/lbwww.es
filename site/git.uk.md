@@ -215,9 +215,3 @@ For sending patches, it is now preferred that you use *codeberg*. Technically,
 pull requests are still possible via Notabug. While Notabug still exists,
 Libreboot patches will continue be pushed there, mirroring what gets pushed
 on Notabug.
-
-The Notabug repository also contains some historical git repositories,
-including the old Libreboot git repository from before build system, website
-and images were split into separate repos. Leah Rowe has copies of these and
-will push them to codeberg if Notabug ever goes down permanently. Same goes
-for osboot repositories, which were merged with Libreboot in November 2022.

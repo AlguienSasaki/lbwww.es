@@ -497,11 +497,10 @@ is software-defined, and not enforced by the hardware.
 History
 =======
 
-The osboot project merged with Libreboot, and `nvmutil` was
-imported into the `lbmk` repository. A historical change log
+A historical change log
 is included at [docs/install/nvmutilimport.md](nvmutilimport.md),
 but this simply lists historical changes to nvmutil when it
-was part of osboot. Future changes to nvmutil can be found by
+was a separate project. Future changes to nvmutil can be found by
 running `git log util/nvmutil` in `lbmk.git`. No more changes
 to `nvmutilimport.md` will be applied, but future releases of
 Libreboot announced in `news/` will mention any nvmutil changes.

@@ -11,7 +11,7 @@ documentation, but there are aspects of libreboot that deserve special
 treatment. libreboot provides the option to boot GRUB directly, running on
 bare metal (instead of using BIOS or UEFI services).
 
-[The Linux section](../gnulinux/) also has libreboot-specific guides for
+[The Linux section](../linux/) also has libreboot-specific guides for
 dealing with Linux distributions when using GRUB directly, in this
 setup. [A similar section exists for BSD operating systems](../bsd/)
 

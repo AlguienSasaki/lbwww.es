@@ -6,7 +6,7 @@ x-toc-enable: true
 Libreboot est un micrologiciel de démarrage [libéré](freedom-status.md)
 qui initialise le matériel (càd le contrôleur mémoire, CPU,
 périphériques) sur [des ordinateurs x86/ARM spécifiques](docs/hardware/)
-et lance un chargeur d'amorçage pour votre système d'exploitation. [Linux](docs/gnulinux/) et [BSD](docs/bsd/) sont bien supportés. C'est un
+et lance un chargeur d'amorçage pour votre système d'exploitation. [Linux](docs/linux/) et [BSD](docs/bsd/) sont bien supportés. C'est un
 remplacement pour le micrologiciel UEFI/BIOS propriétaire.
 Des canaux d'aide sont disponibles 
 dans le canal [\#libreboot](https://web.libera.chat/#libreboot) sur le serveur IRC [Libera](https://libera.chat/).

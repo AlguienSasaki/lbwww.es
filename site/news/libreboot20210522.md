@@ -136,19 +136,7 @@ I scrapped the re-write in December 2020, and continued with my development on
 the Libreboot 20160907 build system. 
 
 Fundamental design flaws were fixed, and it is much more configurable these
-days. It first started as an experimental fork named *osboot*, which you can
-see here: <https://osboot.org/> (I, Leah Rowe, am the founder and lead developer
-of both libreboot *and* osboot. osboot is the younger sibling of libreboot)
-
-**NOTE: As of November 2022,
-[osboot has merged with and become part of Libreboot](merge.md), but
-the old repos at <https://notabug.org/osboot/> still exist and shall be
-preserved.**
-
-The osboot Git repository was then forked into osboot-libre, available in the
-branch named `libre`. *That* branch was then forked to create this Libreboot
-release. The osboot build system is named osbmk (osboot-make) and the one in
-the libre branch is named osboot-libre.
+days.
 
 Moving forward, ideas/features that were implemented (whether on not they were
 completed) in the re-write will be implemented in lbmk. The design of lbmk is
@@ -191,12 +179,12 @@ compared to the Libreboot 20160907 build system:
   few commits. There were more revisions used, but they were closer together.
   In *this* release, coreboot 4.11 and 4.14 are the versions used, and these
   revisions are quite far apart from each other.
-* You no longer have to manually run individual commands within lbmk (in osboot
-  it's called osbmk. osboot-make): each command checks if previous commands
+* You no longer have to manually run individual commands within lbmk:
+  each command checks if previous commands
   required were run, and runs them if not. **This means you can just type a
   single command to build a ROM image if you wish!**
 * Makefile included, making the build system even easier to use. The Makefile
-  contains no logic, it just runs osbmk (osboot-make) commands
+  contains no logic, it just runs lbmk commands.
 * The GRUB payload is now handled by a completely separate command. The
   command `./build payload grub` generates the GRUB payload executables, and
   puts them in `payload/grub/`, in a completely modular way.
@@ -214,23 +202,6 @@ compared to the Libreboot 20160907 build system:
 * Vastly improved `grub.cfg`: un-hardcodes a lot of functionality, improved
   usability on i945 targets such as X60/T60/macbook21, USB HDD support out of
   the box
-* Tianocore payload supported, for UEFI. NOTE: this is inherited from osboot,
-  but Tianocore itself doesn't work well or is otherwise untested on currently
-  supported platforms in Libreboot. The build system is capable of building it,
-  and what it builds *does* work on some sandybridge and ivybridge laptops that
-  were tested in osboot (the non-libre version, in the master branch). However,
-  Tianocore is a very large and complex codebase (it's actually bigger than the
-  Linux kernel!). It is untested on everything in Libreboot except i945 and GM45,
-  and on those it completely stalls (it gets to the logo screen, but crashes,
-  so it never reaches the UEFI shell program). Getting Tianocore to work is
-  a priority for the *next* Libreboot release; Tianocore is free software, and
-  can work quite well but it does need some maintenance first. Linux distros
-  expect it nowadays (on x86), though the linux kernel can still run on bare
-  metal and that is unlikely to change (so, GRUB payload will always be
-  possible on x86). lbmk doesn't actually build tianocore. Instead, it modifies
-  the *coreboot* build system, and uses the coreboot build system with a dummy
-  board config, selecting Tianocore as the payload, and then it copies the
-  Tianocore ELF into `payload/tianocore/`
 * SeaBIOS now included as standard, on all ROM images; on images with the GRUB
   payload, SeaBIOS is an option in the boot menu.
 * The build system is *much* easier to use when adding new board configs
@@ -690,24 +661,6 @@ coreboot 4.12
   SMMSTORE is basically UEFI's answer to CMOS "NVRAM". it is a way to store
   configurations, in SPI flash. it's handled via SMM interrupts (SMIs). NOTE:
   SMMSTOREv2 is also becoming a thing now
-* relocatable ramstage, postcar stage and C\_ENVIRONMENTAL\_BOOTBLOCK (as
-  opposed to romcc) are now mandatory features for all boards. This means that
-  fam15h/10h boards were dropped from coreboot, which didn't implement those
-  features yet (in other words, ASUS KCMA-D8 and KGPE-D16, not to mention
-  KFSN4-DRE, are currently stuck on coreboot 4.11 in libreboot) - it would be
-  too much work to get these boards working again in coreboot master, and the
-  code for these boards already work well, so a fork of coreboot 4.11 for
-  libreboot and osboot is planned, to backport newer coreboot features whenever
-  necessary, and in general keeping the boards building properly (newer GCC
-  toolchains will be used, over time). D8/D16 uses AMD AGESA codebase which
-  is AMD's own thing, not written at all with coreboot's coding style in mind,
-  to the point where the whole thing would have to be re-written to integrate it
-  into coreboot again. this is largely a waste of time, so maintaining coreboot
-  4.11 is a much better decision (again, AMD's code works very well. it's from
-  the time when AMD was actually sharing AGESA source code with coreboot. AGESA
-  was AMD's codebase for hardware initialization, and for a time, coreboot was
-  bolting it on in its own build system. You can find it under `src/vendorcode/`
-  in coreboot 4.11 source code
 
 coreboot 4.11
 -------------

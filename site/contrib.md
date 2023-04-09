@@ -234,7 +234,7 @@ the project, she provided Leah with a lot of technical advice. She initially
 created Libreboot IRC channel, when Leah did not know how to
 use IRC, and also handed +F founder status to Leah for the channel. As an FSF
 sysadmin, it was Lisa's job to maintain a lot of the infrastructure used by
-Libreboot; at the time, mailing lists on the GNU Savannah website were used by
+Libreboot; at the time, mailing lists on the Savannah website were used by
 the Libreboot project. When Paul Kocialkowski was a member of the project in
 2016, she helped him get help from the FSF; he was the leader of the Replicant
 project at the time, which had funding from the FSF, and the FSF authorized him
@@ -274,9 +274,6 @@ achievement:
 The FSF and GNU websites now run on
 Librebooted ASUS KGPE-D16 based servers, on a fully free GNU+Linux distro. This
 means that the FSF now has full software freedom for their hosting infrastructure.
-
-**NOTE: D16/D8 and KFSN4-DRE boards were removed from Libreboot on November
-19th, 2022.**
 
 The FSF also provides access to this infrastructure for many other projects
 (besides GNU projects); for example, Trisquel uses a D16 provided by the FSF

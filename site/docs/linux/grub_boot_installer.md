@@ -73,7 +73,7 @@ will unmount it:
 The `lsblk` command told you what device it is. Overwrite the drive, writing
 the OpenBSD installer to it with `dd`. Here's an example:
 
-	doas dd if=gnulinux.iso of=/dev/rsdXc bs=1M; sync
+	doas dd if=linux.iso of=/dev/rsdXc bs=1M; sync
 
 That's it! You should now be able to boot the installer from your USB drive
 (the instructions for doing so will be given later).
@@ -84,7 +84,7 @@ from [the Debian homepage](https://www.debian.org/), or the Devuan ISO from
 [the Devuan homepage](https://www.devuan.org/).
 
 Secondly, create a bootable USB drive using the commands in
-[#prepare-the-usb-drive-in-gnulinux](#prepare-the-usb-drive-in-gnulinux).
+[#prepare-the-usb-drive-in-linux](#prepare-the-usb-drive-in-linux).
 
 Thirdly, boot the USB and enter these commands in the GRUB terminal
 (for 64-bit Intel or AMD):

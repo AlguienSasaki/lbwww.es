@@ -6,21 +6,8 @@ The last Libreboot release, version 20220710, was released on 10 July
 in 2022. *This* new release, Libreboot 20221214, is released today on December
 14th, 2022. This is intended to be a *testing* release.
 
-This release is based on the osboot merger that happened last month. Many
-new boards are now supported!
-
-Many ARM-based chromebooks have also been added, and they were added just
-before the osboot merge.
-
-Both the osboot merge and ARM chromebooks (with u-boot payload) were
-mentioned in the [osboot/libreboot merge news post](merge.md) back in
-November 2022.
-
 This is marked as a *testing* release, but most/all boards should be fairly
-stable. Prior to the osboot/libreboot merge, a separate osboot release was
-planned, but the merger was decided upon instead. This release is essentially
-what osboot would have been, had it gone for a separate release. New releases
-conform to osboot standard, for all boards.
+stable.
 
 Build from source
 -----------------
@@ -277,9 +264,6 @@ These are takes from the git log of `lbmk.git`:
 
 osbmk Git changes
 -------------
-
-Osboot merged with the Libreboot project in November 2022, and the osboot
-website shut down, redirecting to the Libreboot one.
 
 It's important to show the osboot changes aswell. Osboot only became part of
 Libreboot last month, but the "reboot" of the osboot project happened around

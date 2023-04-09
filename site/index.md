@@ -7,7 +7,7 @@ The `libreboot` project provides
 [libre](freedom-status.md) *boot
 firmware* that initializes the hardware (e.g. memory controller, CPU,
 peripherals) on [specific Intel/AMD x86 and ARM targets](docs/hardware/), which
-then starts a bootloader for your operating system. [Linux](docs/gnulinux/)
+then starts a bootloader for your operating system. [Linux](docs/linux/)
 and [BSD](docs/bsd/) are well-supported. It replaces proprietary BIOS/UEFI
 firmware. Help is available
 via [\#libreboot](https://web.libera.chat/#libreboot)

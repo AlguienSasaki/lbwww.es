@@ -145,5 +145,5 @@ Revisions for r20140903 (6th beta) (3rd September 2014)
         terminal\_output \--append gfxterm
     -   Play a beep on startup:\
         play 480 440 1
--   Documentation: updated gnulinux/grub\_cbfs.html to make it safer
+-   Documentation: updated linux/grub\_cbfs.html to make it safer
     (and easier) to follow.

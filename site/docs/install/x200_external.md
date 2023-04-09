@@ -87,7 +87,7 @@ You should see something like this:
 
 ![](https://av.libreboot.org/x200/disassembly/0019.jpg)
 
-Now [install Linux](../gnulinux/).
+Now [install Linux](../linux/).
 
 X200S and X200 Tablet users: GPIO33 trick will not work.
 --------------------------------------------------------

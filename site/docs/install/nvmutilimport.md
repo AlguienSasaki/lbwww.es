@@ -10,11 +10,6 @@ version of the nvmutil documentation: [nvmutil.md](nvmutil.md)
 
 This code and documentation import was performed on November 17th, 2022.
 
-The notes below are for historical purposes, as they show versioned
-Change Logs from when nvmutil was part of osboot, but in its own
-repository. Post-osboot-libreboot-merge, it was decided that nvmutil
-shall now be part of the Libreboot build system proper.
-
 Future changes to nvmutil (in `lbmk.git`) shall be included in regular
 Libreboot release announcements, under `news/`, so please be sure to
 check that from now on.

@@ -143,7 +143,7 @@ Changes for this release (latest changes first, earliest changes last)
     -   Too many issues. Chromebooks are crippled (soldered
         RAM/storage/wifi) and have too many usability issues for the
         libreboot project.
--   docs/gnulinux/grub\_cbfs.html Major cleanup. Usability improvements.
+-   docs/linux/grub\_cbfs.html Major cleanup. Usability improvements.
 -   flash (flashrom script): remove boardmismatch=force
     -   This was put there before for users upgrading from libreboot r5
         to r6, but also allows the user to flash the wrong image. For

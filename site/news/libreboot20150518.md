@@ -69,7 +69,7 @@ Changes for this release, relative to r20150208 (earliest changes last, recent c
     again in the next release)
 -   coreboot-libre: delete unused code (reduce size of src archive)
 -   Flashing guides: make them more friendly to colourblind people
--   docs/gnulinux/encrypted\_\*.html: Remove mention of password
+-   docs/linux/encrypted\_\*.html: Remove mention of password
     length - it was arbitrary and pointless.
 -   docs/maintain/: Finish the guide
 -   scripts/download/coreboot: use diffs included in libreboot, not
@@ -92,11 +92,11 @@ Changes for this release, relative to r20150208 (earliest changes last, recent c
 -   demefactory (new utility): create GM45 factory.rom without the ME
 -   ich9deblob: re-factor descriptor.c functions
 -   docs/hardware/t500.html: add hardware logs
--   docs/gnulinux/encrypted\_\*.html: No password for default entry
+-   docs/linux/encrypted\_\*.html: No password for default entry
 -   docs/git/: Add more details about BUC.TS
 -   grub.cfg: Also scan for grub2/grub.cfg, not just grub/grub.cfg
 -   docs/maintain/ (new section. WIP!): Maintaining libreboot
--   docs/gnulinux/grub\_boot\_installer.html: Fix hazardous instruction
+-   docs/linux/grub\_boot\_installer.html: Fix hazardous instruction
 -   docs/tasks.html: Better categorization between intel/amd/arm
 -   docs/install/bbb\_setup.html: notes about SPI flashing stability
 -   docs/install/bbb\_setup.html: more names for the 0.1" cables
@@ -151,10 +151,10 @@ Changes for this release, relative to r20150208 (earliest changes last, recent c
 -   grub-assemble: Disable verbose output
 -   Add documentation on how to unlock root encrypted fs with key in
     initramfs in Parabola Linux
--   docs/gnulinux/grub\_cbfs.html: Improve structure (easier to use)
+-   docs/linux/grub\_cbfs.html: Improve structure (easier to use)
 -   grub.cfg: Disable the beep on startup
 -   docs/install/bbb\_setup.html: Make the guide easier to use
--   docs/gnulinux/grub\_cbfs.html: Remove redundant instructions
+-   docs/linux/grub\_cbfs.html: Remove redundant instructions
 -   docs/install/x200\_external.html: Mark pins in the images
 -   docs/install/bbb\_setup.html: Replace 3.3V PSU photo with ATX PSU
 -   docs/hardware/x200.html: Add dumps from 4-MiB X200 with Lenovo BIOS 3.22

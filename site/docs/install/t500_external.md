@@ -258,4 +258,4 @@ You should see something like this:
 
 ![](https://av.libreboot.org/t500/0062.jpg)
 
-Now [install Linux](../gnulinux/).
+Now [install Linux](../linux/).

@@ -77,12 +77,6 @@ available in the Libreboot 20220710 release:
 * ditto KCMA-D8
 * ditto GA-G41M-ES2L
 
-GA-G41M-ES2L works *for me* but jxself on FSF IRC reported video init issues.
-If you have this board, and the 2021 releases don't work either, you might
-consider using upstream coreboot or the September 2016 Libreboot release.
-I will investigate this, and re-include ROMs for this board on the next
-release of Libreboot.
-
 The boards listed above can still be compiled, from the source code archive
 in this release and from the Libreboot git repository; additionally, ROM images
 are provided for these in the previous release. D8/D16 continue to have raminit

@@ -20,7 +20,7 @@ Might want to run with --calibrate first
 
 If powertop doesn't work, another way (reduces battery life slightly)
 is to add *processor.max\_cstate=2* to the *linux* line in grub.cfg,
-using [this guide](../gnulinux/grub_cbfs.md).
+using [this guide](../linux/grub_cbfs.md).
 
 High Pitched Whining Noise on Idle in Arch-based distros
 ==============================================================
@@ -74,7 +74,7 @@ Might want to run with --calibrate first
 
 If powertop doesn't work, another way (reduces battery life slightly)
 is to add *processor.max\_cstate=2* to the *linux* line in grub.cfg,
-using [this guide](../gnulinux/grub_cbfs.md).
+using [this guide](../linux/grub_cbfs.md).
 
 X60/T60: Serial port - how to use (for dock owners)
 
@@ -112,7 +112,7 @@ Devuan, to enable a serial console using GeTTY:\
 
 Note: part of the tutorial above requires changing your grub.cfg. Just
 change the `linux` line to add instructions for enabling getty. See
-[../gnulinux/grub\_cbfs.md](../gnulinux/grub_cbfs.md).
+[../linux/grub\_cbfs.md](../linux/grub_cbfs.md).
 
 Finetune backlight control on intel gpu's
 =========================================
@@ -217,7 +217,7 @@ behaviour.
 You need to write changes in a libreboot rom image, and flash it, in order
 to apply them. You can either use a pre-compiled rom image, or create an image
 from the current one in your computer. See here 
-<https://libreboot.org/docs/gnulinux/grub_cbfs.html#get-the-rom-image> for 
+<https://libreboot.org/docs/linux/grub_cbfs.html#get-the-rom-image> for 
 more information on how to do that.
 
 Once you have a libreboot rom image, say 'libreboot.rom', you can write
@@ -238,7 +238,7 @@ You can check that the parameters are set in the image with :
 	sudo ./nvramtool -C libreboot.rom -a
 
 Finally, you need to flash the rom with this new image. See here
-<https://libreboot.org/docs/gnulinux/grub_cbfs.html#with-re-flashing-the-rom>
+<https://libreboot.org/docs/linux/grub_cbfs.html#with-re-flashing-the-rom>
 for a detailed explanation.
 
 Get EDID: Find out the name (model) of your LCD panel

@@ -678,7 +678,7 @@ boot just fine, using the bootloader (GRUB) that is in the flash chip.
 This also means that even if you remove the HDD or SSD, you'll still
 have a functioning bootloader installed which could be used to boot a
 live distribution installer from a USB flash drive. See
-[How to install Linux on a libreboot system](../docs/gnulinux/grub_boot_installer.md)
+[How to install Linux on a libreboot system](../docs/linux/grub_boot_installer.md)
 
 Nowadays, other payloads are also provided. If you're using the SeaBIOS payload,
 then the normal MBR bootsector is used on your HDD or SSD, like you would
@@ -692,7 +692,7 @@ automatically switch to a GRUB configuration on the HDD or SSD, if it
 exists. You can also load a different GRUB configuration, from any kind
 of device that is supported in GRUB (such as a USB flash drive). For
 more information, see
-[Modifying the GRUB Configuration in libreboot Systems](../docs/gnulinux/grub_cbfs.md)
+[Modifying the GRUB Configuration in libreboot Systems](../docs/linux/grub_cbfs.md)
 
 If you're using the SeaBIOS payload, it's even easier. It works just like you
 would expect. SeaBIOS implements a normal x86 BIOS interface.
@@ -972,8 +972,8 @@ Can I use Linux?
 --------------------------------------------------
 
 Absolutely! It is well-tested in libreboot, and highly recommended. See
-[installing Linux](../docs/gnulinux/grub_boot_installer.md) and
-[booting Linux](../docs/gnulinux/grub_cbfs.md).
+[installing Linux](../docs/linux/grub_boot_installer.md) and
+[booting Linux](../docs/linux/grub_cbfs.md).
 
 Any recent distribution should work, as long as it uses KMS (kernel mode
 setting) for the graphics.
@@ -983,7 +983,7 @@ Fedora won't boot? (may also be applicable to Redhat/CentOS)
 
 On Fedora, by default the grub.cfg tries to boot linux in 16-bit mode. You
 just have to modify Fedora's GRUB configuration.
-Refer to [the Linux page](docs/gnulinux/).
+Refer to [the Linux page](docs/linux/).
 
 Can I use BSD?
 ----------------------------------
