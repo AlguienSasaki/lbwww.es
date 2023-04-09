@@ -274,7 +274,7 @@ The keyboard has a keypad enter instead of an AltGr. The first key on
 the right side of the spacebar is the Apple "command" key. On its
 right is the keypad enter. We can make it act as an AltGr.
 
-If your operating system is Trisquel or other dpkg-based distribution,
+If your operating system is Debian or other dpkg-based distribution,
 there is an easy solution. Under root (or sudo) run
 
 	dpkg-reconfigure keyboard-configuration

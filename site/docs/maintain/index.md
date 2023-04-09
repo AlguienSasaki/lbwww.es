@@ -45,7 +45,7 @@ these nuances, when working on *libreboot*.
 What is lbmk?
 ==============
 
-In the same way that Trisquel and Debian are GNU+Linux distributions, Libreboot 
+In the same way that that *Alpine Linux* is a *Linux distribution*, Libreboot 
 is a **coreboot distribution**. The `lbmk` build system *is* that distro,
 providing the glue necessary to integrate coreboot plus anything else that's
 needed, unifying everything in a completely automated and pre-configured
@@ -120,7 +120,7 @@ for users, in a completely automated fashion. The purpose of `lbmk` is to
 provide an *unattended* build process, with as little user interaction as
 possible. Thus, `lbmk` is an *automated build system*. It says on the libreboot
 home page that libreboot is a *coreboot distribution* in much the same way that
-Trisquel is a *GNU+Linux distribution*, and `lbmk` is what implements that!
+Debian is a *GNU+Linux distribution*, and `lbmk` is what implements that!
 
 Continue reading, and you will learn of each file contained in `lbmk`. This
 document largely pertains to the version of `lbmk` as hosted in `lbmk.git`,
@@ -917,8 +917,6 @@ resources/scripts/build/dependencies/ubuntu2004
 
 Using `apt-get`, this installs build dependencies for Ubuntu 20.04 (for later
 versions, you might use the Debian script).
-
-This script should also work with Trisquel 9 and 10.
 
 Command: `./build dependencies ubuntu2004`
 

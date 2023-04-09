@@ -54,7 +54,7 @@ much more flexibility; for example, the Makefile currently cannot build single
 ROM images (it just builds all of them, for all boards).
 
 You must ensure that all build dependencies are installed. If you're running
-Ubuntu or similar distribution (Debian, Trisquel, etc) you can do this:
+Ubuntu or similar distribution (Debian, Arch, etc) you can do this:
 
 	sudo make install-dependencies-ubuntu
 
@@ -111,8 +111,7 @@ First, install build dependencies
 ---------------------------------
 
 libreboot includes a script that automatically installs apt-get dependencies
-in Ubuntu 20.04. It works well in other apt-get distros (such as Trisquel and
-Debian):
+in Ubuntu 20.04:
 
 	sudo ./build dependencies ubuntu2004
 
