@@ -52,10 +52,6 @@ libreboot currently supports the following systems in this release:
 
 ### Laptops (ARM, with U-Boot payload)
 
--   [Samsung Chromebook 2 13" (peach-pi)](../install/chromebooks.md)
--   [Samsung Chromebook 2 11" (peach-pit)](../install/chromebooks.md)
--   [HP Chromebook 11 G1 (daisy-spring)](../install/chromebooks.md)
--   [Samsung Chromebook XE303 (daisy-snow)](../install/chromebooks.md)
 -   [HP Chromebook 14 G3 (nyan-blaze)](../install/chromebooks.md)
 -   [Acer Chromebook 13 (CB5-311, C810) (nyan-big)](../install/chromebooks.md)
 -   [Hisense Chromebook C11 and more (veyron-jerry)](../install/chromebooks.md)
@@ -67,6 +63,10 @@ libreboot currently supports the following systems in this release:
 These boards were in Libreboot, but have been removed with the intention of
 re-adding them at a later date. They were removed due to issues. List:
 
+-   [Samsung Chromebook 2 13" (peach-pi)](../install/chromebooks.md)
+-   [Samsung Chromebook 2 11" (peach-pit)](../install/chromebooks.md)
+-   [HP Chromebook 11 G1 (daisy-spring)](../install/chromebooks.md)
+-   [Samsung Chromebook XE303 (daisy-snow)](../install/chromebooks.md)
 -   [ASUS Chromebit CS10 (veyron-mickey)](../install/chromebooks.md)
 -   [ASUS Chromebook Flip C100PA (veyron-minnie)](../install/chromebooks.md)
 -   [ASUS Chromebook C201PA (veyron-speedy)](../install/c201.md)

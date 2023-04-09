@@ -7,6 +7,9 @@ x-toc-enable: true
 November 2022. You can still use older revisions of Libreboot, and older
 release versions.**
 
+These will be re-added to Libreboot at a later date, once proper testing
+has been done.
+
 Initial flashing instructions for KGPE-D16.
 
 This guide is for those who want libreboot on their ASUS KGPE-D16

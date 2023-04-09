@@ -3,6 +3,11 @@ title: Chromebook flashing instructions
 x-toc-enable: true
 ...
 
+NOTE: daisy, peach and veyron boards were temporarily removed from
+lbmk. They should be re-added to Libreboot at a later date. The reasons
+are written on the hardware compatibility page. For now, Libreboot only
+officially supports the `nyan` and `gru` chromebooks.
+
 This page attempts to give a brief, general overview of how to flash
 custom firmware on ChromeOS devices. This guide usually refers to all of
 them as "Chromebook"s since it's the most common form factor.
