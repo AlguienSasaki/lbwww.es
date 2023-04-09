@@ -74,6 +74,16 @@ Lbmk includes a script that will automatically inject the necessary blobs into a
 The script can determine the board automatically if you have not changed the name, but you can also manually set the board name with the `-b` flag.
 
 In order to inject the necessary blobs into a rom image, run the script from the root of lbmk and point to the rom image.
+
+If you only wish to flash a release rom then the process of injecting the necessary blobs is quite simple.
+Run the injection script pointing to the release archive you downloaded:
+
+	./blobutil inject /path/to/libreboot-20230319-18-g9f76c92_t440pmrc_12mb.tar.xz
+
+The script can automatically detect the board as long as you do not change the file name.
+You can then find flash-ready ROMs in `/bin/release/`
+
+Alternatively, you may patch only a single rom file.
 For example:
 
 	./blobutil inject -r x230_libreboot.rom -b x230_12mb
