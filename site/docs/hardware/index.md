@@ -24,22 +24,14 @@ libreboot currently supports the following systems in this release:
 -   [Gigabyte GA-G41M-ES2L motherboard](ga-g41m-es2l.md)
 -   [Acer G43T-AM3](acer_g43t-am3.md)
 -   [Intel D510MO and D410PT motherboards](d510mo.md)
--   [Intel D945GCLF](d945gclf.md) (removed from lbmk, TODO: re-add support)
 -   [Apple iMac 5,2](imac52.md)
-
-### Servers/workstations (AMD, x86)
-
--   [ASUS KCMA-D8 motherboard](kcma-d8.md) (removed from lbmk, TODO: re-add)
--   [ASUS KGPE-D16 motherboard](kgpe-d16.md) (removed from lbmk, TODO: re-add)
--   [ASUS KFSN4-DRE motherboard](kfsn4-dre.md) (removed from lbmk, TODO: re-add)
 
 ### Laptops (Intel, x86)
 
 -   ThinkPad X60 / X60S / X60 Tablet
 -   ThinkPad T60 (with Intel GPU)
 -   [Lenovo ThinkPad X200 / X200S / X200 Tablet](x200.md)
--   Lenovo ThinkPad X230 (documentation needs to be re-added, ever since the
-    purge on 4 January 2022. It will be done asap)
+-   Lenovo ThinkPad X230
 -   Lenovo ThinkPad X301
 -   [Lenovo ThinkPad R400](r400.md)
 -   [Lenovo ThinkPad T400 / T400S](t400.md)
@@ -66,12 +58,24 @@ libreboot currently supports the following systems in this release:
 -   [Samsung Chromebook XE303 (daisy-snow)](../install/chromebooks.md)
 -   [HP Chromebook 14 G3 (nyan-blaze)](../install/chromebooks.md)
 -   [Acer Chromebook 13 (CB5-311, C810) (nyan-big)](../install/chromebooks.md)
--   [ASUS Chromebit CS10 (veyron-mickey)](../install/chromebooks.md)
--   [ASUS Chromebook Flip C100PA (veyron-minnie)](../install/chromebooks.md)
--   [ASUS Chromebook C201PA (veyron-speedy)](../install/c201.md)
 -   [Hisense Chromebook C11 and more (veyron-jerry)](../install/chromebooks.md)
 -   [ASUS Chromebook Flip C101 (gru-bob)](../install/chromebooks.md)
 -   [Samsung Chromebook Plus (v1) (gru-kevin)](../install/chromebooks.md)
+
+## Removed boards
+
+These boards were in Libreboot, but have been removed with the intention of
+re-adding them at a later date. They were removed due to issues. List:
+
+-   [ASUS Chromebit CS10 (veyron-mickey)](../install/chromebooks.md)
+-   [ASUS Chromebook Flip C100PA (veyron-minnie)](../install/chromebooks.md)
+-   [ASUS Chromebook C201PA (veyron-speedy)](../install/c201.md)
+-   [ASUS KCMA-D8 motherboard](kcma-d8.md) (removed from lbmk, TODO: re-add)
+-   [ASUS KGPE-D16 motherboard](kgpe-d16.md) (removed from lbmk, TODO: re-add)
+-   [ASUS KFSN4-DRE motherboard](kfsn4-dre.md) (removed from lbmk, TODO: re-add)
+-   [Intel D945GCLF](d945gclf.md) (removed from lbmk, TODO: re-add support)
+
+### NOTES about removed boards:
 
 **WARNING: veyron speedy boards (e.g. C201) have non-functional video init as
 of 19 February 2023, and no fix is yet available on that date. See:
@@ -89,6 +93,10 @@ cover it. For now, assume that these are broken - ROM images are excluded,
 for now, and have been deleted from the Libreboot 20221214 and 20230319
 releases. - see: <https://review.coreboot.org/plugins/gitiles/blobs/+/4c0dcf96ae73ba31bf9aa689768a5ecd47bac19e>
 and <https://review.coreboot.org/plugins/gitiles/blobs/+/b36cc7e08f7337f76997b25ee7344ab8824e268d>**
+
+d945gclf: Doesn't boot at all, according to last report. D510MO is still in
+lbmk but still was reported problematic; other boards should be fine (see list
+above).
 
 WARNING: Support for these boards is at a proof-of-concept stage. Refer
 to [docs/uboot/](../uboot/) for more info about the U-Boot payload.
