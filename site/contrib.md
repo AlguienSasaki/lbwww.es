@@ -109,7 +109,7 @@ Alyssa Rosenzweig
 Switched the website to use markdown in lieu of handwritten HTML and custom
 PHP. **Former libreboot project maintainer (sysadmin for libreboot.org).**
 
-Alyssa wrote the original static site generator (bash scripts converting
+Alyssa wrote the original static site generator (shell scripts converting
 markdown to html, via pandoc) for libreboot.org. This static site generator has
 now been heavily modified and forked into a formal project, by Leah Rowe:
 

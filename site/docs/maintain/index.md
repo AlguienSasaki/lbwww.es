@@ -160,11 +160,75 @@ implementing the `lbmk` build system.
 
 All sections below pertain to actual files in lbmk:
 
+.gitcheck
+=========
+
+This checks whether Git credentials are set, and sets placeholder credentials
+if required, locally for the given project.
+
+If something went wrong during build, these placeholder credentials will still
+be in effect, but only within `lbmk`. You can unset them like so:
+
+	./.gitcheck Clean
+
+This is important, when working on Libreboot. Ordinarily, temporary credentials
+are cleared after running lbmk, but may not be cleared in error conditions.
+
+A bit of a hack, but it avoids build issues when the user hasn't set a name
+and email address in Git. If you've set a *global* one, then this script is
+irrelevant.
+
+NOTE: In a git repository, the directory `.git` and files like `.gitignore`
+or `.gitmodules` are used by the Git software. The name of this script begins
+with `.git`, but the Git software does not make use of this file. It is
+a *shell script*, executed by lbmk when you run commands in it.
+
+More context about Git name/email can be found in
+the [Libreboot build instructions](../build/).
+
+.git
+====
+
+Metadata used by git-scm, the version control system that Libreboot uses for
+development. This directory will be present in the Git repository. It is not
+provided in Libreboot *releases*. Learn more about Git here:
+
+<https://git-scm.com/>
+
+.gitignore
+==========
+
+This file is used by Git. It tells Git to *ignore* certain files, so that they
+do not get added accidentally to commits for the Libreboot Git repository,
+named `lbmk.git`.
+
+You can learn more about `.gitignore` files here:
+
+<https://git-scm.com/docs/gitignore>
+
 COPYING
 =======
 
 This file contains a copy of the GNU General Public License, version 3.0. It is
 the license that most parts of `lbmk` are released under.
+
+NOTE: Not all of Libreboot is released under this license, but it is heavily
+used in the Libreboot *build system*. Much of coreboot is GPL version 2 and
+in some cases, other licenses (such as BSD-style licenses) are used. This is
+inevitable, with Libreboot being an *aggregate distribution* of software,
+namely coreboot and *payloads*, plus utilities.
+
+Including a `COPYING` file is a good, conservative first step in adhering
+to *good practise* when it comes to software, and it is *mostly* technically
+correct in the context of *lbmk*, because *most* of lbmk is under GPLv3. This
+is a legacy from when Libreboot started, where that license was chosen, and
+it has just been *de facto* standard for Libreboot (build system) ever since.
+
+You should perform an audit, to learn more about other licenses. This can be
+done by inspecting the various projects that lbmk makes use of, like coreboot.
+For aggregate distributions such as coreboot distributions or Linux distros,
+it's not trivial to keep track of every license in a simple way, so such an
+audit is inevitable if you want to know more.
 
 Makefile
 ========
@@ -176,16 +240,59 @@ Use of this file is purely optional, and largely beneficial if you simply want
 to build all of `lbmk` (just run `make` when the current work directory is the
 root directory of `lbmk`).
 
-README.md
-=========
+README*.*md
+===========
 
 This file contains a brief description of libreboot, along with information
 about the project
 
+It's basically a copy of the homepage text, relative to libreboot.org.
+
+blobs/
+======
+
+This directory contains binary blobs, presently only GbE and IFD files which
+are non-software blobs; they are binary-encoded configuration files.
+
+The IFD files are *Intel Flash Descriptors* configuring the machine, on Intel
+machines that use flash descriptors, and the GbE files are configs for Intel
+gigabit ethernet. You can read more about these on
+the [freedom status page](../../freedom-status.md) - the `ifdtool`
+and `nvmutil` programs interact with these (nvmutil is provided by Libreboot,
+and ifdtool is supplied by the upstream coreboot project).
+
+When `blobutil` is running, it will place temporary files here, extracting
+binary blobs such as Intel ME firmware, for running through `me_cleaner`.
+
+At present, only the GbE and IFD files are included here for Libreboot
+releases, but other files such as `me.bin` are stored here during the build
+process (auto-downloaded and processed through `me_cleaner` on boards that
+need them).
+
+NOTE: Other blobs such as EC firmware and Intel MRC are *not* placed here, by
+lbmk.
+
+blobutil
+========
+
+This script is responsible for downloading, extracting and inserting binary
+blobs that are required on specific machines for coreboot. This is done
+automatically, during the build process, but `blobutil` can also be used as
+a standalone program, for *release* ROM images (many of which will have certain
+blobs like Intel ME *scrubbed*, where the user is expected to insert them).
+
+You can read more about this on the page: [Inserting binary blobs
+on Sandybridge/Ivybridge/Haswell](../install/ivy_has_common.md)
+
+NOTE: This utility may be expanded in future Libreboot revisions, to handle
+things such as EC firmware, and it may expand to other platforms. It is, at
+present, only utilised for handling ROM images on Intel Sandybridge, Ivybridge
+and Haswell platforms.
+
 build
 =====
 
-This is the main BASH script, part of `lbmk`, used for running most `lbmk`
+This is the main shell script, part of `lbmk`, used for running most `lbmk`
 commands. You could say that this file *is* `lbmk`. Run `./build help` for
 usage instructions.
 
@@ -226,7 +333,7 @@ You may also refer to the [build instructions](../build)
 download
 ========
 
-This is the main BASH script for downloading various components used by `lbmk`.
+This is the main shell script for downloading various components used by `lbmk`.
 For example, this script downloads coreboot. Scripts called by `download` may
 also apply patches and such, to the corresponding project; for example, it will
 apply custom patches to GRUB.
@@ -251,6 +358,23 @@ For a full list of all `download` commands, run:
 
 	./download help
 
+*Most* download modules are defined in `resources/git/revisions`, showing the
+link to git repositories and info about revisions, for each given project.
+More on this is available in the page you're reading now (keep reading).
+
+gitclone
+========
+
+This script is used by the `download` script, specifically for cloning of
+Git repositories, for certain projects as defined in the file at location,
+path `resources/git/revisions` within lbmk.
+
+It downloads a project, from a main Git repository or a backup if defined and
+the main one is down. It then resets to a defined revision (commit ID). If
+patches are supplied for that project, by lbmk, then those patches are applied.
+The patches are applied as per: ascending, alphanumerical order of patch file
+name.
+
 modify
 ======
 
@@ -271,6 +395,8 @@ This would run:
 
 	./resources/scripts/modify/coreboot/configs x200_8mb x60
 
+If you run it without arguments, help text is shown.
+
 projectname
 ===========
 
@@ -279,6 +405,54 @@ This file contains a single line of text, with the string "libreboot".
 If you were to fork libreboot, you could very easily just modify this file, so
 as to rename your fork in a largely automated way. Many parts of lbmk use this
 file.
+
+resources/blobs/
+================
+
+This directory contains ME7 Update Parser, and a file defining links to vendor
+update files, from which Intel ME images are extracted, to be neutered
+via `me_cleaner`.
+
+resources/blobs/me7\_update\_parser.py
+======================================
+
+This is a special fork of `me_cleaner`, specifically for parsing and neutering
+Intel ME images provided by Lenovo for ThinkPad X220 and other Lenovo
+ThinkPads of Intel SandyBridge platform. You can find information about this
+on the original repository:
+
+<https://github.com/Thrilleratplay/me7_update_parser>
+
+ME7 Update Parser was originally written for *Heads*, another coreboot distro
+very similar to Libreboot that provides coreboot build automation with Linux
+based payload configurations. *Their* build system auto-downloads and
+auto-neuters Intel ME images, during build, so that the user does not have to
+manually extract such images from dumps of the original vendor firmware (in
+the flash) on a given machine.
+
+Such logic was ported to Libreboot, courtesy of `shmalebx9` as mentioned
+on the [who page](../../who.md) - Caleb is a core developer in the Libreboot
+project.
+
+resources/blobs/sources
+=======================
+
+URLs and hashes for vendor files containing Intel ME images within them. Where
+feasible, backup URLs are also provided. SHA1 checksums are defined, so that
+lbmk can verify the integrity of downloaded files.
+
+When building for sandybridge, ivybridge and haswell machines, Libreboot's
+bulid system automatically downloads such updates from the vendor, to extract
+the Intel ME image and neuter it with `me_cleaner` or `me7_update_parser.py`.
+
+Such auto-download logic was ported from the *Heads* build system, to be used
+in the *Libreboot* build system. It is the bee's knees, because it prevents
+the need for manual extraction of Intel ME images from vendor dumps. It means
+that you can just *build Libreboot* (from `lbmk`) and then just flash the
+resulting image, without having to worry.
+
+Of course, backing up the original firmware is still a good idea, before
+installing Libreboot or any other spin of coreboot.
 
 resources/coreboot/
 ===================
@@ -518,136 +692,17 @@ for instance, and `lbmk` will not erroneously try to apply `README` as though
 it were a patch file. This might be useful if you have a *lot* of patches, and
 you want to provide some explanations about specific files.
 
-resources/u-boot/
-=================
+resources/git/revisions
+=======================
 
-This directory contains configuration, patches and so on, for each mainboard
-that can use U-Boot as a payload in the `lbmk` build system. U-Boot doesn't yet
-have reliable generic configurations that can work across all coreboot boards
-(per-architecture), so these are used to build it per-board.
+This defines git repositories and commit IDs (revisions) to reset to, for
+various projects used by Libreboot. *This* file is used, for projects that
+are relatively simple to handle when downloading (coreboot is not defined
+here).
 
-resources/u-boot/BOARDNAME/
-===========================
-
-Each `BOARDNAME` directory defines configuration for a corresponding mainboard.
-It doesn't actually have to be for a board; it can also be used to just define
-a U-Boot revision, with patches and so on. To enable use as a payload in ROM
-images, this must have the same name as its `resources/coreboot/BOARDNAME/`
-counterpart.
-
-resources/u-boot/BOARDNAME/board.cfg
-====================================
-
-This file can contain several configuration lines, each being a string, such
-as:
-
-* `ubtree="default"` (example entry)
-* `ubrevision="4debc57a3da6c3f4d3f89a637e99206f4cea0a96"` (example entry)
-* `arch="AArch64"` (example entry)
-
-These are similar in meaning to their coreboot counterparts.
-
-The `ubtree` entry is actually a link, where its value is a directory name
-under `resources/u-boot`. For example, `ubtree="default"` would refer to
-`resources/u-boot/default` and the corresponding U-Boot source tree created
-(when running `./download u-boot`, which makes use of `board.cfg`) would be
-`u-boot/default/`. In other words: a `board.cfg` file in `resources/u-boot/foo`
-might refer to `resources/u-boot/bar` by specifying `ubtree="bar"`, and the
-created u-boot source tree would be `u-boot/bar/`. ALSO:
-
-FUN FACT: such references are infinitely checked until resolved. For
-example, `foo` can refer to `bar` and `bar` can refer to `baz` but if there is
-an infinite loop, this is detected and handled by `lbmk`. For example,
-if `bar` refers to `foo` which refers back to `bar`, this is not permitted
-and will throw an error in `lbmk`.
-
-The `ubrevision` entry defines which U-Boot revision to use, from the U-Boot
-Git repository. *At present, lbmk only supports use of the official repository
-from the upstream U-Boot project*.
-
-The `arch` entry specifies which CPU architecture is to be used: currently
-recognized entries are `x86_32`, `x86_64`, `ARMv7` and `AArch64`. *Setting it
-to a non-native arch means that necessary crossgcc-arch will be compiled and be
-available when building roms, but not necessarily built or discovered when
-individual scripts are called manually.*
-
-resources/u-boot/BOARDNAME/config/\*
-====================================
-
-Files in this directory are *U-Boot* configuration files. Configuration file
-names can be anything, but for now `default` is the only one used.
-
-In `lbmk`, a board-specific directory under `resources/u-boot/` should never
-specify a U-Boot revision. Rather, a directory *without* U-Boot configs should
-be created, specifying a U-Boot revision. For example, the directory
-`resources/u-boot/default/` specifies a U-Boot revision. In the board-specific
-directory, your `board.cfg` could then specify `ubtree="default"` but without
-specifying a U-Boot revision (this is specified by
-`resources/u-boot/default/board.cfg`).
-
-Normally, the U-Boot build process results in the U-Boot executable and a
-device-tree file for the target board, which must further be packaged together
-to make things work. When you create a U-Boot configuration, you should enable
-`CONFIG_REMAKE_ELF` or `CONFIG_OF_EMBED` that handles this. The former option
-enables creation of a `u-boot.elf` that bundles them together after the build,
-and the latter option embeds it into the `u-boot` executable.
-
-When making a U-Boot configuration, you should also pay special attention to
-the `CONFIG_SYS_TEXT_BASE` (`CONFIG_TEXT_BASE` in later versions), whose defaults
-may cause it to overlap coreboot, in which case it won't boot. Normally, the
-upstream coreboot build system checks for this when given `CONFIG_PAYLOAD_ELF`,
-but `lbmk` injects the payload itself and doesn't check for this yet.
-
-Another interesting config option is `CONFIG_POSITION_INDEPENDENT` for ARM
-boards, which has been so far enabled in the ones `lbmk` supports, just to be
-safe.
-
-U-Boot build system
--------------------
-
-If you wish to know about U-Boot, refer here:\
-<https://u-boot.readthedocs.io/en/latest/>
-
-This and other documents from U-Boot shall help you to understand *U-Boot*.
-
-You create a config, for `resources/u-boot/BOARDNAME/configs`, by finding the
-corresponding board name in the upstream U-Boot `configs` directory, and
-running `make BOARDNAME_defconfig` and `make menuconfig` commands in the
-*U-Boot* build system. You should do this after running `./download u-boot` in
-`lbmk`.
-
-You might want to consider basing your config on the upstream `coreboot` boards
-when possible, but such a board is not available upstream for ARM yet.
-
-You can simply clone U-Boot upstream, add whatever patches you want, and
-then you can make your config. It will appear afterwards in a file
-named `.config` which is your config for inside `resources/u-boot/BOARDNAME/`.
-
-You can then use `git format-patch -nX` where `X` is however many patches you
-added to that U-Boot tree. You can put them in the patches directory
-under `resources/u-boot/BOARDNAME`.
-
-The *base* revision, upon which any custom patches you wrote are applied,
-shall be the `ubrevision` entry.
-
-Scripts exist in `lbmk` for automating the modification/updating of *existing*
-configs, but not for adding them. Adding them is to be done manually, based on
-the above guidance.
-
-resources/u-boot/BOARDNAME/patches/\*
-=====================================
-
-In cases where `ubrevision` is specified, where the given directory
-under `resources/u-boot/` does in fact define a version of U-Boot to
-download, you can add custom *patches* on top of that revision. When you run
-the command `./download u-boot`, those patches will be applied chronologically
-in alphanumerical order as per patch file names.
-
-The patch files should be named with `.patch` file extensions. All other files
-will be ignored. By having `lbmk` do it this way, you could add a `README` file
-for instance, and `lbmk` will not erroneously try to apply `README` as though
-it were a patch file. This might be useful if you have a *lot* of patches, and
-you want to provide some explanations about specific files.
+In the past, Libreboot had bespoke logic for *each* program, to download it.
+This was repetitive, so much of the download logic was centralised with the
+use of the `gitclone` script, which references this file.
 
 resources/grub/background/
 ==========================
@@ -698,10 +753,64 @@ resources/grub/patches/
 
 This directory contains custom patches for GRUB.
 
-resources/memtest86plus/patch/
+resources/me\_cleaner/patches
+=============================
+
+Patches applied to `me_cleaner` when downloading it.
+
+resources/memtest86plus/patches/
 ==============================
 
-This directory contains custom patches for Memtest86+.
+Patches applied to Memtest86+ when downloading it. Libreboot includes
+memtest86+ as a secondary payload, loaded from SeaBIOS *or* GRUB when booted
+via int10h text mode on x86 hosts.
+
+(using it with corebootfb mode is also possible, if your machine has a viable
+serial output on it with memtest86+ configured accordingly, and this was done
+on some older Libreboot releases in the past, but current Libreboot releases
+only provide memtest86+ in text mode, for use directly on the machine)
+
+resources/scripts/
+==================
+
+These scripts implement the *core* logic of Libreboot's *automated build
+system*, to produce coreboot ROM images with payloads.
+
+resources/scripts/blobs/download
+================================
+
+Where certain binary blobs like Intel ME or MRC are needed on a given board,
+this script is called automatically by the build system, to download the files
+for insertion.
+
+resources/scripts/blobs/extract
+===============================
+
+Where auto-download is not viable, this script can provide a somewhat automated
+experience for *extracting* blobs. You will supply a *dump* of the original
+vendor firmware, dumped from the flash IC on whichever target machine you wish
+to flash.
+
+Dumping the original firmware is *always* recommended, regardless of what you
+want to do.
+
+resources/scripts/blobs/inject
+==============================
+
+Where a blob is provided, via the `extract` or `download` method, *this*
+script *inserts* a blob (ME, MRC etc) into a given target image.
+
+resources/scripts/build/
+========================
+
+This directory contains shell scripts for compiling various binaries from
+available sources.
+
+resources/scripts/build/boot/
+=============================
+
+This directory contains shell scripts for compiling ROM images. Many other
+scripts in lbmk are called by these scripts; for example, GRUB payload scripts.
 
 resources/scripts/build/boot/roms
 =================================
@@ -719,6 +828,15 @@ Pass several board names if you wish to build only for specific targets. For
 example:
 
 	./build boot roms x60 x200_8mb
+
+Since November 2022, this script can build images for x86 *and* ARM targets.
+The *ARM* targets are ChromeOS devices (chromebooks and such); Libreboot uses
+the *U-Boot* payload, rather than Google's *depthcharge* bootloader. In this
+setup, U-Boot is running on the bare metal, as enabled by *coreboot*.
+
+For x86 targets, these scripts build with the GRUB and/or SeaBIOS payloads
+inserted into the ROM images; secondary payloads like Memtest86+ are also
+handled and inserted here.
 
 resources/scripts/build/boot/roms\_helper
 =========================================
@@ -809,6 +927,8 @@ the default anyway) to enable *all* option ROMs, unless `vgarom` setups are
 used, in which case the option is set to *0* (disabled) because coreboot is
 then expected to handle option ROMs, and SeaBIOS should not do it.
 
+This script handles U-Boot separately, for ARM-based chromeos devices.
+
 Essentially, the `roms_helper` script makes use of each and every part of
 lbmk. It is the heart of libreboot.
 
@@ -870,7 +990,7 @@ Command: `./build clean payloads`
 resources/scripts/build/clean/rom\_images
 =========================================
 
-This deletes the `bin/` directory.
+This deletes the `bin/` directory, containing compiled coreboot ROM images.
 
 Command: `./build clean rom_images`
 
@@ -1011,6 +1131,13 @@ on all coreboot source trees.
 
 Command: `./build release src`
 
+NOTE: This script *scrubs* certain binary blobs from release ROMs, such as
+Intel ME or MRC firmware. The release ROMs shall then exclude these blobs
+within them, requiring manual insertion by the user post-release. See:
+
+[Insert binary blobs
+on Sandybridge/Ivybridge/Haswell](../install/ivy_has_common.md)
+
 resources/scripts/download/coreboot
 ===================================
 
@@ -1042,12 +1169,13 @@ This downloads and patches GRUB.
 
 Command: `./download grub`
 
-resources/scripts/download/ich9utils
-====================================
+resources/scripts/download/me\_cleaner
+======================================
 
-This downloads `ich9utils`, which includes `ich9gen`.
+This downloads the `me_cleaner` program, for neutering Intel ME images. You
+can read more about it here:
 
-Command: `./download ich9utils`
+<https://github.com/corna/me_cleaner/wiki/>
 
 resources/scripts/download/memtest86plus
 ========================================
@@ -1055,6 +1183,21 @@ resources/scripts/download/memtest86plus
 This downloads and patches Memtest86+.
 
 Command: `./download memtest86plus`
+
+resources/scripts/download/mrc
+==============================
+
+Where required, this will download Intel MRC images. This is called
+automatically by lbmk, on platforms that require it (currently only
+Intel Haswell, where Libreboot-covered hardware is concerned, and a
+libre replacement of `mrc.bin` exists on that platform, provided as
+an option in Libreboot 20230319 or newer releases).
+
+This is a fork of *coreboot's* MRC image download script, which does
+not guarantee specific versions of the file nor does it check SHA1
+hashes and such. It was forked for Libreboot purpose, because the
+Libreboot build system *enforces* such verification during the build
+process.
 
 resources/scripts/download/seabios
 ==================================
@@ -1172,6 +1315,12 @@ resources/seabios/config/vgarom
 This version is for normal SeaBIOS configurations, where `libgfxinit` is not
 to be used.
 
+resources/seabios/patches/
+==========================
+
+This directory contains patch files, automatically applied to SeaBIOS after
+downloading it.
+
 update
 ======
 
@@ -1192,3 +1341,170 @@ This would run:
 
 	./resources/scripts/update/coreboot/configs x200_8mb x60
 
+resources/u-boot/
+=================
+
+This directory contains configuration, patches and so on, for each mainboard
+that can use U-Boot as a payload in the `lbmk` build system. U-Boot doesn't yet
+have reliable generic configurations that can work across all coreboot boards
+(per-architecture), so these are used to build it per-board.
+
+resources/u-boot/BOARDNAME/
+===========================
+
+Each `BOARDNAME` directory defines configuration for a corresponding mainboard.
+It doesn't actually have to be for a board; it can also be used to just define
+a U-Boot revision, with patches and so on. To enable use as a payload in ROM
+images, this must have the same name as its `resources/coreboot/BOARDNAME/`
+counterpart.
+
+resources/u-boot/BOARDNAME/board.cfg
+====================================
+
+This file can contain several configuration lines, each being a string, such
+as:
+
+* `ubtree="default"` (example entry)
+* `ubrevision="4debc57a3da6c3f4d3f89a637e99206f4cea0a96"` (example entry)
+* `arch="AArch64"` (example entry)
+
+These are similar in meaning to their coreboot counterparts.
+
+The `ubtree` entry is actually a link, where its value is a directory name
+under `resources/u-boot`. For example, `ubtree="default"` would refer to
+`resources/u-boot/default` and the corresponding U-Boot source tree created
+(when running `./download u-boot`, which makes use of `board.cfg`) would be
+`u-boot/default/`. In other words: a `board.cfg` file in `resources/u-boot/foo`
+might refer to `resources/u-boot/bar` by specifying `ubtree="bar"`, and the
+created u-boot source tree would be `u-boot/bar/`. ALSO:
+
+FUN FACT: such references are infinitely checked until resolved. For
+example, `foo` can refer to `bar` and `bar` can refer to `baz` but if there is
+an infinite loop, this is detected and handled by `lbmk`. For example,
+if `bar` refers to `foo` which refers back to `bar`, this is not permitted
+and will throw an error in `lbmk`.
+
+The `ubrevision` entry defines which U-Boot revision to use, from the U-Boot
+Git repository. *At present, lbmk only supports use of the official repository
+from the upstream U-Boot project*.
+
+The `arch` entry specifies which CPU architecture is to be used: currently
+recognized entries are `x86_32`, `x86_64`, `ARMv7` and `AArch64`. *Setting it
+to a non-native arch means that necessary crossgcc-arch will be compiled and be
+available when building roms, but not necessarily built or discovered when
+individual scripts are called manually.*
+
+resources/u-boot/BOARDNAME/config/\*
+====================================
+
+Files in this directory are *U-Boot* configuration files. Configuration file
+names can be anything, but for now `default` is the only one used.
+
+In `lbmk`, a board-specific directory under `resources/u-boot/` should never
+specify a U-Boot revision. Rather, a directory *without* U-Boot configs should
+be created, specifying a U-Boot revision. For example, the directory
+`resources/u-boot/default/` specifies a U-Boot revision. In the board-specific
+directory, your `board.cfg` could then specify `ubtree="default"` but without
+specifying a U-Boot revision (this is specified by
+`resources/u-boot/default/board.cfg`).
+
+Normally, the U-Boot build process results in the U-Boot executable and a
+device-tree file for the target board, which must further be packaged together
+to make things work. When you create a U-Boot configuration, you should enable
+`CONFIG_REMAKE_ELF` or `CONFIG_OF_EMBED` that handles this. The former option
+enables creation of a `u-boot.elf` that bundles them together after the build,
+and the latter option embeds it into the `u-boot` executable.
+
+When making a U-Boot configuration, you should also pay special attention to
+the `CONFIG_SYS_TEXT_BASE` (`CONFIG_TEXT_BASE` in later versions), whose defaults
+may cause it to overlap coreboot, in which case it won't boot. Normally, the
+upstream coreboot build system checks for this when given `CONFIG_PAYLOAD_ELF`,
+but `lbmk` injects the payload itself and doesn't check for this yet.
+
+Another interesting config option is `CONFIG_POSITION_INDEPENDENT` for ARM
+boards, which has been so far enabled in the ones `lbmk` supports, just to be
+safe.
+
+U-Boot build system
+-------------------
+
+If you wish to know about U-Boot, refer here:\
+<https://u-boot.readthedocs.io/en/latest/>
+
+This and other documents from U-Boot shall help you to understand *U-Boot*.
+
+You create a config, for `resources/u-boot/BOARDNAME/configs`, by finding the
+corresponding board name in the upstream U-Boot `configs` directory, and
+running `make BOARDNAME_defconfig` and `make menuconfig` commands in the
+*U-Boot* build system. You should do this after running `./download u-boot` in
+`lbmk`.
+
+You might want to consider basing your config on the upstream `coreboot` boards
+when possible, but such a board is not available upstream for ARM yet.
+
+You can simply clone U-Boot upstream, add whatever patches you want, and
+then you can make your config. It will appear afterwards in a file
+named `.config` which is your config for inside `resources/u-boot/BOARDNAME/`.
+
+You can then use `git format-patch -nX` where `X` is however many patches you
+added to that U-Boot tree. You can put them in the patches directory
+under `resources/u-boot/BOARDNAME`.
+
+The *base* revision, upon which any custom patches you wrote are applied,
+shall be the `ubrevision` entry.
+
+Scripts exist in `lbmk` for automating the modification/updating of *existing*
+configs, but not for adding them. Adding them is to be done manually, based on
+the above guidance.
+
+resources/u-boot/BOARDNAME/patches/\*
+=====================================
+
+In cases where `ubrevision` is specified, where the given directory
+under `resources/u-boot/` does in fact define a version of U-Boot to
+download, you can add custom *patches* on top of that revision. When you run
+the command `./download u-boot`, those patches will be applied chronologically
+in alphanumerical order as per patch file names.
+
+The patch files should be named with `.patch` file extensions. All other files
+will be ignored. By having `lbmk` do it this way, you could add a `README` file
+for instance, and `lbmk` will not erroneously try to apply `README` as though
+it were a patch file. This might be useful if you have a *lot* of patches, and
+you want to provide some explanations about specific files.
+
+util/
+=====
+
+This directory contains utilities that `lbmk` makes use of.
+
+util/nvmutil/
+=============
+
+The `nvmutil` software allows you to set the MAC address on Intel GbE NVM
+files. It also allows you to set *random* MAC addresses, in addition to
+arbitrary ones.
+
+This directory contains the source code for `nvmutil`, which you can read
+about here:
+
+[nvmutil manual](../install/nvmutil.md)
+
+util/ich9utils/
+===============
+
+The `ich9utils` utilities handle ICH9M Flash Descriptors, and GbE NVM configs
+for Intel Gigabit Ethernet chipsets used on certain laptops of Intel GM45
+platform, combined with ICH9M southbridge.
+
+This directory contains the source code for `ich9utils`, which you can read
+about here:
+
+[ich9utils manual](../install/ich9utils.html)
+
+This source code also pertains to `ich9gen`, which is what GM45 laptops in
+Libreboot use in order to generate a config that *excludes* Intel ME firmware.
+
+Patches welcome.
+
+If you read this manual from start to finish, you've been assimilated. Welcome
+to the team!
