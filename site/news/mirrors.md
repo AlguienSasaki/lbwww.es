@@ -13,7 +13,7 @@ mirrors are provided as a *backup*, in case the main Codeberg mirror is ever
 offline for any reason.
 
 I can now announce the following *official* mirrors of Libreboot's git
-repository, provided directly by the Libreboot project; first, the build
+repository, controlled directly by the Libreboot project; first, the build
 system (lbmk):
 
 * <https://gitea.treehouse.systems/libreboot/lbmk>
