@@ -200,8 +200,38 @@ Another way to submit patches is to email Leah Rowe directly:
 However, for transparency of the code review process, it's recommended that you
 use Codeberg, for the time being.
 
+Mirrors of lbmk.git
+===================
+
+The `lbmk` repository contains Libreboot's automated build system, which
+produces Libreboot releases (including compiled ROM images).
+
+You can run `git clone` on any of these links (the links are also clickable,
+to view changes in your Web browser):
+
+* <https://framagit.org/libreboot/libreboot>
+* <https://gitlab.com/libreboot/lbmk>
+* <https://pagure.io/libreboot>
+* <https://rocketgit.com/libreboot/libreboot>
+
+lbwww.git mirror
+----------------
+
+NOTE: `lbwww` (pandoc markdown files for the Libreboot website) also available
+on gitlab.com:
+
+<https://gitlab.com/libreboot/lbwww>
+
+It's on TODO to mirror `lbwww` on the other sites aswell, as listed above for
+the `lbmk` mirrors. At present, `lbwww` is available on gitlab, codeberg and
+notabug.
+
 Notabug repositories
 ====================
+
+Commits that go to codeberg are also still pushed to notabug, in addition to
+the other mirrors. Notabug is considered a *mirror* since 8 April 2023, when
+Libreboot's main development site moved to *Codeberg*.
 
 OLD notabug repos are still pushed to as backup, but the codeberg mirror is
 considered to be main/official now, as of the [announcement on 8
@@ -215,3 +245,8 @@ For sending patches, it is now preferred that you use *codeberg*. Technically,
 pull requests are still possible via Notabug. While Notabug still exists,
 Libreboot patches will continue be pushed there, mirroring what gets pushed
 on Notabug.
+
+Because pull requests and issues were available on notabug in the past, it
+makes sense to keep them open, though we ask that you send to codeberg. If
+they were to be closed on notabug, existing PRs and issues won't be visible
+anymore either, so they have to stay open.
