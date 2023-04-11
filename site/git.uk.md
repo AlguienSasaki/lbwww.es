@@ -209,6 +209,8 @@ produces Libreboot releases (including compiled ROM images).
 You can run `git clone` on any of these links (the links are also clickable,
 to view changes in your Web browser):
 
+* <https://gitea.treehouse.systems/libreboot/lbmk>
+* <https://0xacab.org/libreboot/lbmk/>
 * <https://framagit.org/libreboot/libreboot>
 * <https://gitlab.com/libreboot/lbmk>
 * <https://pagure.io/libreboot>
