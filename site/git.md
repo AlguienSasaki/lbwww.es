@@ -15,6 +15,10 @@ The `libreboot` project has 3 main Git repositories:
 * Website (+docs): <https://codeberg.org/libreboot/lbwww>
 * Images (for website): <https://codeberg.org/libreboot/lbwww-img>
 
+You can also *browse* lbmk on Libreboot's own cgit instance, though it is not
+intended for development (use codeberg for that):\
+<https://browse.libreboot.org/lbmk.git/>
+
 Libreboot was previously using NotABug, but it had continued reliability
 issues due to HTTP 500 errors being returned, largely in the evenings, most
 likely because too many people were on it; it was decided that Libreboot
