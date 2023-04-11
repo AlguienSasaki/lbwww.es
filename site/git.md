@@ -219,14 +219,24 @@ to view changes in your Web browser):
 lbwww.git mirror
 ----------------
 
-NOTE: `lbwww` (pandoc markdown files for the Libreboot website) also available
-on gitlab.com:
+The `lbwww` repository contains Markdown files (pandoc variant), for use
+with the [Untitled Static Site Generator](https://untitled.vimuser.org/); this
+is what Libreboot uses to provide HTML web pages, *including* the page that
+you are reading right now!
 
-<https://gitlab.com/libreboot/lbwww>
+You can run `git clone` on these links, and/or click to view changes in your
+Web browser. See:
 
-It's on TODO to mirror `lbwww` on the other sites aswell, as listed above for
-the `lbmk` mirrors. At present, `lbwww` is available on gitlab, codeberg and
-notabug.
+* <https://gitea.treehouse.systems/libreboot/lbwww>
+* <https://0xacab.org/libreboot/lbwww>
+* <https://framagit.org/libreboot/lbwww/>
+* <https://gitlab.com/libreboot/lbwww>
+* <https://rocketgit.com/libreboot/lbwww>
+
+NOTE: The `lbwww-img` repository is not generally provided, on mirrors, as
+those are just image files which you can find on <https://av.libreboot.org>
+and it is not the intention of the Libreboot project to bog down *mirrors*
+with additional traffic by hosting images.
 
 Notabug repositories
 ====================
