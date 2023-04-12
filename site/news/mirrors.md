@@ -41,4 +41,7 @@ If you know of a decent Git site where you think Libreboot should mirror on,
 or you're the *operator* of such a site and want Libreboot on there, feel free
 to [get in touch](../contact.md)!
 
-That is all.
+UPDATE: on 12 April 2023, Libreboot gained these additional mirrors:
+
+* <https://git.fosscommunity.in/libreboot/lbmk>
+* <https://git.fosscommunity.in/libreboot/lbwww>

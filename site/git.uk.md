@@ -214,6 +214,7 @@ You can run `git clone` on any of these links (the links are also clickable,
 to view changes in your Web browser):
 
 * <https://gitea.treehouse.systems/libreboot/lbmk>
+* <https://git.fosscommunity.in/libreboot/lbmk>
 * <https://0xacab.org/libreboot/lbmk/>
 * <https://framagit.org/libreboot/libreboot>
 * <https://gitlab.com/libreboot/lbmk>
@@ -232,6 +233,7 @@ You can run `git clone` on these links, and/or click to view changes in your
 Web browser. See:
 
 * <https://gitea.treehouse.systems/libreboot/lbwww>
+* <https://git.fosscommunity.in/libreboot/lbwww>
 * <https://0xacab.org/libreboot/lbwww>
 * <https://framagit.org/libreboot/lbwww/>
 * <https://gitlab.com/libreboot/lbwww>
