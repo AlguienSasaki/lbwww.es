@@ -343,6 +343,9 @@ Libreboot. For T60, see:
 <https://ounapuu.ee/posts/2022/10/13/recovering-password-locked-thinkpad-t60/>
 (TODO: link something here for X60)
 
+X60 BIOS password (Lenovo): you might find info here:
+<https://bios-pw.org/>
+
 You can just get bucts from the libreboot project, same thing for the patched
 flashrom. In the Libreboot 20160907 release, there is a *utility* archive, which
 has statically compiled executables. They still work just fine on modern
