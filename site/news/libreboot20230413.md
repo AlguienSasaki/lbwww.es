@@ -182,7 +182,6 @@ Desktops (AMD, Intel, x86)
 
 -   [HP Chromebook 14 G3 (nyan-blaze)](../docs/install/chromebooks.md)
 -   [Acer Chromebook 13 (CB5-311, C810) (nyan-big)](../docs/install/chromebooks.md)
--   [Hisense Chromebook C11 and more (veyron-jerry)](../docs/install/chromebooks.md)
 -   [ASUS Chromebook Flip C101 (gru-bob)](../docs/install/chromebooks.md)
 -   [Samsung Chromebook Plus (v1) (gru-kevin)](../docs/install/chromebooks.md)
 
