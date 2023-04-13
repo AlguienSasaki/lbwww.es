@@ -337,6 +337,12 @@ example of the push pin as a proof of concept:
 
 #### ThinkPad X60/X60S/X60T/T60 with Lenovo BIOS {#flashrom_lenovobios}
 
+NOTE: If BIOS password auth is enabled, you can clear it by shorting pins on
+an EEPROM and then resetting the password in Lenovo BIOS, prior to flashing
+Libreboot. For T60, see:
+<https://ounapuu.ee/posts/2022/10/13/recovering-password-locked-thinkpad-t60/>
+(TODO: link something here for X60)
+
 You can just get bucts from the libreboot project, same thing for the patched
 flashrom. In the Libreboot 20160907 release, there is a *utility* archive, which
 has statically compiled executables. They still work just fine on modern
