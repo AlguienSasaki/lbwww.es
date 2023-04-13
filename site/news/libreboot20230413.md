@@ -25,7 +25,7 @@ massive code cleanup has been performed on parts of the build system.
 The priority of this release has been build system fixes/improvements. For the
 time being, no more code changes will be made unless needed, in coreboot, for
 existing supported hardware; the focus is going to be on adding *more* boards
-to coreboot, to support more hardware. I've been on a spree, buying lots of
+to Libreboot, to support more hardware. I've been on a spree, buying lots of
 mainboards that coreboot supports, that would be interesting in Libreboot.
 
 It is my intention that the next Libreboot release will be an *official*
@@ -134,8 +134,7 @@ Changelog:
   order of functions, split more operations into functions, generally made
   the script easier to read/work on.
 * `blobutil/inject`: use correct offset for insertion of `mrc.bin` (Haswell
-  platform, e.g. ThinkPad T440p) - see remarks written below in this release
-  announcement.
+  platform, e.g. ThinkPad T440p) - as written above.
 * Removed mainboard: `d945gclf` - known to be problematic at boot. I have one,
   and I'm going to test it for re-entry in a future release.
 * Added missing dependency in Arch Linux dependencies installation script,
