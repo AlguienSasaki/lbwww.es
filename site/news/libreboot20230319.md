@@ -2,6 +2,11 @@
 % Leah Rowe
 % 19 March 2023
 
+**UPDATE: Bugs in this were fixed, and a bugfix release is now available.
+See: [Libreboot 20230413 release announcement of 13
+April 2023](libreboot20230413.md) - the `t440pmrc_12mb` and `w541mrc_12mb`
+images have been re-added, in the new release.**
+
 Introduction
 ============
 
