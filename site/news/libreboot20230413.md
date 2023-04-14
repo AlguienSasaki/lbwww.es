@@ -1,6 +1,6 @@
 % Libreboot 20230413 released!
 % Leah Rowe
-% 14 April 2023
+% 13 April 2023
 
 Introduction
 ============
