@@ -25,6 +25,7 @@ libreboot currently supports the following systems in this release:
 -   [Acer G43T-AM3](acer_g43t-am3.md)
 -   [Intel D510MO and D410PT motherboards](d510mo.md)
 -   [Apple iMac 5,2](imac52.md)
+-   [HP Elite 8200 SFF](hp8200sff.md) (HP 6200 Pro Business probably works too)
 
 ### Laptops (Intel, x86)
 

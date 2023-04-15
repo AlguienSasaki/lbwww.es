@@ -27,7 +27,8 @@ Haswell/Ivybridge/Sandybridge machines
 BLOBS MISSING IN RELEASE ROMs
 -----------------------------
 
-E.g. ThinkPad X220, X230, T440p, W541.
+E.g. ThinkPad X220, X230, T440p, W541. - also desktop boards such as HP
+Elite 8200 SFF.
 
 The lbmk build system automatically fetches required blobs for these
 boards, when building, and sets them up properly, e.g. `me_cleaner`
@@ -166,7 +167,7 @@ Which systems are supported?
 
 [Refer to the hardware compatibility page](../hardware/)
 
-MAC address on Sandybridge/Ivybridge/Haswell (e.g. X230, X220, T440p, W541)
+Sandy/Ivybridge/Haswell MAC address (e.g. X230, X220, T440p, W541, hp8200sff)
 =====================================================================
 
 You can change the MAC address in flash, on these machines. See:
@@ -532,6 +533,11 @@ Refer to the following article:\
 iMac5,2 isn't documented but you can find the flash chip on that board quite
 easily. See the generic flashing guide:\
 [Externally rewrite 25xx NOR flash via SPI protocol](spi.md)
+
+TARGET: HP Elite 8200 SFF
+-------------------------
+
+See: [HP Elite 8200 SFF hardware information](../hardware/hp8200sff.md)
 
 TARGET: Gigabyte GA-G41M-ES2L mainboard
 ---------------------------------------

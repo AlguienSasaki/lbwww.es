@@ -1,0 +1,130 @@
+---
+title: HP Elite 8200 SFF and 6200 Pro Business
+x-toc-enable: true
+...
+
+Introduction
+============
+
+Libreboot has support for this, in the Git repository and release versions
+after (but *not* including) the Libreboot 20230413 release.
+
+Brief board info
+----------------
+
+HP Elite 8200 SFF is a small-form-factory desktop of Intel Sandybridge platform
+which you can read more about here:
+
+<https://support.hp.com/gb-en/product/hp-compaq-8200-elite-small-form-factor-pc/5037931>
+
+Installation of Libreboot
+-------------------------
+
+You can actually just compile the Libreboot ROM for this, and flash the
+entire ROM, then flash it. The *coreboot* project proper, has information
+about this:
+
+<https://doc.coreboot.org/mainboard/hp/compaq_8200_sff.html>
+
+Refer to the coreboot guide for flashing instructions, and you can build the
+images for it in Libreboot like so:
+
+	./build boot roms hp8200sff_8mb
+
+More information about building ROM images can be found in
+the [build guide](../build/).
+
+This is a *Sandybridge* board which means that a neutered ME image is required
+if you wish to flash the ME region. Libreboot's build system automatically
+downloads, neuters (using `me_cleaner`) and inserts this if compiling from
+source.
+
+If you're using *Libreboot release* ROM images, the ME image has been scrubbed
+and you must re-insert it. Use the information on this guide to know how
+to do that:
+
+[Insert binary blobs on Intel Sandybridge/Ivybridge/Haswell
+platforms](../install/ivy_has_common.md)
+
+You may also wish to change the *default MAC address* if you're planning to
+use the onboard Intel Gigabit Ethernet. You can do this using the information
+in the same guide linked above, or read the nvmutil manual:
+
+[Modify MAC addresses with nvmutil](../install/nvmutil.md).
+
+HP 6200 Pro Business PC
+-----------------------
+
+According to this page from the vendor, HP BIOS updates are the same on both
+the 8200 SFF Elite *and* 6200 Pro Business desktop PCs; therefore, we believe
+that the Libreboot port for 8200 SFF will *also* work on 6200 Pro Business PCs.
+That page is here:
+<https://support.hp.com/fi-fi/drivers/selfservice/swdetails/hp-compaq-8200-elite-small-form-factor-pc/5037931/swItemId/vc-229778-2>
+
+The port for this board is courtesy of *Riku Viitanen* (`Riku_V` on Libreboot
+IRC), who tested and confirmed the following functionality:
+
+* PS/2 and USB keyboards
+* Boot from USB and DVD
+* Gigabit ethernet
+* VGA and DisplayPort (Intel graphics), with libgfxinit (native video init)
+* 4x8 GB RAM
+* Headphone output, PC speaker
+* S3 suspend, wake on USB keyboard
+* lm\_sensors outputs CPU core temperatures only
+
+At the time of porting, the following is untested in Libreboot:
+
+* PCIe cards (believed to be working, based on coreboot git messages)
+* PCI cards (believed to be working, based on coreboot git messages)
+* Serial port and parallel port (internal header on the board) and PS/2 mouse-
+  NOTE: Serial port believed to work, according to initial coreboot commit from
+  revision `6308e0e92f624cb18a875ed04e41e1d15fc91054` in 2018
+* Wake on LAN
+* Internal flashing from OEM BIOS - TODO: Riku spoke to someone on IRC who said
+  it might be possible, so this should be investigated. - NOTE: coreboot git
+  logs also suggest that this is possible.
+
+According to the initial coreboot port from 2018, the following also works:
+
+* SATA slots
+* EHCI debug (not enabled by Libreboot configs)
+* USB ports
+* Native (libre) raminit with up to four DIMM modules (also tested by Riku and
+  confirmed working, with 32GB RAM instealled as 4x8GB)
+
+TPM
+---
+
+According to git logs, TPM should work, and a commit from 2018 at revision
+ID `39d0e2a2cf45e28cdddd0fe0c88f94ce527ab1ef` in coreboot makes the TPM visible
+to operating systems.
+
+PSU Fan control
+---------------
+
+See coreboot commit `9bd601584350f51f112b15a7369f9aa82f1d0919` - labelled
+by commit message `superio/nuvoton/npcd378: Add PSU fan control`.
+
+Per this commit, SuperIO-based fan control is supported on HP Elite 8200 SFF.
+
+TODO for testing the above is here:\
+<https://codeberg.org/libreboot/lbmk/issues/9>
+
+This is controlled via `nvramtool` to modify the value in sram. See:
+
+* `psu_fan_lvl=3` <-- default setting in coreboot, and Libreboot.
+
+Other values possible: from reading the source code, it is implied that the
+number can be between 0 and 7. If the value is set higher than 7, it will
+default back to 3.
+
+Libreboot locks CMOS/NVRAM settings, but you can change the default setting in
+the *ROM* by using the `-C` option in nvramtool. You can find this under the
+directory `coreboot/default/util/nvramtool` when downloading coreboot inside
+of lbmk by running the command:
+
+	./download coreboot default
+
+Go in there and type `make` to build nvramtool. Simply run nvramtool without
+arguments, and it will show a list of options.
