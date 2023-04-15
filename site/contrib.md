@@ -341,6 +341,14 @@ bucts before flashing the ROM again, to flash the main bootblock. Libreboot
 hosts a copy of his work, because his website hosting bucts is no longer
 responsive.
 
+Riku Viitanen
+-------------
+
+Added support for HP Elite 8200 SFF desktop PC to Libreboot. You can read
+about this in the hardware page:
+
+[HP Elite 8200 SFF](docs/hardware/hp8200sff.md)
+
 Steve Shenton
 -------------
 

@@ -353,6 +353,14 @@ coreboot під час ініціалізації відеочіпсета Intel
 періодично надсилаючи патчі для тестування, доки помилку не було виправлено
 в coreboot, а потім допоміг ій інтегрувати виправлення в libreboot.
 
+Riku Viitanen
+-------------
+
+Added support for HP Elite 8200 SFF desktop PC to Libreboot. You can read
+about this in the hardware page:
+
+[HP Elite 8200 SFF](docs/hardware/hp8200sff.md)
+
 Стів Шентон
 -------------
 
