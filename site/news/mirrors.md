@@ -45,3 +45,8 @@ UPDATE: on 12 April 2023, Libreboot gained these additional mirrors:
 
 * <https://git.fosscommunity.in/libreboot/lbmk>
 * <https://git.fosscommunity.in/libreboot/lbwww>
+
+UPDATE: on 15 April 2023, Libreboot gained these additional mirrors:
+
+* <https://git.disroot.org/libreboot/lbmk>
+* <https://git.disroot.org/libreboot/lbwww>
