@@ -333,7 +333,7 @@ Intel/x86
 Neutered ME required on these targets: `t420_8mb`, `t420s_8mb`, `t430_12mb`,
 `t440p_12mb`, `t440pmrc_12mb`, `t520_8mb`, `t530_12mb`, `w530_12mb`,
 `w541_12mb`, `w541mrc_12mb`, `x220_8mb`, `x230_12mb`, `x230_16mb`,
-`x230edp_12mb`, `x230t_12mb` and `x230t_16mb`.
+`x230edp_12mb`, `x230t_12mb`, `x230t_16mb` and `hp8200sff`.
 
 As stated, Libreboot provides this in a state where the ME is no longer a
 threat to security. It initialises itself, but then does nothing, so it's
