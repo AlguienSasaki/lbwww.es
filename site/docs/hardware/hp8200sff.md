@@ -17,6 +17,8 @@ which you can read more about here:
 
 <https://support.hp.com/gb-en/product/hp-compaq-8200-elite-small-form-factor-pc/5037931>
 
+Here's the [Technical Reference Manual](https://web.archive.org/web/20160109143257/https://h10032.www1.hp.com/ctg/Manual/c02778024.pdf)
+
 Installation of Libreboot
 -------------------------
 
@@ -33,6 +35,10 @@ images for it in Libreboot like so:
 
 More information about building ROM images can be found in
 the [build guide](../build/).
+
+If you plan on using a graphics card (other than the integrated graphics of
+your CPU), choose one of the files which name contains both "seabios" and
+"txtmode".
 
 This is a *Sandybridge* board which means that a neutered ME image is required
 if you wish to flash the ME region. Libreboot's build system automatically
@@ -64,19 +70,21 @@ That page is here:
 The port for this board is courtesy of *Riku Viitanen* (`Riku_V` on Libreboot
 IRC), who tested and confirmed the following functionality:
 
+* Sandy Bridge (i5-2400) and Ivy Bridge (i5-3570S) CPUs
+* 4x8 GB RAM (Sandy Bridge: 1333MHz, Ivy Bridge: 1600MHz)
 * PS/2 and USB keyboards
 * Boot from USB and DVD
 * Gigabit ethernet
 * VGA and DisplayPort (Intel graphics), with libgfxinit (native video init)
-* 4x8 GB RAM
 * Headphone output, PC speaker
 * S3 suspend, wake on USB keyboard
 * lm\_sensors outputs CPU core temperatures only
+* Both PCIe x16 slots, external GPU works with SeaBIOS
+* PCI
+* SATA
 
-At the time of porting, the following is untested in Libreboot:
+At the time of porting, the following is untested:
 
-* PCIe cards (believed to be working, based on coreboot git messages)
-* PCI cards (believed to be working, based on coreboot git messages)
 * Serial port and parallel port (internal header on the board) and PS/2 mouse-
   NOTE: Serial port believed to work, according to initial coreboot commit from
   revision `6308e0e92f624cb18a875ed04e41e1d15fc91054` in 2018
@@ -84,14 +92,17 @@ At the time of porting, the following is untested in Libreboot:
 * Internal flashing from OEM BIOS - TODO: Riku spoke to someone on IRC who said
   it might be possible, so this should be investigated. - NOTE: coreboot git
   logs also suggest that this is possible.
+* Does the OEM BIOS support Ivy Bridge chips? People on various forums say no,
+  but of them say the chipset is the reason. No one seems to have actually
+  tested, or at least haven't told about it.
+* Floppy drive. The case has a spot for it, but I can't find the header (P10).
 
 According to the initial coreboot port from 2018, the following also works:
 
-* SATA slots
 * EHCI debug (not enabled by Libreboot configs)
 * USB ports
 * Native (libre) raminit with up to four DIMM modules (also tested by Riku and
-  confirmed working, with 32GB RAM instealled as 4x8GB)
+  confirmed working, with 32GB RAM installed as 4x8GB)
 
 TPM
 ---
