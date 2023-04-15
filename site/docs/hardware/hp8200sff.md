@@ -12,7 +12,7 @@ after (but *not* including) the Libreboot 20230413 release.
 Brief board info
 ----------------
 
-HP Elite 8200 SFF is a small-form-factory desktop of Intel Sandybridge platform
+HP Elite 8200 SFF is a small-form-factor desktop of Intel Sandybridge platform
 which you can read more about here:
 
 <https://support.hp.com/gb-en/product/hp-compaq-8200-elite-small-form-factor-pc/5037931>
