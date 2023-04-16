@@ -218,7 +218,7 @@ A few months later, the name *Libreboot* was coined, and the domain name
 could, heavily promoting the project and he even wrote this article on the FSF
 website, announcing it:
 
-<https://www.fsf.org/blogs/licensing/replace-your-proprietary-bios-with-libreboot>
+<https://web.archive.org/web/20171222063358/https://www.fsf.org/blogs/licensing/replace-your-proprietary-bios-with-libreboot>
 
 Klemens Nanni
 -------------

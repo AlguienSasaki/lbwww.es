@@ -220,8 +220,7 @@ coreboot, і це включало оновлення мікрокоду ЦП. �
 активно просуваючи проект, і навіть написав цю статтю на веб-сайті FSF
 оголосивши про це:
 
-<https://www.fsf.org/blogs/licensing/replace-your-proprietary-bios-with-libreboot>
-
+<https://web.archive.org/web/20171222063358/https://www.fsf.org/blogs/licensing/replace-your-proprietary-bios-with-libreboot>
 
 Ендрю Роббінс
 --------------

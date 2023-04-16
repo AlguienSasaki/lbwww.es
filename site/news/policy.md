@@ -184,7 +184,8 @@ Libreboot previously complied with FSF RYF criteria, but it now adheres to a
 much more pragmatic policy aimed at providing more freedom to more people, in a
 more pragmatic way. You can read those guidelines by following this URL:
 
-* FSF Respects Your Freedom (RYF) guidelines: **https://ryf.fsf.org/about/criteria**
+* FSF Respects Your Freedom (RYF) guidelines:
+<https://web.archive.org/web/20220604203538/https://ryf.fsf.org/about/criteria/>
 
 Put simply, the RYF guidelines pertain to commercial products, with the
 stipulation that they must not contain proprietary software, or known privacy
