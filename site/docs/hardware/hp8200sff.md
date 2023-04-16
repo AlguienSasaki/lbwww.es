@@ -63,11 +63,11 @@ HP 6200 Pro Business PC
 
 According to this page from the vendor, HP BIOS updates are the same on both
 the 8200 SFF Elite *and* 6200 Pro Business desktop PCs; therefore, we believe
-that the Libreboot port for 8200 SFF will *also* work on 6200 Pro Business PCs.
-That page is here:
+that the Libreboot config for 8200 SFF will *also* work on 6200 Pro Business
+PCs. That page is here:
 <https://support.hp.com/fi-fi/drivers/selfservice/swdetails/hp-compaq-8200-elite-small-form-factor-pc/5037931/swItemId/vc-229778-2>
 
-The port for this board is courtesy of *Riku Viitanen* (`Riku_V` on Libreboot
+The config for this board is courtesy of *Riku Viitanen* (`Riku_V` on Libreboot
 IRC), who tested and confirmed the following functionality:
 
 * Sandy Bridge (i5-2400) and Ivy Bridge (i5-3570S) CPUs
@@ -83,7 +83,7 @@ IRC), who tested and confirmed the following functionality:
 * PCI
 * SATA
 
-At the time of porting, the following is untested:
+At the time of adding this board to Libreboot, the following is untested:
 
 * Serial port and parallel port (internal header on the board) and PS/2 mouse-
   NOTE: Serial port believed to work, according to initial coreboot commit from
