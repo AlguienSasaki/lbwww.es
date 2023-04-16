@@ -198,7 +198,7 @@ exception, to mitigate this fact:
 
 * "However, there is one exception for secondary embedded processors. The exception applies to software delivered inside auxiliary and low-level processors and FPGAs, within which software installation is not intended after the user obtains the product. This can include, for instance, microcode inside a processor, firmware built into an I/O device, or the gate pattern of an FPGA. The software in such secondary processors does not count as product software."
 
-This exception violates every principle the FSF stands for, *and it should be
+*This should be
 rejected on ideological grounds*. The rest of libreboot's policy and overall
 ideology expressed, in this article, will be based largely on that rejection.
 The definition of *product software* is completely arbitrary; software is
@@ -392,7 +392,6 @@ Here, it is discussing the microcode that is burned into *mask ROM* on the CPU
 itself. It is simultaneously not giving the OK for microcode *updates* supplied
 by either coreboot or the Linux kernel; according to the FSF, these are an
 attack on your freedom, but the older, buggier microcode burned into ROM is OK.
-This is absolutely inconsistent.
 
 The CPU already has microcode burned into mask ROM. The microcode configures
 logic gates in the CPU, to implement an instruction set, via special *decoders*
@@ -402,9 +401,7 @@ implement x86, or *broken* x86, and the default microcode is almost always
 *broken x86* on Intel/AMD CPUs; it is inevitable, due to the complexity of
 these processors.
 
-The basis of the FSF's disagreement about microcode *updates* is that they do
-believe otherwise; Stallman himself expressed such ignorance to me, in an email
-conversation that I had with him as of January 2nd, 2022. The FSF believes
+The FSF believes
 that these x86 microcode updates (on Intel/AMD) allow you to completely create
 a new CPU that is fundamentally different than x86. This is not true. It is also
 not true that *all* instructions in x86 ISA are implemented with microcode. In
@@ -445,8 +442,6 @@ The libreboot build system *no longer* applies the two patches linked above!
 Instead, CPU microcode updates are enabled by default, on the affected boards.
 The result is superior IA32 feature control and added PECI support.
 
-The *libreboot project* rejects the FSF's narrow, dogmatic view entirely.
-
 This shift in project policy does not affect your freedom at all, because you
 still otherwise have older, buggier microcode anyway. However, it does improve
 system reliability by including the updates!
@@ -479,13 +474,6 @@ to replace stand-alone mask ROM ICs with compatible flash memory.
 
 Conclusion
 ==========
-
-Compromise and nuance is the name of the game, even if you're the FSF. It is
-completely unavoidable, but there are some who try to deny this fact and
-pretend like things are as they'd prefer them to be, rather than how they
-actually are in the real world.
-
-Facts and *feelings* are usually very different things, and contradictory.
 
 RYF isn't *wrong* per se, just flawed. It is correct in some ways and if
 complied with, the result *does* give many freedoms to the user, but RYF
@@ -536,9 +524,6 @@ Don't call it "Respects Your Freedom" or something similar. Instead, call it
 something like: the freedom catalog. And actually focus on hardware, not just
 software!
 
-In the year 2022 onwards, we can do better. The RYF program should be cancelled.
-It is no longer fit for purpose.
-
 Other resources
 ===============
 
@@ -554,31 +539,3 @@ Bunnie.
 It's worth a read! Link:
 
 <https://ariadne.space/2022/01/22/the-fsfs-relationship-with-firmware-is-harmful-to-free-software-users/>
-
-Hector Martin's RYF thread
---------------------------
-
-Hector Martin, leader of the *Asahi Linux* project (for booting linux kernels
-on M1 macbooks) wrote a very robust twitter thread criticizing the RYF criteria
-and much of what he wrote inspired *this* article that you are reading. See:
-
-<http://web.archive.org/web/20220326234344/https://twitter.com/marcan42/status/1040626210999431168>
-
-Article updates
-===============
-
-23 January 2022
----------------
-
-Added link to Ariadne Conill's article.
-
-21 January 2022
----------------
-
-This article was updated on 21 January 2022, to add the section with examples
-in the real world of FSF sweeping blobs under the rug (ATI T400 thinkpads,
-ICH9M descriptors and TALOS II NIC firmware).
-
-Also on 21 January 2022: added section about FSDG (criticisms of it).
-
-Also on 21 January 2022: added link to Hector Martin's twitter thread.
