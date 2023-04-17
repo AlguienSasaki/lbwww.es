@@ -438,10 +438,6 @@ Pick your poison. Not adding the updates is *irresponsible*, and ultimately
 futile, because you still end up with proprietary microcode, but you just get
 an older, buggier version instead!
 
-The libreboot build system *no longer* applies the two patches linked above!
-Instead, CPU microcode updates are enabled by default, on the affected boards.
-The result is superior IA32 feature control and added PECI support.
-
 This shift in project policy does not affect your freedom at all, because you
 still otherwise have older, buggier microcode anyway. However, it does improve
 system reliability by including the updates!
