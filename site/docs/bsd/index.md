@@ -22,7 +22,7 @@ you read this article.
 Boot BSD, using SeaBIOS
 =======================
 
-On x86 platforms, libreboot/libreboot both provide the choice of GRUB and/or
+On x86 platforms, Libreboot provides the choice of GRUB and/or
 SeaBIOS payload. GRUB can technically boot BSD kernels, but the code is
 poorly maintained and unreliable for this use-case scenario; on BIOS systems,
 GRUB can chainload BSD bootloaders, but on bare metal (as coreboot payload),
@@ -79,7 +79,7 @@ on most systems, but not on most coreboot systems with native video
 initialisation used, due to the quirks already described. If you see any
 documentation (in BSD land) pertaining to VESA modes, ignore it entirely;
 unless you're using the proprietary VGA ROM for your device, it won't work,
-and libreboot/libreboot don't distribute these (instead, coreboot's own video
+and Libreboot doesn't distribute these (instead, coreboot's own video
 initialisation is used where possible, or a headless SeaBIOS payload setup
 is provided, where you would either run it headless or install a graphics
 card).
@@ -141,7 +141,7 @@ Dubious mention: Tianocore
 --------------------------
 
 Tianocore is extremely bloated, and unauditable, so it is not included
-in libreboot or libreboot, but it is the reference UEFI implementation by
+in Libreboot firmware, but it is the reference UEFI implementation by
 Intel and contributors. It can boot most BSD systems very well.
 
 More robust ways to provide UEFI services in Libreboot are to be investigated.
@@ -151,7 +151,11 @@ releases of Libreboot.
 Desktop users
 -------------
 
-Desktop users on libreboot/libreboot should just install a graphics card,
+NOTE: This section may not be full accurate; for example, the hardware page
+about HP Elite 8200 SFF talks about use of graphics cards on both corebootfb
+and txtmode setups, and seems to work fine with SeaBIOS in both cases.
+
+Desktop users on Libreboot should just install a graphics card,
 and again boot with SeaBIOS in text mode; however, when you do this,
 SeaBIOS will execute the VGA option ROM on the card which will provide
 early video initialisation instead of coreboot's initialisation, and that

@@ -26,7 +26,7 @@ below to determine compatibility with your board.
 Flashing instructions can be found at
 [../install/](../install/) - note that external
 flashing is required (e.g. RPi), if the proprietary (ASUS) firmware is
-currently installed. If you already have libreboot/libreboot/coreboot, by default
+currently installed. If you already have Libreboot or coreboot, by default
 it is possible to re-flash using software running in Linux on the kcma-d8,
 without using external hardware.
 
