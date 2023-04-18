@@ -3,7 +3,7 @@
 % 17 April 2023
 
 The change described in this article is *not* present in Libreboot 20221214,
-20230319 or 20230413 - it will be presint in the *next* Libreboot release.
+20230319 or 20230413 - it will be present in the *next* Libreboot release.
 
 If you want a no-microcode setup, either [build the
 latest Libreboot from source via lbmk](../docs/build/) and remove the microcode
