@@ -3,7 +3,9 @@
 % 17 April 2023
 
 The change described in this article is *not* present in Libreboot 20221214,
-20230319 or 20230413 - if you want a no-microcode setup, either [build the
+20230319 or 20230413 - it will be presint in the *next* Libreboot release.
+
+If you want a no-microcode setup, either [build the
 latest Libreboot from source via lbmk](../docs/build/) and remove the microcode
 updates using the instructions on this page, *or* if you need pre-built ROM
 images, Libreboot 20220710 had no-microcode ROMs by default and it has the
