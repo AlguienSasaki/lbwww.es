@@ -22,6 +22,12 @@ Here's the [Technical Reference Manual](https://web.archive.org/web/201601091432
 Installation of Libreboot
 -------------------------
 
+TODO: this patch is now in coreboot gerrit:\
+<https://review.coreboot.org/c/coreboot/+/74248>\
+(more notes about internal flashing)\
+also:\
+<https://www.reddit.com/r/coreboot/comments/12nux51/hp_elite_8200_sff_coreboot_port_current_state/> - see notes about 8300
+
 You can actually just compile the Libreboot ROM for this, and flash the
 entire ROM, then flash it. The *coreboot* project proper, has information
 about this:
