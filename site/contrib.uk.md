@@ -301,6 +301,11 @@ GNU+Linux дистрибутив, активно просуваний FSF.
 
 Зробив логотип libreboot.
 
+Nicholas Chin
+-------------
+
+[Ported Dell Latitude E6400 to Libreboot](news/e6400.md).
+
 Патрік "П. Дж." Макдермотт
 ---------------------------
 

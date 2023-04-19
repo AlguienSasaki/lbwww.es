@@ -289,6 +289,11 @@ Marcus Moeller
 
 Made the libreboot logo.
 
+Nicholas Chin
+-------------
+
+[Ported Dell Latitude E6400 to Libreboot](news/e6400.md).
+
 Patrick "P. J." McDermott
 ---------------------------
 
