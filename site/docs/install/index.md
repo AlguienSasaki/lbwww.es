@@ -512,6 +512,11 @@ How to use external flashing equipment
 Refer to the following article:\
 [Externally rewrite 25xx NOR flash via SPI protocol](spi.md)
 
+DELL Latitude E6400 laptop
+-------------------------
+
+See: [e6400.md]
+
 ASUS KFSN4-DRE
 --------------
 
