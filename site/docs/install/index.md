@@ -276,6 +276,10 @@ the sections below:
 
 [You must flash it externally](spi.md)
 
+#### DELL Latitute E6400 laptop
+
+See: [Dell Latitute E6400 Libreboot Installation Guide](e6400.md)
+
 #### Lenovo ThinkPad X200/X200S/X200T/T400/T400S/T500/W500/R400/R500 running non-free Lenovo BIOS
 
 If you're running one of these, it cannot be flashed internally if you're still

@@ -29,6 +29,7 @@ libreboot currently supports the following systems in this release:
 
 ### Laptops (Intel, x86)
 
+-   [Dell Latitute E6400](e6400.md)
 -   ThinkPad X60 / X60S / X60 Tablet
 -   ThinkPad T60 (with Intel GPU)
 -   [Lenovo ThinkPad X200 / X200S / X200 Tablet](x200.md)
