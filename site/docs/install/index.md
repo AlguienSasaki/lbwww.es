@@ -515,7 +515,7 @@ Refer to the following article:\
 DELL Latitude E6400 laptop
 -------------------------
 
-See: [e6400.md]
+See: [Dell Latitute E6400 Libreboot Installation Instructions](e6400.md)
 
 ASUS KFSN4-DRE
 --------------
