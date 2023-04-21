@@ -3,6 +3,11 @@ title: Flashing the ThinkPad T400 externally
 x-toc-enable: true
 ...
 
+**If you haven't bought an T400 yet: the [Dell Latitude
+E6400](../../news/e6400.md) is much easier to flash; no disassembly required,
+it can be flashed entirely in software from Dell BIOS to Libreboot. It is the
+same hardware generation (GM45), with same CPUs, video processor, etc.**
+
 Initial flashing instructions for T400.
 
 This guide is for those who want libreboot on their ThinkPad T400 while

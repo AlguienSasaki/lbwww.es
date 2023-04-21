@@ -3,6 +3,11 @@ title: First-time ThinkPad X200 flashing
 x-toc-enable: true
 ...
 
+**If you haven't bought an X200 yet: the [Dell Latitude
+E6400](../../news/e6400.md) is much easier to flash; no disassembly required,
+it can be flashed entirely in software from Dell BIOS to Libreboot. It is the
+same hardware generation (GM45), with same CPUs, video processor, etc.**
+
 This guide is for those who want libreboot on their ThinkPad X200 while
 they still have the original Lenovo BIOS present. This guide can also be
 followed (adapted) if you brick your X200, to know how to recover.

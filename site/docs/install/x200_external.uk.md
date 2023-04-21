@@ -3,6 +3,11 @@ title: Прошивка ThinkPad X200 вперше
 x-toc-enable: true
 ...
 
+**If you haven't bought an X200 yet: the [Dell Latitude
+E6400](../../news/e6400.md) is much easier to flash; no disassembly required,
+it can be flashed entirely in software from Dell BIOS to Libreboot. It is the
+same hardware generation (GM45), with same CPUs, video processor, etc.**
+
 Цей посібник призначений для тих, хто бажає libreboot на своєму ThinkPad X200,
 поки у нього все ще є оригінальний Lenovo BIOS в наявності. Цього керівництва також можна
 дотримуватися (адаптувати), якщо ви перетворили ваш X200 на цеглину, щоб знати, як його відновити.
