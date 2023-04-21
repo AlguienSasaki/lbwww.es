@@ -276,7 +276,7 @@ the sections below:
 
 [You must flash it externally](spi.md)
 
-#### DELL Latitute E6400 laptop
+#### DELL Latitute E6400 laptop (easy to flash, similar to X200/T400)
 
 See: [Dell Latitute E6400 Libreboot Installation Guide](e6400.md)
 
@@ -512,7 +512,7 @@ How to use external flashing equipment
 Refer to the following article:\
 [Externally rewrite 25xx NOR flash via SPI protocol](spi.md)
 
-DELL Latitude E6400 laptop
+DELL Latitude E6400 laptop (easy to flash, similar to X200/T400)
 -------------------------
 
 See: [Dell Latitute E6400 Libreboot Installation Instructions](e6400.md)
