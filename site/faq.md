@@ -43,6 +43,20 @@ to.
 Read the notes about CH341A on [docs/install/spi.md](docs/install/spi.md) to
 learn more.
 
+How Can I Help
+--------------
+
+You do not need to be a skilled developer in order to help the project
+substantially.
+If you have a board supported by Coreboot, consider [porting](/docs/maintain/porting.md)
+it to Libreboot.
+
+If you have a board supported in Libreboot then please consider becoming a
+tester.
+Testing involves minimal effort and really helps out the project.
+See the [board maintainers documentation](/docs/maintain/testing.md)
+if you are interested in testing roms before they are released.
+
 Flashrom complains about DEVMEM access
 --------------------------------------
 
