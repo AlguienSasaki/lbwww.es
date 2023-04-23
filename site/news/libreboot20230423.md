@@ -86,12 +86,12 @@ Build system changes:
   in Parabola GNU+Linux, courtesy of Riku Viitanen (`Riku_V` on Libreboot IRC)
 * `util/nvmutil`: sorted includes alphabetically; `sys/` first (puffy!)
 * `util/e6400-flash-unlock`: New utility for Dell Latitude E6400 added, written
-  by Nicholas Chin (`nic3-14159` on Libreboot IRC). It writes EC commands to
-  unlock the flash, pulling `GPIO33`/`HDA_DOCK_EN` to a low logic state. This
-  disables IFD-based flash protections. On Dell E6400, the EC is hooked up to
-  GPIO33 and Dell's own BIOS offers no other protections, so the machine can
-  be flashed *entirely with software on the host CPU*, from Dell BIOS to
-  Libreboot! See:
+  by Nicholas Chin (`nic3-14159` on Libreboot IRC). It sends EC commands to
+  pull a GPIO connected to `GPIO33`/`HDA_DOCK_EN` in the chipset to a low logic
+  state, disabling IFD-based flash protections. Additionally, it bypasses the
+  SMM BIOS lock protection by disabling SMIs, and since Dell's own BIOS offers
+  no other protections, the machine can be flashed *entirely with software on
+  the host CPU*, from Dell BIOS to Libreboot! See:
   <https://browse.libreboot.org/lbmk.git/tree/util/e6400-flash-unlock>
 * GRUB payload: `grub.cfg` menu timeout now 30s, not 5s
 * `blobutil/download`: support downloading KBC1126-based EC firmware for HP
