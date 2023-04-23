@@ -360,6 +360,10 @@ introducing non-standard broken behaviour and it may result in the machine
 being unable to boot properly. In other cases, doing so may break features such
 as S3 suspend/resume.
 
+CPU microcode blobs included by default, on all x86 boards. While not needed
+in most cases, their use is highly recommended. For reasons why, see:
+[news/policy.md#more-detailed-insight-about-microcode](news/policy.md#more-detailed-insight-about-microcode)
+
 Intel Flash Descriptors are provided as blobs on some boards, but these are
 not *software* blobs. They are configurations provided in a binary format,
 fully readable by libre software. For example:
@@ -377,10 +381,6 @@ Intel GbE NVM config (configuration data, binary-encoded, for gigabit NIC):
 * Libreboot's `ich9gen` program *also* generates GbE NVM images specifically
   for Intel NICs used in GM45 thinkpads.
 * Libreboot's `nvmutil` program can manipulate GbE NVM images
-
-CPU microcode blobs included by default, on all x86 boards. While not needed
-in most cases, their use is highly recommended. For reasons why, see:
-[news/policy.md#more-detailed-insight-about-microcode](news/policy.md#more-detailed-insight-about-microcode)
 
 ARM/chromebooks
 ---------------
