@@ -3,6 +3,32 @@ title: HP Elite 8200 SFF and 6200 Pro Business
 x-toc-enable: true
 ...
 
+<div class="specs">
+<center>
+![HP Compaq 8200 Elite SFF](https://av.libreboot.org/hp8200sff/grub_open.jpg){width=200px}
+</center>
+
+| ***Specifications***      |                                             |
+|---------------------------|---------------------------------------------|
+| **Manufacturer**          | HP                                          |
+| **Name**                  | Compaq 8200 Elite SFF                       |
+| **Released**              | 2011                                        |
+| **Chipset**               | Intel Q67                                   |
+| **CPU**                   | Intel Sandy/Ivy Bridge                      |
+| **Graphics**              | Intel HD Graphics or PCI-e low profile card |
+| **Memory**                | Up to 32GB (4x8GB)                          |
+| **Architecture**          | x86_64                                      |
+| **Intel ME/AMD PSP**      | Present, neutered                           |
+| **Flash chip**            | SOIC-8 8MiB                                 |
+
+
+| ***Payloads supported***  |       |
+|---------------------------|-------|
+| **GRUB**                  | Works |
+| **SeaBIOS**               | Works |
+| **SeaBIOS with GRUB**     | Works |
+</div>
+
 Introduction
 ============
 
