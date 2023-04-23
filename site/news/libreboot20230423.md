@@ -80,13 +80,19 @@ Build system changes:
   them, who want to still have the option to feasibly run without them.
   [This is ill advised, due to bugs that the microcode updates
   fix](gm45microcode.md)
-* `blobutil/inject`: Fixed bad variable expansion pattern
+* `blobutil/inject`: Fixed bad variable expansion pattern. Patch courtesy
+  Leah Rowe.
+* GRUB patch: fix hanging on HP EliteBooks, by implementing a 200ms timeout
+  for PS/2 keyboard initialisation. Patch courtesy of Riku Viitanen, and it
+  fixes this issue which has existed in coreboot *for years*:
+  <https://browse.libreboot.org/lbmk.git/plain/resources/grub/patches/0005-at-keyboard-timeout.patch?id=20192c08488104f5cacc1f3842ae8e0ee74c44ef>
 * `build/release/roms`: HP KBC1126 EC firmware scrubbed from release ROMs, for
   re-insertion later via `./blobutil download` and `./blobutil inject` like
-  with ME images via `me_cleaner` - for HP laptops.
+  with ME images via `me_cleaner` - for HP laptops. Patch courtesy Leah Rowe.
 * `build/dependencies/parabola`: New script for installing build dependencies
   in Parabola GNU+Linux, courtesy of Riku Viitanen (`Riku_V` on Libreboot IRC)
-* `util/nvmutil`: sorted includes alphabetically; `sys/` first (puffy!)
+* `util/nvmutil`: sorted includes alphabetically; `sys/` first (puffy!) -
+  courtesy Leah Rowe.
 * `util/e6400-flash-unlock`: New utility for Dell Latitude E6400 added, written
   by Nicholas Chin (`nic3-14159` on Libreboot IRC). It sends EC commands to
   pull a GPIO connected to `GPIO33`/`HDA_DOCK_EN` in the chipset to a low logic
@@ -95,7 +101,7 @@ Build system changes:
   no other protections, the machine can be flashed *entirely with software on
   the host CPU*, from Dell BIOS to Libreboot! See:
   <https://browse.libreboot.org/lbmk.git/tree/util/e6400-flash-unlock>
-* GRUB payload: `grub.cfg` menu timeout now 30s, not 5s
+* GRUB payload: `grub.cfg` menu timeout now 30s, not 5s (courtesy Leah Rowe)
 * `blobutil/download`: support downloading KBC1126-based EC firmware for HP
   laptops. (patch by Leah Rowe)
 * `blobutil/download: Support extracting `me.bin` from full archives, when
