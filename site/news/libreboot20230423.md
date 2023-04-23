@@ -116,11 +116,11 @@ Desktops (AMD, Intel, x86)
 -   [Acer G43T-AM3](../docs/hardware/acer_g43t-am3.md)
 -   [Intel D510MO and D410PT motherboards](../docs/hardware/d510mo.md)
 -   [Apple iMac 5,2](../docs/hardware/imac52.md)
--   [HP Elite 8200 SFF](hp8200sff.md) (HP 6200 Pro Business probably works too)
+-   [HP Elite 8200 SFF](../docs/hardware/hp8200sff.md) (HP 6200 Pro Business probably works too)
 
 ### Laptops (Intel, x86)
 
--   **[Dell Latitute E6400](e6400.md) (easy to flash, no disassembly, similar
+-   **[Dell Latitute E6400](../docs/hardware/e6400.md) (easy to flash, no disassembly, similar
     hardware to X200/T400)**
 -   ThinkPad X60 / X60S / X60 Tablet
 -   ThinkPad T60 (with Intel GPU)
@@ -143,8 +143,8 @@ Desktops (AMD, Intel, x86)
 -   [Lenovo Thinkpad X230](../docs/install/x230_external.md)
 -   [Lenovo Thinkpad X230t](../docs/install/x230_external.md)
 -   [Lenovo ThinkPad W541](../docs/install/ivy_has_common.md)
--   [HP EliteBook 2560p](hp2560p.md)
--   [HP EliteBook Folio 9470m](hp9470m.md)
+-   [HP EliteBook 2560p](../docs/hardware/hp2560p.md)
+-   [HP EliteBook Folio 9470m](../docs/hardware/hp9470m.md)
 
 ### Laptops (ARM, with U-Boot payload)
 
