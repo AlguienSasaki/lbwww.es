@@ -451,6 +451,8 @@ Also has a series of extensive improvements to the entire Libreboot system;
 for example, Ferass made the entire build system use POSIX `sh`, removing
 bashisms that previously plagued it.
 
+This is IRC nick `f_` on Libreboot IRC. Cool guy!
+
 Vladimir Serbinenko
 -------------------
 
