@@ -16,8 +16,10 @@ BIOS/UEFI firmware on x86 machines, and provides an *improved* configuration
 on ARM-based chromebooks supported (U-Boot bootloader, instead of Google's
 depthcharge bootloader). On x86 machines, the GRUB and SeaBIOS coreboot
 payloads are officially supported, provided in varying configurations per
-machine. You can find the list of supported hardware in the Libreboot
-documentation.
+machine. It provides an automated build system for the configuration and
+installation of coreboot ROM images, making coreboot easier to use for
+non-technical people. You can find the list of supported hardware in the
+Libreboot documentation.
 
 The last Libreboot release, version 20221214, was released on 14 December
 in 2022. *This* new release, Libreboot 20230319, is released today on
