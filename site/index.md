@@ -13,9 +13,9 @@ firmware. Help is available
 via [\#libreboot](https://web.libera.chat/#libreboot)
 on [Libera](https://libera.chat/) IRC.
 
-**NEW RELEASE: The latest release is Libreboot 20230413, released on
-14 April 2023.
-See: [Libreboot 20230413 release announcement](news/libreboot20230413.md).**
+**NEW RELEASE: The latest release is Libreboot 20230423, released on
+23 April 2023.
+See: [Libreboot 20230423 release announcement](news/libreboot20230423.md).**
 
 Why should you use *libreboot*?
 ----------------------------

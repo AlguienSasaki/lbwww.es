@@ -11,8 +11,8 @@ remplacement pour le micrologiciel UEFI/BIOS propriétaire.
 Des canaux d'aide sont disponibles 
 dans le canal [\#libreboot](https://web.libera.chat/#libreboot) sur le serveur IRC [Libera](https://libera.chat/).
 
-**NOUVELLE VERSION: La dernière version est [Libreboot 20230413](news/libreboot20230413.md), sortie
-le 13 Avril 2023.**
+**NOUVELLE VERSION: La dernière version est [Libreboot 20230423](news/libreboot20230423.md), sortie
+le 23 Avril 2023.**
 
 Pourquoi devriez-vous utiliser Libreboot?
 -----------------------------------

@@ -28,9 +28,6 @@ existing supported hardware; the focus is going to be on adding *more* boards
 to Libreboot, to support more hardware. I've been on a spree, buying lots of
 mainboards that coreboot supports, that would be interesting in Libreboot.
 
-It is my intention that the next Libreboot release will be an *official*
-stable release!
-
 Build from source
 -----------------
 

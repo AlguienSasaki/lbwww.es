@@ -7,7 +7,7 @@ Introduction
 ============
 
 Libreboot has support for this, in the Git repository and release versions
-after (but *not* including) the Libreboot 20230413 release.
+from 20230423 onwards.
 
 Brief board info
 ----------------

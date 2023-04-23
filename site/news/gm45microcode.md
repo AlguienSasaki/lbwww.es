@@ -6,7 +6,8 @@ UPDATE: This also applies to the Dell Latitute E6400 port, added on 19
 April 2023 to Libreboot. See: [E6400 announcement](e6400.md)
 
 The change described in this article is *not* present in Libreboot 20221214,
-20230319 or 20230413 - it will be present in the *next* Libreboot release.
+20230319 or 20230413 - **UPDATE: [Libreboot 20230423 is out, and includes
+this change on all GM45 targets](libreboot20230423.md)**
 
 If you want a no-microcode setup, either [build the
 latest Libreboot from source via lbmk](../docs/build/) and remove the microcode

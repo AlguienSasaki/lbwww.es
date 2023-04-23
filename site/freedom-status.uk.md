@@ -341,11 +341,10 @@ firmware is inserted into main boot flash, rather than being on a separate IC.
 This is *better* because libre replacements would be more easy to install in
 the future, and reverse engineering is made much easier by it. Libreboot's
 build system handles such firmware in `blobutil`, automatically downloading
-it during the build process - releases after Libreboot 20230413, which lacks
-such EC integration for HPs, will scrub EC firmware and provide functionality
-in `blobutil` insert, to insert them with `cbfstool` at the correct offset as
-defined by coreboot config for each board. - **TODO: English paragraph that
-needs to be translated into Ukrainian.**
+it during the build process - Libreboot 20230423 onwards does scrub EC firmware
+and provide functionality in `blobutil` insert, to insert them with `cbfstool`
+at the correct offset as defined by coreboot config for each board. - **TODO:
+English paragraph that needs to be translated into Ukrainian.**
 
 Як заявлено, Libreboot надає це в стані, де ME більше не є
 загрозою для безпеки. Він ініціалізує себе, але потім нічого не робить, тому його
