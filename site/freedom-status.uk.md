@@ -336,6 +336,11 @@ Intel/x86
 `x230edp_12mb`, `x230t_12mb`, `x230t_16mb`, `hp8200sff_8mb`, `hp2560p_8mb`
 та `hp9470m_16mb`.
 
+Як заявлено, Libreboot надає це в стані, де ME більше не є
+загрозою для безпеки. Він ініціалізує себе, але потім нічого не робить, тому його
+вимкнено. Це зроблено використовуючи `me_cleaner`. Дивіться:
+<https://github.com/corna/me_cleaner/wiki/How-does-it-work%3F>
+
 KBC1126 EC firmware on `hp9470m_16mb` and `hp9470m_16mb` - on HP laptops, EC
 firmware is inserted into main boot flash, rather than being on a separate IC.
 This is *better* because libre replacements would be more easy to install in
@@ -345,11 +350,6 @@ it during the build process - Libreboot 20230423 onwards does scrub EC firmware
 and provide functionality in `blobutil` insert, to insert them with `cbfstool`
 at the correct offset as defined by coreboot config for each board. - **TODO:
 English paragraph that needs to be translated into Ukrainian.**
-
-Як заявлено, Libreboot надає це в стані, де ME більше не є
-загрозою для безпеки. Він ініціалізує себе, але потім нічого не робить, тому його
-вимкнено. Це зроблено використовуючи `me_cleaner`. Дивіться:
-<https://github.com/corna/me_cleaner/wiki/How-does-it-work%3F>
 
 Оновлення *мікрокоду* для ЦП надано на *всіх* платформах x86, за замовчуванням. Не
 вимагається технічно, але надзвичайно рекомендовано. Виконайте для видалення:
