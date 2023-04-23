@@ -284,10 +284,7 @@ blobs like Intel ME *scrubbed*, where the user is expected to insert them).
 You can read more about this on the page: [Inserting binary blobs
 on Sandybridge/Ivybridge/Haswell](../install/ivy_has_common.md)
 
-NOTE: This utility may be expanded in future Libreboot revisions, to handle
-things such as EC firmware, and it may expand to other platforms. It is, at
-present, only utilised for handling ROM images on Intel Sandybridge, Ivybridge
-and Haswell platforms.
+KBC1126 EC firmware for HP laptops is *also* handled by blobutil.
 
 build
 =====
