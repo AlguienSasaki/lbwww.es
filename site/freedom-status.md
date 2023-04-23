@@ -336,6 +336,11 @@ Neutered ME required on these targets: `t420_8mb`, `t420s_8mb`, `t430_12mb`,
 `x230edp_12mb`, `x230t_12mb`, `x230t_16mb`, `hp8200sff`, `hp2560p_8mb`
 and `hp9470m_16mb`.
 
+As stated, Libreboot provides this in a state where the ME is no longer a
+threat to security. It initialises itself, but then does nothing, so it's
+disabled. This is done using `me_cleaner`. See:
+<https://github.com/corna/me_cleaner/wiki/How-does-it-work%3F>
+
 KBC1126 EC firmware on `hp9470m_16mb` and `hp9470m_16mb` - on HP laptops, EC
 firmware is inserted into main boot flash, rather than being on a separate IC.
 This is *better* because libre replacements would be more easy to install in
@@ -344,11 +349,6 @@ build system handles such firmware in `blobutil`, automatically downloading
 it during the build process. Libreboot 20230423 onwards does scrub EC firmware
 and provide functionality in `blobutil` insert, to insert them with `cbfstool`
 at the correct offset as defined by coreboot config for each board.
-
-As stated, Libreboot provides this in a state where the ME is no longer a
-threat to security. It initialises itself, but then does nothing, so it's
-disabled. This is done using `me_cleaner`. See:
-<https://github.com/corna/me_cleaner/wiki/How-does-it-work%3F>
 
 *Microcode* updates for CPU provided on *all* x86 platforms, by default. Not
 technically required, but highly recommended. To remove, do:
