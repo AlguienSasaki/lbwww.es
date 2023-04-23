@@ -118,10 +118,6 @@ Libreboot's pragmatic policies will inevitably result in more people becoming
 coreboot developers in the future, by acting as that crucial *bridge* between
 *it* and non-technical people who just need a bit of help to get started.
 
-Lots of people have hardware that coreboot supports, and it
-provides a lot more freedom than otherwise fully proprietary firmware, even if
-the user does have to install a blob or two as part of their coreboot image.
-
 Configuration
 -------------
 
