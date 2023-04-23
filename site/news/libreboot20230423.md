@@ -104,7 +104,7 @@ Build system changes:
 * GRUB payload: `grub.cfg` menu timeout now 30s, not 5s (courtesy Leah Rowe)
 * `blobutil/download`: support downloading KBC1126-based EC firmware for HP
   laptops. (patch by Leah Rowe)
-* `blobutil/download: Support extracting `me.bin` from full archives, when
+* `blobutil/download`: Support extracting `me.bin` from full archives, when
   running `./blobutil download` - this is done, using the `-M` option
   in `me_cleaner` (some vendors put whole ROM images with IFD, GBE, ME and BIOS
   regions in them, inside their BIOS update archives - we only need to get ME
