@@ -174,6 +174,18 @@ didn't work with ACPI based brightness controls. Others in coreboot later
 improved it, making ACPI-based backlight controls work properly, based on this
 earlier work.
 
+Ferass El Hafidi
+--------
+
+Added cstate 3 support on macbook21, enabling higher battery life and cooler
+CPU temperatures on idle usage.
+
+Also has a series of extensive improvements to the entire Libreboot system;
+for example, Ferass made the entire build system use POSIX `sh`, removing
+bashisms that previously plagued it.
+
+This is IRC nick `f_` on Libreboot IRC. Cool guy!
+
 Jeroen Quint
 ------------
 
@@ -440,18 +452,6 @@ contact details are on the raptor site.
 
 **D16 support was removed on 19 November 2022. You can still use older
 revisions of Libreboot, and older release versions.**
-
-Ferass El Hafidi
---------
-
-Added cstate 3 support on macbook21, enabling higher battery life and cooler
-CPU temperatures on idle usage. vitali64 on irc
-
-Also has a series of extensive improvements to the entire Libreboot system;
-for example, Ferass made the entire build system use POSIX `sh`, removing
-bashisms that previously plagued it.
-
-This is IRC nick `f_` on Libreboot IRC. Cool guy!
 
 Vladimir Serbinenko
 -------------------
