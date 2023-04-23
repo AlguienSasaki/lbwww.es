@@ -136,8 +136,11 @@ accessible for otherwise non-technical users.
 FREEDOM CATALOG
 ===============
 
-A *blob status* page should also be made available, educating people about the
-status of binary blobs on each machine supported by the Libreboot build system.
+A *[freedom status](../freedom-status.md)* page should also be made available,
+educating people about the status of binary blobs on each machine supported by
+the Libreboot build system. Please read:
+[Software and hardware freedom status for each mainboard supported by
+Libreboot](../freedom-status.md).
 
 It is desirable to see a world where all hardware and software is libre, under
 the same ideology as the Libreboot project. Hardware!?
