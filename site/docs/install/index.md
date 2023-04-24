@@ -669,10 +669,10 @@ the insert script for ME works with sandybridge aswell).
 **If using release ROMs, neutered ME must be inserted. Refer to the above
 guide.**
 
-TARGET: Thinkpad X230/T430/T530
+TARGET: Thinkpad X230/T430/T530/W530
 ---------------------
 
-NOTE: no install docs for T430/T530 yet, but check coreboot wiki.
+NOTE: no install docs for T430/T530/W530 yet, but check coreboot wiki.
 
 NOTE: Internal flashing is also possible, on this machine, from vendor firmware,
 but it's still recommended to use a clip and a SPI flasher. However, follow

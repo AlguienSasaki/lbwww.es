@@ -39,7 +39,8 @@ libreboot currently supports the following systems in this release:
 -   [Lenovo ThinkPad R400](r400.md)
 -   [Lenovo ThinkPad T400 / T400S](t400.md)
 -   [Lenovo ThinkPad T500](t500.md)
--   [Lenovo ThinkPad T530](../install/ivy_has_common.md) (no install docs yet)
+-   [Lenovo ThinkPad T530 / W530](../install/ivy_has_common.md) (no install
+    docs yet)
 -   [Lenovo ThinkPad W500](t500.md)
 -   [Lenovo ThinkPad R500](r500.md)
 -   [Apple MacBook1,1 and MacBook2,1](macbook21.md)
