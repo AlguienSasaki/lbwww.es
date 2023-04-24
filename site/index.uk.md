@@ -4,7 +4,7 @@ x-toc-enable: true
 ...
 
 Проект *Libreboot* надає
-[вільну](freedom-status.md) *завантажувальну
+[вільну](freedom-status.uk.md) *завантажувальну
 прошивку*, яка ініціалізує апаратне забезпечення (наприклад, контролер пам'яті, ЦП,
 периферію) на [конкретних цілях Intel/AMD x86 та ARM](docs/hardware/), що
 потім розпочинає завантажувач для вашої операційної системи. [Linux](docs/linux/)
@@ -22,7 +22,7 @@ x-toc-enable: true
 ----------------------------
 
 Libreboot надає вам [свободи](https://en.wikipedia.org/wiki/Open_source), які в
-іншому випадку ви не можете отримати з більшістью інших завантажувальних
+іншому випадку ви не можете отримати з більшістю інших завантажувальних
 прошивок. Він надзвичайно [потужний](docs/linux/grub_hardening.md)
 та [налаштовується](docs/maintain/) для багатьох випадків використання.
 
@@ -30,9 +30,9 @@ Libreboot надає вам [свободи](https://en.wikipedia.org/wiki/Open_
 та право читати. В цьому контексті, Libreboot надає вам ці права.
 Ваша свобода має значення.
 [Право на ремонт](https://yewtu.be/watch?v=Npd_xDuNi9k) має значення.
-Багато людей використовує пропрієтарну (невільну)
+Багато людей використовують пропрієтарну (невільну)
 завантажувальну прошивку, навіть якщо вони використовують [вільну операційну систему](https://www.openbsd.org/).
-Пропрієтарна прошивка часто [містить](faq.html#intel) [лазівки](faq.html#amd),
+Пропрієтарна прошивка часто [містить](faq.uk.html#intel) [лазівки](faq.uk.html#amd),
 та може бути глючною. Проект libreboot було засновано в грудні 2013 року, з
 явною метою зробити прошивку coreboot доступною для нетехнічних користувачів.
 
@@ -43,7 +43,7 @@ Coreboot помітно складний для встановлення для 
 [GRUB](https://www.gnu.org/software/grub/),
 [Tianocore](https://www.tianocore.org/)), які також мають бути налаштованими.
 *Програмне забезпечення libreboot вирішує цю проблему*; це *дистрибутив coreboot* з
-[автоматизованою системою побудови](docs/build/), яка збирає завершені *образи ROM*, для
+[автоматизованою системою побудови](docs/build/index.uk.md), яка збирає завершені *образи ROM*, для
 більш надійної установки. Документація надається.
 
 Чим libreboot відрізняється від звичайного coreboot?
@@ -73,28 +73,28 @@ Coreboot помітно складний для встановлення для 
 Як допомогти
 -----------
 
-The *single* biggest way you can help it to *add* new mainboards to Libreboot,
-by submitting a config. Anything coreboot supports can be integrated in
-Libreboot, with ROM images provided in releases. See:
+*Єдиний* найбільший шлях, яким ви можете допомогти є *додавання* нових материнських плат до Libreboot,
+за допомогою відправки конфігурації. Що завгодно, що підтримує coreboot може бути інтегровано в
+Libreboot, з образами ROM наданими в випусках. Дивіться:
 
-* [Apply to become a board maintainer/tester](docs/maintain/testing.md)
-* [Porting guide for new mainboards](docs/maintain/porting.md)
-* [Libreboot build system documentation](docs/maintain/)
+* [Подача на становлення супровідником/випробувачем плати](docs/maintain/testing.md)
+* [Керівництво перенесення для нових материнських плат](docs/maintain/porting.uk.md)
+* [Документація системи побудови Libreboot](docs/maintain/)
 
-After that, there is build system maintenance (see above), and *documentation*
-which we take seriously. Documentation is critical, in any project.
+Після цього, є обслуговування системи побудови (дивіться зверху), та *документація*,
+до якої ми ставимося серйозно. Документація є критичною, в будь-якому проекті.
 
-*User support* is also critical. Stick around on IRC, and if you're competent
-to help someone with their issue (or wily enough to learn with them), that is
-a great service to the project. A lot of people also ask for user support
-on the `r/libreboot` subreddit.
+*Користувацька ідтримка* є також критичною. Тримайтесь поряд на IRC, і якщо ви компетентні
+допомогти комусь з їх проблемним питанням (або досить вправні, щоб навчитись з ними), це є
+чудовою послугою для проекту. Багато людей також запитує підтримки користувачів
+на subreddit `r/libreboot`.
 
 Ви можете перевірити помилки, перелічені
 в [системі відстеження помилок](https://codeberg.org/libreboot/lbmk/issues).
 
-Якщо ви помітили помилку і маєте виправлення, [ось інструкції щодо надсилання виправлень](git.md), а також ви можете повідомити про це. Також, весь цей веб-сайт
+Якщо ви помітили помилку і маєте виправлення, [ось інструкції щодо надсилання виправлень](git.uk.md), а також ви можете повідомити про це. Також, весь цей веб-сайт
 написаний Markdown та розміщений в [окремому
-репозиторії](https://codeberg.org/libreboot/lbwww), де ви можете надсилати виправлення.
+сховищі](https://codeberg.org/libreboot/lbwww), де ви можете надсилати виправлення.
 
 Усі обговорення розробки та підтримка користувачів відбуваються на IRC
-каналі. Більше інформації на [сторінці зворотнього зв'язку](contact.md).
+каналі. Більше інформації на [сторінці зворотнього зв'язку](contact.uk.md).
