@@ -13,6 +13,8 @@ x-toc-enable: true
 через [\#libreboot](https://web.libera.chat/#libreboot)
 на [Libera](https://libera.chat/) IRC.
 
+<img tabindex=1 class="r" src="https://av.libreboot.org/hp9470m/9470m+2560p.jpg" /><span class="f"><img src="https://av.libreboot.org/hp9470m/9470m+2560p.jpg" /></span>
+
 **НОВИЙ ВИПУСК: Останній випуск Libreboot 20230423, випущено 23 квітня 2023.
 Дивіться: [Оголошення про випуск Libreboot 20230423](news/libreboot20230423.md).**
 

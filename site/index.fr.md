@@ -11,6 +11,8 @@ remplacement pour le micrologiciel UEFI/BIOS propriétaire.
 Des canaux d'aide sont disponibles 
 dans le canal [\#libreboot](https://web.libera.chat/#libreboot) sur le serveur IRC [Libera](https://libera.chat/).
 
+<img tabindex=1 class="r" src="https://av.libreboot.org/hp9470m/9470m+2560p.jpg" /><span class="f"><img src="https://av.libreboot.org/hp9470m/9470m+2560p.jpg" /></span>
+
 **NOUVELLE VERSION: La dernière version est [Libreboot 20230423](news/libreboot20230423.md), sortie
 le 23 Avril 2023.**
 
