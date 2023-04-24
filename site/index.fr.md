@@ -48,6 +48,8 @@ un [système de compilation automatisé](docs/builds/), crééant des
 De quelle façon Libreboot diffère de Coreboot?
 ------------------------------------------------
 
+<img tabindex=1 class="l" style="max-width:15%;" src="https://av.libreboot.org/hp8200sff/grub_open.jpg" /><span class="f"><img src="https://av.libreboot.org/hp8200sff/grub_open.jpg" /></span>
+
 Contrairement à l'opinion populaire, le but principal de Libreboot n'est
 pas de fournir un Coreboot déblobbé; ceci n'est simplement qu'une
 des politiques de Libreboot, une importante certes, mais qui n'est qu'un

@@ -47,6 +47,8 @@ Coreboot помітно складний для встановлення для 
 Чим libreboot відрізняється від звичайного coreboot?
 ---------------------------------------------
 
+<img tabindex=1 class="l" style="max-width:15%;" src="https://av.libreboot.org/hp8200sff/grub_open.jpg" /><span class="f"><img src="https://av.libreboot.org/hp8200sff/grub_open.jpg" /></span>
+
 Таким же самим чином, як *Debian* це дистрибутив Linux, `libreboot` це
 *дистрибутив coreboot*. Якщо ви хочете зібрати образ ROM з нуля, вам
 інакше довелось би виконати налаштування експертного рівня coreboot, GRUB та

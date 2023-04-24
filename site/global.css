@@ -129,11 +129,16 @@ img
 	cursor: pointer;
 }
 
-.r {
-	float: right;
+.l,.r {
 	max-width:40%;
 	margin:1em;
 }
+.r {
+	float: right;
+}
+.l {
+	float: left;
+}
 .p {
-	width: 13em;
+	max-width: 13em;
 }

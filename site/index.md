@@ -49,6 +49,8 @@ more robust installation. Documentation is provided.
 Libreboot is not a fork of coreboot
 -----------------------------------
 
+<img tabindex=1 class="l" style="max-width:15%;" src="https://av.libreboot.org/hp8200sff/grub_open.jpg" /><span class="f"><img src="https://av.libreboot.org/hp8200sff/grub_open.jpg" /></span>
+
 In fact, Libreboot tries to stay as close to *stock* coreboot as possible,
 for each board, but with many different types of configuration provided
 automatically by the Libreboot build system.
