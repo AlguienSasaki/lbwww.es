@@ -22,10 +22,10 @@ See: [Libreboot 20230423 release announcement](news/libreboot20230423.md).**
 Why should you use *libreboot*?
 ----------------------------
 
-Libreboot gives you freedoms that you otherwise can't get with most other
-boot firmware, plus faster boot speeds and [better
-security](docs/linux/grub_hardening.md). It's extremely powerful and
-[configurable](docs/maintain/) for many use cases.
+Libreboot gives you [freedoms](https://en.wikipedia.org/wiki/Open_source) that
+you otherwise can't get with most other boot firmware, plus faster boot speeds
+and [better security](docs/linux/grub_hardening.md). It's extremely powerful
+and [configurable](docs/maintain/) for many use cases.
 
 You have rights. The right to privacy, freedom of thought, freedom of speech
 and the right to read. In this context, Libreboot gives you these rights.
