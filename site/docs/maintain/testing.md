@@ -1,7 +1,12 @@
 ---
-title: Board Maintainers Guide
+title: Apply to become board maintainer/tester for Libreboot
 x-toc-enable: true
 ...
+
+This page is very new, and these guidelines/procedures will be revised over
+time. We are, as of April 2023, formalising our testing / release engineering
+procedures somewhat. The Libreboot project is *expanding* to support a lot
+more hardware these days.
 
 Libreboot strives to make Coreboot accessible for as many users as possible.
 To accomplish this goal, we must add as many boards as possible.
@@ -18,17 +23,22 @@ All you need to do in order to become a board maintainer is:
 + Have the board you wish to maintain
 
 Once you become a board maintainer, your real name and screen name can
-be added to the public list on [libreboot.org.](/index.html)
-You can, of course, choose to forego the public listing.
+be added to the public list on the Libreboot contributors page.
+You can, of course, choose to forego the public listing (we will ask for
+permission, before publishing your name).
 
-To apply as a board maintainer, ping `leah` or `shmalebx9` on
+To apply for such a posting, ping `leah` or `shmalebx9` on
 [irc,](../../contact.html#irc-chatroom) or email
-Caleb at [thonkpeasant@protonmail.com](mailto:thonkpeasant@protonmail.com)
+Leah Rowe via [leah@libreboot.org](mailto:leah@libreboot.org)
 Do not be afraid to apply to maintain a board with another listed
 maintainer or multiple maintainers; more is better.
 
 Please read the following sections to understand the specifics of
 maintaining a board.
+
+NOTE: If there are already testers for a given mainboard, *you* can still
+provide testing for the same mainboard if that's what you have. The more the
+merrier!
 
 Be Contactable
 ==============

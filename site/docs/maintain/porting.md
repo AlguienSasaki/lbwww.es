@@ -1,6 +1,9 @@
 ---
-title: Porting Guide
+title: Porting guide for new mainboards
 ...
+
+NOTE: This page is largely Intel-centric, at present. It should be revised to
+cover more vendors. [Patches welcome!](../../git.md)
 
 This guide is intended for those with very little knowledge of firmware
 in general and coreboot in particular.

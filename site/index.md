@@ -75,6 +75,17 @@ users](docs/install/).
 How to help
 -----------
 
+The *single* biggest way you can help it to *add* new mainboards to Libreboot,
+by submitting a config. Anything coreboot supports can be integrated in
+Libreboot, with ROM images provided in releases. See:
+
+* [Apply to become a board maintainer/tester](docs/maintain/testing.md)
+* [Porting guide for new mainboards](docs/maintain/porting.md)
+* [Libreboot build system documentation](docs/maintain/)
+
+After that, there is build system maintenance (see above), and *documentation*
+which we take seriously. Documentation is critical, in any project.
+
 You can check bugs listed on
 the [bug tracker](https://codeberg.org/libreboot/lbmk/issues).
 
