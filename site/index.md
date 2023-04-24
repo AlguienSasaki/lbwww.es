@@ -3,7 +3,7 @@ title: Libreboot project
 x-toc-enable: true
 ...
 
-The `libreboot` project provides
+The *Libreboot* project provides
 [libre](freedom-status.md) *boot
 firmware* that initializes the hardware (e.g. memory controller, CPU,
 peripherals) on [specific Intel/AMD x86 and ARM targets](docs/hardware/), which
@@ -35,7 +35,7 @@ Proprietary firmware often [contains](faq.html#intel) [backdoors](faq.html#amd),
 and can be buggy. The libreboot project was founded in in December 2013, with the
 express purpose of making coreboot firmware accessible for non-technical users.
 
-The `libreboot` project uses [coreboot](https://www.coreboot.org/) for [hardware
+The Libreboot project uses [coreboot](https://www.coreboot.org/) for [hardware
 initialisation](https://doc.coreboot.org/getting_started/architecture.html).
 Coreboot is notoriously difficult to install for most non-technical users; it
 handles only basic initialization and jumps to a separate
@@ -55,7 +55,7 @@ In fact, Libreboot tries to stay as close to *stock* coreboot as possible,
 for each board, but with many different types of configuration provided
 automatically by the Libreboot build system.
 
-In the same way that *Alpine Linux* is a *Linux distribution*, `libreboot` is
+In the same way that *Alpine Linux* is a *Linux distribution*, Libreboot is
 a *coreboot distribution*. If you want to build a ROM image from scratch, you
 otherwise have to perform expert-level configuration of coreboot, GRUB and
 whatever other software you need, to prepare the ROM image. With *libreboot*,
@@ -68,7 +68,7 @@ If you were to build regular coreboot, without using libreboot's automated
 build system, it would require a lot more intervention and decent technical
 knowledge to produce a working configuration.
 
-Regular binary releases of `libreboot` provide these
+Regular binary releases of Libreboot provide these
 ROM images pre-compiled, and you can simply install them, with no special
 knowledge or skill except the ability to
 follow [simplified instructions, written for non-technical
