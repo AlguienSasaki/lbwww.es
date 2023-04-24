@@ -20,8 +20,9 @@ Pourquoi devriez-vous utiliser Libreboot?
 -----------------------------------
 
 Libreboot vous donne des libertés que nous n'auriez pas autrement avec d'autre
-micrologiciel de démarrage. Il est extremement puissant et configurable pour 
-plein de cas d'utilisations.
+micrologiciel de démarrage. Il est
+extremement [puissant](docs/linux/grub_hardening.md)
+et [configurable](docs/maintain) pour  plein de cas d'utilisations.
 
 Vous avez des droits. Un droit à la vie privée, liberté de pensée, liberté d'espression et le droit de lire. Dans ce contexte là, Libreboot vous permet d'avoir ces droits.
 Votre liberté compte.
