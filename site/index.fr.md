@@ -86,6 +86,11 @@ Libreboot, with ROM images provided in releases. See:
 After that, there is build system maintenance (see above), and *documentation*
 which we take seriously. Documentation is critical, in any project.
 
+*User support* is also critical. Stick around on IRC, and if you're competent
+to help someone with their issue (or wily enough to learn with them), that is
+a great service to the project. A lot of people also ask for user support
+on the `r/libreboot` subreddit.
+
 Vous pouvez allez voir les bugs listés sur le [traqueur de bugs](https://codeberg.org/libreboot/lbmk/issues).
 
 Si vous trouvez un bug et avez un correctif, [voici les instructions pour envoyer des patchs](git.md), et vous pouvez aussi nous les signaler.
