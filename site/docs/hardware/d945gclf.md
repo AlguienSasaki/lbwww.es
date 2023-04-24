@@ -5,7 +5,7 @@ x-toc-enable: true
 
 <div class="specs">
 <center>
-![D945GCLF](https://av.libreboot.org/d945gclf/d945gclf.jpg){width=200px}
+<img tabindex=1 alt="D945GCLF" class="p" src="https://av.libreboot.org/d945gclf/d945gclf.jpg" /><span class="f"><img src="https://av.libreboot.org/d945gclf/d945gclf.jpg" /></span>
 </center>
 
 | ***Specifications***       |                                                |

@@ -5,7 +5,7 @@ x-toc-enable: true
 
 <div class="specs">
 <center>
-![HP Compaq 8200 Elite SFF](https://av.libreboot.org/hp8200sff/grub_open.jpg){width=200px}
+<img tabindex=1 alt="HP Compaq 8200 Elite SFF" class="p" src="https://av.libreboot.org/hp8200sff/grub_open.jpg" /><span class="f"><img src="https://av.libreboot.org/hp8200sff/grub_open.jpg" /></span>
 </center>
 
 | ***Specifications***      |                                             |
