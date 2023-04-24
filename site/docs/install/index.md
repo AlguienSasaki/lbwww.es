@@ -126,7 +126,7 @@ an option in the boot menu.
 ROM images that have `seabios_withgrub` in the file name start with SeaBIOS
 first, but also have GRUB available in the boot menu when you press ESC.
 
-### seabios\_grubfirst (DEFUNCT, WAS INTENDED ONLY FOR DESKTOPS)
+### seabios\_grubfirst (DEFUNCT)
 
 **DEFUNCT**
 
@@ -168,18 +168,17 @@ Which systems are supported?
 [Refer to the hardware compatibility page](../hardware/)
 
 Sandy/Ivybridge/Haswell MAC address (e.g. X230, X220, T440p, W541, hp8200sff)
+Intel GbE MAC address (IFD-based systems)
 =====================================================================
 
 You can change the MAC address in flash, on these machines. See:
 [nvmutil documentation](nvmutil.md)
 
-MAC address on GM45+ICH9M hardware (ThinkPad X200/R400/T400/T500/W500)
-======================================================================
-
 The MAC address is stored in a region of the boot flashed called *GbE NVM*
 which is short for *gigabit ethernet non-volatile memory*. Refer to the
 following article:
 
+For GM45/ICH9M systems (e.g. ThinkPad X200/T400, Dell Latitude E6400), see:
 [ich9utils documentation](ich9utils.md) (you can also use nvmutil, see link
 above)
 
@@ -235,7 +234,7 @@ Use this to find out:
 
 In the output will be information pertaining to your boot flash.
 
-### Howto: read/write/erase the boot flash (PLEASE CHECK LIST OF EXCEPTIONS BELOW BEFORE YOU ATTEMPT THIS!!!!)
+### Howto: read/write/erase the boot flash
 
 How to read the current chip contents:
 
@@ -280,7 +279,7 @@ the sections below:
 
 See: [Dell Latitute E6400 Libreboot Installation Guide](e6400.md)
 
-#### Lenovo ThinkPad X200/X200S/X200T/T400/T400S/T500/W500/R400/R500 running non-free Lenovo BIOS
+#### ThinkPad X200/T400/T500/W500/R400/R500 vendor BIOS
 
 If you're running one of these, it cannot be flashed internally if you're still
 running the non-free Lenovo BIOS firmware.
