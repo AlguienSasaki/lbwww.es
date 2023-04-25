@@ -2,7 +2,10 @@
 % Leah Rowe
 % 30 March 2023
 
-This page will be updated after I've acquired the hardware.
+**UPDATE: As of 25 April 2023, I've now ordered one myself. The issue was
+finding one with a decent cooler, which is rare, but I found one. 2 CPUs,
+some RAM, the cooler - and I'll get a case+PSU to put it in. Expect D16 in
+the next Libreboot release. Expect it.**
 
 Please donate a D16 machine if you can
 ======================================
