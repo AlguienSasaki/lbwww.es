@@ -19,7 +19,7 @@ on [Libera](https://libera.chat/) IRC.
 23 April 2023.
 See: [Libreboot 20230423 release announcement](news/libreboot20230423.md).**
 
-Why should you use *libreboot*?
+Why should you use *Libreboot*?
 ----------------------------
 
 Libreboot gives you [freedoms](https://en.wikipedia.org/wiki/Open_source) that
@@ -34,7 +34,7 @@ Your freedom matters.
 Many people use proprietary (non-libre)
 boot firmware, even if they use [a libre OS](https://www.openbsd.org/).
 Proprietary firmware often [contains](faq.html#intel) [backdoors](faq.html#amd),
-and can be buggy. The libreboot project was founded in in December 2013, with the
+and can be buggy. The Libreboot project was founded in in December 2013, with the
 express purpose of making coreboot firmware accessible for non-technical users.
 
 The Libreboot project uses [coreboot](https://www.coreboot.org/) for [hardware
@@ -44,7 +44,7 @@ handles only basic initialization and jumps to a separate
 [payload](https://doc.coreboot.org/payloads.html) program (e.g.
 [GRUB](https://www.gnu.org/software/grub/),
 [Tianocore](https://www.tianocore.org/)), which must also be configured.
-*The libreboot software solves this problem*; it is a *coreboot distribution* with
+*The Libreboot project solves this problem*; it is a *coreboot distribution* with
 an [automated build system](docs/build/) that builds complete *ROM images*, for
 more robust installation. Documentation is provided.
 
@@ -60,13 +60,13 @@ automatically by the Libreboot build system.
 In the same way that *Alpine Linux* is a *Linux distribution*, Libreboot is
 a *coreboot distribution*. If you want to build a ROM image from scratch, you
 otherwise have to perform expert-level configuration of coreboot, GRUB and
-whatever other software you need, to prepare the ROM image. With *libreboot*,
+whatever other software you need, to prepare the ROM image. With *Libreboot*,
 you can literally download from Git or a source archive, and run `make`, and it
 will build entire ROM images. An automated build system, named `lbmk`
 (Libreboot MaKe), builds these ROM images automatically, without any user input
 or intervention required. Configuration has already been performed in advance.
 
-If you were to build regular coreboot, without using libreboot's automated
+If you were to build regular coreboot, without using Libreboot's automated
 build system, it would require a lot more intervention and decent technical
 knowledge to produce a working configuration.
 

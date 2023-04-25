@@ -16,7 +16,7 @@ dans le canal [\#libreboot](https://web.libera.chat/#libreboot) sur le serveur I
 **NOUVELLE VERSION: La dernière version est [Libreboot 20230423](news/libreboot20230423.md), sortie
 le 23 Avril 2023.**
 
-Pourquoi devriez-vous utiliser Libreboot?
+Pourquoi devriez-vous utiliser *Libreboot*?
 -----------------------------------
 
 Libreboot vous donne des [libertés](https://en.wikipedia.org/wiki/Open_source)
