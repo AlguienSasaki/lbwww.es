@@ -44,7 +44,7 @@ handles only basic initialization and jumps to a separate
 [payload](https://doc.coreboot.org/payloads.html) program (e.g.
 [GRUB](https://www.gnu.org/software/grub/),
 [Tianocore](https://www.tianocore.org/)), which must also be configured.
-*The Libreboot project solves this problem*; it is a *coreboot distribution* with
+*Libreboot solves this problem*; it is a *coreboot distribution* with
 an [automated build system](docs/build/) that builds complete *ROM images*, for
 more robust installation. Documentation is provided.
 
