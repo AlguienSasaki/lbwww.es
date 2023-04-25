@@ -261,11 +261,9 @@ IRC, а також передала +F статус засновника для 
 (жінка з блакитним волоссям - Ліза, а довговолосий хлопець із вусами -
 Патрік):
 
-<https://media.libreplanet.org/u/libreplanet/m/session-02-c-mws-png-libreplanet-2016-sessions/>
-(посилання на архів: <http://web.archive.org/web/20170319043913/https://media.libreplanet.org/u/libreplanet/m/session-02-c-mws-png-libreplanet-2016-sessions/>)
+<http://web.archive.org/web/20170319043913/https://media.libreplanet.org/u/libreplanet/m/session-02-c-mws-png-libreplanet-2016-sessions/>
 
-<https://media.libreplanet.org/u/libreplanet/m/session-02-c-wide-png-libreplanet-2016-sessions/>
-(посилання на архів: <http://web.archive.org/web/20170319043915/https://media.libreplanet.org/u/libreplanet/m/session-02-c-wide-png-libreplanet-2016-sessions/>)
+<http://web.archive.org/web/20170319043915/https://media.libreplanet.org/u/libreplanet/m/session-02-c-wide-png-libreplanet-2016-sessions/>
 
 Цікавий факт: Патрік також є провідним розробником ProteanOS, проекту вбудованої
 ОС, схваленого FSF: <http://proteanos.com/> (використовує BusyBox і Linux-libre)

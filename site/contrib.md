@@ -261,11 +261,9 @@ Free Software Foundation has these photos of that talk on their LibrePlanet
 website (the woman with the blue hair is Lisa, and the long-haired dude with the
 moustache is Patrick):
 
-<https://media.libreplanet.org/u/libreplanet/m/session-02-c-mws-png-libreplanet-2016-sessions/>
-(archive link: <http://web.archive.org/web/20170319043913/https://media.libreplanet.org/u/libreplanet/m/session-02-c-mws-png-libreplanet-2016-sessions/>)
+<http://web.archive.org/web/20170319043913/https://media.libreplanet.org/u/libreplanet/m/session-02-c-mws-png-libreplanet-2016-sessions/>
 
-<https://media.libreplanet.org/u/libreplanet/m/session-02-c-wide-png-libreplanet-2016-sessions/>
-(archive link: <http://web.archive.org/web/20170319043915/https://media.libreplanet.org/u/libreplanet/m/session-02-c-wide-png-libreplanet-2016-sessions/>)
+<http://web.archive.org/web/20170319043915/https://media.libreplanet.org/u/libreplanet/m/session-02-c-wide-png-libreplanet-2016-sessions/>
 
 Fun fact: Patrick is also the lead developer of ProteanOS, an FSF-endorsed
 embedded OS project: <http://proteanos.com/> (uses BusyBox and Linux-libre)
