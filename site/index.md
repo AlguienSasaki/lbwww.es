@@ -81,7 +81,7 @@ How to help
 
 <img tabindex=1 class="l" style="max-width:15%;" src="https://av.libreboot.org/hp8200sff/grub_open.jpg" /><span class="f"><img src="https://av.libreboot.org/hp8200sff/grub_open.jpg" /></span>
 
-The *single* biggest way you can help it to *add* new mainboards to Libreboot,
+The *single* biggest way you can help is to *add* new mainboards in Libreboot,
 by submitting a config. Anything coreboot supports can be integrated in
 Libreboot, with ROM images provided in releases. See:
 
