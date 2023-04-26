@@ -49,7 +49,7 @@ un [système de compilation automatisé](docs/builds/), crééant des
 De quelle façon Libreboot diffère de Coreboot?
 ------------------------------------------------
 
-<img tabindex=1 class="l" style="max-width:15%;" src="https://av.libreboot.org/hp8200sff/grub_open.jpg" /><span class="f"><img src="https://av.libreboot.org/hp8200sff/grub_open.jpg" /></span>
+<img tabindex=1 class="l" style="max-width:25%;" src="https://av.libreboot.org/thinkpadcollection/thinkpadcollection1-min.jpg" /><span class="f"><img src="https://av.libreboot.org/thinkpadcollection/thinkpadcollection1-min.jpg" /></span>
 
 Contrairement à l'opinion populaire, le but principal de Libreboot n'est
 pas de fournir un Coreboot déblobbé; ceci n'est simplement qu'une
@@ -77,6 +77,8 @@ pouvez les installez simplement, sans connaissance ou compétence particulière
 
 Comment aider
 -----------
+
+<img tabindex=1 class="l" style="max-width:15%;" src="https://av.libreboot.org/hp8200sff/grub_open.jpg" /><span class="f"><img src="https://av.libreboot.org/hp8200sff/grub_open.jpg" /></span>
 
 The *single* biggest way you can help it to *add* new mainboards to Libreboot,
 by submitting a config. Anything coreboot supports can be integrated in

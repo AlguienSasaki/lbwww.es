@@ -49,7 +49,7 @@ Coreboot помітно складний для встановлення для 
 Чим Libreboot відрізняється від звичайного coreboot?
 ---------------------------------------------
 
-<img tabindex=1 class="l" style="max-width:15%;" src="https://av.libreboot.org/hp8200sff/grub_open.jpg" /><span class="f"><img src="https://av.libreboot.org/hp8200sff/grub_open.jpg" /></span>
+<img tabindex=1 class="l" style="max-width:25%;" src="https://av.libreboot.org/thinkpadcollection/thinkpadcollection1-min.jpg" /><span class="f"><img src="https://av.libreboot.org/thinkpadcollection/thinkpadcollection1-min.jpg" /></span>
 
 Таким же самим чином, як *Debian* це дистрибутив Linux, Libreboot це
 *дистрибутив coreboot*. Якщо ви хочете зібрати образ ROM з нуля, вам
@@ -72,6 +72,8 @@ Coreboot помітно складний для встановлення для 
 
 Як допомогти
 -----------
+
+<img tabindex=1 class="l" style="max-width:15%;" src="https://av.libreboot.org/hp8200sff/grub_open.jpg" /><span class="f"><img src="https://av.libreboot.org/hp8200sff/grub_open.jpg" /></span>
 
 *Єдиний* найбільший шлях, яким ви можете допомогти є *додавання* нових материнських плат до Libreboot,
 за допомогою відправки конфігурації. Що завгодно, що підтримує coreboot може бути інтегровано в

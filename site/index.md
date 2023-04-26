@@ -51,7 +51,7 @@ more robust installation. Documentation is provided.
 Libreboot is not a fork of coreboot
 -----------------------------------
 
-<img tabindex=1 class="l" style="max-width:15%;" src="https://av.libreboot.org/hp8200sff/grub_open.jpg" /><span class="f"><img src="https://av.libreboot.org/hp8200sff/grub_open.jpg" /></span>
+<img tabindex=1 class="l" style="max-width:25%;" src="https://av.libreboot.org/thinkpadcollection/thinkpadcollection1-min.jpg" /><span class="f"><img src="https://av.libreboot.org/thinkpadcollection/thinkpadcollection1-min.jpg" /></span>
 
 In fact, Libreboot tries to stay as close to *stock* coreboot as possible,
 for each board, but with many different types of configuration provided
@@ -78,6 +78,8 @@ users](docs/install/).
 
 How to help
 -----------
+
+<img tabindex=1 class="l" style="max-width:15%;" src="https://av.libreboot.org/hp8200sff/grub_open.jpg" /><span class="f"><img src="https://av.libreboot.org/hp8200sff/grub_open.jpg" /></span>
 
 The *single* biggest way you can help it to *add* new mainboards to Libreboot,
 by submitting a config. Anything coreboot supports can be integrated in
