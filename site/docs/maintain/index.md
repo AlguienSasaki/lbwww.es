@@ -7,7 +7,7 @@ Automated pragmatism
 ====================
 
 This manual describes the nature of `lbmk` (LibreBoot MaKe), the automated
-build system used to produce libreboot releases. It is intended as a reference
+build system used to produce libreboot releases. It is provided as a reference
 for *libreboot development*.
 
 If you simply wish to compile libreboot from source, you should instead refer
@@ -25,7 +25,7 @@ just reset to that revision.
 
 As such, you should always refer to the *live* version of this page, on
 libreboot.org, when working on the `lbmk.git` repository; the live version is
-intended for development on the Git repository!
+provided for development on the Git repository!
 
 libreboot blob reduction policy
 ============================
