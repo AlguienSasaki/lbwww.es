@@ -34,7 +34,7 @@ Your freedom matters.
 Many people use proprietary (non-libre)
 boot firmware, even if they use [a libre OS](https://www.openbsd.org/).
 Proprietary firmware often [contains](faq.html#intel) [backdoors](faq.html#amd),
-and can be buggy. The Libreboot project was founded in in December 2013, with the
+and can be buggy. The Libreboot project was founded in December 2013, with the
 express purpose of making coreboot firmware accessible for non-technical users.
 
 The Libreboot project uses [coreboot](https://www.coreboot.org/) for [hardware
