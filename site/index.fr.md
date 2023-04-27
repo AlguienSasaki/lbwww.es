@@ -105,3 +105,18 @@ vous pouvez envoyer vos patchs.
 La discussion sur le dévéloppement de Libreboot et le support utilisateur
 se font toutes sur le canal IRC. Plus d'information est disponible sur 
 la [page de contact](contact.md).
+
+Translations needed, for libreboot.org
+--------------------------------------
+
+Libreboot currently has translated Web pages in Ukrainian and French (but not
+for all pages, yet, on either language).
+
+If you want to help with translations, you can translate pages, update existing
+translations and submit your translated versions. For instructions, please
+read:
+
+[How to submit translations for libreboot.org](news/translations.md)
+
+Even if someone is already working on translations in a given language, we can
+always use multiple people. The more the merrier!

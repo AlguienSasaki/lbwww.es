@@ -107,3 +107,18 @@ repository](https://codeberg.org/libreboot/lbwww) where you can send patches.
 
 Any and all development discussion and user support are all done on the IRC
 channel. More information is on the [contact page](contact.md).
+
+Translations needed, for libreboot.org
+--------------------------------------
+
+Libreboot currently has translated Web pages in Ukrainian and French (but not
+for all pages, yet, on either language).
+
+If you want to help with translations, you can translate pages, update existing
+translations and submit your translated versions. For instructions, please
+read:
+
+[How to submit translations for libreboot.org](news/translations.md)
+
+Even if someone is already working on translations in a given language, we can
+always use multiple people. The more the merrier!

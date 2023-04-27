@@ -100,3 +100,18 @@ Libreboot, з образами ROM наданими в випусках. Див�
 
 Усі обговорення розробки та підтримка користувачів відбуваються на IRC
 каналі. Більше інформації на [сторінці зворотнього зв'язку](contact.uk.md).
+
+Translations needed, for libreboot.org
+--------------------------------------
+
+Libreboot currently has translated Web pages in Ukrainian and French (but not
+for all pages, yet, on either language).
+
+If you want to help with translations, you can translate pages, update existing
+translations and submit your translated versions. For instructions, please
+read:
+
+[How to submit translations for libreboot.org](news/translations.md)
+
+Even if someone is already working on translations in a given language, we can
+always use multiple people. The more the merrier!
