@@ -25,7 +25,7 @@ Warum solltest Du *Libreboot* verwenden?
 Libreboot gibt dir [Freiheit](https://en.wikipedia.org/wiki/Open_source) welche
 Du mit den meisten Boot Firmwares nicht hast, und zusätzlich schnellere Boot Geschwindigkeiten
 und [höhere Sicherheit](docs/linux/grub_hardening.md). Es ist extrem leistungsfähig
-und [konfiguerierbar](docs/maintain/) für viele Einsatzzwecke.
+und [konfigurierbar](docs/maintain/) für viele Einsatzzwecke.
 
 Du hast Rechte. Das Recht auf Privatsphäre, freedom of thought, freedom of speech
 and the right to read. In diesem Zusammenhang, Libreboot gibt dir diese Rechte.
