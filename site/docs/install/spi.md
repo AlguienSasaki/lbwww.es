@@ -18,6 +18,7 @@ libreboot currently documents how to use these SPI programmers:
 
 * Raspberry Pi (RPi)
 * BeagleBone Black (BBB)
+* Libre Computer 'Le Potato'
 
 Many other SPI programmers exist. More of them will be documented on this page,
 at a date in the future. You can otherwise figure it out on your own; certain
@@ -152,6 +153,14 @@ directly.
 
 Software configuration
 ======================
+
+General/Le potato
+-----------------
+
+The [generic guide](spi_generic.md) is intended to help those looking to use an
+SBC which is not listed in this guide.
+The guide will, however, use the libre computer 'Le Potato' as a reference board.
+If you have that board, you should refer to the [generic guide.](spi_generic.md)
 
 BeagleBone Black (BBB)
 ----------------------
