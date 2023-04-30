@@ -22,7 +22,7 @@ Hier finden sich ebenso Anleitungen zum Senden von Patches (via Pull-Requests).
 IRC Chatraum
 ============
 
-IRC ist hauptsächlich der Weg um Kontakt Libreboot Project aufzunehmen. `#libreboot` auf Libera
+IRC ist hauptsächlich der Weg um Kontakt Libreboot Projekt aufzunehmen. `#libreboot` auf Libera
 IRC.
 
 Webchat:
@@ -39,7 +39,7 @@ anbei die Verbindungsdetails:
 * Port (TLS): `6697`
 * Port (non-TLS): `6667`
 
-Wir empfehlen, dass Du Port `6697` mit TLS encryption aktiviert verwendest.  
+Wir empfehlen, dass Du Port `6697` mit aktivierter TLS Verschlüsselung verwendest.  
 
 Es wird empfohlen SASL für die Authentifizierung zu verwenden. Diese Seiten auf der Libera
 Website erläutern wie dies funktioniert:
@@ -53,7 +53,7 @@ Grundsätzlich solltest Du die Dokumentation der von Dir verwendeten IRC Softwar
 Soziale Medien
 ============
 
-Libreboot existiert officially an vielen Orten.
+Libreboot existiert offiziell an vielen Orten.
 
 Mastodon
 --------
