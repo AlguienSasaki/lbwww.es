@@ -3,15 +3,15 @@ title: Libreboot project
 x-toc-enable: true
 ...
 
-The *Libreboot* project provides
-[libre](freedom-status.md) *boot
-firmware* that initializes the hardware (e.g. memory controller, CPU,
-peripherals) on [specific Intel/AMD x86 and ARM targets](docs/hardware/), which
-then starts a bootloader for your operating system. [Linux](docs/linux/)
-and [BSD](docs/bsd/) are well-supported. It replaces proprietary BIOS/UEFI
-firmware. Help is available
+Das *Libreboot* Projekt bietet
+eine [freie](freedom-status.md) *Boot
+Firmware* welche die Hardware initialisiert (z.b. Speicher-Controller, CPU,
+Peripherie) auf [bestimmten Intel/AMD x86 and ARM Geräten](docs/hardware/),
+und dann einen Bootloader für dein Betriebssystem startet. [Linux](docs/linux/)
+sowie [BSD](docs/bsd/) werden gut unterstützt. Es ersetzt proprietäre BIOS/UEFI
+Firmware. Hilfe ist verfügbar
 via [\#libreboot](https://web.libera.chat/#libreboot)
-on [Libera](https://libera.chat/) IRC.
+und [Libera](https://libera.chat/) IRC.
 
 <img tabindex=1 class="r" src="https://av.libreboot.org/hp9470m/9470m+2560p.jpg" /><span class="f"><img src="https://av.libreboot.org/hp9470m/9470m+2560p.jpg" /></span>
 
@@ -27,8 +27,8 @@ Du mit den meisten Boot Firmwares nicht hast, und zusätzlich schnellere Boot Ge
 und [höhere Sicherheit](docs/linux/grub_hardening.md). Es ist extrem leistungsfähig
 und [konfigurierbar](docs/maintain/) für viele Einsatzzwecke.
 
-Du hast Rechte. Das Recht auf Privatsphäre, freedom of thought, freedom of speech
-and the right to read. In diesem Zusammenhang, Libreboot gibt dir diese Rechte.
+Du hast Rechte. Das Recht auf Privatsphäre, Meinungsfreiheit, freedom of speech
+und Informationsfreiheit. In diesem Zusammenhang, Libreboot gibt dir diese Rechte.
 Deine Freiheit ist wichtig.
 [Das Recht auf Reparatur](https://yewtu.be/watch?v=Npd_xDuNi9k) matters.
 Viele Menschen verwenden proprietäre (non-libre)
@@ -54,49 +54,51 @@ Libreboot ist kein Coreboot Fork
 
 <img tabindex=1 class="l" style="max-width:25%;" src="https://av.libreboot.org/thinkpadcollection/thinkpadcollection1-min.jpg" /><span class="f"><img src="https://av.libreboot.org/thinkpadcollection/thinkpadcollection1-min.jpg" /></span>
 
-In fact, Libreboot tries to stay as close to *stock* coreboot as possible,
-for each board, but with many different types of configuration provided
-automatically by the Libreboot build system.
+In der Tat versucht Libreboot so nah am regulären Coreboot zu bleiben wie möglich,
+für jedes Board, aber mit vielen automatisch durch das Libreboot Build System zur 
+Verfügung gestellten verschiedenen Konfigurations Typen. 
 
-In the same way that *Alpine Linux* is a *Linux distribution*, Libreboot is
-a *coreboot distribution*. If you want to build a ROM image from scratch, you
-otherwise have to perform expert-level configuration of coreboot, GRUB and
-whatever other software you need, to prepare the ROM image. With *Libreboot*,
-you can literally download from Git or a source archive, and run `make`, and it
-will build entire ROM images. An automated build system, named `lbmk`
-(Libreboot MaKe), builds these ROM images automatically, without any user input
-or intervention required. Configuration has already been performed in advance.
+Ebenso wie *Alpine Linux* eine *Linux Distribution* ist, ist Libreboot eine
+*Coreboot Distribution*. Sofern Du ein ROM Image von Grund auf herstellen möchtest,
+musst Du zunächst Konfigurationen auf Experten Level durchführen,
+und zwar für Coreboot, GRUB sowie sämtliche Software die Du sonst noch verwenden 
+möchtest, um das ROM Image vorzubereiten. Mithilfe von *Libreboot* kannst Du 
+sprichwörtlich von Git oder einem anderen Quell-Archiv herunterladen, anschliessend 
+`make` ausführen, und es wird komplette ROM Images herstellen, ohne das Benutzer 
+Eingaben oder Eingreifen von Nöten sind. Die Konfiguration wurde bereits im 
+Vorfeld erledigt.
 
-If you were to build regular coreboot, without using Libreboot's automated
-build system, it would require a lot more intervention and decent technical
-knowledge to produce a working configuration.
+Sofern Du das reguläre Coreboot herstellen möchtest, ohne hierfür das automatisierte
+Libreboot Build System zu verwenden, würde dies deutlich mehr Eingreifen und ein 
+sehr tiefgreifendes technisches Verständnis voraussetzen um eine funktionsfähige 
+Konfiguration herzustellen. 
 
-Regular binary releases of Libreboot provide these
-ROM images pre-compiled, and you can simply install them, with no special
-knowledge or skill except the ability to
-follow [simplified instructions, written for non-technical
-users](docs/install/).
+Reguläre Binär Veröffentlichungen bieten diese ROM Images vor-kompiliert,
+und Du kannst dies einfach installieren ohne spezielle technische 
+Kenntnisse oder fertigkeiten abgesehen von der Fähigkeit einer 
+[vereinfachten Anleitung, [geschrieben für technisch unerfahrene Benutzer](docs/install/) zu folgen.
 
-How to help
+Wie kann ich helfen
 -----------
 
 <img tabindex=1 class="l" style="max-width:15%;" src="https://av.libreboot.org/hp8200sff/grub_open.jpg" /><span class="f"><img src="https://av.libreboot.org/hp8200sff/grub_open.jpg" /></span>
 
-The *single* biggest way you can help is to *add* new mainboards in Libreboot,
-by submitting a config. Anything coreboot supports can be integrated in
-Libreboot, with ROM images provided in releases. See:
+Der beste Weg wie Du helfen kannst, ist das *hinzufügen* neuer Mainboards in 
+Libreboot, indem Du eine Konfiguration zur Verfügung stellst. Alles was von 
+Coreboot unterstützt wird kann auch in Libreboot integriert werden, Mithilfe
+von ROM Images in den Veröffentlichungen. Siehe auch: 
 
-* [Apply to become a board maintainer/tester](docs/maintain/testing.md)
-* [Porting guide for new mainboards](docs/maintain/porting.md)
-* [Libreboot build system documentation](docs/maintain/)
+* [Bewerbe dich um Boards zu testen oder zu pflegen](docs/maintain/testing.md)
+* [Anleitung um neue Mainboards hinzuzufügen](docs/maintain/porting.md)
+* [Libreboot Build System Dokumentation](docs/maintain/)
 
-After that, there is build system maintenance (see above), and *documentation*
-which we take seriously. Documentation is critical, in any project.
+Zudem ist da noch Pflege des Build Systems (siehe oben), sowie *Dokumentation*
+welche wir sehr ernst nehmen. Dokumentation ist wichtig, in jedem Projekt.
 
-*User support* is also critical. Stick around on IRC, and if you're competent
-to help someone with their issue (or wily enough to learn with them), that is
-a great service to the project. A lot of people also ask for user support
-on the `r/libreboot` subreddit.
+*Hilfe für Benutzer* ist ebenso wichtig. Bleibe im IRC Chat, und falls Du 
+kompetent genug bist jemandem bei seinem Problem zu helfen (oder bereit mit
+der Person gemeinsam zu lernen), dann ist dies ein wichtiger Beitrag zum 
+Projekt. Viele Leute fragen zudem unter dem Subreddit `r/libreboot` nach Hilfe.
 
 Eine Liste mit Bugs gibt es
 unter [Bug Tracker](https://codeberg.org/libreboot/lbmk/issues).
