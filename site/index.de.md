@@ -85,7 +85,7 @@ Wie kann ich helfen
 
 Der beste Weg wie Du helfen kannst, ist das *hinzufügen* neuer Mainboards in 
 Libreboot, indem Du eine Konfiguration zur Verfügung stellst. Alles was von 
-Coreboot unterstützt wird kann auch in Libreboot integriert werden, Mithilfe
+Coreboot unterstützt wird kann auch in Libreboot integriert werden, mithilfe
 von ROM Images in den Veröffentlichungen. Siehe auch: 
 
 * [Bewerbe dich um Boards zu testen oder zu pflegen](docs/maintain/testing.md)
