@@ -29,8 +29,8 @@ Caleb La Grange
 ===============
 
 Caleb goes by the screen name `shmalebx9`.
-Caleb mainly deals with improvements to the lbmk build system, board porting,
-and documentation.
+Caleb kümmert sich hauptsächlich um Verbesserungen am lbmk Build System,
+das Hizufügen neuer Boards sowie um die Dokumentation.
 
 Wenn Du mehr über Caleb's Mitwirken an Libreboot erfahren möchtest, dann
 kannst Du seinen/ihren Eintrag unter der 
@@ -40,9 +40,10 @@ lesen.
 Alper Nebi Yasak
 ================
 
-Alper handles development of the U-Boot payload support in Libreboot,
-coordinates testing on Chromebooks that use it, and does any necessary
-upstream work on U-Boot itself. `alpernebbi` bei Libera IRC.
+Alper kümmert sich um die Entwicklung der U-Boot Payload Unterstützung 
+in Libreboot, koordiniert Tests auf Chromebooks die dies nutzen, und
+erledigt jegliche notwendige Upstream Arbeit an U-Boot selbst.
+`alpernebbi` bei Libera IRC.
 
 Wenn Du mehr über Alper's Mitwirken an Libreboot erfahren möchtest, dann
 kannst Du seinen/ihren Eintrag unter der 
@@ -54,4 +55,4 @@ Entwickler gesucht!
 
 **Lerne wie Du Patches beisteuern kannst unter der [git Seite](git.md)**
 
-All are welcome to join in on development.
+Jeder ist willkommen an der Entwicklung teilzunehmen.
