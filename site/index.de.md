@@ -110,3 +110,18 @@ Repository](https://codeberg.org/libreboot/lbwww) für welches Du auch Patches s
 
 Sämtliche Diskussionen über Entwicklung sowie Hilfe für Nutzer findet im IRC
 Kanal statt. Mehr Informationen gibt es unter [Kontakt](contact.md).
+
+Übersetzungen benötigt, für libreboot.org
+--------------------------------------
+
+Libreboot hat derzeit übersetzte Webseiten in ukrainisch und französisch (aber bislang
+nicht für alle Seiten in beiden Sprachen)
+
+Sofern Du mit Übersetzungen helfen möchtest, kannst Du Seiten übersetzen, 
+existierende Übersetzungen überarbeiten oder deine übersetzten Version schicken.
+Für Anleitungen, siehe bitte hier:
+
+[Wie man Übersetzungen für libreboot.org bereitstellt](news/translations.md)
+
+Auch wenn jemand bereits an einer Übersetzung in einer bestimmten Sprache arbeitet,
+so können wir immer mehrere Leute gebrauchen. Desto mehr desto besser!
