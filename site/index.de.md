@@ -115,7 +115,7 @@ Kanal statt. Mehr Informationen gibt es unter [Kontakt](contact.md).
 --------------------------------------
 
 Libreboot hat derzeit übersetzte Webseiten in ukrainisch und französisch (aber bislang
-nicht für alle Seiten in beiden Sprachen)
+nicht für alle Seiten für keine der Sprachen)
 
 Sofern Du mit Übersetzungen helfen möchtest, kannst Du Seiten übersetzen, 
 existierende Übersetzungen überarbeiten oder deine übersetzten Version schicken.
