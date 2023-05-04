@@ -162,21 +162,30 @@ To flash the entire ROM image internally, run within ChromeOS:
 If you can already boot a conventional Linux distro on your Chromebook,
 you may be able to use `flashrom -p linux_mtd` on that system instead.
 
-Install an operating system
+Install an operating system (experimental research)
 ===========================
 
 Successful installations:
+-------------------------
+
+Libreboot currently hosts a guide on how to install ArchLinuxARM on RK3399-based Chromebooks running U-boot, which can be found [here](../uboot/uboot-archlinux.md).
+
+There is also this page which refers installing Debian on the Asus C201:
 
 * [ArchLinuxARM on RK3399-based Chromebooks](../uboot/uboot-archlinux.md).
 * [Debian on Asus Chromebook C201](https://wiki.debian.org/InstallingDebianOn/Asus/C201).
 
 Unsuccessful installations:
+---------------------------
 
 * [OpenBSD on Samsung Chromebook Plus XE513C24](../uboot/uboot-openbsd.md).
 
 Other promising ARM-compatible distros:
+---------------------------------------
 
 * [Armbian](https://www.armbian.com/uefi-arm64/).
+
+In general, ARM-compatible distros targeting U-boot (such as [armbian](https://www.armbian.com/uefi-arm64/)) can be used.
 
 See also
 ========
