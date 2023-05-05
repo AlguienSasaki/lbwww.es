@@ -228,7 +228,7 @@ The fact that almost nobody talks about the EC firmware is *because* of the
 Respects Your Freedom certification. In reality, the EC firmware is crucial
 to user freedom, and ought to be free, but it is completely disregarded by
 the FSF as *part of the hardware*. This is wrong, and the FSF should actively
-actively encourage people to free it, on every laptop!
+encourage people to free it, on every laptop!
 
 Other firmware currently outside the reach of the libreboot project are covered
 in the libreboot FAQ page. For example, HDD/SSD firmware is covered in the FAQ.
