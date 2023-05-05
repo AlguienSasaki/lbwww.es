@@ -165,13 +165,18 @@ you may be able to use `flashrom -p linux_mtd` on that system instead.
 Install an operating system
 ===========================
 
-Libreboot currently lacks any good documentation about this, but there
-is this page which refers to Debian:
+Successful installations:
 
-[Debian installation](https://wiki.debian.org/InstallingDebianOn/Asus/C201)
+* [ArchLinuxARM on RK3399-based Chromebooks](../uboot/uboot-archlinux.md).
+* [Debian on Asus Chromebook C201](https://wiki.debian.org/InstallingDebianOn/Asus/C201).
 
-In general, ARM-compatible distros targeting U-boot can be used. You can
-follow their instructions, once you have Libreboot up and running.
+Unsuccessful installations:
+
+* [OpenBSD on Samsung Chromebook Plus XE513C24](../uboot/uboot-openbsd.md).
+
+Other promising ARM-compatible distros:
+
+* [Armbian](https://www.armbian.com/uefi-arm64/).
 
 See also
 ========
