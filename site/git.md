@@ -28,7 +28,7 @@ likely because too many people were on it; it was decided that Libreboot
 needed something more stable, so now Libreboot is hosted on codeberg. See:
 [announcement of move to codeberg, 8 April 2023](news/codeberg.md)
 
-There aro also these programs, hosted by the Libreboot project, and libreboot
+There are also these programs, hosted by the Libreboot project, and libreboot
 either recommends them or makes use of them:
 
 The `ich9utils` project is now available under `util/ich9utils` in lbmk, and
