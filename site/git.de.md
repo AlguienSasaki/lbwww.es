@@ -83,7 +83,7 @@ Du kannst dann folgendermassen in das Verzeichnis wechseln:
 
 	cd lbmk
 
-Ändere dies nach deinen Vorstellungen oder ertelle einfach einen build. 
+Ändere dies nach deinen Vorstellungen oder erstelle einfach einen build. 
 Für Anleitungen bzgl. `lbmk` build, siehe [build Anleitungen](docs/build/).
 
 Informationen über das build system selbst und wie es funktioniert, ist
