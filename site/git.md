@@ -187,7 +187,7 @@ Make an account on <https://codeberg.org/> and navigate (while logged in) to the
 repository that you wish to work on. Click *Fork* and in your account,
 you will have your own repository of libreboot. Clone your repository, make
 whatever changes you like to it and then push to your repository, in your
-account on NotABug. You can also do this on a new branch, if you wish.
+account on Codeberg. You can also do this on a new branch, if you wish.
 
 In your Codeberg account, you can then navigate to the official libreboot
 repository and submit a Pull Request. The way it works is similar to other
