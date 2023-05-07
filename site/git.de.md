@@ -12,8 +12,8 @@ sind unter [who.de.md](who.de.md) zu finden.
 Das `Libreboot` Projekt hat hauptsächlich 3 Git Repositories:
 
 * Build system: <https://codeberg.org/libreboot/lbmk>
-* Website (+Anleitungen): <https://codeberg.org/libreboot/lbwww>
-* Bilder (für diw Website): <https://codeberg.org/libreboot/lbwww-img>
+* Webseite (+Anleitungen): <https://codeberg.org/libreboot/lbwww>
+* Bilder (für die Webseite): <https://codeberg.org/libreboot/lbwww-img>
 
 You can also *browse* lbmk on Libreboot's own cgit instance, though it is not
 intended for development (use codeberg for that):\
@@ -162,77 +162,83 @@ international copyright law. It does not matter which name, or indeed whether
 you even declare a copyright (but we do require that certain copyright
 licenses are used - read more about that on this same page).
 
-If you use a different name and email address on your commits/patches, then you
-should be fairly anonymous. Use
+Sofern Du einen anderen Namen und eine andere email Adresse für deine 
+commits/patches verwendest dann solltest Du anonym sein. Verwende 
 [git log](https://git-scm.com/book/en/v2/Git-Basics-Viewing-the-Commit-History)
-and [git show](https://git-scm.com/docs/git-show) to confirm that before you
-push changes to a public Git repository.
+und [git show](https://git-scm.com/docs/git-show) um dies zu überprüfen
+bevor Du einem öffentlichen Git Repository Änderungen hinzufügst.
 
-Licenses (for contributors)
+Lizenzen (für Mitwirkende)
 --------
 
-Make sure to freely license your work, under a libre license. Libreboot no
-longer sets arbitrary restrictions on what licenses are accepted, and many
-licenses out there already exist. We will audit your contribution and tell
-you if there are problems with it (e.g. no license).
+Stelle sicher, dass deine Beiträge mit einer libre Lizenz frei lizensiert
+sind. Libreboot schreibt nicht mehr vor, welche Lizenzen akzeptiert werden,
+und es existieren einige Lizenzen. Wir werden deinen Beitrag prüfen und
+dir mitteilen sofern es ein Problem damit gibt (z.B. keine Lizenz).
 
-*Always* declare a license on your work! Not declaring a license means that
-the default, restrictive copyright laws apply, which would make your work
-proprietary, subject to all of the same restrictions.
+Gib *immer* eine Lizenz an für deine Arbeit! Keine Lizenz anzugeben bedeutet
+das deine Arbeit unter die Standard Urheberrechte fällt, was deine Arbeit 
+proprietär macht und somit von denselben Einschränkungen betroffen ist.
 
-The MIT license is a good one to start with, and it is the preferred license
-for all new works in Libreboot, but we're not picky. Libreboot has historically
-used GNU licensing such as GPL; much of that remains, and is likely to remain.
-It's your work; obviously, if you're deriving from an existing work,
-it may make sense to use the same license on your contribution, for license
-compatibility.
+Die MIT Lizenz ist ein guter Start, und sie ist die bevorzugte Lizenz
+für sämtliche Arbeit an Libreboot, aber wir sind nicht pingelig. Libreboot 
+hat in der Vergangenheit GNU Lizenzen so wie GPL verwendet; vieles davon
+besteht nach wie vor und wird auch weiterhin bestehen.
+Es ist deine Arbeit; sofern deine Arbeit auf der Arbeit eines anderen basiert,
+ist es aufgrund der Lizenz-Kompatibilität ggfs. naheliegend diesselbe Lizenz zu
+verwenden.
 
-You can find common examples of licenses
-[here](https://opensource.org/licenses).
+[Hier](https://opensource.org/licenses) findest Du übliche Beispiele für Lizenzen.
 
-If you *are* deriving from an existing work, it's important that your license
-(for your contribution) be compatible with the licensing of the work from which
-yours was derived. The MIT license is good because it's widely compatible
-with many other licenses, and permits many freedoms (such as the freedom to
-sublicense) that other licenses do not:
+*Wenn* deine Arbeit auf bestehender Arbeit basiert, dann ist es wichtig
+(für deinen Beitrag) das die Lizenz deiner Arbeit kompatibel ist mit der
+Lizenz der Arbeit auf der sie beruht. Die MIT Lizenz ist hierfür gut geeignet,
+weil sie mit vielen anderen Lizenen kompatibel ist, und Freiheit zulässt
+(wie zum Beispiel die Freiheit einer SubLizenz) was bei vielen anderen
+Lizenzen nicht der Fall ist:
 
 <https://opensource.org/licenses/MIT>
 
-Send patches
+Patches senden
 ------------
 
-Make an account on <https://codeberg.org/> and navigate (while logged in) to the
-repository that you wish to work on. Click *Fork* and in your account,
-you will have your own repository of libreboot. Clone your repository, make
-whatever changes you like to it and then push to your repository, in your
-account on NotABug. You can also do this on a new branch, if you wish.
+Erstelle einen Account unter <https://codeberg.org/> und navigiere (während 
+Du eingeloggt bist) zu dem Repository das Du bearbeiten möchtest. Klicke 
+auf *Fork* und Du wirst ein eigenes Libreboot Repository in deinem Account 
+erhalten. Erstelle einen Clone dieses Repository, füge alle gewünschten Änderungen hinzu
+und führe anschliessend einen Push in dein Repository in deinem Account
+auf Codeberg durch. Du kannst dies auch in einem neuen Branch erledigen,
+sofern Du magst.
 
-In your Codeberg account, you can then navigate to the official libreboot
-repository and submit a Pull Request. The way it works is similar to other
-popular web-based Git platforms that people use these days.
+In deinem Codeberg Account kannst Du nun zum offiziellen Libreboot
+Repository navigieren und dort einen Pull Request erstellen. Die Art und 
+Weise wie dies funktioniert ist vergleichbar mit anderen populären Web basierten
+Git Plattformen die heutzutage verwendet werden. 
 
-You can submit your patches there. Alternative, you can log onto the libreboot
-IRC channel and notify the channel of which patches you want reviewed, if you
-have your own Git repository with the patches.
+Du kannst dort deine Patches bereitstellen. Alternativ kannst Du dich in
+den Libreboot IRC Kanal einloggen und dort bekannt geben welche deiner Patches 
+geprüft werden sollen, sofern Du ein eigenes Git repository mit den Patches
+hast.
 
-Once you have issued a Pull Request, the libreboot maintainers will be notified
-via email. If you do not receive a fast enough response from the project, then
-you could also notify the project via the `#libreboot` channel on Libera Chat.
+Sobald Du einen Pull Request erstellt hast, werden die Libreboot Maintainer
+per email informiert. Sofern Du nicht schnell genug eine Antwort erhälst,
+kannst Du das Projekt ebenso mithilfe des `#libreboot` Kanals auf Libera
+Chat kontaktieren.
 
-Another way to submit patches is to email Leah Rowe directly:
-[info@minifree.org](mailto:info@minifree.org) is Leah's project email address.
+Ein weiterer Weg Patches zu senden ist Leah Rowe direkt eine email zu senden:
+[info@minifree.org](mailto:info@minifree.org) ist Leah's Projekt email Addresse.
 
-However, for transparency of the code review process, it's recommended that you
-use Codeberg, for the time being.
+Um den Prozess der Quelltext Überprüfung transparent zu gestalten,
+wird jedoch empfohlen künftig Codeberg zu verwenden.
 
-Mirrors of lbmk.git
+Mirrors für lbmk.git
 ===================
 
-The `lbmk` repository contains Libreboot's automated build system, which
-produces Libreboot releases (including compiled ROM images).
+Das `lbmk` Repository enthält Libreboot's automatischess build system, welches
+Libreboot Veröffentlichungen  herstellt (inklusive kompilierter ROM Images).
 
-You can run `git clone` on any of these links (the links are also clickable,
-to view changes in your Web browser):
+Du kannst `git clone` für alle diese Links ausführen (die Links können auch
+angeklickt werden, um Änderungen in deinem Web Browser anzusehen):
 
 * <https://git.disroot.org/libreboot/lbmk>
 * <https://gitea.treehouse.systems/libreboot/lbmk>
@@ -243,16 +249,16 @@ to view changes in your Web browser):
 * <https://pagure.io/libreboot>
 * <https://rocketgit.com/libreboot/libreboot>
 
-lbwww.git mirror
+lbwww.git Mirror
 ----------------
 
-The `lbwww` repository contains Markdown files (pandoc variant), for use
-with the [Untitled Static Site Generator](https://untitled.vimuser.org/); this
-is what Libreboot uses to provide HTML web pages, *including* the page that
-you are reading right now!
+Das `lbwww` Repository enthält Markdown Dateien (Pandoc Variant), für die
+Verwendung mit dem [Untitled Static Site Generator](https://untitled.vimuser.org/);
+dies wird von Libreboot verwendet um HTML Web Seiten bereitzustellen, *inklusive*
+der Seite die Du gerade liest!
 
-You can run `git clone` on these links, and/or click to view changes in your
-Web browser. See:
+Du kannst `git clone` für diese Links ausführen und/oder die Links
+anklicken um Änderungen in deinem Web Browser anzusehen). Siehe:
 
 * <https://git.disroot.org/libreboot/lbwww>
 * <https://gitea.treehouse.systems/libreboot/lbwww>
@@ -262,32 +268,34 @@ Web browser. See:
 * <https://gitlab.com/libreboot/lbwww>
 * <https://rocketgit.com/libreboot/lbwww>
 
-NOTE: The `lbwww-img` repository is not generally provided, on mirrors, as
-those are just image files which you can find on <https://av.libreboot.org>
-and it is not the intention of the Libreboot project to bog down *mirrors*
-with additional traffic by hosting images.
+HINWEIS: Das `lbwww-img` Repository wird generell nicht auf einem Mirror
+zur Verfügung gestellt, weil dies lediglich Bilder sind die Du unter 
+<https://av.libreboot.org> finden kannst und es ist nicht die Intention
+des Libreboot Projektes *Mirror* mit zusätzlichen Datenverkehr durch
+Bilder zu belasten.
 
-Notabug repositories
+Notabug Repositories
 ====================
 
-Commits that go to codeberg are also still pushed to notabug, in addition to
-the other mirrors. Notabug is considered a *mirror* since 8 April 2023, when
-Libreboot's main development site moved to *Codeberg*.
+Commits die zu codeberg gepusht werden, werden ebenso zu notabug gepusht, 
+zusätzlich zu den anderen Mirrors.
+Notabug wird seit dem 8. April 2023 als *Mirror* betrachtet, seitdem
+Libreboot's Haupt Entwicklung zu *Codeberg* gewechselt hat.
 
-OLD notabug repos are still pushed to as backup, but the codeberg mirror is
-considered to be main/official now, as of the [announcement on 8
-April 2023](news/codeberg.md). See:
+In die ALTEN notabug Repositories wird zu Backup Zwecken nach wie vor gepusht, 
+aber der codeberg mirror wird nun als der hauptsächliche/offizielle betrachtet, 
+wie in dieser [Ankündigung vom 8. April 2023](news/codeberg.md). Siehe:
 
 * Build system: <https://notabug.org/libreboot/lbmk>
-* Website (+docs): <https://notabug.org/libreboot/lbwww>
-* Images (for website): <https://notabug.org/libreboot/lbwww-img>
+* Webseite (+Dokumentation): <https://notabug.org/libreboot/lbwww>
+* Bilder (für die Webseite): <https://notabug.org/libreboot/lbwww-img>
 
-For sending patches, it is now preferred that you use *codeberg*. Technically,
-pull requests are still possible via Notabug. While Notabug still exists,
-Libreboot patches will continue be pushed there, mirroring what gets pushed
-on Notabug.
+Um Patches zu senden, wird nun bevorzugt wenn Du *codeberg* verwendest. 
+Technisch gesehen sind pull requests via Notabug nach wie vor möglich. 
+Während Notabug nach wie vor existiert, werden Libreboot Patches nach wie
+vor dorthin gepushed, als Mirror für Änderungen die auf Notabug gepushed werden.
 
-Because pull requests and issues were available on notabug in the past, it
-makes sense to keep them open, though we ask that you send to codeberg. If
-they were to be closed on notabug, existing PRs and issues won't be visible
-anymore either, so they have to stay open.
+Weil pull requests und issues in der Vergangenheit auf notabug verfügbar waren, 
+macht es Sinn diese offen zu lassen, dennoch würden wir dich bitten an codeberg
+zu schicken. Sofern diese auf notabug geschlossen werden, dann werden diese PRs
+und issues ohnehin nicht mehr sichtbar, daher sollten diese offen bleiben.
