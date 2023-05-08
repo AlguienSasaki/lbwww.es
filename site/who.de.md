@@ -22,7 +22,7 @@ ihrem Labor in Großbrittanien.
 
 Wenn Du mehr über Leah's Mitwirken an Libreboot erfahren möchtest, dann
 kannst Du ihren Eintrag unter der 
-[Seite mit allen Mitwirkenden, Vergangenheit und Gegenwart](contrib.md)
+[Seite mit allen Mitwirkenden, Vergangenheit und Gegenwart](contrib.de.md)
 lesen.
 
 Caleb La Grange
@@ -34,7 +34,7 @@ das Hinzufügen neuer Boards sowie um die Dokumentation.
 
 Wenn Du mehr über Caleb's Mitwirken an Libreboot erfahren möchtest, dann
 kannst Du seinen Eintrag unter der 
-[Seite mit allen Mitwirkenden, Vergangenheit und Gegenwart](contrib.md)
+[Seite mit allen Mitwirkenden, Vergangenheit und Gegenwart](contrib.de.md)
 lesen.
 
 Alper Nebi Yasak
@@ -47,7 +47,7 @@ erledigt jegliche notwendige Upstream Arbeit an U-Boot selbst.
 
 Wenn Du mehr über Alper's Mitwirken an Libreboot erfahren möchtest, dann
 kannst Du seinen/ihren Eintrag unter der 
-[Seite mit allen Mitwirkenden, Vergangenheit und Gegenwart](contrib.md)
+[Seite mit allen Mitwirkenden, Vergangenheit und Gegenwart](contrib.de.md)
 lesen.
 
 Entwickler gesucht!
