@@ -83,7 +83,7 @@ Du kannst dann folgendermassen in das Verzeichnis wechseln:
 
 	cd lbmk
 
-Ändere dies nach deinen Vorstellungen oder erstelle einfach einen build. 
+Ändere dies nach deinen Vorstellungen oder ertelle einfach einen build. 
 Für Anleitungen bzgl. `lbmk` build, siehe [build Anleitungen](docs/build/).
 
 Informationen über das build system selbst und wie es funktioniert, ist
@@ -152,18 +152,14 @@ werden wir dies respektieren.
 Natürlich, kannst Du jeglichen Namen und/oder jegliche email Aaddresse verwenden
 die Du möchtest.
 
-Rechtlich gesprochen, jegliches copyright is automatic under the Berne Convention of
-international copyright law. It does not matter which name, or indeed whether
-you even declare a copyright (but we do require that certain copyright
-licenses are used - read more about that on this same page).
+Rechtlich gesprochen, jegliches Urheberrecht fällt automatisch unter die
+Berner Übereinkunft zum Schutz von Werken der Literatur und Kunst. Es spielt
+keine Rolle welchen Namen, oder ob Du tatsächlich überhaupt ein Urheberrecht
+deklariert hast (aber wir setzen voraus das bestimmte Lizenzen für das
+Urheberrecht verwndet werden - lies mehr darüber auf dieser Seite).
 
-Legally speaking, all copyright is automatic under the Berne Convention of
-international copyright law. It does not matter which name, or indeed whether
-you even declare a copyright (but we do require that certain copyright
-licenses are used - read more about that on this same page).
-
-Sofern Du einen anderen Namen und eine andere email Adresse für deine 
-commits/patches verwendest dann solltest Du anonym sein. Verwende 
+Sofern Du einen anderen Namen sowie eine andere email Adresse für deine 
+Commits/Patches verwendest dann solltest Du anonym sein. Verwende 
 [git log](https://git-scm.com/book/en/v2/Git-Basics-Viewing-the-Commit-History)
 und [git show](https://git-scm.com/docs/git-show) um dies zu überprüfen
 bevor Du einem öffentlichen Git Repository Änderungen hinzufügst.

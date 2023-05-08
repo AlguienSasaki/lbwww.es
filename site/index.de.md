@@ -5,8 +5,8 @@ x-toc-enable: true
 
 Das *Libreboot* Projekt bietet
 eine [freie](freedom-status.md) *Boot
-Firmware* welche die Hardware initialisiert (z.b. Speicher-Controller, CPU,
-Peripherie) auf [bestimmten Intel/AMD x86 and ARM Geräten](docs/hardware/),
+Firmware* welche auf [bestimmten Intel/AMD x86 und ARM Geräten](docs/hardware/)
+die Hardware initialisiert (z.b. Speicher-Controller, CPU, Peripherie),
 und dann einen Bootloader für dein Betriebssystem startet. [Linux](docs/linux/)
 sowie [BSD](docs/bsd/) werden gut unterstützt. Es ersetzt proprietäre BIOS/UEFI
 Firmware. Hilfe ist verfügbar
@@ -27,16 +27,15 @@ Du mit den meisten Boot Firmwares nicht hast, und zusätzlich schnellere Boot
 Geschwindigkeiten sowie [höhere Sicherheit](docs/linux/grub_hardening.md).
 Es ist extrem leistungsfähig und für viele Einsatzzwecke [konfigurierbar](docs/maintain/).
 
-Du hast Rechte. Das Recht auf Privatsphäre, Meinungsfreiheit, das Recht 
-deine Meinung zu äußern, und Informationsfreiheit. 
-In diesem Zusammenhang, Libreboot gibt dir diese Rechte.
+Du hast Rechte. Das Recht auf Privatsphäre, Gedankenfreiheit, Meinungsäußerungsfreiheit,
+und Informationsfreiheit. In diesem Zusammenhang, Libreboot gibt dir diese Rechte.
 Deine Freiheit ist wichtig.
-[Das Recht auf Reparatur](https://yewtu.be/watch?v=Npd_xDuNi9k) matters.
+[Das Recht auf Reparatur](https://yewtu.be/watch?v=Npd_xDuNi9k) ist wichtig.
 Viele Menschen verwenden proprietäre (non-libre)
-Boot Firmware, sogar wenn Sie ein [a libre OS](https://www.openbsd.org/) verwenden.
+Boot Firmware, sogar wenn Sie ein [Libre OS](https://www.openbsd.org/) verwenden.
 Proprietäre Firmware [enthält](faq.html#intel) häufig [Hintertüren](faq.html#amd),
 und kann fehlerhaft sein. Das Libreboot Projekt wurde im Dezember 2013 gegründet, 
-mit dem Ziel Coreboot Firmware auch für technisch unerfahrene Nutzer verfügbar 
+mit dem Ziel, Coreboot Firmware auch für technisch unerfahrene Nutzer verfügbar 
 zu machen.
 
 Das Libreboot Projekt verwendet [Coreboot](https://www.coreboot.org/) für
@@ -56,7 +55,7 @@ Libreboot ist kein Coreboot Fork
 
 <img tabindex=1 class="l" style="max-width:25%;" src="https://av.libreboot.org/thinkpadcollection/thinkpadcollection1-min.jpg" /><span class="f"><img src="https://av.libreboot.org/thinkpadcollection/thinkpadcollection1-min.jpg" /></span>
 
-In der Tat versucht Libreboot so nah am regulären Coreboot zu bleiben wie möglich,
+Tatsächlich versucht Libreboot so nah am regulären Coreboot zu bleiben wie möglich,
 für jedes Board, aber mit vielen automatisch durch das Libreboot Build System zur 
 Verfügung gestellten verschiedenen Konfigurationstypen. 
 
@@ -64,13 +63,13 @@ Ebenso wie *Alpine Linux* eine *Linux Distribution* ist, ist Libreboot eine
 *Coreboot Distribution*. Sofern Du ein ROM Image von Grund auf herstellen möchtest,
 musst Du zunächst Konfigurationen auf Experten Level durchführen,
 und zwar für Coreboot, GRUB sowie sämtliche Software die Du sonst noch verwenden 
-möchtest, um das ROM Image vorzubereiten. Mithilfe von *Libreboot* kannst Du 
+möchtest um das ROM Image vorzubereiten. Mithilfe von *Libreboot* kannst Du 
 sprichwörtlich von Git oder einem anderen Quell-Archiv herunterladen, anschliessend 
 `make` ausführen, und es wird komplette ROM Images herstellen, ohne das Benutzer 
 Eingaben oder Eingreifen von Nöten sind. Die Konfiguration wurde bereits im 
 Vorfeld erledigt.
 
-Sofern Du das reguläre Coreboot herstellen möchtest, ohne hierfür das automatisierte
+Sofern Du das reguläre Coreboot herstellen wollen würdest, ohne hierfür das automatisierte
 Libreboot Build System zu verwenden, würde dies deutlich mehr Eingreifen und ein 
 sehr tiefgreifendes technisches Verständnis voraussetzen um eine funktionsfähige 
 Konfiguration herzustellen. 
@@ -106,12 +105,12 @@ Eine Liste mit Bugs gibt es
 unter [Bug Tracker](https://codeberg.org/libreboot/lbmk/issues).
 
 Sofern Du einen Bug findest oder einen Fix hast, [hier sind Anleitungen um Patches zu
-schicken](git.md), oder Du kannst davon berichten. Diese Website ist zudem
+schicken](git.de.md), oder Du kannst davon berichten. Diese Website ist zudem
 in Markdown geschrieben und verfügbar in einem [separaten
 Repository](https://codeberg.org/libreboot/lbwww) für welches Du auch Patches schicken kannst.
 
 Sämtliche Diskussionen über Entwicklung sowie Hilfe für Nutzer findet im IRC
-Kanal statt. Mehr Informationen gibt es unter [Kontakt](contact.md).
+Kanal statt. Mehr Informationen gibt es unter [Kontakt](contact.de.md).
 
 Übersetzungen für libreboot.org benötigt
 --------------------------------------

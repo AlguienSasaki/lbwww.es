@@ -53,6 +53,6 @@ lesen.
 Entwickler gesucht!
 ==================
 
-**Lerne wie Du Patches beisteuern kannst unter der [git Seite](git.md)**
+**Lerne wie Du Patches beisteuern kannst unter der [git Seite](git.de.md)**
 
 Jeder ist willkommen an der Entwicklung teilzunehmen.
