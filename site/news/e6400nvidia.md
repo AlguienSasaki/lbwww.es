@@ -1,4 +1,4 @@
-% Dell Latitude E6400 XFR support confirmed, plus experimental Nvidia GPU support on E6400 variants
+% Experimental Nvidia GPU support on Dell Latitude E6400 variants, plus E6400 XFR support now confirmed
 % Leah Rowe
 % 9 May 2023
 
