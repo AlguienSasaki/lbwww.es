@@ -15,8 +15,8 @@ XFR (rugged variant) was also tested today (Intel graphics) and confirmed
 working in Libreboot 20230423.
 
 The *Nvidia* variants are *not* supported in Libreboot 20230423. Support is
-available in an experimental branch of Libreboot. Read the rest of this article
-to learn more.
+available in an experimental branch of Libreboot. 6400 XFR testing+photo
+provided, courtesy Mark Cornick (`mcornick` on Libreboot IRC).
 
 Dell Latitude E6400 with Nvidia GPU
 ===================================
