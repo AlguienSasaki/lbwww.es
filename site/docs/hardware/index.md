@@ -29,7 +29,8 @@ libreboot currently supports the following systems in this release:
 
 ### Laptops (Intel, x86)
 
--   **[Dell Latitute E6400](e6400.md) (easy to flash, no disassembly, similar
+-   **[Dell Latitute E6400, E6400 XFR and E6400 ATG, all with Nvidia or Intel
+    GPU](e6400.md) (easy to flash, no disassembly, similar
     hardware to X200/T400)**
 -   ThinkPad X60 / X60S / X60 Tablet
 -   ThinkPad T60 (with Intel GPU)

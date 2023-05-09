@@ -87,7 +87,9 @@ desirable for you to use an external/add-on graphics card
 
 #### vesafb (vgarom)
 
-high resolution VESA framebuffer used on startup
+high resolution VESA framebuffer used on startup. This is equivalent
+to `corebootfb` (high resolution framebuffer), but for setups where a VGA
+Option ROM is used.
 
 #### txtmode (vgarom)
 
@@ -95,7 +97,11 @@ int10h text mode is used on startup
 
 ### normal
 
-int10h text mode startup is implied here.
+NOTE: Dell Latitude E6400 Nvidia variant uses this.
+
+int10h text mode startup is implied here. The `vesafb` mode is unavailable here.
+For `vesafb` mode, please use init type `vgarom`; most useful for GRUB payloads
+or perhaps Tianocore.
 
 In this setup, coreboot is neither implementing libgfxinit / native graphics
 initialization nor is it finding/loading/executing VGA option ROMs. In this

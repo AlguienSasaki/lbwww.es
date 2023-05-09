@@ -780,6 +780,14 @@ Where certain binary blobs like Intel ME or MRC are needed on a given board,
 this script is called automatically by the build system, to download the files
 for insertion.
 
+Specific binary blobs handled are:
+
+* Intel ME images (via `me_cleaner`)
+* Intel MRC (haswell boards)
+* VGA option ROMs (currently just [Dell Latitude
+  E6400 Nvidia variants](../../news/e6400nvidia.md))
+* KBC1126 EC firmware (HP laptops)
+
 resources/scripts/blobs/extract
 ===============================
 
@@ -791,11 +799,33 @@ to flash.
 Dumping the original firmware is *always* recommended, regardless of what you
 want to do.
 
+Specific binary blobs handled are:
+
+* Intel ME images (via `me_cleaner`)
+
+TODO, NOT YET HANDLED BY `extract` (only handled by `download` and `inject`):
+
+* Intel MRC (haswell boards)
+* KBC1126 EC firmware (HP laptops)
+* VGA option ROMs (currently just [Dell Latitude
+  E6400 Nvidia variants](../../news/e6400nvidia.md))
+
+The `extract` method is useful for offline installation, where such files
+are required, and available.
+
 resources/scripts/blobs/inject
 ==============================
 
 Where a blob is provided, via the `extract` or `download` method, *this*
 script *inserts* a blob (ME, MRC etc) into a given target image.
+
+Specific binary blobs handled are:
+
+* Intel ME images (via `me_cleaner`)
+* Intel MRC (haswell boards)
+* VGA option ROMs (currently just [Dell Latitude
+  E6400 Nvidia variants](../../news/e6400nvidia.md))
+* KBC1126 EC firmware (HP laptops)
 
 resources/scripts/build/
 ========================
@@ -1135,6 +1165,13 @@ within them, requiring manual insertion by the user post-release. See:
 [Insert binary blobs
 on Sandybridge/Ivybridge/Haswell](../install/ivy_has_common.md)
 
+resources/scripts/download/bios\_utilities
+==========================================
+
+This downloads and patches `bios_utilities`.
+
+Command: `./download bios_utilities`
+
 resources/scripts/download/coreboot
 ===================================
 
@@ -1310,7 +1347,15 @@ resources/seabios/config/vgarom
 ===============================
 
 This version is for normal SeaBIOS configurations, where `libgfxinit` is not
-to be used.
+to be used; coreboot itself handles VGA ROM initialisation.
+
+resources/seabios/config/normal
+===============================
+
+This version is for normal SeaBIOS configurations, where `libgfxinit` is not
+to be used; coreboot itself does *not* handle VGA ROM initialisation, and it
+is assumed that SeaBIOS payload will be used in text mode. In this setup,
+SeaBIOS executes VGA ROMs.
 
 resources/seabios/patches/
 ==========================
