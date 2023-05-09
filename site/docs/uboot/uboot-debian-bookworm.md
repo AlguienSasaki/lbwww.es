@@ -1,0 +1,158 @@
+---
+title: Debian Bookworm Install on a Samsung Chromebook Plus
+x-toc-enable: true
+...
+
+System Configuration
+====================
+
+Hardware: Samsung Chromebook Plus XE513C24 (gru_kevin)
+
+Libreboot: 2023-04-23
+
+Operating System: Debian Bookworm RC2
+
+Note!  As of this RC2 version of Debian Bookworm, the system automatically
+makes use of non-free firmware during install.  If your intention is to avoid
+all non-free firmware you should avoid using Debian Bookworm or search for a
+downstream version of Debian Bookworm that strips out all non-free firmware.
+More info in the link below.
+
+[https://wiki.debian.org/Firmware](https://wiki.debian.org/Firmware)
+
+Install Media Preparation
+=========================
+
+Follow the Debian installation instructions in the link below:
+
+[https://www.debian.org/devel/debian-installer/](https://www.debian.org/devel/debian-installer/)
+
+At the time of this install Debian Bookworm RC2 was recommended on the download
+page and I selected the DVD image to have all the packages available when
+offline (3.7 gigabyte iso).  See the notes below about alternately using the
+netinst version.
+
+[https://cdimage.debian.org/cdimage/bookworm_di_rc2/arm64/iso-dvd/](https://cdimage.debian.org/cdimage/bookworm_di_rc2/arm64/iso-dvd/)
+
+Write the iso file to a micro sdcard.  Replace "sdcard_device" below
+with the appropriate device path on your system.
+```
+# dd if=debian-bookworm-DI-rc2-arm64-DVD-1.img of=/dev/sdcard_device bs=1M status=progress; sync
+```
+
+During the install the system automatically makes use of non-free firmware to
+activate the wireless network card.  For this reason you could choose the
+netinst iso and download files as needed rather than using the DVD iso.
+
+Installation
+============
+
+1. Insert the micro sdcard into the slot on the Chromebook.
+2. Power on the Chromebook.
+
+The system automatically found an EFI image (efi/boot/bootaa64.efi), but after
+loading it the "Synchronous Abort" handler activated and the chromeboot would
+reboot.
+
+Since libreboot/uboot has a 2 second pause at the beginning to stop autoboot if
+desired I paused autoboot and it dropped me to the uboot command line. Per the
+suggestion from alpernebbi on libreboot IRC I looked for the grub EFI image and
+started that up instead.  Below are the series of uboot commands I used to
+understand the media and partition structure.
+
+```
+Hit any key to stop autoboot: 0
+=> mmc list
+mmc@fe320000: 1
+mmc@fe330000: 0
+=> mmc dev 1
+switch to partitions #0, OK
+mmc1 is current device
+=> mmc part
+Partition Map for MMC device 1 -- Partition Type: DOS
+Part     Start Sector Num Sectors  UUID         Type
+1        0            7766016      00000000-01  83
+2        7766016      15168        00000000-02  ef Boot
+=> ls mmc 1:2
+          efi/
+168       ubootefi.var
+1 file(s), 1 dir(s)
+=> ls mmc 1:2 efi/boot
+          ./
+          ../
+872448    bootaa64.efi
+4289984   grubaa64.efi
+2 file(s), 2 dir(s)
+=>
+```
+
+The following two commands are the ones that were needed to boot the operating
+system.
+
+```
+=> load mmc 1:2 $loadaddr
+4289984 bytes read in 187 ms (21.9 MiB/s)
+=> bootefi $loadaddr
+```
+
+The grub text menu popped up at this point.  See the screen shot below.  I
+found the first option "Install" provided the easiest install experience as
+everything was in text mode and easy to read.  The "Graphical install" worked
+also, however the screen resolution was so high that all the text and buttons
+were quite small on the display and harder to read. 
+
+![](https://av.libreboot.org/xe513c24/debbook-grub.jpg)
+
+At this point the installation proceeded normally.
+
+![](https://av.libreboot.org/xe513c24/debbook-lang.jpg)
+![](https://av.libreboot.org/xe513c24/debbook-packages.jpg)
+
+Note that you will see a message during install asking whether you want to
+search for non-free firmware.  My experience was that the system would use
+non-free firmware regardless what I selected in that dialogue.  The system was
+able to connect wirelessly to the internet and download packages and updates as
+needed.
+
+![](https://av.libreboot.org/xe513c24/debbook-nonfree.jpg)
+
+Per instructions from alpernebbi, when you arrive at the stage where the grub
+bootloader is installed take special note to select yes to the option to "Force
+installation to removable media path", and also say no to the option to "Update
+NVRAM variables".  During my first install I inadvertently said yes to the
+NVRAM variable option and experienced corruption to the EFI partition on the
+emmc.
+
+Note that when rebooting into your new system you will experience the same
+synchronous abort issue mentioned above.  You can use the same method to pause
+the uboot script and drop to the uboot prompt to load and boot the grub efi
+image.  Once booted into your Debian Bookworm system you can open a shell as
+root and go to the boot/efi path to copy the grubaa64.efi file and overwrite it
+onto the bootaa64.efi file.  By doing this the system will boot from uboot
+normally without needing to drop to the uboot prompt.  This will only last
+until the next time debian updates grub though, so you may need to repeat this
+as a workaround for now.
+
+Below are a couple screen shots of the installed system running from the
+internal emmc.
+
+![](https://av.libreboot.org/xe513c24/debbook-desktop.jpg)
+![](https://av.libreboot.org/xe513c24/debbook-firefox.jpg)
+
+System Functionality
+====================
+
+Things that work
+* Wireless internet and bluetooth (due to non-free firmware)
+* Touch screen and stylus
+* Touchpad
+* Audio (Speakers and headphone jack)
+* Volume buttons on side of laptop.
+* Graphics (the open source panfrost driver is impressive)
+* Playing videos
+
+Things that do not work
+* Powering off.  You can shutdown in Debian and the system goes through the
+  normal shut down sequence, but then remains on indefinitely (blue light on
+  side near power button).  You have to hold the power button down for 10
+  seconds or so to completely power off the system.

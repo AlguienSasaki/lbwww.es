@@ -165,14 +165,19 @@ you may be able to use `flashrom -p linux_mtd` on that system instead.
 Install an operating system (experimental research)
 ===========================
 
+In general, ARM-compatible distros targeting U-boot can be used.  There are
+three general methods for installing that vary depending on the distribution:
+
+1. EFI - common u-boot methodology used by both arm64 and amd64 systems.
+2. boot.scr - an older u-boot specific script used by some distributions.
+3. extlinux.conf - a newer flat, bootloader-spec text file that typically lives
+   in /boot/extlinux/extlinux.conf
+
 Successful installations:
 -------------------------
 
-Libreboot currently hosts a guide on how to install ArchLinuxARM on RK3399-based Chromebooks running U-boot, which can be found [here](../uboot/uboot-archlinux.md).
-
-There is also this page which refers installing Debian on the Asus C201:
-
 * [ArchLinuxARM on RK3399-based Chromebooks](../uboot/uboot-archlinux.md).
+* [Debian Bookworm on Samsung Chromebook Plus XE513C24](../uboot/uboot-debian-bookworm.md).
 * [Debian on Asus Chromebook C201](https://wiki.debian.org/InstallingDebianOn/Asus/C201).
 
 Unsuccessful installations:
@@ -184,8 +189,6 @@ Other promising ARM-compatible distros:
 ---------------------------------------
 
 * [Armbian](https://www.armbian.com/uefi-arm64/).
-
-In general, ARM-compatible distros targeting U-boot (such as [armbian](https://www.armbian.com/uefi-arm64/)) can be used.
 
 See also
 ========
