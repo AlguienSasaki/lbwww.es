@@ -119,7 +119,7 @@ Libreboot hat derzeit übersetzte Webseiten in ukrainisch und französisch (aber
 nicht für alle Seiten für keine der Sprachen)
 
 Sofern Du mit Übersetzungen helfen möchtest, kannst Du Seiten übersetzen, 
-existierende Übersetzungen überarbeiten oder deine übersetzten Version schicken.
+existierende Übersetzungen überarbeiten oder deine übersetzten Versionen schicken.
 Für Anleitungen, siehe bitte hier:
 
 [Wie man Übersetzungen für libreboot.org bereitstellt](news/translations.md)
