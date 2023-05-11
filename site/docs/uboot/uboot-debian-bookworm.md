@@ -142,7 +142,8 @@ internal emmc.
 System Functionality
 ====================
 
-Things that work
+Things that work:
+
 * Wireless internet and bluetooth (due to non-free firmware)
 * Touch screen and stylus
 * Touchpad
@@ -151,7 +152,8 @@ Things that work
 * Graphics (the open source panfrost driver is impressive)
 * Playing videos
 
-Things that do not work
+Things that do not work:
+
 * Powering off.  You can shutdown in Debian and the system goes through the
   normal shut down sequence, but then remains on indefinitely (blue light on
   side near power button).  You have to hold the power button down for 10
