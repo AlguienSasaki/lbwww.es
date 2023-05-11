@@ -15,8 +15,8 @@ Das `Libreboot` Projekt hat hauptsächlich 3 Git Repositories:
 * Webseite (+Anleitungen): <https://codeberg.org/libreboot/lbwww>
 * Bilder (für die Webseite): <https://codeberg.org/libreboot/lbwww-img>
 
-You can also *browse* lbmk on Libreboot's own cgit instance, though it is not
-intended for development (use codeberg for that):\
+Du kannst dir lbmk auch auf Libreboot's eigener cgit Instanz *ansehen*,
+allerdings ist dies nicht für die Entwicklung gedacht (benutze hierfür bitte codeberg):\
 <https://browse.libreboot.org/lbmk.git/>
 
 Weiter unten auf dieser Seite sind Mirror von `lbmk` und `lbwww` aufgelistet, 
@@ -61,7 +61,7 @@ oder T60 flashen möchtest, welches (derzeit) noch ein nicht-freies Lenovo
 BIOS verwendet. Anleitungen hierfür findest Du hier:\
 [Libreboot Installations Anleitungen](docs/install/)
 
-The `ich9utils` Repository wird erheblich vom `lbmk` build system verwendet.
+Das `ich9utils` Repository wird erheblich vom `lbmk` build system verwendet.
 Du kannst `ich9utils` allerdings auch separat herunterladen und verwenden.
 Es erzeugt ICH9M descriptor+GbE Images für GM45 ThinkPads welche die ICH9M 
 Southbridge verwenden. Es könnte auch für andere Systeme funktionieren,
@@ -106,7 +106,7 @@ in einem separaten Git Repository:
 Du kannst alles nach deinen Vorstellungen ändern. Beachte die nachfolgenden
 Informationen wie Du deine Änderungen zur Verfügung stellen kannst.
 
-Die gesamte Website ist in Markdown geschrien, insbesondere die Pandoc Version. 
+Die gesamte Website ist in Markdown geschrieben, insbesondere die Pandoc Version. 
 Die statischen HTML Seiten werden mit [Untitled](https://untitled.vimuser.org/)
 generiert. Leah Rowe, die Gründerin von Libreboot, ist auch die Gründerin des Untitled static
 site generator Projekts.
