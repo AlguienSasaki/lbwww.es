@@ -1,5 +1,5 @@
 ---
-title: Libreboot project
+title: Libreboot projekt
 x-toc-enable: true
 ...
 
