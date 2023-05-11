@@ -54,7 +54,7 @@ Git statt. Sieh in der [offiziellen Git Dokumentation](https://git-scm.com/doc)
 nach, sofern Du nicht weisst wie man Git verwendet. 
 
 Das `bucts` Repository wird auch vom Libreboot Projekt gehostet, da das
-Original Repository auf `stuge.se`nicht mehr verfügbar ist, seit wie dies
+Original Repository auf `stuge.se` nicht mehr verfügbar ist, seit wie dies
 zuletzt geprüft haben. Das `bucts` Programm wurde von Peter Stuge geschrieben.
 Du benötigst `bucts` sofern Du ein Libreboot ROM intern auf ein Thinkpad X60 
 oder T60 flashen möchtest, welches (derzeit) noch ein nicht-freies Lenovo 
