@@ -4,7 +4,7 @@ x-toc-enable: true
 ...
 
 Diese Liste gibt nicht unbedingt wieder wer derzeit an dem Projekt arbeitet,
-aber sie listet die Leute auf die für das Projekt bedeutsame Beiträge geleistet
+aber sie listet die Leute auf die bedeutsame Beiträge für das Projekt geleistet
 haben.
 
 Sofern wir vergessen haben dich zu erwähnen, gib uns Bescheid und wir werden
