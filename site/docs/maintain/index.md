@@ -890,10 +890,6 @@ The `romtype` entry in `board.cfg` tells this script what to do with the ROM,
 after it has been built. Currently, it operates based on these possible values
 for `romtype`:
 
-* `4MiB IFD BIOS region` will cause only the upper 4MB section of the ROM
-  to be included in a release. This option is largely deprecated, a hangover
-  from libreboot, which also no longer uses this option on any boards, and it is
-  thus subject for removal.
 * `d8d16sas` will cause *fake* (empty) files named `pci1000,0072.rom`
   and `pci1000,3050.rom` to be inserted in CBFS. This prevents SeaBIOS from
   loading or executing the option ROM stored on PIKE2008 modules, present on
