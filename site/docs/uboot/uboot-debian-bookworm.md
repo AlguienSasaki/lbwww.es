@@ -56,9 +56,10 @@ reboot.
 
 Since libreboot/uboot has a 2 second pause at the beginning to stop autoboot if
 desired I paused autoboot and it dropped me to the uboot command line. Per the
-suggestion from alpernebbi on libreboot IRC I looked for the grub EFI image and
-started that up instead.  Below are the series of uboot commands I used to
-understand the media and partition structure.
+suggestion from alpernebbi on libreboot IRC I looked for the grub EFI image on
+the micro sdcard and started that up instead.  Below are the series of uboot
+commands I used to understand the media and partition structure.  Device 1 is
+the micro sdcard slot, and in this case the efi partition is 2.
 
 ```
 Hit any key to stop autoboot: 0
@@ -90,7 +91,7 @@ The following two commands are the ones that were needed to boot the operating
 system.
 
 ```
-=> load mmc 1:2 $loadaddr
+=> load mmc 1:2 $loadaddr efi/boot/grubaa64.efi
 4289984 bytes read in 187 ms (21.9 MiB/s)
 => bootefi $loadaddr
 ```
@@ -116,22 +117,48 @@ needed.
 
 ![](https://av.libreboot.org/xe513c24/debbook-nonfree.jpg)
 
-Per instructions from alpernebbi, when you arrive at the stage where the grub
-bootloader is installed take special note to select yes to the option to "Force
-installation to removable media path", and also say no to the option to "Update
-NVRAM variables".  During my first install I inadvertently said yes to the
-NVRAM variable option and experienced corruption to the EFI partition on the
-emmc.
+Some users have mentioned experiencing corruption of the first partition after
+installing Debian Bookworm on a Libreboot / uboot xe513c24 system.  This is
+possibly due to the experimental nature of the libreboot / uboot system at this
+time.
 
-Note that when rebooting into your new system you will experience the same
+One potential workaround is to leave some unused space at the beginning of the
+drive before the first partition.  This can be done by manually partitioning
+during install and configuring the first partition to start 100MB or so from
+the start of the drive.
+
+Also, per instructions from alpernebbi on IRC, when you arrive at the stage
+where the grub bootloader is installed take special note to select yes to the
+option to "Force installation to removable media path", and also say no to the
+option to "Update NVRAM variables".  If one selects yes on updating NVRAM
+variables this can also lead to partition corruption in some instances.
+
+Lastly when rebooting into your new system you will likely experience the same
 synchronous abort issue mentioned above.  You can use the same method to pause
 the uboot script and drop to the uboot prompt to load and boot the grub efi
-image.  Once booted into your Debian Bookworm system you can open a shell as
-root and go to the boot/efi path to copy the grubaa64.efi file and overwrite it
-onto the bootaa64.efi file.  By doing this the system will boot from uboot
-normally without needing to drop to the uboot prompt.  This will only last
-until the next time debian updates grub though, so you may need to repeat this
-as a workaround for now.
+image.  Depending on how you partitioned the internal emmc drive during
+install, the partition number may vary, but below are the applicable commands
+on my system.  The internal device is 0, and the efi partition was 1.
+
+```
+=> load mmc 0:1 $loadaddr efi/boot/grubaa64.efi
+4289984 bytes read in 187 ms (21.9 MiB/s)
+=> bootefi $loadaddr
+```
+
+Once booted into your Debian Bookworm system you can open a shell as
+root and go to the boot efi path to copy the grubaa64.efi file and overwrite it
+onto the bootaa64.efi file.
+
+```
+# cd /boot/efi/EFI/BOOT
+# mv BOOTAA64.EFI BOOTAA64.EFI.bak
+# cp grubaa64.efi bootaa64.efi
+```
+
+By doing this the system will boot from uboot normally without needing to drop
+to the uboot prompt.  This will only last until the next time debian updates
+grub though, so you may need to repeat this as a workaround for now.
 
 Below are a couple screen shots of the installed system running from the
 internal emmc.
