@@ -15,7 +15,7 @@ Entwicklungs Diskussion
 ======================
 
 Eine Mailing Liste ist für die Zukunft in Planung. Bis dahin, siehe unter
-[der Git Seite](git.md) für Information wie Du dich an der Entwicklung beteiligen kannst.
+[der Git Seite](git.md) für Informationen wie Du dich an der Entwicklung beteiligen kannst.
 
 Hier finden sich ebenso Anleitungen zum Senden von Patches (via Pull-Requests).
 

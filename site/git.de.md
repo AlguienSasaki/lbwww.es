@@ -9,7 +9,7 @@ Libreboot Repositories
 Informationen darüber wer an Libreboot arbeitet und wer das Projekt betreibt
 sind unter [who.de.md](who.de.md) zu finden.
 
-Das `Libreboot` Projekt hat hauptsächlich 3 Git Repositories:
+Das `libreboot` Projekt hat hauptsächlich 3 Git Repositories:
 
 * Build system: <https://codeberg.org/libreboot/lbmk>
 * Webseite (+Anleitungen): <https://codeberg.org/libreboot/lbwww>
@@ -83,10 +83,10 @@ Du kannst dann folgendermassen in das Verzeichnis wechseln:
 
 	cd lbmk
 
-Ändere dies nach deinen Vorstellungen oder ertelle einfach einen build. 
+Ändere dies nach deinen Vorstellungen oder erstelle einfach einen build. 
 Für Anleitungen bzgl. `lbmk` build, siehe [build Anleitungen](docs/build/).
 
-Informationen über das build system selbst und wie es funktioniert, ist
+Informationen über das build system selbst und wie es funktioniert, sind
 verfügbar unter dem [lbmk maintenance guide](docs/maintain/).
 
 lbwww and lbwww-img
@@ -127,7 +127,7 @@ Wenn dein Patch der Libreboot Webseite hinzugefügt wird, werden erscheinen dein
 Zu Entwicklungszwecken, könntest Du deine Bilder auch lokal verknüpfen, und
 anschliesend die URLs anpassen sobald Du deine Patches für die Dokumentation/Webseite schickst.
 
-Eine Anleitung wie Du eine lokale Version der Webseite herstellst kannst,
+Eine Anleitung wie Du eine lokale Version der Webseite herstellen kannst,
 befinden sich auf der Untitled Webseite. Lade untitled
 herunter, und erstelle in dem `untitled` Verzeichnis ein Verzeichnis mit
 dem Namen `www/` dann wechsle in dieses Verzeichnis und klone das `lbwww`
@@ -149,7 +149,7 @@ spezifiert werden. Es ist Dir gestattet dies zu tun, sofern Du deine Privatsphä
 wahren möchtest. Wir glauben an Privatsphäre. Sofern Du anonym bleiben möchtest 
 werden wir dies respektieren.
 
-Natürlich, kannst Du jeglichen Namen und/oder jegliche email Aaddresse verwenden
+Natürlich kannst Du jeglichen Namen und/oder jegliche email Adresse verwenden
 die Du möchtest.
 
 Rechtlich gesprochen, jegliches Urheberrecht fällt automatisch unter die

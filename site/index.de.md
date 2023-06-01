@@ -16,7 +16,7 @@ und [Libera](https://libera.chat/) IRC.
 <img tabindex=1 class="r" src="https://av.libreboot.org/hp9470m/9470m+2560p.jpg" /><span class="f"><img src="https://av.libreboot.org/hp9470m/9470m+2560p.jpg" /></span>
 
 **NEUESTE VERSION: Die neueste Version von Libreboot ist 20230423, veröffentlicht am
-23 April 2023.
+23. April 2023.
 Siehe auch: [Libreboot 20230423 release announcement](news/libreboot20230423.md).**
 
 Warum solltest Du *Libreboot* verwenden?
@@ -122,7 +122,7 @@ Sofern Du mit Übersetzungen helfen möchtest, kannst Du Seiten übersetzen,
 existierende Übersetzungen überarbeiten oder deine übersetzten Versionen schicken.
 Für Anleitungen, siehe bitte hier:
 
-[Wie man Übersetzungen für libreboot.org bereitstellt](news/translations.md)
+[Wie man Übersetzungen für libreboot.org bereitstellt](news/translations.de.md)
 
 Auch wenn jemand bereits an einer Übersetzung in einer bestimmten Sprache arbeitet,
 so können wir immer mehrere Leute gebrauchen. Desto mehr desto besser!
