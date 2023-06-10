@@ -21,6 +21,22 @@ x-toc-enable: true
 | **Intel ME/AMD PSP**      | Present, neutered                           |
 | **Flash chip**            | SOIC-8 8MiB                                 |
 
+```
+W+: Works without blobs; 
+N: Doesn't work; 
+W*: Works with blobs; 
+U: Untested; 
+P+: Partially works; 
+P*: Partially works with blobs
+```
+
+| ***Features***                                    |    |
+|---------------------------------------------------|----|
+| **Internal flashing with original boot firmware** | W* |
+| **Display (Intel GPU)**                           | W+ |
+| **Display (PCIe graphics card)**                  | W+ |
+| **Audio**                                         | W+ |
+| **RAM Init**                                      | W+ |
 
 | ***Payloads supported***  |       |
 |---------------------------|-------|
@@ -43,25 +59,26 @@ which you can read more about here:
 
 <https://support.hp.com/gb-en/product/hp-compaq-8200-elite-small-form-factor-pc/5037931>
 
-Here's the [Technical Reference Manual](https://web.archive.org/web/20160109143257/https://h10032.www1.hp.com/ctg/Manual/c02778024.pdf)
+Here's the [Technical Reference Manual](https://web.archive.org/web/20160109143257/https://h10032.www1.hp.com/ctg/Manual/c02778024.pdf).
+This system supports Ivy Bridge processors too. The original BIOS
+won't even POST with those, but with Libreboot they work fully.
 
 Installation of Libreboot
 -------------------------
 
-TODO: this patch is now in coreboot gerrit:\
-<https://review.coreboot.org/c/coreboot/+/74248>\
-(more notes about internal flashing)\
-also:\
-<https://www.reddit.com/r/coreboot/comments/12nux51/hp_elite_8200_sff_coreboot_port_current_state/> - see notes about 8300
-
 You can actually just compile the Libreboot ROM for this, and flash the
-entire ROM, then flash it. The *coreboot* project proper, has information
-about this:
+entire ROM.
+
+Internal flashing from OEM BIOS is possible by setting a jumper
+on the board. Step by step instructions for this are below.
+
+The *coreboot* project proper has technical details on why this works if
+you are interested. It also has external flashing instructions if you need
+to recover from an unbootable BIOS:
 
 <https://doc.coreboot.org/mainboard/hp/compaq_8200_sff.html>
 
-Refer to the coreboot guide for flashing instructions, and you can build the
-images for it in Libreboot like so:
+You can build the images for it in Libreboot like so:
 
 	./build boot roms hp8200sff_8mb
 
@@ -90,6 +107,76 @@ in the same guide linked above, or read the nvmutil manual:
 
 [Modify MAC addresses with nvmutil](../install/nvmutil.md).
 
+Internal flashing from vendor BIOS
+----------------------------------
+
+The vendor BIOS imposes write-protections in the Flash Descriptor and
+runtime. However, the flash descriptor can be bypassed by bridging a
+jumper and the runtime protections only apply to a fixed address block.
+Since neutering the Management Engine frees up a lot of space, we can
+just install an intermediate Libreboot image there. This removes all
+write-protections so has the same end result as external flashing:
+a completely unlocked system.
+
+Power off the computer. Remove the side panel.
+Near the back USB ports find the jumper labelled **FDO**.
+
+![Location of the FDO jumper](https://av.libreboot.org/hp8200sff/fdo.jpg)
+
+You need to short the two pins circled. Use a
+[jumper block](https://en.wikipedia.org/wiki/Jumper_(computing)) if you
+have one but a screwdriver will do the job fine too. Hold the tip
+between the pins until you can see the normal BIOS boot screen.
+
+![](https://av.libreboot.org/hp8200sff/fdo\_screwdriver.jpg)
+
+Boot into an OS supported by flashrom. On Linux, make sure you add the
+kernel parameter **iomem=relaxed** which disables memory protections that
+prevent BIOS flashing.
+
+Now, run this command:
+
+	flashrom -p internal -c MX25L6406E/MX25L6408E
+
+The output should contain the text "The Flash Descriptor Override
+Pin-Strap is set". If it doesn't, start again from the beginning.
+
+Now build the **4** MiB Libreboot image.
+
+	./build boot roms hp8200sff_4mb
+
+More information about building ROM images can be found in
+the [build guide](../build/).
+
+Also build `ifdtool`. It will be needed soon.
+
+	cd coreboot/default/util/ifdtool
+	make
+	sudo make install
+
+Now choose the image you want from `bin/hp8200sff_4mb`.
+We'll refer to it as `libreboot4.rom`. We need to pad it to 8 MiB:
+
+	dd if=/dev/zero bs=4M count=1 >> libreboot4.rom
+
+Flash the Libreboot image with a tweaked layout:
+
+	ifdtool libreboot4.rom -f layout
+	flashrom -p internal -c MX25L6406E/MX25L6408E -w libreboot4.rom -l layout -i fd -i gbe -i bios -i me
+
+Power off the computer. Make sure to power off, rebooting is not enough!
+
+Power on the computer.
+Now we can flash the full 8 MiB image. Boot to an OS with flashrom
+again. On linux, remember the **iomem=relaxed** kernel parameter.
+
+Pick a Libreboot image of your choice from `bin/hp8200sff_8mb`
+or from a release archive. We'll refer to it as `libreboot8.rom`.
+
+	flashrom -p internal -c MX25L6406E/MX25L6408E -w libreboot8.rom
+
+Power cycle the computer again.
+
 HP 6200 Pro Business PC
 -----------------------
 
@@ -104,7 +191,8 @@ IRC), who tested and confirmed the following functionality:
 
 * Sandy Bridge (i5-2400) and Ivy Bridge (i5-3570S) CPUs
 * 4x8 GB RAM (Sandy Bridge: 1333MHz, Ivy Bridge: 1600MHz)
-* PS/2 and USB keyboards
+* PS/2 keyboard and mouse
+* USB keyboard (a bit laggy on GRUB)
 * Boot from USB and DVD
 * Gigabit ethernet
 * VGA and DisplayPort (Intel graphics), with libgfxinit (native video init)
@@ -114,25 +202,18 @@ IRC), who tested and confirmed the following functionality:
 * Both PCIe x16 slots, external GPU works with SeaBIOS
 * PCI
 * SATA
+* USB ports
+* Serial port (RS-232)
 
 At the time of adding this board to Libreboot, the following is untested:
 
-* Serial port and parallel port (internal header on the board) and PS/2 mouse-
-  NOTE: Serial port believed to work, according to initial coreboot commit from
-  revision `6308e0e92f624cb18a875ed04e41e1d15fc91054` in 2018
+* Parallel port (internal header on the board)
 * Wake on LAN
-* Internal flashing from OEM BIOS - TODO: Riku spoke to someone on IRC who said
-  it might be possible, so this should be investigated. - NOTE: coreboot git
-  logs also suggest that this is possible.
-* Does the OEM BIOS support Ivy Bridge chips? People on various forums say no,
-  but of them say the chipset is the reason. No one seems to have actually
-  tested, or at least haven't told about it.
 * Floppy drive. The case has a spot for it, but I can't find the header (P10).
 
 According to the initial coreboot port from 2018, the following also works:
 
 * EHCI debug (not enabled by Libreboot configs)
-* USB ports
 * Native (libre) raminit with up to four DIMM modules (also tested by Riku and
   confirmed working, with 32GB RAM installed as 4x8GB)
 
