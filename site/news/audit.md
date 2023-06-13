@@ -122,7 +122,7 @@ And here is the version coreboot had, which Libreboot forked:
 
 And here is the *Libreboot* version, as of today, 13 June 2023:
 
-<https://browse.libreboot.org/lbmk.git/tree/util/spkmodem_recv/spkmodem-recv.c?id=b52a7f4f86529e8407d7c1245e5d741a3f53d36d>
+<https://browse.libreboot.org/lbmk.git/plain/util/spkmodem_recv/spkmodem-recv.c?id=5c5c1c64fd29f85644771810820ab912e75bc747>
 
 In addition to code style changes, certain variables are renamed for clarity,
 and certain redundant variables removed. Logic split into functions, and the
