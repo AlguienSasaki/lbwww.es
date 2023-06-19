@@ -1,0 +1,111 @@
+---
+title: HP Compaq Elite 8300 USDT
+x-toc-enable: true
+...
+
+<div class="specs">
+<center>
+<img tabindex=1 alt="HP Compaq Elite 8300 USDT" class="p" src="https://av.libreboot.org/hp8300usdt/hp8300usdt.jpg" /><span class="f"><img src="https://av.libreboot.org/hp8300usdt/hp8300usdt.jpg" /></span>
+</center>
+
+| ***Specifications***      |                                             |
+|---------------------------|---------------------------------------------|
+| **Manufacturer**          | HP                                          |
+| **Name**                  | Compaq 8300 Elite USDT                      |
+| **Released**              | 2012                                        |
+| **Chipset**               | Intel Q77                                   |
+| **CPU**                   | Intel Sandy/Ivy Bridge (65W max.)           |
+| **Graphics**              | Intel HD Graphics or MXM graphics card      |
+| **Memory**                | Up to 16GB (2x8GB)                          |
+| **Architecture**          | x86_64                                      |
+| **Intel ME/AMD PSP**      | Present, neutered                           |
+| **Flash chip**            | SOIC-16 16MiB                               |
+
+# Introduction
+
+This is a small but powerful desktop using Sandy or Ivy Bridge CPUs (of up to 65W TDP).
+It has a slot for a discrete MXM graphics card, but that is currently untested.
+
+These features are tested and confirmed working:
+
+* Native raminit with both DIMMs (up to 2x8GB)
+* Libgfxinit textmode and framebuffer on both DisplayPorts and VGA
+* SeaBIOS and GRUB payloads
+* External USB2 and USB3 ports: they all work
+* USB 3.0 SuperSpeed on Linux-libre (rear, 4 ports)
+* Ethernet
+* Mini-PCIe WLAN
+* SATA: 2.5" SSD and optical drive bay
+* PS/2 keyboard and mouse
+* S3 suspend and resume, wake using USB keyboard
+* Headphone output, line out, internal speaker
+* Wake on LAN
+* Rebooting
+
+Untested (and likely don't work):
+
+* mSATA
+* eSATA
+* Discrete MXM GPU
+
+# Installation
+
+## Internal flashing
+
+Internal flashing is possible and very simple on this board:
+
+First, make sure the computer is powered off. Remove the top cover.
+
+The jumper labelled "FDO" (for Flash Descriptor Override) needs to be shorted.
+That removes all write protections on this board.
+
+We can borrow a shunt from another header on the board: PSWD. It is right
+next to the SO-DIMM RAM slots. Move it to the FDO header between the quartz
+crystal (small metal cylinder) and the power cable for the optical drive.
+
+![](https://av.libreboot.org/hp8300usdt/jumper_to_fdo.jpg)
+
+Boot into an OS of your choice (that has flashrom support). When using Linux,
+you need to supply the kernel parameter `iomem=relaxed`.
+
+The BIOS should no longer impose any write-protections.
+You can now use `flashrom -p internal` freely.
+
+Take a backup of the original BIOS:
+
+	flashrom -p internal -r oem_bios
+
+You can now flash libreboot:
+
+	flashrom -p internal -w libreboot.rom
+
+You can now move the jumper back to its original place.
+By default,Librebootapplies no write-protection, so
+updating it can be done without the jumper anyway.
+
+## External flashing
+
+Unbricking is possible by external flashing. You first need to remove
+the optical disk drive and 2.5" HDD/SSD and the metal bracket that
+supports them. This requires you to open one torx screw in total.
+
+The SOIC-16 flash chip is located on the edge of the board
+near the group of yellow cubes. Follow the
+[general SPI flashing guide](http://localhost:8080/docs/install/spi.html).
+
+![](https://av.libreboot.org/hp8300usdt/chip+header.jpg)
+
+You might need to power the board by plugging it in. In that case,
+do not connect the Vcc (3v3) pin of the flash chip.
+Also make sure the board doesn't fully power on (that is, boot).
+
+If you don't have a suitable clip, you can also use the ROM_RCVRY header
+right next to the flash chip. By default only the footprint is present,
+so you have to solder a pin header of your own. End result can be seen
+and the pinout can be seen in the photo earlier. Consult the HP service
+manual (page 241) on how to remove the motherboard from the chassis.
+
+<http://web.archive.org/web/20210305234331/https://h10032.www1.hp.com/ctg/Manual/c03612798.pdf>
+
+If you do this, you have to reapply thermal paste.
+That might be a good idea anyway, considering how old these are getting
