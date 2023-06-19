@@ -65,9 +65,6 @@ Mastodon
 Також можливо зв'язатися з Лією за ії електронною адресою:
 [leah@libreboot.org](mailto:leah@libreboot.org)
 
-e wikipedia:
-<https://en.wikipedia.org/wiki/User:Libreleah>
-
 Reddit
 ------
 

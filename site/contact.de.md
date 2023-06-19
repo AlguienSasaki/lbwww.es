@@ -65,9 +65,6 @@ Gründerin und Haupt-Entwicklerin, Leah Rowe, ist auf Mastodon:
 Leah kann zudem unter dieser eMail kontaktiert werden:
 [leah@libreboot.org](mailto:leah@libreboot.org)
 
-oder wikipedia:
-<https://en.wikipedia.org/wiki/User:Libreleah>
-
 Reddit
 ------
 
