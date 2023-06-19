@@ -55,6 +55,7 @@ libreboot currently supports the following systems in this release:
 -   [Lenovo Thinkpad X230t](../install/x230_external.md)
 -   [Lenovo ThinkPad W541](../install/ivy_has_common.md) (no install docs yet)
 -   [HP EliteBook 2560p](hp2560p.md)
+-   [HP EliteBook 2570p](hp2570p.md)
 -   [HP EliteBook Folio 9470m](hp9470m.md)
 
 ### Laptops (ARM, with U-Boot payload)
