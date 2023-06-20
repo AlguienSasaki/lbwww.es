@@ -2,6 +2,9 @@
 % Leah Rowe
 % 17 April 2023
 
+[Libreboot releases after 20230423 will provide separate ROMs with microcode
+excluded, alongside default ROMs that include microcode](microcode.md).
+
 UPDATE: This also applies to the Dell Latitute E6400 port, added on 19
 April 2023 to Libreboot. See: [E6400 announcement](e6400.md)
 

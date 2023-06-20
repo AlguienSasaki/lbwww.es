@@ -109,7 +109,7 @@ read more about that and the reasons *why* by reading the following article:
 are **OK**](news/policy.md#more-detailed-insight-about-microcode)
 
 [Releases after Libreboot 20230423 will provide separate ROMs with microcode
-excluded, alongside default ones with microcode included.](microcode.md)
+excluded, alongside default ones with microcode included.](news/microcode.md)
 
 Intel platforms
 ===============
@@ -359,7 +359,7 @@ technically required, but highly recommended. To remove, do:
 	cbfstool filename.rom remove -n cpu_microcode_blob.bin
 
 [Releases after Libreboot 20230423 will provide separate ROMs with microcode
-excluded, alongside default ones with microcode included.](microcode.md)
+excluded, alongside default ones with microcode included.](news/microcode.md)
 
 Removal of microcode updates will affect system stability in a negative way,
 introducing non-standard broken behaviour and it may result in the machine

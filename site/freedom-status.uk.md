@@ -109,7 +109,7 @@ raminit на даній платі, блоб було би надано Libreboo
 є **нормальним**](news/policy.uk.md#більш-детальна-інформація-про-мікрокод)
 
 [Releases after Libreboot 20230423 will provide separate ROMs with microcode
-excluded, alongside default ones with microcode included.](microcode.md)
+excluded, alongside default ones with microcode included.](news/microcode.md)
 
 Платформи Intel
 ===============
@@ -360,7 +360,7 @@ English paragraph that needs to be translated into Ukrainian.**
 	cbfstool filename.rom remove -n cpu_microcode_blob.bin
 
 [Releases after Libreboot 20230423 will provide separate ROMs with microcode
-excluded, alongside default ones with microcode included.](microcode.md)
+excluded, alongside default ones with microcode included.](news/microcode.md)
 
 Видалення оновлень мікрокоду вплине на стабільність системи негативно,
 впроваджуючи нестандартну поламану поведінку і його результатом може бути
