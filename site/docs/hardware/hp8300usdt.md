@@ -26,6 +26,9 @@ x-toc-enable: true
 This is a small but powerful desktop using Sandy or Ivy Bridge CPUs (of up to 65W TDP).
 It has a slot for a discrete MXM graphics card, but that is currently untested.
 
+Libreboot has support for this, in the Git repository and
+release versions after (but not including) 20230423.
+
 These features are tested and confirmed working:
 
 * Native raminit with both DIMMs (up to 2x8GB)
@@ -75,12 +78,24 @@ Take a backup of the original BIOS:
 
 	flashrom -p internal -r oem_bios
 
+This is an Ivy Bridge board which means that a neutered ME image
+is required if you wish to flash the ME region. Libreboot's
+build system automatically downloads, neuters (using me_cleaner)
+and inserts this if compiling from source.
+
+If you're using Libreboot release ROM images, the ME image has been
+scrubbed and you must re-insert it.
+Use the information on this guide to know how to do that:
+
+[Insert binary blobs on Intel Sandybridge/Ivybridge/Haswell
+platforms](../install/ivy_has_common.md)
+
 You can now flash libreboot:
 
 	flashrom -p internal -w libreboot.rom
 
 You can now move the jumper back to its original place.
-By default,Librebootapplies no write-protection, so
+By default, Libreboot applies no write-protection, so
 updating it can be done without the jumper anyway.
 
 ## External flashing
