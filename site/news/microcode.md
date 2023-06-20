@@ -11,7 +11,7 @@ Introduction
 
 Firstly, what is microcode? In this context, CPU microcode is what configures
 logic gates in the CPU to implement an instruction set. You can learn more
-about microcode on the [FAQ](faq.md#microcode).
+about microcode on the [FAQ](../faq.md#microcode).
 
 In the next Libreboot releases, ROM images that *exclude* CPU microcode updates
 will once again be available. Libreboot's [Binary Blob Reduction
