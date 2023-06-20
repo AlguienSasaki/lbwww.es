@@ -6,18 +6,19 @@ x-toc-enable: true
 Introduction
 ============
 
-As many readers may know, coreboot (which Libreboot uses for hardware
-initialisation) is nominally *Free As In Freedom*, *libre* or *open source*
-software; albeit, coreboot attempts to provide free code to initialise each
-machine. The coreboot developers work tirelessly to reverse engineer as much
-functionality as possible, so as to provide freely licensed source code.
+This page documents how Libreboot's [binary blob reduction
+policy](news/policy.md), adopted in November 2022, is implemented in practise,
+especially that line which says: *"if a blob can be avoided, it must be
+avoided."*
 
-On *some* (not all) platforms, coreboot *requires* certain
-[blobs](https://en.wikipedia.org/wiki/Binary_blob) for things
-like raminit. *All* boards currently supported by Libreboot can be initialised
-entirely with *free*, *libre* or *open source* code from *coreboot* itself,
-because Libreboot currently only focuses on such mainboards. Libreboot's goal is
-to eventually support *all* mainboards from coreboot.
+Libreboot uses [coreboot](https://coreboot.org/) for hardware initialisation.
+While coreboot is nominally *free* or *open source* software, on *some* (not
+all) platforms, coreboot *requires* certain
+[blobs](https://en.wikipedia.org/wiki/Binary_blob)
+for things like raminit. *All* boards currently supported by Libreboot can be
+initialised entirely with *free*, *libre* or *open source* code from *coreboot*
+itself, because Libreboot currently only focuses on such mainboards. Libreboot's
+goal is to eventually support *all* mainboards from coreboot.
 
 A more *pragmatic* [binary blobs reduction policy](news/policy.md) was adopted
 by Libreboot during November 2022, as part of an ongoing campaign to support
@@ -26,11 +27,6 @@ people with coreboot which, regardless of blob status, *does* provide increased
 software freedom compared to fully proprietary boot firmware which is what most
 people would otherwise use; Libreboot's modern policy is thus pragmatic, further
 advancing the cause of *software freedom*.
-
-This page documents how Libreboot's [binary blob reduction
-policy](news/policy.md), adopted in November 2022, is implemented in practise,
-especially that line which says: *"if a blob can be avoided, it must be
-avoided."*
 
 Libreboot's *previous* policy was to *ban all binary blobs*. This actively
 *harmed* the Free Software movement, by reducing the number of people who can
@@ -43,22 +39,12 @@ was *corrected*, in November 2022.
 Coreboot architecture
 ---------------------
 
-Although not *strictly* necessary for non-developers, you may find it useful
-to gain a high-level understanding of *how* coreboot works, to gain some
-some context about some of the topics discussed in this article. See:
+For context about certain topics, please read:
 
 <https://doc.coreboot.org/getting_started/architecture.html>
 
 100% libre init in coreboot
 ===========================
-
-*All* mainboards currently supported by Libreboot can have 100%
-libre initialisation *from the coreboot side*. In this context, that refers to
-any initialisation handled on the main CPU, to bring up the machine for code
-execution.
-
-The boot firmware is not the *only* software present in any machine, and there
-are some contexts that must be understood to see the bigger picture.
 
 The reason this distinction matters (referring specifically to coreboot's side
 of the initialisation) will become clearer, in the following sections:
@@ -123,13 +109,6 @@ In a *descriptor* configuration, the flash is divided into regions such as:
 a hard drive. What's important is that the flash IC is *divided* into such
 regions, where each region is intended for a specific purpose.
 
-On some newer descriptor-based Intel platforms, there are more regions than
-this. In some cases, the *[Embedded
-Controller](faq.md#ec-embedded-controller-firmware)* (EC) firmware may also
-be in its own region of the boot flash; at least for the time being, this is
-not the case on any hardware that Libreboot supports (instead, it is stored
-on a separate IC).
-
 The contents of the *descriptor* and *GbE* regions are described by Intel
 datasheets, but those datasheets often contain *reserved* sections where
 parts are left undocumented. Reverse engineering efforts over the years have
@@ -138,74 +117,37 @@ documented some of these blank spots.
 Libreboot does *not* distribute Intel ME images
 -----------------------------------------------
 
-The ME contains many modules within itself, and one of these modules is the
-BringUp code. This BringUp code is the ME's *own* initialisation firmware,
-analogous to coreboot. By that very same analogy, the other modules of
-Intel ME (such as the ME kernel) are similar (conceptually) to
-a *coreboot payload*.
-
-Thus, a *neutered ME* setup is, on the intel ME coprocessor, analogous to
-running coreboot without a payload. In this state, the ME initialises itself
-ready to run code, but then *doesn't actually run code*. It is thus benign,
-both from a security- and freedom-minded point of view. In other words, the ME
-is *disabled*.
-
 Libreboot does *not* distribute the Intel ME firmware in any way, whether in
 the Git repository or in releases. Where it is needed, Libreboot provides
-scripts that automatically fetch and install it, in a *neutered* state by
-running the `me_cleaner` program, which you can learn about here:
+scripts that automatically fetch and install it, in a *neutered* (disabled)
+state by running the `me_cleaner` program. This is completely automated.
+Please read:
 
 <https://github.com/corna/me_cleaner/wiki/How-does-it-work%3F>
 
-This is completely automated. If you're compiling ROM images from `lbmk.git`,
-libreboot's automated build system, the ME firmware will be downloaded,
-neutered with `me_cleaner` and inserted into the final ROM image automatically.
+The *BringUp* code of Intel ME is all that remains, in Libreboot configurations.
+ME BringUp (BUP) is analogous to coreboot, providing initialisation for the
+ME itself; by that same analogy, the way Libreboot configures it is similar to
+running *coreboot* without a payload. The ME is initialised, to a state where
+it can run code, but then it *doesn't actually run code*. It is thus *disabled*.
 
-*Released* ROM images, provided pre-compiled, omit the Intel ME firmware. On
-platforms that require it, the *same* scripts that insert it during the build
-process can *also* run post-build, reinserting Intel ME into the boot ROM. This
-is due to licensing issues surrounding the distribution of Intel ME images.
+In other words, a *neutered* Intel ME setup is completely benign, both from a
+software freedom and security perspective. It becomes a useless, unused
+processor, that most people in the real world will ever want to use anyway.
+With this perspective, we see that Intel ME is now entirely inconsequential
+to the average user.
 
-The Libreboot build system fetches it directly from the vendor for a given
-machine or set of machines (as an example, Lenovo provides images for several
-ThinkPad machines). This ensures that each user gets the exactly same
-configuration (the other alternative is to extract Intel ME firmware from the
-original vendor image, in the ME region of the flash IC).
-
-You can learn more about this on the following page:
+*Released* Libreboot ROM images, provided pre-compiled, do *not* include the
+ME firmware at all; they are scrubbed, by automated release scripts when they're
+preparing a release. If you're building from source, the Libreboot build system
+will automatically download it (from the vendor), neuter it and then insert it;
+on release ROMs, the same scripts used by the build systems can (must) be run
+manually, accomplishing the same result after the fact. Please read:
 [docs/install/ivy_has_common.md](docs/install/ivy_has_common.md)
 
 The ME firmware is *required* on almost all Intel platforms, or the machine
-will turn *off* after 30 minutes. In the neutered setup, the BringUp code of
-Intel's ME will disable that 30 minute reset time, allowing you to use your
-computer normally even though the ME is *not* running anything after that.
-
-Neutered ME really is disabled
-------------------------------
-
-Consider this: if the ME is only doing it's own BringUp, but then not
-running anything, is it really anything more than a slight drain on your
-battery life? In the neutered state, Intel ME is just an inactive computer
-on your mainboard, one that does nothing, that you don't need and that you
-will never use. Therefore, it might be considered benign from both a software
-freedom perspective and a security perspective, and such is the view taken by
-the Libreboot project.
-
-If these assumptions are held, and you agreed with Libreboot's article about
-microcode as linked above, and you considered the *fact* that (at least as of
-now) Libreboot is capable of purely libre initialisation within coreboot, then
-we can reasonably assert that Libreboot provides a decent level of software
-freedom. This, in spite of how some may otherwise feel if they *don't* have
-such perspective.
-
-So, even though the remaining BringUp code for Intel ME *is* proprietary,
-and cannot be modified due to cryptographic signature verification by the
-hardware, it's software for a device you'll never want to actually use in
-the real world, so if it's *not doing anything* in the neutered state, then
-it can be ignored in practise. This depends on your point of view, and some
-people may take a more dogmatic approach than this. The Libreboot project
-considers neutered ME setups to be acceptable, both from a security perspective
-and software freedom perspective.
+will turn *off* after 30 minutes (or it will not boot, if the ME also controls
+whether the CPU comes out of reset).
 
 More about Intel ME removal/disabling
 ----------------------------------
@@ -215,33 +157,38 @@ full use of the machine, on GM45 platforms with ICH9M southbridge. These are
 laptops: ThinkPad X200/T400/T500/W500 and so on of that generation. See:
 [docs/install/ich9utils.md](docs/install/ich9utils.md)
 
-On newer platforms, `me_cleaner` is used. You can read about there here:
+The `ich9utils` software is provided by Libreboot. The `ich9gen` utility was
+specifically written by Leah Rowe, in 2014 and improved incrementally since.
 
-<https://github.com/corna/me_cleaner/wiki/How-does-it-work%3F>
+On newer platforms as alluded to above, `me_cleaner` is used instead.
+
+Notes about specific types of blobs
+===================================
 
 VGA option ROMs
-============
+---------------
 
 *Native* video initialisation is supported and *enabled*, for all supported
 Intel platforms that have it. The source code is provided by coreboot, under
 free license.
 
-On *some* machines, dual graphics is possible. For example, certain ThinkPad
-T440p mainboards come with both an Intel and an Nvidia GPU, where you can
-either use *both* or just the Intel one; to use the Nvidia GPU, a binary blob
-is required that Libreboot does not provide (nor will provide), instead opting
-to enable only the *Intel* GPU (where libre initialisation code is available
-in coreboot). In most T440p mainboards, *only* the Intel GPU is physically
-present.
+In some cases, a laptop may have a graphics chip that is unsupported by
+coreboot. In this situation, a binary blob called a *VGA Option ROM* must be
+used. Libreboot has *experimental* support for Nvidia GPU models of the Dell
+Latitude E6400, in an experimental branch where the build system automatically
+downloads the VGA ROM for it. This is currently *not* present in releases, or
+in the stable branch of `lbmk`.
 
-On some ThinkPad T400, W500 and T500 mainboards, an ATI and Intel GPU is
-present, and you can use either or. Once again, Libreboot *only* supports the
-Intel GPU, where coreboot has libre initialisation code.
+In other instances, a machine may have *two* graphics devices, where one has
+native (free/libre) initialisation provided by coreboot. In these situations,
+it is possible to insert a VGA ROM for the other one; Libreboot currently lacks
+documentation for this, but it has been tested. Example: Dual Intel/Nvidia
+graphics on some ivybridge or haswell thinkpads.
 
-This is an example of the nuanced nature in Libreboot's policy. Libreboot
-*could* provide such blobs, with the justification that they are *needed* to
-use those extra processors. However, in practise, the machines are completely
-useable with just Intel graphics for which source code is available.
+For *add-on* GPUs, SeaBIOS (payload) can typically scan a VGA ROM present on
+the card and execute it. This has been tested on certain desktop mainboards
+that Libreboot supports, and works just fine; Libreboot does not need to handle
+these blobs at all.
 
 Libreboot's default is *always* freedom, when feasible in practise. Users who
 wish to have use of these additional GPUs, on such hardware, must take stock
@@ -270,15 +217,12 @@ ARM platforms (chromebooks)
 Mostly blobless, except for the requirement on `daisy` and `peach` mainboards
 to include BL1 bootloader blobs. These are:
 
-* HP Chromebook 11 G1 (daisy-spring)
-* Samsung Chromebook XE303 (daisy-snow)
-* Samsung Chromebook 2 13” (peach-pi)
-* Samsung Chromebook 2 11” (peach-pit)
-
-Libreboot *currently* does not accomodate these blobs at all, and this is
-considered to be a *bug*; such is documented on the hardware compatibility
-page. They can be added manually by the user, but documentation for this is
-currently lacking in the Libreboot website.
+* HP Chromebook 11 G1 (daisy-spring) **(board removed from Libreboot, due to
+	issues (will be re-added at a later date)**
+* Samsung Chromebook XE303 (daisy-snow) **(ditto)**
+* Samsung Chromebook 2 13” (peach-pi) **(ditto)**
+* Samsung Chromebook 2 11” (peach-pit) **(ditto)**
+* nyan-* chromebooks also temporarily removed, but are blobless in Libreboot
 
 List of blobs needed, specifically for each board
 =================================================
@@ -295,25 +239,30 @@ Here is a list, *for each* board, of those blobs:
 Intel/x86
 ---------
 
+### Intel ME:
+
 Neutered ME required on these targets: `t420_8mb`, `t420s_8mb`, `t430_12mb`,
 `t440p_12mb`, `t440pmrc_12mb`, `t520_8mb`, `t530_12mb`, `w530_12mb`,
 `w541_12mb`, `w541mrc_12mb`, `x220_8mb`, `x230_12mb`, `x230_16mb`,
-`x230edp_12mb`, `x230t_12mb`, `x230t_16mb`, `hp8200sff`, `hp2560p_8mb`
-and `hp9470m_16mb`.
+`x230edp_12mb`, `x230t_12mb`, `x230t_16mb`, `hp8200sff`, `hp2560p_8mb`,
+`hp2570p_16mb`, `hp8300usdt_16mb` and `hp9470m_16mb`.
 
 As stated, Libreboot provides this in a state where the ME is no longer a
 threat to security. It initialises itself, but then does nothing, so it's
 disabled. This is done using `me_cleaner`. See:
 <https://github.com/corna/me_cleaner/wiki/How-does-it-work%3F>
 
-KBC1126 EC firmware on `hp9470m_16mb` and `hp9470m_16mb` - on HP laptops, EC
-firmware is inserted into main boot flash, rather than being on a separate IC.
-This is *better* because libre replacements would be more easy to install in
+### KBC1126 EC firmware (HP laptops):
+
+EC firmware is inserted into main boot flash, rather than being on a separate
+IC. This is *better* because libre replacements would be more easy to install in
 the future, and reverse engineering is made much easier by it. Libreboot's
 build system handles such firmware in `blobutil`, automatically downloading
 it during the build process. Libreboot 20230423 onwards does scrub EC firmware
 and provide functionality in `blobutil` insert, to insert them with `cbfstool`
 at the correct offset as defined by coreboot config for each board.
+
+### CPU microcode:
 
 *Microcode* updates for CPU provided on *all* x86 platforms, by default. Not
 technically required, but highly recommended. To remove, do:
@@ -331,6 +280,8 @@ as S3 suspend/resume.
 CPU microcode blobs included by default, on all x86 boards. While not needed
 in most cases, their use is highly recommended. For reasons why, see:
 [news/policy.md#more-detailed-insight-about-microcode](news/policy.md#more-detailed-insight-about-microcode)
+
+### Intel Flash Descriptor (IFD):
 
 Intel Flash Descriptors are provided as blobs on some boards, but these are
 not *software* blobs. They are configurations provided in a binary format,
@@ -353,15 +304,23 @@ Intel GbE NVM config (configuration data, binary-encoded, for gigabit NIC):
 ARM/chromebooks
 ---------------
 
+### BL1 bootloader (peach/daisy):
+
 BL1 bootloader needed on: `daisy_snow`, `daisy_spring` and `peach_pit`.
+
+These boards are *currently* not present. They were removed from Libreboot,
+because the build system does not yet auto-insert the BL1 blobs. The boards
+are otherwise believed to work, using Alper's port of U-Boot in Libreboot.
 
 Conclusion
 ==========
 
 From the above, you can see that Libreboot really *does* implement a *binary
 blobs reduction policy*, with the emphasis on *reduction* being most critical.
+It can be asserted that Libreboot does in fact provide a reasonable level of
+*software freedom*, on all boards.
 
-Libreboot *could* add a lot of blobs for various platforms, to enable various
+Libreboot *could* add a lot more blobs for various platforms, to enable various
 extra features, that it instead avoids adding, precisely because the *purpose*
 of the Libreboot project is to promote *libre* software and *minimise* the
 power that proprietary software developers have over users.
