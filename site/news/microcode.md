@@ -119,6 +119,9 @@ are *required* to implement stable x86 ISA, otherwise your CPU will behave
 in strange, unpredictable ways, which could cause severe bugs in software
 that cause *real* issues. Issues such as data loss.
 
+More context
+------------
+
 A small but vocal minority of users are unhappy with the presence of these
 microcode files, so it has been decided that the Libreboot project will once
 again accomodate such users. This change has been implemented in the most
