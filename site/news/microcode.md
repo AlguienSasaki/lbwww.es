@@ -63,7 +63,7 @@ be discouraged, but the user's *freedom to choose* should also be respected,
 and accomodated.
 
 It is the official view of the Libreboot project that microcode updates do not
-even quality as *software*. The burned-in microcode *is* software, but the
+even qualify as *software*. The burned-in microcode *is* software, but the
 updates only provide hotpatching, essentially turning on or off certain
 features. The CPU already has older, buggier microcode burned into mask ROM,
 so the choice is to either update it, or encounter more bugs. Regardless,
