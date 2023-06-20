@@ -22,11 +22,12 @@ mainboards supported in Libreboot (in `lbmk.git` and in releases) can boot
 with entirely free software, requiring *zero* blobs of any kind from *coreboot*.
 
 The nuance of how Libreboot *implements* this policy is described in
-the [Freedom Status](freedom-status.md) page. Although coreboot (which Libreboot
-uses for hardware initialisation) *is* a free software project, certain binary
-blobs are needed on some platforms, for things like raminit (memory controller
-initialisation). Libreboot tries to reduce or eliminate these, or mitigate
-their existence (for example, `me_cleaner` is used on newer Intel platforms).
+the [Freedom Status](../freedom-status.md) page. Although coreboot (which
+Libreboot uses for hardware initialisation) *is* a free software project,
+certain binary blobs are needed on some platforms, for things like raminit
+(memory controller initialisation). Libreboot tries to reduce or eliminate
+these, or mitigate their existence (for example, `me_cleaner` is used on newer
+Intel platforms).
 
 One exception made in that policy is that CPU microcode updates *must* be
 provided by default, on all x86 mainboards. The ARM platforms do not use
