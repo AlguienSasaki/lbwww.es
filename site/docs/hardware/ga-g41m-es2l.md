@@ -90,6 +90,10 @@ Flashing instructions can be found at
 RAM
 ---
 
+**This board is very picky with RAM. If it doesn't boot, try an EHCI debug
+dongle, serial usb adapter and null modem cable, or spkmodem, to get a
+coreboot log to see if it passed raminit.**
+
 Kingston 8 GiB Kit  KVR800D2N6/8G with Elpida Chips E2108ABSE-8G-E
 
 this is a 2x4GB setup and these work quite well, according to a user on IRC.
