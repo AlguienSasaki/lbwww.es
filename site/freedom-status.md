@@ -6,77 +6,39 @@ x-toc-enable: true
 Introduction
 ============
 
-The short version of the story is: *all* boards currently supported by Libreboot
-can be initialised in coreboot with *free*, *libre* or *open source* code, that
-the user can study in great depth and adapt for their purposes, but there are
-certain caveats and pitfalls that the user must know about for certain machines.
-
 As many readers may know, coreboot (which Libreboot uses for hardware
 initialisation) is nominally *Free As In Freedom*, *libre* or *open source*
 software; albeit, coreboot attempts to provide free code to initialise each
-machine. The coreboot developers work very hard to reverse engineer as much
+machine. The coreboot developers work tirelessly to reverse engineer as much
 functionality as possible, so as to provide freely licensed source code.
-These people are to be celebrated, for Libreboot could not exist without such
-efforts by them.
 
-On *some* boards that coreboot supports, certain binary blobs are required.
-This may be for things like video framebuffer initialisation, setting up the
-memory controllers and so on. A binary blob is, in this context, any software
-that only comes as executable binary code *with source code unavailable*. This
-makes it harder (but not impossible) to study how such programs work, and those
-blobs often come with restrictions on either their usage and/or distribution.
+On *some* (not all) platforms, coreboot *requires* certain
+[blobs](https://en.wikipedia.org/wiki/Binary_blob) for things
+like raminit. *All* boards currently supported by Libreboot can be initialised
+entirely with *free*, *libre* or *open source* code from *coreboot* itself,
+because Libreboot currently only focuses on such mainboards. Libreboot's goal is
+to eventually support *all* mainboards from coreboot.
 
-The purpose of this document is to clearly describe the presence (or lack) of
-binary blobs, on each given hardware platform or, within each platform,
-specific mainboard variations. Such information was either absent or poorly
-worded on the Libreboot website, so it was decided that formal documentation
-should be written. The reason for such absence was that Libreboot previously
-provided support *only* for those boards that do *not* require binary blobs in
-the main flash IC for boot firmware, so no such documentation was required.
+A more *pragmatic* [binary blobs reduction policy](news/policy.md) was adopted
+by Libreboot during November 2022, as part of an ongoing campaign to support
+more hardware (from coreboot) within Libreboot, so as to provide *many more*
+people with coreboot which, regardless of blob status, *does* provide increased
+software freedom compared to fully proprietary boot firmware which is what most
+people would otherwise use; Libreboot's modern policy is thus pragmatic, further
+advancing the cause of *software freedom*.
 
-A more *pragmatic* policy was published during November 2022, with a view to
-helping as many people as possible install coreboot, even on less-than-ideal
-hardware (while continuing to also support the more freedom-friendly hardware).
-Libreboot still has strict standards about precisely *what* blobs are allowed,
-which you can read in the following document, thus:
+This page documents how Libreboot's [binary blob reduction
+policy](news/policy.md), adopted in November 2022, is implemented in practise,
+especially that line which says: *"if a blob can be avoided, it must be
+avoided."*
 
-[Binary blob reduction policy](news/policy.md)
-
-In this article, you will learn of all the ways (in practise) that Libreboot
-implements this *blob reduction policy*, especially that line in it which says,
-quote, "if a blob can be avoided, it must be avoided".
-
-Why does this matter?
----------------------
-
-The *practical goal* of the Libreboot project is to support as much hardware of
-coreboot compatibility as possible, fully tested with pre-compiled ROM images
-and easy flashing instructions, aimed at non-technical users so as to bring in
-as many users as possible into the coreboot community. With more users, many
-more people are exposed to coreboot and this will inevitably lead to more
-people developing coreboot, which is a critical project in the libre software
-movement. With more developers, more *users* will be able to achieve a level of
-freedom or *sovereignty* in their computing and, thus, the cycle shall continue.
-
-This goal exists because the *ideological goal* of Libreboot is to spread
-software freedom by whatever means necessary, to as many people as possible.
-Universal access to source code, the ability to study and change the code or
-redistribute it, and run it infinitely for any purpose is extremely important.
-Such freedom should be the *default* for all software. This makes coreboot
-extremely useful, even in cases where a binary blob is needed for certain
-functionality. Freedom should be the *default* for all software, and it is the
-purpose of *Libreboot* to help establish such a reality.
-
-The *policy* of the Libreboot project, within that goal, is to provide such
-hardware support with as *few* binary blobs as possible, ideally *none* as is
-the case with many configurations that Libreboot supports. Libreboot *will*
-attempt to support any given piece of hardware, even in cases where *full*
-software freedom is not possible; for example, if coreboot requires a blob for
-raminit on a given board, the blob would be provided by Libreboot.
-
-*You can read Libreboot's blob reduction/minimalisation policy in more detail.
-Please read the document, titled: [Binary Blob Reduction
-Policy](news/policy.md).*
+Libreboot's *previous* policy was to *ban all binary blobs*. This actively
+*harmed* the Free Software movement, by reducing the number of people who can
+realistically use coreboot because, to this day, nothing quite like Libreboot
+yet exists. Libreboot's main purpose is to make coreboot *as easy to use as
+possible* for normal, non-technical users who like the idea of coreboot but
+who are otherwise not competent to configure it from scratch. Such harm
+was *corrected*, in November 2022.
 
 Coreboot architecture
 ---------------------
