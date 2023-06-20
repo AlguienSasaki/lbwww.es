@@ -101,6 +101,8 @@ The libreboot project has the following policy:
   ROM anyway, the only choice is either *x86* or *broken x86*. Thus, libreboot
   will only allow coreboot mainboard configurations where microcode updates
   are *enabled*, if available for the CPU on that mainboard.
+  [Releases after 20230423 will provide separate ROM images with microcode
+  excluded, alongside the default ones that include microcode.](microcode.md)
 * Intel Management Engine: in the libreboot documentation, words *must* be written
   to tell people how to *neuter* the ME, if possible on a given board.
   The `me_cleaner` program is very useful, and provides a much more secure ME
@@ -366,6 +368,9 @@ it either.
 
 More detailed insight about microcode
 =====================================
+
+[Releases after 20230423 will provide separate ROM images with microcode
+excluded, alongside the default ones that include microcode.](microcode.md)
 
 To be clear: it is preferable that microcode be libre. The microcode on Intel
 and AMD systems *are* proprietary. Facts and feelings rarely coincide; the

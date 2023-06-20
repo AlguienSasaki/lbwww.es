@@ -95,6 +95,8 @@ Libreboot вирішує цю ситуацію *суворо* та *принци
   ROM в будь-якому випадку, єдиний вибір - *x86* або *зламаний x86*. Таким чином, libreboot
   дозволить лише конфігурації материнської плати coreboot, де
   *ввімкнено* оновлення мікрокоду, якщо доступно для ЦП на цій системній платі.
+  [Releases after 20230423 will provide separate ROM images with microcode
+  excluded, alongside the default ones that include microcode.](microcode.md)
 * Intel Management Engine: у документації libreboot *повинні* бути написані
   слова, щоб розповісти людям, як *нейтралізувати* ME, якщо це можливо на даній дошці.
   Програма `me_cleaner` є дуже корисною та забезпечує набагато безпечнішу конфігурацію
@@ -359,6 +361,9 @@ OpenBSD майже така сама, але вони розумні в цьом
 
 Більш детальна інформація про мікрокод
 =====================================
+
+[Releases after 20230423 will provide separate ROM images with microcode
+excluded, alongside the default ones that include microcode.](microcode.md)
 
 Щоб було зрозуміло: бажано, щоб мікрокод був вільним. Мікрокод систем Intel
 та AMD *є* пропрієтарним. Факти і почуття рідко збігаються; метою цього
