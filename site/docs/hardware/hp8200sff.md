@@ -1,17 +1,18 @@
 ---
-title: HP Elite 8200 SFF and 6200 Pro Business
+title: HP Elite 8200 SFF/MT and 6200 Pro Business
 x-toc-enable: true
 ...
 
 <div class="specs">
 <center>
-<img tabindex=1 alt="HP Compaq 8200 Elite SFF" class="p" src="https://av.libreboot.org/hp8200sff/grub_open.jpg" /><span class="f"><img src="https://av.libreboot.org/hp8200sff/grub_open.jpg" /></span>
+<img tabindex=1 alt="HP Compaq 8200 Elite SFF" class="p" src="https://av.libreboot.org/hp8200sff/grub_open.jpg" /><span class="f"><img src="https://av.libreboot.org/hp8200sff/grub_open.jpg" /></span> <img tabindex=1 title="From left to right: SFF and MT" class="p" src="https://av.libreboot.org/hp8200sff/sff+mt.jpg" /><span class="f"><img src="https://av.libreboot.org/hp8200sff/sff+mt.jpg" /></span>
 </center>
 
 | ***Specifications***      |                                             |
 |---------------------------|---------------------------------------------|
 | **Manufacturer**          | HP                                          |
 | **Name**                  | Compaq 8200 Elite SFF                       |
+|                           | Compaq 8200 Elite MT                        |
 | **Released**              | 2011                                        |
 | **Chipset**               | Intel Q67                                   |
 | **CPU**                   | Intel Sandy/Ivy Bridge                      |
@@ -58,6 +59,10 @@ HP Elite 8200 SFF is a small-form-factor desktop of Intel Sandybridge platform
 which you can read more about here:
 
 <https://support.hp.com/gb-en/product/hp-compaq-8200-elite-small-form-factor-pc/5037931>
+
+MT is an identical board with a larger chassis and more powerful power supply:
+
+<https://support.hp.com/gb-en/product/hp-compaq-8200-elite-desktop-pc-series/5037940>
 
 Here's the [Technical Reference Manual](https://web.archive.org/web/20160109143257/https://h10032.www1.hp.com/ctg/Manual/c02778024.pdf).
 This system supports Ivy Bridge processors too. The original BIOS
@@ -204,11 +209,11 @@ IRC), who tested and confirmed the following functionality:
 * SATA
 * USB ports
 * Serial port (RS-232)
+* Wake on LAN
 
 At the time of adding this board to Libreboot, the following is untested:
 
 * Parallel port (internal header on the board)
-* Wake on LAN
 * Floppy drive. The case has a spot for it, but I can't find the header (P10).
 
 According to the initial coreboot port from 2018, the following also works:
