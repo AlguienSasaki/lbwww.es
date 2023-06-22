@@ -672,6 +672,13 @@ Similar to X230 but there's only 1 flash. Intel ME image must be inserted
 if using release ROMs. See: [guide](ivy_has_common.md) (says ivy/haswell but
 the insert script for ME works with sandybridge aswell).
 
+Refer to assembly/disassembly guide for T420:
+
+[ThinkPad T420 external flashing](t420_external.md) (T420s is very similar)
+
+X220/X220i: disassembly/reassembly very similar to X230. Please refer to
+X230 instructions, but note: X220/X220i has *one* flash chip, not two.
+
 **If using release ROMs, neutered ME must be inserted. Refer to the above
 guide.**
 
