@@ -133,7 +133,7 @@ it can run code, but then it *doesn't actually run code*. It is thus *disabled*.
 
 In other words, a *neutered* Intel ME setup is completely benign, both from a
 software freedom and security perspective. It becomes a useless, unused
-processor, that most people in the real world will ever want to use anyway.
+processor, that most people in the real world will never want to use anyway.
 With this perspective, we see that Intel ME is now entirely inconsequential
 to the average user.
 
