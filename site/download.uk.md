@@ -66,6 +66,7 @@ Libreboot із джерельного кода, [прочитайте цю ст�
 * <https://mirror.koddos.net/libreboot/> (koddos.net, Нідерланди)
 * <https://mirror-hk.koddos.net/libreboot/> (koddos.net, Гонконг)
 * <https://mirror.cyberbits.eu/libreboot/> (cyberbits.eu, Франція)
+* <https://mirror.mangohost.net/libreboot/> (mangohost.net, Moldova)
 
 Дзеркала RSYNC {#rsync}
 -------------
@@ -79,6 +80,7 @@ Libreboot із джерельного кода, [прочитайте цю ст�
 * <rsync://ftp.linux.ro/libreboot/> (linux.ro, Румунія)
 * <rsync://mirror.koddos.net/libreboot/> (koddos.net, Нідерланди)
 * <rsync://mirror-hk.koddos.net/libreboot/> (koddos.net, Гонконг)
+* <rsync://mirror.mangohost.net/libreboot/> (mangohost.net, Moldova)
 
 Ви підтримуєте роботу дзеркала? Зв'яжіться з проектом libreboot, і посилання буде
 додано до цієї сторінки!
