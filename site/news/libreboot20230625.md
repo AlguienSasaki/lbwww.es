@@ -247,14 +247,6 @@ Newest changes first, oldest changes last:
 Hardware supported in this release
 ==================================
 
-### TODO: UPDATE THIS!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-1111
-
-DO NOT PUSH UNTIL THIS IS UPDATED
-
-**TODO: update this**
-
 All of the following are believed to *boot*, but if you have any issues,
 please contact the Libreboot project. They are:
 
