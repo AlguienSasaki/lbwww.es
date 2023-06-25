@@ -137,7 +137,7 @@ Newest changes first, oldest changes last:
 * `util/nvmutil`: Hardened pledge calls, when compiled on OpenBSD.
 * utils: Properly detect OpenBSD, to test whether pledge should be used.
 * board `hp8200sff`: Add 4MB ROM configs, for internal flashing, patch courtesy
-  of Riki Viitanen.
+  of Riku Viitanen.
 * Unified *all* scripts in the main directory of lbmk (build system). All core
   logic is now a *single* script, removing needless code repetition.
 * `download/coreboot` fix: Do not needlessly re-download a given coreboot
