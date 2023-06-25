@@ -15,9 +15,9 @@ on [Libera](https://libera.chat/) IRC.
 
 <img tabindex=1 class="r" src="https://av.libreboot.org/hp9470m/9470m+2560p.jpg" /><span class="f"><img src="https://av.libreboot.org/hp9470m/9470m+2560p.jpg" /></span>
 
-**NEW RELEASE: The latest release is Libreboot 20230423, released on
-23 April 2023.
-See: [Libreboot 20230423 release announcement](news/libreboot20230423.md).**
+**NEW RELEASE: The latest release is Libreboot 20230625, released on
+25 June 2023.
+See: [Libreboot 20230625 release announcement](news/libreboot20230625.md).**
 
 Why should you use *Libreboot*?
 ----------------------------

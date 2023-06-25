@@ -61,9 +61,6 @@ libreboot currently supports the following systems in this release:
 
 ### Laptops (ARM, with U-Boot payload)
 
--   [HP Chromebook 14 G3 (nyan-blaze)](../install/chromebooks.md)
--   [Acer Chromebook 13 (CB5-311, C810) (nyan-big)](../install/chromebooks.md)
--   [Hisense Chromebook C11 and more (veyron-jerry)](../install/chromebooks.md)
 -   [ASUS Chromebook Flip C101 (gru-bob)](../install/chromebooks.md)
 -   [Samsung Chromebook Plus (v1) (gru-kevin)](../install/chromebooks.md)
 
@@ -72,6 +69,9 @@ libreboot currently supports the following systems in this release:
 These boards were in Libreboot, but have been removed with the intention of
 re-adding them at a later date. They were removed due to issues. List:
 
+-   [HP Chromebook 14 G3 (nyan-blaze)](../install/chromebooks.md)
+-   [Acer Chromebook 13 (CB5-311, C810) (nyan-big)](../install/chromebooks.md)
+-   [Hisense Chromebook C11 and more (veyron-jerry)](../install/chromebooks.md)
 -   [Samsung Chromebook 2 13" (peach-pi)](../install/chromebooks.md)
 -   [Samsung Chromebook 2 11" (peach-pit)](../install/chromebooks.md)
 -   [HP Chromebook 11 G1 (daisy-spring)](../install/chromebooks.md)

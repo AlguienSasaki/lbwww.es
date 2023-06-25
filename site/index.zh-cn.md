@@ -7,8 +7,8 @@ x-toc-enable: true
 
 <img tabindex=1 class="r" src="https://av.libreboot.org/hp9470m/9470m+2560p.jpg" /><span class="f"><img src="https://av.libreboot.org/hp9470m/9470m+2560p.jpg" /></span>
 
-**新版发布: 最新版本 Libreboot 20230423 已在 2023 年 4 月 23 日发布。
-详见: [Libreboot 20230423 发布公告](news/libreboot20230423.md).**
+**新版发布: 最新版本 Libreboot 20230625 已在 2023 年 6 月 25 日发布。
+详见: [Libreboot 20230625 发布公告](news/libreboot20230625.md).**
 
 为什么要使用 *Libreboot*?
 ----------------------------

@@ -2,6 +2,11 @@
 % Leah Rowe
 % 20 June 2023
 
+**UPDATE: [Libreboot 20230625 was released](libreboot20230625.md)
+on 25 June 2023, and it contains the change described in the text below.**
+
+**The original article text from 20 June 2023 is as follows:**
+
 As I write this, I'm quite close to providing a new stable release of Libreboot.
 The final push to get it out the door is underway, with round-the-clock build
 testing and general polishing.

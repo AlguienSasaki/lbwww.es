@@ -15,8 +15,8 @@ x-toc-enable: true
 
 <img tabindex=1 class="r" src="https://av.libreboot.org/hp9470m/9470m+2560p.jpg" /><span class="f"><img src="https://av.libreboot.org/hp9470m/9470m+2560p.jpg" /></span>
 
-**НОВИЙ ВИПУСК: Останній випуск Libreboot 20230423, випущено 23 квітня 2023.
-Дивіться: [Оголошення про випуск Libreboot 20230423](news/libreboot20230423.md).**
+**НОВИЙ ВИПУСК: Останній випуск Libreboot 20230625, випущено 25 червня 2023.
+Дивіться: [Оголошення про випуск Libreboot 20230625](news/libreboot20230625.md).**
 
 Чому вам варто використовувати *Libreboot*?
 ----------------------------

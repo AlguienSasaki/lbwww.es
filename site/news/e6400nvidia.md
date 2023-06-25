@@ -8,15 +8,15 @@ Introduction
 ============
 
 [Dell Latitude E6400 *with Intel GMA 4500MHD* graphics](e6400.md) was added, and
-included in the recent Libreboot 20230423 release. *Today*, [experimental
+included in Libreboot release 20230423 or newer. *Today*, [experimental
 support](https://browse.libreboot.org/lbmk.git/log/?h=e6400nvidia_wip) is now
 available for variants with GPU: Nvidia Quadro NVS 160M. The Dell Latitude 6400
 XFR (rugged variant) was also tested today (Intel graphics) and confirmed
-working in Libreboot 20230423.
+working in Libreboot as of release 20230423.
 
-The *Nvidia* variants are *not* supported in Libreboot 20230423. Support is
-available in an experimental branch of Libreboot. 6400 XFR testing+photo
-provided, courtesy Mark Cornick (`mcornick` on Libreboot IRC).
+The *Nvidia* variants are *not* supported in Libreboot 20230423 or 20230625.
+Support is available in an experimental branch of Libreboot. 6400 XFR
+testing+photo provided, courtesy Mark Cornick (`mcornick` on Libreboot IRC).
 
 Dell Latitude E6400 with Nvidia GPU
 ===================================
