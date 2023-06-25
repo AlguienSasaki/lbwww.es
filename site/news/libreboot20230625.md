@@ -18,7 +18,7 @@ Libreboot documentation.
 
 *This* new release, Libreboot 20230625, released today 25 June 2023, is
 a new *stable* release of Libreboot. The previous stable release was
-Libreboot 20220710, released on 10 July 2023.
+Libreboot 20220710, released on 10 July 2022.
 
 A note about the changelog
 --------------------------
