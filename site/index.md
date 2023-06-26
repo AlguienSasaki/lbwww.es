@@ -22,7 +22,7 @@ See: [Libreboot 20230625 release announcement](news/libreboot20230625.md).**
 Why should you use *Libreboot*?
 ----------------------------
 
-Libreboot gives you [freedoms](https://en.wikipedia.org/wiki/Open_source) that
+Libreboot gives you [freedoms](https://writefreesoftware.org/) that
 you otherwise can't get with most other boot firmware, plus faster boot speeds
 and [better security](docs/linux/grub_hardening.md). It's extremely powerful
 and [configurable](docs/maintain/) for many use cases.

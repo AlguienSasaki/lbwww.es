@@ -13,7 +13,7 @@ x-toc-enable: true
 为什么要使用 *Libreboot*?
 ----------------------------
 
-Libreboot 赋予了你[自由](https://en.wikipedia.org/wiki/Open_source)，而这等自由，是你用其他引导固件得不到的。同时，它的启动速度更加快，[安全性也更加高](docs/linux/grub_hardening.md)。在各种情况下使用，它都十分强大，具有高度[可配置性](docs/maintain/)。
+Libreboot 赋予了你[自由](https://writefreesoftware.org/)，而这等自由，是你用其他引导固件得不到的。同时，它的启动速度更加快，[安全性也更加高](docs/linux/grub_hardening.md)。在各种情况下使用，它都十分强大，具有高度[可配置性](docs/maintain/)。
 
 权利在你手上。你拥有隐私权、思想自由、言论自由、阅读权。这时，Libreboot 赋予了你这些权利。你的自由是宝贵的。
 [修理权](https://yewtu.be/watch?v=Npd_xDuNi9k)是宝贵的。

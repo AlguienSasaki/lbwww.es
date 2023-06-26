@@ -19,7 +19,7 @@ le 25 Juin 2023.**
 Pourquoi devriez-vous utiliser *Libreboot*?
 -----------------------------------
 
-Libreboot vous donne des [libertés](https://en.wikipedia.org/wiki/Open_source)
+Libreboot vous donne des [libertés](https://writefreesoftware.org/)
 que nous n'auriez pas autrement avec d'autre micrologiciel de démarrage. Il est
 extremement [puissant](docs/linux/grub_hardening.md)
 et [configurable](docs/maintain) pour  plein de cas d'utilisations.

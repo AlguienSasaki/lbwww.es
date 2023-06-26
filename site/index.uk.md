@@ -21,7 +21,7 @@ x-toc-enable: true
 Чому вам варто використовувати *Libreboot*?
 ----------------------------
 
-Libreboot надає вам [свободи](https://en.wikipedia.org/wiki/Open_source), які в
+Libreboot надає вам [свободи](https://writefreesoftware.org/), які в
 іншому випадку ви не можете отримати з більшістю інших завантажувальних
 прошивок. Він надзвичайно [потужний](docs/linux/grub_hardening.md)
 та [налаштовується](docs/maintain/) для багатьох випадків використання.
