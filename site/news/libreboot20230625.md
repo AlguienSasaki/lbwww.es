@@ -17,12 +17,15 @@ machine. It provides an [automated build system](../docs/maintain/) for the
 ROM images, making coreboot easier to use for non-technical people. You can find
 the [list of supported hardware](../docs/hardware/) in Libreboot documentation.
 
-Libreboot's main benefit is *higher boot speed*, better security and more
-customisation options compared to most proprietary firmware. As a libre software
-project, the code can be audited, and coreboot does regularly audit code. The
-other main benefit is *freedom* to study, adapt and share the code, a freedom
-denied by most boot firmware, but not Libreboot!
-Booting Linux/BSD is also [well](../docs/linux/) [supported](../docs/bsd/).
+Libreboot's main benefit is *higher boot speed*,
+[better](../docs/linux/encryption.md) 
+[security](../docs/linux/grub_hardening.md) and more
+customisation options compared to most proprietary firmware. As a
+[libre](policy.md) software project, the code can be audited, and coreboot does
+regularly audit code. The other main benefit is [*freedom* to study, adapt and
+share the code](https://writefreesoftware.org/), a freedom denied by most boot
+firmware, but not Libreboot! Booting Linux/BSD is also [well](../docs/linux/) 
+[supported](../docs/bsd/).
 
 *This* new release, Libreboot 20230625, released today 25 June 2023, is
 a new *stable* release of Libreboot. The previous stable release was
