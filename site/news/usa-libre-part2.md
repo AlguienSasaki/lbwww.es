@@ -6,7 +6,8 @@ Introduction
 ============
 
 This article makes use of the term *libre software*, which has the same meaning
-as more popular terms such as *open source software* or *free software*
+as more popular terms such as *open source software* 
+or *[free software](https://writefreesoftware.org/)*
 or *free and open source software*. More information can be found about
 it [here](https://en.wikipedia.org/wiki/Open_source) - to the Libreboot
 project, this is important because it talks about your *freedom* to study,

@@ -10,7 +10,8 @@ information about *how those principles are applied in practise*, please read
 this article instead: [Software and hardware freedom status for each mainboard
 supported by Libreboot](../freedom-status.md)
 
-Libreboot's policy is to provide as much software freedom as possible to each
+Libreboot's policy is to provide as much
+[software freedom](https://writefreesoftware.org/) as possible to each
 user, on each and every bit of hardware supported, and to *support as much
 hardware from coreboot as is feasible*; what this means is that you should
 have the potential to study, modify and *share* all source code, documentation
@@ -127,7 +128,8 @@ The principles above should apply to *default* configurations. However, libreboo
 is to be *configurable*, allowing the user to do whatever they like.
 
 It's natural that the user may want to create a setup that is *less* libre than
-the default one in libreboot. This is perfectly acceptable; freedom is superior,
+the default one in libreboot. This is perfectly acceptable;
+[freedom](https://writefreesoftware.org/) is superior,
 and should be encouraged, but the user's *freedom to choose* should also be
 respected, and accomodated.
 

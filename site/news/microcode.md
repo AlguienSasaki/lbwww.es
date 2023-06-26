@@ -24,11 +24,13 @@ will once again be available. Libreboot's [Binary Blob Reduction
 Policy](policy.md) dictates that each mainboard must be provided with as few
 binary blobs as possible, ideally none. *At present*, *all* x86 and ARM
 mainboards supported in Libreboot (in `lbmk.git` and in releases) can boot
-with entirely free software, requiring *zero* blobs of any kind from *coreboot*.
+with entirely [free software](https://writefreesoftware.org/),
+requiring *zero* blobs of any kind from *coreboot*.
 
 The nuance of how Libreboot *implements* this policy is described in
 the [Freedom Status](../freedom-status.md) page. Although coreboot (which
-Libreboot uses for hardware initialisation) *is* a free software project,
+Libreboot uses for hardware initialisation) *is* a
+[free software](https://writefreesoftware.org/) project,
 certain binary blobs are needed on some platforms, for things like raminit
 (memory controller initialisation). Libreboot tries to reduce or eliminate
 these, or mitigate their existence (for example, `me_cleaner` is used on newer

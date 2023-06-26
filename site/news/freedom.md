@@ -4,7 +4,8 @@
 
 Quite a while ago, I [wrote a policy](policy.md) in Libreboot that defines,
 precisely, the standards of what Libreboot will accept in releases as it
-pertains to *Software Freedom*. This policy was written, because a *lack of
+pertains to *[Software Freedom](https://writefreesoftware.org/)*. This policy
+was written, because a *lack of
 clarity* existed, so I wanted to make sure that people knew exactly what the
 Libreboot project is all about, and what they can expect. It is essentially
 a *manifesto*, describing the *ideology* of the Libreboot project.
@@ -23,7 +24,8 @@ Libreboot](../freedom-status.md)
 
 The article describes, in great detail, the current status of licensing for
 various components of Libreboot. It is the *goal* of Libreboot to promote
-*software freedom*, helping as many people as possible achieve a level of
+*[software freedom](https://writefreesoftware.org/)*, helping as many people as
+possible achieve a level of
 sovereignty in their personal computing, reducing (or eliminating) the power
 that proprietary software developers would otherwise have over them. Libreboot
 makes great strides to provide *boot firmware*, based on coreboot, with as much

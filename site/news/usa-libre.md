@@ -21,7 +21,8 @@ parts of this article as though someone who has never heard of Libre Software
 reading it, because I expect precisely that such people *will* read this
 particular article.
 
-When we say libre software, we mean software that gives people the ability to
+When we say libre software, we mean software that gives people the
+[freedom](https://writefreesoftware.org/) to
 freely study, adapt, share, use and re-use all code or documentation, so as to
 enable the free exchange of ideas and, simply speaking, democracy. This is your
 Linux distros, BSD projects, and accompanying software that typically comes

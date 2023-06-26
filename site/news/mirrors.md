@@ -7,7 +7,8 @@ means Libreboot should reach out to as many people as possible. By maintaining
 a presence on *several* websites, it can do just that!
 
 So today, I started making accounts on a few of the more popular Git hosting
-platforms that seem *reasonable* from a software freedom perspective, or are
+platforms that seem *reasonable* from a
+[software freedom](https://writefreesoftware.org/) perspective, or are
 otherwise places where lots of freedom-minded people might see it. These
 mirrors are provided as a *backup*, in case the main Codeberg mirror is ever
 offline for any reason.

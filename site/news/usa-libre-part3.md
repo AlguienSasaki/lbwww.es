@@ -19,7 +19,7 @@ Now, there is another upcoming bill hearing: house bill 556-FN:\
 <https://gencourt.state.nh.us/lsr_search/billText.aspx?id=193&type=4>
 
 It is critical that as many people show up as possible, to defend the bill
-and advance the cause of *software freedom*.
+and advance the cause of *[software freedom](https://writefreesoftware.org/)*.
 
 *New Hampshire residents: In addition to showing up on the day, you can also
 contact your house representative, and ask them to support this bill! This

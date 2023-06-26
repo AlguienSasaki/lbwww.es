@@ -8,7 +8,8 @@ Join us now and flash the firmware!
 You'll be free!
 ---------------
 
-Libreboot is free (as in freedom) boot firmware, which initializes the hardware
+Libreboot is [free](https://writefreesoftware.org/) (as in freedom) boot
+firmware, which initializes the hardware
 (e.g. memory controller, CPU, peripherals) in your computer so that software
 can run. Libreboot then starts a bootloader to load your operating system. It
 replaces the proprietary BIOS/UEFI firmware typically found on a computer.

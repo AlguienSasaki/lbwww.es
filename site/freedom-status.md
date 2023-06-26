@@ -12,7 +12,8 @@ especially that line which says: *"if a blob can be avoided, it must be
 avoided."*
 
 Libreboot uses [coreboot](https://coreboot.org/) for hardware initialisation.
-While coreboot is nominally *free* or *open source* software, on *some* (not
+While coreboot is nominally [*free* or *open source*
+software](https://writefreesoftware.org/), on *some* (not
 all) platforms, coreboot *requires* certain
 [blobs](https://en.wikipedia.org/wiki/Binary_blob)
 for things like raminit. *All* boards currently supported by Libreboot can be
@@ -24,7 +25,8 @@ A more *pragmatic* [binary blobs reduction policy](news/policy.md) was adopted
 by Libreboot during November 2022, as part of an ongoing campaign to support
 more hardware (from coreboot) within Libreboot, so as to provide *many more*
 people with coreboot which, regardless of blob status, *does* provide increased
-software freedom compared to fully proprietary boot firmware which is what most
+[software freedom](https://writefreesoftware.org/) compared to fully proprietary
+boot firmware which is what most
 people would otherwise use; Libreboot's modern policy is thus pragmatic, further
 advancing the cause of *software freedom*.
 
