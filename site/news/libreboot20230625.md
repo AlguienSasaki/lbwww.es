@@ -8,13 +8,14 @@ Introduction
 Libreboot provides boot firmware for supported x86/ARM machines, starting a
 bootloader that then loads your operating system. It replaces proprietary
 BIOS/UEFI firmware on x86 machines, and provides an *improved* configuration
-on ARM-based chromebooks supported (U-Boot bootloader, instead of Google's
-depthcharge bootloader). On x86 machines, the GRUB and SeaBIOS coreboot
+on [ARM-based chromebooks](../docs/install/chromebooks.html) supported
+(U-Boot bootloader, instead of Google's depthcharge bootloader). On x86
+machines, the GRUB and SeaBIOS coreboot
 payloads are officially supported, provided in varying configurations per
-machine. It provides an automated build system for the configuration and
-installation of coreboot ROM images, making coreboot easier to use for
-non-technical people. You can find the list of supported hardware in the
-Libreboot documentation.
+machine. It provides an [automated build system](../docs/maintain/) for the
+[configuration](../docs/build/) and [installation](../docs/install/) of coreboot
+ROM images, making coreboot easier to use for non-technical people. You can find
+the [list of supported hardware](../docs/hardware/) in Libreboot documentation.
 
 Libreboot's main benefit is *higher boot speed*, better security and more
 customisation options compared to most proprietary firmware. As a libre software
