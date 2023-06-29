@@ -56,7 +56,8 @@ New mainboards now supported:
 
 These boards were added to Libreboot:
 
-* Laptop: HP EliteBook 2570p (courtesy Riku Viitanen)
+* Laptop: HP EliteBook 2570p (courtesy Riku Viitanen and Johan Ehnberg
+  `johan@molnix.com`)
 * Desktop: HP 8300 USDT (courtesy Riku Viitanen, who *also* ported this
   to coreboot)
 * Desktop: Gigabyte GA-G41M-ES2L was *re-added*, having been previously
