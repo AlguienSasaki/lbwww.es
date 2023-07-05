@@ -299,7 +299,9 @@ Problems with FSDG
 <img tabindex=1 src="https://av.libreboot.org/firmware.png" /><span class="f"><img src="https://av.libreboot.org/firmware.png" /></span>
 
 The FSF maintains another set of criteria, dubbed Free System Distribution
-Guidelines (GNU FSDG)]
+Guidelines (GNU FSDG)]. They recommend a special version of the Linux kernel,
+dubbed *linux-libre*, which removes all firmware blobs from upstream. These
+firmware blobs are required for certain hardware to work correctly.
 
 The FSDG criteria is separate from RYF, but has similar problems. FSDG is
 what the FSF-endorsed GNU+Linux distros comply with. Basically, it bans
@@ -360,7 +362,10 @@ their `fw_update` program which you can read about here:
 because new users of GNU+Linux might be discouraged from using the OS if their
 hardware doesn't work. You might say: just buy new hardware! This is often not
 possible for users, and the user might not have the skill to reverse engineer
-it either.
+it either. Banning such firmware constitutes *censorship*, in the name of
+freedom, but all it does is reduce freedom of choice; somebody else has already
+made that decision for you, *against* you. You should not use linux-libre at
+all.
 
 More detailed insight about microcode
 =====================================
