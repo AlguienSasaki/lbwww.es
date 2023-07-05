@@ -306,7 +306,16 @@ firmware blobs are required for certain hardware to work correctly.
 The FSDG criteria is separate from RYF, but has similar problems. FSDG is
 what the FSF-endorsed GNU+Linux distros comply with. Basically, it bans
 all proprietary software, including device firmware. This may seem noble, but
-it's extremely problematic in the context of firmware. Food for thought:
+it's extremely problematic in the context of firmware. 
+
+*Banning* linux-firmware specifically is a threat to freedom in the long term,
+because new users of GNU+Linux might be discouraged from using the OS if their
+hardware doesn't work. You might say: just buy new hardware! This is often not
+possible for users, and the user might not have the skill to reverse engineer
+it either. **Banning such firmware constitutes *censorship*, in the name of
+freedom, but all it does is reduce freedom of choice; somebody else has already
+made that decision for you, *against* you.** You should not use linux-libre at
+all. Some wisdom:
 
 * Excluding firmware blobs in the linux kernel is *bad*. Proprietary firmware
   is *also bad*. Including them is a wiser choice, if strong education is also
@@ -324,7 +333,9 @@ it's extremely problematic in the context of firmware. Food for thought:
   to hide the firmware instead, making actual (software) freedom less likely!*
 
 Besides this, FSDG seems OK. Any libre operating system should ideally not
-have proprietary *drivers* or *applications*.
+have proprietary *drivers* or *applications*. Libreboot *previously* adhered
+to FSDG, but now takes a more pragmatic approach when it comes to things like
+CPU microcode or *EC firmware*.
 
 Hardware manufacturers like to shove everything into firmware because their
 product is often poorly designed, so they later want to provide workarounds in
@@ -358,14 +369,7 @@ their `fw_update` program which you can read about here:
 
 <https://man.openbsd.org/fw_update>
 
-*Banning* linux-firmware specifically is a threat to freedom in the long term,
-because new users of GNU+Linux might be discouraged from using the OS if their
-hardware doesn't work. You might say: just buy new hardware! This is often not
-possible for users, and the user might not have the skill to reverse engineer
-it either. Banning such firmware constitutes *censorship*, in the name of
-freedom, but all it does is reduce freedom of choice; somebody else has already
-made that decision for you, *against* you. You should not use linux-libre at
-all.
+OpenBSD is great.
 
 More detailed insight about microcode
 =====================================
