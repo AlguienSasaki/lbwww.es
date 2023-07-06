@@ -4,13 +4,12 @@ x-toc-enable: true
 ...
 
 The *Libreboot* project provides
-[libre](freedom-status.md) *boot
-firmware* that initializes the hardware (e.g. memory controller, CPU,
-peripherals) on [specific Intel/AMD x86 and ARM targets](docs/hardware/), which
-then starts a bootloader for your operating system. [Linux](docs/linux/)
-and [BSD](docs/bsd/) are well-supported. It replaces proprietary BIOS/UEFI
-firmware. Help is available
-via [\#libreboot](https://web.libera.chat/#libreboot)
+[free, open source](freedom-status.md) (*libre*) boot
+firmware, replacing proprietary BIOS/UEFI firmware on [specific Intel/AMD x86
+and ARM targets](docs/hardware/). It initialises the hardware (e.g. memory
+controller, CPU, peripherals) and starts a bootloader for your operating
+system. [Linux](docs/linux/) and [BSD](docs/bsd/) are well-supported. Help is
+available via [\#libreboot](https://web.libera.chat/#libreboot)
 on [Libera](https://libera.chat/) IRC.
 
 <img tabindex=1 class="r" src="https://av.libreboot.org/hp9470m/9470m+2560p.jpg" /><span class="f"><img src="https://av.libreboot.org/hp9470m/9470m+2560p.jpg" /></span>
