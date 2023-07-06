@@ -11,6 +11,24 @@ x-toc-enable: true
 Libreboot складається разом, і як підтримувати його. Якщо ви бажаєте зібрати
 Libreboot із джерельного кода, [прочитайте цю сторінку](docs/build/).
 
+READ THIS BEFORE UPDATING LIBREBOOT, OR YOU MIGHT BRICK YOUR MACHINE
+====================================================================
+
+**On newer Intel platforms that require Intel ME and/or MRC firmware, such as
+ThinkPad X230 or T440p, and/or HP laptops that require KBC1126 EC firmware,
+the release ROMs of Libreboot are MISSING certain files, that you must insert
+yourself. FAILURE to adhere to this warning may result in you bricking your
+machine (rendering it unbootable), if you were to flash the release ROMs without
+modifying them in any way. For more information, please read:**
+
+**[Insert binary blobs on Sandybridge/Ivybridge/Haswell](docs/install/ivy_has_common.md)**
+
+NOTE: This warning does not apply to ROMs that you compiled yourself, using
+lbmk. It only applies to release ROMs, because ME/MRC/EC firmware is *deleted*
+in release ROMs. The link above says how to re-add them. When building ROM images
+yourself, from source, Libreboot's build system automatically handles it. See:
+[Libreboot build instructions](docs/build/)
+
 Код підпису GPG
 ---------------
 
