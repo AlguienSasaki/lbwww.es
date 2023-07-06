@@ -73,6 +73,15 @@ You must patch the release rom with the necessary blobs *and then* flash it to y
 Lbmk includes a script that will automatically inject the necessary blobs into a rom file.
 The script can determine the board automatically if you have not changed the name, but you can also manually set the board name with the `-b` flag.
 
+You must determine the correct board name, for your board, based on the list
+generated when running this command:
+
+	./build boot roms list
+
+For example, `t440pmrc_12mb` corresponds to ThinkPad T440p with MRC firmware.
+Whereas `t440plibremrc_12mb` corresponds to T440p with libre MRC firmware.
+Another example: `x230_12mb` corresponds to Thinkpad X230.
+
 In order to inject the necessary blobs into a rom image, run the script from the root of lbmk and point to the rom image.
 
 If you only wish to flash a release rom then the process of injecting the necessary blobs is quite simple.

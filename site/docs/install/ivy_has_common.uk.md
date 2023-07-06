@@ -74,6 +74,15 @@ Lbmk включає сценарій, який автоматично введе
 Сценарій може визначити плату в автоматичному режимі, якщо ви не змінили ім'я, але ви можете також встановити
 ім'я плати самостійно з використанням флага `-b`.
 
+You must determine the correct board name, for your board, based on the list
+generated when running this command:
+
+	./build boot roms list
+
+For example, `t440pmrc_12mb` corresponds to ThinkPad T440p with MRC firmware.
+Whereas `t440plibremrc_12mb` corresponds to T440p with libre MRC firmware.
+Another example: `x230_12mb` corresponds to Thinkpad X230.
+
 В порядку для введення необхідних блобів в образ rom, виконайте сценарій з кореня lbmk та вкажіть на образ rom.
 Наприклад:
 
