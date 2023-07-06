@@ -26,7 +26,7 @@ NOTE: This warning does not apply to ROMs that you compiled yourself, using
 lbmk. It only applies to release ROMs, because ME/MRC/EC firmware is *deleted*
 in release ROMs. The link above says how to re-add them. When building ROM images
 yourself, from source, Libreboot's build system automatically handles it. See:
-[Libreboot build instructions](docs/build/)
+[Libreboot build instructions](../build/)
 
 PRECAUTIONS
 ===========
