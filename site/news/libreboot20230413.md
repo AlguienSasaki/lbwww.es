@@ -30,6 +30,22 @@ existing supported hardware; the focus is going to be on adding *more* boards
 to Libreboot, to support more hardware. I've been on a spree, buying lots of
 mainboards that coreboot supports, that would be interesting in Libreboot.
 
+READ THIS BEFORE FLASHING LIBREBOOT, OR YOU MIGHT BRICK YOUR MACHINE
+====================================================================
+
+**On newer Intel platforms that require Intel ME and/or MRC firmware, such as
+ThinkPad X230 or T440p, and/or HP laptops that require KBC1126 EC firmware,
+the release ROMs of Libreboot are MISSING certain files, that you must insert
+yourself. FAILURE to adhere to this warning may result in you bricking your
+machine (rendering it unbootable), if you were to flash the release ROMs without
+modifying them in any way. For more information, please read:**
+
+**[Insert binary blobs on Sandybridge/Ivybridge/Haswell](../docs/install/ivy_has_common.md)**
+
+This isn't required on *all* Libreboot-supported boards, but if in doubt, follow
+these instructions anyway. If you run `blobutil` on a board that doesn't need
+blobs, nothing will happen.
+
 Build from source
 -----------------
 

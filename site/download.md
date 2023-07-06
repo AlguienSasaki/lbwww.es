@@ -29,6 +29,10 @@ in release ROMs. The link above says how to re-add them. When building ROM image
 yourself, from source, Libreboot's build system automatically handles it. See:
 [Libreboot build instructions](docs/build/)
 
+This isn't required on *all* Libreboot-supported boards, but if in doubt, follow
+these instructions anyway. If you run `blobutil` on a board that doesn't need
+blobs, nothing will happen.
+
 GPG signing key
 ---------------
 
