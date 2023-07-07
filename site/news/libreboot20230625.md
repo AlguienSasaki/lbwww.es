@@ -2,6 +2,9 @@
 % Leah Rowe
 % 25 June 2023
 
+**PLEASE READ THIS BEFORE INSTALLING:
+[Safety issues updating Libreboot on Sandybridge/Ivybridge/Haswell](safety.md)**
+
 Introduction
 ============
 

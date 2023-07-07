@@ -9,6 +9,9 @@ in 2022. *This* new release, Libreboot 20221214, is released today on December
 This is marked as a *testing* release, but most/all boards should be fairly
 stable.
 
+**PLEASE READ THIS BEFORE INSTALLING:
+[Safety issues updating Libreboot on Sandybridge/Ivybridge/Haswell](safety.md)**
+
 READ THIS BEFORE FLASHING LIBREBOOT, OR YOU MIGHT BRICK YOUR MACHINE
 ====================================================================
 

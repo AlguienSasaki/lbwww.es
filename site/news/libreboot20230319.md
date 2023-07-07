@@ -7,6 +7,9 @@ See: [Libreboot 20230413 release announcement of 13
 April 2023](libreboot20230413.md) - the `t440pmrc_12mb` and `w541mrc_12mb`
 images have been re-added, in the new release.**
 
+**PLEASE READ THIS BEFORE INSTALLING:
+[Safety issues updating Libreboot on Sandybridge/Ivybridge/Haswell](safety.md)**
+
 Introduction
 ============
 
