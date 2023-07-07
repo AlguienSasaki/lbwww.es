@@ -3,6 +3,9 @@ title: Generic SPI Flashing Guide
 x-toc-enable: true
 ...
 
+**[PLEASE READ THESE INSTRUCTIONS BEFORE INSTALLING](../../news/safety.md),
+OR YOU MIGHT BRICK YOUR MACHINE: [SAFETY PRECAUTIONS](../../news/safety.md)**
+
 There are a plethora of single board computers with which you can flash libreboot to a SOIC chip.
 Some users might be daunted by the price of a raspberry pi.
 This guide is intended to help users looking to use a programmer which is not listed in the [main guide.](spi.md)

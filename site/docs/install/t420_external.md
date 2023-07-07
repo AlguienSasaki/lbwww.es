@@ -3,6 +3,9 @@ title: ThinkPad T420 external flashing
 x-toc-enable: true
 ...
 
+**[PLEASE READ THESE INSTRUCTIONS BEFORE INSTALLING](../../news/safety.md),
+OR YOU MIGHT BRICK YOUR MACHINE: [SAFETY PRECAUTIONS](../../news/safety.md)**
+
 Read the [Ivybridge/Haswell common guide](/docs/install/ivy_has_common.html) if you want more information. Please note, for Thinkpad T420, splitting the rom is not required.
 The following instructions expect you to have these on hand:
 

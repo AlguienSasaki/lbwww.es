@@ -3,6 +3,9 @@ title: Read/write 25XX NOR flash via SPI protocol
 x-toc-enable: true
 ...
 
+**[PLEASE READ THESE INSTRUCTIONS BEFORE INSTALLING](../../news/safety.md),
+OR YOU MIGHT BRICK YOUR MACHINE: [SAFETY PRECAUTIONS](../../news/safety.md)**
+
 This guide will teach you how to use various tools for externally reprogramming
 a 25xx NOR flash via SPI protocol. This is the most common type of flash IC for
 computers that coreboot runs on. Almost every system currently supported by

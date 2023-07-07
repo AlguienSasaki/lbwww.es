@@ -690,8 +690,20 @@ sandybridge/ivybridge/haswell
 **If using release ROMs, neutered ME must be inserted. Refer to the info
 below.**
 
+HP laptops AND desktops (all of them)
+-------------------------------------
+
+**[PLEASE READ THESE INSTRUCTIONS BEFORE INSTALLING](../../news/safety.md),
+OR YOU MIGHT BRICK YOUR MACHINE: [SAFETY PRECAUTIONS](../../news/safety.md)**
+
+Refer to links about and the [hardware page](../hardware/) for installation
+instructions on each HP mainboard.
+
 TARGET: ThinkPad X220/T420/T420s
 --------------------------------
+
+**[PLEASE READ THESE INSTRUCTIONS BEFORE INSTALLING](../../news/safety.md),
+OR YOU MIGHT BRICK YOUR MACHINE: [SAFETY PRECAUTIONS](../../news/safety.md)**
 
 Similar to X230 but there's only 1 flash. Intel ME image must be inserted
 if using release ROMs. See: [guide](ivy_has_common.md) (says ivy/haswell but
@@ -710,6 +722,9 @@ guide.**
 TARGET: Thinkpad X230/T430/T530/W530
 ---------------------
 
+**[PLEASE READ THESE INSTRUCTIONS BEFORE INSTALLING](../../news/safety.md),
+OR YOU MIGHT BRICK YOUR MACHINE: [SAFETY PRECAUTIONS](../../news/safety.md)**
+
 NOTE: no install docs for T430/T530/W530 yet, but check coreboot wiki.
 
 NOTE: Internal flashing is also possible, on this machine, from vendor firmware,
@@ -725,6 +740,9 @@ Read [board documentation](/docs/install/x230_external.html) for disassembly.
 TARGET: Thinkpad X230t
 ---------------------
 
+**[PLEASE READ THESE INSTRUCTIONS BEFORE INSTALLING](../../news/safety.md),
+OR YOU MIGHT BRICK YOUR MACHINE: [SAFETY PRECAUTIONS](../../news/safety.md)**
+
 Refer to the [ivybridge/haswell common guide.](ivy_has_common.md) for how to
 make the rom image usable for external flashing.
 
@@ -737,6 +755,9 @@ guide.**
 
 TARGET: Thinkpad t440p/w541
 ---------------------
+
+**[PLEASE READ THESE INSTRUCTIONS BEFORE INSTALLING](../../news/safety.md),
+OR YOU MIGHT BRICK YOUR MACHINE: [SAFETY PRECAUTIONS](../../news/safety.md)**
 
 Refer to the [ivybridge/haswell common guide.](ivy_has_common.md) for how to
 make the rom image usable for external flashing.

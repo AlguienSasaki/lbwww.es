@@ -3,6 +3,9 @@ title: HP Elite 8200 SFF/MT and 6200 Pro Business
 x-toc-enable: true
 ...
 
+**[PLEASE READ THESE INSTRUCTIONS BEFORE INSTALLING](../../news/safety.md),
+OR YOU MIGHT BRICK YOUR MACHINE: [SAFETY PRECAUTIONS](../../news/safety.md)**
+
 <div class="specs">
 <center>
 <img tabindex=1 alt="HP Compaq 8200 Elite SFF" class="p" src="https://av.libreboot.org/hp8200sff/grub_open.jpg" /><span class="f"><img src="https://av.libreboot.org/hp8200sff/grub_open.jpg" /></span> <img tabindex=1 title="From left to right: SFF and MT" class="p" src="https://av.libreboot.org/hp8200sff/sff+mt.jpg" /><span class="f"><img src="https://av.libreboot.org/hp8200sff/sff+mt.jpg" /></span>

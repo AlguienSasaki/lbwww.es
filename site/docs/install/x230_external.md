@@ -3,6 +3,9 @@ title: ThinkPad X230/X230T external flashing
 x-toc-enable: true
 ...
 
+**[PLEASE READ THESE INSTRUCTIONS BEFORE INSTALLING](../../news/safety.md),
+OR YOU MIGHT BRICK YOUR MACHINE: [SAFETY PRECAUTIONS](../../news/safety.md)**
+
 NOTE: Internal flashing (from vendor firmware) to Libreboot is possible, on
 this board, but the steps are a bit more complex than using an external flasher.
 See: [internal ivybridge flashing](ivy_internal.md)

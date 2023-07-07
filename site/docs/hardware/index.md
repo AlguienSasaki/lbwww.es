@@ -3,6 +3,9 @@ title: Hardware compatibility list
 x-toc-enable: true
 ...
 
+**[PLEASE READ THESE INSTRUCTIONS BEFORE INSTALLING](../../news/safety.md),
+OR YOU MIGHT BRICK YOUR MACHINE: [SAFETY PRECAUTIONS](../../news/safety.md)**
+
 This sections relates to known hardware compatibility in libreboot.
 
 For installation instructions, refer to [../install/](../install/).

@@ -3,6 +3,9 @@ title: HP Compaq Elite 8300 USDT
 x-toc-enable: true
 ...
 
+**[PLEASE READ THESE INSTRUCTIONS BEFORE INSTALLING](../../news/safety.md),
+OR YOU MIGHT BRICK YOUR MACHINE: [SAFETY PRECAUTIONS](../../news/safety.md)**
+
 <div class="specs">
 <center>
 <img tabindex=1 alt="HP Compaq Elite 8300 USDT" class="p" src="https://av.libreboot.org/hp8300usdt/hp8300usdt.jpg" /><span class="f"><img src="https://av.libreboot.org/hp8300usdt/hp8300usdt.jpg" /></span>

@@ -3,6 +3,9 @@ title: ThinkPad T440p external flashing
 x-toc-enable: true
 ...
 
+**[PLEASE READ THESE INSTRUCTIONS BEFORE INSTALLING](../../news/safety.md),
+OR YOU MIGHT BRICK YOUR MACHINE: [SAFETY PRECAUTIONS](../../news/safety.md)**
+
 Read the [Ivybridge/Haswell common guide](/docs/install/ivy_has_common.html) if you want more information.
 All of the following instructions assume that you've cloned lbmk and are operating from the
 root of that project. To do so, run
