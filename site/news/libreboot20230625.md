@@ -332,3 +332,26 @@ Downloads
 You can find this release on the downloads page. At the time of this
 announcement, some of the rsync mirrors may not have it yet, so please check
 another one if your favourite one doesn't have it.
+
+Post-release errata
+===================
+
+When building ROM images from the release archives, the following error
+is observed in some cases, depending on distro:
+
+```
+In file included from src/lib/version.c:4:
+build/build.h:10:32: error: 'libreboot' undeclared here (not in a function)
+   10 | #define COREBOOT_MAJOR_VERSION libreboot-20230625
+      |                                ^~~~~~~~~
+src/lib/version.c:35:46: note: in expansion of macro 'COREBOOT_MAJOR_VERSION'
+   35 | const unsigned int coreboot_major_revision = COREBOOT_MAJOR_VERSION;
+      |                                              ^~~~~~~~~~~~~~~~~~~~~~
+```
+
+This happened when a user tried to build for ThinkPad W541 on an Arch Linux
+system. The fix is available here:
+
+<https://browse.libreboot.org/lbmk.git/patch/?id=f34e07ae27e3e6e8508cdebcbd09fdf73fca302d>
+
+Apply this patch to your local release archive, and it should fix the issue.
