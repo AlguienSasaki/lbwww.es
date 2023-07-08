@@ -312,7 +312,8 @@ it's extremely problematic in the context of firmware.
 because new users of GNU+Linux might be discouraged from using the OS if their
 hardware doesn't work. You might say: just buy new hardware! This is often not
 possible for users, and the user might not have the skill to reverse engineer
-it either. **Banning such firmware constitutes *censorship*, in the name of
+it either. **Banning such firmware constitutes
+*[censorship](https://en.wikipedia.org/wiki/Book_burning)*, in the name of
 freedom, but all it does is reduce freedom of choice; somebody else has already
 made that decision for you, *against* you.** You should not use linux-libre at
 all. Some wisdom:
