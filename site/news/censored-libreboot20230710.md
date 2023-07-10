@@ -265,7 +265,7 @@ Libreboot would be like, had it kept the old policy. The website for Censored
 Libreboot has its *own* version of this release announcement, with only this
 censored version of the changelog present. You can view that here:
 
-<https://censored.libreboot.org/news/censored-libreboot20230710.md>
+<https://censored.libreboot.org/news/censored-libreboot20230710.html>
 
 The following changelogs cherry-pick only the old-policy-compliant changes
 from the above listed Libreboot release announcements:
