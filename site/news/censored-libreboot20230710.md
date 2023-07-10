@@ -380,9 +380,16 @@ Hardware supported in Censored Libreboot c20230710
 All of the following are believed to *boot*, but if you have any issues,
 please contact the Libreboot project. They are:
 
+Servers (AMD, x86)
+------------------
+
+-   [ASUS KGPE-D16 motherboard](../docs/hardware/kgpe-d16.md)
+-   [ASUS KFSN4-DRE motherboard](../docs/hardware/kfsn4-dre.md)
+
 Desktops (AMD, Intel, x86)
 -----------------------
 
+-   [ASUS KCMA-D8 motherboard](../docs/hardware/kcma-d8.md)
 -   [Gigabyte GA-G41M-ES2L motherboard](../docs/hardware/ga-g41m-es2l.md)
 -   [Acer G43T-AM3](../docs/hardware/acer_g43t-am3.md)
 -   [Intel D510MO and D410PT motherboards](../docs/hardware/d510mo.md)
