@@ -25,6 +25,10 @@ here:
 * lbmk (Libreboot build system): <https://codeberg.org/libreboot/lbmk/src/branch/fsdg20230625>
 * lbwww (Libreboot website): <https://codeberg.org/libreboot/lbwww/src/branch/c20230710>
 
+**NOTE: this page lists *code changes* in Censored Libreboot. For *website* and
+*documentation* changes, please read the following document:
+<https://censored.libreboot.org/censorship.html>**
+
 Introduction
 ============
 
@@ -139,6 +143,10 @@ these boards there, *after* I've integrated the Dasharo version of coreboot.
 
 Uncensored changelog, relative to Libreboot 20230625
 ====================================================
+
+**NOTE: this page lists *code changes* in Censored Libreboot. For *website* and
+*documentation* changes, please read the following document:
+<https://censored.libreboot.org/censorship.html>**
 
 You can actually view the changes yourself, in great detail, by looking at
 these special branches of `lbmk.git` (build system) and `lbwww.git` (Libreboot
