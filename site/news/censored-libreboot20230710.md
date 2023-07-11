@@ -18,9 +18,9 @@ present in Libreboot releases prior to the new policy's introduction.**
 occured. It provides a glimpse into a parallel reality, showing what state the
 Libreboot project would be in otherwise. I did it on a whim, for fun, *and I
 did it in two days, from scratch*. Not 8 months. 2 days. **I even made a website
-for this Libreboot release, here: <https://censored.libreboot.org/>** - the
-actual [Git](https://git-scm.com/) branches for Censored Libreboot can be found
-here:
+for this Libreboot release, here: <https://censored.libreboot.org/>**.
+
+The exact changes that created this Censored Libreboot release can be found here:
 
 * lbmk (Libreboot build system): <https://codeberg.org/libreboot/lbmk/commits/branch/fsdg20230625>
 * lbwww (Libreboot website): <https://codeberg.org/libreboot/lbwww/commits/branch/c20230710>
