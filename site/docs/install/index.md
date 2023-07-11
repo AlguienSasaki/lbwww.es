@@ -690,7 +690,7 @@ sandybridge/ivybridge/haswell
 **If using release ROMs, neutered ME must be inserted. Refer to the info
 below.**
 
-HP laptops AND desktops (all of them)
+On currently supported HP laptops AND desktops
 -------------------------------------
 
 **[PLEASE READ THESE INSTRUCTIONS BEFORE INSTALLING](../../news/safety.md),
