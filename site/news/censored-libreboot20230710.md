@@ -22,8 +22,8 @@ for this Libreboot release, here: <https://censored.libreboot.org/>** - the
 actual [Git](https://git-scm.com/) branches for Censored Libreboot can be found
 here:
 
-* lbmk (Libreboot build system): <https://codeberg.org/libreboot/lbmk/src/branch/fsdg20230625>
-* lbwww (Libreboot website): <https://codeberg.org/libreboot/lbwww/src/branch/c20230710>
+* lbmk (Libreboot build system): <https://codeberg.org/libreboot/lbmk/commits/branch/fsdg20230625>
+* lbwww (Libreboot website): <https://codeberg.org/libreboot/lbwww/commits/branch/c20230710>
 
 **NOTE: this page lists *code changes* in Censored Libreboot. For *website* and
 *documentation* changes, please read the following document:
