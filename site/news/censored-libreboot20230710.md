@@ -14,6 +14,9 @@ The exact changes that created this Censored Libreboot release can be found here
 * lbmk (Libreboot build system): <https://codeberg.org/libreboot/lbmk/commits/branch/fsdg20230625>
 * lbwww (Libreboot website): <https://codeberg.org/libreboot/lbwww/commits/branch/c20230710>
 
+There is an entire version of the Libreboot site, made specifically for this
+release: <https://censored.libreboot.org/>
+
 Introduction
 ============
 
