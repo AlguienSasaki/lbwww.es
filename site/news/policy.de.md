@@ -2,6 +2,10 @@
 % Leah Rowe
 % 4 January 2022 (updated 15 November 2022)
 
+The [Censored Libreboot c20230710 release](censored-libreboot20230710.md)
+release provides a clear example as to the merits of this policy, by showing
+what Libreboot would be if it *didn't* adopt this policy.
+
 Einleitung
 ============
 
