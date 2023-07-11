@@ -5,20 +5,9 @@
 Warning
 =======
 
-**This is *not* a regular Libreboot release. The [Libreboot
-20230625](libreboot20230625.md) release is still considered to be the official
-stable release, at this time. *This* release, that you will read about now,
-the *Censored Libreboot c20230710* release, is provided to illustrate a point,
-serving as a proof of concept to support the merits of Libreboot's [Binary
-Blob Reduction Policy](policy.md). You are well-advised *not* to use today's
-release, because it intentionally re-introduces certain flaws that were
-present in Libreboot releases prior to the new policy's introduction.**
-
-*This* release is engineered under the assumption that the policy change never
-occured. It provides a glimpse into a parallel reality, showing what state the
-Libreboot project would be in otherwise. I did it on a whim, for fun, *and I
-did it in two days, from scratch*. Not 8 months. 2 days. **I even made a website
-for this Libreboot release, here: <https://censored.libreboot.org/>**.
+**This release is *not* recommended for general use. You should still use the
+recent [Libreboot 20230625](libreboot20230625.md) release, which is the
+current stable release.**
 
 The exact changes that created this Censored Libreboot release can be found here:
 
@@ -67,13 +56,6 @@ blobs have; for example, it automatically uses `me_cleaner` during build time,
 to [disable Intel ME](https://github.com/corna/me_cleaner/wiki/How-does-it-work%3F)
 after bringup, on newer Intel platforms that require Intel ME.
 
-You can find out about the current status of binary blobs, on the [Freedom
-Status](../freedom-status.md) page. It describes how Libreboot policy is
-implemented, in great detail.
-
-About this release
-------------------
-
 *This* new release, Censored Libreboot c20230710, released today 10 July 2023,
 is a special spin-off of Libreboot based on the [20230625
 release](libreboot20230625.md), provided as a proof of concept; it shows what
@@ -83,17 +65,9 @@ has been *removed* (censored), in this version, hence the name: *Censored
 Libreboot*. More information available here:
 <https://censored.libreboot.org/censorship.html>
 
-**This version of Libreboot was not created from the `master` branch of lbmk, but
-this special branch: `fsdg20230625`. There is a *website* for this version,
-hosted at <https://censored.libreboot.org/> and the branch of `lbwww.git`
-for *that* is `c20230710`**
-
-This release is *not* recommended for general use. You should still use the
-[Libreboot 20230625](libreboot20230625.md) release. This *censored* release is
-a proof of concept, made to provide a concrete example of the sort of thing the
-new Libreboot policies are opposed to, so as to provide a clearer understanding.
-In order to so do, an actual release *must* be provided. People need to see
-evidence/examples, and this release provides that.
+You can find out about the current status of binary blobs, on the [Freedom
+Status](../freedom-status.md) page. It describes how Libreboot policy is
+implemented, in great detail.
 
 A note about the changelog
 --------------------------
