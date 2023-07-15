@@ -58,9 +58,13 @@ Untested (and likely don't work):
 
 ## Internal flashing
 
-Internal flashing is possible and very simple on this board:
+Internal flashing is possible. OEM BIOS versions 2.87 and 2.90 are confirmed
+compatible with this guide. BIOS 2.05 is confirmed **not** to work.
 
-First, make sure the computer is powered off. Remove the top cover.
+If you have some other BIOS version, please do tell about it on
+[IRC](https://libreboot.org/contact.html) or comment on this
+[issue](https://codeberg.org/libreboot/lbwww/issues/73),
+so this guide can be updated.
 
 The jumper labelled "FDO" (for Flash Descriptor Override) needs to be shorted.
 That removes all write protections on this board.
