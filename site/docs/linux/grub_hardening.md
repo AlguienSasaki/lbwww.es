@@ -34,8 +34,8 @@ for coreboot file system and it is what we will focus on in this article).
 We will be using this functionality to verify the signature of a Linux kernel,
 at boot time. In conjunction with reproducible builds (both libreboot and your
 Linux kernel), this can greatly improve system security; Debian is an excellent
-example of a Linux distribution that is fully reproducible nowadays (in
-stable releases).
+example of a project striving towards this goal; see:
+<https://wiki.debian.org/ReproducibleBuilds>
 
 For your reference: a reproducible build is one where, given a precise (and
 well documented) development setup, the exact same binary can be produced each
