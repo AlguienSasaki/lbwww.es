@@ -113,7 +113,7 @@ supports them. This requires you to open one torx screw in total.
 
 The SOIC-16 flash chip is located on the edge of the board
 near the group of yellow cubes. Follow the
-[general SPI flashing guide](http://localhost:8080/docs/install/spi.html).
+[general SPI flashing guide](../install/spi.html).
 
 ![](https://av.libreboot.org/hp8300usdt/chip+header.jpg)
 
