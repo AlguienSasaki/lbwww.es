@@ -5,7 +5,7 @@
 Introduction
 ============
 
-[Libreboot 20220710](libreboot20220710.md) was the last release to officially
+[Libreboot 20211122](libreboot20211122.md) was the last release to officially
 support these boards: ASUS KFSN4-DRE, KCMA-D8 and KGPE-D16; they were removed
 shortly, shortly after that release was announced, in subsequent revisions
 of `lbmk.git`.
@@ -21,10 +21,10 @@ release of Libreboot.
 It was implemented with this patch:
 <https://browse.libreboot.org/lbmk.git/commit/?id=af084014f04602f570a23b0cc23a112401348faf>
 
-Differences now, versus Libreboot 20220710
+Differences now, versus Libreboot 20211122
 ------------------------------------------
 
-The following changes have been made, relative to Libreboot 20220710:
+The following changes have been made, relative to Libreboot 20211122:
 
 * Coreboot `4.11_branch` (branch) used, instead of regular `4.11` (release tag).
   This contains many fixes on top of the original Coreboot 4.11 release that
@@ -47,7 +47,7 @@ The following changes have been made, relative to Libreboot 20220710:
   [building older Gnat with newer host
   Gnat](https://gcc.gnu.org/install/prerequisites.html)
 
-The PIKE2008 fix from Libreboot 20220710 was retained, and it is included in
+The PIKE2008 fix from Libreboot 20211122 was retained, and it is included in
 today's change. This inserts an empty option ROM in CBFS, without which SeaBIOS
 would hang; the empty option ROM prevents SeaBIOS from loading the real one.
 
@@ -69,7 +69,7 @@ priority is to have support for these boards again in Libreboot.
 The previous news announcement said that I would only add these boards after
 doing that, but I felt this work is worthy enough for entry in the main branch
 of Libreboot. Any issues that it has will be similar to what was present in the
-Libreboot 20220710 release (Dasharo made a lot of improvements, especially to
+Libreboot 20211122 release (Dasharo made a lot of improvements, especially to
 raminit).
 
 I would like it if people can provide testing for all of these boards, in
