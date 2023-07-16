@@ -7,8 +7,7 @@ Introduction
 
 [Libreboot 20211122](libreboot20211122.md) was the last release to officially
 support these boards: ASUS KFSN4-DRE, KCMA-D8 and KGPE-D16; they were removed
-shortly, shortly after that release was announced, in subsequent revisions
-of `lbmk.git`.
+much later, in subsequent releases.
 
 I'm pleased to announce that they have, today, been re-added to `lbmk.git`.
 This is the [automated build system](../docs/maintain/) that builds Libreboot
