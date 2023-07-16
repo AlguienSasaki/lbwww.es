@@ -108,10 +108,6 @@ configuration)
 My KCMA-D8 or KGPE-D16 doesn't boot with the PIKE2008 module installed 
 -----------------------------------------------------------------------
 
-**KGPE-D16, KCMA-D8 and KFSN4-DRE ASUS mainboards were removed on 19
-November 2022. You can still use older revisions of Libreboot, and older
-release versions.**
-
 Loading the option ROM from the PIKE2008 module on either ASUS KCMA-D8
 or KGPE-D16 causes the system to hang at boot. It's possible to use
 this in the payload (if you use a linux kernel payload, like linuxboot),

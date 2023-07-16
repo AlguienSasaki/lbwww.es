@@ -3,10 +3,6 @@ title: KGPE-D16 external flashing instructions
 x-toc-enable: true
 ...
 
-**KGPE-D16, KCMA-D8 and KFSN4-DRE ASUS mainboards were removed on 19
-November 2022. You can still use older revisions of Libreboot, and older
-release versions.**
-
 These will be re-added to Libreboot at a later date, once proper testing
 has been done.
 

@@ -40,8 +40,14 @@ Supported hardware
 
 libreboot currently supports the following systems in this release:
 
+### Servers (AMD, x86)
+
+-   [ASUS KGPE-D16 motherboard](kgpe-d16.md)
+-   [ASUS KFSN4-DRE motherboard](kfsn4-dre.md)
+
 ### Desktops (AMD, Intel, x86)
 
+-   [ASUS KCMA-D8 motherboard](kcma-d8.md)
 -   [Gigabyte GA-G41M-ES2L motherboard](ga-g41m-es2l.md)
 -   [Acer G43T-AM3](acer_g43t-am3.md)
 -   [Intel D510MO and D410PT motherboards](d510mo.md)
@@ -100,9 +106,6 @@ re-adding them at a later date. They were removed due to issues. List:
 -   [ASUS Chromebit CS10 (veyron-mickey)](../install/chromebooks.md)
 -   [ASUS Chromebook Flip C100PA (veyron-minnie)](../install/chromebooks.md)
 -   [ASUS Chromebook C201PA (veyron-speedy)](../install/c201.md)
--   [ASUS KCMA-D8 motherboard](kcma-d8.md) (removed from lbmk, TODO: re-add)
--   [ASUS KGPE-D16 motherboard](kgpe-d16.md) (removed from lbmk, TODO: re-add)
--   [ASUS KFSN4-DRE motherboard](kfsn4-dre.md) (removed from lbmk, TODO: re-add)
 -   [Intel D945GCLF](d945gclf.md) (removed from lbmk, TODO: re-add support)
 
 ### NOTES about removed boards:

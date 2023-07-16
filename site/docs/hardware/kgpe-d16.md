@@ -6,10 +6,6 @@ x-toc-enable: true
 Introduction
 ============
 
-**KGPE-D16, KCMA-D8 and KFSN4-DRE ASUS mainboards were removed on 19
-November 2022. You can still use older revisions of Libreboot, and older
-release versions.**
-
 This is a server board using AMD hardware (Fam10h *and Fam15h* CPUs
 available). It can also be used for building a high-powered workstation.
 Powered by libreboot. The coreboot port was done by Timothy Pearson of
