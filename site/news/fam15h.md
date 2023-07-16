@@ -60,7 +60,7 @@ where *upstream* coreboot had deleted KFSN4-DRE/KCMA-D8/KGPE-D16 support just
 after the 4.11 release; however, Dasharo *only* supports KGPE-D16 (out of these
 boards).
 
-I intend to study code differences between D8/D16 time, and port those to
+I intend to study code differences between D8/D16 in time, and port those to
 Dasharo so that it can have a KCMA-D8 port. I then wish to use this in
 Libreboot. I *could* use Dasharo now, for D16, regardless. For now, the main
 priority is to have support for these boards again in Libreboot.
