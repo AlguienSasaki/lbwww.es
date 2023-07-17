@@ -132,7 +132,7 @@ Distribution Guidelines), talking favourably about FSF/GNU, and so on. I'm in
 a position to *do it* (thus scratching the itch), so why not?
 
 **I did this release for them:
-<https://gnuboot.vimuser.org/news/gnuboot20230717.html>** - it's designared *GNU
+<https://gnuboot.vimuser.org/news/gnuboot20230717.html>** - it's designated *GNU
 Boot 20230717*, and I encourage them to re-use this in their project, to get
 off the ground. This completely leapfrogs their current development; it's
 months ahead. *Months*.
