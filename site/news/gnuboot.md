@@ -69,7 +69,8 @@ existed - osboot, created in December 2020, ran for just under two years as
 a separate project, and it very much resembled what Libreboot is today.
 
 osboot was a fork of Libreboot, that I created *myself*, and maintained in
-parallel to Libreboot.
+parallel to Libreboot. The old osboot Git repositories are *still available*
+here, archived for historical purposes: <https://notabug.org/osboot>
 
 osboot/libreboot merge
 ----------------------
