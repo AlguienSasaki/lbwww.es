@@ -21,9 +21,9 @@ Unofficial GNU Boot 20230717 release
 If you want to skip the lecture, just read these first and re-visit this
 page (the one you're reading now) afterwards for more context:
 
-* GNU Boot 20230717, unofficial release (produced by *me*):
+* **GNU Boot 20230717, unofficial release (produced by *me*):
   <https://gnuboot.vimuser.org/news/gnuboot20230717.html> - based on the
-  recent [Libreboot 20230625](libreboot20230625.md) release, but modified to
+  recent [Libreboot 20230625](libreboot20230625.md) release**, but modified to
   comply with their policy, as best as I could approximate.
 
 Or generally: <https://gnuboot.vimuser.org/> - website, also unofficial.
@@ -128,6 +128,11 @@ the early section of this article. I decided recently that I'd simply make a
 release *for them*, exactly to their specifications (GNU Free System
 Distribution Guidelines), talking favourably about FSF/GNU, and so on. I'm in
 a position to *do it* (thus scratching the itch), so why not?
+
+**I did this release for them:
+<https://gnuboot.vimuser.org/news/gnuboot20230717.html>** - it's designared *GNU
+Boot 20230717*, and I encourage them to re-use this in their project, to get
+off the ground.
 
 The most remarkable thing of all is this: in December 2022 is when I first
 learned of their supposed effort. They tried to poach several Libreboot developers
