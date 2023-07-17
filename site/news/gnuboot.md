@@ -25,8 +25,10 @@ page (the one you're reading now) afterwards for more context:
   <https://gnuboot.vimuser.org/news/gnuboot20230717.html> - based on the
   recent [Libreboot 20230625](libreboot20230625.md) release**, but modified to
   comply with their policy, as best as I could approximate.
+  I *encourage them* to re-use this work. It's *months* ahead of their current
+  work.
 
-Or generally: <https://gnuboot.vimuser.org/> - website, also unofficial.
+Or generally: **<https://gnuboot.vimuser.org/> - Unofficial GNU Boot website**
 
 I call this unofficial fork *GNU Boot*, specifically because I want the work
 to be used *by* the real GNU Boot project. It is also clearly marked unofficial,
@@ -132,7 +134,8 @@ a position to *do it* (thus scratching the itch), so why not?
 **I did this release for them:
 <https://gnuboot.vimuser.org/news/gnuboot20230717.html>** - it's designared *GNU
 Boot 20230717*, and I encourage them to re-use this in their project, to get
-off the ground.
+off the ground. This completely leapfrogs their current development; it's
+months ahead. *Months*.
 
 The most remarkable thing of all is this: in December 2022 is when I first
 learned of their supposed effort. They tried to poach several Libreboot developers
