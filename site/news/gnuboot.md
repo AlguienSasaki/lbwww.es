@@ -160,7 +160,7 @@ work - *and I want them to do that*).
 
 There were/are more things to talk about, but I'm not really interested in
 writing more. Free as in freedom? Libreboot is a free software project, yet
-their propaganda says otherwise.
+GNU propaganda says otherwise.
 
 GNU Boot is an [inferior](../policy.md#problems-with-fsdg) free software
 project, and Libreboot still provides the same blob-free configurations on
