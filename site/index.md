@@ -27,9 +27,11 @@ you otherwise can't get with most other boot firmware, plus faster boot speeds
 and [better security](docs/linux/grub_hardening.md). It's extremely powerful
 and [configurable](docs/maintain/) for many use cases.
 
-You have rights. The right to privacy, freedom of thought, freedom of speech
-and the right to read. In this context, Libreboot gives you these rights.
-Your freedom matters.
+*We* believe the freedom to [study, share, modify and use
+software](https://writefreesoftware.org/), without any
+restriction, is one of the fundamental human rights that everyone must have.
+In this context, *software freedom* matters. Your freedom matters. Education
+matters.
 [Right to repair](https://yewtu.be/watch?v=Npd_xDuNi9k) matters.
 Many people use proprietary (non-libre)
 boot firmware, even if they use [a libre OS](https://www.openbsd.org/).
