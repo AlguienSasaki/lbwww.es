@@ -131,7 +131,7 @@ Distribution Guidelines), talking favourably about FSF/GNU, and so on. I'm in
 a position to *do it* (thus scratching the itch), so why not?
 
 **I did this release for them:
-<https://gnuboot.vimuser.org/news/gnuboot20230717.html>** - it's designated *GNU
+<https://notgnuboot.vimuser.org/news/gnuboot20230717.html>** - it's designated *GNU
 Boot 20230717*, and I encourage them to re-use this in their project, to get
 off the ground. This completely leapfrogs their current development; it's
 months ahead. *Months*. **It's 8 months ahead**, since their current revision
@@ -173,7 +173,7 @@ Happy hacking!
 UPDATE (21 July 2023)
 =====================
 
-This non-GeNUine Boot website, and the non-GeNUine release itself,
+The non-GeNUine Boot website, and the non-GeNUine release itself,
 was originally *named* GNU Boot, but clearly marked as *unofficial*, with the
 hope that the GNU project would adapt and re-use it for their project. I did
 this, specifically to help them get up to date. They currently use Libreboot
@@ -202,7 +202,7 @@ Libreboot and even older coreboot.
 
 Anyway, I complied with their polite request and have renamed the project to
 non-GeNUine Boot. The release archive was re-compiled, under this new brand
-name and this non-GeNUine website was re-written accordingly.
+name and the website was re-written accordingly.
 
 Personally, I like the new name better.
 
