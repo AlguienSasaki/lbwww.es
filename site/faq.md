@@ -401,6 +401,10 @@ the microcode on AMD processors:
 
 <https://yewtu.be/watch?v=W3FbTMqYi4U>
 
+Here is another video:
+
+<https://yewtu.be/watch?v=I6dQfnb3y0I>
+
 The git repository for that project is here:
 
 <https://github.com/RUB-SysSec/Microcode>

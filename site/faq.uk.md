@@ -389,7 +389,9 @@ Revealed (Розкрито вбудовану технологію безпек�
 У цьому цікавому відео розповідається про те, як група людей
 провела зворотню розробку мікрокода на процесорах AMD:
 
-<https://yewtu.be/watch?v=W3FbTMqYi4U>
+* <https://yewtu.be/watch?v=W3FbTMqYi4U>
+
+* <https://yewtu.be/watch?v=I6dQfnb3y0I>
 
 Репозиторій git для цього проекту тут:
 
