@@ -212,4 +212,9 @@ project:
 
 ![](https://av.vimuser.org/email.png)
 
+This, after they themselves tried to steal the name *Libreboot* for their
+fork, when they first announced themselves on 19 March 2023 at LibrePlanet,
+only renaming to *GNU Boot* months later (on 11 June 2023). Utter hypocrisy,
+and a great irony to boot.
+
 I may very well send patches. *If I want to*.
