@@ -173,7 +173,7 @@ Happy hacking!
 UPDATE (21 July 2023)
 =====================
 
-This website, that you are reading now, and the non-GeNUine release itself,
+This non-GeNUine Boot website, and the non-GeNUine release itself,
 was originally *named* GNU Boot, but clearly marked as *unofficial*, with the
 hope that the GNU project would adapt and re-use it for their project. I did
 this, specifically to help them get up to date. They currently use Libreboot
