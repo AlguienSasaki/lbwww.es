@@ -25,7 +25,7 @@ If you want to skip the lecture, just read these first and re-visit this
 page (the one you're reading now) afterwards for more context:
 
 * **non-GeNUine Boot 20230717, unofficial release (produced by *me*):
-  <https://notgnuboot.vimuser.org/news/gnuboot20230717.html> - based on the
+  <https://notgnuboot.vimuser.org/news/nongenuineboot20230717.html> - based on the
   recent [Libreboot 20230625](libreboot20230625.md) release**, but modified to
   comply with GNU Boot policy, as best as I could approximate.
   I *encourage them* to re-use this work. It's roughly *8 months* ahead
@@ -131,7 +131,7 @@ Distribution Guidelines), talking favourably about FSF/GNU, and so on. I'm in
 a position to *do it* (thus scratching the itch), so why not?
 
 **I did this release for them:
-<https://notgnuboot.vimuser.org/news/gnuboot20230717.html>** - it's designated *GNU
+<https://notgnuboot.vimuser.org/news/nongenuineboot20230717.html>** - it's designated *GNU
 Boot 20230717*, and I encourage them to re-use this in their project, to get
 off the ground. This completely leapfrogs their current development; it's
 months ahead. *Months*. **It's 8 months ahead**, since their current revision
