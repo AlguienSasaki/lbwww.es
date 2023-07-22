@@ -578,7 +578,7 @@ How do I program an SPI flash chip?
 ---------------------------------------------------------------------------------
 
 Refer to:\
-[Externally rewrite 25xx NOR flash via SPI protocol](spi.md)
+[Externally rewrite 25xx NOR flash via SPI protocol](docs/install/spi.md)
 
 It's possible to use a 16-pin SOIC test clip on an 8-pin SOIC chip, if you
 align the pins properly. The connection is generally more sturdy.
