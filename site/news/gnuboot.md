@@ -100,7 +100,7 @@ project, superior to Libreboot in many ways). I recently helped them by offering
 to host tarballs for them, that they use in their build system.
 
 But that's just the problem: when GNU Boot first launched, as a failed *hostile
-fork* of Libreboot (at domain name, libreboot **-dot-** at), I observed: their code repository
+fork* of Libreboot *under the same name*, I observed: their code repository
 was based on Libreboot from late 2022, and their website based on Libreboot in
 late 2021. Their same-named Libreboot site was announced during LibrePlanet
 2023, by this video:
