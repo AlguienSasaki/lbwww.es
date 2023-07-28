@@ -3,21 +3,18 @@ title: Libreboot 项目
 x-toc-enable: true
 ...
 
-*Libreboot* 项目提供了[自由](freedom-status.md)的*引导固件*，能够在[特定的 Intel/AMD x86 以及 ARM 目标机](docs/hardware/)上对硬件（如内存控制器、CPU、外设）进行初始化，进而为操作系统启动 bootloader。本项目对 [Linux](docs/linux/) 和 [BSD](docs/bsd/) 支持良好，并替代了专有的 BIOS/UEFI 固件。寻求帮助，可以前往 [Libera](https://libera.chat/) IRC 上的 [\#libreboot](https://web.libera.chat/#libreboot) 频道。
+*Libreboot* 项目基于 coreboot 提供了[自由且开源](freedom-status.md)的引导固件，替代了特定基于 Intel/AMD x86 及 ARM 的主板（包括笔记本和桌面计算机）上的专有 BIOS/UEFI 固件。它首先对硬件（如内存控制器、CPU、外设）进行初始化，然后为操作系统启动 bootloader。本项目对 [Linux](docs/linux/) 和 [BSD](docs/bsd/) 支持良好。寻求帮助，可以前往 [Libera](https://libera.chat/) IRC 上的 [\#libreboot](https://web.libera.chat/#libreboot) 频道。
 
 <img tabindex=1 class="r" src="https://av.libreboot.org/hp9470m/9470m+2560p.jpg" /><span class="f"><img src="https://av.libreboot.org/hp9470m/9470m+2560p.jpg" /></span>
 
-**新版发布: 最新版本 Libreboot 20230625 已在 2023 年 6 月 25 日发布。
-详见: [Libreboot 20230625 发布公告](news/libreboot20230625.md).**
+**新版发布: 最新版本 Libreboot 20230625 已在 2023 年 6 月 25 日发布。详见: [Libreboot 20230625 发布公告](news/libreboot20230625.md).**
 
 为什么要使用 *Libreboot*?
 ----------------------------
 
 Libreboot 赋予了你[自由](https://writefreesoftware.org/)，而这等自由，是你用其他引导固件得不到的。同时，它的启动速度更加快，[安全性也更加高](docs/linux/grub_hardening.md)。在各种情况下使用，它都十分强大，具有高度[可配置性](docs/maintain/)。
 
-权利在你手上。你拥有隐私权、思想自由、言论自由、阅读权。这时，Libreboot 赋予了你这些权利。你的自由是宝贵的。
-[修理权](https://yewtu.be/watch?v=Npd_xDuNi9k)是宝贵的。
-尽管许多人在用[自由的操作系统](https://www.openbsd.org/)，但他们用的引导固件却是专有（非自由）的。专有固件常常[包含](faq.html#intel)了[后门](faq.html#amd)，并且也可能出问题。2013 年 12 月，我们建立了 Libreboot 项目，目的是让不懂技术的用户能使用 coreboot 固件。
+*我们*相信，不受限制地[研究、分享、修改及使用软件](https://writefreesoftware.org/)的自由，是每个人都必须享有的基本人权的一部分。这时，*软件自由*至关重要。你的自由至关重要。教育至关重要。[修理权](https://yewtu.be/watch?v=Npd_xDuNi9k)至关重要。尽管许多人在用[自由的操作系统](https://www.openbsd.org/)，但他们用的引导固件却是专有（非自由）的。专有固件常常[包含](faq.html#intel)了[后门](faq.html#amd)，并且也可能出问题。2013 年 12 月，我们建立了 Libreboot 项目，目的是让不懂技术的用户能使用 coreboot 固件。
 
 Libreboot 项目使用 [coreboot](https://www.coreboot.org/) 来[初始化硬件](https://doc.coreboot.org/getting_started/architecture.html)。对大部分不懂技术的用户来说，coreboot 是出了名地难安装；它只处理了基础的初始化，然后跳转进入单独的 [payload](https://doc.coreboot.org/payloads.html) 程序（例如 [GRUB](https://www.gnu.org/software/grub/)、[Tianocore](https://www.tianocore.org/)），而后者也需要进行配置。*Libreboot 解决了这样的问题*；他是一个 *coreboot 发行版*，配有[自动构建系统](docs/build/)，能够构建完整的 *ROM 镜像*，从而让安装更加稳定。另有文档可参考。
 
