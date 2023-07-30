@@ -198,9 +198,10 @@ GNU Boot cease and desist email
 The GNU Boot people actually sent me a cease and desist email, citing trademark
 infringement.  Amazing.
 
-Despite the original site clearly stating that it's unofficial. I literally made
-it to help them. You know, to help them use newer Libreboot because they use old
-Libreboot and even older coreboot.
+Despite the [nonGeNUine Boot](https://notgnuboot.vimuser.org/) site having
+clearly stating that it's unofficial, and *not* the GNU Boot project. I
+literally made it to help them. You know, to help them use newer Libreboot
+because they use old Libreboot and even older coreboot.
 
 Anyway, I complied with their polite request and have renamed the project to
 non-GeNUine Boot. The release archive was re-compiled, under this new brand
