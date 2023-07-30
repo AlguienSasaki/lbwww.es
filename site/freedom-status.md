@@ -207,12 +207,6 @@ Libreboot has *fully libre* initialisation available for all Intel memory
 controllers on supported platforms. This *includes* Haswell (ThinkPad T440p
 and W541) as of Libreboot 20230319 or higher.
 
-AMD platforms
-=============
-
-Libreboot currently *lacks* support for AMD platforms, but information about
-them will be written when this fact changes.
-
 ARM platforms (chromebooks)
 =============
 
