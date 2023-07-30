@@ -162,7 +162,8 @@ writing more. Free as in freedom? Libreboot is a free software project, yet
 GNU propaganda says otherwise.
 
 GNU Boot is [inferior](../policy.md#problems-with-fsdg) to Libreboot in every
-way; since Libreboot still provides the same blob-free configurations on
+way, just as Libreboot was inferior to OSBoot prior to the Libreboot/OSBoot
+merge; since Libreboot still provides the same blob-free configurations on
 mainboards when that is possible, GNU Boot is also a *pointless* project,
 just as Libreboot was before I merged osboot with it, but I digress.
 
