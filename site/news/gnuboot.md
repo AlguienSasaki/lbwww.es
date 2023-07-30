@@ -161,9 +161,9 @@ There were/are more things to talk about, but I'm not really interested in
 writing more. Free as in freedom? Libreboot is a free software project, yet
 GNU propaganda says otherwise.
 
-GNU Boot is an [inferior](../policy.md#problems-with-fsdg) free software
-project, and Libreboot still provides the same blob-free configurations on
-mainboards when that is possible, so GNU Boot is also a *superfluous* project,
+GNU Boot is an [inferior](../policy.md#problems-with-fsdg) to Libreboot in every
+way; since Libreboot still provides the same blob-free configurations on
+mainboards when that is possible, GNU Boot is also a *pointless* project,
 just as Libreboot was before I merged osboot with it, but I digress.
 
 What more is there to say?
