@@ -250,7 +250,8 @@ disabled. This is done using `me_cleaner`. See:
 
 ### KBC1126 EC firmware (HP laptops):
 
-EC firmware is inserted into main boot flash, rather than being on a separate
+[EC firmware](faq.md#ec-embedded-controller-firmware)
+is inserted into main boot flash, rather than being on a separate
 IC. This is *better* because libre replacements would be more easy to install in
 the future, and reverse engineering is made much easier by it. Libreboot's
 build system handles such firmware in `blobutil`, automatically downloading
@@ -260,7 +261,8 @@ at the correct offset as defined by coreboot config for each board.
 
 ### CPU microcode:
 
-*Microcode* updates for CPU provided on *all* x86 platforms, by default. Not
+[*Microcode* updates](faq.md#microcode)
+for CPU provided on *all* x86 platforms, by default. Not
 technically required, but highly recommended. To remove, do:
 
 	cbfstool filename.rom remove -n cpu_microcode_blob.bin
