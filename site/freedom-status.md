@@ -97,7 +97,7 @@ In a *descriptor* configuration, the flash is divided into regions such as:
   the initialisation firmware plus operating system for it is loaded from
   this dedicated region in the main boot flash. More info is available [in the
   FAQ](faq.md#intelme) - where ME firmware is otherwise present, Libreboot
-  either removes it or (with the `me_cleaner` program) reconfigures it in such
+  either [removes](docs/install/ich9utils.html) it or (with the `me_cleaner` program) [reconfigures](https://github.com/corna/me_cleaner/wiki/How-does-it-work%3F) it in such
   a way where it is disabled during machine initialisation.
 * Platform region: non-program data, usually just a bunch of strings put there
   by the hardware vendor.
