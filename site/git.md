@@ -114,6 +114,30 @@ Therefore, if you wish to add images to the website, please also submit to the
 <https://av.libreboot.org/path/to/your/new/image/in/lbwww-img> for each one.
 When it is merged on the libreboot website, your images will appear live.
 
+If adding a photo, compress it for web distribution. Images should be about
+800px wide, and usually under 100KiB in size:
+
+First, scale your image down to approximately 800px width, using your favourite
+image manipulation program. For example, with `imagemagick` you can do the
+following (make sure the image isn't already smaller or equal than preferred).
+
+	convert original.jpg -resize 600000@ -quality 70% web.jpg
+
+You should always run `jpegoptim` on jpg images before submitting them.
+It strips useless metadata and *losslessly* optimises them further by cleverly
+rearranging the huffman tables used in them.
+
+	jpegoptim -s --all-progressive web.jpg
+
+If the image is a (line) drawing, vector graphics are preferable to bitmaps.
+Therefore, if possible, save them as SVGs. Those are easy to modify,
+and will surely make translators' work easier as well.
+
+PNG images should be optimised with `zopfli` (this is lossless as well).
+For example, this reduced the Libreboot boot logo from around 11k to 3k:
+
+	zopflipng -ym image.png image.png
+
 For development purposes, you might make your images local links first, and
 then adjust the URLs when you submit your documentation/website patches.
 

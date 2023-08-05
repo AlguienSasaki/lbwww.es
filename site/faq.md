@@ -401,6 +401,10 @@ the microcode on AMD processors:
 
 <https://yewtu.be/watch?v=W3FbTMqYi4U>
 
+Here is another video:
+
+<https://yewtu.be/watch?v=I6dQfnb3y0I>
+
 The git repository for that project is here:
 
 <https://github.com/RUB-SysSec/Microcode>
@@ -574,7 +578,7 @@ How do I program an SPI flash chip?
 ---------------------------------------------------------------------------------
 
 Refer to:\
-[Externally rewrite 25xx NOR flash via SPI protocol](spi.md)
+[Externally rewrite 25xx NOR flash via SPI protocol](docs/install/spi.md)
 
 It's possible to use a 16-pin SOIC test clip on an 8-pin SOIC chip, if you
 align the pins properly. The connection is generally more sturdy.

@@ -97,7 +97,7 @@ In a *descriptor* configuration, the flash is divided into regions such as:
   the initialisation firmware plus operating system for it is loaded from
   this dedicated region in the main boot flash. More info is available [in the
   FAQ](faq.md#intelme) - where ME firmware is otherwise present, Libreboot
-  either removes it or (with the `me_cleaner` program) reconfigures it in such
+  either [removes](docs/install/ich9utils.html) it or (with the `me_cleaner` program) [reconfigures](https://github.com/corna/me_cleaner/wiki/How-does-it-work%3F) it in such
   a way where it is disabled during machine initialisation.
 * Platform region: non-program data, usually just a bunch of strings put there
   by the hardware vendor.
@@ -207,12 +207,6 @@ Libreboot has *fully libre* initialisation available for all Intel memory
 controllers on supported platforms. This *includes* Haswell (ThinkPad T440p
 and W541) as of Libreboot 20230319 or higher.
 
-AMD platforms
-=============
-
-Libreboot currently *lacks* support for AMD platforms, but information about
-them will be written when this fact changes.
-
 ARM platforms (chromebooks)
 =============
 
@@ -256,7 +250,8 @@ disabled. This is done using `me_cleaner`. See:
 
 ### KBC1126 EC firmware (HP laptops):
 
-EC firmware is inserted into main boot flash, rather than being on a separate
+[EC firmware](faq.md#ec-embedded-controller-firmware)
+is inserted into main boot flash, rather than being on a separate
 IC. This is *better* because libre replacements would be more easy to install in
 the future, and reverse engineering is made much easier by it. Libreboot's
 build system handles such firmware in `blobutil`, automatically downloading
@@ -266,7 +261,8 @@ at the correct offset as defined by coreboot config for each board.
 
 ### CPU microcode:
 
-*Microcode* updates for CPU provided on *all* x86 platforms, by default. Not
+[*Microcode* updates](faq.md#microcode)
+for CPU provided on *all* x86 platforms, by default. Not
 technically required, but highly recommended. To remove, do:
 
 	cbfstool filename.rom remove -n cpu_microcode_blob.bin

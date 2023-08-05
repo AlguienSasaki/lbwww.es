@@ -3,7 +3,7 @@
 % 17 July 2023
 
 People have been waiting for me to break the silence about this. I go on about
-it on IRC. This article is intended to address it once and for all, offically.
+it on IRC. This article is intended to address it once and for all, officially.
 
 I waited so long, because until recently there really wasn't anything tangible
 to talk about; why talk about vaporware? Why indeed.
@@ -15,24 +15,23 @@ This doesn't need to be an overly long post, so it won't be. There is a *fork*
 of Libreboot, named GNU Boot, which you can find here:
 <https://savannah.gnu.org/projects/gnuboot/>
 
-Unofficial GNU Boot 20230717 release
+Long story short, when I saw this, I decided that I would try to *help* the
+project. More on this next:
+
+non-GeNUine Boot 20230717 release
 ------------------------------------
 
 If you want to skip the lecture, just read these first and re-visit this
 page (the one you're reading now) afterwards for more context:
 
-* **GNU Boot 20230717, unofficial release (produced by *me*):
-  <https://gnuboot.vimuser.org/news/gnuboot20230717.html> - based on the
+* **non-GeNUine Boot 20230717, unofficial release (produced by *me*):
+  <https://notgnuboot.vimuser.org/news/nongenuineboot20230717.html> - based on the
   recent [Libreboot 20230625](libreboot20230625.md) release**, but modified to
-  comply with their policy, as best as I could approximate.
+  comply with GNU Boot policy, as best as I could approximate.
   I *encourage them* to re-use this work. It's roughly *8 months* ahead
   of their current work.
 
-Or generally: **<https://gnuboot.vimuser.org/> - Unofficial GNU Boot website**
-
-I call this unofficial fork *GNU Boot*, specifically because I want the work
-to be used *by* the real GNU Boot project. It is also clearly marked unofficial,
-on that website, so people don't get confused about that.
+Or generally: **<https://notgnuboot.vimuser.org/> - non-GeNUine Boot website**
 
 These links, above, are for an *unofficial* fork of Libreboot that *I* have
 done myself, proposed for re-use by the new GNU Boot project. I am *not* a
@@ -101,7 +100,7 @@ project, superior to Libreboot in many ways). I recently helped them by offering
 to host tarballs for them, that they use in their build system.
 
 But that's just the problem: when GNU Boot first launched, as a failed *hostile
-fork* of Libreboot (at domain name, libreboot .dot. at), I observed: their code repository
+fork* of Libreboot *under the same name*, I observed: their code repository
 was based on Libreboot from late 2022, and their website based on Libreboot in
 late 2021. Their same-named Libreboot site was announced during LibrePlanet
 2023, by this video:
@@ -117,8 +116,8 @@ created on 11 June 2023. Yet no real development, in over a month since then.
 
 I have this itch in the back of my mind, that says: if you're going to do
 something, you should *do it*. When someone expresses disagreement with what
-I say, I can respect it if the it's more than just words. Which is precisely
-what they have been.
+I say, I can respect it if it's more than just words, which is all
+what they had given at the time of this article.
 
 I value *technical excellence*.
 
@@ -132,7 +131,7 @@ Distribution Guidelines), talking favourably about FSF/GNU, and so on. I'm in
 a position to *do it* (thus scratching the itch), so why not?
 
 **I did this release for them:
-<https://gnuboot.vimuser.org/news/gnuboot20230717.html>** - it's designated *GNU
+<https://notgnuboot.vimuser.org/news/nongenuineboot20230717.html>** - it's designated *non-GeNUine
 Boot 20230717*, and I encourage them to re-use this in their project, to get
 off the ground. This completely leapfrogs their current development; it's
 months ahead. *Months*. **It's 8 months ahead**, since their current revision
@@ -162,11 +161,63 @@ There were/are more things to talk about, but I'm not really interested in
 writing more. Free as in freedom? Libreboot is a free software project, yet
 GNU propaganda says otherwise.
 
-GNU Boot is an [inferior](../policy.md#problems-with-fsdg) free software
-project, and Libreboot still provides the same blob-free configurations on
-mainboards when that is possible, so GNU Boot is also a *superfluous* project,
+GNU Boot is [inferior](../policy.md#problems-with-fsdg) to Libreboot in every
+way, just as Libreboot was inferior to OSBoot before the Libreboot/OSBoot
+merge; since modern (post-merge) Libreboot still provides the same blob-free
+configurations on
+mainboards when that is possible, GNU Boot is also a *pointless* project,
 just as Libreboot was before I merged osboot with it, but I digress.
 
 What more is there to say?
 
 Happy hacking!
+
+UPDATE (21 July 2023)
+=====================
+
+The non-GeNUine Boot website, and the non-GeNUine release itself,
+was originally *named* GNU Boot, but clearly marked as *unofficial*, with the
+hope that the GNU project would adapt and re-use it for their project. I did
+this, specifically to help them get up to date. They currently use Libreboot
+from about 8 months ago (late 2022), and that revision used *coreboot* releases
+from ~mid 2021.
+
+Modern Libreboot uses coreboot from early 2023, and contains many bug fixes
+in its build system, owing to an extensive [build system
+audit](audit.html); GNU Boot still contains all of
+the bugs that existed, prior to the audit. Bugs such as: errors literally not
+being handled, in many critical areas of the build system, due to improper use
+of subshells within shell scripts (Libreboot's build system is implemented with
+shell scripts), improper handling of git credentials in the coreboot build
+system, fam15h boards no longer compiling correct on modern Linux distros...
+the list goes on. All fixed, in newer Libreboot, including the recent release.
+
+GNU Boot cease and desist email
+-------------------------------
+
+The GNU Boot people actually sent me a cease and desist email, citing trademark
+infringement.  Amazing.
+
+Despite the [nonGeNUine Boot](https://notgnuboot.vimuser.org/) site having
+clearly stating that it's unofficial, and *not* the GNU Boot project. I
+literally made it to help them. You know, to help them use newer Libreboot
+because they use old Libreboot and even older coreboot.
+
+Anyway, I complied with their polite request and have renamed the project to
+non-GeNUine Boot. The release archive was re-compiled, under this new brand
+name and the website was re-written accordingly.
+
+Personally, I like the new name better.
+
+Here is a screenshot of the cease and desist request that I received,
+from *Adrien ‘neox’ Bourmault* who is a founding member of the GNU Boot
+project:
+
+![](https://av.vimuser.org/email.png)
+
+This, after they themselves tried to steal the name *Libreboot* for their
+fork, when they first announced themselves on 19 March 2023 at LibrePlanet,
+only renaming to *GNU Boot* months later (on 11 June 2023). Utter hypocrisy,
+and a great irony to boot.
+
+I may very well send patches. *If I want to*.

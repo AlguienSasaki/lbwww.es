@@ -114,6 +114,30 @@ Untitled.
 <https://av.libreboot.org/шлях/до/вашого/нового/зображення/в/lbwww-img> для кожного з них.
 Коли його буде поєднано на веб-сайті libreboot, ваші зображення з'являться в реальному часі.
 
+If adding a photo, compress it for web distribution. Images should be about
+800px wide, and usually under 100KiB in size:
+
+First, scale your image down to approximately 800px width, using your favourite
+image manipulation program. For example, with `imagemagick` you can do the
+following (make sure the image isn't already smaller or equal than preferred).
+
+        convert original.jpg -resize 600000@ -quality 70% web.jpg
+
+You should always run `jpegoptim` on jpg images before submitting them.
+It strips useless metadata and *losslessly* optimises them further by cleverly
+rearranging the huffman tables used in them.
+
+        jpegoptim -s --all-progressive web.jpg
+
+If the image is a (line) drawing, vector graphics are preferable to bitmaps.
+Therefore, if possible, save them as SVGs. Those are easy to modify,
+and will surely make translators' work easier as well.
+
+PNG images should be optimised with `zopfli` (this is lossless as well).
+For example, this reduced the Libreboot boot logo from around 11k to 3k:
+
+        zopflipng -ym image.png image.png
+
 Для цілей розробки ви можете спочатку створити локальні посилання на зображення, а
 потім налаштувати URL-адреси, коли надсилатимете документацію/патчі веб-сайту.
 

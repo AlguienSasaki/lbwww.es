@@ -296,12 +296,6 @@ Libreboot має *повністю вільну* ініціалізацію, д�
 на платформах, які підтримуються. Це *включає* Haswell (ThinkPad T440p
 та W541), станом на Libreboot 20230319 та пізніші.
 
-Платформи AMD
-=============
-
-Libreboot наразі *бракує* підтримки для платформ AMD, але інформація про
-них буде написана, коли цей факт зміниться.
-
 Платформи ARM (chromebook)
 =============
 
@@ -333,6 +327,8 @@ Libreboot *наразі* не розміщує ці блоби взагалі, �
 Intel/x86
 ---------
 
+### Intel ME:
+
 Нейтралізований ME потрібен на цих цілях: `t420_8mb`, `t420s_8mb`, `t430_12mb`,
 `t440p_12mb`, `t440pmrc_12mb`, `t520_8mb`, `t530_12mb`, `w530_12mb`,
 `w541_12mb`, `w541mrc_12mb`, `x220_8mb`, `x230_12mb`, `x230_16mb`,
@@ -344,7 +340,10 @@ Intel/x86
 вимкнено. Це зроблено використовуючи `me_cleaner`. Дивіться:
 <https://github.com/corna/me_cleaner/wiki/How-does-it-work%3F>
 
-KBC1126 EC firmware on `hp9470m_16mb` and `hp9470m_16mb` - on HP laptops, EC
+### KBC1126 EC firmware (HP laptops):
+
+KBC1126 [EC firmware](faq.uk.md##прошивка-ec-вбудований-контролер)
+on `hp9470m_16mb` and `hp9470m_16mb` - on HP laptops, EC
 firmware is inserted into main boot flash, rather than being on a separate IC.
 This is *better* because libre replacements would be more easy to install in
 the future, and reverse engineering is made much easier by it. Libreboot's
@@ -354,7 +353,10 @@ and provide functionality in `blobutil` insert, to insert them with `cbfstool`
 at the correct offset as defined by coreboot config for each board. - **TODO:
 English paragraph that needs to be translated into Ukrainian.**
 
-Оновлення *мікрокоду* для ЦП надано на *всіх* платформах x86, за замовчуванням. Не
+### CPU microcode:
+
+Оновлення [*мікрокоду*](faq.uk.md#microcode)
+для ЦП надано на *всіх* платформах x86, за замовчуванням. Не
 вимагається технічно, але надзвичайно рекомендовано. Виконайте для видалення:
 
 	cbfstool filename.rom remove -n cpu_microcode_blob.bin
@@ -370,6 +372,8 @@ excluded, alongside default ones with microcode included.](news/microcode.md)
 Блоби мікрокоду ЦП включено за замовчуванням, на всіх платах x86. В той час як не потрібні
 в більшості випадків, їх використання надзвичайно рекомендовано. Дивіться для причин чому:
 [news/policy.uk.md#більш-детальна-інформація-про-мікрокод](news/policy.uk.md#більш-детальна-інформація-про-мікрокод)
+
+### Intel Flash Descriptor (IFD):
 
 Intel Flash Descriptor надано в якості блобів на деяких платах, але це не є
 блобами *програмного забезпечення*. Це конфігурації, які надано в двійковому форматі,
@@ -391,6 +395,8 @@ Intel Flash Descriptor надано в якості блобів на деяки
 
 ARM/chromebook
 ---------------
+
+### BL1 bootloader (peach/daisy):
 
 BL1 завантажувач потрібен на: `daisy_snow`, `daisy_spring` та `peach_pit`.
 
