@@ -1088,6 +1088,10 @@ OpenBSD. Інші системи не перевірені, але мають п
     * [Sam Zeloof](https://yewtu.be/channel/UC7E8-0Ou69hwScPW1_fQApA)
 	(Сем буквально робить процесори в своєму гаражі, натхненний роботою Джері Еллсуорт
 	з транзисторами)
+    * [Ben Eater](https://eater.net/) (shows how to build an 8-bit CPU from scratch,
+	also does things with MOS 6502)
+	(also shows how to make other things like graphics chips, teaches networking
+	concepts) - check out Ben's videos! <https://redirect.invidious.io/beneater>
     * [iPad Rehab with Jessa Jones](https://yewtu.be/channel/UCPjp41qeXe1o_lp1US9TpWA)
 	(дуже точна пайка. вона займається ремонтом мобільних телефонів і подібного, про що
 	також йдеться в серії iFixit про ремонт компонентів)

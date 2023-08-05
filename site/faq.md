@@ -1103,6 +1103,10 @@ Where can I learn more about electronics
     * [Sam Zeloof](https://yewtu.be/channel/UC7E8-0Ou69hwScPW1_fQApA)
 	(Sam literally makes CPUs in his garage, inspired by Jeri Ellsworth's
 	work with transistors)
+    * [Ben Eater](https://eater.net/) (shows how to build an 8-bit CPU from scratch,
+	also does things with MOS 6502)
+	(also shows how to make other things like graphics chips, teaches networking
+	concepts) - check out Ben's videos! <https://redirect.invidious.io/beneater>
     * [iPad Rehab with Jessa Jones](https://yewtu.be/channel/UCPjp41qeXe1o_lp1US9TpWA)
 	(very precise soldering. she does repairs on mobile phones and such, also
 	featured in iFixit's series about getting into component repairs)
