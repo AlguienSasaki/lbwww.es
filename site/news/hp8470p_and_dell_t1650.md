@@ -8,10 +8,10 @@ Introduction
 I've ported and tested two new boards, and merged them into the `lbmk` master
 branch. They will be available in the next regular release:
 
+<img tabindex=1 class="r" style="max-width:25%" src="https://av.libreboot.org/hp8470p/hp8470p.jpg" /><span class="f"><img src="https://av.libreboot.org/hp8470p/hp8470p.jpg" /></span>
+
 HP EliteBook 8470p
 ------------------
-
-<img tabindex=1 class="r" style="max-width:25%" src="https://av.libreboot.org/hp8470p/hp8470p.jpg" /><span class="f"><img src="https://av.libreboot.org/hp8470p/hp8470p.jpg" /></span>
 
 HP EliteBook 8470p is another IvyBridge platform, similar to other EliteBooks
 that Libreboot already supports, such as the HP EliteBook 9470m that Riku
