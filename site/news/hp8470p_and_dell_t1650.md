@@ -15,7 +15,7 @@ HP EliteBook 8470p is another IvyBridge platform, similar to other EliteBooks
 that Libreboot already supports, such as the HP EliteBook 9470m that Riku
 added.
 
-<img tabindex=1 class="r" style="max-width:35%" src="https://av.libreboot.org/hp8470p/hp8470p.jpg" /><span class="f"><img src="https://av.libreboot.org/hp8470p/hp8470p.jpg" /></span>
+<img tabindex=1 class="r" style="max-width:25%" src="https://av.libreboot.org/hp8470p/hp8470p.jpg" /><span class="f"><img src="https://av.libreboot.org/hp8470p/hp8470p.jpg" /></span>
 
 It was added in this patch:
 <https://browse.libreboot.org/lbmk.git/commit/?id=6075fed84912be82cb03a99ad5a5a82547872463>
@@ -46,9 +46,10 @@ another IvyBridge desktop, same platform as [HP 8300
 USDT](../docs/hardware/hp8300usdt.html), but it supports *ECC* memory, if you
 use a Xeon E3 model CPU (ivybridge variant).
 
-<img tabindex=1 class="l" style="max-width:35%" src="https://av.libreboot.org/t1650/t1650.jpg" /><span class="f"><img src="https://av.libreboot.org/t1650/t1650.jpg" /></span>
+It was added in this patch:
+<https://browse.libreboot.org/lbmk.git/commit/?id=f9afeb6feb289003359790e820d7e7d918937fea>
 
-My model had 
+<img tabindex=1 class="l" style="max-width:25%" src="https://av.libreboot.org/t1650/t1650.jpg" /><span class="f"><img src="https://av.libreboot.org/t1650/t1650.jpg" /></span>
 
 You can find a list of IvyBridge CPUs here:
 <https://en.wikipedia.org/wiki/Ivy_Bridge_(microarchitecture)#List_of_Ivy_Bridge_processors>
@@ -58,7 +59,7 @@ an Intel graphics chip built in, so I could not test coreboot's libgfxinit for
 this board, but it should work. I've since ordered a 1275v2 which does have
 graphics, but I didn't have it at the time of this news post.
 
-<img tabindex=1 class="r" style="max-width:35%" src="https://av.libreboot.org/t1650/t1650_seabios.jpg" /><span class="f"><img src="https://av.libreboot.org/t1650/t1650_seabios.jpg" /></span>
+<img tabindex=1 class="r" style="max-width:25%" src="https://av.libreboot.org/t1650/t1650_seabios.jpg" /><span class="f"><img src="https://av.libreboot.org/t1650/t1650_seabios.jpg" /></span>
 
 Native video init for Intel graphics *is* enabled, in this Libreboot port, but
 because I haven't tested it yet, I've done *this* in the port that was merged:
@@ -67,7 +68,7 @@ is relied upon to execute the VGA Option ROM on an add-on graphics card (the
 one I had was Nvidia Quadro K420, tested with the `nouveau` driver under
 Debian Linux).
 
-<img tabindex=1 class="l" style="max-width:35%" src="https://av.libreboot.org/t1650/t1650_grub.jpg" /><span class="f"><img src="https://av.libreboot.org/t1650/t1650_grub.jpg" /></span>
+<img tabindex=1 class="l" style="max-width:25%" src="https://av.libreboot.org/t1650/t1650_grub.jpg" /><span class="f"><img src="https://av.libreboot.org/t1650/t1650_grub.jpg" /></span>
 
 If you want GRUB-only setup, you could configure SeaBIOS bootorder to only
 load the GRUB payload, and disable the SeaBIOS menu. This can be done by
@@ -76,7 +77,7 @@ only booting `img/grub2` from CBFS. More info available here:
 into CBFS, as per the instructions on that page. Make sure you have external
 flashing equipment to recover in case you brick it!
 
-<img tabindex=1 class="r" style="max-width:35%" src="https://av.libreboot.org/t1650/t1650_libreboot_website.jpg" /><span class="f"><img src="https://av.libreboot.org/t1650/t1650_libreboot_website.jpg" /></span>
+<img tabindex=1 class="r" style="max-width:25%" src="https://av.libreboot.org/t1650/t1650_libreboot_website.jpg" /><span class="f"><img src="https://av.libreboot.org/t1650/t1650_libreboot_website.jpg" /></span>
 
 With ECC memory, this board is easily suitable for running a server of some kind,
 in cases where data integrity matters (many userspace programs will use `read()`
