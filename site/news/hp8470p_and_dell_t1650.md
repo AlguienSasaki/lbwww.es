@@ -59,7 +59,7 @@ an Intel graphics chip built in, so I could not test coreboot's libgfxinit for
 this board, but it should work. I've since ordered a 1275v2 which does have
 graphics, but I didn't have it at the time of this news post.
 
-<img tabindex=1 class="r" style="max-width:25%" src="https://av.libreboot.org/t1650/t1650_seabios.jpg" /><span class="f"><img src="https://av.libreboot.org/t1650/t1650_seabios.jpg" /></span>
+<img tabindex=1 class="l" style="max-width:25%" src="https://av.libreboot.org/t1650/t1650_grub.jpg" /><span class="f"><img src="https://av.libreboot.org/t1650/t1650_grub.jpg" /></span>
 
 Native video init for Intel graphics *is* enabled, in this Libreboot port, but
 because I haven't tested it yet, I've done *this* in the port that was merged:
@@ -72,8 +72,6 @@ Here's how to build ROM images for this board (make sure you have performed
 the [prerequisite steps](../docs/build/) first:
 
 	./build boot roms t1650_12mb
-
-<img tabindex=1 class="l" style="max-width:25%" src="https://av.libreboot.org/t1650/t1650_grub.jpg" /><span class="f"><img src="https://av.libreboot.org/t1650/t1650_grub.jpg" /></span>
 
 If you want GRUB-only setup, you could configure SeaBIOS bootorder to only
 load the GRUB payload, and disable the SeaBIOS menu. This can be done by
