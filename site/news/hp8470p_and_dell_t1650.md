@@ -11,11 +11,11 @@ branch. They will be available in the next regular release:
 HP EliteBook 8470p
 ------------------
 
+<img tabindex=1 class="r" style="max-width:25%" src="https://av.libreboot.org/hp8470p/hp8470p.jpg" /><span class="f"><img src="https://av.libreboot.org/hp8470p/hp8470p.jpg" /></span>
+
 HP EliteBook 8470p is another IvyBridge platform, similar to other EliteBooks
 that Libreboot already supports, such as the HP EliteBook 9470m that Riku
 added.
-
-<img tabindex=1 class="r" style="max-width:25%" src="https://av.libreboot.org/hp8470p/hp8470p.jpg" /><span class="f"><img src="https://av.libreboot.org/hp8470p/hp8470p.jpg" /></span>
 
 It was added in this patch:
 <https://browse.libreboot.org/lbmk.git/commit/?id=6075fed84912be82cb03a99ad5a5a82547872463>
