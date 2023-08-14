@@ -68,6 +68,11 @@ is relied upon to execute the VGA Option ROM on an add-on graphics card (the
 one I had was Nvidia Quadro K420, tested with the `nouveau` driver under
 Debian Linux).
 
+Here's how to build ROM images for this board (make sure you have performed
+the [prerequisite steps](../docs/build/) first:
+
+	./build boot roms t1650_12mb
+
 <img tabindex=1 class="l" style="max-width:25%" src="https://av.libreboot.org/t1650/t1650_grub.jpg" /><span class="f"><img src="https://av.libreboot.org/t1650/t1650_grub.jpg" /></span>
 
 If you want GRUB-only setup, you could configure SeaBIOS bootorder to only
