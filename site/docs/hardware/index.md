@@ -64,6 +64,7 @@ libreboot currently supports the following systems in this release:
 -   [HP EliteBook 2170p](hp2170p.md)
 -   [HP EliteBook 2560p](hp2560p.md)
 -   [HP EliteBook 2570p](hp2570p.md)
+-   [HP EliteBook 8470p](hp8470p.md)
 -   [HP EliteBook Folio 9470m](hp9470m.md)
 -   [Lenovo ThinkPad R400](r400.md)
 -   [Lenovo ThinkPad R500](r500.md)

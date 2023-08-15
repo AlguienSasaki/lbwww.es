@@ -583,6 +583,7 @@ Links to specific HP laptop pages:
 * [HP EliteBook 2170p](../hardware/hp2170p.md)
 * [HP EliteBook 2560p](../hardware/hp2560p.md)
 * [HP EliteBook 2570p](../hardware/hp2570p.md)
+* [HP EliteBook 8470p](../hardware/hp8470p.md)
 * [HP EliteBook Folio 9470m](../hardware/hp9470m.md)
 
 TARGET: HP Elite 8200 SFF
