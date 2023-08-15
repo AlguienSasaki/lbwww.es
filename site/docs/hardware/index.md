@@ -54,6 +54,7 @@ libreboot currently supports the following systems in this release:
 -   [Apple iMac 5,2](imac52.md)
 -   [HP Elite 8200 SFF/MT](hp8200sff.md) (HP 6200 Pro Business probably works too)
 -   [HP Elite 8300 USDT](hp8300usdt.md)
+-   [HP EliteBook 2170p](hp2170p.md)
 
 ### Laptops (Intel, x86)
 

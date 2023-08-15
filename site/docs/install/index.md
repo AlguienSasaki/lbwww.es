@@ -573,6 +573,18 @@ iMac5,2 isn't documented but you can find the flash chip on that board quite
 easily. See the generic flashing guide:\
 [Externally rewrite 25xx NOR flash via SPI protocol](spi.md)
 
+TARGET: HP EliteBook laptops
+----------------------------
+
+Refer to the [hardware page](../hardware/) for info about HP laptops.
+
+Links to specific HP laptop pages:
+
+* [HP EliteBook 2170p](../hardware/hp2170p.md)
+* [HP EliteBook 2560p](../hardware/hp2560p.md)
+* [HP EliteBook 2570p](../hardware/hp2570p.md)
+* [HP EliteBook Folio 9470m](../hardware/hp9470m.md)
+
 TARGET: HP Elite 8200 SFF
 -------------------------
 
