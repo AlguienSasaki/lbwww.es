@@ -29,47 +29,47 @@ x-toc-enable: true
 
 ### 服务器（AMD，x86）
 
--   [ASUS KGPE-D16 主板](kgpe-d16.md)
 -   [ASUS KFSN4-DRE 主板](kfsn4-dre.md)
+-   [ASUS KGPE-D16 主板](kgpe-d16.md)
 
 ### Desktops (AMD, Intel, x86)
 
+-   [Acer G43T-AM3](acer_g43t-am3.md)
+-   [Apple iMac 5,2](imac52.md)
 -   [ASUS KCMA-D8 主板](kcma-d8.md)
 -   [Gigabyte GA-G41M-ES2L 主板](ga-g41m-es2l.md)
--   [Acer G43T-AM3](acer_g43t-am3.md)
--   [Intel D510MO 及 D410PT 主板](d510mo.md)
--   [Apple iMac 5,2](imac52.md)
 -   [HP Elite 8200 SFF/MT](hp8200sff.md)（HP 6200 Pro Business 多半也能用）
 -   [HP Elite 8300 USDT](hp8300usdt.md)
+-   [Intel D510MO 及 D410PT 主板](d510mo.md)
 
 ### 笔记本（Intel，x86）
 
--   **[Dell Latitude E6400, E6400 XFR 及 E6400 ATG，皆支持 Nvidia 或 Intel GPU](e6400.md)（刷入简单，无需拆解，硬件类似 X200/T400）**
--   ThinkPad X60 / X60S / X60 Tablet
--   ThinkPad T60（Intel GPU 款）
--   [Lenovo ThinkPad X200 / X200S / X200 Tablet](x200.md)
--   Lenovo ThinkPad X230
--   Lenovo ThinkPad X301
--   [Lenovo ThinkPad R400](r400.md)
--   [Lenovo ThinkPad T400 / T400S](t400.md)
--   [Lenovo ThinkPad T500](t500.md)
--   [Lenovo ThinkPad T530 / W530](../install/ivy_has_common.md)（暂无安装文档）
--   [Lenovo ThinkPad W500](t500.md)
--   [Lenovo ThinkPad R500](r500.md)
 -   [Apple MacBook1,1 及 MacBook2,1](macbook21.md)
--   [Lenovo ThinkPad T440p](../install/t440p_external.md)
--   [Lenovo Thinkpad X220](../install/ivy_has_common.md)
--   [Lenovo Thinkpad X220t](../install/ivy_has_common.md)
--   [Lenovo Thinkpad T420](../install/ivy_has_common.md)（暂无安装文档）
--   [Lenovo ThinkPad T420S](../install/ivy_has_common.md)（暂无安装文档）
--   [Lenovo ThinkPad T430](../install/ivy_has_common.md)（暂无安装文档）
--   [Lenovo Thinkpad X230](../install/x230_external.md)
--   [Lenovo Thinkpad X230t](../install/x230_external.md)
--   [Lenovo ThinkPad W541](../install/ivy_has_common.md)（暂无安装文档）
+-   [Dell Latitude E6400, E6400 XFR 及 E6400 ATG，皆支持 Nvidia 或 Intel GPU](e6400.md) **（刷入简单，无需拆解，硬件类似 X200/T400）**
+-   [HP EliteBook 2170p](hp2170p.md)
 -   [HP EliteBook 2560p](hp2560p.md)
 -   [HP EliteBook 2570p](hp2570p.md)
 -   [HP EliteBook Folio 9470m](hp9470m.md)
--   [HP EliteBook 2170p](hp2170p.md)
+-   [Lenovo ThinkPad R400](r400.md)
+-   [Lenovo ThinkPad R500](r500.md)
+-   [Lenovo ThinkPad T400 / T400S](t400.md)
+-   [Lenovo Thinkpad T420](../install/ivy_has_common.md)（暂无安装文档）
+-   [Lenovo ThinkPad T420S](../install/ivy_has_common.md)（暂无安装文档）
+-   [Lenovo ThinkPad T430](../install/ivy_has_common.md)（暂无安装文档）
+-   [Lenovo ThinkPad T440p](../install/t440p_external.md)
+-   [Lenovo ThinkPad T500](t500.md)
+-   [Lenovo ThinkPad T530 / W530](../install/ivy_has_common.md)（暂无安装文档）
+-   Lenovo ThinkPad T60（Intel GPU 款）
+-   [Lenovo ThinkPad W500](t500.md)
+-   [Lenovo ThinkPad W541](../install/ivy_has_common.md)（暂无安装文档）
+-   [Lenovo ThinkPad X200 / X200S / X200 Tablet](x200.md)
+-   [Lenovo Thinkpad X220](../install/ivy_has_common.md)
+-   [Lenovo Thinkpad X220t](../install/ivy_has_common.md)
+-   Lenovo ThinkPad X230
+-   [Lenovo Thinkpad X230](../install/x230_external.md)
+-   [Lenovo Thinkpad X230t](../install/x230_external.md)
+-   Lenovo ThinkPad X301
+-   Lenovo ThinkPad X60 / X60S / X60 Tablet
 
 ### 笔记本（ARM，配 U-Boot payload）
 

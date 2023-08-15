@@ -42,50 +42,49 @@ libreboot currently supports the following systems in this release:
 
 ### Servers (AMD, x86)
 
--   [ASUS KGPE-D16 motherboard](kgpe-d16.md)
 -   [ASUS KFSN4-DRE motherboard](kfsn4-dre.md)
+-   [ASUS KGPE-D16 motherboard](kgpe-d16.md)
 
 ### Desktops (AMD, Intel, x86)
 
+-   [Acer G43T-AM3](acer_g43t-am3.md)
+-   [Apple iMac 5,2](imac52.md)
 -   [ASUS KCMA-D8 motherboard](kcma-d8.md)
 -   [Gigabyte GA-G41M-ES2L motherboard](ga-g41m-es2l.md)
--   [Acer G43T-AM3](acer_g43t-am3.md)
--   [Intel D510MO and D410PT motherboards](d510mo.md)
--   [Apple iMac 5,2](imac52.md)
 -   [HP Elite 8200 SFF/MT](hp8200sff.md) (HP 6200 Pro Business probably works too)
 -   [HP Elite 8300 USDT](hp8300usdt.md)
+-   [Intel D510MO and D410PT motherboards](d510mo.md)
 
 ### Laptops (Intel, x86)
 
--   **[Dell Latitude E6400, E6400 XFR and E6400 ATG, all with Nvidia or Intel
-    GPU](e6400.md) (easy to flash, no disassembly, similar
-    hardware to X200/T400)**
--   ThinkPad X60 / X60S / X60 Tablet
--   ThinkPad T60 (with Intel GPU)
--   [Lenovo ThinkPad X200 / X200S / X200 Tablet](x200.md)
--   Lenovo ThinkPad X230
--   Lenovo ThinkPad X301
--   [Lenovo ThinkPad R400](r400.md)
--   [Lenovo ThinkPad T400 / T400S](t400.md)
--   [Lenovo ThinkPad T500](t500.md)
--   [Lenovo ThinkPad T530 / W530](../install/ivy_has_common.md) (no install
-    docs yet)
--   [Lenovo ThinkPad W500](t500.md)
--   [Lenovo ThinkPad R500](r500.md)
 -   [Apple MacBook1,1 and MacBook2,1](macbook21.md)
--   [Lenovo ThinkPad T440p](../install/t440p_external.md)
--   [Lenovo Thinkpad X220](../install/ivy_has_common.md)
--   [Lenovo Thinkpad X220t](../install/ivy_has_common.md)
--   [Lenovo Thinkpad T420](../install/ivy_has_common.md) (no install docs yet)
--   [Lenovo ThinkPad T420S](../install/ivy_has_common.md) (no install docs yet)
--   [Lenovo ThinkPad T430](../install/ivy_has_common.md) (no install docs yet)
--   [Lenovo Thinkpad X230](../install/x230_external.md)
--   [Lenovo Thinkpad X230t](../install/x230_external.md)
--   [Lenovo ThinkPad W541](../install/ivy_has_common.md) (no install docs yet)
+-   [Dell Latitude E6400, E6400 XFR and E6400 ATG, all with Nvidia or Intel
+    GPU](e6400.md) **(easy to flash, no disassembly, similar
+    hardware to X200/T400)**
+-   [HP EliteBook 2170p](hp2170p.md)
 -   [HP EliteBook 2560p](hp2560p.md)
 -   [HP EliteBook 2570p](hp2570p.md)
 -   [HP EliteBook Folio 9470m](hp9470m.md)
--   [HP EliteBook 2170p](hp2170p.md)
+-   [Lenovo ThinkPad R400](r400.md)
+-   [Lenovo ThinkPad R500](r500.md)
+-   [Lenovo ThinkPad T400 / T400S](t400.md)
+-   [Lenovo Thinkpad T420](../install/ivy_has_common.md) (no install docs yet)
+-   [Lenovo ThinkPad T420S](../install/ivy_has_common.md) (no install docs yet)
+-   [Lenovo ThinkPad T430](../install/ivy_has_common.md) (no install docs yet)
+-   [Lenovo ThinkPad T440p](../install/t440p_external.md)
+-   [Lenovo ThinkPad T500](t500.md)
+-   [Lenovo ThinkPad T530 / W530](../install/ivy_has_common.md) (no install
+-   Lenovo ThinkPad T60 (with Intel GPU)
+-   [Lenovo ThinkPad W500](t500.md)
+-   [Lenovo ThinkPad W541](../install/ivy_has_common.md) (no install docs yet)
+-   [Lenovo ThinkPad X200 / X200S / X200 Tablet](x200.md)
+-   [Lenovo Thinkpad X220](../install/ivy_has_common.md)
+-   [Lenovo Thinkpad X220t](../install/ivy_has_common.md)
+-   Lenovo ThinkPad X230
+-   [Lenovo Thinkpad X230](../install/x230_external.md)
+-   [Lenovo Thinkpad X230t](../install/x230_external.md)
+-   Lenovo ThinkPad X301
+-   Lenovo ThinkPad X60 / X60S / X60 Tablet
 
 ### Laptops (ARM, with U-Boot payload)
 
@@ -97,17 +96,17 @@ libreboot currently supports the following systems in this release:
 These boards were in Libreboot, but have been removed with the intention of
 re-adding them at a later date. They were removed due to issues. List:
 
--   [HP Chromebook 14 G3 (nyan-blaze)](../install/chromebooks.md)
 -   [Acer Chromebook 13 (CB5-311, C810) (nyan-big)](../install/chromebooks.md)
--   [Hisense Chromebook C11 and more (veyron-jerry)](../install/chromebooks.md)
--   [Samsung Chromebook 2 13" (peach-pi)](../install/chromebooks.md)
--   [Samsung Chromebook 2 11" (peach-pit)](../install/chromebooks.md)
--   [HP Chromebook 11 G1 (daisy-spring)](../install/chromebooks.md)
--   [Samsung Chromebook XE303 (daisy-snow)](../install/chromebooks.md)
 -   [ASUS Chromebit CS10 (veyron-mickey)](../install/chromebooks.md)
--   [ASUS Chromebook Flip C100PA (veyron-minnie)](../install/chromebooks.md)
 -   [ASUS Chromebook C201PA (veyron-speedy)](../install/c201.md)
+-   [ASUS Chromebook Flip C100PA (veyron-minnie)](../install/chromebooks.md)
+-   [Hisense Chromebook C11 and more (veyron-jerry)](../install/chromebooks.md)
+-   [HP Chromebook 11 G1 (daisy-spring)](../install/chromebooks.md)
+-   [HP Chromebook 14 G3 (nyan-blaze)](../install/chromebooks.md)
 -   [Intel D945GCLF](d945gclf.md) (removed from lbmk, TODO: re-add support)
+-   [Samsung Chromebook 2 11" (peach-pit)](../install/chromebooks.md)
+-   [Samsung Chromebook 2 13" (peach-pi)](../install/chromebooks.md)
+-   [Samsung Chromebook XE303 (daisy-snow)](../install/chromebooks.md)
 
 ### NOTES about removed boards:
 
