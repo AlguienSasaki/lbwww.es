@@ -306,9 +306,9 @@ the sections below:
 
 [You must flash it externally](spi.md)
 
-#### DELL Latitute E6400 laptop (easy to flash, similar to X200/T400)
+#### DELL Latitude E6400 laptop (easy to flash, similar to X200/T400)
 
-See: [Dell Latitute E6400 Libreboot Installation Guide](e6400.md)
+See: [Dell Latitude E6400 Libreboot Installation Guide](e6400.md)
 
 #### ThinkPad X200/T400/T500/W500/R400/R500 vendor BIOS
 
@@ -545,7 +545,7 @@ Refer to the following article:\
 DELL Latitude E6400 laptop (easy to flash, similar to X200/T400)
 -------------------------
 
-See: [Dell Latitute E6400 Libreboot Installation Instructions](e6400.md)
+See: [Dell Latitude E6400 Libreboot Installation Instructions](e6400.md)
 
 ASUS KFSN4-DRE
 --------------

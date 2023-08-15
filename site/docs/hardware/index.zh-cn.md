@@ -44,7 +44,7 @@ x-toc-enable: true
 
 ### 笔记本（Intel，x86）
 
--   **[Dell Latitute E6400, E6400 XFR 及 E6400 ATG，皆支持 Nvidia 或 Intel GPU](e6400.md)（刷入简单，无需拆解，硬件类似 X200/T400）**
+-   **[Dell Latitude E6400, E6400 XFR 及 E6400 ATG，皆支持 Nvidia 或 Intel GPU](e6400.md)（刷入简单，无需拆解，硬件类似 X200/T400）**
 -   ThinkPad X60 / X60S / X60 Tablet
 -   ThinkPad T60（Intel GPU 款）
 -   [Lenovo ThinkPad X200 / X200S / X200 Tablet](x200.md)
