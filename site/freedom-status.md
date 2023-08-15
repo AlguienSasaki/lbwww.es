@@ -241,7 +241,7 @@ Neutered ME required on these targets: `t420_8mb`, `t420s_8mb`, `t430_12mb`,
 `t440p_12mb`, `t440pmrc_12mb`, `t520_8mb`, `t530_12mb`, `w530_12mb`,
 `w541_12mb`, `w541mrc_12mb`, `x220_8mb`, `x230_12mb`, `x230_16mb`,
 `x230edp_12mb`, `x230t_12mb`, `x230t_16mb`, `hp8200sff`, `hp2560p_8mb`,
-`hp2570p_16mb`, `hp8300usdt_16mb` and `hp9470m_16mb`.
+`hp2570p_16mb`, `hp8300usdt_16mb`, `hp2170p_16mb` and `hp9470m_16mb`.
 
 As stated, Libreboot provides this in a state where the ME is no longer a
 threat to security. It initialises itself, but then does nothing, so it's
@@ -249,6 +249,9 @@ disabled. This is done using `me_cleaner`. See:
 <https://github.com/corna/me_cleaner/wiki/How-does-it-work%3F>
 
 ### KBC1126 EC firmware (HP laptops):
+
+This applies to the following targets: `hp2170p_16mb`, `hp2560p_8mb`,
+`hp2570p_16mb`, `hp8470pintel_16mb`, `hp9470m_16mb`.
 
 [EC firmware](faq.md#ec-embedded-controller-firmware)
 is inserted into main boot flash, rather than being on a separate
@@ -258,6 +261,10 @@ build system handles such firmware in `blobutil`, automatically downloading
 it during the build process. Libreboot 20230423 onwards does scrub EC firmware
 and provide functionality in `blobutil` insert, to insert them with `cbfstool`
 at the correct offset as defined by coreboot config for each board.
+
+### SMSC SCH5545 Environmental Control
+
+This is a tiny firmware required for fan control, on Dell Precision T1650.
 
 ### CPU microcode:
 

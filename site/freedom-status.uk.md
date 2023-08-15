@@ -332,8 +332,8 @@ Intel/x86
 Нейтралізований ME потрібен на цих цілях: `t420_8mb`, `t420s_8mb`, `t430_12mb`,
 `t440p_12mb`, `t440pmrc_12mb`, `t520_8mb`, `t530_12mb`, `w530_12mb`,
 `w541_12mb`, `w541mrc_12mb`, `x220_8mb`, `x230_12mb`, `x230_16mb`,
-`x230edp_12mb`, `x230t_12mb`, `x230t_16mb`, `hp8200sff_8mb`, `hp2560p_8mb`
-та `hp9470m_16mb`.
+`x230edp_12mb`, `x230t_12mb`, `x230t_16mb`, `hp8200sff_8mb`, `hp2560p_8mb`,
+`hp2570p_16mb`, `hp2170p_16mb` та `hp9470m_16mb`.
 
 Як заявлено, Libreboot надає це в стані, де ME більше не є
 загрозою для безпеки. Він ініціалізує себе, але потім нічого не робить, тому його
@@ -342,16 +342,21 @@ Intel/x86
 
 ### KBC1126 EC firmware (HP laptops):
 
-KBC1126 [EC firmware](faq.uk.md##прошивка-ec-вбудований-контролер)
-on `hp9470m_16mb` and `hp9470m_16mb` - on HP laptops, EC
-firmware is inserted into main boot flash, rather than being on a separate IC.
-This is *better* because libre replacements would be more easy to install in
+This applies to the following targets: `hp2170p_16mb`, `hp2560p_8mb`,
+`hp2570p_16mb`, `hp8470pintel_16mb`, `hp9470m_16mb`.
+
+[EC firmware](faq.md#ec-embedded-controller-firmware)
+is inserted into main boot flash, rather than being on a separate
+IC. This is *better* because libre replacements would be more easy to install in
 the future, and reverse engineering is made much easier by it. Libreboot's
 build system handles such firmware in `blobutil`, automatically downloading
-it during the build process - Libreboot 20230423 onwards does scrub EC firmware
+it during the build process. Libreboot 20230423 onwards does scrub EC firmware
 and provide functionality in `blobutil` insert, to insert them with `cbfstool`
-at the correct offset as defined by coreboot config for each board. - **TODO:
-English paragraph that needs to be translated into Ukrainian.**
+at the correct offset as defined by coreboot config for each board.
+
+### SMSC SCH5545 Environmental Control
+
+This is a tiny firmware required for fan control, on Dell Precision T1650.
 
 ### CPU microcode:
 
