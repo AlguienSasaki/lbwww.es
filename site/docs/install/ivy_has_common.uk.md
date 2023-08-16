@@ -1,78 +1,82 @@
 ---
-title: Спільне Sandybridge/Ivybridge/Haswell 
+title: Insert binary blobs on Sandybridge/Ivybridge/Haswell
 x-toc-enable: true
 ...
 
-Для як використовувати зовнішній програматор дивіться [керівництво прошивання 25xx NOR](/docs/install/spi.html)
+**TODO: Re-translate this again to Ukrainian. It was translated before, but
+the english page got heavily re-written.**
 
-Intel Flash Descriptor означує, що перші 5Мб з 12Мб завантажувальної флеш-пам'яті складається з
-регіонів Intel Flash Descriptor, GbE та Intel ME. Фінальні 7Мб тої
-12Мб флеш-пам'яті є регіоном BIOS. Однак, ця 12Мб флеш-пам'ять є фізично розділеною
-на флеш-пам'ять 8Мб NOR та флеш-пам'ять 4Мб NOR flash; операційна система бачить продовжувані 12Mб флеш-
-пам'яті, з нижчою частиною, яка є вмістом флеш-пам'яті 8Мб NOR та вищим
-вмістом, що є флеш-пам'ять 4Мб NOR.
+This is not a general purpose installation guide, but you *should read it*
+before installing Libreboot! *This* guide *must* be followed, no matter what
+method you use to install Libreboot; even if you compile from source, you should
+still read this page for later reference.
 
-Не хвилюйтесь надто багато про те, до якого флеш-чіпа ваш програматор під'єднано.
-Flashrom вийде з ладу, якщо ви спробуєте прошити образ з неправильним розміром для чіпа, до якого ви
-під`єднані.
+For how to use an external programmer see the [25xx NOR flashing guide](/docs/install/spi.html)
 
-Образи libreboot, випущені або побудовані для плат haswell або ivybridge ідуть як образи 12/16Мб.
-Розмір образа в питанні посилається на загальний розмір *обох* чипів.
-В порядку для того, щоб прошити повний образ зовнішньо, ви маєте поділити образ на дві секції для вміщення в розмір двох чипів, які ви бажаєте прошити.
-Це керівництво покаже приклади для Thinkpad X230, але вся інформація буде застосована для інших плат.
+Introduction
+============
 
-Плати Ivybridge вимагають *хоча би* intel management engine в порядку для завантаження.
-Плати Haswell додатково вимагають блоб mrc.
-Ні один з цих блобів не є перерозповсюджуваним, тому образи для цих плат має бути побудовано з джерельного коду або виправлені з затребуваними блобами.
+**PLEASE MAKE SURE you have build dependencies installed first. Although you
+do not need to re-compile release ROMs, you should follow these instructions
+before reading the instructions below:
+<https://libreboot.org/docs/build/#first-install-build-dependencies>**
 
-Якщо ви плануєте прошити rom випуску для вашої плати, тоді ви потребуєте лише виправити існуючий rom.
-Альтернативно, ви можете спробувати побудувати rom з джерельного коду для вашої плати.
+Coreboot is nominally free software, but requires binary blobs for certain
+boards, for certain functionalities; it differs per board, and some boards do
+not require blobs of any kind in the flash. We cover this more thoroughly in
+the [Freedom Status](../../freedom-status.md) page and in the [Binary Blob
+Reduction Policy](../../news/policy.md).
 
-Внутрішнє прошивання
------------------
+Well, not all of these blobs are freely redistributable. Coreboot does provide
+binary blobs in some cases, if the vendor has allowed it. In other cases,
+extraction from factory firmware is required, or you can extract them from
+vendor-supplied updates - Libreboot's build system does the latter.
 
-Для ivybridge конкретно (тобто, thinkpad X230, T430) на Lenovo ThinkPad,
-можливо прошитись з мікропрограмного забезпечення постачальника до Libreboot, без використання
-кліпси, але деякий розбір досі потрібен. Це може бути вигідно, якщо ви
-хочете заощадити кошти за допомогою некупівлі обладнання для зовнішньої прошивки. Все, що вам потрібно,
-це металевий пінцет або щось подібне, за допомогою якого можна створити коротке
-замикання між двома провідниками.
+When you [compile Libreboot ROM images from source](../build/), Libreboot will
+automatically download any given blobs that are required, for any given board
+target. This is done without user intervention, and only when absolutely needed
+to make the machine boot properly.
 
-Дивіться: [внутрішнє прошивання ivybridge](ivy_internal.md)
+The problem?
+------------
 
-Отримання бінарних блобів
-----------------------
+Well, if the blobs cannot be freely redistributed, then we can't provide them.
+So how do we handle *that*, in the context of Libreboot releases?
 
-Якщо ви побудували ваш rom з джерельного коду, тоді всі блоби загалом завантажено автоматично.
-Деякі плати, однак, не мають джерел для всіх блобів і вимагають ручного вилучення блобів.
-Якщо ви пробуєте побудувати rom з джерельного коду та lbmk виходить з ладу при розміщенні блобів, ви може вилучити їх з існуючої резервної копії rom.
-Щоб зробити це, почніть з отримання повної резервної копії rom для вашої машини.
+The solution
+------------
 
-Після того, як ви підключили програматор і зчитали обидва флеш-чіпи, вам доведеться об'єднати два образи в якості одного rom.
-Загалом, образ 4Мб є верхнім і образ 8Мб є нижнім.
-Для створення файлу rom, придатного для читання, просто виконайте конкатенацію обох файлів.
+The answer is very simple:  these blobs are **NOT** provided, at all! However,
+the very same logic used by the build system can be run standalone, to re-insert
+these binary blobs on release ROMs. The `inject` script detects what blobs are
+needed for your ROM image.
 
-	cat bottom.rom top.rom > full_backup.bin
+The script will detect what board you're inserting on, or you can manually tell
+it what board, and it will fetch them for you, inserting them, so that your
+board is ready to flash - flashing it without these required blobs may result in
+a brick.
 
-Створивши резервну копію rom постачальника, ви можете використати lbmk для автоматичного вилучення потрібних блобів.
-Сценарій вилучення блобів приймає ім'я плати в якості першого аргумента та шлях до rom в якості другого аргумента.
-Наприклад, ось те, як би ви вилучили блоби з резервної копії rom x230.
+Blob locations
+--------------
 
-	./blobutil extract x230_12mb full_backup.bin
+During auto-download of blobs, they are saved to these locations within the
+Libreboot build system:
 
-Майте на увазі, що команда зверху має бути виконана з кореня директорії lbmk.
-Дивіться [інструкції побудови](/docs/build/index.uk.html) для більших подробиць. 
+* ME firmware: `blobs/*/me.bin` - the `*` can be any given directory. Different ones will
+  be used by given boards, but the directory name may not match the board
+  target name.
+* SMSC SCH5545 fan control firmware (for Dell T1650): `blobs/t1650/sch5545ec.bin`
+* SMSC KBC1126 embedded controller firmware, on HP EliteBooks: `ec/`
+* Intel MRC firmware, used for ram/peripheral init on Haswell machines such as
+  thinkpad t440p/w541: `mrc/`
 
-Введення блобів в існуючий образ
+The above list refers to the *non-redistributable blobs*, and these are not
+directly included in releases. These are what `blobutil` auto-downloads.
+The `me.bin` files are produced by extracting them from vendor updates and
+neutering them with `me_cleaner` so that Intel ME is disabled during early boo.
+
+Injecting Blobs into an Existing Rom
 ------------------------------------
-
-Образи випусків не можуть включати конкртні блоби з юридичних причин.
-Тому ви **не можете** напряму прошити образ випуску на свою плату.
-Ви маєте виправити rom випуску необхідними блобами *і потім* прошити їх на свою плату.
-
-Lbmk включає сценарій, який автоматично введе необхідні блоби в файл rom.
-Сценарій може визначити плату в автоматичному режимі, якщо ви не змінили ім'я, але ви можете також встановити
-ім'я плати самостійно з використанням флага `-b`.
 
 You must determine the correct board name, for your board, based on the list
 generated when running this command:
@@ -83,84 +87,114 @@ For example, `t440pmrc_12mb` corresponds to ThinkPad T440p with MRC firmware.
 Whereas `t440plibremrc_12mb` corresponds to T440p with libre MRC firmware.
 Another example: `x230_12mb` corresponds to Thinkpad X230.
 
-В порядку для введення необхідних блобів в образ rom, виконайте сценарій з кореня lbmk та вкажіть на образ rom.
-Наприклад:
+In order to inject the necessary blobs into a rom image, run the script from the root of lbmk and point to the rom image.
+
+If you only wish to flash a release rom then the process of injecting the necessary blobs is quite simple.
+Run the injection script pointing to the release archive you downloaded:
+
+	./blobutil inject /path/to/libreboot-20230319-18-g9f76c92_t440pmrc_12mb.tar.xz
+
+The script can automatically detect the board as long as you do not change the file name.
+You can then find flash-ready ROMs in `/bin/release/`
+
+Alternatively, you may patch only a single rom file, but you must supply the
+correct board target name as alluded to above.
+For example:
 
 	./blobutil inject -r x230_libreboot.rom -b x230_12mb
 
-Опціонально, ви можете використовувати цей сценарій для модифікації mac-адреси rom з флагом `-m`.
-Наприклад:
+Optionally, you can use this script to modify the mac address of the rom with the `-m` flag.
+For example:
 
 	./blobutil inject -r x230_libreboot.rom -b x230_12mb -m 00:f6:f0:40:71:fd
 
-**ПРИМІТКА: Машини Haswell ідуть з `mrc.bin` або без, залежно від 
-конфігурації образа ROM. Ці конфігураційні файли ROM мають `mrc.bin`: `t440pmrc_12mb`
-та `w541mrc_12mb`. Ці конфігураційні файли ROM мають вільний MRC: `t440p_12mb`
-та `w541_12mb` - критичним є те, щоб вибрати правильний, коли використовуєте
-флаг `-b` в команді `blobutil inject`. Наприклад, якщо ви
-використали `-b t440p_12mb` на образі ROM, який насправді відповідає
-`t440pmrc_12mb`, тоді затребуваний файл `mrc.bin` не буде додано
-і той ROM не завантажиться після прошивання.**
+Check that the blobs were inserted
+==================================
 
-**ПРИМІТКА: В архіві src Libreboot 20230319 або git tag, метод `blobutil`
-зламано на конфігураційних файлах Haswell, які вимагають `mrc.bin`, тому він
-не введе `mrc.bin` на правильному офсеті. Це було виправлено в ревізіях після
-випуску, і буде доступно в наступному випуску після цього. Прочитайте
-[оголошення оновлення Libreboot
-20230319](../../news/libreboot20230319_update.md) для більшої інформації.**
+You *must* ensure that the blobs were inserted.
 
-ПРИМІТКА: редактор MAC використовує `nvmutil`, про який ви можете прочитати більше в
-[документації nvmutil](nvmutil.md).
+Some examples of how to do that in lbmk:
 
-**УВАГА: Це поламано в архіві src Libreboot 20221214. Він виходить з ладу при
-спробі використання cbfstool, в зв'язку з проблемною перевіркою в сценарії. Це виправлено в
-нещодавніх випусках Libreboot або ревізіях. Виправлення
-наступне:
+	./build module cbutils
 
-Відредагуйте рядок 137 в `resources/scripts/blobs/inject`. Рядок в 20221214 каже
-це:
+Now you find `cbutitls/default`, which is a directory containing `cbfstool`
+and `ifdtool`. Do this on your ROM image (`libreboot.rom` in the example
+below):
+
+	./cbutils/default/cbfstool libreboot.rom print
+
+You should check that the blobs were inserted in cbfs, if needed; for example,
+EC firmware or MRC firmware.
+
+Next:
+
+	./cbutils/default/ifdtool -x libreboot.rom
+
+This creates several `.bin` files, one of which says `me` in it (Intel ME).
+Run hexdump on it:
+
+	hexdump flashregion_2_intel_me.bin
+
+Check the output. If it's all `0xFF` (all ones) or otherwise isn't a bunch
+of code, then the Intel ME firmware wasn't inserted.
+
+You'll note the small size of the Intel ME, e.g. 84KB on sandybridge platforms.
+This is because blobutil *automatically* neuters it, disabling it during
+early boot. This is done using `me_cleaner`, which lbmk imports.
+
+Errata
+======
+
+**NOTE: Haswell machines come with `mrc.bin` or without, depending on the
+ROM image configuration. These ROM configs have `mrc.bin`: `t440pmrc_12mb`
+and `w541mrc_12mb`. These ROM configs have libre MRC: `t440p_12mb`
+and `w541_12mb` - it is critical that you choose the right one, when using
+the `-b` flag in the `blobutil inject` command. For example, if you
+used `-b t440p_12mb` on a ROM image that actually corresponds
+to `t440pmrc_12mb`, then the required `mrc.bin` file would not be added
+and that ROM would not boot when flashed.**
+
+**NOTE: In the Libreboot 20230319 src archive or git tag, the `blobutil`
+insert method is broken on Haswell configs that need `mrc.bin`, because it does
+not insert `mrc.bin` at the correct offset. This was fixed in revisions after
+the release, and will be available in the next release after that. Read
+the [Libreboot 20230319 update
+announcement](../../news/libreboot20230319_update.md) for more information.**
+
+NOTE: the MAC changer makes use of `nvmutil`, which you can read more about in
+the [nvmutil documentation](nvmutil.md).
+
+**WARNING: This is broken in Libreboot 20221214's src archive. It fails when
+attempting to use cbfstool, due to a faulty check in a script. This is fixed in
+recent Libreboot releases or revisions. The fix is as
+follows:
+
+Edit line 137 in `resources/scripts/blobs/inject`. The line in 20221214 says
+this:
 
 	make -C cd coreboot/default/util/cbfstool || Fail 'could not build ifdtool'
 
-Модифікуйте його казати це:
+Modify it to say this:
 
 	make -C coreboot/default/util/cbfstool || Fail 'could not build cbfstool'
 
-ТАКОЖ:
+ALSO:
 
-*Коли створюєте MAC-адресу*, той самий сценарій намагається побудувати `nvmutil`
-з `/util/nvmutil`, в Libreboot 20221214. Це було знайдено 10 січня
-2023 року, засновуючий на звітах користувачів на IRC. Виправіть це подібним чином (вже виправлено, в останньому
-Libreboot з Git):
+*When generating a MAC address*, the same script tries to build `nvmutil`
+from `/util/nvmutil`, in Libreboot 20221214. This was discovered on 10 January
+2023, based on user report on IRC. Fix it like so (already fixed, in latest
+Libreboot from Git):
 
-Рядок 30, він каже:
+Line 30, it says:
 
 	make -C /util/nvmutil || Fail 'failed to build nvmutil'
 
-Змініть його казати:
+Change it to say:
 
 	make -C util/nvmutil || Fail 'failed to build nvmutil'
 
-До того часу, поки це не буде відредаговано відповідним чином, сценарій введення *вийде* з не-нульовим
-статусом, та блоби не буде введено.
+Until this is edited accordingly, the inject script will *exit* with non-zero
+status, and no blobs will be injected.
 
-Це було виправлено, в наступних після Libreboot 20221214 випусках, але ви маєте
-застосувати виправлення самостійно, якщо використовуєте *той* випуск.
-
-Розділення Rom
------------------
-
-Ви можете використовувати `dd` для легкого розділення вашого rom на дві окремі порції для
-зовнішнього прошивання.
-Наприклад, таким чином ви би поділили rom 12Мб для встановлення: 
-
-	dd if=libreboot.rom of=top.rom bs=1M skip=8
-	dd if=libreboot.rom of=bottom.rom bs=1M count=8
-
-Ви би потім прошили чип 4Мб з `top.rom` та чип 8Мб з `bottom.rom`.
-Для більшого образа rom, та ж сама логіка була би застосована.
-
-В dd `skip` означає, що ви бажаєте, щоб програма проігнорувала перші n блоків, де
-`count` означає, що ви хочете, щоб вона зупинила запис після n блоків.
-
-Коли ваш образ rom поділено, ви можете перейти до [прошивання.](/docs/install/spi.html)
+This has been fixed, following the Libreboot 20221214 release, but you must
+apply this fix yourself, if using *that* release.

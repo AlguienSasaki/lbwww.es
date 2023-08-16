@@ -3,75 +3,77 @@ title: Insert binary blobs on Sandybridge/Ivybridge/Haswell
 x-toc-enable: true
 ...
 
+This is not a general purpose installation guide, but you *should read it*
+before installing Libreboot! *This* guide *must* be followed, no matter what
+method you use to install Libreboot; even if you compile from source, you should
+still read this page for later reference.
+
 For how to use an external programmer see the [25xx NOR flashing guide](/docs/install/spi.html)
 
-The Intel Flash Descriptor defines that the first 5MiB of the 12MiB boot flash consists of
-the Intel Flash Descriptor, GbE and Intel ME regions. The final 7MiB of that
-12MiB flash is the BIOS region. However, this 12MiB of flash is physically split
-into an 8MiB NOR flash and a 4MiB NOR flash; the OS sees a continuous 12MiB of
-flash, with the lower part being the contents of 8MiB NOR flash and the upper
-contents being the 4MiB NOR flash.
+Introduction
+============
 
-Do not worry too much about which flash chip your programmer is connected to.
-Flashrom will fail if you try to flash the wrong sized image for the chip you are connected
-to.
+**PLEASE MAKE SURE you have build dependencies installed first. Although you
+do not need to re-compile release ROMs, you should follow these instructions
+before reading the instructions below:
+<https://libreboot.org/docs/build/#first-install-build-dependencies>**
 
-The libreboot roms released or built for haswell or ivybridge boards come as 12/16MiB roms.
-The size of the rom in question refers to the total size of *both* chips.
-In order to flash a full rom externally, you need to split the rom into two sections to fit the size of the two chips you wish to flash.
-This guide will show examples for the Thinkpad X230, but all of the information will apply to other boards.
+Coreboot is nominally free software, but requires binary blobs for certain
+boards, for certain functionalities; it differs per board, and some boards do
+not require blobs of any kind in the flash. We cover this more thoroughly in
+the [Freedom Status](../../freedom-status.md) page and in the [Binary Blob
+Reduction Policy](../../news/policy.md).
 
-Ivybridge boards require *at least* the intel management engine in order to boot.
-Haswell boards additionally require the mrc blob.
-Neither of these blobs are redistributable, so roms for these boards must be built from source or patched with the required blobs.
+Well, not all of these blobs are freely redistributable. Coreboot does provide
+binary blobs in some cases, if the vendor has allowed it. In other cases,
+extraction from factory firmware is required, or you can extract them from
+vendor-supplied updates - Libreboot's build system does the latter.
 
-If you're planning to flash a release rom to your board then you need only patch the existing rom.
-Alternatively, you can attempt to build a rom from source for your board.
+When you [compile Libreboot ROM images from source](../build/), Libreboot will
+automatically download any given blobs that are required, for any given board
+target. This is done without user intervention, and only when absolutely needed
+to make the machine boot properly.
 
-Internal flashing
------------------
+The problem?
+------------
 
-For ivybridge specifically (e.g. thinkpad X230, T430) on Lenovo ThinkPads,
-it is possible to flash from vendor firmware to Libreboot, without using a
-clip, but some disassembly is still required. This can be beneficial if you
-want to save money by not buying external flashing equipment. All you need is
-a pain of metal tweezers or something similar that can be used to create
-a short circuit between two conductors.
+Well, if the blobs cannot be freely redistributed, then we can't provide them.
+So how do we handle *that*, in the context of Libreboot releases?
 
-See: [ivybridge internal flashing](ivy_internal.md)
+The solution
+------------
 
-Obtaining Binary Blobs
-----------------------
+The answer is very simple:  these blobs are **NOT** provided, at all! However,
+the very same logic used by the build system can be run standalone, to re-insert
+these binary blobs on release ROMs. The `inject` script detects what blobs are
+needed for your ROM image.
 
-If you have built your rom from source then all of the blobs are generally downloaded automatically.
-Some boards however, do not have sources for all blobs and require manual blob extraction.
-If you try to build a rom from source and lbmk fails to locate the blobs, you can extract them from an existing rom backup.
-To do this, start by obtaining a full backup rom from your machine.
+The script will detect what board you're inserting on, or you can manually tell
+it what board, and it will fetch them for you, inserting them, so that your
+board is ready to flash - flashing it without these required blobs may result in
+a brick.
 
-Once you have connected your programmer and read from both flash chips, you will have to combine the two images to a single rom.
-In general, the 4mb image is the top, and the 8mb image is the bottom.
-To create a readable rom file, simply concatenate the two files.
+Blob locations
+--------------
 
-	cat bottom.rom top.rom > full_backup.bin
+During auto-download of blobs, they are saved to these locations within the
+Libreboot build system:
 
-Once you have a backup of your vendor rom, you can use lbmk to automatically extract the necessary blobs.
-The blob extraction script takes a board name as the first argument and a path to a rom as the second argument.
-For example, here is how you would extract the blobs from an x230 rom backup.
+* ME firmware: `blobs/*/me.bin` - the `*` can be any given directory. Different ones will
+  be used by given boards, but the directory name may not match the board
+  target name.
+* SMSC SCH5545 fan control firmware (for Dell T1650): `blobs/t1650/sch5545ec.bin`
+* SMSC KBC1126 embedded controller firmware, on HP EliteBooks: `ec/`
+* Intel MRC firmware, used for ram/peripheral init on Haswell machines such as
+  thinkpad t440p/w541: `mrc/`
 
-	./blobutil extract x230_12mb full_backup.bin
-
-Note that the above command must be run from the root of the lbmk directory.
-See [building instructions](/docs/build/index.html) for more details. 
+The above list refers to the *non-redistributable blobs*, and these are not
+directly included in releases. These are what `blobutil` auto-downloads.
+The `me.bin` files are produced by extracting them from vendor updates and
+neutering them with `me_cleaner` so that Intel ME is disabled during early boo.
 
 Injecting Blobs into an Existing Rom
 ------------------------------------
-
-Release roms cannot include certain blobs for legal reasons.
-You therefore **cannot** directly flash a release rom to your board.
-You must patch the release rom with the necessary blobs *and then* flash it to your board.
-
-Lbmk includes a script that will automatically inject the necessary blobs into a rom file.
-The script can determine the board automatically if you have not changed the name, but you can also manually set the board name with the `-b` flag.
 
 You must determine the correct board name, for your board, based on the list
 generated when running this command:
@@ -92,7 +94,8 @@ Run the injection script pointing to the release archive you downloaded:
 The script can automatically detect the board as long as you do not change the file name.
 You can then find flash-ready ROMs in `/bin/release/`
 
-Alternatively, you may patch only a single rom file.
+Alternatively, you may patch only a single rom file, but you must supply the
+correct board target name as alluded to above.
 For example:
 
 	./blobutil inject -r x230_libreboot.rom -b x230_12mb
@@ -101,6 +104,43 @@ Optionally, you can use this script to modify the mac address of the rom with th
 For example:
 
 	./blobutil inject -r x230_libreboot.rom -b x230_12mb -m 00:f6:f0:40:71:fd
+
+Check that the blobs were inserted
+==================================
+
+You *must* ensure that the blobs were inserted.
+
+Some examples of how to do that in lbmk:
+
+	./build module cbutils
+
+Now you find `cbutitls/default`, which is a directory containing `cbfstool`
+and `ifdtool`. Do this on your ROM image (`libreboot.rom` in the example
+below):
+
+	./cbutils/default/cbfstool libreboot.rom print
+
+You should check that the blobs were inserted in cbfs, if needed; for example,
+EC firmware or MRC firmware.
+
+Next:
+
+	./cbutils/default/ifdtool -x libreboot.rom
+
+This creates several `.bin` files, one of which says `me` in it (Intel ME).
+Run hexdump on it:
+
+	hexdump flashregion_2_intel_me.bin
+
+Check the output. If it's all `0xFF` (all ones) or otherwise isn't a bunch
+of code, then the Intel ME firmware wasn't inserted.
+
+You'll note the small size of the Intel ME, e.g. 84KB on sandybridge platforms.
+This is because blobutil *automatically* neuters it, disabling it during
+early boot. This is done using `me_cleaner`, which lbmk imports.
+
+Errata
+======
 
 **NOTE: Haswell machines come with `mrc.bin` or without, depending on the
 ROM image configuration. These ROM configs have `mrc.bin`: `t440pmrc_12mb`
@@ -155,21 +195,3 @@ status, and no blobs will be injected.
 
 This has been fixed, following the Libreboot 20221214 release, but you must
 apply this fix yourself, if using *that* release.
-
-Splitting The Rom
------------------
-
-You can use `dd` to easily split your rom into the two separate portions for
-external flashing.
-For example, here is how you would split a 12mb rom for installation: 
-
-	dd if=libreboot.rom of=top.rom bs=1M skip=8
-	dd if=libreboot.rom of=bottom.rom bs=1M count=8
-
-You would then flash the 4MiB chip with `top.rom` and the 8MiB chip with `bottom.rom`.
-For a larger rom image, the same logic would apply.
-
-In dd `skip` means that you want the program to ignore the first n blocks, whereas
-`count` means you want it to stop writing after n blocks.
-
-Once you have your rom image split you can proceed to [flashing.](/docs/install/spi.html)
