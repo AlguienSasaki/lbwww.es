@@ -37,6 +37,7 @@ x-toc-enable: true
 -   [Acer G43T-AM3](acer_g43t-am3.md)
 -   [Apple iMac 5,2](imac52.md)
 -   [ASUS KCMA-D8 主板](kcma-d8.md)
+-   [Dell Precision T1650](t1650.md)
 -   [Gigabyte GA-G41M-ES2L 主板](ga-g41m-es2l.md)
 -   [HP Elite 8200 SFF/MT](hp8200sff.md)（HP 6200 Pro Business 多半也能用）
 -   [HP Elite 8300 USDT](hp8300usdt.md)

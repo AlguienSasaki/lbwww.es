@@ -5,6 +5,9 @@
 Introduction
 ============
 
+**UPDATE (16 August 2023): This also applies to the recently added Dell
+Precision T1650 mainboard.**
+
 As I write this post, [Libreboot 20230625](libreboot20230625.md) recently came
 out. There's technically nothing unsafe about the release itself, but certain
 users have been bricking their machines, on the following mainboards:

@@ -560,6 +560,11 @@ chips, but it is hard to find now.  A custom flasher may be made such as
 [flashrom serprog stm32](https://github.com/wosk/stm32-vserprog-lpc) or
 [teensy flasher](https://www.flashrom.org/Teensy_3.1_SPI_%2B_LPC/FWH_Flasher)
 
+TARGET: DELL Precision T1650 desktop
+------------------------------------
+
+Refer to the [T1650 hardware page](../hardware/t1650.md).
+
 TARGET: Apple Macbook2,1, Macbook1,1 and iMac5,2 (i945 platform)
 ----------------------------------------------------------------
 
