@@ -2,6 +2,11 @@
 % Leah Rowe
 % 14 August 2023
 
+**UPDATE, 16 August 2023:
+[installation instructions are now available for
+HP EliteBook 8470p](../docs/hardware/hp8470p.md) and also
+[Dell Precision T1650](../docs/hardware/t1650.md).**
+
 Introduction
 ============
 
