@@ -165,7 +165,7 @@ lbmk.
 Ви маєте вказати libreboot резервну копію rom та сказати системі побудові те, для якої плати ви хочете видобути блоби
 Наприклад, щоб видобути блоби для t440p, ви маєте виконати:
 
-	./blobutil extract t440p_12mb /path/to/12mb_backup.rom
+	./update blobs extract t440p_12mb /path/to/12mb_backup.rom
 
 Ви потім можете побудувати rom для цієї плати нормально:
 
@@ -182,28 +182,25 @@ lbmk.
 що означає те, що кожен сценарій *може* бути використано самостійно (якщо це не є правдою, для
 будь-якого сценарія, це є помилкою, яка має бути виправлена).
 
-Це настільки просто, як це:
-
-	./download all
-
-Вищезазначена команда завантажує всі модулі, які означено в системі побудови libreboot.
-Однак, ви можете завантажити модулі індивідуально.
-
-Ця команда показує вам список доступних модулів:
-
-	./download list
+Check the list of downloadable modules by reading `resources/git/revisions`.
 
 Приклад завантаження індивідуального модуля:
 
-	./download coreboot
+	./fetch seabios
 
-	./download seabios
+	./fetch grub
 
-	./download grub
+	./fetch flashrom
 
-	./download flashrom
+Coreboot and u-Boot are handled by a separate script:
 
-	./download u-boot
+	./fetch_trees coreboot
+
+	./fetch_trees u-boot
+
+The 'fetch_trees` script creates multiple directories
+based on revisions, and patches per revision, whereas
+the `fetch` script only does one revision.
 
 Третє, побудова кожного з модулів:
 --------------------------------

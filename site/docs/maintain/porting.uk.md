@@ -114,10 +114,10 @@ libreboot як `плата.`
 для інструкцій про створення уніфікованого образу rom.
 
 Витягнення блобів з образа rom постачальника автоматизовано в lbmk.
-Просто виконайте `./blobutil extract [плата] [/path/to/backup.bin]`
+Просто виконайте `./update blobs extract [плата] [/path/to/backup.bin]`
 Наприклад:
 
-	./blobutil extract t420s_12mb t420s_backup.bin
+	./update blobs extract t420s_12mb t420s_backup.bin
 
 Ви можете потім модифікувати ваші конфігурації coreboot знову та встановити шлях для
 intel firmware descriptor, intel management engine, та прошивки gigabit ethernet.

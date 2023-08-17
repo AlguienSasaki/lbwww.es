@@ -165,7 +165,7 @@ If your board does not have blob sources available, then you must extract them f
 You must point libreboot to the backup rom and tell the build system which board you want to extract blobs for.
 For example, to extract blobs for the t440p you must run:
 
-	./blobutil extract t440p_12mb /path/to/12mb_backup.rom
+	./update blobs extract t440p_12mb /path/to/12mb_backup.rom
 
 You can then build the rom for this board as normal:
 
@@ -182,28 +182,25 @@ the [libreboot maintenance manual](../maintain/); lbmk is designed to be modular
 which means that each script *can* be used on its own (if that's not true, for
 any script, it's a bug that should be fixed).
 
-It's as simple as that:
-
-	./download all
-
-The above command downloads all modules defined in the libreboot build system.
-However, you can download modules individually.
-
-This command shows you the list of available modules:
-
-	./download list
+Check the list of downloadable modules by reading `resources/git/revisions`.
 
 Example of downloading an individual module:
 
-	./download coreboot
+	./fetch seabios
 
-	./download seabios
+	./fetch grub
 
-	./download grub
+	./fetch flashrom
 
-	./download flashrom
+Coreboot and u-Boot are handled by a separate script:
 
-	./download u-boot
+	./fetch_trees coreboot
+
+	./fetch_trees u-boot
+
+The 'fetch_trees` script creates multiple directories
+based on revisions, and patches per revision, whereas
+the `fetch` script only does one revision.
 
 Third, build all of the modules:
 --------------------------------

@@ -106,7 +106,7 @@ Build system changes:
   fixes this issue which has existed in coreboot *for years*:
   <https://browse.libreboot.org/lbmk.git/plain/resources/grub/patches/0005-at-keyboard-timeout.patch?id=20192c08488104f5cacc1f3842ae8e0ee74c44ef>
 * `build/release/roms`: HP KBC1126 EC firmware scrubbed from release ROMs, for
-  re-insertion later via `./blobutil download` and `./blobutil inject` like
+  re-insertion later via `./update blobs download` and `./update blobs inject` like
   with ME images via `me_cleaner` - for HP laptops. Patch courtesy Leah Rowe.
 * `build/dependencies/parabola`: New script for installing build dependencies
   in Parabola GNU+Linux, courtesy of Riku Viitanen (`Riku_V` on Libreboot IRC)
@@ -124,7 +124,7 @@ Build system changes:
 * `blobutil/download`: support downloading KBC1126-based EC firmware for HP
   laptops. (patch by Leah Rowe)
 * `blobutil/download`: Support extracting `me.bin` from full archives, when
-  running `./blobutil download` - this is done, using the `-M` option
+  running `./update blobs download` - this is done, using the `-M` option
   in `me_cleaner` (some vendors put whole ROM images with IFD, GBE, ME and BIOS
   regions in them, inside their BIOS update archives - we only need to get ME
   from them, to run through `me_cleaner`) in `me_cleaner`. Ninja'd into lbmk by

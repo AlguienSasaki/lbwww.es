@@ -60,7 +60,7 @@ of the libreboot Git repository.
 
 Then, download coreboot:
 
-	./download coreboot
+	./fetch_trees coreboot
 
 Finally, compile the `cbutils` module:
 

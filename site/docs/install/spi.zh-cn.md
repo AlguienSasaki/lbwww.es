@@ -256,7 +256,7 @@ Flashrom 是用来读出、擦除、重写 NOR flash 内容的软件。
 
 注意：你可以输入 debian、arch 或 void 来替换 ubuntu。debian 脚本也可以用于新版 ubuntu。
 
-	./download flashrom
+	./fetch flashrom
 	./build module flashrom
 
 如果 `ubuntu2004` 报告了依赖缺失，编辑一下这个脚本，把缺失的依赖移除就行了。脚本位于 `resources/scripts/build/dependencies/ubuntu2004`，它是写给 Ubuntu 20.04 的，但在其他使用 `apt-get` 包管理器的 Linux 发行版应该也能用。

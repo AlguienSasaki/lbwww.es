@@ -89,7 +89,7 @@ In order to inject the necessary blobs into a rom image, run the script from the
 If you only wish to flash a release rom then the process of injecting the necessary blobs is quite simple.
 Run the injection script pointing to the release archive you downloaded:
 
-	./blobutil inject /path/to/libreboot-20230319-18-g9f76c92_t440pmrc_12mb.tar.xz
+	./update blobs inject /path/to/libreboot-20230319-18-g9f76c92_t440pmrc_12mb.tar.xz
 
 The script can automatically detect the board as long as you do not change the file name.
 You can then find flash-ready ROMs in `/bin/release/`
@@ -98,12 +98,12 @@ Alternatively, you may patch only a single rom file, but you must supply the
 correct board target name as alluded to above.
 For example:
 
-	./blobutil inject -r x230_libreboot.rom -b x230_12mb
+	./update blobs inject -r x230_libreboot.rom -b x230_12mb
 
 Optionally, you can use this script to modify the mac address of the rom with the `-m` flag.
 For example:
 
-	./blobutil inject -r x230_libreboot.rom -b x230_12mb -m 00:f6:f0:40:71:fd
+	./update blobs inject -r x230_libreboot.rom -b x230_12mb -m 00:f6:f0:40:71:fd
 
 Check that the blobs were inserted
 ==================================

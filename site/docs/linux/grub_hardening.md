@@ -84,7 +84,7 @@ You can build `cbfstool` in the libreboot build system. Run this command:
 
 This assumes that you already downloaded coreboot:
 
-	./download coreboot
+	./fetch_trees coreboot
 
 This, in turn, assumes that you have installed the build dependencies for
 libreboot. On Ubuntu 20.04 and other apt-get distros, you can do this:
@@ -156,7 +156,7 @@ GRUB using the libreboot build system. Run the following commands (assuming
 you have the correct build dependencies installed) to build GRUB, from the
 libreboot Git repository:
 
-	./download grub
+	./fetch_trees grub
 
 	./build module grub
 

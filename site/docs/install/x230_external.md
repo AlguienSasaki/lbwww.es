@@ -30,7 +30,7 @@ The script can determine the board automatically if you have not changed the nam
 In order to inject the necessary blobs into a rom image, run the script from the root of lbmk and point to the rom image.
 Run the injection script pointing to the release archive you downloaded:
 
-	./blobutil inject /path/to/libreboot-20230319-18-g9f76c92_t440_12mb.tar.xz
+	./update blobs inject /path/to/libreboot-20230319-18-g9f76c92_t440_12mb.tar.xz
 
 The script can automatically detect the board as long as you do not change the file name.
 You can then find flash-ready ROMs in `/bin/release/`
@@ -38,12 +38,12 @@ You can then find flash-ready ROMs in `/bin/release/`
 Alternatively, you may patch only a single rom file.
 For example:
 
-	./blobutil inject -r x230_libreboot.rom -b x230_12mb
+	./update blobs inject -r x230_libreboot.rom -b x230_12mb
 
 Optionally, you can use this script to modify the mac address of the rom with the `-m` flag.
 For example:
 
-	./blobutil inject -r x230_libreboot.rom -b x230_12mb -m 00:f6:f0:40:71:fd
+	./update blobs inject -r x230_libreboot.rom -b x230_12mb -m 00:f6:f0:40:71:fd
 
 NOTE: this makes use of `nvmutil`, which you can read more about in
 the [nvmutil documentation](nvmutil.md).

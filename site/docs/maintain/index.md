@@ -337,7 +337,7 @@ apply custom patches to GRUB.
 
 This runs scripts in `resources/scripts/download`. For example:
 
-	./download coreboot
+	./fetch_trees coreboot
 
 This would run:
 
@@ -345,7 +345,7 @@ This would run:
 
 Additional parameters can be given, for example:
 
-	./download coreboot default
+	./fetch_trees coreboot default
 
 This would run:
 

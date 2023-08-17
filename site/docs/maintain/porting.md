@@ -117,10 +117,10 @@ You'll need a unified rom for dual chip setups; see [the ivybridge haswell guide
 for instructions on creating a unified rom image.
 
 Extracting the blobs from a vendor rom image is automated in lbmk.
-Simply run `./blobutil extract [board] [/path/to/backup.bin]`
+Simply run `./update blobs extract [board] [/path/to/backup.bin]`
 For example:
 
-	./blobutil extract t420s_12mb t420s_backup.bin
+	./update blobs extract t420s_12mb t420s_backup.bin
 
 You can then modify your coreboot configs again and set the path for the
 intel firmware descriptor, intel management engine, and gigabit ethernet firmware.
