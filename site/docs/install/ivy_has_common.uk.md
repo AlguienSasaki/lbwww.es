@@ -73,7 +73,7 @@ Libreboot build system:
 The above list refers to the *non-redistributable blobs*, and these are not
 directly included in releases. These are what `blobutil` auto-downloads.
 The `me.bin` files are produced by extracting them from vendor updates and
-neutering them with `me_cleaner` so that Intel ME is disabled during early boo.
+neutering them with `me_cleaner` so that Intel ME is disabled during early boot.
 
 Injecting Blobs into an Existing Rom
 ------------------------------------
