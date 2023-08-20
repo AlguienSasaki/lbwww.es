@@ -1,4 +1,4 @@
-% Encrypted /boot/ on LUKSv2 with argon2i/id now possible in Libreboot GRUB
+% Encrypted /boot/ on LUKSv2 now possible in Libreboot GRUB (PHC argon2 imported)
 % Leah Rowe
 % 20 August 2023
 
