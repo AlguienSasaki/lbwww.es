@@ -16,6 +16,14 @@ Today, Libreboot now supports argon2 key derivation in its version of GRUB,
 which is offered as a coreboot payload within the Libreboot build system, and
 in Libreboot releases.
 
+Libreboot's argon2 patches are based on [this AUR
+repository](https://aur.archlinux.org/cgit/aur.git/tree/?h=grub-improved-luks2-git&id=1c7932d90f1f62d0fd5485c5eb8ad79fa4c2f50d)
+which patched GRUB 2.06, and the patches were rebased for use with GRUB 2.12
+which Libreboot uses; the rebase was performed by [Nicholas
+Johnson](https://nicholasjohnson.ch/). Nicholas emailed me to tell me that this
+had been done, and I then merged Nicholas's work into Libreboot. Thank you,
+Nicholas!
+
 Why does this matter?
 ---------------------
 
