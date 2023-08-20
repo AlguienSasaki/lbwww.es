@@ -10,7 +10,7 @@ Introduction
 The GRUB payload has supported LUKSv2 for a long time, but only with the
 old-school PBKDF2 key derivation method; most Linux dm-crypt setups on LUKSv2
 use argon2-based key derivation, which GRUB did not support. This mean either:
-use LUKSv2 with PBKDF2 (less secure), or LUKSv2 (ditto), in GRUB.
+use LUKSv2 with PBKDF2 (less secure), or LUKSv1 (ditto), in GRUB.
 
 Today, Libreboot now supports argon2 key derivation in its version of GRUB,
 which is offered as a coreboot payload within the Libreboot build system, and
