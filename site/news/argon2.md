@@ -22,7 +22,8 @@ which patched GRUB 2.06, and the patches were rebased for use with GRUB 2.12
 which Libreboot uses; the rebase was performed by [Nicholas
 Johnson](https://nicholasjohnson.ch/). Nicholas emailed me to tell me that this
 had been done, and I then merged Nicholas's work into Libreboot. Thank you,
-Nicholas!
+Nicholas! Thanks also go to [Axel](https://axelen.xyz/) who is the author of
+the original work that Nicholas imported from Archlinux AUR.
 
 Why does this matter?
 ---------------------
