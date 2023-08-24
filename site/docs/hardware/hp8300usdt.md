@@ -26,8 +26,10 @@ OR YOU MIGHT BRICK YOUR MACHINE: [SAFETY PRECAUTIONS](../../news/safety.md)**
 
 # Introduction
 
-This is a small but powerful desktop using Sandy or Ivy Bridge CPUs (of up to 65W TDP).
-It has a slot for a discrete MXM graphics card, but that is currently untested.
+This is a small but powerful desktop using Sandy or Ivy Bridge CPUs
+(of up to 65W TDP).
+It has a slot for a discrete MXM graphics card as well.
+Some cards work while others don't. Your mileage will vary.
 
 Libreboot has support for this, in the Git repository and
 release versions after (but not including) 20230423.
@@ -41,18 +43,12 @@ These features are tested and confirmed working:
 * USB 3.0 SuperSpeed on Linux-libre (rear, 4 ports)
 * Ethernet
 * Mini-PCIe WLAN
-* SATA: 2.5" SSD and optical drive bay
+* SATA: 2.5" disk (6Gbps), mSATA (3Gbps), and optical drive bay
 * PS/2 keyboard and mouse
 * S3 suspend and resume, wake using USB keyboard
 * Headphone output, line out, internal speaker
 * Wake on LAN
 * Rebooting
-
-Untested (and likely don't work):
-
-* mSATA
-* eSATA
-* Discrete MXM GPU
 
 # Installation
 
@@ -109,7 +105,7 @@ updating it can be done without the jumper anyway.
 
 Unbricking is possible by external flashing. You first need to remove
 the optical disk drive and 2.5" HDD/SSD and the metal bracket that
-supports them. This requires you to open one torx screw in total.
+supports them. This requires you to open one torx (T15) screw in total.
 
 The SOIC-16 flash chip is located on the edge of the board
 near the group of yellow cubes. Follow the
