@@ -15,25 +15,25 @@ x-toc-enable: true
 * Веб-сайт (+документація): <https://codeberg.org/libreboot/lbwww>
 * Зображення (для веб-сайта): <https://codeberg.org/libreboot/lbwww-img>
 
-You can also *browse* lbmk on Libreboot's own cgit instance, though it is not
-intended for development (use codeberg for that):\
+Ви також можете *переглядати* lbmk на власному екземплярі Libreboot cgit, хоча це не призначено
+для розробки (використовуйте codeberg для цього):\
 <https://browse.libreboot.org/lbmk.git/>
 
-If the main Git repositories are down, mirrors of `lbmk` and `lbwww` are listed
-further down in this page
+Якщо основні репозиторії Git лежать, дзеркала `lbmk` та `lbwww` є зазначеними
+далі знизу на цій сторінці
 
-Libreboot was previously using NotABug, but it had continued reliability
-issues due to HTTP 500 errors being returned, largely in the evenings, most
-likely because too many people were on it; it was decided that Libreboot
-needed something more stable, so now Libreboot is hosted on codeberg. See:
-[announcement of move to codeberg, 8 April 2023](news/codeberg.md)
+Libreboot раніше використовував NotABug, але він мав проблеми з надійністю, які продовжувались,
+в зв'язку з помилками HTTP 500, які повертались, в основному по вечорам, скоріше
+за все тому, що надто багато людей було на ньому; було прийнято рішення, що Libreboot
+потребував щось більш стабільне, тому тепер Libreboot розміщено на codeberg. Дивіться:
+[оголошення переміщення на codeberg, 8 квітня 2023 року](news/codeberg.md)
 
 Є також ці програми, розміщені в проекті Libreboot, і libreboot
 або рекомендує їх, або використовує їх:
 
-The `ich9utils` project is now available under `util/ich9utils` in lbmk, and
-lbmk uses *that*, but the old standalone repository is still available on
-notabug (bucts is also there):
+Проект `ich9utils` тепер доступний під `util/ich9utils` в lbmk, і
+lbmk використовує *це*, але старий окремий репозиторій досі доступний на
+notabug (bucts також там):
 
 * Bucts (утиліта): <https://notabug.org/libreboot/bucts>
 * ich9utils (утиліта): <https://notabug.org/libreboot/ich9utils>
@@ -77,7 +77,7 @@ libreboot! Завантажте репозиторій Git:
 	cd lbmk
 
 Внесіть будь-які зміни, які забажаєте, або просто побудуйте. Щоб отримати вказівки щодо
-збирання `lbmk`, зверніться до [інструкцій зі збирання](docs/build/).
+збирання `lbmk`, зверніться до [інструкцій зі збирання](docs/build/index.uk.md).
 
 Інформація про саму систему збірки та про те, як вона працює, доступна в
 [посібнику обслуговування lbmk](docs/maintain/).
@@ -110,31 +110,31 @@ Untitled.
 зображення розміщувалися на av.libreboot.org.
 
 Тому, якщо ви бажаєте додати зображення на веб-сайт, надішліть їх також до
-репозиторія `lbwww-img`, із посиланням на них
+репозиторію `lbwww-img`, із посиланням на них
 <https://av.libreboot.org/шлях/до/вашого/нового/зображення/в/lbwww-img> для кожного з них.
 Коли його буде поєднано на веб-сайті libreboot, ваші зображення з'являться в реальному часі.
 
-If adding a photo, compress it for web distribution. Images should be about
-800px wide, and usually under 100KiB in size:
+Якщо додаєте світлину, стисніть її для веб розповсюдження. Світлинам варто бути приблизно
+800px завширшки, і зазвичай менше 100Кбайт розміром:
 
-First, scale your image down to approximately 800px width, using your favourite
-image manipulation program. For example, with `imagemagick` you can do the
-following (make sure the image isn't already smaller or equal than preferred).
+По-перше, зменшіть масштаб вашого зображення до приблизно 800px завширшки, використовуючи вашу улюблену
+програму маніпуляції зображенням. Наприклад, з `imagemagick` ви можете зробити
+наступне (переконайтесь, що зображення не є вже меншим або еквівалентним, ніж віддано перевагу).
 
         convert original.jpg -resize 600000@ -quality 70% web.jpg
 
-You should always run `jpegoptim` on jpg images before submitting them.
-It strips useless metadata and *losslessly* optimises them further by cleverly
-rearranging the huffman tables used in them.
+Вам варто завжди виконувати `jpegoptim` на jpg зображеннях перед їх поданням.
+Воно вирізає безкорисні метадані та оптимізує *без втрат* їх більше, розумно
+переорганізовуючи таблиці Гаффмана, що використані в них.
 
         jpegoptim -s --all-progressive web.jpg
 
-If the image is a (line) drawing, vector graphics are preferable to bitmaps.
-Therefore, if possible, save them as SVGs. Those are easy to modify,
-and will surely make translators' work easier as well.
+Якщо зображення є (штриховим) малюнком, векторній графіці віддається перевага в порівнянні з бітовою картою.
+Таким чином, якщо можливо, зберігайте їх як SVG. Їх легко модифікувати,
+і точно зробить роботу перекладачів легше так само.
 
-PNG images should be optimised with `zopfli` (this is lossless as well).
-For example, this reduced the Libreboot boot logo from around 11k to 3k:
+Зображенням PNG варто бути оптимізованими з `zopfli` (він так само без втрат).
+Наприклад, це зменшило логотип завантаження Libreboot з приблизно 11k до 3k:
 
         zopflipng -ym image.png image.png
 
@@ -231,14 +231,14 @@ IRC-канал libreboot і повідомити канал, які виправ
 Однак, для прозорості процесу перевірки коду, ми рекомендуємо на даний момент
 використовувати Codeberg.
 
-Mirrors of lbmk.git
+Дзеркала lbmk.git
 ===================
 
-The `lbmk` repository contains Libreboot's automated build system, which
-produces Libreboot releases (including compiled ROM images).
+Репозиторій `lbmk` містить автоматизовану систему побудови Libreboot, що
+створює випуски Libreboot (включаючи зібрані образи ROM).
 
-You can run `git clone` on any of these links (the links are also clickable,
-to view changes in your Web browser):
+Ви можете виконати `git clone` на будь-якому з цих посилань (посилання є також доступними для натискання,
+для перегляду змін в вашому веб-браузері):
 
 * <https://git.disroot.org/libreboot/lbmk>
 * <https://gitea.treehouse.systems/libreboot/lbmk>
@@ -249,16 +249,16 @@ to view changes in your Web browser):
 * <https://pagure.io/libreboot>
 * <https://rocketgit.com/libreboot/libreboot>
 
-lbwww.git mirror
+дзеркало lbwww.git
 ----------------
 
-The `lbwww` repository contains Markdown files (pandoc variant), for use
-with the [Untitled Static Site Generator](https://untitled.vimuser.org/); this
-is what Libreboot uses to provide HTML web pages, *including* the page that
-you are reading right now!
+Репозиторій `lbwww` містить файли Markdown (варіант pandoc), для використання
+з [генератором статичних сайтів Untitled](https://untitled.vimuser.org/); це те,
+що Libreboot використовує для надання веб-сторінок HTML, *включаючи* сторінку, яку ви
+читаєте прямо зараз!
 
-You can run `git clone` on these links, and/or click to view changes in your
-Web browser. See:
+Ви можете виконати `git clone` на цих посиланнях, та/або натиснути для перегляду змін в вашому
+веб-браузері. Дивіться:
 
 * <https://git.disroot.org/libreboot/lbwww>
 * <https://gitea.treehouse.systems/libreboot/lbwww>
@@ -268,32 +268,32 @@ Web browser. See:
 * <https://gitlab.com/libreboot/lbwww>
 * <https://rocketgit.com/libreboot/lbwww>
 
-NOTE: The `lbwww-img` repository is not generally provided, on mirrors, as
-those are just image files which you can find on <https://av.libreboot.org>
-and it is not the intention of the Libreboot project to bog down *mirrors*
-with additional traffic by hosting images.
+ПРИМІТКА: Репозиторій `lbwww-img` не зазвичай надано, на дзеркалах, оскільки
+вони лише файли зображень, які ви можете знайти на <https://av.libreboot.org>
+і це не намір проекта Libreboot втягнути *дзеркала*
+в додатковий трафік шляхом розміщення зображень.
 
-Notabug repositories
+Репозиторії Notabug
 ====================
 
-Commits that go to codeberg are also still pushed to notabug, in addition to
-the other mirrors. Notabug is considered a *mirror* since 8 April 2023, when
-Libreboot's main development site moved to *Codeberg*.
+Коміти, які ідуть до codeberg досі push'аться до notabug, в додаток до
+інших дзеркал. Notabug розцінюється *дзеркалом* з 8 квітня 2023 року, коли
+основний сайт розробки Libreboot переїхав на *Codeberg*.
 
-OLD notabug repos are still pushed to as backup, but the codeberg mirror is
-considered to be main/official now, as of the [announcement on 8
-April 2023](news/codeberg.md). See:
+До СТАРИХ репозиторіїв notabug досі push'иться в якості резервної копії, але дзеркало codeberg
+розцінюється в якості основного/офіційного зараз, як в [оголошенні 8
+квітня 2023 року](news/codeberg.md). Дивіться:
 
-* Build system: <https://notabug.org/libreboot/lbmk>
-* Website (+docs): <https://notabug.org/libreboot/lbwww>
-* Images (for website): <https://notabug.org/libreboot/lbwww-img>
+* Система побудови: <https://notabug.org/libreboot/lbmk>
+* Веб-сайт (+документація): <https://notabug.org/libreboot/lbwww>
+* Зображення (для веб-сайта): <https://notabug.org/libreboot/lbwww-img>
 
-For sending patches, it is now preferred that you use *codeberg*. Technically,
-pull requests are still possible via Notabug. While Notabug still exists,
-Libreboot patches will continue be pushed there, mirroring what gets pushed
-on Notabug.
+Для відправлення виправлень, тепер віддається перевага тому, щоб ви використовували *codeberg*. Технічно,
+pull request'и досі можливі через Notabug. Поки Notabug досі існує,
+виправлення Libreboot буде продовжено push'ити там, відзеркалюючи що push'иться
+на Notabug.
 
-Because pull requests and issues were available on notabug in the past, it
-makes sense to keep them open, though we ask that you send to codeberg. If
-they were to be closed on notabug, existing PRs and issues won't be visible
-anymore either, so they have to stay open.
+Тому що pull request'и та проблемні питання були доступними на notabug в минулому, має
+сенс тримати їх відкритими, хоча наше прохання, щоб ви відправляли до codeberg. Якщо
+їх було би закрито на notabug, або існуючі PR та проблемні питання не були би доступними для перегляду
+більше, тому вони мусять залишатись відкритими.
