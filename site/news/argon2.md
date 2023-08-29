@@ -70,7 +70,7 @@ Article by Matthew Garrett
 --------------------------
 
 [PSA: upgrade your LUKS key derivation
-function](https://mjg59.dreamwidth.org/66429.html) by Matthew Garret, talks
+function](https://mjg59.dreamwidth.org/66429.html) by Matthew Garrett, talks
 further about the importance of secure key derivation (specifically argon2id)
 on encrypted Linux setups.
 
