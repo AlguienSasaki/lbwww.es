@@ -23,6 +23,32 @@ Refer to the following pages:
 * [Modifying the GRUB Configuration in libreboot Systems](grub_cbfs.md)
 * [How to Harden Your GRUB Configuration, for Security](grub_hardening.md)
 
+NOTE ABOUT VGA MODES and GRUB
+=============================
+
+Libreboot does not support switching VGA modes, when coreboot's libgfxinit is
+used on Intel GPUs. Many distros will install GRUB, which Libreboot then finds
+and executes, if running SeaBIOS payload; if using GRUB, just the distro's
+grub.cfg file is loaded instead, by Libreboot's own GRUB in flash.
+
+Libreboot GRUB boots in text mode or uses the coreboot framebuffer. Anyway,
+set `GRUB_TERMINAL=console` in GRUB and you should be fine. This avoids GRUB,
+the one provided by your distro, switching video modes.
+
+In Debian for example (steps largely the same on other distros):
+
+Edit `/etc/default/` as root, and uncomment or add the line:
+
+	GRUB_TERMINAL=console
+
+Then still as root, do these commands:
+
+	export PATH="$PATH:/sbin"
+	update-grub
+
+Now your distro's GRUB menu should work, when your distro's GRUB bootloader is
+executed from Libreboot's SeaBIOS payload.
+
 Encrypted (LUKS/dm-crypt) installations
 =======================================
 
