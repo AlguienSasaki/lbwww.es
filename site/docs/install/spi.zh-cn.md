@@ -11,6 +11,7 @@ x-toc-enable: true
 
 libreboot 目前记录了这些 SPI 编程器的使用方法：
 
+* Raspberry Pi Pico
 * 树莓派（Raspberry Pi，RPi）
 * BeagleBone Black（BBB）
 * Libre Computer 'Le Potato'
@@ -22,6 +23,55 @@ libreboot 目前记录了这些 SPI 编程器的使用方法：
 *内部*刷写是指，主机上的 CPU 可以使用板载 SPI 编程器（每个主板都有）对 SPI flash 进行再编程。这可以在 Linux 上使用 flashrom 做到。
 
 你在读的*这个*教程，使用的是*外部*编程器。之所以叫*外部*，是因为用的不是主板上的*内部*编程器。
+
+Raspberry Pi Pico
+=================
+
+![Left to right: Raspberry Pi Pico and Pico H](https://av.libreboot.org/rpi_pico/two_picos.webp)
+
+If you don't already have a programmer, get this one! It's well engineered,
+safe, and costs just $5 with headers pre-soldered (Raspberry Pi Pico H).
+Additionally, all the software running on it is free, down to the full
+[Boot ROM](https://github.com/raspberrypi/pico-bootrom). The wireless
+versions (Pico W & Pico WH) need non-free firmware to use the Wi-Fi chip,
+which is not needed for following this guide.
+
+A Pico has proper 3.3V logic levels, unlike a ch341a. Which means it won't
+destroy your board by sending 5V to it. If you have a 1.8V flash chip,
+you need to add a logic level converter.
+
+First, connect just the Pico to your computer with a micro-USB cable.
+Mount it like any other USB flash drive. If it isn't detected, you might need
+to press the BOOTSEL button while you plug it in (this forces it into the
+bootloader mode).
+
+Now download the serprog
+[firmware](https://viitanen.xyz/pico-serprog-20230827.tar.lz).
+Copy the file `pico_serprog.uf2` into your Pico.
+Disconnect the Pico and proceed to wire it to your
+[flash chip](/docs/install/spi.html#identify-which-flash-type-you-have).
+
+![Raspberry Pi Pico pinout, when using the firmware linked above](https://av.libreboot.org/rpi_pico/pinout_serprog.png)
+
+![A Raspberry Pi Pico connected to a SOIC16 flash chip](https://av.libreboot.org/rpi_pico/soic16_x200.webp)
+
+Headers were manually soldered on the top side, and the plastic packaging
+was repurposed as an insulating base. These might be nice to have, but by no
+means necessary. If your headers are on the other side, just keep in mind
+that the pinouts are as seen from above.
+
+Now run (as root) `dmesg -wH`. When you plug in the Pico, a line like this
+will appear:
+
+	[453876.669019] cdc_acm 2-1.2:1.0: ttyACMx: USB ACM device
+
+Take note of the ttyACMx. Flashrom is now usable
+(substitute ttyACMx with what you observed earlier).
+
+	flashrom -p serprog:dev=/dev/ttyACMx,spispeed=16M
+
+spispeed=32M usually works, but since it's not much faster it's probably
+not worth it. The 12Mbps USB port is limiting the actual speed here.
 
 不要使用 CH341A！
 ==================

@@ -19,7 +19,8 @@ dump, erase and rewrite these flash chips.
 
 libreboot currently documents how to use these SPI programmers:
 
-* Raspberry Pi (RPi)
+* Raspberry Pi Pico
+* Raspberry Pi (RPi) single-board computers
 * BeagleBone Black (BBB)
 * Libre Computer 'Le Potato'
 
@@ -39,6 +40,55 @@ from Linux, with flashrom.
 
 *This* guide that you're reading now is for using an *external* programmer. It
 is called *external* because it's not the *internal* one on your mainboard.
+
+Raspberry Pi Pico
+=================
+
+![Left to right: Raspberry Pi Pico and Pico H](https://av.libreboot.org/rpi_pico/two_picos.webp)
+
+If you don't already have a programmer, get this one! It's well engineered,
+safe, and costs just $5 with headers pre-soldered (Raspberry Pi Pico H).
+Additionally, all the software running on it is free, down to the full
+[Boot ROM](https://github.com/raspberrypi/pico-bootrom). The wireless
+versions (Pico W & Pico WH) need non-free firmware to use the Wi-Fi chip,
+which is not needed for following this guide.
+
+A Pico has proper 3.3V logic levels, unlike a ch341a. Which means it won't
+destroy your board by sending 5V to it. If you have a 1.8V flash chip,
+you need to add a logic level converter.
+
+First, connect just the Pico to your computer with a micro-USB cable.
+Mount it like any other USB flash drive. If it isn't detected, you might need
+to press the BOOTSEL button while you plug it in (this forces it into the
+bootloader mode).
+
+Now download the serprog
+[firmware](https://viitanen.xyz/pico-serprog-20230827.tar.lz).
+Copy the file `pico_serprog.uf2` into your Pico.
+Disconnect the Pico and proceed to wire it to your
+[flash chip](/docs/install/spi.html#identify-which-flash-type-you-have).
+
+![Raspberry Pi Pico pinout, when using the firmware linked above](https://av.libreboot.org/rpi_pico/pinout_serprog.png)
+
+![A Raspberry Pi Pico connected to a SOIC16 flash chip](https://av.libreboot.org/rpi_pico/soic16_x200.webp)
+
+Headers were manually soldered on the top side, and the plastic packaging
+was repurposed as an insulating base. These might be nice to have, but by no
+means necessary. If your headers are on the other side, just keep in mind
+that the pinouts are as seen from above.
+
+Now run (as root) `dmesg -wH`. When you plug in the Pico, a line like this
+will appear:
+
+	[453876.669019] cdc_acm 2-1.2:1.0: ttyACMx: USB ACM device
+
+Take note of the ttyACMx. Flashrom is now usable
+(substitute ttyACMx with what you observed earlier).
+
+	flashrom -p serprog:dev=/dev/ttyACMx,spispeed=16M
+
+spispeed=32M usually works, but since it's not much faster it's probably
+not worth it. The 12Mbps USB port is limiting the actual speed here.
 
 Do not use CH341A!
 ==================
@@ -118,10 +168,32 @@ SOIC8
 
 ![](https://av.libreboot.org/chip/soic8.jpg)
 
+| Pin | Function |
+|-----|----------|
+|   1 | CS       |
+|   2 | MISO     |
+|   3 | WP       |
+|   4 | GND      |
+|   5 | MOSI     |
+|   6 | CLK      |
+|   7 | HOLD     |
+|   8 | VCC      |
+
 SOIC16
 ------
 
 ![](https://av.libreboot.org/chip/soic16.jpg)
+
+| Pin | Function |
+|-----|----------|
+|   2 | VCC      |
+|   3 | HOLD     |
+|   7 | CS       |
+|   8 | MISO     |
+|   9 | WP       |
+|  10 | GND      |
+|  15 | MOSI     |
+|  16 | CLK      |
 
 SOIC8 and SOIC16 are the most common types, but there are others:
 
@@ -131,15 +203,18 @@ WSON8
 It will be like this on an X200S or X200 Tablet:\
 
 ![](https://av.libreboot.org/x200t_flash/X200T-flashchip-location.jpg)
+Pinout is the same as SOIC8 above.
 
 On T400S, it is in this location near the RAM:\
 ![](https://av.libreboot.org/t400s/soic8.jpg)\
-NOTE: in this photo, the chip has been replaced with SOIC8
+NOTE: in this photo, the chip has been replaced with SOIC8.
 
 DIP8
 ----
 
 ![](https://av.libreboot.org/dip8/dip8.jpg)
+
+Pinout is the same as SOIC8 above.
 
 Supply Voltage
 --------------
