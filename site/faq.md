@@ -412,29 +412,13 @@ The git repository for that project is here:
 Both the video and the repository give some further insight about CPU
 microcode. The way it works on AMD will be very similar to Intel.
 
-### Intel is uncooperative 
-
-For years, coreboot has been struggling against Intel. Intel has been
-shown to be extremely uncooperative in general. Many coreboot
-developers, and companies, have tried to get Intel to cooperate; namely,
-releasing source code for the firmware components. Even Google, which
-sells millions of *chromebooks* (coreboot preinstalled) have been unable
-to persuade them.
-
-Even when Intel does cooperate, they still don't provide source code.
-They might provide limited information (datasheets) under strict
-corporate NDA (non-disclosure agreement), but even that is not
-guaranteed. Even ODMs and IBVs can't get source code from Intel, in
-most cases (they will just integrate the blobs that Intel provides).
-
-Newer Intel graphics chipsets also [require firmware
-blobs](https://01.org/linuxgraphics/intel-linux-graphics-firmwares?langredirect=1).
-
-The `libreboot` project *does* provide some support for newer Intel platforms, but
-you should be aware of these issues if you choose to run those machines.
-
 Freedom pitfalls to consider on AMD hardware {#amd}
 ----------------------------------------------------------------------------
+
+NOTE: Nowadays there's openSIL <https://github.com/openSIL/openSIL> - it's
+AMD's attempt to provide some source code again, that projects like coreboot
+can use, but AMD is still problematic; the PSP for example (see below) cannot
+be "neutered" (nothing like `me_cleaner`, or *psp\_cleaner*) exists yet.
 
 AMD has more or less the same problem as Intel, when it comes to software
 freedom.
@@ -527,33 +511,6 @@ the updates are needed on all AMD boards (depends on CPU).
 
 The libreboot project does not consider microcode updates a problem, and it
 enables them by default on all supported hardware.
-
-### AMD is uncooperative
-
-AMD seemed like it was on the right track in 2011 when it started
-cooperating with and releasing source code for several critical
-components to the coreboot project. It was not to be. For so-called
-economic reasons, they decided that it was not worth the time to invest
-in the coreboot project anymore. Unfortunately they haven't even shared
-the source code of AGESA library for a Family 15h Steamroller/Excavator
-architectures (which, like the earlier fam15h Bulldozer/Piledriver, do
-not have a PSP) and released it to a coreboot project only as a binary.
-
-For a company to go from being so good, to so bad, in just 3 years,
-shows that something is seriously wrong with AMD. Like Intel, they do
-not deserve your money.
-
-Given the current state of Intel hardware with the Management Engine, it
-is our opinion that all performant x86 hardware newer than the AMD
-Family 15h CPUs (on AMD's side) or anything post-2009 on Intel's side
-is defective by design and cannot safely be used to store, transmit, or
-process sensitive data. Sensitive data is any data in which a data
-breach would cause significant economic harm to the entity which created
-or was responsible for storing said data, so this would include banks,
-credit card companies, or retailers (customer account records), in
-addition to the "usual" engineering and software development firms.
-This also affects whistleblowers, or anyone who needs actual privacy and
-security.
 
 Hi, I have &lt;insert random system here&gt;, is it supported?
 --------------------------------------------------------------------------------------------------------
