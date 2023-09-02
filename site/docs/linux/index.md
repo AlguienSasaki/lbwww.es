@@ -37,7 +37,7 @@ the one provided by your distro, switching video modes.
 
 In Debian for example (steps largely the same on other distros):
 
-Edit `/etc/default/` as root, and uncomment or add the line:
+Edit `/etc/default/grub` as root, and uncomment or add the line:
 
 	GRUB_TERMINAL=console
 
