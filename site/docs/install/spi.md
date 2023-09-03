@@ -62,15 +62,30 @@ Mount it like any other USB flash drive. If it isn't detected, you might need
 to press the BOOTSEL button while you plug it in (this forces it into the
 bootloader mode).
 
-Now download the serprog
-[firmware](https://viitanen.xyz/pico-serprog-20230827.tar.lz).
-Copy the file `pico_serprog.uf2` into your Pico.
+You can download the serprog firmware here:\
+<https://codeberg.org/libreboot/pico-serprog>\
+or here:\
+<https://notabug.org/libreboot/pico-serprog>
+
+Copy the file `rpi-pico-serprog.uf2` into your Pico. To build this firmware, you
+could build it yourself or you could also clone `lbmk.git` and [install build
+dependencies](..//build/#first-install-build-dependencies), then inside lbmk,
+do:
+
+	./build rpi-pico serprog
+
+This will automatically build the rpi-pico firmware, and the file will be
+at `bin/serprog/rpi-pico-serprog.uf2`. This binary will be provided
+pre-compiled in the next Libreboot release, after the 20230625 release.
+
 Disconnect the Pico and proceed to wire it to your
 [flash chip](/docs/install/spi.html#identify-which-flash-type-you-have).
 
-![Raspberry Pi Pico pinout, when using the firmware linked above](https://av.libreboot.org/rpi_pico/pinout_serprog.png)
+![Raspberry Pi Pico pinout, when using the firmware linked
+above](https://av.libreboot.org/rpi_pico/pinout_serprog.png)
 
-![A Raspberry Pi Pico connected to a SOIC16 flash chip](https://av.libreboot.org/rpi_pico/soic16_x200.webp)
+![A Raspberry Pi Pico connected to a SOIC16 flash
+chip](https://av.libreboot.org/rpi_pico/soic16_x200.webp)
 
 Headers were manually soldered on the top side, and the plastic packaging
 was repurposed as an insulating base. These might be nice to have, but by no
