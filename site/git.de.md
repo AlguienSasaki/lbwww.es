@@ -14,6 +14,7 @@ Das `libreboot` Projekt hat hauptsächlich 3 Git Repositories:
 * Build system: <https://codeberg.org/libreboot/lbmk>
 * Webseite (+Anleitungen): <https://codeberg.org/libreboot/lbwww>
 * Bilder (für die Webseite): <https://codeberg.org/libreboot/lbwww-img>
+* Pico-serprog: <https://codeberg.org/libreboot/pico-serprog>
 
 Du kannst dir lbmk auch auf Libreboot's eigener cgit Instanz *ansehen*,
 allerdings ist dies nicht für die Entwicklung gedacht (benutze hierfür bitte codeberg):\
@@ -268,6 +269,11 @@ angeklickt werden, um Änderungen in deinem Web Browser anzusehen):
 * <https://gitlab.com/libreboot/lbmk>
 * <https://pagure.io/libreboot>
 * <https://rocketgit.com/libreboot/libreboot>
+
+Mirrors fur pico-serprog.git
+=========================
+
+* <https://notabug.org/libreboot/pico-serprog>
 
 lbwww.git Mirror
 ----------------

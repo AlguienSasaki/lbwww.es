@@ -14,6 +14,7 @@ x-toc-enable: true
 * Система побудови: <https://codeberg.org/libreboot/lbmk>
 * Веб-сайт (+документація): <https://codeberg.org/libreboot/lbwww>
 * Зображення (для веб-сайта): <https://codeberg.org/libreboot/lbwww-img>
+* Pico-serprog: <https://codeberg.org/libreboot/pico-serprog>
 
 Ви також можете *переглядати* lbmk на власному екземплярі Libreboot cgit, хоча це не призначено
 для розробки (використовуйте codeberg для цього):\
@@ -248,6 +249,11 @@ IRC-канал libreboot і повідомити канал, які виправ
 * <https://gitlab.com/libreboot/lbmk>
 * <https://pagure.io/libreboot>
 * <https://rocketgit.com/libreboot/libreboot>
+
+Дзеркала pico-serprog.git
+=========================
+
+* <https://notabug.org/libreboot/pico-serprog>
 
 дзеркало lbwww.git
 ----------------
