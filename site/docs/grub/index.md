@@ -6,7 +6,7 @@ x-toc-enable: true
 TODO: this guide should be reviewed and updated. Some info might be out of
 date.
 
-GNU GRUB already has excellent
+GRUB already has excellent
 documentation, but there are aspects of libreboot that deserve special
 treatment. libreboot provides the option to boot GRUB directly, running on
 bare metal (instead of using BIOS or UEFI services).

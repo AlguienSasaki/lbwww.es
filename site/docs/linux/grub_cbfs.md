@@ -117,6 +117,28 @@ machine powered down) and read the contents of the boot flash.
 Extract grub.cfg
 ================
 
+Releases *after* Libreboot 20230625
+-----------------------------------
+
+Releases after Libreboot 20230625 contain `grub.cfg` inside the GRUB memdisk,
+inaccessible directly from CBFS, but the memdisk is inside `grub.elf` which
+gets put inside CBFS.
+
+An override is possible, on these Libreboot revisions. If `grub.cfg` is present
+in CBFS, Libreboot's GRUB will use *that* and not the memdisk one; it will not
+auto-switch to `grubtest.cfg`, but the test config will be available in the
+menu to switch to, if present.
+
+You can find `grub.cfg` under lbmk (for this purpose, it's best to use the
+lbmk one, not the release one - unless you're using a release after 20230625).
+Find it at path: `resources/grub/config/grub.cfg`.
+
+So, you can *add* `grubtest.cfg` as normal, test that, and
+then *add* `grub.cfg` once you're happy, and it will override the default.
+
+Libreboot 20230625 and below:
+----------------------------
+
 libreboot images that use the GRUB bootloader will have *two* configuration
 files in CBFS:
 
@@ -148,6 +170,11 @@ from your ROM image.
 
 Insert new grub.cfg
 ===================
+
+NOTE: As stated above, releases after Libreboot 20230625 only default to
+the config in memdisk, and lack a CBFS config, so you can skip the *remove*
+step below and just directly add the new `grub.cfg` - unless you already
+added one before, in which case removal is required first.
 
 Remove the old `grub.cfg` (substitute with `grubtest.cfg` as desired):
 

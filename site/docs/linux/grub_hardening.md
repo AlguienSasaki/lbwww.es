@@ -3,6 +3,9 @@ title: Hardening GRUB
 x-toc-enable: true
 ...
 
+**NOTE: [Encrypted /boot with LUKS2 on argon2 key derivation is now
+possible](../../news/argon2.md) but not yet documented by this guide.**
+
 This article only applies to those people who use the GRUB bootloader as
 their default payload (options besides GRUB are also available in
 libreboot). Whenever this article refers to GRUB, or configuration files

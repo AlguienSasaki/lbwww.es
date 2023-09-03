@@ -3,6 +3,19 @@ title: ZFSbootmenu with Full Disk Encryption Guide
 x-toc-enable: true
 ...
 
+This article is obsolete!
+=========================
+
+**NOTE: [Encrypted /boot with LUKS2 on argon2 key derivation is now
+possible](../../news/argon2.md) but not yet documented by this guide.**
+
+zfsbootmenu is still nice, but no longer required. Use latest Libreboot and
+boot encrypted /boot (with argon2) directly from GRUB if you want to. Guides
+need to be written for this, and are not yet present on the Libreboot site.
+
+Article
+=======
+
 As described in the [general encryption guide,](encryption.md) Libreboot allows for full disk encryption including the boot partition.
 Just as with the general guide, this explanation will demonstrate how to create a partition with moderate encryption for GRUB as well as a root partition with strong encryption.
 The major differences between the encryption method described in the general guide and this guide are:

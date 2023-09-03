@@ -1,5 +1,26 @@
 # Fully Encrypted Boot and Root Partitions with Libreboot
 
+# THIS ARTICLE IS OBSOLETE
+
+See news article: [Encrypted /boot/ on LUKSv2 now possible in Libreboot
+GRUB (PHC argon2 imported)](../../news/argon2.html)
+
+The article, written below, was merged *before* argon2 support became possible
+in GRUB, within Libreboot. The Libreboot 20230625 release doesn't have it, but
+it will be present in releases after Libreboot 20230625. For now, you can
+[download lbmk.git](../../git.md) and [build from source](../build/) to get
+the latest Libreboot, if you want argon2 support.
+
+The guide below assumes that GRUB *cannot* handle argon2 key derivation, which
+is most common now on LUKSv2 setups, so it has you using the older PBKDF2
+algorithm in GRUB.
+
+Encrypted LUKSv2 `/boot` is once again possible in Libreboot, but this page
+has not yet been updated to contain guidance for that. You can most likely just
+adapt the instructions below.
+
+# Article, as-is:
+
 The following guide will explain how to create:
 
 + A boot partition (/dev/sda1 in this example) that GRUB can decrypt with 'passphrase1'

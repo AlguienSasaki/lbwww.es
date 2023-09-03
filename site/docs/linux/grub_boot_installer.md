@@ -78,6 +78,13 @@ the OpenBSD installer to it with `dd`. Here's an example:
 That's it! You should now be able to boot the installer from your USB drive
 (the instructions for doing so will be given later).
 
+## GRUB2 config on external media
+
+Pick the menu option: *Search for GRUB2 configuration on external media*
+
+If the distro installer image has a `grub.cfg` file inside, this menuentry is
+scripted to find it. This works well for many distros.
+
 ## Debian or Devuan net install
 Download the Debian or Devuan net installer. You can download the Debian ISO
 from [the Debian homepage](https://www.debian.org/), or the Devuan ISO from
@@ -86,21 +93,9 @@ from [the Debian homepage](https://www.debian.org/), or the Devuan ISO from
 Secondly, create a bootable USB drive using the commands in
 [#prepare-the-usb-drive-in-linux](#prepare-the-usb-drive-in-linux).
 
-Thirdly, boot the USB and enter these commands in the GRUB terminal
-(for 64-bit Intel or AMD):
-
-	set root='usb0'
-	linux /install.amd/vmlinuz
-	initrd /install.amd/initrd.gz
-	boot
-
-If you are on a 32-bit system (e.g. some Thinkpad X60's) then you will need to
-use these commands (this is also true for 32-bit running on 64-bit machines):
-
-	set root='usb0'
-	linux /install.386/vmlinuz
-	initrd /install.386/initrd.gz
-	boot
+You can select the option, in the Libreboot GRUB menu, to load GRUB config
+from external media, and that should work just fine. Alternatively, pick one
+of the ISOLINUX-related menu options.
 
 ## Booting ISOLINUX Images (Automatic Method)
 Boot it in GRUB using the `Parse ISOLINUX config (USB)` option. A new menu
