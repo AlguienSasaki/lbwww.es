@@ -698,7 +698,7 @@ GPIO pins on Raspberry Pi (RPi) 26 Pin
 Diagram of the 26 GPIO Pins of the Raspberry Pi Model B (for the Model
 B+ with 40 pins, start counting from the right and leave 14 pins):
 
-![](https://av.libreboot.org/rpi/0012.png) ![](https://av.libreboot.org/rpi/0013.png)
+![](https://av.libreboot.org/rpi/0012.webp) ![](https://av.libreboot.org/rpi/0013.png)
 
 Use this as a reference for the other sections in this page, seen below:
 
@@ -734,7 +734,7 @@ SOIC16 wiring diagram (Raspberry Pi)
 ------------------------------------
 
 RPi GPIO header:\
-![](https://av.libreboot.org/rpi/0009.png)
+![](https://av.libreboot.org/rpi/0009.webp)
 ![](https://av.libreboot.org/rpi/0010.png)
 
 BBB P9 header:\

@@ -470,7 +470,7 @@ BeagleBone Black（BBB）上的 GPIO 引脚
 
 树莓派 B 款 26 GPIO 引脚图（对 40 引脚的 B+ 款而言，从右边开始数，剩下 14 个引脚）：
 
-![](https://av.libreboot.org/rpi/0012.png) ![](https://av.libreboot.org/rpi/0013.png)
+![](https://av.libreboot.org/rpi/0012.webp) ![](https://av.libreboot.org/rpi/0013.png)
 
 此处的信息，也请在阅读以下其他部分时参考：
 
@@ -500,7 +500,7 @@ SOIC16 接线图（树莓派）
 ------------------------------------
 
 RPi GPIO 排针：\
-![](https://av.libreboot.org/rpi/0009.png)
+![](https://av.libreboot.org/rpi/0009.webp)
 ![](https://av.libreboot.org/rpi/0010.png)
 
 BBB P9 排针：\
