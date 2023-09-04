@@ -60,7 +60,7 @@ mode (lbmk ROM images with `txtmode` in the file name, not `corebootfb`).
 Warnings for X11 users
 ----------------------
 
-One important peculiarity of most libreboot and libreboot systems is: VGA mode
+One important peculiarity of most libreboot systems is: VGA mode
 support exists, if booting with corebootfb (coreboot's own framebuffer) and
 the SeaVGABIOS option ROM used in the SeaBIOS payload; however, the ability
 to switch modes is not present, which means you can't switch to text mode
