@@ -9,6 +9,10 @@ now shift once again to new hardware support.
 Introduction
 ============
 
+This article pertains to the current Libreboot (lbmk) revision at this time
+of writing, which is `c400916e33b8870384c30b83a9ecb9cdf7121917` from 11
+September 2023.
+
 A lot of work has gone into Libreboot since the [20230625
 release](libreboot20230625.md), the main focus of which has been yet another
 audit; the [previous audit](audit.md) was mild by comparison.
