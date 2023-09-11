@@ -2,6 +2,17 @@
 % Leah Rowe
 % 9 May 2023
 
+**Update: Nvidia GPU variants of Latitude E6400 are, as of 11 September 2023,
+fully supported in the `master` branch of lbmk (Libreboot build system);
+however, the same `e6400_4mb` target shall provide for both variants. In
+releases, the necessary VGA ROM is absent but can be added using the `inject`
+command documented [here](../docs/install/ivy_has_common.md) - or you can just
+build lbmk from source, and it gets inserted automatically via download. The
+same ROM, if it contains the Nvidia VGA ROM, supports both variants; if the VGA
+ROM is missing, then only the Intel GPU variant is supported. The same ROM
+will work on both variants, provided for by Libreboot patching the devicetree
+in coreboot, on this mainboard.**
+
 <img tabindex=1 class="r" style="max-width:35%" src="https://av.libreboot.org/e6400/e6400xfr-seabios.jpg" /><span class="f"><img src="https://av.libreboot.org/e6400/e6400xfr-seabios.jpg" /></span>
 
 Introduction
