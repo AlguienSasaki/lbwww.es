@@ -114,8 +114,6 @@ reduction; for example, Riku Viitanen implemented support for building RP2040
 images e.g. Pico Pi, and stm32-vserprog images, for use in small MCU-based SPI
 flashers (via serprog protocol).
 
-Literally about 200+ changes have been made to the Libreboot build system,
-
 FULL list of changes (from lbmk git log)
 ---------------------------------------
 
