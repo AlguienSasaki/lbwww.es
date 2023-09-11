@@ -3,6 +3,9 @@ title: Insert binary blobs on Sandybridge/Ivybridge/Haswell
 x-toc-enable: true
 ...
 
+**NOTE: This page also applies to PM45 machine Dell Latitude E6400 if it
+contains an Nvidia GPU (Libreboot blob scripts can insert the VGA ROM)**
+
 This is not a general purpose installation guide, but you *should read it*
 before installing Libreboot! *This* guide *must* be followed, no matter what
 method you use to install Libreboot; even if you compile from source, you should
