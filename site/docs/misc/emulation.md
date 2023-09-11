@@ -23,18 +23,22 @@ In order to test the resulting roms, you must have qemu installed on the host ma
 Test the roms by pointing qemu to the rom in bios mode.
 For example:
 
-`qemu-system-x86_64 -bios bin/qemu_x86_12mb/grub_qemu_x86_12mb_libgfxinit_corebootfb_usqwerty.rom`
+`qemu-system-x86_64 -bios bin/qemu_x86_12mb/grub_qemu_x86_12mb_libgfxinit_corebootfb_usqwerty_noblobs.rom`
 
-`qemu-system-x86_64 -bios bin/qemu_x86_12mb/uboot_payload_qemu_x86_12mb_libgfxinit_corebootfb.rom -serial stdio`
+`qemu-system-x86_64 -bios bin/qemu_x86_12mb/uboot_payload_qemu_x86_12mb_libgfxinit_corebootfb_noblobs.rom -serial stdio`
 
 There is basic support for an arm64 virtual machine as well, although the payloads are not as developed as the x86 one:
 
 	./build boot roms qemu_arm64_12mb
 
 ```
-qemu-system-aarch64 -bios bin/qemu_arm64_12mb/uboot_payload_qemu_arm64_12mb_libgfxinit_corebootfb.rom \
+qemu-system-aarch64 -bios bin/qemu_arm64_12mb/uboot_payload_qemu_arm64_12mb_libgfxinit_corebootfb_noblobs.rom \
 	-M virt,secure=on,virtualization=on,acpi=on -cpu cortex-a53 -m 768M -serial stdio -vga none -display none
 ```
+
+NOTE: After the 20230625 release, U-Boot support was removed from x86 Qemu; it's
+also problematic on ARM-based Qemu. Only x86 qemu, with other payloads, is to
+be considered reliable for now.
 
 Use Cases
 =========
