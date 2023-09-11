@@ -40,7 +40,7 @@ exhaustive:
   Libreboot revision.
 * *Massively reduced the size of the build system*: where only shell scripts are
   concerned, the total sloccount in Libreboot 20230625 was 3388 source lines.
-  As of *today*, that figure stands at 2644 source codes, a *22% reduction in
+  As of *today*, that figure stands at 2644 source lines, a *22% reduction in
   code size*.
 * Many scripts that were separate are now unified. For example: the scripts
   handling defconfigs files on SeaBIOS, u-Boot and coreboot have now been
