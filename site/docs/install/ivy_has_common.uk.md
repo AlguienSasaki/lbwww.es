@@ -6,6 +6,9 @@ x-toc-enable: true
 **TODO: Re-translate this again to Ukrainian. It was translated before, but
 the english page got heavily re-written.**
 
+**NOTE: This page also applies to PM45 machine Dell Latitude E6400 if it
+contains an Nvidia GPU (Libreboot blob scripts can insert the VGA ROM)**
+
 This is not a general purpose installation guide, but you *should read it*
 before installing Libreboot! *This* guide *must* be followed, no matter what
 method you use to install Libreboot; even if you compile from source, you should
