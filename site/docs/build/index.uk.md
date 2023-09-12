@@ -89,7 +89,7 @@ or get a list of supported build targets:
 
 Якщо ви бажаєте побудувати корисні навантаження, можете зробити це. Наприклад:
 
-	./build payload grub
+	./build grub payload
 
 	./handle make config -b seabios
 
