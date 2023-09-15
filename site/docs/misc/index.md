@@ -5,23 +5,6 @@ x-toc-enable: true
 
 TODO: this page is very old, and could do with an update.
 
-High Pitched Whining Noise on Idle in Debian or Devuan
-======================================================================
-
-Start powertop automatically at boot time.
-
-Included with libreboot is a script called 'powertop.debian'. Run this
-as root and it will setup powertop to run with --auto-tune at boot
-time. Load the file in your text editor to see how it does that.
-
-	sudo ./resources/scripts/misc/powertop.debian
-
-Might want to run with --calibrate first
-
-If powertop doesn't work, another way (reduces battery life slightly)
-is to add *processor.max\_cstate=2* to the *linux* line in grub.cfg,
-using [this guide](../linux/grub_cbfs.md).
-
 High Pitched Whining Noise on Idle in Arch-based distros
 ==============================================================
 

@@ -3,8 +3,27 @@ title: ich9utils
 x-toc-enable: true
 ...
 
-If all you want to do is change the MAC address, you might use `nvmutil`
-instead. See: [nvmutil documentation](../install/nvmutil.md).
+**THIS PAGE IS OBSOLETE. Releases after Libreboot 20230625 no longer include
+ich9utils; instead, ICH9M descriptors and gbe nvm configurations are provided
+pre-assembled. Coreboot's bincfg can regenerate them if you wish, and/or you
+can modify the ifd file with coreboot's ifdtool. You can use nvmutil to modify
+the GbE NVM MAC address**
+
+**If all you want to do is change the MAC address, you might use `nvmutil`
+instead. See: [nvmutil documentation](../install/nvmutil.md).**
+
+The documentation below is *still valid*, if you actually want to use ich9utils.
+You can find it in older Libreboot releases, up to Libreboot 20230625. The only
+modification that ich9gen permitted was to change the MAC address, and ifdtool
+can set read-only mode via `--unlock` argument on a ROM, so ich9utils was a
+moving (read: not moving) part that basically did the same thing as providing
+static images.
+
+The initial plan was to rewrite ich9utils in a cleaner coding style, like that
+used in nvmutil, but then it was decided instead that ich9utils would be
+scrapped.
+
+Anyway, ich9utils documentation:
 
 Introduction
 ============
@@ -58,21 +77,11 @@ ich9utils
 =========
 
 You can find `ich9utils` on the [Git page](../../git.md) or you can download
-`lbmk` from the same page and run the following command in there:
+`lbmk` from the same page at an under revision (around Libreboot 20230625 or
+so), and find it under `util/ich9utils/`.
 
-	./build module ich9utils
-
-You may also find it in the source code tar archives, on releases.
-
-In `lbmk`, you can use the following command to generate descriptors:
-
-	./build descriptors ich9m
-
-The libreboot build system will use the descriptors under `descriptors/ich9m`
-when building ROM images for these machines.
-
-Alternatively, you can just clone `ich9utils` directly and run `make` in the
-directory, and run the `ich9gen` program directly.
+Go in there and type `make` to get the binaries: `ich9deblob`, `ich9gen`
+and `ich9show`.
 
 ICH9 show utility {#ich9show}
 ================
@@ -91,6 +100,11 @@ to use a custom macaddress, you can supply an argument like so:
 
 	ich9gen --macaddress 00:1f:16:80:80:80
 
+**WARNING: ich9gen's `--macaddress` functionality does NOT check for all-zero
+MAC addresses, nor does it prevents multicast addresses. A valid MAC address
+is non-zero, and unicast. This is why you should use `nvmutil` because it does
+this check.**
+
 The above MAC address is just an example. It is recommended that you use the
 MAC address officially assigned to your NIC.
 
@@ -102,6 +116,9 @@ Three new files will be created:
     chip.
 -   `ich9fdgbe_16m.bin`: this is for GM45 laptops with the 16MB flash
     chip.
+
+**NOTE: You can also use the `--lock` and `--unlock` arguments in ifdtool, to
+accomplish the same result of locking or unlocking a descriptor.**
 
 These files contain the descriptor+GbE region and are suitable for systems
 that have an Intel GbE NIC present. The flash regions (as defined by the

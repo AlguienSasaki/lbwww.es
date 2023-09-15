@@ -53,18 +53,18 @@ Coreboot Config
 
 Coreboot payloads (GRUB, Seabios, etc) are built separately.
 You therefore only need to focus on the coreboot config(s) for `board.`
-All of these configs are stored under resources/coreboot/`board`
+All of these configs are stored under config/coreboot/`board`
 
 The easiest way to start a new configuration for a given board is to copy an existing
 configuration and make the necessary modifications.
 For example, if one wanted to port the t420s, then the t420 config would be an excellent
 starting point.
 
-	cp -r resources/coreboot/t420_12mb/ resources/coreboot/t420s_12mb
+	cp -r config/coreboot/t420_12mb/ config/coreboot/t420s_12mb
 
 You can then easily modify the existing coreboot configs for you board via lbmk.
 
-	./modify coreboot configs t420s_12mb
+	./handle make config -m coreboot t420s_12mb
 
 This script will provide a curses interface through which you can easily modify the
 necessary variables and settings.

@@ -55,7 +55,11 @@ could build it yourself or you could also clone `lbmk.git` and [install build
 dependencies](..//build/#first-install-build-dependencies), then inside lbmk,
 do:
 
-	./build rpi-pico serprog
+	./build serprog rp2040 pico
+
+or for the W version:
+
+	./build serprog rp2040 pico_w
 
 This will automatically build the rpi-pico firmware, and the file will be
 at `bin/serprog/rpi-pico-serprog.uf2`. This binary will be provided
@@ -319,18 +323,17 @@ Flashrom 是用来读出、擦除、重写 NOR flash 内容的软件。
 
 注意：你可以输入 debian、arch 或 void 来替换 ubuntu。debian 脚本也可以用于新版 ubuntu。
 
-	./fetch flashrom
-	./build module flashrom
+	./handle make file -b flashrom
 
-如果 `ubuntu2004` 报告了依赖缺失，编辑一下这个脚本，把缺失的依赖移除就行了。脚本位于 `resources/scripts/build/dependencies/ubuntu2004`，它是写给 Ubuntu 20.04 的，但在其他使用 `apt-get` 包管理器的 Linux 发行版应该也能用。
+如果 `ubuntu2004` 报告了依赖缺失，编辑一下这个脚本，把缺失的依赖移除就行了。脚本位于 `config/dependencies/ubuntu2004`，它是写给 Ubuntu 20.04 的，但在其他使用 `apt-get` 包管理器的 Linux 发行版应该也能用。
 
-接下来，会出现一个 `flashrom/` 目录，其中有一个 `flashrom` 可执行文件。如果你在运行上面的依赖命令的时候，出现了缺失包的错误，则修改 `resources/scripts/build/dependencies/ubuntu2004`。那个脚本会在 apt-get 中下载并安装构建依赖，它是为运行 Ubuntu 的 x86-64 系统写的，但在树莓派上的 Raspbian 应该能用。
+接下来，会出现一个 `flashrom/` 目录，其中有一个 `flashrom` 可执行文件。如果你在运行上面的依赖命令的时候，出现了缺失包的错误，则修改 `config/dependencies/ubuntu2004`。那个脚本会在 apt-get 中下载并安装构建依赖，它是为运行 Ubuntu 的 x86-64 系统写的，但在树莓派上的 Raspbian 应该能用。
 
 或者，你可以直接从上游下载 flashrom，位于：<https://flashrom.org/Flashrom>
 
 如果你是在 ThinkPad X200 上刷写 Macronix flash 芯片，则要使用一个 flashrom 的特别修改版，下载地址在这里：<https://vimuser.org/hackrom.tar.xz> —— 其中有修改版的源代码，也有可以直接运行的二进制文件。将 `--workaround-mx` 参数传给 flashrom。这会缓解稳定性问题。
 
-如果你直接下载了 flashrom 源代码，你可以进入目录并直接运行 `make`。在 libreboot 构建系统中，`resources/scripts/build/dependencies/` 处的脚本写明了构建依赖，你可以直接使用 `apt-get` 软件安装。
+如果你直接下载了 flashrom 源代码，你可以进入目录并直接运行 `make`。在 libreboot 构建系统中，`config/dependencies/` 处的脚本写明了构建依赖，你可以直接使用 `apt-get` 软件安装。
 
 如何使用 flashrom
 ===================

@@ -118,7 +118,7 @@ You *must* ensure that the blobs were inserted.
 
 Some examples of how to do that in lbmk:
 
-	./build module cbutils
+	./build coreboot utils
 
 Now you find `cbutitls/default`, which is a directory containing `cbfstool`
 and `ifdtool`. Do this on your ROM image (`libreboot.rom` in the example
@@ -170,7 +170,7 @@ the [nvmutil documentation](nvmutil.md).
 **WARNING: This is broken in Libreboot 20221214's src archive. It fails when
 attempting to use cbfstool, due to a faulty check in a script. This is fixed in
 recent Libreboot releases or revisions. The fix is as
-follows:
+follows (though, you really should use a newer release by now):
 
 Edit line 137 in `resources/scripts/blobs/inject`. The line in 20221214 says
 this:

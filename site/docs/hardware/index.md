@@ -142,7 +142,7 @@ to [docs/uboot/](../uboot/) for more info about the U-Boot payload.
 -   [Qemu arm64](../misc/emulation.md)
 
 
-TODO: More hardware is supported. See `resources/coreboot/` in lbmk. Update
+TODO: More hardware is supported. See `config/coreboot/` in lbmk. Update
 the above list!
 
 'Supported' means that the build scripts know how to build ROM images

@@ -60,11 +60,11 @@ of the libreboot Git repository.
 
 Then, download coreboot:
 
-	./fetch_trees coreboot
+	./update project trees coreboot
 
 Finally, compile the `cbutils` module:
 
-	./build module cbutils
+	./build coreboot utils
 
 Among other things, this will produce a `cbfstool` executable under any of the
 subdirectories in `coreboot/` under `util/cbfstool/cbfstool
@@ -79,7 +79,7 @@ You will also want to build `flashrom` which libreboot recommends for reading
 from and/or writing to the boot flash. In the libreboot build system, you can
 build it by running this command:
 
-	./build module flashrom
+	./handle make file -b flashrom
 
 An executable will be available at `flashrom/flashrom` after you have done
 this.
@@ -131,7 +131,7 @@ menu to switch to, if present.
 
 You can find `grub.cfg` under lbmk (for this purpose, it's best to use the
 lbmk one, not the release one - unless you're using a release after 20230625).
-Find it at path: `resources/grub/config/grub.cfg`.
+Find it at path: `config/grub/config/grub.cfg`.
 
 So, you can *add* `grubtest.cfg` as normal, test that, and
 then *add* `grub.cfg` once you're happy, and it will override the default.

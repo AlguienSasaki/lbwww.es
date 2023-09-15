@@ -72,7 +72,11 @@ could build it yourself or you could also clone `lbmk.git` and [install build
 dependencies](..//build/#first-install-build-dependencies), then inside lbmk,
 do:
 
-	./build rpi-pico serprog
+	./build serprog rp2040 pico
+
+or for the W version:
+
+	./build serprog rp2040 pico_w
 
 This will automatically build the rpi-pico firmware, and the file will be
 at `bin/serprog/rpi-pico-serprog.uf2`. This binary will be provided
@@ -457,18 +461,17 @@ install flashrom. Do this after downloading the
 NOTE: debian, arch or void can be written instead of ubuntu2004. the debian
 script is also applicable to newer ubuntu versions
 
-	./fetch flashrom
-	./build module flashrom
+	./handle make file -b flashrom
 
 If the `ubuntu2004` script complains about missing dependencies, just modify
-the script and remove those dependencies. The script is located
-at `resources/scripts/build/dependencies/ubuntu2004` and it is written for
+the dependencies config to remove those dependencies. The script is located
+at `config/dependencies/ubuntu2004` and it is written for
 Ubuntu 20.04, but it should work fine in other Linux distributions that use
 the `apt-get` package manager.
 
 A `flashrom/` directory will be present, with a `flashrom` executable inside
 of it. If you got an error about missing package when running the dependencies
-command above, tweak `resources/scripts/build/dependencies/ubuntu2004`. That
+command above, tweak `config/dependencies/ubuntu2004`. That
 script downloads and installs build dependencies in apt-get and it is intended
 for use on x86-64 systems running Ubuntu 20.04, but it should work in Raspbian
 on the Raspberry Pi.
@@ -484,8 +487,8 @@ argument in flashrom. This mitigates stability issues.
 
 If you downloaded the flashrom source code directly, you can go into the
 directory and simply type `make`. In the libreboot build system, build
-dependencies are documented in script located
-at `resources/scripts/build/dependencies/` which you can install
+dependencies are documented in configuration files located
+at `config/dependencies/` which you can install
 using the `apt-get` software.
 
 How to use flashrom
