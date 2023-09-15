@@ -12,6 +12,20 @@ some of the concepts explained here. This article will no doubt be incomplete,
 and several practises may persist in spite of it; nonetheless, this article
 shall serve as a reference for lbmk development.
 
+NO BASHISMS
+===========
+
+Libreboot's build system was previously written in Bash, and actually used
+Bash-specific behaviour. This was later *corrected*, thanks largely to work
+done by Ferass El Hafidi.
+
+Here is an *excellent* introduction to posix `sh` scripting:
+<https://pubs.opengroup.org/onlinepubs/009604499/utilities/xcu_chap02.html>
+
+and an even more excellent introduction:
+<https://vermaden.wordpress.com/ghost-in-the-shell/>
+(seriously, it's good. Read it!)
+
 Design
 ======
 
@@ -271,20 +285,6 @@ Do:
 	#!/usr/bin/env sh
 
 This is more portable, between various Unix systems.
-
-NO BASHISMS
-===========
-
-Libreboot's build system was previously written in Bash, and actually used
-Bash-specific behaviour. This was later *corrected*, thanks largely to work
-done by Ferass El Hafidi.
-
-Here is an *excellent* introduction to posix `sh` scripting:
-<https://pubs.opengroup.org/onlinepubs/009604499/utilities/xcu_chap02.html>
-
-and an even more excellent introduction:
-<https://vermaden.wordpress.com/ghost-in-the-shell/>
-(seriously, it's good. Read it!)
 
 Be portable!
 ============
