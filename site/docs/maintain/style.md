@@ -32,6 +32,8 @@ Design
 Libreboot's build system design is very simple: put as much as possible
 under `config/`, and keep actual logic to a minimum.
 
+You can read about that design in the [lbmk maintenance manual](index.md).
+
 No Makefiles
 ------------
 
