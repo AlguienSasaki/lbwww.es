@@ -68,30 +68,36 @@ attention to how the functions are formatted, e.g. where `{` and `}` go:
 
 main()
 {
-
+	foo
+	bar
+	do_something_else
 }
 
 foo()
 {
 	printf "I'm a function that does stuff.\n"
-	bar
+	bar || err "foo: an error occured"
 	do_something_else
 }
 
 bar()
 {
 	printf "I'm another function that does stuff.\n"
+	some_other_command || printf "WARNING: bar: something something" 1>&2
 }
 
 do_something_else()
 {
-	complicated_function bla bla bla
+	complicated_function bla bla bla || \
+	    err "do_something_else: something happened that wasn't nice"
 }
 
 complicated_function()
 {
 	printf "I'm a complicated function, provided as helper"
 	printf " function for do_something_else()\n"
+
+	do_some_complicated_stuff || return 1
 }
 
 main $@
