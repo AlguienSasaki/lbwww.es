@@ -82,6 +82,8 @@ attention to how the functions are formatted, e.g. where `{` and `}` go:
 ```
 #!/usr/bin/env sh
 
+. "include/err.sh"
+
 main()
 {
 	foo
@@ -118,6 +120,16 @@ complicated_function()
 
 main $@
 ```
+
+PWD is always root of lbmk
+--------------------------
+
+In any script executed by lbmk, under `script/`, the work directory is relative
+to the main `lbmk` script. In other words, all scripts under `script/` also
+assume this.
+
+This is actually one of the reasons for that design, as also alluded to in
+the main [lbmk maintenance manual](index.md).
 
 main should only be a simple skeleton
 -------------------------------------
