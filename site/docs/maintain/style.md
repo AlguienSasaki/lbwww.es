@@ -20,7 +20,7 @@ Bash-specific behaviour. This was later *corrected*, thanks largely to work
 done by Ferass El Hafidi.
 
 Here is an *excellent* introduction to posix `sh` scripting:
-<https://pubs.opengroup.org/onlinepubs/9699919799/>
+<https://pubs.opengroup.org/onlinepubs/009604499/utilities/xcu_chap02.html>
 
 and an even more excellent introduction:
 <https://vermaden.wordpress.com/ghost-in-the-shell/>
