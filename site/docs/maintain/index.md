@@ -6,6 +6,8 @@ x-toc-enable: true
 In addition to this manual, you should also refer to [porting.md](porting.md)
 and [testing.md](testing.md).
 
+Please also read about the [lbmk coding style and design](style.md).
+
 Automated coreboot build system
 ===============================
 
