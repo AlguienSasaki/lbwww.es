@@ -12,8 +12,7 @@ Introduction!
 ============
 
 This doesn't need to be an overly long post, so it won't be. There is a *fork*
-of Libreboot, named GNU Boot, which you can find here:
-<https://savannah.gnu.org/projects/gnuboot/>
+of Libreboot, named GNU Boot, which you can find on the GNU Savannah website.
 
 Long story short, when I saw this, I decided that I would try to *help* the
 project. More on this next:
