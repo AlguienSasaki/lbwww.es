@@ -94,8 +94,6 @@ Changes for this release (latest changes first, earliest changes last)
 -   libreboot\_bin.tar.xz: Include utils as statically linked binaries
     -   This means that the user does not have to install build
         dependency or build from source anymore.
--   deps-parabola (removed) Remove Parabola dependencies script. Will
-    re-add later (properly tested)
 -   grub.cfg: Add more path checks to isolinux parser (more ISOs should
     work now)
 -   Update SeaBIOS

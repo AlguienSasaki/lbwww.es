@@ -31,10 +31,6 @@ Revisions for r20140711 (1st beta) (11th July 2014)
         Apple EFI firmware is running)
     -   Documentation: Added macbook21 ROMs to the list of ROMs in
         docs/\#rom
-    -   Documentation: Write documentation linking to Mono Moosbart's
-        macbook21 and parabola page (and include a copy)
--   Documentation: added a copy of Mono's Parabola install guide (for
-    macbook21 with Apple EFI firmware) and linked in in main index.
 -   Documentation: added a copy of Mono's Coreboot page (for macbook21)
     and linked it in main index.
 -   T60: Copy CD option from the grub.cfg files for T60 \*serial\*.rom

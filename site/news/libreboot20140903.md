@@ -8,8 +8,6 @@ Revisions for r20140903 (6th beta) (3rd September 2014)
 -   Added modified builddeb\* scripts for Arch-based distros:
     buildpac, buildpac-flashrom, buildpac-bucts (courtesy of Noah
     Vesely)
--   Documentation: updated all relevant areas to mention use of
-    buildpac\* scripts for Parabola users.
 -   Documentation: added information showing how to enable or disable
     bluetooth on the X60
 -   MacBook1,1 tested! See **hardware/\#macbook11**
@@ -105,7 +103,6 @@ Revisions for r20140903 (6th beta) (3rd September 2014)
     builddeb ( updated accordingly)
 -   Removed buildpac-bucts and buildpac-flashrom, merged them with
     buildpac ( updated accordingly)
--   Renamed buildpac to deps-parabola ( updated accordingly)
 -   Documentation: removed all parts talking about build dependencies,
     replaced them with links to \#build\_dependencies
 -   Documentation: emphasized more strongly on the documentation, the

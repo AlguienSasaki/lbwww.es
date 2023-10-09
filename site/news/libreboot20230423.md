@@ -108,8 +108,6 @@ Build system changes:
 * `build/release/roms`: HP KBC1126 EC firmware scrubbed from release ROMs, for
   re-insertion later via `./update blobs download` and `./update blobs inject` like
   with ME images via `me_cleaner` - for HP laptops. Patch courtesy Leah Rowe.
-* `build/dependencies/parabola`: New script for installing build dependencies
-  in Parabola GNU+Linux, courtesy of Riku Viitanen (`Riku_V` on Libreboot IRC)
 * `util/nvmutil`: sorted includes alphabetically; `sys/` first (puffy!) -
   courtesy Leah Rowe.
 * `util/e6400-flash-unlock`: New utility for Dell Latitude E6400 added, written

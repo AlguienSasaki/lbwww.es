@@ -57,7 +57,6 @@ Revisions for r20140911 (7th beta) (11th September 2014)
 -   Use a submodule for i945-pwm.
 -   Don't clean packages that fail or don't need cleaning.
 -   Don't clean i945-pwm, it's not needed.
--   Regression fix: Parabola live ISO boot issues
 -   Re-enable background images in ISOLINUX/SYSLINUX GRUB parser menus
 -   Regression fix: Re-add CD-ROM (ata0) in GRUB
 -   Documentation: add notes about performance penalty when using

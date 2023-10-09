@@ -195,10 +195,7 @@ Libreboot includes statically linked executables in some releases, built from
 the available source code. Those executables have certain libraries built into
 them, so that the executables will work on many Linux distros.
 
-Libreboot 20160907 was built in Trisquel Linux, version 7.0 64-bit.
-Some older Libreboot releases will have been built in Trisquel 6.0.1.
-
-To comply with GPL v2, Trisquel 6 and 7 source ISOs are supplied by the
+To comply with GPL v2, source ISOs are supplied by the
 Libreboot project. You can find these source ISOs in the `ccsource` directory
 on the `rsync` mirrors.
 

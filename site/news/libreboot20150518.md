@@ -111,9 +111,6 @@ Changes for this release, relative to r20150208 (earliest changes last, recent c
 -   docs/hardware/gm45\_remove\_me.html: prioritize ich9gen executable path
 -   docs/hardware/gm45\_remove\_me.html: prioritize changing mac address
 -   docs/hardware/gm45\_remove\_me.html: less confusing notes about ich9gen
--   build/dependencies/parabola: Add dependencies for x86\_64
--   scripts/dependencies/paraboladependencies: build dependencies
-    (32-bit Parabola)
 -   **New board**: ThinkPad T500
 -   Add diffs for descriptor/gbe differences between T500 and X200
 -   coreboot-libre: provide better blob categorization
@@ -149,8 +146,6 @@ Changes for this release, relative to r20150208 (earliest changes last, recent c
 -   docs/git/: Add notes about building for specific boards
 -   build/roms/withgrub: Allow building for a custom range of boards
 -   grub-assemble: Disable verbose output
--   Add documentation on how to unlock root encrypted fs with key in
-    initramfs in Parabola Linux
 -   docs/linux/grub\_cbfs.html: Improve structure (easier to use)
 -   grub.cfg: Disable the beep on startup
 -   docs/install/bbb\_setup.html: Make the guide easier to use

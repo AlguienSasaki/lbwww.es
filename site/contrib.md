@@ -286,10 +286,7 @@ Librebooted ASUS KGPE-D16 based servers, on a fully free GNU+Linux distro. This
 means that the FSF now has full software freedom for their hosting infrastructure.
 
 The FSF also provides access to this infrastructure for many other projects
-(besides GNU projects); for example, Trisquel uses a D16 provided by the FSF
-for their development server used for building Trisquel releases and testing
-changes to the Trisquel GNU+Linux distribution. Trisquel is a fully free
-GNU+Linux distribution, heavily promoted by the FSF.
+(besides GNU projects).
 
 Lisa was a strong supporter of Libreboot in the very early days of the project,
 and her contributions were invaluable. I, Leah Rowe, owe her a debt of gratitude.

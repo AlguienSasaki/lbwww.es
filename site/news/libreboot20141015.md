@@ -59,6 +59,5 @@ Changes for this release (latest changes first, earliest changes last)
     crossgcc'. Libreboot only targets x86 at the time of writing.
 -   ROM images no longer include SeaBIOS. Instead, the user adds it
     afterwards. Documentation and scripts updated.
--   docs/images/encrypted\_parabola.html: Notes about linux-libre-grsec
 -   Documentation: added more info about wifi chipsets
 
