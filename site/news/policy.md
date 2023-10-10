@@ -54,10 +54,6 @@ A binary blob, in this context, is any executable for which no source code
 exists, that you cannot study and modify in a reasonable manner. By definition,
 all such blobs are *proprietary* in nature, and should be avoided if possible.
 
-Specific binary blobs are also problematic, on most coreboot systems, but they
-differ per machine. Read more on the FAQ, and on this page, for how we deal
-with binary blobs in the Libreboot project.
-
 For information about Intel Management Engine and AMD PSP, refer to the FAQ.
 
 Blob *reduction* policy
