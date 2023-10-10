@@ -83,11 +83,11 @@ image:
 
 You can build `cbfstool` in the libreboot build system. Run this command:
 
-	./build coreboot utils
+	./update project trees -b coreboot utils
 
 This assumes that you already downloaded coreboot:
 
-	./update project trees coreboot
+	./update project trees -f coreboot
 
 This, in turn, assumes that you have installed the build dependencies for
 libreboot. On Ubuntu 20.04 and other apt-get distros, you can do this:
@@ -159,11 +159,11 @@ GRUB using the libreboot build system. Run the following commands (assuming
 you have the correct build dependencies installed) to build GRUB, from the
 libreboot Git repository:
 
-	./update project repo grub
+	./update project trees -f grub
 
-	./build grub utils
+	./build fw grub
 
-The following executable will then be available under the `grub/` directory:
+The following executable will then be available under the `src/grub/` directory:
 
 	grub-mkpasswd-pbkdf2
 

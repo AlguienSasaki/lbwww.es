@@ -372,6 +372,13 @@ example of the push pin as a proof of concept:
 
 #### ThinkPad X60/X60S/X60T/T60 with Lenovo BIOS {#flashrom_lenovobios}
 
+**NOTE: This section partially relates to `utils` release archive in
+Libreboot 20160907, which contains static compiled binaries for things like
+bucts and flashrom. It will *still* work on modern distros, and thus is
+still referenced here. The `flash` script in that release can be used, with
+modern Libreboot ROMs. Current Libreboot releases do not include pre-compiled
+utilities, only ROMs.**
+
 NOTE: If BIOS password auth is enabled, you can clear it by shorting pins on
 an EEPROM and then resetting the password in Lenovo BIOS, prior to flashing
 Libreboot. For T60, see:

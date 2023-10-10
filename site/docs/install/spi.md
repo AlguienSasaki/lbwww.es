@@ -461,7 +461,7 @@ install flashrom. Do this after downloading the
 NOTE: debian, arch or void can be written instead of ubuntu2004. the debian
 script is also applicable to newer ubuntu versions
 
-	./handle make file -b flashrom
+	./update project trees -b flashrom
 
 If the `ubuntu2004` script complains about missing dependencies, just modify
 the dependencies config to remove those dependencies. The script is located

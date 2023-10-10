@@ -64,7 +64,7 @@ starting point.
 
 You can then easily modify the existing coreboot configs for you board via lbmk.
 
-	./handle make config -m coreboot t420s_12mb
+	./update project trees -m coreboot t420s_12mb
 
 This script will provide a curses interface through which you can easily modify the
 necessary variables and settings.
@@ -79,7 +79,7 @@ a corebootfb and txtmode config for each board (the script will handle this for 
 Now you can build and test the rom for `board.`
 Once you have finished this, you can try flashing the resulting rom to your board as a test.
 
-	./build boot roms t420s_12mb
+	./build fw coreboot t420s_12mb
 
 If you try to flash this rom and it fails, then there are two probable reasons:
 
@@ -108,30 +108,13 @@ for various rom sizes.
 | 12MB     | 0xBE0000  |
 | 16MB     | 0xFE0000  |
 
-Obtaining Blobs
-===============
-
-The easiest way to see if your coreboot config is valid is to extract the required
-binary blobs from a backup of your vendor rom.
-You'll need a unified rom for dual chip setups; see [the ivybridge haswell guide](/docs/install/ivy_has_common.html)
-for instructions on creating a unified rom image.
-
-Extracting the blobs from a vendor rom image is automated in lbmk.
-Simply run `./update blobs extract [board] [/path/to/backup.bin]`
-For example:
-
-	./update blobs extract t420s_12mb t420s_backup.bin
-
-You can then modify your coreboot configs again and set the path for the
-intel firmware descriptor, intel management engine, and gigabit ethernet firmware.
-
 Getting Help
 ============
 
 Once you have tried everything above, you might find that the board still doesn't
 work.
 If that is the case, then you should contact libreboot developers for more help.
-You can ping `shmalebx9` and/or `leah` on irc or submit an issue on git.
+You can ping `leah` on irc or submit an issue on git.
 In either case, make sure to include a detailed description of everything you
 tried, and what exactly happened when you tried to flash the rom.
 If your board is not supported in libreboot, then you can assume that our

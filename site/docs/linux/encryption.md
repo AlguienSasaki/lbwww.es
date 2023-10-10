@@ -1,6 +1,6 @@
 # Fully Encrypted Boot and Root Partitions with Libreboot
 
-# THIS ARTICLE IS OBSOLETE
+# THIS ARTICLE IS OBSOLETE (and will probably be deleted)
 
 See news article: [Encrypted /boot/ on LUKSv2 now possible in Libreboot
 GRUB (PHC argon2 imported)](../../news/argon2.html)

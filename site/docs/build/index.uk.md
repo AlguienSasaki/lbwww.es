@@ -3,6 +3,28 @@ title: Побудова з джерельного коду
 x-toc-enable: true
 ...
 
+WARNING: Flash from bin/, NOT elf/
+==================================
+
+TODO: translate this section into ukrainian language
+
+**WARNING: When you build a ROM image from the Libreboot build system, please
+ensure that you flash the appropriate ROM image from `bin/`, NOT `elf/`.
+The `elf/` coreboot ROMs do not contain payloads. Libreboot's build system
+builds no-payload ROMs under `elf/`, and payloads separately under `elf/`. Then
+it copies from `elf/` and inserts payloads from `elf/`, and puts the final ROM
+images (containing payloads) in `bin/`. This design is more efficient, and
+permits many configurations without needless duplication of work. More info
+is available in the [lbmk maintenance manual](../maintain/)**
+
+Also, this page currently only refers to the build system as it exists
+in `lbmk.git`. A massive re-design of lbmk has been in progress, since the
+Libreboot 20230625 release. When the next version after 20230625 comes out,
+this page will once again match the current tarball release.
+
+Introduction
+============
+
 Система побудови libreboot, називається `lbmk`, скорочення від `LibreBoot MaKe`, і цей
 документ описує те, як використовувати її. З цим керівництвом ви можете узнати те, як побудувати
 libreboot з доступного джерельного коду.
@@ -77,23 +99,23 @@ libreboot Make (lbmk) автоматично виконує всі необхі�
 В якості результату, ви тепер можете (після встановлення правильних залежностей побудови) виконати
 лише одну команду, з свіжого Git clone, для побудови образів ROM:
 
-	./build boot roms all
+	./build fw coreboot all
 
 або навіть побудувати конкретні образи ROM, такі як:
 
-	./build boot roms x60
+	./build fw coreboot x60
 
 or get a list of supported build targets:
 
-	./build boot roms list
+	./build fw coreboot list
 
 Якщо ви бажаєте побудувати корисні навантаження, можете зробити це. Наприклад:
 
-	./build grub payload
+	./build fw grub
 
-	./handle make config -b seabios
+	./update project trees -b seabios
 
-	./handle make config -b u-boot
+	./update project trees -b u-boot
 
 Попередні кроки буде виконано автоматично. Однак, ви можете *досі* виконати
 окремі частини системи побудови власноруч, якщо виберете. Це може бути

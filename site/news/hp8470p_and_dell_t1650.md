@@ -38,7 +38,7 @@ source](../docs/build/) if you wish to use this board. Read those instructions
 first; with build dependencies then installed, you can build the board like
 so:
 
-	./build boot roms hp8470pintel_16mb
+	./build fw coreboot hp8470pintel_16mb
 
 There is currently no documentation on the coreboot website, but installation
 instructions will be written for the Libreboot website.
@@ -76,7 +76,7 @@ Debian Linux).
 Here's how to build ROM images for this board (make sure you have performed
 the [prerequisite steps](../docs/build/) first:
 
-	./build boot roms t1650_12mb
+	./build fw coreboot t1650_12mb
 
 If you want GRUB-only setup, you could configure SeaBIOS bootorder to only
 load the GRUB payload, and disable the SeaBIOS menu. This can be done by

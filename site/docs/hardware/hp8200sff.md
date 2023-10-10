@@ -88,7 +88,7 @@ to recover from an unbootable BIOS:
 
 You can build the images for it in Libreboot like so:
 
-	./build boot roms hp8200sff_8mb
+	./build fw coreboot hp8200sff_8mb
 
 More information about building ROM images can be found in
 the [build guide](../build/).
@@ -151,14 +151,14 @@ Pin-Strap is set". If it doesn't, start again from the beginning.
 
 Now build the **4** MiB Libreboot image.
 
-	./build boot roms hp8200sff_4mb
+	./build fw coreboot hp8200sff_4mb
 
 More information about building ROM images can be found in
 the [build guide](../build/).
 
 Also build `ifdtool`. It will be needed soon.
 
-	cd coreboot/default/util/ifdtool
+	cd src/coreboot/default/util/ifdtool
 	make
 	sudo make install
 
@@ -256,7 +256,7 @@ the *ROM* by using the `-C` option in nvramtool. You can find this under the
 directory `coreboot/default/util/nvramtool` when downloading coreboot inside
 of lbmk by running the command:
 
-	./fetch_trees coreboot default
+	./update project trees -f coreboot default
 
 Go in there and type `make` to build nvramtool. Simply run nvramtool without
 arguments, and it will show a list of options.

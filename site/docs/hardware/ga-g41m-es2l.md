@@ -76,10 +76,10 @@ Modify the MAC address in the file `rt8168-macaddress` and then:
 
 Now you have a different MAC address hardcoded. In the above example, the ROM
 image is named `libreboot.rom` for your board. You can find cbfstool
-under `coreboot/default/util/cbfstool/` after running the following command
+under `cbutils/` after running the following command
 in the build system:
 
-	./build module cbutils
+	./update project trees -b coreboot utils
 
 You can learn more about using the build system, lbmk, here:\
 [libreboot build instructions](../build/)

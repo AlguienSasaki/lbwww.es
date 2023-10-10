@@ -17,7 +17,7 @@ Building and Testing
 
 Libreboot can be built for qemu just like any other board.
 
-	./build boot roms qemu_x86_12mb
+	./build fw coreboot qemu_x86_12mb
 
 In order to test the resulting roms, you must have qemu installed on the host machine.
 Test the roms by pointing qemu to the rom in bios mode.
@@ -29,7 +29,7 @@ For example:
 
 There is basic support for an arm64 virtual machine as well, although the payloads are not as developed as the x86 one:
 
-	./build boot roms qemu_arm64_12mb
+	./build fw coreboot qemu_arm64_12mb
 
 ```
 qemu-system-aarch64 -bios bin/qemu_arm64_12mb/uboot_payload_qemu_arm64_12mb_libgfxinit_corebootfb_noblobs.rom \

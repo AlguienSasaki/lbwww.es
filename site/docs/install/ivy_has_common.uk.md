@@ -1,5 +1,5 @@
 ---
-title: Insert binary blobs on Sandybridge/Ivybridge/Haswell
+title: Insert vendore files on Sandybridge/Ivybridge/Haswell
 x-toc-enable: true
 ...
 
@@ -7,7 +7,7 @@ x-toc-enable: true
 the english page got heavily re-written.**
 
 **NOTE: This page also applies to PM45 machine Dell Latitude E6400 if it
-contains an Nvidia GPU (Libreboot blob scripts can insert the VGA ROM)**
+contains an Nvidia GPU (Libreboot vendor scripts can insert the VGA ROM)**
 
 This is not a general purpose installation guide, but you *should read it*
 before installing Libreboot! *This* guide *must* be followed, no matter what
@@ -24,7 +24,7 @@ do not need to re-compile release ROMs, you should follow these instructions
 before reading the instructions below:
 <https://libreboot.org/docs/build/#first-install-build-dependencies>**
 
-Coreboot is nominally free software, but requires binary blobs for certain
+Coreboot is nominally free software, but requires non-free software for certain
 boards, for certain functionalities; it differs per board, and some boards do
 not require blobs of any kind in the flash. We cover this more thoroughly in
 the [Freedom Status](../../freedom-status.md) page and in the [Binary Blob
@@ -84,7 +84,7 @@ Injecting Blobs into an Existing Rom
 You must determine the correct board name, for your board, based on the list
 generated when running this command:
 
-	./build boot roms list
+	./build fw coreboot list
 
 For example, `t440pmrc_12mb` corresponds to ThinkPad T440p with MRC firmware.
 Whereas `t440plibremrc_12mb` corresponds to T440p with libre MRC firmware.
@@ -95,7 +95,7 @@ In order to inject the necessary blobs into a rom image, run the script from the
 If you only wish to flash a release rom then the process of injecting the necessary blobs is quite simple.
 Run the injection script pointing to the release archive you downloaded:
 
-	./update blobs inject /path/to/libreboot-20230319-18-g9f76c92_t440pmrc_12mb.tar.xz
+	./update vendor inject /path/to/libreboot-20230319-18-g9f76c92_t440pmrc_12mb.tar.xz
 
 The script can automatically detect the board as long as you do not change the file name.
 You can then find flash-ready ROMs in `/bin/release/`
@@ -104,12 +104,12 @@ Alternatively, you may patch only a single rom file, but you must supply the
 correct board target name as alluded to above.
 For example:
 
-	./update blobs inject -r x230_libreboot.rom -b x230_12mb
+	./update vendor inject -r x230_libreboot.rom -b x230_12mb
 
 Optionally, you can use this script to modify the mac address of the rom with the `-m` flag.
 For example:
 
-	./update blobs inject -r x230_libreboot.rom -b x230_12mb -m 00:f6:f0:40:71:fd
+	./update vendor inject -r x230_libreboot.rom -b x230_12mb -m 00:f6:f0:40:71:fd
 
 Check that the blobs were inserted
 ==================================
@@ -118,7 +118,7 @@ You *must* ensure that the blobs were inserted.
 
 Some examples of how to do that in lbmk:
 
-	./build coreboot utils
+	./update project trees -b coreboot utils
 
 Now you find `cbutitls/default`, which is a directory containing `cbfstool`
 and `ifdtool`. Do this on your ROM image (`libreboot.rom` in the example

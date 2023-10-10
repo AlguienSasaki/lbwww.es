@@ -60,11 +60,11 @@ of the libreboot Git repository.
 
 Then, download coreboot:
 
-	./update project trees coreboot
+	./update project trees -f coreboot
 
-Finally, compile the `cbutils` module:
+Finally, compile the `cbutils` payload (and you will then have the utils):
 
-	./build coreboot utils
+	./build fw grub
 
 Among other things, this will produce a `cbfstool` executable under any of the
 subdirectories in `coreboot/` under `util/cbfstool/cbfstool
@@ -79,9 +79,9 @@ You will also want to build `flashrom` which libreboot recommends for reading
 from and/or writing to the boot flash. In the libreboot build system, you can
 build it by running this command:
 
-	./handle make file -b flashrom
+	./update project trees -b flashrom
 
-An executable will be available at `flashrom/flashrom` after you have done
+An executable will be available at `src/flashrom/flashrom` after you have done
 this.
 
 Dump the boot flash
@@ -93,7 +93,7 @@ your computer, you can use `flashrom` to acquire it.
 Simply run the following, after using libreboot's build system to compile
 flashrom:
 
-	sudo ./flashrom/flashrom -p internal -r dump.bin
+	sudo ./src/flashrom/flashrom -p internal -r dump.bin
 
 If flashrom complains about multiple flash chip definitions, do what it says to
 rectify your command and run it again.

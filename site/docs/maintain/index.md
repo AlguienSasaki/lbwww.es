@@ -98,9 +98,9 @@ bin/
 This directory is created when running any of the following commands, with the
 right arguments:
 
-	./build boot roms ARGUMENTS_HERE
-	./build serprog stm32
-	./build serprog rp2040
+	./build fw coreboot ARGUMENTS_HERE
+	./build fw serprog stm32
+	./build fw serprog rp2040
 
 Simply speaking, `bin/` shall contain finished ROM images or firmware, that
 can then be installed (flashed) to the target device.

@@ -3,6 +3,26 @@ title: Build from source
 x-toc-enable: true
 ...
 
+WARNING: Flash from bin/, NOT elf/
+==================================
+
+**WARNING: When you build a ROM image from the Libreboot build system, please
+ensure that you flash the appropriate ROM image from `bin/`, NOT `elf/`.
+The `elf/` coreboot ROMs do not contain payloads. Libreboot's build system
+builds no-payload ROMs under `elf/`, and payloads separately under `elf/`. Then
+it copies from `elf/` and inserts payloads from `elf/`, and puts the final ROM
+images (containing payloads) in `bin/`. This design is more efficient, and
+permits many configurations without needless duplication of work. More info
+is available in the [lbmk maintenance manual](../maintain/)**
+
+Also, this page currently only refers to the build system as it exists
+in `lbmk.git`. A massive re-design of lbmk has been in progress, since the
+Libreboot 20230625 release. When the next version after 20230625 comes out,
+this page will once again match the current tarball release.
+
+Introduction
+============
+
 libreboot's build system is named `lbmk`, short for `LibreBoot MaKe`, and this
 document describes how to use it. With this guide, you can know how to compile
 libreboot from the available source code.
@@ -77,23 +97,23 @@ if the required utilities for GRUB are not built, to produce payloads.
 As a result, you can now (after installing the correct build dependencies) run
 just a single command, from a fresh Git clone, to build all ROM images:
 
-	./build boot roms all
+	./build fw coreboot all
 
 or even just build specific ROM images, e.g.:
 
-	./build boot roms x60
+	./build fw coreboot x60
 
 or get a list of supported build targets:
 
-	./build boot roms list
+	./build fw coreboot list
 
 If you wish to build payloads, you can also do that. For example:
 
-	./build grub payload
+	./build fw grub
 
-	./handle make config -b seabios
+	./update project trees -b seabios
 
-	./handle make config -b u-boot
+	./update project trees -b u-boot
 
 Previous steps will be performed automatically. However, you can *still* run
 individual parts of the build system manually, if you choose. This may be
