@@ -188,7 +188,7 @@ computer. NOTE: An attacker could still open your system and re-flash new
 firmware externally. You should implement some detection mechanism, such as
 epoxy applied in a *random pattern* on every screw; this slows down the attack
 and means that you will know someone tampered with it because they cannot
-easily re-produce the exact same blob of epoxy in the same pattern (when you
+easily re-produce the exact same glob of epoxy in the same pattern (when you
 apply it, swirl it around a bit for a few minutes while it cures. The purpose
 is not to prevent disassembly, but to slow it down and make it detectable when
 it has occured).

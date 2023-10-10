@@ -72,7 +72,7 @@ the vendor on many supported systems. These programs lack source code, and the
 coreboot project does not control them, but they can be used to perform
 specific initialization tasks.
 
-The libreboot project *allows* binary blobs from coreboot, but there is *still* a
+The libreboot project *allows* vendor code within coreboot, but there is *still* a
 lot of nuance to precisely what is allowed. It is important that you understand
 these nuances, when working on *libreboot*.
 
@@ -109,15 +109,6 @@ The files under `bin/` are provided in regular Libreboot releases.
 
 **These** are the ROM images that you should flash. Do *not* flash the ROM
 images contained under `elf/`!
-
-blobs/
----------------
-
-Used by the blob handler scripts, referenced in certain coreboot configs.
-
-Certain binary blobs such as Intel ME or SCH5545 EC firmware are downloaded
-here; not all blobs are downloaded here however, as some are handled under
-separate directories.
 
 cbutils/
 ---------------
@@ -161,10 +152,8 @@ Please also
 visit: <https://doc.coreboot.org/northbridge/intel/haswell/mrc.bin.html> - the
 handling of this, in Libreboot, is based largely on the information there.
 
-This contains the Intel MRC blob, auto-downloaded during build
-by `script/update/blobs/mrc`, called by the user directly or
-by `script/update/blobs/download`. This provides raminit and peripheral
-init on certain Haswell and Broadwell platforms.
+This contains the Intel MRC firmware, auto-downloaded during build
+by `script/update/vender/download`.
 
 In some cases, libre MRC firmware is also available, and provided
 by Libreboot as an alternative choice.
@@ -185,7 +174,7 @@ current lbmk behaviour, and executed so as to provide Libreboot release
 archives.
 
 This provides source tarballs, and ROM images for example; however, ROM images
-containing non-redistributable blobs are *scrubbed* such that those blobs must,
+containing non-redistributable vendor code are *scrubbed* such that these files must,
 in regular releases, be [re-added manually](../install/ivy_has_common.md) by
 the user.
 
@@ -197,7 +186,7 @@ Third-party source trees are downloaded into this directory, by lbmk.
 src/bios\_extract/
 ---------------
 
-Used by the blob handler scripts. The upstream that we use is here:
+Used by the vendor file handler scripts. The upstream that we use is here:
 <https://review.coreboot.org/bios_extract>
 
 Specifically: the pfs extract utility from this is used on Dell vendor updates,
@@ -206,7 +195,7 @@ to extract SCH5545 EC (Environment Control) firmware.
 src/biosutilities/
 ---------------
 
-Used by the blob handler scripts. The upstream that we use is here:
+Used by the vendor file handler scripts. The upstream that we use is here:
 <https://github.com/platomav/BIOSUtilities>
 
 The `dell_inspiron_1100_unpacker.py` script is used here, to extract from Dell
@@ -275,8 +264,8 @@ payload). More information available at these pages:
 * <https://github.com/corna/me_cleaner/>
 * Libreboot [freedom status page](../../freedom-status.md)
 
-The *blob* scripts are what handle this, specifically the download script
-located at `script/update/blobs/download`.
+The *vendor file* scripts are what handle this, specifically the download script
+located at `script/update/vendor/download`.
 
 src/memtest86plus/
 ---------------
@@ -318,7 +307,7 @@ src/uefitool/
 Please also visit: <https://github.com/LongSoft/UEFITool>
 
 This is compiled, so as to provide `UEFIExtract`. Currently used by the
-blob download script at `script/update/blobs/download`, to download SCH5545 EC
+vendor download script at `script/update/vendor/download`, to download SCH5545 EC
 firmware (used for fan control on Dell Precision T1650).
 
 src/pico-serprog
@@ -358,6 +347,15 @@ may not have much RAM.
 
 Where large files (or a large number of files) are handled by lbmk on a
 temporary basis, this `tmp/` directory is created and then used.
+
+vendor/
+---------------
+
+Used by the vendor file handler scripts, referenced in certain coreboot configs.
+
+Certain vendor files such as Intel ME or SCH5545 EC firmware are downloaded
+here; not all such files are downloaded here however, as some are handled under
+separate directories.
 
 util/
 ===============
@@ -506,9 +504,9 @@ for example, be `default`. In other words, they can refer to other trees.
 
 The coreboot downloads are based on scanning of these directories, and ROM
 images are also built based on them; coreboot defconfigs are also used by
-the blob scripts, for adding or removing certain binary blobs (for example,
+the vendor scripts, for adding or removing certain vendor firmware (for example,
 a config will define where `me.bin` is located, and if it doesn't exist, the
-blob scripts will look up that file and download/process it with `me_cleaner`).
+vendor scripts will look up that file and download/process it with `me_cleaner`).
 
 ### config/coreboot/BOARDNAME/patches/
 
@@ -534,7 +532,7 @@ as:
 * `payload_seabios_withgrub="y"` (example entry)
 * `grub_scan_disk="ata"`
 * `uboot_config=default` (specify which U-Boot tree to use)
-* `blobs_required="n"`
+* `vendorfiles="n"`
 * `microcode_required="y"`
 
 The `tree` value refers to `config/coreboot/TREE`; in other words, a given
@@ -587,7 +585,7 @@ on a ThinkPad X60 with the optical drive may cause GRUB to hang, so on that
 machine it is advisable to set this option to `ahci` (becuse the default HDD
 slot is AHCI).
 
-The `blobs_required` entry doesn't affect anything in code, except that
+The `vendorfiles` entry doesn't affect anything in code, except that
 the `noblobs` string will be appended to ROM image file names, on releases;
 ditto `nomicrocode` but in that case, the behaviour is: if no microcode to
 begin with, only `nomicrocode` images will be named, otherwise ROM images with
@@ -1091,9 +1089,9 @@ in the script at `script/update/vendor/download`, and it is used from there.
 include/option.sh
 ---------------
 
-Functions used by scripts under `script/update/blobs/`, for checking defconfig
+Functions used by scripts under `script/update/vendor/`, for checking defconfig
 files. These files are checked because the scripts need to know whether a given
-blob is used; if it is, a path is then specified in defconfig, telling the blob
+file is used; if it is, a path is then specified in defconfig, telling the vendor
 script either where it is, or where it should be downloaded to.
 
 Several other parts of lbmk also use this file. It is added to as little as
@@ -1274,11 +1272,11 @@ clone, then cleans itself up and creates tarballs. If you run this script, you
 should expect it to take at least 4 hours; slower on really old systems. On
 really fast systems, it might take 2-3 hours.
 
-NOTE: This script *scrubs* certain binary blobs from release ROMs, such as
-Intel ME or MRC firmware. The release ROMs shall then exclude these blobs
+NOTE: This script *scrubs* certain vendor firmware from release ROMs, such as
+Intel ME or MRC firmware. The release ROMs shall then exclude these files
 within them, requiring manual insertion by the user post-release. See:
 
-[Insert binary blobs
+[Insert vendor files
 on Sandybridge/Ivybridge/Haswell](../install/ivy_has_common.md)
 
 ### script/update/project/trees
@@ -1404,12 +1402,12 @@ Remember: code equals bugs, so less code equals fewer bugs.
 
 ### script/update/vendor/download
 
-This downloads binary blobs when needed, on a given coreboot target. It does
-this by scanning the defconfig files of that board, to know where the blobs
+This downloads vendor code when needed, on a given coreboot target. It does
+this by scanning the defconfig files of that board, to know where the files
 are (or where they should be) within lbmk. Based on this, it then knows which
-blobs to download.
+files to download.
 
-These blobs are then inserted at build time by the coreboot build system (as
+These files are then inserted at build time by the coreboot build system (as
 defined by defconfigs), or post-release by running the `inject` script.
 
 It looks inside `config/vendor/` at the files in there, concatenating them and
@@ -1420,14 +1418,14 @@ the `me_cleaner` program.
 More information is available [here](../install/ivy_has_common.md).
 
 This script is executed automatically, when you compile ROM images, if the given
-mainboard requires binary blobs to be inserted. In this way, you do not need to
+mainboard requires vendor code to be inserted. In this way, you do not need to
 manually extract such files from your original vendor image.
 
 ### script/update/vendor/inject
 
 This is not used during the build process, but it can be run by the user on
-release ROMs (which do not contain non-redistributable blobs handled by these
-blob scripts, even if they are required). This script inserts those blobs
+release ROMs (which do not contain non-redistributable code handled by these
+vendor scripts, even if they are required). This script inserts those files
 into the coreboot ROM image; if you're building from source, using lbmk, you
 do not need to run the inject script at all.
 

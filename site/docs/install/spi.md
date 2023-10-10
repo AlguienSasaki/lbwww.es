@@ -555,7 +555,8 @@ You can combine both flashes together with `cat` for example:
 
 	cat bottom_8mb.rom top_4mb.rom > full_12mb.rom
 
-Note that you will need this combined rom if you intend to manually extract blobs.
+Note that you will need this combined rom if you intend to manually extract vendor
+files, which is a method not officially supported by Libreboot's build system.
 
 Writing
 -------

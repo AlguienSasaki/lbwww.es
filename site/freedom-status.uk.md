@@ -349,9 +349,9 @@ This applies to the following targets: `hp2170p_16mb`, `hp2560p_8mb`,
 is inserted into main boot flash, rather than being on a separate
 IC. This is *better* because libre replacements would be more easy to install in
 the future, and reverse engineering is made much easier by it. Libreboot's
-build system handles such firmware in `blobutil`, automatically downloading
+build system handles such firmware with scripts, automatically downloading
 it during the build process. Libreboot 20230423 onwards does scrub EC firmware
-and provide functionality in `blobutil` insert, to insert them with `cbfstool`
+and provide functionality in a special script, to insert them with `cbfstool`
 at the correct offset as defined by coreboot config for each board.
 
 ### SMSC SCH5545 Environmental Control

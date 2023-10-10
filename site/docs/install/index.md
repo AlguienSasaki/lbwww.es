@@ -20,7 +20,7 @@ yourself. FAILURE to adhere to this warning may result in you bricking your
 machine (rendering it unbootable), if you were to flash the release ROMs without
 modifying them in any way. For more information, please read:**
 
-**[Insert binary blobs on Sandybridge/Ivybridge/Haswell](ivy_has_common.md)**
+**[Insert vendor files on Sandybridge/Ivybridge/Haswell](ivy_has_common.md)**
 
 NOTE: This warning does not apply to ROMs that you compiled yourself, using
 lbmk. It only applies to release ROMs, because ME/MRC/EC firmware is *deleted*
@@ -29,8 +29,8 @@ yourself, from source, Libreboot's build system automatically handles it. See:
 [Libreboot build instructions](../build/)
 
 This isn't required on *all* Libreboot-supported boards, but if in doubt, follow
-these instructions anyway. If you run `blobutil` on a board that doesn't need
-blobs, nothing will happen.
+these instructions anyway. If you run the vendor scripts on a board that doesn't
+need vendor files, nothing will happen.
 
 PRECAUTIONS
 ===========
@@ -55,12 +55,12 @@ BLOBS MISSING IN RELEASE ROMs
 E.g. ThinkPad X220, X230, T440p, W541. - also desktop boards such as HP
 Elite 8200 SFF.
 
-The lbmk build system automatically fetches required blobs for these
+The lbmk build system automatically fetches required vendor code for these
 boards, when building, and sets them up properly, e.g. `me_cleaner`
 is used. The same process is also available in a script, which can
 insert them into ROM images.
 
-**If you're using release ROMs, these blobs are missing, and must be
+**If you're using release ROMs, these files are missing, and must be
 added. See: [ivy_has_common.md](ivy_has_common.md).**
 
 About ROM image file names
@@ -106,7 +106,7 @@ NOTE: no configs in libreboot are currently available that use this method.
 
 With this method, coreboot is finding, loading and executing a VGA option ROM
 for your graphics hardware. This would not be done on laptops, because that
-implies supplying non-free binary blobs in libreboot, so this setup would only
+implies needless supply of non-free software in libreboot, so this setup would only
 ever be provided on desktop hardware where no GPU exists or where it is
 desirable for you to use an external/add-on graphics card
 

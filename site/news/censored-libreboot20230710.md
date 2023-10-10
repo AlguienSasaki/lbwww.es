@@ -69,7 +69,7 @@ has been *removed* (censored), in this version, hence the name: *Censored
 Libreboot*. More information available here:
 <https://censored.libreboot.org/censorship.html>
 
-You can find out about the current status of binary blobs, on the [Freedom
+You can find out about the current freedom status per board, on the [Freedom
 Status](../freedom-status.md) page. It describes how Libreboot policy is
 implemented, in great detail.
 

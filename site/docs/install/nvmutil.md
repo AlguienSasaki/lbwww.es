@@ -8,7 +8,7 @@ on any system that uses an Intel Flash Descriptor.
 
 This is the reference documentation for `nvmutil`, but an automated script
 using nvmutil is available for ivy/sandybridge and haswell hardware, when
-inserting blobs, which you can use to change the MAC address. See:
+inserting vendor files, which you can use to change the MAC address. See:
 
 [docs/install/ivy_has_common.md](ivy_has_common.md)
 

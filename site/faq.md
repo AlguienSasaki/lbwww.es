@@ -194,7 +194,7 @@ Please read the [hardware compatibility list](docs/hardware/).
 Freedom pitfalls with modern Intel hardware {#intel}
 ----------------------------------------------------
 
-Coreboot is nominally Free Software, but requires binary blobs on most x86
+Coreboot is nominally Free Software, but requires certain vendor code on some x86
 targets that it supports, on both Intel and AMD.
 
 ### Intel Management Engine (ME) {#intelme}
@@ -370,21 +370,16 @@ interesting:
 ### Firmware Support Package (FSP) {#fsp}
 
 On all recent Intel systems, coreboot support has revolved around
-integrating a blob (for each system) called the *FSP* (firmware support
+integrating a vendor file (for each system) called the *FSP* (firmware support
 package), which handles all of the hardware initialization, including
 memory and CPU initialization. Reverse engineering and replacing this
-blob is almost impossible, due to how complex it is. Even for the most
+file is almost impossible, due to how complex it is. Even for the most
 skilled developer, it would take years to replace. Intel distributes
-this blob to firmware developers, without source.
+this file to firmware developers, for free redistribution.
 
 Since the FSP is responsible for the early hardware initialization, that
 means it also handles SMM (System Management Mode). This is a special
-mode that operates below the operating system level. **It's possible
-that rootkits could be implemented there, which could perform a number
-of attacks on the user (the list is endless). Any Intel system that has
-the proprietary FSP blob cannot be trusted at all.** In fact, several
-SMM rootkits have been demonstrated in the wild (use a search engine to
-find them).
+mode that operates below the operating system level.
 
 ### CPU microcode updates {#microcode}
 
@@ -488,7 +483,7 @@ demonstration](https://media.ccc.de/v/31c3_-_6103_-_en_-_saal_2_-_201412272145_-
 and based on this work, Damien Zammit (another coreboot hacker)
 [partially replaced it](https://github.com/zamaudio/smutool/) with free
 firmware, but on the relevant system (ASUS F2A85-M) there were still
-other blobs present (Video BIOS, and others).
+other such files present (Video BIOS, and others).
 
 ### AMD AGESA firmware 
 
@@ -499,7 +494,7 @@ page is a few years out of date.
 This is responsible for virtually all core hardware initialization on
 modern AMD systems. In 2011, AMD started cooperating with the coreboot
 project, releasing this as source code under a free license. In 2014,
-they stopped releasing source code and started releasing AGESA as binary
+they stopped releasing source code and started releasing AGESA as vendor
 blobs instead. This makes AGESA now equivalent to [Intel FSP](#fsp).
 
 ### AMD CPU microcode updates 
@@ -843,7 +838,7 @@ advisable if security is a concern. USB 2.0 has plenty of bandwidth for
 many HDDs (a few high-end ones can use more bandwidth than USB 2.0 is
 capable of), but for SSDs it might be problematic. USB 3.0 will provide more
 reasonable performance, though note that depending on the system, you may have
-to deal with binary blob XHCI firmware in your kernel (if that bothers you).
+to deal with binary vendor XHCI firmware in your kernel (if that bothers you).
 
 Use of USB is also not an absolute guarantee of safety, so do beware.
 The attack surface becomes much smaller, but a malicious drive could
@@ -990,7 +985,7 @@ Besides software itself (embedded in ROM or not), most hardware
 We do not have a single device that can be considered be "100% free",
 and such absolutes are nearly impossible to reach.
 
-Notable proprietary blobs (not a complete list):
+Notable vendor code present (example) (not a complete list):
 
 * All devices
 	* SATA/PATA Hard Drive/Optical Disc Drive Firmware

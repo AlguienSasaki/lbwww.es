@@ -22,60 +22,59 @@ before reading the instructions below:
 <https://libreboot.org/docs/build/#first-install-build-dependencies>**
 
 Coreboot is nominally free software, but requires non-free software for certain
-boards, for certain functionalities; it differs per board, and some boards do
-not require blobs of any kind in the flash. We cover this more thoroughly in
+boards, for certain functionalities; we cover this more thoroughly in
 the [Freedom Status](../../freedom-status.md) page and in the [Binary Blob
 Reduction Policy](../../news/policy.md).
 
-Well, not all of these blobs are freely redistributable. Coreboot does provide
-binary blobs in some cases, if the vendor has allowed it. In other cases,
+Well, not all of these files are freely redistributable. Coreboot does provide
+vendor files in some cases, if the vendor has allowed it. In other cases,
 extraction from factory firmware is required, or you can extract them from
 vendor-supplied updates - Libreboot's build system does the latter.
 
 When you [compile Libreboot ROM images from source](../build/), Libreboot will
-automatically download any given blobs that are required, for any given board
+automatically download any given files that are required, for any given board
 target. This is done without user intervention, and only when absolutely needed
 to make the machine boot properly.
 
 The problem?
 ------------
 
-Well, if the blobs cannot be freely redistributed, then we can't provide them.
+Well, if the files cannot be freely redistributed, then we can't provide them.
 So how do we handle *that*, in the context of Libreboot releases?
 
 The solution
 ------------
 
-The answer is very simple:  these blobs are **NOT** provided, at all! However,
+The answer is very simple:  these files are **NOT** provided, at all! However,
 the very same logic used by the build system can be run standalone, to re-insert
-these binary blobs on release ROMs. The `inject` script detects what blobs are
+these vendor files on release ROMs. The `inject` script detects what files are
 needed for your ROM image.
 
 The script will detect what board you're inserting on, or you can manually tell
 it what board, and it will fetch them for you, inserting them, so that your
-board is ready to flash - flashing it without these required blobs may result in
+board is ready to flash - flashing it without these required files may result in
 a brick.
 
-Blob locations
+Vendor file locations
 --------------
 
-During auto-download of blobs, they are saved to these locations within the
+During auto-download of files, they are saved to these locations within the
 Libreboot build system:
 
-* ME firmware: `blobs/*/me.bin` - the `*` can be any given directory. Different ones will
+* ME firmware: `vendor/*/me.bin` - the `*` can be any given directory. Different ones will
   be used by given boards, but the directory name may not match the board
   target name.
-* SMSC SCH5545 fan control firmware (for Dell T1650): `blobs/t1650/sch5545ec.bin`
+* SMSC SCH5545 fan control firmware (for Dell T1650): `vendor/t1650/sch5545ec.bin`
 * SMSC KBC1126 embedded controller firmware, on HP EliteBooks: `ec/`
 * Intel MRC firmware, used for ram/peripheral init on Haswell machines such as
   thinkpad t440p/w541: `mrc/`
 
-The above list refers to the *non-redistributable blobs*, and these are not
-directly included in releases. These are what `blobutil` auto-downloads.
+The above list refers to the *non-redistributable files*, and these are not
+directly included in releases. These are auto-downloaded during the build.
 The `me.bin` files are produced by extracting them from vendor updates and
 neutering them with `me_cleaner` so that Intel ME is disabled during early boot.
 
-Injecting Blobs into an Existing Rom
+Injecting vendor files into ROM
 ------------------------------------
 
 You must determine the correct board name, for your board, based on the list
@@ -87,9 +86,9 @@ For example, `t440pmrc_12mb` corresponds to ThinkPad T440p with MRC firmware.
 Whereas `t440plibremrc_12mb` corresponds to T440p with libre MRC firmware.
 Another example: `x230_12mb` corresponds to Thinkpad X230.
 
-In order to inject the necessary blobs into a rom image, run the script from the root of lbmk and point to the rom image.
+In order to inject the necessary files into a rom image, run the script from the root of lbmk and point to the rom image.
 
-If you only wish to flash a release rom then the process of injecting the necessary blobs is quite simple.
+If you only wish to flash a release rom then the process of injecting the necessary files is quite simple.
 Run the injection script pointing to the release archive you downloaded:
 
 	./update vendor inject /path/to/libreboot-20230319-18-g9f76c92_t440pmrc_12mb.tar.xz
@@ -108,10 +107,10 @@ For example:
 
 	./update vendor inject -r x230_libreboot.rom -b x230_12mb -m 00:f6:f0:40:71:fd
 
-Check that the blobs were inserted
+Check that the files were inserted
 ==================================
 
-You *must* ensure that the blobs were inserted.
+You *must* ensure that the files were inserted.
 
 Some examples of how to do that in lbmk:
 
@@ -123,7 +122,7 @@ below):
 
 	./cbutils/default/cbfstool libreboot.rom print
 
-You should check that the blobs were inserted in cbfs, if needed; for example,
+You should check that the files were inserted in cbfs, if needed; for example,
 EC firmware or MRC firmware.
 
 Next:
@@ -139,7 +138,7 @@ Check the output. If it's all `0xFF` (all ones) or otherwise isn't a bunch
 of code, then the Intel ME firmware wasn't inserted.
 
 You'll note the small size of the Intel ME, e.g. 84KB on sandybridge platforms.
-This is because blobutil *automatically* neuters it, disabling it during
+This is because lbmk *automatically* neuters it, disabling it during
 early boot. This is done using `me_cleaner`, which lbmk imports.
 
 Errata
@@ -149,7 +148,7 @@ Errata
 ROM image configuration. These ROM configs have `mrc.bin`: `t440pmrc_12mb`
 and `w541mrc_12mb`. These ROM configs have libre MRC: `t440p_12mb`
 and `w541_12mb` - it is critical that you choose the right one, when using
-the `-b` flag in the `blobutil inject` command. For example, if you
+the `-b` flag in the `./update vendor inject` command. For example, if you
 used `-b t440p_12mb` on a ROM image that actually corresponds
 to `t440pmrc_12mb`, then the required `mrc.bin` file would not be added
 and that ROM would not boot when flashed.**

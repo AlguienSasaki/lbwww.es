@@ -1,4 +1,4 @@
-% Binary blob reduction policy
+% Binary Blob Reduction Policy
 % Leah Rowe
 % 4 January 2022 (updated 15 November 2022)
 
@@ -67,9 +67,9 @@ Default configurations
 ----------------------
 
 Coreboot, upon which Libreboot is based, is mostly libre software but does
-require binary blobs on some platforms. A most common example might be raminit
+require certain vendor code on some platforms. A most common example might be raminit
 (memory controller initialisation) or video framebuffer initialisation. The
-coreboot firmware uses binary blobs for some of these tasks, on some mainboards,
+coreboot firmware uses certain vendor code for some of these tasks, on some mainboards,
 but some mainboards from coreboot can be initialised with 100% libre source
 code, which you can inspect, and compile for your use.
 
@@ -78,21 +78,21 @@ nature of this is what you're about to read.
 
 The libreboot project has the following policy:
 
-* If a blob *can* be avoided, it should be avoided. For example, if VGA ROM
+* If free software *can* be used, it *should* be used. For example, if VGA ROM
   initialization otherwise does a better job but coreboot has *libre* init code
   for a given graphics device, that code should be used in libreboot, when
   building a ROM image. Similarly, if *memory controller initialization* is
-  possible with a binary blob *or* libre code in coreboot, the *libre* code
-  should be used in ROMs built by the Libreboot build system, and the *blob*
-  for raminit should not be used; however, if no libre init code is available
+  possible with vendor code *or* libre code in coreboot, the *libre* code
+  should be used in ROMs built by the Libreboot build system, and the *vendor*
+  raminit code should not be used; however, if no libre init code is available
   for said raminit, it is permitted and Libreboot build system will use the
-  *blob*.
+  *vendor* code.
 * Some nuance is to be observed: on some laptop or desktop configurations, it's
   common that there will be *two* graphics devices (for example, an nvidia and
   an intel chip, using nvidia optimus technology, on a laptop). It may be that
   one of them has libre init code in coreboot, but the other one does not. It's
   perfectly acceptable, and desirable, for libreboot to support both devices,
-  and accomodate the required binary blob on the one that lacks native
+  and accomodate the required vendor code on the one that lacks native
   initialization.
 * An exception is made for CPU microcode updates: they are permitted, and in
   fact *required* as per libreboot policy. These updates fix CPU bugs, including
@@ -106,17 +106,17 @@ The libreboot project has the following policy:
   to tell people how to *neuter* the ME, if possible on a given board.
   The `me_cleaner` program is very useful, and provides a much more secure ME
   configuration.
-* Binary blobs should *never* be deleted, even if they are unused. In the
-  coreboot project, a set of `3rdparty` submodules are available, with binary
-  blobs for init tasks on many boards. These must *all* be included in libreboot
+* Vendor blobs should *never* be deleted, even if they are unused. In the
+  coreboot project, a set of `3rdparty` submodules are available, with vendor
+  code for init tasks on many boards. These must *all* be included in libreboot
   releases, even if unused. That way, even if the Libreboot build system does
   not yet integrate support for a given board, someone who downloads libreboot
   can still make changes to their local version of the build system, if they
   wish, to provide a configuration for their hardware.
 
 Generally speaking, common sense is applied. For example, an exception to the
-minimalization might be if *blob* raminit and *libre* raminit are available, but
-the *libre* one is so broken so as to be unusable. In that situation, the blob
+minimalization might be if *vendor* raminit and *libre* raminit are available, but
+the *libre* one is so broken so as to be unusable. In that situation, the vendor
 one should be used instead, because otherwise the user might switch back to an
 otherwise fully proprietary system, instead of using coreboot (via libreboot).
 *Some* freedom is *better than none*.
@@ -145,7 +145,7 @@ FREEDOM CATALOG
 ===============
 
 A *[freedom status](../freedom-status.md)* page should also be made available,
-educating people about the status of binary blobs on each machine supported by
+educating people about the software freedom status on each machine supported by
 the Libreboot build system. Please read:
 [Software and hardware freedom status for each mainboard supported by
 Libreboot](../freedom-status.md).
@@ -279,7 +279,7 @@ provide incentive for levels of software freedom, such as:
 * FSF once endorsed the ThinkPad T400 with Libreboot, as sold by Minifree. This
   machine comes in two versions: with ATI+Intel GPU, or only Intel GPU. If ATI
   GPU, it's possible to configure the machine so that either GPU is used. If the
-  ATI GPU is to be used, a firmware blob is needed for initialization, though the
+  ATI GPU is to be used, a binary blob is needed for initialization, though the
   driver for it is entirely libre. *The FSF* ignored this fact and endorsed the
   hardware, so long as Libreboot does not enable the ATI GPU or tell people how
   to enable it. The *Intel* GPU on that machine has libre initialization code by
@@ -304,8 +304,8 @@ Problems with FSDG
 
 The FSF maintains another set of criteria, dubbed Free System Distribution
 Guidelines (GNU FSDG)]. They recommend a special version of the Linux kernel,
-dubbed *linux-libre*, which removes all firmware blobs from upstream. These
-firmware blobs are required for certain hardware to work correctly.
+dubbed *linux-libre*, which removes all vendor code from upstream. These
+vendor files are required for certain hardware to work correctly.
 
 The FSDG criteria is separate from RYF, but has similar problems. FSDG is
 what the FSF-endorsed GNU+Linux distros comply with. Basically, it bans
@@ -322,13 +322,13 @@ freedom, but all it does is reduce freedom of choice; somebody else has already
 made that decision for you, *against* you.** You should not use linux-libre at
 all. Some wisdom:
 
-* Excluding firmware blobs in the linux kernel is *bad*. Proprietary firmware
+* Excluding vendor blobs in the linux kernel is *bad*. Proprietary firmware
   is *also bad*. Including them is a wiser choice, if strong education is also
   provided about *why they are bad* (less freedom). If you expose them to
   the user, and tell them about it, there is greater incentive (by simple
   reminder of their existence) to reverse engineer and replace them.
 * Firmware *in your OS kernel* is *good*. The FSF simultaneously gives the OK
-  for hardware *with those same firmware blobs* if the firmware is embedded
+  for hardware *with those same binary blobs* if the firmware is embedded
   into a ROM/flash chip on the device, or embedded in some processor. If the
   firmware is on separate ROM/flash, it could still be replaced by the user via
   reverse engineering, but then you would probably have to do some soldering

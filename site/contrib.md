@@ -47,7 +47,7 @@ Caleb La Grange
 with a narrower focus. Caleb focuses on several areas of development:
 
 * Build system. Caleb is responsible for improving and fixing the libreboot Make build
-system. Specifically: binary blob management, automation, and reproducibility. 
+system. Specifically: automation, and reproducibility. 
 * Hardware modification. Caleb has a passion for hardware alteration; soldering,
 desoldering, and testing libreboot software on the resulting hardware.
 * Board porting. Anything supported in Coreboot can be ported to libreboot, Caleb
@@ -211,14 +211,6 @@ if I would be interested in the FSF's RYF program; I was very surprised that the
 FSF would take me seriously, and I said yes. This is what started the early
 work on Libreboot. Joshua showed me all the problems my products had, and from
 that, the solution was clear:
-
-A project needed to exist, providing a fully free version of coreboot, without
-any binary blobs. At the time (and this is still true today), coreboot was not
-entirely libre software and shipped with binary blobs by default. In particular,
-CPU microcode updates were included by default, on all x86 machines. Working
-with Joshua who reviewed my work, I created a fully free version of coreboot.
-At first, it wasn't called Libreboot, and the work was purely intended for my
-company (at that time called Gluglug) to be promoted by the FSF.
 
 Joshua used his media connections at the FSF to heavily promote my work, and
 on December 13th, 2013, the Libreboot project was born (but not called that).

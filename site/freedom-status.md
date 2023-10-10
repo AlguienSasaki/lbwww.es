@@ -8,23 +8,23 @@ Introduction
 
 This page documents how Libreboot's [binary blob reduction
 policy](news/policy.md), adopted in November 2022, is implemented in practise,
-especially that line which says: *"if a blob can be avoided, it must be
-avoided."*
+especially that line which says: *"if free software can be used, it must be
+used."*
 
 Libreboot uses [coreboot](https://coreboot.org/) for hardware initialisation.
 While coreboot is nominally [*free* or *open source*
 software](https://writefreesoftware.org/), on *some* (not
 all) platforms, coreboot *requires* certain
-[blobs](https://en.wikipedia.org/wiki/Binary_blob)
+[vendor files](https://en.wikipedia.org/wiki/Binary_blob)
 for things like raminit. *All* boards currently supported by Libreboot can be
 initialised entirely with *free*, *libre* or *open source* code from *coreboot*
 itself, because Libreboot currently only focuses on such mainboards. Libreboot's
 goal is to eventually support *all* mainboards from coreboot.
 
-A more *pragmatic* [binary blobs reduction policy](news/policy.md) was adopted
+A more *pragmatic* [binary blob reduction policy](news/policy.md) was adopted
 by Libreboot during November 2022, as part of an ongoing campaign to support
 more hardware (from coreboot) within Libreboot, so as to provide *many more*
-people with coreboot which, regardless of blob status, *does* provide increased
+people with coreboot which, regardless of freedom status, *does* provide increased
 [software freedom](https://writefreesoftware.org/) compared to fully proprietary
 boot firmware which is what most
 people would otherwise use; Libreboot's modern policy is thus pragmatic, further
@@ -164,7 +164,7 @@ specifically written by Leah Rowe, in 2014 and improved incrementally since.
 
 On newer platforms as alluded to above, `me_cleaner` is used instead.
 
-Notes about specific types of blobs
+Notes about specific types of vendor file
 ===================================
 
 VGA option ROMs
@@ -175,7 +175,7 @@ Intel platforms that have it. The source code is provided by coreboot, under
 free license.
 
 In some cases, a laptop may have a graphics chip that is unsupported by
-coreboot. In this situation, a binary blob called a *VGA Option ROM* must be
+coreboot. In this situation, a vendor file called a *VGA Option ROM* must be
 used. Libreboot has *experimental* support for Nvidia GPU models of the Dell
 Latitude E6400, in an experimental branch where the build system automatically
 downloads the VGA ROM for it. This is currently *not* present in releases, or
@@ -190,7 +190,7 @@ graphics on some ivybridge or haswell thinkpads.
 For *add-on* GPUs, SeaBIOS (payload) can typically scan a VGA ROM present on
 the card and execute it. This has been tested on certain desktop mainboards
 that Libreboot supports, and works just fine; Libreboot does not need to handle
-these blobs at all.
+these files at all.
 
 Libreboot's default is *always* freedom, when feasible in practise. Users who
 wish to have use of these additional GPUs, on such hardware, must take stock
@@ -210,27 +210,28 @@ and W541) as of Libreboot 20230319 or higher.
 ARM platforms (chromebooks)
 =============
 
-Mostly blobless, except for the requirement on `daisy` and `peach` mainboards
-to include BL1 bootloader blobs. These are:
+Mostly free software, except for the requirement on `daisy` and `peach` mainboards
+to include BL1 bootloader files from the vendor. These are:
 
 * HP Chromebook 11 G1 (daisy-spring) **(board removed from Libreboot, due to
 	issues (will be re-added at a later date)**
 * Samsung Chromebook XE303 (daisy-snow) **(ditto)**
 * Samsung Chromebook 2 13” (peach-pi) **(ditto)**
 * Samsung Chromebook 2 11” (peach-pit) **(ditto)**
-* nyan-* chromebooks also temporarily removed, but are blobless in Libreboot
+* nyan-* chromebooks also temporarily removed, but are 100% free software in
+  Libreboot
 
-List of blobs needed, specifically for each board
+List of vendor files, specifically for each board
 =================================================
 
 This article has thoroughly explained, in a detailed overview, the precise
-nature as to *what* binary blobs are accomodated for in Libreboot. Again,
+nature as to *what* vendor files are accomodated for in Libreboot. Again,
 fully libre init from coreboot is available *on all currently supported boards*.
 
 *From coreboot* is the critical aspect of this, but Libreboot's full scope is
 the main flash IC which (in some cases) contains software outside of coreboot.
 
-Here is a list, *for each* board, of those blobs:
+Here is a list, *for each* board, of those files:
 
 Intel/x86
 ---------
@@ -258,9 +259,9 @@ This applies to the following targets: `hp2170p_16mb`, `hp2560p_8mb`,
 is inserted into main boot flash, rather than being on a separate
 IC. This is *better* because libre replacements would be more easy to install in
 the future, and reverse engineering is made much easier by it. Libreboot's
-build system handles such firmware in `blobutil`, automatically downloading
+build system handles such firmware in a script, automatically downloading
 it during the build process. Libreboot 20230423 onwards does scrub EC firmware
-and provide functionality in `blobutil` insert, to insert them with `cbfstool`
+and provide functionality in a special script, to insert them with `cbfstool`
 at the correct offset as defined by coreboot config for each board.
 
 ### SMSC SCH5545 Environmental Control
@@ -283,7 +284,7 @@ introducing non-standard broken behaviour and it may result in the machine
 being unable to boot properly. In other cases, doing so may break features such
 as S3 suspend/resume.
 
-CPU microcode blobs included by default, on all x86 boards. While not needed
+CPU microcode files included by default, on all x86 boards. While not needed
 in most cases, their use is highly recommended. For reasons why, see:
 [news/policy.md#more-detailed-insight-about-microcode](news/policy.md#more-detailed-insight-about-microcode)
 
@@ -315,7 +316,7 @@ ARM/chromebooks
 BL1 bootloader needed on: `daisy_snow`, `daisy_spring` and `peach_pit`.
 
 These boards are *currently* not present. They were removed from Libreboot,
-because the build system does not yet auto-insert the BL1 blobs. The boards
+because the build system does not yet auto-insert the BL1 files. The boards
 are otherwise believed to work, using Alper's port of U-Boot in Libreboot.
 
 Conclusion
@@ -326,7 +327,7 @@ blobs reduction policy*, with the emphasis on *reduction* being most critical.
 It can be asserted that Libreboot does in fact provide a reasonable level of
 *software freedom*, on all boards.
 
-Libreboot *could* add a lot more blobs for various platforms, to enable various
+Libreboot *could* add a lot more such files for many platforms, to enable various
 extra features, that it instead avoids adding, precisely because the *purpose*
 of the Libreboot project is to promote *libre* software and *minimise* the
 power that proprietary software developers have over users.

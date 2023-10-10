@@ -133,7 +133,7 @@ Prepare the ROM image
 Libreboot ROM image layouts are currently incompatible with the regions
 that should be carried over from the stock firmware. However, the
 released images should still be somewhat usable, since the Chromebooks
-supported so far don't require any non-redistributable blobs to be
+supported so far don't require any non-redistributable code to be
 injected by the end user.
 
 Future Libreboot versions will likely require post-processing to
@@ -146,7 +146,7 @@ Flash the ROM image
 ===================
 
 WARNING: Although none are supported yet, make sure not to flash ROM
-images on x86 Chromebooks without injecting non-redistributable blobs
+images on x86 Chromebooks without injecting non-redistributable code
 first (like Intel ME firmware). This is not yet documented here.
 
 You can flash the ROM image both internally and externally. For the

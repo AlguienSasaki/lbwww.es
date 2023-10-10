@@ -84,7 +84,7 @@ Once you have finished this, you can try flashing the resulting rom to your boar
 If you try to flash this rom and it fails, then there are two probable reasons:
 
 1) CBFS size or ROM size is wrong
-2) The blobs are incompatible
+2) The vendor code (if required) is incompatible
 
 Solutions to these problems follow in the proceeding sections.
 

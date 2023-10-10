@@ -27,7 +27,7 @@ yourself. FAILURE to adhere to this warning may result in you bricking your
 machine (rendering it unbootable), if you were to flash the release ROMs without
 modifying them in any way. For more information, please read:**
 
-**[Insert binary blobs on Sandybridge/Ivybridge/Haswell](../install/ivy_has_common.md)**
+**[Insert vendor files on Sandybridge/Ivybridge/Haswell](../install/ivy_has_common.md)**
 
 NOTE: This warning does not apply to ROMs that you compiled yourself, using
 lbmk. It only applies to release ROMs, because ME/MRC/EC firmware is *deleted*
@@ -121,8 +121,8 @@ from 2021.01 is known to work, for u-boot on this board. See:\
 revisions) - for now, ROM images deleted from the Libreboot 20221214
 and 20230319 releases.**
 
-**WARNING: daisy- and peach- boards require a BL1 bootloader blob, but the
-one from coreboot 3rdparty is a fake/placeholder blob. We need logic in the
+**WARNING: daisy- and peach- boards require a BL1 bootloader firmware, but the
+one from coreboot 3rdparty is a fake/placeholder file. We need logic in the
 Libreboot build system for properly fetching/extracting these, plus docs to
 cover it. For now, assume that these are broken - ROM images are excluded,
 for now, and have been deleted from the Libreboot 20221214 and 20230319

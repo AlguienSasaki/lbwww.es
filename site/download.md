@@ -21,7 +21,7 @@ yourself. FAILURE to adhere to this warning may result in you bricking your
 machine (rendering it unbootable), if you were to flash the release ROMs without
 modifying them in any way. For more information, please read:**
 
-**[Insert binary blobs on Sandybridge/Ivybridge/Haswell](docs/install/ivy_has_common.md)**
+**[Insert vendor files on Sandybridge/Ivybridge/Haswell](docs/install/ivy_has_common.md)**
 
 NOTE: This warning does not apply to ROMs that you compiled yourself, using
 lbmk. It only applies to release ROMs, because ME/MRC/EC firmware is *deleted*
@@ -30,8 +30,8 @@ yourself, from source, Libreboot's build system automatically handles it. See:
 [Libreboot build instructions](docs/build/)
 
 This isn't required on *all* Libreboot-supported boards, but if in doubt, follow
-these instructions anyway. If you run `blobutil` on a board that doesn't need
-blobs, nothing will happen.
+these instructions anyway. If you run the vendor scripts on a board that doesn't
+need blobs, nothing will happen.
 
 GPG signing key
 ---------------

@@ -47,19 +47,6 @@ to Dell Latitude E6400 documentation in Libreboot; specifically,
 the [E6400 info page](../docs/hardware/e6400.md) and [E6400 flashing
 guide](../docs/install/e6400.md).
 
-Nicholas Chin, author of the original Dell E6400 port, has been helping me and
-I've been working on this experimental branch of Libreboot under his
-guidance:
-
-* <https://browse.libreboot.org/lbmk.git/log/?h=e6400nvidia_wip>
-
-*These* patches were already merged in Libreboot's master branch, which the
-changes in the WIP branch rely upon:
-
-* Import the `bios_extract` utilities in lbmk: <https://browse.libreboot.org/lbmk.git/commit/?id=6d0ff0286451dc43d32428a44a68d07bc13c058a>
-* Bug fixes from Nicholas for `bios_extract`: <https://browse.libreboot.org/lbmk.git/commit/?id=2e64f6397556b7e6fff8a7a305a5eaa1095acfc1>
-* blobutil: support downloading VGA ROM for Nvidia E6400: <https://browse.libreboot.org/lbmk.git/commit/?id=5a197b4ff160a348179a3350af266c6b87a3aa04>
-
 Ongoing development discussion is available, on the Libreboot bug tracker. See:
 
 * <https://codeberg.org/libreboot/lbmk/issues/14>

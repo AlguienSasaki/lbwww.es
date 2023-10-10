@@ -21,17 +21,17 @@ about microcode on the [FAQ](../faq.md#microcode) and
 
 In the next Libreboot releases, ROM images that *exclude* CPU microcode updates
 will once again be available. Libreboot's [Binary Blob Reduction
-Policy](policy.md) dictates that each mainboard must be provided with as few
-binary blobs as possible, ideally none. *At present*, *all* x86 and ARM
+Policy](policy.md) dictates that each mainboard must be provided with **as few**
+binary blobs as possible, ideally **none**. *At present*, *all* x86 and ARM
 mainboards supported in Libreboot (in `lbmk.git` and in releases) can boot
 with entirely [free software](https://writefreesoftware.org/),
-requiring *zero* blobs of any kind from *coreboot*.
+requiring *zero* vendor files of any kind within *coreboot*.
 
 The nuance of how Libreboot *implements* this policy is described in
 the [Freedom Status](../freedom-status.md) page. Although coreboot (which
 Libreboot uses for hardware initialisation) *is* a
 [free software](https://writefreesoftware.org/) project,
-certain binary blobs are needed on some platforms, for things like raminit
+certain vendor files are needed on some platforms, for things like raminit
 (memory controller initialisation). Libreboot tries to reduce or eliminate
 these, or mitigate their existence (for example, `me_cleaner` is used on newer
 Intel platforms).
@@ -54,7 +54,7 @@ Why?
 ----
 
 Freedom of choice, that's why. Libreboot's policy explicitly
-[states](policy.md#configuration), in the context of *adding* binary blobs:
+[states](policy.md#configuration), in the context of *adding* vendor files:
 
 *It’s natural that the user may want to create a setup that is less libre than
 the default one in libreboot. This is perfectly acceptable; freedom is superior,
@@ -87,15 +87,15 @@ In `board.cfg` for each mainboard defined (in Libreboot's build system, lbmk),
 the following entries are available:
 
 * `microcode_required="n" or "y"` (it's "n" on ALL boards)
-* `blobs_required="n" or "y"`("n" on MOST boards)
+* `vendorfiles="n" or "y"`("n" on MOST boards)
 
-If `blobs_required="n"`, the given ROM image `filename.rom`
+If `vendorfiles="n"`, the given ROM image `filename.rom`
 becomes `filename_noblobs.bin` for all versions of it. In this
 context, *noblobs* means *zero* blobs in the entire boot flash when the
 final ROM image is flashed to it, regardless of whether coreboot is
 blob-free, irrespective of microcode updates. ROM images
 containing `noblobs` in the filename *may* still contain microcode
-updates, distinguishing *microcode* as a special kind of blob distinct
+updates, distinguishing *microcode* as a special kind of vendor file distinct
 from all others.
 
 With or without `_noblobs` in the name:
@@ -103,11 +103,11 @@ With or without `_noblobs` in the name:
 If `microcode_required="n"`, the given ROM image `filename.rom`
 is either:
 
-* If no microcode blob exists within it already, such as on ARM
+* If no microcode file exists within it already, such as on ARM
   mainboards, the ROM is simply copied to: `filename_nomicrocode.rom`
 * If the ROM contains microcode (default on most x86 boards, except Qemu
   or in rare cases where none are advised), `filename.rom` is retained and
-  is copied to `filename_nomicrocode.rom`, and the CPU microcode update blob
+  is copied to `filename_nomicrocode.rom`, and the CPU microcode update file
   shall be removed from `filename_nomicrocode.rom`.
 
 What this means is that ROMs *with* OR *without* microcode will be present,
@@ -139,7 +139,7 @@ In previous releases of Libreboot, no-microcode was the default (microcode
 updates were excluded entirely, from all releases). This policy was changed
 during November 2022, as part of an ongoing campaign to support more hardware
 (from coreboot) within Libreboot, so as to provide many more people with
-coreboot which, regardless of blob status on each platform, *does* provide
+coreboot which, regardless of freedom status on each platform, *does* provide
 increased software freedom compared to fully proprietary boot firmware, which
 is what people would otherwise use; thus, Libreboot's modern policy is
 pragmatic, advancing further the cause of *software freedom*.

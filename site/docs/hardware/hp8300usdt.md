@@ -90,7 +90,7 @@ If you're using Libreboot release ROM images, the ME image has been
 scrubbed and you must re-insert it.
 Use the information on this guide to know how to do that:
 
-[Insert binary blobs on Intel Sandybridge/Ivybridge/Haswell
+[Insert vendor files on Intel Sandybridge/Ivybridge/Haswell
 platforms](../install/ivy_has_common.md)
 
 You can now flash libreboot:

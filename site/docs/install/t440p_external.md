@@ -18,17 +18,17 @@ You can now follow the rest of the instructions.
 Preparing a release Rom
 -----------------------
 
-You must patch the release rom with the necessary blobs *and then* flash it to your board.
+You must patch the release rom with the necessary vendor files *and then* flash it to your board.
 
-Lbmk includes a script that will automatically inject the necessary blobs into a rom file.
+Lbmk includes a script that will automatically inject the necessary files into a rom file.
 The script can determine the board automatically if you have not changed the name, but you can also manually set the board name with the `-b` flag.
 
-In order to inject the necessary blobs into a rom image, run the script from the root of lbmk and point to the rom image.
+In order to inject the necessary files into a rom image, run the script from the root of lbmk and point to the rom image.
 
-If you only wish to flash a release rom then the process of injecting the necessary blobs is quite simple.
+If you only wish to flash a release rom then the process of injecting the necessary files is quite simple.
 Run the injection script pointing to the release archive you downloaded:
 
-	./update blobs inject /path/to/libreboot-20230319-18-g9f76c92_t440_12mb.tar.xz
+	./update vendor inject /path/to/libreboot-20230319-18-g9f76c92_t440_12mb.tar.xz
 
 The script can automatically detect the board as long as you do not change the file name.
 You can then find flash-ready ROMs in `/bin/release/`
@@ -36,21 +36,21 @@ You can then find flash-ready ROMs in `/bin/release/`
 Alternatively, you may patch only a single rom file.
 For example (libre replacement of `mrc.bin`):
 
-	./update blobs inject -r t440p_libreboot.rom -b t440p_12mb
+	./update vendor inject -r t440p_libreboot.rom -b t440p_12mb
 
 Optionally, you can use this script to modify the mac address of the rom with the `-m` flag.
 For example:
 
-	./update blobs inject -r t440p_libreboot.rom -b t440p_12mb -m 00:f6:f0:40:71:fd
+	./update vendor inject -r t440p_libreboot.rom -b t440p_12mb -m 00:f6:f0:40:71:fd
 
-If you're flashing a ROM that needs blob `mrc.bin`, you would do one of these
+If you're flashing a ROM that needs vendor file `mrc.bin`, you would do one of these
 instead, for example:
 
-	./update blobs inject -r t440p_libreboot.rom -b t440pmrc_12mb
+	./update vendor inject -r t440p_libreboot.rom -b t440pmrc_12mb
 
 or (inserting a different MAC address)
 
-	./update blobs inject -r t440p_libreboot.rom -b t440pmrc_12mb -m 00:f6:f0:40:71:fd
+	./update vendor inject -r t440p_libreboot.rom -b t440pmrc_12mb -m 00:f6:f0:40:71:fd
 
 NOTE: this makes use of `nvmutil`, which you can read more about in
 the [nvmutil documentation](nvmutil.md).

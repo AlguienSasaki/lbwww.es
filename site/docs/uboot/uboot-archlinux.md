@@ -31,9 +31,9 @@ Despite still being distributed by some distros, boot.scr is a legacy boot metho
 
 For more information about what actually goes into a boot.scr script, check [this page in the u-boot documentation](https://u-boot.readthedocs.io/en/latest/usage/cmd/source.html?highlight=boot.scr#fit-image)
 
-3) extlinux.conf - a flat, bootloader-spec text file that lives in /boot/extlinux/extlinux.conf. That's all. Not a binary blob in sight!
+3) extlinux.conf - a flat, bootloader-spec text file that lives in /boot/extlinux/extlinux.conf. That's all.
 
-Since extlinux.conf is supported by multiple bootloaders, making your system more portable, is natively supported by u-boot, and requires no binary blobs or extra software, it seems to be the best choice for a chromebook.
+Since extlinux.conf is supported by multiple bootloaders, making your system more portable, is natively supported by u-boot, it seems to be the best choice for a chromebook.
 
 Creating extlinux.conf
 ======================

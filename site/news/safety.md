@@ -19,33 +19,33 @@ users have been bricking their machines, on the following mainboards:
 Why?
 ----
 
-On these platforms, the following binary blobs are required:
+On these platforms, the following binary vendor files are required:
 
 * Intel ME firmware: all Sandy/Ivy/Haswell boards. Libreboot's build system
   runs `me_cleaner` to neuter the Intel ME, so that it's disabled after BringUp.
 * Intel MRC firmware: Haswell platforms (W541, T440p) - a libre MRC replacement
-  is available, but experimental, and the blob version is still recommended.
+  is available, but experimental, and the vendor version is still recommended.
 * KBC1126 EC firmware: HP laptops (all sandy/ivy/haswell)
 
 When you [build Libreboot from source](../docs/build/), Libreboot's automated
-build system (lbmk) automatically downloads these blobs directly from the
+build system (lbmk) automatically downloads these files directly from the
 hardware vendor, and inserts them into the ROM during build time.
 
-However, these blobs are not redistributable, so Libreboot's build system (lbmk)
-automatically scrubs (deletes) these blobs, from each ROM image, prior to
+However, these files are not redistributable, so Libreboot's build system (lbmk)
+automatically scrubs (deletes) these files, from each ROM image, prior to
 archiving the ROM images for release.
 
 What this means is exactly as implied:
 
 If you simply flash the release ROMs as-is, *without* modification, you will
-be flashing them *without* these required blobs. This is exactly what some
+be flashing them *without* these required files. This is exactly what some
 people have been doing.
 
-Instructions are given here, for how to insert these blobs on release ROMs:
+Instructions are given here, for how to insert these files on release ROMs:
 
-[Insert binary blobs on Sandybridge/Ivybridge/Haswell](../docs/install/ivy_has_common.md)
+[Insert vendor files on Sandybridge/Ivybridge/Haswell](../docs/install/ivy_has_common.md)
 
-The linked guide makes use of `blobutil`, lbmk's single centralised utility that
+The linked guide makes use of vendor scripts, that
 handles *all* firmwares, automatically for each given mainboard. It can
 automatically download and insert all of the following:
 
@@ -97,7 +97,7 @@ Libreboot releases, on the affected machines:
 
 * If BIOS region blob-free (no MRC/EC firmware needed): set IFD, GbE and BIOS
   regions read-write by default, but lock the ME region.
-* If BIOS region requires blobs inserted: set IFD and GbE regions read-write
+* If BIOS region requires vendor files: set IFD and GbE regions read-write
   by default, but lock the ME and BIOS regions.
 
 In this configuration, internal flashing would still be possible, so that you
@@ -120,7 +120,7 @@ one of three possible scenarios:
 
 Under this regime, some users may still brick their machines. For example,
 they might read the instructions for how to unlock regions, and then still
-flash a ROM image without running `blobutil` on it - there is nothing we
+flash a ROM image without running vendor scripts on it - there is nothing we
 can really do to prevent this, short of simply locking *all* regions, including
 the IFD region (if we did that, then users would need to externally re-flash
 their machine when updating).

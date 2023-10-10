@@ -43,11 +43,11 @@ yourself. FAILURE to adhere to this warning may result in you bricking your
 machine (rendering it unbootable), if you were to flash the release ROMs without
 modifying them in any way. For more information, please read:**
 
-**[Insert binary blobs on Sandybridge/Ivybridge/Haswell](../docs/install/ivy_has_common.md)**
+**[Insert vendor files on Sandybridge/Ivybridge/Haswell](../docs/install/ivy_has_common.md)**
 
 This isn't required on *all* Libreboot-supported boards, but if in doubt, follow
-these instructions anyway. If you run `blobutil` on a board that doesn't need
-blobs, nothing will happen.
+these instructions anyway. If you run the vendor scripts on a board that doesn't
+need any vendor files, then nothing will happen.
 
 Build from source
 -----------------

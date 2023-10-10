@@ -43,11 +43,11 @@ yourself. FAILURE to adhere to this warning may result in you bricking your
 machine (rendering it unbootable), if you were to flash the release ROMs without
 modifying them in any way. For more information, please read:**
 
-**[Insert binary blobs on Sandybridge/Ivybridge/Haswell](../docs/install/ivy_has_common.md)**
+**[Insert vendor files on Sandybridge/Ivybridge/Haswell](../docs/install/ivy_has_common.md)**
 
 This isn't required on *all* Libreboot-supported boards, but if in doubt, follow
-these instructions anyway. If you run `blobutil` on a board that doesn't need
-blobs, nothing will happen.
+these instructions anyway. If you run the vendor scripts on a board that doesn't
+need any vendor files, nothing will happen.
 
 Build from source
 -----------------
@@ -75,7 +75,7 @@ The changes can be summarised, thus:
   ThinkPad W541). This is using patches from Angel Pons (hell on coreboot IRC),
   that are currently still in review on coreboot master. The *old* configs
   that use `mrc.bin` for raminit are still available aswell, so this release
-  contains ROMs with libre raminit *and* ROMs with blob raminit. The reasons
+  contains ROMs with libre raminit *and* ROMs with vendor raminit. The reasons
   are explained below.
 * **FIXED S3 suspend/resume on Haswell (T440p/W541)** - but only on configs
   that use `mrc.bin`. The images with libre MRC still have broken S3. S3
@@ -139,17 +139,17 @@ In this release, and in the build system, the following targets are defined:
 * `t440p_12mb`: libre raminit code used (reverse engineered replacement
   of `mrc.bin`)
 * `w541_12mb`: ditto (libre raminit code)
-* `t440pmrc_12mb`: blob `mrc.bin` used for raminit. GRUB and SeaBIOS payloads
+* `t440pmrc_12mb`: vendor `mrc.bin` used for raminit. GRUB and SeaBIOS payloads
   both supported.
-* `w541mrc_12mb`: blob `mrc.bin` used for raminit. GRUB and SeaBIOS payloads
+* `w541mrc_12mb`: vendor `mrc.bin` used for raminit. GRUB and SeaBIOS payloads
   both supported.
 
 The libre raminit comes from this patchset:
 
 <https://review.coreboot.org/c/coreboot/+/64198/5>
 
-The MRC blob (and Angel's replacement code) don't just do raminit, they handle
-a few other init tasks aswell, including USB host controller.
+The MRC vendor file (and Angel's replacement code) don't just do raminit, they
+handle a few other init tasks aswell, including USB host controller.
 
 New boards, x86
 ----------
