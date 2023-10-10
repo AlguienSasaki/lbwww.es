@@ -655,7 +655,7 @@ VESA frame buffer (NOT to be confused with the coreboot frame buffer), or just
 normal text mode. Text mode startup is always recommended, and in that setup,
 GRUB (including coreboot GRUB, but also PC GRUB) can use VGA modes.
 
-The name `libgfxinit` is simply what `./build boot roms` uses, but it may be
+The name `libgfxinit` is simply what `./build fw coreboot` uses, but it may be
 that a board uses the old-school native video init code written in C. On some
 platforms, coreboot implemented a 3rd party library called `libgfxinit`, which
 is written in Ada and handles video initialization. In this setup, coreboot
@@ -1011,8 +1011,8 @@ all other parts of the Libreboot build system. The rules are as follows:
   would execute `script/build/fw/coreboot all` in `sh`.
 * `TMPDIR` is exclicitly set, providing a constant location where temporary
   files and directories can be made. `TMPDIR` is exported by the parent to
-  all children; for example, `./build boot roms all` would export it
-  to `script/build/boot/roms`, and then anything called by *that* will also
+  all children; for example, `./build fw coreboot all` would export it
+  to `script/build/fw/coreboot`, and then anything called by *that* will also
   inherit it - the main parent process running `lbmk` will then clean up this
   `TMPDIR` directory upon any exit.
 * All exits from lbmk are handled by this script. *All* exits, zero or non-zero,
@@ -1110,8 +1110,8 @@ script/
 =======
 
 *All* scripts under `script/` are executed only by the main `lbmk` script,
-conforming to the standard `buildpath/mode/option` e.g. `build/boot/roms` - so,
-running `./build boot roms` would run `script/build/boot/roms`.
+conforming to the standard `buildpath/mode/option` e.g. `build/fw/coreboot` - so,
+running `./build fw coreboot` would run `script/build/fw/coreboot`.
 
 script/build/
 ---------------
@@ -1135,7 +1135,7 @@ The `targetname` argument must be specified, chosen from this output:
 Pass several board names if you wish to build only for specific targets. For
 example:
 
-	./build boot roms x60 x200_8mb
+	./build fw coreboot x60 x200_8mb
 
 To build *all* targets, specify:
 
@@ -1186,7 +1186,7 @@ for `romtype`:
 * If no declaration is made, or a declaration is made contrary to the above,
   no special modifications will be made.
 
-If no payload is defined in `target.cfg`, the `roms_helper` script will exit
+If no payload is defined in `target.cfg`, the `build/fw/coreboot` script will exit
 with error status.
 
 If SeaBIOS is to be used, on `libgfxinit` setups, SeaVGABIOS will also be
@@ -1217,12 +1217,12 @@ Libreboot!
 ### script/build/fw/grub
 
 This builds the `grub.elf` file and keymap configuration files, placing these
-under `elf/grub/` for use by `script/build/boot/roms`.
+under `elf/grub/` for use by `script/build/fw/coreboot`.
 
 Command: `./build fw grub`
 
 This builds the `grub-mkstandalone` utility under `src/grub/`, which is used
-by `script/build/boot/roms` to insert GRUB payloads inside coreboot ROM
+by `script/build/fw/coreboot` to insert GRUB payloads inside coreboot ROM
 images.
 
 ### script/build/fw/serprog
@@ -1380,7 +1380,7 @@ coreboot ROM images.
 
 NOTE: the `coreboot` projectname here shall cause the ROM images to go
 under `elf/` - this is the no-payload ROM images, which are later used
-separately by `script/build/boot/roms_helper` to provide full images, with
+separately by `script/build/fw/coreboot` to provide full images, with
 payloads inserted. It is an intentional design choice of Libreboot, to split
 it up this way and *not* use coreboot's own build system to handle payloads.
 

@@ -21,7 +21,7 @@ and the build dependencies are installed like so, from `lbmk/` as root:
 
 	./build dependencies debian
 
-This installs everything needed for `./build boot roms`, and part of the
+This installs everything needed for `./build fw coreboot`, and part of the
 build process makes use of coreboot's own cross-compile toolchain.
 
 [QEMU x86/ARM64 virtual machines](../misc/emulation.md) are also
