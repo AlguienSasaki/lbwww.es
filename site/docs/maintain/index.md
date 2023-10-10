@@ -458,7 +458,7 @@ config/vendor/
 ### config/vendor/sources
 
 URLs and hashes for vendor files containing Intel ME images within them. Where
-feasible, backup URLs are also provided. SHA1 checksums are defined, so that
+feasible, backup URLs are also provided. SHA512 checksums are defined, so that
 lbmk can verify the integrity of downloaded files.
 
 When building for sandybridge, ivybridge and haswell machines, Libreboot's
