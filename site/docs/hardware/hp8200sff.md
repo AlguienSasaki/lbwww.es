@@ -253,7 +253,7 @@ default back to 3.
 
 Libreboot locks CMOS/NVRAM settings, but you can change the default setting in
 the *ROM* by using the `-C` option in nvramtool. You can find this under the
-directory `coreboot/default/util/nvramtool` when downloading coreboot inside
+directory `src/coreboot/default/util/nvramtool` when downloading coreboot inside
 of lbmk by running the command:
 
 	./update project trees -f coreboot default

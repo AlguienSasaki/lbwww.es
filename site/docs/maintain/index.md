@@ -154,8 +154,8 @@ or multiple branches in the same tree; entirely separate directories are
 created, for each revision of coreboot used, each able to have its own patches.
 These can then be re-use appropriately, per mainboard. For example:
 
-* `coreboot/default` is used by most mainboards.
-* `coreboot/cros` is used by cros devices.
+* `src/coreboot/default` is used by most mainboards.
+* `src/coreboot/cros` is used by cros devices.
 
 This may be less efficient on disk usage, but it simplifies the logic greatly.
 Coreboot also uses its own toolchain called *crossgcc*, and crossgcc is in fact

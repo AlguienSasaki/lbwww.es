@@ -67,9 +67,9 @@ Finally, compile the `cbutils` payload (and you will then have the utils):
 	./build fw grub
 
 Among other things, this will produce a `cbfstool` executable under any of the
-subdirectories in `coreboot/` under `util/cbfstool/cbfstool
+subdirectories in `src/coreboot/` under `util/cbfstool/cbfstool`.
 
-For example: `coreboot/default/util/cbfstool/cbfstool`
+For example: `src/coreboot/default/util/cbfstool/cbfstool`
 
 The `cbfstool` utility is what you shall use. It is used to manipulate CBFS
 (coreboot file system) which is a file system contained within the coreboot

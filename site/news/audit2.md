@@ -1,10 +1,6 @@
-% Libreboot Build System Audit 2 (new Libreboot release soon!)
+% Libreboot Build System Audit 2
 % Leah Rowe
 % 11 September 2023
-
-This is *not* a new release announcement, but a new release *is* coming soon!
-This new audit has been the opening act, now concluded and the priority will
-now shift once again to new hardware support.
 
 Introduction
 ============
