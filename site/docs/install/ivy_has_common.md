@@ -21,7 +21,7 @@ do not need to re-compile release ROMs, you should follow these instructions
 before reading the instructions below:
 <https://libreboot.org/docs/build/#first-install-build-dependencies>**
 
-Coreboot is nominally free software, but requires non-free software for certain
+Coreboot is nominally free software, but requires certain vendor code on some
 boards, for certain functionalities; we cover this more thoroughly in
 the [Freedom Status](../../freedom-status.md) page and in the [Binary Blob
 Reduction Policy](../../news/policy.md).

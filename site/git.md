@@ -54,7 +54,7 @@ The `bucts` repository is hosted by the libreboot project, because the original
 repository on `stuge.se` is no longer available, last time we checked. The
 `bucts` program was written by Peter Stuge. You need `bucts` if you're flashing
 internally an libreboot ROM onto a ThinkPad X60 or T60 that is currently running
-the non-free Lenovo BIOS. Instructions for that are available here:\
+the original Lenovo BIOS. Instructions for that are available here:\
 [libreboot installation guides](docs/install/)
 
 The `ich9utils` repository is used heavily, by the `lbmk` build system. However,

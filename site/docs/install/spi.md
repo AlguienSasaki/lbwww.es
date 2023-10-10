@@ -50,8 +50,8 @@ If you don't already have a programmer, get this one! It's well engineered,
 safe, and costs just $5 with headers pre-soldered (Raspberry Pi Pico H).
 Additionally, all the software running on it is free, down to the full
 [Boot ROM](https://github.com/raspberrypi/pico-bootrom). The wireless
-versions (Pico W & Pico WH) need non-free firmware to use the Wi-Fi chip,
-which is not needed for following this guide.
+versions (Pico W & Pico WH) need vendor firmware to use the Wi-Fi chip,
+but that is not needed for following this guide.
 
 A Pico has proper 3.3V logic levels, unlike a ch341a. Which means it won't
 destroy your board by sending 5V to it. If you have a 1.8V flash chip,

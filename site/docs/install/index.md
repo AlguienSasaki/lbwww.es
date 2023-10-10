@@ -313,7 +313,7 @@ See: [Dell Latitude E6400 Libreboot Installation Guide](e6400.md)
 #### ThinkPad X200/T400/T500/W500/R400/R500 vendor BIOS
 
 If you're running one of these, it cannot be flashed internally if you're still
-running the non-free Lenovo BIOS firmware.
+running the original Lenovo BIOS firmware.
 
 [You must flash it externally](spi.md)
 
@@ -324,7 +324,7 @@ Please also see notes about the built-in MAC address inside the boot flash, for
 the onboard NIC (ethernet one); not relevant on R500, which doesn't use an
 Intel NIC.
 
-#### Intel D510MO and D410PT running non-free Intel BIOS
+#### Intel D510MO and D410PT running original Intel BIOS
 
 [You must flash it externally](spi.md)
 
@@ -339,7 +339,7 @@ Ignore this section. Internal flashing *is* possible, but there are two chips
 and you must flash both chips. Refer to the guide:\
 [Gigabyte GA-G41M-ES2L installation guide](ga-g41m-es2l.html)
 
-#### Macbook1,1 running non-free Apple EFI firmware
+#### Macbook1,1 running original Apple EFI firmware
 
 This laptop requires external flashing. Remove the mainboard and refer to
 the [external flashing guide](spi.md); if libreboot is already running, you
@@ -358,15 +358,15 @@ This board uses LPC flash in a PLCC32 socket. This coreboot page shows an
 example of the push pin as a proof of concept:
 <http://www.coreboot.org/Developer_Manual/Tools#Chip_removal_tools>
 
-#### ASUS KGPE-D16 running non-free ASUS BIOS
+#### ASUS KGPE-D16 running original ASUS BIOS
 
 [You must flash it externally](spi.md)
 
-#### ASUS KCMA-D8 running non-free ASUS BIOS
+#### ASUS KCMA-D8 running original ASUS BIOS
 
 [You must flash it externally](spi.md)
 
-#### ASUS D945GCLF running non-free Intel BIOS
+#### ASUS D945GCLF running original Intel BIOS
 
 [You must flash it externally](spi.md)
 

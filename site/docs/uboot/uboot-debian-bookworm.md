@@ -12,12 +12,6 @@ Libreboot: 2023-04-23
 
 Operating System: Debian Bookworm RC2
 
-Note!  As of this RC2 version of Debian Bookworm, the system automatically
-makes use of non-free firmware during install.  If your intention is to avoid
-all non-free firmware you should avoid using Debian Bookworm or search for a
-downstream version of Debian Bookworm that strips out all non-free firmware.
-More info in the link below.
-
 [https://wiki.debian.org/Firmware](https://wiki.debian.org/Firmware)
 
 Install Media Preparation
@@ -39,10 +33,6 @@ with the appropriate device path on your system.
 ```
 # dd if=debian-bookworm-DI-rc2-arm64-DVD-1.img of=/dev/sdcard_device bs=1M status=progress; sync
 ```
-
-During the install the system automatically makes use of non-free firmware to
-activate the wireless network card.  For this reason you could choose the
-netinst iso and download files as needed rather than using the DVD iso.
 
 Installation
 ============
@@ -109,14 +99,6 @@ At this point the installation proceeded normally.
 ![](https://av.libreboot.org/xe513c24/debbook-lang.jpg)
 ![](https://av.libreboot.org/xe513c24/debbook-packages.jpg)
 
-Note that you will see a message during install asking whether you want to
-search for non-free firmware.  My experience was that the system would use
-non-free firmware regardless what I selected in that dialogue.  The system was
-able to connect wirelessly to the internet and download packages and updates as
-needed.
-
-![](https://av.libreboot.org/xe513c24/debbook-nonfree.jpg)
-
 Some users have mentioned experiencing corruption of the first partition after
 installing Debian Bookworm on a Libreboot / uboot xe513c24 system.  This is
 possibly due to the experimental nature of the libreboot / uboot system at this
@@ -171,7 +153,7 @@ System Functionality
 
 Things that work:
 
-* Wireless internet and bluetooth (due to non-free firmware)
+* Wireless internet and bluetooth
 * Touch screen and stylus
 * Touchpad
 * Audio (Speakers and headphone jack)
