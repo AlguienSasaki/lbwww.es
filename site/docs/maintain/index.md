@@ -1250,10 +1250,9 @@ or vendor files.
 
 ### script/update/project/release
 
-This builds source archives. You must only run this after compiling crossgcc
-on all coreboot source trees, and after building the ROM images that you wish
-to release; in other words, it is recommended that you
-run `./build release roms` first.
+This script builds the release archives, which are then provided in a new
+Libreboot release. Most users do not need to look at this file at all, but it
+is provided under free license for curious souls.
 
 Command: `./update project release`
 
