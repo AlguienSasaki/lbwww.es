@@ -67,8 +67,8 @@ be surprised by just how much can be done with so little. Continue reading!
 libreboot blob reduction policy
 ============================
 
-The coreboot software is nominally free, but it requires additional binary
-blobs on many supported systems. These *blobs* lack source code, and the
+The coreboot software is nominally free, but it requires additional files from
+the vendor on many supported systems. These programs lack source code, and the
 coreboot project does not control them, but they can be used to perform
 specific initialization tasks.
 
@@ -107,24 +107,8 @@ can then be installed (flashed) to the target device.
 
 The files under `bin/` are provided in regular Libreboot releases.
 
-bios\_extract/
----------------
-
-Used by the blob handler scripts. The upstream that we use is here:
-<https://review.coreboot.org/bios_extract>
-
-Specifically: the pfs extract utility from this is used on Dell vendor updates,
-to extract SCH5545 EC (Environment Control) firmware.
-
-biosutilities/
----------------
-
-Used by the blob handler scripts. The upstream that we use is here:
-<https://github.com/platomav/BIOSUtilities>
-
-The `dell_inspiron_1100_unpacker.py` script is used here, to extract from Dell
-BIOS updates, to get at the VGA ROM for Nvidia GPU on certain models of Dell
-Latitude E6400.
+**These** are the ROM images that you should flash. Do *not* flash the ROM
+images contained under `elf/`!
 
 blobs/
 ---------------
@@ -141,26 +125,6 @@ cbutils/
 The build system compiles `cbfstool` and `ifdtool`, from coreboot, and then
 places the executables here for use on coreboot ROM images.
 
-coreboot/
----------------
-
-Please also visit: <https://coreboot.org/>
-
-Coreboot is the main boot firmware, providing hardware initialisation. Libreboot
-makes extensive use of coreboot, on supported mainboards.
-
-Coreboot trees go here. Libreboot's build system does not simply use one tree,
-or multiple branches in the same tree; entirely separate directories are
-created, for each revision of coreboot used, each able to have its own patches.
-These can then be re-use appropriately, per mainboard. For example:
-
-* `src/coreboot/default` is used by most mainboards.
-* `src/coreboot/cros` is used by cros devices.
-
-This may be less efficient on disk usage, but it simplifies the logic greatly.
-Coreboot also uses its own toolchain called *crossgcc*, and crossgcc is in fact
-compiled *per tree* in Libreboot.
-
 ec/
 ---------------
 
@@ -169,6 +133,9 @@ are inserted into those coreboot images, under `elf/` *and* `bin/`.
 
 elf/
 ---------------
+
+**DO NOT flash coreboot ROM images contained under `elf/`. Please use ROM images
+under `bin/` instead!**
 
 Compiled binaries (compiled by lbmk) go here, but they are not the final
 binaries; coreboot ROM images are compiled without payloads, then cached here
@@ -186,59 +153,6 @@ lbmk in your own custom coreboot ROM (that you didn't build with lbmk).
 
 This is only used by the build system, but these images are *not* provided in
 releases (only the images under `bin/` are provided).
-
-flashrom/
----------------
-
-Please also visit: <https://flashrom.org/>
-
-Although currently unused by any part of lbmk, we provide flashrom for the
-convenience of users, and this is copied to release archives. Flashrom is the
-program that you will use to read, erase and write the flash, containing
-coreboot firmware.
-
-grub/
----------------
-
-Please also visit: <https://www.gnu.org/software/grub/>
-
-The GNU GRUB bootloader, a reference multiboot implementation with its own
-small kernel/OS and drivers (e.g. file systems, cryptography). This is the
-default recommended [coreboot payload](https://doc.coreboot.org/payloads.html)
-on x86-based Libreboot systems. GRUB will load and execute your Linux kernel,
-which then runs on the bare metal.
-
-The *utilities* for GRUB are compiled here, and used from here; specifically,
-the `grub-mkstandalone` utility is executed from here to create the final
-GRUB image under `elf/grub/`.
-
-NOTE: This is *only* provided for x86 machines, in Libreboot. For ARM, we ship
-U-Boot instead.
-
-me\_cleaner/
----------------
-
-Please also visit: <https://github.com/corna/me_cleaner/>
-
-This is used by Libreboot, to *neuter* Intel ME images. The intel ME images
-are auto-downloaded from the vendor during each build process, cached on
-disk and processed by `me_cleaner`. It removes almost all code from Intel ME,
-leaving only the basic bringup code (analogous to running coreboot without a
-payload). More information available at these pages:
-
-* <https://github.com/corna/me_cleaner/>
-* Libreboot [freedom status page](../../freedom-status.md)
-
-The *blob* scripts are what handle this, specifically the download script
-located at `script/update/blobs/download`.
-
-memtest86plus/
----------------
-
-Please also visit: <https://www.memtest.org/>
-
-This is provided inside ROM images, as a payload executed from main GRUB or
-SeaBIOS payload. It checks for corrupted memory.
 
 mrc/
 ---------------
@@ -265,7 +179,7 @@ currently only initialises Intel GPUs natively, on Libreboot systems.
 release/
 ---------------
 
-The scripts under `script/build/release/` create tar archives in here, which
+The script at `script/update/project/release` create tarballs in here, which
 constitute regular Libreboot releases. It is meticulously maintained, as per
 current lbmk behaviour, and executed so as to provide Libreboot release
 archives.
@@ -275,7 +189,104 @@ containing non-redistributable blobs are *scrubbed* such that those blobs must,
 in regular releases, be [re-added manually](../install/ivy_has_common.md) by
 the user.
 
-seabios/
+src/
+----
+
+Third-party source trees are downloaded into this directory, by lbmk.
+
+src/bios\_extract/
+---------------
+
+Used by the blob handler scripts. The upstream that we use is here:
+<https://review.coreboot.org/bios_extract>
+
+Specifically: the pfs extract utility from this is used on Dell vendor updates,
+to extract SCH5545 EC (Environment Control) firmware.
+
+src/biosutilities/
+---------------
+
+Used by the blob handler scripts. The upstream that we use is here:
+<https://github.com/platomav/BIOSUtilities>
+
+The `dell_inspiron_1100_unpacker.py` script is used here, to extract from Dell
+BIOS updates, to get at the VGA ROM for Nvidia GPU on certain models of Dell
+Latitude E6400.
+
+src/coreboot/
+---------------
+
+Please also visit: <https://coreboot.org/>
+
+Coreboot is the main boot firmware, providing hardware initialisation. Libreboot
+makes extensive use of coreboot, on supported mainboards.
+
+Coreboot trees go here. Libreboot's build system does not simply use one tree,
+or multiple branches in the same tree; entirely separate directories are
+created, for each revision of coreboot used, each able to have its own patches.
+These can then be re-use appropriately, per mainboard. For example:
+
+* `src/coreboot/default` is used by most mainboards.
+* `src/coreboot/cros` is used by cros devices.
+
+This may be less efficient on disk usage, but it simplifies the logic greatly.
+Coreboot also uses its own toolchain called *crossgcc*, and crossgcc is in fact
+compiled *per tree* in Libreboot.
+
+src/flashrom/
+---------------
+
+Please also visit: <https://flashrom.org/>
+
+Although currently unused by any part of lbmk, we provide flashrom for the
+convenience of users, and this is copied to release archives. Flashrom is the
+program that you will use to read, erase and write the flash, containing
+coreboot firmware.
+
+src/grub/
+---------------
+
+Please also visit: <https://www.gnu.org/software/grub/>
+
+The GNU GRUB bootloader, a reference multiboot implementation with its own
+small kernel/OS and drivers (e.g. file systems, cryptography). This is the
+default recommended [coreboot payload](https://doc.coreboot.org/payloads.html)
+on x86-based Libreboot systems. GRUB will load and execute your Linux kernel,
+which then runs on the bare metal.
+
+The *utilities* for GRUB are compiled here, and used from here; specifically,
+the `grub-mkstandalone` utility is executed from here to create the final
+GRUB image under `elf/grub/`.
+
+NOTE: This is *only* provided for x86 machines, in Libreboot. For ARM, we ship
+U-Boot instead.
+
+src/me\_cleaner/
+---------------
+
+Please also visit: <https://github.com/corna/me_cleaner/>
+
+This is used by Libreboot, to *neuter* Intel ME images. The intel ME images
+are auto-downloaded from the vendor during each build process, cached on
+disk and processed by `me_cleaner`. It removes almost all code from Intel ME,
+leaving only the basic bringup code (analogous to running coreboot without a
+payload). More information available at these pages:
+
+* <https://github.com/corna/me_cleaner/>
+* Libreboot [freedom status page](../../freedom-status.md)
+
+The *blob* scripts are what handle this, specifically the download script
+located at `script/update/blobs/download`.
+
+src/memtest86plus/
+---------------
+
+Please also visit: <https://www.memtest.org/>
+
+This is provided inside ROM images, as a payload executed from main GRUB or
+SeaBIOS payload. It checks for corrupted memory.
+
+src/seabios/
 ---------------
 
 Please also visit: <https://www.seabios.org/SeaBIOS>
@@ -288,17 +299,7 @@ particular, the BSD bootloaders can be executed from SeaBIOS.
 This is provided as a coreboot payload, either as first payload or it can be
 executed from GRUB (if GRUB is the main payload, on a given target).
 
-tmp/
----------------
-
-The `TMPDIR` environmental variable is set by lbmk, to a location under `/tmp`,
-but some users may have `/tmp` mounted as a *tmpfs* (file system in RAM), and
-may not have much RAM.
-
-Where large files (or a large number of files) are handled by lbmk on a
-temporary basis, this `tmp/` directory is created and then used.
-
-u-boot/
+src/u-boot/
 ---------------
 
 Please also visit: <https://www.denx.de/project/u-boot/>
@@ -311,7 +312,7 @@ provides UEFI. Information about that can be found on these resources:
 
 This is currently the only payload on *ARM* systems, within Libreboot.
 
-uefitool/
+src/uefitool/
 ---------------
 
 Please also visit: <https://github.com/LongSoft/UEFITool>
@@ -320,7 +321,7 @@ This is compiled, so as to provide `UEFIExtract`. Currently used by the
 blob download script at `script/update/blobs/download`, to download SCH5545 EC
 firmware (used for fan control on Dell Precision T1650).
 
-util-fw/rp2040/pico-serprog
+src/pico-serprog
 ---------------------------
 
 Used by lbmk, to build firmware for serprog-based SPI flashers with RP2040 SoC.
@@ -332,7 +333,7 @@ Please visit these pages:
 * <https://github.com/raspberrypi/pico-sdk>
 * <https://codeberg.org/libreboot/pico-serprog>
 
-util-fw/stm32-vserprog
+src/stm32-vserprog
 ----------------------
 
 Used by lbmk, to build firmware for serprog-based SPI flashers with STM32 MCU.
@@ -348,10 +349,18 @@ Before moving onto configurations, we will now cover *utilities* provided by
 Libreboot itself (included within lbmk, rather than being downloaded like the
 third party projects listed above):
 
+tmp/
+---------------
+
+The `TMPDIR` environmental variable is set by lbmk, to a location under `/tmp`,
+but some users may have `/tmp` mounted as a *tmpfs* (file system in RAM), and
+may not have much RAM.
+
+Where large files (or a large number of files) are handled by lbmk on a
+temporary basis, this `tmp/` directory is created and then used.
+
 util/
 ===============
-
-Not to be confused with `util-fw/`!
 
 If a codebase is not frequently used by Libreboot, is actively developed (making
 it not viable to maintain in Libreboot) or the codebase is very large, we would
@@ -445,24 +454,18 @@ config/
 This directory contains configuration files, used by the Libreboot build
 system. These next sections will cover specific configuration files.
 
-config/blobs/
+config/vendor/
 ---------------
 
-### config/blobs/sources
+### config/vendor/sources
 
 URLs and hashes for vendor files containing Intel ME images within them. Where
 feasible, backup URLs are also provided. SHA1 checksums are defined, so that
 lbmk can verify the integrity of downloaded files.
 
 When building for sandybridge, ivybridge and haswell machines, Libreboot's
-bulid system automatically downloads such updates from the vendor, to extract
+build system automatically downloads such updates from the vendor, to extract
 the Intel ME image and neuter it with `me_cleaner` or `me7_update_parser.py`.
-
-Such auto-download logic was ported from the *Heads* build system, to be used
-in the *Libreboot* build system. It is the bee's knees, because it prevents
-the need for manual extraction of Intel ME images from vendor dumps. It means
-that you can just *build Libreboot* (from `lbmk`) and then just flash the
-resulting image, without having to worry.
 
 Of course, backing up the original firmware is still a good idea, before
 installing Libreboot or any other spin of coreboot.
@@ -478,6 +481,19 @@ config/coreboot
 When a given coreboot tree is compiled, for a given target, this file defines
 which files to copy from the coreboot directory, which are then copied to
 a location under `elf/coreboot`.
+
+The presence of this file affects behaviour in `script/update/project/release`;
+specifically, PROJECT is then downloaded to `src/PROJECT/PROJECT`, and files
+under `config/PROJECT/TARGET/target.cfg` define which tree to use, which then
+looks under `config/PROJECT/TREE/target.cfg` to get the git revision; then
+the src directory `src/PROJECT/TREE` is created, copied
+from `src/PROJECT/PROJECT`.
+
+For example, coreboot target `x200_8mb` refers to tree name `default` which
+would create `src/coreboot/default`.
+
+If the `build.list` file is *not* included, then the git revision
+under `config/git` is used, and only `src/PROJECT` is created.
 
 ### config/coreboot/BOARDNAME/
 
@@ -674,14 +690,15 @@ config/git/
 Configuration related to third-party Git repositories, that Libreboot makes
 use of.
 
-### config/git/revisions
-
-This file defines third party codebases, with repository links, revision IDs,
+These file define third party codebases, with repository links, revision IDs,
 and dependencies (referring to other modules defined in this file).
 
 Almost every third party codebase that lbmk downloads is based on the handling
 of *this* file. Some of the codebases defined here will also have a directory
 of their own; for example, `config/grub/` exists.
+
+Multiple files exist here, and they are *concatenated* in a temporary file by
+lbmk, which is then scanned to find information about projects.
 
 config/grub/
 ---------------
@@ -840,7 +857,7 @@ have reliable generic configurations that can work across all coreboot boards
 ### config/u-boot/build.list
 
 When a given U-Boot tree is compiled, for a given target, this file defines
-which files to copy from the `u-boot/` directory, which are then copied to
+which files to copy from the U-Boot source build, which are then copied to
 a location under `elf/u-boot/`.
 
 ### config/u-boot/TREENAME/
@@ -988,46 +1005,12 @@ Scripts in root directory of lbmk
 build
 ---------------
 
-Symbolic link, pointing to the `lbmk` script. This is executed by the user, or
-by lbmk, referencing scripts under `script/build/*/`.
-
-checkgit
----------------
-
-This is executed by the `lbmk` script when it runs, returning non-zero status
-and exit if global git name/email configuration does not exist; lbmk makes
-extensive use of git, and coreboot requires this to be set.
-
-checkversion
----------------
-
-If lbmk is in git, this uses `git describe` to get a version number based on
-revision and/or git tag, then writing that to a file called `version` and a
-corresponding date (as unix timestamp) to `versiondate`; if this script is
-executed from a release archive, the value stored in those files (included by
-default in release archives, but auto-generated in `lbmk.git`) will be used
-as-is.
-
-The result of this is then used in many things. For example, `lscoreboot` on
-the GRUB terminal will yield this revision number and date.
-
-handle
----------------
-
-Symbolic link, pointing to the `lbmk` script. This is executed by the user, or
-by lbmk, referencing scripts under `script/handle/*/`.
-
-lbmk
----------------
-
 This is the main script in lbmk, Libreboot's build system. It is what executes
 all other parts of the Libreboot build system. The rules are as follows:
 
-* `lbmk` cannot be called directly; symlinks such as `build`, `update`
-  or `handle` will point to it, and you will execute those.
 * Argument zero, representing the name of the symlink, will be used to
-  execute `script/LINKNAME/mode/option` - for example: `./build boot roms all`
-  would execute `script/build/boot/roms all` in `sh`.
+  execute `script/LINKNAME/mode/option` - for example: `./build fw coreboot all`
+  would execute `script/build/fw/coreboot all` in `sh`.
 * `TMPDIR` is exclicitly set, providing a constant location where temporary
   files and directories can be made. `TMPDIR` is exported by the parent to
   all children; for example, `./build boot roms all` would export it
@@ -1036,7 +1019,7 @@ all other parts of the Libreboot build system. The rules are as follows:
   `TMPDIR` directory upon any exit.
 * All exits from lbmk are handled by this script. *All* exits, zero or non-zero,
   are engineered such that *this* script, in the parent process (the very first
-  instance) is what ultimately exits.
+  instance) is what ultimately exits back to the user's shell prompt.
 * This script is programmed to *exit* with non-zero status, when run as root,
   unless the `./build dependencies *` commands are used,
   referencing files under `config/dependencies/`
@@ -1048,7 +1031,7 @@ tl;dr break this script and you *break Libreboot*.
 update
 ---------------
 
-Symbolic link, pointing to the `lbmk` script. This is executed by the user, or
+Symbolic link, pointing to the `build` script. This is executed by the user, or
 by lbmk, referencing scripts under `script/update/*/`.
 
 include/
@@ -1058,12 +1041,54 @@ This directory contains *helper scripts*, to be included
 by main scripts using the `.` command (called the `source`
 command in `bash`, but we rely upon posix `sh` only).
 
-include/blobutil.sh
+include/err.sh
 ---------------
 
-Common variables, used by all scripts under `script/update/blobs/`.
+Generic error handling, used by all lbmk scripts.
 
-include/defconfig.sh
+This also contains functions to verify the current libreboot version, and check
+whether Git is properly initialised on the host system. It also contains
+the `setvars` function, which provides a shorthand way of initialising many
+variables (combined with use of `eval`), which lbmk uses heavily.
+
+This function also contains `x_` and `xx_` which lbmk uses to execute commands
+and ensure that they cause an exit (with non-zero status) from lbmk, if they
+return an error state; the `xx_` function calls `fail()` which a script must
+provide, to perform some action before calling `err` which in turn prints an
+error message provided as argument. It is used similarly to the C
+function `err()` in BSD libc. The `x_` function simply calls `err`.
+
+This entire file is heavily inspired by `err.h` in BSD libc code. This file is
+heavily used by lbmk (it's used by every script), to provide clean error
+handling in `sh`.
+
+include/git.sh
+--------------
+
+These functions in here previously existed as independent scripts, but they
+were unified here, and they are used when you pass the `-f` argument
+to `script/update/project/trees` (e.g. `./update project trees -f coreboot`).
+
+These functions deal with git cloning, submodule updates, revision resets and
+the application of patch files via `git am`. *Every* git repository downloaded
+by lbmk is handled by the functions in this file.
+
+include/mrc.sh
+--------------
+
+This was previously a separate script. The download logic was removed, and
+now the logic under `include/vendor.sh` is used for downloads. This file now
+only contains those functions used for extraction of MRC files from Google
+Chromebook images, currently only used for Haswell mainboards.
+
+This is an include, used by `script/update/vendor/download`, but it's here in
+this file because the vendor download script is GPLv3-only, while the MRC
+extract logic in this file is GPLv2-only (forked from coreboot ages ago). Thus,
+it is provided as an include to bypass license incompatibility. It has been
+heavily modified to use the same style of logic and general control flow used
+in the script at `script/update/vendor/download`, and it is used from there.
+
+include/option.sh
 ---------------
 
 Functions used by scripts under `script/update/blobs/`, for checking defconfig
@@ -1071,17 +1096,17 @@ files. These files are checked because the scripts need to know whether a given
 blob is used; if it is, a path is then specified in defconfig, telling the blob
 script either where it is, or where it should be downloaded to.
 
-include/err.sh
+Several other parts of lbmk also use this file. It is added to as little as
+possible, and contains miscallaneous functions that don't belong anywhere else.
+
+The functions here are mostly those that deal with configuration files; scanning
+them to set variables and so on.
+
+include/vendor.sh
 ---------------
 
-Generic error handling, used by all lbmk scripts.
-
-include/export.sh
----------------
-
-Used by the main script named `lbmk`, this provides initialisation of
-the `TMPDIR` environmental variable, allowing unified handling of `/tmp` within
-lbmk.
+Common variables and helper functions, used by all scripts
+under `script/update/vendor/`.
 
 script/
 =======
@@ -1099,16 +1124,15 @@ are also handled.
 
 The scripts that create release archives are also located under this directory.
 
-### script/build/boot/roms
+### script/build/fw/coreboot
 
-This script builds coreboot ROM images. It is largely a shim, which calls
-the `roms_helper` script, which does most of the legwork.
+This builds coreboot ROM images.
 
-Command: `./build boot roms targetname`
+Command: `./build fw coreboot targetname`
 
 The `targetname` argument must be specified, chosen from this output:
 
-	./build boot roms list
+	./build fw coreboot list
 
 Pass several board names if you wish to build only for specific targets. For
 example:
@@ -1117,7 +1141,7 @@ example:
 
 To build *all* targets, specify:
 
-	./build boot roms all
+	./build fw coreboot all
 
 Since November 2022, this script can build images for x86 *and* ARM targets.
 The *ARM* targets are ChromeOS devices (chromebooks and such); Libreboot uses
@@ -1127,11 +1151,6 @@ setup, U-Boot is running on the bare metal, as enabled by *coreboot*.
 For x86 targets, these scripts build with the GRUB and/or SeaBIOS payloads
 inserted into the ROM images; secondary payloads like Memtest86+ are also
 handled and inserted here.
-
-### script/build/boot/roms\_helper
-
-This script builds coreboot ROM images. It is *not* to be executed directly;
-user interaction must be done via the main `roms` script.
 
 It heavily makes use of the `target.cfg` file, for a given board. This script
 will *only* operate on a single target, from a directory in `config/coreboot/`.
@@ -1192,48 +1211,68 @@ then expected to handle option ROMs, and SeaBIOS should not do it.
 
 This script handles U-Boot separately, for ARM-based chromeos devices.
 
-Essentially, the `roms_helper` script makes use of each and every part of
-lbmk. It is the beating heart of libreboot. Break it and you break Libreboot.
-
 When the ROM is finished compiling, it will appear under a directory in `bin/`
 
-### script/build/command/options
+This script is the beating heart of Libreboot. Break it, and you break
+Libreboot!
 
-It basically just does `ls -1` but in a more fault-tolerant way. This is used
-in certain circumstances, such as `./build boot roms all` where a script needs
-to know what build targets are available.
-
-Command: `./build command options DIRECTORY`
-
-### script/build/coreboot/utils
-
-This builds coreboot utilities `ifdtool` and `cbfstool`, placing them
-under `cbutils/` for use by other parts of lbmk.
-
-Command: `./build coreboot utils`
-
-### script/build/grub/payload
+### script/build/fw/grub
 
 This builds the `grub.elf` file and keymap configuration files, placing these
-under `elf/grub/` for use by `script/build/boot/roms_helper`.
+under `elf/grub/` for use by `script/build/boot/roms`.
 
-Command: `./build grub payload`
+Command: `./build fw grub`
 
-### script/build/grub/utils
-
-This builds the `grub-mkstandalone` utility under `grub/`, which is then used
-by `script/build/boot/roms_helper` to insert GRUB payloads inside coreboot ROM
+This builds the `grub-mkstandalone` utility under `src/grub/`, which is used
+by `script/build/boot/roms` to insert GRUB payloads inside coreboot ROM
 images.
 
-Command: `./build grub utils`
+### script/build/fw/serprog
 
-### script/build/release/roms
+Build firmware images for serprog-based SPI programmers, where they use an
+STM32 MCU. It also builds for RP2040-based programmers like Raspberry Pi Pico.
+
+Example command: `./build fw serprog stm32`
+
+Example command: `./build fw serprog rp2040`
+
+The `list` argument is available:
+
+	./build fw serprog stm32 list
+
+Without arguments, all targets would be compiled, but you can specify a short
+list of targets instead, based on the output of `list`.
+
+script/update/
+--------------
+
+This handles most actual building of source trees, called into by scripts
+under `script/build/fw` - it also contains logic for downloading source trees
+or vendor files.
+
+### script/update/project/release
+
+This builds source archives. You must only run this after compiling crossgcc
+on all coreboot source trees, and after building the ROM images that you wish
+to release; in other words, it is recommended that you
+run `./build release roms` first.
+
+Command: `./update project release`
+
+NOTE: if the `-d` option is used, you can specify a directory other
+than `release`. For example:
+
+	./update project release -d /media/stuff/libreboot_release_test
+
+If `-d` is not passed, they will go under `release/` in your lbmk repository.
+The script is engineered to re-initialise git if ran from a release archive.
+Libreboot releases after 20230625 include `.gitignore` in the src archive.
 
 This builds release archives, containing ROM images for coreboot and/or serprog
-programmers. You must *only* run this *after* you've build all of the ROM images
-that you wish to release.
-
-Command: `./build release roms`
+programmers. It works simply: lbmk clones *itself*, and builds itself in its
+clone, then cleans itself up and creates tarballs. If you run this script, you
+should expect it to take at least 4 hours; slower on really old systems. On
+really fast systems, it might take 2-3 hours.
 
 NOTE: This script *scrubs* certain binary blobs from release ROMs, such as
 Intel ME or MRC firmware. The release ROMs shall then exclude these blobs
@@ -1242,70 +1281,61 @@ within them, requiring manual insertion by the user post-release. See:
 [Insert binary blobs
 on Sandybridge/Ivybridge/Haswell](../install/ivy_has_common.md)
 
-### script/build/release/src
-
-This builds source archives. You must only run this after compiling crossgcc
-on all coreboot source trees, and after building the ROM images that you wish
-to release; in other words, it is recommended that you
-run `./build release roms` first.
-
-Command: `./build release src`
-
-### script/build/serprog/rp2040
-
-Build firmware images for serprog-based SPI programmers, where they use an
-RP2040 MCU.
-
-Example command: `./build serprog rp2040`
-
-The `list` argument is available:
-
-	./build serprog rp2040 list
-
-Without arguments, all targets would be compiled, but you can specify a short
-list of targets instead, based on the output of `list`.
-
-### script/build/serprog/stm32
-
-Build firmware images for serprog-based SPI programmers, where they use an
-STM32 MCU.
-
-Example command: `./build serprog stm32`
-
-The `list` argument is available:
-
-	./build serprog stm32 list
-
-Without arguments, all targets would be compiled, but you can specify a short
-list of targets instead, based on the output of `list`.
-
-script/handle/
---------------
-
-The `handle` scripts deal with Kconfig infrastructure across various projects
-used by lbmk. It also handles the compilation of *crossgcc*, coreboot's cross
-compiling toolchain collection which is used for compiling coreboot itself and
-also U-Boot (but *SeaBIOS* is currently built using the *host* toolchain).
-
-### script/handle/make/config
+### script/update/project/trees
 
 *This* is the other beating heart of Libreboot. Used heavily by Libreboot, this
 script is what handles defconfig files for SeaBIOS, U-Boot *and* coreboot; it
 used to be separate scripts, but the logic was unified under this single script.
 
-It handles the following files (PROJECT can be `coreboot`, `seabios`
-or `u-boot`):
+It *also* handles simple git trees, where there is only one revision for the
+project, e.g. GRUB, and the command syntax is the same. Whether a project is
+multi-tree or single-tree is determined by the presence of the
+file `config/PROJECT/build.list` - if it exists, it's multi-tree, otherwise
+single-tree.
+
+It *also*, in addition to downloading from git, can handle modification or
+updating of defconfig files. As already stated, and stated further: it is
+Libreboot's other beating heart. Break this, and you break Libreboot.
+
+For multi-tree projects, it handles the following files (PROJECT can
+be `coreboot`, `seabios` or `u-boot`):
 
 * `config/PROJECT/build.list` (defines what files to copy, after building for
   the target)
 * `config/PROJECT/*/target.cfg` (lbmk build parameters, project project/target)
 * `config/PROJECT/*/config/*` (defconfig files)
 
-Basic command: `./handle make config FLAG projectname`
+For single-tree projects, these files are used:
+
+* `config/git/` - files are concatenated and then scanned, to find project info.
+
+NOTE: For multi-tree projects, `config/git` is still used, to download the
+upstream repository to `src/PROJECT/PROJECT` but with git revision being `HEAD`.
+In this way, you always have the latest code, but revisions defined
+in `config/PROJECT/TARGET/target.cfg` will define a tree,
+then `config/PROJECT/TREE/target.cfg` (which could be the same as `TARGET`,
+but this is not the preferred style in lbmk) will define a revision; then,
+the directory `src/PROJECT/TREE` will be created, reset to the specific
+revision - for multi-tree projects, all defined targets are scanned for their
+corresponding tree, and the trees are prepared as defined above.
+
+Basic command: `./update project trees FLAG projectname`
+
+Special operation: for building coreboot utilities `cbfstool` and `ifdtool` to
+go under `cbutils/`, do this:
+
+	./update project trees -b coreboot utils
+
+Or define specific coreboot tree such as:
+
+	./update project trees -b coreboot utils default
+	./update project trees -b coreboot utils cros
 
 FLAG values are (only *one* to be used at a time):
 
-* `-b` builds an image for the target, based on defconfig.
+* `-b` builds an image for the target, based on defconfig for multi-tree
+  projects, or based only on a Makefile for single-tree projects; on some
+  single-tree projects, this script also handles *cmake*.
 * `-u` runs `make oldconfig` on the target's corresponding source tree, using
   its defconfig (useful for automatically updating configs, when updating trees
   like when adding patches or switching git revisions)
@@ -1318,17 +1348,23 @@ FLAG values are (only *one* to be used at a time):
 * `-x` tries 'make crossgcc-clean`. This only works on coreboot trees, but no
   error status will be returned on exit if you try it on other project trees; no
   action will be performed.
+* `-f` downloads the Git repository for the given project, and resets to a
+  revision as defined under `config/git/`, or (for multi-tree projects), the
+  file `config/PROJECT/TREE/target.cfg` to create `src/project/treename`.
 
 As for *projectname", this can either be `coreboot`, `u-boot` or `seabios`.
 
 Example commands:
 
-	./handle make config -b coreboot
-	./handle make config -b coreboot x200_8mb
-	./handle make config -b coreboot x230_12mb x220_8mb t1650_12mb
-	./handle make config -x coreboot default
-	./handle make config -u seabios
-	./handle make config -m u-boot gru_bob
+	./update project trees -b coreboot
+	./update project trees -b coreboot x200_8mb
+	./update project trees -b coreboot x230_12mb x220_8mb t1650_12mb
+	./update project trees -x coreboot default
+	./update project trees -u seabios
+	./update project trees -m u-boot gru_bob
+	./update project trees -f coreboot
+	./update project trees -b coreboot utils default
+	./update project trees -b coreboot utils
 
 NOTE: the `-x` and `-c` options will cause an exit with zero status, when
 the target's corresponding source tree is unavailable; a non-zero status is
@@ -1338,11 +1374,11 @@ if unavailable and *that* too will return with non-zero status under fault
 conditions.
 
 NOTE: "target" can indeed be the tree name, under some circumstances. For
-example, `./handle make config -m seabios default`
+example, `./update project trees -m seabios default`
 
 After `projectname`, a target can be specified, but if no target is specified,
 then *all* targets will be operated on. For
-example, `./handle make config -b coreboot` will attempt to build *all*
+example, `./update project trees -b coreboot` will attempt to build *all*
 coreboot ROM images.
 
 NOTE: the `coreboot` projectname here shall cause the ROM images to go
@@ -1366,113 +1402,33 @@ Now it is unified, efficiently, under a single script.
 
 Remember: code equals bugs, so less code equals fewer bugs.
 
-### script/handle/make/file
-
-Generic handling of Makefiles, and also cmake on some projects. This is used
-on projects with non-Kconfig-based build systems, where the step for compiling
-is basically `cd projectdir/ && make`.
-
-Example commands:
-
-	./handle make file -b memtest86plus
-	./handle make file -c memtest86plus
-
-The `-b` option runs `make all`. The `-c` option tries `make clean` first,
-and then `make distclean`.
-
-script/update/
----------------
-
-These scripts pertain mostly to *downloads*, of either Git repositories or,
-where required on given mainboards, binary blobs.
-
-### script/update/blobs/download
+### script/update/vendor/download
 
 This downloads binary blobs when needed, on a given coreboot target. It does
 this by scanning the defconfig files of that board, to know where the blobs
-are (or where they should be) within lbmk.
+are (or where they should be) within lbmk. Based on this, it then knows which
+blobs to download.
 
 These blobs are then inserted at build time by the coreboot build system (as
 defined by defconfigs), or post-release by running the `inject` script.
 
-More information is available [here](../install/ivy_has_common.md).
-
-### script/update/blobs/extract
-
-NOTE: Currently broken on some setups. This script is not recommended, but
-it can extract some binary blobs from vendor dumps. Use of it is ill advised,
-because it's not complete, and there's no guarantee what you'll get from it.
+It looks inside `config/vendor/` at the files in there, concatenating them and
+then scanning that to find info about the given board; for example, info like
+where to download a Lenovo BIOS updater to extract `me.bin` from, to run through
+the `me_cleaner` program.
 
 More information is available [here](../install/ivy_has_common.md).
 
-### script/update/blobs/inject
+This script is executed automatically, when you compile ROM images, if the given
+mainboard requires binary blobs to be inserted. In this way, you do not need to
+manually extract such files from your original vendor image.
+
+### script/update/vendor/inject
 
 This is not used during the build process, but it can be run by the user on
 release ROMs (which do not contain non-redistributable blobs handled by these
-blob scripts, but those blobs are required). This script inserts those blobs
+blob scripts, even if they are required). This script inserts those blobs
 into the coreboot ROM image; if you're building from source, using lbmk, you
 do not need to run the inject script at all.
 
 More information is available [here](../install/ivy_has_common.md).
-
-### script/update/blobs/mrc
-
-This is called by the main blob download script, and downloads Intel MRC images
-for raminit and peripherals. Libre MRC setups are also provided in Libreboot,
-as an alternative.
-
-Command: `./update blobs mrc`
-
-More information is available [here](../install/ivy_has_common.md).
-
-### script/update/project/repo
-
-Where Kconfig-based infrastructure is not used, and a project only has one
-revision in use by lbmk, this script is used. It downloads third party
-software (such as memtest86+), based on entries defined
-in `config/git/revisions` and then applies patches, if they exist.
-
-Example command: `./update project repo memtest86plus`
-
-### script/update/project/trees
-
-Similar to the above, and in fact it does use `script/update/project/repo`, but
-then the downloaded tree is copied to multiple directories based on target name.
-This is used for coreboot, U-Boot and SeaBIOS, to create multiple source trees.
-
-The `config/git/revisions` file does not specify a revision for these projects;
-it literally says `HEAD`, nor are patches applied under this paradigm.
-
-Instead, it looks for patches in `config/projectname/target/patches`
-where `projectname` could be coreboot for example, and `target` could
-be `default` on `cros` for example; those are tree names, but you could also
-specify a build target such as `x200_8mb` if it points to a tree name.
-
-It also updates git submodules, where available. The `target.cfg` file is used,
-to know what revision is needed on a given target tree.
-
-Example commands:
-
-	./update project trees coreboot
-	./update project trees seabios
-	./update project trees u-boot
-
-With no additional arguments provided, it will download *all* trees for the
-given project. If you only want to download a specific tree, you can declare
-either the tree name itself or the target name (pointing to the tree name). For
-example:
-
-	./update project trees coreboot default
-	./update project trees coreboot x200_8mb
-
-In the above example, `x200_8mb` is a build target and its `target.cfg` points
-to `default` as tree name, so the practical result of both commands will be
-exactly the same.
-
-Downloaded source trees are *only* created for actual tree names; they are
-not duplicated for targets, where those targets refer to a tree. This saves
-time, and disk space.
-
-This *used to be* separate scripts for coreboot and U-Boot, where SeaBIOS was
-treated as a *simple* clone (using logic similar to `script/update/project/repo`
-but the logic was unified into this one script, greatly simplifying lbmk.
