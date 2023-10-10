@@ -91,8 +91,8 @@ However, you will have to write your own script for installing build
 dependencies. 
 
 libreboot Make (lbmk) automatically runs all necessary commands; for
-example, `./build grub payload` will automatically run `./build grub utils`
-if the required utilities for GRUB are not built, to produce payloads.
+example, `./build fw coreboot` will automatically run `./build fw grub`
+if the required GRUB payload (under `elf/grub/`) does not exist.
 
 As a result, you can now (after installing the correct build dependencies) run
 just a single command, from a fresh Git clone, to build all ROM images:
