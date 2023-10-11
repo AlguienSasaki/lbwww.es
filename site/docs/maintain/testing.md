@@ -27,8 +27,7 @@ be added to the public list on the Libreboot contributors page.
 You can, of course, choose to forego the public listing (we will ask for
 permission, before publishing your name).
 
-To apply for such a posting, ping `leah` or `shmalebx9` on
-[irc,](../../contact.html#irc-chatroom) or email
+To apply for such a posting, email
 Leah Rowe via [leah@libreboot.org](mailto:leah@libreboot.org)
 Do not be afraid to apply to maintain a board with another listed
 maintainer or multiple maintainers; more is better.
