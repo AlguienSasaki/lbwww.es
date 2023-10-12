@@ -215,7 +215,7 @@ early boot.
 
 Libreboot automatically fetches this during the build process, inserting it into
 the very same ROM image that can be flashed on either model, but the VGA ROM
-will only be *executed* if you actually have the Nvidia ROM.
+will only be *executed* if you actually have the Nvidia *GPU* on your board.
 
 ALSO: Libreboot 20230625 did not support Nvidia models at all (only Intel).
 
