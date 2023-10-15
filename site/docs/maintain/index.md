@@ -368,12 +368,18 @@ where the intention is that `lbmk.git` itself should be small and efficient.
 Where appropriate, and where the code is small enough, or it is otherwise deemed
 desirable, `lbmk.git` provides a few utilities as part of itself, namely:
 
-util/e6400-flash-unlock/
+util/dell-flash-unlock/
 ---------------
+
+**NOTE (15 October 2023): The util is now called `dell-flash-unlock`, but it
+was previously called `e6400-flash-unlock`. Links have been updated.**
 
 This program, written by Nicholas Chin, unlocks the boot flash on Dell Latitude
 E6400; it permits internal flashing, from factory firmware to Libreboot, so that
 the user need not disassemble and flash externally.
+
+It also supports several other Dell laptops, with similar ECs. Check the
+README file included in this directory, for more information.
 
 util/me7\_update\_parser/
 ---------------
