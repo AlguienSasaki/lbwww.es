@@ -137,6 +137,3 @@ Another build system audit
 I've also started another audit of the Libreboot build system; the [last
 one](audit.md) was quite intense and a lot more work is going in for the
 next release.
-
-The next Libreboot release is going to be an absolute banger. I can promise you
-that. But I can't give you an ETA yet :)
