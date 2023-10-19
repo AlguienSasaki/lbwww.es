@@ -92,20 +92,20 @@ Some examples:
 
     sudo ./build dependencies ubuntu
 
-    <or>
+or
 
-	sudo ./build dependencies debian
+    sudo ./build dependencies debian
 
-    <or>
+or
 
     sudo ./build dependencies fedora38
 
-    <or>
+or
 
     sudo ./build dependencies arch
 
-NOTE: In case of Ubuntu 20.04 LTS or derived distros, use the dedicated 
-      configuration file:
+NOTE: In case of Ubuntu 20.04 LTS or derived distros for that specific release,
+      use the dedicated configuration file:
 
     sudo ./build dependencies ubuntu2004
 
