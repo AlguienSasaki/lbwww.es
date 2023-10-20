@@ -33,7 +33,7 @@ upstream work on U-Boot itself. `alpernebbi` on Libera IRC.
 List of contributions
 =====================
 
-You can learn more about any developer's involvement with Libreboot, by reading his
+You can learn more about any developer's involvement with Libreboot, by reading their
 entry on the [page listing all contributors, past and present](contrib.md)
 
 Developers wanted!
