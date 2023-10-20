@@ -67,7 +67,7 @@ $if(date)$
 <p class="date">$date$</p>
 $endif$
 <ul>
-<li><a href="/index.de.html">Home</a></li>
+<li><a href="/index.it.html">Home</a></li>
 <li><a href="/faq.html">FAQ</a></li>
 <li><strong><a href="/freedom-status.html">Grado di liberta' possibile</a></strong></li>
 <li><strong><a href="/download.html">Download</a></strong></li>
@@ -75,9 +75,9 @@ $endif$
 <li><a href="/docs/">Documentazione</a></li>
 <li><a href="/news/">Notizie</a></li>
 <li><a href="https://codeberg.org/libreboot/lbmk/issues">Difetti (bugs)</a></li>
-<li><a href="/git.de.html">Spedisci correzioni (patches)</a></li>
+<li><a href="/git.html">Spedisci correzioni (patches)</a></li>
 <li><strong><a href="https://www.patreon.com/libreleah">Donazioni</a></strong></li>
-<li><a href="/contact.de.html">Contatti</a></li>
+<li><a href="/contact.html">Contatti</a></li>
 <li><strong><a href="https://minifree.org/">Compra un PC con libreboot gia' installato</a></strong></li>
 </ul>
 <hr/>
