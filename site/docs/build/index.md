@@ -70,11 +70,11 @@ Python2 is unused by lbmk or anything that it pulls down as modules.
 
 If building on Debian/Ubuntu based systems, you can achieve that via:
 
-    sudo apt install python-is-python3
+	sudo apt install python-is-python3
 
 On Fedora, you can use the following
 
-    sudo dnf install python-unversioned-command
+	sudo dnf install python-unversioned-command
 
 Building Libreboot
 ==================
@@ -88,26 +88,26 @@ according to the selected linux distro.
 The currently supported distros are: Debian/Ubuntu/Linux Mint/Pop!\_OS, 
 Fedora, Arch Linux/Parabola or Void Linux.
 
-Some examples:
+Some examples (run them as root, use use e.g. `sudo`, `doas`):
 
-    sudo ./build dependencies ubuntu
-
-or
-
-    sudo ./build dependencies debian
+	./build dependencies ubuntu
 
 or
 
-    sudo ./build dependencies fedora38
+	./build dependencies debian
 
 or
 
-    sudo ./build dependencies arch
+	./build dependencies fedora38
+
+or
+
+	./build dependencies arch
 
 NOTE: In case of Ubuntu 20.04 LTS or derived distros for that specific release,
-      use the dedicated configuration file:
+use the dedicated configuration file:
 
-    sudo ./build dependencies ubuntu2004
+	./build dependencies ubuntu2004
 
 Check: `config/dependencies/` for list of supported distros.
 
