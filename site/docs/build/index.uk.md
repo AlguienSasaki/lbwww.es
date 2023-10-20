@@ -17,11 +17,6 @@ images (containing payloads) in `bin/`. This design is more efficient, and
 permits many configurations without needless duplication of work. More info
 is available in the [lbmk maintenance manual](../maintain/)**
 
-Also, this page currently only refers to the build system as it exists
-in `lbmk.git`. A massive re-design of lbmk has been in progress, since the
-Libreboot 20230625 release. When the next version after 20230625 comes out,
-this page will once again match the current tarball release.
-
 Introduction
 ============
 
@@ -121,26 +116,3 @@ or get a list of supported build targets:
 окремі частини системи побудови власноруч, якщо виберете. Це може бути
 вигідно, коли ви робите зміни, та бажаєте протестувати конкретну частину
 lbmk.
-
-20230625 build error (release archive)
-======================================
-
-When building ROM images from the release archives, the following error
-is observed in some cases, depending on distro:
-
-```
-In file included from src/lib/version.c:4:
-build/build.h:10:32: error: 'libreboot' undeclared here (not in a function)
-   10 | #define COREBOOT_MAJOR_VERSION libreboot-20230625
-      |                                ^~~~~~~~~
-src/lib/version.c:35:46: note: in expansion of macro 'COREBOOT_MAJOR_VERSION'
-   35 | const unsigned int coreboot_major_revision = COREBOOT_MAJOR_VERSION;
-      |                                              ^~~~~~~~~~~~~~~~~~~~~~
-```
-
-This happened when a user tried to build for ThinkPad W541 on an Arch Linux
-system. The fix is available here:
-
-<https://browse.libreboot.org/lbmk.git/patch/?id=f34e07ae27e3e6e8508cdebcbd09fdf73fca302d>
-
-Apply this patch to your local release archive, and it should fix the issue.

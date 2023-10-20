@@ -5,6 +5,9 @@
 Warning
 =======
 
+**Update 21 October 2023: This is quite obsolete now, because
+[Libreboot 20231021](libreboot20231021.md) is out.**
+
 **This release is *not* recommended for general use. You should still use the
 recent [Libreboot 20230625](libreboot20230625.md) release, which is the
 current stable release. Please also read the [Binary Blob Reduction

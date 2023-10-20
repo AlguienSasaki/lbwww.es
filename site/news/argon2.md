@@ -49,11 +49,14 @@ setup.
 How to get it
 -------------
 
-This is unavailable in the current Libreboot 20230625 release, but will be
-available in the next Libreboot release. For now, you can compile a ROM image
-yourself from the Libreboot build system, lbmk, like so:
+This is unavailable in the Libreboot 20230625 release, but will be
+available in the next Libreboot release.
 
-[How to build Libreboot ROM images from source](../docs/build/)
+**UPDATE (21 October 2023):
+This is available in Libreboot 20231021, and releases after that. Alternatively,
+you may still compile a ROM image yourself from the Libreboot build system. See:**
+
+**[How to build Libreboot ROM images from source](../docs/build/)**
 
 Further reading
 ===============

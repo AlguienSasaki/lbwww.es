@@ -52,20 +52,47 @@ executed from Libreboot's SeaBIOS payload.
 Encrypted (LUKS/dm-crypt) installations
 =======================================
 
-A better solution for encryption would be a Linux payload in flash, handling the
-encryption, at least if you want to use Linux, because then it'll have
-perfect LUKS support.
+Full encryption for basic LUKS2 (with PBKDF or argon2 key derivation) is
+supported in libreboot. Legacy LUKS1 is also supported.
 
-GRUB otherwise has good filesystem support, so if you have a valid `grub.cfg`
-in `/boot/grub` on your installed system, Libreboot's GRUB configuration has
-logic in it that will try to automatically use whatever you have installed,
-by switching to it. In this way, most installations Just Work, so long as
-the `/boot` partition is accessible.
+This is a boon for security, because it's harder
+to tamper with, and you could potentially write-protect plus maybe provide
+a [password](grub_hardening.md) in GRUB at boot time.
 
-Full encryption for basic LUKS2 is supported in libreboot.
-See [the guide](encryption.md) for more detail.
+The easiest way to use it is like this: in Linux, set up your partitions like
+you would, but use LVM volume groups, with group name `grubcrypt` and either:
 
-[The ZFSbootmenu guide](zfsbootmenu.md) builds upon the main encryption guide but describes a setup with ZFS native encryption and ZFSbootmenu.
+* `/` as volume name `rootvol` and `/boot` as volume name `bootvol`
+* `/` as volume name `rootvol` and `/boot` exists within it (no `bootvol`)
+
+If your distro then installs GRUB, and provides a `grub.cfg` file
+under `/boot/grub` (within the distro, on your SSD/HDD file system), it should
+work. Libreboot's GRUB will automatically give you a passphrase prompt, where
+you type your passphrase and it unlocks the volume. Then it will find your
+LVMs and it'll boot from that.
+
+Otherwise, to manually unlock it, you drop to the GRUB shell with C and do:
+
+	cryptomount -a
+
+Or on a specific device, e.g.
+
+	cryptomount (ahci0,1)
+
+This is similar to `cryptsetup luksOpen` in Linux.
+
+Libreboot GRUB merges the PHC argon2 implementation, so it has full support
+for LUKS2 installations in addition to LUKS1. Libreboot 20231021 and higher
+has argon2 support, but older releases only supported PBKDF2 which would make
+LUKS2 dysfunctional unless you swapped it to use PBKDF2 (not argon2) and/or
+downgraded to LUKS1.
+
+With modern Libreboot, you can just use LUKS2 as-is, on most/all Linux distros.
+At the time of the Libreboot 20231021 release, the GRUB upstream (on gnu.org)
+did not have these argon2 patches in its source tree, but Libreboot merges and
+maintains them out of tree.
+
+NOTE: You should also read the instructions about about `GRUB_TERMINAL`.
 
 Rebooting system in case of freeze
 ===================================

@@ -36,7 +36,7 @@ need blobs, nothing will happen.
 GPG signing key
 ---------------
 
-**The latest release is Libreboot 20230625, under the `stable` directory.**
+**The latest release is Libreboot 20231021, under the `testing` directory.**
 
 ### NEW KEY
 
@@ -73,7 +73,7 @@ there is a Git repository that you can download from. Go here:
 HTTPS mirrors {#https}
 -------------
 
-**The latest release is Libreboot 20230625, under the `stable` directory.**
+**The latest release is Libreboot 20231021, under the `testing` directory.**
 
 These mirrors are recommended, since they use TLS (https://) encryption.
 
@@ -166,7 +166,7 @@ crontab. This page tells you how to use crontab:
 HTTP mirrors {#http}
 ------------
 
-**The latest release is Libreboot 20230625, under the `stable` directory.**
+**The latest release is Libreboot 20231021, under the `testing` directory.**
 
 WARNING: these mirrors are non-HTTPS which means that they are
 unencrypted. Your traffic could be subject to interference by
@@ -180,7 +180,7 @@ if using HTTPS.
 FTP mirrors {#ftp}
 -----------
 
-**The latest release is Libreboot 20230625, under the `stable` directory.**
+**The latest release is Libreboot 20231021, under the `testing` directory.**
 
 WARNING: FTP is also unencrypted, like HTTP. The same risks are present.
 

@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<!-- anti-social media tags -->
+  <meta property="og:title" content="Libreboot – Libreboot project">
+  <meta property="og:type" content="article" />
+  <meta property="og:image" content="https://av.vimuser.org/bootmenu.jpg">
+  <meta property="og:url" content="https://libreboot.org/">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta property="og:description" content="Libreboot – Libreboot project">
+  <meta property="og:site_name" content="Libreboot – Libreboot project">
+  <meta name="twitter:image:alt" content="Libreboot – Libreboot project">
+
+  <title>Libreboot – Libreboot project</title>
+  <link rel="stylesheet" href="/global.css">
+<link rel="alternate" type="application/rss+xml" title="RSS Feed" href="/feed.xml"/>
+</head>
+<body>
+<div class="page">
+<header>
+<div class="title">
+<p class="title-logo">
+<img loading="lazy" class="title-logo" alt="Libreboot logo" src="/favicon.ico" />
+</p>
+<h1 class="title">Libreboot project</h1>
+</div>
+<ul>
+<li><a href="/">Home</a></li>
+<li><a href="/faq.html">FAQ</a></li>
+<li><strong><a href="/freedom-status.html">Freedom status</a></strong></li>
+<li><strong><a href="/download.html">Download</a></strong></li>
+<li><a href="/docs/install/">Install</a></li>
+<li><a href="/docs/">Docs</a></li>
+<li><a href="/news/">News</a></li>
+<li><a href="https://codeberg.org/libreboot/lbmk/issues">Bugs</a></li>
+<li><a href="/git.html">Send patch</a></li>
+<li><strong><a href="https://www.patreon.com/libreleah">Donate</a></strong></li>
+<li><a href="/contact.html">Contact</a></li>
+<li><strong><a href="https://minifree.org/">Buy preinstalled</a></strong></li>
+</ul>
+<hr/>
+</header>
+<nav id="TOC">
+<h1>Navigate this page:</h1>
+<ul>
+<li><a href="#why-should-you-use-libreboot">Why should you use
+<em>Libreboot</em>?</a></li>
+<li><a href="#libreboot-is-not-a-fork-of-coreboot">Libreboot is not a
+fork of coreboot</a></li>
+<li><a href="#how-to-help">How to help</a></li>
+<li><a href="#translations-needed-for-libreboot.org">Translations
+needed, for libreboot.org</a></li>
+</ul>
+</nav>
+<div class="pagetext">
+<p><a href="./">English</a> | <a href="index.de.html">Deutsch</a> | <a
+href="index.fr.html">Français</a> | <a href="index.it.html">Italiano</a>
+| <a href="index.uk.html">українська</a> | <a
+href="index.zh-cn.html">简体中文</a></p>
+<p>The <em>Libreboot</em> project provides <a
+href="freedom-status.html">free, open source</a> (<em>libre</em>) boot
+firmware based on coreboot, replacing proprietary BIOS/UEFI firmware on
+<a href="docs/hardware/">specific Intel/AMD x86 and ARM based
+motherboards</a>, including laptop and desktop computers. It initialises
+the hardware (e.g. memory controller, CPU, peripherals) and starts a
+bootloader for your operating system. <a href="docs/linux/">Linux</a>
+and <a href="docs/bsd/">BSD</a> are well-supported. Help is available
+via <a href="https://web.libera.chat/#libreboot">#libreboot</a> on <a
+href="https://libera.chat/">Libera</a> IRC.</p>
+<p><img loading="lazy" tabindex=1 class="r" src="https://av.libreboot.org/hp9470m/9470m+2560p.jpg" /><span
+class="f"><img loading="lazy" src="https://av.libreboot.org/hp9470m/9470m+2560p.jpg" /></span></p>
+<p><strong>NEW RELEASE: The latest release is Libreboot 20231021,
+released on 21 October 2023. See: <a
+href="news/libreboot20231021.html">Libreboot 20231021 release
+announcement</a>.</strong></p>
+<h2 id="why-should-you-use-libreboot">Why should you use
+<em>Libreboot</em>?</h2>
+<p>Libreboot gives you <a
+href="https://writefreesoftware.org/">freedoms</a> that you otherwise
+can’t get with most other boot firmware, plus faster boot speeds and <a
+href="docs/linux/grub_hardening.html">better security</a>. It’s
+extremely powerful and <a href="docs/maintain/">configurable</a> for
+many use cases.</p>
+<p><em>We</em> believe the freedom to <a
+href="https://writefreesoftware.org/">study, share, modify and use
+software</a>, without any restriction, is one of the fundamental human
+rights that everyone must have. In this context, <em>software
+freedom</em> matters. Your freedom matters. Education matters. <a
+href="https://yewtu.be/watch?v=Npd_xDuNi9k">Right to repair</a> matters.
+Many people use proprietary (non-libre) boot firmware, even if they use
+<a href="https://www.openbsd.org/">a libre OS</a>. Proprietary firmware
+often <a href="faq.html#intel">contains</a> <a
+href="faq.html#amd">backdoors</a>, and can be buggy. The Libreboot
+project was founded in December 2013, with the express purpose of making
+coreboot firmware accessible for non-technical users.</p>
+<p>The Libreboot project uses <a
+href="https://www.coreboot.org/">coreboot</a> for <a
+href="https://doc.coreboot.org/getting_started/architecture.html">hardware
+initialisation</a>. Coreboot is notoriously difficult to install for
+most non-technical users; it handles only basic initialization and jumps
+to a separate <a
+href="https://doc.coreboot.org/payloads.html">payload</a> program (e.g.
+<a href="https://www.gnu.org/software/grub/">GRUB</a>, <a
+href="https://www.tianocore.org/">Tianocore</a>), which must also be
+configured. <em>Libreboot solves this problem</em>; it is a <em>coreboot
+distribution</em> with an <a href="docs/build/">automated build
+system</a> that builds complete <em>ROM images</em>, for more robust
+installation. Documentation is provided.</p>
+<h2 id="libreboot-is-not-a-fork-of-coreboot">Libreboot is not a fork of
+coreboot</h2>
+<p><img loading="lazy" tabindex=1 class="l" style="max-width:25%;" src="https://av.libreboot.org/thinkpadcollection/thinkpadcollection1-min.jpg" /><span
+class="f"><img loading="lazy" src="https://av.libreboot.org/thinkpadcollection/thinkpadcollection1-min.jpg" /></span></p>
+<p>In fact, Libreboot tries to stay as close to <em>stock</em> coreboot
+as possible, for each board, but with many different types of
+configuration provided automatically by the Libreboot build system.</p>
+<p>In the same way that <em>Alpine Linux</em> is a <em>Linux
+distribution</em>, Libreboot is a <em>coreboot distribution</em>. If you
+want to build a ROM image from scratch, you otherwise have to perform
+expert-level configuration of coreboot, GRUB and whatever other software
+you need, to prepare the ROM image. With <em>Libreboot</em>, you can
+literally download from Git or a source archive, and run
+<code>make</code>, and it will build entire ROM images. An automated
+build system, named <code>lbmk</code> (Libreboot MaKe), builds these ROM
+images automatically, without any user input or intervention required.
+Configuration has already been performed in advance.</p>
+<p>If you were to build regular coreboot, without using Libreboot’s
+automated build system, it would require a lot more intervention and
+decent technical knowledge to produce a working configuration.</p>
+<p>Regular binary releases of Libreboot provide these ROM images
+pre-compiled, and you can simply install them, with no special knowledge
+or skill except the ability to follow <a href="docs/install/">simplified
+instructions, written for non-technical users</a>.</p>
+<div class="h"><h2 id="how-to-help">How to help</h2><a aria-hidden="true" href="#how-to-help">[link]</a></div>
+<p><img loading="lazy" tabindex=1 class="l" style="max-width:15%;" src="https://av.libreboot.org/hp8200sff/grub_open.jpg" /><span
+class="f"><img loading="lazy" src="https://av.libreboot.org/hp8200sff/grub_open.jpg" /></span></p>
+<p>The <em>single</em> biggest way you can help is to <em>add</em> new
+mainboards in Libreboot, by submitting a config. Anything coreboot
+supports can be integrated in Libreboot, with ROM images provided in
+releases. See:</p>
+<ul>
+<li><a href="docs/maintain/testing.html">Apply to become a board
+maintainer/tester</a></li>
+<li><a href="docs/maintain/porting.html">Porting guide for new
+mainboards</a></li>
+<li><a href="docs/maintain/">Libreboot build system
+documentation</a></li>
+</ul>
+<p>After that, there is build system maintenance (see above), and
+<em>documentation</em> which we take seriously. Documentation is
+critical, in any project.</p>
+<p><em>User support</em> is also critical. Stick around on IRC, and if
+you’re competent to help someone with their issue (or wily enough to
+learn with them), that is a great service to the project. A lot of
+people also ask for user support on the <code>r/libreboot</code>
+subreddit.</p>
+<p>You can check bugs listed on the <a
+href="https://codeberg.org/libreboot/lbmk/issues">bug tracker</a>.</p>
+<p>If you spot a bug and have a fix, <a href="git.html">here are
+instructions for how to send patches</a>, and you can also report it.
+Also, this entire website is written in Markdown and hosted in a <a
+href="https://codeberg.org/libreboot/lbwww">separate repository</a>
+where you can send patches.</p>
+<p>Any and all development discussion and user support are all done on
+the IRC channel. More information is on the <a
+href="contact.html">contact page</a>.</p>
+<h2 id="translations-needed-for-libreboot.org">Translations needed, for
+libreboot.org</h2>
+<p>Libreboot currently has translated Web pages in Ukrainian and French
+(but not for all pages, yet, on either language).</p>
+<p>If you want to help with translations, you can translate pages,
+update existing translations and submit your translated versions. For
+instructions, please read:</p>
+<p><a href="news/translations.html">How to submit translations for
+libreboot.org</a></p>
+<p>Even if someone is already working on translations in a given
+language, we can always use multiple people. The more the merrier!</p>
+<div id="footer">
+<hr />
+<ul>
+<li><a href="/news/policy.html">Binary Blob Reduction Policy</a></li>
+<li><a href="/git.html">Edit this page</a></li>
+<li><a href="/who.html">Who develops Libreboot?</a></li>
+<li><a href="/license.html">License</a></li>
+<li><a href="/template-license.html">Template</a></li>
+<li><a href="/logo-license.html">Logo</a></li>
+<li><a href="/contrib.html">Authors</a></li>
+</ul>
+<hr />
+</div>
+<p>Markdown file for this page: <a href="https://libreboot.org/index.md"
+class="uri">https://libreboot.org/index.md</a></p>
+<p><a href="/sitemap.html">Site map</a></p>
+<p>This HTML page was generated by the <a
+href="https://untitled.vimuser.org/">untitled static site
+generator</a>.</p>
+</div>
+</div>
+</body>
+</html>

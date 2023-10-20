@@ -15,11 +15,6 @@ images (containing payloads) in `bin/`. This design is more efficient, and
 permits many configurations without needless duplication of work. More info
 is available in the [lbmk maintenance manual](../maintain/)**
 
-Also, this page currently only refers to the build system as it exists
-in `lbmk.git`. A massive re-design of lbmk has been in progress, since the
-Libreboot 20230625 release. When the next version after 20230625 comes out,
-this page will once again match the current tarball release.
-
 Introduction
 ============
 
@@ -37,10 +32,25 @@ This version, if hosted live on libreboot.org, assumes that you are using
 the `lbmk` git repository, which
 you can download using the instructions on [the code review page](../../git.md).
 
-If you're using a release archive of libreboot, please refer to the
-documentation included with *that* release. libreboot releases are only intended
-as *snapshots*, not for development. For proper development, you should always
-be working directly in the libreboot git repository.
+A note about documentation (and this page)
+------------------------------------------
+
+From Libreboot 20231021 onwards, *all* releases (including 20231021)
+have `lbwww.git` (the website) and `lbwww-img.git` (images for the website)
+archived in the *src* tar archive for that release; older releases were hit
+or miss, from 20210522 to 20230625, as to whether they came with documentation;
+releases older than 20210522 generally always came with documentation. Modern
+Libreboot documentation is written in Markdown (pandoc variant)
+
+If you're working with *release* documentation, you don't get the full HTML
+files (such as the one you're viewing now, if you're reading *this* page in a
+web browser), so either read the Markdown files directly, or compile them to
+HTML using the [Untitled Static Site Generator](https://untitled.vimuser.org/)
+(which is what the Libreboot project uses to generate HTML from those files).
+
+NOTE: `av.libreboot.org` is hardcoded as the domain name where images are
+pointed to, in `lbwww.git`, so you will need to replace these references in
+your local version, unless you're happy to just continue using those.
 
 Git
 ===
@@ -76,14 +86,17 @@ On Fedora, you can use the following
 
 	sudo dnf install python-unversioned-command
 
-Building Libreboot
-==================
+How to compile Libreboot
+========================
 
-Actual development/testing is always done using `lbmk` directly, and this
+Actual development/testing is always done using lbmk directly, and this
 includes when building from source. Here are some instructions to get you
 started:
 
-libreboot includes a script that automatically installs build dependencies
+First, install build dependencies
+---------------------------------
+
+Libreboot includes a script that automatically installs build dependencies
 according to the selected linux distro. 
 The currently supported distros are: Debian/Ubuntu/Linux Mint/Pop!\_OS, 
 Fedora, Arch Linux/Parabola or Void Linux.
@@ -115,7 +128,10 @@ Technically, any Linux distribution can be used to build libreboot.
 However, you will have to write your own script for installing build
 dependencies. 
 
-libreboot Make (lbmk) automatically runs all necessary commands; for
+Next, build ROM images
+----------------------
+
+Libreboot MaKe (lbmk) automatically runs all necessary commands; for
 example, `./build roms` will automatically run `./build grub`
 if the required GRUB payload (under `elf/grub/`) does not exist.
 
@@ -132,6 +148,9 @@ or get a list of supported build targets:
 
 	./build roms list
 
+Or maybe just build payloads?
+-----------------------------
+
 If you wish to build payloads, you can also do that. For example:
 
 	./build grub
@@ -144,6 +163,17 @@ Previous steps will be performed automatically. However, you can *still* run
 individual parts of the build system manually, if you choose. This may be
 beneficial when you're making changes, and you wish to test a specific part of
 lbmk.
+
+Want to modify Libreboot?
+-------------------------
+
+Check the [lbmk maintenance manual](../maintain/) for guidance. You may for
+example want to modify a config, e.g.:
+
+	./update trees -m coreboot x200_8mb
+
+Or perhaps add a new board! The maintenance manual will teach you how the
+Libreboot build system (lbmk) works!
 
 Post-compilation steps
 ======================
@@ -242,9 +272,10 @@ Libreboot automatically fetches this during the build process, inserting it into
 the very same ROM image that can be flashed on either model, but the VGA ROM
 will only be *executed* if you actually have the Nvidia *GPU* on your board.
 
-ALSO: Libreboot 20230625 did not support Nvidia models at all (only Intel).
+**ALSO: Libreboot 20230625 did not support Nvidia models at all (only Intel).
+In releases, only Libreboot 20231021 and newer will support it.**
 
-Pre-built ROM images from release archives after 20230625 will *not* contain
+Pre-built ROM images from release archives since 20231021 will *not* contain
 this file by default, but it will be present if you compiled directly from lbmk.
 To remove it, do this:
 
@@ -258,26 +289,3 @@ correctly on Intel GPU variants of E6400, but you probably knew that already!
 
 (If you're using a release archive instead, you can re-insert the VGA ROM by
 following [these instructions](../install/ivy_has_common.md))
-
-20230625 build error (release archive)
-======================================
-
-When building ROM images from the release archives, the following error
-is observed in some cases, depending on distro:
-
-```
-In file included from src/lib/version.c:4:
-build/build.h:10:32: error: 'libreboot' undeclared here (not in a function)
-   10 | #define COREBOOT_MAJOR_VERSION libreboot-20230625
-      |                                ^~~~~~~~~
-src/lib/version.c:35:46: note: in expansion of macro 'COREBOOT_MAJOR_VERSION'
-   35 | const unsigned int coreboot_major_revision = COREBOOT_MAJOR_VERSION;
-      |                                              ^~~~~~~~~~~~~~~~~~~~~~
-```
-
-This happened when a user tried to build for ThinkPad W541 on an Arch Linux
-system. The fix is available here:
-
-<https://browse.libreboot.org/lbmk.git/patch/?id=f34e07ae27e3e6e8508cdebcbd09fdf73fca302d>
-
-Apply this patch to your local release archive, and it should fix the issue.

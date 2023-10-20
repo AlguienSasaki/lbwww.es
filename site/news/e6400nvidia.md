@@ -25,9 +25,12 @@ available for variants with GPU: Nvidia Quadro NVS 160M. The Dell Latitude 6400
 XFR (rugged variant) was also tested today (Intel graphics) and confirmed
 working in Libreboot as of release 20230423.
 
-The *Nvidia* variants are *not* supported in Libreboot 20230423 or 20230625.
-Support is available in an experimental branch of Libreboot. 6400 XFR
-testing+photo provided, courtesy Mark Cornick (`mcornick` on Libreboot IRC).
+**UPDATE 21 October 2023: The Nvidia GPU variant is supported
+in [Libreboot 20231021](libreboot20231021.md) and newer - versions older
+than Libreboot 20231021 only support the Intel GPU variant.**
+
+The 6400 XFR testing+photo was provided, courtesy Mark Cornick (`mcornick` on
+Libreboot IRC).
 
 Dell Latitude E6400 with Nvidia GPU
 ===================================

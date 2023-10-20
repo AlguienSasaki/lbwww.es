@@ -2,6 +2,35 @@
 % Leah Rowe
 % 17 July 2023
 
+**UPDATE 21 October 2023: [Libreboot 20231021](libreboot20231021.md) is out,
+and it's vastly superior to Libreboot 20230625 or nonGeNUine Boot 20230717;
+and GNU Boot 0.1 RC is still not much different than the state GNU Boot was in
+at the time of the article below. GNU Boot 0.1 RC (the latest version of GNU
+Boot as of 21 October 2023) is essentially just Libreboot 20220710 plus patches
+I made for them enabling KGPE-D16 to build correctly on modern Linux distros.**
+
+**It's likely that another FSDG-compatible variant of Libreboot will be made,
+again for fun, based on Libreboot 20231021. Watch this space! tl;dr Libreboot
+is vastly superior in the October 2023 revision compared to June 2023, and
+the June 2023 revision is still superior to GNU Boot (still uses newer coreboot
+revisions, has better error handling in the build system, builds more efficiently
+and is generally just better, because it's literally about 8 months ahead in
+development, and supports more hardware such as gru chromebooks with u-boot or
+the Dell Latitude E6400 - which GNU Boot still doesn't support. Libreboot today
+is now lightyears ahead, and the recent October 2023 release has coreboot
+revisions 2 years ahead of the ones used in GNU Boot's default coreboot tree.**
+
+**Two years. Anyway, the original article is as follows (prior to the above):**
+
+The purpose of the original article below was to promote my own FSDG-compliant
+fork of Libreboot 20230625, which I released as Censored-Libreboot 20230710 and
+then nonGeNUine Boot 20230717, with the intent that *GNU Boot* re-use the work,
+but they never re-used any of it except for my D16 build fixes, and one or two
+minor things.
+
+Original article as it was written, 17 July 2023:
+=================================================
+
 People have been waiting for me to break the silence about this. I go on about
 it on IRC. This article is intended to address it once and for all, officially.
 

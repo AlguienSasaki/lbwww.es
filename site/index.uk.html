@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="uk" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<!-- anti-social media tags -->
+  <meta property="og:title" content="Libreboot – Проект Libreboot">
+  <meta property="og:type" content="article" />
+  <meta property="og:image" content="https://av.vimuser.org/bootmenu.jpg">
+  <meta property="og:url" content="https://libreboot.org/index.uk.html">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta property="og:description" content="Libreboot – Проект Libreboot">
+  <meta property="og:site_name" content="Libreboot – Проект Libreboot">
+  <meta name="twitter:image:alt" content="Libreboot – Проект Libreboot">
+
+  <title>Libreboot – Проект Libreboot</title>
+  <link rel="stylesheet" href="/global.css">
+<link rel="alternate" type="application/rss+xml" title="RSS Feed" href="/feed.xml"/>
+</head>
+<body>
+<div class="page">
+<header>
+<div class="title">
+<p class="title-logo">
+<img loading="lazy" class="title-logo" alt="Логотип Libreboot" src="/favicon.ico" />
+</p>
+<h1 class="title">Проект Libreboot</h1>
+</div>
+<ul>
+<li><a href="/index.uk.html">Домашня</a></li>
+<li><a href="/faq.html">FAQ</a></li>
+<li><strong><a href="/freedom-status.html">Статус свободи</a></strong></li>
+<li><strong><a href="/download.uk.html">Завантаження</a></strong></li>
+<li><a href="/docs/install/">Встановлення</a></li>
+<li><a href="/docs/index.uk.html">Документація</a></li>
+<li><a href="/news/">Новини</a></li>
+<li><a href="https://codeberg.org/libreboot/lbmk/issues">Помилки</a></li>
+<li><a href="/git.uk.html">Відправити виправлення</a></li>
+<li><strong><a href="https://www.patreon.com/libreleah">Пожертвувати</a></strong></li>
+<li><a href="/contact.uk.html">Зв'язок</a></li>
+<li><strong><a href="https://minifree.org/">Придбати передвстановленим</a></strong></li>
+</ul>
+<hr/>
+</header>
+<nav id="TOC">
+<h1>Навігація цією сторінкою:</h1>
+<ul>
+<li><a href="#чому-вам-варто-використовувати-libreboot">Чому вам варто
+використовувати <em>Libreboot</em>?</a></li>
+<li><a href="#чим-libreboot-відрізняється-від-звичайного-coreboot">Чим
+Libreboot відрізняється від звичайного coreboot?</a></li>
+<li><a href="#як-допомогти">Як допомогти</a></li>
+<li><a href="#переклади-потрібні-для-libreboot.org">Переклади потрібні,
+для libreboot.org</a></li>
+</ul>
+</nav>
+<div class="pagetext">
+<p><a href="./">English</a> | <a href="index.de.html">Deutsch</a> | <a
+href="index.fr.html">Français</a> | <a href="index.it.html">Italiano</a>
+| <a href="index.uk.html">українська</a> | <a
+href="index.zh-cn.html">简体中文</a></p>
+<p>Проект <em>Libreboot</em> надає <a
+href="freedom-status.uk.html">вільну</a> <em>завантажувальну
+прошивку</em>, яка ініціалізує апаратне забезпечення (наприклад,
+контролер пам’яті, ЦП, периферію) на <a href="docs/hardware/">конкретних
+цілях Intel/AMD x86 та ARM</a>, що потім розпочинає завантажувач для
+вашої операційної системи. <a href="docs/linux/">Linux</a> та <a
+href="docs/bsd/">BSD</a> добре підтримуються. Це заміняє пропрієтарну
+BIOS/UEFI прошивку. Допомога доступна через <a
+href="https://web.libera.chat/#libreboot">#libreboot</a> на <a
+href="https://libera.chat/">Libera</a> IRC.</p>
+<p><img loading="lazy" tabindex=1 class="r" src="https://av.libreboot.org/hp9470m/9470m+2560p.jpg" /><span
+class="f"><img loading="lazy" src="https://av.libreboot.org/hp9470m/9470m+2560p.jpg" /></span></p>
+<p><strong>НОВИЙ ВИПУСК: Останній випуск Libreboot 20231021, випущено 21
+жовтень 2023. Дивіться: <a href="news/libreboot20231021.html">Оголошення
+про випуск Libreboot 20231021</a>.</strong></p>
+<h2 id="чому-вам-варто-використовувати-libreboot">Чому вам варто
+використовувати <em>Libreboot</em>?</h2>
+<p>Libreboot надає вам <a
+href="https://writefreesoftware.org/">свободи</a>, які в іншому випадку
+ви не можете отримати з більшістю інших завантажувальних прошивок. Він
+надзвичайно <a href="docs/linux/grub_hardening.html">потужний</a> та <a
+href="docs/maintain/">налаштовується</a> для багатьох випадків
+використання.</p>
+<p>У вас є права. Право на конфіденційність, свобода мислення, свобода
+висловлювання та право читати. В цьому контексті, Libreboot надає вам ці
+права. Ваша свобода має значення. <a
+href="https://yewtu.be/watch?v=Npd_xDuNi9k">Право на ремонт</a> має
+значення. Багато людей використовують пропрієтарну (невільну)
+завантажувальну прошивку, навіть якщо вони використовують <a
+href="https://www.openbsd.org/">вільну операційну систему</a>.
+Пропрієтарна прошивка часто <a href="faq.uk.html#intel">містить</a> <a
+href="faq.uk.html#amd">лазівки</a>, та може бути глючною. Проект
+Libreboot було засновано в грудні 2013 року, з явною метою зробити
+прошивку coreboot доступною для нетехнічних користувачів.</p>
+<p>Проект Libreboot використовує <a
+href="https://www.coreboot.org/">coreboot</a> для <a
+href="https://doc.coreboot.org/getting_started/architecture.html">ініціалізації
+апаратного забезпечення</a>. Coreboot помітно складний для встановлення
+для більшості нетехнічних користувачів; він виконує тільки базову
+ініціалізацію та перестрибує до окремої програми <a
+href="https://doc.coreboot.org/payloads.html">корисного навантаження</a>
+(наприклад, <a href="https://www.gnu.org/software/grub/">GRUB</a>, <a
+href="https://www.tianocore.org/">Tianocore</a>), які також мають бути
+налаштованими. <em>Програмне забезпечення Libreboot вирішує цю
+проблему</em>; це <em>дистрибутив coreboot</em> з <a
+href="docs/build/index.uk.html">автоматизованою системою побудови</a>,
+яка збирає завершені <em>образи ROM</em>, для більш надійної установки.
+Документація надається.</p>
+<h2 id="чим-libreboot-відрізняється-від-звичайного-coreboot">Чим
+Libreboot відрізняється від звичайного coreboot?</h2>
+<p><img loading="lazy" tabindex=1 class="l" style="max-width:25%;" src="https://av.libreboot.org/thinkpadcollection/thinkpadcollection1-min.jpg" /><span
+class="f"><img loading="lazy" src="https://av.libreboot.org/thinkpadcollection/thinkpadcollection1-min.jpg" /></span></p>
+<p>Таким же самим чином, як <em>Debian</em> це дистрибутив Linux,
+Libreboot це <em>дистрибутив coreboot</em>. Якщо ви хочете зібрати образ
+ROM з нуля, вам інакше довелось би виконати налаштування експертного
+рівня coreboot, GRUB та будь-якого іншого потрібного програмного
+забезпечення, для підготування образа ROM. З <em>Libreboot</em>, ви
+можете буквально завантажити з Git або архіву джерельного коду, та
+запустити <code>make</code>, і це побудує всі образи ROM. Автоматизована
+система побудови, названа <code>lbmk</code> (Libreboot MaKe), збирає ці
+образи ROM автоматично, без будь-якого вводу користувача або потрібного
+втручання. Налаштування вже виконано заздалегідь.</p>
+<p>Якщо би ви збирали звичайний coreboot, не використовуючи
+автоматизовану систему побудови Libreboot, це вимагало би набагато
+більше втручання та гідних технічних знань для створення робочої
+конфігурації.</p>
+<p>Звичайні бінарні випуски Libreboot надають ці образи ROM попередньо
+зібраними, і ви можете просто встановити їх, не маючи спеціальних знань
+або навичок, окрім можливості слідувати <a
+href="docs/install/">спрощеним інструкціям, написаним для нетехнічних
+користувачів</a>.</p>
+<div class="h"><h2 id="як-допомогти">Як допомогти</h2><a aria-hidden="true" href="#як-допомогти">[link]</a></div>
+<p><img loading="lazy" tabindex=1 class="l" style="max-width:15%;" src="https://av.libreboot.org/hp8200sff/grub_open.jpg" /><span
+class="f"><img loading="lazy" src="https://av.libreboot.org/hp8200sff/grub_open.jpg" /></span></p>
+<p><em>Єдиний</em> найбільший шлях, яким ви можете допомогти є
+<em>додавання</em> нових материнських плат до Libreboot, за допомогою
+відправки конфігурації. Що завгодно, що підтримує coreboot може бути
+інтегровано в Libreboot, з образами ROM наданими в випусках.
+Дивіться:</p>
+<ul>
+<li><a href="docs/maintain/testing.html">Подача на становлення
+супровідником/випробувачем плати</a></li>
+<li><a href="docs/maintain/porting.uk.html">Керівництво перенесення для
+нових материнських плат</a></li>
+<li><a href="docs/maintain/">Документація системи побудови
+Libreboot</a></li>
+</ul>
+<p>Після цього, є обслуговування системи побудови (дивіться зверху), та
+<em>документація</em>, до якої ми ставимося серйозно. Документація є
+критичною, в будь-якому проекті.</p>
+<p><em>Користувацька ідтримка</em> є також критичною. Тримайтесь поряд
+на IRC, і якщо ви компетентні допомогти комусь з їх проблемним питанням
+(або досить вправні, щоб навчитись з ними), це є чудовою послугою для
+проекту. Багато людей також запитує підтримки користувачів на subreddit
+<code>r/libreboot</code>.</p>
+<p>Ви можете перевірити помилки, перелічені в <a
+href="https://codeberg.org/libreboot/lbmk/issues">системі відстеження
+помилок</a>.</p>
+<p>Якщо ви помітили помилку і маєте виправлення, <a
+href="git.uk.html">ось інструкції щодо надсилання виправлень</a>, а
+також ви можете повідомити про це. Також, весь цей веб-сайт написаний
+Markdown та розміщений в <a
+href="https://codeberg.org/libreboot/lbwww">окремому сховищі</a>, де ви
+можете надсилати виправлення.</p>
+<p>Усі обговорення розробки та підтримка користувачів відбуваються на
+IRC каналі. Більше інформації на <a href="contact.uk.html">сторінці
+зворотнього зв’язку</a>.</p>
+<h2 id="переклади-потрібні-для-libreboot.org">Переклади потрібні, для
+libreboot.org</h2>
+<p>Libreboot наразі має перекладеними веб-сторінки українською та
+французькою (але не для всіх сторінок, ще, жодною з мов).</p>
+<p>Якщо ви бажаєте допомогти з перекладами, ви можете перекласти
+сторінки, оновити існуючи переклади та надати ваші перекладені версії.
+Для інструкцій, будь ласка прочитайте:</p>
+<p><a href="news/translations.html">Як надати переклади для
+libreboot.org</a></p>
+<p>Навіть якщо хтось вже працює над перекладами даною мовою, ми можемо
+завжди використовувати багато людей. Чим більше, тим краще!</p>
+<div id="footer">
+<hr />
+<ul>
+<li><a href="/news/policy.html">Політика бінарних блобів</a></li>
+<li><a href="/git.html">Редагувати цю сторінку</a></li>
+<li><a href="/who.uk.html">Хто розробляє Libreboot?</a></li>
+<li><a href="/license.html">Ліцензія</a></li>
+<li><a href="/template-license.uk.html">Шаблон</a></li>
+<li><a href="/logo-license.uk.html">Логотип</a></li>
+<li><a href="/contrib.uk.html">Автори</a></li>
+</ul>
+<hr />
+</div>
+<p>Markdown: <a href="https://libreboot.org/index.uk.md"
+class="uri">https://libreboot.org/index.uk.md</a></p>
+<p><a href="/sitemap.html">Індекс сайта</a></p>
+<p>Ця сторінка була створена з <a
+href="https://untitled.vimuser.org/">untitled static site
+generator</a>.</p>
+</div>
+</div>
+</body>
+</html>
