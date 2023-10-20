@@ -5,6 +5,10 @@
 Introduction
 ============
 
+**UPDATE (21 August 2023): None of the proposals below have yet been
+implemented, and this page is still relevant for Libreboot 20231021. It applies
+to any system that requires vendor code to be inserted inside ROM images.**
+
 **UPDATE (16 August 2023): This also applies to the recently added Dell
 Precision T1650 mainboard.**
 

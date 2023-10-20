@@ -86,6 +86,8 @@ Overall changes (summary):
 Here's a more full list of changes, expanding on the above; some entries above
 are also repeated below but in more detail:
 
+* Single-tree projects are no longer needlessly re-downloaded when they already
+  have been downloaded.
 * Scrubbing of vendor files *now* handled by the inject script, rather than
   the release script. This enables more robust handling of configs pertaining
   to vendor files, that tell lbmk where the files are and how to insert them; it
