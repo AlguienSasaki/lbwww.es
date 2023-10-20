@@ -147,7 +147,7 @@ One task, one script
 ====================
 
 Not literally *one task*, but one theme, one *kind* of overall task. For
-example, `script/build/fw/coreboot` builds final ROM images of coreboot,
+example, `script/build/roms` builds final ROM images of coreboot,
 containing payloads; that same script does not also build cross compilers or
 tell you the current weather forecast. This is an analog of the Unix design
 philosophy which says: write one program that does one thing well, and then

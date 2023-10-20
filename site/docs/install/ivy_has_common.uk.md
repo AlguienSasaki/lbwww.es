@@ -84,7 +84,7 @@ Inject vendor files into ROM
 You must determine the correct board name, for your board, based on the list
 generated when running this command:
 
-	./build fw coreboot list
+	./build roms list
 
 For example, `t440pmrc_12mb` corresponds to ThinkPad T440p with MRC firmware.
 Whereas `t440plibremrc_12mb` corresponds to T440p with libre MRC firmware.
@@ -95,7 +95,7 @@ In order to inject the necessary files into a rom image, run the script from the
 If you only wish to flash a release rom then the process of injecting the necessary files is quite simple.
 Run the injection script pointing to the release archive you downloaded:
 
-	./update vendor inject /path/to/libreboot-20230319-18-g9f76c92_t440pmrc_12mb.tar.xz
+	./vendor inject /path/to/libreboot-20230319-18-g9f76c92_t440pmrc_12mb.tar.xz
 
 The script can automatically detect the board as long as you do not change the file name.
 You can then find flash-ready ROMs in `/bin/release/`
@@ -104,12 +104,12 @@ Alternatively, you may patch only a single rom file, but you must supply the
 correct board target name as alluded to above.
 For example:
 
-	./update vendor inject -r x230_libreboot.rom -b x230_12mb
+	./vendor inject -r x230_libreboot.rom -b x230_12mb
 
 Optionally, you can use this script to modify the mac address of the rom with the `-m` flag.
 For example:
 
-	./update vendor inject -r x230_libreboot.rom -b x230_12mb -m 00:f6:f0:40:71:fd
+	./vendor inject -r x230_libreboot.rom -b x230_12mb -m 00:f6:f0:40:71:fd
 
 Check that the files were inserted
 ==================================
@@ -118,7 +118,7 @@ You *must* ensure that the files were inserted.
 
 Some examples of how to do that in lbmk:
 
-	./update project trees -b coreboot utils
+	./update trees -b coreboot utils
 
 Now you find `cbutitls/default`, which is a directory containing `cbfstool`
 and `ifdtool`. Do this on your ROM image (`libreboot.rom` in the example
@@ -152,7 +152,7 @@ Errata
 ROM image configuration. These ROM configs have `mrc.bin`: `t440pmrc_12mb`
 and `w541mrc_12mb`. These ROM configs have libre MRC: `t440p_12mb`
 and `w541_12mb` - it is critical that you choose the right one, when using
-the `-b` flag in the `./update vendor inject` command. For example, if you
+the `-b` flag in the `./vendor inject` command. For example, if you
 used `-b t440p_12mb` on a ROM image that actually corresponds
 to `t440pmrc_12mb`, then the required `mrc.bin` file would not be added
 and that ROM would not boot when flashed.**

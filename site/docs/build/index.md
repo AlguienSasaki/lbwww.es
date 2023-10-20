@@ -116,29 +116,29 @@ However, you will have to write your own script for installing build
 dependencies. 
 
 libreboot Make (lbmk) automatically runs all necessary commands; for
-example, `./build fw coreboot` will automatically run `./build fw grub`
+example, `./build roms` will automatically run `./build grub`
 if the required GRUB payload (under `elf/grub/`) does not exist.
 
 As a result, you can now (after installing the correct build dependencies) run
 just a single command, from a fresh Git clone, to build all ROM images:
 
-	./build fw coreboot all
+	./build roms all
 
 or even just build specific ROM images, e.g.:
 
-	./build fw coreboot x60
+	./build roms x60
 
 or get a list of supported build targets:
 
-	./build fw coreboot list
+	./build roms list
 
 If you wish to build payloads, you can also do that. For example:
 
-	./build fw grub
+	./build grub
 
-	./update project trees -b seabios
+	./update trees -b seabios
 
-	./update project trees -b u-boot
+	./update trees -b u-boot
 
 Previous steps will be performed automatically. However, you can *still* run
 individual parts of the build system manually, if you choose. This may be
@@ -174,7 +174,7 @@ for context:
 <https://libreboot.org/docs/install/ivy_has_common.html>
 
 The scripts under directory `script/update/vendor/` are the ones that do this.
-Specifically, `script/update/vendor/download`. The benefit of this is that you
+Specifically, `script/vendor/download`. The benefit of this is that you
 do not need to extract anything from the original vendor image (e.g. Lenovo
 UEFI image).
 

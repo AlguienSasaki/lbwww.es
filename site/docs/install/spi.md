@@ -72,11 +72,11 @@ could build it yourself or you could also clone `lbmk.git` and [install build
 dependencies](..//build/#first-install-build-dependencies), then inside lbmk,
 do:
 
-	./build fw serprog rp2040 pico
+	./build serprog rp2040 pico
 
 or for the W version:
 
-	./build fw serprog rp2040 pico_w
+	./build serprog rp2040 pico_w
 
 This will automatically build the rpi-pico firmware, and the file will be
 at `bin/serprog_rp2040/serprog_pico.uf2`. This binary will be provided
@@ -461,7 +461,7 @@ install flashrom. Do this after downloading the
 NOTE: debian, arch or void can be written instead of ubuntu2004. the debian
 script is also applicable to newer ubuntu versions
 
-	./update project trees -b flashrom
+	./update trees -b flashrom
 
 If the `ubuntu2004` script complains about missing dependencies, just modify
 the dependencies config to remove those dependencies. The script is located

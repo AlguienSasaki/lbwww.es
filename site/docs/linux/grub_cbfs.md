@@ -60,11 +60,11 @@ of the libreboot Git repository.
 
 Then, download coreboot:
 
-	./update project trees -f coreboot
+	./update trees -f coreboot
 
 Finally, compile the `cbutils` payload (and you will then have the utils):
 
-	./build fw grub
+	./build grub
 
 Among other things, this will produce a `cbfstool` executable under any of the
 subdirectories in `src/coreboot/` under `util/cbfstool/cbfstool`.
@@ -79,7 +79,7 @@ You will also want to build `flashrom` which libreboot recommends for reading
 from and/or writing to the boot flash. In the libreboot build system, you can
 build it by running this command:
 
-	./update project trees -b flashrom
+	./update trees -b flashrom
 
 An executable will be available at `src/flashrom/flashrom` after you have done
 this.

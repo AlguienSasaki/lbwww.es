@@ -79,7 +79,7 @@ image is named `libreboot.rom` for your board. You can find cbfstool
 under `cbutils/` after running the following command
 in the build system:
 
-	./update project trees -b coreboot utils
+	./update trees -b coreboot utils
 
 You can learn more about using the build system, lbmk, here:\
 [libreboot build instructions](../build/)

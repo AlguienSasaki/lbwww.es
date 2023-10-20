@@ -25,19 +25,19 @@ In order to inject the necessary files into a rom image, run the script from the
 If you only wish to flash a release rom then the process of injecting the necessary files is quite simple.
 Run the injection script pointing to the release archive you downloaded:
 	
-	./update vendor inject /path/to/libreboot-20230423_t420_8mb.tar.xz
+	./vendor inject /path/to/libreboot-20230423_t420_8mb.tar.xz
 
 The script can automatically detect the board as long as you do not change the file name.
 You can then find flash-ready ROMs in `/bin/release/`
 
 Alternatively, you may patch only a single rom file.
 
-	./update vendor inject -r t420_libreboot.rom -b t420_8mb
+	./vendor inject -r t420_libreboot.rom -b t420_8mb
 
 Optionally, you can use this script to modify the mac address of the rom with the `-m` flag.
 For example:
 
-	./update vendor inject -r t420_libreboot.rom -b t420_8mb -m 00:f6:f0:40:71:fd
+	./vendor inject -r t420_libreboot.rom -b t420_8mb -m 00:f6:f0:40:71:fd
 
 Disassembly
 -----------

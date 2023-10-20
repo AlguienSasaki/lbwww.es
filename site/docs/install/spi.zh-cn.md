@@ -55,11 +55,11 @@ could build it yourself or you could also clone `lbmk.git` and [install build
 dependencies](..//build/#first-install-build-dependencies), then inside lbmk,
 do:
 
-	./build fw serprog rp2040 pico
+	./build serprog rp2040 pico
 
 or for the W version:
 
-	./build fw serprog rp2040 pico_w
+	./build serprog rp2040 pico_w
 
 This will automatically build the rpi-pico firmware, and the file will be
 at `bin/serprog_rp2040/serprog_pico.uf2`. This binary will be provided
@@ -323,7 +323,7 @@ Flashrom 是用来读出、擦除、重写 NOR flash 内容的软件。
 
 注意：你可以输入 debian、arch 或 void 来替换 ubuntu。debian 脚本也可以用于新版 ubuntu。
 
-	./update project trees -b flashrom
+	./update trees -b flashrom
 
 如果 `ubuntu2004` 报告了依赖缺失，编辑一下这个脚本，把缺失的依赖移除就行了。脚本位于 `config/dependencies/ubuntu2004`，它是写给 Ubuntu 20.04 的，但在其他使用 `apt-get` 包管理器的 Linux 发行版应该也能用。
 

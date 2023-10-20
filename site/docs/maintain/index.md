@@ -98,9 +98,9 @@ bin/
 This directory is created when running any of the following commands, with the
 right arguments:
 
-	./build fw coreboot ARGUMENTS_HERE
-	./build fw serprog stm32
-	./build fw serprog rp2040
+	./build roms ARGUMENTS_HERE
+	./build serprog stm32
+	./build serprog rp2040
 
 Simply speaking, `bin/` shall contain finished ROM images or firmware, that
 can then be installed (flashed) to the target device.
@@ -153,7 +153,7 @@ visit: <https://doc.coreboot.org/northbridge/intel/haswell/mrc.bin.html> - the
 handling of this, in Libreboot, is based largely on the information there.
 
 This contains the Intel MRC firmware, auto-downloaded during build
-by `script/update/vendor/download`.
+by `script/vendor/download`.
 
 In some cases, libre MRC firmware is also available, and provided
 by Libreboot as an alternative choice.
@@ -168,7 +168,7 @@ currently only initialises Intel GPUs natively, on Libreboot systems.
 release/
 ---------------
 
-The script at `script/update/project/release` create tarballs in here, which
+The script at `script/update/release` create tarballs in here, which
 constitute regular Libreboot releases. It is meticulously maintained, as per
 current lbmk behaviour, and executed so as to provide Libreboot release
 archives.
@@ -265,7 +265,7 @@ payload). More information available at these pages:
 * Libreboot [freedom status page](../../freedom-status.md)
 
 The *vendor file* scripts are what handle this, specifically the download script
-located at `script/update/vendor/download`.
+located at `script/vendor/download`.
 
 src/memtest86plus/
 ---------------
@@ -307,7 +307,7 @@ src/uefitool/
 Please also visit: <https://github.com/LongSoft/UEFITool>
 
 This is compiled, so as to provide `UEFIExtract`. Currently used by the
-vendor download script at `script/update/vendor/download`, to download SCH5545 EC
+vendor download script at `script/vendor/download`, to download SCH5545 EC
 firmware (used for fan control on Dell Precision T1650).
 
 src/pico-serprog
@@ -486,7 +486,7 @@ When a given coreboot tree is compiled, for a given target, this file defines
 which files to copy from the coreboot directory, which are then copied to
 a location under `elf/coreboot`.
 
-The presence of this file affects behaviour in `script/update/project/release`;
+The presence of this file affects behaviour in `script/update/release`;
 specifically, PROJECT is then downloaded to `src/PROJECT/PROJECT`, and files
 under `config/PROJECT/TARGET/target.cfg` define which tree to use, which then
 looks under `config/PROJECT/TREE/target.cfg` to get the git revision; then
@@ -661,7 +661,7 @@ VESA frame buffer (NOT to be confused with the coreboot frame buffer), or just
 normal text mode. Text mode startup is always recommended, and in that setup,
 GRUB (including coreboot GRUB, but also PC GRUB) can use VGA modes.
 
-The name `libgfxinit` is simply what `./build fw coreboot` uses, but it may be
+The name `libgfxinit` is simply what `./build roms` uses, but it may be
 that a board uses the old-school native video init code written in C. On some
 platforms, coreboot implemented a 3rd party library called `libgfxinit`, which
 is written in Ada and handles video initialization. In this setup, coreboot
@@ -893,7 +893,7 @@ These are similar in meaning to their coreboot counterparts.
 The tree` entry is actually a link, where its value is a directory name
 under `config/u-boot`. For example, `tree="default"` would refer to
 `config/u-boot/default` and the corresponding U-Boot source tree created
-(when running `./update project trees u-boot`, which makes use of `target.cfg`)
+(when running `./update trees u-boot`, which makes use of `target.cfg`)
 would be `u-boot/default/`. In other words: a `target.cfg` file
 in `config/u-boot/foo` might refer to `config/u-boot/bar` by
 specifying `tree="bar"`, and the created u-boot source tree would
@@ -957,7 +957,7 @@ You create a config, for `config/u-boot/TREENAME/configs`, by finding the
 corresponding board name in the upstream U-Boot `configs` directory, and
 running `make BOARDNAME_defconfig` and `make menuconfig` commands in the
 *U-Boot* build system. You should do this after
-running `./update project trees u-boot` in lbmk.
+running `./update trees u-boot` in lbmk.
 
 You might want to consider basing your config on the upstream `coreboot` boards
 when possible, but such a board is not available upstream for ARM yet.
@@ -1013,12 +1013,12 @@ This is the main script in lbmk, Libreboot's build system. It is what executes
 all other parts of the Libreboot build system. The rules are as follows:
 
 * Argument zero, representing the name of the symlink, will be used to
-  execute `script/LINKNAME/mode/option` - for example: `./build fw coreboot all`
-  would execute `script/build/fw/coreboot all` in `sh`.
+  execute `script/LINKNAME/mode/option` - for example: `./build roms all`
+  would execute `script/build/roms all` in `sh`.
 * `TMPDIR` is exclicitly set, providing a constant location where temporary
   files and directories can be made. `TMPDIR` is exported by the parent to
-  all children; for example, `./build fw coreboot all` would export it
-  to `script/build/fw/coreboot`, and then anything called by *that* will also
+  all children; for example, `./build roms all` would export it
+  to `script/build/roms`, and then anything called by *that* will also
   inherit it - the main parent process running `lbmk` will then clean up this
   `TMPDIR` directory upon any exit.
 * All exits from lbmk are handled by this script. *All* exits, zero or non-zero,
@@ -1071,7 +1071,7 @@ include/git.sh
 
 These functions in here previously existed as independent scripts, but they
 were unified here, and they are used when you pass the `-f` argument
-to `script/update/project/trees` (e.g. `./update project trees -f coreboot`).
+to `script/update/trees` (e.g. `./update trees -f coreboot`).
 
 These functions deal with git cloning, submodule updates, revision resets and
 the application of patch files via `git am`. *Every* git repository downloaded
@@ -1085,12 +1085,12 @@ now the logic under `include/vendor.sh` is used for downloads. This file now
 only contains those functions used for extraction of MRC files from Google
 Chromebook images, currently only used for Haswell mainboards.
 
-This is an include, used by `script/update/vendor/download`, but it's here in
+This is an include, used by `script/vendor/download`, but it's here in
 this file because the vendor download script is GPLv3-only, while the MRC
 extract logic in this file is GPLv2-only (forked from coreboot ages ago). Thus,
 it is provided as an include to bypass license incompatibility. It has been
 heavily modified to use the same style of logic and general control flow used
-in the script at `script/update/vendor/download`, and it is used from there.
+in the script at `script/vendor/download`, and it is used from there.
 
 include/option.sh
 ---------------
@@ -1106,18 +1106,12 @@ possible, and contains miscallaneous functions that don't belong anywhere else.
 The functions here are mostly those that deal with configuration files; scanning
 them to set variables and so on.
 
-include/vendor.sh
----------------
-
-Common variables and helper functions, used by all scripts
-under `script/update/vendor/`.
-
 script/
 =======
 
 *All* scripts under `script/` are executed only by the main `lbmk` script,
-conforming to the standard `buildpath/mode/option` e.g. `build/fw/coreboot` - so,
-running `./build fw coreboot` would run `script/build/fw/coreboot`.
+conforming to the standard `buildpath/mode/option` e.g. `build/roms` - so,
+running `./build roms` would run `script/build/roms`.
 
 script/build/
 ---------------
@@ -1128,24 +1122,24 @@ are also handled.
 
 The scripts that create release archives are also located under this directory.
 
-### script/build/fw/coreboot
+### script/build/roms
 
 This builds coreboot ROM images.
 
-Command: `./build fw coreboot targetname`
+Command: `./build roms targetname`
 
 The `targetname` argument must be specified, chosen from this output:
 
-	./build fw coreboot list
+	./build roms list
 
 Pass several board names if you wish to build only for specific targets. For
 example:
 
-	./build fw coreboot x60 x200_8mb
+	./build roms x60 x200_8mb
 
 To build *all* targets, specify:
 
-	./build fw coreboot all
+	./build roms all
 
 Since November 2022, this script can build images for x86 *and* ARM targets.
 The *ARM* targets are ChromeOS devices (chromebooks and such); Libreboot uses
@@ -1192,7 +1186,7 @@ for `romtype`:
 * If no declaration is made, or a declaration is made contrary to the above,
   no special modifications will be made.
 
-If no payload is defined in `target.cfg`, the `build/fw/coreboot` script will exit
+If no payload is defined in `target.cfg`, the `build/roms` script will exit
 with error status.
 
 If SeaBIOS is to be used, on `libgfxinit` setups, SeaVGABIOS will also be
@@ -1220,29 +1214,29 @@ When the ROM is finished compiling, it will appear under a directory in `bin/`
 This script is the beating heart of Libreboot. Break it, and you break
 Libreboot!
 
-### script/build/fw/grub
+### script/build/grub
 
 This builds the `grub.elf` file and keymap configuration files, placing these
-under `elf/grub/` for use by `script/build/fw/coreboot`.
+under `elf/grub/` for use by `script/build/roms`.
 
-Command: `./build fw grub`
+Command: `./build grub`
 
 This builds the `grub-mkstandalone` utility under `src/grub/`, which is used
-by `script/build/fw/coreboot` to insert GRUB payloads inside coreboot ROM
+by `script/build/roms` to insert GRUB payloads inside coreboot ROM
 images.
 
-### script/build/fw/serprog
+### script/build/serprog
 
 Build firmware images for serprog-based SPI programmers, where they use an
 STM32 MCU. It also builds for RP2040-based programmers like Raspberry Pi Pico.
 
-Example command: `./build fw serprog stm32`
+Example command: `./build serprog stm32`
 
-Example command: `./build fw serprog rp2040`
+Example command: `./build serprog rp2040`
 
 The `list` argument is available:
 
-	./build fw serprog stm32 list
+	./build serprog stm32 list
 
 Without arguments, all targets would be compiled, but you can specify a short
 list of targets instead, based on the output of `list`.
@@ -1254,18 +1248,18 @@ This handles most actual building of source trees, called into by scripts
 under `script/build/fw` - it also contains logic for downloading source trees
 or vendor files.
 
-### script/update/project/release
+### script/update/release
 
 This script builds the release archives, which are then provided in a new
 Libreboot release. Most users do not need to look at this file at all, but it
 is provided under free license for curious souls.
 
-Command: `./update project release`
+Command: `./update release`
 
 NOTE: if the `-d` option is used, you can specify a directory other
 than `release`. For example:
 
-	./update project release -d /media/stuff/libreboot_release_test
+	./update release -d /media/stuff/libreboot_release_test
 
 If `-d` is not passed, they will go under `release/` in your lbmk repository.
 The script is engineered to re-initialise git if ran from a release archive.
@@ -1284,7 +1278,7 @@ within them, requiring manual insertion by the user post-release. See:
 [Insert vendor files
 on Sandybridge/Ivybridge/Haswell](../install/ivy_has_common.md)
 
-### script/update/project/trees
+### script/update/trees
 
 *This* is the other beating heart of Libreboot. Used heavily by Libreboot, this
 script is what handles defconfig files for SeaBIOS, U-Boot *and* coreboot; it
@@ -1322,17 +1316,17 @@ the directory `src/PROJECT/TREE` will be created, reset to the specific
 revision - for multi-tree projects, all defined targets are scanned for their
 corresponding tree, and the trees are prepared as defined above.
 
-Basic command: `./update project trees FLAG projectname`
+Basic command: `./update trees FLAG projectname`
 
 Special operation: for building coreboot utilities `cbfstool` and `ifdtool` to
 go under `cbutils/`, do this:
 
-	./update project trees -b coreboot utils
+	./update trees -b coreboot utils
 
 Or define specific coreboot tree such as:
 
-	./update project trees -b coreboot utils default
-	./update project trees -b coreboot utils cros
+	./update trees -b coreboot utils default
+	./update trees -b coreboot utils cros
 
 FLAG values are (only *one* to be used at a time):
 
@@ -1359,15 +1353,15 @@ As for *projectname", this can either be `coreboot`, `u-boot` or `seabios`.
 
 Example commands:
 
-	./update project trees -b coreboot
-	./update project trees -b coreboot x200_8mb
-	./update project trees -b coreboot x230_12mb x220_8mb t1650_12mb
-	./update project trees -x coreboot default
-	./update project trees -u seabios
-	./update project trees -m u-boot gru_bob
-	./update project trees -f coreboot
-	./update project trees -b coreboot utils default
-	./update project trees -b coreboot utils
+	./update trees -b coreboot
+	./update trees -b coreboot x200_8mb
+	./update trees -b coreboot x230_12mb x220_8mb t1650_12mb
+	./update trees -x coreboot default
+	./update trees -u seabios
+	./update trees -m u-boot gru_bob
+	./update trees -f coreboot
+	./update trees -b coreboot utils default
+	./update trees -b coreboot utils
 
 NOTE: the `-x` and `-c` options will cause an exit with zero status, when
 the target's corresponding source tree is unavailable; a non-zero status is
@@ -1377,16 +1371,16 @@ if unavailable and *that* too will return with non-zero status under fault
 conditions.
 
 NOTE: "target" can indeed be the tree name, under some circumstances. For
-example, `./update project trees -m seabios default`
+example, `./update trees -m seabios default`
 
 After `projectname`, a target can be specified, but if no target is specified,
 then *all* targets will be operated on. For
-example, `./update project trees -b coreboot` will attempt to build *all*
+example, `./update trees -b coreboot` will attempt to build *all*
 coreboot ROM images.
 
 NOTE: the `coreboot` projectname here shall cause the ROM images to go
 under `elf/` - this is the no-payload ROM images, which are later used
-separately by `script/build/fw/coreboot` to provide full images, with
+separately by `script/build/roms` to provide full images, with
 payloads inserted. It is an intentional design choice of Libreboot, to split
 it up this way and *not* use coreboot's own build system to handle payloads.
 
@@ -1405,7 +1399,7 @@ Now it is unified, efficiently, under a single script.
 
 Remember: code equals bugs, so less code equals fewer bugs.
 
-### script/update/vendor/download
+### script/vendor/download
 
 This downloads vendor code when needed, on a given coreboot target. It does
 this by scanning the defconfig files of that board, to know where the files
@@ -1426,7 +1420,7 @@ This script is executed automatically, when you compile ROM images, if the given
 mainboard requires vendor code to be inserted. In this way, you do not need to
 manually extract such files from your original vendor image.
 
-### script/update/vendor/inject
+### script/vendor/inject
 
 This is not used during the build process, but it can be run by the user on
 release ROMs (which do not contain non-redistributable code handled by these

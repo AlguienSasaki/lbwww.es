@@ -93,29 +93,29 @@ Check: `config/dependencies/` for list of supported distros.
 побудови. 
 
 libreboot Make (lbmk) автоматично виконує всі необхідні команди; наприклад,
-`./build fw coreboot` автоматично виконає `./build fw grub`,
+`./build roms` автоматично виконає `./build grub`,
 якщо затребувані утиліти для GRUB не збудовано, для виготовлення корисних навантажень.
 
 В якості результату, ви тепер можете (після встановлення правильних залежностей побудови) виконати
 лише одну команду, з свіжого Git clone, для побудови образів ROM:
 
-	./build fw coreboot all
+	./build roms all
 
 або навіть побудувати конкретні образи ROM, такі як:
 
-	./build fw coreboot x60
+	./build roms x60
 
 or get a list of supported build targets:
 
-	./build fw coreboot list
+	./build roms list
 
 Якщо ви бажаєте побудувати корисні навантаження, можете зробити це. Наприклад:
 
-	./build fw grub
+	./build grub
 
-	./update project trees -b seabios
+	./update trees -b seabios
 
-	./update project trees -b u-boot
+	./update trees -b u-boot
 
 Попередні кроки буде виконано автоматично. Однак, ви можете *досі* виконати
 окремі частини системи побудови власноруч, якщо виберете. Це може бути
