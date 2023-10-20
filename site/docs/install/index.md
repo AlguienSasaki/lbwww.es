@@ -310,6 +310,10 @@ the sections below:
 
 See: [Dell Latitude E6400 Libreboot Installation Guide](e6400.md)
 
+#### DELL Latitude E6430 laptop (easy to flash, no disassembly)
+
+See: [Dell Latitude E6430 Libreboot Installation Guide](e6430.md)
+
 #### ThinkPad X200/T400/T500/W500/R400/R500 vendor BIOS
 
 If you're running one of these, it cannot be flashed internally if you're still
@@ -553,6 +557,11 @@ DELL Latitude E6400 laptop (easy to flash, similar to X200/T400)
 -------------------------
 
 See: [Dell Latitude E6400 Libreboot Installation Instructions](e6400.md)
+
+DELL Latitude E6430 laptop (easy to flash, no disassembly)
+-------------------------
+
+See: [Dell Latitude E6430 Libreboot Installation Instructions](e6430.md)
 
 ASUS KFSN4-DRE
 --------------

@@ -291,7 +291,11 @@ Made the libreboot logo.
 Nicholas Chin
 -------------
 
-[Ported Dell Latitude E6400 to Libreboot](news/e6400.md).
+[Ported Dell Latitude E6400 to Libreboot](news/e6400.md)
+and also [Dell Latitude E6430](hardware/e6430.md) - author of
+the `dell-flash-unlock` (formerly `e6400-flash-unlock`) utility, which
+can unlock the flash on these boards, allowing internal flashing of
+Libreboot directly from host OS running under the original Dell firmware.
 
 Patrick "P. J." McDermott
 ---------------------------

@@ -50,19 +50,21 @@ libreboot currently supports the following systems in this release:
 -   [Acer G43T-AM3](acer_g43t-am3.md)
 -   [Apple iMac 5,2](imac52.md)
 -   [ASUS KCMA-D8 motherboard](kcma-d8.md)
--   [Dell Precision T1650](t1650.md)
+-   [Dell Precision T1650](t1650.md) (**easy to flash without disassembly**)
 -   [Gigabyte GA-G41M-ES2L motherboard](ga-g41m-es2l.md)
 -   [HP Elite 8200 SFF/MT](hp8200sff.md) (HP 6200 Pro Business probably works too)
--   [HP Elite 8300 USDT](hp8300usdt.md)
+    (**easy to flash without disassembly**)
+-   [HP Elite 8300 USDT](hp8300usdt.md) (**easy to flash without disassembly**)
 -   [Intel D510MO and D410PT motherboards](d510mo.md)
 
 ### Laptops (Intel, x86)
 
--   [Apple MacBook1,1 and MacBook2,1](macbook21.md)
+-   [Apple MacBook1,1 and MacBook2,1](macbook21.md) (2,1 flashable without disassembly)
 -   [Dell Latitude E6400, E6400 XFR and E6400 ATG, all with Nvidia or Intel
     GPU](e6400.md) **(easy to flash, no disassembly, similar
     hardware to X200/T400)**
--   [HP EliteBook 2170p](hp2170p.md)
+-   [Dell Latitude E6430 (Intel GPU](e6430.md) **(easy to flash, no disassembly)**
+-   [HP EliteBook 2170p](hp2170p.md) (**socketed flash IC**)
 -   [HP EliteBook 2560p](hp2560p.md)
 -   [HP EliteBook 2570p](hp2570p.md)
 -   [HP EliteBook 8470p](hp8470p.md)
@@ -76,7 +78,7 @@ libreboot currently supports the following systems in this release:
 -   [Lenovo ThinkPad T440p](../install/t440p_external.md)
 -   [Lenovo ThinkPad T500](t500.md)
 -   [Lenovo ThinkPad T530 / W530](../install/ivy_has_common.md) (no install
--   Lenovo ThinkPad T60 (with Intel GPU)
+-   Lenovo ThinkPad T60 (with Intel GPU) (**easy to flash without disassembly**)
 -   [Lenovo ThinkPad W500](t500.md)
 -   [Lenovo ThinkPad W541](../install/ivy_has_common.md) (no install docs yet)
 -   [Lenovo ThinkPad X200 / X200S / X200 Tablet](x200.md)
@@ -86,7 +88,7 @@ libreboot currently supports the following systems in this release:
 -   [Lenovo Thinkpad X230](../install/x230_external.md)
 -   [Lenovo Thinkpad X230t](../install/x230_external.md)
 -   Lenovo ThinkPad X301
--   Lenovo ThinkPad X60 / X60S / X60 Tablet
+-   Lenovo ThinkPad X60 / X60S / X60 Tablet (**easy to flash without disassembly**)
 
 ### Laptops (ARM, with U-Boot payload)
 

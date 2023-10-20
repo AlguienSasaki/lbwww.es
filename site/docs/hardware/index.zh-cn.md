@@ -47,6 +47,7 @@ x-toc-enable: true
 
 -   [Apple MacBook1,1 及 MacBook2,1](macbook21.md)
 -   [Dell Latitude E6400, E6400 XFR 及 E6400 ATG，皆支持 Nvidia 或 Intel GPU](e6400.md) **（刷入简单，无需拆解，硬件类似 X200/T400）**
+-   [Dell Latitude E6430, Intel GPU](e6430.md) **（刷入简单，无需拆解）**
 -   [HP EliteBook 2170p](hp2170p.md)
 -   [HP EliteBook 2560p](hp2560p.md)
 -   [HP EliteBook 2570p](hp2570p.md)
