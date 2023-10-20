@@ -8,8 +8,7 @@ Introduction
 This article pertains to the current Libreboot (lbmk) revision at this time
 of writing, which is `c7e764a3f088e2dbcacb507995476ce3082451ef` from 20
 October 2023. A *release* is also being compiled today, 20 October 2023, based
-upon that revision, and the announcement for that release
-is: [Libreboot 20231020 release announcement](libreboot20231020.md)
+upon that revision, and will be announced soon.
 
 A lot of work has gone into Libreboot since [Libreboot Build System
 Audit 2](audit2.md), the main focus of which has been yet another
