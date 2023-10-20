@@ -1399,6 +1399,9 @@ Now it is unified, efficiently, under a single script.
 
 Remember: code equals bugs, so less code equals fewer bugs.
 
+script/vendor/
+--------------
+
 ### script/vendor/download
 
 This downloads vendor code when needed, on a given coreboot target. It does
