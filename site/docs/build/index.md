@@ -26,6 +26,13 @@ Introduction
 libreboot's build system is named `lbmk`, short for `LibreBoot MaKe`, and this
 document describes how to use it. With this guide, you can know how to compile
 libreboot from the available source code.
+
+The following document describes how `lbmk` works, and how you can make changes
+to it: [libreboot maintenance manual](../maintain/)
+
+Sources
+=======
+
 This version, if hosted live on libreboot.org, assumes that you are using
 the `lbmk` git repository, which
 you can download using the instructions on [the code review page](../../git.md).
@@ -34,9 +41,6 @@ If you're using a release archive of libreboot, please refer to the
 documentation included with *that* release. libreboot releases are only intended
 as *snapshots*, not for development. For proper development, you should always
 be working directly in the libreboot git repository.
-
-The following document describes how `lbmk` works, and how you can make changes
-to it: [libreboot maintenance manual](../maintain/)
 
 Git
 ===
@@ -61,8 +65,16 @@ You may also want to follow more of the steps here:
 Python
 ======
 
-Python2 is unused by lbmk or anything that it pulls down as modules. You
-should ensure that the `python` command runs python 3, on your system.
+You should ensure that the `python` command runs python 3, on your system.
+Python2 is unused by lbmk or anything that it pulls down as modules. 
+
+If building on Debian/Ubuntu based systems, you can achieve that via:
+
+    sudo apt install python-is-python3
+
+On Fedora, you can use the following
+
+    sudo dnf install python-unversioned-command
 
 Building Libreboot
 ==================
@@ -71,18 +83,31 @@ Actual development/testing is always done using `lbmk` directly, and this
 includes when building from source. Here are some instructions to get you
 started:
 
-libreboot includes a script that automatically installs apt-get dependencies
-in Ubuntu 20.04 and distros based upon it:
+libreboot includes a script that automatically installs build dependencies
+according to the selected linux distro. 
+The currently supported distros are: Debian/Ubuntu/Linux Mint/Pop!\_OS, 
+Fedora, Arch Linux/Parabola or Void Linux.
 
-	sudo ./build dependencies ubuntu2004
+Some examples:
 
-Separate scripts also exist:
+    sudo ./build dependencies ubuntu
 
-	sudo ./build dependencies debian
+or
 
-	sudo ./build dependencies arch
+    sudo ./build dependencies debian
 
-	sudo ./build dependencies void
+or
+
+    sudo ./build dependencies fedora38
+
+or
+
+    sudo ./build dependencies arch
+
+NOTE: In case of Ubuntu 20.04 LTS or derived distros for that specific release,
+      use the dedicated configuration file:
+
+    sudo ./build dependencies ubuntu2004
 
 Check: `config/dependencies/` for list of supported distros.
 
