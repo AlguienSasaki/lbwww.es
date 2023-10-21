@@ -102,7 +102,7 @@ argon2id
 --------
 
 You should *specifically* use argon2id. Please ensure this, because some
-older LUKS2 setups defaulted to the weaker *argon2d*. This post by Matthew
+older LUKS2 setups defaulted to the weaker *argon2i*. This post by Matthew
 Garret contains information about that:
 
 <https://mjg59.dreamwidth.org/66429.html>
