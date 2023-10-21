@@ -1013,8 +1013,12 @@ This is the main script in lbmk, Libreboot's build system. It is what executes
 all other parts of the Libreboot build system. The rules are as follows:
 
 * Argument zero, representing the name of the symlink, will be used to
-  execute `script/LINKNAME/mode/option` - for example: `./build roms all`
+  execute `script/LINKNAME/COMMAND` - for example: `./build roms all`
   would execute `script/build/roms all` in `sh`.
+* In the above example, `LINKNAME` could also be `vendor`. In examples below,
+  symlinks are described pointing to `build` (the actual script). The script
+  works by checking argument zero, so it would look in a different directory
+  under `script/` matching `LINKNAME` - in this case, `script/vendor/`
 * `TMPDIR` is exclicitly set, providing a constant location where temporary
   files and directories can be made. `TMPDIR` is exported by the parent to
   all children; for example, `./build roms all` would export it
@@ -1116,7 +1120,7 @@ script/
 =======
 
 *All* scripts under `script/` are executed only by the main `lbmk` script,
-conforming to the standard `buildpath/mode/option` e.g. `build/roms` - so,
+conforming to the standard `buildpath/option` e.g. `build/roms` - so,
 running `./build roms` would run `script/build/roms`.
 
 script/build/
