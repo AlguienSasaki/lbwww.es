@@ -183,7 +183,7 @@ In Libreboot 20231021 (*this release*):
 * Coreboot (cros): MERGED WITH `coreboot/default` (see above)
 * Coreboot (fam15h\_udimm): commit ID `1c13f8d85c7306213cd525308ee8973e5663a3f8`, 16 June 2021
 * GRUB: commit ID `e58b870ff926415e23fc386af41ff81b2f588763`, 3 October 2023
-* SeaBIOS: commit ID `ea1b7a0733906b8425d948ae94fba63c32b1d425`, 24 August 2023
+* SeaBIOS: commit ID `1e1da7a963007d03a4e0e9a9e0ff17990bb1608d`, 24 August 2023
 * U-Boot: commit ID `4459ed60cb1e0562bc5b40405e2b4b9bbf766d57`, 2 October 2023
 
 In Libreboot 20230625 (*previous release*):
