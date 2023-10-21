@@ -54,8 +54,8 @@ Encrypted /boot via LUKS2 with argon2
 
 Full encryption for basic LUKS2 (with PBKDF or argon2 key derivation) is
 supported in libreboot. Legacy LUKS1 is also supported. On *most* other
-systems, `/boot` must be encrypted, but Libreboot supports use of the
-GRUB bootloader as a coreboot payload.
+systems, `/boot` must be unencrypted, but Libreboot supports use of the
+GRUB bootloader as a coreboot payload, directly in the boot flash.
 
 GRUB has code in it that can be used to unlock LUKS1 and LUKS2 dm-crypt,
 using the `cryptomount` command. With this, you can boot with *true* full
