@@ -18,7 +18,7 @@ and is generally just better, because it's literally about 8 months ahead in
 development, and supports more hardware such as gru chromebooks with u-boot or
 the Dell Latitude E6400 - which GNU Boot still doesn't support. Libreboot today
 is now lightyears ahead, and the recent October 2023 release has coreboot
-revisions 2 years ahead of the ones used in GNU Boot's default coreboot tree.**
+revisions 2 years ahead of the ones used in GNU Boot's default coreboot tree (in Libreboot 20230625 and nonGeNUine Boot 20230717, it's still about 18 months ahead).**
 
 **Two years. Anyway, the original article is as follows (prior to the above):**
 
