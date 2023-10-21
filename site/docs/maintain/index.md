@@ -348,7 +348,7 @@ may not have much RAM.
 Where large files (or a large number of files) are handled by lbmk on a
 temporary basis, this `tmp/` directory is created and then used.
 
-vendor/
+vendorfiles/
 ---------------
 
 Used by the vendor file handler scripts, referenced in certain coreboot configs.
@@ -1036,7 +1036,13 @@ update
 ---------------
 
 Symbolic link, pointing to the `build` script. This is executed by the user, or
-by lbmk, referencing scripts under `script/update/*/`.
+by lbmk, referencing scripts under `script/update/`.
+
+vendor
+---------------
+
+Symbolic link, pointing to the `build` script. This is executed by the user, or
+by lbmk, referincing scripts under `script/vendor/`
 
 include/
 ===============
@@ -1095,7 +1101,7 @@ in the script at `script/vendor/download`, and it is used from there.
 include/option.sh
 ---------------
 
-Functions used by scripts under `script/update/vendor/`, for checking defconfig
+Functions used by scripts under `script/vendor/`, for checking defconfig
 files. These files are checked because the scripts need to know whether a given
 file is used; if it is, a path is then specified in defconfig, telling the vendor
 script either where it is, or where it should be downloaded to.

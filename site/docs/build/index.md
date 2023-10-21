@@ -203,7 +203,7 @@ re-inserted (e.g. KBC1126 EC firmware on HP EliteBooks). Please read this page
 for context:
 <https://libreboot.org/docs/install/ivy_has_common.html>
 
-The scripts under directory `script/update/vendor/` are the ones that do this.
+The scripts under directory `script/vendor/` are the ones that do this.
 Specifically, `script/vendor/download`. The benefit of this is that you
 do not need to extract anything from the original vendor image (e.g. Lenovo
 UEFI image).
