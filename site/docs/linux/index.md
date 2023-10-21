@@ -49,11 +49,17 @@ Then still as root, do these commands:
 Now your distro's GRUB menu should work, when your distro's GRUB bootloader is
 executed from Libreboot's SeaBIOS payload.
 
-Encrypted (LUKS/dm-crypt) installations
+Encrypted /boot via LUKS2 with argon2
 =======================================
 
 Full encryption for basic LUKS2 (with PBKDF or argon2 key derivation) is
-supported in libreboot. Legacy LUKS1 is also supported.
+supported in libreboot. Legacy LUKS1 is also supported. On *most* other
+systems, `/boot` must be encrypted, but Libreboot supports use of the
+GRUB bootloader as a coreboot payload.
+
+GRUB has code in it that can be used to unlock LUKS1 and LUKS2 dm-crypt,
+using the `cryptomount` command. With this, you can boot with *true* full
+disk encryption, by encrypting `/boot`.
 
 This is a boon for security, because it's harder
 to tamper with, and you could potentially write-protect plus maybe provide
@@ -91,6 +97,15 @@ With modern Libreboot, you can just use LUKS2 as-is, on most/all Linux distros.
 At the time of the Libreboot 20231021 release, the GRUB upstream (on gnu.org)
 did not have these argon2 patches in its source tree, but Libreboot merges and
 maintains them out of tree.
+
+argon2id
+--------
+
+You should *specifically* use argon2id. Please ensure this, because some
+older LUKS2 setups defaulted to the weaker *argon2d*. This post by Matthew
+Garret contains information about that:
+
+<https://mjg59.dreamwidth.org/66429.html>
 
 NOTE: You should also read the instructions about about `GRUB_TERMINAL`.
 
