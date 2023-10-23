@@ -10,27 +10,11 @@ get an error related to `/dev/mem` access, you should reboot with
 `iomem=relaxed` kernel parameter before running flashrom, or use a kernel that
 has `CONFIG_STRICT_DEVMEM` not enabled.
 
-READ THIS BEFORE UPDATING LIBREBOOT, OR YOU MIGHT BRICK YOUR MACHINE
+SAFETY WARNING!
 ====================================================================
 
-**On newer Intel platforms that require Intel ME and/or MRC firmware, such as
-ThinkPad X230 or T440p, and/or HP laptops that require KBC1126 EC firmware,
-the release ROMs of Libreboot are MISSING certain files, that you must insert
-yourself. FAILURE to adhere to this warning may result in you bricking your
-machine (rendering it unbootable), if you were to flash the release ROMs without
-modifying them in any way. For more information, please read:**
-
-**[Insert vendor files on Sandybridge/Ivybridge/Haswell](ivy_has_common.md)**
-
-NOTE: This warning does not apply to ROMs that you compiled yourself, using
-lbmk. It only applies to release ROMs, because ME/MRC/EC firmware is *deleted*
-in release ROMs. The link above says how to re-add them. When building ROM images
-yourself, from source, Libreboot's build system automatically handles it. See:
-[Libreboot build instructions](../build/)
-
-This isn't required on *all* Libreboot-supported boards, but if in doubt, follow
-these instructions anyway. If you run the vendor scripts on a board that doesn't
-need vendor files, nothing will happen.
+**IMPORTANT ADVICE: [PLEASE READ THESE INSTRUCTIONS BEFORE INSTALLING/UPDATING
+LIBREBOOT](news/safety.md).**
 
 PRECAUTIONS
 ===========
