@@ -36,9 +36,25 @@ qemu-system-aarch64 -bios bin/qemu_arm64_12mb/uboot_payload_qemu_arm64_12mb_libg
 	-M virt,secure=on,virtualization=on,acpi=on -cpu cortex-a53 -m 768M -serial stdio -vga none -display none
 ```
 
-NOTE: After the 20230625 release, U-Boot support was removed from x86 Qemu; it's
-also problematic on ARM-based Qemu. Only x86 qemu, with other payloads, is to
-be considered reliable for now.
+That command (above) does a serial console. Alper Nebi Yasak added this patch to Libreboot:
+<https://browse.libreboot.org/lbmk.git/commit/?id=444f2899e69e9b84fd5428625aa04b00c1341804>
+
+This enables a graphical display in qemu, like so (only works in releases
+after Libreboot 20231021, but not including Libreboot 20231021, so you
+must [build lbmk from git](../build/)). Command:
+
+```
+qemu-system-aarch64 \
+    -machine virt,secure=on,virtualization=on \
+    -cpu cortex-a72 -m 1G \
+    -serial stdio -device VGA \
+    -device qemu-xhci \
+    -device usb-kbd -device usb-mouse \
+    -bios bin/qemu_arm64_12mb/*.rom
+```
+
+NOTE: After the 20230625 release, U-Boot support was removed from x86 Qemu.
+It works fine on the aaarch64 one.
 
 Use Cases
 =========
