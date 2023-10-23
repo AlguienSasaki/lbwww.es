@@ -2,8 +2,8 @@
 % Leah Rowe
 % 23 April 2023
 
-**PLEASE READ THIS BEFORE INSTALLING:
-[Safety issues updating Libreboot on Sandybridge/Ivybridge/Haswell](safety.md)**
+**IMPORTANT ADVICE: [PLEASE READ THESE INSTRUCTIONS BEFORE INSTALLING/UPDATING
+LIBREBOOT](safety.md).**
 
 Introduction
 ============
@@ -31,22 +31,6 @@ only *10 days ago*.
 The *priority* for Libreboot is to add as many new boards as possible, from now
 to the next stable release (ETA Q3 2023), with many testing releases in
 between. Release early, release often. Rigorious testing ensues.
-
-READ THIS BEFORE FLASHING LIBREBOOT, OR YOU MIGHT BRICK YOUR MACHINE
-====================================================================
-
-**On newer Intel platforms that require Intel ME and/or MRC firmware, such as
-ThinkPad X230 or T440p, and/or HP laptops that require KBC1126 EC firmware,
-the release ROMs of Libreboot are MISSING certain files, that you must insert
-yourself. FAILURE to adhere to this warning may result in you bricking your
-machine (rendering it unbootable), if you were to flash the release ROMs without
-modifying them in any way. For more information, please read:**
-
-**[Insert vendor files on Sandybridge/Ivybridge/Haswell](../docs/install/ivy_has_common.md)**
-
-This isn't required on *all* Libreboot-supported boards, but if in doubt, follow
-these instructions anyway. If you run the vendor scripts on a board that doesn't
-need vendor files, nothing will happen.
 
 Build from source
 -----------------

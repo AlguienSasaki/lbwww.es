@@ -2,9 +2,8 @@
 % Leah Rowe
 % 21 October 2023
 
-**PLEASE READ THIS BEFORE INSTALLING:
-[Safety advice when updating Libreboot on
-Sandybridge/Ivybridge/Haswell](safety.md)**
+**IMPORTANT ADVICE: [PLEASE READ THESE INSTRUCTIONS BEFORE INSTALLING/UPDATING
+LIBREBOOT](safety.md).**
 
 Introduction
 ============
