@@ -1115,3 +1115,21 @@ Downloads
 You can find this release on the downloads page. At the time of this
 announcement, some of the rsync mirrors may not have it yet, so please check
 another one if your favourite one doesn't have it.
+
+Post-release fix
+================
+
+There was a minor problem in the original Libreboot 20231021 release, namely:
+keymap configurations were not properly generated inside the ROM images, so
+all ROM images (that have the GRUB payload) defaulted to US Qwerty in GRUB.
+
+This has been fixed, and the release archives were re-uploaded on 23
+October 2023. The re-uploaded archives are built with these two patches
+added:
+
+* <https://browse.libreboot.org/lbmk.git/commit/?id=e86af9a60a6165188ec069ea519eeadb1e2ad3cc>
+* <https://browse.libreboot.org/lbmk.git/commit/?id=8dda0d8654eab05eb2d2a70328ccf95cb322a52b>
+
+The second patch changes where Libreboot's build system downloads acpica from,
+because the main mirror that it downloads from was offline during the build,
+so the relevant acpica tarball was mirrored to Libreboot rsync at last minute.
