@@ -14,7 +14,7 @@ SAFETY WARNING!
 ====================================================================
 
 **IMPORTANT ADVICE: [PLEASE READ THESE INSTRUCTIONS BEFORE INSTALLING/UPDATING
-LIBREBOOT](news/safety.md).**
+LIBREBOOT](../../news/safety.md).**
 
 PRECAUTIONS
 ===========
