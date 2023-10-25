@@ -360,6 +360,19 @@ example of the push pin as a proof of concept:
 
 #### ThinkPad X60/X60S/X60T/T60 with Lenovo BIOS {#flashrom_lenovobios}
 
+**WARNING: Libreboot 20231021 and likely other 2023 releases do not have the
+bootblock copied in release ROMs, so the bucts trick below will actually cause
+a brick. This is fixed in lbmk as of 25 October 2023 onward, but you should
+do this on 20231021 release ROMs before following the instructions below:**
+
+	dd if=libreboot.rom of=bootblock.bin bs=1 \
+	   skip=$(($(stat -c %s libreboot.rom) - 0x10000)) count=64k
+
+And then do this:
+
+	dd if=bootblock.bin of=libreboot.rom bs=1 \
+	   seek=$(($(stat -c %s libreboot.rom) - 0x20000)) count=64k conv=notrunc
+
 **NOTE: This section partially relates to `utils` release archive in
 Libreboot 20160907, which contains static compiled binaries for things like
 bucts and flashrom. It will *still* work on modern distros, and thus is

@@ -1132,3 +1132,38 @@ added:
 The second patch changes where Libreboot's build system downloads acpica from,
 because the main mirror that it downloads from was offline during the build,
 so the relevant acpica tarball was mirrored to Libreboot rsync at last minute.
+
+Post-release errata
+===================
+
+Empty PIKE2008 ROMs not inserted in KCMA-D8 and KGPE-D16 ROMs.
+
+The 64KB bootblock isn't copied on ThinkPad X60 and T60 ROM images. This has
+been fixed with the following patch:
+<https://browse.libreboot.org/lbmk.git/commit/?id=5f6ba01d414e2d98d7db049347b8c5c5d125ba61>
+
+If you're flashing the X60/T60 ROMs from LenovoBIOS (internal flashing), please
+do this on the ROM image first (ROM image named `libreboot.rom` in this example):
+
+	dd if=libreboot.rom of=bootblock.bin bs=1 \
+	   skip=$(($(stat -c %s libreboot.rom) - 0x10000)) count=64k
+
+And then do this:
+
+	dd if=bootblock.bin of=libreboot.rom bs=1 \
+	   seek=$(($(stat -c %s libreboot.rom) - 0x20000)) count=64k conv=notrunc
+
+If you're using SeaBIOS and have a PIKE2008 module installed, on KCMA-D8
+or KGPE-D16, please do this:
+
+	touch empty.rom
+
+	./cbfstool libreboot.rom add -f empty.rom -n pci1000,0072.rom -t raw
+
+	./cbfstool libreboot.rom add -f empty.rom -n pci1000,3050.rom -t raw
+
+Without the empty PIKE2008 ROM, SeaBIOS will hang on those AMD boards.
+
+And without the bootblock copied on X60/T60 ROMs, flashing will result in a brick
+under these conditions: bucts not reset and ROM flashed successfully, and/or
+flashing the ROM from LenovoBIOS to Libreboot.
