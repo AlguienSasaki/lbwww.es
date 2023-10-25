@@ -1145,13 +1145,11 @@ been fixed with the following patch:
 If you're flashing the X60/T60 ROMs from LenovoBIOS (internal flashing), please
 do this on the ROM image first (ROM image named `libreboot.rom` in this example):
 
-	dd if=libreboot.rom of=bootblock.bin bs=1 \
-	   skip=$(($(stat -c %s libreboot.rom) - 0x10000)) count=64k
+	dd if=libreboot.rom of=bootblock.bin bs=1 skip=$(($(stat -c %s libreboot.rom) - 0x10000)) count=64k
 
 And then do this:
 
-	dd if=bootblock.bin of=libreboot.rom bs=1 \
-	   seek=$(($(stat -c %s libreboot.rom) - 0x20000)) count=64k conv=notrunc
+	dd if=bootblock.bin of=libreboot.rom bs=1 seek=$(($(stat -c %s libreboot.rom) - 0x20000)) count=64k conv=notrunc
 
 If you're using SeaBIOS and have a PIKE2008 module installed, on KCMA-D8
 or KGPE-D16, please do this:
