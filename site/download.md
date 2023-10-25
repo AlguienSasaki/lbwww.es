@@ -72,7 +72,6 @@ university, USA)
 * <https://mirror.koddos.net/libreboot/> (koddos.net, Netherlands)
 * <https://mirror-hk.koddos.net/libreboot/> (koddos.net, Hong Kong)
 * <https://mirror.cyberbits.eu/libreboot/> (cyberbits.eu, France)
-* <https://mirror.mangohost.net/libreboot/> (mangohost.net, Moldova)
 
 RSYNC mirrors {#rsync}
 -------------

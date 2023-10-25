@@ -72,7 +72,6 @@ LIBREBOOT](news/safety.md).**
 * <https://mirror.koddos.net/libreboot/> (koddos.net, Нідерланди)
 * <https://mirror-hk.koddos.net/libreboot/> (koddos.net, Гонконг)
 * <https://mirror.cyberbits.eu/libreboot/> (cyberbits.eu, Франція)
-* <https://mirror.mangohost.net/libreboot/> (mangohost.net, Moldova)
 
 Дзеркала RSYNC {#rsync}
 -------------
