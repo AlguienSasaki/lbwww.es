@@ -2,11 +2,26 @@
 % Leah Rowe
 % 10 July 2023
 
+**UPDATE, 27 October 2023: The Censored Libreboot and nonGeNUine Boot websites have merged
+into a new project, called Canoeboot. Canoeboot is a new Libreboot-authored
+spinoff project (official fork).**
+
+**See: [Canoeboot 20231026 release](https://canoeboot.org/news/canoeboot20231026.html) - 
+the original article below showed a desire to work with GNU Boot, but it has
+now been decided that Canoeboot will be an official project of Libreboot,
+providing releases under the old [Binary Blob Elimination
+Policy](https://web.archive.org/web/20221107235850/https://libreboot.org/news/policy.html) (instead of
+Libreboot's current [Binary Blob Reduction Policy](policy.md)).**
+
+**The situation on 27 October 2023 is not much different, in substance. Please
+see: [Canoeboot vs GNU Boot](https://canoeboot.org/gnuboot.html) - Canoeboot
+will now compete with GNU Boot, rather than try to assist it; they didn't accept
+Libreboot's help anyway.**
+
+And now, the original article is as follows:
+
 Warning
 =======
-
-**Update 21 October 2023: This is quite obsolete now, because
-[Libreboot 20231021](libreboot20231021.md) is out.**
 
 **This release is *not* recommended for general use. You should still use the
 recent [Libreboot 20230625](libreboot20230625.md) release, which is the
