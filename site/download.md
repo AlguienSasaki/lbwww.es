@@ -85,7 +85,6 @@ UK)
 * <rsync://ftp.linux.ro/libreboot/> (linux.ro, Romania)
 * <rsync://mirror.koddos.net/libreboot/> (koddos.net, Netherlands)
 * <rsync://mirror-hk.koddos.net/libreboot/> (koddos.net, Hong Kong)
-* <rsync://mirror.mangohost.net/libreboot/> (mangohost.net, Moldova)
 
 Are you running a mirror? Contact the libreboot project, and the link will be
 added to this page!
