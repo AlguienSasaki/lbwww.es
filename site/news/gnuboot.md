@@ -2,31 +2,21 @@
 % Leah Rowe
 % 17 July 2023
 
-**UPDATE 21 October 2023: [Libreboot 20231021](libreboot20231021.md) is out,
-and it's vastly superior to Libreboot 20230625 or nonGeNUine Boot 20230717;
-and GNU Boot 0.1 RC is still not much different than the state GNU Boot was in
-at the time of the article below. GNU Boot 0.1 RC (the latest version of GNU
-Boot as of 21 October 2023) is essentially just Libreboot 20220710 plus patches
-I made for them enabling KGPE-D16 to build correctly on modern Linux distros.**
+**UPDATE, 27 October 2023: The Censored Libreboot and nonGeNUine Boot websites have merged
+into a new project, called Canoeboot. Canoeboot is a new Libreboot-endorsed
+spinoff project (official fork).**
 
-**It's likely that another FSDG-compatible variant of Libreboot will be made,
-again for fun, based on Libreboot 20231021. Watch this space! tl;dr Libreboot
-is vastly superior in the October 2023 revision compared to June 2023, and
-the June 2023 revision is still superior to GNU Boot (still uses newer coreboot
-revisions, has better error handling in the build system, builds more efficiently
-and is generally just better, because it's literally about 8 months ahead in
-development, and supports more hardware such as gru chromebooks with u-boot or
-the Dell Latitude E6400 - which GNU Boot still doesn't support. Libreboot today
-is now lightyears ahead, and the recent October 2023 release has coreboot
-revisions 2 years ahead of the ones used in GNU Boot's default coreboot tree (in Libreboot 20230625 and nonGeNUine Boot 20230717, it's still about 18 months ahead).**
+**See: [Canoeboot 20231026 release](https://canoeboot.org/news/canoeboot20231026.html) - 
+the original article below showed a desire to work with GNU Boot, but it has
+now been decided that Canoeboot will be an official project of Libreboot,
+providing releases under the old [Binary Blob Elimination
+Policy](https://web.archive.org/web/20221107235850/https://libreboot.org/news/policy.html) (instead of
+Libreboot's current [Binary Blob Reduction Policy](policy.md)).**
 
-**Two years. Anyway, the original article is as follows (prior to the above):**
-
-The purpose of the original article below was to promote my own FSDG-compliant
-fork of Libreboot 20230625, which I released as Censored-Libreboot 20230710 and
-then nonGeNUine Boot 20230717, with the intent that *GNU Boot* re-use the work,
-but they never re-used any of it except for my D16 build fixes, and one or two
-minor things.
+**The situation on 27 October 2023 is not much different, in substance. Please
+see: [Canoeboot vs GNU Boot](https://canoeboot.org/gnuboot.html) - Canoeboot
+will now compete with GNU Boot, rather than try to assist it; they didn't accept
+Libreboot's help anyway.**
 
 Original article as it was written, 17 July 2023:
 =================================================

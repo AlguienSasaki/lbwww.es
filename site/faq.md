@@ -351,8 +351,7 @@ Technology* (AMT).
 
 Use of the `me_cleaner` utility is believed to minimize any security risk when
 using these Intel platforms, and coreboot *does* contain fully free code for
-sandybridge/ivybridge platforms. Freedom-wise, these are similar to libreboot
-compatible ThinkPads, and they are quite nice machines.
+sandybridge/ivybridge platforms.
 
 More information about the Management Engine can be found on various Web
 sites, including [me.bios.io](http://me.bios.io/Main_Page),

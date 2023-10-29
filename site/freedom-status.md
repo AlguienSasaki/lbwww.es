@@ -276,6 +276,11 @@ technically required, but highly recommended. To remove, do:
 
 	cbfstool filename.rom remove -n cpu_microcode_blob.bin
 
+On ASUS KFSN4-DRE, KCMA-D8 and KGPE-D16 boards, do this instead:
+
+	cbfstool filename.rom remove -n microcode_amd.bin
+	cbfstool filename.rom remove -n microcode_amd_fam15h.bin
+
 [Releases after Libreboot 20230423 will provide separate ROMs with microcode
 excluded, alongside default ones with microcode included.](news/microcode.md)
 

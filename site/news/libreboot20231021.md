@@ -1136,6 +1136,9 @@ so the relevant acpica tarball was mirrored to Libreboot rsync at last minute.
 Post-release errata
 ===================
 
+Insertion of PIKE2008 ROMs, i945 bootblock copy
+-----------------------------------------------
+
 Empty PIKE2008 ROMs not inserted in KCMA-D8 and KGPE-D16 ROMs.
 
 The 64KB bootblock isn't copied on ThinkPad X60 and T60 ROM images. This has
@@ -1165,3 +1168,53 @@ Without the empty PIKE2008 ROM, SeaBIOS will hang on those AMD boards.
 And without the bootblock copied on X60/T60 ROMs, flashing will result in a brick
 under these conditions: bucts not reset and ROM flashed successfully, and/or
 flashing the ROM from LenovoBIOS to Libreboot.
+
+Fam15h microcode wrongly not detected as inserted
+-------------------------------------------------
+
+On those boards, `target.cfg` files specified `microcode_required="n"`, and
+the logic in the release script renames ROM images according to this rule:
+
+* If `cpu_microcode_blob.bin` exists in CBFS, copy the ROM to provide one
+  with this file removed.
+* If the file doesn't exist in the first place, *move* (rename) the file
+  accordingly under the new name.
+* In either of the above cases, `.rom` is replaced at the end
+  with `_nomicrocode.rom`, in any image that either has the microcode removed,
+  or if it wasn't there to begin with.
+
+On these AMD boards (fam10 and fam15h), namely KCMA-D8, KFSN4-DRE and KGPE-D16,
+the microcode is inserted into CBFS as two files,
+namely `microcode_amd.bin` and `microcode_amd_fam15h.bin` - and the bug is
+precisely that lbmk detected (based on only checking `cpu_microcode_blob.bin`)
+no microcode, and thus *moved* (renamed) to names ending
+in `_nomicrocode.rom`.
+
+In other words, the Libreboot 20231021 ROM images for those boards *all*
+contain microcode updates in them, but they all have `nomicrocode` in the ROM
+file names. This was previously assumed to actually be the case, until an audit
+revealed otherwise (as of 28 October 2023).
+
+This isn't really a problem, it's not a "bug" per se, just a naming error.
+The fix has been implemented with *this* patch:
+<https://browse.libreboot.org/lbmk.git/commit/?id=83bf23766040d5e1642b8c80d975953c1c34f876>
+
+To put it simply: this will not be fixed. Instead, the above patch
+unsets `microcode_required`, so it defaults to `y`. Therefore, the ROM images
+in next release will contain microcode (as they all do, now) and they will
+not contain `nomicrocode` in the ROM image file names.
+
+On ASUS KFSN4-DRE, KCMA-D8 and KGPE-D16 boards, do this to remove microcode:
+
+	cbfstool filename.rom remove -n microcode_amd.bin
+	cbfstool filename.rom remove -n microcode_amd_fam15h.bin
+
+We recommend *keeping* microcode updates, for reasons written in the [Binary
+Blob Reduction Policy](policy.md).
+
+There is also the recent launch of the [Canoeboot project](https://canoeboot.org/),
+an official sister project of Libreboot, maintained by Leah Rowe who also leads
+the Libreboot project; Canoeboot release images do not ever contain microcode
+updates in them. This is precisely why it will not be fixed in lbmk to fix
+the naming issue. The behaviour is simply disabled instead, becasue there's no
+point adding further complexity to the build system.

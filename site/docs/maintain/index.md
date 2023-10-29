@@ -1000,7 +1000,7 @@ Updated each time lbmk runs, based on either `git describe` or, on release
 archives, this file is static and never changes. It says the *time* of
 whichever Libreboot revision is currently in use (time of commit).
 
-At least, you will now learn about the *scripts* (exclusively written as
+At last, you will now learn about the *scripts* (exclusively written as
 posix shell scripts) that constitute the entire Libreboot build system, lbmk:
 
 Scripts in root directory of lbmk
