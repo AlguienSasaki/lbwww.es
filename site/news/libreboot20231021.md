@@ -1136,6 +1136,18 @@ so the relevant acpica tarball was mirrored to Libreboot rsync at last minute.
 Post-release errata
 ===================
 
+S3 suspend/resume
+------------------
+
+Broken on tested boards: i945, gm45, sandybridge and ivybridge (probably
+haswell too, but untested as I write this).
+
+The fix is being investigated, and when available, a new bugfix release will
+be issued, along with several other fixes made in lbmk since this release.
+
+If you're using Libreboot 20231021, you should not try to put your machine
+to sleep. You should only turn it on or power it off (power cycle / coldboot).
+
 Insertion of PIKE2008 ROMs, i945 bootblock copy
 -----------------------------------------------
 
