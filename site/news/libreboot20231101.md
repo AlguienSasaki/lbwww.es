@@ -100,7 +100,7 @@ These changes were made:
   disabling TSEG Stage Cache in coreboot configs.
 * Revert a heapsize patch in coreboot that broke S3 suspend/resume in some
   boards - though we still needed to make another tweak. See above.
-* Dell Latitude E6400 and E6400: fixed keyboard initialisation in GRUB. GRUB
+* Dell Latitude E6400 and E6430: fixed keyboard initialisation in GRUB. GRUB
   was using scancode set 2 without translation. The EC on these Dell laptops
   allows to set the scancodes and reports back what you set, but only ever
   actually uses scancode set 1 (XT) - so, the fix makes GRUB always use set 2
