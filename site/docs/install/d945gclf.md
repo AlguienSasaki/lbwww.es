@@ -2,10 +2,6 @@
 title: Intel D945GCLF flashing tutorial 
 ...
 
-NOTE: On newer Libreboot revisions, boot issues were reported so this board
-was temporarily removed. It will be re-added at a later date, after testing
-has been done.
-
 This guide is for those who want libreboot on their Intel D945GCLF
 motherboard while they still have the original BIOS present.
 
