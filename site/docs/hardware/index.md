@@ -31,6 +31,7 @@ libreboot currently supports the following systems in this release:
     (**easy to flash without disassembly**)
 -   [HP Elite 8300 USDT](hp8300usdt.md) (**easy to flash without disassembly**)
 -   [Intel D510MO and D410PT motherboards](d510mo.md)
+-   [Intel D945GCLF](d945gclf.md)
 
 ### Laptops (Intel, x86)
 
@@ -83,7 +84,6 @@ re-adding them at a later date. They were removed due to issues. List:
 -   [Hisense Chromebook C11 and more (veyron-jerry)](../install/chromebooks.md)
 -   [HP Chromebook 11 G1 (daisy-spring)](../install/chromebooks.md)
 -   [HP Chromebook 14 G3 (nyan-blaze)](../install/chromebooks.md)
--   [Intel D945GCLF](d945gclf.md) (removed from lbmk, TODO: re-add support)
 -   [Samsung Chromebook 2 11" (peach-pit)](../install/chromebooks.md)
 -   [Samsung Chromebook 2 13" (peach-pi)](../install/chromebooks.md)
 -   [Samsung Chromebook XE303 (daisy-snow)](../install/chromebooks.md)

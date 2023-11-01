@@ -13,8 +13,8 @@ dans le canal [\#libreboot](https://web.libera.chat/#libreboot) sur le serveur I
 
 <img tabindex=1 class="r" src="https://av.libreboot.org/hp9470m/9470m+2560p.jpg" /><span class="f"><img src="https://av.libreboot.org/hp9470m/9470m+2560p.jpg" /></span>
 
-**NOUVELLE VERSION: La dernière version est [Libreboot 20231021](news/libreboot20231021.md), sortie
-le 21 octobre 2023.**
+**NOUVELLE VERSION: La dernière version est [Libreboot 20231101](news/libreboot20231101.md), sortie
+le 1 novembre 2023.**
 
 Pourquoi devriez-vous utiliser *Libreboot*?
 -----------------------------------

@@ -42,6 +42,7 @@ x-toc-enable: true
 -   [HP Elite 8200 SFF/MT](hp8200sff.md)（HP 6200 Pro Business 多半也能用）
 -   [HP Elite 8300 USDT](hp8300usdt.md)
 -   [Intel D510MO 及 D410PT 主板](d510mo.md)
+-   [Intel D945GCLF](d945gclf.md)（移出 lbmk，计划：重新加入支持）
 
 ### 笔记本（Intel，x86）
 
@@ -94,7 +95,6 @@ x-toc-enable: true
 -   [ASUS Chromebit CS10 (veyron-mickey)](../install/chromebooks.md)
 -   [ASUS Chromebook Flip C100PA (veyron-minnie)](../install/chromebooks.md)
 -   [ASUS Chromebook C201PA (veyron-speedy)](../install/c201.md)
--   [Intel D945GCLF](d945gclf.md)（移出 lbmk，计划：重新加入支持）
 
 ### 关于已移除的主板
 
