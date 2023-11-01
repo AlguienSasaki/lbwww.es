@@ -312,6 +312,14 @@ Please also see notes about the built-in MAC address inside the boot flash, for
 the onboard NIC (ethernet one); not relevant on R500, which doesn't use an
 Intel NIC.
 
+TARGET: ThinkPad X201/X201S/X201 Tablet
+--------------------------------
+
+**IMPORTANT ADVICE: [PLEASE READ THESE INSTRUCTIONS BEFORE INSTALLING/UPDATING
+LIBREBOOT](../../news/safety.md). - this also applies to X201**
+
+Refer to [X201 flashing guide](x201.md)
+
 #### Intel D510MO and D410PT running original Intel BIOS
 
 [You must flash it externally](spi.md)

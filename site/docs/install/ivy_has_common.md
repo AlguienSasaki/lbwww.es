@@ -6,6 +6,12 @@ x-toc-enable: true
 **NOTE: This page also applies to PM45 machine Dell Latitude E6400 if it
 contains an Nvidia GPU (Libreboot vendor scripts can insert the VGA ROM)**
 
+**NOTE: This page also applies to ThinkPad X201. You must ensure that
+the file `vendorfiles/cache/x201_factory.rom` exists within the Libreboot build
+system; this is your factory ROM (LenovoBIOS) that you can dump
+with flashrom -r - make sure to get two dumps, and ensure that each has the
+same hash, to guarantee a good dump.**
+
 This is not a general purpose installation guide, but you *should read it*
 before installing Libreboot! *This* guide *must* be followed, no matter what
 method you use to install Libreboot; even if you compile from source, you should

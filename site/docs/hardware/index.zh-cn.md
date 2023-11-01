@@ -66,6 +66,7 @@ x-toc-enable: true
 -   [Lenovo ThinkPad W500](t500.md)
 -   [Lenovo ThinkPad W541](../install/ivy_has_common.md)（暂无安装文档）
 -   [Lenovo ThinkPad X200 / X200S / X200 Tablet](x200.md)
+-   [Lenovo ThinkPad X201 / X201S / X201 Tablet](x201.md)
 -   [Lenovo Thinkpad X220](../install/ivy_has_common.md)
 -   [Lenovo Thinkpad X220t](../install/ivy_has_common.md)
 -   Lenovo ThinkPad X230
