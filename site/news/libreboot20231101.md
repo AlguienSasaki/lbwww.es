@@ -119,7 +119,7 @@ These changes were made:
 FULL list of changes (git log)
 ------------------------------
 
-The log is as follows, relative to Libreboot 20230625:
+The log is as follows, relative to Libreboot 20231021:
 
 ```
 * 82bd87fa build/roms: re-add SeaGRUB build support 
