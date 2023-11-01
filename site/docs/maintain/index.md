@@ -536,6 +536,7 @@ as:
 * `payload_memtest="y"` (example entry)
 * `payload_uboot="y"` (example entry)
 * `payload_seabios_withgrub="y"` (example entry)
+* `payload_seabios_grubonly="y"` (example entry)
 * `grub_scan_disk="ata"`
 * `uboot_config=default` (specify which U-Boot tree to use)
 * `vendorfiles="n"`
@@ -570,6 +571,11 @@ The `payload_seabios` entry specifies whether or not SeaBIOS is to be included
 in ROM images. This option is *automatically* enabled
 if `payload_grub_withseabios` and/or `payload_seabios_withgrub` are also turned
 on.
+
+The `payload_seabios_grubonly` option, if enabled, creates separate ROM
+images alongside regular `seabios_withgrub` ones, where the `grubonly` ones
+start SeaBIOS but disable the menu and only ever load GRUB from CBFS, which
+then provides the boot for your machine.
 
 The `payload_memtest` entry specifies whether or not MemTest86+ is to be
 included in ROM images; it will only be included in ROM images for *text mode*
