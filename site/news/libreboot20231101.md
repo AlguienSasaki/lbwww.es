@@ -44,7 +44,7 @@ Work done since last release
 ThinkPad X201 support added
 -----------------------------
 
-The *primary* focus of this release has fixing bugs in the last release, and new
+The *primary* focus of this release was fixing bugs in the last release, and new
 build system features.
 
 However, [ThinkPad X201](../docs/hardware/x201.md) support was added.
