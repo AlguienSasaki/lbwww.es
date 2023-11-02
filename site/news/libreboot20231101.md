@@ -195,6 +195,7 @@ Desktops (AMD, Intel, x86)
 -   [Dell Latitude E6430 (Intel GPU](../docs/hardware/e6430.md) **(easy to flash, no disassembly)**
 -   ThinkPad X60 / X60S / X60 Tablet
 -   ThinkPad T60 (with Intel GPU)
+-   [Lenovo Thinkpad X201 / X201S / X201 Tablet](../docs/hardware/x201.md)
 -   [Lenovo ThinkPad X200 / X200S / X200 Tablet](../docs/hardware/x200.md)
 -   Lenovo ThinkPad X301
 -   [Lenovo ThinkPad R400](../docs/hardware/r400.md)
