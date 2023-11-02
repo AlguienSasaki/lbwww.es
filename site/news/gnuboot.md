@@ -200,10 +200,10 @@ this, specifically to help them get up to date. They currently use Libreboot
 from about 8 months ago (late 2022), and that revision used *coreboot* releases
 from ~mid 2021.
 
-Modern Libreboot uses coreboot from early 2023, and contains many bug fixes
-in its build system, owing to an extensive [build system
-audit](audit.html); GNU Boot still contains all of
-the bugs that existed, prior to the audit. Bugs such as: errors literally not
+Libreboot regularly updates to newer coreboot revisions, containing many fixes
+in its build system, and engages in active [build system
+audit](audit.html); GNU Boot is poorly audited. GNU Boot as of now has bugs
+such as: errors literally not
 being handled, in many critical areas of the build system, due to improper use
 of subshells within shell scripts (Libreboot's build system is implemented with
 shell scripts), improper handling of git credentials in the coreboot build
