@@ -41,7 +41,7 @@ firmware, but not Libreboot! Booting Linux/BSD is also [well](../docs/linux/)
 Work done since last release
 ============================
 
-ThinkPad X201 supported added
+ThinkPad X201 support added
 -----------------------------
 
 The *primary* focus of this release has fixing bugs in the last release, and new
