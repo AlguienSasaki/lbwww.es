@@ -6,7 +6,7 @@
 LIBREBOOT](safety.md).**
 
 A corresponding [Canoeboot 20231101
-release](https://canoeboot.org/canoeboot20231101.html) is also available.
+release](https://canoeboot.org/news/canoeboot20231101.html) is also available.
 Simultaneous same-day release!
 
 Introduction
