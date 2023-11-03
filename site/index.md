@@ -27,6 +27,29 @@ matters.
 [Right to repair](https://yewtu.be/watch?v=Npd_xDuNi9k) matters. All of this
 is *why* Libreboot exists.
 
+Overview of Libreboot design
+============================
+
+Libreboot provides [coreboot](https://coreboot.org/) for [machine
+initialisation](https://doc.coreboot.org/getting_started/architecture.html),
+which then jumps to a [payload](https://doc.coreboot.org/payloads.html) in
+the boot flash; coreboot works with many programs, but Libreboot specifically
+provides SeaBIOS, GNU GRUB and U-Boot as options. Memtest86+ is also provided
+in flash, on some mainboards. The payload is the program in flash that provides
+the early user interface, for booting an operating system. This *payload*
+infrastructure means you can run whatever you want (even Linux!) from the
+boot flash.
+
+Libreboot is specifically a *coreboot distribution*, in the same way that
+Debian is a *Linux distribution*. Libreboot makes coreboot easy to use by
+non-technical users, by providing a [fully automated build
+system](docs/maintain/), [automated build process](docs/build/) and
+[user-friendly installation instructions](docs/install/), in addition to
+regular binary releases that provide pre-compiled ROM images for installation
+on supported hardware. Without automation such as that provided by Libreboot,
+coreboot would be inaccessible for most users; you can also
+still [reconfigure](docs/maintain/) Libreboot however you wish.
+
 Why use Libreboot?
 ==================
 
@@ -61,31 +84,6 @@ about *their* security, not yours. In the Libreboot project, it is reversed; we
 see Intel Boot Guard and similar such technoogies as an attack on your freedom
 over your own property (your computer), and so, we make it our mission to help
 you [wrest](https://trmm.net/TOCTOU/) back such control.
-
-Overview of Libreboot design
-============================
-
-Libreboot provides [coreboot](https://coreboot.org/) for [machine
-initialisation](https://doc.coreboot.org/getting_started/architecture.html),
-which then jumps to a [payload](https://doc.coreboot.org/payloads.html) in
-the boot flash; coreboot works with many programs, but Libreboot specifically
-provides SeaBIOS, GNU GRUB and U-Boot as options. Memtest86+ is also provided
-in flash, on some mainboards. The payload is the program in flash that provides
-the early user interface, for booting an operating system.
-
-This *payload* architecture in coreboot is what specifically sets coreboot
-apart, from all other boot firmware. With coreboot-based firmware such as
-Libreboot, you can run whatever you want (even a Linux kernel!) from the main
-boot flash. Libreboot's focus is to prove sane configurations that work for
-the average user, but you have a lot of flexibility in this regard.
-
-Libreboot is specifically a *coreboot distribution*, in the same way that
-Debian is a *Linux distribution*. Libreboot makes coreboot easy to use by
-non-technical users, by providing a [fully automated build
-system](docs/maintain/), [automated build process](docs/build/) and
-[user-friendly installation instructions](docs/install/), in addition to
-regular binary releases that provide pre-compiled ROM images for installation
-on supported hardware.
 
 Libreboot is not a fork of coreboot
 ===================================
