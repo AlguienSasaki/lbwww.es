@@ -93,7 +93,7 @@ see Intel talk about their *Boot Guard* (which prevents coreboot by only letting
 firmware signed by them be executed) or other vendors imposing similar
 restrictions, and you hear them talk about "security", they are only talking
 about *their* security, not yours. In the Libreboot project, it is reversed; we
-see Intel Boot Guard and similar such technoogies as an attack on your freedom
+see Intel Boot Guard and similar such technologies as an attack on your freedom
 over your own property (your computer), and so, we make it our mission to help
 you [wrest](https://trmm.net/TOCTOU/) back such control.
 
