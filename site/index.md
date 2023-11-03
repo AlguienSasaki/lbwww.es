@@ -58,7 +58,7 @@ Libreboot makes it easier to either get started or otherwise maintain coreboot
 on your machine, via build automation. It provides regular tested releases,
 pre-assembled, often with certain patches on top of coreboot (and other code)
 to ensure stability. By comparison, coreboot uses a rolling-release model, with
-snapshot of the codebase every few months; it is very much developer-oriented,
+a snapshot of the codebase every few months; it is very much developer-oriented,
 whereas Libreboot is specifically crafted for end users.
 
 Libreboot gives you [freedoms](https://writefreesoftware.org/) that
