@@ -64,7 +64,8 @@ pre-assembled, often with certain patches on top of coreboot (and other code)
 to ensure stability. By comparison, coreboot uses a rolling-release model, with
 a snapshot of the codebase every few months; it is very much developer-oriented,
 whereas Libreboot is specifically crafted for end users. In other words, the
-purpose of Libreboot is to *Just Work*.
+purpose of Libreboot is to *Just Work*. Direct configuration and installation
+of coreboot is also possible, but Libreboot makes it *much* easier.
 
 Libreboot gives you [freedoms](https://writefreesoftware.org/) that
 you otherwise can't get with most other boot firmware, plus faster boot speeds
