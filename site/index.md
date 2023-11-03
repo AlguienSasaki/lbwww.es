@@ -30,6 +30,8 @@ is *why* Libreboot exists.
 Overview of Libreboot design
 ============================
 
+<img tabindex=1 class="l" style="max-width:25%;" src="https://av.libreboot.org/thinkpadcollection/thinkpadcollection1-min.jpg" /><span class="f"><img src="https://av.libreboot.org/thinkpadcollection/thinkpadcollection1-min.jpg" /></span>
+
 Libreboot provides [coreboot](https://coreboot.org/) for [machine
 initialisation](https://doc.coreboot.org/getting_started/architecture.html),
 which then jumps to a [payload](https://doc.coreboot.org/payloads.html) in
@@ -52,6 +54,8 @@ still [reconfigure](docs/maintain/) Libreboot however you wish.
 
 Why use Libreboot?
 ==================
+
+<img tabindex=1 class="r" style="max-width:25%;" src="https://av.libreboot.org/hp2170p/hp2170p.jpg" /><span class="f"><img src="https://av.libreboot.org/hp2170p/hp2170p.jpg" /></span>
 
 If you're already inclined towards free software, maybe already a coreboot user,
 Libreboot makes it easier to either get started or otherwise maintain coreboot
@@ -96,7 +100,7 @@ you [wrest](https://trmm.net/TOCTOU/) back such control.
 Libreboot is not a fork of coreboot
 ===================================
 
-<img tabindex=1 class="l" style="max-width:25%;" src="https://av.libreboot.org/thinkpadcollection/thinkpadcollection1-min.jpg" /><span class="f"><img src="https://av.libreboot.org/thinkpadcollection/thinkpadcollection1-min.jpg" /></span>
+<img tabindex=1 class="r" style="max-width:25%;" src="https://av.libreboot.org/t1650/t1650_grub.jpg" /><span class="f"><img src="https://av.libreboot.org/t1650/t1650_grub.jpg" /></span>
 
 In fact, Libreboot tries to stay as close to *stock* coreboot as possible,
 for each board, but with many different types of configuration provided
