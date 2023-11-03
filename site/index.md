@@ -19,39 +19,76 @@ on [Libera](https://libera.chat/) IRC.
 1 November 2023.
 See: [Libreboot 20231101 release announcement](news/libreboot20231101.md).**
 
-Why should you use *Libreboot*?
-----------------------------
-
-Libreboot gives you [freedoms](https://writefreesoftware.org/) that
-you otherwise can't get with most other boot firmware, plus faster boot speeds
-and [better security](docs/linux/grub_hardening.md). It's extremely powerful
-and [configurable](docs/maintain/) for many use cases.
-
 *We* believe the freedom to [study, share, modify and use
 software](https://writefreesoftware.org/), without any
 restriction, is one of the fundamental human rights that everyone must have.
 In this context, *software freedom* matters. Your freedom matters. Education
 matters.
-[Right to repair](https://yewtu.be/watch?v=Npd_xDuNi9k) matters.
-Many people use proprietary (non-libre)
-boot firmware, even if they use [a libre OS](https://www.openbsd.org/).
+[Right to repair](https://yewtu.be/watch?v=Npd_xDuNi9k) matters. All of this
+is *why* Libreboot exists.
+
+Why use Libreboot?
+==================
+
+Libreboot gives you [freedoms](https://writefreesoftware.org/) that
+you otherwise can't get with most other boot firmware, plus faster boot speeds
+and [better security](docs/linux/grub_hardening.md). It's extremely powerful
+and [configurable](docs/maintain/) for many use cases. If you're unhappy with
+the restrictions (not to mention, security issues) imposed on you by proprietary
+BIOS vendors, then Libreboot is one possible choice for you. Since it inherits
+coreboot, it doesn't have any known backdoors in the code, nor does it contain
+legacy cruft from the 1980s. Libreboot provides a sleek, fast boot experience
+for Linux/BSD systems, based on coreboot which is regularly audited and improved.
+
+Libreboot is more reliable that proprietary firmware. Many people use proprietary
+(non-libre) boot firmware, even if they use [a libre OS](https://www.openbsd.org/).
 Proprietary firmware often [contains](faq.html#intel) [backdoors](faq.html#amd),
 and can be buggy. The Libreboot project was founded in December 2013, with the
 express purpose of making coreboot firmware accessible for non-technical users.
 
-The Libreboot project uses [coreboot](https://www.coreboot.org/) for [hardware
-initialisation](https://doc.coreboot.org/getting_started/architecture.html).
-Coreboot is notoriously difficult to install for most non-technical users; it
-handles only basic initialization and jumps to a separate
-[payload](https://doc.coreboot.org/payloads.html) program (e.g.
-[GRUB](https://www.gnu.org/software/grub/),
-[Tianocore](https://www.tianocore.org/)), which must also be configured.
-*Libreboot solves this problem*; it is a *coreboot distribution* with
-an [automated build system](docs/build/) that builds complete *ROM images*, for
-more robust installation. Documentation is provided.
+Libreboot is a community-oriented project, with a focus on helping users escape
+proprietary boot firmware; we ourselves want to live in a world where all software
+is [free](https://writefreesoftware.org/), and so, Libreboot is an effort to
+help get closer to that world. Unlike the big vendors, we don't try to stifle
+you in any way, nor do we see you as a security threat; we regard the ability
+to use, study, modify and redistribute software freely to be a human right that
+everyone must have. Extended to computers, these are products that you purchased,
+and so you should have the freedom to change them in any way you like. When you
+see Intel talk about their *Boot Guard* (which prevents coreboot by only letting
+firmware signed by them be executed) or other vendors imposing similar
+restrictions, and you hear them talk about "security", they are only talking
+about *their* security, not yours. In the Libreboot project, it is reversed; we
+see Intel Boot Guard and similar such technoogies as an attack on your freedom
+over your own property (your computer), and so, we make it our mission to help
+you [wrest](https://trmm.net/TOCTOU/) back such control.
+
+Overview of Libreboot design
+============================
+
+Libreboot provides [coreboot](https://coreboot.org/) for [machine
+initialisation](https://doc.coreboot.org/getting_started/architecture.html),
+which then jumps to a [payload](https://doc.coreboot.org/payloads.html) in
+the boot flash; coreboot works with many programs, but Libreboot specifically
+provides SeaBIOS, GNU GRUB and U-Boot as options. Memtest86+ is also provided
+in flash, on some mainboards. The payload is the program in flash that provides
+the early user interface, for booting an operating system.
+
+This *payload* architecture in coreboot is what specifically sets coreboot
+apart, from all other boot firmware. With coreboot-based firmware such as
+Libreboot, you can run whatever you want (even a Linux kernel!) from the main
+boot flash. Libreboot's focus is to prove sane configurations that work for
+the average user, but you have a lot of flexibility in this regard.
+
+Libreboot is specifically a *coreboot distribution*, in the same way that
+Debian is a *Linux distribution*. Libreboot makes coreboot easy to use by
+non-technical users, by providing a [fully automated build
+system](docs/maintain/), [automated build process](docs/build/) and
+[user-friendly installation instructions](docs/install/), in addition to
+regular binary releases that provide pre-compiled ROM images for installation
+on supported hardware.
 
 Libreboot is not a fork of coreboot
------------------------------------
+===================================
 
 <img tabindex=1 class="l" style="max-width:25%;" src="https://av.libreboot.org/thinkpadcollection/thinkpadcollection1-min.jpg" /><span class="f"><img src="https://av.libreboot.org/thinkpadcollection/thinkpadcollection1-min.jpg" /></span>
 
