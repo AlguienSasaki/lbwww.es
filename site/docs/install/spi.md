@@ -67,6 +67,10 @@ You can download the serprog firmware here:\
 or here:\
 <https://notabug.org/libreboot/pico-serprog>
 
+You can also find the source code for these, under `src/` in Libreboot release
+archives (source code tarball), and/or under `src/` in `lbmk.git` if downloading
+using the build instructions below.
+
 Copy the file `rpi-pico-serprog.uf2` into your Pico. To build this firmware, you
 could build it yourself or you could also clone `lbmk.git` and [install build
 dependencies](..//build/#first-install-build-dependencies), then inside lbmk,
