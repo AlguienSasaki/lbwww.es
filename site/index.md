@@ -40,7 +40,7 @@ coreboot, it doesn't have any known backdoors in the code, nor does it contain
 legacy cruft from the 1980s. Libreboot provides a sleek, fast boot experience
 for Linux/BSD systems, based on coreboot which is regularly audited and improved.
 
-Libreboot is more reliable that proprietary firmware. Many people use proprietary
+Libreboot is more reliable than proprietary firmware. Many people use proprietary
 (non-libre) boot firmware, even if they use [a libre OS](https://www.openbsd.org/).
 Proprietary firmware often [contains](faq.html#intel) [backdoors](faq.html#amd),
 and can be buggy. The Libreboot project was founded in December 2013, with the
