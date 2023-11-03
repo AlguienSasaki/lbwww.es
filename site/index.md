@@ -53,6 +53,14 @@ still [reconfigure](docs/maintain/) Libreboot however you wish.
 Why use Libreboot?
 ==================
 
+If you're already inclined towards free software, maybe already a coreboot user,
+Libreboot makes it easier to either get started or otherwise maintain coreboot
+on your machine, via build automation. It provides regular tested releases,
+pre-assembled, often with certain patches on top of coreboot (and other code)
+to ensure stability. By comparison, coreboot uses a rolling-release model, with
+snapshot of the codebase every few months; it is very much developer-oriented,
+whereas Libreboot is specifically crafted for end users.
+
 Libreboot gives you [freedoms](https://writefreesoftware.org/) that
 you otherwise can't get with most other boot firmware, plus faster boot speeds
 and [better security](docs/linux/grub_hardening.md). It's extremely powerful
