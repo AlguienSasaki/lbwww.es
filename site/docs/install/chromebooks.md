@@ -88,7 +88,7 @@ Chromebooks may have 1.8V as the supply voltage for the SPI NOR chip, be
 extra careful about that.
 
 On newer Chromebooks, there is a root-of-trust chip providing a
-[Closed Case Debugging](https://chromium.googlesource.com/chromiumos/platform/ec/+/cr50_stab/docs/case_closed_debugging_cr50.md)
+[Closed Case Debugging](https://chromium.googlesource.com/chromiumos/platform/ec/+/cr50_stab/docs/case_closed_debugging_gsc.md)
 mechanism that lets you flash externally using a special USB debugging
 cable. However, most boards that Libreboot supports do not have this.
 
@@ -109,7 +109,7 @@ by the fact that it bridges electrical contacts, but finding and
 removing it might require you to disassemble most of the board.
 
 Newer boards have a root-of-trust chip enforcing write-protection. The
-[Closed Case Debugging](https://chromium.googlesource.com/chromiumos/platform/ec/+/cr50_stab/docs/case_closed_debugging_cr50.md)
+[Closed Case Debugging](https://chromium.googlesource.com/chromiumos/platform/ec/+/cr50_stab/docs/case_closed_debugging_gsc.md)
 mechanism should be used to disable hardware write-protection. Opening
 the case and disconnecting the battery might also disable it.
 
@@ -151,7 +151,7 @@ first (like Intel ME firmware). This is not yet documented here.
 
 You can flash the ROM image both internally and externally. For the
 latter, see the [external flashing guide](spi.md) and the ChromiumOS
-[Closed Case Debugging](https://chromium.googlesource.com/chromiumos/platform/ec/+/cr50_stab/docs/case_closed_debugging_cr50.md)
+[Closed Case Debugging](https://chromium.googlesource.com/chromiumos/platform/ec/+/cr50_stab/docs/case_closed_debugging_gsc.md)
 documentation if your board supports it.
 
 To flash the entire ROM image internally, run within ChromeOS:
