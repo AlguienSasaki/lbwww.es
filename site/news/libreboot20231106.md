@@ -219,12 +219,27 @@ another one if your favourite one doesn't have it.
 Post-release errata
 ===================
 
+S3 on GM45/i945
+---------------
+
 GM45 ThinkPads still have buggy S3 behaviour, ditto i945. x4x and Pineview
 untested, other Intel platforms work; AMD untested but should work.
 
 If you're using a GM45 ThinkPad (e.g. X200, T400), don't try putting your
 laptop to sleep. S3 suspend/resume is broken. The intention is that this will
 be fixed before the next stable release.
+
+E6430 VBT config
+----------------
+
+See: <https://browse.libreboot.org/lbmk.git/commit/?id=a02c7e316370409e985fa634fec5a59326e3b4fd>
+
+This patch, linked, enables the VBT setup on Dell Latitude E6430, but this
+patch was not merged before the Libreboot 20231106 release. VBT wasn't actually
+enabled, on the release, so images for E6430 have been removed from the release
+archives; E6430 ROM images will instead be provided in the next release. For
+now, you can build Libreboot from `lbmk.git`. See:
+[Building Libreboot from source](../docs/build/)
 
 ------------------
 
