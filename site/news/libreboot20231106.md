@@ -105,7 +105,7 @@ These changes were made:
   to use defconfigs, not full configs, but that has other drawbacks)
 * Dell Latitude E6430: Enable ME Soft Temporary Disable. This is a disable mode
   that works even if the ME region is unmodified, but we also use `me_cleaner`
-  to neutered the Intel ME.
+  to neuter the Intel ME.
 * Untitled static site generator *documentation* also included in the release.
 * Untitled static site generator now included in releases, alongside the
   included Libreboot documentation (website files, and images).
@@ -228,6 +228,6 @@ be fixed before the next stable release.
 
 ------------------
 
-A corresponding [Canoeboot 20231101
-release](https://canoeboot.org/news/canoeboot20231101.html) is also available.
+A corresponding Canoeboot release will be available soon, and linked here when
+ready.
 
