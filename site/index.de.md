@@ -4,7 +4,7 @@ x-toc-enable: true
 ...
 
 Das *Libreboot* Projekt bietet
-eine [freie](freedom-status.md) *Boot
+eine [freie](https://writefreesoftware.org/) *Boot
 Firmware* welche auf [bestimmten Intel/AMD x86 und ARM Geräten](docs/hardware/)
 die Hardware initialisiert (z.b. Speicher-Controller, CPU, Peripherie),
 und dann einen Bootloader für dein Betriebssystem startet. [Linux](docs/linux/)

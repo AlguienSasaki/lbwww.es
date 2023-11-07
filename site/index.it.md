@@ -3,7 +3,7 @@ title: Progetto Libreboot
 x-toc-enable: true
 ...
 
-Il progetto *Libreboot* fornisce avvio [libero e open source](freedom-status.md)
+Il progetto *Libreboot* fornisce avvio [libero e open source](https://writefreesoftware.org/)
 grazie al firmware basato su coreboot, sostituendo cosi', firmware BIOS/UEFI proprietario
 su [alcune schede madri basate su Intel/AMD x86 o ARM](docs/hardware/),
 in computer fissi e portatili. Inizializza l'hardware (controller di

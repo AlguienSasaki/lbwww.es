@@ -3,7 +3,7 @@ title: Libreboot 项目
 x-toc-enable: true
 ...
 
-*Libreboot* 项目基于 coreboot 提供了[自由且开源](freedom-status.md)的引导固件，替代了特定基于 Intel/AMD x86 及 ARM 的主板（包括笔记本和桌面计算机）上的专有 BIOS/UEFI 固件。它首先对硬件（如内存控制器、CPU、外设）进行初始化，然后为操作系统启动 bootloader。本项目对 [Linux](docs/linux/) 和 [BSD](docs/bsd/) 支持良好。寻求帮助，可以前往 [Libera](https://libera.chat/) IRC 上的 [\#libreboot](https://web.libera.chat/#libreboot) 频道。
+*Libreboot* 项目基于 coreboot 提供了[自由且开源](https://writefreesoftware.org/zh-cn/)的引导固件，替代了特定基于 Intel/AMD x86 及 ARM 的主板（包括笔记本和桌面计算机）上的专有 BIOS/UEFI 固件。它首先对硬件（如内存控制器、CPU、外设）进行初始化，然后为操作系统启动 bootloader。本项目对 [Linux](docs/linux/) 和 [BSD](docs/bsd/) 支持良好。寻求帮助，可以前往 [Libera](https://libera.chat/) IRC 上的 [\#libreboot](https://web.libera.chat/#libreboot) 频道。
 
 <img tabindex=1 class="r" src="https://av.libreboot.org/hp9470m/9470m+2560p.jpg" /><span class="f"><img src="https://av.libreboot.org/hp9470m/9470m+2560p.jpg" /></span>
 

@@ -3,7 +3,7 @@ title: Projet Libreboot
 x-toc-enable: true
 ...
 
-Libreboot est un micrologiciel de démarrage [libéré](freedom-status.md)
+Libreboot est un micrologiciel de démarrage [libéré](https://writefreesoftware.org/)
 qui initialise le matériel (càd le contrôleur mémoire, CPU,
 périphériques) sur [des ordinateurs x86/ARM spécifiques](docs/hardware/)
 et lance un chargeur d'amorçage pour votre système d'exploitation. [Linux](docs/linux/) et [BSD](docs/bsd/) sont bien supportés. C'est un
