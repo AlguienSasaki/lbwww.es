@@ -243,6 +243,6 @@ now, you can build Libreboot from `lbmk.git`. See:
 
 ------------------
 
-A corresponding Canoeboot release will be available soon, and linked here when
-ready.
+A corresponding [Canoeboot 20231107
+release](https://canoeboot.org/news/canoeboot20231107.html) is available.
 
