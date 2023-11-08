@@ -111,14 +111,11 @@ present time:
 
 * Dell OptiPlex 9010 - similar to the T1650 (same platform, same vendor)
 * HP ProBook 6360b - it has been added today to Libreboot, but it's not yet
-  tested. Patch (WIP):
-  <https://browse.libreboot.org/lbmk.git/commit/?h=hp2170p_wip&id=7badbf224b4ac80f73bb64a39aef518d790848c4>
-  (further testing still needed)
+  tested.
 * HP Revolve 810 G1
 * HP EliteBook Folio 9480m - it has been added already to Libreboot (WIP), but
   currently does not boot (more testing needed - not sure what my problem is
-  yet, but it was added today). WIP patch:
-  <https://browse.libreboot.org/lbmk.git/commit/?h=hp2170p_wip&id=25477d9ed44cea19bca8a875a7e334e8d4fa01b3>
+  yet, but it was added today).
 * HP EliteBook 820 G2 (broadwell generation)
 * HP EliteBook *840* G2 - not supported in coreboot yet, but should be similar
   to 820 G2 and I've ordered one for testing. It's probably an easy port.
