@@ -246,3 +246,20 @@ now, you can build Libreboot from `lbmk.git`. See:
 A corresponding [Canoeboot 20231107
 release](https://canoeboot.org/news/canoeboot20231107.html) is available.
 
+Errata
+======
+
+Many modules were removed from GRUB, to save space in flash, but the ones that
+are actually needed were carefully retained.
+
+However, FAT/NTFS support in GRUB was removed in recent Libreboot releases,
+including Libreboot 20231106.
+
+Apparently, some distros use FAT-based file systems for `/boot`, and this meant
+that a user with such a distro could not boot their kernel on the latest release.
+
+This has been fixed, in the following patch:
+<https://browse.libreboot.org/lbmk.git/commit/?id=39aad57873b9e6265d089ef7dbb4dc5add5c659f>
+
+This was merged *after* the Libreboot 20231106 release, and so it will be
+present in the next Libreboot release after 20231106.
