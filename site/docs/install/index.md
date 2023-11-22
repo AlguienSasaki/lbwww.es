@@ -3,6 +3,13 @@ title: Installation instructions
 x-toc-enable: true
 ...
 
+**WARNING: Upstream flashrom has many stability issues at present, especially
+in revisions after 1.3 tested as of November 2022. If you're using flashrom on
+Libreboot systems, we recommend you stick to flashrom 1.2 for now, the last
+known version that was stable. In particular, many i945 machines e.g. X60, T60
+cannot be flashed at all by current November 2023 revisions, at the time of
+this notice. We will have more context at a future date.**
+
 This section relates to installing libreboot on supported targets.
 
 NOTE: if running `flashrom -p internal` for software based flashing, and you
