@@ -44,7 +44,7 @@ infrastructure means you can run whatever you want (even Linux!) from the
 boot flash.
 
 Libreboot is specifically a *coreboot distribution*, in the same way that
-Debian is a *Linux distribution*. Libreboot makes coreboot easy to use by
+Debian is a *Linux distribution*. Libreboot makes coreboot easy to use for
 non-technical users, by providing a [fully automated build
 system](docs/maintain/), [automated build process](docs/build/) and
 [user-friendly installation instructions](docs/install/), in addition to
