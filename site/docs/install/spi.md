@@ -210,7 +210,7 @@ SOIC16
 | Pin | Function |
 |-----|----------|
 |   2 | VCC      |
-|   3 | HOLD     |
+|   1 | HOLD     |
 |   7 | CS       |
 |   8 | MISO     |
 |   9 | WP       |
