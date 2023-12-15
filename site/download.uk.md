@@ -68,7 +68,7 @@ LIBREBOOT](news/safety.md).**
 * <https://mirrors.mit.edu/libreboot/> (Університет МТІ, США)
 * <https://mirror.math.princeton.edu/pub/libreboot/> (Прінстонський
 університет, США)
-* <https://mirror.shapovalov.tech/libreboot/> (shapovalov.tech, Україна)
+* <https://mirror.shapovalov.website/libreboot/> (shapovalov.website, Україна)
 * <https://mirror.koddos.net/libreboot/> (koddos.net, Нідерланди)
 * <https://mirror-hk.koddos.net/libreboot/> (koddos.net, Гонконг)
 * <https://mirror.cyberbits.eu/libreboot/> (cyberbits.eu, Франція)
@@ -81,7 +81,7 @@ LIBREBOOT](news/safety.md).**
 * <rsync://rsync.mirrorservice.org/libreboot.org/release/> (Кентський університет,
 Великобританія)
 * <rsync://mirror.math.princeton.edu/pub/libreboot/> (Прінстонський університет, США)
-* <rsync://rsync.shapovalov.tech/libreboot/> (shapovalov.tech, Україна)
+* <rsync://rsync.shapovalov.website/libreboot/> (shapovalov.website, Україна)
 * <rsync://ftp.linux.ro/libreboot/> (linux.ro, Румунія)
 * <rsync://mirror.koddos.net/libreboot/> (koddos.net, Нідерланди)
 * <rsync://mirror-hk.koddos.net/libreboot/> (koddos.net, Гонконг)
