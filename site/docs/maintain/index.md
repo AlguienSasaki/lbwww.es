@@ -189,8 +189,9 @@ src/bios\_extract/
 Used by the vendor file handler scripts. The upstream that we use is here:
 <https://review.coreboot.org/bios_extract>
 
-Specifically: the pfs extract utility from this is used on Dell vendor updates,
-to extract SCH5545 EC (Environment Control) firmware.
+The `dell_inspiron_1100_unpacker.py` script is used here, to extract from Dell
+BIOS updates, to get at the VGA ROM for Nvidia GPU on certain models of Dell
+Latitude E6400.
 
 src/biosutilities/
 ---------------
@@ -198,9 +199,8 @@ src/biosutilities/
 Used by the vendor file handler scripts. The upstream that we use is here:
 <https://github.com/platomav/BIOSUtilities>
 
-The `dell_inspiron_1100_unpacker.py` script is used here, to extract from Dell
-BIOS updates, to get at the VGA ROM for Nvidia GPU on certain models of Dell
-Latitude E6400.
+Specifically: the pfs extract utility from this is used on Dell vendor updates,
+to extract SCH5545 EC (Environment Control) firmware.
 
 src/coreboot/
 ---------------
