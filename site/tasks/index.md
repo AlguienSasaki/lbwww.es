@@ -147,3 +147,33 @@ correct UEFI implementation.
 
 (then again, linux on bare metal providing kexec as main bootloader method is
 also quite non-standard, at least on x86 and ARM).
+
+Disable Libgfxinit on DGPU setups
+=================================
+
+On machines where a discrete GPU is used, and no Intel GPU is present, but there
+are other variants where an Intel GPU is present, it is possible to provide a
+ROM image where:
+
+1) Libgfxinit is enabled, for Intel graphics
+2) SeaBIOS payload starts first, and can execute VGA ROMs from graphics cards
+3) If a graphics card works, then that VGA ROM provides initialisation
+
+When a dGPU is used, this can cause problems. For example, VGA-based
+mode setting doesn't work properly on some machines, for some reason. For
+example, on the Nvidia variants of Dell Latitude E6400, no Intel graphics
+exists. For some reason, enabling libgfxinit makes `nomodeset` no longer work,
+and VGA modes in various bootloaders e.g. syslinux/grub no longer work - 
+whereas enabling just the SeaBIOS payload to load a VGA ROM, without loading
+libgfxinit, works reliable.
+
+Look at [lbmk build system documentation](../docs/maintain/) to know the
+difference between libgfxinit/normal configs. Basically, we only enable
+libgfxinit when available but we provide SeaBIOS as the default payload. If
+a graphics card is used, SeaBIOS scans the VGA ROM from it or one can be
+provided in CBFS.
+
+We should keep doing what we're doing, but also provide configurations where
+only the VGA ROM is used, on setups that use a discrete GPU. Libreboot's
+preference is to use the native initialisation, but sometimes the VGA ROM has
+be to be used instead.
