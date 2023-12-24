@@ -74,6 +74,7 @@ $endif$
 <li><a href="/docs/install/">Installazione</a></li>
 <li><a href="/docs/">Documentazione</a></li>
 <li><a href="/news/">Notizie</a></li>
+<li><strong><a href="/tasks/">TODO</a></strong></li>
 <li><a href="https://codeberg.org/libreboot/lbmk/issues">Difetti (bugs)</a></li>
 <li><a href="/git.html">Spedisci correzioni (patches)</a></li>
 <li><strong><a href="https://www.patreon.com/libreleah">Donazioni</a></strong></li>
