@@ -92,6 +92,24 @@ Libreboot can support any board from coreboot, in principle. It would also be
 feasible to integrate other (libre) boot firmware, if desirable. The list below
 is not exhaustive, it just lists boards that are interesting to us at this time:
 
+Autoport
+--------
+
+Autoport is not available for all boards, but is available under the coreboot
+repository. When you run it, the program provides you with instructions for
+how to run it and how to handle the results, what to check
+for manually for tweaking later, while providing general advice to the budding
+coreboot developer.
+
+Well, it's not available for some newer Intel platforms. There are patches
+on coreboot gerrit, that enable it for these platforms. Namely:
+
+* Haswell-lynxpoint: <https://review.coreboot.org/c/coreboot/+/30890>
+* Broadwell: <https://review.coreboot.org/c/coreboot/+/46832>
+
+These patches for the newer platforms are not yet merged in coreboot main. You
+can just cherry-pick these as desired.
+
 Boards
 ------
 
@@ -859,3 +877,158 @@ mentality; their package manager is highly advanced, but written with a very
 minimalist and efficient design. Libreboot's handling of packages and
 dependencies could be re-modelled
 using [apk-tools](https://git.alpinelinux.org/apk-tools/) as inspiration.
+
+Detect module changes
+=====================
+
+When a given package is already downloaded and built in some way, lbmk
+currently works on the assumption that it doesn't change. During development,
+it is necessary to manually delete certain build artifacts, and know what to
+delete.
+
+For example, you have to delete `src/grub` after updating the GRUb revision in
+lbmk. Lbmk does not, for example, detect when you updated the revision and
+automatically adjust to the new revision+patches by: 1) undoing all patches
+and 2) running git pull 3) resetting again to the new revision and applying
+new patches and 4) cleaning the previous builds
+
+In practise, revisions don't change very often in Libreboot, and they're
+normally updated all at once, when they are updated.
+
+Normal/fallback scheme
+======================
+
+Libreboot currently does not handle the normal/fallback payload scheme at all.
+Instead, it is assumed that the user will always be booting from the fallback
+payload, with no normal payload provided. One single payload. This assumption
+is hardcoded into certain logic, in the build system.
+
+Coreboot supports configuring which scheme to use, at boot time, but we don't
+use it. Coreboot's default is to always load the fallback, so we use that.
+
+Delete of /tmp files
+====================
+
+Libreboot resets `TMPDIR` to a subdirectory inside `/tmp`, so that further
+calls to `mktemp` will create all further files and directories under a single
+subdirectory, which can then be deleted all at once, when Libreboot's build
+system exits. This is exported to child processes of lbmk, so that it's
+universal at all times, on each run of lbmk.
+
+It's designed this way, specifically to avoid leaving temporary files on the
+file system, after lbmk exits. If lbmk is interrupted, they will remain, but
+that's the same as with any other program.
+
+They are only deleted once lbmk exits, so if there are a lot of files, that
+means `/tmp` can fill up fast. This can be a problem, especially if the user
+has `/tmp` inside a tmpfs (file system mounted in memory).
+
+Therefore, an audit should be done, ensuring that tmpfiles are deleted as soon
+as possible, while lbmk runs. This is especially needed in the script
+at `script/build/roms`.
+
+Improved payload documentation
+===============================
+
+The actual payload documentation is quite sparse in Libreboot, especially SeaBIOS
+but also GRUB. We don't need to repeat what is said by upstream docs, but we
+also don't link to them or cross reference them in any way.
+
+We should start writing about the payloads in more detail, referencing upstream
+documentation whenever possible.
+
+Re-add vendorfile extract
+=========================
+
+We have scripts that auto-download firmware from the vendor when required,
+and a script that removes/adds them after the fact, if done on release ROMs.
+
+We used to have a fallback script that would extract such files from a factory
+ROM image, but it was poorly maintained and then removed from Libreboot. We
+still recommend using the internet-based script instead, but having such a
+fallback option is still desirable. By having this, we could then reliably
+always have access to such firmwares.
+
+Last time the extract script existed in master, it lacked support for certain
+files, such as SCH5545EC firmware or extracting MRC firmware(which probably
+isn't possible anyway).
+
+Static compiled utils in releases
+=================================
+
+We curerntly only provide binaries of the firmware itself, for each mainboard,
+but we do not provide utilities compiled. We provide only source code, and the
+user is expected to compile utilities from source.
+
+This can be inconvenient, especially if the user is running the vendorfile
+download scripts. This should be done alongside providing musl-cross-make for
+the linuxboot builds.
+
+Download repositories in bulk
+=============================
+
+At present, lbmk does what it needs to do, and downloads repositories only as
+required, upon each stage of the boot process. For example, it may download
+gnulib when downloading GRUb, after having maybe built 5 mainboards all with
+only SeaBIOS, having built SeaBIOS before those 5 - it doesn't build SeaBIOS
+and GRUB before the 5.
+
+What this means is that the internet may work at one stage during a build,
+but for very long builds (ones that take hours, which some do), it may be that
+the user's internet goes down, and a latter part of the build fails, where it
+might have succeeded if packages were downloaded much earlier and in bulk.
+
+Optimisation
+------------
+
+So, TODO: Make lbmk determine precisely what packages would later be downloaded
+through various parts of a build, for a given command, and do it all at once,
+and then build. This is also better because, for very large amounts of modules,
+that take a long time to install, existing downloaded modules could be built
+while the download is in progress, to save on overall build time. This would
+be especially beneficial on slow internet connections, where a larger amount
+of time is spent downloading that building.
+
+In this context, slow internet means 20Mbps or less. Libreboot downloads a *lot*
+of code during the build process. For reasonable build times, it is currently
+recommended that you run lbmk an on internet connection that is at least 100Mbps.
+You can still use slower connections, it'll just take longer.
+
+Don't copy src trees
+====================
+
+For multi-tree projects, lbmk currently copies the source code per tree,
+e.g. `coreboot/default`, `coreboot/dell`. What could be done instead is to
+use the existing Git history as-is, and just make a new branch, with whatever
+patches, at the given revision.
+
+At release time, to save space, the given repository would have its history
+re-initialised, with the code branches reset per tree, and the source code
+copied, then committed - *this* would actually create *more* copies than lbmk
+currently does, thus using the disk more heavily, but only during release time.
+For normal builds (from Git, or from released archives), less disk space would
+be used, and there would be less disk I/O. This would especially reduce wear
+and tear on SSDs, where Libreboot is used.
+
+This may have some complications, where submodules are used. A solution to this
+would be to define those submodule repositories under lbmk's `config/git/`
+instead, and from there, define them as dependencies for a given project. Where
+a multi-tree project defines them, those dependencies could themselves be
+treated as multi-tree in the ame way as described above, even if they don't
+have a configuration for that in lbmk, because they are already used as
+dependencies in the multi-tree projects - in this case, if no custom config is
+provided, they would just use whatever revision is used in the defined submodule
+for the main target project that lbmk is downloading for.
+
+Vendor scripts
+==============
+
+Check hashes of resulting files
+-------------------------------
+
+Libreboot extracts the files from vendor updates, and those updates are checked
+against known hashes, but lbmk only defines such hashes for the larger updates
+themselves. hashes for the files extracted could also be defined, mostly as a
+way to ensure that they were correctly extracted, though it could default back
+to current behaviour (only check the main file) if individual checksums for
+inside files are not defined.
