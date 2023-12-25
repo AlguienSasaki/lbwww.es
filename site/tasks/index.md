@@ -58,6 +58,48 @@ Boards
   not much different code-wise to the D16 mainboard, so differences
   in coreboot `4.11_branch` could be adapted to provide a Dasharo port.
 
+FSDG boards
+-----------
+
+Not yet supported, but interesting for the project. Separated thus:
+
+already supported by coreboot:
+
+* [ASUS P5Q mainboard](https://doc.coreboot.org/mainboard/asus/p5q.html) (ICH10 / i82801jx),
+  known variants, e.g.: Pro, C, L-Pro, SE
+* Scan coreboot code for ICH9/ICH10 systems, or boards with x4x/gm45 based
+  northbridges. Many of these can boot blobless.
+
+Dell Latitude/Precision:
+
+* Dell Latitude laptops: E4200, E4300, E5400, E5500, E6500, Precision M4400,
+
+These typically use MEC5045 or compatible EC. Some may use MEC5035.
+
+SuperIO: at least M6500 is known to use ECE5028. I have a bunch of these
+Dells at my lab, they are high priority for porting because they would be
+easily flashable, and blob-free configs (Canoeboot could also support them).
+
+Other Dells (Ivybridge and Sandybridge)
+------------------------
+
+Nicholas Chin is interested in these:
+
+* E6520
+* E6420
+* E6320 and E6330
+* E6220 and E6230
+* E5520 and E5530
+* E5420 and E5430
+* 6430u
+* E5520m
+* E5420m
+
+Most/all of these should be easily flashable, with the `dell-flash-unlock`
+utility, and many could be ported using autoport as a guide. Nicholas is
+working on these. They are left here for reference. If you have one of these,
+please contact `nic3-14159` on the [Libreboot IRC channel](../contact.md).
+
 ARM-based CrOS devices
 ----------------------
 
