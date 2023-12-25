@@ -29,6 +29,119 @@ reduces the sloccount by only 1 line, maybe 3, but they all add up. Audit 3
 contained hundreds of changes, small changes, that together accounted for
 about 1000 lines of code removed, while not affecting functionality in any way.
 
+Interesting board ports
+=======================
+
+Libreboot can support any board from coreboot, in principle. It would also be
+feasible to integrate other (libre) boot firmware, if desirable. The list below
+is not exhaustive, it just lists boards that are interesting to us at this time:
+
+Boards
+------
+
+* HP EliteBook 2760p
+* HP ProBook 6360b
+* HP Revolve 810 G1
+* HP EliteBook Folio 9480m
+* HP EliteBook 8770w
+* HP EliteBook 820 G2
+* HP EliteBook 840 G2 (not in coreboot yet, but should be similar to 820 G2)
+* HP Z220 CMI and SFF mainboards
+* Dell OptiPlex 7010 and 9010
+* Dell OptiPlex 7020 and 9020
+* MSI PRO Z690-A mainboard (supported by Dasharo, not sure about coreboot) -
+  also, Dasharo supports several more mainboards that aren't in coreboot
+  proper.
+* KGPE-D16 and KCMA-D8: use the Dasharo fork of coreboot, instead
+  of coreboot `4.11_branch`, because Dasharo's version is much more up to
+  date and more reliable with raminit. D8 isn't supported by Dasharo, but it's
+  not much different code-wise to the D16 mainboard, so differences
+  in coreboot `4.11_branch` could be adapted to provide a Dasharo port.
+
+ARM-based CrOS devices
+----------------------
+
+Alper Nebi Yasak ported several of these to Libreboot, but only
+the `gru_bob` and `gru_kevin` machines are known to be stable.
+
+It would be nice to re-add veyron-based platforms, e.g. `veyron_speedy` - old,
+but still very useful.
+
+The `nyan`, `peach` and `daisy` platforms were initially added to lbmk, but
+prematurely. They are talked about here:
+
+<https://libreboot.org/docs/hardware/#removed-boards>
+
+It would be nice in general to support more ARM platforms in Libreboot. None
+of these machines are as decent as the Apple silicon machines (m1/m2/m3 etc),
+but they're still decent enough for most computing tasks (and the Apple machines
+do not currently have coreboot support).
+
+The actual coreboot code for these machines is thought to be reliable. The
+problem is that the U-Boot port is not yet stable across all these machines.
+Libreboot has Alper's proof of concept which works well
+on `gru` chromebooks.
+
+Caleb is interested in the `krane` chromebooks, but has had problems with vboot,
+getting it to boot reliably on custom firmware builds.
+
+OpenSIL and AMD Ryzen
+---------------------
+
+Of interest: coreboot has started imported AMD's *OpenSIL*, to support the
+Ryzen-based chromebooks, and there is interest in adapting that code for
+Ryzen-based desktops. AMD Ryzen CPUs are quite powerful, currently among the
+best available at least on consumer-grade hardware.
+
+UEFI payload
+============
+
+A UEFI payload in Libreboot is highly desirable, because it would basically
+enable any distro or BSD to Just Work.
+
+MrChromebox distribution
+------------------------
+
+MrChromebox is another coreboot distro, similar in spirit to Libreboot.
+
+Of interest: Mrchromebox provides Tianocore-based UEFI setups on chromebooks,
+and we could probably integrate some of that in Libreboot. Tianocore is
+essentially bloatware, and really a liability for the Libreboot project due
+to its complexity, though MrChromebox targets a very different audience.
+
+U-Boot SPL and UEFI on x86
+--------------------------
+
+Simon Glass has been working extensively on x86 support for U-Boot, to be used
+as a coreboot payload. This work is of interest to the Libreboot project,
+because we provide UEFI on ARM but not on x86.
+
+U-Boot also provides SPL which can be used to execute other software in the
+flash, and it's often used to boot a Linux kernel; since U-Boot provides a
+UEFI implementation, it's perfect.
+
+U-Boot is the preferred choice of UEFI implementation on x86, for Libreboot
+purposes, because U-Boot uses a coding style similar to Linux and can more
+easily import Linux drivers which are high quality, and Linux functionality
+in general, for anything that we need.
+
+Since we already provide U-Boot on ARM (thanks to the continued work done by
+Alper Nebi Yasak), U-Boot on x86 would then create a situation whereby Libreboot
+is consistent across platforms, at least for UEFI-based setups.
+
+uefistub
+--------
+
+Currently [under review](https://review.coreboot.org/c/coreboot/+/78913) in
+the coreboot project, this provides an *incomplete* UEFI implementation, but
+much more minimalist than the U-Boot one. It doesn't really *do* anything
+except provide the most minimal code possible, and then you can jump to a
+Linux payload in the flash.
+
+For UEFI purposes, U-Boot seems more mature, and it offers other features
+like SPL. As already stated, this is the preferred UEFI implementation for
+Libreboot, but uefistub is listed too because it's interesting.
+
 Linuxboot
 =========
 
@@ -177,3 +290,14 @@ We should keep doing what we're doing, but also provide configurations where
 only the VGA ROM is used, on setups that use a discrete GPU. Libreboot's
 preference is to use the native initialisation, but sometimes the VGA ROM has
 be to be used instead.
+
+Seek QUBES endorsement
+======================
+
+Libreboot is compatible with Qubes, on several supported mainboards. This could
+be audited, to provide a complete list. Qubes has a page on their website which
+lists compatible devices.
+
+It would be a nice way to promote the Libreboot project, and promote Qubes at
+the same time, which is an excellent project. We could host a page specifically
+for it, saying what works on our end, and basically copy that to their wiki.
