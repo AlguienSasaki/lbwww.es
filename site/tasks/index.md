@@ -11,6 +11,25 @@ Many of these entries will pertain to *lbmk*, which is Libreboot's build
 system, but some entries may relate to documentation, or organisational
 changes.
 
+Libreboot mailing list
+======================
+
+Use <https://sr.ht/~libreboot/> to provide a mailing list, for the Libreboot
+project. Sourcehut is a codeforge, that revolves around use of a mailing list.
+The actual mailing list itself is very good, though Libreboot would likely
+continue using [Codeberg](../news/codeberg.md) since it provides an interface
+that most contributors will be familiar with.
+
+Libreboot last had a mailing list in 2016, but running one isn't very feasible
+for a small project like this, with a smaller scope. Although Libreboot has an
+ambition to support every board from coreboot, of which there are hundreds, the
+actual design of Libreboot (as a [source-based package manager that auto-builds
+ROM images](../docs/maintain/)) is very limited in scope.
+
+At the same time, there aren't many good outsourced options for providing a
+mailing list. Sourcehut is basically our best option. Access to the `~libreboot`
+account or sr.ht was [acquired](../news/10.md) during April 2023.
+
 General auditing
 ================
 
@@ -32,6 +51,39 @@ Auditing can often be pedantic, and seem petty. You might commit a patch that
 reduces the sloccount by only 1 line, maybe 3, but they all add up. Audit 3
 contained hundreds of changes, small changes, that together accounted for
 about 1000 lines of code removed, while not affecting functionality in any way.
+
+Port vendor scripts to Heads
+============================
+
+Ironically, one of the first entries on this page pertains to a competing
+project.
+
+I promised the Heads project that I'd port Libreboot's vendorfile download and
+inject scripts to the Heads build system. Libreboot provides these scripts for
+automatically downloading certain firmwares at build time, as and when
+required for a given mainboard. These are provided by the vendor, e.g. SMSC
+SCH5545 Environment Control (EC) firmware used for fan control on Dell
+Precision T1650.
+
+Heads has such logic, but it's not as developed as the logic in Libreboot,
+which was originally inspired by the Heads logic and then greatly expanded upon.
+
+I'm putting this here on the Libreboot TODO page, so that I always see it. And
+I'm keeping it at the top of the page. This TODO entry is still relevant to
+Libreboot, because it concerns work that I will do in my official capacity,
+representing Libreboot while helping the (friendly) competition.
+
+See: <https://osresearch.net/>
+
+Heads is a really cool project, offering Linux-based kexec payloads on
+supported hardware. It's another coreboot distro, and their build system design
+even works similarly to Libreboot's (though they heavily use Makefiles whereas
+Libreboot exclusively uses shell scripts and uses a much simpler design). Heads
+provides many advanced security features like measured boot, even things like
+TOTP-based authentication using secrets stored in the TPM.
+
+Very, very, very^2 cool project, and Libreboot has plans to integrate some
+of the same functionalitiys within it (see other notes on this page).
 
 Interesting board ports
 =======================
@@ -668,3 +720,142 @@ A 16MB setup was attempted on the ThinkPad T440p, but didn't boot, and I now
 believe it was because I didn't insert the MRC firmware at the correct offset
 during that test. Libreboot's build system now handles that correctly, in
 the vendorfile inject script at `script/vendor/inject`.
+
+Overclocking
+============
+
+See: <https://review.coreboot.org/c/coreboot/+/42547>
+
+The patch, now abandoned, is a proof of concept tested on Asus P8Z77-V LX2 with
+i7-2600 and i5-3330. It is possible for coreboot to enable overclocking on
+some boards, though it's seldom-used and not very universally supported.
+
+It might be useful on some machines. The research here (by Angel Pons) may be
+transferrable to other platforms.
+
+Better dependencies handling
+============================
+
+Lbmk supports handling dependencies, in such a way that a required program is
+automatically downloaded *after* the main one. For example, GRUB requires gnulib.
+
+The problem is that it doesn't work in reverse. For example, when you download
+gnulib, it's actually saved under `src/grub/gnulib`, and `src/grub/` is the
+directory created when downloading GRUB.
+
+Illustration:
+
+```
+./update trees -f gnulib
+./update trees -f grub
+```
+
+This will first download gnulib, but then `src/grub` now exists, and the second
+command to download GRUB will fail, because that directory now exists, but does
+not have anything in it. Some checks for GRUB may then pass, thinking that
+GRUB has already been downloaded, when it hasn't.
+
+Observe:
+
+```
+no u lbmk$ git clone . test
+Cloning into 'test'...
+cdone.
+ dno u lbmk$ c dtest
+bash: c: command not found
+no u lbmk$ l^C
+no u lbmk$ cd test
+no u test$ ls
+build	COPYING  projectname  script  util
+config	include  README.md    update  vendor
+no u test$ ./update trees -f gnulib
+Cloning into '/home/leah/Project/lbdev/lbmk/test/tmp/gitclone'...
+remote: Counting objects: 281482, done.
+remote: Compressing objects: 100% (33030/33030), done.
+remote: Total 281482 (delta 248520), reused 281273 (delta 248367)
+Receiving objects: 100% (281482/281482), 69.48 MiB | 7.98 MiB/s, done.
+Resolving deltas: 100% (248520/248520), done.
+HEAD is now at 9f48fb992a filevercmp: fix several unexpected results
+no u test$ ./update trees -f grub
+src/grub already exists, so skipping download
+src/grub/gnulib already exists, so skipping download
+```
+
+In this case, GRUB will now *always* fail to download, until the `src/grub`
+directory is deleted, which would delete gnulib.
+
+The following could be done:
+
+* Check whether a given location for a download is within a location used by
+ another project, and refuse to do anything if that's the case (exit with error)
+ OR:
+* Automatically download that other program first
+
+It's probably cleaner to go with the first one. Prevent a program downloaded by
+lbmk from being included within another. If another such program is needed
+inside another, for example as a submodule, then the program could be modified.
+For example, modify GRUB to use the location of `../gnulib` as the directory
+for gnulib, where you would then have `src/grub` and `src/gnulib` - this can
+already be done, simply by configuring everything in `config/git/`, but lbmk
+currently does not check this.
+
+For comparison, here's what happens if you download GRUB (which defines gnulib
+as a dependency):
+
+```
+no u test$ rm -Rf src/grub
+no u test$ ./update trees -f grub
+Cloning into '/home/leah/Project/lbdev/lbmk/test/tmp/gitclone'...
+remote: Counting objects: 101717, done.
+remote: Compressing objects: 100% (23307/23307), done.
+remote: Total 101717 (delta 76079), reused 101552 (delta 75971)
+Receiving objects: 100% (101717/101717), 71.90 MiB | 12.85 MiB/s, done.
+Resolving deltas: 100% (76079/76079), done.
+HEAD is now at 64e3cee72 gpt: Add compile time asserts for guid and gpt_partentry sizes
+Applying: mitigate grub's missing characters for borders/arrow characters
+Applying: say the name libreboot, in the grub menu
+Applying: Add CC0 license
+Applying: Define GRUB_UINT32_MAX
+Applying: Add Argon2 algorithm
+Applying: Error on missing Argon2id parameters
+Applying: Compile with Argon2id support
+Applying: Make grub-install work with Argon2
+Applying: at_keyboard coreboot: force scancodes2+translate
+Applying: keylayouts: don't print "Unknown key" message
+Applying: don't print missing prefix errors on the screen
+Applying: don't print error if module not found
+Applying: don't print empty error messages
+Cloning into '/home/leah/Project/lbdev/lbmk/test/tmp/gitclone'...
+remote: Counting objects: 281482, done.
+remote: Compressing objects: 100% (33030/33030), done.
+remote: Total 281482 (delta 248520), reused 281273 (delta 248367)
+Receiving objects: 100% (281482/281482), 69.48 MiB | 9.55 MiB/s, done.
+Resolving deltas: 100% (248520/248520), done.
+HEAD is now at 9f48fb992a filevercmp: fix several unexpected results
+no u test$ ls src/grub
+acinclude.m4	BUGS	      docs	  INSTALL	     po        TODO
+asm-tests	conf	      geninit.sh  linguas.sh	     README    unicode
+AUTHORS		config.h.in   gentpl.py   MAINTAINERS	     SECURITY  util
+autogen.sh	configure.ac  gnulib	  Makefile.am	     tests
+bootstrap	COPYING       grub-core   Makefile.util.def  THANKS
+bootstrap.conf	coreboot.cfg  include	  NEWS		     themes
+no u test$ ls src/grub/gnulib
+build-aux	 COPYING	 gnulib-tool.py.TODO  posix-modules
+cfg.mk		 DEPENDENCIES	 lib		      pygnulib
+ChangeLog	 doc		 m4		      README
+check-AC_LIBOBJ  etc		 Makefile	      STATUS-libposix
+check-copyright  examples	 modules	      tests
+check-module	 gnulib-tool	 MODULES.html.sh      top
+config		 gnulib-tool.py  NEWS		      users.txt
+```
+
+A more general audit is in order, overhauling the entire dependencies
+infrastracture, within lbmk. A lot of the sanity checking is done manually, just
+by configuring everything sensibly and knowing what pitfalls to avoid.
+
+Libreboot is essentially no different to apt-get, in so far an lbmk is
+concerned. The *apk* package manager in Alpine Linux is the closest to lbmk
+mentality; their package manager is highly advanced, but written with a very
+minimalist and efficient design. Libreboot's handling of packages and
+dependencies could be re-modelled
+using [apk-tools](https://git.alpinelinux.org/apk-tools/) as inspiration.
