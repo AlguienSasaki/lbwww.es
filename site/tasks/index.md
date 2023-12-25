@@ -341,8 +341,25 @@ it is currently assumed that the user would modify `grub.cfg` in the flash.
 This pertains to the GRUB *payload* provided in the flash, by Libreboot. It is
 currently the preferred payload in Libreboot, at least for x86 machines.
 
-FLILL-based write protection
+Document flash write protection
 ============================
+
+IFD-based method
+----------------
+
+Already covered, but could be documented more prominently.
+Use `ifdtool --lock libreboot.rom` to lock the IFD.
+
+This method is easily circumvented, by enabling the Flash Descriptor Override,
+which varies from trivial to physically difficult depending on the board.
+
+On some platforms, such as the Dell Latitude E6400, this method is entirely
+useless; on the E6400, the EC firmware can be instructed to override the
+IFD settings, by enabling the Flash Descriptor Override (in fact, this is part
+of what the `dell-flash-unlock` utility does).
+
+FLILL-based method
+------------------
 
 We already vaguely mention Intel Flash Descriptor settings ta enable
 write protection. This documentation should be expanded on.
@@ -369,3 +386,51 @@ Flash Descriptor Override, will not affect FLILL entries.
 
 We could document this on the Libreboot website.
 
+SMM write protection
+--------------------
+
+system management mode can also be used, to implement flash write protection.
+
+PR (Protected Range) registers
+------------------------------
+
+Differing per platform but defined by Intel datasheets, the Protected Range
+registers can be set, to enable flash write protection. Once written, these
+cannot be changed until a reboot. Anything can set them.
+
+This is the preferred method and should be the default (enabled by default),
+because it can be done from GRUB. So, it could be provided on GRUB setups.
+
+We could make it so that all menuentries in the default Libreboot GRUB menu
+enable this, when possible on a given mainboard. The GRUB *shell* would not
+enable it, and special menuentries that don't enable it could be provided (or
+an entirely separate GRUB config, e.g. `grub_unprotected.cfg`).
+
+With the PRx-based method, the user can easily circumvent it when they want to
+update their firmware. Combined with a passphrase in GRUB, for menuentries
+and the shell, this would prevent an unauthorised user from updating the
+system; boot password alone cannot protect against malicious code in the user's
+operating system, but this method would *require* a boot password.
+
+It could also be done earlier, in coreboot, but then there's no way to turn
+it off. Doing it from GRUB (or Linux, when a payload for that is added) seems
+wiser.
+
+In practise, this should probably not be the default. Libreboot's current
+default is *no write protection*, though most Linux distros and BSDs enable
+protecting `/dev/mem` by default, that the user can turn off at boot time when
+they want to flash (e.g. cmdline option `iomem=relaxed` in Linux,
+or `kern.securelevel=-1` in OpenBSD).
+
+Chip-specific
+-------------
+
+Some flash chips support their own write protection scheme, covered in their
+datasheets, but this is usually unreliable or inconsistent. This method is
+not to be relied upon.
+
+Layers!
+-------
+
+Security is all about layers. When you want to lock down the flash, use every
+method available to you.
