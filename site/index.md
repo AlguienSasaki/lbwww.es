@@ -131,6 +131,10 @@ users](docs/install/).
 How to help
 -----------
 
+The [tasks page](tasks/) lists tasks that could (will) be worked on. It will
+be updated over time as more tasks are added/completede. If you want to help,
+you could pick one of these tasks and work on it.
+
 <img tabindex=1 class="l" style="max-width:15%;" src="https://av.libreboot.org/hp8200sff/grub_open.jpg" /><span class="f"><img src="https://av.libreboot.org/hp8200sff/grub_open.jpg" /></span>
 
 The *single* biggest way you can help is to *add* new mainboards in Libreboot,
