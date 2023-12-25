@@ -7,6 +7,10 @@ This page contains a curated list of tasks that are to be worked on, or tasks
 that are being worked on. This is intended to complement
 the [issue pages](https://codeberg.org/libreboot/lbmk/issues/).
 
+Many of these entries will pertain to *lbmk*, which is Libreboot's build
+system, but some entries may relate to documentation, or organisational
+changes.
+
 General auditing
 ================
 
@@ -58,7 +62,7 @@ Boards
   not much different code-wise to the D16 mainboard, so differences
   in coreboot `4.11_branch` could be adapted to provide a Dasharo port.
 
-FSDG boards
+Blobless boards
 -----------
 
 Not yet supported, but interesting for the project. Separated thus:
@@ -134,6 +138,38 @@ Of interest: coreboot has started imported AMD's *OpenSIL*, to support the
 Ryzen-based chromebooks, and there is interest in adapting that code for
 Ryzen-based desktops. AMD Ryzen CPUs are quite powerful, currently among the
 best available at least on consumer-grade hardware.
+
+AMD Family16 boards
+-------------------
+
+See: <https://review.coreboot.org/c/coreboot/+/71607>
+
+This is part of a patch series, from 9 September 2023 onward, re-adding
+AMD Family 16 platform to coreboot, most notably enabling use of the new
+allocator and other things in coreboot.
+
+The linked patch is for mainboard: HP T620 - of note, it may also be suitable
+for Canoeboot. Worth looking into.
+
+AMD AGESA-based platforms were removed from coreboot, because they weren't
+being maintained anymore, so they were dropped. Some of those boards are
+still quite decent today. Various efforts here and there have revived some
+of them, e.g. the Dasharo project.
+
+Also referenced there: Biostar A68N-5200 mainboard. Check
+coreboot `4.18_branch` for these boards. Coreboot started removing the
+AGESA boards after release 4.11.
+
+Lenovo G505s
+------------
+
+Old board, removed from coreboot ages ago, but one of the fastest pre-PSP
+AMD laptops, has full init in coreboot - it does require a VGA ROM for
+graphics. Anyway:
+<http://dangerousprototypes.com/docs/Lenovo_G505S_hacking>
+
+This page was linked to me ages ago by Mike Banon. It contains instructions
+for how to configure the machine. It might be worth integrating into lbmk.
 
 UEFI payload
 ============
@@ -476,3 +512,159 @@ Layers!
 
 Security is all about layers. When you want to lock down the flash, use every
 method available to you.
+
+lbwww: Document MXM graphics
+============================
+
+MXM graphics modules are present, on some laptops that we do not yet support,
+because certain functionality is needed on them that we do not implement yet.
+
+See: <https://codeberg.org/libreboot/lbmk/issues/112>
+
+Unlike on several other setups, many of these modules require certain data
+tables to be present, provided by a BIOS interrupt, which the VGA ROMs then
+use. These tables essentially contain config for things like ports, and power
+management. More information, including links to PDF files containing the
+specs for it, are provided for in the above linked issue page.
+
+Several more high-end HP EliteBook machines use MXM graphics modules,
+e.g. HP EliteBook 8560w.
+
+John lane GRUB patches
+======================
+
+The GRUB project itself has started merging some of this functionality, for
+things like detached LUKS headers. We had these for GRUB in Libreboot 2016
+releases, but they were since removed.
+
+Current functionality works on most setups, and we merge [Argon2
+KDF support](../news/argon2.md) into GRUB, out-of-tree.
+
+See: <https://grub.johnlane.ie/>
+
+Interesting, the Arch Linux AUR has several of these patches for its
+GRUB 2.06 package. See:
+<https://aur.archlinux.org/packages/grub-luks-keyfile>
+
+These could be re-based for GRUB 2.12, which is what Libreboot uses.
+
+Use crossgcc for SeaBIOS and GRUB
+=================================
+
+We currently use hostcc for the SeaBIOS and GRUB payloads. This, among other
+things, means lbmk is currently only supported for amd64 machines.
+
+See other notes on this page about Linuxboot. When that work is done, we will
+have better infrastructure for cross compilation, which could also be used for
+this purpose.
+
+In particular, GRUB's build system requires you to build certain utilities
+first. We use `grub-mkstandalone` to then provide the coreboot payload. For
+GRUB specifically, we should therefore use musl-cross-make. SeaBIOS can be
+built using crossgcc.
+
+Port lbmk to BSD systems
+========================
+
+In particular, FreeBSD is of interest.
+
+We probably don't need to natively port it, because FreeBSD has Linux ABI
+compatibility in its kernel, using *linuxlator*, and you can bootstrap a
+Debian system under it.
+
+See: <https://docs.freebsd.org/en/books/handbook/linuxemu/>
+
+See: <https://docs.freebsd.org/en/books/handbook/linuxemu/#linuxemu-debootstrap>
+
+We may still need certain build system modifications anyway, but this would
+probably be mostly just documenting how to use lbmk that way.
+
+FreeBSD specifically offers many advantages, such as really good OpenZfs
+integration (better than ZFS-On-Linux setups), which it can do natively because
+the licensing in BSD is compatible; Linux can't merge ZFS due to CDDL licensing.
+
+An actual native port to FreeBSD is also feasible, and coreboot itself already
+has some support for that, as does GRUB. If using crossgcc to build all payloads,
+this could be even easier.
+
+Building a Linux kernel might be slightly more challenging, but again: crossgcc.
+
+Adapting musl-cross-make for use in FreeBSD could be interesting. Other notes
+on this TODO page talk about using musl-cross-make to provide static linked
+utilities in releases, but this has only Linux in mind. Doing them for
+FreeBSD may also be desirable.
+
+Libreboot already has excellent support for booting all of the BSDs. Having the
+build system be compatible would just be another great boon.
+
+Package lbmk in distros
+=======================
+
+Providing binaries of Libreboot in distros wouldn't make sense, because we
+do that anyway, on Libreboot RSYNC, but having ports of the build system on
+various Linux distros and BSDs might be desirable.
+
+Distro package managers could check when changes are made to a given board,
+and if the system you're on matches that given board, the package manager could
+provide you with an option to *flash* it.
+
+This would probably only be provided on systems where that is extremely safe,
+specifically that those systems have been well-tested. Some ports in Libreboot
+are a bit flaky and would require extra work.
+
+It's unlikely that this job will ever be done, but it's on the TODO page
+anyway. Distro package managers concern themselves with OS applications, kernel,
+libc, bootloaders and so on; Libreboot is a step below them, earlier on in
+the boot process.
+
+But then again, there are things
+like [fwupd](https://github.com/fwupd/fwupd) that provide firmware updates in
+distros, so there's no reason Libreboot couldn't do something equivalent - we
+could even do binaries, though I'm mostly thinking of the Libreboot build
+system itself. A distro could package lbmk to build for a specific Libreboot
+version, and handle all of the dependencies and everything.
+
+Vendor scripts
+==============
+
+Bruteforce more files
+---------------------
+
+We bruteforce extract IME but some other firmwares are more or less
+hardcoded in config.
+
+In particular, VGA ROM extraction could be improved. We could modify
+the `romheaders` utility to return zero status or non-zero status based on
+a given PCI vendor/device ID; non-zero if it's not a match, for a given file,
+or it isn't a VGA ROM. We currently extract an nvidia ROM for certain models
+of Dell Latitude E6400, but the logic is more or less hardcoded.
+
+The script at `script/vendor/download` auto-downloads vendor firmwares needed
+on certain mainboards, during build time. Libreboot's build system
+uses the script at `script/vendor/inject` to add or remove such files after
+the fact, on release ROMs, because those firmwares are *deleted* at release
+time. This work began mostly after mid-2022, and has since been expanded to
+cover many types of firmwares, used on various mainboards.
+
+Investigate 16MB flash setups
+=============================
+
+On some ivybridge and sandybridge boards, where flash is 8MB or 12MB,
+it is feasible (with some soldering) to upgrade it to 16MB setups.
+
+The IFD is configured accordingly, but some board modification besides
+that may be required. For example, on the ThinkPad T440p, SPI2 is easily
+accessible but SPI1 requires full disassembly. One could re-wire the board,
+removing the Chip Select resistor for SPI1, and the SPI2 CS resistor, then
+re-wiring CS1 to CS2 via a resistor, so that only SPI2 is used (thanks go
+to Nicholas Chin for describing this idea) - then you stick one big 16MB flash
+on SPI2, which is easily flashable.
+
+These upgrades are really only recommended for advanced users. We do already
+provide images for them; 16MB ROM images on many GM45 thinkpads, and also
+the ThinkPad X230.
+
+A 16MB setup was attempted on the ThinkPad T440p, but didn't boot, and I now
+believe it was because I didn't insert the MRC firmware at the correct offset
+during that test. Libreboot's build system now handles that correctly, in
+the vendorfile inject script at `script/vendor/inject`.
