@@ -301,3 +301,71 @@ lists compatible devices.
 It would be a nice way to promote the Libreboot project, and promote Qubes at
 the same time, which is an excellent project. We could host a page specifically
 for it, saying what works on our end, and basically copy that to their wiki.
+
+GRUB VGA modes
+==============
+
+VGA support is not universal in Libreboot. We typically rely on GRUB to start
+in console mode (`GRUB_TERMINAL=console`), which means GRUB won't change
+modes, it'll just use whatever mode we started in.
+
+We do not currently modify GRUB's video handling, so some distro setups will
+try to use VGA modes, or some syslinux configs (that GRUB can parse) will,
+causing weird behaviour on many Libreboot systems.
+
+TODO: modify GRUB to only have behaviour matching `GRUB_TERMINAL=console`.
+See: <https://www.gnu.org/software/grub/manual/grub/html_node/Simple-configuration.html>
+
+This will prevent the need for modification. In some cases, it is necessary
+to modify `GRUB_TERMINAL` in distro grub configs. The way Libreboot's GRUB
+menu works is, it scans for GRUB and Syslinux/Extlinux configs on the user's
+HDD/SSD, switching to the first one found.
+
+GRUB configs menu
+================
+
+Libreboot systematically scans for GRUB/Syslinux/Extlinux configs provided by
+the user's operating system, by scanning partitions. It can also scan
+encrypted partitions (asking for the user to type their LUKS passphrase).
+
+However, Libreboot switches to the first one found. In some cases, a user may
+have multiple configurations.
+
+TODO: Keep the current behaviour, for performance reasons, but offer a mode
+where instead a new menu appears, with menuentries generated, where each one
+just switches to one of the detected configurations.
+
+This would enable Libreboot to work more seemlessly on dualboot setups, where
+it is currently assumed that the user would modify `grub.cfg` in the flash.
+
+This pertains to the GRUB *payload* provided in the flash, by Libreboot. It is
+currently the preferred payload in Libreboot, at least for x86 machines.
+
+FLILL-based write protection
+============================
+
+We already vaguely mention Intel Flash Descriptor settings ta enable
+write protection. This documentation should be expanded on.
+
+See:
+<https://opensecuritytraining.info/IntroBIOS_files/Day2_02_Advanced%20x86%20-%20BIOS%20and%20SMM%20Internals%20-%20Flash%20Descriptor.pdf>
+
+Actually, look at that site in general:
+
+* <https://web.archive.org/web/20190104155418/http://opensecuritytraining.info/IntroBIOS.html>
+* <https://opensecuritytraining.info/IntroBIOS.html>
+* <https://p.ost2.fyi/courses/course-v1:OpenSecurityTraining2+Arch4001_x86-64_RVF+2021_v1/course/>
+
+Anyway:
+
+Universal across all currently known IFD versions, the FLILL section can be
+used to define *invalid* opcodes when the flash is used, and this could be used
+to define *write* and/or *erase* opcodes. Up to 4 can be defined.
+
+This could be used to complement existing flash-based write protection. Of
+particular interest is the fact that the FLILL config *cannot* be overridden.
+Setting `HDA_SDO` (newer platforms) or `HDA_DOCK_EN` (GPIO33) to enable
+Flash Descriptor Override, will not affect FLILL entries.
+
+We could document this on the Libreboot website.
+
