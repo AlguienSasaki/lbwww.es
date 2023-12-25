@@ -11,7 +11,8 @@ including laptop and desktop computers. It initialises the hardware (e.g. memory
 controller, CPU, peripherals) and starts a bootloader for your operating
 system. [Linux](docs/linux/) and [BSD](docs/bsd/) are well-supported. Help is
 available via [\#libreboot](https://web.libera.chat/#libreboot)
-on [Libera](https://libera.chat/) IRC.
+on [Libera](https://libera.chat/) IRC. The [tasks page](tasks/) lists what
+we are working on.
 
 <img tabindex=1 class="r" src="https://av.libreboot.org/hp9470m/9470m+2560p.jpg" /><span class="f"><img src="https://av.libreboot.org/hp9470m/9470m+2560p.jpg" /></span>
 
