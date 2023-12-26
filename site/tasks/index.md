@@ -11,6 +11,13 @@ Many of these entries will pertain to *lbmk*, which is Libreboot's build
 system, but some entries may relate to documentation, or organisational
 changes.
 
+If you want to work on some of these yourself, patches are always welcome!
+Please read the [code review page](../git.md), which provides guidance on
+how to submit patches, and it describes the Libreboot project infrastructure.
+
+You may also benefit from *assimilating* all knowledge contained in
+the *[lbmk maintenance manual](../docs/maintain/).*
+
 S3 on ivy/sandy/haswell
 =======================
 
