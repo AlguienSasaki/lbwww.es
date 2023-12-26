@@ -11,6 +11,21 @@ Many of these entries will pertain to *lbmk*, which is Libreboot's build
 system, but some entries may relate to documentation, or organisational
 changes.
 
+S3 on GM45 and i945
+===================
+
+S3 is currently broken on GM45 and i945 machines. This can be bisected in
+coreboot revisions, because it is believed to work well on Libreboot releases
+as recent as 20230625. This needs to be fixed before the next stable release.
+
+The October 2023 and November 2023 releases are affected by this. GM45 means
+machines such as ThinkPad X200 and T400. i945 machines machines such as
+ThinkPad X60 and T60.
+
+The newer generation of Intel machines are not affected, and S3 has never
+worked on Dell Latitude E6400 (a GM45 machine), because (according to Nicholas
+Chin) an idiosyncrasy in how the EC affects coming out of reset.
+
 Libreboot mailing list
 ======================
 
@@ -240,6 +255,20 @@ graphics. Anyway:
 
 This page was linked to me ages ago by Mike Banon. It contains instructions
 for how to configure the machine. It might be worth integrating into lbmk.
+
+RISC-V hardware
+---------------
+
+See: <https://github.com/oreboot/oreboot>
+
+Oreboot is a re-written fork based on coreboot, re-written in Rust instead of
+C, and it has a strong focus on RISC-V platforms. We should start integrating
+this into lbmk - although [Rust has several
+disadvantages](https://drewdevault.com/2019/03/25/Rust-is-not-a-good-C-replacement.html),
+oreboot is still a good project.
+
+(though, whenever possible, lbmk should stick to coreboot, to keep things
+simpler - are there efforts to implement oreboot ports in coreboot/C?)
 
 UEFI payload
 ============
@@ -1032,3 +1061,273 @@ themselves. hashes for the files extracted could also be defined, mostly as a
 way to ensure that they were correctly extracted, though it could default back
 to current behaviour (only check the main file) if individual checksums for
 inside files are not defined.
+
+Handle submodules manually
+==========================
+
+Lbmk automatically downloads git submodules (all of them) on a given downloaded
+repository, when a `.gitmodules` file is present. This functionality should
+be *retained*, but submodules are also not to be relied upon for redundancy.
+
+In some cases, especially critical projects like coreboot, these submodules
+should be defined by lbmk `config/git/` files instead, with redundant
+repositories, and the host projects (e.g. coreboot) modified to use these,
+instead of gitmodules.
+
+Git's own submodules logic doesn't handle redundancy really well and it's not
+very fault tolerant either. Libreboot's lbmk, while less featureful, is
+designed for redundancy.
+
+What if someone is compiling a given revision of lbmk in 10 years from now?
+Some of those repository links might have died, or those projects might have
+experienced a hostile takeover and been overwritten. Anything can happen.
+If there are backup repository links already baked into lbmk configs, it offers
+some redundancy in the future.
+
+It also offers some redundancy now, in the present, if a given git server goes
+offline for a break period of time. Libreboot's design is quite simple, and done
+with this philosophy in mind, that everything should always have a backup.
+
+Auto-update repositories
+------------------------
+
+Already written elsewhere on this TODO page is to automatically decide which
+repositories need updating, when running any part of lbmk. This is thought of
+with the same mentality in mind, always thinking about what someone will be
+running in the future. You can't predict what will happen, so you have to be
+prepared. Users are unpredictable.
+
+Reproducible builds
+===================
+
+We can't focus on this reliably, becasue we use hostcc extensively for many
+parts of the build process. Other parts of this TODO page talk about how to
+integrate linux as a payload, by improving our cross compiling setup.
+
+Cross compilation is the first step to reproducibility, because then we only
+have to worry about the toolchain, which is easier to control. We can start
+focusing specifically on reproducibility once all of that has been done.
+
+VGA: Run-time, not build-time
+=============================
+
+In coreboot, configuration of video initialisation is done at build time. This
+has several disadvantages, in that you now need multiple ROM images for multiple
+configurations, but it has the upside that the resulting ROM image will have
+fewer bytes of code within it.
+
+From an lbmk perspective, the upsides are largely ignored because we want to
+build hundreds and hundreds of ROM images, fast. That means reducing the amount
+of time spent to compile for each mainboard.
+
+We currently do this on each mainboard:
+
+* libgfxinit with text mode startup, if possible
+* libgfxinit with coreboot framebuffer, if possible
+* vgarom setup when desirable; usually executed by seabios, not coreboot
+
+This is often literally 3 different ROM images, for all of the above. It is
+possible to have a libgfxinit setup where SeaBIOS is the payload, so that VGA
+ROMs can be executed aswell, but this has several issues, covered elsewhere on
+this page.
+
+It would be nice if all of this could be runtime options instead. By "runtime",
+we do mean modification of the ROM image, but not in a way that requires a
+full re-build. A good example of this would be the SeaBIOS runtime setup:
+
+<https://www.seabios.org/Runtime_config>
+
+On SeaBIOS, it is not necessary to re-build for the most part (though some things
+are still left to build-time config). Instead, you edit files inside the
+coreboot file system (CBFS), that SeaBIOS will use to configure itself at
+boot time.
+
+We could take a note from SeaBIOS and do that here, but in coreboot. Why is it
+that we need separate ROMs just to switch between the coreboot framebuffer or
+classic text mode startup? Why can't it be the same ROM?
+
+If we were to do it at runtime like described above, we could cut the build
+time in half, or even more than half; we could cut it down to about 30% of the
+current time. Disabling libgfxinit could also be a runtime option. It's already
+possible to change the payload at runtime for instance (manually), by running
+cbfstool.
+
+Modularise the coreboot stages
+==============================
+
+ie. generate cbfs in lbmk
+-------------------------
+
+We currently use the coreboot build system which is designed to build all
+stages, such as the bootblock, car, ramstage, romstage etc. The coreboot build
+system already builds these separately, as separate binaries, and then joins
+them all together inside the CBFS (coreboot file system) of the target ROM
+image. Essentially, coreboot creates the empty file containing CBFS, and starts
+adding all of the files.
+
+The logic is already there in coreboot, but it does everything all at once.
+
+We might benefit from splitting this, within the coreboot build system, so that
+it's possible to do one stage then another, separately, and then we could
+use *lbmk* to join them, initialising the CBFS and adding all of the stages.
+
+This could be useful when we *do* actually need a build-time configuration
+changed, but where many stages are identical between different build-time
+setups. This could then be abused, to substantially reduce the overall build
+time in lbmk. We want to build hundreds of ROM images in coreboot, and that
+takes *time* - too much time.
+
+This will require working with upstream, and in practise require that they
+accept such proposals. The build system design in coreboot is already ready
+for this sort of thing, and it could be done with minimal complexity - the
+current behaviour would be retained as a default.
+
+We might have to backport to some older revisions, because lbmk uses certain
+older revisions on some machines, e.g. AMD AGESA platforms.
+
+Macbook21 C-states patch
+========================
+
+See: <https://review.coreboot.org/c/coreboot/+/63587>
+
+We currently re-use the same ROM image for macbook21 on the imac52, but it is
+now believed that the C-state config there is not suitable on imac52. See patch.
+
+TODO: test on imac52 and macbook21. If confirmed (again, see patch, the problem
+is described there), we can expand it to configure c-states differently on
+imac52. This config is used to enable efficient power management, on these
+machines.
+
+Check file ownership in builds
+==============================
+
+When lbmk is running, it is assumed that the current user has ownership of
+the files. If lbmk is operated on a clone that is under different ownership,
+it might fail in strange ways; for example if you had read access but not
+write access. There is already general error management all over lbmk, where
+a given command returning non-zero status will result in lbmk pretty reliably
+exiting, and printing the error on screen for the user.
+
+However, we do not specifically check permissions/ownership of files. For
+example, the user might have cloned lbmk as root to run the dependencies
+script, and then they want to run lbmk. We already make lbmk exit, with non
+zero status, if it's run as root, for safety reasons, but this does not
+apply when lbmk is run on a clone that is owned by another user.
+
+Lbmk could specifically check for this at startup, and provide a specific
+warning message to the user, so that they know what to do to fix it. Lbmk
+would also then exit earlier, rather than trying to run something, which
+might result in very unpredictable behaviour.
+
+Sanity checks
+-------------
+
+We basically should have startup sanity checks in general, such as checking
+whether all the right dependencies are installed on the host system - similar
+to autoconf setups used by many GNU projects, though we don't want to use
+autoconf, it's bloat.
+
+If a sanity check is passed, a configuration file can then be provided, which
+can be used to control how lbmk runs. For example, if a certain version of a
+library is installed that behaves differently from a newer version, lbmk
+might have logic implemented that makes it behave differently depending on
+which library is installed. The general goal of lbmk is to be as portable as
+possible, but without introducing too much complexity into its design, so this
+TODO item will have to be handled with a lot of core.
+
+Remember the mantra: code equals bugs.
+
+We are running lbmk on extremely buggy systems, such as Linux. We do not yet
+have native support for running on BSD systems for example. This TODO entry
+is basically the same thing as the other entry on this page about porting
+to BSD. So tackle both.
+
+Software Bill of Materials
+==========================
+
+Generate an SBOM for all of Libreboot, on release builds specifically; it can
+be skipped for performance/convenience reasons on regular development builds
+from git. See: `script/update/release` - it would be handled here, because this
+is the script that actually generates full release sets.
+
+SBOM is a requirement now, in many commercial contexts, depending on how
+software is used, or how it's shipped. For example, if you're providing software
+to certain government departments, in certain countries, they may require it.
+
+We can't know where Libreboot will be used. Let's automate this problem so that
+our users don't have to. Coreboot already has some support for this, in its
+build system, and we could adapt the build systems of other projects, and tie
+it all together from lbmk.
+
+The way lbmk works makes it very simple to implement something like this. The
+SBOM is literally just a thing that says what's included in a software release,
+or an aggregate distribution of software in our case. Libreboot's build system
+already has to have things like repository links, revisions, lists of patches
+and so on, to know how each piece of software is configured.
+
+I'd say this would be handled in, say, `include/sbom.sh` within lbmk, with a
+minimal stub in `script/update/trees` that handles it. All it would do is
+generate an sbom file by reading everything under `config/`. This would not be
+used automatically, during regular development builds, but it would be used
+by `script/update/release`. It could output the sbom to regular `stdout`, with
+errors outputted to `stderr` (specifically, and deliberately - like if a certain
+piece of software is missing or disabled or something, write about that in
+stderr, though the actual sbom data would be on stdout).
+
+Let's say you do it as `-z` - ok, but the script handles specific projects.
+So now we do:
+
+	./update trees -z coreboot
+
+This is just one example. The `trees` script already knows how to read configs
+of all the projects, so that it knows how to download and build them. It would
+just output that in a parseable format, to stdout. Then you might do for
+example:
+
+	./update trees -z coreboot 1>sbom.txt 2>sbom.txt.err
+
+But oh, what's this? We already know that the trees script can handle multiple
+projects. For instance:
+
+	./update trees -z flashrom pico-serprog grub seabios
+
+Then it would output for all of those. It just goes in a loop.
+
+This is just an idea. Anyway, this should go hand in hand with reproducible
+builds, which is mentioned elsewhere on this TODO page.
+
+This is a very unix-y way to do an sbom, in lbmk, which is already a very
+unix-esque build system design. Write one thing that does one thing well. We
+pretty much already have everything we need to implement this.
+
+NOTE: The above is not necessarily the best way to handle an SBOM, it's just
+one possible idea off the top of my head, proposed that way because it would
+minimise the amount of complexity needed in lbmk, to handle that use-case.
+
+NOTE: the `-z` option in ./update trees is not yet implemented. Again, the
+above just a concept.
+
+Re-use build artifacts
+======================
+
+Libreboot's build system, lbmk, does not re-use artifacts well. It largely
+assumes that you are building everything from scratch, which is great for
+release builds and is very simple, but sometimes that can be annoying during
+development. This pretty much goes hand in hand with the other TODO item on
+this page, about lbmk checking itself when a given codebase or config gets
+updated, so that it can adapt itself.
+
+Most notably, lbmk runs distclean on most/all codebases before then running
+make-all. This is done for simplicity, and in practise usually works OK because
+most projects only get built once, unless they are modified (by a developer).
+
+This might be useful for:
+
+Partial coreboot re-builds
+--------------------------
+
+A lot of the time in lbmk, we are building multiple variants of the same
+mainboard, for different setups. We could skip a lot of the re-building.
+This pretty much goes hand in hand with the other entry on this TODO page,
+about spliting up the various stages in coreboot, and handling CBFS generation
+within lbmk.
