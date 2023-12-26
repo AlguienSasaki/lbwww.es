@@ -18,6 +18,12 @@ how to submit patches, and it describes the Libreboot project infrastructure.
 You may also benefit from *assimilating* all knowledge contained in
 the *[lbmk maintenance manual](../docs/maintain/).*
 
+U-Boot test/lib/strlcat.c
+=========================
+
+Delete this file, in U-Boot trees, before the next release
+after Libreboot 20231106.
+
 S3 on ivy/sandy/haswell
 =======================
 
@@ -225,6 +231,7 @@ already supported by coreboot:
   northbridges. Many of these can boot blobless.
 
 Dell Latitude/Precision:
+-----------------------
 
 * Dell Latitude laptops: E4200, E4300, E5400, E5500, E6500, Precision M4400,
 
@@ -233,6 +240,39 @@ These typically use MEC5045 or compatible EC. Some may use MEC5035.
 SuperIO: at least M6500 is known to use ECE5028. I have a bunch of these
 Dells at my lab, they are high priority for porting because they would be
 easily flashable, and blob-free configs (Canoeboot could also support them).
+
+E4200 SPD
+---------
+
+NOTE: Some of this may be inaccurate, because it's copied from handwritten
+notes that were written very hastily and are barely legible.
+
+The SPD EEPROM is on the back of the board, between the CPU backplate and the
+RAM chips. SOIC-8 chip labelled U2. It's a 24XX IC, should be possible to
+dump using a 3.3v-modded CH341A (on the 24xx socket).
+
+or
+
+```
+modprobe eeprom
+```
+
+look in e.g. 0-0058 or 0-0052 in `/sys/bus/i2c/devices`
+
+May need other modules like at25 and i2c-i801
+
+The eeprom file in these should contain the SPD data. Just look through a bunch
+of them until the file is found and seems to be correct.
+
+decode-dimms (utility) can also read eeprom and decode SPD data but doesn't dump
+the ram eeprom (dumping it in a ch341a as above would do so)
+
+see <https://unix.stackexchange.com/questions/92037/how-to-view-rams-spd-timings-table#92044>
+
+(yes, that url was also handwritten)
+
+modprobe i2c-dev and sudo i2cdump 0 0x50 works in libreboot, but not the
+vendor bios.
 
 Other Dells (Ivybridge and Sandybridge)
 ------------------------
@@ -915,6 +955,10 @@ believe it was because I didn't insert the MRC firmware at the correct offset
 during that test. Libreboot's build system now handles that correctly, in
 the vendorfile inject script at `script/vendor/inject`.
 
+In IFD-based systems, CS1 and CS2 are separate, but data lines like
+MOSI/MISO are shared, and the PCH/southbridge will enable or disable the given
+flash IC to access the region needed.
+
 ME Cleaner status page
 ======================
 
@@ -1410,6 +1454,24 @@ is described there), we can expand it to configure c-states differently on
 imac52. This config is used to enable efficient power management, on these
 machines.
 
+How to dump c-state config
+--------------------------
+
+```
+i2cdump 0x69
+```
+
+dump the c-state config from apple efi firmware
+
+imac5,2 breaks with the current c-state patch used in libreboot, according
+to `f_` on IRC.
+
+powertop can give info about available c-states
+
+also: don't use efi grub or anything efi on non-macos operating systems on
+these machines, doesn't work well in apple's firmware. mentioned by avph in
+the gerrit link (see above)
+
 Check file ownership in builds
 ==============================
 
@@ -1738,3 +1800,173 @@ on supported Libreboot hardware. AMD has them too. These are errata documents
 that define which bugs exist in each CPU, and which ones have been fixed by
 microcode updates - they also generally provide information for OS developers,
 to know how certain bugs should be mitigated, whenever possible.
+
+Macbook2,1 backlight controls
+=============================
+
+Was reported broken in linux 6.1, but works in 5.x
+
+Since linux 6.1, the backlight subsystem was revamped. Try one of the
+cmdline options:
+
+* `acpi_backlight=video`
+* `acpi_backlight=vendor`
+* `acpi_backlight=native`
+
+More testing is needed on this. So far, nothing seems broken on other machines
+tested and no user reports have come in. The way backlight controls work on
+coreboot can differ a bit from the vendor firmware on some boards.
+
+Not really a major issue, but it does need to be addressed.
+
+TODO: test other platforms too
+-------------------------------
+
+Test other platforms.
+
+Document CH341A variants
+========================
+
+All CH341A variants are garbage for ISP-based flashing, because of weak
+drive strength and poor board layout, also the WP/HOLD pins are often held
+high via straight connections to VCC on these boards (rather than going through
+a pull-up resistor, as safe electrical design would dictate).
+
+However, Libreboot currently only documents the black and gold one, that comes
+with 5V logic levels by default, and it has information for how to modify it
+so that the logic level are 3.3v - in addition, there are 1.8V logic level
+adapters, that just come with logic level converters on them.
+
+The original green variant is 3.3v by default, and some newer variants have
+adjustable voltage for the logic levels.
+
+For socket-based flashing, they're actually quite decent flashers. Quite
+convenient, because you don't have to mess with a breadboard or anything,
+because they already have ZIF sockets on them for DIP-8 ICs, on which you can
+also use adapters for SOIC-8, SOIC-16 and WSON-8.
+
+E6400 VGA ROM (Nvidia)
+----------------------
+
+See: <https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=990662#22>
+
+Although we couldn't reproduce it after testing, a redditor did report that
+following these steps caused nouveau to work.
+
+Also: `e6400nvidia_4mb` works better on that setup, nouveau is actually stable
+in some cases. Check the E6400 page for libreboot, it lists issues with nouveau
+on those machines.
+
+Test Crystalwell CPUs on T440p
+------------------------------
+
+Coreboot has support for these, but they have not been tested as far as I know,
+and no reports have been made for them by Libreboot users. These offer higher
+performance and the machine is already very nice.
+
+Ditto W541.
+
+How to extract VBT data
+-----------------------
+
+See:
+
+* <https://manpages.debian.org/bullseye/intel-gpu-tools/intel_vbt_decode.1.en.html>
+
+Extract it from the vga rom, the vbt header is in there, and the number of bytes
+will be in the size field, so that one can know how many bytes to extract. One
+of these tools linked above prints it.
+
+The VBT table is needed on machines where intel libgfxinit is used. It can just
+be extracted and included in a coreboot port.
+
+Guix: use debootstrap
+=====================
+
+GCC-Gnat is unavailable in Guix, due to the distro's requirement for sources
+to be bootstrapped. GCC-Gnat is also required, for building GCC-Gnat. We build
+it in libreboot, to provide libgfxinit, because it's written in Ada.
+
+Therefore, lbmk cannot be used reliably in Guix. It's possible to just add
+a binary for Gnat to the host, and then use that, but there is another idea:
+
+Guix *does* have debootstrap, which could be used to bootstrap a Debian system,
+and install everything in that, including GCC-Gnat. Of course, we don't need
+to do anything for this in lbmk, but it would be nice to document.
+
+In fact, it wouldn't necessarily need to be specific to Guix, because many
+systems have debootstrap; FreeBSD also has it, and it's even mentioned here
+on this page, though in the context of *porting* lbmk to FreeBSD.
+
+Perhaps this could be done:
+
+In the logic for `./build dependencies distroname`, add an option for Guix,
+but on that one, make lbmk automatically set up debootstrap if it's being
+run for Guix (and it would detect whether the host actually is Guix System).
+
+docs/build/clean.md
+===================
+
+Add this section, telling the user (of lbmk specifically) how to clean various
+directories. This isn't handled universally, due to lbmk's design. When
+updating revisions, a lot of manual intervention is needed if an existing
+revision was already downloaded, especially if it was built.
+
+For example, if you already compiled GRUB at a given revision, it will be
+present under `elf/grub/`. If you're updating the revision in lbmk, you must
+delete `elf/grub` first. Similarly, if you're testing out code changes, you
+have to know to do that and re-make GRUB.
+
+This section relates to another section on this page, about automatically
+handling such updates in lbmk when it runs. Until that is done, this section
+is also here. We should document how this is handled, under the current scheme.
+A lot of development on lbmk requires the operator to *know* how lbmk works.
+
+The preference however is to simplify and automate everything as much as possible.
+That is Libreboot's philosophy, that the user should never have to do more than
+is absolutely necessary when someonething could just as easily be done in code.
+
+E6400 security
+==============
+
+See other section on this page about write protection.
+
+Setting PR registers for write protection is a valid way to write protect on
+Dell E6400, and it would not be affected by the flash-unlock utilitiy.
+
+SMM methods
+-----------
+
+Tere are two SMM write protect methods:
+
+The old lock enable bit, which causes an SMI to be triggered whenever BIOS write
+enable is changed back to 1. Then SMM needs to change the BISO write enable back
+to 0. Not the best option as it is vulnerable to timing attacks where a write gets
+through before SMM can change it back.
+
+On newer chipsets (5 series and newer, basically everything newer than GM45),
+there's a new bit called SMM BIOS write protection, which prevents flash
+from being written to unless all cores are in SMM, which is better than the other
+method.
+
+^ These notes were supplied by Nicholas Chin via IRC.
+
+PCI-E REBAR
+===========
+
+See: <https://github.com/xCuri0/ReBarUEFI>
+
+This is *required* on some newer graphics cards, and can otherwise improve
+performance when supported. Support supports
+PCI-E REBAR - apparently some GPUs need it.
+
+It allows the host CPU to access all of VRAM at once, without 32-bit legacy
+code. The above repository is a proof of concept that shows it working, though
+the work there is not directly applicable to us.
+
+This feature is only supported commercially on much newer mainboards, and is
+unavailable on many older mainboards, but it can be added if the firmware is
+updated. This is one of the benefits of the *freedom* coreboot gives you. We
+could enable this on all the older desktop machines, where otherwise their
+factory firmware does not and will not enable it (and the above link is for
+UEFI systems only).
