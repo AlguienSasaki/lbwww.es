@@ -11,6 +11,27 @@ Many of these entries will pertain to *lbmk*, which is Libreboot's build
 system, but some entries may relate to documentation, or organisational
 changes.
 
+S3 on ivy/sandy/haswell
+=======================
+
+Ivybridge, sandybridge and haswell thinkpads have broken S3 suspend/resume,
+at least in coreboot 4.22 - we are affected in lbmk, where we use a revision
+that is quite close to 4.22, but we mitigate it by turning off the TSEG stage
+cache.
+
+It's possible that upstream may have properly fixed it already. In our case,
+disabling TSEG stage cache makes S3 work again, on these machines - but GM45
+and i945 are still broken (see below).
+
+Of interest, this patch was merged *after* the current revision used
+in Libreboot, at least on 26 December 2023:
+
+<https://review.coreboot.org/c/coreboot/+/78850>
+
+Updating coreboot revisions is par for the course in Libreboot. This should
+be tested again, but with TSEG Stage Cache re-enabled, to verify whether S3
+is still broken on these machines (ditto GM45 and i945).
+
 S3 on GM45 and i945
 ===================
 
@@ -146,6 +167,31 @@ Boards
   date and more reliable with raminit. D8 isn't supported by Dasharo, but it's
   not much different code-wise to the D16 mainboard, so differences
   in coreboot `4.11_branch` could be adapted to provide a Dasharo port.
+
+ThinkPad T430s and T431s
+-------------------------
+
+These are interesting; the T431s in particular has soldered RAM, so we'd need
+to take care of SPDs (not done automatically yet, in coreboot). The schematics
+will show GPIO straps that could be used to glean which SPD data is correct,
+if we wanted to scan it automatically at boot time (we'd have to include SPD
+data for all known modules, it might be possible to extract it from vendor
+updates, otherwise we'd have to dump it from multiple variants of the same
+machine).
+
+Both are supported by coreboot.
+
+840 G2 (possible 820 G2)
+-------------------------
+
+These notes are based on a chat on Libreboot IRC.
+
+The TPM is Infineon SLB9660 and does TPM 1.2. We could maybe upgrade
+firmware to that of SLB9665. It would no longer work with the HP BIOS but
+maybe coreboot could be used, and then we could have
+newer TPM version - SLB9665 firmware can meet TPM 2.0 specification.
+
+(we do not yet use the TPM in any meaningful way on Libreboot machines)
 
 Blobless boards
 -----------
@@ -647,6 +693,51 @@ GRUB 2.06 package. See:
 
 These could be re-based for GRUB 2.12, which is what Libreboot uses.
 
+Already merged
+--------------
+
+GRUB 2.12 has these patches already, so we don't need to do anything. The
+above pertains to GRUB 2.06, but they were upstreamed for 2.12. That being
+said, we do have some users who like 2.06 for some reason!
+
+Document how to use
+-------------------
+
+John lane's site even has instructions for how to use detached LUKS headers
+in GRUB.
+
+Maybe we could do something for it in automation too. When scanning for
+grub.cfg files, at the stage where cryptomount -a is executed, we could
+also check for LUKS header files and handle them if found. Yes, we could make
+the default Libreboot setup work out of the box, with detached LUKS headers.
+We already have this functionality, as described above, but we need to
+configure it. Read John Lane's site for more information, and the upstream
+GRUB documentation will also cover it.
+
+lbmk-c: clustered builds
+========================
+
+I had an idea on IRC when we were talking about how to optimise the build
+speed in Libreboot. Most of the time is spent simply compiling the ROM images,
+and this will become especially true when we support hundreds of boards; almost
+none of the time, by percentage, will be spent on payloads and cross compilers
+anymore.
+
+So my idea was: what if we had a cluster setup where multiple machines have
+their own clone of lbmk, but they all stay in sync, re-using the same builds,
+for example the same crossgcc builds, but each dividing up tasks between each
+other.
+
+For example, if you have 100 boards and 10 machines, those 10 machines in
+the cluster would build 10 rom sets each. They would tell each other when
+they're all done, and then at the end, there would be a process where they're
+all copied.
+
+This could probably be done using an NFS share, for things like the bin/
+directory on the release/ directory. We really will need something like this
+in the future, because Libreboot's goal is to support literally every coreboot
+board, providing automated configurations for all of them.
+
 Use crossgcc for SeaBIOS and GRUB
 =================================
 
@@ -1108,6 +1199,24 @@ Cross compilation is the first step to reproducibility, because then we only
 have to worry about the toolchain, which is easier to control. We can start
 focusing specifically on reproducibility once all of that has been done.
 
+Tarballs
+--------
+
+We already have partial reproducibility, though we currently use the `-T0`
+option in xz, whereas `-T1` is more appropriate; forcing it to run on 1 core
+will ensure that the file is always compressed in the same way.
+
+See: <https://reproducible-builds.org/docs/archives/>
+
+We already pretty much are right on the money. The main task that we still need
+to work on is cross compilation; specifically, we need to actually cross compile,
+because most code is compiled by hostcc when we use lbmk. This is covered in
+another section, on this TODO page.
+
+Also: <https://lists.debian.org/debian-dpkg/2016/10/msg00012.html>
+
+This post writes about the rationale for `-T1` when using xz.
+
 VGA: Run-time, not build-time
 =============================
 
@@ -1331,3 +1440,100 @@ mainboard, for different setups. We could skip a lot of the re-building.
 This pretty much goes hand in hand with the other entry on this TODO page,
 about spliting up the various stages in coreboot, and handling CBFS generation
 within lbmk.
+
+Notes about Git
+---------------
+
+See: <https://github.blog/2020-12-21-get-up-to-speed-with-partial-clone-and-shallow-clone/>
+
+This guide has some useful information about using Git, and some of it may be
+useful for this goal. There are many cases where we download all of the Git
+history for a given project, where we really only need a small part of it. We
+could speed up the downloads a lot, and also speed up the builds a bit (by
+reducing the amount of deltas that need to be resolved when cloning).
+
+In particular, Git Work Trees are a useful feature that we might use in lbmk.
+
+Scan submodules for backups
+---------------------------
+
+Where a project does use submodules, it's possible that we may already define
+how to download it, with redundant links. We could scan for this, by parsing
+the `.gitmodules` file within a project and comparing to what we have
+under `config/git/`.
+
+Chinese users can't run lbmk
+==========================
+
+Libreboot has quite a few Chinese users, but the Chinese internet blocks access
+to several sites like github - and apparently the coreboot gerrit site is also
+blocked, where we clone coreboot from.
+
+We'd need to get Chinese internet users to test this, but lbmk should be
+modified to work on the Chinese internet, when downloading packages. China is
+a huge country with over 1 billion people, all of whom deserve to use coreboot.
+
+We could provide special branches of lbmk with patches in it, that make certain
+upstreams be altered. For example, download coreboot from several mirrors that
+are not blocked in China.
+
+I did toy with the idea of making a Gitee account (China's not-invented-here
+copy of GitHub), but registration required a Chinese phone number, so I couldn't
+make an account. I was going to set it up for Libreboot.
+
+me cleaner is old
+=================
+
+From what I can tell, `me_cleaner` is not well-tested or supported on many
+newer Intel platforms. it shouldn't affect us in Libreboot for now, because we're
+not even past Haswell yet, but see for instance:
+
+
+Also: disablement
+-----------------
+
+See: <https://github.com/corna/me_cleaner/issues/278>
+
+This looks interesting. It seems on some arrandale machines it's actually
+possible to completely disable the ME (remove it from the nor flash),
+with "almost no ill effects" according to the OP on that issue page.
+
+me6updateparser
+===============
+
+We have me7updateparser, imported from the Heads project. It is used to
+re-construct full intel ME firmware from the partial firmware update provided
+in Lenovo X220 update files.
+
+We do not have ME auto-download on ThinkPad X201 (ME6). If we run it on those
+updates, it has the same problem: it is a partial ME update. We need to
+reconstruct the ME6 firmware, in the same way. The current me7updateparser is
+not suitable for ME6.
+
+FAQ: cover USB fuzzing attacks
+==============================
+
+We write on the FAQ that SATA devices could potentially have DMA capability,
+but this has still not been proven, and it's probably not true in practise.
+
+USB may not have DMA, but it's possible to perform what's called a fuzzing
+attack, whereby a USB device pretends to be something such as a keyboard,
+a mouse, a networking device, or any number of things in quick succession.
+A wily attacker could program a small USB dongle, and plug it into your running
+machine. If your operating system is insufficiently secured or otherwise
+poorly configured, and attacker could then remotely control your machine,
+and steal data.
+
+You can just look up "USB fuzzing attack" online. There are several actually
+practical examples of it in the wild, and it's really easy to do. Easy meaning:
+cheap. It's a low-effort attack.
+
+So we should cover it, and talk about ways to mitigate the risk (e.g. disable
+USB input devices and networking devices, in the user's operating system).
+
+Coreboot users page
+===================
+
+Update it and also add canoeboot there. The current entry isn't really a problem
+but it could be better, and also be more descriptive about all the features
+lbmk offers.
