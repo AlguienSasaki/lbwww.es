@@ -188,6 +188,18 @@ machine).
 
 Both are supported by coreboot.
 
+ASUS A88XM-E
+------------
+
+See: <https://browse.libreboot.org/lbmk.git/commit/?h=a88hm_test&id=80118a24b80b94078dec6aee9f54cfc5d286a14b>
+
+This is in a special branch, because there is currently no automation in the
+vendor scripts. it was done just to test the board. This uses an older revision
+of coreboot, because the board was dropped after coreboot 4.18. This lbmk
+patch makes use of coreboot `4.18_branch`.
+
+TODO: Finish this port in lbmk, and add it to the master branch.
+
 840 G2 (possible 820 G2)
 -------------------------
 
@@ -338,6 +350,22 @@ Of interest: Mrchromebox provides Tianocore-based UEFI setups on chromebooks,
 and we could probably integrate some of that in Libreboot. Tianocore is
 essentially bloatware, and really a liability for the Libreboot project due
 to its complexity, though MrChromebox targets a very different audience.
+
+Chromebooks (x86)
+-----------------
+
+Start supporting x86 chromebooks in Libreboot. We don't support any.
+There is already MrChromebox, we could just track that, but use our own
+payloads instead of Tianocore.
+
+Specifically: lbmk could have a feature added to it where it re-uses configs
+from MrChromebox, with logic to automatically disable the payload. In lbmk,
+coreboot configs do not enable payloads at all, because payloads are
+compiled by lbmk and added after the fact - this is why we have `elf/`
+containing coreboot images without payloads, and `bin/` which contains the
+full ROMs, with payloads inside. This design is much more flexible, and permits
+builds to be re-used more efficiently so as to reduce overall build time, when
+compiling for multiple mainboards.
 
 U-Boot SPL and UEFI on x86
 --------------------------
@@ -490,6 +518,27 @@ correct UEFI implementation.
 
 (then again, linux on bare metal providing kexec as main bootloader method is
 also quite non-standard, at least on x86 and ARM).
+
+Netboot.xyz
+-----------
+
+It's unlikely that this will actually be used in lbmk, but this provides a really
+nice way to boot Linux distros over the network:
+
+<https://github.com/netbootxyz>
+
+It uses iPXE, whereas we would be using Linux and kexec.
+
+Zfsbootmenu
+-----------
+
+See: <https://docs.zfsbootmenu.org/en/v2.3.x/>
+
+Similar in concept to netboot.xyz, but this actually does use Linux. It can
+boot many distros. We could provide something similar to this in Libreboot.
+
+This was briefly documented on the Libreboot website,
+before [argon2 kdf support](../news/argon2.md) was merged in Libreboot GRUB.
 
 Disable Libgfxinit on DGPU setups
 =================================
@@ -865,6 +914,53 @@ A 16MB setup was attempted on the ThinkPad T440p, but didn't boot, and I now
 believe it was because I didn't insert the MRC firmware at the correct offset
 during that test. Libreboot's build system now handles that correctly, in
 the vendorfile inject script at `script/vendor/inject`.
+
+ME Cleaner status page
+======================
+
+See: <https://github.com/corna/me_cleaner/issues/3>
+
+It's a good reference, though far from complete. People post there saying
+whether their hardware works with `me_cleaner`.
+
+Test thermal safety on Lenovo X201
+==================================
+
+A user reported that the machines get quite hot. Could just be bad
+cooling, on the machines that the the user reported. Anyway, test it under
+these conditions:
+
+* Coldboot on factory BIOS
+* S3 resume on factory BIOS
+* Cold boot on Libreboot
+* S3 resume on Libreboot
+
+Test all of the above cases *with* the full Intel ME firmware, first. *Then*,
+re-run both tests (coldboot and S3 resume) on Libreboot, but with the neutered
+ME firmware. This will require a custom ROM with a non-truncated ME region, and
+the smaller BIOS region, because lbmk currently only provides the truncated
+setup. Truncation shouldn't affect anything, but a non-neutered ME will not be
+truncated.
+
+Compare the results. Monitor temperatures. Do all of this during a stress
+test (`stress -c 2`) while monitoring temperatures in the `sensors` utility,
+or use xsensors. Check what the maximum temperature is.
+
+Then: on each of the above tests, *disconnect* the fan, but leave the stress
+test running. With the fan no longer receiving power, the system temperature
+will continue rising. On any given system, an automatic shutoff will occur,
+turning the system *off* abruptly (there isn't even a shutdown sequence in
+the OS, the machine will just lose all power and turn *off* completely). *This*
+is what must be tested. We *must* confirm that this works, or remove the port.
+
+No such reports have ever been made, on any other systems supported by
+Libreboot - only the ThinkPad X201, and only anecdotal. It has not yet been
+fully tested.
+
+Also literally feel the machine, and look at it. According to some users, the
+machine gets hotter when a neutered ME is in use. Depending on the results, it
+may be wise to *remove* this port from lbmk, so as to not further encourage
+its use. My own one seemed fine in testing, however, when I added it to lbmk.
 
 Overclocking
 ============
@@ -1544,3 +1640,101 @@ Coreboot users page
 Update it and also add canoeboot there. The current entry isn't really a problem
 but it could be better, and also be more descriptive about all the features
 lbmk offers.
+
+Auto-configure IFD region limits
+================================
+
+We currently configure the ME/BIOS region sizes manually, which is fine, but
+the way it's configured is very complicated.
+
+See: [Vendor file guide](../docs/install/ivy_has_common.html)
+
+The way the Libreboot build system works, the Intel ME and other firmware is
+automatically downloaded at build time. At release time, blobs such as these
+are deleted, but an extra *insert* script is provided that can provide the
+same auto-download and auto-insert on release ROMs.
+
+The default Intel ME firmware is about 5MB in most setups. We
+use `me_cleaner` which removes a lot of the malicious features in the ME,
+and truncates it to a much smaller size, e.g. 96KB on ivybridge systems (down
+from the default 5MB).
+
+We currently configure this manually. We could do it automatically, though it
+should not be done automatically at build time, but at the time of adding
+a given machine to Libreboot. We could automate it like so:
+
+* Download the vendor update, and use the bruteforce extraction method to get
+  at `me.bin`
+* Run the `me_cleaner` program, and get the size of the ME.
+* Pass it a factory dump, and run `me_cleaner` on that, to set all the
+  extra bits like HAP, but don't use truncate.
+* Run the `--unlock` command in ifdtool, to unlock that ROM.
+* Auto-configure the IFD region sizes in that dump, based on the truncated
+  size.
+* Extract the final IFD, and the GbE region if it exists.
+
+Then it can configure the config file under `config/vendor/`.
+
+After this, lbmk would still have static configs, not altered in any way at
+build time, but this would be an automated way to add new configs. Read more
+on the guide linked above, and read the vendor scripts themselves, to learn
+more; you can also read about them on the [lbmk maintenance
+manual](../docs/maintain/).
+
+Signed commits
+==============
+
+Start signing commits in Git. There's nothing more to say. Just do it.
+
+Secure suspend method (LUKS setups)
+================================
+
+See: <https://github.com/shmalebx9/luks-suspend-portable>
+
+Caleb came up with a method to have suspend functionality, where the encryption
+keys are not stored in memory. It's worth looking into. We might be able to
+provide something automated in lbmk.
+
+USB keyboard in secondary payload
+=================================
+
+We don't use secondary payloads defined here, but see:
+<https://ticket.coreboot.org/issues/484>
+
+The issue page has info about the problem, and a workaround. Listed here
+for reference, in case this functionality is ever used in Libreboot.
+
+zstd in btrfs on grub
+=====================
+
+Reported buggy by a user on IRC. TODO: test it
+
+zstd is the compression used in btrfs, when compression is enabled. No other
+information was given, other than it is "buggy". Reported
+on Libreboot 20231101.
+
+Optimise crossgcc space
+=======================
+
+Re-use crossgcc from other coreboot trees, in other coreboot trees. We currently
+build several versions of it, but we probably only need one, maybe two. Audit
+this, across various coreboot trees. Specific coreboot trees (older ones) could
+just be patched if re-using crossgcc from a newer tree.
+
+T60 /proc/acpi/ibm/thermal
+==========================
+
+Reported by a user (unknown what LIbreboot version), this file is not available
+at all. It was later revealed that the user flashed a ROM image without microcode
+updates, triggering the AE18 errata. Thermal management is buggy without the
+updates, on that platform.
+
+Link CPU errata PDFs
+=====================
+
+Libreboot makes reference to CPU errata in documentation, but without actually
+linking to the documents themselves. Link to the PDFs for all available CPUs,
+on supported Libreboot hardware. AMD has them too. These are errata documents
+that define which bugs exist in each CPU, and which ones have been fixed by
+microcode updates - they also generally provide information for OS developers,
+to know how certain bugs should be mitigated, whenever possible.
