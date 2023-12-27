@@ -1970,3 +1970,25 @@ updated. This is one of the benefits of the *freedom* coreboot gives you. We
 could enable this on all the older desktop machines, where otherwise their
 factory firmware does not and will not enable it (and the above link is for
 UEFI systems only).
+
+./update release -m serprog
+===========================
+
+Support generating release archives that only contain serprog src and roms,
+nothing else. But with the lbmk build system in it, to build them if using
+the serprog src archive (while roms would also be provided).
+
+also:
+
+	./update release -m serprogsrc
+
+^ src only
+
+right now we have:
+
+	./update release # builds all roms and src, coreboot too
+	./update release -m src # same as above, but src only
+
+The `-m serprog` and `-m serprogsrc` arguments would apply the same logic,
+but only handle serprog sources. Specifically, pico-serprog and stm32-vserprog,
+which Riku already automated the handling of in lbmk.
