@@ -1880,6 +1880,13 @@ of these tools linked above prints it.
 The VBT table is needed on machines where intel libgfxinit is used. It can just
 be extracted and included in a coreboot port.
 
+Also see: intelvbttool in coreboot. How to use:
+
+	intelvbttool --inlegacy --outvbt data.vbt
+
+Example patch (merged in coreboot) that used this:
+<https://review.coreboot.org/c/coreboot/+/79625>
+
 Guix: use debootstrap
 =====================
 
