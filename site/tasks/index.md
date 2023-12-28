@@ -241,6 +241,18 @@ SuperIO: at least M6500 is known to use ECE5028. I have a bunch of these
 Dells at my lab, they are high priority for porting because they would be
 easily flashable, and blob-free configs (Canoeboot could also support them).
 
+Dell Latitude E7240
+-------------------
+
+See: <https://review.coreboot.org/c/coreboot/+/79746>
+
+Haswell latitude, works with `dell-flash-unlock`, uses MEC5055 EC. Documentation
+is included with that patch. It should be possible to re-use the existing
+MRC extraction logic. It will have to be backported to the branch used for
+libremrc in lbmk.
+
+NOTE: Iru Cai is the person working on this.
+
 E4200 SPD
 ---------
 
@@ -324,10 +336,19 @@ getting it to boot reliably on custom firmware builds.
 OpenSIL and AMD Ryzen
 ---------------------
 
-Of interest: coreboot has started imported AMD's *OpenSIL*, to support the
-Ryzen-based chromebooks, and there is interest in adapting that code for
-Ryzen-based desktops. AMD Ryzen CPUs are quite powerful, currently among the
-best available at least on consumer-grade hardware.
+Coreboot is importing OpenSIL code from AMD, to support Epyc Genoa (server
+platform).
+
+There are also chromebooks now with AMD Ryzen CPUs.
+
+<https://github.com/coreboot/coreboot/commit/a859057db8d2eaf59a7575e303d7af35979d12d7>
+
+<https://github.com/coreboot/coreboot/commit/9e45e32420eda750afea9f6e4a3e6de42ba4152b>
+
+NOTE:
+
+9elements seems to be the main entity working on OpenSIL integration in
+coreboot, under the direction of Arthur Heymans.
 
 AMD Family16 boards
 -------------------
@@ -1999,3 +2020,21 @@ right now we have:
 The `-m serprog` and `-m serprogsrc` arguments would apply the same logic,
 but only handle serprog sources. Specifically, pico-serprog and stm32-vserprog,
 which Riku already automated the handling of in lbmk.
+
+Shrink FSP size (Intel)
+=========================
+
+See: <https://blog.osfw.foundation/breaking-the-boundary-a-way-to-create-your-own-fsp-binary/>
+
+Remove modules from FSP that coreboot doesn't use. This will especially be
+useful on setups where linuxboot is to be enabled. Initially done on Alderlake
+but possible on other platforms.
+
+Thanks go to Nicholas Chin for linking this.
+
+Chromebooks
+-----------
+
+Especially useful here, if using the default setup. In the default setup,
+there are essentially three copies of the firmware in flash: a recovery
+image, an "A" image and a "B" image, according to Nicholas Chin.
