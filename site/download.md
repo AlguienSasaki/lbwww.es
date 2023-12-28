@@ -24,22 +24,37 @@ GPG signing key
 
 ### NEW KEY
 
-Full key fingerprint: `98CC DDF8 E560 47F4 75C0  44BD D0C6 2464 FA8B 4856`
+Full key fingerprint: `8BB1 F7D2 8CF7 696D BF4F  7192 5C65 4067 D383 B1FF`
 
-This key is for Libreboot releases *after* the 20160907 release.
+This key is for Libreboot releases *after* the 20231106 release. It applies to
+all Libreboot releases from the year 2024, and it will expire (unless revoked
+early) on 26 December 2028.
 
 Download the key here: [lbkey.asc](lbkey.asc)
 
 Libreboot releases are signed using GPG.
 
-### OLD KEY:
+### OLD KEY
+
+Full key fingerprint: `98CC DDF8 E560 47F4 75C0  44BD D0C6 2464 FA8B 4856`
+
+This key is for Libreboot releases *after* the 20160907 release, and up
+to the Libreboot 20231106 release. This key *expired* during December 2023,
+so you should use the *newer* key (see above) for the releases after
+Libreboot 20231106.
+
+Download the key here: [lbkey.asc](lbkeyold.asc)
+
+Libreboot releases are signed using GPG.
+
+### OLD OLD KEY:
 
 This key is for Libreboot 20160907, and releases older than 20160907:
 
 Full key fingerprint: CDC9 CAE3 2CB4 B7FC 84FD  C804 969A 9795 05E8 C5B2
 
 The GPG key can also be downloaded with this exported dump of the
-pubkey: [lbkeyold.asc](lbkeyold.asc).
+pubkey: [lbkeyold.asc](lbkeyoldold.asc).
 
 	sha512sum -c sha512sum.txt
 	gpg --verify sha512sum.txt.sig
