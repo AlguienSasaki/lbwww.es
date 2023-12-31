@@ -51,6 +51,10 @@ code more readable. Such has been the main focus of this audit.
 
 And now, specific changes:
 
+* GRUB: bumped the revision again, to the 2.12 release which came out
+  on 20 December 2023. We previously bumped this to a November revision,
+  mentioned earlier in this changelog, but now we can use the officia/
+  GRUB 2.12 release.
 * `target.cfg` files are now possible for single-tree projects, not just
   multi-tree projects. For single-tree projects, it goes
   at `config/projectname/target.cfg`, and it goes on the
@@ -289,6 +293,7 @@ And now, specific changes:
 Exact git log, relative to 20231106:
 
 ```
+* 11a82163 Bump GRUB to 2.12 release
 * f3098f56 git.sh multi-tree: grab submodules *after* patches 
 * 5fb6e36f update/trees: clean up the coreboot-version check 
 * 4c9ee172 update/trees: support custom make/autogen argument 
@@ -434,4 +439,4 @@ Exact git log, relative to 20231106:
 * f12f5c3a nvmutil: fix makefile 
 ```
 
-This is 116 changes, since Libreboot 20231106.
+This is 117 changes, since Libreboot 20231106.
