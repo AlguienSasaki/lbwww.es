@@ -6,7 +6,7 @@ Introduction
 ============
 
 This article pertains to the current Libreboot (lbmk) revision at this time
-of writing, which is `f3098f566ca89f6d7ebc8e91e2a78e751a7ef924` from 31
+of writing, which is `11a821637d8a36f4a72001ef8d8c41952f066cc3` from 31
 December 2023. A *release* is also being considered for some time in January
 of 2024, based on this audit and new features that are planned, plus new
 boards. To compliment this audit, the [TODO page](../tasks/), which now lists
