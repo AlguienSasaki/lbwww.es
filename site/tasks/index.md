@@ -461,6 +461,24 @@ For UEFI purposes, U-Boot seems more mature, and it offers other features
 like SPL. As already stated, this is the preferred UEFI implementation for
 Libreboot, but uefistub is listed too because it's interesting.
 
+Videos (plus RISCV)
+------
+
+The *Open Source Firmware Conference* (OSFC) in 2023 had several interesting
+talks pertaining to ARM, secureboot, linuxboot, UEFI and everything in between.
+Also RISCV/oreboot. Here are some videos, some of which contain info already
+alluded to on this page:
+
+* <https://www.osfc.io/2023/talks/enabling-coreboot-for-open-system-firmware-on-arm-servers/>
+* <https://www.osfc.io/2023/talks/u-boot-as-a-coreboot-payload/>
+* <https://www.osfc.io/2023/talks/aligned-on-risc-v/>
+
+In general, there are many interesting talks:
+
+* <https://www.osfc.io/archive/2023/>
+
+The talks go all the way back to 2018. They're all worth watching.
+
 Linuxboot
 =========
 
