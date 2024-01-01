@@ -253,6 +253,20 @@ libremrc in lbmk.
 
 NOTE: Iru Cai is the person working on this.
 
+Dell Precision M4800
+--------------------
+
+See: <https://review.coreboot.org/c/coreboot/+/79755>
+
+Another haswell machine. However, according to Nicholas Chin, at least
+on 1 January 2024, this patch (on patchset 4), there were problems with
+code quality and libgfxinit didn't work yet - also, the ACPI code seemed
+to be a dump of the vendor, which is of low quality and likely not suitable
+for entry into coreboot due to copyright reasons.
+
+This port is worth looking at. When the issues are fixed, this will make a
+fine addition to lbmk.
+
 E4200 SPD
 ---------
 
