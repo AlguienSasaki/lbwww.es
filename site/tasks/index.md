@@ -1377,7 +1377,7 @@ prepared. Users are unpredictable.
 Reproducible builds
 ===================
 
-We can't focus on this reliably, becasue we use hostcc extensively for many
+We can't focus on this reliably, because we use hostcc extensively for many
 parts of the build process. Other parts of this TODO page talk about how to
 integrate linux as a payload, by improving our cross compiling setup.
 
