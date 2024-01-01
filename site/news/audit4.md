@@ -77,7 +77,8 @@ And now, specific changes:
 * `script/build/serprog`: Return error status (exit) if basename fails, when
   processing various board targets available on stm32/rp2040 projects. Patch
   courtesy of Leah Rowe.
-* **NEW BOARD:** HP 8300 CMT mainboard, added by Riku Viitanen.
+* **NEW BOARD:** HP 8300 CMT mainboard, added by Riku Viitanen, who worked
+  on it with a tester in the IRC channel.
 * Fixed implicit typecasting bug on flashrom 1.2 source code, thus preventing
   a build issue (tested on Debian 12.2). Patch courtesy of Leah Rowe.
 * `script/build/roms`: Rename `check_target` to `configure_target`
@@ -183,7 +184,7 @@ And now, specific changes:
   X230 setups where the user replaced the two flashes with a single 16MB flash.
   Patch courtesy of Nicholas Chin.
 * **NEW BOARD:** HP EliteBook 8460p support added. Patch courtesy of Riku
-  Viitanen, who worked on it with a tester in the IRC channel.
+  Viitanen.
 * `include/git.sh`: Simplified submodule handling by not using subshells for
   running `cd` to a git repository. Instead, the `-C` option is used in Git.
 * main build script, in the `initialise_command` (now `initcmd`) function:
