@@ -77,7 +77,7 @@ ROM images](../docs/maintain/)) is very limited in scope.
 
 At the same time, there aren't many good outsourced options for providing a
 mailing list. Sourcehut is basically our best option. Access to the `~libreboot`
-account or sr.ht was [acquired](../news/10.md) during April 2023.
+account was [acquired](../news/10.md) during April 2023.
 
 General auditing
 ================
