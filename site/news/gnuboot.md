@@ -2,21 +2,26 @@
 % Leah Rowe
 % 17 July 2023
 
+**UPDATE, 2 January 2024: Also see the notes about desire for partial
+reconciliation, written at the end of [the 10-year anniversary
+article published on 12 December 2023](10.md) - as far as I'm concerned, all
+hostilities have cooled. The FSF seems to have backed off, and I have only the
+desire to focus on my own work, so I will no longer concern myself with GNUBoot.**
+
 **UPDATE, 27 October 2023: The Censored Libreboot and nonGeNUine Boot websites have merged
 into a new project, called Canoeboot. Canoeboot is a new Libreboot-endorsed
-spinoff project (official fork).**
+spinoff project (official fork). See: <https://canoeboot.org/>**
 
 **See: [Canoeboot 20231026 release](https://canoeboot.org/news/canoeboot20231026.html) - 
 the original article below showed a desire to work with GNU Boot, but it has
 now been decided that Canoeboot will be an official project of Libreboot,
 providing releases under the old [Binary Blob Elimination
 Policy](https://web.archive.org/web/20221107235850/https://libreboot.org/news/policy.html) (instead of
-Libreboot's current [Binary Blob Reduction Policy](policy.md)).**
+Libreboot's current [Binary Blob Reduction Policy](policy.md)). - no further
+action is planned, except that [Canoeboot](https://canoeboot.org/) will now
+be maintained, without paying the GNU project much mind.**
 
-**The situation on 27 October 2023 is not much different, in substance. Please
-see: [Canoeboot vs GNU Boot](https://canoeboot.org/gnuboot.html) - Canoeboot
-will now compete with GNU Boot, rather than try to assist it; they didn't accept
-Libreboot's help anyway.**
+The original article, published on 17 July 2023, is written below:
 
 Original article as it was written, 17 July 2023:
 =================================================
@@ -38,6 +43,8 @@ project. More on this next:
 
 non-GeNUine Boot 20230717 release
 ------------------------------------
+
+NOTE FROM THE FUTURE: non-GeNUine Boot is now called Canoeboot.
 
 If you want to skip the lecture, just read these first and re-visit this
 page (the one you're reading now) afterwards for more context:
