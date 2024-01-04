@@ -26,6 +26,11 @@ get an error related to `/dev/mem` access, you should reboot with
 `iomem=relaxed` kernel parameter before running flashrom, or use a kernel that
 has `CONFIG_STRICT_DEVMEM` not enabled.
 
+On NetBSD and OpenBSD systems, the equivalent to `iomem=relaxed` in this case
+is `kernel.securelevel=-1`; see [NetBSD securelevel
+manual](https://wiki.netbsd.org/tutorials/kernel_secure_levels/)
+and [OpenBSD securelevel manual](https://man.openbsd.org/securelevel).
+
 ERROR: Could not get I/O privileges
 ------------------------------------
 
@@ -39,7 +44,8 @@ See: <https://lwn.net/Articles/804143/>
 
 Yeah, just enable `CONFIG_X86_IOPL_IOPERM` in your Linux kernel. This is
 a *build-time* option, so you must re-compile your kernel, or find a build that
-has this option enabled (IOPL emulation).
+has this option enabled (IOPL emulation). Many default kernel configurations
+now disable this option.
 
 Here's a handy-dandy guide for building a kernel from source:
 <https://www.cyberciti.biz/tips/compiling-linux-kernel-26.html>
