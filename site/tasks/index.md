@@ -462,6 +462,11 @@ Since we already provide U-Boot on ARM (thanks to the continued work done by
 Alper Nebi Yasak), U-Boot on x86 would then create a situation whereby Libreboot
 is consistent across platforms, at least for UEFI-based setups.
 
+RockPro64
+---------
+
+Another interesting board that coreboot supports. We could add this.
+
 uefistub
 --------
 
