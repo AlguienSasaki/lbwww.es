@@ -2075,3 +2075,15 @@ Chromebooks
 Especially useful here, if using the default setup. In the default setup,
 there are essentially three copies of the firmware in flash: a recovery
 image, an "A" image and a "B" image, according to Nicholas Chin.
+
+Compare factory/download neutered ME
+====================================
+
+Use tools and hexdump diffs to compare neutered Intel ME images,
+comparing ones neutered from factory.bin dump, and ones from
+the auto-downloader in lbmk.
+
+Probably no difference, or no differences that matter, but we never
+tested this (no problems so far, since mid/late 2022 when we started
+doing this in osboot, and heads did it for years before we did, and
+they never had any problems).
