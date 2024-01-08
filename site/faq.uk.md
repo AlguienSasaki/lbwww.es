@@ -1010,8 +1010,6 @@ Of note: Windows 11 officially requires at least TPM 1.2 to be supported, and
 it requires use of UEFI SecureBoot. To bypass this requirement, MajorGeeks has
 a guide, see: <https://www.majorgeeks.com/content/page/bypass_tpm.html>
 
-The person who tested this, being unable to peform a in place upgrade, i had to wipe the drive but no big deal.
-
 The person who tested this also stated that they were unable to perform an
 in-place upgrade from 10 to 11, so they had to wipe the drive and perform a
 clean (note: not clean, because Windows is full of NSA spyware) installation.
