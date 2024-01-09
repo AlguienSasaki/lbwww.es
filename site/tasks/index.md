@@ -2087,3 +2087,37 @@ Probably no difference, or no differences that matter, but we never
 tested this (no problems so far, since mid/late 2022 when we started
 doing this in osboot, and heads did it for years before we did, and
 they never had any problems).
+
+sh set -o pipefail
+==================
+
+Example:
+
+```
+grep "foo" bar.txt | sort
+```
+
+In piped commands, the final command's return value is always used.
+In this case, grep's returning of a non-zero status will *not* result
+in a non-zero exit from a script (where `-e` is set, which we do set in
+most of lbmk).
+
+To remedy this, add:
+
+```
+set -o pipefail
+```
+
+We already set `-u` and `-e`. The `u` switch makes a script exit with
+error status if a variable is used initialised. The `e` switch makes a
+script exit with error-status when any command executed within it exits
+with error, unless the above scenario applies.
+
+Also see:
+
+* <https://gist.github.com/mohanpedala/1e2ff5661761d3abd0385e8223e16425>
+* <http://redsymbol.net/articles/unofficial-bash-strict-mode/>
+
+We already are very strict in how we handle errors, but lbmk does indeed
+used piped logic in a few areas. An audit is in order, to fix any potential
+lack of error handling in such cases.
