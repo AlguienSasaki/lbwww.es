@@ -261,6 +261,12 @@ which means that the MAC address is irrelevant (either there will be an Intel
 PHY module that is now unusable, and you use an add-on card, or it doesn't use
 an Intel PHY module and the onboard NIC is usable).
 
+HP EliteBook 820 G2
+===================
+
+Please refer to the [820 G2 page](../hardware/hp820g2.md) for specific
+flashing instructions, both internal and external.
+
 Install via host CPU (internal flashing)
 ========================================
 
