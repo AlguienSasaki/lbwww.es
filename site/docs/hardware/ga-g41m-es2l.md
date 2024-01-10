@@ -4,7 +4,7 @@ title: Gigabyte GA-G41M-ES2L desktop board
 
 <div class="specs">
 <center>
-![GA-G41M-ES2L]()
+GA-G41M-ES2L
 </center>
 
 | ***Specifications***       |                                                |

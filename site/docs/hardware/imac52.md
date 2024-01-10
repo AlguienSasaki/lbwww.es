@@ -4,7 +4,7 @@ title: Apple iMac 5,2
 
 <div class="specs">
 <center>
-![iMac5,2]()
+iMac5,2
 </center>
 
 | ***Specifications***       |                                                |
