@@ -2106,3 +2106,17 @@ also see
 <https://www.youtube.com/watch?v=SSrFv4a-zgU>
 
 https://blog.3mdeb.com/2020/2020-11-02-grub2mini-summit/
+
+4th SSD on T440p
+================
+
+probably possible on w541 too
+
+<https://www.youtube.com/watch?v=jURgHzLrpBs>
+
+<https://www.youtube.com/watch?v=gAZw0fTKdYg>
+
+this was tested on windows in the lenovo firmware, but it will
+be possible to use this in coreboot with linux/bsd
+
+todo: test it. need to actually solder it and test it.
