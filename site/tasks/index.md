@@ -1025,45 +1025,6 @@ See: <https://github.com/corna/me_cleaner/issues/3>
 It's a good reference, though far from complete. People post there saying
 whether their hardware works with `me_cleaner`.
 
-Test thermal safety on Lenovo X201
-==================================
-
-A user reported that the machines get quite hot. Could just be bad
-cooling, on the machines that the the user reported. Anyway, test it under
-these conditions:
-
-* Coldboot on factory BIOS
-* S3 resume on factory BIOS
-* Cold boot on Libreboot
-* S3 resume on Libreboot
-
-Test all of the above cases *with* the full Intel ME firmware, first. *Then*,
-re-run both tests (coldboot and S3 resume) on Libreboot, but with the neutered
-ME firmware. This will require a custom ROM with a non-truncated ME region, and
-the smaller BIOS region, because lbmk currently only provides the truncated
-setup. Truncation shouldn't affect anything, but a non-neutered ME will not be
-truncated.
-
-Compare the results. Monitor temperatures. Do all of this during a stress
-test (`stress -c 2`) while monitoring temperatures in the `sensors` utility,
-or use xsensors. Check what the maximum temperature is.
-
-Then: on each of the above tests, *disconnect* the fan, but leave the stress
-test running. With the fan no longer receiving power, the system temperature
-will continue rising. On any given system, an automatic shutoff will occur,
-turning the system *off* abruptly (there isn't even a shutdown sequence in
-the OS, the machine will just lose all power and turn *off* completely). *This*
-is what must be tested. We *must* confirm that this works, or remove the port.
-
-No such reports have ever been made, on any other systems supported by
-Libreboot - only the ThinkPad X201, and only anecdotal. It has not yet been
-fully tested.
-
-Also literally feel the machine, and look at it. According to some users, the
-machine gets hotter when a neutered ME is in use. Depending on the results, it
-may be wise to *remove* this port from lbmk, so as to not further encourage
-its use. My own one seemed fine in testing, however, when I added it to lbmk.
-
 Overclocking
 ============
 
@@ -1720,18 +1681,6 @@ See: <https://github.com/corna/me_cleaner/issues/278>
 This looks interesting. It seems on some arrandale machines it's actually
 possible to completely disable the ME (remove it from the nor flash),
 with "almost no ill effects" according to the OP on that issue page.
-
-me6updateparser
-===============
-
-We have me7updateparser, imported from the Heads project. It is used to
-re-construct full intel ME firmware from the partial firmware update provided
-in Lenovo X220 update files.
-
-We do not have ME auto-download on ThinkPad X201 (ME6). If we run it on those
-updates, it has the same problem: it is a partial ME update. We need to
-reconstruct the ME6 firmware, in the same way. The current me7updateparser is
-not suitable for ME6.
 
 FAQ: cover USB fuzzing attacks
 ==============================
