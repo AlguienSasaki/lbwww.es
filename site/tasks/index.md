@@ -2139,3 +2139,15 @@ Apparently, this can be upgraded to TPM 2.0. Riku linked this on IRC:
 And also this, straight from the horse's mouth:
 
 <https://www.infineon.com/cms/en/product/security-smart-card-solutions/optiga-embedded-security-solutions/optiga-tpm/slb-9660xt1.2/>
+
+GRUB XHCI support
+=================
+
+Not merged in master yet, but check this patch series from 2020:
+
+https://lists.gnu.org/archive/html/grub-devel/2020-12/msg00111.html
+
+This could very likely be rebased on top of GRUB 2.12.
+
+GRUB seems to have a habit of *not* merging perfectly good patches. It
+took years for John Lane's detached luks header support to be merged.
