@@ -40,10 +40,9 @@ Work done since last release
 ThinkPad X201 support added
 -----------------------------
 
-The *primary* focus of this release was fixing bugs in the last release, and new
-build system features.
-
-However, [ThinkPad X201](../docs/hardware/x201.md) support was added.
+**UPDATE: SUPPORT WAS REMOVED on 12 January 2024, because it was found that fans
+fail when using a neutered ME, on this platform - this bug only affects the
+older arrandales like X201, but newer platforms are not affected.**
 
 Intel D945GCLF was also re-added, in this release.
 
@@ -191,7 +190,6 @@ Desktops (AMD, Intel, x86)
 -   [Dell Latitude E6430 (Intel GPU](../docs/hardware/e6430.md) **(easy to flash, no disassembly)**
 -   ThinkPad X60 / X60S / X60 Tablet
 -   ThinkPad T60 (with Intel GPU)
--   [Lenovo Thinkpad X201 / X201S / X201 Tablet](../docs/hardware/x201.md)
 -   [Lenovo ThinkPad X200 / X200S / X200 Tablet](../docs/hardware/x200.md)
 -   Lenovo ThinkPad X301
 -   [Lenovo ThinkPad R400](../docs/hardware/r400.md)

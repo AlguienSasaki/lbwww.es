@@ -370,10 +370,9 @@ Intel NIC.
 TARGET: ThinkPad X201/X201S/X201 Tablet
 --------------------------------
 
-**IMPORTANT ADVICE: [PLEASE READ THESE INSTRUCTIONS BEFORE INSTALLING/UPDATING
-LIBREBOOT](../../news/safety.md). - this also applies to X201**
-
-Refer to [X201 flashing guide](x201.md)
+**SUPPORT WAS REMOVED, because fan controls fail when the ME is neutered on
+this platform. This only affects the arrandale machines, and does not affect
+newer Intel platforms.**
 
 #### Intel D510MO and D410PT running original Intel BIOS
 
