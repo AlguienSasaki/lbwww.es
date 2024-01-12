@@ -364,6 +364,8 @@ NOTE:
 9elements seems to be the main entity working on OpenSIL integration in
 coreboot, under the direction of Arthur Heymans.
 
+also <https://www.youtube.com/watch?v=gAZw0fTKdYg>
+
 AMD Family16 boards
 -------------------
 
