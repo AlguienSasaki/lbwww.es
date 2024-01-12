@@ -2151,3 +2151,9 @@ This could very likely be rebased on top of GRUB 2.12.
 
 GRUB seems to have a habit of *not* merging perfectly good patches. It
 took years for John Lane's detached luks header support to be merged.
+
+also see
+
+<https://www.youtube.com/watch?v=SSrFv4a-zgU>
+
+https://blog.3mdeb.com/2020/2020-11-02-grub2mini-summit/
