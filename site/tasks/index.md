@@ -894,6 +894,15 @@ directory on the release/ directory. We really will need something like this
 in the future, because Libreboot's goal is to support literally every coreboot
 board, providing automated configurations for all of them.
 
+distcc is probably useful here:
+
+<https://www.distcc.org/scenarios.html>
+
+ccache
+------
+
+not directly related, but this can speed up coreboot builds
+
 Use crossgcc for SeaBIOS and GRUB
 =================================
 
