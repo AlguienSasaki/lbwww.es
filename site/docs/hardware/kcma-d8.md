@@ -3,6 +3,8 @@ title: ASUS KCMA-D8 desktop/workstation board
 x-toc-enable: true
 ...
 
+TODO: this page is OLD. check that the info is still valid.
+
 Introduction
 ============
 
@@ -149,7 +151,7 @@ Current issues {#issues}
 
 -   Opteron 4100 series CPUs are currently incompatible
 -   LRDIMM memory modules are currently incompatible
-	(use UDIMMs please)
+	(use UDIMMs please) - NOTE: might actually work nowadays.
 -   Memory initialization is still problematic for some modules. We
     recommend avoiding Kingston and Super Talent modules for this reason.
 
@@ -157,11 +159,6 @@ The coreboot wiki has some information about RAM compatibility. The wiki is
 deprecated but the info on it is still correct for this board. Some other
 considerations:
 
--   Booting from USB mass storage devices is currently broken under GRUB.
-    Consequently, the textmode ROM with SeaBIOS is recommended otherwise
-    in order to install an operating system you will need a hard disk with
-    a pre-installed OS or will have to plug in another HDD or CD/DVD
-    reader in order to boot OS installation media.
 -   SeaBIOS lacked serial console support out-of-the-box in release 20160907
     and as such a workaround using SGABIOS is necessary. You can find
     instructions on how to do this on the

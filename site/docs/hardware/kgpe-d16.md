@@ -3,6 +3,8 @@ title: ASUS KGPE-D16 server/workstation board
 x-toc-enable: true
 ...
 
+TODO: OLD page. TODO: check that all the info is still valid.
+
 Introduction
 ============
 
@@ -79,6 +81,7 @@ Current issues {#issues}
 ==============
 
 -   LRDIMM memory modules are currently incompatible
+	(IT MAY WORK NOWADAYS, TODO TEST)
 -   SAS (via PIKE 2008 module) requires a vendor option ROM (and
     SeaBIOS) to boot from it (theoretically possible to replace, but you
     can put a kernel in CBFS or on SATA and boot from that, which
