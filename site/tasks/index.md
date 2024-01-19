@@ -903,6 +903,72 @@ ccache
 
 not directly related, but this can speed up coreboot builds
 
+Fixdep
+======
+
+This would be something to implement in coreboot's build system, but could also
+benefit lbmk. Currently, any changes to the coreboot's config results in Make
+recompiling all objects, even if `make clean` wasn't run or if the change
+shouldn't have an effect. This is because the build system force includes the
+generated config.h header into every source, thus making it a prerequisite of
+every object. This file contains C macro definitions for the value of all
+visible Kconfig options, allowing code to reference these values for various
+purposes. Since all of them are contained in this file alone, any change to the
+config will cause config.h to be updated, forcing all object targets to be out
+of date.
+
+Linux solves this using a utility called fixdep (scripts/basic in the kernel
+sources), which parses all source files and their included headers to determine
+which configs, if any, an object actually depends on. The config.h prerequisite
+is replaced with dependencies on the appropriate config options, allowing make
+to skip rebuilding objects that do not have any config dependencies or where
+the config has not changed in value.
+
+This may make it possible to avoid running distclean in lbmk between boards,
+allowing existing objects to be reused if the new board's config does not
+affect the object. This would reduce the complexity of the build from O(n\*m)
+to the order of O(m), where n is the number of configs and m is the number of
+source files. For maximum effectiveness using fixdep alone, boards would need
+to be built in an order that minimizes the differences in configs between
+sequential builds, otherwise Make may end up rebuilding an object that was
+built previously but overwritten with a new build due to a change in the
+config.
+
+Consider:
+
+- Board A, which sets CONFIG_TEST=y
+- Board B, which sets CONFIG_TEST=n
+- Board C, which sets CONFIG_TEST=y
+- test.c, which uses the value of CONFIG_TEST
+
+An order such as A->C->B would be most efficient:
+
+1. A: test.c compiled for the first time with CONFIG_TEST=y
+2. C: CONFIG_TEST hasn't changed, so test.o can be reused from step 1
+3. B: test.c recompiled, since CONFIG_TEST changed back to n
+
+An order such as A->B->C would be least efficient:
+
+1. A: test.c compiled for the first time with CONFIG_TEST=y
+2. B: test.c recompiled, since CONFIG_TEST changed to n
+3. C: test.c recompiled again, since CONFIG_TEST changed back to y, even though
+   this configuration was previously built in step 1.
+
+Given the number of possible configs, the ideal order is likely impractical to
+determine, and some files may necessarily have to be built multiple times with
+the same Kconfigs applied. However, the use of ccache would help mitigate this
+issue, as it would return cached object files when it detects that the sources
+for the object being built are the same as a previous compile.
+
+All of this should be carefully implemented to ensure that the resulting output
+is the same as if each file was compiled from scratch each time.
+
+The following article describes the function of fixdep in more detail, under
+the header "Dependency tracking":
+<https://opensource.com/article/18/10/kbuild-and-kconfig>
+
+Nicholas Chin is looking at this in coreboot.
+
 Use crossgcc for SeaBIOS and GRUB
 =================================
 
