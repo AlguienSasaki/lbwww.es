@@ -85,7 +85,7 @@ For the MacBook2,1:
     working)*
 * MA701LL/A / A1181 (EMC 2121) / Intel Core 2 Duo T7200 *(tested -
     working)*
-* MB061LL/A / A1181 (EMC 2139) / Intel Core 2 Duo T7200 (untested)
+* MB061LL/A / A1181 (EMC 2139) / Intel Core 2 Duo T7200 *(tested -
 * MA700LL/A / A1181 (EMC 2121) / Intel Core 2 Duo T7200 *(tested -
     working)*
 * MB063LL/A / A1181 (EMC 2139) / Intel Core 2 Duo T7400 *(tested - working)*
