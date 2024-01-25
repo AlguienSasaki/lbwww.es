@@ -2197,3 +2197,22 @@ this was tested on windows in the lenovo firmware, but it will
 be possible to use this in coreboot with linux/bsd
 
 todo: test it. need to actually solder it and test it.
+
+Disable ME device in devicetree
+================================
+
+We neutered, but coreboot still enables MEI1 on many boards.
+
+Look in devicetrees within coreboot, and see:
+
+```
+			device ref mei1 on end
+			device ref mei2 off end
+			device ref me_ide_r off end
+			device ref me_kt off end
+```
+
+Example taken from lenovo/x230. We could just turn all of these off.
+It doesn't affect anything in practise, whether this is on or not, because
+we neuter anyway, so the ME interface is broken by default. Leaving it
+on in devicetree will result in a benign error message on linux dmesg.
