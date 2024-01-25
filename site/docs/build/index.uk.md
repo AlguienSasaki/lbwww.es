@@ -61,6 +61,13 @@ Python
 Python2 не використовується lbmk або будь-чим, що завантажується в якості модулів. Ви
 маєте переконатись, що команда `python` виконує python 3 на вашій системі.
 
+Zero..st, check time/date
+-------------------------
+
+Make sure date/hwclock report the correct time and date on your system,
+because parts of the build process download from HTTPS servers and wrong
+time or date can cause connections to be dropped during negotiation.
+
 Побудова з джерельного коду
 ============================
 

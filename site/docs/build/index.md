@@ -93,6 +93,13 @@ Actual development/testing is always done using lbmk directly, and this
 includes when building from source. Here are some instructions to get you
 started:
 
+Zero..st, check time/date
+-------------------------
+
+Make sure date/hwclock report the correct time and date on your system,
+because parts of the build process download from HTTPS servers and wrong
+time or date can cause connections to be dropped during negotiation.
+
 First, install build dependencies
 ---------------------------------
 
