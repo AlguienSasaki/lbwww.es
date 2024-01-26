@@ -589,3 +589,12 @@ so that they can be checked during insertion post-release.
 
 Simply check that the mrc.bin and refcode files were added in CBFS, to your
 HP 820 G2 ROM, if you're using a release ROM.
+
+Because of the error, your 820 G2 ROMs will not appear under `bin/release/`,
+but if you only ran that command for those ROMs, and it was the last command
+you ran, you will find the injected ROM images under `tmp/romdir/` in your
+lbmk.
+
+If you're in any doubt whatsoever, simply build this ROM [from
+source](../docs/build/), using either the (source code) release archive,
+or from `lbmk.git`.
