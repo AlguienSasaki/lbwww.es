@@ -14,8 +14,8 @@ su [Libera](https://libera.chat/).
 
 <img tabindex=1 class="r" src="https://av.libreboot.org/hp9470m/9470m+2560p.jpg" /><span class="f"><img src="https://av.libreboot.org/hp9470m/9470m+2560p.jpg" /></span>
 
-**ULTIMO RILASCIO: L'ultimo rilascio e' Libreboot 20231106, rilasciato il 6 novembre 2023.
-Vedi: [Libreboot 20231106 annuncio di rilascio](news/libreboot20231106.md).**
+**ULTIMO RILASCIO: L'ultimo rilascio e' Libreboot 20240126, rilasciato il 26 January 2024.
+Vedi: [Libreboot 20240126 annuncio di rilascio](news/libreboot20240126.md).**
 
 Per quale ragione utilizzare *Libreboot*?
 -----------------------------------------

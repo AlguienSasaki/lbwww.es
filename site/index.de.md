@@ -15,9 +15,9 @@ und [Libera](https://libera.chat/) IRC.
 
 <img tabindex=1 class="r" src="https://av.libreboot.org/hp9470m/9470m+2560p.jpg" /><span class="f"><img src="https://av.libreboot.org/hp9470m/9470m+2560p.jpg" /></span>
 
-**NEUESTE VERSION: Die neueste Version von Libreboot ist 20231106, veröffentlicht
-am 6. November 2023.
-Siehe auch: [Libreboot 20231106 release announcement](news/libreboot20231106.md).**
+**NEUESTE VERSION: Die neueste Version von Libreboot ist 20240126, veröffentlicht
+am 26. January 2024.
+Siehe auch: [Libreboot 20240126 release announcement](news/libreboot20240126.md).**
 
 Warum solltest Du *Libreboot* verwenden?
 ----------------------------

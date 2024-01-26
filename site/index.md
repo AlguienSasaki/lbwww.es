@@ -17,9 +17,9 @@ them yourself).
 
 <img tabindex=1 class="r" src="https://av.libreboot.org/hp9470m/9470m+2560p.jpg" /><span class="f"><img src="https://av.libreboot.org/hp9470m/9470m+2560p.jpg" /></span>
 
-**NEW RELEASE: The latest release is Libreboot 20231106, released on
-6 November 2023.
-See: [Libreboot 20231106 release announcement](news/libreboot20231106.md).**
+**NEW RELEASE: The latest release is Libreboot 20240126, released on
+26 January 2024.
+See: [Libreboot 20240126 release announcement](news/libreboot20240126.md).**
 
 *We* believe the freedom to [study, share, modify and use
 software](https://writefreesoftware.org/), without any

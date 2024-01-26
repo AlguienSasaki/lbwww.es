@@ -20,13 +20,13 @@ LIBREBOOT](news/safety.md).**
 Код підпису GPG
 ---------------
 
-**Останнім випуском є Libreboot 20231106, в директорії `testing`.**
+**Останнім випуском є Libreboot 20240126, в директорії `testing`.**
 
 ### НОВИЙ КЛЮЧ
 
 Повний відбиток ключа: `8BB1 F7D2 8CF7 696D BF4F  7192 5C65 4067 D383 B1FF`
 
-Вищезазначений ключ для Libreboot 20231106, та наступних випусків. This key
+Вищезазначений ключ для Libreboot 20240126, та наступних випусків. This key
 is applicable to any release made on or after the date: 28 December 2023. It
 will expire on 26 December 2028.
 
@@ -39,9 +39,9 @@ will expire on 26 December 2028.
 Повний відбиток ключа: `98CC DDF8 E560 47F4 75C0  44BD D0C6 2464 FA8B 4856`
 
 This key is for Libreboot releases *after* the 20160907 release, and up
-to the Libreboot 20231106 release. This key *expired* during December 2023,
+to the Libreboot 20240126 release. This key *expired* during December 2023,
 so you should use the *newer* key (see above) for the releases after
-Libreboot 20231106.
+Libreboot 20240126.
 
 Завантажте ключ тут: [lbkey.asc](lbkeyold.asc)
 
@@ -72,7 +72,7 @@ Libreboot 20231106.
 Дзеркала HTTPS {#https}
 -------------
 
-**Останнім випуском є Libreboot 20231106, в директорії `testing`.**
+**Останнім випуском є Libreboot 20240126, в директорії `testing`.**
 
 Дані дзеркала є рекомендованими, оскільки використовують TLS (https://) шифрування.
 
@@ -163,7 +163,7 @@ crontab. Ця сторінка розповідає вам, як викорис�
 Дзеркала HTTP {#http}
 ------------
 
-**Останнім випуском є Libreboot 20231106, під директорією `testing`.**
+**Останнім випуском є Libreboot 20240126, під директорією `testing`.**
 
 УВАГА: ці дзеркала є не-HTTPS, що означає, що вони
 незашифровані. Ваш трафік може бути об'єктом втручання
@@ -177,7 +177,7 @@ crontab. Ця сторінка розповідає вам, як викорис�
 Дзеркала FTP {#ftp}
 -----------
 
-**Останнім випуском є Libreboot 20231106, під директорією `testing`.**
+**Останнім випуском є Libreboot 20240126, під директорією `testing`.**
 
 УВАГА: FTP є також незашифрованим, подібно HTTP. Ті ж самі ризики присутні.
 
