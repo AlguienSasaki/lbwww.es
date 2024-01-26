@@ -56,6 +56,7 @@ These new mainboards have been added:
   coreboot port done by Iru Cai.
 * HP Compaq Elite 8300 CMT, added by Riku Viitanen
 * HP EliteBook 8460p, added by Riku Viitanen
+* Dell Latitude E6530, added by Nicholas Chin
 * ThinkPad X220 eDP variant (distinct from regular X220, this model is created
   by modification, soldering a modboard that permits use of eDP screens
   instead of LVDS, for higher resolution displays). Added by IRC user `risapav`
