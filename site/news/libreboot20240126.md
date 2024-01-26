@@ -34,15 +34,8 @@ firmware, but not Libreboot! Booting Linux/BSD is also [well](../docs/linux/)
 Testing needed!
 ===============
 
-This was only recently updated, based on the new coreboot revision. Coreboot
-has fixes upstream that should make S3 suspend/resume work again on GM45
-thinkpads (it was broken in the previous Libreboot release). If you have
-a GM45 ThinkPad (X200, T400 etc), please confirm whether S3 suspend/resume
-works (also called *sleep mode*).
-
-Ditto, all mainboards in general should be tested. Again, this is a *testing*
-release so expect some rough edges. Make sure to have [external flashing
-gear](../docs/install/spi.md) ready just in case!
+The coreboot revision has been updated very recently. Make sure to
+have [external flashing gear](../docs/install/spi.md) ready just in case!
 
 Work done since last release
 ============================
@@ -63,6 +56,13 @@ These new mainboards have been added:
   who did not give their real name.
 
 Conversely, the [ThinkPad X201 was removed](x201.md).
+
+S3 fixed on GM45 thinkpads
+--------------------------
+
+The new coreboot revision includes a fix within it that fixes S3 suspend/resume
+on GM45 thinkpads (e.g. X200, T400). This was broken in the previous Libreboot
+release, but now it works again.
 
 Modest code size reduction
 --------------------------
