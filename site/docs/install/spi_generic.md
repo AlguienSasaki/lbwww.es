@@ -3,6 +3,9 @@ title: Generic SPI Flashing Guide
 x-toc-enable: true
 ...
 
+NOTE: Libreboot standardises on [flashprog](https://flashprog.org/wiki/Flashprog)
+now, as of 27 January 2024, which is a fork of flashrom.
+
 **[PLEASE READ THESE INSTRUCTIONS BEFORE INSTALLING](../../news/safety.md),
 OR YOU MIGHT BRICK YOUR MACHINE: [SAFETY PRECAUTIONS](../../news/safety.md)**
 
@@ -83,24 +86,24 @@ sudo ldto merge spicc spicc-spidev
 Using Flashrom
 ==============
 
-Most linux distros will provide flashrom in their default repositories.
-You can also download flashrom in binary form with [libreboot utils.](https://libreboot.org/download.html#https)
+Most linux distros will provide flashprog in their default repositories.
+You can also download flashprog in binary form with [libreboot utils.](https://libreboot.org/download.html#https)
 Here is an example using raspbian:
 
 ```
 sudo apt update
-sudo apt install flashrom
+sudo apt install flashprog
 ```
 
 Reading/writing from SPI works respectively as such:
 
 ```
-sudo ./flashrom -p linux_spi:dev=/dev/spidev0.0,spispeed=32768 -r /path/to/read.bin
-sudo ./flashrom -p linux_spi:dev=/dev/spidev0.0,spispeed=32768 -w /path/to/libreboot.rom
+sudo ./flashprog -p linux_spi:dev=/dev/spidev0.0,spispeed=32768 -r /path/to/read.bin
+sudo ./flashprog -p linux_spi:dev=/dev/spidev0.0,spispeed=32768 -w /path/to/libreboot.rom
 ```
 
 Note that `spispeed` varies based on the board in question.
 A standard lower limit is *512.*
 For example, to read on a board with a lower SPI speed, you may try:
 
-	sudo ./flashrom -p linux_spi:dev=/dev/spidev0.0,spispeed=512 -r /path/to/read.bin
+	sudo ./flashprog -p linux_spi:dev=/dev/spidev0.0,spispeed=512 -r /path/to/read.bin

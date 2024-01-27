@@ -71,15 +71,18 @@ crystal (small metal cylinder) and the power cable for the optical drive.
 
 ![](https://av.libreboot.org/hp8300usdt/jumper_to_fdo.jpg)
 
-Boot into an OS of your choice (that has flashrom support). When using Linux,
+Boot into an OS of your choice (that has flashprog support). When using Linux,
 you need to supply the kernel parameter `iomem=relaxed`.
 
+NOTE: Libreboot standardises on [flashprog](https://flashprog.org/wiki/Flashprog)
+now, as of 27 January 2024, which is a fork of flashrom.
+
 The BIOS should no longer impose any write-protections.
-You can now use `flashrom -p internal` freely.
+You can now use `flashprog -p internal` freely.
 
 Take a backup of the original BIOS:
 
-	flashrom -p internal -r oem_bios
+	flashprog -p internal -r oem_bios
 
 This is an Ivy Bridge board which means that a neutered ME image
 is required if you wish to flash the ME region. Libreboot's
@@ -95,7 +98,7 @@ platforms](../install/ivy_has_common.md)
 
 You can now flash libreboot:
 
-	flashrom -p internal -w libreboot.rom
+	flashprog -p internal -w libreboot.rom
 
 You can now move the jumper back to its original place.
 By default, Libreboot applies no write-protection, so

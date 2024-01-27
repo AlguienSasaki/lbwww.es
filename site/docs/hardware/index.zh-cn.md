@@ -124,8 +124,11 @@ d945gclf：据上次报告，根本无法启动。D510MO 仍在 lbmk 中，但�
 
 建议更新到最新 EC 固件版本。[EC 固件](../../faq.md#ec-embedded-controller-firmware) 与 libreboot 是独立的，所以我们实际上并不会提供这些固件，但如果你仍还有 Lenovo BIOS，那你可以直接运行 Lenovo BIOS 更新工具，它会同时更新 BIOS 和 EC 版本。见：
 
--   [../install/#flashrom](../install/#flashrom)
+-   [../install/#flashprog](../install/#flashprog)
 -   <http://www.thinkwiki.org/wiki/BIOS_update_without_optical_disk>
+
+NOTE: Libreboot standardises on [flashprog](https://flashprog.org/wiki/Flashprog)
+now, as of 27 January 2024, which is a fork of flashrom.
 
 注意：只有在运行 Lenovo BIOS 的时候，你才能这样做。如何在运行 libreboot 的时候更新 EC 固件尚不清楚。libreboot 只会替换 BIOS 固件，而不会替换 EC。
 

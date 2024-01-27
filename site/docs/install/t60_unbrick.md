@@ -3,6 +3,9 @@ title: ThinkPad T60 Recovery guide
 x-toc-enable: true
 ...
 
+NOTE: Libreboot standardises on [flashprog](https://flashprog.org/wiki/Flashprog)
+now, as of 27 January 2024, which is a fork of flashrom.
+
 This section documents how to recover from a bad flash that prevents
 your ThinkPad T60 from booting.
 
@@ -160,16 +163,16 @@ which all draw a lot of current, more than your flasher can provide.
 
 Example command:
 
-	sudo ./flashrom -p linux_spi:dev=/dev/spidev0.0,spispeed=4096 -w libreboot.rom -V
+	sudo ./flashprog -p linux_spi:dev=/dev/spidev0.0,spispeed=4096 -w libreboot.rom -V
 
-If flashrom complains about multiple flash chips detected, just pass the `-c`
+If flashprog complains about multiple flash chips detected, just pass the `-c`
 option as it suggests, and pick any of the chips it lists. `spispeed=4096` or
 lower (e.g. `spispeed=512`) is recommended on this board. The flashing becomes
 unstable, on this machine, when you use higher speeds.
 
 Reverse the steps to re-assemble your system, after you've flashed the chip.
 
-It should be `Verifying flash... VERIFIED` at the end. If flashrom
+It should be `Verifying flash... VERIFIED` at the end. If flashprog
 complains about multiple flash chip definitions detected, then choose
 one of them following the instructions in the output.
 

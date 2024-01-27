@@ -3,6 +3,9 @@ title: ThinkPad X230/X230T external flashing
 x-toc-enable: true
 ...
 
+NOTE: Libreboot standardises on [flashprog](https://flashprog.org/wiki/Flashprog)
+now, as of 27 January 2024, which is a fork of flashrom.
+
 **[PLEASE READ THESE INSTRUCTIONS BEFORE INSTALLING](../../news/safety.md),
 OR YOU MIGHT BRICK YOUR MACHINE: [SAFETY PRECAUTIONS](../../news/safety.md)**
 
@@ -58,7 +61,7 @@ external flashing.
 	dd if=libreboot.rom of=bottom.rom bs=1M count=8
 
 Flash the top chip with top.rom, and tho bottom chip with bottom.rom.
-Don't worry about knowing which chip is which on a standard setup; flashrom will let you know if the 
+Don't worry about knowing which chip is which on a standard setup; flashprog will let you know if the 
 image size is incorrect for the chip you're flashing.
 
 

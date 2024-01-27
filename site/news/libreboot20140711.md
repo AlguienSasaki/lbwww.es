@@ -59,8 +59,8 @@ Revisions for r20140711 (1st beta) (11th July 2014)
 -   Merged changes for digitizer (X60 Tablet) and IR (X60 and T60) based
     on 5243/17, 5242/17 and 5239/19 from review.coreboot.org
     -   (see ./resources/libreboot/patch/gitdiff and ./getcb)
--   Documentation: added information about building flashrom using
-    'builddeps-flashrom' script.
+-   Documentation: added information about building flashprog using
+    'builddeps-flashprog' script.
 -   Re-created resources/libreboot/config/x60config
 -   Re-created resources/libreboot/config/t60config
 -   Added 'x60tconfig' in resources/libreboot/config (because X60
@@ -81,7 +81,7 @@ Revisions for r20140711 (1st beta) (11th July 2014)
 -   Added 'getmt86' script for getting the memtest86+ version used,
     and patching it.
 -   Added 'getbucts' script for getting the bucts version used.
--   Added 'getflashrom' script for getting the flashrom version used,
+-   Added 'getflashprog' script for getting the flashprog version used,
     and patching it
 -   Added 'getall' script which runs all of the other 'get' scripts.
 -   Add instructions to the 'build' script to prepare
@@ -100,32 +100,32 @@ Revisions for r20140711 (1st beta) (11th July 2014)
         libreboot\_src after running 'getall'.
 -   Annotated the 'builddeb' script, to say what each set of
     dependencies are for.
--   Separated bucts/flashrom builddeb sections into separate scripts:
-    builddeb-flashrom, builddeb-bucts.
+-   Separated bucts/flashprog builddeb sections into separate scripts:
+    builddeb-flashprog, builddeb-bucts.
 -   Documentation: Updated relevant parts based on the above.
 -   Added instructions to 'build' script for including builddeb-bucts
-    and builddeb-flashrom in libreboot\_bin
--   Updated flashrom checkout (r1822 2014-06-16) from SVN
-    (http://flashrom.org/Downloads).
+    and builddeb-flashprog in libreboot\_bin
+-   Updated flashprog checkout (r1822 2014-06-16) from SVN
+    (http://flashprog.org/Downloads).
     -   Updated flashing instructions in docs/ for new commands needed
         (Macronix chip on X60/T60)
-    -   For X60/T60 (flashrom): Patched
+    -   For X60/T60 (flashprog): Patched
         flashchips.c\_lenovobios\_macronix and
         flashchips.c\_lenovobios\_sst executables for SST/macronix
-        (included in resources/flashrom/patch)
-    -   Updated builddeps to build flashrom\_lenovobios\_sst and
-        flashrom\_lenovobios\_macronix, for X60/T60 users with Lenovo
+        (included in resources/flashprog/patch)
+    -   Updated builddeps to build flashprog\_lenovobios\_sst and
+        flashprog\_lenovobios\_macronix, for X60/T60 users with Lenovo
         BIOS
-    -   moved the flashrom build instructions from 'builddeps' and put
-        them in 'builddeps-flashrom', excecuting that from
+    -   moved the flashprog build instructions from 'builddeps' and put
+        them in 'builddeps-flashprog', excecuting that from
         'builddeps'.
-    -   Added builddeps-flashrom to libreboot\_bin.tar.gz
--   flashrom: added patched flashchips.c to resources/flashrom/patch
+    -   Added builddeps-flashprog to libreboot\_bin.tar.gz
+-   flashprog: added patched flashchips.c to resources/flashprog/patch
     (automatically use correct macronix chip on libreboot, without using
     '-c' switch)
     -   removed 'MX25L1605' and 'MX25L1605A/MX25L1606E' entries in
         flashchips.c for the patched version of flashchips.c
-    -   added instructions to 'builddeps-flashrom' to automatically
+    -   added instructions to 'builddeps-flashprog' to automatically
         use this modified flashchips.c in the default build
 -   Added builddeb to libreboot\_bin.tar.gz
 -   Moved 'bucts' build instructions from builddeps to builddeps-bucts
@@ -139,15 +139,15 @@ Revisions for r20140711 (1st beta) (11th July 2014)
         in libreboot\_bin
     -   Documentation: Add tutorial for flashing while Lenovo BIOS is
         running (on X60/T60)
--   Added 'flash' script (make sure to run builddeps-flashrom first)
-    which (while libreboot is already running) can use flashrom to flash
+-   Added 'flash' script (make sure to run builddeps-flashprog first)
+    which (while libreboot is already running) can use flashprog to flash
     a ROM
     -   eg: "sudo ./flash bin/x60/coreboot\_serial\_ukdvorak.rom"
-        equivalent to "sudo ./flashrom/flashrom -p internal -w
+        equivalent to "sudo ./flashprog/flashprog -p internal -w
         bin/x60/coreboot\_uk\_dvorak.rom"
     -   updated 'build' script to include the 'flash' script in
         libreboot\_bin.tar.gz
--   Documentation: replaced default flashrom tutorial to recommend the
+-   Documentation: replaced default flashprog tutorial to recommend the
     'flash' script instead.
 -   Re-add cbfstool source code back into libreboot\_bin.tar.gz, as
     cbfstool\_standalone
@@ -208,7 +208,7 @@ Revisions for r20140711 (1st beta) (11th July 2014)
     'builddeps-memtest86', link from 'builddeps'
     -   Link to 'builddeps-memtest86' in final stage of 'getmt86'
 -   made 'build' script put resources/ directory in libreboot\_bin, to
-    make builddeps-flashrom work in libreboot\_bin
+    make builddeps-flashprog work in libreboot\_bin
 -   Removed instructions for building source code in the 'get' script
     (they don't really belong there)
 -   Added libfuse-dev and liblzma-dev to the list of GRUB dependencies

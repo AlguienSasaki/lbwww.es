@@ -189,7 +189,10 @@ So you compiled your Libreboot image? Congratulations!
 
 Before you flash, please make sure that you *dumped* two copies of the original
 firmware just in case (verifying the hashes of each dump, to ensure that they
-match), using the `-r` option in flashrom.
+match), using the `-r` option in flashprog.
+
+NOTE: Libreboot standardises on [flashprog](https://flashprog.org/wiki/Flashprog)
+now, as of 27 January 2024, which is a fork of flashrom.
 
 There are some additional considerations:
 

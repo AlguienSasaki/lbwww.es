@@ -337,6 +337,8 @@ Helped write the [FAQ section about DMA](../faq.md#hddssd-firmware), and provide
 general advice in the early days of the project. Peter was a coreboot developer
 in those days, and a major developer in the *libusb* project (which flashrom
 makes heavy use of).
+NOTE: Libreboot standardises on [flashprog](https://flashprog.org/wiki/Flashprog)
+now, as of 27 January 2024.
 
 Peter also wrote the *bucts* utility used to set Backup Control (BUC) Top Swap
 (TS) bit on i945 laptops such as ThinkPad X60/T60, which is useful for a

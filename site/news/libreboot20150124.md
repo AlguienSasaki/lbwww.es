@@ -46,7 +46,7 @@ Changes for this release (latest changes first, earliest changes last)
 -   grub.cfg: ISOLINUX parsing is now done on all USB partitions.
 -   grub.cfg: Automatically switched to /boot/grub/libreboot\_grub.cfg
     on a partition, if it exists.
--   libreboot\_bin: added static ARM binaries for flashrom, cbfstool,
+-   libreboot\_bin: added static ARM binaries for flashprog, cbfstool,
     ich9gen and ich9deblob (tested on beaglebone black).
 -   Flashrom: removed redundant Macronix flashchip definitions (for X200
     owners).
@@ -66,8 +66,8 @@ Changes for this release (latest changes first, earliest changes last)
 -   buildrom-withgrub: disabled creation of \*txtmode\*.rom for X200
     (only framebuffer graphics work)
 -   Updated SeaBIOS (again)
--   docs/install/\#flashrom\_x200: improve instructions
--   Updated flashrom (again) - patches updated
+-   docs/install/\#flashprog\_x200: improve instructions
+-   Updated flashprog (again) - patches updated
 -   Updated GRUB (again)
 -   Updated coreboot (again)
 -   build-release: not all files were copied to libreboot\_src. fix
@@ -87,7 +87,7 @@ Changes for this release (latest changes first, earliest changes last)
 -   cleandeps: clean i945-pwm utility
 -   scripts (all): fix typos
 -   Documentation: general cleanup.
--   builddeps-flashrom: reduce build commands to a single for loop
+-   builddeps-flashprog: reduce build commands to a single for loop
 -   scripts (all): replace unnecessary rm -Rf with rm -f
 -   docs/release.html: add lenovo g505s to the list of candidates
 -   .gitignore: add libreboot\_bin.tar.xz and libreboot\_src.tar.xz
@@ -98,7 +98,7 @@ Changes for this release (latest changes first, earliest changes last)
     work now)
 -   Update SeaBIOS
 -   x60flashfrom5 (new), for X60 users upgrading from 5th/early release
--   Update flashrom
+-   Update flashprog
 -   Update GRUB
 -   Updated coreboot-libre
     -   i945: permanently set tft\_brightness to 0xff (fixes bug on X60
@@ -142,7 +142,7 @@ Changes for this release (latest changes first, earliest changes last)
         RAM/storage/wifi) and have too many usability issues for the
         libreboot project.
 -   docs/linux/grub\_cbfs.html Major cleanup. Usability improvements.
--   flash (flashrom script): remove boardmismatch=force
+-   flash (flashprog script): remove boardmismatch=force
     -   This was put there before for users upgrading from libreboot r5
         to r6, but also allows the user to flash the wrong image. For
         example, the user could flash a T60 image on an X60, thus

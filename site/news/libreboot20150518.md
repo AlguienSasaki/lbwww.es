@@ -53,9 +53,9 @@ Machines supported in this release:
 Changes for this release, relative to r20150208 (earliest changes last, recent changes first)
 ---------------------------------------------------------------------------------------------
 
--   Add a whitelist entry to board\_enable.c in flashrom, for the
+-   Add a whitelist entry to board\_enable.c in flashprog, for the
     ThinkPad R400, T400 and T500
--   Updated flashrom (to SVN revision 1889)
+-   Updated flashprog (to SVN revision 1889)
     -   X200 whitelist patch removed (merged upstream)
     -   X200 whitelist modified to include X200S and X200 Tablet
 -   libreboot\_util: don't include cmos layout files (not needed
@@ -215,5 +215,5 @@ Changes for this release, relative to r20150208 (earliest changes last, recent c
 -   build-release: Separate ROM images into individual archives
 -   build-release: rename libreboot\_bin to libreboot\_util
 -   **New board:** ThinkPad R400 support added to libreboot.
--   bbb\_setup.html: tell user to use libreboot's own flashrom
+-   bbb\_setup.html: tell user to use libreboot's own flashprog
 

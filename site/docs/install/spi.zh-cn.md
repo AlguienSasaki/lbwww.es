@@ -7,7 +7,7 @@ x-toc-enable: true
 
 本指南将教你怎样使用各种工具，通过 SPI 协议对 25xx NOR flash 进行外部再编程。这是 coreboot 所支持的计算机中，最常见的 flash IC 类型。目前 libreboot 支持的每个系统，基本都使用这种类型的引导 flash；唯一的例外就是 ASUS KFSN4-DRE，它在 PLCC32 芯片座中使用了 LPC flash，你可以在供应商固件启动后，对其进行热切换，然后再内部刷入。十分简单！
 
-我们会用到 [flashrom](https://flashrom.org/Flashrom) 软件，这个软件可以读出、擦除及重写这些 flash 芯片。
+我们会用到 [flashprog](https://flashprog.org/Flashrom) 软件，这个软件可以读出、擦除及重写这些 flash 芯片。
 
 libreboot 目前记录了这些 SPI 编程器的使用方法：
 
@@ -20,7 +20,7 @@ libreboot 目前记录了这些 SPI 编程器的使用方法：
 
 大部分支持 libreboot 机器，都需要在第一次刷写的时候，借助这里的教程或是类似教程，对其进行外部再刷写。不过，目前支持的所有机器，你都可以在 libreboot 运行时，对其进行内部再刷写。
 
-*内部*刷写是指，主机上的 CPU 可以使用板载 SPI 编程器（每个主板都有）对 SPI flash 进行再编程。这可以在 Linux 上使用 flashrom 做到。
+*内部*刷写是指，主机上的 CPU 可以使用板载 SPI 编程器（每个主板都有）对 SPI flash 进行再编程。这可以在 Linux 上使用 flashprog 做到。
 
 你在读的*这个*教程，使用的是*外部*编程器。之所以叫*外部*，是因为用的不是主板上的*内部*编程器。
 
@@ -85,7 +85,7 @@ will appear:
 Take note of the ttyACMx. Flashrom is now usable
 (substitute ttyACMx with what you observed earlier).
 
-	flashrom -p serprog:dev=/dev/ttyACMx,spispeed=16M
+	flashprog -p serprog:dev=/dev/ttyACMx,spispeed=16M
 
 spispeed=32M usually works, but since it's not much faster it's probably
 not worth it. The 12Mbps USB port is limiting the actual speed here.
@@ -173,7 +173,7 @@ DIP8
 BeagleBone Black（BBB）
 ----------------------
 
-SSH 连接到你的 BeagleBone Black。假定你在 BBB 上用的是 Debian 9。你将在 BBB 上运行 `flashrom`。
+SSH 连接到你的 BeagleBone Black。假定你在 BBB 上用的是 Debian 9。你将在 BBB 上运行 `flashprog`。
 
 注意：该部分已过时，因为它是写给 BBB 上运行的 Debian 9 的。
 
@@ -212,9 +212,9 @@ RemainAfterExit=yes
 WantedBy=multi-user.target
 ```
 
-现在测试 flashrom：
+现在测试 flashprog：
 
-	./flashrom -p linux_spi:dev=/dev/spidev1.0,spispeed=512
+	./flashprog -p linux_spi:dev=/dev/spidev1.0,spispeed=512
 
 重要的一点是，要使用 `spispeed=512` 或者更低的速度，例如 256 或 128，否则 BBB 会十分不稳定。
 
@@ -223,7 +223,7 @@ WantedBy=multi-user.target
 ```
 Calibrating delay loop... OK.
 No EEPROM/flash device found.
-Note: flashrom can never write if the flash chip isn't found automatically.
+Note: flashprog can never write if the flash chip isn't found automatically.
 ```
 
 这表示正常工作了（夹子没连接任何 flash 芯片，所以出错是正常的）。
@@ -238,7 +238,7 @@ BBB 注意事项
 Rasberry Pi（RPi）
 -----------------
 
-SSH 连接到树莓派。你将在树莓派上运行 `flashrom`。
+SSH 连接到树莓派。你将在树莓派上运行 `flashprog`。
 
 你必须在树莓派上配置 `spidev`。这是 Linux 内核的一个特别驱动；它严谨的名字叫做 `spi-bcm2835`。
 
@@ -256,7 +256,7 @@ SSH 连接到树莓派。你将在树莓派上运行 `flashrom`。
 RPi 驱动强度（Drive Strength）
 ------------------
 
-RPi 的 flashrom 可能无法检测到一些系统的 SPI flash，即使你已经完美地连好了线并夹住了芯片。这可能是因为树莓派 GPIO 的驱动强度，它默认是 8mA。驱动强度本质上就是，在保持高电平最低电压的同时，引脚最高能输出的电流。对树莓派而言，这个电压是 3.0 V。
+RPi 的 flashprog 可能无法检测到一些系统的 SPI flash，即使你已经完美地连好了线并夹住了芯片。这可能是因为树莓派 GPIO 的驱动强度，它默认是 8mA。驱动强度本质上就是，在保持高电平最低电压的同时，引脚最高能输出的电流。对树莓派而言，这个电压是 3.0 V。
 
 类似地，也要满足一个最低电压，SPI flash 芯片才会把它当成高逻辑电平。这个值一般是 SPI flash 的 0.7*VCC，对 3.3V 的芯片而言也就是 2.31V。如果驱动强度太低了，那 flash 芯片的引脚处的电压可能会低于最低电压，导致它被视为发送了低逻辑电平，而不是高逻辑电平。
 
@@ -309,33 +309,33 @@ RPi 的自由固件
 
 <https://librerpi.github.io/>
 
-安装 flashrom
+安装 flashprog
 ----------------
 
 如果你在使用 BBB 或者 RPi，你需要在 SSH 进去之后再这么做。
 
 Flashrom 是用来读出、擦除、重写 NOR flash 内容的软件。
 
-使用 Git 仓库中的 libreboot 构建系统，你可以下载并安装 flashrom。首先下载 [lbmk Git 仓库](https://codeberg.org/libreboot/lbmk)，然后执行：
+使用 Git 仓库中的 libreboot 构建系统，你可以下载并安装 flashprog。首先下载 [lbmk Git 仓库](https://codeberg.org/libreboot/lbmk)，然后执行：
 
 	cd lbmk
 	sudo ./build dependencies ubuntu2004
 
 注意：你可以输入 debian、arch 或 void 来替换 ubuntu。debian 脚本也可以用于新版 ubuntu。
 
-	./update trees -b flashrom
+	./update trees -b flashprog
 
 如果 `ubuntu2004` 报告了依赖缺失，编辑一下这个脚本，把缺失的依赖移除就行了。脚本位于 `config/dependencies/ubuntu2004`，它是写给 Ubuntu 20.04 的，但在其他使用 `apt-get` 包管理器的 Linux 发行版应该也能用。
 
-接下来，会出现一个 `flashrom/` 目录，其中有一个 `flashrom` 可执行文件。如果你在运行上面的依赖命令的时候，出现了缺失包的错误，则修改 `config/dependencies/ubuntu2004`。那个脚本会在 apt-get 中下载并安装构建依赖，它是为运行 Ubuntu 的 x86-64 系统写的，但在树莓派上的 Raspbian 应该能用。
+接下来，会出现一个 `flashprog/` 目录，其中有一个 `flashprog` 可执行文件。如果你在运行上面的依赖命令的时候，出现了缺失包的错误，则修改 `config/dependencies/ubuntu2004`。那个脚本会在 apt-get 中下载并安装构建依赖，它是为运行 Ubuntu 的 x86-64 系统写的，但在树莓派上的 Raspbian 应该能用。
 
-或者，你可以直接从上游下载 flashrom，位于：<https://flashrom.org/Flashrom>
+或者，你可以直接从上游下载 flashprog，位于：<https://flashprog.org/Flashrom>
 
-如果你是在 ThinkPad X200 上刷写 Macronix flash 芯片，则要使用一个 flashrom 的特别修改版，下载地址在这里：<https://vimuser.org/hackrom.tar.xz> —— 其中有修改版的源代码，也有可以直接运行的二进制文件。将 `--workaround-mx` 参数传给 flashrom。这会缓解稳定性问题。
+如果你是在 ThinkPad X200 上刷写 Macronix flash 芯片，则要使用一个 flashprog 的特别修改版，下载地址在这里：<https://vimuser.org/hackrom.tar.xz> —— 其中有修改版的源代码，也有可以直接运行的二进制文件。将 `--workaround-mx` 参数传给 flashprog。这会缓解稳定性问题。
 
-如果你直接下载了 flashrom 源代码，你可以进入目录并直接运行 `make`。在 libreboot 构建系统中，`config/dependencies/` 处的脚本写明了构建依赖，你可以直接使用 `apt-get` 软件安装。
+如果你直接下载了 flashprog 源代码，你可以进入目录并直接运行 `make`。在 libreboot 构建系统中，`config/dependencies/` 处的脚本写明了构建依赖，你可以直接使用 `apt-get` 软件安装。
 
-如何使用 flashrom
+如何使用 flashprog
 ===================
 
 请先阅读本页更下方的部分，了解特定的芯片类型及其接线方法。
@@ -347,11 +347,11 @@ Flashrom 是用来读出、擦除、重写 NOR flash 内容的软件。
 
 树莓派正确接线后，运行这个命令来查看是否检测到 25xx flash：
 
-	sudo ./flashrom -p linux_spi:dev=/dev/spidev0.0,spispeed=32768
+	sudo ./flashprog -p linux_spi:dev=/dev/spidev0.0,spispeed=32768
 
 对 BBB 而言，必须使用更慢的速度及不同的设备路径：
 
-	sudo ./flashrom -p linux_spi:dev=/dev/spidev1.0,spispeed=512
+	sudo ./flashprog -p linux_spi:dev=/dev/spidev1.0,spispeed=512
 
 在 BBB 上，绝对不要使用高于 `spispeed=512` 的速度。有时候，你可能还要低到 `spispeed=128` 的速度。BBB 对 SPI 刷写而言非常不稳定、不可靠。在读取的时候，要多次读出，并检查它们的 checksum 是否一致，然后再刷。你可能需要多次刷写芯片！
 
@@ -361,11 +361,11 @@ Flashrom 是用来读出、擦除、重写 NOR flash 内容的软件。
 
 在 RPi 上，这样读出：
 
-	sudo ./flashrom -p linux_spi:dev=/dev/spidev0.0,spispeed=32768 -r dump.bin
+	sudo ./flashprog -p linux_spi:dev=/dev/spidev0.0,spispeed=32768 -r dump.bin
 
 BBB 的话，这样：
 
-	sudo ./flashrom -p linux_spi:dev=/dev/spidev1.0,spispeed=512 -r dump.bin
+	sudo ./flashprog -p linux_spi:dev=/dev/spidev1.0,spispeed=512 -r dump.bin
 
 建议读出*两次*，比如弄一个 `dump2.bin`，然后检查 sha1sum：
 
@@ -386,11 +386,11 @@ BBB 的话，这样：
 
 接下来，运行这个命令（RPi）：
 
-	sudo ./flashrom -p linux_spi:dev=/dev/spidev0.0,spispeed=32768 -w /path/to/libreboot.rom
+	sudo ./flashprog -p linux_spi:dev=/dev/spidev0.0,spispeed=32768 -w /path/to/libreboot.rom
 
 如果用的是 BBB：
 
-	sudo ./flashrom -p linux_spi:dev=/dev/spidev1.0,spispeed=512 -w /path/to/libreboot.rom
+	sudo ./flashprog -p linux_spi:dev=/dev/spidev1.0,spispeed=512 -w /path/to/libreboot.rom
 
 用 BBB 的时候，可能得使用低于 512 的速度。你也许还得多次重复刷写，才能完全工作。
 

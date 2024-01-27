@@ -357,7 +357,7 @@ would simply merge)
 | * cba24e8 fix txtmode config for t440p
 | * 55d6503 changed build system for new blobutil
 | * 1462a3c move all blobs scripts to one directory
-* | 84a9d53 update flashrom
+* | 84a9d53 update flashprog
 * | cda2d70 reset nvmutils to known good revision
 * | 65b62c0 exit if can't download nvmutils
 * | 12c9fd2 coreboot: set me_state=Disabled on all boards

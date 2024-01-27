@@ -3,6 +3,9 @@ title: Read/write 25XX NOR flash via SPI protocol
 x-toc-enable: true
 ...
 
+NOTE: Libreboot standardises on [flashprog](https://flashprog.org/wiki/Flashprog)
+now, as of 27 January 2024, which is a fork of flashrom.
+
 **[PLEASE READ THESE INSTRUCTIONS BEFORE INSTALLING](../../news/safety.md),
 OR YOU MIGHT BRICK YOUR MACHINE: [SAFETY PRECAUTIONS](../../news/safety.md)**
 
@@ -14,7 +17,7 @@ which uses LPC flash in a PLCC32 socket, which you can simply hot-swap after
 booting the vendor firmware, and then flash internally. Simple!
 
 We will be using
-the [flashrom](https://flashrom.org/Flashrom) software which is written to
+the [flashprog](https://flashprog.org/Flashrom) software which is written to
 dump, erase and rewrite these flash chips.
 
 libreboot currently documents how to use these SPI programmers:
@@ -36,7 +39,7 @@ libreboot is running.
 
 *Internal* flashing means that the host CPU on your system can re-program the
 SPI flash, using an on-board SPI programmer (which all boards have). You do this
-from Linux, with flashrom.
+from Linux, with flashprog.
 
 *This* guide that you're reading now is for using an *external* programmer. It
 is called *external* because it's not the *internal* one on your mainboard.
@@ -108,7 +111,7 @@ will appear:
 Take note of the ttyACMx. Flashrom is now usable
 (substitute ttyACMx with what you observed earlier).
 
-	flashrom -p serprog:dev=/dev/ttyACMx,spispeed=16M
+	flashprog -p serprog:dev=/dev/ttyACMx,spispeed=16M
 
 spispeed=32M usually works, but since it's not much faster it's probably
 not worth it. The 12Mbps USB port is limiting the actual speed here.
@@ -267,7 +270,7 @@ BeagleBone Black (BBB)
 ----------------------
 
 SSH into your BeagleBone Black. It is assumed that you are running Debian 9 on
-your BBB. You will run `flashrom` from your BBB.
+your BBB. You will run `flashprog` from your BBB.
 
 NOTE: This section is out of date, because it is written for Debian 9 (running
 on the BBB)
@@ -308,9 +311,9 @@ RemainAfterExit=yes
 WantedBy=multi-user.target
 ```
 
-Now test flashrom:
+Now test flashprog:
 
-	./flashrom -p linux_spi:dev=/dev/spidev1.0,spispeed=512
+	./flashprog -p linux_spi:dev=/dev/spidev1.0,spispeed=512
 
 It is important to use `spispeed=512` or a lower number such as 256 or 128,
 because otherwise the BBB will be quite unstable.
@@ -320,7 +323,7 @@ Example output:
 ```
 Calibrating delay loop... OK.
 No EEPROM/flash device found.
-Note: flashrom can never write if the flash chip isn't found automatically.
+Note: flashprog can never write if the flash chip isn't found automatically.
 ```
 
 This means that it's working (the clip isn't connected to any flash
@@ -339,7 +342,7 @@ TODO: document other SPI flashers
 Rasberry Pi (RPi)
 -----------------
 
-SSH into your Raspberry Pi. You will run `flashrom` from your Raspberry Pi.
+SSH into your Raspberry Pi. You will run `flashprog` from your Raspberry Pi.
 
 You must configure `spidev` on your Raspberry Pi. This is a special driver in
 the Linux kernel; technically, the driver name is `spi-bcm2835`.
@@ -447,7 +450,7 @@ Website:
 
 <https://librerpi.github.io/>
 
-Install flashrom
+Install flashprog
 ----------------
 
 If you're using a BBB or RPi, you will do this while SSH'd into those.
@@ -456,7 +459,7 @@ Flashrom is the software that you will use, for dumping, erasing and rewriting
 the contents of your NOR flash.
 
 In the libreboot build system, from the Git repository, you can download and
-install flashrom. Do this after downloading the
+install flashprog. Do this after downloading the
 [lbmk Git repository](https://codeberg.org/libreboot/lbmk):
 
 	cd lbmk
@@ -465,7 +468,7 @@ install flashrom. Do this after downloading the
 NOTE: debian, arch or void can be written instead of ubuntu2004. the debian
 script is also applicable to newer ubuntu versions
 
-	./update trees -b flashrom
+	./update trees -b flashprog
 
 If the `ubuntu2004` script complains about missing dependencies, just modify
 the dependencies config to remove those dependencies. The script is located
@@ -473,29 +476,29 @@ at `config/dependencies/ubuntu2004` and it is written for
 Ubuntu 20.04, but it should work fine in other Linux distributions that use
 the `apt-get` package manager.
 
-A `flashrom/` directory will be present, with a `flashrom` executable inside
+A `flashprog/` directory will be present, with a `flashprog` executable inside
 of it. If you got an error about missing package when running the dependencies
 command above, tweak `config/dependencies/ubuntu2004`. That
 script downloads and installs build dependencies in apt-get and it is intended
 for use on x86-64 systems running Ubuntu 20.04, but it should work in Raspbian
 on the Raspberry Pi.
 
-Alternatively, you may download flashrom directly from upstream
-at <https://flashrom.org/Flashrom>
+Alternatively, you may download flashprog directly from upstream
+at <https://flashprog.org/Flashrom>
 
 If you're flashing a Macronix flashchip on a ThinkPad X200, you will want to
-use a special patched version of flashrom, which you can download here:
+use a special patched version of flashprog, which you can download here:
 <https://vimuser.org/hackrom.tar.xz> - patched source code is available, and a
 binary is also available that you can simply run. Pass the `--workaround-mx`
-argument in flashrom. This mitigates stability issues.
+argument in flashprog. This mitigates stability issues.
 
-If you downloaded the flashrom source code directly, you can go into the
+If you downloaded the flashprog source code directly, you can go into the
 directory and simply type `make`. In the libreboot build system, build
 dependencies are documented in configuration files located
 at `config/dependencies/` which you can install
 using the `apt-get` software.
 
-How to use flashrom
+How to use flashprog
 ===================
 
 Read past these sections, further down this page, to learn about specific chip
@@ -510,11 +513,11 @@ current chip contents to a file.
 Run this command to see if 25xx flash is detected, with your RPi properly
 wired.
 
-	sudo ./flashrom -p linux_spi:dev=/dev/spidev0.0,spispeed=32768
+	sudo ./flashprog -p linux_spi:dev=/dev/spidev0.0,spispeed=32768
 
 For BBB, you must use a lower speed and a different device path:
 
-	sudo ./flashrom -p linux_spi:dev=/dev/spidev1.0,spispeed=512
+	sudo ./flashprog -p linux_spi:dev=/dev/spidev1.0,spispeed=512
 
 On BBB, never use a speed higher than `spispeed=512`. In some cases, you may
 even need to go as low as `spispeed=128`. The BBB is highly unstable and
@@ -532,11 +535,11 @@ or you can try flashing it with a new ROM.
 
 Dump it like so (RPi):
 
-	sudo ./flashrom -p linux_spi:dev=/dev/spidev0.0,spispeed=32768 -r dump.bin
+	sudo ./flashprog -p linux_spi:dev=/dev/spidev0.0,spispeed=32768 -r dump.bin
 
 For BBB, do this:
 
-	sudo ./flashrom -p linux_spi:dev=/dev/spidev1.0,spispeed=512 -r dump.bin
+	sudo ./flashprog -p linux_spi:dev=/dev/spidev1.0,spispeed=512 -r dump.bin
 
 It is advisable to take a *2nd* dump, e.g. `dump2.bin`, and then check sha1sum:
 
@@ -567,11 +570,11 @@ Writing
 
 Next, run this command (RPi):
 
-	sudo ./flashrom -p linux_spi:dev=/dev/spidev0.0,spispeed=32768 -w /path/to/libreboot.rom
+	sudo ./flashprog -p linux_spi:dev=/dev/spidev0.0,spispeed=32768 -w /path/to/libreboot.rom
 
 If using BBB:
 
-	sudo ./flashrom -p linux_spi:dev=/dev/spidev1.0,spispeed=512 -w /path/to/libreboot.rom
+	sudo ./flashprog -p linux_spi:dev=/dev/spidev1.0,spispeed=512 -w /path/to/libreboot.rom
 
 If using BBB, you may have to use a lower speed than 512. You may also have to
 re-flash several times before it works fully.

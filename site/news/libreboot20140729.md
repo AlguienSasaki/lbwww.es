@@ -19,8 +19,8 @@ Revisions for r20140729 (4th beta) (29th July 2014)
     -   Removed .git and .gitignore from bucts directory
         (libreboot\_src); not needed. Removing them reduces the size of
         the archive. bucts development should be upstream.
-    -   Removed .svn from flashrom directory (libreboot\_src); not
-        needed. Removing it reduces the size of the archive. flashrom
+    -   Removed .svn from flashprog directory (libreboot\_src); not
+        needed. Removing it reduces the size of the archive. flashprog
         development should be upstream.
 -   Added ROMs with Qwerty (Italian) layout in GRUB
     (libreboot\*itqwerty.rom)

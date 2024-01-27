@@ -22,7 +22,7 @@ Flash chip size {#flashchips}
 
 Use this to find out:
 
-	flashrom -p internal
+	flashprog -p internal
 
 Flashing instructions {#clip}
 =====================
@@ -52,11 +52,11 @@ Linux. There are 2 flash chips (one is backup).
 
 Flash the first chip:
 
-	./flashrom -p internal:dualbiosindex=0 -w libreboot.rom
+	./flashprog -p internal:dualbiosindex=0 -w libreboot.rom
 
 Flash the second chip:
 
-	./flashrom -p internal:dualbiosindex=1 -w libreboot.rom
+	./flashprog -p internal:dualbiosindex=1 -w libreboot.rom
 
 NOTE: you can still boot the system with just the main flash chip
 connected, after desoldering the backup chip. This has been tested while
@@ -66,5 +66,5 @@ NOTE: If you don't flash both chips, the recovery program from the default
 factory BIOS will kick in and your board will be soft bricked. Make sure that
 you flash both chips!
 
-NOTE: You need the latest flashrom. Just get it on flashrom.org from
-their SVN or Git repos.
+NOTE: Libreboot standardises on [flashprog](https://flashprog.org/wiki/Flashprog)
+now, as of 27 January 2024, which is a fork of flashrom.

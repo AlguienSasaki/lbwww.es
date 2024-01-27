@@ -202,4 +202,4 @@ images for which the regular Libreboot source code archives suffice. These newer
 releases instead automate the installation of build dependencies, with instructions
 in the documentation for building various utilities from source.
 
-These executables are utilities such as `flashrom`.
+These executables are utilities such as `flashprog`.

@@ -2,6 +2,9 @@
 title: Porting guide for new mainboards
 ...
 
+NOTE: Libreboot standardises on [flashprog](https://flashprog.org/wiki/Flashprog)
+now, as of 27 January 2024, which is a fork of flashrom.
+
 NOTE: This page is largely Intel-centric, at present. It should be revised to
 cover more vendors. [Patches welcome!](../../git.md)
 
@@ -93,7 +96,7 @@ Wrong CBFS and or ROM size
 
 Different boards have different flash chip setups.
 Generally, you have one or two flash chips with a combined size of 4-16MB.
-Thankfully, flashrom will let you know the size of the flash chip you're flashing.
+Thankfully, flashprog will let you know the size of the flash chip you're flashing.
 For example: when flashing an X230, you'll see that one chip is 8192, and the other is 4096.
 The total rom size should therefore be set as 12MB.
 

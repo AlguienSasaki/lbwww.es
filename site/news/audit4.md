@@ -2,6 +2,9 @@
 % Leah Rowe
 % 31 December 2023
 
+NOTE: Libreboot standardises on [flashprog](https://flashprog.org/wiki/Flashprog)
+now, as of 27 January 2024, which is a fork of flashrom.
+
 Introduction
 ============
 
@@ -79,7 +82,7 @@ And now, specific changes:
   courtesy of Leah Rowe.
 * **NEW BOARD:** HP 8300 CMT mainboard, added by Riku Viitanen, who worked
   on it with a tester in the IRC channel.
-* Fixed implicit typecasting bug on flashrom 1.2 source code, thus preventing
+* Fixed implicit typecasting bug on flashprog 1.2 source code, thus preventing
   a build issue (tested on Debian 12.2). Patch courtesy of Leah Rowe.
 * `script/build/roms`: Rename `check_target` to `configure_target`
   and `prepare_target` to `configure_dependencies`, for increased code clarity.
@@ -256,7 +259,7 @@ And now, specific changes:
   script was making improper use of subshells, leading to a zero exit, when
   it should have exited with non-zero status in such situations. Patch/fix
   courtesy of Leah Rowe.
-* Bumped flashrom revision back to version 1.2, because the 1.4 RC we were
+* Bumped flashprog revision back to version 1.2, because the 1.4 RC we were
   importing has issues (also, Nico Huber's flashprog will probably be used
   in future releases of Libreboot). Patch courtesy of Leah Rowe.
 * Debian dependencies config: Fixed the freetype dependency, as tested on
@@ -313,7 +316,7 @@ Exact git log, relative to 20231106:
 | * 74147ea4 Add HP 8300 CMT port 
 |/  
 * 0aca6332 lbmk scripts: shorter code lines 
-* 575332f2 fix flashrom build error (implicit enum typecast) 
+* 575332f2 fix flashprog build error (implicit enum typecast) 
 * b4ab3057 lbmk scripts: general code cleanup 
 * 38a7aa31 build/roms: rename two functions for clarity 
 * 746d9cad build: remove test command 
@@ -417,7 +420,7 @@ Exact git log, relative to 20231106:
 |\  
 | * 50bfe1ca fix void dependencies typo 
 |/  
-* 4e00ac00 revert flashrom back to version 1.2 
+* 4e00ac00 revert flashprog back to version 1.2 
 * 83c8248f dependencies/debian: fix libfreetype-dev 
 * 39aad578 grub: re-add fat/nt file system modules 
 * 47ef411e Bump GRUB revision to 8 November 2023 revision 

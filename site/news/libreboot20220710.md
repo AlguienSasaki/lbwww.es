@@ -40,7 +40,7 @@ Work done since the 20211122 release:
   additional improvements made by Leah Rowe)
 * GM45/ICH9M laptops: Disable PECI in coreboot, to work around a microcode bug
   causing SpeedStep (and possibly other CPU features) to fail.
-* Do not treat warnings as errors when building flashrom (fixes building on
+* Do not treat warnings as errors when building flashprog (fixes building on
   newer versions of GCC).
 * Macbook2,1: 16MB configurations now available (you must first upgrade the
   SPI flash)
@@ -57,7 +57,7 @@ Work done since the 20211122 release:
 * Scripts in lbmk: improved help output, courtesy of Denis 'GNUtoo' Carikli.
 * scripts: process git versions when lbmk is a worktree or submodule. Courtesy
   John Doe (cool guy)
-* Updated to newer flashrom, in the build system
+* Updated to newer flashprog, in the build system
 * Perform silentoldconfig in seabios before full make. This fixes a race
   condition when rebuilding SeaBIOS with a high CPU count, resulting in failure
   with the error message (fix courtesy of John Doe):

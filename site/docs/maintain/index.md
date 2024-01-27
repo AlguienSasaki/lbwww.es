@@ -3,6 +3,9 @@ title: lbmk maintenance manual
 x-toc-enable: true
 ...
 
+NOTE: Libreboot standardises on [flashprog](https://flashprog.org/wiki/Flashprog)
+now, as of 27 January 2024, which is a fork of flashrom.
+
 In addition to this manual, you should also refer to [porting.md](porting.md)
 and [testing.md](testing.md).
 
@@ -222,12 +225,12 @@ This may be less efficient on disk usage, but it simplifies the logic greatly.
 Coreboot also uses its own toolchain called *crossgcc*, and crossgcc is in fact
 compiled *per tree* in Libreboot.
 
-src/flashrom/
+src/flashprog/
 ---------------
 
-Please also visit: <https://flashrom.org/>
+Please also visit: <https://flashprog.org/>
 
-Although currently unused by any part of lbmk, we provide flashrom for the
+Although currently unused by any part of lbmk, we provide flashprog for the
 convenience of users, and this is copied to release archives. Flashrom is the
 program that you will use to read, erase and write the flash, containing
 coreboot firmware.

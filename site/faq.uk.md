@@ -3,6 +3,9 @@ title: Часті питання
 x-toc-enable: true
 ...
 
+NOTE: Libreboot standardises on [flashprog](https://flashprog.org/wiki/Flashprog)
+now, as of 27 January 2024, which is a fork of flashrom.
+
 Також відомо як Відповіді на часті питання
 
 Важливі питання
@@ -46,15 +49,15 @@ Libreboot](freedom-status.uk.md)
 Flashrom скаржиться на доступ DEVMEM
 --------------------------------------
 
-Якщо запущено `flashrom -p internal` для програмної перепрошивки та
+Якщо запущено `flashprog -p internal` для програмної перепрошивки та
 ви отримуєте помилку, пов'язану з доступом до /dev/mem, вам слід перезавантажити систему з
-параметром ядра `iomem=relaxed` перед виконанням flashrom, або використовуйте ядро,
+параметром ядра `iomem=relaxed` перед виконанням flashprog, або використовуйте ядро,
 для якого не ввімкнено `CONFIG_STRICT_DEVMEM` та `CONFIG_IO_STRICT_DEVMEM`.
 
-Приклад виводу flashrom з обома `CONFIG_STRICT_DEVMEM` та `CONFIG_IO_STRICT_DEVMEM` ввімкненими:
+Приклад виводу flashprog з обома `CONFIG_STRICT_DEVMEM` та `CONFIG_IO_STRICT_DEVMEM` ввімкненими:
 ```
-flashrom v0.9.9-r1955 on Linux 4.11.9-1-ARCH (x86_64)
-flashrom is free software, get the source code at https://flashrom.org
+flashprog v0.9.9-r1955 on Linux 4.11.9-1-ARCH (x86_64)
+flashprog is free software, get the source code at https://flashprog.org
 
 Calibrating delay loop... OK.
 Error accessing high tables, 0x100000 bytes at 0x000000007fb5d000
@@ -648,7 +651,7 @@ ROM та флеш-чіпом. Випадок вище, наприклад:
 наведені вище приклади, щоб видобути ROM без дескрипторів 2 МБ x86 із доповненого
 образа 16 МБ, виконайте наступне:
 
-	dd if=flashromread.rom of=вашrom.rom ibs=14MiB skip=1
+	dd if=flashprogread.rom of=вашrom.rom ibs=14MiB skip=1
 
 Після видалення заповнення cbfstool зможе працювати із образом як зазвичай.
 

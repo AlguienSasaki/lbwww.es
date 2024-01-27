@@ -138,8 +138,11 @@ libreboot, so we don't actually provide that, but if you still have
 Lenovo BIOS then you can just run the Lenovo BIOS update utility, which
 will update both the BIOS and EC version. See:
 
--   [../install/#flashrom](../install/#flashrom)
+-   [../install/#flashprog](../install/#flashprog)
 -   <http://www.thinkwiki.org/wiki/BIOS_update_without_optical_disk>
+
+NOTE: Libreboot standardises on [flashprog](https://flashprog.org/wiki/Flashprog)
+now, as of 27 January 2024, which is a fork of flashrom.
 
 NOTE: this can only be done when you are using Lenovo BIOS. How to
 update the EC firmware while running libreboot is unknown. libreboot

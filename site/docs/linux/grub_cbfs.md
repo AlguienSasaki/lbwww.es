@@ -3,6 +3,9 @@ title: Modifying grub.cfg in CBFS
 x-toc-enable: true
 ...
 
+NOTE: Libreboot standardises on [flashprog](https://flashprog.org/wiki/Flashprog)
+now, as of 27 January 2024, which is a fork of flashrom.
+
 Before you follow this guide, it is advisable that you have the ability to
 flash externally, just in case something goes wrong.
 
@@ -27,7 +30,7 @@ a *soft brick* where your machine is effectively useless and, in that scenario,
 may or may not require external flashing equipment for restoring the machine to
 a known state.
 
-Compile flashrom and cbfstool
+Compile flashprog and cbfstool
 =============================
 
 libreboot does not currently distribute utilities pre-compiled. It only
@@ -75,34 +78,34 @@ The `cbfstool` utility is what you shall use. It is used to manipulate CBFS
 (coreboot file system) which is a file system contained within the coreboot
 ROM image; as a *coreboot distribution*, libreboot inherits this technology.
 
-You will also want to build `flashrom` which libreboot recommends for reading
+You will also want to build `flashprog` which libreboot recommends for reading
 from and/or writing to the boot flash. In the libreboot build system, you can
 build it by running this command:
 
-	./update trees -b flashrom
+	./update trees -b flashprog
 
-An executable will be available at `src/flashrom/flashrom` after you have done
+An executable will be available at `src/flashprog/flashprog` after you have done
 this.
 
 Dump the boot flash
 ===================
 
 If you wish to modify your *existing* libreboot ROM, which was installed on
-your computer, you can use `flashrom` to acquire it.
+your computer, you can use `flashprog` to acquire it.
 
 Simply run the following, after using libreboot's build system to compile
-flashrom:
+flashprog:
 
-	sudo ./src/flashrom/flashrom -p internal -r dump.bin
+	sudo ./src/flashprog/flashprog -p internal -r dump.bin
 
-If flashrom complains about multiple flash chip definitions, do what it says to
+If flashprog complains about multiple flash chip definitions, do what it says to
 rectify your command and run it again.
 
 You may want to use the following, instead of `-p internal`:
 `-p internal:laptop=force_I_want_a_brick,boardmismatch=force`
 
 Do not let the word *brick* fools you. This merely disables the safety checks
-in flashrom, which is sometimes necessary depending on what ROM was already
+in flashprog, which is sometimes necessary depending on what ROM was already
 flashed, versus the new ROM image.
 
 The `internal` option assumes that internal read/write is possible; this is
@@ -195,17 +198,17 @@ Flash the modified ROM image
 Your modified `dump.bin` or other modified libreboot ROM can then be re-flashed
 using:
 
-	sudo ./flashrom -p internal -w dump.bin
+	sudo ./flashprog -p internal -w dump.bin
 
 If a `-c` option is required, use it and specify a flash chip name. This is
-only useful when `flashrom` complains about multiple flash chips being
+only useful when `flashprog` complains about multiple flash chips being
 detected.
 
-If flashrom complains about wrong chip/board, make sure that your ROM is for
+If flashprog complains about wrong chip/board, make sure that your ROM is for
 the correct system. If you're sure, you can disable the safety checks by running
 this instead:
 
-	sudo ./flashrom -p internal:laptop=force_I_want_a_brick,boardmismatch=force -w dump.bin
+	sudo ./flashprog -p internal:laptop=force_I_want_a_brick,boardmismatch=force -w dump.bin
 
 If you need to use external flashing equipment, see the link above to the
 Raspberry Pi page.

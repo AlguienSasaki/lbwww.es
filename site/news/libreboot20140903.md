@@ -6,7 +6,7 @@ Revisions for r20140903 (6th beta) (3rd September 2014)
 -------------------------------------------------------
 
 -   Added modified builddeb\* scripts for Arch-based distros:
-    buildpac, buildpac-flashrom, buildpac-bucts (courtesy of Noah
+    buildpac, buildpac-flashprog, buildpac-bucts (courtesy of Noah
     Vesely)
 -   Documentation: added information showing how to enable or disable
     bluetooth on the X60
@@ -54,7 +54,7 @@ Revisions for r20140903 (6th beta) (3rd September 2014)
 -   Updated GRUB to new version from August 14th, 2014.
 -   Unified all grub configurations for all systems to a single grub.cfg
     under resources/grub/config/
--   Updated flashrom to new version from August 20th, 2014
+-   Updated flashprog to new version from August 20th, 2014
 -   Added getseabios and builddeps-seabios (builddeps and getall were
     also updated)
     -   Added instructions to 'buildrom-withgrub' to include
@@ -99,15 +99,15 @@ Revisions for r20140903 (6th beta) (3rd September 2014)
     gcry\_tiger gcry\_whirlpool~~
 -   Added GNUtoo's list of GRUB modules (includes all of the gcry\_\*
     modules above), cryptomount should be working now.
--   Removed builddeb-bucts and builddeb-flashrom, merged them with
+-   Removed builddeb-bucts and builddeb-flashprog, merged them with
     builddeb ( updated accordingly)
--   Removed buildpac-bucts and buildpac-flashrom, merged them with
+-   Removed buildpac-bucts and buildpac-flashprog, merged them with
     buildpac ( updated accordingly)
 -   Documentation: removed all parts talking about build dependencies,
     replaced them with links to \#build\_dependencies
 -   Documentation: emphasized more strongly on the documentation, the
-    need to re-build bucts and/or flashrom before flashing a ROM image.
--   build-release: flashrom, nvramtool, cbfstool and bucts are no longer
+    need to re-build bucts and/or flashprog before flashing a ROM image.
+-   build-release: flashprog, nvramtool, cbfstool and bucts are no longer
     provided pre-compiled in binary archives, and are now in source form
     only. (to maximize distro compatibility).
 -   'build' script: replaced grub.elf assembly instructons, it is now

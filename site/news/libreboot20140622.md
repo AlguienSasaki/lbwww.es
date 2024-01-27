@@ -24,7 +24,7 @@ Revision (22nd June 2014 - extra)
 Revision (22nd June 2014 - extra)
 ---------------------------------
 
--   Documentation: Improved the instructions for using flashrom
+-   Documentation: Improved the instructions for using flashprog
 -   Documentation: Improved the instructions for using cbfstool (to
     change the default GRUB menu)
 -   Documentation: Numerous small fixes.

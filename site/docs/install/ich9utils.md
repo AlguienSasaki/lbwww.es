@@ -123,7 +123,7 @@ accomplish the same result of locking or unlocking a descriptor.**
 These files contain the descriptor+GbE region and are suitable for systems
 that have an Intel GbE NIC present. The flash regions (as defined by the
 Intel Flash Descriptor) are set *read-write* which means that you can also
-re-flash using `flashrom -p internal` in your operating system running on
+re-flash using `flashprog -p internal` in your operating system running on
 that machine. This is the default setup used when libreboot's build system
 compiles ROM images.
 
@@ -181,7 +181,7 @@ a Broadcom NIC for ethernet. In descriptorless mode, ICH9M works very similarly
 to older ICH7 chipsets.
 
 Your libreboot.rom image is now ready to be flashed on the system. Refer
-back to [../install/\#flashrom](../install/#flashrom) for how to flash
+back to [../install/\#flashprog](../install/#flashprog) for how to flash
 it.
 
 Write-protecting the flash chip
@@ -289,7 +289,7 @@ This takes a `factory.rom` dump and disables the ME/TPM, but leaves the
 region intact. It also sets all regions read-write. Simply put, this means
 that you can use the original factory firmware but without the Intel ME enabled.
 
-The ME interferes with flash read/write in flashrom, and the default
+The ME interferes with flash read/write in flashprog, and the default
 descriptor locks some regions. The idea is that doing this will remove
 all of those restrictions.
 

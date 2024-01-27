@@ -19,7 +19,7 @@ recommend avoiding Kingston modules.*
 *For working configurations see <https://www.coreboot.org/Board:asus/kgpe-d16>.*
 
 Flashing instructions can be found at
-[../install/\#flashrom](../install/#flashrom) - note that external
+[../install/\#flashprog](../install/#flashprog) - note that external
 flashing is required, if the proprietary (ASUS) firmware is
 currently installed. If you already have libreboot, by default it is
 possible to re-flash using software running in Linux on the

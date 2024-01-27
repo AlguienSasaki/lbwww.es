@@ -179,7 +179,7 @@ follows:
 * 59540530 - nuke p2b_ls/p3b_f boards (2 days ago) <Leah Rowe>
 * ebd9ec96 - debian/ubuntu dependencies scripts: add gettext (3 days ago) <Leah Rowe>
 * f9e20b8a - util/nvmutil: optimise rhex() further (13 days ago) <Leah Rowe>
-* f04855c2 - fix flashrom download error (13 days ago) <Leah Rowe>
+* f04855c2 - fix flashprog download error (13 days ago) <Leah Rowe>
 * e2945f02 - payload/grub: force terminal_output to console (2 weeks ago) <Leah Rowe>
 * 909d3b31 - grub.cfg: set default timeout to 5 seconds (2 weeks ago) <Leah Rowe>
 * 544737c8 - scripts: build cbutils, not specific utils (2 weeks ago) <Leah Rowe>

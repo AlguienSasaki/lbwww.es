@@ -111,23 +111,26 @@ containing your NIC's configuration. This is the part that
 many people will struggle with, so we will dedicated an
 entire next section to it:
 
-Use flashrom
+Use flashprog
 ------------
+
+NOTE: Libreboot standardises on [flashprog](https://flashprog.org/wiki/Flashprog)
+now, as of 27 January 2024, which is a fork of flashrom.
 
 If you wish to operate on the GbE section that's already
 flashed, you should *dump* the current full ROM image.
 If you already have a ROM image, you do not need to dump
 it, so you can skip this section.
 
-Download flashrom here:
+Download flashprog here:
 
-* <https://flashrom.org/>
+* <https://flashprog.org/>
 
-Using recent flashrom versions, you can extract this region. If
-your regions are unlocked, you can run flashrom on the target
+Using recent flashprog versions, you can extract this region. If
+your regions are unlocked, you can run flashprog on the target
 system, like so:
 
-	flashrom -p internal -r rom.bin
+	flashprog -p internal -r rom.bin
 
 If your system has two flash chips, the GbE region is usually
 stored on SPI1 (not SPI2). Otherwise, it may be that you have
@@ -145,7 +148,7 @@ from and writing to the chip. See:
 * <https://libreboot.org/docs/install/spi.html>
 
 If you're using an external programmer, the `-p internal`
-option should be changed accordingly. Read flashrom
+option should be changed accordingly. Read flashprog
 documentation, and make sure you have everything
 properly configured.
 
@@ -201,18 +204,18 @@ This will create the file `rom.bin.new`, which contains
 your modified GbE section with the NVM images inside; this
 includes your MAC address.
 
-Refer to flashrom documentation. You may flash the new ROM
+Refer to flashprog documentation. You may flash the new ROM
 like so, if running on the same system and the regions are
 read-write:
 
-	flashrom -p internal -w rom.bin.new
+	flashprog -p internal -w rom.bin.new
 
-Newer versions of flashrom support flashing just the specified
+Newer versions of flashprog support flashing just the specified
 region, like so:
 
-	flashrom -p internal --ifd -i gbe -w rom.bin.new
+	flashprog -p internal --ifd -i gbe -w rom.bin.new
 
-If you're running flashrom from host CPU on the target
+If you're running flashprog from host CPU on the target
 system, and it's dual flash, you can just flash the
 concatenated image, which you created earlier by running
 the `cat` program; dual-IC flash configurations appear to

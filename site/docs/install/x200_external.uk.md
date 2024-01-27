@@ -3,6 +3,9 @@ title: Прошивка ThinkPad X200 вперше
 x-toc-enable: true
 ...
 
+NOTE: Libreboot standardises on [flashprog](https://flashprog.org/wiki/Flashprog)
+now, as of 27 January 2024, which is a fork of flashrom.
+
 **If you haven't bought an X200 yet: the [Dell Latitude
 E6400](../../news/e6400.md) is much easier to flash; no disassembly required,
 it can be flashed entirely in software from Dell BIOS to Libreboot. It is the
@@ -25,7 +28,7 @@ same hardware generation (GM45), with same CPUs, video processor, etc.**
 
 Виконайте цю команду на x200, щоб дізнатися модель флеш-чіпа та його розмір:
 
-    flashrom -p internal
+    flashprog -p internal
 
 MAC адреса
 ===========
@@ -106,7 +109,7 @@ sgsit дізнався про контакт під назвою GPIO33, яки�
 
 ![](https://av.libreboot.org/x200/gpio33_location.jpg)
 
-Це замовчуванням ми побачимо це в lenovobios, під час спроби flashrom -p
+Це замовчуванням ми побачимо це в lenovobios, під час спроби flashprog -p
 internal -w rom.rom:
 
     FREG0: Warning: Flash Descriptor region (0x00000000-0x00000fff) is read-only.
@@ -141,7 +144,7 @@ internal -w rom.rom:
 встановлення PRx і переходу до нормального завантаження. Теоретично можливо, що ми
 зможемо дізнатися, як це працює, налагодивши утиліту оновлення BIOS Lenovo (у
 Windows), а потім відтворивши її дії за допомогою якогось інструменту для Linux,
-а потім завантаживши двійковий файл flashrom в пам'ять та ROM для прошивки (для BIOS
+а потім завантаживши двійковий файл flashprog в пам'ять та ROM для прошивки (для BIOS
 регіона). Ви б зробили це з заземленням GPIO33, і програма корисного навантаження
 фактично прошиє весь чіп, лише звичайним образом libreboot.
 

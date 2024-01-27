@@ -2,6 +2,9 @@
 % Leah Rowe
 % 7 July 2023
 
+NOTE: Libreboot standardises on [flashprog](https://flashprog.org/wiki/Flashprog)
+now, as of 27 January 2024, which is a fork of flashrom.
+
 Introduction
 ============
 
@@ -115,7 +118,7 @@ do not have to disassemble the machine, but *two* flashes would be needed:
 
 Under this configuration, we would still have the reality where some people
 don't read documentation, but if they don't read documentation, they will
-then just run flashrom on ROM images as-is, and it won't work. This will cause
+then just run flashprog on ROM images as-is, and it won't work. This will cause
 one of three possible scenarios:
 
 * They don't bother updating, and therefore avoid bricking their machine

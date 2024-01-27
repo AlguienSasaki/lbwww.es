@@ -3,6 +3,9 @@ title: Jobs that need doing
 x-toc-enable: true
 ...
 
+NOTE: Libreboot standardises on [flashprog](https://flashprog.org/wiki/Flashprog)
+now, as of 27 January 2024, which is a fork of flashrom.
+
 This page contains a curated list of tasks that are to be worked on, or tasks
 that are being worked on. This is intended to complement
 the [issue pages](https://codeberg.org/libreboot/lbmk/issues/).
@@ -1659,7 +1662,7 @@ example:
 But oh, what's this? We already know that the trees script can handle multiple
 projects. For instance:
 
-	./update trees -z flashrom pico-serprog grub seabios
+	./update trees -z flashprog pico-serprog grub seabios
 
 Then it would output for all of those. It just goes in a loop.
 

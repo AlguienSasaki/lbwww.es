@@ -3,27 +3,23 @@ title: Installation instructions
 x-toc-enable: true
 ...
 
-**WARNING: Upstream flashrom has many stability issues at present, especially
-in revisions after 1.3 tested as of November 2023. If you're using flashrom on
-Libreboot systems, we recommend you stick to flashrom 1.2 for now, the last
-known version that was stable. In particular, many i945 machines e.g. X60, T60
-cannot be flashed at all by current November 2023 revisions, at the time of
-this notice. We will have more context at a future date.**
+**NOTE: Libreboot standardises on [flashprog](https://flashprog.org/wiki/Flashprog)
+now, as of 27 January 2024, which is a fork of flashrom.**
 
 This section relates to installing libreboot on supported targets.
 
 FLASH ERRORS (and workarounds)
 =======================
 
-Right out of the gate, some users may experience errors with flashrom when
+Right out of the gate, some users may experience errors with flashprog when
 using the internal programmer. They are:
 
 /dev/mem access error
 ---------------------
 
-NOTE: if running `flashrom -p internal` for software based flashing, and you
+NOTE: if running `flashprog -p internal` for software based flashing, and you
 get an error related to `/dev/mem` access, you should reboot with
-`iomem=relaxed` kernel parameter before running flashrom, or use a kernel that
+`iomem=relaxed` kernel parameter before running flashprog, or use a kernel that
 has `CONFIG_STRICT_DEVMEM` not enabled.
 
 On NetBSD and OpenBSD systems, the equivalent to `iomem=relaxed` in this case
@@ -36,8 +32,8 @@ ERROR: Could not get I/O privileges
 
 Error message: `ERROR: Could not get I/O privileges (Function not implemented)`
 
-If you get this while running `flashrom -p internal -w filename.rom` (or any
-internal flash operation), note: flashrom heavily uses ioperm/iopl functions
+If you get this while running `flashprog -p internal -w filename.rom` (or any
+internal flash operation), note: flashprog heavily uses ioperm/iopl functions
 to operate the internal flasher, at least on x86 machines.
 
 See: <https://lwn.net/Articles/804143/>
@@ -56,7 +52,7 @@ See: [NetBSD securelevel manual](https://wiki.netbsd.org/tutorials/kernel_secure
 and [OpenBSD securelevel manpage](https://man.openbsd.org/securelevel).
 
 Otherwise, if you get such errors, it may just be that you're not root. You
-must run flashrom as root, at least to use the internal flasher (using external
+must run flashprog as root, at least to use the internal flasher (using external
 USB flashing dongles doesn't normally require root).
 
 SAFETY WARNING!
@@ -276,7 +272,7 @@ may be configured to restrict write privileges by the host CPU.
 
 In some situations, the host CPU can rewrite/erase/dump the boot flash.
 This is called *internal flashing*. This means that you will run software,
-namely `flashrom`, to read/erase/write the contents of the boot flash from a
+namely `flashprog`, to read/erase/write the contents of the boot flash from a
 running operating system on the target device.
 
 NOTE: please also read the sections further down this page. On some systems,
@@ -287,11 +283,11 @@ NOTE: in some cases, external flashing is possible but special steps are
 required. This depends on your mainboard. Again, please read this page
 carefully.
 
-Run flashrom on host CPU
+Run flashprog on host CPU
 ------------------------
 
 You can simply take any ROM image from the libreboot project, and flash it.
-Boot a Linux distribution on the target device, and install flashrom.
+Boot a Linux distribution on the target device, and install flashprog.
 
 In some cases, this is not possible or there are other considerations. Please
 read this section *carefully*.
@@ -300,7 +296,7 @@ read this section *carefully*.
 
 Use this to find out:
 
-	flashrom -p internal
+	flashprog -p internal
 
 In the output will be information pertaining to your boot flash.
 
@@ -308,14 +304,14 @@ In the output will be information pertaining to your boot flash.
 
 How to read the current chip contents:
 
-	sudo flashrom -p internal:laptop=force_I_want_a_brick,boardmismatch=force -r dump.bin
+	sudo flashprog -p internal:laptop=force_I_want_a_brick,boardmismatch=force -r dump.bin
 
 You should still make several dumps, even if you're flashing internally, to
 ensure that you get the same checksums. Check each dump using `sha1sum`
 
 How to erase and rewrite the chip contents:
 
-	sudo flashrom -p internal:laptop=force_I_want_a_brick,boardmismatch=force -w libreboot.rom
+	sudo flashprog -p internal:laptop=force_I_want_a_brick,boardmismatch=force -w libreboot.rom
 
 If you are re-flashing a GM45+ICH9M laptop (e.g. ThinkPad X200/X200S/X200T,
 T400, T500, R400, W500 etc - but not R500), you should run the ich9gen utility
@@ -324,13 +320,13 @@ Please read the ich9utils documentation:
 [/docs/install/ich9utils.html](/docs/install/ich9utils.html)
 
 NOTE: `force_I_want_a_brick` is not scary. Do not be scared! This merely disables
-the safety checks in flashrom. Flashrom and coreboot change a lot, over the years,
+the safety checks in flashprog. Flashrom and coreboot change a lot, over the years,
 and sometimes it's necessary to use this option. If you're scared, then just
 follow the above instructions, but remove that option. So, just use `-p internal`.
 If that doesn't work, next try `-p internal:boardmismatch=force`. If that doesn't
 work, try `-p internal:boardmismatch=force,laptop=force_I_want_a_brick`. So long
 as you *ensure* you're using the correct ROM for your machine, it will be safe
-to run flashrom. These extra options just disable the safetyl checks in flashrom.
+to run flashprog. These extra options just disable the safetyl checks in flashprog.
 There is nothing to worry about.
 
 If successful, it will either say `VERIFIED` or it will say that the chip
@@ -420,7 +416,7 @@ example of the push pin as a proof of concept:
 
 [You must flash it externally](spi.md)
 
-#### ThinkPad X60/X60S/X60T/T60 with Lenovo BIOS {#flashrom_lenovobios}
+#### ThinkPad X60/X60S/X60T/T60 with Lenovo BIOS {#flashprog_lenovobios}
 
 **WARNING: Libreboot 20231021 and likely older 2023 releases do not have the
 bootblock copied in release ROMs, so the bucts trick below will actually cause
@@ -437,7 +433,7 @@ And then do this:
 
 **NOTE: This section partially relates to `utils` release archive in
 Libreboot 20160907, which contains static compiled binaries for things like
-bucts and flashrom. It will *still* work on modern distros, and thus is
+bucts and flashprog. It will *still* work on modern distros, and thus is
 still referenced here. The `flash` script in that release can be used, with
 modern Libreboot ROMs. Current Libreboot releases do not include pre-compiled
 utilities, only ROMs.**
@@ -452,7 +448,7 @@ X60 BIOS password (Lenovo): you might find info here:
 <https://bios-pw.org/>
 
 You can just get bucts from the libreboot project, same thing for the patched
-flashrom. In the Libreboot 20160907 release, there is a *utility* archive, which
+flashprog. In the Libreboot 20160907 release, there is a *utility* archive, which
 has statically compiled executables. They still work just fine on modern
 systems, and they can be used for this purpose.
 
@@ -467,11 +463,11 @@ Here are a list of targets:
   and you will run it at 115200 baud rate. agetty/fgetty in Linux can give
   you a serial console in your OS)
 
-Download and build flashrom, using the instructions
+Download and build flashprog, using the instructions
 on [the Git page](../../git.md), and download the `bucts` software using the
 notes on that very same page.
 
-You can replace Lenovo BIOS with libreboot, using flashrom running on the host
+You can replace Lenovo BIOS with libreboot, using flashprog running on the host
 CPU. However, there are some considerations.
 
 Firstly, make sure that the yellow CMOS battery is installed, and functioning
@@ -483,7 +479,7 @@ load on it, which there will be. This coincell powers the real-time clock and
 CMOS memory).
 
 Lenovo BIOS restricts write access, but there is a weakness in it. With a
-specially patched flashrom binary, you can easily flash it but the top 64KiB
+specially patched flashprog binary, you can easily flash it but the top 64KiB
 region of the boot flash, containing your bootblock, cannot be flashed just
 yet. However, there is a register called the *Backup Control* or *BUC* register
 and in that register is a status bit called *Top Swap* or *TS*.
@@ -497,12 +493,12 @@ program referenced below.
 The libreboot ROM images already have the upper 64KiB bootblock copied to the lower
 one, so you don't have to worry about copying it yourself.
 
-If you build flashrom using the libreboot build system, there will be three
+If you build flashprog using the libreboot build system, there will be three
 binaries:
 
-* `flashrom`
-* `flashrom_i945_sst`
-* `flashrom_i945_mx`
+* `flashprog`
+* `flashprog_i945_sst`
+* `flashprog_i945_mx`
 
 It's these last two binaries that you should use. Now compile bucts (just
 run `make` in the bucts source directory).
@@ -514,19 +510,19 @@ Run the bucts tool:
 Ensure that your CMOS battery is connected too. Now you must determine whether
 you have Macronix or SST. An X60/T60 thinkpad will have either an SST or a
 Macronix chip. The Macronix chip will have "MX" written on the chip. You will
-use `flashrom_i945_sst` for the SST chip, and `flashrom_i945_mx` for the
+use `flashprog_i945_sst` for the SST chip, and `flashprog_i945_mx` for the
 Macronix chip.
 
-Now run flashrom (for SST):
+Now run flashprog (for SST):
 
-	sudo ./flashrom_i945_sst -p internal -w coreboot.rom
+	sudo ./flashprog_i945_sst -p internal -w coreboot.rom
 
 Or Macronix:
 
-	sudo ./flashrom_i945_mx -p internal -w coreboot.rom
+	sudo ./flashprog_i945_mx -p internal -w coreboot.rom
 
 NOTE: you *can* just run both. One of them will succeed. It is perfectly
-harmless to run both versions of flashrom. In fact, you should do so!
+harmless to run both versions of flashprog. In fact, you should do so!
 
 You'll see a lot of errors. This is normal. You should see something like:
 
@@ -554,17 +550,17 @@ Your flash chip is in an unknown state.
 If you see this, rejoice! It means that the flash was successful. Please do not
 panic. Shut down now, and wait a few seconds, then turn back on again.
 
-**WARNING: if flashrom complains about `/dev/mem` access, please
-run `sudo ./bucts 0`. If flashrom is complaining about `/dev/mem`, it means
+**WARNING: if flashprog complains about `/dev/mem` access, please
+run `sudo ./bucts 0`. If flashprog is complaining about `/dev/mem`, it means
 that you have `CONFIG_STRICT_DEVMEM` enabled in your kernel. Reboot with the
 following kernel parameter added in your bootloader: `iomem=relaxed` and try
 again with the above instructions. DO NOT continue until the above works, and
-you see the expected flashrom output as indicated above.**
+you see the expected flashprog output as indicated above.**
 
-If you *did* run flashrom and it failed to flash, but you set bucts to 1 and
+If you *did* run flashprog and it failed to flash, but you set bucts to 1 and
 shut down, don't worry. Just remove the yellow coin-cell battery (it's underneath
 the keyboard, connected to the mainboard), wait a minute or two, reconnect the
-coin-cell and try again from scratch. In this instance, if flashrom didn't do
+coin-cell and try again from scratch. In this instance, if flashprog didn't do
 anything, and didn't flash anything, it means you still have Lenovo BIOS but
 if bucts is set to 1, you can flush it and set it back to 0. BUC.TS is stored in
 volatile memory, powered by that CR2032 coin-cell battery.
@@ -572,16 +568,16 @@ volatile memory, powered by that CR2032 coin-cell battery.
 Assuming that everything went well:
 
 Flash the ROM for a second time. For this second flashing attempt, the upper
-64KiB bootblock is now read-write. Use the *unpatched* flashrom binary:
+64KiB bootblock is now read-write. Use the *unpatched* flashprog binary:
 
-	sudo ./flashrom -p internal -w libreboot.rom
+	sudo ./flashprog -p internal -w libreboot.rom
 
 To reset bucts, do this:
 
 	sudo ./bucts 0
 
 ONLY set bucts back to 0 if you're sure that the upper 64KiB bootblock is
-flashed. It is flashed if flashrom said VERIFIED when running the above
+flashed. It is flashed if flashprog said VERIFIED when running the above
 command.
 
 If it said VERIFIED, shut down. If it didn't say VERIFIED, make sure bucts is
@@ -627,13 +623,13 @@ ASUS KFSN4-DRE
 
 The KFSN4-DRE has an LPC chip.  Most people have been flashing these
 internally, hot-swapping the chip out after boot, preserving the original chip,
-and using flashrom on a new chip as described above.
+and using flashprog on a new chip as described above.
 
 TODO: Document PLCC32 (LPC) flashing.
 The [FlexyICE](https://www.coreboot.org/FlexyICE) has been used to flash these
 chips, but it is hard to find now.  A custom flasher may be made such as
-[flashrom serprog stm32](https://github.com/wosk/stm32-vserprog-lpc) or
-[teensy flasher](https://www.flashrom.org/Teensy_3.1_SPI_%2B_LPC/FWH_Flasher)
+[flashprog serprog stm32](https://github.com/wosk/stm32-vserprog-lpc) or
+[teensy flasher](https://www.flashprog.org/Teensy_3.1_SPI_%2B_LPC/FWH_Flasher)
 
 TARGET: DELL Precision T1650 desktop
 ------------------------------------

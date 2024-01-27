@@ -3,6 +3,9 @@ title: First-time ThinkPad X200 flashing
 x-toc-enable: true
 ...
 
+NOTE: Libreboot standardises on [flashprog](https://flashprog.org/wiki/Flashprog)
+now, as of 27 January 2024, which is a fork of flashrom.
+
 **If you haven't bought an X200 yet: the [Dell Latitude
 E6400](../../news/e6400.md) is much easier to flash; no disassembly required,
 it can be flashed entirely in software from Dell BIOS to Libreboot. It is the
@@ -25,7 +28,7 @@ Flash chip size
 
 Run this command on x200 to find out flash chip model and its size:
 
-	flashrom -p internal
+	flashprog -p internal
 
 MAC address
 ===========
@@ -106,7 +109,7 @@ Look just above the 7 in TP37 (that's GPIO33):
 
 ![](https://av.libreboot.org/x200/gpio33_location.jpg)
 
-By default we would see this in lenovobios, when trying flashrom -p
+By default we would see this in lenovobios, when trying flashprog -p
 internal -w rom.rom:
 
 ```
@@ -147,7 +150,7 @@ that does the flashing; Lenovo BIOS then probably sees that and runs that, inste
 of setting PRx and going for normal boot. It is theoretically possible that we
 could discover how this works, by debugging the Lenovo BIOS update utility (in
 Windows), and then replicate what it is doing, with some tool for Linux,
-then load a flashrom binary into memory and the ROM to flash (for the BIOS
+then load a flashprog binary into memory and the ROM to flash (for the BIOS
 region). You would do this with GPIO33 grounded, and the payload program would
 actually flash the entire chip, with just a normal libreboot image.
 

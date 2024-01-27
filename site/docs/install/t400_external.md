@@ -3,6 +3,9 @@ title: Flashing the ThinkPad T400 externally
 x-toc-enable: true
 ...
 
+NOTE: Libreboot standardises on [flashprog](https://flashprog.org/wiki/Flashprog)
+now, as of 27 January 2024, which is a fork of flashrom.
+
 Dell Latitude E6400
 ===================
 
@@ -77,7 +80,7 @@ Flash chip size {#flashchips}
 
 Use this to find out:
 
-	flashrom -p internal
+	flashprog -p internal
 
 MAC address {#macaddress}
 ===========

@@ -137,7 +137,7 @@ In addition to coreboot firmware, the Libreboot build system (lbmk) can now
 build *serprog* firmware, specifically `pico-serprog` and `stm32-vserprog`, on
 all devices that these projects support.
 
-The *serprog* protocol is supported by flashrom, to provide SPI flashing. It
+The *serprog* protocol is supported by flashprog, to provide SPI flashing. It
 can be used to set up an external SPI flasher, for [flashing Libreboot
 externally](../docs/install/spi.md).
 
@@ -572,12 +572,12 @@ The log is as follows, relative to Libreboot 20230625:
 * c7e764a3 update/release: confirm vdir path on exit 
 * 1c8b2114 update/release: copy crossgcc to archive 
 * 54a05fc1 always re-generate .git in lbmk 
-* 52c9416b update flashrom revision 
-* af1c1e10 add backup git repo for flashrom 
-* 18364822 Revert "config/git: don't download flashrom" 
+* 52c9416b update flashprog revision 
+* af1c1e10 add backup git repo for flashprog 
+* 18364822 Revert "config/git: don't download flashprog" 
 * ac442808 config/git: add more backup repos 
 * 75980052 git/config: don't use github on main repos 
-* bf4ea810 config/git: don't download flashrom 
+* bf4ea810 config/git: don't download flashprog 
 * da3044e7 git/config stm32-vserprog: don't fetch libopencm3 
 * 782371a5 update/release: delete *all* .git and .gitmodules 
 * 743a425c include/git: fix already-exists download message 
