@@ -2219,3 +2219,18 @@ Example taken from lenovo/x230. We could just turn all of these off.
 It doesn't affect anything in practise, whether this is on or not, because
 we neuter anyway, so the ME interface is broken by default. Leaving it
 on in devicetree will result in a benign error message on linux dmesg.
+
+audit tmp usage
+===============
+
+some .elf files are left in /tmp, outside of TMPDIR, after lbmk runs,
+and it seems to be when building elfs. in particular, it happened
+when i built gru\_bob but it could be for others
+
+lbmk changes TMPDIR to /tmp/lbmk\_xxxxxxxxx where x numbers are generated,
+and exports that, but things that it runs may or may not respect TMPDIR,
+or it could be buggy in some shells. therefore, audit the way lbmk uses
+tmp, because in some cases it literally does now delete temporary files
+or directories, on the assumption that they are deleted at the end. at the
+end when lbmk exits, the main script deletes /tmp/lbmk\_xxxxxxxx
+
