@@ -76,7 +76,7 @@ using the build instructions below.
 
 Copy the file `rpi-pico-serprog.uf2` into your Pico. To build this firmware, you
 could build it yourself or you could also clone `lbmk.git` and [install build
-dependencies](..//build/#first-install-build-dependencies), then inside lbmk,
+dependencies](../build/#first-install-build-dependencies), then inside lbmk,
 do:
 
 	./build serprog rp2040 pico
