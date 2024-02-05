@@ -2234,3 +2234,16 @@ tmp, because in some cases it literally does now delete temporary files
 or directories, on the assumption that they are deleted at the end. at the
 end when lbmk exits, the main script deletes /tmp/lbmk\_xxxxxxxx
 
+Switchable Graphics (Optimus)
+=============================
+
+Some of the Thinkpads we support have dual graphics, using Nvidia Optimus.
+It'd be nice to have. This coreboot patch enables it on Thinkpads:
+
+<https://review.coreboot.org/c/coreboot/+/28380>
+
+There are other patches on Gerit, related to Optimus too:
+
+<https://review.coreboot.org/q/Optimus>
+
+This should be looked into.
