@@ -55,6 +55,7 @@ libreboot currently supports the following systems in this release:
 -   [Lenovo ThinkPad T430](../install/ivy_has_common.md) (no install docs yet)
 -   [Lenovo ThinkPad T440p](../install/t440p_external.md)
 -   [Lenovo ThinkPad T500](t500.md)
+-   [Lenovo ThinkPad T520 / W520](../install/ivy_has_common.md) (no install guide yet)
 -   [Lenovo ThinkPad T530 / W530](../install/ivy_has_common.md) (no install
 -   Lenovo ThinkPad T60 (with Intel GPU) (**easy to flash without disassembly**)
 -   [Lenovo ThinkPad W500](t500.md)
