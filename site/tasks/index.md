@@ -2205,6 +2205,20 @@ also see
 
 https://blog.3mdeb.com/2020/2020-11-02-grub2mini-summit/
 
+GRUB nvme support
+=================
+
+GRUB doesn't support nvme on bare metal.
+
+SeaBIOS does.
+
+Libreboot is getting a lot of new ports, and some of them can use nvme
+drives. We need nvme support in GRUB.
+
+TODO: adapt SeaBIOS nvme code for GRUB. Also submit upstream.
+
+GRUB can do nvme but only if it's supported by the (UEFI) vendor firmware.
+
 4th SSD on T440p
 ================
 
