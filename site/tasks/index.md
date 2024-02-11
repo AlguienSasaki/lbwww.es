@@ -2307,3 +2307,20 @@ makes. this could reverse engineered to then add those options in coreboot.
 
 haswell overclocking would be very useful to have, on libreboot machines,
 because you can get some still-very-nice CPUs for these machines.
+
+X60/T60 alloc magic is broken at 0x7b1aedf0: 0
+===============================================
+
+See: <https://codeberg.org/libreboot/lbmk/issues/179>
+
+Reported on T60. Another user reported on X60. Happened when booting from
+battery. On the X60 reported, booting with charger connected worked, but
+this GRUB error is produced when booting on battery.
+
+Happens in 20240126. Does not happen in 20230625.
+
+A bisect is indicated; possibly in GRUB, but if nothing is found there,
+then the bug will be in coreboot. Could be either of them.
+
+Could be a bug in GRUB's memory management. And/or regression in
+coreboot raminit. More testing is needed.
