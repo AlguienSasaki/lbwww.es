@@ -2247,3 +2247,45 @@ There are other patches on Gerit, related to Optimus too:
 <https://review.coreboot.org/q/Optimus>
 
 This should be looked into.
+
+Overclocking (CPU and RAM)
+=========================
+
+Coreboot could be modified to support overclocking. Here is an example
+patch on gerrit (not merged in main):
+
+<https://review.coreboot.org/c/coreboot/+/42547>
+
+Coreboot can also be used to load custom SPDs for the RAM if you want to get
+into re-binning (as it's called. Thank you Riku for telling me that this is
+what it's actually called). Useful if you want to quickly test.
+
+Libreboot is starting to support machines where some users may want to start
+overclocking their CPU/GPU/RAM.
+
+As for GPU overclocking: usually there are programs you can run for this in
+your operating system, but sometimes on laptops with dgpu, the VGA ROM might
+limit it in some way.
+
+This article is from someone who modified the VGA ROM on their AMD Radeon
+graphics chip, in a laptop:
+<https://habr.com/en/articles/232265/?_x_tr_hist=true> - it is an example of
+the sort of thing lbmk could automate, when auto-downloading those VGA ROMs,
+on certain machines. NOTE: Page is in Russian, use a translator.
+
+The type of people (enthusiasts) that like Libreboot would be into this sort
+of thing. It may be interesting to study, especially on haswell machines.
+
+Haswell
+-------
+
+<https://www.youtube.com/watch?v=vCZiTSZutR4>
+
+interesting video on alienware laptop (haswell), and there are other examples.
+those machines, whether they get ported to coreboot or not, could be used
+to study what affect those options have: take dumps of hardware logs using
+various utils, before and after, to study what change those settings actually
+makes. this could reverse engineered to then add those options in coreboot.
+
+haswell overclocking would be very useful to have, on libreboot machines,
+because you can get some still-very-nice CPUs for these machines.
