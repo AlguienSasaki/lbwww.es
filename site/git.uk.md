@@ -232,6 +232,14 @@ IRC-канал libreboot і повідомити канал, які виправ
 Однак, для прозорості процесу перевірки коду, ми рекомендуємо на даний момент
 використовувати Codeberg.
 
+Mailing list
+------------
+
+Libreboot has this mailing list:
+<https://lists.sr.ht/~libreboot/libreboot>
+
+The email address is [~libreboot/libreboot@lists.sr.ht](mailto:~libreboot/libreboot@lists.sr.ht)
+
 Дзеркала lbmk.git
 ===================
 
@@ -241,6 +249,7 @@ IRC-канал libreboot і повідомити канал, які виправ
 Ви можете виконати `git clone` на будь-якому з цих посилань (посилання є також доступними для натискання,
 для перегляду змін в вашому веб-браузері):
 
+* <https://git.sr.ht/~libreboot/lbmk>
 * <https://git.disroot.org/libreboot/lbmk>
 * <https://gitea.treehouse.systems/libreboot/lbmk>
 * <https://git.fosscommunity.in/libreboot/lbmk>
@@ -266,6 +275,7 @@ IRC-канал libreboot і повідомити канал, які виправ
 Ви можете виконати `git clone` на цих посиланнях, та/або натиснути для перегляду змін в вашому
 веб-браузері. Дивіться:
 
+* <https://git.sr.ht/~libreboot/lbwww>
 * <https://git.disroot.org/libreboot/lbwww>
 * <https://gitea.treehouse.systems/libreboot/lbwww>
 * <https://git.fosscommunity.in/libreboot/lbwww>

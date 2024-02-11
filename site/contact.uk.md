@@ -3,18 +3,24 @@ title: Зв'язок
 x-toc-enable: true
 ...
 
-**TODO: списки розсилки, сервер mastodon та обліковий запис peertube.**
-
 Підтримка користувачів
 ============
 
 IRC або Reddit рекомендовані, якщо ви бажаєте попросити про допомогу (найкраще IRC).
 Дивіться інформацію нижче щодо IRC та Reddit.
 
+Mailing list
+============
+
+Libreboot has this mailing list:
+<https://lists.sr.ht/~libreboot/libreboot>
+
+The email address is [~libreboot/libreboot@lists.sr.ht](mailto:~libreboot/libreboot@lists.sr.ht)
+
 Обговорення розробки
 ======================
 
-Списки розсилки плануються на майбутнє. Зараз, подивіться нотатки
+Зараз, подивіться нотатки
 на [сторінці Git](git.md) для інформації щодо допомоги з розробкою.
 
 На цій сторінці також знаходяться інструкції по відправці патчів (через pull request'и).

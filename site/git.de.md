@@ -252,6 +252,14 @@ Ein weiterer Weg Patches zu senden ist Leah Rowe direkt eine email zu senden:
 Um den Prozess der Quelltext Überprüfung transparent zu gestalten,
 wird jedoch empfohlen künftig Codeberg zu verwenden.
 
+Mailing list
+------------
+
+Libreboot has this mailing list:
+<https://lists.sr.ht/~libreboot/libreboot>
+
+The email address is [~libreboot/libreboot@lists.sr.ht](mailto:~libreboot/libreboot@lists.sr.ht)
+
 Mirrors für lbmk.git
 ===================
 
@@ -261,6 +269,7 @@ Libreboot Veröffentlichungen  herstellt (inklusive kompilierter ROM Images).
 Du kannst `git clone` für alle diese Links ausführen (die Links können auch
 angeklickt werden, um Änderungen in deinem Web Browser anzusehen):
 
+* <https://git.sr.ht/~libreboot/lbmk>
 * <https://git.disroot.org/libreboot/lbmk>
 * <https://gitea.treehouse.systems/libreboot/lbmk>
 * <https://git.fosscommunity.in/libreboot/lbmk>
@@ -286,6 +295,7 @@ der Seite die Du gerade liest!
 Du kannst `git clone` für diese Links ausführen und/oder die Links
 anklicken um Änderungen in deinem Web Browser anzusehen). Siehe:
 
+* <https://git.sr.ht/~libreboot/lbwww>
 * <https://git.disroot.org/libreboot/lbwww>
 * <https://gitea.treehouse.systems/libreboot/lbwww>
 * <https://git.fosscommunity.in/libreboot/lbwww>

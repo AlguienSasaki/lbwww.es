@@ -3,18 +3,24 @@ title: Kontakt
 x-toc-enable: true
 ...
 
-**TODO: mailing lists, mastodon server and peertube account.**
-
 User support
 ============
 
 IRC oder Reddit werden bevorzugt, sofern Du eine Support Anfrage hast (IRC empfohlen).
 Für Informationen bzgl. IRC and Reddit siehe unten.
 
+Mailing list
+============
+
+Libreboot has this mailing list:
+<https://lists.sr.ht/~libreboot/libreboot>
+
+The email address is [~libreboot/libreboot@lists.sr.ht](mailto:~libreboot/libreboot@lists.sr.ht)
+
 Entwicklungs Diskussion
 ======================
 
-Eine Mailing Liste ist für die Zukunft in Planung. Bis dahin, siehe unter
+Siehe unter
 [der Git Seite](git.md) für Informationen wie Du dich an der Entwicklung beteiligen kannst.
 
 Hier finden sich ebenso Anleitungen zum Senden von Patches (via Pull-Requests).
