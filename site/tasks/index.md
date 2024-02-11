@@ -834,6 +834,24 @@ specs for it, are provided for in the above linked issue page.
 Several more high-end HP EliteBook machines use MXM graphics modules,
 e.g. HP EliteBook 8560w.
 
+MXM works! TODO: merge
+----------------------
+
+Riku got it working. See:
+
+* SeaBIOS patch 1: <https://mail.coreboot.org/hyperkitty/list/seabios@seabios.org/thread/ZHVOSUEYILGFNBKWOFNSDQ7PGCADSMU4/>
+* SeaBIOS patch 2: <https://mail.coreboot.org/hyperkitty/list/seabios@seabios.org/thread/LK2ZHY6BSKRBUCZ5LMND5IBW3HGLZTMV/>
+* mxmdump util: <https://codeberg.org/Riku_V/mxmdump/>
+* int tool: <https://codeberg.org/Riku_V/int>
+
+the "int" tool can be used to determine what mxm spec you have, and the mxmdump
+util can be used to dump the mxm config. on systems where there is no i2c rom,
+the system firmware (in this case libreboot) must provide it via int15h
+interrupt. riku's seabios patches implement this.
+
+TODO: Merge in libreboot, with elitebook 8560w support. (riku will probably
+merge this himself, but i'm adding it here just in case)
+
 John lane GRUB patches
 ======================
 
