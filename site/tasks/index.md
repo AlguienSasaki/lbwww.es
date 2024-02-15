@@ -238,6 +238,8 @@ Dell Latitude/Precision:
 
 * Dell Latitude laptops: E4200, E4300, E5400, E5500, E6500, Precision M4400,
 
+Also E6440 (Haswell machine)
+
 These typically use MEC5045 or compatible EC. Some may use MEC5035.
 
 SuperIO: at least M6500 is known to use ECE5028. I have a bunch of these
