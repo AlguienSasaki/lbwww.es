@@ -2340,3 +2340,9 @@ then the bug will be in coreboot. Could be either of them.
 
 Could be a bug in GRUB's memory management. And/or regression in
 coreboot raminit. More testing is needed.
+
+Intel/AMD errata PDF
+====================
+
+List PDF links for Intel/AMD CPUs, provided by Intel/AMD, showing what is
+unpatched as of yet, in microcode updates.
