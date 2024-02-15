@@ -238,13 +238,25 @@ Dell Latitude/Precision:
 
 * Dell Latitude laptops: E4200, E4300, E5400, E5500, E6500, Precision M4400,
 
-Also E6440 (Haswell machine)
+Also E6440 (Haswell machine) - also E6540, 5540, E5440, E3540, E3440, E7440, and E7240
+ also - Nicholas says only the E6x40 models here have socked CPUs. The
+rest are soldered.
+
+E7440: https://review.coreboot.org/c/coreboot/+/46540
+
+E7240: https://review.coreboot.org/c/coreboot/+/40300 (original)
+and rebased to main: https://review.coreboot.org/c/coreboot/+/79746
 
 These typically use MEC5045 or compatible EC. Some may use MEC5035.
 
 SuperIO: at least M6500 is known to use ECE5028. I have a bunch of these
 Dells at my lab, they are high priority for porting because they would be
 easily flashable, and blob-free configs (Canoeboot could also support them).
+
+Broadwell Dell
+--------------
+
+E5450 uses MEC5085, currently untested for dell-flash-unlock.
 
 Dell Latitude E7240
 -------------------
@@ -326,6 +338,12 @@ Most/all of these should be easily flashable, with the `dell-flash-unlock`
 utility, and many could be ported using autoport as a guide. Nicholas is
 working on these. They are left here for reference. If you have one of these,
 please contact `nic3-14159` on the [Libreboot IRC channel](../contact.md).
+
+Look at the page:
+<https://en.wikipedia.org/wiki/Dell_Latitude#Exx50_Models_(2015)>
+
+It lists Dell Latitude models, though "Precision" brand is also available
+on some models that may be Libreboot-feasible.
 
 ARM-based CrOS devices
 ----------------------
