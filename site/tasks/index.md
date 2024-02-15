@@ -258,6 +258,16 @@ Broadwell Dell
 
 E5450 uses MEC5085, currently untested for dell-flash-unlock.
 
+Skylake Dell
+------------
+
+<https://en.wikipedia.org/wiki/Dell_Latitude#Exx70_Models_(2016)>
+
+Non-E models don't have the MEC ECs. The E models have MEC5085.
+
+Nicholas isn't sure whether these have bootguard. TODO: test, and also
+test with dell-flash-unlock.
+
 Dell Latitude E7240
 -------------------
 
@@ -2372,3 +2382,14 @@ unpatched as of yet, in microcode updates.
 <https://github.com/intel/Intel-Linux-Processor-Microcode-Data-Files/blob/main/releasenote.md#microcode-20230808>
 
 Links.
+
+Fork autoport to util/
+======================
+
+TODO: transfer written notes here
+
+Autoport patches are all over the place. The one in coreboot main is horribly
+out of date, for example only goes up to Broadwell even with the out of
+tree patches.
+
+Port it to skylake and above.
