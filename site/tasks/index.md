@@ -256,8 +256,10 @@ libremrc in lbmk.
 
 NOTE: Iru Cai is the person working on this.
 
-Dell Precision M4800
+Dell Precision M4800 and M6800
 --------------------
+
+Also M6800, though no port is available yet. 17.3 inch display.
 
 See: <https://review.coreboot.org/c/coreboot/+/79755>
 
