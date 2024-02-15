@@ -2346,3 +2346,9 @@ Intel/AMD errata PDF
 
 List PDF links for Intel/AMD CPUs, provided by Intel/AMD, showing what is
 unpatched as of yet, in microcode updates.
+
+<https://www.intel.com/content/www/us/en/products/docs/processors/core/core-technical-resources.html>
+
+<https://github.com/intel/Intel-Linux-Processor-Microcode-Data-Files/blob/main/releasenote.md#microcode-20230808>
+
+Links.
