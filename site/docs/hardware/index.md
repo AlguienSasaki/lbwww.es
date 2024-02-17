@@ -46,6 +46,7 @@ libreboot currently supports the following systems in this release:
 -   [HP EliteBook 820 G2](hp820g2.md)
 -   [HP EliteBook 8460p](hp8460p.md)
 -   [HP EliteBook 8470p](hp8470p.md)
+-   [HP EliteBook 8560w](hp8560w.md)
 -   [HP EliteBook Folio 9470m](hp9470m.md)
 -   [Lenovo ThinkPad R400](r400.md)
 -   [Lenovo ThinkPad R500](r500.md)
