@@ -92,6 +92,9 @@ pre-compiled in the next Libreboot release, after the 20230625 release.
 Disconnect the Pico and proceed to wire it to your
 [flash chip](/docs/install/spi.html#identify-which-flash-type-you-have).
 
+**NOTE: SCK and CLK mean the same thing. The diagram below says SCK, and other
+parts of this guide say CLK. It's the same thing!**
+
 ![Raspberry Pi Pico pinout, when using the firmware linked
 above](https://av.libreboot.org/rpi_pico/pinout_serprog.png)
 
