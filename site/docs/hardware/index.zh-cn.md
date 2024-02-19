@@ -37,6 +37,7 @@ x-toc-enable: true
 -   [Acer G43T-AM3](acer_g43t-am3.md)
 -   [Apple iMac 5,2](imac52.md)
 -   [ASUS KCMA-D8 主板](kcma-d8.md)
+-   Dell OptiPlex 7020/9020 MT and SFF (no guides yet)
 -   [Dell Precision T1650](t1650.md)
 -   [Gigabyte GA-G41M-ES2L 主板](ga-g41m-es2l.md)
 -   [HP Elite 8200 SFF/MT](hp8200sff.md)（HP 6200 Pro Business 多半也能用）
@@ -48,13 +49,17 @@ x-toc-enable: true
 
 -   [Apple MacBook1,1 及 MacBook2,1](macbook21.md)
 -   [Dell Latitude E6400, E6400 XFR 及 E6400 ATG，皆支持 Nvidia 或 Intel GPU](e6400.md) **（刷入简单，无需拆解，硬件类似 X200/T400）**
+-   Dell Latitude E6420 (Intel GPU) - no guide yet. internal flashing possible.
 -   [Dell Latitude E6430, Intel GPU](e6430.md) **（刷入简单，无需拆解）**
+-   Dell Latitude E5530 (Intel GPU) - no guide yet. internal flashing possible.
+-   Dell Latitude E6520 (Intel GPU) - no guide yet. internal flashing possible.
 -   [HP EliteBook 2170p](hp2170p.md)
 -   [HP EliteBook 2560p](hp2560p.md)
 -   [HP EliteBook 2570p](hp2570p.md)
 -   [HP EliteBook 820 G2](hp820g2.md)
 -   [HP EliteBook 8460p](hp8460p.md)
 -   [HP EliteBook 8470p](hp8470p.md)
+-   [HP EliteBook 8560w](hp8560w.md)
 -   [HP EliteBook Folio 9470m](hp9470m.md)
 -   [Lenovo ThinkPad R400](r400.md)
 -   [Lenovo ThinkPad R500](r500.md)

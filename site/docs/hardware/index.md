@@ -25,6 +25,7 @@ libreboot currently supports the following systems in this release:
 -   [Acer G43T-AM3](acer_g43t-am3.md)
 -   [Apple iMac 5,2](imac52.md)
 -   [ASUS KCMA-D8 motherboard](kcma-d8.md)
+-   Dell OptiPlex 7020/9020 MT and SFF (no guides yet)
 -   [Dell Precision T1650](t1650.md) (**easy to flash without disassembly**)
 -   [Gigabyte GA-G41M-ES2L motherboard](ga-g41m-es2l.md)
 -   [HP Elite 8200 SFF/MT](hp8200sff.md) (HP 6200 Pro Business probably works too)
@@ -39,7 +40,10 @@ libreboot currently supports the following systems in this release:
 -   [Dell Latitude E6400, E6400 XFR and E6400 ATG, all with Nvidia or Intel
     GPU](e6400.md) **(easy to flash, no disassembly, similar
     hardware to X200/T400)**
+-   Dell Latitude E6420 (Intel GPU) - no guide yet. internal flashing possible.
 -   [Dell Latitude E6430 (Intel GPU](e6430.md) **(easy to flash, no disassembly)**
+-   Dell Latitude E5530 (Intel GPU) - no guide yet. internal flashing possible.
+-   Dell Latitude E6520 (Intel GPU) - no guide yet. internal flashing possible.
 -   [HP EliteBook 2170p](hp2170p.md) (**socketed flash IC**)
 -   [HP EliteBook 2560p](hp2560p.md)
 -   [HP EliteBook 2570p](hp2570p.md)
