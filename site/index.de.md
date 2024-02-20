@@ -15,7 +15,7 @@ und [Libera](https://libera.chat/) IRC.
 
 <img tabindex=1 class="r" src="https://av.libreboot.org/hp9470m/9470m+2560p.jpg" /><span class="f"><img src="https://av.libreboot.org/hp9470m/9470m+2560p.jpg" /></span>
 
-You can also [buy Libreboot installed](https://minifree.org/) from Minifree Ltd,
+You can also [buy Libreboot preinstalled](https://minifree.org/) from Minifree Ltd,
 on select hardware, aswell as send your compatible hardware
 for [Libreboot preinstallation](https://minifree.org/product/installation-service/).
 The founder and lead developer of Libreboot, Leah Rowe, also owns and operates
