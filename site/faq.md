@@ -95,8 +95,8 @@ Error accessing DMI Table, 0x1000 bytes at 0x000000007fb27000
 /dev/mem mmap failed: Operation not permitted
 ```
 
-The backlight is darker on the left side of the screen when lowering the brightness on my ThinkPad X200/X200S/X200T, T400, T500, R400, W500, R500 and other Intel laptops
----------------------------------------------------------------------------------------------------------------
+Uneven backlight on GM45 ThinkPads
+----------------------------------
 
 We don't know how to detect the correct PWM value to use in
 coreboot, so we just use the default one in coreboot which has
@@ -105,8 +105,8 @@ this issue on some CCFL panels, but not LED panels.
 You can work around this in your distribution, by following the notes at
 [docs: backlight control](../docs/misc/#finetune-backlight-control-on-intel-gpus).
 
-The ethernet doesn't work on my X200/T400/X60/T60 when I plug in it 
--------------------------------------------------------------------
+GM45 thinkpad ethernet port doesn't autoconnect
+-----------------------------------------------
 
 This was observed on some systems using network-manager. This happens
 both on the original BIOS and in libreboot. It's a quirk in the
@@ -122,8 +122,8 @@ On systemd-based distros, you might try:
 (the service name might be different for you, depending on your
 configuration)
 
-My KCMA-D8 or KGPE-D16 doesn't boot with the PIKE2008 module installed 
------------------------------------------------------------------------
+PIKE2008 module hangs KGPE-D16 / KCMA-D8
+-----------------------------------------
 
 Loading the option ROM from the PIKE2008 module on either ASUS KCMA-D8
 or KGPE-D16 causes the system to hang at boot. It's possible to use
