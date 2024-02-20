@@ -3,6 +3,22 @@ title: 通过 SPI 协议对 25XX NOR flash 进行读/写
 x-toc-enable: true
 ...
 
+Need help?
+==========
+
+Help is available on [Libreboot IRC](../../contact.md) and other channels.
+
+If you want professional installation, Minifree Ltd sells [Libreboot
+pre-installed](https://minifree.org/) on select hardware, and it also provides
+a [Libreboot preinstall service](https://minifree.org/product/installation-service/)
+if you want to send your machine in to have Libreboot installed for you.
+
+Leah Rowe, the founder and lead developer of Libreboot, also owns and
+operates Minifree Ltd; sales provide funding for the Libreboot project.
+
+Introduction
+============
+
 **[安装之前请先阅读这些指示](../../news/safety.md)，否则你的机器可能会成砖：[安全措施](../../news/safety.md)**
 
 本指南将教你怎样使用各种工具，通过 SPI 协议对 25xx NOR flash 进行外部再编程。这是 coreboot 所支持的计算机中，最常见的 flash IC 类型。目前 libreboot 支持的每个系统，基本都使用这种类型的引导 flash；唯一的例外就是 ASUS KFSN4-DRE，它在 PLCC32 芯片座中使用了 LPC flash，你可以在供应商固件启动后，对其进行热切换，然后再内部刷入。十分简单！

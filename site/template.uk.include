@@ -69,17 +69,19 @@ $endif$
 <ul>
 <li><a href="/index.uk.html">Домашня</a></li>
 <li><a href="/faq.html">FAQ</a></li>
-<li><strong><a href="/freedom-status.html">Статус свободи</a></strong></li>
-<li><strong><a href="/download.uk.html">Завантаження</a></strong></li>
+<li><a href="/download.uk.html">Завантаження</a></li>
+<li>-</li>
+<li style="font-size:1.3em;"><em><strong><a href="https://minifree.org/">Придбати передвстановленим</a></strong></em></li>
+<li>-</li>
 <li><a href="/docs/install/">Встановлення</a></li>
 <li><a href="/docs/index.uk.html">Документація</a></li>
 <li><a href="/news/">Новини</a></li>
-<li><strong><a href="/tasks/">TODO</a></strong></li>
+<li><a href="/tasks/">TODO</a></li>
 <li><a href="https://codeberg.org/libreboot/lbmk/issues">Помилки</a></li>
 <li><a href="/git.uk.html">Відправити виправлення</a></li>
-<li><strong><a href="https://www.patreon.com/libreleah">Пожертвувати</a></strong></li>
 <li><a href="/contact.uk.html">Зв'язок</a></li>
-<li><strong><a href="https://minifree.org/">Придбати передвстановленим</a></strong></li>
+<li>-</li>
+<li style="font-size:1.3em;"><em><strong><a href="https://www.patreon.com/libreleah">Пожертвувати</a></strong></em></li>
 </ul>
 <hr/>
 </header>

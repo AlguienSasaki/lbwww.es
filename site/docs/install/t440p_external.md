@@ -3,6 +3,15 @@ title: ThinkPad T440p external flashing
 x-toc-enable: true
 ...
 
+Buy Libreboot preinstalled
+==========================
+
+This laptop is available to buy with Libreboot pre-installed:
+<https://minifree.org/product/libreboot-t440p/>
+
+Introduction
+============
+
 NOTE: Libreboot standardises on [flashprog](https://flashprog.org/wiki/Flashprog)
 now, as of 27 January 2024, which is a fork of flashrom.
 

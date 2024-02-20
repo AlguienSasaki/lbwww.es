@@ -3,6 +3,22 @@ title: 兼容硬件列表
 x-toc-enable: true
 ...
 
+Need help?
+==========
+
+Help is available on [Libreboot IRC](../../contact.md) and other channels.
+
+If you want professional installation, Minifree Ltd sells [Libreboot
+pre-installed](https://minifree.org/) on select hardware, and it also provides
+a [Libreboot preinstall service](https://minifree.org/product/installation-service/)
+if you want to send your machine in to have Libreboot installed for you.
+
+Leah Rowe, the founder and lead developer of Libreboot, also owns and
+operates Minifree Ltd; sales provide funding for the Libreboot project.
+
+Introduction
+============
+
 **[安装之前请先阅读这些指示](../../news/safety.md)，否则你的机器可能会变砖：[安全措施](../../news/safety.md)**
 
 这一部分说明了 libreboot 已知兼容的硬件。
@@ -34,10 +50,13 @@ x-toc-enable: true
 
 ### Desktops (AMD, Intel, x86)
 
+-   **Dell OptiPlex 7020/9020 MT and SFF (no guides yet) - [Available to buy
+    with Libreboot preinstalled](https://minifree.org/product/libreboot-9020/)**
 -   [Acer G43T-AM3](acer_g43t-am3.md)
 -   [Apple iMac 5,2](imac52.md)
 -   [ASUS KCMA-D8 主板](kcma-d8.md)
--   Dell OptiPlex 7020/9020 MT and SFF (no guides yet)
+-   Dell OptiPlex 7010 **MT** (known to work, using the T1650 ROM, but more
+    research is needed)
 -   [Dell Precision T1650](t1650.md)
 -   [Gigabyte GA-G41M-ES2L 主板](ga-g41m-es2l.md)
 -   [HP Elite 8200 SFF/MT](hp8200sff.md)（HP 6200 Pro Business 多半也能用）
@@ -47,16 +66,21 @@ x-toc-enable: true
 
 ### 笔记本（Intel，x86）
 
+-   **[HP EliteBook 820 G2](hp820g2.md) - Also [available to buy with Libreboot
+    preinstalled](https://minifree.org/product/libreboot-820/)**
+-   **[Lenovo ThinkPad T440p](../install/t440p_external.md) - Also [available
+    to buy with Libreboot preinstalled](https://minifree.org/product/libreboot-t440p/)**
+-   **[Lenovo ThinkPad W541](../install/ivy_has_common.md) - Also [available to
+    buy with Libreboot preinstalled](https://minifree.org/product/libreboot-w541/)**
 -   [Apple MacBook1,1 及 MacBook2,1](macbook21.md)
--   [Dell Latitude E6400, E6400 XFR 及 E6400 ATG，皆支持 Nvidia 或 Intel GPU](e6400.md) **（刷入简单，无需拆解，硬件类似 X200/T400）**
--   Dell Latitude E6420 (Intel GPU) - no guide yet. internal flashing possible.
--   [Dell Latitude E6430, Intel GPU](e6430.md) **（刷入简单，无需拆解）**
--   Dell Latitude E5530 (Intel GPU) - no guide yet. internal flashing possible.
--   Dell Latitude E6520 (Intel GPU) - no guide yet. internal flashing possible.
+-   [Dell Latitude E6400, E6400 XFR 及 E6400 ATG，皆支持 Nvidia 或 Intel GPU](e6400.md)
+-   Dell Latitude E6420 (Intel GPU) - no guide yet.
+-   [Dell Latitude E6430, Intel GPU](e6430.md)
+-   Dell Latitude E5530 (Intel GPU) - no guide yet.
+-   Dell Latitude E6520 (Intel GPU) - no guide yet.
 -   [HP EliteBook 2170p](hp2170p.md)
 -   [HP EliteBook 2560p](hp2560p.md)
 -   [HP EliteBook 2570p](hp2570p.md)
--   [HP EliteBook 820 G2](hp820g2.md)
 -   [HP EliteBook 8460p](hp8460p.md)
 -   [HP EliteBook 8470p](hp8470p.md)
 -   [HP EliteBook 8560w](hp8560w.md)
@@ -67,12 +91,10 @@ x-toc-enable: true
 -   [Lenovo Thinkpad T420](../install/ivy_has_common.md)（暂无安装文档）
 -   [Lenovo ThinkPad T420S](../install/ivy_has_common.md)（暂无安装文档）
 -   [Lenovo ThinkPad T430](../install/ivy_has_common.md)（暂无安装文档）
--   [Lenovo ThinkPad T440p](../install/t440p_external.md)
 -   [Lenovo ThinkPad T500](t500.md)
 -   [Lenovo ThinkPad T530 / W530](../install/ivy_has_common.md)（暂无安装文档）
 -   Lenovo ThinkPad T60（Intel GPU 款）
 -   [Lenovo ThinkPad W500](t500.md)
--   [Lenovo ThinkPad W541](../install/ivy_has_common.md)（暂无安装文档）
 -   [Lenovo ThinkPad X200 / X200S / X200 Tablet](x200.md)
 -   [Lenovo Thinkpad X220](../install/ivy_has_common.md)
 -   [Lenovo Thinkpad X220t](../install/ivy_has_common.md)

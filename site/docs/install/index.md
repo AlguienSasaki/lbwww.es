@@ -3,13 +3,26 @@ title: Installation instructions
 x-toc-enable: true
 ...
 
+Need help?
+==========
+
+Help is available on [Libreboot IRC](../../contact.md) and other channels.
+
+If you want professional installation, Minifree Ltd sells [Libreboot
+pre-installed](https://minifree.org/) on select hardware, and it also provides
+a [Libreboot preinstall service](https://minifree.org/product/installation-service/)
+if you want to send your machine in to have Libreboot installed for you.
+
+Leah Rowe, the founder and lead developer of Libreboot, also owns and
+operates Minifree Ltd; sales provide funding for the Libreboot project.
+
+FLASH ERRORS (and workarounds)
+=======================
+
 **NOTE: Libreboot standardises on [flashprog](https://flashprog.org/wiki/Flashprog)
 now, as of 27 January 2024, which is a fork of flashrom.**
 
 This section relates to installing libreboot on supported targets.
-
-FLASH ERRORS (and workarounds)
-=======================
 
 Right out of the gate, some users may experience errors with flashprog when
 using the internal programmer. They are:

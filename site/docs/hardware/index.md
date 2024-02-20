@@ -3,6 +3,22 @@ title: Hardware compatibility list
 x-toc-enable: true
 ...
 
+Need help?
+==========
+
+Help is available on [Libreboot IRC](../../contact.md) and other channels.
+
+If you want professional installation, Minifree Ltd sells [Libreboot
+pre-installed](https://minifree.org/) on select hardware, and it also provides
+a [Libreboot preinstall service](https://minifree.org/product/installation-service/)
+if you want to send your machine in to have Libreboot installed for you.
+
+Leah Rowe, the founder and lead developer of Libreboot, also owns and
+operates Minifree Ltd; sales provide funding for the Libreboot project.
+
+Introduction
+============
+
 **IMPORTANT ADVICE: [PLEASE READ THESE INSTRUCTIONS BEFORE INSTALLING/UPDATING
 LIBREBOOT](../../news/safety.md).**
 
@@ -22,32 +38,38 @@ libreboot currently supports the following systems in this release:
 
 ### Desktops (AMD, Intel, x86)
 
+-   **Dell OptiPlex 7020/9020 MT and SFF (no guides yet) - [Available to buy
+    with Libreboot preinstalled](https://minifree.org/product/libreboot-9020/)**
 -   [Acer G43T-AM3](acer_g43t-am3.md)
 -   [Apple iMac 5,2](imac52.md)
 -   [ASUS KCMA-D8 motherboard](kcma-d8.md)
--   Dell OptiPlex 7020/9020 MT and SFF (no guides yet)
--   [Dell Precision T1650](t1650.md) (**easy to flash without disassembly**)
+-   Dell OptiPlex 7010 **MT** (known to work, using the T1650 ROM, but more
+    research is needed)
+-   [Dell Precision T1650](t1650.md)
 -   [Gigabyte GA-G41M-ES2L motherboard](ga-g41m-es2l.md)
 -   [HP Elite 8200 SFF/MT](hp8200sff.md) (HP 6200 Pro Business probably works too)
-    (**easy to flash without disassembly**)
--   [HP Elite 8300 USDT](hp8300usdt.md) (**easy to flash without disassembly**)
+-   [HP Elite 8300 USDT](hp8300usdt.md)
 -   [Intel D510MO and D410PT motherboards](d510mo.md)
 -   [Intel D945GCLF](d945gclf.md)
 
 ### Laptops (Intel, x86)
 
--   [Apple MacBook1,1 and MacBook2,1](macbook21.md) (2,1 flashable without disassembly)
+-   **[HP EliteBook 820 G2](hp820g2.md) - Also [available to buy with Libreboot
+    preinstalled](https://minifree.org/product/libreboot-820/)**
+-   **[Lenovo ThinkPad T440p](../install/t440p_external.md) - Also [available
+    to buy with Libreboot preinstalled](https://minifree.org/product/libreboot-t440p/)**
+-   **[Lenovo ThinkPad W541](../install/ivy_has_common.md) - Also [available to
+    buy with Libreboot preinstalled](https://minifree.org/product/libreboot-w541/)**
+-   [Apple MacBook1,1 and MacBook2,1](macbook21.md)
 -   [Dell Latitude E6400, E6400 XFR and E6400 ATG, all with Nvidia or Intel
-    GPU](e6400.md) **(easy to flash, no disassembly, similar
-    hardware to X200/T400)**
--   Dell Latitude E6420 (Intel GPU) - no guide yet. internal flashing possible.
--   [Dell Latitude E6430 (Intel GPU](e6430.md) **(easy to flash, no disassembly)**
--   Dell Latitude E5530 (Intel GPU) - no guide yet. internal flashing possible.
--   Dell Latitude E6520 (Intel GPU) - no guide yet. internal flashing possible.
--   [HP EliteBook 2170p](hp2170p.md) (**socketed flash IC**)
+    GPU](e6400.md)
+-   Dell Latitude E6420 (Intel GPU) - no guide yet.
+-   [Dell Latitude E6430 (Intel GPU](e6430.md)
+-   Dell Latitude E5530 (Intel GPU) - no guide yet.
+-   Dell Latitude E6520 (Intel GPU) - no guide yet.
+-   [HP EliteBook 2170p](hp2170p.md)
 -   [HP EliteBook 2560p](hp2560p.md)
 -   [HP EliteBook 2570p](hp2570p.md)
--   [HP EliteBook 820 G2](hp820g2.md)
 -   [HP EliteBook 8460p](hp8460p.md)
 -   [HP EliteBook 8470p](hp8470p.md)
 -   [HP EliteBook 8560w](hp8560w.md)
@@ -58,13 +80,11 @@ libreboot currently supports the following systems in this release:
 -   [Lenovo Thinkpad T420](../install/ivy_has_common.md) (no install docs yet)
 -   [Lenovo ThinkPad T420S](../install/ivy_has_common.md) (no install docs yet)
 -   [Lenovo ThinkPad T430](../install/ivy_has_common.md) (no install docs yet)
--   [Lenovo ThinkPad T440p](../install/t440p_external.md)
 -   [Lenovo ThinkPad T500](t500.md)
 -   [Lenovo ThinkPad T520 / W520](../install/ivy_has_common.md) (no install guide yet)
 -   [Lenovo ThinkPad T530 / W530](../install/ivy_has_common.md) (no install
--   Lenovo ThinkPad T60 (with Intel GPU) (**easy to flash without disassembly**)
+-   Lenovo ThinkPad T60 (with Intel GPU)
 -   [Lenovo ThinkPad W500](t500.md)
--   [Lenovo ThinkPad W541](../install/ivy_has_common.md) (no install docs yet)
 -   [Lenovo ThinkPad X200 / X200S / X200 Tablet](x200.md)
 -   [Lenovo Thinkpad X220](../install/ivy_has_common.md)
 -   [Lenovo Thinkpad X220t](../install/ivy_has_common.md)
@@ -72,7 +92,7 @@ libreboot currently supports the following systems in this release:
 -   [Lenovo Thinkpad X230](../install/x230_external.md)
 -   [Lenovo Thinkpad X230t](../install/x230_external.md)
 -   Lenovo ThinkPad X301
--   Lenovo ThinkPad X60 / X60S / X60 Tablet (**easy to flash without disassembly**)
+-   Lenovo ThinkPad X60 / X60S / X60 Tablet
 
 ### Laptops (ARM, with U-Boot payload)
 
