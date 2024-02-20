@@ -7,6 +7,12 @@ x-toc-enable: true
 
 <img tabindex=1 class="r" src="https://av.libreboot.org/hp9470m/9470m+2560p.jpg" /><span class="f"><img src="https://av.libreboot.org/hp9470m/9470m+2560p.jpg" /></span>
 
+You can also [buy Libreboot installed](https://minifree.org/) from Minifree Ltd,
+on select hardware, aswell as send your compatible hardware
+for [Libreboot preinstallation](https://minifree.org/product/installation-service/).
+The founder and lead developer of Libreboot, Leah Rowe, also owns and operates
+Minifree; sales provide funding for Libreboot.
+
 **新版发布: 最新版本 Libreboot 20240126 已在 2024 年 01 月 24 日发布。详见: [Libreboot 20240126 发布公告](news/libreboot20240126.md).**
 
 为什么要使用 *Libreboot*?

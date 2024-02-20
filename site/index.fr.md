@@ -13,6 +13,12 @@ dans le canal [\#libreboot](https://web.libera.chat/#libreboot) sur le serveur I
 
 <img tabindex=1 class="r" src="https://av.libreboot.org/hp9470m/9470m+2560p.jpg" /><span class="f"><img src="https://av.libreboot.org/hp9470m/9470m+2560p.jpg" /></span>
 
+You can also [buy Libreboot installed](https://minifree.org/) from Minifree Ltd,
+on select hardware, aswell as send your compatible hardware
+for [Libreboot preinstallation](https://minifree.org/product/installation-service/).
+The founder and lead developer of Libreboot, Leah Rowe, also owns and operates
+Minifree; sales provide funding for Libreboot.
+
 **NOUVELLE VERSION: La dernière version est [Libreboot 20240126](news/libreboot20240126.md), sortie
 le 26 January 2024.**
 

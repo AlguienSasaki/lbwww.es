@@ -15,6 +15,12 @@ x-toc-enable: true
 
 <img tabindex=1 class="r" src="https://av.libreboot.org/hp9470m/9470m+2560p.jpg" /><span class="f"><img src="https://av.libreboot.org/hp9470m/9470m+2560p.jpg" /></span>
 
+You can also [buy Libreboot installed](https://minifree.org/) from Minifree Ltd,
+on select hardware, aswell as send your compatible hardware
+for [Libreboot preinstallation](https://minifree.org/product/installation-service/).
+The founder and lead developer of Libreboot, Leah Rowe, also owns and operates
+Minifree; sales provide funding for Libreboot.
+
 **НОВИЙ ВИПУСК: Останній випуск Libreboot 20240126, випущено 26 січень 2024.
 Дивіться: [Оголошення про випуск Libreboot 20240126](news/libreboot20240126.md).**
 
