@@ -669,6 +669,11 @@ TARGET: DELL Precision T1650 desktop
 
 Refer to the [T1650 hardware page](../hardware/t1650.md).
 
+TARGET: DELL OptiPlex 7020/9020 SFF and MT desktops
+------------------------------------
+
+Refer to the [7020/9020 hardware page](../hardware/dell9020.md).
+
 TARGET: Apple Macbook2,1, Macbook1,1 and iMac5,2 (i945 platform)
 ----------------------------------------------------------------
 
