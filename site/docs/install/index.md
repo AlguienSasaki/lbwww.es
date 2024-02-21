@@ -276,6 +276,12 @@ HP EliteBook 820 G2
 Please refer to the [820 G2 page](../hardware/hp820g2.md) for specific
 flashing instructions, both internal and external.
 
+HP EliteBook 8560w
+===================
+
+Please refer to the [8560w page](../hardware/hp8560w.md) for specific
+flashing instructions, both internal and external.
+
 Install via host CPU (internal flashing)
 ========================================
 
