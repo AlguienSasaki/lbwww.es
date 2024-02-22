@@ -283,6 +283,17 @@ The FSF also provides access to this infrastructure for many other projects
 Lisa was a strong supporter of Libreboot in the very early days of the project,
 and her contributions were invaluable. I, Leah Rowe, owe her a debt of gratitude.
 
+Lorenzo Aloe
+------------
+
+Provided hardware testing for the [Dell OptiPlex 9020](docs/hardware/dell9020.md),
+also provided testing for proxmox with GPU passthrough on Dell Precision T1650,
+confirming near-native performance; with this, you can boot operating systems
+virtually natively, performance-wise, on a Libreboot system in cases where
+that OS is not natively supported.
+
+All round good guy, an honest and loyal fan.
+
 Marcus Moeller
 --------------
 
