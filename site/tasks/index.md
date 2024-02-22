@@ -48,6 +48,31 @@ Updating coreboot revisions is par for the course in Libreboot. This should
 be tested again, but with TSEG Stage Cache re-enabled, to verify whether S3
 is still broken on these machines (ditto GM45 and i945).
 
+Rockchip RK3588 SoCs in coreboot
+================================
+
+See:
+<https://www.collabora.com/news-and-blog/blog/2024/02/21/almost-a-fully-open-source-boot-chain-for-rockchips-rk3588/>
+
+Although coreboot is not mentioned (the context is TF-A), this could be added
+to coreboot.
+
+Also:
+
+Add TF-A support to Libreboot
+-----------------------------
+
+Yes. We already provide other non-coreboot firmware, such as the serprog
+images. We even integrate U-Boot, albeit as a coreboot payload with some init
+steps skipped in U-Boot (handled by coreboot).
+
+TF-A is quite an interesting project:
+
+<https://www.trustedfirmware.org/>
+
+It is essentially an analog of coreboot; coreboot even uses parts of this, on
+some boards.
+
 S3 on GM45 and i945
 ===================
 
