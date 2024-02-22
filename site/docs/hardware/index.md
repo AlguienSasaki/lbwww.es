@@ -39,7 +39,7 @@ libreboot currently supports the following systems in this release:
 ### Desktops (AMD, Intel, x86)
 
 -   **[Dell OptiPlex 7020/9020 MT and SFF](dell9020.md) - Also [available to buy
-    with Libreboot preinstalled](https://minifree.org/product/libreboot-9020/)**
+    with Libreboot preinstalled](https://minifree.org/product/libreboot-9020/)** - Dell OptiPlex XE2 MT/SFF also known to work
 -   [Acer G43T-AM3](acer_g43t-am3.md)
 -   [Apple iMac 5,2](imac52.md)
 -   [ASUS KCMA-D8 motherboard](kcma-d8.md)
