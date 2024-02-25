@@ -213,8 +213,13 @@ the new flashprog project.
 
 Several developers have already jumped ship and went to work on flashprog.
 Nico's vision is a far more sensible one, and he has been invaluable to the
-Libreboot project over many years. As a result, Libreboot withdraws its support
-and endorsement of flashrom - it will only promote flashprog from now on.
+Libreboot project over many years. He has *personally* provided me with help
+and advise on numerous occasions. He is also the author of the Roda RK9 port in
+coreboot, upon which Vladimir Serbinenko's ThinkPad X200 port was based - work
+which *defined* Libreboot in its early days, contributions for which I remain
+eternally grateful. I *know* Nico and trust him as a project leader. As a result,
+Libreboot withdraws its support and endorsement of flashrom - it will only
+promote flashprog from now on.
 
 It's quite possible that *flashrom* has a future, but there's no reason why
 their changes cannot also be included in flashprog, if they are good changes,
