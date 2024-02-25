@@ -187,6 +187,10 @@ Documentation is provided for this, in the pico-serprog README. Riku also
 fixed this issue:
 <https://codeberg.org/libreboot/lbmk/issues/182>
 
+Riku also increased the default drive strength to 12mA on all RP2024 boards,
+increasing reliabily when externally flashing certain mainboards (e.g. PCH
+having low/no resistance on connections to the data lines for the flash).
+
 Flashprog now used, instead of flashrom
 ---------------------------------------
 
