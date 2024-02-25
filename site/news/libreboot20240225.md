@@ -221,7 +221,7 @@ their changes cannot also be included in flashprog, if they are good changes,
 moving forward. Libreboot supports Nico's work out of principle, both on
 a social (community-led, not run by an employee of Google) and technological
 perspective. This was done because, firstly Nico Huber is a better leader,
-and flashrom is very likely to become the dominant project in the future.
+and flashprog is very likely to become the dominant project in the future.
 
 This is the *first* Libreboot release to include flashprog sources, instead
 of flashrom. Moving forward, we will *not* be providing support for flashrom.
