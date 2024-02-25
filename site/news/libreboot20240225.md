@@ -299,3 +299,9 @@ branch, relative to the previous January 2024 release:
 
 You may find archives of this release, by looking at the Libreboot download
 page. Support is available on IRC or Reddit if you need help.
+
+NOTE: As in the previous release, HP 820 G2 images are not provided, because
+the inject scripts cannot currently produce a reliable checksum when inserting
+vendor files on these boards, due to the non-reproducible way in which the
+refcode file is compressed during insertion. Therefore, you
+must [build it from source](../docs/build/).
