@@ -121,8 +121,8 @@ In the same way that *Alpine Linux* is a *Linux distribution*, Libreboot is
 a *coreboot distribution*. If you want to build a ROM image from scratch, you
 otherwise have to perform expert-level configuration of coreboot, GRUB and
 whatever other software you need, to prepare the ROM image. With *Libreboot*,
-you can literally download from Git or a source archive, and run `make`, and it
-will build entire ROM images. An automated build system, named `lbmk`
+you can literally download from Git or a source archive, and run a simple script,
+and it will build entire ROM images. An automated build system, named `lbmk`
 (Libreboot MaKe), builds these ROM images automatically, without any user input
 or intervention required. Configuration has already been performed in advance.
 

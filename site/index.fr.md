@@ -68,7 +68,7 @@ en partant des bases, vous devez alors effectuer une configuration experte
 de Coreboot, GRUB et n'importe quel autre logiciel dont vous avez besoin 
 afin de préparer la ROM. Avec *Libreboot*,
 vous pouvez télécharger la source depuis Git ou une archive, exécuter
-`make` etça compilera une image ROM entières. Le système de compilation 
+and a script etça compilera une image ROM entières. Le système de compilation 
 automatisé de Libreboot nommé `lbmk` (Libreboot MaKe), compile ces images 
 ROM automatiquement, sans besoin d'entrées utilisateur or intervention
 requise. La configuration est faite à l'avance.

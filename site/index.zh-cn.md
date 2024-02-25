@@ -31,7 +31,7 @@ Libreboot 不是 coreboot 的分支
 
 事实上，Libreboot 对每一块主板，都尽可能保持与*标准*的 coreboot 接近，但 Libreboot 构建系统也自动提供了许多不同类型的配置。
 
-Libreboot 是一个 *coreboot 发行版*，就好比 *Alpine Linux* 是一个 *Linux 发行版*。如果你想要从零开始构建 ROM 镜像，那你需要对 coreboot、GRUB 以及其他所需软件进行专业级别的配置，才能准备好 ROM 镜像。有了 *Libreboot*，你只需要下载 Git 仓库或者源代码归档，然后运行 `make`，接着就能构建整个 ROM 镜像。一套自动构建系统，名为 `lbmk`（Libreboot Make），将自动构建 ROM 镜像，而无需任何用户输入或干预。配置已经提前完成。
+Libreboot 是一个 *coreboot 发行版*，就好比 *Alpine Linux* 是一个 *Linux 发行版*。如果你想要从零开始构建 ROM 镜像，那你需要对 coreboot、GRUB 以及其他所需软件进行专业级别的配置，才能准备好 ROM 镜像。有了 *Libreboot*，你只需要下载 Git 仓库或者源代码归档，然后运行 a script，接着就能构建整个 ROM 镜像。一套自动构建系统，名为 `lbmk`（Libreboot Make），将自动构建 ROM 镜像，而无需任何用户输入或干预。配置已经提前完成。
 
 如果你要构建常规的 coreboot，而不使用 Libreboot 的自动构建系统，那么需要有很多的干预以及相当的技术知识，才能写出一份能工作的配置。
 

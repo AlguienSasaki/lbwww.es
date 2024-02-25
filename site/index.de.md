@@ -71,7 +71,7 @@ musst Du zunächst Konfigurationen auf Experten Level durchführen,
 und zwar für Coreboot, GRUB sowie sämtliche Software die Du sonst noch verwenden 
 möchtest um das ROM Image vorzubereiten. Mithilfe von *Libreboot* kannst Du 
 sprichwörtlich von Git oder einem anderen Quell-Archiv herunterladen, anschliessend 
-`make` ausführen, und es wird komplette ROM Images herstellen, ohne das Benutzer 
+ein script ausführen, und es wird komplette ROM Images herstellen, ohne das Benutzer 
 Eingaben oder Eingreifen von Nöten sind. Die Konfiguration wurde bereits im 
 Vorfeld erledigt.
 
