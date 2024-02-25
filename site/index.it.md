@@ -20,8 +20,8 @@ for [Libreboot preinstallation](https://minifree.org/product/installation-servic
 The founder and lead developer of Libreboot, Leah Rowe, also owns and operates
 Minifree; sales provide funding for Libreboot.
 
-**ULTIMO RILASCIO: L'ultimo rilascio e' Libreboot 20240126, rilasciato il 26 January 2024.
-Vedi: [Libreboot 20240126 annuncio di rilascio](news/libreboot20240126.md).**
+**ULTIMO RILASCIO: L'ultimo rilascio e' Libreboot 20240225, rilasciato il 25 February 2024.
+Vedi: [Libreboot 20240225 annuncio di rilascio](news/libreboot20240225.md).**
 
 Per quale ragione utilizzare *Libreboot*?
 -----------------------------------------

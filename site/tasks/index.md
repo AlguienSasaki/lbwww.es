@@ -2388,7 +2388,7 @@ Reported on T60. Another user reported on X60. Happened when booting from
 battery. On the X60 reported, booting with charger connected worked, but
 this GRUB error is produced when booting on battery.
 
-Happens in 20240126. Does not happen in 20230625.
+Happens in 20240126 and 20240225. Does not happen in 20230625.
 
 A bisect is indicated; possibly in GRUB, but if nothing is found there,
 then the bug will be in coreboot. Could be either of them.

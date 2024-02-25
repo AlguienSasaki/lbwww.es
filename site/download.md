@@ -31,13 +31,13 @@ LIBREBOOT](news/safety.md).**
 GPG signing key
 ---------------
 
-**The latest release is Libreboot 20240126, under the `testing` directory.**
+**The latest release is Libreboot 20240225, under the `testing` directory.**
 
 ### NEW KEY
 
 Full key fingerprint: `8BB1 F7D2 8CF7 696D BF4F  7192 5C65 4067 D383 B1FF`
 
-This key is for Libreboot releases *after* the 20240126 release. It applies to
+This key is for Libreboot releases *after* the 20240225 release. It applies to
 all Libreboot releases from the year 2024, and it will expire (unless revoked
 early) on 26 December 2028.
 
@@ -50,9 +50,9 @@ Libreboot releases are signed using GPG.
 Full key fingerprint: `98CC DDF8 E560 47F4 75C0  44BD D0C6 2464 FA8B 4856`
 
 This key is for Libreboot releases *after* the 20160907 release, and up
-to the Libreboot 20240126 release. This key *expired* during December 2023,
+to the Libreboot 20240225 release. This key *expired* during December 2023,
 so you should use the *newer* key (see above) for the releases after
-Libreboot 20240126.
+Libreboot 20240225.
 
 Download the key here: [lbkey.asc](lbkeyold.asc)
 
@@ -83,7 +83,7 @@ there is a Git repository that you can download from. Go here:
 HTTPS mirrors {#https}
 -------------
 
-**The latest release is Libreboot 20240126, under the `testing` directory.**
+**The latest release is Libreboot 20240225, under the `testing` directory.**
 
 These mirrors are recommended, since they use TLS (https://) encryption.
 
@@ -174,7 +174,7 @@ crontab. This page tells you how to use crontab:
 HTTP mirrors {#http}
 ------------
 
-**The latest release is Libreboot 20240126, under the `testing` directory.**
+**The latest release is Libreboot 20240225, under the `testing` directory.**
 
 WARNING: these mirrors are non-HTTPS which means that they are
 unencrypted. Your traffic could be subject to interference by
@@ -188,7 +188,7 @@ if using HTTPS.
 FTP mirrors {#ftp}
 -----------
 
-**The latest release is Libreboot 20240126, under the `testing` directory.**
+**The latest release is Libreboot 20240225, under the `testing` directory.**
 
 WARNING: FTP is also unencrypted, like HTTP. The same risks are present.
 
