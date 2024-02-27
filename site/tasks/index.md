@@ -2418,3 +2418,8 @@ out of date, for example only goes up to Broadwell even with the out of
 tree patches.
 
 Port it to skylake and above.
+
+interesting video
+=================
+
+<https://www.youtube.com/watch?v=5qauRh7eTNY>
