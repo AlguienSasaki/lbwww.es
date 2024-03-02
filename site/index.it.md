@@ -20,8 +20,8 @@ for [Libreboot preinstallation](https://minifree.org/product/installation-servic
 The founder and lead developer of Libreboot, Leah Rowe, also owns and operates
 Minifree; sales provide funding for Libreboot.
 
-**ULTIMO RILASCIO: L'ultimo rilascio e' Libreboot 20240126, rilasciato il 26 January 2024.
-Vedi: [Libreboot 20240126 annuncio di rilascio](news/libreboot20240126.md).**
+**ULTIMO RILASCIO: L'ultimo rilascio e' Libreboot 20240225, rilasciato il 25 February 2024.
+Vedi: [Libreboot 20240225 annuncio di rilascio](news/libreboot20240225.md).**
 
 Per quale ragione utilizzare *Libreboot*?
 -----------------------------------------
@@ -66,7 +66,7 @@ compilazione automatico di Libreboot.
 Esattamente come *Alpine Linux* e' una *distribuzione Linux*, Libreboot e' una
 *distribuzione coreboot*. Per fare un immagine ROM da zero, hai bisogno di esperienza necessaria
 nel configurare coreboot, GRUB e qualunque altra cosa ti serve. Con *Libreboot*,
-che puoi scaricare da Git o da un archivio di codici sorgenti, puoi far partire `make`,
+che puoi scaricare da Git o da un archivio di codici sorgenti, puoi far partire *a script*,
 e questo mettera' su automaticamente le immagini ROM richieste. Un sistema di compilazione automatico,
 chiamato `lbmk` (Libreboot MaKe), mettera' su quelle immagini ROM automaticamente, senza troppi
 interventi da parte dell'utente. Le configurazioni di base sono gia' state previste in precedenza.

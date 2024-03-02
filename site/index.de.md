@@ -21,9 +21,9 @@ for [Libreboot preinstallation](https://minifree.org/product/installation-servic
 The founder and lead developer of Libreboot, Leah Rowe, also owns and operates
 Minifree; sales provide funding for Libreboot.
 
-**NEUESTE VERSION: Die neueste Version von Libreboot ist 20240126, veröffentlicht
-am 26. January 2024.
-Siehe auch: [Libreboot 20240126 release announcement](news/libreboot20240126.md).**
+**NEUESTE VERSION: Die neueste Version von Libreboot ist 20240225, veröffentlicht
+am 25. February 2024.
+Siehe auch: [Libreboot 20240225 release announcement](news/libreboot20240225.md).**
 
 Warum solltest Du *Libreboot* verwenden?
 ----------------------------
@@ -71,7 +71,7 @@ musst Du zunächst Konfigurationen auf Experten Level durchführen,
 und zwar für Coreboot, GRUB sowie sämtliche Software die Du sonst noch verwenden 
 möchtest um das ROM Image vorzubereiten. Mithilfe von *Libreboot* kannst Du 
 sprichwörtlich von Git oder einem anderen Quell-Archiv herunterladen, anschliessend 
-`make` ausführen, und es wird komplette ROM Images herstellen, ohne das Benutzer 
+ein script ausführen, und es wird komplette ROM Images herstellen, ohne das Benutzer 
 Eingaben oder Eingreifen von Nöten sind. Die Konfiguration wurde bereits im 
 Vorfeld erledigt.
 

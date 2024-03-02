@@ -455,7 +455,7 @@ example of the push pin as a proof of concept:
 
 [You must flash it externally](spi.md)
 
-#### ThinkPad X60/X60S/X60T/T60 with Lenovo BIOS {#flashprog_lenovobios}
+#### ThinkPad X60/X60S/X60T/T60 with Lenovo BIOS {#flashrom_lenovobios}
 
 **WARNING: Libreboot 20231021 and likely older 2023 releases do not have the
 bootblock copied in release ROMs, so the bucts trick below will actually cause
@@ -470,9 +470,16 @@ And then do this:
 
 (This was fixed in Libreboot 20231101)
 
+**NOTE: the section below pertaining to 20160907 static binaries references
+flashrom. Libreboot recommends flashprog nowadays, but if you're using that
+utils archive, please note that it is from a time when Libreboot used
+flashrom. Use flashrom there as that's what included in those binaries.
+Libreboot does not currently document how to patch flashprog for sst/macronix
+on X60/T60, when going (in software) from lenovobios to libreboot.**
+
 **NOTE: This section partially relates to `utils` release archive in
 Libreboot 20160907, which contains static compiled binaries for things like
-bucts and flashprog. It will *still* work on modern distros, and thus is
+bucts and flashrom. It will *still* work on modern distros, and thus is
 still referenced here. The `flash` script in that release can be used, with
 modern Libreboot ROMs. Current Libreboot releases do not include pre-compiled
 utilities, only ROMs.**
@@ -487,7 +494,7 @@ X60 BIOS password (Lenovo): you might find info here:
 <https://bios-pw.org/>
 
 You can just get bucts from the libreboot project, same thing for the patched
-flashprog. In the Libreboot 20160907 release, there is a *utility* archive, which
+flashrom. In the Libreboot 20160907 release, there is a *utility* archive, which
 has statically compiled executables. They still work just fine on modern
 systems, and they can be used for this purpose.
 
@@ -502,12 +509,12 @@ Here are a list of targets:
   and you will run it at 115200 baud rate. agetty/fgetty in Linux can give
   you a serial console in your OS)
 
-Download and build flashprog, using the instructions
-on [the Git page](../../git.md), and download the `bucts` software using the
-notes on that very same page.
-
-You can replace Lenovo BIOS with libreboot, using flashprog running on the host
-CPU. However, there are some considerations.
+You can replace Lenovo BIOS with libreboot, using flashrom running on the host
+CPU. However, there are some considerations. NOTE: needs patching for SST
+and macronix chips, but libreboot doesn't yet do this for flashprog. You can
+use the old Libreboot 20160907 sources to get the modified flashrom instead,
+which contains this patch - and static binaries are provided, for convenience;
+they will still work, due to libs being statically linked.
 
 Firstly, make sure that the yellow CMOS battery is installed, and functioning
 correctly. You could check the voltage. The battery is a CR2032
@@ -518,7 +525,7 @@ load on it, which there will be. This coincell powers the real-time clock and
 CMOS memory).
 
 Lenovo BIOS restricts write access, but there is a weakness in it. With a
-specially patched flashprog binary, you can easily flash it but the top 64KiB
+specially patched flashrom binary, you can easily flash it but the top 64KiB
 region of the boot flash, containing your bootblock, cannot be flashed just
 yet. However, there is a register called the *Backup Control* or *BUC* register
 and in that register is a status bit called *Top Swap* or *TS*.
@@ -532,12 +539,12 @@ program referenced below.
 The libreboot ROM images already have the upper 64KiB bootblock copied to the lower
 one, so you don't have to worry about copying it yourself.
 
-If you build flashprog using the libreboot build system, there will be three
+If you use the Libreboot 20160907 utils archive, there will be three
 binaries:
 
-* `flashprog`
-* `flashprog_i945_sst`
-* `flashprog_i945_mx`
+* `flashrom`
+* `flashrom_i945_sst`
+* `flashrom_i945_mx`
 
 It's these last two binaries that you should use. Now compile bucts (just
 run `make` in the bucts source directory).
@@ -549,19 +556,19 @@ Run the bucts tool:
 Ensure that your CMOS battery is connected too. Now you must determine whether
 you have Macronix or SST. An X60/T60 thinkpad will have either an SST or a
 Macronix chip. The Macronix chip will have "MX" written on the chip. You will
-use `flashprog_i945_sst` for the SST chip, and `flashprog_i945_mx` for the
+use `flashrom_i945_sst` for the SST chip, and `flashrom_i945_mx` for the
 Macronix chip.
 
-Now run flashprog (for SST):
+Now run flashrom from the Libreboot 20160907 utils archive (for SST):
 
-	sudo ./flashprog_i945_sst -p internal -w coreboot.rom
+	sudo ./flashrom_i945_sst -p internal -w coreboot.rom
 
 Or Macronix:
 
-	sudo ./flashprog_i945_mx -p internal -w coreboot.rom
+	sudo ./flashrom_i945_mx -p internal -w coreboot.rom
 
 NOTE: you *can* just run both. One of them will succeed. It is perfectly
-harmless to run both versions of flashprog. In fact, you should do so!
+harmless to run both versions of flashrom. In fact, you should do so!
 
 You'll see a lot of errors. This is normal. You should see something like:
 
@@ -589,27 +596,35 @@ Your flash chip is in an unknown state.
 If you see this, rejoice! It means that the flash was successful. Please do not
 panic. Shut down now, and wait a few seconds, then turn back on again.
 
-**WARNING: if flashprog complains about `/dev/mem` access, please
-run `sudo ./bucts 0`. If flashprog is complaining about `/dev/mem`, it means
+**WARNING: if flashrom (from Libreboot 20160907 utils) complains
+about `/dev/mem` access, please
+run `sudo ./bucts 0`. If flashrom is complaining about `/dev/mem`, it means
 that you have `CONFIG_STRICT_DEVMEM` enabled in your kernel. Reboot with the
 following kernel parameter added in your bootloader: `iomem=relaxed` and try
 again with the above instructions. DO NOT continue until the above works, and
-you see the expected flashprog output as indicated above.**
+you see the expected flashrom output as indicated above.**
 
-If you *did* run flashprog and it failed to flash, but you set bucts to 1 and
+If you *did* run flashrom and it failed to flash, but you set bucts to 1 and
 shut down, don't worry. Just remove the yellow coin-cell battery (it's underneath
 the keyboard, connected to the mainboard), wait a minute or two, reconnect the
-coin-cell and try again from scratch. In this instance, if flashprog didn't do
+coin-cell and try again from scratch. In this instance, if flashrom didn't do
 anything, and didn't flash anything, it means you still have Lenovo BIOS but
 if bucts is set to 1, you can flush it and set it back to 0. BUC.TS is stored in
 volatile memory, powered by that CR2032 coin-cell battery.
 
 Assuming that everything went well:
 
+Switch to flashprog now! (avoid flashrom)
+---------------------------------------
+
 Flash the ROM for a second time. For this second flashing attempt, the upper
 64KiB bootblock is now read-write. Use the *unpatched* flashprog binary:
 
 	sudo ./flashprog -p internal -w libreboot.rom
+
+NOTE: At this point, we recommend use of flashprog instead of flashrom, for
+the reasons mentioned in the [Libreboot 20240225
+release](../../news/libreboot20240225.md).
 
 To reset bucts, do this:
 

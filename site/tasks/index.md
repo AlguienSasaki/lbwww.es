@@ -2388,7 +2388,7 @@ Reported on T60. Another user reported on X60. Happened when booting from
 battery. On the X60 reported, booting with charger connected worked, but
 this GRUB error is produced when booting on battery.
 
-Happens in 20240126. Does not happen in 20230625.
+Happens in 20240126 and 20240225. Does not happen in 20230625.
 
 A bisect is indicated; possibly in GRUB, but if nothing is found there,
 then the bug will be in coreboot. Could be either of them.
@@ -2418,3 +2418,42 @@ out of date, for example only goes up to Broadwell even with the out of
 tree patches.
 
 Port it to skylake and above.
+
+interesting video
+=================
+
+<https://www.youtube.com/watch?v=5qauRh7eTNY>
+
+Automate testing
+================
+
+Even though there's lots of error handling, it's better to be paranoid than
+brick users' machines.
+
+Unit tests
+----------
+
+- Build time or separate?
+- me_cleaner -c: checks that ime was inserted and has valid signatures
+
+CI
+--
+
+Preferably self-hosted. Run tests for every commit. There could be tests of
+different size, and even a periodic nightly release could be done.
+
+Integrating this with an automated test stand would also be doable. At the
+very least, it would assure that the ROM images boot successfully.
+
+Board status
+============
+
+As the number of ports grows, it becomes harder to keep track of what works.
+Let's build a machine-readable repo documenting every release (or commit)
+on every board. What features/payloads work, maybe include errata text field.
+A HTML report could also be generated and published online.
+
+On top of this, an easy to use installer could be developed. It would know
+to not install an unbootable (broken) ROM, and would inform users about any
+known problems and have meaningful options.
+

@@ -23,9 +23,9 @@ for [Libreboot preinstallation](https://minifree.org/product/installation-servic
 The founder and lead developer of Libreboot, Leah Rowe, also owns and operates
 Minifree; sales provide funding for Libreboot.
 
-**NEW RELEASE: The latest release is Libreboot 20240126, released on
-26 January 2024.
-See: [Libreboot 20240126 release announcement](news/libreboot20240126.md).**
+**NEW RELEASE: The latest release is Libreboot 20240225, released on
+25 February 2024.
+See: [Libreboot 20240225 release announcement](news/libreboot20240225.md).**
 
 *We* believe the freedom to [study, share, modify and use
 software](https://writefreesoftware.org/), without any
@@ -121,8 +121,8 @@ In the same way that *Alpine Linux* is a *Linux distribution*, Libreboot is
 a *coreboot distribution*. If you want to build a ROM image from scratch, you
 otherwise have to perform expert-level configuration of coreboot, GRUB and
 whatever other software you need, to prepare the ROM image. With *Libreboot*,
-you can literally download from Git or a source archive, and run `make`, and it
-will build entire ROM images. An automated build system, named `lbmk`
+you can literally download from Git or a source archive, and run a simple script,
+and it will build entire ROM images. An automated build system, named `lbmk`
 (Libreboot MaKe), builds these ROM images automatically, without any user input
 or intervention required. Configuration has already been performed in advance.
 
