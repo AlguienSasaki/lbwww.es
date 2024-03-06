@@ -643,6 +643,9 @@ DIP8 IC 的引脚分配和 SOIC8 IC 一样。
 使用 SOIC8 替换 WSON8 IC
 ---------------------------
 
+**NOTE: You can alternatively purchase WSON8 probes from a site like Aliexpress.
+They look similar to SOIC8 clips, and they work similarly.**
+
 你*连是可以连* SOIC8 测试夹，但要连接效果好，需要费点功夫，而且这也十分不可靠。不要直接焊接 WSON8 的焊盘；有些人会这样做，但你不要这样做，因为你这样很容易就会损坏焊盘。
 
 WSON8 的引脚分配和 SOIC8 一样，但它是球状 QFN（四边扁平无引脚封装）。它没有合适的夹子，有时候称为 QFN8。
