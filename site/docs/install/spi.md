@@ -966,6 +966,9 @@ Your DIP8 IC has the same pinout as a SOIC8 IC.
 Replace WSON8 IC with SOIC8
 ---------------------------
 
+**NOTE: You can alternatively purchase WSON8 probes from a site like Aliexpress.
+They look similar to SOIC8 clips, and they work similarly.**
+
 You *can* connect a SOIC8 test clip, but you will struggle to get good
 connections and it will be extremely unreliable. DO NOT solder to the pads of
 the WSON8 directly; some people do this, but you shouldn't do it, because you
