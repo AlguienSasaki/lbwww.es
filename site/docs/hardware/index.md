@@ -59,7 +59,7 @@ libreboot currently supports the following systems in this release:
 -   **[Lenovo ThinkPad T440p](../install/t440p_external.md) - Also [available
     to buy with Libreboot preinstalled](https://minifree.org/product/libreboot-t440p/)**
 -   **[Lenovo ThinkPad W541](../install/ivy_has_common.md) - Also [available to
-    buy with Libreboot preinstalled](https://minifree.org/product/libreboot-w541/)**
+    buy with Libreboot preinstalled](https://minifree.org/product/libreboot-w541/)** - NOTE: W540 also compatible (same mainboard, so flash the same ROM)
 -   [Apple MacBook1,1 and MacBook2,1](macbook21.md)
 -   [Dell Latitude E6400, E6400 XFR and E6400 ATG, all with Nvidia or Intel
     GPU](e6400.md)
