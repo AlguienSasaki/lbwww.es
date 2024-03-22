@@ -37,7 +37,7 @@ LIBREBOOT](news/safety.md).**
 
 Повний відбиток ключа: `8BB1 F7D2 8CF7 696D BF4F  7192 5C65 4067 D383 B1FF`
 
-Вищезазначений ключ для Libreboot 20240225, та наступних випусків. This key
+Вищезазначений ключ для Libreboot 20240126, та наступних випусків. This key
 is applicable to any release made on or after the date: 28 December 2023. It
 will expire on 26 December 2028.
 
@@ -52,7 +52,7 @@ will expire on 26 December 2028.
 This key is for Libreboot releases *after* the 20160907 release, and up
 to the Libreboot 20240225 release. This key *expired* during December 2023,
 so you should use the *newer* key (see above) for the releases after
-Libreboot 20240225.
+Libreboot 20240126.
 
 Завантажте ключ тут: [lbkey.asc](lbkeyold.asc)
 
