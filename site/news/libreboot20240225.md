@@ -241,6 +241,46 @@ new features and hardware functionality - for instance, it has code for handling
 Riku Viitanen's recent changes on the RP2040 serprog images, for pulling unused
 chipselects high (useful on machines like ThinkPad W541 for external flashing).
 
+Context regarding flashprog vs flashrom
+---------------------------------------
+
+It was suggested by a reader, on 27 March 2024, that the lack of context made
+judging this situation very difficult. Therefore, the following links have
+been added, with explanation below.
+
+More context can be gleaned from the following links:
+
+* <https://mail.coreboot.org/hyperkitty/list/flashrom@flashrom.org/thread/47TTR4YNQV7QGPXSL2TROI3FES56XXF7/>
+* <https://www.phoronix.com/news/Flashrom-Splits-Into-Two>
+* <https://mail.coreboot.org/hyperkitty/list/flashrom@flashrom.org/message/ZOYX5R2R5IO3KVFBOKUSQGSL7I7WIHAL/>
+* <https://mail.coreboot.org/hyperkitty/list/flashrom@flashrom.org/message/6MOOPJHTXRS5GK5JUUKL6APJQ6HIHA73/>
+* <https://mail.coreboot.org/hyperkitty/list/flashrom-stable@flashrom.org/thread/RTP3UKMMGWUEVTS5XUFRCXXL24UE4FRV/>
+
+The first link is the mailing list post, where the new flashrom leader unilaterally
+announced Nico's banishment from the project, without giving actual evidence
+to back up her accusations (accusations which are made in the very same post).
+Several other flashrom developers weighed in, some taking the side of the new
+leadership, and several others taking Nico's side. What happened to Nico was
+unfair. As already stated, Libreboot will promote flashprog, *not* flashrom,
+from now on.
+
+Not only were such accusations made, but Nico was initially given his own
+repository on the coreboot project, for his project, which he then
+named *flashrom-stable*. See:
+
+* <https://review.coreboot.org/admin/repos/flashrom-stable,general>
+
+However, as you can see (at least on this date, 27 March 2024), this repo has
+been hidden from view. Nico was banned from even having flashrom-stable on
+the same infrastructure as flashrom, which uses the coreboot infrastructure.
+This later lead to Nico establishing the Flashprog project.
+
+Libreboot stands with Nico and his Flashprog project. Anyone contributing to
+flashrom should consider working for flashprog, either in addition to or
+instead of flashrom. Libreboot will continue its boycott of Flashrom until
+its current leader, Anastasia Klimchuk, steps down from the leadership, and
+even then only after reparations/apologies are issued to the accused.
+
 Exact git log
 -------------
 
