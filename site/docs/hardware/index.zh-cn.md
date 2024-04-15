@@ -66,12 +66,11 @@ Introduction
 
 ### 笔记本（Intel，x86）
 
--   **[HP EliteBook 820 G2](hp820g2.md) - Also [available to buy with Libreboot
-    preinstalled](https://minifree.org/product/libreboot-820/)**
 -   **[Lenovo ThinkPad T440p](../install/t440p_external.md) - Also [available
     to buy with Libreboot preinstalled](https://minifree.org/product/libreboot-t440p/)**
 -   **[Lenovo ThinkPad W541](../install/ivy_has_common.md) - Also [available to
     buy with Libreboot preinstalled](https://minifree.org/product/libreboot-w541/)**
+-   Lenovo ThinkPad X230 - *Also* available on Minifree: <https://minifree.org/product/libreboot-x230/>
 -   [Apple MacBook1,1 及 MacBook2,1](macbook21.md)
 -   [Dell Latitude E6400, E6400 XFR 及 E6400 ATG，皆支持 Nvidia 或 Intel GPU](e6400.md)
 -   Dell Latitude E6420 (Intel GPU) - no guide yet.
@@ -81,6 +80,7 @@ Introduction
 -   [HP EliteBook 2170p](hp2170p.md)
 -   [HP EliteBook 2560p](hp2560p.md)
 -   [HP EliteBook 2570p](hp2570p.md)
+-   [HP EliteBook 820 G2](hp820g2.md)
 -   [HP EliteBook 8460p](hp8460p.md)
 -   [HP EliteBook 8470p](hp8470p.md)
 -   [HP EliteBook 8560w](hp8560w.md)
@@ -98,7 +98,6 @@ Introduction
 -   [Lenovo ThinkPad X200 / X200S / X200 Tablet](x200.md)
 -   [Lenovo Thinkpad X220](../install/ivy_has_common.md)
 -   [Lenovo Thinkpad X220t](../install/ivy_has_common.md)
--   Lenovo ThinkPad X230
 -   [Lenovo Thinkpad X230](../install/x230_external.md)
 -   [Lenovo Thinkpad X230t](../install/x230_external.md)
 -   Lenovo ThinkPad X301

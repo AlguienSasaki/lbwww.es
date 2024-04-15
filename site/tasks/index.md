@@ -2457,3 +2457,13 @@ On top of this, an easy to use installer could be developed. It would know
 to not install an unbootable (broken) ROM, and would inform users about any
 known problems and have meaningful options.
 
+haswell board bifircation
+=========================
+
+<https://www.mouser.com/pdfDocs/4th-gen-core-family-desktop-vol-1-datasheet.pdf>
+
+page 89
+
+also
+
+<https://winraid.level1techs.com/t/bios-mod-to-enable-pcie-bifurcation/31547>

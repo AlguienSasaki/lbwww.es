@@ -3,6 +3,9 @@ title: ThinkPad X230/X230T external flashing
 x-toc-enable: true
 ...
 
+This machine is available to purchase with Libreboot pre-installed:
+<https://minifree.org/product/libreboot-x230/>
+
 NOTE: Libreboot standardises on [flashprog](https://flashprog.org/wiki/Flashprog)
 now, as of 27 January 2024, which is a fork of flashrom.
 
