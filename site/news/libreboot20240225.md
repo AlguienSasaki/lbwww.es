@@ -57,8 +57,6 @@ This release supports the following hardware:
 
 ### Laptops (Intel, x86)
 
--   **[HP EliteBook 820 G2](../docs/hardware/hp820g2.md) - Also [available to buy with Libreboot
-    preinstalled](https://minifree.org/product/libreboot-820/)**
 -   **[Lenovo ThinkPad T440p](../docs/install/t440p_external.md) - Also [available
     to buy with Libreboot preinstalled](https://minifree.org/product/libreboot-t440p/)**
 -   **[Lenovo ThinkPad W541](../docs/install/ivy_has_common.md) - Also [available to
@@ -75,6 +73,7 @@ This release supports the following hardware:
 -   [HP EliteBook 2170p](../docs/hardware/hp2170p.md)
 -   [HP EliteBook 2560p](../docs/hardware/hp2560p.md)
 -   [HP EliteBook 2570p](../docs/hardware/hp2570p.md)
+-   [HP EliteBook 820 G2](../docs/hardware/hp820g2.md)
 -   [HP EliteBook 8460p](../docs/hardware/hp8460p.md)
 -   [HP EliteBook 8470p](../docs/hardware/hp8470p.md)
 -   [HP EliteBook 8560w](../docs/hardware/hp8560w.md)
