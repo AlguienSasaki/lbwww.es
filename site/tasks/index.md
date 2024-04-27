@@ -27,27 +27,6 @@ U-Boot test/lib/strlcat.c
 Delete this file, in U-Boot trees, before the next release
 after Libreboot 20231106.
 
-S3 on ivy/sandy/haswell
-=======================
-
-Ivybridge, sandybridge and haswell thinkpads have broken S3 suspend/resume,
-at least in coreboot 4.22 - we are affected in lbmk, where we use a revision
-that is quite close to 4.22, but we mitigate it by turning off the TSEG stage
-cache.
-
-It's possible that upstream may have properly fixed it already. In our case,
-disabling TSEG stage cache makes S3 work again, on these machines - but GM45
-and i945 are still broken (see below).
-
-Of interest, this patch was merged *after* the current revision used
-in Libreboot, at least on 26 December 2023:
-
-<https://review.coreboot.org/c/coreboot/+/78850>
-
-Updating coreboot revisions is par for the course in Libreboot. This should
-be tested again, but with TSEG Stage Cache re-enabled, to verify whether S3
-is still broken on these machines (ditto GM45 and i945).
-
 Rockchip RK3588 SoCs in coreboot
 ================================
 
@@ -73,41 +52,7 @@ TF-A is quite an interesting project:
 It is essentially an analog of coreboot; coreboot even uses parts of this, on
 some boards.
 
-S3 on GM45 and i945
-===================
-
-S3 is currently broken on GM45 and i945 machines. This can be bisected in
-coreboot revisions, because it is believed to work well on Libreboot releases
-as recent as 20230625. This needs to be fixed before the next stable release.
-
-The October 2023 and November 2023 releases are affected by this. GM45 means
-machines such as ThinkPad X200 and T400. i945 machines machines such as
-ThinkPad X60 and T60.
-
-The newer generation of Intel machines are not affected, and S3 has never
-worked on Dell Latitude E6400 (a GM45 machine), because (according to Nicholas
-Chin) an idiosyncrasy in how the EC affects coming out of reset.
-
-Libreboot mailing list
-======================
-
-Use <https://sr.ht/~libreboot/> to provide a mailing list, for the Libreboot
-project. Sourcehut is a codeforge, that revolves around use of a mailing list.
-The actual mailing list itself is very good, though Libreboot would likely
-continue using [Codeberg](../news/codeberg.md) since it provides an interface
-that most contributors will be familiar with.
-
-Libreboot last had a mailing list in 2016, but running one isn't very feasible
-for a small project like this, with a smaller scope. Although Libreboot has an
-ambition to support every board from coreboot, of which there are hundreds, the
-actual design of Libreboot (as a [source-based package manager that auto-builds
-ROM images](../docs/maintain/)) is very limited in scope.
-
-At the same time, there aren't many good outsourced options for providing a
-mailing list. Sourcehut is basically our best option. Access to the `~libreboot`
-account was [acquired](../news/10.md) during April 2023.
-
-General auditing
+general auditing
 ================
 
 Libreboot's build system design is already extremely efficient. See:
@@ -169,24 +114,6 @@ Libreboot can support any board from coreboot, in principle. It would also be
 feasible to integrate other (libre) boot firmware, if desirable. The list below
 is not exhaustive, it just lists boards that are interesting to us at this time:
 
-Autoport
---------
-
-Autoport is not available for all boards, but is available under the coreboot
-repository. When you run it, the program provides you with instructions for
-how to run it and how to handle the results, what to check
-for manually for tweaking later, while providing general advice to the budding
-coreboot developer.
-
-Well, it's not available for some newer Intel platforms. There are patches
-on coreboot gerrit, that enable it for these platforms. Namely:
-
-* Haswell-lynxpoint: <https://review.coreboot.org/c/coreboot/+/30890>
-* Broadwell: <https://review.coreboot.org/c/coreboot/+/46832>
-
-These patches for the newer platforms are not yet merged in coreboot main. You
-can just cherry-pick these as desired.
-
 Boards
 ------
 
@@ -221,18 +148,6 @@ updates, otherwise we'd have to dump it from multiple variants of the same
 machine).
 
 Both are supported by coreboot.
-
-ASUS A88XM-E
-------------
-
-See: <https://browse.libreboot.org/lbmk.git/commit/?h=a88hm_test&id=80118a24b80b94078dec6aee9f54cfc5d286a14b>
-
-This is in a special branch, because there is currently no automation in the
-vendor scripts. it was done just to test the board. This uses an older revision
-of coreboot, because the board was dropped after coreboot 4.18. This lbmk
-patch makes use of coreboot `4.18_branch`.
-
-TODO: Finish this port in lbmk, and add it to the master branch.
 
 840 G2 (possible 820 G2)
 -------------------------
@@ -700,36 +615,6 @@ boot many distros. We could provide something similar to this in Libreboot.
 This was briefly documented on the Libreboot website,
 before [argon2 kdf support](../news/argon2.md) was merged in Libreboot GRUB.
 
-Disable Libgfxinit on DGPU setups
-=================================
-
-On machines where a discrete GPU is used, and no Intel GPU is present, but there
-are other variants where an Intel GPU is present, it is possible to provide a
-ROM image where:
-
-1) Libgfxinit is enabled, for Intel graphics
-2) SeaBIOS payload starts first, and can execute VGA ROMs from graphics cards
-3) If a graphics card works, then that VGA ROM provides initialisation
-
-When a dGPU is used, this can cause problems. For example, VGA-based
-mode setting doesn't work properly on some machines, for some reason. For
-example, on the Nvidia variants of Dell Latitude E6400, no Intel graphics
-exists. For some reason, enabling libgfxinit makes `nomodeset` no longer work,
-and VGA modes in various bootloaders e.g. syslinux/grub no longer work - 
-whereas enabling just the SeaBIOS payload to load a VGA ROM, without loading
-libgfxinit, works reliable.
-
-Look at [lbmk build system documentation](../docs/maintain/) to know the
-difference between libgfxinit/normal configs. Basically, we only enable
-libgfxinit when available but we provide SeaBIOS as the default payload. If
-a graphics card is used, SeaBIOS scans the VGA ROM from it or one can be
-provided in CBFS.
-
-We should keep doing what we're doing, but also provide configurations where
-only the VGA ROM is used, on setups that use a discrete GPU. Libreboot's
-preference is to use the native initialisation, but sometimes the VGA ROM has
-be to be used instead.
-
 Seek QUBES endorsement
 ======================
 
@@ -906,8 +791,7 @@ util can be used to dump the mxm config. on systems where there is no i2c rom,
 the system firmware (in this case libreboot) must provide it via int15h
 interrupt. riku's seabios patches implement this.
 
-TODO: Merge in libreboot, with elitebook 8560w support. (riku will probably
-merge this himself, but i'm adding it here just in case)
+TODO: Document this properly, if not already documented.
 
 John lane GRUB patches
 ======================
@@ -1347,27 +1231,6 @@ is hardcoded into certain logic, in the build system.
 Coreboot supports configuring which scheme to use, at boot time, but we don't
 use it. Coreboot's default is to always load the fallback, so we use that.
 
-Delete of /tmp files
-====================
-
-Libreboot resets `TMPDIR` to a subdirectory inside `/tmp`, so that further
-calls to `mktemp` will create all further files and directories under a single
-subdirectory, which can then be deleted all at once, when Libreboot's build
-system exits. This is exported to child processes of lbmk, so that it's
-universal at all times, on each run of lbmk.
-
-It's designed this way, specifically to avoid leaving temporary files on the
-file system, after lbmk exits. If lbmk is interrupted, they will remain, but
-that's the same as with any other program.
-
-They are only deleted once lbmk exits, so if there are a lot of files, that
-means `/tmp` can fill up fast. This can be a problem, especially if the user
-has `/tmp` inside a tmpfs (file system mounted in memory).
-
-Therefore, an audit should be done, ensuring that tmpfiles are deleted as soon
-as possible, while lbmk runs. This is especially needed in the script
-at `script/build/roms`.
-
 Improved payload documentation
 ===============================
 
@@ -1377,22 +1240,6 @@ also don't link to them or cross reference them in any way.
 
 We should start writing about the payloads in more detail, referencing upstream
 documentation whenever possible.
-
-Re-add vendorfile extract
-=========================
-
-We have scripts that auto-download firmware from the vendor when required,
-and a script that removes/adds them after the fact, if done on release ROMs.
-
-We used to have a fallback script that would extract such files from a factory
-ROM image, but it was poorly maintained and then removed from Libreboot. We
-still recommend using the internet-based script instead, but having such a
-fallback option is still desirable. By having this, we could then reliably
-always have access to such firmwares.
-
-Last time the extract script existed in master, it lacked support for certain
-files, such as SCH5545EC firmware or extracting MRC firmware(which probably
-isn't possible anyway).
 
 Static compiled utils in releases
 =================================
@@ -1858,13 +1705,6 @@ cheap. It's a low-effort attack.
 So we should cover it, and talk about ways to mitigate the risk (e.g. disable
 USB input devices and networking devices, in the user's operating system).
 
-Coreboot users page
-===================
-
-Update it and also add canoeboot there. The current entry isn't really a problem
-but it could be better, and also be more descriptive about all the features
-lbmk offers.
-
 Auto-configure IFD region limits
 ================================
 
@@ -2140,28 +1980,6 @@ could enable this on all the older desktop machines, where otherwise their
 factory firmware does not and will not enable it (and the above link is for
 UEFI systems only).
 
-./update release -m serprog
-===========================
-
-Support generating release archives that only contain serprog src and roms,
-nothing else. But with the lbmk build system in it, to build them if using
-the serprog src archive (while roms would also be provided).
-
-also:
-
-	./update release -m serprogsrc
-
-^ src only
-
-right now we have:
-
-	./update release # builds all roms and src, coreboot too
-	./update release -m src # same as above, but src only
-
-The `-m serprog` and `-m serprogsrc` arguments would apply the same logic,
-but only handle serprog sources. Specifically, pico-serprog and stm32-vserprog,
-which Riku already automated the handling of in lbmk.
-
 Shrink FSP size (Intel)
 =========================
 
@@ -2192,40 +2010,6 @@ tested this (no problems so far, since mid/late 2022 when we started
 doing this in osboot, and heads did it for years before we did, and
 they never had any problems).
 
-sh set -o pipefail
-==================
-
-Example:
-
-```
-grep "foo" bar.txt | sort
-```
-
-In piped commands, the final command's return value is always used.
-In this case, grep's returning of a non-zero status will *not* result
-in a non-zero exit from a script (where `-e` is set, which we do set in
-most of lbmk).
-
-To remedy this, add:
-
-```
-set -o pipefail
-```
-
-We already set `-u` and `-e`. The `u` switch makes a script exit with
-error status if a variable is used initialised. The `e` switch makes a
-script exit with error-status when any command executed within it exits
-with error, unless the above scenario applies.
-
-Also see:
-
-* <https://gist.github.com/mohanpedala/1e2ff5661761d3abd0385e8223e16425>
-* <http://redsymbol.net/articles/unofficial-bash-strict-mode/>
-
-We already are very strict in how we handle errors, but lbmk does indeed
-used piped logic in a few areas. An audit is in order, to fix any potential
-lack of error handling in such cases.
-
 HP 820 G2 TPM
 =============
 
@@ -2243,24 +2027,6 @@ Apparently, this can be upgraded to TPM 2.0. Riku linked this on IRC:
 And also this, straight from the horse's mouth:
 
 <https://www.infineon.com/cms/en/product/security-smart-card-solutions/optiga-embedded-security-solutions/optiga-tpm/slb-9660xt1.2/>
-
-GRUB XHCI support
-=================
-
-Not merged in master yet, but check this patch series from 2020:
-
-https://lists.gnu.org/archive/html/grub-devel/2020-12/msg00111.html
-
-This could very likely be rebased on top of GRUB 2.12.
-
-GRUB seems to have a habit of *not* merging perfectly good patches. It
-took years for John Lane's detached luks header support to be merged.
-
-also see
-
-<https://www.youtube.com/watch?v=SSrFv4a-zgU>
-
-https://blog.3mdeb.com/2020/2020-11-02-grub2mini-summit/
 
 GRUB nvme support
 =================
@@ -2308,20 +2074,6 @@ Example taken from lenovo/x230. We could just turn all of these off.
 It doesn't affect anything in practise, whether this is on or not, because
 we neuter anyway, so the ME interface is broken by default. Leaving it
 on in devicetree will result in a benign error message on linux dmesg.
-
-audit tmp usage
-===============
-
-some .elf files are left in /tmp, outside of TMPDIR, after lbmk runs,
-and it seems to be when building elfs. in particular, it happened
-when i built gru\_bob but it could be for others
-
-lbmk changes TMPDIR to /tmp/lbmk\_xxxxxxxxx where x numbers are generated,
-and exports that, but things that it runs may or may not respect TMPDIR,
-or it could be buggy in some shells. therefore, audit the way lbmk uses
-tmp, because in some cases it literally does now delete temporary files
-or directories, on the assumption that they are deleted at the end. at the
-end when lbmk exits, the main script deletes /tmp/lbmk\_xxxxxxxx
 
 Switchable Graphics (Optimus)
 =============================
@@ -2396,6 +2148,10 @@ then the bug will be in coreboot. Could be either of them.
 Could be a bug in GRUB's memory management. And/or regression in
 coreboot raminit. More testing is needed.
 
+NOTE: May 2024 release is using coreboot from 20230625 on these laptops (i945)
+to work around the issue, but it'll possibly be fixed before that release,
+otherwise afterward.
+
 Intel/AMD errata PDF
 ====================
 
@@ -2407,17 +2163,6 @@ unpatched as of yet, in microcode updates.
 <https://github.com/intel/Intel-Linux-Processor-Microcode-Data-Files/blob/main/releasenote.md#microcode-20230808>
 
 Links.
-
-Fork autoport to util/
-======================
-
-TODO: transfer written notes here
-
-Autoport patches are all over the place. The one in coreboot main is horribly
-out of date, for example only goes up to Broadwell even with the out of
-tree patches.
-
-Port it to skylake and above.
 
 interesting video
 =================
