@@ -1277,17 +1277,6 @@ When the ROM is finished compiling, it will appear under a directory in `bin/`
 This script is the beating heart of Libreboot. Break it, and you break
 Libreboot!
 
-### script/build/grub
-
-This builds the `grub.elf` file and keymap configuration files, placing these
-under `elf/grub/` for use by `script/build/roms`.
-
-Command: `./build grub`
-
-This builds the `grub-mkstandalone` utility under `src/grub/`, which is used
-by `script/build/roms` to insert GRUB payloads inside coreboot ROM
-images.
-
 ### script/build/serprog
 
 Build firmware images for serprog-based SPI programmers, where they use an
