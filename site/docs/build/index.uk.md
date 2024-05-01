@@ -35,6 +35,47 @@ libreboot з доступного джерельного коду.
 Наступний документ описує те, як працює `lbmk`, і як ви можете робити зміни
 до нього: [керівництво обслуговування libreboot](../maintain/)
 
+Release status
+==============
+
+Information about status will be reported during builds; if a board is
+marked as stable, the build proceeds without further input. If the board is
+marked anything other, a warning appears asking if you wish to proceed; to
+disable these warnings, do this before building (not recommended):
+
+	export LBMK_STATUS=n
+
+In Libreboot, we specify: `stable`, `unstable`, `broken` or `untested`.
+The "unstable" marking means that the board boots mostly/entirely reliably
+annd should be safe to use, but may have a few issues, but nothing which would,
+for example, cause safety issues e.g. thermal, data reliability etc.
+
+The `broken` setting means that a given board will likely brick if flashed.
+The `untested` setting means untested.
+
+Release status is always set with regards to the current lbmk revision, on
+the theory that the current revision is being used to generate a full release.
+The setting is decided on a board-by-board basis, taking its various quirks
+and idiosynrasies into account.
+
+Multi-threaded builds
+=====================
+
+Libreboot's build system defaults to a single build thread, but you can change
+it by doing e.g.
+
+	export LBMK_THREADS=4
+
+This would make lbmk run on 4 threads.
+
+Environmental variables
+=======================
+
+Please read about environmental variables in [the build
+instructions](../maintain/), before running lbmk. You should set
+your variables accordingly, though you do not technically need to; some
+of them may be useful, e.g. `LBMK_THREADS` (sets the number of build threads).
+
 Environmental variables
 =======================
 

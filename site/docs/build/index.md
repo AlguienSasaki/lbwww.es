@@ -25,6 +25,39 @@ libreboot from the available source code.
 The following document describes how `lbmk` works, and how you can make changes
 to it: [libreboot maintenance manual](../maintain/)
 
+Release status
+==============
+
+Information about status will be reported during builds; if a board is
+marked as stable, the build proceeds without further input. If the board is
+marked anything other, a warning appears asking if you wish to proceed; to
+disable these warnings, do this before building (not recommended):
+
+	export LBMK_STATUS=n
+
+In Libreboot, we specify: `stable`, `unstable`, `broken` or `untested`.
+The "unstable" marking means that the board boots mostly/entirely reliably
+annd should be safe to use, but may have a few issues, but nothing which would,
+for example, cause safety issues e.g. thermal, data reliability etc.
+
+The `broken` setting means that a given board will likely brick if flashed.
+The `untested` setting means untested.
+
+Release status is always set with regards to the current lbmk revision, on
+the theory that the current revision is being used to generate a full release.
+The setting is decided on a board-by-board basis, taking its various quirks
+and idiosynrasies into account.
+
+Multi-threaded builds
+=====================
+
+Libreboot's build system defaults to a single build thread, but you can change
+it by doing e.g.
+
+	export LBMK_THREADS=4
+
+This would make lbmk run on 4 threads.
+
 Environmental variables
 =======================
 
