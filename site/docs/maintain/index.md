@@ -579,7 +579,9 @@ as:
 * `grub_scan_disk="ata"`
 * `uboot_config=default` (specify which U-Boot tree to use)
 * `release="n"` (example entry)
-* `status=stable`
+* `status=stable` (example entry)
+* `xtree="default"` (example entry)
+* `tree_depend="default"` (example entry)
 
 The `tree` value refers to `config/coreboot/TREE`; in other words, a given
 target could specify a name other than its own as the tree; it would then
@@ -643,6 +645,13 @@ not building images using `script/update/release`.
 Recommended strings for `status` could be: `stable`, `unstable`, `broken`
 or `untested`. Alternatively, you might state `wip`. You can set whatever
 string you want here.
+
+The `xtree` option specifies that a given tree with use a specific coreboot
+tree for compiling crossgcc. This can be used to skip building gcc if OK on
+a given board; two trees may use the same crossgcc as each other.
+
+The `tree_depend` option means that a given tree needs another tree, defined
+by this variable, to also be present.
 
 ### config/coreboot/BOARDNAME/warn.txt
 
