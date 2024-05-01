@@ -45,8 +45,6 @@ The `untested` setting means untested.
 
 Release status is always set with regards to the current lbmk revision, on
 the theory that the current revision is being used to generate a full release.
-The setting is decided on a board-by-board basis, taking its various quirks
-and idiosynrasies into account.
 
 Multi-threaded builds
 =====================
