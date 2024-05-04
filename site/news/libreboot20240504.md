@@ -172,7 +172,7 @@ is still broken and therefore disabled, but pressing the power button works.
 Work done since Libreboot 20230625
 ============================
 
-Today's release, Libreboot 20240504, is a stable. The *previous* stable release
+Today's release, Libreboot 20240504, is a stable release. The *previous* stable release
 was Libreboot 20230625, but there have been a number of *testing* releases
 between that and today's release.
 
