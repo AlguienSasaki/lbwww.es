@@ -89,12 +89,12 @@ Libreboot 20240126.
 
 Ви можете завантажити Libreboot через дані дзеркала:
 
-* <https://www.mirrorservice.org/sites/libreboot.org/release/> (Кентський
-університет, Великобританія)
-* <https://mirrors.mit.edu/libreboot/> (Університет МТІ, США)
 * <https://mirror.math.princeton.edu/pub/libreboot/> (Прінстонський
 університет, США)
 * <https://mirror.shapovalov.website/libreboot/> (shapovalov.website, Україна)
+* <https://www.mirrorservice.org/sites/libreboot.org/release/> (Кентський
+університет, Великобританія)
+* <https://mirrors.mit.edu/libreboot/> (Університет МТІ, США)
 * <https://mirror.koddos.net/libreboot/> (koddos.net, Нідерланди)
 * <https://mirror-hk.koddos.net/libreboot/> (koddos.net, Гонконг)
 * <https://mirror.cyberbits.eu/libreboot/> (cyberbits.eu, Франція)
