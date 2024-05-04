@@ -21,8 +21,8 @@ for [Libreboot preinstallation](https://minifree.org/product/installation-servic
 The founder and lead developer of Libreboot, Leah Rowe, also owns and operates
 Minifree; sales provide funding for Libreboot.
 
-**НОВИЙ ВИПУСК: Останній випуск Libreboot 20240225, випущено 25 лютий 2024.
-Дивіться: [Оголошення про випуск Libreboot 20240225](news/libreboot20240225.md).**
+**НОВИЙ ВИПУСК: Останній випуск Libreboot 20240504, випущено 25 травень 2024.
+Дивіться: [Оголошення про випуск Libreboot 20240504](news/libreboot20240504.md).**
 
 Чому вам варто використовувати *Libreboot*?
 ----------------------------
