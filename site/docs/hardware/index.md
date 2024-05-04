@@ -68,6 +68,7 @@ libreboot currently supports the following systems in this release:
 -   [Dell Latitude E5530 (Intel GPU](e5530.md)
 -   [Dell Latitude E6520 (Intel GPU](e6520.md)
 -   [Dell Latitude E6530 (Intel GPU](e6530.md)
+-   Dell Latitude E5420.
 -   [HP EliteBook 2170p](hp2170p.md)
 -   [HP EliteBook 2560p](hp2560p.md)
 -   [HP EliteBook 2570p](hp2570p.md)
