@@ -25,33 +25,13 @@ is [software freedom](https://writefreesoftware.org/learn). With use of GRUB
 in the flash, you can make use of many advanced features such as the ability
 to [boot from an encrypted /boot partition](../docs/linux/)
 and [verify kernel GPG signature at boot time](../docs/linux/grub_hardening.md).
-Libreboot's GRUB payload is *heavily* patched; for example, today's release
-uses GRUB based on version 2.12, but Libreboot adds argon2 KDF support (for
-LUKS2) and xHCI support - you can use USB 3.0 devices natively, in GRUB,
-including distro install media via USB3. This means that with the right
-coreboot config, you could use Libreboot's GRUB even on modern machines that lack
-PS/2 keyboard controllers or EHCI support; many modern machines only have USB3.
-
-Another example of the type of benefit you could get from Libreboot: you can
-boot from NVMe SSDs in the SeaBIOS payload, if your board can take them (e.g.
-desktop board with an NVMe adapter in the PCI-E slot). If your vendor's BIOS/UEFI
-firmware only supports SATA, then this is a nice bonus for you. With Libreboot,
-you get continued firmware updates over time, adding new features on both older
-and newer hardware. Libreboot still provides updates for machines that are
-nearly 20 years old, while also supporting newer machines. More hardware support
-is being added all the time!
-
-These and other examples are just the start. Libreboot provides a *superior* boot
-experience compared to proprietary BIOS/UEFI, giving you the same power and level of
-control that running a Linux or BSD operating system does. It's *your* computer
-to boot however you wish. Libreboot lets you get more out of the hardware. All
-your favourite Linux distros and BSDs are compatible, even Qubes(on most machines).
 
 If you're fed up of the control that proprietary UEFI vendors have over you,
 then Libreboot is *for you*. Although many would agree that it is a major step
-forward for most users, it's actually a conservative idea socially. It used to
+forward for most users, it's actually a very old idea. Old is often better. It used to
 be that computers were much more open for learning, and tinkering. Libreboot
 implements this old idea in spirit and in practise, helping you wrest back control.
+
 Unlike the hardware vendors, Libreboot does not see *you* as a *security threat*;
 we regard the ability to use, study, modify and redistribute software freely to
 be a human right that everyone *must* have, and the same is true of hardware.
