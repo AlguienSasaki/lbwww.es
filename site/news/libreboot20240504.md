@@ -124,17 +124,6 @@ This release supports the following hardware:
 -   [ASUS Chromebook Flip C101 (gru-bob)](../docs/install/chromebooks.md)
 -   [Samsung Chromebook Plus (v1) (gru-kevin)](../docs/install/chromebooks.md)
 
-Canoeboot 20240504 also released!
-=========================
-
-I've done simultaneous Canoeboot and Libreboot releases, today. I strongly
-recommend that everyone uses Libreboot, which adheres to Libreboot's
-own [Binary Blob Reduction Policy](policy.md) and therefore supports more
-boards. Canoeboot is a parallel effort, that I also maintain, but Canoeboot
-adheres to GNU FSDG as policy and therefore supports far fewer mainboards. See:
-
-[Canoeboot 20240504 release](https://canoeboot.org/news/canoeboot20240504.html)
-
 New mainboard added
 ====================
 
