@@ -2,22 +2,6 @@
 % Leah Rowe
 % 4 January 2022 (updated 15 November 2022)
 
-The *[Canoeboot project](https://canoeboot.org/)* is an official sister project
-of Libreboot, that implements the GNU Free System Distribution Guidelines
-or *GNU FSDG* as policy, instead of the policy below. Canoeboot is maintained by
-Leah Rowe, the same person who founded the Libreboot project, and who maintains
-Libreboot releases to this day. Criticism of GNU FSDG is provided, in the
-article below.
-
-Canoeboot provides a clear example as to the merits of the policy seen below, by
-showing what Libreboot would be if it *didn't* adopt that policy; it is vastly
-inferior to Libreboot, due to weaker hardware support and less freedom of choice
-for users. Canoeboot is engineered to a high standard, basing off of each
-Libreboot release, but you should still use *Libreboot*. Canoeboot is only
-a *proof of concept*.
-
-And now, without further ado,
-
 Introduction
 ============
 

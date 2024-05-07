@@ -107,12 +107,6 @@ changes first):
   updated - notably, the E6430/E6530 and 8300CMT ports have been modified to
   define SPD location in devicetree, rather than `early_init.c` (thanks to
   Nicholas Chin for the warning).
-* U-Boot: support setting `xarch` too, to define which coreboot tree to use
-  for crossgcc. Although lbmk uses coreboot/default for u-boot, a special tree
-  of canoeboot had gru bob/kevin in `coreboot/cros` again, and it was seen that
-  u-boot was being compiled from crossgcc for coreboot/default, not coreboot/cros,
-  while the latter was used for actual coreboot firmware. In such a scenario,
-  lbmk can now correctly re-use the same crossgcc build, thus saving time.
 * Re-use crossgcc builds across coreboot trees, when possible, to speed up the
   overall build time when building across multiple trees. This is done
   using the `xtree` and `tree_depend` variables in `target.cfg` files, for
@@ -201,16 +195,6 @@ changes first):
   the script on certain targets. Patch courtesy of Leah Rowe.
 * `script/vendor/inject`: Fixed a bad error check, when running `cd` to switch
   to the ROM images directory, when creating archives. Patch courtesy Leah Rowe.
-* Don't delete microcode updates on GM45 ROMs in releases. Microcode updates
-  are always included in builds, but the release build scripts were copying
-  certain ROM images to cerate versions (alongside the default ones) with
-  microcode disabled. This is no longer required, due to the existence of
-  the [Canoeboot project](https://canoeboot.org/). You can also still delete them
-  very easily, using cbfstool, if they are included in a given set of images,
-  so this change reduces the uncompressed size of the ROM images in releases.
-  This also means that the file names of all ROM images now match the file names
-  in canoeboot images, when dealing with a mainboard supported by both projects.
-  Patch courtesy of Leah Rowe.
 * `script/update/release`: Don't test `script/vendor/inject` at the end. This
   is regularly tested anyway, during development, so it's a waste of time to
   have it done by the release build script. This reduces the amount of time

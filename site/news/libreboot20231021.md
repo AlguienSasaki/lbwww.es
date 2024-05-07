@@ -1223,10 +1223,3 @@ On ASUS KFSN4-DRE, KCMA-D8 and KGPE-D16 boards, do this to remove microcode:
 
 We recommend *keeping* microcode updates, for reasons written in the [Binary
 Blob Reduction Policy](policy.md).
-
-There is also the recent launch of the [Canoeboot project](https://canoeboot.org/),
-an official sister project of Libreboot, maintained by Leah Rowe who also leads
-the Libreboot project; Canoeboot release images do not ever contain microcode
-updates in them. This is precisely why it will not be fixed in lbmk to fix
-the naming issue. The behaviour is simply disabled instead, becasue there's no
-point adding further complexity to the build system.

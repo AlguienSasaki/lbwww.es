@@ -123,16 +123,6 @@ And now, specific changes:
   the script on certain targets. Patch courtesy of Leah Rowe.
 * `script/vendor/inject`: Fixed a bad error check, when running `cd` to switch
   to the ROM images directory, when creating archives. Patch courtesy Leah Rowe.
-* Don't delete microcode updates on GM45 ROMs in releases. Microcode updates
-  are always included in builds, but the release build scripts were copying
-  certain ROM images to cerate versions (alongside the default ones) with
-  microcode disabled. This is no longer required, due to the existence of
-  the [Canoeboot project](https://canoeboot.org/). You can also still delete them
-  very easily, using cbfstool, if they are included in a given set of images,
-  so this change reduces the uncompressed size of the ROM images in releases.
-  This also means that the file names of all ROM images now match the file names
-  in canoeboot images, when dealing with a mainboard supported by both projects.
-  Patch courtesy of Leah Rowe.
 * `script/update/release`: Don't test `script/vendor/inject` at the end. This
   is regularly tested anyway, during development, so it's a waste of time to
   have it done by the release build script. This reduces the amount of time

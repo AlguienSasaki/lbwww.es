@@ -191,7 +191,7 @@ These typically use MEC5045 or compatible EC. Some may use MEC5035.
 
 SuperIO: at least M6500 is known to use ECE5028. I have a bunch of these
 Dells at my lab, they are high priority for porting because they would be
-easily flashable, and blob-free configs (Canoeboot could also support them).
+easily flashable.
 
 Broadwell Dell
 --------------
@@ -349,9 +349,6 @@ See: <https://review.coreboot.org/c/coreboot/+/71607>
 This is part of a patch series, from 9 September 2023 onward, re-adding
 AMD Family 16 platform to coreboot, most notably enabling use of the new
 allocator and other things in coreboot.
-
-The linked patch is for mainboard: HP T620 - of note, it may also be suitable
-for Canoeboot. Worth looking into.
 
 AMD AGESA-based platforms were removed from coreboot, because they weren't
 being maintained anymore, so they were dropped. Some of those boards are

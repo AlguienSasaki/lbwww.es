@@ -240,11 +240,6 @@ archives; E6430 ROM images will instead be provided in the next release. For
 now, you can build Libreboot from `lbmk.git`. See:
 [Building Libreboot from source](../docs/build/)
 
-------------------
-
-A corresponding [Canoeboot 20231107
-release](https://canoeboot.org/news/canoeboot20231107.html) is available.
-
 Errata
 ======
 

@@ -247,9 +247,3 @@ x4x (e.g. GA-G41M-ES2L) remains untested.
 Pineview (D945GCLF) is untested for S3.
 
 The AMD boards should work fine with suspend.
-
-------------------
-
-A corresponding [Canoeboot 20231101
-release](https://canoeboot.org/news/canoeboot20231101.html) is also available.
-
