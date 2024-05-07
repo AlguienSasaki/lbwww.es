@@ -196,33 +196,13 @@ systems.
 Joshua Gay
 ----------
 
-Joshua is former FSF staff.
+Joshua was in a position during 2014-2016 to help promote Libreboot in the
+media, in his capacity working for the employer he worked for at the time;
+I credit him specifically. Joshua was one of Libreboot's earliest supporters.
 
-Joshua helped with the early founding of the Libreboot project, in his capacity
-(at that time) as the FSF's licensing and compliance manager. It was his job to
-review products sent into to the FSF for review; the FSF has a certification
-program called *Respects Your Freedom* (RYF) where the FSF will promote your
-company's products if it comes with all Free Software.
-
-I, Leah Rowe, was initially just selling ThinkPad X60 laptops with regular
-coreboot on them, and this included CPU microcode updates. At the time, I didn't
-think much of that. Joshua contacted me, in his capacity at the FSF, and asked
-if I would be interested in the FSF's RYF program; I was very surprised that the
-FSF would take me seriously, and I said yes. This is what started the early
-work on Libreboot. Joshua showed me all the problems my products had, and from
-that, the solution was clear:
-
-Joshua used his media connections at the FSF to heavily promote my work, and
-on December 13th, 2013, the Libreboot project was born (but not called that).
-Joshua made sure that everyone knew what I was doing!
-
-A few months later, the name *Libreboot* was coined, and the domain name
-*libreboot.org* was registered. At that point, the Libreboot project (in early
-2014) was officially born. Once again, Joshua provided every bit of help he
-could, heavily promoting the project and he even wrote this article on the FSF
-website, announcing it:
-
-<https://web.archive.org/web/20171222063358/https://www.fsf.org/blogs/licensing/replace-your-proprietary-bios-with-libreboot>
+He made sure everyone knew what I was doing, and he taught me a *lot* about
+licensing; many of Libreboot's practises today are still based on his lessons,
+such as the pitfalls of GPL compliance and how to really audit everything.
 
 Klemens Nanni
 -------------
@@ -233,55 +213,17 @@ libreboot, and several tweaks to the build system.
 Lisa Marie Maginnis
 -------------------
 
-Lisa is a former sysadmin at the Free Software Foundation. In the early days of
-the project, she provided Leah with a lot of technical advice. She initially
-created Libreboot IRC channel, when Leah did not know how to
-use IRC, and also handed +F founder status to Leah for the channel. As an FSF
-sysadmin, it was Lisa's job to maintain a lot of the infrastructure used by
-Libreboot; at the time, mailing lists on the Savannah website were used by
-the Libreboot project. When Paul Kocialkowski was a member of the project in
-2016, she helped him get help from the FSF; he was the leader of the Replicant
-project at the time, which had funding from the FSF, and the FSF authorized him
-to use some of that funding for his work on Libreboot, thanks to Lisa's
-encouragement while she worked at the FSF.
+Lisa was one of Libreboot's early contributors to Libreboot. She personally
+helped me set up a lot of the early infrastructure, including things like IRC,
+mailing list and so on. She provided a lot of technical guidance, while working
+in a sysadmin job for a certain free software organisation; she was both a
+mentor and a friend.
 
-Lisa also stepped in when Leah Rowe missed her LibrePlanet 2016 talk. Leah was
-scheduled to do a talk about Libreboot, but didn't show up in time. Lisa, along
-with Patrick McDermott (former Libreboot developer, who was present at that
-conference) did the talk in Leah's place. The talk was never recorded, but the
-Free Software Foundation has these photos of that talk on their LibrePlanet
-website (the woman with the blue hair is Lisa, and the long-haired dude with the
-moustache is Patrick):
-
-<http://web.archive.org/web/20170319043913/https://media.libreplanet.org/u/libreplanet/m/session-02-c-mws-png-libreplanet-2016-sessions/>
-
-<http://web.archive.org/web/20170319043915/https://media.libreplanet.org/u/libreplanet/m/session-02-c-wide-png-libreplanet-2016-sessions/>
-
-Fun fact: Patrick is also the lead developer of ProteanOS, an FSF-endorsed
-embedded OS project: <http://proteanos.com/> (uses BusyBox and Linux-libre)
-
-Leah Rowe ran *2* LibrePlanet workshops; one in 2015 and another in 2016, while
-visiting Boston, MA, USA on both occasions to attend these conferences. These
-workshops were for Libreboot installations. People came to both workshops, to
-have Libreboot installed onto their computers. As FSF sysadmin, at that time,
-Lisa provided all of the infrastructure and equipment used at those workshops.
-Without her help, those workshops would have not been possible.
-
-When the ASUS KGPE-D16 mainboard (high-end server board) was ported to Libreboot,
-Leah, working with Timothy Pearson (the one who ported it), shared patches back
-and forth with Lisa around mid 2016, mostly raminit patches, to get the board
-running at the FSF offices. This work ultimately lead to a most wonderful
-achievement:
-
-The FSF and GNU websites now run on
-Librebooted ASUS KGPE-D16 based servers, on a fully free GNU+Linux distro. This
-means that the FSF now has full software freedom for their hosting infrastructure.
-
-The FSF also provides access to this infrastructure for many other projects
-(besides GNU projects).
-
-Lisa was a strong supporter of Libreboot in the very early days of the project,
-and her contributions were invaluable. I, Leah Rowe, owe her a debt of gratitude.
+She got me in touch with a lot of people, and at one point was instrumental in
+helping Paul Kocialkowski secure funding to work on the Veyron Speedy boards
+in Libreboot, e.g. ASUS Chromebook C201PA - at the time, this was using
+Google's own Depthcharge payload, which you can find in 2016 Libreboot
+releases.
 
 Lorenzo Aloe
 ------------
@@ -315,10 +257,6 @@ Patrick also did a lot of research and wrote the libreboot FAQ section
 relating to the [Intel Management Engine](../faq.md#intelme), in addition
 to making several improvements to the build system in libreboot. **Former
 libreboot project maintainer.**
-
-In 2016, Leah Rowe ran a Libreboot installation workshop at the FSF's
-LibrePlanet conference. Working alongside Leah, Patrick helped run the workshop
-and assisted with installing Libreboot onto people's machines.
 
 Paul Kocialkowski
 -----------------

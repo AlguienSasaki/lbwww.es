@@ -303,7 +303,7 @@ logs, combined:
 * Don't use the `-B` option in make commands.
 * Where no-microcode ROM images are provided, ensure that the ROM hashes still
   match when running the vendor inject script. This is only useful on the
-  Dell Latitude E6400, which is otherwise FSDG-compatible but (in Libreboot)
+  Dell Latitude E6400, which is otherwise blob-free but (in Libreboot)
   comes with or without microcode updates, and with or without the Nvidia VGA
   ROM (handled by vendor inject/download scripts) for dGPU variants. Verification
   previously failed, under certain conditions, when inserting that VGA ROM.
@@ -345,8 +345,8 @@ logs, combined:
   spaces in them.
 * Don't support removal of microcode (during release time) on untested targets.
   Set `microcode_required="y"` on most boards, but leave it set to `"n"` on
-  platfroms such as GM45 (ThinkPad X200/T400, Dell E6400, etc); anything FSDG
-  compatible, in other words.
+  platfroms such as GM45 (ThinkPad X200/T400, Dell E6400, etc); anything that
+  can be blob-free, in other words.
 * Improved Dell Latitude E6400 support; the same image now provides iGPU and
   dGPU support, since it's SeaBIOS-only anyway, so a VGA ROM is inserted into
   the same ROM that also enables libgfxinit, enabling the Intel or Nvidia GPU
