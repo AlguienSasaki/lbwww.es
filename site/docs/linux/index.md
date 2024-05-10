@@ -46,6 +46,11 @@ Then still as root, do these commands:
 	export PATH="$PATH:/sbin"
 	update-grub
 
+NOTE: `update-grub` is very much Debian-centric. Not all distros will have it.
+On Arch-based distros for instance, you might do:
+
+	grub-mkconfig -o /boot/grub/grub.cfg
+
 Now your distro's GRUB menu should work, when your distro's GRUB bootloader is
 executed from Libreboot's SeaBIOS payload.
 

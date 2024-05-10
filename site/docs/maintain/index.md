@@ -139,8 +139,8 @@ This directory is created when running any of the following commands, with the
 right arguments:
 
 	./build roms ARGUMENTS_HERE
-	./build serprog stm32
-	./build serprog rp2040
+	./build roms serprog stm32
+	./build roms serprog rp2040
 
 Simply speaking, `bin/` shall contain finished ROM images or firmware, that
 can then be installed (flashed) to the target device.
@@ -1117,27 +1117,6 @@ This directory contains *helper scripts*, to be included
 by main scripts using the `.` command (called the `source`
 command in `bash`, but we rely upon posix `sh` only).
 
-include/err.sh
----------------
-
-Generic error handling, used by all lbmk scripts.
-
-This also contains functions to verify the current libreboot version, and check
-whether Git is properly initialised on the host system. It also contains
-the `setvars` function, which provides a shorthand way of initialising many
-variables (combined with use of `eval`), which lbmk uses heavily.
-
-This function also contains `x_` and `xx_` which lbmk uses to execute commands
-and ensure that they cause an exit (with non-zero status) from lbmk, if they
-return an error state; the `xx_` function calls `fail()` which a script must
-provide, to perform some action before calling `err` which in turn prints an
-error message provided as argument. It is used similarly to the C
-function `err()` in BSD libc. The `x_` function simply calls `err`.
-
-This entire file is heavily inspired by `err.h` in BSD libc code. This file is
-heavily used by lbmk (it's used by every script), to provide clean error
-handling in `sh`.
-
 include/git.sh
 --------------
 
@@ -1177,6 +1156,17 @@ possible, and contains miscallaneous functions that don't belong anywhere else.
 
 The functions here are mostly those that deal with configuration files; scanning
 them to set variables and so on.
+
+This file also contains generic error handling, used by all lbmk scripts.
+
+This also contains functions to verify the current libreboot version, and check
+whether Git is properly initialised on the host system. It also contains
+the `setvars` function, which provides a shorthand way of initialising many
+variables (combined with use of `eval`), which lbmk uses heavily.
+
+This function also contains `x_()` which lbmk uses to execute commands
+and ensure that they cause an exit (with non-zero status) from lbmk, if they
+return an error state.
 
 script/
 =======
@@ -1286,18 +1276,19 @@ When the ROM is finished compiling, it will appear under a directory in `bin/`
 This script is the beating heart of Libreboot. Break it, and you break
 Libreboot!
 
-### script/build/serprog
+Serprog images:
 
 Build firmware images for serprog-based SPI programmers, where they use an
 STM32 MCU. It also builds for RP2040-based programmers like Raspberry Pi Pico.
 
-Example command: `./build serprog stm32`
+Example command: `./build roms serprog stm32`
 
-Example command: `./build serprog rp2040`
+Example command: `./build roms serprog rp2040`
 
 The `list` argument is available:
 
-	./build serprog stm32 list
+	./build roms serprog stm32 list
+	./build roms serprog rp2040 list
 
 Without arguments, all targets would be compiled, but you can specify a short
 list of targets instead, based on the output of `list`.

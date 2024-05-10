@@ -2209,3 +2209,8 @@ page 89
 also
 
 <https://winraid.level1techs.com/t/bios-mod-to-enable-pcie-bifurcation/31547>
+
+ec hacking on lenovo x230
+=========================
+
+<https://zmatt.net/unlocking-my-lenovo-laptop-part-2/>
