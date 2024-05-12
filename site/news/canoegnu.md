@@ -19,6 +19,15 @@ project much like the old one. Libreboot used to be entirely blob-free; coreboot
 is otherwise free software, but requires blobs on some mainboards, so Libreboot
 previously could not support all mainboards from Coreboot.
 
+The benefit of both Canoeboot and Libreboot is that they provide a completely
+automated build process and installation procedure, with well-tested builds
+released on a regular basis that the user can simply install, with minimal
+fuss. You can think of it as a *coreboot distro*. Coreboot provides snapshot
+source code archives every few months, but that's it. Libreboot/Canoeboot gives
+you the ROM images pre-compiled, with source code, and with payloads
+already pre-configured. In other words: Canoeboot and Libreboot make coreboot
+extremely easy to use.
+
 Canoeboot: the blob-free fork
 =============================
 
