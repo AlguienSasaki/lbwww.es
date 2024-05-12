@@ -5,7 +5,11 @@
 As many readers know, Libreboot abandoned the GNU FSDG policy in November 2022,
 instead opting for a [different policy](policy.md) allowing blobs only under
 the most limited circumstances, to allow newer machines to be supported from
-coreboot. This policy of Libreboot will remain.
+coreboot. Fewer/zero blobs is still preferred, and this is provided whenever
+possible; for example, Libreboot recently [removed a
+blob](https://browse.libreboot.org/lbmk.git/commit/?id=cc33974150d275140fced9cfa4b8e901b0552074) previously used for raminit
+on Haswell machines, from now on allowing only the libre raminit that recently
+became stable. This *binary blob reduction policy* of Libreboot will remain.
 
 However, a minority of people disliked this move, and are yearning for a
 project much like the old one. Libreboot used to be entirely blob-free; coreboot
