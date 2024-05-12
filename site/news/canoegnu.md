@@ -54,7 +54,7 @@ email and asked the public what they think, so it's up to them to say what
 they think.
 
 Whether Canoeboot is accepted or not, it will continue operating along its
-current course, providing a viable coreboot distro for diehard purisms who
+current course, providing a viable coreboot distro for diehard purists who
 adhere to the FSF and GNU project.
 
 I've always believed absolutely in the Four Freedoms, as defined by the GNU
