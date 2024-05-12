@@ -73,6 +73,8 @@ ground for many debates within the FSF community):
 
 <https://trisquel.info/en/forum/should-gnu-boot-become-gnu-canoeboot>
 
+And reddit: <https://www.reddit.com/r/linux/comments/1cqe924/should_canoeboot_become_gnu_canoeboot/>
+
 Discussion welcome!
 
 Final thoughts
