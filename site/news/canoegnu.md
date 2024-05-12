@@ -65,4 +65,4 @@ which vision they prefer, and I try as best I can to faithfully serve both
 communities.
 
 That's all for now. I'm probably expecting that nothing will come of this, but
-the intend is there. I'd be very happy though if they say yes!
+the intent is there. I'd be very happy though if they say yes!
