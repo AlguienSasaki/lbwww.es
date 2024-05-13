@@ -97,3 +97,56 @@ communities.
 
 That's all for now. I'm probably expecting that nothing will come of this, but
 the intent is there. I'd be very happy though if they say yes!
+
+Follow-up
+=========
+
+In addition to the [original message](https://canoeboot.org/news/gnu.html#email-sent-to-gnu-eval), I also sent this message to GNU Eval:
+
+some people have actually asked me if i should contribute to GNU Boot, instead of trying to replace it with GNU Canoeboot. They have asked this outside of this email discussion, but some here may be wondering that.
+
+I'd like now to address it. Here goes:
+
+I actually submitted extensive patches to gnuboot in January 2024:
+
+<https://lists.gnu.org/archive/html/gnuboot-patches/2024-01/index.html>
+
+<https://web.archive.org/web/20240511074211/https://lists.gnu.org/archive/html/gnuboot-patches/2024-01/index.html>
+
+The patches were never reviewed, let alone merged, but they:
+
+* Replace "Libreboot" with "GNU Boot" in several places on the documentation (**THIS IS THE ONLY PATCH THEY MERGED**)
+* Fix major build issues, allowing GNU Boot to build on modern distros (GNU Boot only builds on Trisquel 10, my patches make it build on 12. also Gentoo-libre and Arch/Parabola)
+* Add Dell Latitude E6400 support
+* Fix hang in GRUB caused when there is a stuck key, by disabling the "Unknown key" spew message
+* ESP and btrfs subvol support in grub.cfg
+* Fixes building KGPE-D16 on newer distros, by skipping GNAT which isn't needed
+* Add gru bob support (rk3399 chromebooks, with free EC and *no* microcode) - ditto gru kevin
+* Keyboard fix for GRUB: force it to use scancode set 2 translated, instead of untranslated set 2 to work around buggy ECs such as Dell Latitude E6400
+* Avoid spewing the Unknown prefix message in GRUB
+* Adds the dell-flash-unlock tool from Nicholas Chin, allowing internal flashing from factory BIOS to GNU Boot, on the E6400
+* cache cbfstool/ifdtool builds to speed up build time
+* better caching of coreboot rom images during build, to speed up build time
+* Prevent future GRUB build errors by disabling -Werror
+* Support for *building* U-Boot as a coreboot payload, on gru bob/kevin chromebooks (GNU Boot only archives it, doesn't build it)
+
+A second patch set that I sent does the above, and also:
+
+* Updates GRUB, coreboot and SeaBIOS to newer revisions from late 2023 (GNU Boot uses late 2021 revisions)
+* Adds Argon2 KDF support, for booting from LUKS2-encrypted /boot (GNU Boot can't boot from encrypted LUKS2 /boot without this patch)
+* Reduced the number of modules in GRUB to only those needed, saving 100KB of space in flash
+* Update memtest86+ to v6.x instead of 5.x
+
+I sent all of these patches to GNU Boot while bored, and it only took me 1 day to implement all of them, re-using what I had done in Canoeboot months beforehand
+
+My patches fixed all of the fundamental issues with GNU Boot, without rewriting the build system; they use an older version of the Libreboot build system, prior to my re-write of the latter half of 2023 (my re-write makes the build system much smaller and more efficient.
+
+All of the above improvements *and much more* is in Canoeboot. In terms of development, Canoeboot is about 2 years ahead of Canoeboot; Canoeboot has since far surpassed the improvements sent to GNU Boot in January, so even if they did merge them now, they'd still be behind.
+
+I may be missing a thing or two, above, but one thing I'm not missing is my strong and stable commitment to the free software movement, even when I'm dealing with hostile project maintainers who won't even consider my patches.
+
+This is why I will no longer assist the GNU Boot project. Because I tried to help them; and this wasn't my first attempt to help, either.
+
+Whether GNU accepts Canoeboot or not, Canoeboot will continue to press full speed ahead. I say now it's 2 years ahead of GNU Boot;
+
+Next year it'll be 3 years ahead.
