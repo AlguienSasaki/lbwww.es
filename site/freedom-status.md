@@ -214,7 +214,7 @@ Mostly free software, except for the requirement on `daisy` and `peach` mainboar
 to include BL1 bootloader files from the vendor. These are:
 
 * HP Chromebook 11 G1 (daisy-spring) **(board removed from Libreboot, due to
-	issues (will be re-added at a later date)**
+	issues (will be re-added at a later date))**
 * Samsung Chromebook XE303 (daisy-snow) **(ditto)**
 * Samsung Chromebook 2 13” (peach-pi) **(ditto)**
 * Samsung Chromebook 2 11” (peach-pit) **(ditto)**
