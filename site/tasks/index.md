@@ -2214,3 +2214,18 @@ ec hacking on lenovo x230
 =========================
 
 <https://zmatt.net/unlocking-my-lenovo-laptop-part-2/>
+
+DELL 7th gen
+============
+
+
+3050 micro is being worked on.
+
+3050 sff and mt are TODO
+
+5050 models also.
+
+Dell 3020
+=========
+
+another haswell. different to 9020, but could be added.
