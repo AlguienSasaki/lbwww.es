@@ -3,6 +3,44 @@ title: Installation instructions
 x-toc-enable: true
 ...
 
+**GRUB payload warning**
+====================
+
+Firstly, it should be stated: in almost all cases, GRUB works just fine, on
+all of the machines that we test, but as of 26 May 2024 we got the error
+report:
+
+See: <https://codeberg.org/libreboot/lbmk/issues/216>
+
+Although we've only seen this thus far (as per user reports) on Intel
+SandyBridge based Dell Latitude laptops, we advise:
+
+**DO NOT use a ROM image where GRUB is the first payload. If you want to
+use the GRUB payload, please use a ROM image with `seabios_` at the start
+of the file name. Avoid images with `grub_` at the start of the file name.**
+
+ROM images with `grubonly` in them should also be avoided; if you want GRUB
+to be the first thing you see (without interruption), use a ROM image
+with `seabios_` at the start of the file name, and `grubfirst` at the end;
+these place a bootorder file in CBFS, so that SeaBIOS loads GRUB first, but
+you can still press ESC to bring up the SeaBIOS boot select menu.
+
+The error above, in the linked bug report, occurs on `grub_free()`
+or `grub_realloc()` and could be caused by anything in GRUB; the user tested
+on memtest86plus and got no errors, and SeaBIOS works; BIOS GRUB (from a distro)
+also works, where GRUB doesn't need as many drivers; we suspect this may be
+a use-after-free in a GRUB driver, or otherwise something writing to heap memory
+wrongly. The bug is not yet known, only the symptom (the fatal error message).
+
+Libreboot releases after 20240504 will *only* (on x86) contain ROM images where
+SeaBIOS is the first payload, without disabling the SeaBIOS menu (no `grubonly`). You'll still be able to use GRUB, either by pressing ESC for the boot
+select menu, and/or using an image with `grubfirst` in the file name so that
+SeaBIOS loads it first (while still permitting boot select via ESC keypress).
+
+GRUB's code is vast, and complicated, so this policy change is permanent,
+until GRUB can be well-audited (likely forked, with dead/legacy code removed).
+SeaBIOS code is much smaller and more robust. Remember always: code equals bugs.
+
 Need help?
 ==========
 
@@ -199,48 +237,16 @@ an option in the boot menu.
 ROM images that have `seabios_withgrub` in the file name start with SeaBIOS
 first, but also have GRUB available in the boot menu when you press ESC.
 
-### seabios\_grubfirst (DEFUNCT)
-
-**DEFUNCT**
-
-This build option is obsolete, and should not be used. It was deleted
-in lbmk revision `e1bbdadc9584291cf062660d67128e9f17ab788e`.
-
-It was believed, in earlier theory, that VGA ROM initialisation could
-be used in SeaBIOS and then SeaBIOS boots into a GRUB payload (built
-for coreboot), where the initialisation would continue to be used, but
-it didn't work that way.
-
-It's best to use PC GRUB (normal BIOS GRUB), but compile it into a floppy
-image to insert inside CBFS, to then be executed by SeaBIOS. This is referred
-to as SeaGRUB by the Libreboot project, and it would be quite useful
-for desktop users, but it's largely irrelevant on laptops where
-coreboot's own `libgfxinit` is usually available (or the option ROM is
-easy to extract from vendor firmware and insert).
-
-Where direct bare metal GRUB is desired, but you use a desktop system with
-an add-on graphics card, you must extract the VGA ROM for your card and
-insert it into the coreboot ROM, for coreboot itself to execute. This will
-require custom configuration on your part, and it is thus beyond the scope
-of the Libreboot project, in context of lbmk (automated build system).
-
-Some older Libreboot releases included ROM images built using this option,
-and those specific ROM images (`seabios_grubfirst` ones) should not be
-used; you should only use `seabios_grubfirst` or `seabios`, in most
-scenarios, if SeaBIOS is required.
-
-For most desktop users, if running an external graphics card, it's easier
-to simply boot in text mode with a SeaBIOS payload and use only that. This
-will Just Work with almost all graphics cards, allowing you to use an
-operating system with a full display and (drivers permitting) full 2D/3D
-acceleration.
+ROM images with this and `grubonly` in the image start SeaBIOS, but only load
+GRUB from SeaBIOS and the SeaBIOS menu is disabled. Use these images if you
+only want GRUB; they are provided on systems that only have VGA ROM-based
+initialisation, usually discrete graphics cards on desktop machines.
 
 Which systems are supported?
 ============================
 
 [Refer to the hardware compatibility page](../hardware/)
 
-Sandy/Ivybridge/Haswell MAC address (e.g. X230, X220, T440p, W541, hp8200sff)
 Intel GbE MAC address (IFD-based systems)
 =====================================================================
 
