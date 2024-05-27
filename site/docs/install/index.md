@@ -31,12 +31,17 @@ with `seabios_` at the start of the file name, and `grubfirst` at the end;
 these place a bootorder file in CBFS, so that SeaBIOS loads GRUB first, but
 you can still press ESC to bring up the SeaBIOS boot select menu.
 
-The error above, in the linked bug report, occurs on `grub_free()`
-or `grub_realloc()` and could be caused by anything in GRUB; the user tested
-on memtest86plus and got no errors, and SeaBIOS works; BIOS GRUB (from a distro)
-also works, where GRUB doesn't need as many drivers; we suspect this may be
-a use-after-free in a GRUB driver, or otherwise something writing to heap memory
-wrongly. The bug is not yet known, only the symptom (the fatal error message).
+*This warning applies to Libreboot 20240504 and other recent releases.*
+
+**We have since fully mitigated this bug**; SeaBIOS is now the primary payload on
+all boards, with GRUB still available in the boot select menu, and we have
+identified that it was caused by the xHCI driver which has since been removed
+for the affected machines(machines which don't have xHCI anyway, but they
+touch code that does run on the given machines). The xHCI support works fine
+on some newer machines and will be re-added there by making GRUB multi-tree,
+so that different boards can use different versions of GRUB. This will be done,
+and present in the next Libreboot release after 20240504, in addition to fixing
+the actual bug itself. **For now, there are no problems!**
 
 Libreboot releases after 20240504 will *only* (on x86) contain ROM images where
 SeaBIOS is the first payload, without disabling the SeaBIOS menu (no `grubonly`). You'll still be able to use GRUB, either by pressing ESC for the boot
