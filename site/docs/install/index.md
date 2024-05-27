@@ -3,6 +3,12 @@ title: Installation instructions
 x-toc-enable: true
 ...
 
+**SAFETY WARNING!**
+====================================================================
+
+**IMPORTANT ADVICE: [PLEASE READ THESE INSTRUCTIONS BEFORE INSTALLING/UPDATING
+LIBREBOOT](../../news/safety.md).**
+
 **GRUB payload warning**
 ====================
 
@@ -105,12 +111,6 @@ and [OpenBSD securelevel manpage](https://man.openbsd.org/securelevel).
 Otherwise, if you get such errors, it may just be that you're not root. You
 must run flashprog as root, at least to use the internal flasher (using external
 USB flashing dongles doesn't normally require root).
-
-SAFETY WARNING!
-====================================================================
-
-**IMPORTANT ADVICE: [PLEASE READ THESE INSTRUCTIONS BEFORE INSTALLING/UPDATING
-LIBREBOOT](../../news/safety.md).**
 
 PRECAUTIONS
 ===========
