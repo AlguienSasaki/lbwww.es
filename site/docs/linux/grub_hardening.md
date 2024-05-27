@@ -221,6 +221,51 @@ of user-friendliness.
 
 That just about covers it, where password setup is concerned!
 
+SeaBIOS first?
+==============
+
+In releases after Libreboot 20240504, SeaBIOS is the primary payload on
+all images, but GRUB is available in the boot menu. Select a ROM image
+with `grubfirst` at the end, and do this to the ROM image:
+
+	cbfstool libreboot.rom add-int -i 0 -n etc/show-boot-menu
+
+This disables the SeaBIOS menu, so that it only loads GRUB. The `grubfirst`
+image had this done to it by lbmk (Libreboot build system) during build:
+
+	cbfstool libreboot.rom add -f config/grub/bootorder -n bootorder -t raw
+
+This `bootorder` file has the following contents:
+
+```
+/rom@img/grub2
+```
+
+You can add it yourself if your image doesn't have it. With this, SeaBIOS
+only loads GRUB first.
+
+NOTE: Before disabling the boot menu, make sure GRUB works. Access it using
+the `bootorder` file and/or press ESC in the SeaBIOS menu. Then disable the
+SeaBIOS menu.
+
+Alternative: GRUB as primary
+----------------------------
+
+The *SeaBIOS first* policy is now law, in Libreboot releases. The only
+exception is the x86 QEMU target. You can do this if building from source:
+
+	./build roms -p grub targetname
+
+Where `targetname` is e.g. `x200_8mb` (use the correct one for your board).
+
+Again: make sure GRUB works. Also: don't do this if you're using a non-Intel
+graphics card because only the Intel graphics have native video initialisation
+in Libreboot, and we rely on SeaBIOS to execute the VGA ROM for others.
+
+(it is assumed that you know to add the VGA ROM in CBFS if needed, if using
+a dGPU, or that you're using a graphics card on a desktop so SeaBIOS will use
+that automatically)
+
 GPG keys
 ========
 
