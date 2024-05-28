@@ -33,8 +33,7 @@ On these platforms, the following binary vendor files are required:
 
 * Intel ME firmware: all Sandy/Ivy/Haswell boards. Libreboot's build system
   runs `me_cleaner` to neuter the Intel ME, so that it's disabled after BringUp.
-* Intel MRC firmware: Haswell platforms (W541, T440p) - a libre MRC replacement
-  is available, but experimental, and the vendor version is still recommended.
+* Intel MRC firmware: broadwell (HP EliteBook 820 G2)
 * KBC1126 EC firmware: HP laptops (all sandy/ivy/haswell)
 
 When you [build Libreboot from source](../docs/build/), Libreboot's automated

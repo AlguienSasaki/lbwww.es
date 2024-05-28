@@ -66,8 +66,7 @@ Libreboot build system:
   target name.
 * SMSC SCH5545 fan control firmware (for Dell T1650): `vendor/t1650/sch5545ec.bin`
 * SMSC KBC1126 embedded controller firmware, on HP EliteBooks: `ec/`
-* Intel MRC firmware, used for ram/peripheral init on Haswell machines such as
-  thinkpad t440p/w541: `mrc/`
+* Intel MRC firmware, provides raminit on HP EliteBook 820 G2
 
 The above list refers to the *non-redistributable files*, and these are not
 directly included in releases. These are auto-downloaded during the build.
@@ -81,10 +80,6 @@ You must determine the correct board name, for your board, based on the list
 generated when running this command:
 
 	./build roms list
-
-For example, `t440pmrc_12mb` corresponds to ThinkPad T440p with MRC firmware.
-Whereas `t440plibremrc_12mb` corresponds to T440p with libre MRC firmware.
-Another example: `x230_12mb` corresponds to Thinkpad X230.
 
 In order to inject the necessary files into a rom image, run the script from the root of lbmk and point to the rom image.
 

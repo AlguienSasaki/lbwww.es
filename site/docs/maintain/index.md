@@ -176,15 +176,7 @@ releases (only the images under `bin/` are provided).
 mrc/
 ---------------
 
-Please also
-visit: <https://doc.coreboot.org/northbridge/intel/haswell/mrc.bin.html> - the
-handling of this, in Libreboot, is based largely on the information there.
-
-This contains the Intel MRC firmware, auto-downloaded during build
-by logic contained under `include/vendor.sh`.
-
-In some cases, libre MRC firmware is also available, and provided
-by Libreboot as an alternative choice.
+Intel System Agent downloaded at build time for HP EliteBook 820 G2.
 
 pciroms/
 ---------------
