@@ -17,7 +17,7 @@ GA-G41M-ES2L
                                         Pentium Extreme/D/4 Extreme/4/Celeron |
 | **Graphics**               | Integrated                                     |
 | **Display**                | None.                                          |
-| **Memory**                 | Up to 16GB                                     |
+| **Memory**                 | Up to 8GB (2x4GB DDR2-800)                     |
 | **Architecture**           | x86_64                                         |
 | **Original boot firmware** | AWARD BIOS                                     |
 | **Intel ME/AMD PSP**       | Present. Can be disabled                       |
