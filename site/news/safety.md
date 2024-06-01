@@ -24,7 +24,7 @@ users have been bricking their machines, on the following mainboards:
 
 * Sandybridge platforms (e.g. ThinkPad X220, T420)
 * Ivybridge platforms (e.g. ThinkPad X230, T430)
-* Haswell platforms (e.g. ThinkPad T440p, W541)
+* Haswell platforms (e.g. ThinkPad T440p, W541, OptiPlex 9020)
 
 Why?
 ----
