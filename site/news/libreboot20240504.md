@@ -454,3 +454,44 @@ fault or by virtue of the product; the eDP-based targets are therefore a liabili
 to the Libreboot project.
 
 That is all.
+
+Errata
+======
+
+See: <https://codeberg.org/libreboot/lbmk/issues/216>
+
+This bug has been *fixed* in lbmk.git, and the fix will be included in
+the next release, but it wasn't caught in the 20240504 release.
+
+The bug is quite serious, and it was previously decided that documentation
+should be written warning about it (in docs/install/). The bug was *only*
+triggered on Intel Sandybridge hardware (e.g. ThinkPad X220) and was never
+reported on other boards, but there's no way to fully know; what is known
+is that the offending patch that caused the bug has been *removed*; namely,
+xHCI GRUB patches, which are now only provided on Haswell and Broadwell
+hardware (where the bug has not occured). **Therefore, we know that the
+bug will no longer occur.**
+
+The next release will exclude xHCI support on machines that don't need it,
+and a mitigation is in place that makes SeaBIOS the primary payload, to prevent
+effective bricks in the future; the bug was in GRUB, but if SeaBIOS is the
+first payload then the machine remains bootable even if a similar bug occurs.
+
+It is now the default behaviour, in the next release, that certain images
+contain a bootorder file in CBFS, making SeaBIOS try GRUB first, but you can
+still press ESC to access the SeaBIOS boot menu if you want to directly boot
+an OS from that. This, and the other change mentioned above, will guarantee
+stability. GRUB is *no longer* the primary payload, on any mainboard.
+
+However, it was later decided to put this release in the `testing`
+directory instead; it was initially designated as a stable release.
+
+All ROM images for the 20240504 release have been *removed* from rsync,
+but the source tarball remains in place.
+
+You are advised to use the 20240225 release, or the next release
+after 20240504.
+
+A new [audit](audit5.md) has been conducted, marked complete as of 9 June 2024,
+fixing this and many issues; a new *true* stable release will be made available
+some time in June 2024.
