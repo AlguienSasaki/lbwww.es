@@ -21,12 +21,6 @@ how to submit patches, and it describes the Libreboot project infrastructure.
 You may also benefit from *assimilating* all knowledge contained in
 the *[lbmk maintenance manual](../docs/maintain/).*
 
-U-Boot test/lib/strlcat.c
-=========================
-
-Delete this file, in U-Boot trees, before the next release
-after Libreboot 20231106.
-
 Rockchip RK3588 SoCs in coreboot
 ================================
 
@@ -122,11 +116,9 @@ Boards
 * HP Revolve 810 G1
 * HP EliteBook Folio 9480m
 * HP EliteBook 8770w
-* HP EliteBook 820 G2
 * HP EliteBook 840 G2 (not in coreboot yet, but should be similar to 820 G2)
 * HP Z220 CMI and SFF mainboards
 * Dell OptiPlex 7010 and 9010
-* Dell OptiPlex 7020 and 9020
 * MSI PRO Z690-A mainboard (supported by Dasharo, not sure about coreboot) -
   also, Dasharo supports several more mainboards that aren't in coreboot
   proper.
@@ -773,62 +765,6 @@ specs for it, are provided for in the above linked issue page.
 Several more high-end HP EliteBook machines use MXM graphics modules,
 e.g. HP EliteBook 8560w.
 
-MXM works! TODO: merge
-----------------------
-
-Riku got it working. See:
-
-* SeaBIOS patch 1: <https://mail.coreboot.org/hyperkitty/list/seabios@seabios.org/thread/ZHVOSUEYILGFNBKWOFNSDQ7PGCADSMU4/>
-* SeaBIOS patch 2: <https://mail.coreboot.org/hyperkitty/list/seabios@seabios.org/thread/LK2ZHY6BSKRBUCZ5LMND5IBW3HGLZTMV/>
-* mxmdump util: <https://codeberg.org/Riku_V/mxmdump/>
-* int tool: <https://codeberg.org/Riku_V/int>
-
-the "int" tool can be used to determine what mxm spec you have, and the mxmdump
-util can be used to dump the mxm config. on systems where there is no i2c rom,
-the system firmware (in this case libreboot) must provide it via int15h
-interrupt. riku's seabios patches implement this.
-
-TODO: Document this properly, if not already documented.
-
-John lane GRUB patches
-======================
-
-The GRUB project itself has started merging some of this functionality, for
-things like detached LUKS headers. We had these for GRUB in Libreboot 2016
-releases, but they were since removed.
-
-Current functionality works on most setups, and we merge [Argon2
-KDF support](../news/argon2.md) into GRUB, out-of-tree.
-
-See: <https://grub.johnlane.ie/>
-
-Interesting, the Arch Linux AUR has several of these patches for its
-GRUB 2.06 package. See:
-<https://aur.archlinux.org/packages/grub-luks-keyfile>
-
-These could be re-based for GRUB 2.12, which is what Libreboot uses.
-
-Already merged
---------------
-
-GRUB 2.12 has these patches already, so we don't need to do anything. The
-above pertains to GRUB 2.06, but they were upstreamed for 2.12. That being
-said, we do have some users who like 2.06 for some reason!
-
-Document how to use
--------------------
-
-John lane's site even has instructions for how to use detached LUKS headers
-in GRUB.
-
-Maybe we could do something for it in automation too. When scanning for
-grub.cfg files, at the stage where cryptomount -a is executed, we could
-also check for LUKS header files and handle them if found. Yes, we could make
-the default Libreboot setup work out of the box, with detached LUKS headers.
-We already have this functionality, as described above, but we need to
-configure it. Read John Lane's site for more information, and the upstream
-GRUB documentation will also cover it.
-
 lbmk-c: clustered builds
 ========================
 
@@ -1073,133 +1009,6 @@ some boards, though it's seldom-used and not very universally supported.
 It might be useful on some machines. The research here (by Angel Pons) may be
 transferrable to other platforms.
 
-Better dependencies handling
-============================
-
-Lbmk supports handling dependencies, in such a way that a required program is
-automatically downloaded *after* the main one. For example, GRUB requires gnulib.
-
-The problem is that it doesn't work in reverse. For example, when you download
-gnulib, it's actually saved under `src/grub/gnulib`, and `src/grub/` is the
-directory created when downloading GRUB.
-
-Illustration:
-
-```
-./update trees -f gnulib
-./update trees -f grub
-```
-
-This will first download gnulib, but then `src/grub` now exists, and the second
-command to download GRUB will fail, because that directory now exists, but does
-not have anything in it. Some checks for GRUB may then pass, thinking that
-GRUB has already been downloaded, when it hasn't.
-
-Observe:
-
-```
-no u lbmk$ git clone . test
-Cloning into 'test'...
-cdone.
- dno u lbmk$ c dtest
-bash: c: command not found
-no u lbmk$ l^C
-no u lbmk$ cd test
-no u test$ ls
-build	COPYING  projectname  script  util
-config	include  README.md    update  vendor
-no u test$ ./update trees -f gnulib
-Cloning into '/home/leah/Project/lbdev/lbmk/test/tmp/gitclone'...
-remote: Counting objects: 281482, done.
-remote: Compressing objects: 100% (33030/33030), done.
-remote: Total 281482 (delta 248520), reused 281273 (delta 248367)
-Receiving objects: 100% (281482/281482), 69.48 MiB | 7.98 MiB/s, done.
-Resolving deltas: 100% (248520/248520), done.
-HEAD is now at 9f48fb992a filevercmp: fix several unexpected results
-no u test$ ./update trees -f grub
-src/grub already exists, so skipping download
-src/grub/gnulib already exists, so skipping download
-```
-
-In this case, GRUB will now *always* fail to download, until the `src/grub`
-directory is deleted, which would delete gnulib.
-
-The following could be done:
-
-* Check whether a given location for a download is within a location used by
- another project, and refuse to do anything if that's the case (exit with error)
- OR:
-* Automatically download that other program first
-
-It's probably cleaner to go with the first one. Prevent a program downloaded by
-lbmk from being included within another. If another such program is needed
-inside another, for example as a submodule, then the program could be modified.
-For example, modify GRUB to use the location of `../gnulib` as the directory
-for gnulib, where you would then have `src/grub` and `src/gnulib` - this can
-already be done, simply by configuring everything in `config/git/`, but lbmk
-currently does not check this.
-
-For comparison, here's what happens if you download GRUB (which defines gnulib
-as a dependency):
-
-```
-no u test$ rm -Rf src/grub
-no u test$ ./update trees -f grub
-Cloning into '/home/leah/Project/lbdev/lbmk/test/tmp/gitclone'...
-remote: Counting objects: 101717, done.
-remote: Compressing objects: 100% (23307/23307), done.
-remote: Total 101717 (delta 76079), reused 101552 (delta 75971)
-Receiving objects: 100% (101717/101717), 71.90 MiB | 12.85 MiB/s, done.
-Resolving deltas: 100% (76079/76079), done.
-HEAD is now at 64e3cee72 gpt: Add compile time asserts for guid and gpt_partentry sizes
-Applying: mitigate grub's missing characters for borders/arrow characters
-Applying: say the name libreboot, in the grub menu
-Applying: Add CC0 license
-Applying: Define GRUB_UINT32_MAX
-Applying: Add Argon2 algorithm
-Applying: Error on missing Argon2id parameters
-Applying: Compile with Argon2id support
-Applying: Make grub-install work with Argon2
-Applying: at_keyboard coreboot: force scancodes2+translate
-Applying: keylayouts: don't print "Unknown key" message
-Applying: don't print missing prefix errors on the screen
-Applying: don't print error if module not found
-Applying: don't print empty error messages
-Cloning into '/home/leah/Project/lbdev/lbmk/test/tmp/gitclone'...
-remote: Counting objects: 281482, done.
-remote: Compressing objects: 100% (33030/33030), done.
-remote: Total 281482 (delta 248520), reused 281273 (delta 248367)
-Receiving objects: 100% (281482/281482), 69.48 MiB | 9.55 MiB/s, done.
-Resolving deltas: 100% (248520/248520), done.
-HEAD is now at 9f48fb992a filevercmp: fix several unexpected results
-no u test$ ls src/grub
-acinclude.m4	BUGS	      docs	  INSTALL	     po        TODO
-asm-tests	conf	      geninit.sh  linguas.sh	     README    unicode
-AUTHORS		config.h.in   gentpl.py   MAINTAINERS	     SECURITY  util
-autogen.sh	configure.ac  gnulib	  Makefile.am	     tests
-bootstrap	COPYING       grub-core   Makefile.util.def  THANKS
-bootstrap.conf	coreboot.cfg  include	  NEWS		     themes
-no u test$ ls src/grub/gnulib
-build-aux	 COPYING	 gnulib-tool.py.TODO  posix-modules
-cfg.mk		 DEPENDENCIES	 lib		      pygnulib
-ChangeLog	 doc		 m4		      README
-check-AC_LIBOBJ  etc		 Makefile	      STATUS-libposix
-check-copyright  examples	 modules	      tests
-check-module	 gnulib-tool	 MODULES.html.sh      top
-config		 gnulib-tool.py  NEWS		      users.txt
-```
-
-A more general audit is in order, overhauling the entire dependencies
-infrastracture, within lbmk. A lot of the sanity checking is done manually, just
-by configuring everything sensibly and knowing what pitfalls to avoid.
-
-Libreboot is essentially no different to apt-get, in so far an lbmk is
-concerned. The *apk* package manager in Alpine Linux is the closest to lbmk
-mentality; their package manager is highly advanced, but written with a very
-minimalist and efficient design. Libreboot's handling of packages and
-dependencies could be re-modelled
-using [apk-tools](https://git.alpinelinux.org/apk-tools/) as inspiration.
-
 Detect module changes
 =====================
 
@@ -1317,41 +1126,6 @@ themselves. hashes for the files extracted could also be defined, mostly as a
 way to ensure that they were correctly extracted, though it could default back
 to current behaviour (only check the main file) if individual checksums for
 inside files are not defined.
-
-Handle submodules manually
-==========================
-
-Lbmk automatically downloads git submodules (all of them) on a given downloaded
-repository, when a `.gitmodules` file is present. This functionality should
-be *retained*, but submodules are also not to be relied upon for redundancy.
-
-In some cases, especially critical projects like coreboot, these submodules
-should be defined by lbmk `config/git/` files instead, with redundant
-repositories, and the host projects (e.g. coreboot) modified to use these,
-instead of gitmodules.
-
-Git's own submodules logic doesn't handle redundancy really well and it's not
-very fault tolerant either. Libreboot's lbmk, while less featureful, is
-designed for redundancy.
-
-What if someone is compiling a given revision of lbmk in 10 years from now?
-Some of those repository links might have died, or those projects might have
-experienced a hostile takeover and been overwritten. Anything can happen.
-If there are backup repository links already baked into lbmk configs, it offers
-some redundancy in the future.
-
-It also offers some redundancy now, in the present, if a given git server goes
-offline for a break period of time. Libreboot's design is quite simple, and done
-with this philosophy in mind, that everything should always have a backup.
-
-Auto-update repositories
-------------------------
-
-Already written elsewhere on this TODO page is to automatically decide which
-repositories need updating, when running any part of lbmk. This is thought of
-with the same mentality in mind, always thinking about what someone will be
-running in the future. You can't predict what will happen, so you have to be
-prepared. Users are unpredictable.
 
 Reproducible builds
 ===================
@@ -1636,14 +1410,6 @@ could speed up the downloads a lot, and also speed up the builds a bit (by
 reducing the amount of deltas that need to be resolved when cloning).
 
 In particular, Git Work Trees are a useful feature that we might use in lbmk.
-
-Scan submodules for backups
----------------------------
-
-Where a project does use submodules, it's possible that we may already define
-how to download it, with redundant links. We could scan for this, by parsing
-the `.gitmodules` file within a project and comparing to what we have
-under `config/git/`.
 
 Chinese users can't run lbmk
 ==========================
@@ -2024,20 +1790,6 @@ Apparently, this can be upgraded to TPM 2.0. Riku linked this on IRC:
 And also this, straight from the horse's mouth:
 
 <https://www.infineon.com/cms/en/product/security-smart-card-solutions/optiga-embedded-security-solutions/optiga-tpm/slb-9660xt1.2/>
-
-GRUB nvme support
-=================
-
-GRUB doesn't support nvme on bare metal.
-
-SeaBIOS does.
-
-Libreboot is getting a lot of new ports, and some of them can use nvme
-drives. We need nvme support in GRUB.
-
-TODO: adapt SeaBIOS nvme code for GRUB. Also submit upstream.
-
-GRUB can do nvme but only if it's supported by the (UEFI) vendor firmware.
 
 4th SSD on T440p
 ================
