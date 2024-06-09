@@ -39,7 +39,7 @@ Your computer is *your property* to use as you wish. Free Software protects you,
 by ensuring that you always have control of the machine.
 
 *This* new release, Libreboot 20240504, released today 4 May 2024, is
-a new *stable* release of Libreboot. The previous stable release was
+a major new release of Libreboot. The previous stable release was
 Libreboot 20230625 released on 25 June 2023, and the previous *testing* release
 was Libreboot 20240225 released on 25 February 2024. Extreme care has been
 taken with this release, but it adds a host of new features such as USB3
@@ -47,7 +47,7 @@ support in the GRUB payload, and a slew of mainboard fixes. *Read on* to learn
 more.
 
 The main purpose of this release has been to fix bugs. A lot more work will now
-go into Libreboot for a planned *testing* release in the summer of 2024.
+go into Libreboot for another release in the summer of 2024.
 
 Hardware supported in this release
 ==================================
@@ -140,10 +140,6 @@ is still broken and therefore disabled, but pressing the power button works.
 
 Work done since Libreboot 20230625
 ============================
-
-Today's release, Libreboot 20240504, is a stable release. The *previous* stable release
-was Libreboot 20230625, but there have been a number of *testing* releases
-between that and today's release.
 
 To know the full set of differences between Libreboot 20230625
 and Libreboot 20240405, first you must read the changelogs of those interim
