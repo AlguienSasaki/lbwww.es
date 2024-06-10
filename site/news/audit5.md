@@ -83,7 +83,7 @@ Libreboot [from source via lbmk.git](../docs/build/).
 
 Not all of these are actually audit-related, but are still nice changes, and
 will be included in the release changelog, for the next release
-after Libreboot 20231106. The changes are, from newest to oldest:
+after Libreboot 20240504. The changes are, from newest to oldest:
 
 NOTE: The changes *per category* are in order from latest on top, and earliest
 changes on the bottom, but if you're reading top down (in this article), please
