@@ -17,80 +17,31 @@ what the Libreboot releases are built with. The *lbmk* build system essentially
 implements a *coreboot distro*, the same way you might think of a Linux
 distribution.
 
-Extensive auditing has been performed on that build system (lbmk) since
-last month's release, the Libreboot 20240504 release. The purpose
-of these audits is to fix bugs, reduce code bloat and generally improve
-efficiency, adding new features and refining everything in the most careful
-and conservative way possible, with a focus on providing *clean code*. Remember
-always, these three magic words: code equals bugs.
+Extensive auditing has been performed on lbmk, since the Libreboot 20240504
+release. These audits fix bugs, reduce code bloat and generally improve the
+efficiency of lbmk, adding and removing features in a careful, conservative
+way, with a focus on *clean code*. Remember the magic words: code equals bugs.
 
-This article pertains to the current Libreboot (lbmk) revision at this time
-of writing, which is `2ee186aee3aa3ab9619ed9549bd3b82909dcfbd0` from 9
-June 2024. A *release* is also being considered for some time in June
-of 2024, based on this audit and new features that are planned, plus new
-boards. The focus *now*, post-audit, shall be on hardware testing; lots of new
-board ports are planned for the next Libreboot release.
+This article covers changes from Libreboot 20240504, up to
+revision `2ee186aee3aa3ab9619ed9549bd3b82909dcfbd0` from 9 June 2024.
 
-There are *211* changes in this audit, relative to Libreboot 20250504 from which
-the audit immediately started. Vast improvements have been made to the build
-system in terms of reliability, stability and safety; there are many changes,
-which will be listed in the following sections.
-
-This is Libreboot Build System Audit **5**. The previous audit can be read in
-the article for [Libreboot Build System Audit 4](audit4.md).
-
-All of the following changes, which you are about to learn of, will be included
-in the next Libreboot release (after Libreboot 20240504).
+You can read about the *previous* audit in the article
+for [Libreboot Build System Audit 4](audit4.md).
 
 Modest code size reduction
 --------------------------
 
-Code size (of lbmk) is counted by running David A. Wheeler's *sloccount*
-utility, with the following command: `sloccount build script/ include/`. This
-counts the number of *source lines* and, based on this, the code size has been
-reduced by *198 lines*.
+There are 1482 lines of shell script in the build system, versus 1680 in the
+Libreboot 20240504 release. Libreboot's build system is written purely in
+POSIX sh; not BASH, not KSH, not ZSH, jush sh!
 
-The build system is vastly more efficient, with the shell scripts now counting
-at *1482 lines* of shell script, down from *1680 lines* in Libreboot 20240504.
-This represents an approximate *12% reduction* in code size.
-
-Shell scripts?? Libreboot's build system is implemented *entirely* with POSIX
-compliant shell scripts. Not BASH, not ZSH, not KSH, just good old `sh`. You
-can read more about it in the [lbmk maintenance manual](../docs/maintain/).
-
-Libreboot's build system, lbmk, is essentially a *source-based package manager*
-which downloads, patches and builds various sources, to then automatically
-provide binary images for easy installation. This is how Libreboot releases are
-made, so it goes without saying: lbmk is the beating heart of Libreboot.
-
-Despite this reduction by 198 lines, there are *many* new features. Line for
-line, lbmk is now much more powerful. NOTE: there are changes between *audit 4*
-and Libreboot 20240504, but those are covered in the release announcements for
-Libreboot 20240126, 20240225 and 20240504.
-
-That code reduction may seem impressive, or maybe small; now you will see all
-of the changes that yielded this result. It's a lot!
+This is a difference of 198 lines, or a 12% reduction. Despite the reduction,
+numerous features have been added and a large number of bugs were fixed.
 
 Summarised list of changes
 ==========================
 
-Together, all of these changes are substantial, but the most interesting and
-useful changes are highlighted in **bold**.
-
-These and subsequent changes will be present in the *next Libreboot release*,
-after Libreboot 20240504, but they can already be obtained now, if you compile
-Libreboot [from source via lbmk.git](../docs/build/).
-
-Not all of these are actually audit-related, but are still nice changes, and
-will be included in the release changelog, for the next release
-after Libreboot 20240504. The changes are, from newest to oldest:
-
-NOTE: The changes *per category* are in order from latest on top, and earliest
-changes on the bottom, but if you're reading top down (in this article), please
-note that the changes between categories are *not* in order.
-
-For the purpose of this article, I've split the changes into different
-categories e.g. bugfixes, general code cleanup, features and so on.
+Changes are in order per category, from newest to oldest:
 
 Feature changes
 ---------------
