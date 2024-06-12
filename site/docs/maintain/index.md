@@ -138,12 +138,6 @@ The files under `bin/` are provided in regular Libreboot releases.
 **These** are the ROM images that you should flash. Do *not* flash the ROM
 images contained under `elf/`!
 
-cbutils/
----------------
-
-The build system compiles `cbfstool` and `ifdtool`, from coreboot, and then
-places the executables here for use on coreboot ROM images.
-
 ec/
 ---------------
 
@@ -172,6 +166,10 @@ lbmk in your own custom coreboot ROM (that you didn't build with lbmk).
 
 This is only used by the build system, but these images are *not* provided in
 releases (only the images under `bin/` are provided).
+
+As of Libreboot 20240612, the `elf/` directory must be used by default for all
+builds, in an effort to make exclusive use of *out-of-source builds*. As such,
+the `cbutils` directory is no longer used.
 
 mrc/
 ---------------
@@ -580,6 +578,7 @@ as:
 * `release="n"` (example entry)
 * `xtree="default"` (example entry)
 * `tree_depend="default"` (example entry)
+* `grubtree="nvme" (example entry)`
 
 The `tree` value refers to `config/coreboot/TREE`; in other words, a given
 target could specify a name other than its own as the tree; it would then
@@ -642,6 +641,9 @@ a given board; two trees may use the same crossgcc as each other.
 
 The `tree_depend` option means that a given tree needs another tree, defined
 by this variable, to also be present.
+
+The `grubtree` option specifies which GRUB tree to use. If unset, it defers to
+the `default` GRUB tree.
 
 ### config/coreboot/BOARDNAME/config/
 
@@ -749,18 +751,18 @@ of their own; for example, `config/grub/` exists.
 Multiple files exist here, and they are *concatenated* in a temporary file by
 lbmk, which is then scanned to find information about projects.
 
-config/grub/
+GRUB config
 ---------------
 
-### config/grub/background
+### config/data/grub/background
 
 Splash screen images applied duing startup when using the GRUB payload.
 
-### config/grub/background/background1024x768.png
+### config/data/grub/background/background1024x768.png
 
 Used on ThinkPad X60 and T60.
 
-### config/grub/background/background1280x800.png
+### config/data/grub/background/background1280x800.png
 
 Used on all other machines, besides X60 and T60 thinkpads.
 
@@ -770,11 +772,11 @@ example, `config/coreboot/x60/target.cfg` specifies this:
 
 	grub_background="background1024x768.png"
 
-### config/grub/background/COPYING
+### config/data/grub/background/COPYING
 
 Licensing info for GRUB bootsplash images.
 
-### config/grub/config/
+### config/grub/TREE/config/
 
 GRUB configuration files.
 
@@ -786,7 +788,7 @@ Author info for GRUB configuration files.
 
 Licensing info for GRUB configuration files.
 
-### config/grub/config/grub.cfg
+### config/grub/TREE/config/grub.cfg
 
 This is a configuration file. It is used to program GRUB's shell.
 
@@ -800,7 +802,7 @@ A `grubtest.cfg` can be inserted into CBFS, but it will not override the
 default `grub.cfg` (either in CBFS or on memdisk); however, the one in memdisk
 will provide a menuentry for switching to this, if available.
 
-### config/grub/config/grub\_memdisk.cfg
+### config/data/grub/config/memdisk.cfg
 
 This GRUB configuration checks whether `grub.cfg` exists in CBFS and switches
 to that first (not provided by default) or, if one is not available in CBFS,
@@ -810,12 +812,12 @@ The GRUB memdisk is a file system within `grub.elf`, itself stored within the
 coreboot file system named *CBFS*, which is part of the coreboot ROM image on
 every coreboot target.
 
-### config/grub/keymap/
+### config/data/grub/keymap/
 
 Keymap files used by GRUB. They can alter the character set corresponding to
 inputted scancodes.
 
-### config/grub/keymap/\*.gkb
+### config/data/grub/keymap/\*.gkb
 
 The keymap files themselves. These are inserted into the GRUB memdisk, and
 the `grub.cfg` file can specify which one is to be used.
@@ -824,7 +826,7 @@ These files are binary-encoded, defining which characters correspond to which
 scancodes. It is handled by `grub-core/commands/keylayouts.c` in the GRUB source
 code.
 
-### config/grub/modules.list
+### config/grub/TREE/modules.list
 
 This defines which modules are inserted into `grub.elf`. These modules can be
 anything from file systems, small applications/utilities, launchers (e.g.
@@ -989,6 +991,56 @@ but `lbmk` injects the payload itself and doesn't check for this yet.
 Another interesting config option is `CONFIG_POSITION_INDEPENDENT` for ARM
 boards, which has been so far enabled in the ones `lbmk` supports, just to be
 safe.
+
+config/submodule
+----------------
+
+In here you can find submodule configurations for projects. It works for both
+single- and multi-tree projects. Use the existing examples as reference.
+
+Files, in each directory:
+
+* `module.list` lists paths (files and directories) for given modules, which
+  can be files(via URL) or Git repositories, or both.
+* NAME/module.cfg
+
+NAME is the file/directory name for the module, with everything up to the
+final forward slash removed. E.g. foo/bar/thing.zip would be thing.zip as
+NAME.
+
+In `module.cfg` there can be either, file:
+
+```
+subfile="url"
+subfile_bkup="url"
+subhash="sha512sum for file"
+```
+
+or, git repository:
+
+```
+subrepo="url"
+subrepo_bkup="url"
+subhash="sha1 git commit id"
+```
+
+You must only use `subfile` or `subrepo`, not both, and there must be a backup
+URL. The build system intentionally *avoids* using Git's actual submodules
+feature, instead opting to download such repositories manually, because the
+official submodules feature doesn't have very good redundancy.
+
+Additionally, a `patches` directory can be included alongside `module.cfg`,
+which can be used to patch the submodule (only supported for Git repositories
+because files are not extracted, only placed at their configured destination).
+
+The destination path in `module.list` is relative to the location of the main
+Git repository under which it is placed.
+
+config/data/PROJECT
+-------------------
+
+Random configuration data provided on a per-project basis. Complements
+the `config/PROJECT` directory.
 
 U-Boot build system
 -------------------
