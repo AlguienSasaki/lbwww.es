@@ -243,7 +243,8 @@ Neutered ME required on these targets: `t420_8mb`, `t420s_8mb`, `t430_12mb`,
 `w541_12mb`, `w541mrc_12mb`, `x220_8mb`, `x230_12mb`, `x230_16mb`,
 `x230edp_12mb`, `x230t_12mb`, `x230t_16mb`, `hp8200sff`, `hp2560p_8mb`,
 `hp2570p_16mb`, `hp8300usdt_16mb`, `hp2170p_16mb`, `hp9470m_16mb`,
-`hp820g2_12mb` and `t1650_12mb`.
+`hp820g2_12mb`, `t1650_12mb` and the OptiPlex 9020 ports, also
+Sandybridge/Ivybridge/Haswell Dell Latitude.
 
 As stated, Libreboot provides this in a state where the ME is no longer a
 threat to security. It initialises itself, but then does nothing, so it's
