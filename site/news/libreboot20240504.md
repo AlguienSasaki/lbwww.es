@@ -2,6 +2,10 @@
 % Leah Rowe
 % 4 May 2024
 
+**Do not use the 20240504 release. This changelog is still provided as
+reference, but there were problems with this release. Please instead use
+the [Libreboot 20240612 release](libreboot20240612.md).**
+
 Introduction
 ============
 

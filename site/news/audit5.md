@@ -2,6 +2,9 @@
 % Leah Rowe
 % 9 June 2024
 
+**A new release is now available, with these changes. Learn more by reading
+about the [Libreboot 20240612 release](libreboot20240612.md).**
+
 Introduction
 ============
 

@@ -242,7 +242,8 @@ This `bootorder` file has the following contents:
 ```
 
 You can add it yourself if your image doesn't have it. With this, SeaBIOS
-only loads GRUB first.
+only loads GRUB first. You can still put a GRUB config in CBFS to override
+the default one, as of Libreboot 20240612.
 
 NOTE: Before disabling the boot menu, make sure GRUB works. Access it using
 the `bootorder` file and/or press ESC in the SeaBIOS menu. Then disable the
