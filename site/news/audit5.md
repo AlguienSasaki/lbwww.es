@@ -128,15 +128,10 @@ Feature changes
   robust these days, pretty much booting anything automatically, but you used
   to have to (regularly) use a `libreboot_grub.cfg` file to override the default
   one provided by your distro. This legacy cruft has been removed, entirely!
-* Import the `nuke()` function from Canoeboot; even though Libreboot does not
-  deblob (that's what Canoeboot is for), it still needs to delete certain files
-  from time to time, and this function does a very efficient job of that.
-  This is used to delete a poorly licensed source file from U-Boot,
-  namely `test/lib/strlcat.c` (the license name has a typo in it which makes
-  the file technically non-free or otherwise tainted) - that file was already
-  deleted before, but the deletion was hardcoded, so now it is deleted
-  systematically, and it is now possible to add new deletions without modifying
-  more code in lbmk.
+* Added the `nuke()` function to delete files systematically, based on the
+  presence of a `nuke.list` file which contains files/directory paths relative
+  to the root directory of a given Git repository. This is used to delete a
+  poorly licensed source file in U-Boot (strlcat.c).
 * **T440p/W541 laptops: Enable NVMe SSDs in `grub_scan_disk`**; an e-key adapter
   can be used in the WLAN slot, to add an NVMe SSD. Even though throughput
   is limited by the x1 PCI-E width, it's still a viable upgrade as it offers
@@ -418,7 +413,6 @@ The changes are, from newest to earliest:
   a new Git history when you run it for the first time.
 * Main build script: define `xp` as a global variable, to prevent it from
   being lost between functions.
-* Fixed missing deletion of strlcat.c in U-Boot sources
 * script/roms: Create full release tarball name, when generating releases.
 * Main build script: exit (with error status) if not running directly from
   the root of the lbmk work directory.
@@ -513,10 +507,6 @@ where possible and so on:
   the `main` function, and then `main` was cleaned up significantly.
 * Main build script: don't make `script_path` a global variable; this allowed
   a reduction in code size by precisely *one line of code*.
-* Made certain variables generic (lbmk and LBMK variables are now xbmk
-  and XBMK respectively). The same change has been made in Canoeboot; this
-  single change makes merging patches between Libreboot/Canoeboot much easier,
-  by reducing the number of merge conflicts during `git cherry-pick`.
 * Main build script: merged the functionality of function `check_git` into
   the `main` function, then deleted function `check_git` (which was in
   the file include/option.sh).
