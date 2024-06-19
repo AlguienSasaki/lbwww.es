@@ -330,8 +330,8 @@ Intel/x86
 ### Intel ME:
 
 Нейтралізований ME потрібен на цих цілях: `t420_8mb`, `t420s_8mb`, `t430_12mb`,
-`t440p_12mb`, `t440pmrc_12mb`, `t520_8mb`, `t530_12mb`, `w530_12mb`,
-`w541_12mb`, `w541mrc_12mb`, `x220_8mb`, `x230_12mb`, `x230_16mb`,
+`t440plibremrc_12mb`, `t520_8mb`, `t530_12mb`, `w530_12mb`,
+`w541_12mb`, `x220_8mb`, `x230_12mb`, `x230_16mb`,
 `x230edp_12mb`, `x230t_12mb`, `x230t_16mb`, `hp8200sff_8mb`, `hp2560p_8mb`,
 `hp2570p_16mb`, `hp2170p_16mb`, `hp9470m_16mb`, `hp820g2_12mb`, `t1650_12mb` та
 Dell OptiPlex 9020, Sandybridge/Ivybridge/Haswell Dell Latitude.

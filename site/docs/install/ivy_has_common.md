@@ -86,7 +86,7 @@ In order to inject the necessary files into a rom image, run the script from the
 If you only wish to flash a release rom then the process of injecting the necessary files is quite simple.
 Run the injection script pointing to the release archive you downloaded:
 
-	./vendor inject /path/to/libreboot-20230319-18-g9f76c92_t440pmrc_12mb.tar.xz
+	./vendor inject libreboot-RELEASE_targetname.tar.xz
 
 The script can automatically detect the board as long as you do not change the file name.
 You can then find flash-ready ROMs in `/bin/release/`
@@ -136,14 +136,31 @@ You'll note the small size of the Intel ME, e.g. 84KB on sandybridge platforms.
 This is because lbmk *automatically* neuters it, disabling it during
 early boot. This is done using `me_cleaner`, which lbmk imports.
 
+NOTE: the MAC changer makes use of `nvmutil`, which you can read more about in
+the [nvmutil documentation](nvmutil.md).
+
 Errata
 ======
 
-**NOTE: Haswell machines come with `mrc.bin` or without, depending on the
-ROM image configuration. These ROM configs have `mrc.bin`: `t440pmrc_12mb`
-and `w541mrc_12mb`. These ROM configs have libre MRC: `t440p_12mb`
-and `w541_12mb` - it is critical that you choose the right one, when using
-the `-b` flag in the `./vendor inject` command. For example, if you
-used `-b t440p_12mb` on a ROM image that actually corresponds
-to `t440pmrc_12mb`, then the required `mrc.bin` file would not be added
-and that ROM would not boot when flashed.**
+NOTE: As of Libreboot releases from May 2024 onward, the Intel MRC is no longer
+included for Haswell; MRC is a blob for raminit, but we now provide libre
+raminit. The following targets no longer exist in the build system:
+
+* `t440pmrc_12mb` (use `t440plibremrc_12mb` instead)
+* `t440pbmrc_12mb` (use `t440plibremrc_12mb` instead)
+* `w541mrc_12mb` (use `w541_12mb` instead)
+* `w541bmrc_12mb` (use `w541_12mb` instead)
+* `dell9020sff_12mb` (use `dell9020sff_nri_12mb` instead)
+* `dell9020sffbmrc` (use `dell9020sff_nri_12mb` instead)
+* `dell9020mt_12mb` (use `dell9020mt_nri_12mb` instead)
+* `dell9020mtbmrc` (use `dell9020mt_nri_12mb` instead)
+
+This is written as errata because some users may still be using older release
+images but on the newer build system from May 2024 onward; you must use the
+Libreboot 20240225 release if you want to inject MRC and so on, for these older
+targets.
+
+Libreboot's [binary blob reduction policy](../../news/policy.md) is very strict,
+and states: if a blob can be avoided, it must be avoided. Therefore, the MRC
+is removed on Haswell and Libreboot will only use the libre raminit (called
+NRI, short for Native Ram Initialisation).

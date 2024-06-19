@@ -40,29 +40,20 @@ In order to inject the necessary files into a rom image, run the script from the
 If you only wish to flash a release rom then the process of injecting the necessary files is quite simple.
 Run the injection script pointing to the release archive you downloaded:
 
-	./vendor inject /path/to/libreboot-20230319-18-g9f76c92_t440_12mb.tar.xz
+	./vendor inject /path/to/libreboot-RELEASE_targetname.tar.xz
 
 The script can automatically detect the board as long as you do not change the file name.
 You can then find flash-ready ROMs in `/bin/release/`
 
 Alternatively, you may patch only a single rom file.
-For example (libre replacement of `mrc.bin`):
+For example:
 
-	./vendor inject -r t440p_libreboot.rom -b t440p_12mb
+	./vendor inject -r t440p_libreboot.rom -b t440plibremrc_12mb
 
 Optionally, you can use this script to modify the mac address of the rom with the `-m` flag.
 For example:
 
-	./vendor inject -r t440p_libreboot.rom -b t440p_12mb -m 00:f6:f0:40:71:fd
-
-If you're flashing a ROM that needs vendor file `mrc.bin`, you would do one of these
-instead, for example:
-
-	./vendor inject -r t440p_libreboot.rom -b t440pmrc_12mb
-
-or (inserting a different MAC address)
-
-	./vendor inject -r t440p_libreboot.rom -b t440pmrc_12mb -m 00:f6:f0:40:71:fd
+	./vendor inject -r t440p_libreboot.rom -b t440plibremrc_12mb -m 00:f6:f0:40:71:fd
 
 NOTE: this makes use of `nvmutil`, which you can read more about in
 the [nvmutil documentation](nvmutil.md).
@@ -107,3 +98,29 @@ You should now be able to see the two flash chips near the RAM.\
 <img tabindex=1 src="https://av.libreboot.org/board/t440p/t440p_chipLocation.jpg" /><span class="f"><img src="https://av.libreboot.org/board/t440p/t440p_chipLocation_orig.jpg" /></span>
 
 You can now proceed to [flashing](/docs/install/spi.html) this machine.
+
+Errata
+======
+
+NOTE: As of Libreboot releases from May 2024 onward, the Intel MRC is no longer
+included for Haswell; MRC is a blob for raminit, but we now provide libre
+raminit. The following targets no longer exist in the build system:
+
+* `t440pmrc_12mb` (use `t440plibremrc_12mb` instead)
+* `t440pbmrc_12mb` (use `t440plibremrc_12mb` instead)
+* `w541mrc_12mb` (use `w541_12mb` instead)
+* `w541bmrc_12mb` (use `w541_12mb` instead)
+* `dell9020sff_12mb` (use `dell9020sff_nri_12mb` instead)
+* `dell9020sffbmrc` (use `dell9020sff_nri_12mb` instead)
+* `dell9020mt_12mb` (use `dell9020mt_nri_12mb` instead)
+* `dell9020mtbmrc` (use `dell9020mt_nri_12mb` instead)
+
+This is written as errata because some users may still be using older release
+images but on the newer build system from May 2024 onward; you must use the
+Libreboot 20240225 release if you want to inject MRC and so on, for these older
+targets.
+
+Libreboot's [binary blob reduction policy](../../news/policy.md) is very strict,
+and states: if a blob can be avoided, it must be avoided. Therefore, the MRC
+is removed on Haswell and Libreboot will only use the libre raminit (called
+NRI, short for Native Ram Initialisation).
