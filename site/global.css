@@ -85,7 +85,7 @@ html, ul, #TOC
 
 @media (min-width:60em)
 {
-	.title-logo{display:none}
+	.title-logo{display:none; background:none;}
 	div.title,h1.title {
 		background:url("https://av.libreboot.org/logo/logo.png") no-repeat;
 		background-size:auto 99%;
