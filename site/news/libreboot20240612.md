@@ -938,3 +938,38 @@ The latest changes are listed first, going all the way down to earlier changes:
 ```
 
 This is 211 changes, since Libreboot 20240504.
+
+Errata
+======
+
+Revision 1
+----------
+
+A bug was found, where booting GRUB (payload) on Haswell ThinkPads with a USB
+device plugged in would sometimes cause GRUB to hang. This was fixed with the
+following patch:
+<https://browse.libreboot.org/lbmk.git/commit/?h=20240612_branch&id=70398439baa0127e62d0a7786e21b7de68f1495d>
+
+This patch is included now, on the release archives.
+
+The following archives have been *replaced*, with ones that include this fix:
+
+* Source archive (now marked `20240612rev1`, not `20240612`)
+* ROM image archives for: T440p, W541, 9020 SFF and 9020 MT. The new archives
+  are marked `20240612rev1`, not `20240612`.
+
+This particular bug was nasty, because some of these machines might have
+internal USB devices plugged in, such as smartcard readers. It would not have
+caused the system to be unusable, because SeaBIOS is the primary payload and
+GRUB (payload) is loaded from that.
+
+If you were affected by this bug, please consider switching to the new images,
+where this has been fixed. The fix was very simple:
+
+Don't load the xHCI module in GRUB, where it is used, immediately upon booting
+GRUB; instead, load it much later on, from `grub.cfg`. This is done, by putting
+it on *install* modules, instead of modules. The *install* modules do not
+auto-load when GRUB starts.
+
+A full investigation is still required, but this workaround fixes the issue as
+far as the user is concerned.
