@@ -48,6 +48,10 @@ code,pre, #TOC, a:hover, img
 	background: #d9d6d6;
 	border-radius:0.25em;
 }
+header img
+{
+	background: none;
+}
 
 a
 {
