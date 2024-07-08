@@ -34,8 +34,8 @@ h1,h2,h3,h4{font-weight:normal; font-size:2em}
 
 html
 {
-	color: #280b22;
-	background: #f0f0f0;
+	color: #280518;
+	background: #ffe9e9;
 	font-family: sans-serif;
 	line-height: 1.4;
 }
@@ -45,7 +45,7 @@ hr {
 
 code,pre, #TOC, a:hover, img
 {
-	background: #d9d6d6;
+	background: #ead6d6;
 	border-radius:0.25em;
 }
 header img
@@ -55,7 +55,7 @@ header img
 
 a
 {
-	color: #4e324e;
+	color: #3e223e;
 }
 
 img,video,iframe,pre
