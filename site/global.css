@@ -35,7 +35,7 @@ h1,h2,h3,h4{font-weight:normal; font-size:2em}
 html
 {
 	color: #280518;
-	background: #ffe9e9;
+	background: #efe9e9;
 	font-family: sans-serif;
 	line-height: 1.4;
 }
@@ -45,7 +45,7 @@ hr {
 
 code,pre, #TOC, a:hover, img
 {
-	background: #ead6d6;
+	background: #e3d6d6;
 	border-radius:0.25em;
 }
 header img
