@@ -362,7 +362,7 @@ detail the ME's hardware architecture and firmware application modules.
 
 If you're stuck with the ME (non-libreboot system), you might find this
 interesting:
-<http://hardenedlinux.org/firmware/2016/11/17/neutralize_ME_firmware_on_sandybridge_and_ivybridge.html>
+<https://hardenedlinux.github.io/firmware/2016/11/17/neutralize_ME_firmware_on_sandybridge_and_ivybridge.html>
 
 ### Firmware Support Package (FSP) {#fsp}
 
