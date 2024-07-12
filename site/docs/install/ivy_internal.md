@@ -6,6 +6,29 @@ x-toc-enable: true
 **[PLEASE READ THESE INSTRUCTIONS BEFORE INSTALLING](../../news/safety.md),
 OR YOU MIGHT BRICK YOUR MACHINE: [SAFETY PRECAUTIONS](../../news/safety.md)**
 
+Side-note: <https://github.com/gch1p/thinkpad-bios-software-flashing-guide>
+
+Ch1p's own guide also tells you how to do exactly the same thing (same result)
+as this guide, but this guide (from the Libreboot project) was made
+independently, without knowing that ch1p's guide existed at the time. Ch1p,
+aka Evgeny Zinoviev, is the author of the ME Soft Temporary Disable support
+patch in coreboot, that the guide below makes use of. Specifically, this
+coreboot patch:
+
+```
+    commit 833e9bad4762e0dca6c867d3a18dbaf6d5166be8
+    Author: Evgeny Zinoviev <me@ch1p.io>
+    Date:   Thu Nov 21 21:47:31 2019 +0300
+    
+        sb/intel/bd82x6x: Support ME Soft Temporary Disable Mode
+```
+
+Anyway, follow ch1p's guide or this one. Ch1p was on Libreboot IRC and linked
+the above guide, so it has been added here to honour him.
+
+Introduction
+============
+
 External flashing still recommended
 -----------------------------------
 
