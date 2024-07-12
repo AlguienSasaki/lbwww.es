@@ -6,7 +6,15 @@ x-toc-enable: true
 **[PLEASE READ THESE INSTRUCTIONS BEFORE INSTALLING](../../news/safety.md),
 OR YOU MIGHT BRICK YOUR MACHINE: [SAFETY PRECAUTIONS](../../news/safety.md)**
 
-Side-note: <https://github.com/gch1p/thinkpad-bios-software-flashing-guide>
+Ch1p's guide
+============
+
+This page tells you how to flash an ivybridge ThinkPad with Libreboot,
+internally, when it has the Lenovo firmware on it. It was written independently
+of ch1p's original guide, the existence of which was later made clear to the
+Libreboot project, by ch1p himself.
+
+See: <https://github.com/gch1p/thinkpad-bios-software-flashing-guide>
 
 Ch1p's own guide also tells you how to do exactly the same thing (same result)
 as this guide, but this guide (from the Libreboot project) was made
