@@ -653,6 +653,18 @@ chips, but it is hard to find now.  A custom flasher may be made such as
 [flashprog serprog stm32](https://github.com/wosk/stm32-vserprog-lpc) or
 [teensy flasher](https://www.flashprog.org/Teensy_3.1_SPI_%2B_LPC/FWH_Flasher)
 
+TARGET: DELL OptiPlex 7010 and 9010, MT
+---------------------------------------
+
+Coreboot officially only has SFF for the 7010/9010 boards, but the MT
+ones have been studied, and verified to contain the same GPIO configuration
+among other things, compared to T1650; the latter merely has extra wiring
+for ECC.
+
+Simply flash a T1650 image onto one of these machines. We may or may not
+provide this as a separate target (coreboot variant) in a future release,
+but re-using the T1650 image is OK for now.
+
 TARGET: DELL Precision T1650 desktop
 ------------------------------------
 

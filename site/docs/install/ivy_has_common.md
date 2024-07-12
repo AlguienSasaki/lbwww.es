@@ -64,7 +64,8 @@ Libreboot build system:
 * ME firmware: `vendor/*/me.bin` - the `*` can be any given directory. Different ones will
   be used by given boards, but the directory name may not match the board
   target name.
-* SMSC SCH5545 fan control firmware (for Dell T1650): `vendor/t1650/sch5545ec.bin`
+* SMSC SCH5545 fan control firmware (for Dell T1650): `vendor/t1650/sch5545ec.bin` -
+  ditto 9010/7010 MT/SFF optiplex machines.
 * SMSC KBC1126 embedded controller firmware, on HP EliteBooks: `ec/`
 * Intel MRC firmware, provides raminit on HP EliteBook 820 G2
 

@@ -79,7 +79,7 @@ inject scripts to the Heads build system. Libreboot provides these scripts for
 automatically downloading certain firmwares at build time, as and when
 required for a given mainboard. These are provided by the vendor, e.g. SMSC
 SCH5545 Environment Control (EC) firmware used for fan control on Dell
-Precision T1650.
+Precision T1650. (ditto 7010/9010 MT/SFF machines)
 
 Heads has such logic, but it's not as developed as the logic in Libreboot,
 which was originally inspired by the Heads logic and then greatly expanded upon.

@@ -44,7 +44,8 @@ libreboot currently supports the following systems in this release:
 -   [Apple iMac 5,2](imac52.md)
 -   [ASUS KCMA-D8 motherboard](kcma-d8.md)
 -   Dell OptiPlex 7010 **MT** (known to work, using the T1650 ROM, but more
-    research is needed)
+    research is needed) - 9010 also known to work. No GPIO changes, so it should
+    be safe to flash.
 -   [Dell Precision T1650](t1650.md)
 -   [Gigabyte GA-G41M-ES2L motherboard](ga-g41m-es2l.md)
 -   [HP Elite 8200 SFF/MT](hp8200sff.md) (HP 6200 Pro Business probably works too)

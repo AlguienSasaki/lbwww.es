@@ -56,7 +56,8 @@ Introduction
 -   [Apple iMac 5,2](imac52.md)
 -   [ASUS KCMA-D8 主板](kcma-d8.md)
 -   Dell OptiPlex 7010 **MT** (known to work, using the T1650 ROM, but more
-    research is needed)
+    research is needed) - 9010 also works, with no GPIO changes. It should be
+    safe to flash.
 -   [Dell Precision T1650](t1650.md)
 -   [Gigabyte GA-G41M-ES2L 主板](ga-g41m-es2l.md)
 -   [HP Elite 8200 SFF/MT](hp8200sff.md)（HP 6200 Pro Business 多半也能用）
