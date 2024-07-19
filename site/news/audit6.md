@@ -68,6 +68,10 @@ that will be available, in the next Libreboot release.
 Summarised list of changes
 ==========================
 
+The most interesting changes are marked in **bold**. "Interesting" means that
+the change greatly improves the usefulness/reliability of Libreboot, or that it
+affects the user in a profound and noticeable way.
+
 Changes are in order per category, from newest to oldest:
 
 Feature changes
@@ -81,8 +85,8 @@ improve the redundancy of certain operations, and overall reliability in lbmk.
 
 The changes are as follows:
 
-* Put the cache directory location in an environmental variable,
-  named `XBMK_CACHE`. If unset, it defaults to `$PWD/cache`, where PWD is the
+* **Put the cache directory location in an environmental variable,
+  named `XBMK_CACHE`.** If unset, it defaults to `$PWD/cache`, where PWD is the
   current location that the instance of lbmk is running from, otherwise if
   defined, the location is used. This means that the same cached files are
   re-used on the lbmk copy created when running `./update release`, thus
@@ -100,10 +104,10 @@ The changes are as follows:
   adding a payload, because it's a given that then coreboot's own build system
   would have done it. Libreboot will always enable `CONFIG_PAYLOAD_NONE` on
   all official targets, so this feature is only intended for power users.
-* Unified cache file handling for vendor files, and files defined as modules
+* **Unified cache file handling** for vendor files, and files defined as modules
   for specific projects. They are now cached within the same base directory.
-* `script/trees`: Automatically re-download and re-build a given project, when
-  configuration changes, on any file under specific directories in `config/`
+* **`script/trees`: Automatically re-download and re-build a given project, when
+  configuration changes**, on any file under specific directories in `config/`
   pertaining to it; this is done by concatenating the sha512sum hashes for
   each of those files, and then making a sha512sum hash from that. The hash
   is stored, and compared to the current one; if it differs, then you know
@@ -127,7 +131,7 @@ The changes are as follows:
   universally, for vendor files and for submodules files (e.g. crossgcc files).
   This avoids wasting bandwidth when building for multiple coreboot trees, in
   cases where multiple trees share the same URLs for crossgcc tarballs.
-* `include/git.sh`: Cache all git downloads, reset to `HEAD`, before copying
+* **`include/git.sh`: Cache all git downloads**, reset to `HEAD`, before copying
   to the final location; this is also done on submodules. If a cached repository
   exists, run `git pull` on it but without an exit under fault conditions; if
   a fault occurs, including when trying to reset on a copy of it, fall back to
@@ -135,7 +139,7 @@ The changes are as follows:
   destination. This change results in substantially reduced internet bandwidth
   usage, especially when downloading submodules for multiple coreboot trees,
   in cases where those trees share common revisions.
-* `script/trees`: Support `-d` (flag) for custom build logic; it does the same
+* **`script/trees`: Support `-d` (flag) for custom build logic**; it does the same
   thing as `-b`, but with a variable named `dry` being set to `:`; this is
   prefixed on most build-related commands, and can be further prefixed as
   desired, in mkhelper functions. The result is that you can do *dry runs* on
@@ -155,14 +159,14 @@ The changes are as follows:
   reason for implementing this is precisely so that project-specific hacks can
   be removed; the `trees` script now contains much more generalised logic,
   and project-specific logic was moved to mkhelper functions.
-* SeaBIOS-only images are no longer provided, where GRUB is specified on a
+* **SeaBIOS-only images are no longer provided,** where GRUB is specified on a
   given mainboard; similarly, GRUB-first images are not provided. If GRUB is
   enabled on a board, *SeaGRUB* is provided. The get SeaBIOS-only startup, you
   can either remove the `bootorder` file from CBFS, or disable
   GRUB in `target.cfg` before building, for a given mainboard.
-* `script/trees`: A `premake` variable is supported in `mkhelper.cfg` files,
+* **`script/trees`: A `premake` variable is supported in `mkhelper.cfg`** files,
   defining a function to be executed *before* running `make`, on a given project.
-* `script/trees`: A `postmake` variable is supported in `mkhelper.cfg`
+* **`script/trees`: A `postmake` variable is supported in `mkhelper.cfg`**
   and `target.cfg` files, defining a function to be executed immediately after
   running `make`, on a given project. This is used during coreboot builds, to
   add payloads on a given coreboot image. It can be used for any other purpose.
@@ -205,7 +209,7 @@ The changes are as follows:
   single-tree projects, defined *by argument*, but it was quite error prone
   and there's no clean way to otherwise do it. We don't use the script this
   way, anywhere in lbmk, and users are advised the same.
-* `script/roms`: *Only* Support SeaBIOS and Sea*GRUB*, on x86 coreboot targets.
+* **`script/roms`: *Only* Support SeaBIOS and Sea*GRUB*, on x86 mainboards**.
   SeaGRUB is a configuration whereby SeaBIOS starts first, but immediately tries
   to load GRUB from the flash. This complements the other change, listed below.
   We will no longer provide configurations where GRUB is the primary payload,
@@ -240,7 +244,7 @@ The changes are as follows:
   argument on the `grub-mkstandalone` command, and it means that the GRUB
   images can be used standalone in other build systems. The image is very
   small, so it's OK to do it this way.
-* `script/roms`: Don't insert GRUB keymaps, at all. This feature was using a
+* **`script/roms`: Don't insert GRUB keymaps, at all.** This feature was using a
   lot of disk space during testing. If no keymap is inserted, GRUB defaults to
   US Qwerty. You can still insert the keymap file as `keymap.gkb` in CBFS, and
   that keymap will be used by GRUB (e.g. US Dvorak, French Azerty, French BEPO).
@@ -284,7 +288,7 @@ The changes are as follows:
   itself (the coreboot configs all enable `CONFIG_PAYLOAD_NONE`). For cases
   where a `target.cfg` file does *not* specify `mkhelper`, a fallback default
   entry is dictated within `config/data/coreboot/mkhelper.cfg`.
-* GRUB: Only load the `xhci` module from `grub.cfg`; the `install_modules`
+* **GRUB: Only load the `xhci` module from `grub.cfg`**; the `install_modules`
   variable now defines `xhci`, instead of `modules` defining it. This means
   that the xHCI module is no longer automatically loaded during GRUB machine
   initialisation, but it's then loaded immediately when the GRUB shell starts,
@@ -323,7 +327,7 @@ The changes are as follows:
   the build threads being default (one thread), ensuring that we set it to
   the value as defined by `XBMK_THREADS`. The bug was triggered when building
   the U-Boot images, because U-Boot does not specify `CPUS=` on makeargs.
-* `include/git.sh`: Re-try `git pull` three times, when updating the cache
+* **`include/git.sh`: Re-try `git pull` three times**, when updating the cache
   Git repository for a given project or submodule. This mitigates possible
   instability in the user's internet connection, where it's online but may
   otherwise experience jitter (the same issue could also occur on the internet
@@ -381,7 +385,7 @@ The changes are as follows:
   declared. The intention is to check both unitialised and empty strings, per
   variable. This is a *pre-emptive* bug fix, because this bug did not seemingly
   cause any issues in practise, but a bug is still a bug.
-* `include/vendor.sh`: Re-added the `modify_gbe()` function, seldom used but
+* **`include/vendor.sh`: Re-added the `modify_gbe()` function**, seldom used but
   nonetheless required; it's called when the user specifies a MAC address,
   during vendorfile insertion on release images. Direct use of `nvmutil` is
   still recommended, simply to gain an understanding of how it works; the MAC
@@ -441,7 +445,7 @@ The changes are as follows:
   is nameless, because this file is used during the build process when naming
   release tarballs; theoreticaly, because in practise, lbmk would never remove
   this file, but the build system is designed to be as adaptable as possible.
-* `script/trees`: If the crossgcc build fails, run it *again* first, before
+* **`script/trees`: If the crossgcc build fails, run it again first**, before
   returning with error status. If the second build passes, don't yield an error.
   Sometimes the crossgcc build can fail for whatever reason, but a second run
   will succeed. This avoids having to re-run the *rest* of lbmk, just to re-run
@@ -475,7 +479,7 @@ Extensive code cleanup has been performed, as was the main purpose of Audit 6.
 
 The changes are as follows:
 
-* Removed `util/autoport`, because the Haswell support that we merged for it
+* **Removed `util/autoport`**, because the Haswell support that we merged for it
   is now included in upstream(coreboot), so it will be included in future
   coreboot revisions for lbmk.
 * `script/trees`: Move dependency building (based on `build_depend`) to a new
