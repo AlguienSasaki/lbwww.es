@@ -159,11 +159,6 @@ The changes are as follows:
   reason for implementing this is precisely so that project-specific hacks can
   be removed; the `trees` script now contains much more generalised logic,
   and project-specific logic was moved to mkhelper functions.
-* **SeaBIOS-only images are no longer provided,** where GRUB is specified on a
-  given mainboard; similarly, GRUB-first images are not provided. If GRUB is
-  enabled on a board, *SeaGRUB* is provided. The get SeaBIOS-only startup, you
-  can either remove the `bootorder` file from CBFS, or disable
-  GRUB in `target.cfg` before building, for a given mainboard.
 * **`script/trees`: A `premake` variable is supported in `mkhelper.cfg`** files,
   defining a function to be executed *before* running `make`, on a given project.
 * **`script/trees`: A `postmake` variable is supported in `mkhelper.cfg`**
@@ -244,10 +239,6 @@ The changes are as follows:
   argument on the `grub-mkstandalone` command, and it means that the GRUB
   images can be used standalone in other build systems. The image is very
   small, so it's OK to do it this way.
-* **`script/roms`: Don't insert GRUB keymaps, at all.** This feature was using a
-  lot of disk space during testing. If no keymap is inserted, GRUB defaults to
-  US Qwerty. You can still insert the keymap file as `keymap.gkb` in CBFS, and
-  that keymap will be used by GRUB (e.g. US Dvorak, French Azerty, French BEPO).
 * `script/roms`: Removed extra checks on `grub_scan_disk`, because we no longer
   allow it to be overridden, instead relying only on `target.cfg` files, which
   are carefully crafted per board. This setting configures the order of which
