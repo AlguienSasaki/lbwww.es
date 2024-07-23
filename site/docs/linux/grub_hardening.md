@@ -83,7 +83,7 @@ image:
 
 You can build `cbfstool` in the libreboot build system. Run this command:
 
-	./update trees -b coreboot utils
+	./update trees -d coreboot TREENAME
 
 This assumes that you already downloaded coreboot:
 

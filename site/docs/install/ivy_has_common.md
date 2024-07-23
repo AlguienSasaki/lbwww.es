@@ -110,7 +110,7 @@ You *must* ensure that the files were inserted.
 
 Some examples of how to do that in lbmk:
 
-	./update trees -b coreboot utils
+	./update trees -d coreboot TREENAME
 
 Now you find `cbutitls/default`, which is a directory containing `cbfstool`
 and `ifdtool`. Do this on your ROM image (`libreboot.rom` in the example

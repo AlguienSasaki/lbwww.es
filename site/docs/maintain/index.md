@@ -1326,12 +1326,12 @@ Basic command: `./update trees FLAG projectname`
 Special operation: for building coreboot utilities `cbfstool` and `ifdtool` to
 go under `cbutils/`, do this:
 
-	./update trees -b coreboot utils
+	./update trees -d coreboot TREENAME
 
 Or define specific coreboot tree such as:
 
-	./update trees -b coreboot utils default
-	./update trees -b coreboot utils cros
+	./update trees -d coreboot default
+	./update trees -d coreboot cros
 
 FLAG values are (only *one* to be used at a time):
 
@@ -1365,8 +1365,8 @@ Example commands:
 	./update trees -u seabios
 	./update trees -m u-boot gru_bob
 	./update trees -f coreboot
-	./update trees -b coreboot utils default
-	./update trees -b coreboot utils
+	./update trees -d coreboot default
+	./update trees -d coreboot
 
 NOTE: the `-x` and `-c` options will cause an exit with zero status, when
 the target's corresponding source tree is unavailable; a non-zero status is
