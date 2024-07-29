@@ -973,3 +973,36 @@ auto-load when GRUB starts.
 
 A full investigation is still required, but this workaround fixes the issue as
 far as the user is concerned.
+
+Revision 2
+----------
+
+NOTE: Source code archive not available for rev2, because another revision
+was made that also includes the rev2 change; a 'rev3` source archive is
+available.
+
+Revision 2 fixed a minor mistake in the Intel Flash Descriptor on HP 8200
+machines, specifically the 4MB target; the Platform Data region was wrong,
+which caused issues when flashing. The
+file `libreboot-20240612rev2_hp8200sff_4mb.tar.xz` is available,
+replacing `libreboot-20240612_hp8200sff_4mb.tar.xz`, on Libreboot rsync.
+
+Revision 3
+----------
+
+Removed `util/autoport/`, becaues it's not required in release archives.
+
+The source code archive is now `libreboot-20240612rev3_src.tar.xz` for this
+release, on Libreboot rsync. It contains the original 20240612 changes, in
+addition to rev1 and rev2 changes, alongside rev3 (removal of autoport).
+
+The autoport source files lack license headers, which is OK in the context
+of `coreboot.git` which contains a fallback COPYING file, but our own
+equivalent of that file contains a different license, so the way we were
+packaging autoport wasn`t ideal; it's possible that we may have unintentionally
+violated the license. This is the first reason for the removal.
+
+The second reason for the removal is that we only intend for this to be used
+for development anyway, where it is recommended that you use `lbmk.git`, not
+the release archives, and upstream (coreboot) has merged the Haswell support
+patches that we were importing, so our copy of autoport is no longer useful.
