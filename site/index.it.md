@@ -35,7 +35,7 @@ E' estremamente flessibile e [configurabile](docs/maintain/) per la maggior part
 il software](https://writefreesoftware.org/), senza restrizione alcuna,
 in quanto e' uno dei fondamentali diritti umani che chiunque deve avere.
 In questo contesto, *il software libero* conta. La tua liberta' conta. La formazione personale conta.
-[Il diritto di riparare](https://yewtu.be/watch?v=Npd_xDuNi9k) conta.
+[Il diritto di riparare](https://en.wikipedia.org/wiki/Right_to_repair) conta.
 Molte persone usano firmware di boot proprietario (non-libero), anche se usano
 [un sistema operativo libero](https://www.openbsd.org/).
 Firmware proprietari spesso [contengono](faq.html#intel) [vulnerabilita'](faq.html#amd),

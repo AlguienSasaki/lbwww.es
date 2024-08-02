@@ -36,7 +36,7 @@ Es ist extrem leistungsfähig und für viele Einsatzzwecke [konfigurierbar](docs
 Du hast Rechte. Das Recht auf Privatsphäre, Gedankenfreiheit, Meinungsäußerungsfreiheit,
 und Informationsfreiheit. In diesem Zusammenhang, Libreboot gibt dir diese Rechte.
 Deine Freiheit ist wichtig.
-[Das Recht auf Reparatur](https://yewtu.be/watch?v=Npd_xDuNi9k) ist wichtig.
+[Das Recht auf Reparatur](https://en.wikipedia.org/wiki/Right_to_repair) ist wichtig.
 Viele Menschen verwenden proprietäre (non-libre)
 Boot Firmware, sogar wenn Sie ein [Libre OS](https://www.openbsd.org/) verwenden.
 Proprietäre Firmware [enthält](faq.html#intel) häufig [Hintertüren](faq.html#amd),

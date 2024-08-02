@@ -32,7 +32,7 @@ software](https://writefreesoftware.org/), without any
 restriction, is one of the fundamental human rights that everyone must have.
 In this context, *software freedom* matters. Your freedom matters. Education
 matters.
-[Right to repair](https://yewtu.be/watch?v=Npd_xDuNi9k) matters; Libreboot lets
+[Right to repair](https://en.wikipedia.org/wiki/Right_to_repair) matters; Libreboot lets
 you continue to use your hardware, with continued firmware updates. All of this
 is *why* Libreboot exists.
 
