@@ -92,8 +92,8 @@ pin 1.
 
 When you wire the clip, to flash one of the ICs, the same voltage rail also
 turns on the other IC and the other IC's own chip-select is in a *floating*
-state, which in practise means *high logic state*; in other words, the other
-flash will be active.
+state, which in practise means *random logic state*; in other words, the other
+flash may or may not be active, randomly.
 
 This means that external flashing would not ordinarily work, unless you use
 the following trick:
@@ -104,6 +104,13 @@ connected to VCC. You can do this with the same 3.3v power source that you use
 on pin 8 of the chip that you're flashing. Ideally you should pull the other
 chip select high via 47ohm resistor, which should be enough to prevent damage
 in the case of accidentally shorting the wrong pin.
+
+Doing this means that you *disable* the chip fou're not flashing. It's very
+important that you ensure only the one you want to flash is active, when using
+an external flasher.
+
+**This is not required for internal flashing. It is only required for
+external flashing.**
 
 If you do it right, the chips should flash reliably. This same trick must be
 used when flashing either of the chips.
