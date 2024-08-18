@@ -3,6 +3,9 @@ title: Insert vendore files on Sandybridge/Ivybridge/Haswell
 x-toc-enable: true
 ...
 
+Regarding vendorfile insertion: if unsure, just follow these instructions.
+If a given target does not require vendor files, none will be inserted.
+
 **TODO: Re-translate this again to Ukrainian. It was translated before, but
 the english page got heavily re-written.**
 
