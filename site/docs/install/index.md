@@ -304,7 +304,7 @@ If you are re-flashing a GM45+ICH9M laptop (e.g. ThinkPad X200/X200S/X200T,
 T400, T500, R400, W500 etc - but not R500), you should run the ich9gen utility
 to preserve your mac address.
 Please read the ich9utils documentation:
-[/docs/install/ich9utils.html](/docs/install/ich9utils.html)
+[ich9utils.md](ich9utils.md)
 
 NOTE: `force_I_want_a_brick` is not scary. Do not be scared! This merely disables
 the safety checks in flashprog. Flashrom and coreboot change a lot, over the years,
@@ -390,7 +390,7 @@ reference this paragraph on this web page.
 
 Ignore this section. Internal flashing *is* possible, but there are two chips
 and you must flash both chips. Refer to the guide:\
-[Gigabyte GA-G41M-ES2L installation guide](ga-g41m-es2l.html)
+[Gigabyte GA-G41M-ES2L installation guide](ga-g41m-es2l.md)
 
 #### Macbook1,1 running original Apple EFI firmware
 
@@ -865,7 +865,7 @@ Refer to the [ivybridge/haswell common guide.](ivy_has_common.md) for how to
 make the rom image usable for external flashing (with a clip). **If using
 release ROMs, you must insert the neutered ME. Look at the info on that page.**
 
-Read [board documentation](/docs/install/x230_external.html) for disassembly.
+Read [board documentation](x230_external.md) for disassembly.
 
 TARGET: Thinkpad X230t
 ---------------------
@@ -876,7 +876,7 @@ LIBREBOOT](../../news/safety.md).**
 Refer to the [ivybridge/haswell common guide.](ivy_has_common.md) for how to
 make the rom image usable for external flashing.
 
-Read [board documentation](/docs/install/x230_external.html) for disassembly.
+Read [board documentation](x230_external.md) for disassembly.
 (same instructions as X230, for this purpose of external flashing, but
 full disassembly will differ slightly)
 
@@ -892,7 +892,9 @@ LIBREBOOT](../../news/safety.md).**
 Refer to the [ivybridge/haswell common guide.](ivy_has_common.md) for how to
 make the rom image usable for external flashing.
 
-Read [board documentation](/docs/install/t440p_external.html) for disassembly.
+T440p: Read [board documentation](t440p_external.md) for disassembly.
+
+W541: Read [board documentation](w541_external.md)
 
 **If using release ROMs, neutered ME must be inserted. Refer to the above
 guide.**
