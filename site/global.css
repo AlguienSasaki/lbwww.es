@@ -2,9 +2,6 @@
  * This CSS is released under Creative Commons Zero 1.0 Universal license:
  * https://creativecommons.org/publicdomain/zero/1.0/legalcode.txt
  */
-
-h1,h2,h3,h4{font-weight:normal; font-size:2em}
-
 .specs
 {
 	float: right;
@@ -17,7 +14,7 @@ h1,h2,h3,h4{font-weight:normal; font-size:2em}
 }
 
 
-@media (max-width:90em)
+@media (max-width:89em)
 {
 	html
 	{
@@ -34,19 +31,17 @@ h1,h2,h3,h4{font-weight:normal; font-size:2em}
 
 html
 {
-	color: #280518;
-	background: #efe9e9;
+	background: #280b22;
+	color: #eee;
 	font-family: sans-serif;
 	line-height: 1.4;
-}
-hr {
-	color: #eee;
+	text-shadow: 1px 1px #000;
 }
 
-code,pre, #TOC, a:hover, img
+code,pre, #TOC, a:hover
 {
-	background: #e3d6d6;
 	border-radius:0.25em;
+	background: #4e324e;
 }
 header img
 {
@@ -55,7 +50,7 @@ header img
 
 a
 {
-	color: #3e223e;
+	color: #fcc;
 }
 
 img,video,iframe,pre
@@ -89,14 +84,14 @@ html, ul, #TOC
 
 @media (min-width:60em)
 {
-	.title-logo{display:none; background:none;}
+	.title-logo{display:none}
 	div.title,h1.title {
-		background:url("https://av.libreboot.org/logo/logo.png") no-repeat;
+		background:url("/favicon.ico") no-repeat;
 		background-size:auto 99%;
 		min-height:2em
 	}
 	div.title {background-position:right}
-	h1.title {padding:0 4em; font-size:2.5em; font-weight:normal;}
+	h1.title {padding:0 4em}
 	#TOC
 	{
 		float: left;
