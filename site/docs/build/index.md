@@ -108,6 +108,9 @@ On Fedora, you can use the following
 
 	sudo dnf install python-unversioned-command
 
+On most modern distros, Python 2 is no longer included and Python 3 will be
+the only one available on the `python`.
+
 How to compile Libreboot
 ========================
 
@@ -132,24 +135,24 @@ Fedora, Arch Linux/Parabola or Void Linux.
 
 Some examples (run them as root, use use e.g. `sudo`, `doas`):
 
-	./build dependencies ubuntu
+	./mk dependencies ubuntu
 
 or
 
-	./build dependencies debian
+	./mk dependencies debian
 
 or
 
-	./build dependencies fedora38
+	./mk dependencies fedora38
 
 or
 
-	./build dependencies arch
+	./mk dependencies arch
 
 NOTE: In case of Ubuntu 20.04 LTS or derived distros for that specific release,
 use the dedicated configuration file:
 
-	./build dependencies ubuntu2004
+	./mk dependencies ubuntu2004
 
 Check: `config/dependencies/` for list of supported distros.
 
@@ -161,32 +164,32 @@ Next, build ROM images
 ----------------------
 
 Libreboot MaKe (lbmk) automatically runs all necessary commands; for
-example, `./build roms` will automatically run `./build grub`
-if the required GRUB payload (under `elf/grub/`) does not exist.
+example, `./mk -b coreboot` will automatically build the required payloads
+if not already compiled.
 
 As a result, you can now (after installing the correct build dependencies) run
 just a single command, from a fresh Git clone, to build all ROM images:
 
-	./build roms all
+	./mk -b coreboot
 
 or even just build specific ROM images, e.g.:
 
-	./build roms x60
+	./mk -b coreboot x60
 
 or get a list of supported build targets:
 
-	./build roms list
+	./mk -b coreboot list
 
 Or maybe just build payloads?
 -----------------------------
 
 If you wish to build payloads, you can also do that. For example:
 
-	./build grub
+	./mk -b grub
 
-	./update trees -b seabios
+	./mk -b seabios
 
-	./update trees -b u-boot
+	./mk -b u-boot
 
 Previous steps will be performed automatically. However, you can *still* run
 individual parts of the build system manually, if you choose. This may be
@@ -199,7 +202,7 @@ Want to modify Libreboot?
 Check the [lbmk maintenance manual](../maintain/) for guidance. You may for
 example want to modify a config, e.g.:
 
-	./update trees -m coreboot x200_8mb
+	./mk -m coreboot x200_8mb
 
 Or perhaps add a new board! The maintenance manual will teach you how the
 Libreboot build system (lbmk) works!

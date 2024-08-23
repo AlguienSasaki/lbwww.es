@@ -95,15 +95,11 @@ could build it yourself or you could also clone `lbmk.git` and [install build
 dependencies](../build/#first-install-build-dependencies), then inside lbmk,
 do:
 
-	./build serprog rp2040 pico
-
-or for the W version:
-
-	./build serprog rp2040 pico_w
+	./mk -b pico-serprog
 
 This will automatically build the rpi-pico firmware, and the file will be
-at `bin/serprog_rp2040/serprog_pico.uf2`. This binary will be provided
-pre-compiled in the next Libreboot release, after the 20230625 release.
+at `bin/serprog_rp2040/serprog_pico.uf2`
+and `bin/serprog_rp2040/serprog_pico_w.uf2`.
 
 Disconnect the Pico and proceed to wire it to your
 [flash chip](/docs/install/spi.html#identify-which-flash-type-you-have).
@@ -482,12 +478,12 @@ install flashprog. Do this after downloading the
 [lbmk Git repository](https://codeberg.org/libreboot/lbmk):
 
 	cd lbmk
-	sudo ./build dependencies ubuntu2004
+	sudo ./mk dependencies ubuntu2004
 
 NOTE: debian, arch or void can be written instead of ubuntu2004. the debian
 script is also applicable to newer ubuntu versions
 
-	./update trees -b flashprog
+	./mk -b flashprog
 
 If the `ubuntu2004` script complains about missing dependencies, just modify
 the dependencies config to remove those dependencies. The script is located

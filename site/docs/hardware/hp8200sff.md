@@ -88,7 +88,7 @@ to recover from an unbootable BIOS:
 
 You can build the images for it in Libreboot like so:
 
-	./build roms hp8200sff_8mb
+	./mk -b coreboot hp8200sff_8mb
 
 More information about building ROM images can be found in
 the [build guide](../build/).
@@ -154,7 +154,7 @@ Pin-Strap is set". If it doesn't, start again from the beginning.
 
 Now build the **4** MiB Libreboot image.
 
-	./build roms hp8200sff_4mb
+	./mk -b coreboot hp8200sff_4mb
 
 More information about building ROM images can be found in
 the [build guide](../build/).

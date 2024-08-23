@@ -71,15 +71,11 @@ could build it yourself or you could also clone `lbmk.git` and [install build
 dependencies](../build/#first-install-build-dependencies), then inside lbmk,
 do:
 
-	./build serprog rp2040 pico
-
-or for the W version:
-
-	./build serprog rp2040 pico_w
+	./mk -b pico-serprog
 
 This will automatically build the rpi-pico firmware, and the file will be
-at `bin/serprog_rp2040/serprog_pico.uf2`. This binary will be provided
-pre-compiled in the next Libreboot release, after the 20230625 release.
+at `bin/serprog_rp2040/serprog_pico.uf2`
+and `bin/serprog_rp2040/serprog_pico_w.uf2`.
 
 Disconnect the Pico and proceed to wire it to your
 [flash chip](/docs/install/spi.html#identify-which-flash-type-you-have).
@@ -335,11 +331,11 @@ Flashrom 是用来读出、擦除、重写 NOR flash 内容的软件。
 使用 Git 仓库中的 libreboot 构建系统，你可以下载并安装 flashprog。首先下载 [lbmk Git 仓库](https://codeberg.org/libreboot/lbmk)，然后执行：
 
 	cd lbmk
-	sudo ./build dependencies ubuntu2004
+	sudo ./mk dependencies ubuntu2004
 
 注意：你可以输入 debian、arch 或 void 来替换 ubuntu。debian 脚本也可以用于新版 ubuntu。
 
-	./update trees -b flashprog
+	./mk -b flashprog
 
 如果 `ubuntu2004` 报告了依赖缺失，编辑一下这个脚本，把缺失的依赖移除就行了。脚本位于 `config/dependencies/ubuntu2004`，它是写给 Ubuntu 20.04 的，但在其他使用 `apt-get` 包管理器的 Linux 发行版应该也能用。
 

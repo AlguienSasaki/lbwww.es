@@ -83,16 +83,12 @@ image:
 
 You can build `cbfstool` in the libreboot build system. Run this command:
 
-	./update trees -d coreboot TREENAME
-
-This assumes that you already downloaded coreboot:
-
-	./update trees -f coreboot
+	./mk -d coreboot TREENAME
 
 This, in turn, assumes that you have installed the build dependencies for
 libreboot. On Ubuntu 20.04 and other apt-get distros, you can do this:
 
-	./build dependencies ubuntu2004
+	./mk dependencies ubuntu2004
 
 The `cbfstool` executables will be under each coreboot directory, under
 each `coreboot/boardname/` directory for each board. Just pick one, presumably
@@ -159,11 +155,9 @@ GRUB using the libreboot build system. Run the following commands (assuming
 you have the correct build dependencies installed) to build GRUB, from the
 libreboot Git repository:
 
-	./update trees -f grub
+	./mk -b grub default
 
-	./build grub
-
-The following executable will then be available under the `src/grub/` directory:
+The following executable will then be available under `src/grub/default/`:
 
 	grub-mkpasswd-pbkdf2
 
@@ -248,24 +242,6 @@ the default one, as of Libreboot 20240612.
 NOTE: Before disabling the boot menu, make sure GRUB works. Access it using
 the `bootorder` file and/or press ESC in the SeaBIOS menu. Then disable the
 SeaBIOS menu.
-
-Alternative: GRUB as primary
-----------------------------
-
-The *SeaBIOS first* policy is now law, in Libreboot releases. The only
-exception is the x86 QEMU target. You can do this if building from source:
-
-	./build roms -p grub targetname
-
-Where `targetname` is e.g. `x200_8mb` (use the correct one for your board).
-
-Again: make sure GRUB works. Also: don't do this if you're using a non-Intel
-graphics card because only the Intel graphics have native video initialisation
-in Libreboot, and we rely on SeaBIOS to execute the VGA ROM for others.
-
-(it is assumed that you know to add the VGA ROM in CBFS if needed, if using
-a dGPU, or that you're using a graphics card on a desktop so SeaBIOS will use
-that automatically)
 
 GPG keys
 ========

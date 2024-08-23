@@ -59,15 +59,15 @@ Install the build dependencies. For Ubuntu 20.04 and similar, you can run
 the following command in the libreboot build system, from the root directory
 of the libreboot Git repository.
 
-	./build dependencies ubuntu2004
+	./mk dependencies ubuntu2004
 
 Then, download coreboot:
 
-	./update trees -f coreboot
+	./mk -f coreboot
 
 Finally, compile the `cbutils` payload (and you will then have the utils):
 
-	./build grub
+	./mk -b grub
 
 Among other things, this will produce a `cbfstool` executable under any of the
 subdirectories in `src/coreboot/` under `util/cbfstool/cbfstool`.
@@ -82,9 +82,9 @@ You will also want to build `flashprog` which libreboot recommends for reading
 from and/or writing to the boot flash. In the libreboot build system, you can
 build it by running this command:
 
-	./update trees -b flashprog
+	./mk -b flashprog
 
-An executable will be available at `src/flashprog/flashprog` after you have done
+An executable will be available at `elf/flashprog/flashprog` after you have done
 this.
 
 Dump the boot flash
@@ -96,7 +96,7 @@ your computer, you can use `flashprog` to acquire it.
 Simply run the following, after using libreboot's build system to compile
 flashprog:
 
-	sudo ./src/flashprog/flashprog -p internal -r dump.bin
+	sudo ./elf/flashprog/flashprog -p internal -r dump.bin
 
 If flashprog complains about multiple flash chip definitions, do what it says to
 rectify your command and run it again.

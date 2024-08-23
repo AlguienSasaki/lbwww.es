@@ -126,17 +126,74 @@ bin/
 This directory is created when running any of the following commands, with the
 right arguments:
 
-	./build roms ARGUMENTS_HERE
-	./build roms serprog stm32
-	./build roms serprog rp2040
+	./mk -b coreboot ARGUMENTS_HERE
+	./mk -b stm32-vserprog
+	./mk -b pico-serprog
 
 Simply speaking, `bin/` shall contain finished ROM images or firmware, that
 can then be installed (flashed) to the target device.
 
 The files under `bin/` are provided in regular Libreboot releases.
 
-**These** are the ROM images that you should flash. Do *not* flash the ROM
-images contained under `elf/`!
+**These** are the ROM images that you should flash.
+
+Older versions of lbmk build coreboot images separately under `elf/`, but
+without payloads, using `elf/` as a build cache, then inserting payloads
+into copies of these images in files under `bin/`. However, modern lbmk
+now only puts coreboot images in `bin/`, with payloads included.
+
+If you still have `elf/` coreboot images in your lbmk tree, please do not
+use them (and you may aswell delete them).
+
+cache/
+---------------
+
+Certain files are cached here automatically, by lbmk. The user need not touch
+these files.
+
+cache/app
+--------------
+
+When vendor updates are extracted, they go here, which is then processed to
+find individual files for use in coreboot images (e.g. KBC1126 EC firmware).
+
+This directory is constantly over-written, so it's essentially another temporary
+directory used by the build system.
+
+cache/file/
+--------------
+
+Files that are downloaded are hashed, and the cached version of the file
+is stored there, named as the SHA512 checksum. This is used for vendor file
+downloads, and subfile downloads.
+
+A *subfile* is like a Git submodule, but it's a *file* (just a humble file),
+downloaded via curl/wget. The build system does not
+run `git submodule update` commands when handling Git repositories anymore,
+instead processing submodules manually; it supports both repositories *and*
+files relative to the directory locations for those repositories, but subfiles
+are not downloaded to the *cached git repository*, only the work directory used
+for building in lbmk.
+
+cache/hash
+---------------
+
+When lbmk is handling any project, it sorts a list of files under `config/`
+including `config/project` (or `config/project/TREE`) and `config/data/project`.
+
+SHA512 checksums are calculated from these files, in the sorted order, and
+written in that order, to a file. *That* file is then checksummed, and this
+hash is stored in `cache/hash` for that project.
+
+If the currently stored hash differs from what's calculated, it means that
+the project has changed, and the source directories plus builds are deleted.
+The project source is then re-prepared and re-build.
+
+cache/repo
+--------------
+
+Git repositories are cached here. This avoids wasting bandwidth, when downloading
+multiple repositories. **Git submodules are also cached here!**
 
 ec/
 ---------------
@@ -148,21 +205,30 @@ elf/
 ---------------
 
 **DO NOT flash coreboot ROM images contained under `elf/`. Please use ROM images
-under `bin/` instead!**
+under `bin/` instead! - In modern lbmk, only the ones under `bin/` are ever
+created anyway.**
 
 Compiled binaries (compiled by lbmk) go here, but they are not the final
 binaries; coreboot ROM images are compiled without payloads, then cached here
-under `elf/coreboot` as one example; ditto GRUB and SeaBIOS which go
-under `elf/grub` and `elf/seabios` respectively - `elf/u-boot` is another
-example.
+under `elf/coreboot` as one example
 
-Binaries under `elf/` are compiled first, which lbmk then uses to generate
-the files under `bin/`; the latter files under `bin/` are intended for
-installation by the user.
+GRUB and SeaBIOS which go
+under `elf/grub` and `elf/seabios` respectively - `elf/u-boot` is another
+example. A given project can include a `build.list` file
+at `config/data/PROJECT/build.list`, which would contain a list of file paths
+relative to the *source directory*; these files would be copied, after a build
+operation, to `elf/PROJECT` for single-tree projects,
+or `elf/PROJECT/TREE` for multi-tree projects.
 
 It is technically possible to re-use these files elsewhere. For example, you
 may wish to only compile GRUB with lbmk, and then use the `grub.elf` file from
-lbmk in your own custom coreboot ROM (that you didn't build with lbmk).
+lbmk in your own custom coreboot ROM (that you didn't build with lbmk). However,
+this use is not officially supported by the Libreboot project; these files are
+simply used by the Libreboot build system.
+
+Some utilities are also provided compiled here, when building. For
+example: `elf/flashprog/flashprog`. This is because lbmk tries to provide
+out-of-source builds whenever feasible.
 
 This is only used by the build system, but these images are *not* provided in
 releases (only the images under `bin/` are provided).
@@ -175,6 +241,9 @@ mrc/
 ---------------
 
 Intel System Agent downloaded at build time for HP EliteBook 820 G2.
+
+The *Haswell* MRC file is no longer downloaded here, because Haswell machines
+now use native raminit *exclusively*; only Broadwell uses MRC, at present.
 
 pciroms/
 ---------------
@@ -198,20 +267,20 @@ the user.
 
 You can create release archives by doing:
 
-	./update release
+	./mk release
 
 By default, this creates a release under `release/`, but you can change the
 directory, for example:
 
-	./update release -d path
+	./mk release -d path
 
 You can also specify that only a *source archive* be created, like so:
 
-	./update release -m src
+	./mk release -m src
 
 Or with a custom directory:
 
-	./update release -d path -m src
+	./mk release -d path -m src
 
 The build system expects there to be a *git tag*, so make sure there is one.
 This is used to create the version number for a given release.
@@ -270,7 +339,7 @@ convenience of users, and this is copied to release archives. Flashrom is the
 program that you will use to read, erase and write the flash, containing
 coreboot firmware.
 
-src/grub/
+src/grub/TREE
 ---------------
 
 Please also visit: <https://www.gnu.org/software/grub/>
@@ -286,7 +355,23 @@ the `grub-mkstandalone` utility is executed from here to create the final
 GRUB image under `elf/grub/`.
 
 NOTE: This is *only* provided for x86 machines, in Libreboot. For ARM, we ship
-U-Boot instead.
+U-Boot instead. Since Libreboot 20240612, the GRUB builds are *multi-tree*,
+much like, say, coreboot or SeaBIOS.
+
+As of August 2024, the following GRUB source trees can be downloaded:
+
+* `src/grub/default`
+* `src/grub/xhci`
+* `src/grub/nvme`
+
+Simplify specify the tree. For example:
+
+	./mk -b grub xhci
+
+The `xhci` tree contains patches for both NVMe SSD support, and xHCI. The `nvme`
+tree contains NVMe SSD support but not xHCI support. The `default` tree contains
+no NVMe or xHCI support. All trees otherwise have the same fixes on top of
+upstream GRUB, e.g. fix for Dell Latitude keyboard controllers.
 
 src/memtest86plus/
 ---------------
@@ -498,8 +583,6 @@ other example. Deletions occur when the source tree is created.
 config/vendor/
 ---------------
 
-### config/vendor/sources
-
 URLs and hashes for vendor files containing Intel ME images within them. Where
 feasible, backup URLs are also provided. SHA512 checksums are defined, so that
 lbmk can verify the integrity of downloaded files.
@@ -516,25 +599,6 @@ E6400.
 
 config/coreboot
 ---------------
-
-### config/coreboot/build.list
-
-When a given coreboot tree is compiled, for a given target, this file defines
-which files to copy from the coreboot directory, which are then copied to
-a location under `elf/coreboot`.
-
-The presence of this file affects behaviour in `./update release` commands;
-specifically, PROJECT is then downloaded to `src/PROJECT/PROJECT`, and files
-under `config/PROJECT/TARGET/target.cfg` define which tree to use, which then
-looks under `config/PROJECT/TREE/target.cfg` to get the git revision; then
-the src directory `src/PROJECT/TREE` is created, copied
-from `src/PROJECT/PROJECT`.
-
-For example, coreboot target `x200_8mb` refers to tree name `default` which
-would create `src/coreboot/default`.
-
-If the `build.list` file is *not* included, then the git revision
-under `config/git` is used, and only `src/PROJECT` is created.
 
 ### config/coreboot/BOARDNAME/
 
@@ -567,12 +631,9 @@ as:
 * `rev="ad983eeec76ecdb2aff4fb47baeee95ade012225"` (example entry)
 * `xarch="i386-elf"` (example entry)
 * `payload_grub="y"` (example entry)
-* `payload_grub_withseabios="y"` (example entry)
 * `payload_seabios="y"` (example entry)
 * `payload_memtest="y"` (example entry)
 * `payload_uboot="y"` (example entry)
-* `payload_seabios_withgrub="y"` (example entry)
-* `payload_seabios_grubonly="y"` (example entry)
 * `grub_scan_disk="ata"`
 * `uboot_config=default` (specify which U-Boot tree to use)
 * `release="n"` (example entry)
@@ -630,7 +691,7 @@ on a ThinkPad X60 with the optical drive may cause GRUB to hang, so on that
 machine it is advisable to set this option to `ahci` (becuse the default HDD
 slot is AHCI).
 
-The `release` variable can be set to n, which makes the `./update release`
+The `release` variable can be set to n, which makes the `./mk release`
 call skip that target, when creating release images. For example, a given
 board may not be stable and you don't want images for it to be included in the
 release.
@@ -708,7 +769,7 @@ VESA frame buffer (NOT to be confused with the coreboot frame buffer), or just
 normal text mode. Text mode startup is always recommended, and in that setup,
 GRUB (including coreboot GRUB, but also PC GRUB) can use VGA modes.
 
-The name `libgfxinit` is simply what `./build roms` uses, but it may be
+The name `libgfxinit` is simply what `./mk -b coreboot` uses, but it may be
 that a board uses the old-school native video init code written in C. On some
 platforms, coreboot implemented a 3rd party library called `libgfxinit`, which
 is written in Ada and handles video initialization. In this setup, coreboot
@@ -729,7 +790,7 @@ config/dependencies/
 Files here are so named, and called like so: e.g. the `debian` file would be
 referenced when running:
 
-	./build dependencies debian
+	./mk dependencies debian
 
 These files define a list of packages, and the correct package manager command
 to use on a given distro. This can be used to install build dependencies, which
@@ -940,7 +1001,7 @@ These are similar in meaning to their coreboot counterparts.
 The tree` entry is actually a link, where its value is a directory name
 under `config/u-boot`. For example, `tree="default"` would refer to
 `config/u-boot/default` and the corresponding U-Boot source tree created
-(when running `./update trees u-boot`, which makes use of `target.cfg`)
+(when running `./mk u-boot`, which makes use of `target.cfg`)
 would be `u-boot/default/`. In other words: a `target.cfg` file
 in `config/u-boot/foo` might refer to `config/u-boot/bar` by
 specifying `tree="bar"`, and the created u-boot source tree would
@@ -1054,7 +1115,7 @@ You create a config, for `config/u-boot/TREENAME/configs`, by finding the
 corresponding board name in the upstream U-Boot `configs` directory, and
 running `make BOARDNAME_defconfig` and `make menuconfig` commands in the
 *U-Boot* build system. You should do this after
-running `./update trees u-boot` in lbmk.
+running `./mk u-boot` in lbmk.
 
 You might want to consider basing your config on the upstream `coreboot` boards
 when possible, but such a board is not available upstream for ARM yet.
@@ -1114,27 +1175,27 @@ Take any given file under `script/` and you can do:
 
 For example:
 
-	./build roms
-	./update trees
+	./mk -b coreboot
+	./mk
 
 Special commands available (not provided by files under `script/`):
 
-	./update release
-	./vendor download
-	./vendor inject
+	./mk release
+	./mk download
+	./mk inject
 
 The `vendor` commands are handled by the `build` script, calling functions
-inside `include/vendor.sh`, and the `./update release` logic is handled
+inside `include/vendor.sh`, and the `./mk release` logic is handled
 directly by the `build` script.
 
 More information about `./vendor` commands can be found
 here: [inserting vendor files](../install/ivy_has_internal.md)
 
-Information about `./update release` is written elsewhere on this page.
+Information about `./mk release` is written elsewhere on this page.
 
 You can also know what build system revision you have by running:
 
-	./build version
+	./mk version
 
 This script is the beating heart of Libreboot. Break it and you break Libreboot.
 
@@ -1150,7 +1211,7 @@ include/git.sh
 
 These functions in here previously existed as independent scripts, but they
 were unified here, and they are used when you pass the `-f` argument
-to `script/update/trees` (e.g. `./update trees -f coreboot`).
+to `script/update/trees` (e.g. `./mk -f coreboot`).
 
 These functions deal with git cloning, submodule updates, revision resets and
 the application of patch files via `git am`. *Every* git repository downloaded
@@ -1199,20 +1260,20 @@ script/roms
 
 This builds coreboot ROM images.
 
-Command: `./build roms targetname`
+Command: `./mk -b coreboot targetname`
 
 The `targetname` argument must be specified, chosen from this output:
 
-	./build roms list
+	./mk -b coreboot list
 
 Pass several board names if you wish to build only for specific targets. For
 example:
 
-	./build roms x60 x200_8mb
+	./mk -b coreboot x60 x200_8mb
 
 To build *all* targets, specify:
 
-	./build roms all
+	./mk -b coreboot
 
 Since November 2022, this script can build images for x86 *and* ARM targets.
 The *ARM* targets are ChromeOS devices (chromebooks and such); Libreboot uses
@@ -1321,17 +1382,17 @@ the directory `src/PROJECT/TREE` will be created, reset to the specific
 revision - for multi-tree projects, all defined targets are scanned for their
 corresponding tree, and the trees are prepared as defined above.
 
-Basic command: `./update trees FLAG projectname`
+Basic command: `./mk FLAG projectname`
 
 Special operation: for building coreboot utilities `cbfstool` and `ifdtool` to
 go under `cbutils/`, do this:
 
-	./update trees -d coreboot TREENAME
+	./mk -d coreboot TREENAME
 
 Or define specific coreboot tree such as:
 
-	./update trees -d coreboot default
-	./update trees -d coreboot cros
+	./mk -d coreboot default
+	./mk -d coreboot cros
 
 FLAG values are (only *one* to be used at a time):
 
@@ -1358,15 +1419,15 @@ As for *projectname", this can either be `coreboot`, `u-boot` or `seabios`.
 
 Example commands:
 
-	./update trees -b coreboot
-	./update trees -b coreboot x200_8mb
-	./update trees -b coreboot x230_12mb x220_8mb t1650_12mb
-	./update trees -x coreboot default
-	./update trees -u seabios
-	./update trees -m u-boot gru_bob
-	./update trees -f coreboot
-	./update trees -d coreboot default
-	./update trees -d coreboot
+	./mk -b coreboot
+	./mk -b coreboot x200_8mb
+	./mk -b coreboot x230_12mb x220_8mb t1650_12mb
+	./mk -x coreboot default
+	./mk -u seabios
+	./mk -m u-boot gru_bob
+	./mk -f coreboot
+	./mk -d coreboot default
+	./mk -d coreboot
 
 NOTE: the `-x` and `-c` options will cause an exit with zero status, when
 the target's corresponding source tree is unavailable; a non-zero status is
@@ -1376,11 +1437,11 @@ if unavailable and *that* too will return with non-zero status under fault
 conditions.
 
 NOTE: "target" can indeed be the tree name, under some circumstances. For
-example, `./update trees -m seabios default`
+example, `./mk -m seabios default`
 
 After `projectname`, a target can be specified, but if no target is specified,
 then *all* targets will be operated on. For
-example, `./update trees -b coreboot` will attempt to build *all*
+example, `./mk -b coreboot` will attempt to build *all*
 coreboot ROM images.
 
 NOTE: the `coreboot` projectname here shall cause the ROM images to go

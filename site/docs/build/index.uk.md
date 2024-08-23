@@ -43,7 +43,7 @@ marked as stable, the build proceeds without further input. If the board is
 marked anything other, a warning appears asking if you wish to proceed; to
 disable these warnings, do this before building (not recommended):
 
-	export LBMK_STATUS=n
+	export XBMK_STATUS=n
 
 In Libreboot, we specify: `stable`, `unstable`, `broken` or `untested`.
 The "unstable" marking means that the board boots mostly/entirely reliably
@@ -64,7 +64,7 @@ Multi-threaded builds
 Libreboot's build system defaults to a single build thread, but you can change
 it by doing e.g.
 
-	export LBMK_THREADS=4
+	export XBMK_THREADS=4
 
 This would make lbmk run on 4 threads.
 
@@ -74,7 +74,7 @@ Environmental variables
 Please read about environmental variables in [the build
 instructions](../maintain/), before running lbmk. You should set
 your variables accordingly, though you do not technically need to; some
-of them may be useful, e.g. `LBMK_THREADS` (sets the number of build threads).
+of them may be useful, e.g. `XBMK_THREADS` (sets the number of build threads).
 
 Environmental variables
 =======================
@@ -82,7 +82,7 @@ Environmental variables
 Please read about environmental variables in [the build
 instructions](../maintain/), before running lbmk. You should set
 your variables accordingly, though you do not technically need to; some
-of them may be useful, e.g. `LBMK_THREADS` (sets the number of build threads).
+of them may be useful, e.g. `XBMK_THREADS` (sets the number of build threads).
 
 Git
 ===
@@ -127,15 +127,15 @@ time or date can cause connections to be dropped during negotiation.
 libreboot включає сценарій, який автоматично встановлює apt-get залежності
 в Ubuntu 20.04:
 
-	sudo ./build dependencies ubuntu2004
+	sudo ./mk dependencies ubuntu2004
 
 Окремі сценарії також існують:
 
-	sudo ./build dependencies debian
+	sudo ./mk dependencies debian
 
-	sudo ./build dependencies arch
+	sudo ./mk dependencies arch
 
-	sudo ./build dependencies void
+	sudo ./mk dependencies void
 
 Check: `config/dependencies/` for list of supported distros.
 
@@ -150,23 +150,23 @@ libreboot Make (lbmk) автоматично виконує всі необхі�
 В якості результату, ви тепер можете (після встановлення правильних залежностей побудови) виконати
 лише одну команду, з свіжого Git clone, для побудови образів ROM:
 
-	./build roms all
+	./mk -b coreboot
 
 або навіть побудувати конкретні образи ROM, такі як:
 
-	./build roms x60
+	./mk -b coreboot x60
 
 or get a list of supported build targets:
 
-	./build roms list
+	./mk -b coreboot list
 
 Якщо ви бажаєте побудувати корисні навантаження, можете зробити це. Наприклад:
 
-	./build grub
+	./mk -b grub
 
-	./update trees -b seabios
+	./mk -b seabios
 
-	./update trees -b u-boot
+	./mk -b u-boot
 
 Попередні кроки буде виконано автоматично. Однак, ви можете *досі* виконати
 окремі частини системи побудови власноруч, якщо виберете. Це може бути

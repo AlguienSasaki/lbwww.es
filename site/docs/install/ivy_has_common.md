@@ -80,7 +80,7 @@ Injecting vendor files into ROM
 You must determine the correct board name, for your board, based on the list
 generated when running this command:
 
-	./build roms list
+	./mk -b coreboot list
 
 In order to inject the necessary files into a rom image, run the script from the root of lbmk and point to the rom image.
 
@@ -110,20 +110,20 @@ You *must* ensure that the files were inserted.
 
 Some examples of how to do that in lbmk:
 
-	./update trees -d coreboot TREENAME
+	./mk -d coreboot TREENAME
 
-Now you find `cbutitls/default`, which is a directory containing `cbfstool`
+Now you find `elf/cbfstool`, which is a directory containing `cbfstool`
 and `ifdtool`. Do this on your ROM image (`libreboot.rom` in the example
 below):
 
-	./cbutils/default/cbfstool libreboot.rom print
+	./elf/cbfstool/TREENAME/cbfstool libreboot.rom print
 
 You should check that the files were inserted in cbfs, if needed; for example,
 EC firmware or MRC firmware.
 
 Next:
 
-	./cbutils/default/ifdtool -x libreboot.rom
+	./elf/ifdtool/TREENAME/ifdtool -x libreboot.rom
 
 This creates several `.bin` files, one of which says `me` in it (Intel ME).
 Run hexdump on it:

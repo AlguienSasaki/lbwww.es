@@ -87,7 +87,7 @@ Inject vendor files into ROM
 You must determine the correct board name, for your board, based on the list
 generated when running this command:
 
-	./build roms list
+	./mk -b coreboot list
 
 In order to inject the necessary files into a rom image, run the script from the root of lbmk and point to the rom image.
 
