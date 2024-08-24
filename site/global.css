@@ -57,6 +57,7 @@ img,video,iframe,pre
 {
 	max-width: 100%;
 	overflow: auto;
+	border-radius:0.25em;
 }
 
 .title>*, header ul>li, .nav ul>li,
