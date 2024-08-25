@@ -6,7 +6,7 @@ This website is written in Markdown, and compiled into static HTML using
 Pandoc. An HTML template is used, 
 Copyright (c) 2014--2017, John MacFarlane
 
-Modifications to it are copyright 2021 Leah Rowe, released under the terms of
+Modifications to it are copyright 2021-2024 Leah Rowe, released under the terms of
 Creative Commons Zero license version 1.0 universal, which you can find here:
 <https://creativecommons.org/publicdomain/zero/1.0/legalcode>
 
