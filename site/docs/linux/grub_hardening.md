@@ -308,6 +308,11 @@ The simplest way is to just do this:
 
 	ifdtool -x libreboot.rom -O libreboot.rom
 
+If you did the step before, to compile `cbfstool`, you can find ifdtool in
+the `elf/` directory, e.g. `elf/ifdtool/default/ifdtool`. Make sure to use
+the correct version, as per `tree=` (same as before when deciding to which
+cbfstool version to use based on the coreboot tree used by your board).
+
 Note that this only works for Intel-based systems that use an Intel Flash
 Descriptor, which is actually most Intel systems that Libreboot supports.
 
