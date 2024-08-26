@@ -22,57 +22,13 @@ if you want to send your machine in to have Libreboot installed for you.
 Leah Rowe, the founder and lead developer of Libreboot, also owns and
 operates Minifree Ltd; sales provide funding for the Libreboot project.
 
-FLASH ERRORS (and workarounds)
-=======================
+**Disable security before flashing**
+================================
 
-**NOTE: Libreboot standardises on [flashprog](https://flashprog.org/wiki/Flashprog)
-now, as of 27 January 2024, which is a fork of flashrom.**
+**Before internal flashing, you must first disable `/dev/mem` protections. Make
+sure to re-enable them after you're finished.**
 
-This section relates to installing libreboot on supported targets.
-
-Right out of the gate, some users may experience errors with flashprog when
-using the internal programmer. They are:
-
-/dev/mem access error
----------------------
-
-NOTE: if running `flashprog -p internal` for software based flashing, and you
-get an error related to `/dev/mem` access, you should reboot with
-`iomem=relaxed` kernel parameter before running flashprog, or use a kernel that
-has `CONFIG_STRICT_DEVMEM` not enabled.
-
-On NetBSD and OpenBSD systems, the equivalent to `iomem=relaxed` in this case
-is `kernel.securelevel=-1`; see [NetBSD securelevel
-manual](https://wiki.netbsd.org/tutorials/kernel_secure_levels/)
-and [OpenBSD securelevel manual](https://man.openbsd.org/securelevel).
-
-ERROR: Could not get I/O privileges
-------------------------------------
-
-Error message: `ERROR: Could not get I/O privileges (Function not implemented)`
-
-If you get this while running `flashprog -p internal -w filename.rom` (or any
-internal flash operation), note: flashprog heavily uses ioperm/iopl functions
-to operate the internal flasher, at least on x86 machines.
-
-See: <https://lwn.net/Articles/804143/>
-
-Yeah, just enable `CONFIG_X86_IOPL_IOPERM` in your Linux kernel. This is
-a *build-time* option, so you must re-compile your kernel, or find a build that
-has this option enabled (IOPL emulation). Many default kernel configurations
-now disable this option.
-
-Here's a handy-dandy guide for building a kernel from source:
-<https://www.cyberciti.biz/tips/compiling-linux-kernel-26.html>
-
-**BSD users:** On OpenBSD and NetBSD if you get similar errors, note that it
-should work here, but you need to boot with `kern.securelevel=-1`.
-See: [NetBSD securelevel manual](https://wiki.netbsd.org/tutorials/kernel_secure_levels/)
-and [OpenBSD securelevel manpage](https://man.openbsd.org/securelevel).
-
-Otherwise, if you get such errors, it may just be that you're not root. You
-must run flashprog as root, at least to use the internal flasher (using external
-USB flashing dongles doesn't normally require root).
+**See: [Disabling /dev/mem protection](devmem.md)**
 
 PRECAUTIONS
 ===========
@@ -563,14 +519,6 @@ Your flash chip is in an unknown state.
 
 If you see this, rejoice! It means that the flash was successful. Please do not
 panic. Shut down now, and wait a few seconds, then turn back on again.
-
-**WARNING: if flashrom (from Libreboot 20160907 utils) complains
-about `/dev/mem` access, please
-run `sudo ./bucts 0`. If flashrom is complaining about `/dev/mem`, it means
-that you have `CONFIG_STRICT_DEVMEM` enabled in your kernel. Reboot with the
-following kernel parameter added in your bootloader: `iomem=relaxed` and try
-again with the above instructions. DO NOT continue until the above works, and
-you see the expected flashrom output as indicated above.**
 
 If you *did* run flashrom and it failed to flash, but you set bucts to 1 and
 shut down, don't worry. Just remove the yellow coin-cell battery (it's underneath

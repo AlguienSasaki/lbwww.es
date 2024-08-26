@@ -8,6 +8,14 @@ now, as of 27 January 2024, which is a fork of flashrom.
 
 AKA Frequently Questioned Answers
 
+Disable security before flashing
+================================
+
+Before internal flashing, you must first disable `/dev/mem` protections. Make
+sure to re-enable them after you're finished.
+
+See: [Disabling /dev/mem protection](install/devmem.md)
+
 Buy Libreboot pre-installed
 ==========
 
@@ -54,27 +62,6 @@ tester.
 Testing involves minimal effort and really helps out the project.
 See the [board maintainers documentation](/docs/maintain/testing.md)
 if you are interested in testing roms before they are released.
-
-Flashrom complains about DEVMEM access
---------------------------------------
-
-If running `flashprog -p internal` for software based flashing, and
-you get an error related to /dev/mem access, you should reboot with
-`iomem=relaxed` kernel parameter before running flashprog, or use a kernel
-that has `CONFIG_STRICT_DEVMEM` and `CONFIG_IO_STRICT_DEVMEM` not enabled.
-
-Example flashprog output with both `CONFIG_STRICT_DEVMEM` and `CONFIG_IO_STRICT_DEVMEM` enabled:
-```
-flashprog v0.9.9-r1955 on Linux 4.11.9-1-ARCH (x86_64)
-flashprog is free software, get the source code at https://flashprog.org
-
-Calibrating delay loop... OK.
-Error accessing high tables, 0x100000 bytes at 0x000000007fb5d000
-/dev/mem mmap failed: Operation not permitted
-Failed getting access to coreboot high tables.
-Error accessing DMI Table, 0x1000 bytes at 0x000000007fb27000
-/dev/mem mmap failed: Operation not permitted
-```
 
 Uneven backlight on GM45 ThinkPads
 ----------------------------------

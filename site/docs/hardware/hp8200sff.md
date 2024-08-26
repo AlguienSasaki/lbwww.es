@@ -49,6 +49,14 @@ P*: Partially works with blobs
 | **SeaBIOS with GRUB**     | Works |
 </div>
 
+Disable security before flashing
+================================
+
+Before internal flashing, you must first disable `/dev/mem` protections. Make
+sure to re-enable them after you're finished.
+
+See: [Disabling /dev/mem protection](../install/devmem.md)
+
 Introduction
 ============
 
@@ -138,10 +146,6 @@ between the pins until you can see the normal BIOS boot screen.
 
 ![](https://av.libreboot.org/hp8200sff/fdo\_screwdriver.jpg)
 
-Boot into an OS supported by flashprog. On Linux, make sure you add the
-kernel parameter **iomem=relaxed** which disables memory protections that
-prevent BIOS flashing.
-
 NOTE: Libreboot standardises on [flashprog](https://flashprog.org/wiki/Flashprog)
 now, as of 27 January 2024, which is a fork of flashrom.
 
@@ -179,7 +183,7 @@ Power off the computer. Make sure to power off, rebooting is not enough!
 
 Power on the computer.
 Now we can flash the full 8 MiB image. Boot to an OS with flashprog
-again. On linux, remember the **iomem=relaxed** kernel parameter.
+again.
 
 NOTE: Libreboot standardises on [flashprog](https://flashprog.org/wiki/Flashprog)
 now, as of 27 January 2024, which is a fork of flashrom.

@@ -7,6 +7,14 @@ Make sure SecureBoot is disabled, if you're running a UEFI-based Latitude.
 Other steps also required, described on this page and in the `README.md`
 file included with `dell-flash-unlock`.
 
+Disable security before flashing
+================================
+
+Before internal flashing, you must first disable `/dev/mem` protections. Make
+sure to re-enable them after you're finished.
+
+See: [Disabling /dev/mem protection](devmem.md)
+
 Internal flashing
 =================
 
@@ -14,29 +22,8 @@ You can simply boot Linux/BSD, on the Dell Latitude you wish to flash, and
 run `flashprog` from there, for Libreboot installation. Certain other steps
 are also required, documented in the steps below:
 
-Flashing from BSD
------------------
-
-Basically identical to Linux, except that you must
-set `kern.securelevel` to -1 on boot, which is equivalent to `iomem=relaxed`
-under Linux, for this purpose.
-
-The `dell-flash-unlock` utility will compile and run just fine. It has been
-tested on OpenBSD, NetBSD and FreeBSD. With this in mind, simply follow the
-Linux instrucctions but adapt accordingly.
-
-If unsure, just boot a live Linux distro via USB and run it all there.
-
-Flashing from Linux
--------------------
-
-MAKE SURE you boot with this Linux kernel parameter: `iomem=relaxed` - this
-disables memory protections, permitting `/dev/mem` access needed by flashprog.
-The flash is memory mapped and flashprog accesses it via `/dev/mem`.
-
 You can flash Libreboot directly from the vendor (Dell) BIOS, without taking
-the machine apart. It can be done entirely from Linux. It will probably also
-work on BSD systems, but it has only been testing on Linux thus far.
+the machine apart. It can be done entirely from Linux/BSD.
 
 **NOTE (15 October 2023): The util is now called `dell-flash-unlock`, but it
 was previously called `e6400-flash-unlock`. Links have been updated.**

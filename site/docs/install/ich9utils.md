@@ -196,10 +196,7 @@ Read on for more information. Use the `ro` files mentioned below, and your
 flash will be read-only in software (you can still externally re-flash and read
 the contents of flash).
 
-For ease of use, libreboot provides ROMs that are read-write by default. In
-practise, you can boot a Linux kernel with access to lower memory disabled
-which will make software re-flashing impossible (unless you reboot with such
-memory protections disabled, e.g. `iomem=relaxed` kernel parameter).
+For ease of use, libreboot provides ROMs that are read-write by default.
 
 ICH9 deblob utility {#ich9deblob}
 ===================

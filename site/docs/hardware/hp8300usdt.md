@@ -24,6 +24,14 @@ OR YOU MIGHT BRICK YOUR MACHINE: [SAFETY PRECAUTIONS](../../news/safety.md)**
 | **Intel ME/AMD PSP**      | Present, neutered                           |
 | **Flash chip**            | SOIC-16 16MiB                               |
 
+Disable security before flashing
+================================
+
+Before internal flashing, you must first disable `/dev/mem` protections. Make
+sure to re-enable them after you're finished.
+
+See: [Disabling /dev/mem protection](../install/devmem.md)
+
 # Introduction
 
 This is a small but powerful desktop using Sandy or Ivy Bridge CPUs
@@ -71,8 +79,7 @@ crystal (small metal cylinder) and the power cable for the optical drive.
 
 ![](https://av.libreboot.org/hp8300usdt/jumper_to_fdo.jpg)
 
-Boot into an OS of your choice (that has flashprog support). When using Linux,
-you need to supply the kernel parameter `iomem=relaxed`.
+Boot into an OS of your choice (that has flashprog support).
 
 NOTE: Libreboot standardises on [flashprog](https://flashprog.org/wiki/Flashprog)
 now, as of 27 January 2024, which is a fork of flashrom.
