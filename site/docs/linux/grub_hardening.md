@@ -321,6 +321,23 @@ GM45 machines) accordingly. Note that the x4x/ich10-based machines don't have
 flash descriptors, and neither do the i945 machines, but the GM45 and newer
 Intel platforms do.
 
+Other facts
+-----------
+
+Strapping `HDA_SDO` or `HDA_DOCK_EN` requires physical access, because you have
+to short a pin on the HDA chip on the motherboard, or there will be a header
+for this on the board (e.g. "service mode" jumper).
+
+On *Dell Latitude* laptops specifically, the EC can unlock flash by setting
+the SDO/DOCK\_EN signal as described, and this is in fact what
+the `dell-flash-unlock` utility does, so you can consider IFD locking there
+to be basically useless.
+
+In addition to the above, you may also consider `/dev/mem` protection.
+Enable `CONFIG_STRICT_DEVMEM` in your Linux kernel, or set `securelevel` above
+zero on your BSD setup (but BSD cannot be booted with GRUB very easily so
+it's a moot point).
+
 Install the new image
 =====================
 
