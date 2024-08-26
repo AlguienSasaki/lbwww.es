@@ -6,76 +6,11 @@ x-toc-enable: true
 NOTE: Libreboot standardises on [flashprog](https://flashprog.org/wiki/Flashprog)
 now, as of 27 January 2024, which is a fork of flashrom.
 
-This section documents how to recover from a bad flash that prevents
-your ThinkPad T60 from booting.
-
-This section documents how to recover from a bad flash that prevents
-your ThinkPad X60 from booting.
-
-ROM images for this machine are well-tested in libreboot, so bricks are rare.
-The most common cause of a brick is operator error, when flashing a ROM image.
-In *most* cases, the cause will be that there is no bootblock, or an invalid
-one.
-
-Brick type 1: bucts not reset. {#bucts_brick}
-==============================
-
-You still have Lenovo BIOS, or you had libreboot running and you flashed
-another ROM; and you had bucts 1 set and the ROM wasn't dd'd.\* or if
-Lenovo BIOS was present and libreboot wasn't flashed.
-
-There are *2* 64KiB bootblocks possible, in the upper part of the ROM image.
-By default (bucts set to 0), the top one is used. If bucts is set to 1, the
-lower one (the one before the top one) is used. This bootblock is the first
-code that executes, during *romstage* as per coreboot hardware initialization.
-
-BUC is short for *Backup Control* and TS is short for *Top Swap*. This is a
-special register on Intel platforms. Lenovo BIOS sets PRx registers, preventing
-software re-flashing, but there is a bug in the protection, allowing everything
-*except* the upper 64KiB from being flashed. By default, coreboot only puts a
-bootblock in the upper region. If you flash such a ROM, while bucts is set to 1,
-the system won't boot because there's not a valid bootblock; this is common if
-you're re-flashing when coreboot is already installed, and you didn't set bucts
-back to 0.
-
-When you install on X60/T60 the first time, you set this bucts bit to 1, then
-you re-flash a second time and set it back to 0.
-
-In this case, unbricking is easy: reset BUC.TS to 0 by removing that
-yellow cmos coin (it's a battery) and putting it back after a minute or
-two:\
-![](https://av.libreboot.org/t60_dev/0006.JPG)
-
-\*Those dd commands should be applied to all newly compiled T60 ROM
-images (the ROM images in libreboot binary archives already have this
-applied!):
-
-	dd if=coreboot.rom of=top64k.bin bs=1 skip=$[$(stat -c %s coreboot.rom) - 0x10000] count=64k
-	dd if=coreboot.rom bs=1 skip=$[$(stat -c %s coreboot.rom) - 0x20000] count=64k | hexdump
-	dd if=top64k.bin of=coreboot.rom bs=1 seek=$[$(stat -c %s coreboot.rom) - 0x20000] count=64k conv=notrunc
-
-(doing this makes the ROM suitable for use when flashing a system that
-still has Lenovo BIOS running, using those instructions:
-<http://www.coreboot.org/Board:lenovo/x60/Installation>. (it says x60,
-but instructions for t60 are identical)
-
-Brick type 2: bad ROM image {#recovery}
-===========================================
-
-In this instance, you might have flashed a ROM without the top bootblock copied
-to the lower 64KiB section in the ROM, and you flashed the ROM for the first
-time (from Lenovo BIOS), in which case there is not a valid bootblock.
-
-In this scenario, you compiled a ROM that had an incorrect
-configuration, or there is an actual bug preventing your system from
-booting. Or, maybe, you set BUC.TS to 0 and shut down after first flash
-while Lenovo BIOS was running. In any case, your system is bricked and
-will not boot at all.
-
 "Unbricking" means flashing a known-good (working) ROM. The problem:
 you can't boot the system, making this difficult. In this situation,
-external hardware (see hardware requirements above) is needed which can
-flash the SPI chip (where libreboot resides).
+external hardware is needed which can flash the SPI chip (where libreboot
+resides). First, disassemble the machine using the following steps, and refer
+to the external flashing guide linked later from *this* guide.
 
 Remove those screws and remove the HDD:\
 ![](https://av.libreboot.org/t60_dev/0001.JPG) ![](https://av.libreboot.org/t60_dev/0002.JPG)
