@@ -9,26 +9,13 @@ now, as of 27 January 2024, which is a fork of flashrom.
 Before you follow this guide, it is advisable that you have the ability to
 flash externally, just in case something goes wrong.
 
-This guide assumes that you use the GRUB bootloader as your default
-payload. In this configuration, GRUB is flashed alongside coreboot and runs
-on *bare metal* as a native coreboot payload and does *not* use BIOS or UEFI
-services (but it *can* load and execute SeaBIOS, in addition to any other
-coreboot payload, by chainloading it).
+Libreboot's own GRUB configuration automatically scans for one provided by
+your distro, and this automation will usually work. Sometimes, you might wish
+to override it with your own custom menuentry or additional logic in the GRUB
+config. You can configure GRUB however you like, and this topic is vast so what
+to actually *put in the config* will not be covered here.
 
-In most circumstances, this guide will not benefit you. libreboot's default
-GRUB configuration file contains scripting logic within it that intelligently
-searches for GRUB partitions installed onto a partition on your SSD, HDD or
-USB drive installed on your computer. If such a file is found, libreboot's
-default GRUB configuration is configured to switch automatically to that
-configuration. While not perfect, the logic *does* work with most
-configurations.
-
-Therefore, you should only follow *this* guide if the automation (described
-above) does not work. It goes without saying that modifying the default GRUB
-configuration is risky, because a misconfiguration could create what's called
-a *soft brick* where your machine is effectively useless and, in that scenario,
-may or may not require external flashing equipment for restoring the machine to
-a known state.
+This guide will simply teach you how to modify the config, but not what to put.
 
 Compile flashprog and cbfstool
 =============================
@@ -55,19 +42,27 @@ This can be found under `coreboot/*/util/cbfstool/` as source code,
 where `*` can be any coreboot source code directory for a given mainboard.
 The directory named `default` should suffice.
 
-Install the build dependencies. For Ubuntu 20.04 and similar, you can run
+Install the build dependencies. For Debian and similar, you can run
 the following command in the libreboot build system, from the root directory
 of the libreboot Git repository.
 
-	./mk dependencies ubuntu2004
+	./mk dependencies debian
 
-Then, download coreboot:
+Determine what coreboot tree you need for your board. For example, if building
+for `x200_8mb`, check `config/coreboot/x200_8mb/target.cfg` and it might
+say `tree="default"` - in this case, the coreboot tree is named `default`.
 
-	./mk -f coreboot
+Then, download coreboot (we'll assume the `default` tree is correct):
+
+	./mk -f coreboot default
 
 Finally, compile the `cbutils` payload (and you will then have the utils):
 
 	./mk -b grub
+
+GRUB is multi-tree, but for GRUB utilities that's fine because we don't patch
+those in any tree; we only patch the GRUB kernel to add various drivers and
+extra crypto such as argon2.
 
 Among other things, this will produce a `cbfstool` executable under any of the
 subdirectories in `src/coreboot/` under `util/cbfstool/cbfstool`.
@@ -77,6 +72,13 @@ For example: `src/coreboot/default/util/cbfstool/cbfstool`
 The `cbfstool` utility is what you shall use. It is used to manipulate CBFS
 (coreboot file system) which is a file system contained within the coreboot
 ROM image; as a *coreboot distribution*, libreboot inherits this technology.
+
+You can compile cbfstool and ifdtool for the given coreboot tree, e.g.:
+
+	./mk -d coreboot default
+
+This will create `elf/cbfstool/default/cbfbstool`
+and `elf/ifdtool/default/ifdtool`.
 
 You will also want to build `flashprog` which libreboot recommends for reading
 from and/or writing to the boot flash. In the libreboot build system, you can
@@ -90,125 +92,53 @@ this.
 Dump the boot flash
 ===================
 
-If you wish to modify your *existing* libreboot ROM, which was installed on
-your computer, you can use `flashprog` to acquire it.
+[Learn how to externally reprogram these chips](../install/spi.md) and use
+the `-r` option in flashprog; alternatively, for internal flash access,
+look at the [main flashing guide](../install/).
 
-Simply run the following, after using libreboot's build system to compile
-flashprog:
-
-	sudo ./elf/flashprog/flashprog -p internal -r dump.bin
-
-If flashprog complains about multiple flash chip definitions, do what it says to
-rectify your command and run it again.
-
-You may want to use the following, instead of `-p internal`:
-`-p internal:laptop=force_I_want_a_brick,boardmismatch=force`
-
-Do not let the word *brick* fools you. This merely disables the safety checks
-in flashprog, which is sometimes necessary depending on what ROM was already
-flashed, versus the new ROM image.
-
-The `internal` option assumes that internal read/write is possible; this is
-when you read from and/or write to the boot flash from an operating systems
-(usually Linux) that is *running on* the target system.
-
-In other cases, you may need to connect an SPI programmer externally (with the
-machine powered down) and read the contents of the boot flash.
-
-[Learn how to externally reprogram these chips](../install/spi.md)
-
-Extract grub.cfg
-================
-
-Libreboot 20231021 or newer
------------------------------------
-
-Releases or or after 20231021 contain `grub.cfg` inside the GRUB memdisk,
-inaccessible directly from CBFS, but the memdisk is inside `grub.elf` which
-gets put inside CBFS.
-
-An override is possible, on these Libreboot revisions. If `grub.cfg` is present
-in CBFS, Libreboot's GRUB will use *that* and not the memdisk one; it will not
-auto-switch to `grubtest.cfg`, but the test config will be available in the
-menu to switch to, if present.
-
-You can find `grub.cfg` under lbmk (for this purpose, it's best to use the
-lbmk one, not the release one - unless you're using a release image).
-Find it at path (in current lbmk): `config/grub/config/grub.cfg`.
-
-So, you can *add* `grubtest.cfg` as normal, test that, and
-then *add* `grub.cfg` once you're happy, and it will override the default.
-
-Libreboot 20230625 or older
-----------------------------
-
-NOTE: This information will probably be deleted after a certain time has passed.
-Libreboot changed a lot, as of release 20231021 in reference to 20230625, so it
-may take a while before people adjust; therefore, this information is provided
-for reference, but you should consider it to be deprecated:
-
-libreboot images that use the GRUB bootloader will have *two* configuration
-files in CBFS:
-
-* `grub.cfg`
-* `grubtest.cfg`
-
-We recommend that you modify `grubtest.cfg` first, and boot. Select the boot
-menu option for loading `grubtest.cfg` and verify that your new config works
-correctly. If it doesn't, keep modifying `grubtest.cfg` until it does work.
-When that it done, copy the changes over to `grub.cfg
-
-You can use the following commands to modify the contents of CBFS, where
-GRUB's configuration file is concerned (dump.bin is the ROM that you dumped,
-or it could refer to the libreboot ROM image that you compiled or otherwise
-acquired).
-
-Show the contents of CBFS, in your ROM:
-
-	cbfstool dump.bin print
-
-Extract `grub.cfg` (substitude with `grubtest.cfg` as desired):
-
-	cbfstool dump.bin extract -n grub.cfg -f grub.cfg
-
-You will now have a file named `grub.cfg`.
-
-Make your desired modifications. You should then delete the old `grub.cfg`
-from your ROM image.
+Those guides show how to dump the flash contents, which you are advised to do.
 
 Insert new grub.cfg
 ===================
 
-NOTE: As stated above, releases on or after Libreboot 20231021 only default to
-the config in memdisk, and lack a CBFS config, so you can skip the *remove*
-step below and just directly add the new `grub.cfg` - unless you already
-added one before, in which case removal is required first.
+If you already have a `grub.cfg` in cbfstool, you can extract and modify that
+one, e.g.:
 
-Remove the old `grub.cfg` (substitute with `grubtest.cfg` as desired):
+	cbfstool libreboot.rom extract -n grub.cfg -f grub.cfg
 
-	cbfstool dump.bin remove -n grub.cfg
+Now remove it:
 
-Add your modified `grub.cfg` (substitute with `grubtest.cfg` as desired):
+	cbfstool libreboot.rom remove -n grub.cfg
 
-	cbfstool dump.bin add -f grub.cfg -n grub.cfg -t raw
+It's important that you re-add `grub.cfg` before flashing:
+
+	cbfstool libreboot.rom add -f grub.cfg -n grub.cfg
+
+Repeat this for `grubtest.cfg` if you wish.
+
+If you're using a default Libreboot image, there *is no `grub.cfg` in flash*.
+This is because there is also a default one embedded inside the GRUB binary,
+which is inside CBFS. So:
+
+The coreboot image has its own filesystem, CBFS, and within CBFS is the GRUB
+binary, and within the GRUB binary is another filesystem called memdisk, where
+the default GRUB configuration is located.
+
+You can insert a `grub.cfg` into CBFS and it will override the one in memdisk.
+
+Check your board, e.g. `x200_8mb`, look at the file: `config/coreboot/x200_8mb/target.cfg`
+and check for `grubtree` - if it's not sot, then it's `default`, otherwise check
+what it's set to.
+
+We'll assume it's `default`, so the
+file `config/grub/default/config/payload` is your GRUB config; this will be the
+same as what yo uhave in memdisk.
+
+Modify *that* file, or the one you extracted if you already inserted a custom
+one before, and you will re-insert it when you're done.
 
 Flash the modified ROM image
 ============================
 
-Your modified `dump.bin` or other modified libreboot ROM can then be re-flashed
-using:
-
-	sudo ./flashprog -p internal -w dump.bin
-
-If a `-c` option is required, use it and specify a flash chip name. This is
-only useful when `flashprog` complains about multiple flash chips being
-detected.
-
-If flashprog complains about wrong chip/board, make sure that your ROM is for
-the correct system. If you're sure, you can disable the safety checks by running
-this instead:
-
-	sudo ./flashprog -p internal:laptop=force_I_want_a_brick,boardmismatch=force -w dump.bin
-
-If you need to use external flashing equipment, see the link above to the
-Raspberry Pi page.
+Check the [Libreboot flashing guide](../install/) which says how to flash the
+new image.
