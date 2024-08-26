@@ -14,7 +14,7 @@ Disable security before flashing
 Before internal flashing, you must first disable `/dev/mem` protections. Make
 sure to re-enable them after you're finished.
 
-See: [Disabling /dev/mem protection](install/devmem.md)
+See: [Disabling /dev/mem protection](docs/install/devmem.md)
 
 Buy Libreboot pre-installed
 ==========
