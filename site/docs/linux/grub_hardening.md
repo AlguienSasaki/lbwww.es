@@ -16,6 +16,24 @@ to verify all files that it accesses.
 
 Let's begin.
 
+**Disable security before flashing**
+================================
+
+**Before internal flashing, you must first disable `/dev/mem` protections. Make
+sure to re-enable them after you're finished.**
+
+**See: [Disabling /dev/mem protection](../install/devmem.md)**
+
+This only applies if you're following these instructions via internal
+flashing, from an existing installation.
+
+Back up your flash first!
+=========================
+
+Make sure you also back up the current flash contents, before you proceed with
+this guide. See: [Libreboot flashing guides](../install/) (it also says how
+to read the flash, in addition to writing it)
+
 Build dependencies
 ==================
 
@@ -337,6 +355,43 @@ In addition to the above, you may also consider `/dev/mem` protection.
 Enable `CONFIG_STRICT_DEVMEM` in your Linux kernel, or set `securelevel` above
 zero on your BSD setup (but BSD cannot be booted with GRUB very easily so
 it's a moot point).
+
+Other write-protect methods
+---------------------------
+
+The steps above do not require recompilation of the Libreboot images. However,
+coreboot offers additional security at build time, which you can select if you
+wish.
+
+Let's assume your board is `x200_8mb`, do:
+
+	./mk -m coreboot x200_8mb
+
+Find this section: Security -> Boot media protection mechanism
+
+In the above example, I found:
+
+* Lock boot media using the controller
+* Lock boot media using the chip
+
+Which one to pick depends on your board. Let's pick "controller".
+
+Now we can see: Security -> Boot media protected regions
+
+In there, there is the option to ban writes, or to ban both reads and writes.
+Banning reads may be desirable, for example if you have a salt hashed password
+stored in `grub.cfg`! (as this guide told you to do)
+
+You'll have to play around with this yourself. These options are not enabled
+by default, because Libreboot images are supposed to allow writes by default,
+when booted. You have to enable such security yourself, because the design of
+Libreboot is to be as easy to use as possible by defalut, which include updates,
+thus implying read-write flash permissions.
+
+This example was for `x200_8mb`, but other boards may look different in config.
+Anyway, when you're done, save the config and then build it from source in lbmk.
+
+See: [build from source](../build/)
 
 Install the new image
 =====================
