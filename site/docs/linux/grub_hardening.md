@@ -4,102 +4,62 @@ x-toc-enable: true
 ...
 
 **NOTE: [Encrypted /boot with LUKS2 on argon2 key derivation is now
-possible](../../news/argon2.md) but not yet documented by this guide.**
+possible](../../news/argon2.md). This is covered in
+the [main Linux guide](./).**
 
-This article only applies to those people who use the GRUB bootloader as
-their default payload (options besides GRUB are also available in
-libreboot). Whenever this article refers to GRUB, or configuration files
-used in GRUB, it is referring exclusively to those files hosted in CBFS
-(coreboot file system) in the libreboot ROM image. In this configuration,
-GRUB is running on *bare metal* as a coreboot payload (instead of relying on
-BIOS or UEFI services, like it does on *most* x86 based configurations).
+GRUB can have password protection at boot, prevent unauthorised access to the
+shell and to menuentries. You can also boot from fully encrypted distros, where
+the `/boot` directory is already encrypted, containing your kernel. You can
+additionally verify each file, including GRUB configuration files and Linux
+kernels, using GPG; GRUB supports putting a GPG pubkey in CBFS, and using it
+to verify all files that it accesses.
 
-This guide deals with various ways in which you can harden your GRUB
-configuration, for security purposes. These steps are optional, but *strongly*
-recommended by the libreboot project.
+Let's begin.
 
-GRUB provides *many* advanced security features, which most people don't
-know about but are fully documented on the libreboot website. Read on!
+Build dependencies
+==================
 
-This article doesn't cover how to dump your ROM, or flash a new one. Please
-read other sections in the libreboot documentation if you don't know how to do
-that. As such, this is an *expert only* guide. There is a great possibility for
-bricking your system if you follow this guide incorrectly, or otherwise don't
-know what you're doing.
+You need `cbfstool` from coreboot. For whatever board you have, check which
+coreboot tree it uses in Libreboot's build system, lbmk. For example, let's
+say your board is `x200_8mb`, you would do:
 
-GRUB secure boot with GPG
+	grep tree= config/coreboot/x200_8mb/target.cfg
+
+In this example, the output might be:
+
+	tree="default"
+
+This means you should compile `cbfstool` from the `default` coreboot tree,
+like so:
+
+	./mk -d coreboot default
+
+This will result in the following binary: `elf/cbfstool/default/cbfstool`
+
+We won't assume the path to cbfstool, in the remainder of this guide, so
+adapt accordingly.
+
+Background information
 =========================
 
-GRUB contains code, based on [GPG](https://gnupg.org/), that can verify
-PGP signatures on *any* type of file, on any storage medium supported by
-GRUB (it supports basically everything, including CBFS which is short
-for coreboot file system and it is what we will focus on in this article).
-We will be using this functionality to verify the signature of a Linux kernel,
-at boot time. In conjunction with reproducible builds (both libreboot and your
-Linux kernel), this can greatly improve system security; Debian is an excellent
-example of a project striving towards this goal; see:
-<https://wiki.debian.org/ReproducibleBuilds>
+By default, the `grub.cfg` file and `grubtest.cfg` file are not present in
+CBFS, because the GRUB memdisk, contained within the GRUB binary itself, within
+CBFS, contains a GRUB configuration file.
 
-For your reference: a reproducible build is one where, given a precise (and
-well documented) development setup, the exact same binary can be produced each
-time the source code is compiled when that *very same development setup* is
-replicated by another person. In other words, the file checksum (e.g.
-SHA512 hash) will be exactly the same at all times. In practise, this means
-that metadata such as time stamps are not included in the binary, or if they
-are, they are constant (in many scenarios, it's based on the date of a Git
-commit ID that the build is based on, if the software is built from a Git
-repository). More information about reproducible builds can be found here:
+Libreboot will switch to `grub.cfg` from flash instead, if it exists,
+skipping the one in memdisk.
 
-<https://reproducible-builds.org/>
+Because we need to put a signature next to each file, that would mean
+re-building GRUB if you wanted to use the one in memdisk. Therefore, we can
+insert a custom one in CBFS, to mitigate that fact.
 
-Reproducibility is a key goal of the libreboot project, though it has not yet
-achieved that goal. However, it is an important part of any secure system. We
-suggest that, when securing your libreboot system as instructed by this guide,
-you should also use a reproducible Linux distribution (because checking GPG
-signatures on a non-reproducible binary, such as a Linux kernel, is meaningless
-if that binary can be compromised as a result of literally not being able to
-verify that the source code *actually* corresponds to the provided binary,
-which is exactly what reproducible builds allow). If *someone else* compiles an
-executable for you, and that executable is non-reproducible, you have no way to
-verify that the source code they provided *actually* corresponds to the binary
-they gave you. Based on these facts, we can observe that checking GPG
-signatures will improve your *operational* security, but only in specific
-circumstances under *controlled conditions*.
-
-This tutorial assumes you have a libreboot image (ROM) that you wish to modify,
-which from now on we will refer to simply as *`my.rom`*. It should go without
-saying that this ROM uses the GRUB bootloader as payload. This page shows
-how to modify grubtest.cfg, which means that signing and password protection
-will work after switching to it in the main boot menu and bricking due to
-incorrect configuration will be impossible. After you are satisfied with the
-new setup, you should transfer the new settings to grub.cfg to make your
-machine truly secure.
-
-First, extract the old grubtest.cfg and remove it from the libreboot
-image:
-
-	cbfstool my.rom extract -n grubtest.cfg -f my.grubtest.cfg
-	cbfstool my.rom remove -n grubtest.cfg
-
-You can build `cbfstool` in the libreboot build system. Run this command:
-
-	./mk -d coreboot TREENAME
-
-This, in turn, assumes that you have installed the build dependencies for
-libreboot. On Ubuntu 20.04 and other apt-get distros, you can do this:
-
-	./mk dependencies ubuntu2004
-
-The `cbfstool` executables will be under each coreboot directory, under
-each `coreboot/boardname/` directory for each board. Just pick one, presumably
-from the coreboot directory for your board. libreboot creates multiple coreboot
-archives for different board revisions, on different boards.
+By doing it this way, you can avoid re-building GRUB, or indeed anything inside
+your current Libreboot images.
 
 References:
 
 * [GRUB manual](https://www.gnu.org/software/grub/manual/html_node/Security.html#Security)
 * [GRUB info pages](http://git.savannah.gnu.org/cgit/grub.git/tree/docs/grub.texi)
-* [SATA connected storage considered dangerous.](../../faq.md#hddssd-firmware)
 * [Coreboot GRUB security howto](https://www.coreboot.org/GRUB2#Security)
 
 GRUB Password
@@ -110,36 +70,14 @@ checking can be disabled through the interactive console:
 
 	set check_signatures=no
 
-This is useful because it allows you to occasionally boot unsigned live CD/USB
-media and such. You might consider supplying signatures on a USB stick, but the
-signature checking code currently looks for `/path/to/filename.sig` when
-verifying `/path/to/filename` and, as such, it will be impossible to supply
-signatures in any other location (unless the software is modified accordingly).
+Disabling signatures, using the above command, is useful when you're booting
+regular media such as live distros via USB.
 
-It's worth noting that this is not your LUKS password but, rather, a password
-that you must enter in order to use *restricted* functionality (such as the
-GRUB terminal for executing commands). This behaviour protects your system
-from an attacker simply booting a live USB key (e.g. live Linux
-distribution) for the purpose of flashing modified boot firmware, which from
-your perspective is *compromised* boot firmware. *This should be different than
-your LUKS passphrase and user password.*
-
-GRUB supports storing salted, hashed passwords in the configuration file.
-This is a far more secure configuration, because an attacker cannot simply read
-your password as *plain text* inside said file.
-
-Use of the *diceware method* is *strongly* recommended, for generating secure
-passphrases (as opposed to passwords). The diceware method involves rolling
-dice to generate random numbers, which are then used as an index to pick a
-random word from a large dictionary of words. You can use any language (e.g.
-English, German). Look it up on a search engine. Diceware method is a way to
-generate secure passphrases that are very hard (almost impossible, with enough
-words) to crack, while being easy enough to remember. On the other hand, most
-kinds of secure passwords are hard to remember and easier to crack. Diceware
-passphrases are harder to crack because of far higher entropy (there are many
-words available to use, but only about 50 commonly used symbols in
-pass*words*). This high level of entropy is precisely what makes such pass
-phrases secure, even if an attacker knows exactly which dictionary you used!
+You are strongly advised to use an *open diceware* passphrase (look that up).
+Generate a strong passphrase of completely random words, at least 20 words in
+total is ideal. Passphrases are better than pass*words* containing lots
+of random letters and symbols, because pass*phrases* have higher entropy and
+are therefore harder to crack.
 
 The GRUB password can be stored in one of two ways:
 
@@ -161,53 +99,63 @@ The following executable will then be available under `src/grub/default/`:
 
 	grub-mkpasswd-pbkdf2
 
-Its output will be a string of the following form:
+Run that program. It will ask you to choose a new passphrase. Its output will
+be a string of the following form:
 
 	grub.pbkdf2.sha512.10000.HEXDIGITS.MOREHEXDIGITS
+
+Make sure to copy this into the correct GRUB config. The correct GRUB config
+can be determined as follows. Again, let's assume that you have `x200_8mb`:
+
+	grep grubtree= config/coreboot/x200_8mb/target.cfg
+
+It *may* or *may not* output anything. If it outputs *nothing*, then the
+GRUB tree is `default`, otherwise it might output something like:
+
+	grubtree="nvme"
+
+Make *sure* to use the correct GRUB tree. We will assume `default`, so you
+should adapt accordingly, when doing this yourself:
+
+	cp config/grub/default/config/payload grub.cfg
+
+Now, your `grub.cfg` file is correct for the board, and you can insert
+the salted, hashed passphrase that you get from `grub-mkpasswd-pbkdf2` earlier.
 
 Now open my.grubtest.cfg and put the following before the menu entries
 (prefered above the functions and after other directives). Of course use
 the pbdkf string that you had generated yourself:
 
+Put this *before* the menuentries (just before) in `grub.cfg`, but note that
+you should **not** literally use what is below; the hash below is not the one
+you generated yourself. Make sure to adapt accordingly.
+
+Example:
+
 	set superusers="root"
 	password_pbkdf2 root grub.pbkdf2.sha512.10000.711F186347156BC105CD83A2ED7AF1EB971AA2B1EB2640172F34B0DEFFC97E654AF48E5F0C3B7622502B76458DA494270CC0EA6504411D676E6752FD1651E749.8DD11178EB8D1F633308FD8FCC64D0B243F949B9B99CCEADE2ECA11657A757D22025986B0FA116F1D5191E0A22677674C994EDBFADE62240E9D161688266A711
 
-Obviously, replace it with the correct hash that you actually obtained for the
+**Again**, replace it with the correct hash that you actually obtained for the
 password you entered. In other words, *do not use the hash that you see above!*
 
-With this configuration in place, you must now enter the passphrase *every
-single time you boot your computer*. This completely restricts an attacker in
-such a way that they cannot simply boot an arbitrary operating system on your
-computer. NOTE: An attacker could still open your system and re-flash new
-firmware externally. You should implement some detection mechanism, such as
-epoxy applied in a *random pattern* on every screw; this slows down the attack
-and means that you will know someone tampered with it because they cannot
-easily re-produce the exact same glob of epoxy in the same pattern (when you
-apply it, swirl it around a bit for a few minutes while it cures. The purpose
-is not to prevent disassembly, but to slow it down and make it detectable when
-it has occured).
+Once this configuration is inserted, you will need to enter a passphrase every
+time you boot. GRUB will also ask for a username. In the above example, we
+made a username `root`, but you can set it to what you want and
+adapt accordingly.
 
 Another good thing to do, if we chose to load signed on-disk GRUB
-configurations, is to remove (or comment out) `unset superusers` in
-function try\_user\_config:
+configurations, is to remove (or comment out) `unset superusers`. Find any line
+that says this, in your `grub.cfg` file:
 
-```
-function try_user_config {
-	set root="${1}"
-	for dir in boot grub grub2 boot/grub boot/grub2; do
-		for name in '' autoboot_ libreboot_ coreboot_; do
-			if [ -f /"${dir}"/"${name}"grub.cfg ]; then
-            			#unset superusers
-            			configfile /"${dir}"/"${name}"grub.cfg
-         		fi
-		done
-	done
-}
-```
+	unset superusers
+
+Change it to this:
+
+	# unset superusers
 
 The `unset superusers` command disables password authentication, which will
 allow the attacker to boot an arbitrary operating system, regardless of
-signature checking. The default libreboot configuration is tweaked for *easy of
+signature checking. The default libreboot configuration is tweaked for *ease of
 use* by end users, and it is *not* done with security in mind (though security
 is preferred). Thus, libreboot is less restrictive by default. What you are
 doing, per this article, is making your system *more secure* but at the expense
@@ -217,6 +165,8 @@ That just about covers it, where password setup is concerned!
 
 SeaBIOS first?
 ==============
+
+**Very important. Make sure you read this carefully.**
 
 In releases after Libreboot 20240504, SeaBIOS is the primary payload on
 all images, but GRUB is available in the boot menu. Select a ROM image
@@ -241,7 +191,31 @@ the default one, as of Libreboot 20240612.
 
 NOTE: Before disabling the boot menu, make sure GRUB works. Access it using
 the `bootorder` file and/or press ESC in the SeaBIOS menu. Then disable the
-SeaBIOS menu.
+SeaBIOS menu:
+
+	cbfstool libreboot.rom add-int -i 0 -n etc/show-boot-menu
+
+Although the `bootorder` file only specifies *GRUB*, this just means that
+SeaBIOS won't automatically try to boot anything else. The SeaBIOS menu is still
+accessible, by pressing ESC when prompted; the above `add-int` command disables
+that menu, so that *only* the GRUB payload will be executed.
+
+SeaBIOS option ROMs
+===================
+
+SeaBIOS will also still execute PCI option ROMs. Depending on your preference,
+you may wish to disable this, but please note that this will break certain
+things like graphics cards. More information is available here:
+
+<https://www.seabios.org/Runtime_config>
+
+On a laptop, you probably don't have to worry about option ROMs at all, but
+desktops are much more easily upgradeable; though, in practise, anyone
+inclined to insert a card with a malicious option ROM on it wouldn't do that
+anyway, because if they have access to your hardware, they could just
+externally re-flash the machine anyway, so I wouldn't worry, but it's up to you.
+
+If you're using a graphics card, you *need* VGA option ROMs at least.
 
 GPG keys
 ========
@@ -266,7 +240,10 @@ Now that we have a key, we can sign some files with it. We must sign:
 -   (if we wish to transfer control to it) an on-disk `grub.cfg`
 -   `grubtest.cfg` (so that you can go back to `grubtest.cfg` after signature
     checking is enforced. You can always get back to `grub.cfg` by pressing ESC,
-    but, afterwards, `grubtest.cfg` is not signed and it will not load.
+    but, afterwards, `grubtest.cfg` is not signed and it will not load. The
+    GRUB config we made earlier can be copied to `grubtest.cfg` and inserted,
+    but please only do this at the end of the guide when it tells you to insert
+    the GRUB config, because there are still osme things you need to do.
 
 Suppose that we have a pair of `my.kernel` and `my.initramfs` and an
 on-disk `libreboot_grub.cfg`. We will sign them by running the following
@@ -279,7 +256,7 @@ gpg --homedir keys --detach-sign libreboot_grub.cfg
 gpg --homedir keys --detach-sign my.grubtest.cfg
 ```
 
-Of course, some further modifications to my.grubtest.cfg will be required. We
+Of course, some further modifications to grubtest.cfg will be required. We
 need to *trust* the key and enable signature enforcement (put this before menu
 entries):
 
@@ -292,9 +269,61 @@ What remains now is to include the modifications into the libreboot image
 (ROM):
 
 ```
-cbfstool my.rom add -n boot.key -f boot.key -t raw
-cbfstool my.rom add -n grubtest.cfg -f my.grubtest.cfg -t raw
-cbfstool my.rom add -n grubtest.cfg.sig -f my.grubtest.cfg.sig -t raw
+cbfstool libreboot.rom add -n boot.key -f boot.key -t raw
+
+# You might consider copying `grub.cfg` to `grubtest.cfg` and adding that.
+# Otherwise, adding just `grub.cfg` is also fine.
+
+cbfstool libreboot.rom add -n grub.cfg -f my.grub.cfg -t raw
+cbfstool libreboot.rom add -n grub.cfg.sig -f my.grub.cfg.sig -t raw
+
+cbfstool libreboot.rom add -n grubtest.cfg -f my.grubtest.cfg -t raw
+cbfstool libreboot.rom add -n grubtest.cfg.sig -f my.grubtest.cfg.sig -t raw
 ```
 
-Now, flash it. If it works, copy it over to `grub.cfg` in CBFS.
+Congratulations!
+================
+
+With any luck, this should work perfectly. Your system will no longer boot
+anything unless it's signed by your key.
+
+If your entire system is also encrypted, including `/boot`, then that protects
+everything including the privkey much more robustly, and it further prevents
+tampering with your kernel (where GPG only detects tampering, encryption can
+prevent it).
+
+Encryption, combined with a GRUB passphrase, combined with a GPG check, should
+make you pretty damn secure at boot time. All that's left now is one final,
+optional step:
+
+Flash write protection
+======================
+
+Although not strictly related to GNU GRUB, flash protection will prevent anyone
+except you from overwriting the flash without permission. This is important,
+because you don't want some malicious software running as root from overwriting
+your flash, thus removing any of the above protections.
+
+The simplest way is to just do this:
+
+	ifdtool -x libreboot.rom -O libreboot.rom
+
+Note that this only works for Intel-based systems that use an Intel Flash
+Descriptor, which is actually most Intel systems that Libreboot supports.
+
+You can still flash externally, or strap `HDA_SDO` (`HDA_DOCK_EN` on older
+GM45 machines) accordingly. Note that the x4x/ich10-based machines don't have
+flash descriptors, and neither do the i945 machines, but the GM45 and newer
+Intel platforms do.
+
+Install the new image
+=====================
+
+Now simply flash the new image, using
+the [flashing instructions](../install/).
+
+If you did all of the above steps correctly, your system should boot
+up just fine. Shut it down and wait a few seconds. If you screwed it up
+and the system is now unbootable, that's OK because you can use an
+external flasher; please
+read [external flashing instructions](../install/spi.md)
