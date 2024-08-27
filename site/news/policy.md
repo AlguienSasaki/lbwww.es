@@ -176,7 +176,7 @@ This next section previously existed in a less than diplomatic manner. It
 has been restored, as of August 2024, because the wisdom that it provides is
 important, yet being respectful of our friends in Massachussets is also
 a good thing to do, where feasible. This section was previously deleted, as
-a gesture of good will to this people, but it can't not be here, so without
+a gesture of good will to those people, but it can't not be here, so without
 further ado:
 
 Firstly, observe the following graphic:
