@@ -42,6 +42,11 @@ Run the injection script pointing to the release archive you downloaded:
 
 	./vendor inject libreboot-RELEASE_targetname.tar.xz
 
+**You are strongly advised only to insert it on the tarball, because then
+checksums are verified to ensure that the vendor files were inserted correctly.
+Otherwise, you can do it manually on each individual image, specifying the
+board name with the instructions provided below:**
+
 The script can automatically detect the board as long as you do not change the file name.
 You can then find flash-ready ROMs in `/bin/release/`
 
@@ -59,11 +64,19 @@ For example:
 Check that the files were inserted
 ==================================
 
-You *must* ensure that the files were inserted.
+You *must* ensure that the files were inserted. The inject command automatically
+verifies checksums of the complete images, when you run it directly on a
+release tarball, but not when running it manually on an individual image;
+checking it manually is useful for the latter, but you should probably just
+insert it into the tarball.
 
 Some examples of how to do that in lbmk:
 
 	./mk -d coreboot TREENAME
+
+TREENAME should be the coreboot tree corresponding to your board. Check
+this in `config/coreboot/BOARD/target.cfg` for your board, and `tree` will be
+set to e.g. `default`, or some other tree name.
 
 Now you find `elf/cbfstool`, which is a directory containing `cbfstool`
 and `ifdtool`. Do this on your ROM image (`libreboot.rom` in the example
