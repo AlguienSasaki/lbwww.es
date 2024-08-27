@@ -3,11 +3,11 @@ title: Modifying grub.cfg in CBFS
 x-toc-enable: true
 ...
 
-NOTE: Libreboot standardises on [flashprog](https://flashprog.org/wiki/Flashprog)
-now, as of 27 January 2024, which is a fork of flashrom.
+Read [Libreboot flashing guides](../install/) before continuing, and make sure
+to back up the current flash contents before you consider following this guide.
 
 Before you follow this guide, it is advisable that you have the ability to
-flash externally, just in case something goes wrong.
+[flash externally](../install/spi.md), just in case something goes wrong.
 
 Libreboot's own GRUB configuration automatically scans for one provided by
 your distro, and this automation will usually work. Sometimes, you might wish
@@ -15,88 +15,117 @@ to override it with your own custom menuentry or additional logic in the GRUB
 config. You can configure GRUB however you like, and this topic is vast so what
 to actually *put in the config* will not be covered here.
 
-This guide will simply teach you how to modify the config, but not what to put.
+This guide will simply teach you how to modify the config, but not what to put,
+whereas the [GRUB hardening](../linux/grub_hardening.md) guide specifically
+says what to modify; cross reference that page and this page.
 
-Compile flashprog and cbfstool
-=============================
+**Disable security before continuing**
+================================
 
-libreboot does not currently distribute utilities pre-compiled. It only
-provides ROM images pre-compiled, where feasible. Therefore, you have to build
-the utilities from source.
+**Before internal flashing, you must first disable `/dev/mem` protections. Make
+sure to re-enable them after you're finished.**
 
-As for the ROM, there are mainly three methods for obtaining a libreboot ROM
-image:
+**See: [Disabling /dev/mem protection](../install/devmem.md)**
 
-1. Dump the contents of the the main *boot flash* on your system, which already
-   has libreboot installed (with GRUB as the default payload). Extract the
-   GRUB configuration from *that* ROM image.
-2. Extract it from a libreboot ROM image supplied by the libreboot project, on
-   the libreboot website or mirrors of the libreboot website.
-3. Build the ROM yourself, using the libreboot build system. Instructions for
-   how to do this are covered in the following article:
-   [How to build libreboot from source](../build/)
+This only applies if you're following these instructions via internal
+flashing, from an existing installation. If you're externally flashing the
+machine, you can ignore this advice.
 
-In either case, you will use the `cbfstool` supplied in the libreboot build
-system.
-This can be found under `coreboot/*/util/cbfstool/` as source code,
-where `*` can be any coreboot source code directory for a given mainboard.
-The directory named `default` should suffice.
+Build dependencies
+==================
 
-Install the build dependencies. For Debian and similar, you can run
-the following command in the libreboot build system, from the root directory
-of the libreboot Git repository.
+**Please first [install build dependencies](../build/).**
 
-	./mk dependencies debian
+Coreboot utilities
+------------------
 
-Determine what coreboot tree you need for your board. For example, if building
-for `x200_8mb`, check `config/coreboot/x200_8mb/target.cfg` and it might
-say `tree="default"` - in this case, the coreboot tree is named `default`.
+You need `cbfstool` from coreboot. For whatever board you have, check which
+coreboot tree it uses in Libreboot's build system, lbmk. For example, let's
+say your board is `x200_8mb`, you would do:
 
-Then, download coreboot (we'll assume the `default` tree is correct):
+	grep tree= config/coreboot/x200_8mb/target.cfg
 
-	./mk -f coreboot default
+In this example, the output might be:
 
-Finally, compile the `cbutils` payload (and you will then have the utils):
+	tree="default"
 
-	./mk -b grub
-
-GRUB is multi-tree, but for GRUB utilities that's fine because we don't patch
-those in any tree; we only patch the GRUB kernel to add various drivers and
-extra crypto such as argon2.
-
-Among other things, this will produce a `cbfstool` executable under any of the
-subdirectories in `src/coreboot/` under `util/cbfstool/cbfstool`.
-
-For example: `src/coreboot/default/util/cbfstool/cbfstool`
-
-The `cbfstool` utility is what you shall use. It is used to manipulate CBFS
-(coreboot file system) which is a file system contained within the coreboot
-ROM image; as a *coreboot distribution*, libreboot inherits this technology.
-
-You can compile cbfstool and ifdtool for the given coreboot tree, e.g.:
+This means you should compile `cbfstool` from the `default` coreboot tree,
+like so:
 
 	./mk -d coreboot default
 
-This will create `elf/cbfstool/default/cbfbstool`
-and `elf/ifdtool/default/ifdtool`.
+This will result in the following binary: `elf/cbfstool/default/cbfstool`
 
-You will also want to build `flashprog` which libreboot recommends for reading
-from and/or writing to the boot flash. In the libreboot build system, you can
-build it by running this command:
+We won't assume the path to cbfstool, in the remainder of this guide, so
+adapt accordingly.
+
+GRUB utilities
+--------------
+
+Again, let's assume the coreboot board is `x200_8mb`. Check the
+file `config/coreboot/x200_8mb/target.cfg` for `grubtree` - if it's not set,
+then the GRUB tree is `default`. We will assume `default`:
+
+	./mk -b grub default
+
+This will compile GRUB for the given tree. If you need to use any of the GRUB
+utilities, this command will build them and in this example, they will be
+available under `src/grub/default/`.
+
+Flashprog
+---------
+
+Compile flashprog like so:
 
 	./mk -b flashprog
 
-An executable will be available at `elf/flashprog/flashprog` after you have done
-this.
+A binary will appear at `elf/flashprog/flashprog`.
+
+Default GRUB config
+===================
+
+The coreboot image has its own filesystem, CBFS, and within CBFS is the GRUB
+binary, and within the GRUB binary is another filesystem called memdisk, where
+the default GRUB configuration is located.
+
+You can override it by inserting your own GRUB config within CBFS.
+
+Acquiring a GRUB config
+=======================
 
 Dump the boot flash
-===================
+-------------------
+
+This is only useful if you already inserted a GRUB config in CBFS. Otherwise,
+you can grab it from Libreboot's build system, lbmk.
 
 [Learn how to externally reprogram these chips](../install/spi.md) and use
 the `-r` option in flashprog; alternatively, for internal flash access,
 look at the [main flashing guide](../install/).
 
 Those guides show how to dump the flash contents, which you are advised to do.
+
+Default GRUB config location
+----------------------------
+
+We'll assume that your GRUB tree is `default`, so the
+file `config/grub/default/config/payload` is your GRUB config; this will be the
+same as what you have in memdisk. Make a copy of this file, for modification.
+
+Modify *that* file, or the one you extracted if you already inserted a custom
+one before, and you will re-insert it when you're done.
+
+Insert grubtest.cfg
+===================
+
+Before reading the next section, please note: if you only have the fallback
+GRUB config in memdisk, and no configs in CBFS, you can test the modified
+version by inserting it as `grubtest.cfg`, instead of `grub.cfg`:
+
+	cbfstool libreboot.rom add -f grubtest.cfg -n grubtest.cfg
+
+Libreboot will not automatically load it, but it will be available from the
+default GRUB menu. This can be useful for test purposes, hence the name.
 
 Insert new grub.cfg
 ===================
@@ -110,32 +139,20 @@ Now remove it:
 
 	cbfstool libreboot.rom remove -n grub.cfg
 
-It's important that you re-add `grub.cfg` before flashing:
+It's important that you re-add `grub.cfg` before flashing (or just add it, if
+it was never there in the first place):
 
 	cbfstool libreboot.rom add -f grub.cfg -n grub.cfg
 
-Repeat this for `grubtest.cfg` if you wish.
+**If you flash the Libreboot image without a `grub.cfg` in CBFS, it will
+default back to the one in GRUB memdisk.
 
-If you're using a default Libreboot image, there *is no `grub.cfg` in flash*.
-This is because there is also a default one embedded inside the GRUB binary,
-which is inside CBFS. So:
+AGAIN:
 
-The coreboot image has its own filesystem, CBFS, and within CBFS is the GRUB
-binary, and within the GRUB binary is another filesystem called memdisk, where
-the default GRUB configuration is located.
-
-You can insert a `grub.cfg` into CBFS and it will override the one in memdisk.
-
-Check your board, e.g. `x200_8mb`, look at the file: `config/coreboot/x200_8mb/target.cfg`
-and check for `grubtree` - if it's not sot, then it's `default`, otherwise check
-what it's set to.
-
-We'll assume it's `default`, so the
-file `config/grub/default/config/payload` is your GRUB config; this will be the
-same as what yo uhave in memdisk.
-
-Modify *that* file, or the one you extracted if you already inserted a custom
-one before, and you will re-insert it when you're done.
+If you only want to test your changes first, insert it first as `grubtest.cfg`
+and ensure that no `grub.cfg` exists in flash. This will let you access the
+test config from the default menu, before deciding whether to make it the
+main config, as `grub.cfg`, overriding the one in GRUB memdisk.
 
 Flash the modified ROM image
 ============================
