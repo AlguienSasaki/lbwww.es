@@ -2,6 +2,13 @@
 % Leah Rowe
 % 7 July 2023
 
+**Please also follow this guide if using Dell Latitude laptops.**
+
+**If unsure, just follow this guide. If you follow this guide on a board that
+does not need vendor files, the resulting ROM images will be identical and
+therefore nothing will have happened. The inject script is designed to insert
+certain files, only if required on a given mainboard.**
+
 NOTE: Libreboot standardises on [flashprog](https://flashprog.org/wiki/Flashprog)
 now, as of 27 January 2024, which is a fork of flashrom.
 

@@ -68,6 +68,10 @@ reduces the sloccount by only 1 line, maybe 3, but they all add up. Audit 3
 contained hundreds of changes, small changes, that together accounted for
 about 1000 lines of code removed, while not affecting functionality in any way.
 
+This will always remain on the TODO list, because there will always be a need
+for auditing, as is true of any codebase. It is always possible to fix more
+bugs or improve a piece of code. As they say: the code is never finished.
+
 Port vendor scripts to Heads
 ============================
 
