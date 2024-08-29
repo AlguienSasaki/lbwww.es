@@ -82,7 +82,7 @@ attention to how the functions are formatted, e.g. where `{` and `}` go:
 ```
 #!/usr/bin/env sh
 
-. "include/err.sh"
+. "include/lib.sh"
 
 main()
 {
@@ -94,7 +94,7 @@ main()
 foo()
 {
 	printf "I'm a function that does stuff.\n"
-	bar || err "foo: an error occured"
+	bar || $err "foo: an error occured"
 	do_something_else
 }
 
@@ -107,7 +107,7 @@ bar()
 do_something_else()
 {
 	complicated_function bla bla bla || \
-	    err "do_something_else: something happened that wasn't nice"
+	    $err "do_something_else: something happened that wasn't nice"
 }
 
 complicated_function()
@@ -169,7 +169,7 @@ However, neither of these should be relied upon exclusively. When a script runs
 must be handled.
 
 The general rule is to call `err()`, which is provided in lbmk by
-the file `include/err.sh`. This is inspired by the way `err()` is called in
+the file `include/lib.sh`. This is inspired by the way `err()` is called in
 BSD programs (from `err.h`, a non-standard BSD libc extension).
 
 Where a script must perform certain cleanup before exiting, the script should
@@ -177,11 +177,11 @@ implement its own `fail()` function that performs cleanup, and then
 calls `err()`. The `err()` function takes a string as argument, which will be
 printed to the screen.
 
-If `err` is being called from `main()`, just write the error message. However,
+If `$err` is being called from `main()`, just write the error message. However,
 if it's being called from another function, you should write the function name.
 For example:
 
-	err "function_name: this shit doesn't work. fix it."
+	$err "function_name: this shit doesn't work. fix it."
 
 Do not directly exit
 --------------------
@@ -276,7 +276,7 @@ follow-up line. For example:
 function_name()
 {
 	really stupidly long command that may also return error state || \
-	    err "function_name: you fucked up. try again."
+	    $err "function_name: you fucked up. try again."
 }
 ```
 
