@@ -2,6 +2,9 @@
 % Leah Rowe
 % 12 June 2024
 
+**IMPORTANT ADVICE: [PLEASE READ THESE INSTRUCTIONS BEFORE INSTALLING/UPDATING
+LIBREBOOT](safety.md).**
+
 Introduction
 ============
 
