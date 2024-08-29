@@ -67,7 +67,7 @@ starting point.
 
 You can then easily modify the existing coreboot configs for you board via lbmk.
 
-	./update trees -m coreboot t420s_12mb
+	./mk -m coreboot t420s_12mb
 
 This script will provide a curses interface through which you can easily modify the
 necessary variables and settings.
@@ -82,7 +82,7 @@ a corebootfb and txtmode config for each board (the script will handle this for 
 Now you can build and test the rom for `board.`
 Once you have finished this, you can try flashing the resulting rom to your board as a test.
 
-	./build roms t420s_12mb
+	./mk -b coreboot t420s_12mb
 
 If you try to flash this rom and it fails, then there are two probable reasons:
 
