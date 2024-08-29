@@ -284,33 +284,9 @@ the sections below:
 
 [You must flash it externally](spi.md)
 
-#### DELL Latitude E6400 laptop
+#### DELL Latitude laptops
 
-See: [Dell Latitude E6400 Libreboot Installation Guide](e6400.md)
-
-#### DELL Latitude E6420 laptop
-
-See: [Dell Latitude E6420 Libreboot Installation Guide](e6430.md)
-
-#### DELL Latitude E6430 laptop
-
-See: [Dell Latitude E6430 Libreboot Installation Guide](e6430.md)
-
-#### DELL Latitude E6520 laptop
-
-See: [Dell Latitude E6520 Libreboot Installation Guide](e6420.md)
-
-#### DELL Latitude E6530 laptop
-
-See: [Dell Latitude E6530 Libreboot Installation Guide](e6430.md)
-
-#### DELL Latitude E5520 laptop
-
-See: [Dell Latitude E5520 Libreboot Installation Guide](e5520.md)
-
-#### DELL Latitude E5530 laptop
-
-See: [Dell Latitude E5530 Libreboot Installation Guide](e6430.md)
+See: [Dell Latitude flashing guide](latitude.md)
 
 #### ThinkPad X200/T400/T500/W500/R400/R500 vendor BIOS
 
@@ -578,15 +554,10 @@ How to use external flashing equipment
 Refer to the following article:\
 [Externally rewrite 25xx NOR flash via SPI protocol](spi.md)
 
-DELL Latitude E6400 laptop (easy to flash, similar to X200/T400)
+DELL Latitude laptops
 -------------------------
 
-See: [Dell Latitude E6400 Libreboot Installation Instructions](e6400.md)
-
-DELL Latitude E6430 laptop (easy to flash, no disassembly)
--------------------------
-
-See: [Dell Latitude E6430 Libreboot Installation Instructions](e6430.md)
+See: [Dell Latitude flashing guide](latitude.md)
 
 ASUS KFSN4-DRE
 --------------

@@ -62,13 +62,13 @@ libreboot currently supports the following systems in this release:
 -   Lenovo ThinkPad X230 - *Also* available on Minifree: <https://minifree.org/product/libreboot-x230/>
 -   [Apple MacBook1,1 and MacBook2,1](macbook21.md)
 -   [Dell Latitude E6400, E6400 XFR and E6400 ATG, all with Nvidia or Intel
-    GPU](e6400.md)
--   [Dell Latitude E6420 (Intel GPU](e6420.md)
--   [Dell Latitude E6430 (Intel GPU](e6430.md)
--   [Dell Latitude E5520 (Intel GPU](e5520.md)
--   [Dell Latitude E5530 (Intel GPU](e5530.md)
--   [Dell Latitude E6520 (Intel GPU](e6520.md)
--   [Dell Latitude E6530 (Intel GPU](e6530.md)
+    GPU](../install/latitude.md)
+-   [Dell Latitude E6420 (Intel GPU](../install/latitude.md)
+-   [Dell Latitude E6430 (Intel GPU](../install/latitude.md)
+-   [Dell Latitude E5520 (Intel GPU](../install/latitude.md)
+-   [Dell Latitude E5530 (Intel GPU](../install/latitude.md)
+-   [Dell Latitude E6520 (Intel GPU](../install/latitude.md)
+-   [Dell Latitude E6530 (Intel GPU](../install/latitude.md)
 -   Dell Latitude E5420.
 -   [HP EliteBook 2170p](hp2170p.md)
 -   [HP EliteBook 2560p](hp2560p.md)

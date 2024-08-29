@@ -73,9 +73,9 @@ Introduction
     buy with Libreboot preinstalled](https://minifree.org/product/libreboot-w541/)**
 -   Lenovo ThinkPad X230 - *Also* available on Minifree: <https://minifree.org/product/libreboot-x230/>
 -   [Apple MacBook1,1 及 MacBook2,1](macbook21.md)
--   [Dell Latitude E6400, E6400 XFR 及 E6400 ATG，皆支持 Nvidia 或 Intel GPU](e6400.md)
+-   [Dell Latitude E6400, E6400 XFR 及 E6400 ATG，皆支持 Nvidia 或 Intel GPU](../install/latitude.md)
 -   Dell Latitude E6420 (Intel GPU) - no guide yet.
--   [Dell Latitude E6430, Intel GPU](e6430.md)
+-   [Dell Latitude E6430, Intel GPU](../install/latitude.md)
 -   Dell Latitude E5530 (Intel GPU) - no guide yet.
 -   Dell Latitude E6520 (Intel GPU) - no guide yet.
 -   [HP EliteBook 2170p](hp2170p.md)

@@ -46,8 +46,7 @@ for Nvidia graphics now exists, in a WIP branch of Libreboot.
 
 The Libreboot documentation has been updated, to cover these models. Refer
 to Dell Latitude E6400 documentation in Libreboot; specifically,
-the [E6400 info page](../docs/hardware/e6400.md) and [E6400 flashing
-guide](../docs/install/e6400.md).
+the [E6400 info page](../docs/install/latitude.md).
 
 Ongoing development discussion is available, on the Libreboot bug tracker. See:
 
@@ -56,8 +55,7 @@ Ongoing development discussion is available, on the Libreboot bug tracker. See:
 For more information about the *Nvidia GPU* variants, please review the
 following pages (which have been updated, while publishing this news article):
 
-* [Dell Latitude E6400 hardware information](../docs/hardware/e6400.md)
-* [Dell Latitude E6400 flashing instructions](../docs/install/e6400.md)
+* [Dell Latitude E6400 information](../docs/install/latitude.md)
 
 Nouveau(in Linux) currently broken
 ----------------------------------

@@ -279,7 +279,7 @@ Desktops (AMD, Intel, x86)
 
 ### Laptops (Intel, x86)
 
--   **[Dell Latitude E6400](../docs/hardware/e6400.md) (easy to flash, no disassembly, similar
+-   **[Dell Latitude E6400](../docs/install/latitude.md) (easy to flash, no disassembly, similar
     hardware to X200/T400)**
 -   ThinkPad X60 / X60S / X60 Tablet
 -   ThinkPad T60 (with Intel GPU)

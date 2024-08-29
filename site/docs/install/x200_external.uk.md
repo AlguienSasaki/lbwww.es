@@ -7,7 +7,7 @@ NOTE: Libreboot standardises on [flashprog](https://flashprog.org/wiki/Flashprog
 now, as of 27 January 2024, which is a fork of flashrom.
 
 **If you haven't bought an X200 yet: the [Dell Latitude
-E6400](../../news/e6400.md) is much easier to flash; no disassembly required,
+E6400](latitude.md) is much easier to flash; no disassembly required,
 it can be flashed entirely in software from Dell BIOS to Libreboot. It is the
 same hardware generation (GM45), with same CPUs, video processor, etc.**
 
