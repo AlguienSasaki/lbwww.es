@@ -19,7 +19,7 @@ payloads are officially supported, provided in varying configurations per
 machine. It provides an [automated build system](../docs/maintain/) for the
 [configuration](../docs/build/) and [installation](../docs/install/) of coreboot
 ROM images, making coreboot easier to use for non-technical people. You can find
-the [list of supported hardware](../docs/hardware/) in Libreboot documentation.
+the [list of supported hardware](../docs/install/) in Libreboot documentation.
 
 Libreboot's main benefit is *higher boot speed*,
 [better](../docs/linux/encryption.md) 

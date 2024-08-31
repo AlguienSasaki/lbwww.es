@@ -6,7 +6,7 @@ x-toc-enable: true
 The *Libreboot* project provides
 [free, open source](https://writefreesoftware.org/) (*libre*) boot
 firmware based on coreboot, replacing proprietary BIOS/UEFI firmware
-on [specific Intel/AMD x86 and ARM based motherboards](docs/hardware/),
+on [specific Intel/AMD x86 and ARM based motherboards](docs/install/),
 including laptop and desktop computers. It initialises the hardware (e.g. memory
 controller, CPU, peripherals) and starts a bootloader for your operating
 system. [Linux](docs/linux/) and [BSD](docs/bsd/) are well-supported. Help is

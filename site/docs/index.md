@@ -24,7 +24,6 @@ operates Minifree Ltd; sales provide funding for the Libreboot project.
 Installing libreboot
 ====================
 
--   [What systems can I use libreboot on?](hardware/)
 -   [How to install libreboot](install/)
 
 Documentation related to operating systems

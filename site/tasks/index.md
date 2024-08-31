@@ -303,7 +303,7 @@ but still very useful.
 The `nyan`, `peach` and `daisy` platforms were initially added to lbmk, but
 prematurely. They are talked about here:
 
-<https://libreboot.org/docs/hardware/#removed-boards>
+<https://libreboot.org/docs/install/#removed-boards>
 
 It would be nice in general to support more ARM platforms in Libreboot. None
 of these machines are as decent as the Apple silicon machines (m1/m2/m3 etc),

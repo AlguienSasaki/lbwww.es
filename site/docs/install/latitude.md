@@ -35,7 +35,7 @@ Thermal safety
 **Thermal safety**: this machine shuts down very quickly, when the machine
 exceeds 80c CPU temperature, which is far more conservative than on most
 laptops (non-Dell ones), so you should make sure that your thermals are
-excellent. More info available [here](../hardware/dell_thermal.md). This is a
+excellent. More info available [here](../install/dell_thermal.md). This is a
 known bug, but otherwise the machine will be mostly stable.
 
 Machine-specific notes

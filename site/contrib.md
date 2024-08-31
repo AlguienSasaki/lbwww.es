@@ -228,7 +228,7 @@ releases.
 Lorenzo Aloe
 ------------
 
-Provided hardware testing for the [Dell OptiPlex 9020](docs/hardware/dell9020.md),
+Provided hardware testing for the [Dell OptiPlex 9020](docs/install/dell9020.md),
 also provided testing for proxmox with GPU passthrough on Dell Precision T1650,
 confirming near-native performance; with this, you can boot operating systems
 virtually natively, performance-wise, on a Libreboot system in cases where
@@ -306,7 +306,7 @@ Riku Viitanen
 Added support for HP Elite 8200 SFF desktop PC to Libreboot. You can read
 about this in the hardware page:
 
-[HP Elite 8200 SFF](docs/hardware/hp8200sff.md)
+[HP Elite 8200 SFF](docs/install/hp8200sff.md)
 
 Steve Shenton
 -------------

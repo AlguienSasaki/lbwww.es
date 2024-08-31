@@ -151,25 +151,25 @@ please contact the Libreboot project. They are:
 Desktops (AMD, Intel, x86)
 -----------------------
 
--   [Gigabyte GA-G41M-ES2L motherboard](../docs/hardware/ga-g41m-es2l.md)
--   [Acer G43T-AM3](../docs/hardware/acer_g43t-am3.md)
--   [Intel D510MO and D410PT motherboards](../docs/hardware/d510mo.md)
--   [Apple iMac 5,2](../docs/hardware/imac52.md)
+-   [Gigabyte GA-G41M-ES2L motherboard](../docs/install/ga-g41m-es2l.md)
+-   [Acer G43T-AM3](../docs/install/acer_g43t-am3.md)
+-   Intel D510MO and D410PT motherboards
+-   Apple iMac 5,2
 
 ### Laptops (Intel, x86)
 
 -   ThinkPad X60 / X60S / X60 Tablet
 -   ThinkPad T60 (with Intel GPU)
--   [Lenovo ThinkPad X200 / X200S / X200 Tablet](../docs/hardware/x200.md)
+-   [Lenovo ThinkPad X200 / X200S / X200 Tablet](../docs/install/x200.md)
 -   Lenovo ThinkPad X230
 -   Lenovo ThinkPad X301
--   [Lenovo ThinkPad R400](../docs/hardware/r400.md)
--   [Lenovo ThinkPad T400 / T400S](../docs/hardware/t400.md)
--   [Lenovo ThinkPad T500](../docs/hardware/t500.md)
+-   [Lenovo ThinkPad R400](../docs/install/r400.md)
+-   [Lenovo ThinkPad T400 / T400S](../docs/install/t400.md)
+-   [Lenovo ThinkPad T500](../docs/install/t500.md)
 -   [Lenovo ThinkPad T530 / W530](../docs/install/ivy_has_common.md)
--   [Lenovo ThinkPad W500](../docs/hardware/t500.md)
--   [Lenovo ThinkPad R500](../docs/hardware/r500.md)
--   [Apple MacBook1,1 and MacBook2,1](../docs/hardware/macbook21.md)
+-   [Lenovo ThinkPad W500](../docs/install/t500.md)
+-   Lenovo ThinkPad R500
+-   [Apple MacBook1,1 and MacBook2,1](../docs/install/macbook21.md)
 -   [Lenovo ThinkPad T440p](../docs/install/t440p_external.md)
 -   [Lenovo Thinkpad X220](../docs/install/ivy_has_common.md)
 -   [Lenovo Thinkpad X220t](../docs/install/ivy_has_common.md)

@@ -7,8 +7,8 @@ Introduction
 
 ![Two HP EliteBooks side by side, both running Libreboot](https://av.libreboot.org/hp9470m/9470m+2560p.jpg)
 
-Support for [HP EliteBook Folio 9470m](../docs/hardware/hp9470m.md) and
-[HP EliteBook 2560p](../docs/hardware/hp2560p.md)
+Support for [HP EliteBook Folio 9470m](../docs/install/hp9470m.md) and
+[HP EliteBook 2560p](../docs/install/hp2560p.md)
 has now been merged into Libreboot. These are very nice Sandy/Ivy
 Bridge laptops. Libreboot's build system now builds coreboot automatically
 for them, making it simple to install libre firmware on these laptops and

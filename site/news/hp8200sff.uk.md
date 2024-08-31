@@ -9,7 +9,7 @@
 Останнім доданим був Acer G43T-AM3.
 
 Ви можете вивчити більше про це на [сторінці встановлення Libreboot та інформації
-апаратного забезпечення HP Elite 8200 SFF](../docs/hardware/hp8200sff.md).
+апаратного забезпечення HP Elite 8200 SFF](../docs/install/hp8200sff.md).
 
 Виправлення в Libreboot було зроблено, ввічливість Ріку Війтанен, нікнейм IRC `Riku_V`
 на Libreboot IRC. Це доволі добра платформа Intel Sandybridge, з усією вільною

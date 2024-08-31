@@ -24,7 +24,6 @@ operates Minifree Ltd; sales provide funding for the Libreboot project.
 Встановлення libreboot
 ====================
 
--   [На яких системах я можу встановлювати libreboot?](hardware/)
 -   [Як встановити libreboot](install/)
 
 Документація, яка має відношення до операційних систем

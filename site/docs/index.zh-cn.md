@@ -22,7 +22,6 @@ operates Minifree Ltd; sales provide funding for the Libreboot project.
 安装 libreboot
 ====================
 
--   [哪些机器上可以使用 libreboot？](hardware/)
 -   [如何安装 libreboot](install/)
 
 操作系统相关文档

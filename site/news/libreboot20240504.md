@@ -60,24 +60,24 @@ This release supports the following hardware:
 
 ### Servers (AMD, x86)
 
--   [ASUS KFSN4-DRE motherboard](../docs/hardware/kfsn4-dre.md)
--   [ASUS KGPE-D16 motherboard](../docs/hardware/kgpe-d16.md)
+-   [ASUS KFSN4-DRE motherboard](../docs/install/kfsn4-dre.md)
+-   [ASUS KGPE-D16 motherboard](../docs/install/kgpe-d16.md)
 
 ### Desktops (AMD, Intel, x86)
 
--   **[Dell OptiPlex 7020/9020 MT and SFF](../docs/hardware/dell9020.md) - Also [available to buy
+-   **[Dell OptiPlex 7020/9020 MT and SFF](../docs/install/dell9020.md) - Also [available to buy
     with Libreboot preinstalled](https://minifree.org/product/libreboot-9020/)** - Dell OptiPlex XE2 MT/SFF also known to work
--   [Acer G43T-AM3](../docs/hardware/acer_g43t-am3.md)
--   [Apple iMac 5,2](../docs/hardware/imac52.md)
--   [ASUS KCMA-D8 motherboard](../docs/hardware/kcma-d8.md)
+-   [Acer G43T-AM3](../docs/install/acer_g43t-am3.md)
+-   Apple iMac 5,2
+-   [ASUS KCMA-D8 motherboard](../docs/install/kcma-d8.md)
 -   Dell OptiPlex 7010 **MT** (known to work, using the T1650 ROM, but more
     research is needed)
--   [Dell Precision T1650](../docs/hardware/t1650.md)
--   [Gigabyte GA-G41M-ES2L motherboard](../docs/hardware/ga-g41m-es2l.md)
--   [HP Elite 8200 SFF/MT](../docs/hardware/hp8200sff.md) (HP 6200 Pro Business probably works too)
--   [HP Elite 8300 USDT](../docs/hardware/hp8300usdt.md)
--   [Intel D510MO and D410PT motherboards](../docs/hardware/d510mo.md)
--   [Intel D945GCLF](../docs/hardware/d945gclf.md)
+-   [Dell Precision T1650](../docs/install/t1650.md)
+-   [Gigabyte GA-G41M-ES2L motherboard](../docs/install/ga-g41m-es2l.md)
+-   [HP Elite 8200 SFF/MT](../docs/install/hp8200sff.md) (HP 6200 Pro Business probably works too)
+-   [HP Elite 8300 USDT](../docs/install/hp8300usdt.md)
+-   Intel D510MO and D410PT motherboards
+-   [Intel D945GCLF](../docs/install/d945gclf.md)
 
 ### Laptops (Intel, x86)
 
@@ -85,7 +85,7 @@ This release supports the following hardware:
     to buy with Libreboot preinstalled](https://minifree.org/product/libreboot-t440p/)**
 -   **[Lenovo ThinkPad W541](../docs/install/ivy_has_common.md) - Also [available to
     buy with Libreboot preinstalled](https://minifree.org/product/libreboot-w541/)**
--   [Apple MacBook1,1 and MacBook2,1](../docs/hardware/macbook21.md)
+-   [Apple MacBook1,1 and MacBook2,1](../docs/install/macbook21.md)
 -   [Dell Latitude E6400, E6400 XFR and E6400 ATG, all with Nvidia or Intel
     GPU](../docs/install/latitude.md)
 -   [Dell Latitude E6420 (Intel GPU](../docs/install/latitude.md)
@@ -95,26 +95,26 @@ This release supports the following hardware:
 -   [Dell Latitude E6520 (Intel GPU](../docs/install/latitude.md)
 -   [Dell Latitude E6530 (Intel GPU](../docs/install/latitude.md)
 -   Dell Latitude E5420
--   [HP EliteBook 2170p](../docs/hardware/hp2170p.md)
--   [HP EliteBook 2560p](../docs/hardware/hp2560p.md)
--   [HP EliteBook 2570p](../docs/hardware/hp2570p.md)
--   [HP EliteBook 820 G2](../docs/hardware/hp820g2.md)
--   [HP EliteBook 8460p](../docs/hardware/hp8460p.md)
--   [HP EliteBook 8470p](../docs/hardware/hp8470p.md)
--   [HP EliteBook 8560w](../docs/hardware/hp8560w.md)
--   [HP EliteBook Folio 9470m](../docs/hardware/hp9470m.md)
--   [Lenovo ThinkPad R400](../docs/hardware/r400.md)
--   [Lenovo ThinkPad R500](../docs/hardware/r500.md)
--   [Lenovo ThinkPad T400 / T400S](../docs/hardware/t400.md)
+-   [HP EliteBook 2170p](../docs/install/hp2170p.md)
+-   [HP EliteBook 2560p](../docs/install/hp2560p.md)
+-   [HP EliteBook 2570p](../docs/install/hp2570p.md)
+-   [HP EliteBook 820 G2](../docs/install/hp820g2.md)
+-   [HP EliteBook 8460p](../docs/install/hp8460p.md)
+-   [HP EliteBook 8470p](../docs/install/hp8470p.md)
+-   [HP EliteBook 8560w](../docs/install/hp8560w.md)
+-   [HP EliteBook Folio 9470m](../docs/install/hp9470m.md)
+-   [Lenovo ThinkPad R400](../docs/install/r400.md)
+-   Lenovo ThinkPad R500
+-   [Lenovo ThinkPad T400 / T400S](../docs/install/t400.md)
 -   [Lenovo Thinkpad T420](../docs/install/ivy_has_common.md) (no install docs yet)
 -   [Lenovo ThinkPad T420S](../docs/install/ivy_has_common.md) (no install docs yet)
 -   [Lenovo ThinkPad T430](../docs/install/ivy_has_common.md) (no install docs yet)
--   [Lenovo ThinkPad T500](../docs/hardware/t500.md)
+-   [Lenovo ThinkPad T500](../docs/install/t500.md)
 -   [Lenovo ThinkPad T520 / W520](../docs/install/ivy_has_common.md) (no install guide yet)
 -   [Lenovo ThinkPad T530 / W530](../docs/install/ivy_has_common.md) (no install
 -   Lenovo ThinkPad T60 (with Intel GPU)
--   [Lenovo ThinkPad W500](../docs/hardware/t500.md)
--   [Lenovo ThinkPad X200 / X200S / X200 Tablet](../docs/hardware/x200.md)
+-   [Lenovo ThinkPad W500](../docs/install/t500.md)
+-   [Lenovo ThinkPad X200 / X200S / X200 Tablet](../docs/install/x200.md)
 -   [Lenovo Thinkpad X220](../docs/install/ivy_has_common.md)
 -   [Lenovo Thinkpad X220t](../docs/install/ivy_has_common.md)
 -   Lenovo ThinkPad X230

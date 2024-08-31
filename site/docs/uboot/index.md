@@ -5,8 +5,6 @@ x-toc-enable: true
 
 Libreboot has experimental support for using U-Boot as a coreboot
 payload since the [20221214](../../news/libreboot20221214.md) release.
-Refer to [docs/hardware/](../hardware/) for a complete list of U-Boot
-targets in Libreboot.
 
 U-Boot integration in Libreboot is currently at a proof-of-concept
 stage, with most boards completely untested and most likely not working.

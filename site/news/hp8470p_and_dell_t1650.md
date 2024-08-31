@@ -4,8 +4,8 @@
 
 **UPDATE, 16 August 2023:
 [installation instructions are now available for
-HP EliteBook 8470p](../docs/hardware/hp8470p.md) and also
-[Dell Precision T1650](../docs/hardware/t1650.md).**
+HP EliteBook 8470p](../docs/install/hp8470p.md) and also
+[Dell Precision T1650](../docs/install/t1650.md).**
 
 Introduction
 ============
@@ -48,7 +48,7 @@ Dell Precision T1650
 
 This machine is truly unique, among most desktop boards in coreboot. It's yet
 another IvyBridge desktop, same platform as [HP 8300
-USDT](../docs/hardware/hp8300usdt.html), but it supports *ECC* memory, if you
+USDT](../docs/install/hp8300usdt.html), but it supports *ECC* memory, if you
 use a Xeon E3 model CPU (ivybridge variant).
 
 It was added in this patch:

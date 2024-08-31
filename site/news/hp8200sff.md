@@ -9,7 +9,7 @@ Today, Libreboot gains its *first* desktop machine for nearly 2 years. The
 last one added was Acer G43T-AM3.
 
 You can learn more about this on the [HP Elite 8200 SFF Libreboot installation
-and hardware information page](../docs/hardware/hp8200sff.md).
+and hardware information page](../docs/install/hp8200sff.md).
 
 The patch for Libreboot was done, courtesy of Riku Viitanen, IRC nick `Riku_V`
 on Libreboot IRC. It's quite a nice Intel Sandybridge platform, with all libre

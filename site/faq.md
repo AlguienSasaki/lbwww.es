@@ -174,7 +174,7 @@ What systems are compatible with libreboot?
 Any system can easily be added, so *compatibility* merely refers to whatever
 boards are integrated in the `lbmk` build system, which libreboot uses.
 
-Please read the [hardware compatibility list](docs/hardware/).
+The [installation page](docs/install/) lists compatible machines.
 
 Freedom pitfalls with modern Intel hardware {#intel}
 ----------------------------------------------------
@@ -305,8 +305,8 @@ ME can be disabled by setting a couple of values in the SPI flash
 memory. The ME firmware can then be removed entirely from the flash
 memory space. The libreboot project [does this](docs/install/ich9utils.md) on
 the Intel 4 Series systems that it supports, such as the [ThinkPad
-X200](../docs/install/x200_external.md) and [ThinkPad
-T400](../docs/install/t400_external.md). ME firmware versions 6.0 and
+X200](../docs/install/x200.md) and [ThinkPad
+T400](../docs/install/t400.md). ME firmware versions 6.0 and
 later, which are found on all systems with an Intel Core i3/i5/i7 CPU
 and a PCH, include "ME Ignition" firmware that performs some hardware
 initialization and power management. If the ME's boot ROM does not find
