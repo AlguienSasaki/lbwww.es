@@ -122,7 +122,7 @@ Before reading the next section, please note: if you only have the fallback
 GRUB config in memdisk, and no configs in CBFS, you can test the modified
 version by inserting it as `grubtest.cfg`, instead of `grub.cfg`:
 
-	cbfstool libreboot.rom add -f grubtest.cfg -n grubtest.cfg
+	cbfstool libreboot.rom add -f grubtest.cfg -n grubtest.cfg -t raw
 
 Libreboot will not automatically load it, but it will be available from the
 default GRUB menu. This can be useful for test purposes, hence the name.
@@ -142,7 +142,7 @@ Now remove it:
 It's important that you re-add `grub.cfg` before flashing (or just add it, if
 it was never there in the first place):
 
-	cbfstool libreboot.rom add -f grub.cfg -n grub.cfg
+	cbfstool libreboot.rom add -f grub.cfg -n grub.cfg -t raw
 
 **If you flash the Libreboot image without a `grub.cfg` in CBFS, it will
 default back to the one in GRUB memdisk.
