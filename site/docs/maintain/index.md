@@ -657,19 +657,10 @@ hence `xarch`.
 The `payload_grub` entry specifies whether or not GRUB is to be included in
 ROM images.
 
-The `payload_grub_withseabios` entry specifies whether or not SeaBIOS is to
-be included *with* GRUB, in ROM images. Turning this on also turns
-on `payload_seabios_withgrub`, unless that option is explicitly turned off.
-
 The `payload_seabios` entry specifies whether or not SeaBIOS is to be included
-in ROM images. This option is *automatically* enabled
-if `payload_grub_withseabios` and/or `payload_seabios_withgrub` are also turned
-on.
-
-The `payload_seabios_grubonly` option, if enabled, creates separate ROM
-images alongside regular `seabios_withgrub` ones, where the `grubonly` ones
-start SeaBIOS but disable the menu and only ever load GRUB from CBFS, which
-then provides the boot for your machine.
+in ROM images. If GRUB is also enabled, standalone SeaBIOS images will be
+created alongside SeaGRUB images. SeaGRUB is where SeaBIOS automatically
+loads GRUB, via `bootorder` inserted into CBFS.
 
 The `payload_memtest` entry specifies whether or not MemTest86+ is to be
 included in ROM images; it will only be included in ROM images for *text mode*
@@ -812,6 +803,52 @@ of their own; for example, `config/grub/` exists.
 Multiple files exist here, and they are *concatenated* in a temporary file by
 lbmk, which is then scanned to find information about projects.
 
+config/data/PROJECT/mkhelper.cfg
+--------------------------------
+
+These `mkhelper.cfg` files define common configuration that can be supplied
+for any single- or multi-tree project. Arguments available are as follows:
+
+* `makeargs`: This defines what arguments to append when running the
+  main `make` command on a given project. For example, this is used on coreboot
+  to tell coreboot's build system that the submodules have been updated (to
+  avoid downloading any that we didn't manually specify).
+* `build_depend`: Just before running the main `make` command on a given
+  project, this specifies other projects to build. It also works with multi
+  tree projects. Example: `seabios/default grub/xhci memtest86plus`
+* `premake`: This defines a function to be called *before* running make, on a
+  given project; the mkhelper file itself can also import any given file to
+  provide that function.
+* `mkhelper` (variable name): Defines a function to be called just after
+  running make, on a given project.
+* `postmake`: This is run *after* `mkhelper`, and can be used for additional
+  functions. For example, it's used on coreboot to call `mkcoreboottar` which
+  will create tarballs of ROM images if `XBMK_RELEASE` is enabled.
+
+You can define anything else here, for use by a given project. More specifically,
+anything you put in mkhelper files will be imported as part of a normal shell
+script during operation of lbmk, to complement core functionality across all
+the various projects.
+
+The `mkhelper` file is a global configuration for the project. Individual
+projects can complement what is set in mkhelper, via `target.cfg` files for
+each project, project tree or target on a given multi-tree project.
+
+The `mkhelper` functionality (and postmake/premake) was originally implemented
+so that lots of special configuration could be done per project, without a lot
+of code repetition. This is a unique design of lbmk, different from many other
+coreboot-distro build systems.
+
+The `mkhelper` functionality is an essential component that makes lbmk work
+the way it does; for example, the `trees` script builds coreboot images without
+payloads, and functions to add payloads are handled by mkhelper-type functions.
+This design allows almost all functionality to be centralised, where the mkhelper
+functions only provide functionality that differs from core functionality.
+
+In the simplest of terms, you may regard mkhelpers as *plugins*, of a sort.
+They simply extend the core functionality of the build system, in a way that
+can differ flexibly between projects.
+
 GRUB config
 ---------------
 
@@ -849,7 +886,7 @@ Author info for GRUB configuration files.
 
 Licensing info for GRUB configuration files.
 
-### config/grub/TREE/config/grub.cfg
+### config/grub/TREE/config/payload
 
 This is a configuration file. It is used to program GRUB's shell.
 
@@ -863,7 +900,7 @@ A `grubtest.cfg` can be inserted into CBFS, but it will not override the
 default `grub.cfg` (either in CBFS or on memdisk); however, the one in memdisk
 will provide a menuentry for switching to this, if available.
 
-### config/data/grub/config/memdisk.cfg
+### config/data/grub/memdisk.cfg
 
 This GRUB configuration checks whether `grub.cfg` exists in CBFS and switches
 to that first (not provided by default) or, if one is not available in CBFS,
@@ -887,7 +924,7 @@ These files are binary-encoded, defining which characters correspond to which
 scancodes. It is handled by `grub-core/commands/keylayouts.c` in the GRUB source
 code.
 
-### config/grub/TREE/modules.list
+### config/data/grub/module/TREE
 
 This defines which modules are inserted into `grub.elf`. These modules can be
 anything from file systems, small applications/utilities, launchers (e.g.
@@ -901,7 +938,7 @@ This list is used by lbmk when it runs `grub-mkstandalone`, which is the utility
 from GRUB that generates `grub.elf` files (to be compressed inside CBFS and then
 executed as a coreboot payload).
 
-### config/grub/patches/
+### config/grub/TREE/patches/
 
 For a given GRUB revision, patches with the `patch` file extension are placed
 here, alphanumerically in the order that they should be applied. For example,
@@ -920,7 +957,7 @@ by lbmk to build coreboot ROM images.
 config/seabios/
 ---------------
 
-### config/seabios/build.list
+### config/data/seabios/build.list
 
 When a given SeaBIOS tree is compiled, for a given target, this file defines
 which files to copy from the `seabios/` directory, which are then copied to
@@ -966,7 +1003,7 @@ that can use U-Boot as a payload in the `lbmk` build system. U-Boot doesn't yet
 have reliable generic configurations that can work across all coreboot boards
 (per-architecture), so these are used to build it per-board.
 
-### config/u-boot/build.list
+### config/data/u-boot/build.list
 
 When a given U-Boot tree is compiled, for a given target, this file defines
 which files to copy from the U-Boot source build, which are then copied to
@@ -1138,6 +1175,11 @@ the above guidance.
 Config files in lbmk root directory
 ===================================
 
+projectsite
+-------------
+
+Domain name linking to the project home page (e.g. libreboot.org).
+
 projectname
 ---------------
 
@@ -1167,7 +1209,10 @@ Scripts in root directory of lbmk
 build
 ---------------
 
-This is the main script. Symlinks `vendor` and `update` also point to it.
+This is the main script. Symlinks `vendor` and `update` also point to it, as
+does `mk`. Direct use of this script is considered deprecate, because in a
+future audit, it will be removed; the `./mk` commands will be used,
+exclusively, so please use only `./mk` as directed here and elsewhere.
 
 Take any given file under `script/` and you can do:
 
@@ -1181,8 +1226,8 @@ For example:
 Special commands available (not provided by files under `script/`):
 
 	./mk release
-	./mk download
 	./mk inject
+	./mk -d coreboot TARGET # also downloads vendor files
 
 The `vendor` commands are handled by the `build` script, calling functions
 inside `include/vendor.sh`, and the `./mk release` logic is handled
@@ -1225,12 +1270,12 @@ now the logic under `include/vendor.sh` is used for downloads. This file now
 only contains those functions used for extraction of MRC files from Google
 Chromebook images, currently only used for Haswell mainboards.
 
-This is an include, used by `script/vendor/download`, but it's here in
+This is an include, used by `include/vendor.sh`, but it's here in
 this file because the vendor download script is GPLv3-only, while the MRC
 extract logic in this file is GPLv2-only (forked from coreboot ages ago). Thus,
 it is provided as an include to bypass license incompatibility. It has been
 heavily modified to use the same style of logic and general control flow used
-in the script at `script/vendor/download`, and it is used from there.
+in the script at `include/vendor.sh`, and it is used from there.
 
 include/lib.sh
 ---------------
@@ -1252,13 +1297,12 @@ This function also contains `x_()` which lbmk uses to execute commands
 and ensure that they cause an exit (with non-zero status) from lbmk, if they
 return an error state.
 
-script/
-=======
-
-script/roms
+include/rom.sh
 -----------
 
-This builds coreboot ROM images.
+This builds coreboot ROM images. Specifically, this contains mkhelper functions.
+It also builds serprog images, and it could be used to provide functions for
+building other types of firmware.
 
 Command: `./mk -b coreboot targetname`
 
@@ -1274,11 +1318,6 @@ example:
 To build *all* targets, specify:
 
 	./mk -b coreboot
-
-Since November 2022, this script can build images for x86 *and* ARM targets.
-The *ARM* targets are ChromeOS devices (chromebooks and such); Libreboot uses
-the *U-Boot* payload, rather than Google's *depthcharge* bootloader. In this
-setup, U-Boot is running on the bare metal, as enabled by *coreboot*.
 
 For x86 targets, these scripts build with the GRUB and/or SeaBIOS payloads
 inserted into the ROM images; secondary payloads like Memtest86+ are also
@@ -1327,21 +1366,30 @@ This script is the beating heart of Libreboot. Break it, and you break
 Libreboot!
 
 Serprog images:
+--------------
 
 Build firmware images for serprog-based SPI programmers, where they use an
 STM32 MCU. It also builds for RP2040-based programmers like Raspberry Pi Pico.
 
-Example command: `./build roms serprog stm32`
+Example command: `./mk -b pico-serprog`
 
-Example command: `./build roms serprog rp2040`
+Example command: `./mk -b stm32-vserprog`
 
-The `list` argument is available:
+This also uses `rom.sh` as with the coreboot image build logic. It's all
+defined in that file, so read the main section pertaining to this file.
 
-	./build roms serprog stm32 list
-	./build roms serprog rp2040 list
+include/vendor.sh
+-----------------
 
-Without arguments, all targets would be compiled, but you can specify a short
-list of targets instead, based on the output of `list`.
+Helper functions for downloading and injecting vendor files. How to use:
+
+	./mk inject ARGUMENTS
+	./mk -d coreboot TARGET
+
+Refer elsewhere in the documentation for how to handle vendor files.
+
+script/
+=======
 
 script/trees
 ------------
