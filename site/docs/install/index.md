@@ -96,7 +96,7 @@ Laptops (Intel, x86)
 -   [Apple MacBook1,1 and MacBook2,1](macbook21.md)
 -   [Dell Latitude E6400, E6400 XFR and E6400 ATG, all with Nvidia or Intel
     GPU](latitude.md)
--   [Dell Latitude E5420, E5520, E5530, E6420, E6430, E6520, E6530](latitude.md)
+-   [Dell Latitude E5420, E5520, E5530, E6420, E6430, E6520, E6530, E6230, E6330, E6220](latitude.md)
     (Intel GPU variants only)
 -   [HP EliteBook 2170p](hp2170p.md)
 -   [HP EliteBook 2560p](hp2560p.md)
