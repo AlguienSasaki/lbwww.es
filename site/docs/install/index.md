@@ -61,6 +61,11 @@ systems, you can use the U-Boot payload (coreboot still initialises hardware).
 
 Libreboot currently supports the following systems:
 
+Games consoles
+--------------
+
+-   [Sony Playstation](playstation.md) (PS1/PSX)
+
 Servers (AMD, x86)
 ------------------
 
