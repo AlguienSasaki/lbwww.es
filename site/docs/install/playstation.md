@@ -169,16 +169,18 @@ on PAL consoles (and vice versa); RGB SCART can be used to mitigate the colour
 issue, but not the timing issue. The oscillator mod is the only solution for the
 timing issue.
 
-The PAL GPU clock is roughly 53.2MHz, and divides by 12 to create the PAL
+The PAL GPU clock is roughly 53.2MHz, and divides by 12 to create the 4.43MHz PAL
 subcarrier/colorburst signal; this is needed in composite video for example.
 
-The NTSC GPU clock is 53.693175MHz, and divides by 15 to create the NTSC
+The NTSC GPU clock is 53.693175MHz, and divides by 15 to create the 3.58MHz NTSC
 subcarrier/colorburst signal; ditto, this is used for NTSC composite video.
 
 On a PAL playstation, Sony woride 53.2MHz to both inputs, and on NTSC, wired
 53.69MHz to both inputs; that means on NTSC machines, PAL games will run with
 a 3.579545MHz colorburst signal, and on PAL consoles running NTSC games,
-the colorburst would be 3.55MHz.
+the colorburst would be 3.55MHz. *Some* people suggest hardwiring a 4.43MHz
+clock to the video dac/buffer on PAL consoles, thus creating what is called
+a "PAL60" signal, but this is ill advised; ditto wiring 3.58MHz to it (NTSC50).
 
 On *most* consoles except very early launch/debug models, and *very late* slim
 models, the PAL clock is pin 192 on the GPU and NTSC is pin 196 on the GPU.
@@ -192,6 +194,10 @@ resistor) directly to the pin; on an NTSC console, do the same but cut 192
 and hook up 53.2MHz to it. The Dual Frequency Oscillator method is easier and
 therefore recommend, but you can do this other method, which I call *DO* (Dual
 Oscillator. Because it's two oscillators!)
+
+By fixing the timings in this way, your region-free console will also have
+correct timings, thus maximum game compatibility, and colours will always be
+correct no matter what video cable you're using.
 
 Modchips
 --------
