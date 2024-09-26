@@ -175,7 +175,7 @@ subcarrier/colorburst signal; this is needed in composite video for example.
 The NTSC GPU clock is 53.693175MHz, and divides by 15 to create the 3.58MHz NTSC
 subcarrier/colorburst signal; ditto, this is used for NTSC composite video.
 
-On a PAL playstation, Sony woride 53.2MHz to both inputs, and on NTSC, wired
+On a PAL playstation, Sony hardwired 53.2MHz to both inputs, and on NTSC, wired
 53.69MHz to both inputs; that means on NTSC machines, PAL games will run with
 a 3.579545MHz colorburst signal, and on PAL consoles running NTSC games,
 the colorburst would be 3.55MHz. *Some* people suggest hardwiring a 4.43MHz
