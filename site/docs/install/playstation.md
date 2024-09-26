@@ -138,7 +138,7 @@ solution in case of bugs.
 There are a few edge cases: PsNee (referenced below) might not work well on
 some Japanese playstations, or PAL PSOne Slim, due to extra restrictions in
 the Sony BIOS; therefore, if doing Dual BIOS, it might be wise to use two of
-those adapter PCBs stacker, using the same OE/CE switch idea. On the one
+those adapter PCBs stacked, using the same OE/CE switch idea. On the one
 containing Sony BIOS, you might use a dump for US NTSC console for example, if
 setting it up on a PAL PSOne or Japanese console. Japanese consoles otherwise
 have additional region checks at startup, and PAL PSOne slims check what video
