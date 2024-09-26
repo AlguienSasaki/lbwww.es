@@ -192,7 +192,8 @@ Combined with PsNee and PicoStation, the Open BIOS from PCSX-Redux team will
 turn your 90s PlayStation into a very hackable machine. There is
 also PSXSDK (which is also free/opensource) allowing for libre game
 development, also known (somewhat ambiguously) as "homebrew" development. The
-fact that these old consoles were designed to boot proprietary games, they are
+fact that these old consoles were designed to boot proprietary games is mere
+coincidence; they are
 simply computers, fully reprogrammable and as such, Libreboot is happy to provide
 this support, for the Sony PlayStation
 
