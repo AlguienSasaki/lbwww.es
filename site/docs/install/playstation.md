@@ -138,7 +138,7 @@ Look here:
 This person has designed PCBs that can be used to add a NOR flash, adapting to
 the pinout of the playstation BIOS. Some early launch model PlayStations used
 a 40-pin chip but most later ones soon after and to end of life were 32-pin.
-This page only sells adapters for use with 32-bit boards.
+This page only sells adapters for use with 32-pin boards.
 
 For most boards, the one you want is probably the `PS1_Flash_Bios_(A)` one.
 
