@@ -99,7 +99,7 @@ Laptops (Intel, x86)
     buy with Libreboot preinstalled](https://minifree.org/product/libreboot-w541/)** - NOTE: W540 also compatible (same mainboard, so flash the same ROM)
 -   Lenovo ThinkPad X230 - *Also* available on Minifree: <https://minifree.org/product/libreboot-x230/>
 -   [Apple MacBook1,1 and MacBook2,1](macbook21.md)
--   [Dell Latitude E6400, E6400 XFR and E6400 ATG, all with Nvidia or Intel
+-   [Dell Latitude E4300, E6400, E6400 XFR and E6400 ATG, all with Nvidia or Intel
     GPU](latitude.md)
 -   [Dell Latitude E5420, E5520, E5530, E6420, E6430, E6520, E6530, E6230, E6330, E6220](latitude.md)
     (Intel GPU variants only)
