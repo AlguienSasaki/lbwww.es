@@ -83,7 +83,7 @@ inject scripts to the Heads build system. Libreboot provides these scripts for
 automatically downloading certain firmwares at build time, as and when
 required for a given mainboard. These are provided by the vendor, e.g. SMSC
 SCH5545 Environment Control (EC) firmware used for fan control on Dell
-Precision T1650. (ditto 7010/9010 MT/SFF machines)
+Precision T1650.
 
 Heads has such logic, but it's not as developed as the logic in Libreboot,
 which was originally inspired by the Heads logic and then greatly expanded upon.
@@ -122,7 +122,6 @@ Boards
 * HP EliteBook 8770w
 * HP EliteBook 840 G2 (not in coreboot yet, but should be similar to 820 G2)
 * HP Z220 CMI and SFF mainboards
-* Dell OptiPlex 7010 and 9010
 * MSI PRO Z690-A mainboard (supported by Dasharo, not sure about coreboot) -
   also, Dasharo supports several more mainboards that aren't in coreboot
   proper.
