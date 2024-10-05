@@ -375,6 +375,13 @@ Intel D945GCLF (vendor BIOS)
 
 See: [Intel D945GCLF flashing guide](d945gclf.md)
 
+Dell OptiPlex 7010/9010 SFF (vendor BIOS)
+---------------------
+
+Refer to the [7010/9020 SFF page](dell7010.md). Internal flashing also possible.
+NOTE: If you have the *MT* variant, read the sections below instead (the SFF
+ROM is only for SFF).
+
 Dell OptiPlex 7010/9010 MT (vendor BIOS)
 ---------------------
 
