@@ -269,15 +269,11 @@ Other Dells (Ivybridge and Sandybridge)
 
 Nicholas Chin is interested in these:
 
-* E6520
-* E6420
-* E6320 and E6330
-* E6220 and E6230
-* E5520 and E5530
-* E5420 and E5430
 * 6430u
 * E5520m
 * E5420m
+
+Many others have been added, of Intel 2nd and 3rd gen.
 
 Most/all of these should be easily flashable, with the `dell-flash-unlock`
 utility, and many could be ported using autoport as a guide. Nicholas is
