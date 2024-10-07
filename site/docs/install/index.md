@@ -83,7 +83,8 @@ Desktops (AMD, Intel, x86)
 -   Dell OptiPlex 7010 **MT** (known to work, using the T1650 ROM, but more
     research is needed) - 9010 also known to work. No GPIO changes, so it should
     be safe to flash.
--  [Dell OptiPlex 7010/9010 SFF](dell7010.md) **(for MT, please use the T1650 image)**
+-   [Dell OptiPlex 3050 Micro](dell3050.md)
+-   [Dell OptiPlex 7010/9010 SFF](dell7010.md) **(for MT, please use the T1650 image)**
 -   [Dell Precision T1650](t1650.md) **(the same ROM works on 7010/9010 MT variant)**
 -   [Gigabyte GA-G41M-ES2L motherboard](ga-g41m-es2l.md)
 -   [HP Elite 8200 SFF/MT](hp8200sff.md) (HP 6200 Pro Business probably works too)
@@ -374,6 +375,13 @@ Intel D945GCLF (vendor BIOS)
 ---------------------------------
 
 See: [Intel D945GCLF flashing guide](d945gclf.md)
+
+Dell OptiPlex 3050 Micro (vendor BIOS)
+---------------------
+
+Refer to the [3050 Micro page](dell3050.md). Internal flashing also possible.
+This has the Intel Boot Guard, but Libreboot uses the *deguard* utility to
+disable the Boot Guard on this Intel 7th gen board.
 
 Dell OptiPlex 7010/9010 SFF (vendor BIOS)
 ---------------------
