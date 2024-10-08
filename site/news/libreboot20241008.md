@@ -132,7 +132,8 @@ and also an MT model, which are likely feasible to port, using deguard and
 basing upon this 3050micro port.
 
 SeaBIOS currently hangs, so you can only use the GRUb payload for now. Also,
-boot times were considerably, so the *DRAM clear on boot* option has been
+boot times were considerably slow with DRAM clear on boot, so the *DRAM clear
+on boot* option has been
 disabled on this board. The TPM is also disabled, though you can enable it
 if you want to re-build. A lot more work will be done on this board, between
 now and the next stable release of Libreboot (today's release is a testing
