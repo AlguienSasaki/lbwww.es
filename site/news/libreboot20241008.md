@@ -62,8 +62,9 @@ The following boards have been added since the Libreboot 20240612 release:
 * Dell Latitude E6330 (courtesy of Nicholas Chin)
 * Dell Latitude E6230 (courtesy of Nicholas Chin. Seriously cool guy)
 * Dell Latitude E4300 (courtesy of Nicholas Chin)
-* Dell OptiPlex 7010/9010 SFF (porting done by 3mdeb, and I added the config
-  for it to Libreboot, based on the Dell Precision T1650 config)
+* [Dell OptiPlex 7010/9010 SFF](../docs/install/dell7010.md) (porting done
+  by 3mdeb, and I added the config for it to Libreboot, based on the Dell
+  Precision T1650 config)
 
 About the Dell Latitude ports
 -----------------------------
