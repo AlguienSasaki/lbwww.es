@@ -88,7 +88,7 @@ installation page, linked above, which also references info from PCSX Redux.
 You can use this on a real PlayStation. Although the machine was originally meant
 for playing proprietary games, there are free/opensource SDKs available for it,
 such as [PSn00bSDK](https://github.com/Lameguy64/PSn00bSDK), and with certain
-other modificatios, it basically becomes a very hackable classic 90s computer,
+other modifications, it basically becomes a very hackable classic 90s computer,
 that also happens to play games. More info is on the Libreboot page about it,
 linked above.
 
