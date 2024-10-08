@@ -12,7 +12,7 @@ x-toc-enable: true
 Libreboot 的创始人和主要开发者，Leah Rowe，也是 Minifree 的所有者和经营者；
 销售电脑为 Libreboot 提供资金。
 
-**新版发布: 最新版本 Libreboot 20240612 已在 2024 年 06 月 12 日发布。详见: [Libreboot 20240612 发布公告](news/libreboot20240612.md).**
+**新版发布: 最新版本 Libreboot 20241008 已在 2024 年 10 月 08 日发布。详见: [Libreboot 20241008 发布公告](news/libreboot20241008.md).**
 
 为什么要使用 *Libreboot*?
 ----------------------------
