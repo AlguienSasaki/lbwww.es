@@ -85,6 +85,7 @@ Desktops (AMD, Intel, x86)
     be safe to flash.
 -   [Dell OptiPlex 3050 Micro](dell3050.md)
 -   [Dell OptiPlex 7010/9010 SFF](dell7010.md) **(for MT, please use the T1650 image)**
+-   Dell Precision T1700 (use the same ROM as 9020 MT, but it won't have ECC support)
 -   [Dell Precision T1650](t1650.md) **(the same ROM works on 7010/9010 MT variant)**
 -   [Gigabyte GA-G41M-ES2L motherboard](ga-g41m-es2l.md)
 -   [HP Elite 8200 SFF/MT](hp8200sff.md) (HP 6200 Pro Business probably works too)
@@ -406,7 +407,7 @@ Refer to the [T1650 hardware page](t1650.md). External flashing
 required, or you can set the Service Mode jumper and flash internally (from
 vendor firmware, to Libreboot).
 
-Dell OptiPlex 7020/9020/XE2 SFF/MT
+Dell OptiPlex 7020/9020/XE2 SFF/MT / Precision T1700
 ------------------------------------
 
 Refer to the [7020/9020 hardware page](dell9020.md). Internal
