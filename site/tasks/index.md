@@ -1980,3 +1980,39 @@ Dell 3020
 =========
 
 another haswell. different to 9020, but could be added.
+
+Dell 3050 Micro century byte
+============================
+
+The `CONFIG_USE_LEGACY_8254_TIMER`
+and `CONFIG_USE_PC_CMOS_ALTCENTURY` options must both be
+enabled. Discovered in patch `d1743d1f64720801146b162c01568ca0023dfb00`
+of lbmk; look at that revision and the next one after it,
+revision `237fa1e3c18365794bf5bf525df99a460c821192`.
+
+As of that revision, SeaBIOS works normally, on Dell OptiPlex 3050 Micro.
+It was hanging. Look at the patches about 10 revisions before
+then, from when the 3050 was first added to lbmk. I made, at that time,
+a bunch of changes to match upstream as closely as possible,
+until fixing it in the above revisions.
+
+While SeaBIOS does indeed now work perfectly on this machine, I still
+don't know why it was broken before. We have our smoking gun, but
+now what needs to happen is for this bug to be re-introduced, using
+the above information as reference.
+
+Then, follow SeaBIOS execution with serial debug, possibly inserting
+print statements into parts of the SeaBIOS source code. This would be
+desirable, so that SeaBIOS can be used with the above two options
+turned off.
+
+When debugging the issue, I initially tried many things. The issue was
+not to do with the SeaBIOS revision, though I also changed that to the
+one used by coreboot at the time, instead of the slightly newer one that
+lbmk was using; I even directly used coreboot's own SeaBIOS build, instead
+of lbmk's. Weirdly, I did also try with the legacy 8254 timer enabled, but
+without enabling the alt century byte option; when disabling the latter,
+relative to the above commit, that's what broke SeaBIOS again.
+
+For now, Libreboot will leave these options enabled, but this is not
+desirable.
