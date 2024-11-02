@@ -83,6 +83,7 @@ Desktops (AMD, Intel, x86)
 -   Dell OptiPlex 7010 **MT** (known to work, using the T1650 ROM, but more
     research is needed) - 9010 also known to work. No GPIO changes, so it should
     be safe to flash.
+-   [Dell OptiPlex 780 variants e.g. MT, USFF](dell780.md)
 -   [Dell OptiPlex 3050 Micro](dell3050.md)
 -   [Dell OptiPlex 7010/9010 SFF](dell7010.md) **(for MT, please use the T1650 image)**
 -   Dell Precision T1700 (use the same ROM as 9020 MT, but it won't have ECC support)
