@@ -110,7 +110,7 @@ This release supports the following hardware:
 -   [Lenovo ThinkPad T420S](../docs/install/ivy_has_common.md) (no install docs yet)
 -   [Lenovo ThinkPad T430](../docs/install/ivy_has_common.md) (no install docs yet)
 -   [Lenovo ThinkPad T500](../docs/install/t500.md)
--   [Lenovo ThinkPad T520 / W520](../docs/install/ivy_has_common.md) (no install guide yet)
+-   [Lenovo ThinkPad T520](../docs/install/ivy_has_common.md) (no install guide yet)
 -   [Lenovo ThinkPad T530 / W530](../docs/install/ivy_has_common.md) (no install
 -   Lenovo ThinkPad T60 (with Intel GPU)
 -   [Lenovo ThinkPad W500](../docs/install/t500.md)
