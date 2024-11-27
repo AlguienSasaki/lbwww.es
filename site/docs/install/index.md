@@ -123,8 +123,6 @@ Laptops (Intel, x86)
 -   [Lenovo ThinkPad T500 / W500](t500.md)
 -   Lenovo ThinkPad T520
 -   Lenovo ThinkPad T530
--   Lenovo ThinkPad W520
--   Lenovo ThinkPad W530
 -   Lenovo ThinkPad T60, X60, X60S, X60 Tablet (with Intel GPU)
 -   [Lenovo ThinkPad X200 / X200S / X200 Tablet](x200.md)
 -   Lenovo Thinkpad X220 / X200 Tablet
