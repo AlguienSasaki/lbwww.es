@@ -133,6 +133,79 @@ In other words, do not lecture the user. Just try to help them with their
 problem! The goal of the libreboot project is simply to make coreboot more
 accessible for otherwise non-technical users.
 
+Examples of Libreboot policy in action
+======================================
+
+More information about this is also available on
+the [freedom status](freedom-status.md) page.
+
+Context is everything, so to make the above picture more clear, here are a few
+examples of how this very policy is implemented in Libreboot:
+
+* On many laptops, it is possible to have both Intel graphics and a dedicated
+  graphics card enabled; more about Intel graphics is covered below. We could
+  provide the VGA ROM for those extra chips, e.g. Nvidia graphics chips, but
+  we don't. We configure the machines in such a way where the Intel graphics
+  is used, exclusively, so the dedicated GPU may aswell be turned off, and
+  it *is* turned off in such circumstances. The Intel graphics provide good
+  enough performance and reliable operation for most people, and native
+  initialisation code is available from coreboot to make use of the Intel GPU
+  at boot time.
+* Newer Intel platforms have Intel ME, which is a coprocessor inside the
+  machine that handles many functions including certain power management, and
+  it can provides useful remote management features with Intel AMT for example.
+  This is a giant 5MB+ blob in the flash, and the ME has full access to your
+  RAM and other peripherals; more is documented about this in the Libreboot
+  FAQ. On older ME4-based platforms such as Intel GM45 platforms, e.g.
+  ThinkPad X200/T400, we remove the ME firmware entirely from the flash, leaving
+  the Intel ME in a permanent reset loop. On Intel Sandybridge and up, we
+  include ME firmware when building, or provide a script to insert it via
+  vendor download on release images, but Libreboot's build system automatically
+  runs the [me cleaner](https://github.com/corna/me_cleaner) software, which
+  removes most of the features from the ME, including its kernel and networking
+  stack, leaving only a rump (dare we say, ROMP) of initialisation code in
+  the ME; essentially, the configuration is equivalent to running coreboot
+  without a payload, where it does nothing other than initialise itself, because
+  that is all the ME does in this configuration, initialise itself but not
+  actually run anything. ME Cleaner is required, instead of full removal,
+  because the machines don't boot reliably without at least the BUP/ROMP
+  modules present in flash.
+* On Intel Haswell platform (Intel 4th gen), a binary blob is available for
+  memory controller initialisation, called the Intel *MRC* or System Agent. We
+  previously included this in Libreboot; nowadays, we have free initialisation
+  code written by Angel Pons. The libre code, called NRI (Native RAM
+  Initialisation) still has a few bugs, such as lack of ECC support, and the
+  MRC also does other things such as initialise certain peripherals. The
+  Haswell machines can be configured in EHCI or XHCI mode for USB ports at
+  startup, and the latter means that you need xHCI support in whatever you're
+  using such as Linux, but also payloads such as U-Boot or GRUB. SeaBIOS and
+  GRUB have stable xHCI support (we have to patch GRUB to have it because
+  otherwise upstream doesn't have it). U-Boot's xHCI support is quite buggy,
+  at least as of November 2024; when tested, it looks like the EHCI mode
+  doesn't work on NRI, only MRC. Now, to get more stable U-Boot support when
+  using USB devices, we could use the MRC and set the machine in EHCI mode
+  at startup; an option exists for it in coreboot. Ditto, we could have ECC
+  support (useful on the Dell Precision T1700, which Libreboot supports!) - it
+  was decided that these issues are quite minor so the free initialisation code
+  is used, and we no longer provide the MRC.
+* Libreboot provides native graphics initialisation on most Intel hardware,
+  provided by coreboot. This replaces the Intel VGA ROM; called libgfxinit,
+  coreboot's native code is far from perfect because many legacy VGA functions
+  simply do not work so it can be a challenge to get old, legacy operating
+  systems working, even if they had full driver support on a given machine
+  when running the vendor BIOS. Libgfxinit otherwise provides a sensible
+  framebuffer implementation from coreboot, which Linux and BSD systems know
+  how to use, and you can use KMS on these systems instead of calls to VGA
+  in the BIOS, to mitigate this issue. It was decided a long time ago that,
+  when available, the native initialisation should be used, when it is stable
+  and Linux/BSD systems work reliably. There is only one exception: the
+  ThinkPad T480 currently doesn't work with libgfxinit in Libreboot, at least
+  as of November 2024, so the Intel VGA ROM is used instead.
+* On RK3399-based Chromebooks, it is possible to load a HDCP blob, which could
+  be convenient for easy access to DRM-based media. We simply do not use this
+  blob on any machines, because it is completeley unnecessary for everyday
+  operating of a free operating system.
+
 FREEDOM CATALOG
 ===============
 
