@@ -137,7 +137,7 @@ Examples of Libreboot policy in action
 ======================================
 
 More information about this is also available on
-the [freedom status](freedom-status.md) page.
+the [freedom status](../freedom-status.md) page.
 
 Context is everything, so to make the above picture more clear, here are a few
 examples of how this very policy is implemented in Libreboot:
