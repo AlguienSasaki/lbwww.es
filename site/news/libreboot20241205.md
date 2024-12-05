@@ -42,7 +42,7 @@ Summarised list of changes
 Board support
 -------------
 
-The following boards have been added since the Libreboot 20240612 release:
+The following boards have been added since the Libreboot 20241008 release:
 
 * **[Lenovo ThinkPad T480](../docs/install/t480.md)** support, implemented by
   Mate Kukri with testing and hardware logs provided by Leah Rowe.
