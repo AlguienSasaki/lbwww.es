@@ -329,6 +329,32 @@ This may be less efficient on disk usage, but it simplifies the logic greatly.
 Coreboot also uses its own toolchain called *crossgcc*, and crossgcc is in fact
 compiled *per tree* in Libreboot.
 
+src/deguard/
+------------
+
+Mate Kukri's utility that disables the Intel Boot Guard on Intel MEv11-based
+PCH. More info available on the [deguard page](../install/deguard.md).
+
+On coreboot targets that have Intel Boot Guard, you can specify in
+target configuration, on the vendor file config, something like:
+
+	ME11bootguard="y"
+	ME11delta="thinkpad_t480s" # subdirectory under deguard's data/delta/
+	ME11version="11.6.0.1126"
+	ME11sku="2M"
+	ME11pch="LP"
+
+The above example is used on the ThinkPad T480S, and specifies that in
+addition to downloading and neutering an Intel ME image, it should also run
+deguard to set up a Boot Guard-disabled configuration, or *deguarded*
+installation (or less politically correctly, a disreguarded ME!)
+
+Libreboot uses a generic, universal ME image on all MEv11 based systems,
+downloading it from a vendor, generic because its configuration is stripped
+out and replaced by deguard, with one specific to the target machine. More
+information is available on the deguard page, and in the deguard README,
+which when downloading in lbmk in the `src/deguard/` directory.
+
 src/flashprog/
 ---------------
 
@@ -338,6 +364,18 @@ Although currently unused by any part of lbmk, we provide flashprog for the
 convenience of users, and this is copied to release archives. Flashrom is the
 program that you will use to read, erase and write the flash, containing
 coreboot firmware.
+
+src/gpio-scripts
+----------------
+
+This is a fork of the original gpio-scripts. The fork is maintained by Riku
+Viitanen, based on code written by Angel Pons (author of the Haswell native
+raminit patches and many other excellent works), but Riku's version parses
+the inteltool log files. This is useful for adapting GPIO configs on Intel
+machines, when porting new boards to coreboot.
+
+NOTE: Not included in Libreboot yet, but `intelp2m` is used instead for this
+purpose, on much newer Intel systems (from around Skylake era or later).
 
 src/grub/TREE
 ---------------
@@ -373,6 +411,12 @@ tree contains NVMe SSD support but not xHCI support. The `default` tree contains
 no NVMe or xHCI support. All trees otherwise have the same fixes on top of
 upstream GRUB, e.g. fix for Dell Latitude keyboard controllers.
 
+src/int/
+--------
+
+Riku Viitanen wrote this tool for debugging, when implementing MXM option ROM
+support in coreboot and SeaBIOS, for the HP EliteBook 8560w.
+
 src/memtest86plus/
 ---------------
 
@@ -380,6 +424,20 @@ Please also visit: <https://www.memtest.org/>
 
 This is provided inside ROM images, as a payload executed from main GRUB or
 SeaBIOS payload. It checks for corrupted memory.
+
+src/mxmdump/
+------------
+
+Riku Viitanen wrote this utility, for dumping the MXM config on graphics cards
+that use it. The HP EliteBook 8560w uses these cards, and normally you would
+just run a VGA option ROM to get a display at boot time. The MXM cards
+additionally contain a configuration called MXM, which basically describes
+ports and several power management capabilities.
+
+MXM data is loaded via an INT15H handler, which Riku also implemented in
+SeaBIOS. If the MXM data is not handled, the VGA option ROM (when executed)
+will often complain and refuse to boot; some of them can be hacked to bypass
+this fact, but such hacks are no longer required because of Riku's tool.
 
 src/seabios/
 ---------------
@@ -407,6 +465,11 @@ provides UEFI. Information about that can be found on these resources:
 
 This is currently the only payload on *ARM* systems, within Libreboot.
 
+U-Boot is also available on x86 machines, since the Libreboot 20241205 release.
+More information can be found on the [U-Boot x86 page](../install/uboot-x86.md);
+it is available as an alternative to the traditional SeaBIOS and GRUB payloads,
+and it can successfully boot UEFI applications on x86 Libreboot systems.
+
 src/uefitool/
 ---------------
 
@@ -415,6 +478,21 @@ Please also visit: <https://github.com/LongSoft/UEFITool>
 This is compiled, so as to provide `UEFIExtract`. Currently used by the
 vendor download logic within `include/vendor.sh`, to download SCH5545 EC
 firmware (used for fan control on Dell Precision T1650).
+
+This has also been modified to build reliably on non-glibc-based systems e.g.
+Alpine Linux, which uses musl libc.
+
+src/pcsx-redux
+----------------
+
+PCSX-Redux is a Sony Playstation (PS1/PSX) emulator, but Libreboot only uses
+one part from it: the Open BIOS. This is used by Libreboot to provide an
+open BIOS for the Sony Playstation!
+
+More information available on the [PlayStation page](../install/playstation.md).
+
+This is automatically compiled by the main build script, and the resulting
+BIOS image is provided in Libreboot release archives.
 
 src/pico-serprog
 ---------------------------
@@ -1297,6 +1375,12 @@ This function also contains `x_()` which lbmk uses to execute commands
 and ensure that they cause an exit (with non-zero status) from lbmk, if they
 return an error state.
 
+This also includes the `mk()` function, which can be used as shorthand to
+build multiple projects, but it doesn't handle targets within multi-tree projects,
+so if for example you say `mk coreboot`, it would build every coreboot target.
+This is useful for the release build logic, because now it can much more simply
+build all of Libreboot, while still being flexible about it.
+
 include/rom.sh
 -----------
 
@@ -1364,6 +1448,10 @@ When the ROM is finished compiling, it will appear under a directory in `bin/`
 
 This script is the beating heart of Libreboot. Break it, and you break
 Libreboot!
+
+CCACHE is automatically used, when building coreboot, but not currently for
+other projects. This is done by cooking coreboot configs at build time, enabling
+coreboot's build option for it.
 
 Serprog images:
 --------------
