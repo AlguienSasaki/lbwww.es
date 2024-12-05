@@ -1,10 +1,14 @@
 ---
-title: U-Boot payload
+title: U-Boot payload (x86 and ARM)
 x-toc-enable: true
 ...
 
+**NOTE: This documentation refers only to ARM64. For AMD64/i386 (Intel/AMD)
+U-Boot setups, please read [uboot-x86.md](uboot-x86.md).**
+
 Libreboot has experimental support for using U-Boot as a coreboot
-payload since the [20221214](../../news/libreboot20221214.md) release.
+payload since the [20221214](../../news/libreboot20221214.md) release, on ARM64
+systems, and on x86 since late 2024.
 
 U-Boot integration in Libreboot is currently at a proof-of-concept
 stage, with most boards completely untested and most likely not working.
@@ -17,7 +21,7 @@ As of 14 December 2022, building of U-Boot images has been tested on
 Debian. Make sure you have the latest `lbmk` from the Git repository,
 and the build dependencies are installed like so, from `lbmk/` as root:
 
-	./build dependencies debian
+	./mk dependencies debian
 
 This installs everything needed for `./build roms`, and part of the
 build process makes use of coreboot's own cross-compile toolchain.
