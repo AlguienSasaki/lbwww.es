@@ -20,7 +20,7 @@ implemented, and this page is still relevant for Libreboot 20231021. It applies
 to any system that requires vendor code to be inserted inside ROM images.**
 
 (it also applies to Libreboot 20231101, 20231106, 20240126, 20240225, 20240504,
-20240612 and 20241008)
+20240612, 20241008 and 20241205)
 
 **UPDATE (16 August 2023): This also applies to the recently added Dell
 Precision T1650 mainboard.**

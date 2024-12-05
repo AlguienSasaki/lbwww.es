@@ -31,7 +31,7 @@ LIBREBOOT](news/safety.md).**
 GPG signing key
 ---------------
 
-**The latest release is Libreboot 20241008, under the `testing` directory.**
+**The latest release is Libreboot 20241205, under the `stable` directory.**
 
 ### NEW KEY
 
@@ -83,7 +83,7 @@ there is a Git repository that you can download from. Go here:
 HTTPS mirrors {#https}
 -------------
 
-**The latest release is Libreboot 20241008, under the `testing` directory.**
+**The latest release is Libreboot 20241205, under the `stable` directory.**
 
 These mirrors are recommended, since they use TLS (https://) encryption.
 
@@ -174,7 +174,7 @@ crontab. This page tells you how to use crontab:
 HTTP mirrors {#http}
 ------------
 
-**The latest release is Libreboot 20241008, under the `testing` directory.**
+**The latest release is Libreboot 20241205, under the `stable` directory.**
 
 WARNING: these mirrors are non-HTTPS which means that they are
 unencrypted. Your traffic could be subject to interference by
@@ -188,7 +188,7 @@ if using HTTPS.
 FTP mirrors {#ftp}
 -----------
 
-**The latest release is Libreboot 20241008, under the `testing` directory.**
+**The latest release is Libreboot 20241205, under the `stable` directory.**
 
 WARNING: FTP is also unencrypted, like HTTP. The same risks are present.
 

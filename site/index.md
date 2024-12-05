@@ -23,9 +23,9 @@ for [Libreboot preinstallation](https://minifree.org/product/installation-servic
 The founder and lead developer of Libreboot, Leah Rowe, also owns and operates
 Minifree; sales provide funding for Libreboot.
 
-**NEW RELEASE: The latest release is Libreboot 20241008, released on
-8 October 2024.
-See: [Libreboot 20241008 release announcement](news/libreboot20241008.md).**
+**NEW RELEASE: The latest release is Libreboot 20241205, released on
+5 December 2024.
+See: [Libreboot 20241205 release announcement](news/libreboot20241205.md).**
 
 *We* believe the freedom to [study, share, modify and use
 software](https://writefreesoftware.org/), without any
