@@ -97,6 +97,7 @@ Desktops (AMD, Intel, x86)
 Laptops (Intel, x86)
 --------------------
 
+-   [Lenovo ThinkPad T480 and ThinkPad T480s](t480.md)
 -   **Lenovo ThinkPad T440p - Also [available
     to buy with Libreboot preinstalled](https://minifree.org/product/libreboot-t440p/)**
 -   **Lenovo ThinkPad W541 - Also [available to
@@ -564,6 +565,13 @@ bootblock, set bucts back to zero:
 
 The second flash can be done by simply following the general internal flashing
 guide further down on this page.
+
+ThinkPad T480/T480S (vendor BIOS)
+----------------------
+
+See:
+
+* [ThinkPad T480/T480S](t480.md)
 
 Thinkpad T440p/W541 (vendor BIOS)
 ---------------------
