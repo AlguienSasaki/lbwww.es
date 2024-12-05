@@ -25,6 +25,16 @@ Mate Kukri, who authored the ThinkPad T480/T480 and OptiPlex 3050 Micro ports,
 wrote a tool called *deguard*, which Libreboot uses on these boards. This tool
 reconfigures the ME, exploiting it so as to disable the Boot Guard.
 
+You can find it hosted by the coreboot project:
+
+<https://review.coreboot.org/deguard> (git repository)
+
+and Libreboot provides a mirror of this repository:
+
+<https://codeberg.org/libreboot/deguard>
+
+More information is available there.
+
 This is done by externally flashing an older version. Libreboot's build system
 automatically downloads this older version, runs `me_cleaner` on it, and applies
 the deguard hack; this includes machine-specific ME configuration, which is
