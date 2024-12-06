@@ -718,6 +718,28 @@ as:
 * `xtree="default"` (example entry)
 * `tree_depend="default"` (example entry)
 * `grubtree="nvme" (example entry)`
+* `payload_uboot_i386="y"` (example entry - 32 bit U-Boot)
+* `payload_uboot_amd64="y"` (example entry - 64 bit U-Boot)
+
+Please also check the `build_depend` variable
+in `config/data/coreboot/mkhelper.cfg` - and compare to what trees are used
+for payloads in the given target. If your board's `target.cfg` requires trees
+and projects other than that specified in `mkhelper.cfg`, you must replace
+the entire `build_depend` string. For example, if your board requires GRUB with
+xHCI patches, with SeaBIOS and with U-Boot AMD64, and you also want memtest86plus,
+you would therefore set the string as follows:
+
+```
+build_depend="grub/xhci seabios/default u-boot/amd64coreboot memtest86plus"
+```
+
+In the above example, you would also set `grubtree="xhci"`,
+but please note that there is only one SeaBIOS tree so `/default` is implied,
+but must still be in the `build_depend` variable. Multiple U-Boot trees exist,
+but for x86 32-bit you would only specify `i386coreboot` and for 64-bit you
+would only specify `amd64coreboot` and for ARM64 you say `default` - so you
+do not need to specify a `seabiostree` or `uboottree` variable, and these are
+not handled, because lbmk simply assumes use of the aforementioned tree names.
 
 The `tree` value refers to `config/coreboot/TREE`; in other words, a given
 target could specify a name other than its own as the tree; it would then
