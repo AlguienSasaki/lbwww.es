@@ -42,6 +42,8 @@ Summarised list of changes
 Board support
 -------------
 
+<img tabindex=1 class="r" src="https://av.libreboot.org/t480/t480.jpg" /><span class="f"><img src="https://av.libreboot.org/t480/t480.jpg" /></span>
+
 The following boards have been added since the Libreboot 20241008 release:
 
 * **[Lenovo ThinkPad T480](../docs/install/t480.md)** support, implemented by
