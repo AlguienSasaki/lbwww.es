@@ -1,5 +1,5 @@
 ---
-title: Insert vendor files on Sandybridge/Ivybridge/Haswell
+title: Insert vendor files not included in release images
 x-toc-enable: true
 ...
 
@@ -11,6 +11,17 @@ Coreboot is nominally free software, but requires certain vendor code on some
 boards, for certain functionalities; we cover this more thoroughly in
 the [Freedom Status](../../freedom-status.md) page and in the [Binary Blob
 Reduction Policy](../../news/policy.md).
+
+Libreboot can't directly distribute *all* of these blobs, so some of them are
+downloaded at build-time, and processed for insertion into the firmware images.
+**On pre-compiled ROM images in releases, these files are removed, and can be
+re-added using the same automation that was applied during the build process.**
+
+Examples of vendor files can include, for example: Intel ME (disabled after
+boot with me\_cleaner), Embedded Controller firmware (e.g. KBC1126 EC firmware
+on HP EliteBooks), VGA ROMs (e.g. Nvidia GPU ROM for Dell Latitude E6400),
+and so on. Without these, your machine may not boot correctly, or not boot at
+all!
 
 Therefore, you should just follow this guide if in any doubt. Otherwise, the
 freedom status page lists all boards that require vendor files, and it says

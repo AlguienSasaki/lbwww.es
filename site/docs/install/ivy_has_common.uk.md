@@ -1,5 +1,5 @@
 ---
-title: Insert vendore files on Sandybridge/Ivybridge/Haswell
+title: Insert vendor files not included in release images
 x-toc-enable: true
 ...
 
@@ -8,6 +8,11 @@ If a given target does not require vendor files, none will be inserted.
 
 **TODO: Re-translate this again to Ukrainian. It was translated before, but
 the english page got heavily re-written.**
+
+Libreboot can't directly distribute *all* of these blobs, so some of them are
+downloaded at build-time, and processed for insertion into the firmware images.
+**On pre-compiled ROM images in releases, these files are removed, and can be
+re-added using the same automation that was applied during the build process.**
 
 **NOTE: This page also applies to PM45 machine Dell Latitude E6400 if it
 contains an Nvidia GPU (Libreboot vendor scripts can insert the VGA ROM)**
