@@ -6,7 +6,7 @@ x-toc-enable: true
 Introduction
 ============
 
-U-Boot is available as a coreboot payload, in Libreboot 20241205 and later,
+U-Boot is available as a coreboot payload, in Libreboot 20241206 and later,
 on x86 boards; on ARM it has been available since late 2022 Libreboot releases.
 
 Please read <https://www.u-boot.org/>, especially the full U-Boot documentation
@@ -16,7 +16,7 @@ available there.
 the [main U-Boot page](index.md).**
 
 More documentation about this will be written at a later date, but just before
-the Libreboot 20241205 release in December 2024, U-Boot support was added as
+the Libreboot 20241206 release in December 2024, U-Boot support was added as
 a payload on x86 machines, both 32- and 64-bit. This is using the excellent work
 done by Simon Glass and others, on making U-Boot run as a generic x86 coreboot
 payload. It has several boot methods but the most interesting (in an x86
@@ -121,7 +121,7 @@ albeit not widely used by the mainstream, but it does work (I use it myself!).
 Bugs
 ====
 
-Limited testing, at least as of 5 December 2024, but some issues that appeared
+Limited testing, at least as of 6 December 2024, but some issues that appeared
 included:
 
 * Haswell: USB support very flaky. E.g. some keyboards work, some don't, some

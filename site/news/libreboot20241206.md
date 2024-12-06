@@ -1,8 +1,8 @@
-% Libreboot 20241205 released!
+% Libreboot 20241206 released!
 % Leah Rowe
-% 5 December 2024
+% 6 December 2024
 
-Today's Libreboot 20241205 revision is a *stable release*, whereas the previous
+Today's Libreboot 20241206 revision is a *stable release*, whereas the previous
 testing release was Libreboot 20241008, and the previous stable release was
 Libreboot 20240612.
 
@@ -26,7 +26,7 @@ and then a payload such as [SeaBIOS](https://www.seabios.org/SeaBIOS)
 or [GNU GRUB](https://www.gnu.org/software/grub/) to boot your operating
 system; on ARM(chromebooks), we provide *U-Boot* (as a coreboot payload).
 
-For Libreboot 20241205, today's release, U-Boot is *also* provided as an
+For Libreboot 20241206, today's release, U-Boot is *also* provided as an
 optional coreboot payload on x86 machines. This provides a sensible UEFI
 implementation, useful for booting Linux/BSD systems more easily. More
 information available on the [U-Boot x86 page](../docs/uboot/uboot-x86.md).
@@ -121,7 +121,7 @@ In descending order from the latest changes to the earliest changes:
 
 * Disabled U-Boot on ThinkPad T480, because it's currently buggy there; more
   boards will have U-Boot tweaks made to them, in subsequent hotfixes to
-  the Libreboot 20241205 release, and hotfixes to U-Boot itself are also likely,
+  the Libreboot 20241206 release, and hotfixes to U-Boot itself are also likely,
   since U-Boot still requires a lot more testing. U-Boot does work quite well
   on a number of tested mainboards; if yours works, or doesn't work, please get
   in touch with the Libreboot project, so that a tally can be kept.
@@ -144,7 +144,7 @@ In descending order from the latest changes to the earliest changes:
 * Removed the FSP submodule from `coreboot/default`, because it's currently
   used in `coreboot/next` instead (for Kaby Lake machines).
 * Enabled support in coreboot, on Dell OptiPlex 3050 Micro, for Coffee Lake CPUs.
-  With a special pin mod (currently untested as of 5 December 2024), Kaby Lake
+  With a special pin mod (currently untested as of 6 December 2024), Kaby Lake
   machines can make use of 8th-gen Coffee Lake CPUs, which offer greater
   performance and power efficiency.
 
@@ -161,7 +161,7 @@ changes to the earliest changes):
   didn't cause any issues in practise, so this is a preventative bug fix,
   because projects that use the crossgcc compiler all set `xarch` properly,
   and none of the projects that aren't cross compiled use special prefixes
-  in their toolchain references, at least as of 5 December 2024.
+  in their toolchain references, at least as of 6 December 2024.
 * Add U-Boot first, on x86 coreboot targets, even though it doesn't execute
   first, because U-Boot has to be inserted at a specific offset. This avoids
   potential overlap errors in cbfstool, if it were to be added later on. This
@@ -176,7 +176,7 @@ changes to the earliest changes):
   the VESA display an startup, since this is already done by the VESA driver.
   In some cases, you may want to keep what was previously on the screen, like
   for logos and such. We currently do not use U-Boot on VESA setups in Libreboot,
-  as of 5 December 2024.
+  as of 6 December 2024.
 * U-Boot: Merged an x86 patch from Simon Glass, that makes U-Boot silently
   disable serial console output, where one is not available; previously, it
   would crash if one wasn't available, on x86 machines.
@@ -330,6 +330,6 @@ were intentionally delayed because this is to be a stable release. A lot of new
 work will now go into the next testing release, which is scheduled for the
 latter part of January 2025 or early February 2025.
 
-If you spot any issues in the Libreboot 20241205 release, please do get in
+If you spot any issues in the Libreboot 20241206 release, please do get in
 contact with the Libreboot project. We appreciate any and all help. Thank you
 for reading, and have a wonderful day!

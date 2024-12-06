@@ -465,7 +465,7 @@ provides UEFI. Information about that can be found on these resources:
 
 This is currently the only payload on *ARM* systems, within Libreboot.
 
-U-Boot is also available on x86 machines, since the Libreboot 20241205 release.
+U-Boot is also available on x86 machines, since the Libreboot 20241206 release.
 More information can be found on the [U-Boot x86 page](../uboot/uboot-x86.md);
 it is available as an alternative to the traditional SeaBIOS and GRUB payloads,
 and it can successfully boot UEFI applications on x86 Libreboot systems.

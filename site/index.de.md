@@ -21,9 +21,9 @@ for [Libreboot preinstallation](https://minifree.org/product/installation-servic
 The founder and lead developer of Libreboot, Leah Rowe, also owns and operates
 Minifree; sales provide funding for Libreboot.
 
-**NEUESTE VERSION: Die neueste Version von Libreboot ist 20241205, veröffentlicht
-am 8. Oktober 2024.
-Siehe auch: [Libreboot 20241205 release announcement](news/libreboot20241205.md).**
+**NEUESTE VERSION: Die neueste Version von Libreboot ist 20241206, veröffentlicht
+am 6 December 2024.
+Siehe auch: [Libreboot 20241206 release announcement](news/libreboot20241206.md).**
 
 Warum solltest Du *Libreboot* verwenden?
 ----------------------------
