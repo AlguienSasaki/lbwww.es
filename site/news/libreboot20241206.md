@@ -12,6 +12,8 @@ LIBREBOOT](safety.md).**
 Introduction
 ============
 
+<img tabindex=1 class="r" src="https://av.vimuser.org/uboot.png" /><span class="f"><img src="https://av.vimuser.org/uboot.png" /></span>
+
 Libreboot is a free/open source BIOS/UEFI replacement on x86 and ARM, providing
 boot firmware that initialises the hardware in your computer, to then load an
 operating system (e.g. Linux/BSD). It is specifically a *coreboot distribution*,
@@ -26,8 +28,6 @@ and then a payload such as [SeaBIOS](https://www.seabios.org/SeaBIOS)
 or [GNU GRUB](https://www.gnu.org/software/grub/) to boot your operating
 system; on ARM(chromebooks), we provide *U-Boot* (as a coreboot payload).
 
-<img tabindex=1 class="r" src="https://av.vimuser.org/uboot.png" /><span class="f"><img src="https://av.vimuser.org/uboot.png" /></span>
-
 For Libreboot 20241206, today's release, U-Boot is *also* provided as an
 optional coreboot payload on x86 machines. This provides a sensible UEFI
 implementation, useful for booting Linux/BSD systems more easily. More
@@ -41,10 +41,10 @@ in addition to numerous new mainboards.
 Summarised list of changes
 ==========================
 
-<img tabindex=1 class="r" src="https://av.libreboot.org/t480/t480.jpg" /><span class="f"><img src="https://av.libreboot.org/t480/t480.jpg" /></span>
-
 Board support
 -------------
+
+<img tabindex=1 class="r" src="https://av.libreboot.org/t480/t480.jpg" /><span class="f"><img src="https://av.libreboot.org/t480/t480.jpg" /></span>
 
 The following boards have been added since the Libreboot 20241008 release:
 
