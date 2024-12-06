@@ -89,7 +89,7 @@ html, ul, #TOC
 	div.title,h1.title {
 		background:url("/favicon.ico") no-repeat;
 		background-size:auto 99%;
-		min-height:2em
+		min-height:3em
 	}
 	div.title {background-position:right}
 	h1.title {padding:0 4em}
