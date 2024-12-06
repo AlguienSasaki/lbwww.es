@@ -15,7 +15,7 @@ on [Libera](https://libera.chat/) IRC. The [tasks page](tasks/) lists what
 we are working on (contributions are welcome, if you want to work on some of
 them yourself).
 
-<img tabindex=1 class="r" src="https://av.libreboot.org/hp9470m/9470m+2560p.jpg" /><span class="f"><img src="https://av.libreboot.org/hp9470m/9470m+2560p.jpg" /></span>
+<img tabindex=1 class="r" src="https://av.libreboot.org/t480/t480.jpg" /><span class="f"><img src="https://av.libreboot.org/t480/t480.jpg" /></span>
 
 You can also [buy Libreboot preinstalled](https://minifree.org/) from Minifree Ltd,
 on select hardware, aswell as send your compatible hardware
@@ -39,7 +39,7 @@ is *why* Libreboot exists.
 Overview of Libreboot design
 ============================
 
-<img tabindex=1 class="l" style="max-width:25%;" src="https://av.libreboot.org/thinkpadcollection/thinkpadcollection1-min.jpg" /><span class="f"><img src="https://av.libreboot.org/thinkpadcollection/thinkpadcollection1-min.jpg" /></span>
+<img tabindex=1 class="l" src="https://av.libreboot.org/hp9470m/9470m+2560p.jpg" /><span class="f"><img src="https://av.libreboot.org/hp9470m/9470m+2560p.jpg" /></span>
 
 Libreboot provides [coreboot](https://coreboot.org/) for [machine
 initialisation](https://doc.coreboot.org/getting_started/architecture.html),
@@ -64,7 +64,7 @@ still [reconfigure](docs/maintain/) Libreboot however you wish.
 Why use Libreboot?
 ==================
 
-<img tabindex=1 class="r" style="max-width:25%;" src="https://av.libreboot.org/hp2170p/hp2170p.jpg" /><span class="f"><img src="https://av.libreboot.org/hp2170p/hp2170p.jpg" /></span>
+<img tabindex=1 class="r" style="max-width:25%;" src="https://av.libreboot.org/thinkpadcollection/thinkpadcollection1-min.jpg" /><span class="f"><img src="https://av.libreboot.org/thinkpadcollection/thinkpadcollection1-min.jpg" /></span>
 
 If you're already inclined towards free software, maybe already a coreboot user,
 Libreboot makes it easier to either get started or otherwise maintain coreboot
