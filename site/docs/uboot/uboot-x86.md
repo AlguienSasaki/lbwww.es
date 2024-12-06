@@ -6,6 +6,8 @@ x-toc-enable: true
 Introduction
 ============
 
+<img tabindex=1 class="r" src="https://av.vimuser.org/uboot.png" /><span class="f"><img src="https://av.vimuser.org/uboot.png" /></span>
+
 U-Boot is available as a coreboot payload, in Libreboot 20241206 and later,
 on x86 boards; on ARM it has been available since late 2022 Libreboot releases.
 
