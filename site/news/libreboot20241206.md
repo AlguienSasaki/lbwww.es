@@ -1,4 +1,4 @@
-% Libreboot 20241206 released!
+% Libreboot 20241206 released! ThinkPad T480 added. Plus U-Boot UEFI on x86. Fixes for OptiPlex 3050 Micro.
 % Leah Rowe
 % 6 December 2024
 
