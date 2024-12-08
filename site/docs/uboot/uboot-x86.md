@@ -28,6 +28,8 @@ reliably boot many Linux and BSD systems.
 Availability
 ------------
 
+<img tabindex=1 class="r" src="https://av.vimuser.org/uboot.png" /><span class="f"><img src="https://av.vimuser.org/uboot.png" /></span>
+
 Do this in lbmk.git (Libreboot's build system) to check whether your board has
 U-Boot enabled:
 
@@ -52,8 +54,6 @@ Here is an example of what it looks like on the boot menu:
 
 Boot Linux/BSD installer (USB)
 ---------------------------
-
-<img tabindex=1 class="r" src="https://av.vimuser.org/uboot.png" /><span class="f"><img src="https://av.vimuser.org/uboot.png" /></span>
 
 Just stick your formatted USB stick in. U-Boot should detect it. Sometimes some
 USB flash drives are broken, because many of them violate specifications and
