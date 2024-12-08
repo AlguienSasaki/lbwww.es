@@ -28,10 +28,20 @@ and then a payload such as [SeaBIOS](https://www.seabios.org/SeaBIOS)
 or [GNU GRUB](https://www.gnu.org/software/grub/) to boot your operating
 system; on ARM(chromebooks), we provide *U-Boot* (as a coreboot payload).
 
+U-Boot UEFI payload on x86\_64
+------------------------------
+
+<img tabindex=1 class="r" src="https://av.vimuser.org/x200-u-boot.jpg" /><span class="f"><img src="https://av.vimuser.org/x200-u-boot.jpg" /></span>
+
 For Libreboot 20241206, today's release, U-Boot is *also* provided as an
 optional coreboot payload on x86 machines. This provides a sensible UEFI
 implementation, useful for booting Linux/BSD systems more easily. More
 information available on the [U-Boot x86 page](../docs/uboot/uboot-x86.md).
+
+This means that you can have a UEFI boot environment, even on machines where
+the original vendor firmware never supported it. For example, the ThinkPad X200
+in the photo is running U-Boot, and booting a distro via U-Boot's UEFI
+implementation; that machine could not originally do UEFI.
 
 This page lists all changes made since the *Libreboot 20241008* release. Since
 it's a stable release, there has been a more conservative focus on fixing bugs

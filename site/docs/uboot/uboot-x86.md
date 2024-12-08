@@ -6,7 +6,7 @@ x-toc-enable: true
 Introduction
 ============
 
-<img tabindex=1 class="r" src="https://av.vimuser.org/uboot.png" /><span class="f"><img src="https://av.vimuser.org/uboot.png" /></span>
+<img tabindex=1 class="r" src="https://av.vimuser.org/x200-u-boot.jpg" /><span class="f"><img src="https://av.vimuser.org/x200-u-boot.jpg" /></span>
 
 U-Boot is available as a coreboot payload, in Libreboot 20241206 and later,
 on x86 boards; on ARM it has been available since late 2022 Libreboot releases.
@@ -52,6 +52,8 @@ Here is an example of what it looks like on the boot menu:
 
 Boot Linux/BSD installer (USB)
 ---------------------------
+
+<img tabindex=1 class="r" src="https://av.vimuser.org/uboot.png" /><span class="f"><img src="https://av.vimuser.org/uboot.png" /></span>
 
 Just stick your formatted USB stick in. U-Boot should detect it. Sometimes some
 USB flash drives are broken, because many of them violate specifications and
