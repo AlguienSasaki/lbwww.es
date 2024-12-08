@@ -53,8 +53,7 @@ qemu-system-aarch64 \
     -bios bin/qemu_arm64_12mb/*.rom
 ```
 
-NOTE: After the 20230625 release, U-Boot support was removed from x86 Qemu.
-It works fine on the aaarch64 one.
+U-Boot is also available on the x86 QEMU images.
 
 Use Cases
 =========
