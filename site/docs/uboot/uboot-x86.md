@@ -52,6 +52,16 @@ Here is an example of what it looks like on the boot menu:
 
 <https://mas.to/@libreleah/113596262378713418>
 
+Errors
+------
+
+If you see error `-25` in the bootflow menu, it's because there's nothing
+installed that i t can use e.g. EFI bootloader such as GRUB.
+
+If you see error `-2` it's likely that you have tried to boot a USB drive
+automatically; sometimes you have to do it manually (see the section below
+about using the bootflow command manually, via `bootflow select`).
+
 Boot Linux/BSD installer (USB)
 ---------------------------
 
