@@ -99,6 +99,14 @@ You should now be able to see the two flash chips near the RAM.\
 
 You can now proceed to [flashing](/docs/install/spi.html) this machine.
 
+`thinkpad_acpi` issues {#thinkpad-acpi}
+---------------------------------------
+
+It has been reported by that `thinkpad_acpi` does not load correctly on the T440p.
+
+If you encounter this, check [this page](https://libreboot.org/faq#thinkpad-acpi)
+for details as to how to fix this.
+
 Errata
 ======
 

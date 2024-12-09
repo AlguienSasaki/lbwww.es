@@ -3,8 +3,8 @@ title: ThinkPad W541/W540 external flashing
 x-toc-enable: true
 ...
 
-NOTE: The same image for W541 also works on W541, as it's the exact same
-mainboard.
+NOTE: The same image for W541 also works on the W540, as the motherboard is
+identical.
 
 Buy Libreboot preinstalled
 ==========================
@@ -116,6 +116,16 @@ If you do it right, the chips should flash reliably. This same trick must be
 used when flashing either of the chips.
 
 You can now proceed to [flashing](/docs/install/spi.html) this machine.
+
+`thinkpad_acpi` issues {#thinkpad-acpi}
+---------------------------------------
+
+It has been reported by a user that `thinkpad_acpi` does not load correctly on
+the T440p. Since the W541/W540/T540p are also haswell machines, you may be
+affected by this issue.
+
+If you encounter this, check [this page](https://libreboot.org/faq#thinkpad-acpi)
+for details as to how to fix this.
 
 Errata
 ======
