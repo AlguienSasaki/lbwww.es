@@ -131,6 +131,16 @@ Take note of the ttyACMx. Flashrom is now usable
 spispeed=32M usually works, but since it's not much faster it's probably
 not worth it. The 12Mbps USB port is limiting the actual speed here.
 
+Raspberry Pi Pico SOIC-8 wiring
+-------------------------------
+
+When using a Raspberry Pi Pico to program a SOIC-8 flash chip with
+`pico-serprog`, you may use the following diagram, which contains the
+Raspberry Pi Pins and the pinouts of the typical SOIC-8 chip to wire up
+your programmer:
+
+[SOIC-8 to Pico pinout diagram](https://av.libreboot.org/rpi_pico/soic8_pico_pinouts.jpg)
+
 Do not use CH341A!
 ==================
 

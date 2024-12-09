@@ -17,7 +17,7 @@ sure to re-enable them after you're finished.
 See: [Disabling /dev/mem protection](docs/install/devmem.md)
 
 Buy Libreboot pre-installed
-==========
+=============================
 
 If you want professional installation, Minifree Ltd sells [Libreboot
 pre-installed](https://minifree.org/) on select hardware, and it also provides
@@ -169,7 +169,7 @@ Hardware compatibility
 ======================
 
 What systems are compatible with libreboot?
------------------------------------------------------------------------------------
+--------------------------------------------
 
 Any system can easily be added, so *compatibility* merely refers to whatever
 boards are integrated in the `lbmk` build system, which libreboot uses.
@@ -576,7 +576,7 @@ This will change the default inside that ROM image, and then you can
 re-flash it.
 
 How do I pad a ROM before flashing?
---------------------------------------
+-------------------------------------
 
 It is advisable to simply use a larger ROM image. This section was written
 mostly for ASUS KCMA-D8 and KGPE-D16 mainboards, where previously we only
@@ -616,7 +616,7 @@ padded 16MiB image do the following:
 With padding removed cbfstool will be able to operate on the image as usual.
 
 Do I need to install a bootloader when installing a distribution?
----------------------------------------------------------------------------------------------------
+-----------------------------------------------------------------
 
 Most libreboot setups integrate the GRUB bootloader already, as a
 *[payload](http://www.coreboot.org/Payloads)*. This means that the GRUB
@@ -635,7 +635,7 @@ then the normal MBR bootsector is used on your HDD or SSD, like you would
 expect. So the above paragraphs only apply to the GRUB payload.
 
 Do I need to re-flash when I re-install a distribution?
--------------------------------------------------------------------------------------------
+-------------------------------------------------------
 
 Not anymore. Recent versions of libreboot (using the GRUB payload) will
 automatically switch to a GRUB configuration on the HDD or SSD, if it
@@ -653,25 +653,43 @@ What does a flash chip look like?
 You can find photos of various chip types on the following page:\
 [External 25xx NOR flashing guide](docs/install/spi.md)
 
-Inability to modprobe thinkpad\_acpi on Haswell
-===============================================
+Inability to load `thinkpad_acpi` on post-haswell systems {#thinkpad-acpi}
+==========================================================================
 
-This was reported by a user, running Debian 11 with
-kernel `5.19.0-0.deb11.2-amd64`. The `thinkpad_acpi` module was not loading,
-with the following message:
+Reported by a user on Debian 11 (on a ThinkPad T440p) and a user
+on Void Linux (ThinkPad T480), Linux (or modprobe) may fail to load
+`thinkpad_acpi`.
 
 ```
 modprobe: ERROR: could not insert 'thinkpad_acpi': "No such device"
 ```
 
-Battery info in `/sys` was absent, because of this. The user reported that
-the following workaround was effective (in Debian).
+It is suspected that at least these mainboards are affected:
 
-Add this line to `/etc/modprobe.d/thinkpad_acpi.conf`:
+ * [ThinkPad W541](https://libreboot.org/docs/install/w541_external.html)
+ * [ThinkPad T440p](https://libreboot.org/docs/install/t440p_external.html)
+ * [ThinkPad T480/T480s](https://libreboot.org/docs/install/t480.html)
+
+This may result the following effects, including or not limited to:
+
+ * Temperature reporting not working
+ * Battery info not working.
+ * Fan speed reporting not working
+ * Fan control not working
+
+For these systems, add the line
 
 ```
 options thinkpad_acpi force_load=1
 ```
+
+to any file in `/etc/modprobe.d`. You can also add
+
+```
+thinkpad_acpi.force_load=1
+```
+
+to your kernel parameters (in GRUB, or your preferred linux-capable bootloader).
 
 tlp
 ---
