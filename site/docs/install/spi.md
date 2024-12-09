@@ -139,7 +139,7 @@ When using a Raspberry Pi Pico to program a SOIC-8 flash chip with
 Raspberry Pi Pins and the pinouts of the typical SOIC-8 chip to wire up
 your programmer:
 
-[SOIC-8 to Pico pinout diagram](https://av.libreboot.org/rpi_pico/soic8_pico_pinouts.jpg)
+![SOIC-8 to Pico pinout diagram](https://av.libreboot.org/rpi_pico/soic8_pico_pinouts.jpg)
 
 Do not use CH341A!
 ==================
