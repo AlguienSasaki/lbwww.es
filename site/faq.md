@@ -657,7 +657,12 @@ Inability to load `thinkpad_acpi` on post-haswell systems {#thinkpad-acpi}
 ==========================================================================
 
 Reported by a user on Debian 11 (on a ThinkPad T440p) and a user
-on Void Linux (ThinkPad T480), Linux may fail to load `thinkpad_acpi`.
+on Void Linux (ThinkPad T480), Linux (or modprobe) may fail to load
+`thinkpad_acpi`.
+
+```
+modprobe: ERROR: could not insert 'thinkpad_acpi': "No such device"
+```
 
 It is suspected that at least these mainboards are affected:
 
