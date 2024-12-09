@@ -347,3 +347,55 @@ latter part of January 2025 or early February 2025.
 If you spot any issues in the Libreboot 20241206 release, please do get in
 contact with the Libreboot project. We appreciate any and all help. Thank you
 for reading, and have a wonderful day!
+
+Revisions
+=========
+
+Revision 1
+----------
+
+A bug was found whereby `seabios_` images are created twice, This was fixed in
+the revision `e3b77b132e6b5981c09bc1ce282afaae64058ab3`. This bug caused vendor
+file insertion to fail on release images, because the `vendorhashes` file would
+list the file twice, but one of the hashes would be wrong.
+
+This is because the build system wrongly created U-Boot-only images first with
+that name, because the `add_uboot` function in `rom.sh` unconditionally created
+images with U-Boot in them; the function also creates ARM64 images, where U-Boot
+is the primary payload.
+
+On x86 machines, SeaBIOS should be the main payload, chainloading U-Boot.
+
+The build system would then create the actual `seabios_` image, replacing the
+other one, on x86 machines.
+
+So, the command to create the first image was removed. However, just before
+uploading `rev1` images, it was discovered that this would cause no U-Boot
+images to be built for ARM64 devices, which lead to Revision 2:
+
+Revision 2
+----------
+
+See commit ID `b910424b5df8ed7c931a7b8f5cc8e34eacf0ca3e`.
+
+Revision 1 was reverted, and replaced with the following logic instead:
+
+In `add_uboot`, the instruction to create a ROM image was changed so that it
+only creates one where U-Boot is the primary payload (which is the case for
+ARM64).
+
+The source archive is now `20241206rev2` instead of `20241206`, and the same
+is true of affected images on x86, where `vcfg` is set in `target.cfg`.
+
+Errata
+======
+
+On ThinkPad T480/T480S, headphone output works; the internal speaker is disabled
+but audio is not automatically redirected to the headphone jack. This switching
+can be done manually, for example in the `pavucontrol` utility:
+
+Output Devices -> Select Headphones on the built-in audio.
+
+Pavucontrol will specify that the headphones are not connected, but you can
+select it anyway and it will work. This will be fixed in a subsequent revision,
+and the corrected images re-uploaded to the existing Libreboot 20241206 release.
