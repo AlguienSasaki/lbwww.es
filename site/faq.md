@@ -666,9 +666,9 @@ modprobe: ERROR: could not insert 'thinkpad_acpi': "No such device"
 
 It is suspected that at least these mainboards are affected:
 
- * [ThinkPad W541](https://libreboot.org/docs/install/w541_external.html)
- * [ThinkPad T440p](https://libreboot.org/docs/install/t440p_external.html)
- * [ThinkPad T480/T480s](https://libreboot.org/docs/install/t480.html)
+ * [ThinkPad W541](docs/install/w541_external.md)
+ * [ThinkPad T440p](docs/install/t440p_external.md)
+ * [ThinkPad T480/T480s](docs/install/t480.md)
 
 This may result the following effects, including or not limited to:
 

@@ -104,7 +104,7 @@ You can now proceed to [flashing](/docs/install/spi.html) this machine.
 
 It has been reported by that `thinkpad_acpi` does not load correctly on the T440p.
 
-If you encounter this, check [this page](https://libreboot.org/faq#thinkpad-acpi)
+If you encounter this, check [this page](../../faq.md#thinkpad-acpi)
 for details as to how to fix this.
 
 Errata
