@@ -132,6 +132,43 @@ UEFI SecureBoot with a Linux UKI could achieve similar results in a security
 sense to Libreboot's GRUB hardening setup, though the latter is more flexible,
 albeit not widely used by the mainstream, but it does work (I use it myself!).
 
+ThinkPad X60/T60
+================
+
+The 32-bit U-Boot payload is only useful for 32-bit setups, and 32-bit UEFI
+isn't really that common on x86; the 64-bit U-Boot payload is much more useful,
+in this context.
+
+Most ThinkPad X60/T60 have 32-bit-only CPUs in them, so the 32-bit U-Boot
+payload is used. If you have a 64-bit CPU (Core 2 Duo instead of Core Duo),
+namely Core 2 Duo L9400, T5600 or T7200, you might be able to use the 64-bit
+payload instead, for full 64-bit UEFI, but this is currently not tested and it
+is not configured.
+
+To enable this, on compatible CPUs, make the following modifications to the
+build system and compile a custom image:
+
+Check `config/coreboot/x60/target.cfg` (change `x60` to what you use if it
+differs), and you'll find something like this:
+
+	build_depend="seabios/default grub/default u-boot/i386coreboot"
+	payload_uboot_i386="y"
+
+In the above example, you would change it to:
+
+	build_depend="seabios/default grub/default u-boot/amd64coreboot"
+	payload_uboot_amd64="y"
+
+You can then re-compile the image, using
+standard [build instructions](../build/). For example on X60 you would use
+the following build target:
+
+	./mk -b coreboot x60
+
+Using a full UEFI setup on such old hardware is quite novel and might be
+interesting in the future, as more distros stop supporting BIOS-based methods,
+or where the latter may become untested in the future.
+
 Bugs
 ====
 
