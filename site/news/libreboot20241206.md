@@ -387,6 +387,28 @@ ARM64).
 The source archive is now `20241206rev2` instead of `20241206`, and the same
 is true of affected images on x86, where `vcfg` is set in `target.cfg`.
 
+Revision 3
+----------
+
+See commit ID `3b6b283eabe7a655c861d1543aeae49d27566f53` and the two commits
+before that.
+
+This revision disables PCI-E Re-plug (hotplug feature) for the NVMe SSD on
+Dell OptiPlex 3050 Micro, to prevent the device from being renamed randomly;
+such renaming will cause a system crash if booting Linux from the NVMe.
+
+In my case, I was running RAID1 (SATA+NVMe) and every few days, the RAID1 got
+unsynced; I simply re-synced and it was fine, but what if that was a RAID0? It
+would possibly corrupt the entire array.
+
+This revision should prevent the issue from occuring. Without this patch,
+the `nvme0n1` device (as an example) might randomly rename to `nvme0n2`, because
+Linux would see it as a new device.
+
+This same fix was made to the ThinkPad T480/T480s to fix the same issue there,
+which manifested during S3 resume, but that bug never made it into the release
+because it was fixed *before* the initial release of Libreboot 20241206.
+
 Errata
 ======
 
