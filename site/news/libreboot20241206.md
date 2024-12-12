@@ -408,16 +408,3 @@ Linux would see it as a new device.
 This same fix was made to the ThinkPad T480/T480s to fix the same issue there,
 which manifested during S3 resume, but that bug never made it into the release
 because it was fixed *before* the initial release of Libreboot 20241206.
-
-Errata
-======
-
-On ThinkPad T480/T480S, headphone output works; the internal speaker is disabled
-but audio is not automatically redirected to the headphone jack. This switching
-can be done manually, for example in the `pavucontrol` utility:
-
-Output Devices -> Select Headphones on the built-in audio.
-
-Pavucontrol will specify that the headphones are not connected, but you can
-select it anyway and it will work. This will be fixed in a subsequent revision,
-and the corrected images re-uploaded to the existing Libreboot 20241206 release.
