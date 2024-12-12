@@ -408,3 +408,5 @@ Linux would see it as a new device.
 This same fix was made to the ThinkPad T480/T480s to fix the same issue there,
 which manifested during S3 resume, but that bug never made it into the release
 because it was fixed *before* the initial release of Libreboot 20241206.
+
+The ROM images were all re-uploaded, compiled from the rev3 tarball, because it was discovered that the rev2 tarballs had a GRUB built showing the old Libreboot 20241008 version number; the actual code in GRUB matched the code for 20241206, but it was a cached GRUB build from just before updating the version number for release. This is because the rev2 ROM image tarballs were done manually, to avoid a full re-build of every target in lbmk. To avoid all doubt, all ROM images have been re-compiled with the version number corrected, from the rev3 tag.
