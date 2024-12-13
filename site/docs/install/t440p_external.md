@@ -6,8 +6,8 @@ x-toc-enable: true
 Buy Libreboot preinstalled
 ==========================
 
-This laptop is available to buy with Libreboot pre-installed:
-<https://minifree.org/product/libreboot-t440p/>
+**Minifree now sells the Libreboot T480, instead of the Libreboot T440p. See:
+<https://minifree.org/product/libreboot-t480/>**
 
 Introduction
 ============

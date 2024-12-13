@@ -9,8 +9,8 @@ identical.
 Buy Libreboot preinstalled
 ==========================
 
-This laptop is available to buy with Libreboot pre-installed:
-<https://minifree.org/product/libreboot-w541/>
+**Minifree now sells the Libreboot T480, instead of the Libreboot W541. See:
+<https://minifree.org/product/libreboot-t480/>**
 
 Introduction
 ============
