@@ -3,9 +3,21 @@ title: Insert vendor files not included in release images
 x-toc-enable: true
 ...
 
-Please make sure to install [build dependencies](../build/) if following this
-guide, and note that this guide assumes you use [lbmk.git](../git.md), not the
-release archives, even if you're using release *ROM images*, which is fine.
+**Install build dependencies first**
+================================
+
+**You will be compiling several small utilities from source code. This means
+you need the compilers and various libraries.**
+
+**Please make sure to install [build dependencies](../build/)** before using this
+guide, and note that this guide assumes you use [lbmk.git](../git.md).
+
+**Failure to adhere to this warning will result in vendor file insertion not
+working. The insertion must work correctly, prior to Libreboot installation,
+if your board requires it, otherwise your board simply will not boot.**
+
+Introduction
+============
 
 Coreboot is nominally free software, but requires certain vendor code on some
 boards, for certain functionalities; we cover this more thoroughly in
@@ -23,13 +35,6 @@ on HP EliteBooks), VGA ROMs (e.g. Nvidia GPU ROM for Dell Latitude E6400),
 and so on. Without these, your machine may not boot correctly, or not boot at
 all!
 
-Therefore, you should just follow this guide if in any doubt. Otherwise, the
-freedom status page lists all boards that require vendor files, and it says
-what they are. This is because Libreboot cannot directly distribute some of them,
-but they are extracted from vendor updates at build time, and inserted into
-images; when those images are then archived for release, the non-redistributable
-filejs are removed.
-
 The same logic can be used after the fact, to re-download and re-insert these
 files; the page that you're reading now will tell you how to do so.
 
@@ -38,7 +43,7 @@ vendor files inserted, nothing will happen. You only need to follow this guide
 if you use release ROMs; if you're building directly from source, using the
 Libreboot build system, then you can just flash the result.*
 
-Injecting vendor files into ROM
+Injecting vendor files ROMs tarball
 ------------------------------------
 
 You must determine the correct board name, for your board, based on the list
@@ -53,13 +58,25 @@ Run the injection script pointing to the release archive you downloaded:
 
 	./vendor inject libreboot-RELEASE_targetname.tar.xz
 
+The script can automatically detect the board as long as you do not change the file name.
+You can then find flash-ready ROMs in `/bin/release/`
+
+*This is the recommended way to do it, injecting into the tarball.*
+
+Injecting vendor files into single ROMs
+---------------------------------------
+
 **You are strongly advised only to insert it on the tarball, because then
 checksums are verified to ensure that the vendor files were inserted correctly.
 Otherwise, you can do it manually on each individual image, specifying the
 board name with the instructions provided below:**
 
-The script can automatically detect the board as long as you do not change the file name.
-You can then find flash-ready ROMs in `/bin/release/`
+**However, when injecting into the tarball in bulk like that, lbmk currently
+cannot change the MAC addresses automatically, using the `-m` option mentioned
+below.**
+
+**Therefore, if you want to rely on insertion into the tarball, you can just
+copy the ROM you want and [change the MAC address manually](nvmutil.md).**
 
 Alternatively, you may patch only a single rom file, but you must supply the
 correct board target name as alluded to above.
@@ -71,6 +88,12 @@ Optionally, you can use this script to modify the mac address of the rom with th
 For example:
 
 	./vendor inject -r x230_libreboot.rom -b x230_12mb -m 00:f6:f0:40:71:fd
+
+You are *strongly* advised to inject the tarballs instead. However, so long as
+you're careful, injecting into single ROM images is perfectly safe. Just know
+once more that the checksum verification is unavailable in the latter, so you
+must absolutely ensure that you specified the correct board with the `-b`
+option.
 
 Check that the files were inserted
 ==================================

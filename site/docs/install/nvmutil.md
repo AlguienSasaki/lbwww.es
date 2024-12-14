@@ -170,11 +170,23 @@ with `make`, to get an ifdtool binary.
 
 To make internal flashing possible later on, you might do:
 
-	ifdtool --unlock rom.bin
+	ifdtool --unlock rom.bin # READ THE WARNING BELOW FIRST
+
+**WARNING: On ThinkPad T480/T480s and OptiPlex 3050 Micro, do this instead:**
+
+	ifdtool --platform sklkbl --unlock rom.bin
 
 Running this command will create a modified image,
 named `rom.bin.new`. This file will have all regions set
 to read-write, per configuration in the Intel Flash Descriptor.
+
+Note: if you want the original image to be modified, without needing to
+keep track of `rom.bin.new` as mentioned above, use the -O switch. For example,
+repeating the above command:
+
+	ifdtool --unlock rom.bin -O rom.bin
+
+(add the `--platform` option if you need to)
 
 In addition to unlocked regions, you may wish to *neuter* the
 Intel Management Engine, removing all the nasty spying features
@@ -188,7 +200,7 @@ article, so you should read their documentation.
 
 Now run this:
 
-	ifdtool -x rom.bin
+	ifdtool -x rom.bin # For T480/3050micro, add: --platform sklkbl
 
 Several files will be created, and the one you need to
 operate on is named `flashregion_3_gbe.bin` so please
@@ -198,7 +210,7 @@ Read the notes below about how to use the `nvmutil` program,
 operating on this file. When you're done, you can insert the
 modified GbE file back into your ROM image, like so:
 
-	ifdtool -i gbe:flashregion_3_gbe.bin rom.bin
+	ifdtool -i gbe:flashregion_3_gbe.bin rom.bin  # For T480/3050micro, add: --platform sklkbl
 
 This will create the file `rom.bin.new`, which contains
 your modified GbE section with the NVM images inside; this
@@ -214,6 +226,16 @@ Newer versions of flashprog support flashing just the specified
 region, like so:
 
 	flashprog -p internal --ifd -i gbe -w rom.bin.new
+
+**WARNING: If using `--ifd` in flashprog, note that flashprog probably doesn't
+have anything similar to the `--platform` option in ifdtool. Therefore, you
+way wish to specify the regions manually. You can do this quite simply, by:**
+
+	ifdtool -f layout.txt rom.bin  # For T480/3050micro, add: --platform sklkbl
+
+and instead of `--ifd` in flashprog, use:
+
+	flashprog -p internal -l layout.txt -i gbe -w rom.bin.new
 
 If you're running flashprog from host CPU on the target
 system, and it's dual flash, you can just flash the
