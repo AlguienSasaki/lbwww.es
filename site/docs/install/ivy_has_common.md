@@ -10,7 +10,7 @@ x-toc-enable: true
 you need the compilers and various libraries.**
 
 **Please make sure to install [build dependencies](../build/)** before using this
-guide, and note that this guide assumes you use [lbmk.git](../git.md).
+guide, and note that this guide assumes you use [lbmk.git](../../git.md).
 
 **Failure to adhere to this warning will result in vendor file insertion not
 working. The insertion must work correctly, prior to Libreboot installation,
