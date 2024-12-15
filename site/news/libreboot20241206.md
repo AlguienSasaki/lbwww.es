@@ -59,9 +59,11 @@ Board support
 The following boards have been added since the Libreboot 20241008 release:
 
 * **[Lenovo ThinkPad T480](../docs/install/t480.md)** support, implemented by
-  Mate Kukri with testing and hardware logs provided by Leah Rowe.
+  Mate Kukri with testing and hardware logs provided by Leah Rowe. - You can also
+  [buy T480 with Libreboot pre-installed](https://minifree.org/product/libreboot-t480/)
 * **[Lenovo ThinkPad T480S](../docs/install/t480.md)** support, implemented by
-  Mate Kukri with testing and hardware logs provided by Leah Rowe.
+  Mate Kukri with testing and hardware logs provided by Leah Rowe. - You can also
+  [buy T480s with Libreboot pre-installed](https://minifree.org/product/libreboot-t480/)
 * **[Dell OptiPlex 780 USFF](../docs/install/dell780.md)** support, implemented
   by Nicholas Chin with testing and hardware logs provided by Lorenzo Aloe.
 * **[Dell OptiPlex 780 MT](../docs/install/dell780.md)** support, implemented by
