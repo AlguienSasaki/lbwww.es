@@ -1,128 +1,83 @@
 ---
 title: Projet Libreboot
 x-toc-enable: true
-...
+---
 
-Libreboot est un micrologiciel de démarrage [libéré](https://writefreesoftware.org/)
-qui initialise le matériel (càd le contrôleur mémoire, CPU,
-périphériques) sur [des ordinateurs x86/ARM spécifiques](docs/install/)
-et lance un chargeur d'amorçage pour votre système d'exploitation. [Linux](docs/linux/) et [BSD](docs/bsd/) sont bien supportés. C'est un
-remplacement pour le micrologiciel UEFI/BIOS propriétaire.
-Des canaux d'aide sont disponibles 
-dans le canal [\#libreboot](https://web.libera.chat/#libreboot) sur le serveur IRC [Libera](https://libera.chat/).
+Le projet Libreboot fournit un firmware [libre et Open-Source](https://writefreesoftware.org/) basé sur Coreboot, remplaçant le BIOS/UEFI propriétaire sur des [cartes mères Intel/AMD x86 et ARM](docs/install/), pour des ordinateurs de bureau et des ordinateurs portables. 
+Il initialise le matériel (le contrôleur de mémoire, le CPU, les périphériques) et lance un bootloader pour votre système d’exploitation. Les systèmes [Linux](docs/linux/) et [BSD](docs/bsd/) sont bien pris en charge. De l’aide est disponible sur [\#Libreboot](https://web.libera.chat/#Libreboot) via [Libera](https://libera.chat/). La page des tâches répertorie les projets en cours (les contributions sont les bienvenues si vous souhaitez y travailler vous-même).
 
-<img tabindex=1 class="r" src="https://av.libreboot.org/hp9470m/9470m+2560p.jpg" /><span class="f"><img src="https://av.libreboot.org/hp9470m/9470m+2560p.jpg" /></span>
 
-You can also [buy Libreboot preinstalled](https://minifree.org/) from Minifree Ltd,
-on select hardware, aswell as send your compatible hardware
-for [Libreboot preinstallation](https://minifree.org/product/installation-service/).
-The founder and lead developer of Libreboot, Leah Rowe, also owns and operates
-Minifree; sales provide funding for Libreboot.
+<img tabindex=1 class="r" src="https://av.Libreboot.org/hp9470m/9470m+2560p.jpg" /><span class="f"><img src="https://av.Libreboot.org/hp9470m/9470m+2560p.jpg" /></span>
 
-**NOUVELLE VERSION: La dernière version est [Libreboot 20241206](news/libreboot20241206.md), sortie
+Vous pouvez également acheter du matériel avec [Libreboot pré-installé](https://minifree.org/) via l'entreprise Minifree Ltd,
+ou envoyer votre propre ordinateur [pour y installer Libreboot](https://minifree.org/product/installation-service/).
+
+Leah Rowe, fondateur et principal développeur du projet Libreboot, est également propriétaire de Minifree Ltd. Les ventes contribuent à financer le développement du projet Libreboot.
+
+**NOUVELLE VERSION: La dernière version est [Libreboot 20241206](news/Libreboot20241206.md), sortie
 le 6 December 2024.**
 
 Pourquoi devriez-vous utiliser *Libreboot*?
 -----------------------------------
 
-Libreboot vous donne des [libertés](https://writefreesoftware.org/)
-que nous n'auriez pas autrement avec d'autre micrologiciel de démarrage. Il est
-extremement [puissant](docs/linux/grub_hardening.md)
-et [configurable](docs/maintain) pour  plein de cas d'utilisations.
+Libreboot vous offre des [libertés](https://writefreesoftware.org/) que vous n’auriez pas avec d’autres micrologiciels de démarrage. [Puissant](docs/linux/grub_hardening.md) et hautement [configurable](docs/maintain), il répond à de nombreux cas d’utilisation.
 
-Vous avez des droits. Un droit à la vie privée, liberté de pensée, liberté d'espression et le droit de lire. Dans ce contexte là, Libreboot vous permet d'avoir ces droits.
-Votre liberté compte.
-Le [Droit à la réparation](https://en.wikipedia.org/wiki/Right_to_repair) est important.
-Beaucoup de personnes utilisent un micrologiciel de 
-démarrage propriétare (non libre), même
-si ils utilisent [un système d'exploitation libre](https://www.openbsd.org/).
-Les micrologiciels propriétaires [contiennent](faq.html#intel) souvent 
-des [portes dérobées](faq.html#amd) et peuvent être instable. Libreboot 
-a été fondé en Décembre 2013 avec le but de rendre le libre
-au niveau du micrologiciel accessible pour les utilisateurs non-techniques. 
+Vous avez des droits : droit à la vie privée, liberté de pensée, liberté d’expression et droit à l’information. Dans ce cadre, Libreboot vous permet de préserver ces droits. Votre liberté est essentielle. Le [droit à la réparation](https://fr.wikipedia.org/wiki/Droit_%C3%A0_la_r%C3%A9paration) est également crucial. Beaucoup de personnes utilisent des micrologiciels propriétaires (non libres), même lorsqu’elles utilisent [un système d'exploitation libre](https://www.openbsd.org/). Ces micrologiciels sont souvent instables et [contiennent](faq.html#intel) parfois des [portes dérobées](faq.html#amd). 
 
-Libreboot utilise [coreboot](https://www.coreboot.org) pour
-[l'initialisation matérielle](https://doc.coreboot.org/getting_started/architecture.html)
-Coreboot est renommé comme être difficilement installable par des utilisateurs 
-non technique; il se charge seulement de l'initialisation basique
-puis bascule sur un programme de [charge utile](https://doc.coreboot.org/payloads.html)
-(par ex. [GRUB](https://www.gnu.org/software/grub/),
-[Tianocore](https://www.tianocore.org/)), qui doit lui aussi être configuré.
-*Libreboot règle ce problème*; c'est une *distribution de coreboot* avec
-un [système de compilation automatisé](docs/builds/), crééant des 
-*images ROM* complètes pour une installation plus robuste. De la documentation est disponible.
 
-De quelle façon Libreboot diffère de Coreboot?
+Libreboot, fondé en décembre 2013, a pour objectif de rendre le micrologiciel libre accessible même aux utilisateurs non techniques.
+
+Libreboot s’appuie sur  [Coreboot](https://www.Coreboot.org) pour
+[l'initialisation matérielle](https://doc.Coreboot.org/getting_started/architecture.html). Coreboot est réputé complexe à installer, en particulier pour les utilisateurs non techniques ; il se limite à l’initialisation matérielle de base avant de transmettre le contrôle à une [charge utile](https://doc.Coreboot.org/payloads.html) (comme [GRUB](https://www.gnu.org/software/grub/) ou [Tianocore](https://www.tianocore.org/)), qui nécessite également une configuration. Libreboot simplifie ce processus : il s’agit d’une distribution de Coreboot dotée d’un [système de compilation automatisé](docs/builds/), capable de créer des images ROM complètes pour une installation plus simple et fiable. 
+
+Une documentation détaillée est disponible.
+
+
+Quelles sont les différences entre Libreboot et Coreboot?
 ------------------------------------------------
 
-<img tabindex=1 class="l" style="max-width:25%;" src="https://av.libreboot.org/thinkpadcollection/thinkpadcollection1-min.jpg" /><span class="f"><img src="https://av.libreboot.org/thinkpadcollection/thinkpadcollection1-min.jpg" /></span>
+<img tabindex=1 class="l" style="max-width:25%;" src="https://av.Libreboot.org/thinkpadcollection/thinkpadcollection1-min.jpg" /><span class="f"><img src="https://av.Libreboot.org/thinkpadcollection/thinkpadcollection1-min.jpg" /></span>
 
-Contrairement à l'opinion populaire, le but principal de Libreboot n'est
-pas de fournir un Coreboot déblobbé; ceci n'est simplement qu'une
-des politiques de Libreboot, une importante certes, mais qui n'est qu'un
-aspect mineur de Libreboot.
+Contrairement à l'opinion populaire, le but principal de Libreboot n'est pas de fournir un Coreboot sans blobs propriétaires ; ceci n'est qu'une des politiques de Libreboot, certes importante, mais qui reste un aspect mineur de son projet.
 
-De la même façon que *Alpine Linux* est une distribution Linux, Libreboot 
-est une *distribution coreboot*. Si vous voulez compilé une image ROM
-en partant des bases, vous devez alors effectuer une configuration experte 
-de Coreboot, GRUB et n'importe quel autre logiciel dont vous avez besoin 
-afin de préparer la ROM. Avec *Libreboot*,
-vous pouvez télécharger la source depuis Git ou une archive, exécuter
-and a script etça compilera une image ROM entières. Le système de compilation 
-automatisé de Libreboot nommé `lbmk` (Libreboot MaKe), compile ces images 
-ROM automatiquement, sans besoin d'entrées utilisateur or intervention
-requise. La configuration est faite à l'avance.
+De la même façon qu’Alpine Linux est une distribution Linux, Libreboot est une distribution Coreboot. Si vous voulez compiler une image ROM à partir de zéro, vous devrez effectuer une configuration experte de Coreboot, GRUB et de tout autre logiciel nécessaire pour préparer la ROM. Avec Libreboot, vous pouvez télécharger le code source depuis Git ou une archive, exécuter un script, et cela générera une image ROM complète. Le système de compilation automatisé de Libreboot, nommé `lbmk` (Libreboot MaKe), compile ces images ROM automatiquement. Aucune intervention n'est requise, car la configuration est préparée à l'avance.
 
-Si vous devriez compiler du coreboot classique sans utiliser le système 
-de build automatisé de Libreboot, ça demanderait bien plus d'effort et 
-de connaissances techniques décente pour écrire une configuration qui marche.
+Si vous deviez compiler Coreboot classique sans utiliser le système de compilation automatisé de Libreboot, cela nécessiterait bien plus d'efforts et de connaissances techniques pour créer une configuration fonctionnelle.
 
-Les versions de Libreboot fournissent ces images ROM pré-compilés et vous 
-pouvez les installez simplement, sans connaissance ou compétence particulière 
-à savoir, sauf [suivre des instructions simplifiés écrite pour des utilisateurs non techniques](docs/install/).
+Les versions de Libreboot fournissent des images ROM pré-compilées que vous pouvez installer facilement, [sans connaissances ou compétences particulières](docs/install/).
 
 Comment aider
 -----------
 
-<img tabindex=1 class="l" style="max-width:15%;" src="https://av.libreboot.org/hp8200sff/grub_open.jpg" /><span class="f"><img src="https://av.libreboot.org/hp8200sff/grub_open.jpg" /></span>
+<img tabindex=1 class="l" style="max-width:15%;" src="https://av.Libreboot.org/hp8200sff/grub_open.jpg" /><span class="f"><img src="https://av.Libreboot.org/hp8200sff/grub_open.jpg" /></span>
 
-The *single* biggest way you can help it to *add* new mainboards to Libreboot,
-by submitting a config. Anything coreboot supports can be integrated in
-Libreboot, with ROM images provided in releases. See:
+La meilleure façon d'aider le projet est d’ajouter de nouvelles cartes mères au projet Libreboot en soumettant une configuration. Tout ce qui est pris en charge par Coreboot peut être intégré à Libreboot, avec des images ROM fournies dans les versions publiées. Voir :
 
-* [Apply to become a board maintainer/tester](docs/maintain/testing.md)
-* [Porting guide for new mainboards](docs/maintain/porting.md)
-* [Libreboot build system documentation](docs/maintain/)
+* [Postuler pour devenir mainteneur/testeur de cartes mères](docs/maintain/testing.md)
+* [Guide de portage pour nouvelles cartes mèress](docs/maintain/porting.md)
+* [Documentation du système de compilation Libreboot](docs/maintain/)
 
-After that, there is build system maintenance (see above), and *documentation*
-which we take seriously. Documentation is critical, in any project.
+Ensuite, il y a la maintenance du système de compilation (voir ci-dessus) ainsi que la **documentation**, que nous prenons très au sérieux. La documentation est essentielle dans tout projet.
 
-*User support* is also critical. Stick around on IRC, and if you're competent
-to help someone with their issue (or wily enough to learn with them), that is
-a great service to the project. A lot of people also ask for user support
-on the `r/libreboot` subreddit.
+Le support utilisateur est également crucial. Restez actif sur IRC et, si vous êtes dans la capacité d'aider quelqu'un avec son problème, cela rendra un grand service au projet. De nombreuses personnes demandent également du support utilisateur sur le subreddit r/Libreboot.
 
-Vous pouvez allez voir les bugs listés sur le [traqueur de bugs](https://codeberg.org/libreboot/lbmk/issues).
+Vous pouvez allez voir les bugs listés sur le [traqueur de bugs](https://codeberg.org/Libreboot/lbmk/issues).
 
-Si vous trouvez un bug et avez un correctif, [voici les instructions pour envoyer des patchs](git.md), et vous pouvez aussi nous les signaler.
-Par ailleurs, ce site est écrit en Markdown et hébergé dans un [dépôt séparé](https://codeberg.org/libreboot/lbwww) où
+Vous pouvez nous signaler les bugs que vous trouverez. Vous pouvez également proposer un correctif en [suivant ces instructions pour envoyer des patchs](git.md),
+Par ailleurs, ce site est écrit en Markdown et hébergé dans un [dépôt séparé](https://codeberg.org/Libreboot/lbwww) où
 vous pouvez envoyer vos patchs.
 
 La discussion sur le dévéloppement de Libreboot et le support utilisateur
-se font toutes sur le canal IRC. Plus d'information est disponible sur 
+se font toutes sur le canal IRC. Plus d'informations sont disponibles sur 
 la [page de contact](contact.md).
 
-Translations needed, for libreboot.org
+Aide pour la traduction
 --------------------------------------
 
-Libreboot currently has translated Web pages in Ukrainian and French (but not
-for all pages, yet, on either language).
+Libreboot dispose actuellement de pages Web traduites en ukrainien et en français.
 
-If you want to help with translations, you can translate pages, update existing
-translations and submit your translated versions. For instructions, please
-read:
+Si vous souhaitez participer à le traduction, vous pouvez traduire des pages, mettre à jour les traductions existantes et soumettre vos versions traduites. Pour les instructions, veuillez lire :
 
-[How to submit translations for libreboot.org](news/translations.md)
+[Comment proposer une traduction pour Libreboot.org](news/translations.md)
 
-Even if someone is already working on translations in a given language, we can
-always use multiple people. The more the merrier!
+Et même si quelqu'un travaille déjà sur des traductions dans une langue donnée, nous pouvons travailler à plusieurs. Plus on est de fous, plus on rit !
