@@ -12,7 +12,7 @@ Il initialise le matériel (le contrôleur de mémoire, le CPU, les périphériq
 Vous pouvez également acheter du matériel avec [Libreboot pré-installé](https://minifree.org/) via l'entreprise Minifree Ltd,
 ou envoyer votre propre ordinateur [pour y installer Libreboot](https://minifree.org/product/installation-service/).
 
-Leah Rowe, fondateur et principal développeur du projet Libreboot, est également propriétaire de Minifree Ltd. Les ventes contribuent à financer le développement du projet Libreboot.
+Leah Rowe, fondateur et principal développeur du projet Libreboot, est également propriétaire de Minifree Ltd. Les ventes contribuent à financer le développement du projet Libreboot
 
 **NOUVELLE VERSION: La dernière version est [Libreboot 20241206](news/Libreboot20241206.md), sortie
 le 6 December 2024.**
