@@ -40,7 +40,7 @@ information available on the [U-Boot x86 page](../docs/uboot/uboot-x86.md).
 
 This means that you can have a UEFI boot environment, even on machines where
 the original vendor firmware never supported it. For example, the ThinkPad X200
-in the photo is running U-Boot, and booting a distro via U-Boot's UEFI
+runs U-Boot virtually bug-free, and it can boot Linux distros via U-Boot's UEFI
 implementation; that machine could not originally do UEFI.
 
 This page lists all changes made since the *Libreboot 20241008* release. Since
