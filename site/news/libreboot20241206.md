@@ -439,7 +439,7 @@ what you want to do.
 
 To celebrate this fix, the default background logo was also changed. The old
 one was a white silhouette of the Libreboot logo, whereas the new one is of
-the same shape but shoes a rainbow-coloured gradient instead of all-white. This
+the same shape but shows a rainbow-coloured gradient instead of all-white. This
 rainbow logo was also used in U-Boot on the very initial Libreboot 20241206
 release, and it's also used for the main website logo at the time of this
 revision.
