@@ -44,9 +44,9 @@ runs U-Boot virtually bug-free, and it can boot Linux distros via U-Boot's UEFI
 implementation; that machine could not originally do UEFI.
 
 This page lists all changes made since the *Libreboot 20241008* release. Since
-it's a stable release, there has been a more conservative focus on fixing bugs
-and in general polishing, though several interesting features have been added,
-in addition to numerous new mainboards.
+Libreboot 20241206 is a stable release, there has been a more conservative focus
+on fixing bugs and in general polishing, though several interesting features
+have been added, in addition to numerous new mainboards.
 
 Summarised list of changes
 ==========================
