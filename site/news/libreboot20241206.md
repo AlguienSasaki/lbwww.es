@@ -427,8 +427,6 @@ The ROM images were all re-uploaded, compiled from the rev3 tarball, because it 
 Revision 4
 ----------
 
-All current ROM/src archives in this release match changes up to rev4.
-
 Rev4 fixed a bug: GRUB was not allowing the background image to be changed,
 despite rules in `grub.cfg` that made one in CBFS load before memdisk. This fix
 was implemented by no longer inserting background images into GRUB's memdisk,
@@ -446,3 +444,22 @@ revision.
 
 Basically, this fix was done as an excuse just to do another revision update,
 to change the logo! The actual bug was actually quite minor and irrelevant.
+
+Revision 5 and 6
+----------------
+
+All current ROM/src archives in this release match changes up to rev6.
+
+I decided afterall to keep using the boring all-grey silhouette logo in GRUB.
+I also made the same decision for U-Boot.
+
+The plain logo is less eye catching and looks less out of place, and it's
+uncontroversial in every way. This revision still contains the fix allowing
+GRUB backgrounds to be changed. Rev5 made this change to GRUB and Rev6 made
+it to U-Boot. All ROM images were re-compiled to rev6, and re-uploaded.
+
+A minor change, to be sure. I need Libreboot to be as trouble-free as possible
+to everyone, and some countries are culturally hostile to the particular
+colour gradient used by the old logo (from rev4); even if I preferred that
+logo, I want those users to have no trouble at all using Libreboot in public.
+Libreboot's only purpose is to provide free boot firmware.
