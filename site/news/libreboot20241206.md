@@ -353,6 +353,17 @@ for reading, and have a wonderful day!
 Revisions
 =========
 
+Occasionally, stable releases such as this one may contain minor (or critical)
+issues that went unnoticed during testing. When this occurs, critical or
+otherwise desirable fixes are implemented, while not fundamentally altering
+the substance of the original release.
+
+When this occurs, the ROM image and source code archives are entirely re-built,
+and re-uploaded, replacing the old one. Patch files are provided alongside the
+updated source archive, so that you can revert (from it) back to the older
+revisions if you wish; by doing this, you can therefore also re-create the
+original release archive, for reference.
+
 Revision 1
 ----------
 
@@ -412,3 +423,26 @@ which manifested during S3 resume, but that bug never made it into the release
 because it was fixed *before* the initial release of Libreboot 20241206.
 
 The ROM images were all re-uploaded, compiled from the rev3 tarball, because it was discovered that the rev2 tarballs had a GRUB built showing the old Libreboot 20241008 version number; the actual code in GRUB matched the code for 20241206, but it was a cached GRUB build from just before updating the version number for release. This is because the rev2 ROM image tarballs were done manually, to avoid a full re-build of every target in lbmk. To avoid all doubt, all ROM images have been re-compiled with the version number corrected, from the rev3 tag.
+
+Revision 4
+----------
+
+All current ROM/src archives in this release match changes up to rev4.
+
+Rev4 fixed a bug: GRUB was not allowing the background image to be changed,
+despite rules in `grub.cfg` that made one in CBFS load before memdisk. This fix
+was implemented by no longer inserting background images into GRUB's memdisk,
+instead inserting them into CBFS.
+
+This way, you can remove what's in CBFS and replace it with your own, if that's
+what you want to do.
+
+To celebrate this fix, the default background logo was also changed. The old
+one was a white silhouette of the Libreboot logo, whereas the new one is of
+the same shape but shoes a rainbow-coloured gradient instead of all-white. This
+rainbow logo was also used in U-Boot on the very initial Libreboot 20241206
+release, and it's also used for the main website logo at the time of this
+revision.
+
+Basically, this fix was done as an excuse just to do another revision update,
+to change the logo! The actual bug was actually quite minor and irrelevant.
