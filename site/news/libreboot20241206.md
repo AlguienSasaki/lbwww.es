@@ -31,7 +31,7 @@ system; on ARM(chromebooks), we provide *U-Boot* (as a coreboot payload).
 U-Boot UEFI payload on x86\_64
 ------------------------------
 
-<img tabindex=1 class="r" src="https://av.vimuser.org/x200-u-boot.jpg" /><span class="f"><img src="https://av.vimuser.org/x200-u-boot.jpg" /></span>
+<img tabindex=1 class="r" src="https://av.vimuser.org/uboot.png" /><span class="f"><img src="https://av.vimuser.org/uboot.png" /></span>
 
 For Libreboot 20241206, today's release, U-Boot is *also* provided as an
 optional coreboot payload on x86 machines. This provides a sensible UEFI
@@ -53,8 +53,6 @@ Summarised list of changes
 
 Board support
 -------------
-
-<img tabindex=1 class="r" src="https://av.vimuser.org/uboot.png" /><span class="f"><img src="https://av.vimuser.org/uboot.png" /></span>
 
 The following boards have been added since the Libreboot 20241008 release:
 

@@ -6,7 +6,7 @@ x-toc-enable: true
 Introduction
 ============
 
-<img tabindex=1 class="r" src="https://av.vimuser.org/x200-u-boot.jpg" /><span class="f"><img src="https://av.vimuser.org/x200-u-boot.jpg" /></span>
+<img tabindex=1 class="r" src="https://av.vimuser.org/uboot.png" /><span class="f"><img src="https://av.vimuser.org/uboot.png" /></span>
 
 U-Boot is available as a coreboot payload, in Libreboot 20241206 and later,
 on x86 boards; on ARM it has been available since late 2022 Libreboot releases.
@@ -27,8 +27,6 @@ reliably boot many Linux and BSD systems.
 
 Availability
 ------------
-
-<img tabindex=1 class="r" src="https://av.vimuser.org/uboot.png" /><span class="f"><img src="https://av.vimuser.org/uboot.png" /></span>
 
 Do this in lbmk.git (Libreboot's build system) to check whether your board has
 U-Boot enabled:
