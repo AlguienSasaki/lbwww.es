@@ -18,14 +18,21 @@
 {
 	html
 	{
-		font-size: 0.95em;
+		font-size: 1.05em;
 	}
 }
 @media (min-width:90em)
 {
 	html
 	{
-		font-size: 1.05em;
+		font-size: 1.15em;
+	}
+}
+@media (min-width:110em)
+{
+	html
+	{
+		font-size: 1.25em;
 	}
 }
 
