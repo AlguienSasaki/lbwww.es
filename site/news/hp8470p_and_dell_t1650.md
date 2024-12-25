@@ -32,14 +32,6 @@ these AMD variants, please [contact Leah Rowe](../docs/maintain/testing.html).
 
 Another quirk: SOIC16 flash IC, but it's 16MB in size (Winbond W25Q128).
 
-This will be available in the next Libreboot release. For now, you
-can [download Libreboot from Git](../git.md) and [build from
-source](../docs/build/) if you wish to use this board. Read those instructions
-first; with build dependencies then installed, you can build the board like
-so:
-
-	./build roms hp8470pintel_16mb
-
 There is currently no documentation on the coreboot website, but installation
 instructions will be written for the Libreboot website.
 
@@ -72,11 +64,6 @@ SeaBIOS-only at startup, but GRUB is available in the SeaBIOS menu. SeaBIOS
 is relied upon to execute the VGA Option ROM on an add-on graphics card (the
 one I had was Nvidia Quadro K420, tested with the `nouveau` driver under
 Debian Linux).
-
-Here's how to build ROM images for this board (make sure you have performed
-the [prerequisite steps](../docs/build/) first:
-
-	./build roms t1650_12mb
 
 If you want GRUB-only setup, you could configure SeaBIOS bootorder to only
 load the GRUB payload, and disable the SeaBIOS menu. This can be done by

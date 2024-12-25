@@ -105,7 +105,7 @@ XBMK\_RELEASE
 
 If set to `y`, it signals to `script/roms` that a release is being built,
 and it will honour `release="n"` in target.cfg files. You could also set this
-yourself, when doing regular builds, if you wanted to test how `./build roms`
+yourself when doing regular builds, if you wanted to test how `./mk -b coreboot`
 behaves running it in release mode. Do this if you want to:
 
 	export XBMK_RELEASE=y
@@ -1309,16 +1309,9 @@ Scripts in root directory of lbmk
 build
 ---------------
 
-This is the main script. Symlinks `vendor` and `update` also point to it, as
-does `mk`. Direct use of this script is considered deprecate, because in a
-future audit, it will be removed; the `./mk` commands will be used,
-exclusively, so please use only `./mk` as directed here and elsewhere.
+This is the main build script.
 
-Take any given file under `script/` and you can do:
-
-	./build file # (THIS IS NOT A VALID COMMAND)
-
-For example:
+Example commands:
 
 	./mk -b coreboot
 	./mk
