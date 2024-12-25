@@ -266,7 +266,7 @@ the *ROM* by using the `-C` option in nvramtool. You can find this under the
 directory `src/coreboot/default/util/nvramtool` when downloading coreboot inside
 of lbmk by running the command:
 
-	./update trees -f coreboot default
+	./mk -f coreboot default
 
 Go in there and type `make` to build nvramtool. Simply run nvramtool without
 arguments, and it will show a list of options.
