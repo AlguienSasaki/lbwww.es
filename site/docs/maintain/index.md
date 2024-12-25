@@ -1329,13 +1329,6 @@ Special commands available (not provided by files under `script/`):
 	./mk inject
 	./mk -d coreboot TARGET # also downloads vendor files
 
-The `vendor` commands are handled by the `build` script, calling functions
-inside `include/vendor.sh`, and the `./mk release` logic is handled
-directly by the `build` script.
-
-More information about `./vendor` commands can be found
-here: [inserting vendor files](../install/ivy_has_internal.md)
-
 Information about `./mk release` is written elsewhere on this page.
 
 You can also know what build system revision you have by running:

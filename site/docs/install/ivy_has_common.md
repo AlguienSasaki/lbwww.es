@@ -56,7 +56,7 @@ In order to inject the necessary files into a rom image, run the script from the
 If you only wish to flash a release rom then the process of injecting the necessary files is quite simple.
 Run the injection script pointing to the release archive you downloaded:
 
-	./vendor inject libreboot-RELEASE_targetname.tar.xz
+	./mk inject libreboot-RELEASE_targetname.tar.xz
 
 The script can automatically detect the board as long as you do not change the file name.
 You can then find flash-ready ROMs in `/bin/release/`
@@ -82,12 +82,12 @@ Alternatively, you may patch only a single rom file, but you must supply the
 correct board target name as alluded to above.
 For example:
 
-	./vendor inject -r x230_libreboot.rom -b x230_12mb
+	./mk inject -r x230_libreboot.rom -b x230_12mb
 
 Optionally, you can use this script to modify the mac address of the rom with the `-m` flag.
 For example:
 
-	./vendor inject -r x230_libreboot.rom -b x230_12mb -m 00:f6:f0:40:71:fd
+	./mk inject -r x230_libreboot.rom -b x230_12mb -m 00:f6:f0:40:71:fd
 
 You are *strongly* advised to inject the tarballs instead. However, so long as
 you're careful, injecting into single ROM images is perfectly safe. Just know
