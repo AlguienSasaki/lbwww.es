@@ -2,8 +2,10 @@
 title: Керівництво перенесення
 ...
 
-NOTE: Libreboot standardises on [flashprog](https://flashprog.org/wiki/Flashprog)
+**NOTE: Libreboot standardises on [flashprog](https://flashprog.org/wiki/Flashprog)
 now, as of 27 January 2024, which is a fork of flashrom.
+The reason why was explained, in
+the [Libreboot 20240225 release](../../news/libreboot20240225.md#flashprog-now-used-instead-of-flashrom)**
 
 Це керівнитво передбачається для тих, хто має дуже низький рівень знань про прошивку
 загалом та coreboot окремо.

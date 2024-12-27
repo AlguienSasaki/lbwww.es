@@ -82,9 +82,16 @@ See: [build from source](../build/)
 IFD-based flash protection
 --------------------------
 
+**NOTE: This CAN cause bricks on a lot of machines. You should use this with
+care. The FLILL and/or PRx based methods are more reliable - also SMM methods.
+You can reconfigure coreboot and enable the chipset-based flash protection there
+which accomplishes the same result, and the benefit is that it can't easily
+be overridden by an evel maid attack e.g. can't simply set the service jumper
+on desktops.**
+
 The simplest way is to just do this:
 
-	ifdtool -x libreboot.rom -O libreboot.rom
+	ifdtool --lock libreboot.rom -O libreboot.rom
 
 If you did the step before, to compile `cbfstool`, you can find ifdtool in
 the `elf/` directory, e.g. `elf/ifdtool/default/ifdtool`. Use the ifdtool
@@ -218,6 +225,26 @@ things like graphics cards. More information is available here:
 <https://www.seabios.org/Runtime_config>
 
 If you're using a graphics card, you *need* VGA option ROMs at least.
+
+GRUBSEA
+-------
+
+Another option is to make it so that GRUB is the primary payload on your board.
+In this setup, SeaBIOS and U-Boot are still available.
+
+For your board's `target.cfg`, add this:
+
+	payload_grubsea="y"
+
+E.g. `config/coreboot/x200_8mb/target.cfg`
+
+You should only do this on setups that have native graphics initialisation
+e.g. Intel graphics, or where no VGA/GOP ROM is required either on-card or
+in the flash (e.g. Intel graphics on Alderlake machines).
+
+If you can't use GRUB as a primary payload, then you can use SeaGRUB as above
+and disable the SeaBIOS menu, making SeaBIOS load only GRUB; SeaGRUB is useful
+because GRUB will piggyback off of the VGA setup done by SeaBIOS first.
 
 GPG keys
 ========

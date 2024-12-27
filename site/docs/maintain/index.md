@@ -3,8 +3,10 @@ title: lbmk maintenance manual
 x-toc-enable: true
 ...
 
-NOTE: Libreboot standardises on [flashprog](https://flashprog.org/wiki/Flashprog)
+**NOTE: Libreboot standardises on [flashprog](https://flashprog.org/wiki/Flashprog)
 now, as of 27 January 2024, which is a fork of flashrom.
+The reason why was explained, in
+the [Libreboot 20240225 release](../../news/libreboot20240225.md#flashprog-now-used-instead-of-flashrom)**
 
 In addition to this manual, you should also refer to [porting.md](porting.md)
 and [testing.md](testing.md).
@@ -709,6 +711,7 @@ as:
 * `rev="ad983eeec76ecdb2aff4fb47baeee95ade012225"` (example entry)
 * `xarch="i386-elf"` (example entry)
 * `payload_grub="y"` (example entry)
+* `payload_grubsea="y"`
 * `payload_seabios="y"` (example entry)
 * `payload_memtest="y"` (example entry)
 * `payload_uboot="y"` (example entry)
@@ -756,6 +759,18 @@ hence `xarch`.
 
 The `payload_grub` entry specifies whether or not GRUB is to be included in
 ROM images.
+
+The `payload_grubsea` entry specifies that GRUB shall be the primary payload,
+instead of SeaBIOS; SeaGRUB is disabled in this setup. You should only use this
+where an Intel graphics device is present, or otherwise where native graphics
+initialisation is present; it is also feasible on Intel Alderlake platforms,
+but only where an Intel GPU is present; where a given system can use other
+graphics devices, they must be unplugged or otherwise disabled. For example, you
+must remove the graphics card on your desktop machine and only use the Intel
+graphics, where it is available. Because of this, `payload_grubsea` is not
+currently enabled by default (and SeaBIOS is more stable so it's a nice fallback
+in case a bug in GRUB would otherwise brick your machine, because you can
+bypass it and use SeaBIOS).
 
 The `payload_seabios` entry specifies whether or not SeaBIOS is to be included
 in ROM images. If GRUB is also enabled, standalone SeaBIOS images will be

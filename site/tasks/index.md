@@ -3,16 +3,10 @@ title: Jobs that need doing
 x-toc-enable: true
 ...
 
-NOTE: Libreboot standardises on [flashprog](https://flashprog.org/wiki/Flashprog)
+**NOTE: Libreboot standardises on [flashprog](https://flashprog.org/wiki/Flashprog)
 now, as of 27 January 2024, which is a fork of flashrom.
-
-This page contains a curated list of tasks that are to be worked on, or tasks
-that are being worked on. This is intended to complement
-the [issue pages](https://codeberg.org/libreboot/lbmk/issues/).
-
-Many of these entries will pertain to *lbmk*, which is Libreboot's build
-system, but some entries may relate to documentation, or organisational
-changes.
+The reason why was explained, in
+the [Libreboot 20240225 release](../news/libreboot20240225.md#flashprog-now-used-instead-of-flashrom)**
 
 If you want to work on some of these yourself, patches are always welcome!
 Please read the [code review page](../git.md), which provides guidance on
@@ -62,51 +56,22 @@ audits are done in Libreboot, see:
 * [Libreboot build system audit 1](../news/audit.md)
 * [Libreboot build system audit 2](../news/audit2.md)
 * [Libreboot build system audit 3](../news/audit3.md)
+* [Libreboot build system audit 4](../news/audit4.md)
+* [Libreboot build system audit 5](../news/audit5.md)
+* [Libreboot build system audit 6](../news/audit6.md)
 
 Auditing can often be pedantic, and seem petty. You might commit a patch that
-reduces the sloccount by only 1 line, maybe 3, but they all add up. Audit 3
-contained hundreds of changes, small changes, that together accounted for
-about 1000 lines of code removed, while not affecting functionality in any way.
+reduces the sloccount by only 1 line, maybe 3, but they all add up.
 
-This will always remain on the TODO list, because there will always be a need
-for auditing, as is true of any codebase. It is always possible to fix more
-bugs or improve a piece of code. As they say: the code is never finished.
+I say again:
 
-Port vendor scripts to Heads
-============================
-
-Ironically, one of the first entries on this page pertains to a competing
-project.
-
-I promised the Heads project that I'd port Libreboot's vendorfile download and
-inject scripts to the Heads build system. Libreboot provides these scripts for
-automatically downloading certain firmwares at build time, as and when
-required for a given mainboard. These are provided by the vendor, e.g. SMSC
-SCH5545 Environment Control (EC) firmware used for fan control on Dell
-Precision T1650.
-
-Heads has such logic, but it's not as developed as the logic in Libreboot,
-which was originally inspired by the Heads logic and then greatly expanded upon.
-
-I'm putting this here on the Libreboot TODO page, so that I always see it. And
-I'm keeping it at the top of the page. This TODO entry is still relevant to
-Libreboot, because it concerns work that I will do in my official capacity,
-representing Libreboot while helping the (friendly) competition.
-
-See: <https://osresearch.net/>
-
-Heads is a really cool project, offering Linux-based kexec payloads on
-supported hardware. It's another coreboot distro, and their build system design
-even works similarly to Libreboot's (though they heavily use Makefiles whereas
-Libreboot exclusively uses shell scripts and uses a much simpler design). Heads
-provides many advanced security features like measured boot, even things like
-TOTP-based authentication using secrets stored in the TPM.
-
-Very, very, very^2 cool project, and Libreboot has plans to integrate some
-of the same functionalitiys within it (see other notes on this page).
+Code equals bugs, so fewer lines of code will cause fewer bugs.
 
 Interesting board ports
 =======================
+
+**Any board port is interesting. These are just a few that happened to be
+noticed at a given time. The list below is by no means complete!**
 
 Libreboot can support any board from coreboot, in principle. It would also be
 feasible to integrate other (libre) boot firmware, if desirable. The list below
@@ -375,57 +340,11 @@ oreboot is still a good project.
 (though, whenever possible, lbmk should stick to coreboot, to keep things
 simpler - are there efforts to implement oreboot ports in coreboot/C?)
 
-UEFI payload
-============
-
-A UEFI payload in Libreboot is highly desirable, because it would basically
-enable any distro or BSD to Just Work.
-
-MrChromebox distribution
-------------------------
-
-MrChromebox is another coreboot distro, similar in spirit to Libreboot.
-
-Of interest: Mrchromebox provides Tianocore-based UEFI setups on chromebooks,
-and we could probably integrate some of that in Libreboot. Tianocore is
-essentially bloatware, and really a liability for the Libreboot project due
-to its complexity, though MrChromebox targets a very different audience.
-
-Chromebooks (x86)
+LoongArch support
 -----------------
 
-Start supporting x86 chromebooks in Libreboot. We don't support any.
-There is already MrChromebox, we could just track that, but use our own
-payloads instead of Tianocore.
-
-Specifically: lbmk could have a feature added to it where it re-uses configs
-from MrChromebox, with logic to automatically disable the payload. In lbmk,
-coreboot configs do not enable payloads at all, because payloads are
-compiled by lbmk and added after the fact - this is why we have `elf/`
-containing coreboot images without payloads, and `bin/` which contains the
-full ROMs, with payloads inside. This design is much more flexible, and permits
-builds to be re-used more efficiently so as to reduce overall build time, when
-compiling for multiple mainboards.
-
-U-Boot SPL and UEFI on x86
---------------------------
-
-Simon Glass has been working extensively on x86 support for U-Boot, to be used
-as a coreboot payload. This work is of interest to the Libreboot project,
-because we provide UEFI on ARM but not on x86.
-
-U-Boot also provides SPL which can be used to execute other software in the
-flash, and it's often used to boot a Linux kernel; since U-Boot provides a
-UEFI implementation, it's perfect.
-
-U-Boot is the preferred choice of UEFI implementation on x86, for Libreboot
-purposes, because U-Boot uses a coding style similar to Linux and can more
-easily import Linux drivers which are high quality, and Linux functionality
-in general, for anything that we need.
-
-Since we already provide U-Boot on ARM (thanks to the continued work done by
-Alper Nebi Yasak), U-Boot on x86 would then create a situation whereby Libreboot
-is consistent across platforms, at least for UEFI-based setups.
+Ariadne Conill has been working on bringup for coreboot. Work also being done
+with edk2; U-Boot also desirable here.
 
 RockPro64
 ---------
@@ -444,6 +363,11 @@ Linux payload in the flash.
 For UEFI purposes, U-Boot seems more mature, and it offers other features
 like SPL. As already stated, this is the preferred UEFI implementation for
 Libreboot, but uefistub is listed too because it's interesting.
+
+Probably useless, since U-Boot is more complete. We may aswell use U-Boot, but
+uefistub will remain mentioned here for the time being. The context for
+uefistub is linuxboot-only setups; this is where uefistub can truly shine,
+specifically on ARM64 devices.
 
 Videos (plus RISCV)
 ------
@@ -465,6 +389,10 @@ The talks go all the way back to 2018. They're all worth watching.
 
 Linuxboot
 =========
+
+**NOTE: Stali Linux is a useful base, on top of which any Linux-based setup
+could be built. With a stripped down kernel, it already provides a sensible
+build system for ARM64 and AMD64.**
 
 See for inspiration: [Heads project](https://osresearch.net/)
 and [Ownerboot project](https://sr.ht/~amjoseph/ownerboot/), these are other
