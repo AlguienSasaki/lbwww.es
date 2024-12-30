@@ -27,7 +27,7 @@ Introduction
 
 libreboot 目前记录了这些 SPI 编程器的使用方法：
 
-* Raspberry Pi Pico
+* Raspberry Pi Pico / Pico 2
 * 树莓派（Raspberry Pi，RPi）
 * BeagleBone Black（BBB）
 * Libre Computer 'Le Potato'
@@ -42,6 +42,13 @@ libreboot 目前记录了这些 SPI 编程器的使用方法：
 
 Raspberry Pi Pico
 =================
+
+**Pico 2 and other RP2530 dongles also supported, on Libreboot 20241206 rev8
+or higher. Releases before this only supported the original Pico, and other
+RP2040 dongles; newer Libreboot releases now support both RP2040 and RP2530.**
+
+The pinout on Raspberry Pi Pico and Raspberry Pi Pico 2 are identical, but you
+must take care to flash the correct image on either device.
 
 ![Left to right: Raspberry Pi Pico and Pico H](https://av.libreboot.org/rpi_pico/two_picos.webp)
 
@@ -75,7 +82,8 @@ do:
 
 This will automatically build the rpi-pico firmware, and the file will be
 at `bin/serprog_rp2040/serprog_pico.uf2`
-and `bin/serprog_rp2040/serprog_pico_w.uf2`.
+and `bin/serprog_rp2040/serprog_pico_w.uf2` - images with `pico2` in the
+file name are for the Pico 2, and they can also be used.
 
 Disconnect the Pico and proceed to wire it to your
 [flash chip](/docs/install/spi.html#identify-which-flash-type-you-have).
