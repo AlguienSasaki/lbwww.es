@@ -239,8 +239,8 @@ For your board's `target.cfg`, add this:
 E.g. `config/coreboot/x200_8mb/target.cfg`
 
 You should only do this on setups that have native graphics initialisation
-e.g. Intel graphics, or where no VGA/GOP ROM is required either on-card or
-in the flash (e.g. Intel graphics on Alderlake machines).
+e.g. Intel graphics (or FSP-based Intel graphics initialisation like on
+Alderlake which sets up a similar framebuffer).
 
 If you can't use GRUB as a primary payload, then you can use SeaGRUB as above
 and disable the SeaBIOS menu, making SeaBIOS load only GRUB; SeaGRUB is useful
