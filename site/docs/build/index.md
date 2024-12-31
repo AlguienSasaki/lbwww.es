@@ -3,10 +3,10 @@ title: Build from source
 x-toc-enable: true
 ...
 
-WARNING: cryptfs file name limits
+WARNING: eCryptfs file name limits
 =================================
 
-Do not run the build system on a cryptfs file system, because it has
+Do not run the build system on a eCryptfs file system, because it has
 very short file name limits and Libreboot's build system deals with very
 long file names. We commonly get reports from this by Linux Mint users
 who encrypt their home directory with cryptfs; use a serious distro like
