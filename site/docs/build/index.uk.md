@@ -3,19 +3,15 @@ title: Побудова з джерельного коду
 x-toc-enable: true
 ...
 
-WARNING: Flash from bin/, NOT elf/
-==================================
+WARNING: eCryptfs file name limits
+=================================
 
-TODO: translate this section into ukrainian language
-
-**WARNING: When you build a ROM image from the Libreboot build system, please
-ensure that you flash the appropriate ROM image from `bin/`, NOT `elf/`.
-The `elf/` coreboot ROMs do not contain payloads. Libreboot's build system
-builds no-payload ROMs under `elf/`, and payloads separately under `elf/`. Then
-it copies from `elf/` and inserts payloads from `elf/`, and puts the final ROM
-images (containing payloads) in `bin/`. This design is more efficient, and
-permits many configurations without needless duplication of work. More info
-is available in the [lbmk maintenance manual](../maintain/)**
+Do not run the build system on a eCryptfs file system, because it has
+very short file name limits and Libreboot's build system deals with very
+long file names. We commonly get reports from this by Linux Mint users
+who encrypt their home directory with cryptfs; use a serious distro like
+Debian or Arch please. And use a decent file system; zfs or perhaps mdcrypt
+with btrfs will do nicely.
 
 Introduction
 ============
