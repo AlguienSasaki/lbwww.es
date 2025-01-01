@@ -59,7 +59,7 @@ Environmental variables
 Please read about environmental variables in [the build
 instructions](../maintain/), before running lbmk. You should set
 your variables accordingly, though you do not technically need to; some
-of them may be useful, e.g. `LBMK_THREADS` (sets the number of build threads).
+of them may be useful, e.g. `XBMK_THREADS` (sets the number of build threads).
 
 Sources
 =======
