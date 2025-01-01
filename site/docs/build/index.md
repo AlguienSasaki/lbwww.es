@@ -157,11 +157,15 @@ or
 
 or
 
-	./mk dependencies fedora38
+	./mk dependencies fedora41
 
 or
 
 	./mk dependencies arch
+
+NOTE: For versioned files, such as `fedora41`, typically other versions will
+be available too, e.g. `fedora38`. Make sure to check `config/dependencies/`,
+so that you know whether or not a file is available for your distro.
 
 NOTE: In case of Ubuntu 20.04 LTS or derived distros for that specific release,
 use the dedicated configuration file:
