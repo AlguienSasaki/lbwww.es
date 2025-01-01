@@ -23,6 +23,22 @@ libreboot from the available source code.
 The following document describes how `lbmk` works, and how you can make changes
 to it: [libreboot maintenance manual](../maintain/)
 
+MIPS cross compiler
+===================
+
+Libreboot has support for the Sony PlayStation (PS1/PSX), based on
+the PCSX-Redux Open BIOS. If you're doing a full release build, and/or
+specifically building the PSX BIOS, you need a MIPS cross compiler.
+
+Arch-based systems have a mipsel cross compiler available from AUR, and most
+Debian-based systems have a mipsel cross compiler in apt; for these, the normal
+dependencies installation command will provide them. We know Void Linux and
+Fedora don't have a MIPS compiler, for instance.
+
+If your distro doesn't have the MIPS compiler available,
+the [PlayStation](../install/playstation.md) page provides instructions for
+manual installation; please do this in addition to the normal dependencies.
+
 Multi-threaded builds
 =====================
 

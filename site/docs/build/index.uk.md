@@ -31,28 +31,21 @@ libreboot з доступного джерельного коду.
 Наступний документ описує те, як працює `lbmk`, і як ви можете робити зміни
 до нього: [керівництво обслуговування libreboot](../maintain/)
 
-Release status
-==============
+MIPS cross compiler
+===================
 
-Information about status will be reported during builds; if a board is
-marked as stable, the build proceeds without further input. If the board is
-marked anything other, a warning appears asking if you wish to proceed; to
-disable these warnings, do this before building (not recommended):
+Libreboot has support for the Sony PlayStation (PS1/PSX), based on
+the PCSX-Redux Open BIOS. If you're doing a full release build, and/or
+specifically building the PSX BIOS, you need a MIPS cross compiler.
 
-	export XBMK_STATUS=n
+Arch-based systems have a mipsel cross compiler available from AUR, and most
+Debian-based systems have a mipsel cross compiler in apt; for these, the normal
+dependencies installation command will provide them. We know Void Linux and
+Fedora don't have a MIPS compiler, for instance.
 
-In Libreboot, we specify: `stable`, `unstable`, `broken` or `untested`.
-The "unstable" marking means that the board boots mostly/entirely reliably
-annd should be safe to use, but may have a few issues, but nothing which would,
-for example, cause safety issues e.g. thermal, data reliability etc.
-
-The `broken` setting means that a given board will likely brick if flashed.
-The `untested` setting means untested.
-
-Release status is always set with regards to the current lbmk revision, on
-the theory that the current revision is being used to generate a full release.
-The setting is decided on a board-by-board basis, taking its various quirks
-and idiosynrasies into account.
+If your distro doesn't have the MIPS compiler available,
+the [PlayStation](../install/playstation.md) page provides instructions for
+manual installation; please do this in addition to the normal dependencies.
 
 Multi-threaded builds
 =====================
