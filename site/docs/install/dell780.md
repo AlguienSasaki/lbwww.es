@@ -29,12 +29,12 @@ Dell OptiPlex 780
 
 
 ```
-W+: Works without blobs; 
+W+: Works without vendor firmware; 
 N: Doesn't work; 
-W*: Works with blobs; 
+W*: Works with vendor firmware; 
 U: Untested; 
 P+: Partially works; 
-P*: Partially works with blobs
+P*: Partially works with vendor firmware
 ?: UNKNOWN AT THIS TIME
 ```
 
@@ -78,7 +78,7 @@ lack `_truncate` in the file name.
 100% FREE
 =========
 
-This mainboard does not rely on any binary blobs in the flash. It is using
+This mainboard is entirely free software in the main boot flash. It is using
 the Intel X4X / ICH10 platform, same as on the already supported
 Gigabyte GA-G41M-ES2L mainboard.
 

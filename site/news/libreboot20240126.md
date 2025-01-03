@@ -221,7 +221,7 @@ changes first):
   changed to match the 68\* naming scheme.
 * `config/vendor/sources`: document HP laptop ROM families, for certain models,
   according to name scheme 68SFC, 68SCE, 68ICE and 68ICF. Some of these boards
-  iare part of the same families, and use the same blobs. Patch courtesy of
+  iare part of the same families, and use the same files. Patch courtesy of
   Riku Viitanen.
 * `script/build/roms`: remove the `modify_coreboot_rom` function. Fake PIKE2008
   ROMs are now inserted by defining option roms in the coreboot config, where

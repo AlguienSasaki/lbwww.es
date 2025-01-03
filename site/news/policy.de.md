@@ -107,9 +107,9 @@ The libreboot project has the following policy:
   to tell people how to *neuter* the ME, if possible on a given board.
   The `me_cleaner` program is very useful, and provides a much more secure ME
   configuration.
-* Vendor blobs should *never* be deleted, even if they are unused. In the
+* Such vendor files should *never* be deleted, even if they are unused. In the
   coreboot project, a set of `3rdparty` submodules are available, with vendor
-  blobs for init tasks on many boards. These must *all* be included in libreboot
+  files for init tasks on many boards. These must *all* be included in libreboot
   releases, even if unused. That way, even if the Libreboot build system does
   not yet integrate support for a given board, someone who downloads libreboot
   can still make changes to their local version of the build system, if they

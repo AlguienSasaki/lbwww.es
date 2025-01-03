@@ -158,7 +158,7 @@ are also repeated below but in more detail:
 * Don't use the `-B` option in make commands.
 * Where no-microcode ROM images are provided, ensure that the ROM hashes still
   match when running the vendor inject script. This is only useful on the
-  Dell Latitude E6400, which is otherwise blob-free but (in Libreboot)
+  Dell Latitude E6400, which is otherwise entirely free software but (in Libreboot)
   comes with or without microcode updates, and with or without the Nvidia VGA
   ROM (handled by vendor inject/download scripts) for dGPU variants. Verification
   previously failed, under certain conditions, when inserting that VGA ROM.

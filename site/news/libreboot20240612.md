@@ -221,7 +221,7 @@ Feature changes
 * Print a two-line break before confirming the location of the generated
   release archive, when running release builds. This makes it more obvious
   to the operator.
-* **Removed the MRC (raminit blob) on Intel Haswell** (4th generation)
+* **Removed the MRC (vendor raminit code) on Intel Haswell** (4th generation)
   hardware, namely the ThinkPad T440p, W541, Dell OptiPlex 9020 MT
   and Dell OptiPlex 9020 SFF; the libre raminit now works well, and S3 works.
 * Removed all status checks from script/roms (formerly script/build/roms),
@@ -360,7 +360,7 @@ The changes are, from newest to earliest:
   fixing a bug that was actually triggered, and a preventative bug fix as the
   original code wasn't correct either, even on AMD64 hosts (where it happened
   to compile anyway).
-* include/vendor.sh: Skip a given blob if the path to it is `/dev/null` - this
+* include/vendor.sh: Skip a given file if the path to it is `/dev/null` - this
   fixes a bug exposed by the previous change two bullet points down (fine
   grained error control), because VGA ROMs are handled but the KGPE-D16 target
   mitigates a crash bug when PIKE2008's option ROM is executed by SeaBIOS, by
@@ -619,7 +619,7 @@ these changes relative to the old one:
 * 192e23b7 vbe: implement function 09h (get/set palette data)
 * 3722c21d vgasrc: round up save/restore size
 * 5d87ff25 vbe: Add VBE 2.0+ OemData field to struct vbe_info
-* 163fd9f0 fix smbios blob length overflow
+* 163fd9f0 fix smbios data length overflow
 * 82faf1d5 Add LBA 64bit support for reads beyond 2TB.
 * 3f082f38 Add AHCI Power ON + ICC_ACTIVE into port setup code
 * 3ae88886 esp-scsi: terminate DMA transfer when ESP data transfer completes
@@ -802,7 +802,7 @@ The latest changes are listed first, going all the way down to earlier changes:
 * | f6cbc501 import nuke() from cbmk cdce8ba70b 
 |/  
 * 7fbcb7be coreboot t440p/w541: enable nvme in grub_scan_disk 
-* 47f582d4 ./vendor download: skip if blob path is /dev/null 
+* 47f582d4 ./vendor download: skip if file path is /dev/null 
 * e7cb10d6 do not allow dashes in coreboot target names 
 * e9b9e825 ./vendor download: more fine-tuned error control 
 * 0dd0dfaf vendor.sh: don't error on main targets 
@@ -919,7 +919,7 @@ The latest changes are listed first, going all the way down to earlier changes:
 * 190495d2 disable x301 for next release (for now) 
 * 03fae0cf mrc.sh: remove redundant function extract_ref() 
 * f66ceef6 print two line breaks before confirming release 
-* cc339741 remove haswell mrc blob (libre raminit stable now) 
+* cc339741 remove haswell mrc file (libre raminit stable now) 
 * 05fbd392 remove all status checks. only handle release. 
 * 8ba0fd83 git.sh: remove errant comment 
 * d7ce26dc move script/*/* to script/ 

@@ -24,12 +24,12 @@ x-toc-enable: true
 | **Flash chip**             | PLCC 1MiB (Upgradable to 2MiB)                 |
 
 ```
-W+: Works without blobs; 
+W+: Works without vendor firmware; 
 N: Doesn't work; 
-W*: Works with blobs; 
+W*: Works with vendor firmware; 
 U: Untested; 
 P+: Partially works; 
-P*: Partially works with blobs
+P*: Partially works with vendor firmware
 ```
 
 | ***Features*** |                                       |

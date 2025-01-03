@@ -2,6 +2,45 @@
 % Leah Rowe
 % 7 July 2023
 
+New safety features
+===============
+
+NOTE: This page is mostly completely obsolete, as of 3 January 2025; changes
+made in the vendor inject script for Libreboot 20241206 rev8 or higher (and
+releases newer than the 20241206 series) make the script almost completely
+safe to use, as described in the section pertaining to this on
+the [main guide](../docs/install/ivy_has_common.md).
+
+To summarise, those new safety features are as follows:
+
+* Newer release ROMs (20241206rev8 or higher, or releases newer than 20241206
+  series) have 1-byte padding on non-inject images, to trigger an error in
+  flashprog due to a size mismatch versus chip size, and they have the
+  words `DO_NOT_FLASH` in the image file names. (older release images don't
+  have this, so watch out)
+* Injects directly into the *tarballs*, and replaces the given tarball with
+  one containing the injected images. Older versions left the tarball
+  untouched and outputted images to `bin/release/` (directory), whereas many
+  users wrongly believed they could use the tarball; the new version therefore
+  adheres accordingly to the user's natural expectation, in this regard.
+* Avoids replacing the tarball, where errors are observed, and prints much more
+  pedantic error messages, to let the user know that they must *stop* and take
+  note.
+
+With this in mind, the original article written below is largely obsolete, and
+the steps below (which would require extreme over-engineering) are probably not
+going to be implemented.
+
+Now, continue reading the article below, if you wish!
+
+NOTE: The sections in the article below are *still* important to read, so please
+do read it, and note that **you must
+still [insert vendor files](../docs/install/ivy_has_common.md) regardless,
+prior to Libreboot installation, if required on your board.**
+
+Article
+=======
+
 **Please also follow this guide if using Dell Latitude laptops.**
 
 **If unsure, just follow this guide. If you follow this guide on a board that
@@ -113,8 +152,8 @@ BIOS region is coreboot.
 Per the issue page, I intend to implement the following regime in future
 Libreboot releases, on the affected machines:
 
-* If BIOS region blob-free (no MRC/EC firmware needed): set IFD, GbE and BIOS
-  regions read-write by default, but lock the ME region.
+* BIOS region doesn't need vendor files (no MRC/EC firmware needed): set IFD,
+  GbE and BIOS regions read-write by default, but lock the ME region.
 * If BIOS region requires vendor files: set IFD and GbE regions read-write
   by default, but lock the ME and BIOS regions.
 

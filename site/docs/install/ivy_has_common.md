@@ -10,15 +10,18 @@ recovery via [external flashing](spi.md) - regardless, you are advised to
 also read the external flashing guide just in caes, and have an external
 flasher handy in case you need it.**
 
+Even if your board doesn't need vendor firmware inserted, you can also use this
+guide to change the GbE MAC address in the flash, if your board has an Intel
+Gigabit Ethernet device (where an Intel Flash Descriptor is used).
+
 WARNING: eCryptfs file name limits
 =================================
 
 Do not run the build system on a eCryptfs file system, because it has
 very short file name limits and Libreboot's build system deals with very
 long file names. We commonly get reports from this by Linux Mint users
-who encrypt their home directory with cryptfs; use a serious distro like
-Debian or Arch please. And use a decent file system; ZFS or perhaps LUKS
-with btrfs will do nicely.
+who encrypt their home directory with eCryptfs; regular LUKS encryption will
+do nicely.
 
 **Install build dependencies first**
 ================================
@@ -41,7 +44,7 @@ boards, for certain functionalities; we cover this more thoroughly in
 the [Freedom Status](../../freedom-status.md) page and in the [Binary Blob
 Reduction Policy](../../news/policy.md).
 
-Libreboot can't directly distribute *all* of these blobs, so some of them are
+Libreboot can't directly distribute *all* of these files, so some of them are
 downloaded at build-time, and processed for insertion into the firmware images.
 **On pre-compiled ROM images in releases, these files are removed, and can be
 re-added using the same automation that was applied during the build process.**
@@ -237,6 +240,73 @@ if you're not savvy enough to look at stuff in hexdump.
 You'll note the small size of the Intel ME, e.g. 84KB on sandybridge platforms.
 This is because lbmk *automatically* neuters it, disabling it during
 early boot. This is done using `me_cleaner`, which lbmk imports.
+
+Intel FSP copyright
+===================
+
+If you just want to inject Intel FSP and ME into your image, ready for
+flashing, please read [the guide](ivy_has_common.md).
+
+Abstract
+--------
+
+The initial Libreboot 20241206 release included Intel FSP directly inside the
+ROM images. Intel provides the FSP under a license which states (and I
+paraphrase): you must not modify it, but you can redistribute it freely, so
+long as the license notice is retained.
+
+The FSP is a concatenation of three modules: FSP-T, FSP-S and FSP-M. T basically
+does CAR, S is essentially romstage components, and M is raminit. Due to how
+coreboot works, these components must be split into single components. Coreboot
+doesn't use T by default (it implements CAR itself), but has the option to
+use it. It will use M and S, only.
+
+Technically, the process of splitting FSP into these three files counts as
+a modification. Furthermore, coreboot also rebases the M module by modifying
+certain pointers, so that it can integrate with coreboot to provide raminit.
+
+Intel *themselves* own the copyright to the tool for splitting FSP,
+at `3rdparty/fsp/Tools/SplitFspBin.py`, and it seems that they do intend for
+the FSP to be used this way. However, until now, those using the Intel FSP
+have built coreboot images from source, so the issue of modified distributions
+didn't come up.
+
+By the strictest possible interpretation of Intel's licensing, Libreboot was
+technically in violation. To mitigate this, Libreboot 20241206 *revision 8* and
+newer, will no longer include the Intel FSP inside images. Instead, the vendor
+inject script is used for inserting the FSP into release images, which is what
+we already do for several other components.
+
+`_fsp` vs `_vfsp` targets
+-------------------------
+
+The original 20241206 release images had `_fsp` in the file name. From rev8
+onward, `_vfsp` is specified instead.
+
+Libreboot's inject script verifies checksums on files, when inserting into the
+images. Because of this, if we inject FSP after the fact, that means anyone
+using the old images will find errors when they try.
+
+To mitigate this, the build targets containing `_fsp` in the name have been
+retained, but these targets are set `release="n"` so that no ROM images are
+provided in releases. The `_vfsp` images are provided pre-compiled, instead.
+
+With this re-design, modern lbmk (from Libreboot 20241206 rev8 onward) can still
+reliably inject Intel ME into the old `_fsp` images, if you already downloaded
+those before.
+
+Therefore, you must be especially careful to get this right. If you're running
+the inject script into a tarball, it will generally detect the right one, but
+inserting manually into individual image files is also possible; if you do this,
+you must remember to correctly specify `t480_vfsp_16mb` or `t480s_vfsp_16mb`,
+or to specify the `_fsp` targets if you're doing this on older images.
+
+It is extremely unlikely that Intel would have ever cracked down on Libreboot
+for its previous mistake, since many other projects exist that include FSP
+directly in coreboot images, even commercially. However, Libreboot wishes to
+respect Intel's license, in the
+most [technically correct](https://www.youtube.com/watch?v=0ZEuWJ4muYc) way
+possible.
 
 Errata
 ======

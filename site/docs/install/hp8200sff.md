@@ -26,12 +26,12 @@ OR YOU MIGHT BRICK YOUR MACHINE: [SAFETY PRECAUTIONS](../../news/safety.md)**
 | **Flash chip**            | SOIC-8 8MiB                                 |
 
 ```
-W+: Works without blobs; 
+W+: Works without vendor firmware; 
 N: Doesn't work; 
-W*: Works with blobs; 
+W*: Works with vendor firmware; 
 U: Untested; 
 P+: Partially works; 
-P*: Partially works with blobs
+P*: Partially works with vendor firmware
 ```
 
 | ***Features***                                    |    |

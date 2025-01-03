@@ -679,6 +679,10 @@ This may result the following effects, including or not limited to:
  * Fan speed reporting not working
  * Fan control not working
 
+**However, enabling it on the ThinkPad T480 may cause the following issues,
+as of Libreboot 20241206rev8: it might turn off rfkill making you have to
+manually unblock wlan, and the Fn keys through F9 to F12 may stop working.**
+
 For these systems, add the line
 
 ```

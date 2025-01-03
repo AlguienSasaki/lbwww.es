@@ -693,6 +693,12 @@ GRUB (наприклад, флеш-накопичувач USB). Для
 Неможливість виконати modprobe thinkpad\_acpi на Haswell
 ===============================================
 
+This pertains to ThinkPad T480, T440p and W541.
+
+**However, enabling it on the ThinkPad T480 may cause the following issues,
+as of Libreboot 20241206rev8: it might turn off rfkill making you have to
+manually unblock wlan, and the Fn keys through F9 to F12 may stop working.**
+
 Про це повідомив користувач, який використовує Debian 11 з
 ядром `5.19.0-0.deb11.2-amd64`. Модуль `thinkpad_acpi` не завантажувався
 з таким повідомленням:

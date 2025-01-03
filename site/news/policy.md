@@ -98,7 +98,7 @@ The libreboot project has the following policy:
   to tell people how to *neuter* the ME, if possible on a given board.
   The `me_cleaner` program is very useful, and provides a much more secure ME
   configuration.
-* Vendor blobs should *never* be deleted, even if they are unused. In the
+* Such vendor files should *never* be deleted, even if they are unused. In the
   coreboot project, a set of `3rdparty` submodules are available, with vendor
   code for init tasks on many boards. These must *all* be included in libreboot
   releases, even if unused. That way, even if the Libreboot build system does
@@ -154,7 +154,7 @@ examples of how this very policy is implemented in Libreboot:
 * Newer Intel platforms have Intel ME, which is a coprocessor inside the
   machine that handles many functions including certain power management, and
   it can provides useful remote management features with Intel AMT for example.
-  This is a giant 5MB+ blob in the flash, and the ME has full access to your
+  This is a giant 5MB+ section in the flash, and the ME has full access to your
   RAM and other peripherals; more is documented about this in the Libreboot
   FAQ. On older ME4-based platforms such as Intel GM45 platforms, e.g.
   ThinkPad X200/T400, we remove the ME firmware entirely from the flash, leaving
@@ -170,7 +170,7 @@ examples of how this very policy is implemented in Libreboot:
   actually run anything. ME Cleaner is required, instead of full removal,
   because the machines don't boot reliably without at least the BUP/ROMP
   modules present in flash.
-* On Intel Haswell platform (Intel 4th gen), a binary blob is available for
+* On Intel Haswell platform (Intel 4th gen), vendor firmware is available for
   memory controller initialisation, called the Intel *MRC* or System Agent. We
   previously included this in Libreboot; nowadays, we have free initialisation
   code written by Angel Pons. The libre code, called NRI (Native RAM

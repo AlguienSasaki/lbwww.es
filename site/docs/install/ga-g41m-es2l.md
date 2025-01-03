@@ -24,12 +24,12 @@ GA-G41M-ES2L
 | **Flash chip**             | 2x8Mbit                                        |
 
 ```
-W+: Works without blobs; 
+W+: Works without vendor firmware; 
 N: Doesn't work; 
-W*: Works with blobs; 
+W*: Works with vendor firmware; 
 U: Untested; 
 P+: Partially works; 
-P*: Partially works with blobs
+P*: Partially works with vendor firmware
 ```
 
 | ***Features*** |                                       |

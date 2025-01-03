@@ -1404,7 +1404,7 @@ the way it's configured is very complicated.
 See: [Vendor file guide](../docs/install/ivy_has_common.html)
 
 The way the Libreboot build system works, the Intel ME and other firmware is
-automatically downloaded at build time. At release time, blobs such as these
+automatically downloaded at build time. At release time, files such as these
 are deleted, but an extra *insert* script is provided that can provide the
 same auto-download and auto-insert on release ROMs.
 

@@ -10,7 +10,8 @@ can modify the ifd file with coreboot's ifdtool. You can use nvmutil to modify
 the GbE NVM MAC address**
 
 **If all you want to do is change the MAC address, you might use `nvmutil`
-instead. See: [nvmutil documentation](../install/nvmutil.md).**
+instead. See: [nvmutil documentation](../install/nvmutil.md), or use
+the [inject script](ivy_has_common.md).**
 
 The documentation below is *still valid*, if you actually want to use ich9utils.
 You can find it in older Libreboot releases, up to Libreboot 20230625. The only

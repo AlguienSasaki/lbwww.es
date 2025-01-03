@@ -9,9 +9,8 @@ WARNING: eCryptfs file name limits
 Do not run the build system on a eCryptfs file system, because it has
 very short file name limits and Libreboot's build system deals with very
 long file names. We commonly get reports from this by Linux Mint users
-who encrypt their home directory with cryptfs; use a serious distro like
-Debian or Arch please. And use a decent file system; ZFS or perhaps LUKS
-with btrfs will do nicely.
+who encrypt their home directory with eCryptfs; regular LUKS encryption will
+do nicely.
 
 Introduction
 ============
