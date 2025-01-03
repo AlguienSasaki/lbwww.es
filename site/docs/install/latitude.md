@@ -10,10 +10,10 @@ instructions on this page.
 Disable security before flashing
 ================================
 
-**[SAFETY WARNING: Always insert vendor files before flashing.](../../news/safety.md),
-or look directly at [Injecting Vendor Files](ivy_has_common.md). If you flash
-Libreboot without inserting vendor files, you will brick the machine; if you
-do, please follow the external flashing instructions linked below.**
+**[PLEASE READ THESE INSTRUCTIONS BEFORE INSTALLING](ivy_has_common.md), OR
+YOU MAY BRICK YOUR MACHINE!! - Please click the link and follow the instructions
+there, before flashing. For posterity,
+[here is the link again](ivy_has_common.md).**
 
 Please also [disable /dev/mem protection](devmem.md), otherwise flashprog
 and dell-flash-unlock won't work. You can re-enable the protections after

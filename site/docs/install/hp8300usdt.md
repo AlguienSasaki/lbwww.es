@@ -3,8 +3,10 @@ title: HP Compaq Elite 8300 USDT
 x-toc-enable: true
 ...
 
-**[PLEASE READ THESE INSTRUCTIONS BEFORE INSTALLING](../../news/safety.md),
-OR YOU MIGHT BRICK YOUR MACHINE: [SAFETY PRECAUTIONS](../../news/safety.md)**
+**[PLEASE READ THESE INSTRUCTIONS BEFORE INSTALLING](ivy_has_common.md), OR
+YOU MAY BRICK YOUR MACHINE!! - Please click the link and follow the instructions
+there, before flashing. For posterity,
+[here is the link again](ivy_has_common.md).**
 
 <div class="specs">
 <center>

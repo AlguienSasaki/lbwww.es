@@ -25,8 +25,10 @@ operates Minifree Ltd; sales provide funding for the Libreboot project.
 Safety warning
 --------------
 
-**IMPORTANT ADVICE: [PLEASE READ THESE INSTRUCTIONS BEFORE INSTALLING/UPDATING
-LIBREBOOT](news/safety.md).**
+**[PLEASE READ THESE INSTRUCTIONS BEFORE INSTALLING](docs/install/ivy_has_common.md), OR
+YOU MAY BRICK YOUR MACHINE!! - Please click the link and follow the instructions
+there, before flashing. For posterity,
+[here is the link again](docs/install/ivy_has_common.md).**
 
 Код підпису GPG
 ---------------

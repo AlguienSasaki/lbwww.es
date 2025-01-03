@@ -6,8 +6,10 @@ Today's Libreboot 20241206 revision is a *stable release*, whereas the previous
 testing release was Libreboot 20241008, and the previous stable release was
 Libreboot 20240612.
 
-**IMPORTANT ADVICE: [PLEASE READ THESE INSTRUCTIONS BEFORE INSTALLING/UPDATING
-LIBREBOOT](safety.md).**
+**[PLEASE READ THESE INSTRUCTIONS BEFORE INSTALLING](../docs/install/ivy_has_common.md), OR
+YOU MAY BRICK YOUR MACHINE!! - Please click the link and follow the instructions
+there, before flashing. For posterity,
+[here is the link again](../docs/install/ivy_has_common.md).**
 
 Introduction
 ============

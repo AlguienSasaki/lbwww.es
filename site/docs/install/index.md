@@ -14,8 +14,10 @@ the `-r` option in flashprog instead `-w`, to read from the flash.**
 **SAFETY WARNING!**
 ====================================================================
 
-**IMPORTANT ADVICE: [PLEASE READ THESE INSTRUCTIONS BEFORE INSTALLING/UPDATING
-LIBREBOOT](../../news/safety.md).**]
+**[PLEASE READ THESE INSTRUCTIONS BEFORE INSTALLING](ivy_has_common.md), OR
+YOU MAY BRICK YOUR MACHINE!! - Please click the link and follow the instructions
+there, before flashing. For posterity,
+[here is the link again](ivy_has_common.md).**
 
 **If you're using release ROMs, some files may be missing inside them, and must
 be added. See: [Inserting Vendor Files](ivy_has_common.md).**

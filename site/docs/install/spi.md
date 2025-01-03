@@ -24,8 +24,10 @@ now, as of 27 January 2024, which is a fork of flashrom.
 The reason why was explained, in
 the [Libreboot 20240225 release](../../news/libreboot20240225.md#flashprog-now-used-instead-of-flashrom)**
 
-**[PLEASE READ THESE INSTRUCTIONS BEFORE INSTALLING](../../news/safety.md),
-OR YOU MIGHT BRICK YOUR MACHINE: [SAFETY PRECAUTIONS](../../news/safety.md)**
+**[PLEASE READ THESE INSTRUCTIONS BEFORE INSTALLING](ivy_has_common.md), OR
+YOU MAY BRICK YOUR MACHINE!! - Please click the link and follow the instructions
+there, before flashing. For posterity,
+[here is the link again](ivy_has_common.md).**
 
 This guide will teach you how to use various tools for externally reprogramming
 a 25xx NOR flash via SPI protocol. This is the most common type of flash IC for

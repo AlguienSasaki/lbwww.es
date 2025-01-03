@@ -2,8 +2,10 @@
 % Leah Rowe
 % 23 April 2023
 
-**IMPORTANT ADVICE: [PLEASE READ THESE INSTRUCTIONS BEFORE INSTALLING/UPDATING
-LIBREBOOT](safety.md).**
+**[PLEASE READ THESE INSTRUCTIONS BEFORE INSTALLING](../docs/install/ivy_has_common.md), OR
+YOU MAY BRICK YOUR MACHINE!! - Please click the link and follow the instructions
+there, before flashing. For posterity,
+[here is the link again](../docs/install/ivy_has_common.md).**
 
 Introduction
 ============

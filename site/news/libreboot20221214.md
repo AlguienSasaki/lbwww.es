@@ -9,8 +9,10 @@ in 2022. *This* new release, Libreboot 20221214, is released today on December
 This is marked as a *testing* release, but most/all boards should be fairly
 stable.
 
-**IMPORTANT ADVICE: [PLEASE READ THESE INSTRUCTIONS BEFORE INSTALLING/UPDATING
-LIBREBOOT](safety.md).**
+**[PLEASE READ THESE INSTRUCTIONS BEFORE INSTALLING](ivy_has_common.md), OR
+YOU MAY BRICK YOUR MACHINE!! - Please click the link and follow the instructions
+there, before flashing. For posterity,
+[here is the link again](../docs/install/ivy_has_common.md).**
 
 Build from source
 -----------------
