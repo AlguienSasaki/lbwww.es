@@ -47,7 +47,7 @@ Latitude E6400
 Vendor files not required for Dell Latitude E6400 if you have the Intel GPU.
 
 If you have the Nvidia model, please use the `e6400nvidia_4mb` target, and
-make sure to run the inject script.
+make sure to run the [inject script](ivy_has_common.md) prior to flashing.
 
 E6400 nvidia issues
 -------------------

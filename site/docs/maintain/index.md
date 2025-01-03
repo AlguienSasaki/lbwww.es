@@ -1497,7 +1497,8 @@ Helper functions for downloading and injecting vendor files. How to use:
 	./mk inject ARGUMENTS
 	./mk -d coreboot TARGET
 
-Refer elsewhere in the documentation for how to handle vendor files.
+Refer elsewhere in the documentation for how to handle vendor files, and/or
+read [the guide](../install/ivy_has_common.md).
 
 script/
 =======

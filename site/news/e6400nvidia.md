@@ -31,6 +31,19 @@ than Libreboot 20231021 only support the Intel GPU variant.**
 The 6400 XFR testing+photo was provided, courtesy Mark Cornick (`mcornick` on
 Libreboot IRC).
 
+Preparing a release Rom
+-----------------------
+
+NOTE: Not strictly required on Intel graphics models, but still useful for
+changing the MAC address.
+
+**Please follow this prior to flashing, or you may brick your machine.**
+
+Please [inject vendor files](ivy_has_common.md) prior to flashing. You can also
+use this guide to change the built-in MAC address for your Intel Gigabit
+Ethernet device; doing so is advisable, because otherwise you will have a
+default, generic MAC address.
+
 Dell Latitude E6400 with Nvidia GPU
 ===================================
 

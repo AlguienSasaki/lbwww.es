@@ -3,6 +3,13 @@ title: Insert vendor files not included in release images
 x-toc-enable: true
 ...
 
+**PLEASE MAKE SURE you read and follow the instructions on this page, prior
+to flashing Libreboot, if required for your mainboard; failure to heed this
+warning can and will result in a soft-brick, which would then necessitate
+recovery via [external flashing](spi.md) - regardless, you are advised to
+also read the external flashing guide just in caes, and have an external
+flasher handy in case you need it.**
+
 WARNING: eCryptfs file name limits
 =================================
 
@@ -45,21 +52,21 @@ on HP EliteBooks), VGA ROMs (e.g. Nvidia GPU ROM for Dell Latitude E6400),
 and so on. Without these, your machine may not boot correctly, or not boot at
 all!
 
-The same logic can be used after the fact, to re-download and re-insert these
-files; the page that you're reading now will tell you how to do so.
+If in doubt, you should simply follow these instructions. If your board
+doesn't need vendor files, the tar archive won't be modified.
 
-*If in doubt, just follow these instructions anyway; if your board doesn't need
-vendor files inserted, nothing will happen. You only need to follow this guide
-if you use release ROMs; if you're building directly from source, using the
-Libreboot build system, then you can just flash the result.*
+MAC address
+-----------
 
-Injecting vendor files ROMs tarball
+Regardless of whether your board needs vendorfiles or not, you can also use
+this command to change the MAC address on systems with Intel GbE regions in
+the flash, where an Intel gigabit ethernet device is used.
+
+For example, a Lenovo ThinkPad X200 doesn't need any files added, but can still
+have the mac address changed; please continue reading!
+
+Injecting vendor files into tarballs
 ------------------------------------
-
-You must determine the correct board name, for your board, based on the list
-generated when running this command:
-
-	./mk -b coreboot list
 
 In order to inject the necessary files into a rom image, run the script from the root of lbmk and point to the rom image.
 
@@ -68,51 +75,125 @@ Run the injection script pointing to the release archive you downloaded:
 
 	./mk inject libreboot-RELEASE_targetname.tar.xz
 
+Where a GbE region is present in the flash, you can also use the above command
+to change the MAC address, by modifying it like so:
+
+	./mk inject libreboot-RELEASE_targetname.tar.xz setmac
+
+Note that `setmac`, without additional argument, will *randomise* the MAC
+address, setting a *local*, *unicast* MAC address. You can specify a custom
+MAC address, like so:
+
+	./mk inject libreboot-RELEASE_targetname.tar.xz setmac 00:1f:16:00:01:02
+
+The above MAC address is a random example; please make sure to use one that matches
+your board, if you wish. You can also use randomisation this way; the `?` character
+will be randomised, e.g.:
+
+	./mk inject libreboot-RELEASE_targetname.tar.xz setmac ??:??:??:??:??:??
+
+You can mix and match arbitrary characters with random ones, e.g.:
+
+	./mk inject libreboot-RELEASE_targetname.tar.xz setmac 0?:??:12:?a:6?:69
+
 The script can automatically detect the board as long as you do not change the file name.
-You can then find flash-ready ROMs in `/bin/release/`
 
-*This is the recommended way to do it, injecting into the tarball.*
+On Libreboot 20241206 rev8 or newer, releases newer than the 20241206 series,
+and in the latest lbmk Git repository branch revisions (`master` branch), the
+commands above *directly modify the tarball*.
 
-Injecting vendor files into single ROMs
----------------------------------------
+Older versions left the tarball unmodified, and extracted the modified images
+to `bin/release/` - on current behaviour, you inject the tarball and then
+extract the tarball yourself afterward, to flash the modified images.
 
-**You are strongly advised only to insert it on the tarball, because then
-checksums are verified to ensure that the vendor files were inserted correctly.
-Otherwise, you can do it manually on each individual image, specifying the
-board name with the instructions provided below:**
+Behaviour changes in Libreboot 20241206 rev8
+--------------------------------------------
 
-**However, when injecting into the tarball in bulk like that, lbmk currently
-cannot change the MAC addresses automatically, using the `-m` option mentioned
-below.**
+*Older* versions of this script would have produced the injected images under
+the `bin/release/` directory, and/or allow you to do it on specific ROM images.
 
-**Therefore, if you want to rely on insertion into the tarball, you can just
-copy the ROM you want and [change the MAC address manually](nvmutil.md).**
+The *current* version, pertaining to this documentation, *only* supports injecting
+tarballs, because the tarball-based mechanism verifies checksums on images,
+after insertion.
 
-Alternatively, you may patch only a single rom file, but you must supply the
-correct board target name as alluded to above.
-For example:
+The older versions of this script would have left the tarball unmodified, while
+producing `bin/release/` containing your images.
 
-	./mk inject -r x230_libreboot.rom -b x230_12mb
+The *current* version, pertaining to this documentation, modifies the tarball
+itself. You can inject and un-inject. To un-inject, you can do:
 
-Optionally, you can use this script to modify the mac address of the rom with the `-m` flag.
-For example:
+	./mk inject libreboot-RELEASE_targetname.tar.xz nuke
 
-	./mk inject -r x230_libreboot.rom -b x230_12mb -m 00:f6:f0:40:71:fd
+Running the `nuke` command will remove vendorfiles, and re-generate a file inside
+the archive named `vendorhashes`. When running regular inject, not `nuke`,
+the `vendorfiles` file is removed after insertion; this way, subsequent
+injections are avoided, by detecting whether they're needed on the basis of
+that file.
 
-You are *strongly* advised to inject the tarballs instead. However, so long as
-you're careful, injecting into single ROM images is perfectly safe. Just know
-once more that the checksum verification is unavailable in the latter, so you
-must absolutely ensure that you specified the correct board with the `-b`
-option.
+The nuke command is available because Libreboot's build system uses it when
+producing release archives. You otherwise shouldn't use `nuke` yourself, except
+for testing purposes or if you're just curious.
+
+Libreboot 20241206 rev8 have different command structure for the inject script.
+Older versions could insert into lone ROM images, with a special command, and
+generally didn't have good error checking. The new version of this script is
+much safer and easier to use. **These changes are also present in the latest
+lbmk git repository.**
+
+ALSO: Non-injected images do, on Libreboot 20241206 rev8 or higher, have 1 byte
+of padding - yes, *1 byte* - at the end, to make flashprog fail to flash it due
+to size mismatch versus chip size, and the words `DO_NOT_FLASH` are inserted
+into the file name. With both of these things, the user is unlikely to flash
+an image that hasn't been injected.
+
+After injection, the `DO_NOT_FLASH` file name prefix is removed, as is the
+padding, so that the injected images are ready to flash, and the tarball is
+re-generated with these images.
+
+ALSO: If vendorfiles are not needed, or if an error occurs, modification of
+the tarball is avoided and it's left alone, UNLESS the following condition is
+met:
+
+If no errors occured, but no vendor files are needed, you can still inject a
+new MAC address, where there is a GbE region. If there isn't a GbE region,
+such modification is skipped (some boards don't have Intel gigabit ethernet,
+and might have a different ethernet adapter instead).
+
+When vendor files are inserted and/or a MAC address is inserted, the tarball
+is re-generated. MAC address insertion is handled with [nvmutil](nvmutil.md);
+the steps there are applied automatically.
+
+Older release images, prior to 20241206 rev8, do not have `DO_NOT_FLASH` or
+the 1-byte padding, so watch out! However, this script, the new version, is
+backwards compatible with older releases.
+
+That's one possible use for the `nuke` command, running it yourself. If you're
+distributing the older release images, you could inject them, and then nuke
+them; doing so will re-generate the `vendorhashes` file, *and* retroactively
+pad them (and add `DO_NOT_FLASH` to the image file names). It would be pointless
+for Libreboot to retroactively modify the official images in this way, since
+20241206 rev8 and newer already has this done to it. Just be careful when
+using the older tarballs.
 
 Check that the files were inserted
 ==================================
 
+Automatic verification
+----------------------
+
 You *must* ensure that the files were inserted. The inject command automatically
 verifies checksums of the complete images, when you run it directly on a
-release tarball, but not when running it manually on an individual image;
-checking it manually is useful for the latter, but you should probably just
-insert it into the tarball.
+release tarball.
+
+If there was an error, and/or the checksums didn't match, then the tarball won't
+be modified. If you're using newer release images with `DO_NOT_FLASH` and
+the one-byte padding (as described above), that's a good indicator, but older
+release images didn't have this modification.
+
+Manual inspection
+-----------------
+
+You could check the files manually, if you're paranoid, after insertion.
 
 Some examples of how to do that in lbmk:
 
@@ -129,7 +210,15 @@ below):
 	./elf/cbfstool/TREENAME/cbfstool libreboot.rom print
 
 You should check that the files were inserted in cbfs, if needed; for example,
-EC firmware or MRC firmware.
+EC firmware or MRC firmware, perhaps FSP.
+
+FSP is redistributable by Intel, but not with modification. Since coreboot has
+to de-concatenate FSP into its modules, and modify pointers in the FSP-M module,
+for raminit, Libreboot treats FSP modules like other injectable vendor files.
+
+(in the original 20241206 release, FSP was directly baked in; the change
+described above was applied in Libreboot 20241206 and newer, and the 3050micro
+image from Libreboot 20241008 was removed from Libreboot's rsync server)
 
 Next:
 
@@ -140,15 +229,14 @@ Run hexdump on it:
 
 	hexdump flashregion_2_intel_me.bin
 
-Check the output. If it's all `0xFF` (all ones) or otherwise isn't a bunch
-of code, then the Intel ME firmware wasn't inserted.
+Check the output. If it's all `0xFF` (all ones) or zeroes or otherwise isn't a
+bunch of code, then the Intel ME firmware wasn't inserted. You could also run
+the `me_cleaner` program on this file, to see if it gives you any information,
+if you're not savvy enough to look at stuff in hexdump.
 
 You'll note the small size of the Intel ME, e.g. 84KB on sandybridge platforms.
 This is because lbmk *automatically* neuters it, disabling it during
 early boot. This is done using `me_cleaner`, which lbmk imports.
-
-NOTE: the MAC changer makes use of `nvmutil`, which you can read more about in
-the [nvmutil documentation](nvmutil.md).
 
 Errata
 ======
@@ -166,6 +254,11 @@ raminit. The following targets no longer exist in the build system:
 * `dell9020mt_12mb` (use `dell9020mt_nri_12mb` instead)
 * `dell9020mtbmrc` (use `dell9020mt_nri_12mb` instead)
 
+FSP images are also no longer baked in on release images, from
+Libreboot 20241206 rev8 or higher (or releases newer than the 20241206 series),
+but the machines that use them still need them; they are injected instead,
+using the commands shown above on this very page.
+
 This is written as errata because some users may still be using older release
 images but on the newer build system from May 2024 onward; you must use the
 Libreboot 20240225 release if you want to inject MRC and so on, for these older
@@ -175,3 +268,5 @@ Libreboot's [binary blob reduction policy](../../news/policy.md) is very strict,
 and states: if a blob can be avoided, it must be avoided. Therefore, the MRC
 is removed on Haswell and Libreboot will only use the libre raminit (called
 NRI, short for Native Ram Initialisation).
+
+The four freedoms are absolute.

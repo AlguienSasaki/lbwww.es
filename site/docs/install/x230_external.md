@@ -30,31 +30,12 @@ You can now follow the rest of the instructions.
 Preparing a release Rom
 -----------------------
 
-You must patch the release rom with the necessary vendor files *and then* flash it to your board.
+**Please follow this prior to flashing, or you may brick your machine.**
 
-Lbmk includes a script that will automatically inject the necessary files into a rom image.
-The script can determine the board automatically if you have not changed the name, but you can also manually set the board name with the `-b` flag.
-
-In order to inject the necessary files into a rom image, run the script from the root of lbmk and point to the rom image.
-Run the injection script pointing to the release archive you downloaded:
-
-	./mk inject /path/to/libreboot-20230319-18-g9f76c92_t440_12mb.tar.xz
-
-The script can automatically detect the board as long as you do not change the file name.
-You can then find flash-ready ROMs in `/bin/release/`
-
-Alternatively, you may patch only a single rom file.
-For example:
-
-	./mk inject -r x230_libreboot.rom -b x230_12mb
-
-Optionally, you can use this script to modify the mac address of the rom with the `-m` flag.
-For example:
-
-	./mk inject -r x230_libreboot.rom -b x230_12mb -m 00:f6:f0:40:71:fd
-
-NOTE: this makes use of `nvmutil`, which you can read more about in
-the [nvmutil documentation](nvmutil.md).
+Please [inject vendor files](ivy_has_common.md) prior to flashing. You can also
+use this guide to change the built-in MAC address for your Intel Gigabit
+Ethernet device; doing so is advisable, because otherwise you will have a
+default, generic MAC address.
 
 Splitting The Rom
 -----------------
@@ -68,8 +49,6 @@ external flashing.
 Flash the top chip with top.rom, and tho bottom chip with bottom.rom.
 Don't worry about knowing which chip is which on a standard setup; flashprog will let you know if the 
 image size is incorrect for the chip you're flashing.
-
-
 
 Disassembly
 -----------
