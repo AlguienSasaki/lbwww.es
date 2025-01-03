@@ -25,14 +25,14 @@
 {
 	html
 	{
-		font-size: 1.15em;
+		font-size: 1.10em;
 	}
 }
 @media (min-width:110em)
 {
 	html
 	{
-		font-size: 1.25em;
+		font-size: 1.15em;
 	}
 }
 
