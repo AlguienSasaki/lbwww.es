@@ -244,8 +244,8 @@ early boot. This is done using `me_cleaner`, which lbmk imports.
 Intel FSP copyright
 ===================
 
-If you just want to inject Intel FSP and ME into your image, ready for
-flashing, please read [the guide](ivy_has_common.md).
+A few boards use Intel FSP, for parts of the machine initialisation. More
+information is available on the [freedom status](../../freedom-status.md) page.
 
 Abstract
 --------
