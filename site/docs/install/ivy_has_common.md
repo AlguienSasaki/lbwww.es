@@ -241,73 +241,6 @@ You'll note the small size of the Intel ME, e.g. 84KB on sandybridge platforms.
 This is because lbmk *automatically* neuters it, disabling it during
 early boot. This is done using `me_cleaner`, which lbmk imports.
 
-Intel FSP copyright
-===================
-
-A few boards use Intel FSP, for parts of the machine initialisation. More
-information is available on the [freedom status](../../freedom-status.md) page.
-
-Abstract
---------
-
-The initial Libreboot 20241206 release included Intel FSP directly inside the
-ROM images. Intel provides the FSP under a license which states (and I
-paraphrase): you must not modify it, but you can redistribute it freely, so
-long as the license notice is retained.
-
-The FSP is a concatenation of three modules: FSP-T, FSP-S and FSP-M. T basically
-does CAR, S is essentially romstage components, and M is raminit. Due to how
-coreboot works, these components must be split into single components. Coreboot
-doesn't use T by default (it implements CAR itself), but has the option to
-use it. It will use M and S, only.
-
-Technically, the process of splitting FSP into these three files counts as
-a modification. Furthermore, coreboot also rebases the M module by modifying
-certain pointers, so that it can integrate with coreboot to provide raminit.
-
-Intel *themselves* own the copyright to the tool for splitting FSP,
-at `3rdparty/fsp/Tools/SplitFspBin.py`, and it seems that they do intend for
-the FSP to be used this way. However, until now, those using the Intel FSP
-have built coreboot images from source, so the issue of modified distributions
-didn't come up.
-
-By the strictest possible interpretation of Intel's licensing, Libreboot was
-technically in violation. To mitigate this, Libreboot 20241206 *revision 8* and
-newer, will no longer include the Intel FSP inside images. Instead, the vendor
-inject script is used for inserting the FSP into release images, which is what
-we already do for several other components.
-
-`_fsp` vs `_vfsp` targets
--------------------------
-
-The original 20241206 release images had `_fsp` in the file name. From rev8
-onward, `_vfsp` is specified instead.
-
-Libreboot's inject script verifies checksums on files, when inserting into the
-images. Because of this, if we inject FSP after the fact, that means anyone
-using the old images will find errors when they try.
-
-To mitigate this, the build targets containing `_fsp` in the name have been
-retained, but these targets are set `release="n"` so that no ROM images are
-provided in releases. The `_vfsp` images are provided pre-compiled, instead.
-
-With this re-design, modern lbmk (from Libreboot 20241206 rev8 onward) can still
-reliably inject Intel ME into the old `_fsp` images, if you already downloaded
-those before.
-
-Therefore, you must be especially careful to get this right. If you're running
-the inject script into a tarball, it will generally detect the right one, but
-inserting manually into individual image files is also possible; if you do this,
-you must remember to correctly specify `t480_vfsp_16mb` or `t480s_vfsp_16mb`,
-or to specify the `_fsp` targets if you're doing this on older images.
-
-It is extremely unlikely that Intel would have ever cracked down on Libreboot
-for its previous mistake, since many other projects exist that include FSP
-directly in coreboot images, even commercially. However, Libreboot wishes to
-respect Intel's license, in the
-most [technically correct](https://www.youtube.com/watch?v=0ZEuWJ4muYc) way
-possible.
-
 Errata
 ======
 
@@ -327,7 +260,14 @@ raminit. The following targets no longer exist in the build system:
 FSP images are also no longer baked in on release images, from
 Libreboot 20241206 rev8 or higher (or releases newer than the 20241206 series),
 but the machines that use them still need them; they are injected instead,
-using the commands shown above on this very page.
+using the commands shown above on this very page. Older images with FSP baked
+directly into release images had `_fsp` in the file names; newer images that
+need it to be injected have `_vfsp` in the file name. Releases from Libreboot
+20241206 release series at revision 8 or higher, or releases newer than the
+20241206 series, no longer include `_fsp` images as they are set `release="n"`
+in the build system; these releases include `_vfsp` images instead. Newer
+targets added in the future, that need FSP, will also have `_vfsp` in the
+file name, for consistency.
 
 This is written as errata because some users may still be using older release
 images but on the newer build system from May 2024 onward; you must use the
