@@ -39,24 +39,21 @@ if your board requires it, otherwise your board simply will not boot.**
 Introduction
 ============
 
-Coreboot is nominally free software, but requires certain vendor code on some
-boards, for certain functionalities; we cover this more thoroughly in
-the [Freedom Status](../../freedom-status.md) page and in the [Binary Blob
-Reduction Policy](../../news/policy.md).
+On *some* boards, but certainly not all of them, certain files are required from
+the hardware vendor. Libreboot has strict [rules](../../news/policy.md)
+governing this, and you can find more information on
+the [Freedom Status](../../freedom-status.md) page.
 
 Libreboot can't directly distribute *all* of these files, so some of them are
 downloaded at build-time, and processed for insertion into the firmware images.
 **On pre-compiled ROM images in releases, these files are removed, and can be
 re-added using the same automation that was applied during the build process.**
 
-Examples of vendor files can include, for example: Intel ME (disabled after
-boot with me\_cleaner), Embedded Controller firmware (e.g. KBC1126 EC firmware
-on HP EliteBooks), VGA ROMs (e.g. Nvidia GPU ROM for Dell Latitude E6400),
-and so on. Without these, your machine may not boot correctly, or not boot at
-all!
+Examples of these files can be found on
+the [Freedom Status](../../freedom-status.md) page.
 
-If in doubt, you should simply follow these instructions. If your board
-doesn't need vendor files, the tar archive won't be modified.
+**If in doubt, you should simply follow these instructions. If your board
+doesn't need vendor files, the tar archive won't be modified.**
 
 MAC address
 -----------
@@ -246,9 +243,14 @@ by processing the MEv11 image with Mate Kukri's [deguard](deguard.md) utility.
 Errata
 ======
 
+This section should not concern you, if you're using newer Libreboot releases.
+This section largely concerns *bugs* which existed in older releases, pertaining
+to this documentation, and design changes made accordingly.
+
 NOTE: As of Libreboot releases from May 2024 onward, the Intel MRC is no longer
-included for Haswell; MRC is a blob for raminit, but we now provide libre
-raminit. The following targets no longer exist in the build system:
+included for Haswell; MRC is a firmware for raminit, but we now provide native
+raminit written by Angel Pons, for the coreboot project. The following targets
+no longer exist in the build system:
 
 * `t440pmrc_12mb` (use `t440plibremrc_12mb` instead)
 * `t440pbmrc_12mb` (use `t440plibremrc_12mb` instead)
@@ -276,9 +278,10 @@ images but on the newer build system from May 2024 onward; you must use the
 Libreboot 20240225 release if you want to inject MRC and so on, for these older
 targets.
 
-Libreboot's [binary blob reduction policy](../../news/policy.md) is very strict,
-and states: if a blob can be avoided, it must be avoided. Therefore, the MRC
-is removed on Haswell and Libreboot will only use the libre raminit (called
-NRI, short for Native Ram Initialisation).
+Libreboot's [Binary Blob Reduction Policy](../../news/policy.md) is very strict,
+and states: if it can be done with free software exclusively, then it should be
+done with free software exclusively. Therefore, the MRC is removed on Haswell
+and Libreboot will only use the libre raminit (called NRI, short for Native Ram
+Initialisation).
 
 The four freedoms are absolute.
