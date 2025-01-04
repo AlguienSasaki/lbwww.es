@@ -81,6 +81,27 @@ Any sensible Linux distribution will do. Libreboot's build system is regularly
 testing on all the major distros. Please do report bugs if you encounter
 issues.
 
+These distros, specifically, are the *most* well-tested:
+
+* Debian Linux
+* Arch Linux
+* Fedora Linux
+
+NOTE: Some patching is also done for non-glibc-based systems, such as
+Alpine Linux, though we currently do not have an automated way to install
+build dependencies for these distros.
+
+NOTE: **Linux** is assumed. BSD systems may work, for parts of the build system,
+but BSD systems are currently not well-tested with lbmk.
+
+**Dependencies**
+----------------
+
+**Make sure you have dependencies installed!**
+
+**The [main build guide](../build) will tell you how to install dependencies,
+such as GNU toolchains and various libraries.**
+
 Host CPU
 --------
 
