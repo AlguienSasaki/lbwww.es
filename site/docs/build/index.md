@@ -15,12 +15,65 @@ do nicely.
 Introduction
 ============
 
-libreboot's build system is named `lbmk`, short for `LibreBoot MaKe`, and this
+Libreboot's build system is named `lbmk`, short for `LibreBoot MaKe`, and this
 document describes how to use it. With this guide, you can know how to compile
 libreboot from the available source code.
 
 The following document describes how `lbmk` works, and how you can make changes
 to it: [libreboot maintenance manual](../maintain/)
+
+System requirements
+===================
+
+This concerns system requirements when *building* Libreboot.
+
+Operating system
+----------------
+
+Any sensible Linux distribution will do. Libreboot's build system is regularly
+testing on all the major distros. Please do report bugs if you encounter
+issues.
+
+Host CPU
+--------
+
+At least an Intel Core 2 Duo, though we recommend much faster CPUs if building
+entire release archives, e.g. quad-core Haswell CPU or better.
+
+NOTE: x86 boards require an *x86_64* host CPU with appropriate host toolchains
+and libraries. We don't yet cross-compile x86 payloads.
+
+NOTE2: ARM64 mainboards *are* cross compiled, so you can build for AArch64
+machines quite easily, from x86 or ARM64 machines.
+
+NOTE3: *32-bit* x86 (i686) machines can be used to compile Libreboot, but
+MemTest86\+ is only compiled for 64-bit, and not cross compiled, so builds
+are disabled when lbmk detects a 32-bit host CPU.
+
+Memory
+------
+
+At least 2GB per CPU core, ideally 4GB; for example, 16GB RAM is recommended
+if you're compiling an a quad-core CPU.
+
+NOTE: `XBMK_THREADS` environmental variable defaults to 1 if unset. This sets
+the number of build threads, which you should match to the number of cores.
+For example, when you're building on a quad-core, do this prior to building:
+
+	export XBMK_THREADS=4
+
+Disk space
+----------
+
+About 20GB bare minimum, if only compiling for 1 board. The sources take up a
+lot of space. However, Libreboot is always expanding as it's developed.
+
+At least 50GB of free disk space is therefor recommended.
+
+We *actually* recommend 100GB, because Libreboot will also have a Linux distro
+in flash on a future release. On our testing, disk I/O does not seem to be a
+major bottleneck, so any HDD or SSD will do, but we obviously recommend a
+fast NVMe (PCI-E) SSD if you can.
 
 Multi-threaded builds
 =====================
@@ -50,26 +103,6 @@ Sources
 This version, if hosted live on libreboot.org, assumes that you are using
 the `lbmk` git repository, which
 you can download using the instructions on [the code review page](../../git.md).
-
-A note about documentation (and this page)
-------------------------------------------
-
-From Libreboot 20231021 onwards, *all* releases (including 20231021)
-have `lbwww.git` (the website) and `lbwww-img.git` (images for the website)
-archived in the *src* tar archive for that release; older releases were hit
-or miss, from 20210522 to 20230625, as to whether they came with documentation;
-releases older than 20210522 generally always came with documentation. Modern
-Libreboot documentation is written in Markdown (pandoc variant)
-
-If you're working with *release* documentation, you don't get the full HTML
-files (such as the one you're viewing now, if you're reading *this* page in a
-web browser), so either read the Markdown files directly, or compile them to
-HTML using the [Untitled Static Site Generator](https://untitled.vimuser.org/)
-(which is what the Libreboot project uses to generate HTML from those files).
-
-NOTE: `av.libreboot.org` is hardcoded as the domain name where images are
-pointed to, in `lbwww.git`, so you will need to replace these references in
-your local version, unless you're happy to just continue using those.
 
 Git
 ===
@@ -261,3 +294,24 @@ example want to modify a config, e.g.:
 
 Or perhaps add a new board! The maintenance manual will teach you how the
 Libreboot build system (lbmk) works!
+
+A note about documentation (and this page)
+==========================================
+
+From Libreboot 20231021 onwards, *all* releases (including 20231021)
+have `lbwww.git` (the website) and `lbwww-img.git` (images for the website)
+archived in the *src* tar archive for that release; older releases were hit
+or miss, from 20210522 to 20230625, as to whether they came with documentation;
+releases older than 20210522 generally always came with documentation. Modern
+Libreboot documentation is written in Markdown (pandoc variant)
+
+If you're working with *release* documentation, you don't get the full HTML
+files (such as the one you're viewing now, if you're reading *this* page in a
+web browser), so either read the Markdown files directly, or compile them to
+HTML using the [Untitled Static Site Generator](https://untitled.vimuser.org/)
+(which is what the Libreboot project uses to generate HTML from those files).
+
+NOTE: `av.libreboot.org` is hardcoded as the domain name where images are
+pointed to, in `lbwww.git`, so you will need to replace these references in
+your local version, unless you're happy to just continue using those.
+
