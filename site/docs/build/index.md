@@ -49,6 +49,16 @@ so that `gnat` and `gcc` are both in PATH at build time, resolving to v14.x.
 GNAT is used by coreboot, because some of the Intel graphics devices are
 initialised natively, with code written in Ada spark (called `libgfxinit`).
 
+When updating from Debian stable to Debian Trixie(testing) or Sid, you should
+also check for orphaned packages, using `aptitude search '~o'`. Do this,
+removing what was leftover from the old release, and make sure to re-run the
+Debian dependencies script, but do it like this:
+
+	./mk dependencies debian --reinstall
+
+NOTE: Ubuntu 24.10 also has the issue described above. Some other distros may
+also have it, if they're based on Debian Testing/Sid or Ubuntu 24.10.
+
 MIPS cross compiler
 ===================
 
