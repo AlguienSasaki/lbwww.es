@@ -239,7 +239,9 @@ if you're not savvy enough to look at stuff in hexdump.
 
 You'll note the small size of the Intel ME, e.g. 84KB on sandybridge platforms.
 This is because lbmk *automatically* neuters it, disabling it during
-early boot. This is done using `me_cleaner`, which lbmk imports.
+early boot. This is done using `me_cleaner`, which lbmk imports. If the platform
+uses MEv11 with Intel Boot Guard, the boot guard is automatically disabled
+by processing the MEv11 image with Mate Kukri's [deguard](deguard.md) utility.
 
 Errata
 ======
