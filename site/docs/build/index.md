@@ -45,6 +45,7 @@ GNAT 14, GNAT 13 is removed but `gnat` (in `PATH`) still won't resolve to
 anything. Libreboot *still* accomodates this, detecting and matching the GCC
 and GNAT versions, which would in this instance match version 14 between them,
 so that `gnat` and `gcc` are both in PATH at build time, resolving to v14.x.
+When we tested with this configuration, the KGPE-D16 images also compiled.
 
 GNAT is used by coreboot, because some of the Intel graphics devices are
 initialised natively, with code written in Ada spark (called `libgfxinit`).
