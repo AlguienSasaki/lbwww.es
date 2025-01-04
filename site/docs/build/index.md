@@ -25,55 +25,11 @@ to it: [libreboot maintenance manual](../maintain/)
 System requirements
 ===================
 
-This concerns system requirements when *building* Libreboot.
+You must ensure that you have the correct operating system, CPU, RAM, disk space
+and so on.
 
-Operating system
-----------------
-
-Any sensible Linux distribution will do. Libreboot's build system is regularly
-testing on all the major distros. Please do report bugs if you encounter
-issues.
-
-Host CPU
---------
-
-At least an Intel Core 2 Duo, though we recommend much faster CPUs if building
-entire release archives, e.g. quad-core Haswell CPU or better.
-
-NOTE: x86 boards require an *x86_64* host CPU with appropriate host toolchains
-and libraries. We don't yet cross-compile x86 payloads.
-
-NOTE2: ARM64 mainboards *are* cross compiled, so you can build for AArch64
-machines quite easily, from x86 or ARM64 machines.
-
-NOTE3: *32-bit* x86 (i686) machines can be used to compile Libreboot, but
-MemTest86\+ is only compiled for 64-bit, and not cross compiled, so builds
-are disabled when lbmk detects a 32-bit host CPU.
-
-Memory
-------
-
-At least 2GB per CPU core, ideally 4GB; for example, 16GB RAM is recommended
-if you're compiling an a quad-core CPU.
-
-NOTE: `XBMK_THREADS` environmental variable defaults to 1 if unset. This sets
-the number of build threads, which you should match to the number of cores.
-For example, when you're building on a quad-core, do this prior to building:
-
-	export XBMK_THREADS=4
-
-Disk space
-----------
-
-About 20GB bare minimum, if only compiling for 1 board. The sources take up a
-lot of space. However, Libreboot is always expanding as it's developed.
-
-At least 50GB of free disk space is therefor recommended.
-
-We *actually* recommend 100GB, because Libreboot will also have a Linux distro
-in flash on a future release. On our testing, disk I/O does not seem to be a
-major bottleneck, so any HDD or SSD will do, but we obviously recommend a
-fast NVMe (PCI-E) SSD if you can.
+System requirements are documented in
+the [lbmk maintenance manual](../maintain/#system-requirements).
 
 Multi-threaded builds
 =====================
