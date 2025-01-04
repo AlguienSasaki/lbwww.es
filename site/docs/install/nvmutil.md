@@ -140,7 +140,16 @@ a single-flash setup. In that case, it's recommended to dump
 both chips, as `spi1.rom` and `spi2.rom`; you can then cat
 them together:
 
-	cat spi1.rom spi2.rom > rom.bin
+	cat spi1.rom spi2.rom > rom.bin # WARNING: see note below
+
+**WARNING: After concatenating the files, please ensure that you did so in
+the correct order. In `hexdump -C rom.bin` you can check for the Intel Flash
+Descriptor near the start of the file, for the bytes `5a a5 f0 0f`. You may
+alternatively attempt extraction with `ifdtool -x rom.bin`, adding
+the `--platform OPTION` option if needed, based on output from `--help` if
+you need to (it lists platform strings for certain newer Intel platforms). If
+ifdtool extraction fails, then that is another indication that you did not
+cat the files correctly.**
 
 If your GbE region is locked (per IFD settings), you can dump
 and flash it using external flashing equipment. The Libreboot
@@ -251,8 +260,11 @@ the `-p internal` parameter to something else. In this
 situation, you should re-split the file accordingly, if
 you have a dual-IC flash set, like so:
 
-	dd if=rom.bin.new of=spi2.rom bs=1M skip=8
-	dd if=rom.bin.new of=spi1.rom bs=1M count=8
+	dd if=rom.bin.new of=spi2.rom bs=1M skip=8 # WARNING: see note below
+	dd if=rom.bin.new of=spi1.rom bs=1M count=8 # WARNING: see note below
+
+**WARNING: The commands above assume SPI1 is 8MB and SPI2 is 4MB, making 12MB
+total. Please adapt accordingly, for your own configuration.**
 
 These files would then be flashed externally, separately,
 using an external programmer.
