@@ -143,23 +143,24 @@ in flash on a future release. On our testing, disk I/O does not seem to be a
 major bottleneck, so any HDD or SSD will do, but we obviously recommend a
 fast NVMe (PCI-E) SSD if you can.
 
-libreboot blob reduction policy
-============================
+Vendor code
+===========
 
-The coreboot software is nominally free, but it requires additional files from
-the vendor on many supported systems. These programs lack source code, and the
-coreboot project does not control them, but they can be used to perform
-specific initialization tasks.
+The coreboot software is nominally free, but occasionally requires an
+additional file or two from the vendor on a few systems. The libreboot
+project *allows* them, only when they are absolutely required.
 
-The libreboot project *allows* vendor code within coreboot, but there is *still* a
-lot of nuance to precisely what is allowed. It is important that you understand
-these nuances, when working on *libreboot*.
+[Strict rules](../../news/policy.md) govern when this allowed, and
+the [freedom status page](../../freedom-status.md) provides additional details.
 
-[Please read the blob reduction guidelines](../../news/policy.md) and also
-the [freedom status page](../../freedom-status.md).
+Please read the files under `config/vendor/` in lbmk, in addition to
+the file `include/vendor.sh`. These configuration files and this source code
+within lbmk, implement the download and patching logic that enables such files
+to be included on final build images, ready for installation on the target
+machine.
 
-Before *configuration* info, you will first be shown a brief overview of every
-project that Libreboot imports, such as coreboot.
+**Before *configuration* info, you will first be shown a brief overview of every
+project that Libreboot imports, such as coreboot.**
 
 Environmental variables
 =======================
