@@ -75,6 +75,9 @@ Run the injection script pointing to the release archive you downloaded:
 
 	./mk inject libreboot-RELEASE_targetname.tar.xz
 
+**NOTE: As of Libreboot 20241206 rev8 or newer, the above command will behave
+the same way as if you declared `setmac` without argument, mentioned below:**
+
 Where a GbE region is present in the flash, you can also use the above command
 to change the MAC address, by modifying it like so:
 
@@ -85,6 +88,18 @@ address, setting a *local*, *unicast* MAC address. You can specify a custom
 MAC address, like so:
 
 	./mk inject libreboot-RELEASE_targetname.tar.xz setmac 00:1f:16:00:01:02
+
+The `setmac` command, without argument, is technically redundant, since MAC
+addresses are randomised by default, every time you run the inject script.
+
+If you wish to *skip* changing the MAC address (not recommended), you can
+use the `keep` argument, like so:
+
+	./mk inject libreboot-RELEASE_targetname.tar.xz setmac keep
+
+The `setmac` command works by inserting a reference GbE file, contained within
+lbmk. The `keep` command makes lbmk *skip* changing your current GbE region;
+it does not, for example, restore the reference GbE image from lbmk.
 
 The above MAC address is a random example; please make sure to use one that matches
 your board, if you wish. You can also use randomisation this way; the `?` character
