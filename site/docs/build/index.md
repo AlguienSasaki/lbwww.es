@@ -80,23 +80,6 @@ Change the name and email address to whatever you want, when doing this.
 You may also want to follow more of the steps here:
 <https://git-scm.com/book/en/v2/Getting-Started-First-Time-Git-Setup>
 
-Python
-======
-
-You should ensure that the `python` command runs python 3, on your system.
-Python2 is unused by lbmk or anything that it pulls down as modules. 
-
-If building on Debian/Ubuntu based systems, you can achieve that via:
-
-	sudo apt install python-is-python3
-
-On Fedora, you can use the following
-
-	sudo dnf install python-unversioned-command
-
-On most modern distros, Python 2 is no longer included and Python 3 will be
-the only one available on the `python`.
-
 How to compile Libreboot
 ========================
 
