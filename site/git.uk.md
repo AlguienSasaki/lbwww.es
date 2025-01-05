@@ -6,9 +6,6 @@ x-toc-enable: true
 репозиторії libreboot
 ===================
 
-Інформацію про те, хто працює над libreboot і хто керує проектом, можна
-знайти на [who.uk.md](who.uk.md)
-
 Проект `libreboot` має 3 основні сховища Git:
 
 * Система побудови: <https://codeberg.org/libreboot/lbmk>

@@ -656,10 +656,6 @@ auto-neuters Intel ME images, during build, so that the user does not have to
 manually extract such images from dumps of the original vendor firmware (in
 the flash) on a given machine.
 
-Such logic was ported to Libreboot, courtesy of `shmalebx9` as mentioned
-on the [who page](../../who.md) - Caleb is a core developer in the Libreboot
-project.
-
 util/nvmutil/
 ---------------
 
