@@ -101,6 +101,16 @@ The `setmac` command works by inserting a reference GbE file, contained within
 lbmk. The `keep` command makes lbmk *skip* changing your current GbE region;
 it does not, for example, restore the reference GbE image from lbmk.
 
+The `setmac` command, when not using `keep`, copied the default GbE file within
+lbmk for that board, modifying the temporary copy and then inserting that. To
+insert the *original file*, without modification, you can do this:
+
+	./mk inject libreboot-RELEASE_targetname.tar.xz setmac restore
+
+The `restore` setting does the same as `setmac` (without `keep`), but skips
+running `nvmutil`; it also skips building nvmutil. Essentially, this will
+restore the default MAC address from standard release images.
+
 The above MAC address is a random example; please make sure to use one that matches
 your board, if you wish. You can also use randomisation this way; the `?` character
 will be randomised, e.g.:
