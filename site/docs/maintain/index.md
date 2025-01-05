@@ -143,8 +143,8 @@ in flash on a future release. On our testing, disk I/O does not seem to be a
 major bottleneck, so any HDD or SSD will do, but we obviously recommend a
 fast NVMe (PCI-E) SSD if you can.
 
-Vendor code
-===========
+Use Free Software when possible
+===============================
 
 The coreboot software is nominally free, but occasionally requires an
 additional file or two from the vendor on a few systems. The libreboot
