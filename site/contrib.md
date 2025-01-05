@@ -40,26 +40,12 @@ works on all aspects of libreboot, such as:
   that libreboot uses
 * Providing user support on IRC
 
-Caleb La Grange
----------------
-
-**Secondary developer, number two to Leah.** Caleb is a full time libreboot developer
-with a narrower focus. Caleb focuses on several areas of development:
-
-* Build system. Caleb is responsible for improving and fixing the libreboot Make build
-system. Specifically: automation, and reproducibility. 
-* Hardware modification. Caleb has a passion for hardware alteration; soldering,
-desoldering, and testing libreboot software on the resulting hardware.
-* Board porting. Anything supported in Coreboot can be ported to libreboot, Caleb
-will test and port any board he can get his hands on. Additionally, anyone can
-contact Caleb to generate libreboot roms for testing on their board.
-* Documentation. Caleb actively maintains documentation on the above areas of
-interest. Additionally, Caleb is responsible for disassembly guides with his own
-pictures and diagrams for several boards.
-* User support. Caleb is active on irc and willing to help any user interested in
-using libreboot or in need of help.
-* Project goals. Caleb collaborates with Leah on determining project goals.
-Leah has the final say in every decision.
+As leader of the project, my own contributions would be too vast to list here
+succinctly, so just go look at literally the entire Git history. I write this
+paragraph without arrogance; it is simply a fact that almost all of the commits
+in Libreboot, by percentage, were written by me. I oversee Libreboot; I am its
+BDFL, or at least its leader until the day when Libreboot will one day be
+surpassed. Libreboot is otherwise my life-long passion, my baby.
 
 External projects
 =================
@@ -93,6 +79,13 @@ Libreboot uses U-Boot as the coreboot payload on supported ARM Chromebooks.
 Contributors in alphabetical order
 ==================================
 
+Alexei Sorokin
+--------------
+
+Sent minor fixes to lbmk; improved sha512sum verification on images, config
+improvements e.g. hide MEI device where neutered ME is used. General
+improvements and tweaks.
+
 Alper Nebi Yasak
 ----------------
 
@@ -117,15 +110,37 @@ now been heavily modified and forked into a formal project, by Leah Rowe:
 Alyssa's original work on the static site generator that Libreboot used to use;
 the Libreboot website is now built with Untitled)
 
+Andrea Perotti
+--------------
+
+Sent several small fixes to Libreboot's dependencies scripts for Debian, Fedora
+and Ubuntu distros.
+
 Andrew Robbins
 --------------
 
 Worked on large parts of Libreboot's old build system and related documentation.
 Andrew joined the Libreboot project as a full time developer during June 2017,
-until his departure in March 2021.
+until his departure in March 2021. Although the work was ultimately scrapped
+in 2021, in favour of Libreboot's
+current [lbmk design](docs/maintain/), he provided countless hours of work to
+the project over the years, helping users on IRC and generally being a very
+passionate Libreboot developer.
+
+Andrew was working on a build system re-write
+that ultimately never reached a stable state, and he abandoned the project
+after his work was replaced, but the feeling of disgust that he had was not
+mutual.
 
 I, Leah Rowe, am very grateful to Andrew Robbins for his numerous contributions
-over the years.
+over the years. Anyone who contributes to Libreboot is a hero. Look at the
+old Libreboot repository on [notabug](https://notabug.org/libreboot) to find
+his contributions.
+
+Arsen Arsenović
+---------------
+
+Added the config for ThinkPad T430 to Libreboot.
 
 Arthur Heymans
 --------------
@@ -141,6 +156,56 @@ project. He still works on coreboot, to this day, and Libreboot greatly
 benefits from his work. His contributions to the coreboot project, and Libreboot,
 are invaluable.
 
+Ben Westover
+------------
+
+Added info about internal flashing for Dell OptiPlex 9020, in the Libreboot
+documentation.
+
+Caleb La Grange
+---------------
+
+Caleb contributed heavily to the Libreboot build system, and even implemented
+the first version of
+Libreboot's [vendor inject script](docs/install/ivy_has_common.md), back when
+it was part of the erstwhile osboot project, which formally merged with
+Libreboot in November 2022.
+
+Before Caleb came along, Libreboot didn't have any sort of structure in its
+package management. The current `include/git.sh` script in Libreboot, which
+uses a centralised set of configuration files, is ultimately derived from the
+work that Caleb did.
+
+Caleb was the one who figured out how to auto-download and neuter the Intel ME
+on ThinkPad T440p, where previous osboot versions had used one that had to be
+extracted from a dump of the original firmware; the Heads project also made use
+of his work, in their project, to add the ThinkPad T440p, since their build
+system focuses a lot on reproducibility so they place an emphasis on auto
+downloading such files, to get the same version each time. Caleb's work in
+Libreboot was largely inspired by Heads, which did the same thing at that time
+on the ThinkPad X230. Libreboot's checksum-based design was also implemented
+by him; when inserting vendor files, checksums are verified on images, to
+ensure that they match what was built in the original release, for each given
+release.
+
+Caleb worked heavily on the Libreboot documentation, vastly improving much of
+the installation instructions, and provided a lot of user support on IRC.
+
+In general, Caleb heavily audited the entire project. The very nature of its
+design, now, is based directly on the work that he did, when looking at the
+design of the build system. The various Libreboot build system audits that
+started in 2023 were essentially turbo-charged versions of the same work he
+was doing.
+
+Caleb has also been a good friend to me, Leah, and provided a lot of advice
+during the osboot merger. I avoided a lot of stupid mistakes because of his
+advice.
+
+Canberk TURAN
+-------------
+
+Added Turkish Q keyboard layout to Libreboot's GRUB payload.
+
 Damien Zammit
 -------------
 
@@ -151,6 +216,11 @@ libreboot project.
 Damien didn't work directly on Libreboot itself, but he worked heavily with
 Leah Rowe, integrating patches and new board ports into Libreboot, based on
 Damien's upstream work on coreboot.
+
+Daniil Prokofev
+---------------
+
+Translated several Libreboot website pages into the Russian language.
 
 Denis Carikli
 -------------
@@ -174,8 +244,56 @@ didn't work with ACPI based brightness controls. Others in coreboot later
 improved it, making ACPI-based backlight controls work properly, based on this
 earlier work.
 
+Very cool guy!!!
+
+Eason aka ezntek
+----------------
+
+Sent a SOIC8 photo for Raspberry Pi Pico pinout, where previously only SOIC16
+info existed. Also added info about `thinkpad_acpi` Linux kernel module for
+ThinkPad T480.
+
+I (Leah) worked with ezntek on some testing and he discovered several bugs
+on the ThinkPad T480, while Mate and I were working on it for Libreboot.
+
+ezntek wrote this guide:
+<https://ezntek.com/posts/librebooting-the-thinkpad-t480-20241207t0933/>
+
+This guide was written based on my and other people's help, on IRC, while we
+were in the process of adding the T480 to Libreboot. Several parts of this guide
+were in fact used to improve the Libreboot guide, such as the info about how
+to update the Lenovo UEFI firmware prior to Libreboot installation, by using
+USB boot media instead of needing to boot Windows.
+
+Eason's guide also made number one on hacker news that day, and as a result,
+many more people learned about Libreboot, especially its support for T480,
+which helped to spread the news about the work.
+
+Absolute legend. One of Libreboot's many great champions.
+
+E. Blåsten
+--------------
+
+Documented several quirks of the MacBook2,1 and ThinkPad X200T, such as
+swivel/rotation on X200T, and various alt keys on the MacBook to make it more
+usable with Linux, when used on Libreboot.
+
+Also helped me (Leah) in a very fundamental way, in 2018. The help I got enabled
+me to be who I am today.
+
+Fedja Beader
+-------------
+
+Wrote several guides for Libreboot, including the original version of the
+GRUB hardening guide. Wrote the info about the Linux kernel panic/netconsole
+on Libreboot's FAQ.
+
+Also sent some small fixes to Libreboot's GRUB configuration, enabling USB
+devices to boot more reliably. Also improved Libreboot's documentation
+pertaining to Full Disk Encryption.
+
 Ferass El Hafidi
---------
+-----------------
 
 Added cstate 3 support on macbook21, enabling higher battery life and cooler
 CPU temperatures on idle usage.
@@ -184,7 +302,27 @@ Also has a series of extensive improvements to the entire Libreboot system;
 for example, Ferass made the entire build system use POSIX `sh`, removing
 bashisms that previously plagued it.
 
+Libreboot's original support for cross-compiling AArch64 coreboot was added
+by him. He also submitted a few bug fixes to the GRUB configuration used by
+Libreboot.
+
 This is IRC nick `f_` on Libreboot IRC. Cool guy!
+
+hslick
+------
+
+Documented Arch Linux ARM installation on ARM64 U-Boot targets.
+
+Integral
+--------
+
+Translated the Libreboot home page into Chinese language.
+
+Jason Lenz
+----------
+
+Sent instructions for installing Debian Linux on ARM64-based chromebooks
+with Libreboot and Alper's U-Boot ARM64 payload.
 
 Jeroen Quint
 ------------
@@ -192,6 +330,19 @@ Jeroen Quint
 Contributed several fixes to the libreboot documentation, relating to
 installing on Arch-based systems with full disk encryption on libreboot
 systems.
+
+John Doe
+--------
+
+This person never gave their name, but they sent two patches:
+
+```
+* 676eb110c7f Perform the silentoldconfig step of seabios before full make 
+* acc57bda6df scripts: process git versions when lbmk is a worktree or submodule
+```
+
+Every contribution is appreciated. Every contributor gets their own entry in
+the Libreboot Hall of Fame.
 
 Joshua Gay
 ----------
@@ -210,6 +361,11 @@ Klemens Nanni
 Made many fixes and improvements to the GRUB configuration used in
 libreboot, and several tweaks to the build system.
 
+Linear Cannon
+-------------
+
+Added NetBSD support for `dell-flash-unlock`.
+
 Lisa Marie Maginnis
 -------------------
 
@@ -225,6 +381,15 @@ in Libreboot, e.g. ASUS Chromebook C201PA - at the time, this was using
 Google's own Depthcharge payload, which you can find in 2016 Libreboot
 releases.
 
+Livio
+-----
+
+Sent a small enhancement for GRUB, allowing the user to turn on or off several
+options at boot time, such as graphical options or spkmodem output, so that
+these features can be included on every image, and used flexibly.
+
+Sent some small fixes to the QEMU target, fixing a bug in the SMBIOS info.
+
 Lorenzo Aloe
 ------------
 
@@ -236,10 +401,66 @@ that OS is not natively supported.
 
 All round good guy, an honest and loyal fan.
 
+Luke T. Shumaker
+----------------
+
+Sent a patch to Libreboot, fixing vboot on 32-bit (i686) hosts; it previously
+only compiled on 64-bit x86 (amd64) machines.
+
 Marcus Moeller
 --------------
 
 Made the libreboot logo.
+
+Mate Kukri
+----------
+
+Mate Kukri is a *major* contributor to Libreboot, and several of the upstreams
+that it uses; he is a coreboot developer, and also contributes heavily to the
+GNU GRUB project.
+
+Off the top of my head, here are just a few of the contributions that he has
+made:
+
+* Wrote several enhancements for `pico-serprog`, based on the original work
+  done by [stacksmashing](https://github.com/stacksmashing), who also has
+  this very interesting [youtube channel](https://www.youtube.com/channel/UC3S8vxwRfqLBdIhgRlDRVzw);
+  Riku's work is heavily inspired by Mate's and stacksmashing's work.
+* Ported the Dell OptiPlex 9020 SFF and MT, and provided several fixes on it
+  for the Libreboot project; several fixes that I (Leah) did were also based on
+  advice that he gave me.
+* Wrote the [deguard](docs/install/deguard.md) utility for disabling Intel
+  Boot Guard on MEv11; this is used for the Dell OptiPlex 3050 Micro
+  and ThinkPad T480 ports.
+* Ported the Dell OptiPlex 3050 Micro and Lenovo ThinkPad T480/T480s to
+  coreboot, directly providing Leah with advice when integrating these ports
+  into Libreboot. This work included heavy amounts of reverse engineering
+  Lenovo's EC firmware.
+* Ported the ASUS H610M-K D4 motherboard to coreboot, an Alderlake machine that
+  Libreboot is interested in, for the release planned by April 2025; this
+  bullet-point is being written on 5 January 2025 prior to its addition in
+  Libreboot.
+* Wrote the NVMe driver that Libreboot uses in GRUB, based upon work done for
+  the SeaBIOS project.
+
+Mate Kukri is a hero to the Libreboot project. Without him, Libreboot would not
+be what it is today.
+
+Michael Reed
+------------
+
+Wrote Libreboot's original OpenBSD installation guide.
+
+Also sent fixes to the original static site generator that Alyssa wrote, upon
+which the Untitled Static Site Generator was later based.
+
+Michał Masłowski
+----------------
+
+Sent several fixes to Libreboot's early build system, back in the early days
+of the project. Also taught Leah how to use Git, because the very first revisions
+were released only as tarballs, without Git history; the first commits in
+the old repository were imports of those tarballs.
 
 Nicholas Chin
 -------------
@@ -250,6 +471,25 @@ the `dell-flash-unlock` (formerly `e6400-flash-unlock`) utility, which
 can unlock the flash on these boards, allowing internal flashing of
 Libreboot directly from host OS running under the original Dell firmware.
 
+Nicholas has ported many more Dell Latitude laptops to Libreboot, and he works
+heavily on the upstream coreboot project. In fact, *every* Dell Latitude
+board supported in Libreboot was done by him, at least as of 5 January 2025.
+
+Nicholas has provided countless hours of user support on the Libreboot IRC
+channel and in those of projects which Libreboot uses, and submitted many
+fixes to Libreboot, both in terms of code and documentation.
+
+He has advised me, Leah, on many occasions, teaching me things. Needless to
+say, he is one of Libreboot's champions.
+
+Nicholas also contributes to coreboot heavily, to flashprog, and several
+other projects that Libreboot uses.
+
+0xloem
+------
+
+Added info about LPC flashing on Libreboot's external flashing guide.
+
 Patrick "P. J." McDermott
 ---------------------------
 
@@ -258,12 +498,27 @@ relating to the [Intel Management Engine](../faq.md#intelme), in addition
 to making several improvements to the build system in libreboot. **Former
 libreboot project maintainer.**
 
+Patrick Rudolph
+---------------
+
+Coreboot developer. Also wrote the xHCI GRUB driver, that Libreboot uses;
+without it, several ports in Libreboot would not be feasible, unless they
+excluded GRUB as a payload, because several newer Intel platforms no longer
+have (or configure) EHCI controllers. Upstream GRUB currently has no xHCI
+driver, but Patrick sent patches in 2020 that Libreboot later re-based,
+on top of GRUB 2.12.
+
 Paul Kocialkowski
 -----------------
 
 Ported the ARM (Rockchip RK3288 SoC) based *Chromebook* laptops to
 libreboot. Also one of the main [Replicant](http://www.replicant.us/)
 developers.
+
+He was also responsible for the original re-write of the Libreboot build
+system, upon which Libreboot's effort from 2017-2021 was based; ultimately,
+this work never became stable and the work was scrapped in 2021, in favour of
+the current Libreboot build system design, named lbmk.
 
 Paul Menzel
 -----------
@@ -279,12 +534,18 @@ Paul worked with Libreboot on
 this, sending patches to test periodically until the bug was fixed
 in coreboot, and then helped her integrate the fix in libreboot.
 
+Peaksol
+-------
+
+Translated several pages, including the SPI flashing guide, into Chinese
+language.
+
 Peter Stuge
 -----------
 
 Helped write the [FAQ section about DMA](../faq.md#hddssd-firmware), and provided
 general advice in the early days of the project. Peter was a coreboot developer
-in those days, and a major developer in the *libusb* project (which flashrom
+in those days, and a major developer in the *libusb* project (which flashprog
 makes heavy use of).
 
 Peter also wrote the *bucts* utility used to set Backup Control (BUC) Top Swap
@@ -305,6 +566,69 @@ Added support for HP Elite 8200 SFF desktop PC to Libreboot. You can read
 about this in the hardware page:
 
 [HP Elite 8200 SFF](docs/install/hp8200sff.md)
+
+Riku also ported the HP Elite 8300 USDT.
+
+Riku implemented MXM support as an INT15h handler in SeaBIOS, and wrote
+some tooling for it, which enables the HP EliteBook 8560w port to work reliably
+in Libreboot.
+
+Riku also added the HP Folio 9470m to Libreboot.
+
+Riku is also in charge of Libreboot's fork of `pico-serprog`, which is used
+to provide serprog firmware on RP2040 and RP2530 devices. These devices can
+be used to set up a cheap but reliable NOR flasher, which is now the default
+recommended one for flashing Libreboot externally. Riku's fork contains several
+enhancements, such as a higher default drive level of 12mA and the ability to
+control multiple chip select pins, useful for flashing dual-chip Intel boards.
+
+Riku has submitted numerous bug fixes to many boards, and generally sent many
+improvements for the build system and also the Libreboot documentation. He
+also added the HP EliteBook 2560p to Libreboot.
+
+Riku also contributes to coreboot and flashprog, and several other projects
+that Libreboot uses.
+
+samuraikid
+----------
+
+Added Portuguese keyboard layout to Libreboot's GRUB payload.
+
+semigel
+-------
+
+Added BTRFS subvolume support to Libreboot's GRUB configuration, for auto-booting
+various Linux distros.
+
+Simon Glass
+-----------
+
+Simon Glass is principally responsible for the x86 U-Boot payload that Libreboot
+now uses as a coreboot payload. Simon provided Leah with several critical patches
+and advised Leah on several aspects of U-Boot's design, that helped a lot
+when integrating it.
+
+Without him, Libreboot would not have a functioning U-Boot implementation on
+x86.
+
+Snooze Function
+---------------
+
+Translated several pages on the Libreboot documentation into the German
+language.
+
+StackSmashing
+-------------
+
+Author of the original [pico-serprog](https://github.com/stacksmashing/pico-serprog)
+project, upon which Libreboot's fork (maintained by Riku Viitanen) is based.
+
+StackSmashing didn't do this specifically for Libreboot, but their work is
+outstanding, so their name is honoured here.
+
+StackSmashing also has a [YouTube channel](https://www.youtube.com/channel/UC3S8vxwRfqLBdIhgRlDRVzw)
+with a lot of really cool videos on it about all things electronics, and hacking
+of electronics. Check it out!
 
 Steve Shenton
 -------------
@@ -381,6 +705,11 @@ Swiftgeek left the project in March 2021. I, Leah Rowe, wish him all the best
 in his endeavours, and I'm very grateful to his numerous contributions over the
 years.
 
+Timothee Benedet
+----------------
+
+Translated several Libreboot website pages into the French language.
+
 Timothy Pearson
 ---------------
 
@@ -404,3 +733,14 @@ Intel platforms in Libreboot, when flashing it (now rewritten
 by others in Ada, for libgfxinit in coreboot, but originally it was written in
 C and included directly in coreboot; libgfxinit is a 3rdparty submodule of
 coreboot).
+
+Vladislav Shapovalov
+--------------------
+
+Translated several pages of the Libreboot website into Ukranian language.
+
+-------------------------------------------------------------------------------
+
+**Did we forget your name?**
+
+**If so, and you would like to be listed here, please contact the Libreboot project.**
