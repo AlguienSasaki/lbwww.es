@@ -37,12 +37,10 @@ works on all aspects of libreboot, such as:
   that libreboot uses
 * Providing user support on IRC
 
-As leader of the project, my own contributions would be too vast to list here
-succinctly, so just go look at literally the entire Git history. I write this
-paragraph without arrogance; it is simply a fact that almost all of the commits
-in Libreboot, by percentage, were written by me. I oversee Libreboot; I am its
-BDFL, or at least its leader until the day when Libreboot will one day be
-surpassed. Libreboot is otherwise my life-long passion, my baby.
+Check the Git repositories to find my own contributions to the project. There
+are a lot, too many to list here, but my work is enabled by the many people
+who help me, and those who work on all the upstream projects that I use in
+Libreboot. I regularly work with all sorts of people.
 
 External projects
 =================
@@ -133,6 +131,23 @@ I, Leah Rowe, am very grateful to Andrew Robbins for his numerous contributions
 over the years. Anyone who contributes to Libreboot is a hero. Look at the
 old Libreboot repository on [notabug](https://notabug.org/libreboot) to find
 his contributions.
+
+Angel Pons
+----------
+
+Angel is a coreboot developer. Their contributions are numerous, in that and
+many other projects. Countless patches in coreboot from them have enabled
+Libreboot to be what it is.
+
+The most noteworthy work by Angel, that Libreboot imported, is the native
+raminit (NRI) for Intel Haswell platform, which Libreboot was able to use
+for replacing the Intel MRC. Because of these patches, Libreboot is able to
+provide wholly free initialisation on that platform, in the BIOS region of
+the flash. For example, the ThinkPad T440p and OptiPlex 9020 ports boot in
+such a configuration, since these are Haswell machines.
+
+Over 2000 commits in coreboot were written by Angel, as of January 2025. They
+are one of coreboot's most active developers.
 
 Arsen Arsenović
 ---------------
