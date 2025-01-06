@@ -41,12 +41,12 @@ system; on ARM(chromebooks), we provide *U-Boot* (as a coreboot payload).
 U-Boot UEFI payload on x86\_64
 ------------------------------
 
-<img tabindex=1 class="r" src="https://av.vimuser.org/uboot.png" /><span class="f"><img src="https://av.vimuser.org/uboot.png" /></span>
-
 For Libreboot 20241206, today's release, U-Boot is *also* provided as an
 optional coreboot payload on x86 machines. This provides a sensible UEFI
 implementation, useful for booting Linux/BSD systems more easily. More
 information available on the [U-Boot x86 page](../docs/uboot/uboot-x86.md).
+
+<img tabindex=1 class="r" src="https://av.vimuser.org/uboot.png" /><span class="f"><img src="https://av.vimuser.org/uboot.png" /></span>
 
 This means that you can have a UEFI boot environment, even on machines where
 the original vendor firmware never supported it. For example, the ThinkPad X200
