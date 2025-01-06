@@ -12,7 +12,7 @@ x-toc-enable: true
 |----------------------------|------------------------------------------------|
 | **Manufacturer**           | ASUS                                           |
 | **Name**                   | KFSN4-DRE                                      |
-| **Released**               | ?                                              |
+| **Released**               | 2007                                           |
 | **Chipset**                | nVIDIA nForce Professional 2200                |
 | **CPU**                    | AMD Opteron 2000 series (Barcelona Family)     |
 | **Graphics**               | XGI Z9s VGA Controller                         |
