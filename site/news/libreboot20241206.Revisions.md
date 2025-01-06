@@ -117,3 +117,48 @@ to everyone, and some countries are culturally hostile to the particular
 colour gradient used by the old logo (from rev4); even if I preferred that
 logo, I want those users to have no trouble at all using Libreboot in public.
 Libreboot's only purpose is to provide free boot firmware.
+
+Revision 7 (18 December 2024)
+----------
+
+Added support for fetching ThunderBolt firmware and padding it, on ThinkPad
+T480 and T480s mainboards. This can be used for externally flashing the newer
+firmware update, without the need to boot Windows to use Lenovo's own updater.
+
+Revision 8 (6 January 2025)
+----------
+
+There are *so many* changes, in this revision, that it is being treated like
+a brand new release, though it is still merely a revision to the existing
+Libreboot 20241206 release.
+
+Please read the [Libreboot 20241206 8th
+revision release announcement](libreboot20241206rev8.md).
+
+Here's a short summary of the revision 8 changes, but you should also read
+the full announcement, linked above:
+
+* HP EliteBook 820 G2 images are now *provided*, whereas this port was
+  previously *source-only*; this is due to fixes that have been made to
+  the build system, that mean the images now have correct checksums after
+  running the `./mk inject` commands.
+* Several upstream code revisions have been updated, with minor fixes.
+* ThinkPad T480/T480s backlight keys now work perfectly, whereas you could
+  only change the brightness with software before.
+* Thinkpad T480/T480s and OptiPlex 3050 Micro no longer automatically turn
+  on by merely plugging in a power supply; you must now actually press the
+  power button. This is especially desirable on the T480.
+* Safer vendorfile insertion, on `include/vendor.sh` - much stricter error
+  handling, and the way it works now reduces the number of possible bricks.
+* Intel FSP now inserted via `./mk inject` commands, instead of being
+  included directly inside release images. This is to mitigate technicalities
+  of Intel's licensing, pertaining to modifications, since coreboot has
+  to specifically split up the various modules and adjust various pointers
+  inside the M module.
+* General bug fixes in the build system.
+* Fix build errors on Debian Trixie/Sid and Arch Linux, as of January 2025.
+* Pico 2 support added for the `pico-serprog` images, courtesy Riku Viitanen.
+* Disabled TPM2 on T480/3050micro to mitigate SeaBIOS hanging, due to buggy
+  TPM drivers in SeaBIOS.
+* Better handling of dependencies, for various Linux distros.
+* Various code quality improvements for `util/nvmutil`, especially the Makefile.

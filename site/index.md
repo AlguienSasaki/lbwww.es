@@ -25,7 +25,9 @@ Minifree; sales provide funding for Libreboot.
 
 **NEW RELEASE: The latest release is Libreboot 20241206, released on
 6 December 2024.
-See: [Libreboot 20241206 release announcement](news/libreboot20241206.md).**
+See: [Libreboot 20241206 release announcement](news/libreboot20241206.md) - the
+newest revision release, Libreboot 20241206 revision 8, is from 6
+January 2025.**
 
 *We* believe the freedom to [study, share, modify and use
 software](https://writefreesoftware.org/), without any

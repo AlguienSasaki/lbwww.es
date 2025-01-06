@@ -4,7 +4,15 @@
 
 Today's Libreboot 20241206 revision is a *stable release*, whereas the previous
 testing release was Libreboot 20241008, and the previous stable release was
-Libreboot 20240612.
+Libreboot 20240612. A new *revision* release became available on 5 January 2025,
+namely Libreboot 20241206, 8th revision.
+
+**UPDATE (revision release), 6 January 2025:\
+The latest *revision* is the *8th revision*, released on 6 January 2025. This
+has replaced the release archives for the original release revisions,
+under the same `stable/20241206/` directory on release mirrors. See:**
+
+**[Libreboot 20241206 revision 8 announcement](libreboot20241206rev8.md)**
 
 **[PLEASE READ THESE INSTRUCTIONS BEFORE INSTALLING](../docs/install/ivy_has_common.md), OR
 YOU MAY BRICK YOUR MACHINE!! - Please click the link and follow the instructions
