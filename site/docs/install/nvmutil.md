@@ -25,6 +25,8 @@ swap/copy and dump regions on Intel PHY NVM images,
 which are small binary configuration files that go
 in flash, for Gigabit (ethernet) Intel NICs.
 
+**Please [install build dependencies](../build/) before you do this.**
+
 This software is largely targeted at coreboot users,
 but it can be used on most modern Intel systems, or
 most systems from about 2008/2009 onwards.
@@ -47,6 +49,8 @@ using `nvmutil`.
 
 Automatic MAC address changer
 -----------------------------
+
+**Please [install build dependencies](../build/) before you do this.**
 
 Instead of running nvmutil manually, like below, you can
 also use the inject command, like so (examples):
