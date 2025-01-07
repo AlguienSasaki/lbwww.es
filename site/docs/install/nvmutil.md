@@ -45,6 +45,36 @@ you how to dump or otherwise acquire that file; the second
 half of this README then tells you how to operate on it,
 using `nvmutil`.
 
+Automatic MAC address changer
+-----------------------------
+
+Instead of running nvmutil manually, like below, you can
+also use the inject command, like so (examples):
+
+	./mk inject libreboot-RELEASE_targetname.tar.xz
+	./mk inject libreboot-RELEASE_targetname.tar.xz setmac
+	./mk inject libreboot-RELEASE_targetname.tar.xz setmac 00:1f:16:00:11:22
+	./mk inject libreboot-RELEASE_targetname.tar.xz setmac 00:??:16:0?:1?:22
+	./mk inject libreboot-RELEASE_targetname.tar.xz setmac restore
+
+This writes the MAC address on the GbE region of the image. You must do this
+on the tarball, from the ROM image release archives, and then extract the
+archive.
+
+These same commands also [download/insert certain vendor files](ivy_has_common.md)
+if needed, on the given board.
+
+Without argument after the tarball, it behaves the same as `setmac`. If `setmac`
+is provided without argument, or no argument is given, the MAC address is
+randomised. Otherwise, you can specify an arbitrary address.
+
+The `?` character is random, and you can specify that any of them be random,
+while setting others (or all of them) arbitrarily.
+
+The `restore` option restores the original one. The command works by using a
+reference GbE image file present in Libreboot's build system, for the given
+mainboard.
+
 How to download newer versions
 ==============================
 
