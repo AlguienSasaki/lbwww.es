@@ -43,6 +43,9 @@ libreboot 目前记录了这些 SPI 编程器的使用方法：
 Raspberry Pi Pico
 =================
 
+RP2040/RP2530 both supported
+----------------------------
+
 **Pico 2 and other RP2530 dongles also supported, on Libreboot 20241206 rev8
 or higher. Releases before this only supported the original Pico, and other
 RP2040 dongles; newer Libreboot releases now support both RP2040 and RP2530.**
@@ -59,21 +62,28 @@ Additionally, all the software running on it is free, down to the full
 versions (Pico W & Pico WH) need vendor firmware to use the Wi-Fi chip,
 but that is not needed for following this guide.
 
-A Pico has proper 3.3V logic levels, unlike a ch341a. Which means it won't
-destroy your board by sending 5V to it. If you have a 1.8V flash chip,
-you need to add a logic level converter.
+Download serprog firmware pre-compiled
+-------------------------
 
-First, connect just the Pico to your computer with a micro-USB cable.
-Mount it like any other USB flash drive. If it isn't detected, you might need
-to press the BOOTSEL button while you plug it in (this forces it into the
-bootloader mode).
+Download the pico serprog tarball from Libreboot releases. For example, the
+Libreboot 20241206rev8 one would be
+named: `libreboot-20241206rev8_pico_serprog.tar.xz` - it's available under
+the `roms/` directory in each release. With these binaries, you can easily
+get started.
 
-You can download the serprog firmware here:\
+Build serprog firmware from source
+----------------------------------
+
+You can alternatively download the serprog firmware here:\
 <https://codeberg.org/libreboot/pico-serprog>\
 or here:\
 <https://notabug.org/libreboot/pico-serprog>
 
-Copy the file `rpi-pico-serprog.uf2` into your Pico. To build this firmware, you
+You can also find the source code for these, under `src/` in Libreboot release
+archives (source code tarball), and/or under `src/` in `lbmk.git` if downloading
+using the build instructions below.
+
+Alternatively to the binaries, you
 could build it yourself or you could also clone `lbmk.git` and [install build
 dependencies](../build/#first-install-build-dependencies), then inside lbmk,
 do:
@@ -81,16 +91,52 @@ do:
 	./mk -b pico-serprog
 
 This will automatically build the rpi-pico firmware, and the file will be
-at `bin/serprog_rp2040/serprog_pico.uf2`
-and `bin/serprog_rp2040/serprog_pico_w.uf2` - images with `pico2` in the
+at `bin/serprog_pico/serprog_pico.uf2`
+and `bin/serprog_pico/serprog_pico_w.uf2` - images with `pico2` in the
 file name are for the Pico 2, and they can also be used.
+
+Install the serprog firmware
+----------------------------
+
+First, connect just the Pico to your computer with a micro-USB cable.
+Mount it like any other USB flash drive. If it isn't detected, you might need
+to press the BOOTSEL button while you plug it in (this forces it into the
+bootloader mode).
+
+When you have the build, or if you're using a release build, copy the
+file `.uf2` file into your Pico. You must make sure to build the correct
+target, or otherwise copy the correct file, because many RP2040 and RP2530
+devices exist and Libreboot provides images for **all of them** in the same
+release tarball.
+
+**NOTE: Other RP2040/2530 devices will also work. You just have to match
+the right pins and use the correct firmware file!**
+
+Logic levels
+------------
+
+A Pico has proper 3.3V logic levels, unlike a ch341a. Which means it won't
+destroy your board by sending 5V to it. If you have a 1.8V flash chip,
+you need to add a logic level converter. **Please ensure that you have matched
+the voltage of your programmer to the voltage of your chip; both the data lines
+and power lines to the chip must match.**
+
+Wiring
+------
 
 Disconnect the Pico and proceed to wire it to your
 [flash chip](/docs/install/spi.html#identify-which-flash-type-you-have).
 
-![Raspberry Pi Pico pinout, when using the firmware linked above](https://av.libreboot.org/rpi_pico/pinout_serprog.png)
+**NOTE: SCK and CLK mean the same thing. The diagram below says SCK, and other
+parts of this guide say CLK. It's the same thing!**
 
-![A Raspberry Pi Pico connected to a SOIC16 flash chip](https://av.libreboot.org/rpi_pico/soic16_x200.webp)
+![Raspberry Pi Pico pinout, when using the firmware linked
+above](https://av.libreboot.org/rpi_pico/pinout_serprog.png)
+
+![A Raspberry Pi Pico connected to a SOIC16 flash
+chip](https://av.libreboot.org/rpi_pico/soic16_x200.webp)
+
+![SOIC-8 to Pico pinout diagram](https://av.libreboot.org/rpi_pico/soic8_pico_pinouts.jpg)
 
 Headers were manually soldered on the top side, and the plastic packaging
 was repurposed as an insulating base. These might be nice to have, but by no
@@ -102,13 +148,15 @@ will appear:
 
 	[453876.669019] cdc_acm 2-1.2:1.0: ttyACMx: USB ACM device
 
-Take note of the ttyACMx. Flashrom is now usable
+Take note of the ttyACMx. Flashprog is now usable
 (substitute ttyACMx with what you observed earlier).
 
 	flashprog -p serprog:dev=/dev/ttyACMx,spispeed=16M
 
 spispeed=32M usually works, but since it's not much faster it's probably
 not worth it. The 12Mbps USB port is limiting the actual speed here.
+
+Higher speeds might work nicely, on Pico 2.
 
 不要使用 CH341A！
 ==================
