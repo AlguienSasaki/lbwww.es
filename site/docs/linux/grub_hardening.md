@@ -15,7 +15,10 @@ Full disk encryption
 ====================
 
 [Encrypted /boot with LUKS2 on argon2 key derivation is now
-possible](../../news/argon2.md).
+possible](../../news/argon2.md) - the work is based on that done by
+Patrick Steinhardt, importing PHC's Argon2 implementation. This was later added
+to GRUB 2.06 on the Arch Linux AUR by Ax333l, and Nicholas Johnson later rebased
+it for GRUB 2.12 to use in Libreboot's GRUB payload.
 
 This is covered in
 the [main Linux guide](./#encrypted-boot-via-luks2-with-argon2), in the

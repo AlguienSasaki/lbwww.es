@@ -25,6 +25,9 @@ had been done, and I then merged Nicholas's work into Libreboot. Thank you,
 Nicholas! Thanks also go to [Axel](https://axelen.xyz/) who is the author of
 the original work that Nicholas imported from Archlinux AUR.
 
+The work on AUR, and Nicholas's update based on it, was ultimately based on
+the work done by Patrick Steinhardt for the GRUB project, importing PHC Argon2.
+
 Why does this matter?
 ---------------------
 

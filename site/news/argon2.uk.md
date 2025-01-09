@@ -25,6 +25,9 @@ AUR](https://aur.archlinux.org/cgit/aur.git/tree/?h=grub-improved-luks2-git&id=1
 Ніколас! Подяка також іде до [Аксель](https://axelen.xyz/), хто є автором
 оригінальної роботи, яку Ніколас імпортував з Archlinux AUR.
 
+The work on AUR, and Nicholas's update based on it, was ultimately based on
+the work done by Patrick Steinhardt for the GRUB project, importing PHC Argon2.
+
 Чому це має значення?
 ---------------------
 
