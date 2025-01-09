@@ -204,8 +204,9 @@ Memory controller initialisation
 --------------------------------
 
 Libreboot has *fully libre* initialisation available for all Intel memory
-controllers on supported platforms. This *includes* Haswell (ThinkPad T440p
-and W541) as of Libreboot 20230319 or higher.
+controllers up to and including Haswell (ThinkPad T440p
+and W541) as of Libreboot 20230319 or higher; on Broadwell, Intel MRC is used
+and on Skylake/newer, FSP-M is used.
 
 ARM platforms (chromebooks)
 =============

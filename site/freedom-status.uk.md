@@ -289,12 +289,13 @@ T440p ідуть з обома графічними картками Intel та 
 libreboot є налаштовуваним, дозволяючи користувачу робити все, що заманеться."* -
 налаштовуваний, напевно! Дивіться: [docs/maintain/](docs/maintain/)
 
-Ініціалізація контролера пам'яті
+Memory controller initialisation
 --------------------------------
 
-Libreboot має *повністю вільну* ініціалізацію, доступну для всіх контролерів пам'яті Intel
-на платформах, які підтримуються. Це *включає* Haswell (ThinkPad T440p
-та W541), станом на Libreboot 20230319 та пізніші.
+Libreboot has *fully libre* initialisation available for all Intel memory
+controllers up to and including Haswell (ThinkPad T440p
+and W541) as of Libreboot 20230319 or higher; on Broadwell, Intel MRC is used
+and on Skylake/newer, FSP-M is used.
 
 Платформи ARM (chromebook)
 =============
