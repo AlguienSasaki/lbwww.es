@@ -77,7 +77,7 @@ Servers (AMD, x86)
 Desktops (AMD, Intel, x86)
 --------------------------
 
--   [Dell OptiPlex 3050 Micro](dell3050.md) - **Also [available to buy with Libreboot pre-installed](https://minifree.org/product/libreboot-3050-micro/)**
+-   [Dell OptiPlex 3050 Micro](dell3050.html) - **Also [available to buy with Libreboot pre-installed](https://minifree.org/product/libreboot-3050-micro/)**
 -   [Dell OptiPlex 7020/9020 MT and SFF](dell9020.md) - Dell OptiPlex XE2 MT/SFF also known to work
 -   [Acer G43T-AM3](acer_g43t-am3.md)
 -   Apple iMac 5,2
@@ -98,7 +98,7 @@ Desktops (AMD, Intel, x86)
 Laptops (Intel, x86)
 --------------------
 
--   [Lenovo ThinkPad T480 and ThinkPad T480s](t480.md) - Also **[available to buy with Libreboot pre-installed](https://minifree.org/product/libreboot-t480/)**
+-   [Lenovo ThinkPad T480 and ThinkPad T480s](t480.html) - Also **[available to buy with Libreboot pre-installed](https://minifree.org/product/libreboot-t480/)**
 -   Lenovo ThinkPad T440p
 -   Lenovo ThinkPad W541
 -   Lenovo ThinkPad X230 - *Also* available on Minifree: <https://minifree.org/product/libreboot-x230/>
