@@ -6,7 +6,7 @@ x-toc-enable: true
 Проект *Libreboot* надає
 [вільну](https://writefreesoftware.org/) *завантажувальну
 прошивку*, яка ініціалізує апаратне забезпечення (наприклад, контролер пам'яті, ЦП,
-периферію) на [конкретних цілях Intel/AMD x86 та ARM](docs/install/), що
+периферію) на [конкретних цілях Intel/AMD x86 та ARM](docs/install/#which-systems-are-supported-by-libreboot), що
 потім розпочинає завантажувач для вашої операційної системи. [Linux](docs/linux/)
 та [BSD](docs/bsd/) добре підтримуються. Це заміняє пропрієтарну BIOS/UEFI
 прошивку. Допомога доступна

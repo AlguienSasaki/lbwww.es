@@ -5,7 +5,7 @@ x-toc-enable: true
 
 Il progetto *Libreboot* fornisce avvio [libero e open source](https://writefreesoftware.org/)
 grazie al firmware basato su coreboot, sostituendo cosi', firmware BIOS/UEFI proprietario
-su [alcune schede madri basate su Intel/AMD x86 o ARM](docs/install/),
+su [alcune schede madri basate su Intel/AMD x86 o ARM](docs/install/#which-systems-are-supported-by-libreboot),
 in computer fissi e portatili. Inizializza l'hardware (controller di
 memoria, CPU, periferiche) e avvia un bootloader per il tuo sistema operativo.
 [Linux](docs/linux/) e [BSD](docs/bsd/) sono ben supportati.

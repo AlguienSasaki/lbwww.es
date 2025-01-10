@@ -3,7 +3,7 @@ title: Projet Libreboot
 x-toc-enable: true
 ---
 
-Le projet Libreboot fournit un firmware [libre et Open-Source](https://writefreesoftware.org/) basé sur Coreboot, remplaçant le BIOS/UEFI propriétaire sur des [cartes mères Intel/AMD x86 et ARM](docs/install/), pour des ordinateurs de bureau et des ordinateurs portables. 
+Le projet Libreboot fournit un firmware [libre et Open-Source](https://writefreesoftware.org/) basé sur Coreboot, remplaçant le BIOS/UEFI propriétaire sur des [cartes mères Intel/AMD x86 et ARM](docs/install/#which-systems-are-supported-by-libreboot), pour des ordinateurs de bureau et des ordinateurs portables. 
 Il initialise le matériel (le contrôleur de mémoire, le CPU, les périphériques) et lance un bootloader pour votre système d’exploitation. Les systèmes [Linux](docs/linux/) et [BSD](docs/bsd/) sont bien pris en charge. De l’aide est disponible sur [\#Libreboot](https://web.libera.chat/#Libreboot) via [Libera](https://libera.chat/). La page des tâches répertorie les projets en cours (les contributions sont les bienvenues si vous souhaitez y travailler vous-même).
 
 
