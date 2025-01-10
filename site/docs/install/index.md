@@ -77,8 +77,8 @@ Servers (AMD, x86)
 Desktops (AMD, Intel, x86)
 --------------------------
 
--   **[Dell OptiPlex 7020/9020 MT and SFF](dell9020.md) - Also [available to buy
-    with Libreboot preinstalled](https://minifree.org/product/libreboot-9020/)** - Dell OptiPlex XE2 MT/SFF also known to work
+-   **[Dell OptiPlex 3050 Micro](dell3050.md) - Also [available to buy with Libreboot pre-installed](https://minifree.org/product/libreboot-3050-micro/)**
+-   [Dell OptiPlex 7020/9020 MT and SFF](dell9020.md) - Dell OptiPlex XE2 MT/SFF also known to work
 -   [Acer G43T-AM3](acer_g43t-am3.md)
 -   Apple iMac 5,2
 -   [ASUS KCMA-D8 motherboard](kcma-d8.md)
@@ -86,7 +86,6 @@ Desktops (AMD, Intel, x86)
     research is needed) - 9010 also known to work. No GPIO changes, so it should
     be safe to flash.
 -   [Dell OptiPlex 780 variants e.g. MT, USFF](dell780.md)
--   [Dell OptiPlex 3050 Micro](dell3050.md)
 -   [Dell OptiPlex 7010/9010 SFF](dell7010.md) **(for MT, please use the T1650 image)**
 -   Dell Precision T1700 (use the same ROM as 9020 MT, but it won't have ECC support)
 -   [Dell Precision T1650](t1650.md) **(the same ROM works on 7010/9010 MT variant)**
@@ -99,11 +98,9 @@ Desktops (AMD, Intel, x86)
 Laptops (Intel, x86)
 --------------------
 
--   [Lenovo ThinkPad T480 and ThinkPad T480s](t480.md)
--   **Lenovo ThinkPad T440p - Also [available
-    to buy with Libreboot preinstalled](https://minifree.org/product/libreboot-t440p/)**
--   **Lenovo ThinkPad W541 - Also [available to
-    buy with Libreboot preinstalled](https://minifree.org/product/libreboot-w541/)** - NOTE: W540 also compatible (same mainboard, so flash the same ROM)
+-   **[Lenovo ThinkPad T480 and ThinkPad T480s](t480.md) - Also [available to buy with Libreboot pre-installed](https://minifree.org/product/libreboot-t480/)**
+-   Lenovo ThinkPad T440p
+-   Lenovo ThinkPad W541
 -   Lenovo ThinkPad X230 - *Also* available on Minifree: <https://minifree.org/product/libreboot-x230/>
 -   [Apple MacBook1,1 and MacBook2,1](macbook21.md)
 -   [Dell Latitude E4300, E6400, E6400 XFR and E6400 ATG, all with Nvidia or Intel
