@@ -88,27 +88,6 @@ you could consider Canoeboot to be *legacy Libreboot*. Libreboot adopted the
 Binary Blob Reduction Policy in November 2022, as part of a general desire to
 support more - and newer - hardware.
 
-Dasharo
--------
-
-Website: <https://docs.dasharo.com/>
-
-Git repositories: <https://github.com/dasharo>
-
-Supports many machines, with a choice of EDK2(UEFI) or Heads(Linuxboot)
-payload in the flash. Some older machines may provide a SeaBIOS payload
-instead. A lot of work that goes into the upstream coreboot project came
-from the Dasharo developers.
-
-Dasharo provides their own fork of coreboot, with a specific tree *per board*.
-Several coreboot ports (e.g. MSI Z690-A PRO) were implemented directly by
-the Dasharo project, and later upstreamed into the regular coreboot project.
-
-Dasharo has a special emphasis on commercial application, providing tailored
-coreboot images for each supported mainboard, with an emphasis on stability.
-It's a very different approach than Libreboot's approach; Libreboot provides
-a more generalised design in its build system and infrastructure.
-
 Chultrabook
 -----------
 
@@ -130,6 +109,27 @@ with regular security updates.
 
 Libreboot largely avoids supporting Chromebooks, precisely because Chultrabook
 and MrChromebox are perfectly viable options on these machines.
+
+Dasharo
+-------
+
+Website: <https://docs.dasharo.com/>
+
+Git repositories: <https://github.com/dasharo>
+
+Supports many machines, with a choice of EDK2(UEFI) or Heads(Linuxboot)
+payload in the flash. Some older machines may provide a SeaBIOS payload
+instead. A lot of work that goes into the upstream coreboot project came
+from the Dasharo developers.
+
+Dasharo provides their own fork of coreboot, with a specific tree *per board*.
+Several coreboot ports (e.g. MSI Z690-A PRO) were implemented directly by
+the Dasharo project, and later upstreamed into the regular coreboot project.
+
+Dasharo has a special emphasis on commercial application, providing tailored
+coreboot images for each supported mainboard, with an emphasis on stability.
+It's a very different approach than Libreboot's approach; Libreboot provides
+a more generalised design in its build system and infrastructure.
 
 Heads
 -----
