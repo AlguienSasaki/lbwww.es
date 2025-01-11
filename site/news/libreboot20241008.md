@@ -15,7 +15,8 @@ Introduction
 
 Libreboot is a free/open source BIOS/UEFI replacement on x86 and ARM, providing
 boot firmware that initialises the hardware in your computer, to then load an
-operating system (e.g. Linux/BSD). It is specifically a *coreboot distribution*,
+operating system (e.g. Linux/BSD). It is specifically
+a *[coreboot distribution](../docs/maintain/)*,
 in the same way that Debian is a Linux distribution. It provides an automated
 build system to produce coreboot ROM images with a variety of payloads such as
 GNU GRUB or SeaBIOS, with regular well-tested releases to make coreboot as easy

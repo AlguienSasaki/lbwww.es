@@ -17,7 +17,8 @@ controller all way to peripherals, readying the hardware so that it can run
 software, e.g. Linux/BSD operating systems. You can essentially think of *lbmk*,
 which is Libreboot's build system, as a *source-based package manager*. It is
 what the Libreboot releases are built with. The *lbmk* build system essentially
-implements a *coreboot distro*, the same way you might think of a Linux
+implements a *[coreboot distro](../docs/maintain/)*,
+the same way you might think of a Linux
 distribution.
 
 Extensive auditing has been performed on lbmk, since the Libreboot 20240504

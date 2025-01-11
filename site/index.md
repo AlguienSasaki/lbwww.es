@@ -53,7 +53,8 @@ the early user interface, for booting an operating system. This *payload*
 infrastructure means you can run whatever you want (even Linux!) from the
 boot flash.
 
-Libreboot is specifically a *coreboot distribution*, in the same way that
+Libreboot is specifically a *[coreboot distribution](docs/maintain)*,
+in the same way that
 Debian is a *Linux distribution*. Libreboot makes coreboot easy to use for
 non-technical users, by providing a [fully automated build
 system](docs/maintain/), [automated build process](docs/build/) and

@@ -7,6 +7,29 @@ Today's Libreboot 20241206 revision, which is the 8th revision in the Libreboot
 to Libreboot 20241206 revision 7 which was released on 18 December 2024.
 The *original* Libreboot 20241206 release came out on 6 December 2024.
 
+What is Libreboot?
+============
+
+<img tabindex=1 class="r" src="https://av.libreboot.org/t480/t480.jpg" /><span class="f"><img src="https://av.libreboot.org/t480/t480.jpg" /></span>
+
+Libreboot is a free/open source BIOS/UEFI replacement on x86 and ARM, providing
+boot firmware that initialises the hardware in your computer, to then load an
+operating system (e.g. Linux/BSD). It is specifically
+a *[coreboot distribution](../docs/maintain/)*,
+in the same way that Debian is a Linux distribution. It provides an automated
+build system to produce coreboot ROM images with a variety of payloads such as
+GNU GRUB or SeaBIOS, with regular well-tested releases to make coreboot as easy
+to use as possible for non-technical users. From a project management perspective,
+this works in *exactly* the same way as a Linux distro, providing a source-based
+package manager (called lbmk) which patches sources and compiles coreboot images.
+It makes use of [coreboot](https://www.coreboot.org/) for hardware initialisation,
+and then a payload such as [SeaBIOS](https://www.seabios.org/SeaBIOS)
+or [GNU GRUB](https://www.gnu.org/software/grub/) to boot your operating
+system; on ARM(chromebooks), we provide *U-Boot* (as a coreboot payload).
+
+We also provide an experimental U-Boot setup on x86, as a coreboot payload for
+providing a minimal UEFI implementation.
+
 Regarding revision 8
 ====================
 
@@ -40,27 +63,6 @@ YOU MAY BRICK YOUR MACHINE!! - Please click the link and follow the instructions
 there, before flashing. For posterity,
 [here is the link again](../docs/install/ivy_has_common.md).**
 
-What is Libreboot?
-============
-
-<img tabindex=1 class="r" src="https://av.libreboot.org/t480/t480.jpg" /><span class="f"><img src="https://av.libreboot.org/t480/t480.jpg" /></span>
-
-Libreboot is a free/open source BIOS/UEFI replacement on x86 and ARM, providing
-boot firmware that initialises the hardware in your computer, to then load an
-operating system (e.g. Linux/BSD). It is specifically a *coreboot distribution*,
-in the same way that Debian is a Linux distribution. It provides an automated
-build system to produce coreboot ROM images with a variety of payloads such as
-GNU GRUB or SeaBIOS, with regular well-tested releases to make coreboot as easy
-to use as possible for non-technical users. From a project management perspective,
-this works in *exactly* the same way as a Linux distro, providing a source-based
-package manager (called lbmk) which patches sources and compiles coreboot images.
-It makes use of [coreboot](https://www.coreboot.org/) for hardware initialisation,
-and then a payload such as [SeaBIOS](https://www.seabios.org/SeaBIOS)
-or [GNU GRUB](https://www.gnu.org/software/grub/) to boot your operating
-system; on ARM(chromebooks), we provide *U-Boot* (as a coreboot payload).
-
-We also provide an experimental U-Boot setup on x86, as a coreboot payload for
-providing a minimal UEFI implementation.
 
 Summarised list of changes
 ==========================
