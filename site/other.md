@@ -229,3 +229,6 @@ System76 provides their own special coreboot fork, that they tailor for
 specific machines that they sell; they also provide free EC firmware. Jeremy
 Soller of System76 maintains this firmware, and the work is regularly
 upstreamed into the regular coreboot project.
+
+System76 provides the coreboot firmware, along with EDK2 UEFI payload. It can
+boot Linux distros, BSD systems and even Windows perfectly.
