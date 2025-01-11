@@ -217,3 +217,15 @@ Libreboot *also* provides U-Boot and GRUB, and has other ambitions. Libreboot
 aims to provide ease of use while also providing great power and flexibility.
 So Libreboot is aimed specifically at power users, while also trying to
 accomodate non-technical users; Skulls largely targets the latter.
+
+System76 Open Firmware
+----------------------
+
+Git repository: <https://github.com/system76/firmware-open>
+
+Other repositories e.g. EC firmware: <https://github.com/system76>
+
+System76 provides their own special coreboot fork, that they tailor for
+specific machines that they sell; they also provide free EC firmware. Jeremy
+Soller of System76 maintains this firmware, and the work is regularly
+upstreamed into the regular coreboot project.
