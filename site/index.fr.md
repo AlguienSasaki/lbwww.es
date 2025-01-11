@@ -6,8 +6,7 @@ x-toc-enable: true
 Le projet Libreboot fournit un firmware [libre et Open-Source](https://writefreesoftware.org/) basé sur Coreboot, remplaçant le BIOS/UEFI propriétaire sur des [cartes mères Intel/AMD x86 et ARM](docs/install/#which-systems-are-supported-by-libreboot), pour des ordinateurs de bureau et des ordinateurs portables. 
 Il initialise le matériel (le contrôleur de mémoire, le CPU, les périphériques) et lance un bootloader pour votre système d’exploitation. Les systèmes [Linux](docs/linux/) et [BSD](docs/bsd/) sont bien pris en charge. De l’aide est disponible sur [\#Libreboot](https://web.libera.chat/#Libreboot) via [Libera](https://libera.chat/). La page des tâches répertorie les projets en cours (les contributions sont les bienvenues si vous souhaitez y travailler vous-même).
 
-
-<img tabindex=1 class="r" src="https://av.Libreboot.org/hp9470m/9470m+2560p.jpg" /><span class="f"><img src="https://av.Libreboot.org/hp9470m/9470m+2560p.jpg" /></span>
+<img tabindex=1 class="r" src="https://av.libreboot.org/t480/t480.jpg" /><span class="f"><img src="https://av.libreboot.org/t480/t480.jpg" /></span>
 
 Vous pouvez également acheter du matériel avec [Libreboot pré-installé](https://minifree.org/) via l'entreprise Minifree Ltd,
 ou envoyer votre propre ordinateur [pour y installer Libreboot](https://minifree.org/product/installation-service/).
@@ -19,6 +18,8 @@ le 6 December 2024.**
 
 Pourquoi devriez-vous utiliser *Libreboot*?
 -----------------------------------
+
+<img tabindex=1 class="l" src="https://av.libreboot.org/hp9470m/9470m+2560p.jpg" /><span class="f"><img src="https://av.libreboot.org/hp9470m/9470m+2560p.jpg" /></span>
 
 Libreboot vous offre des [libertés](https://writefreesoftware.org/) que vous n’auriez pas avec d’autres micrologiciels de démarrage. [Puissant](docs/linux/grub_hardening.md) et hautement [configurable](docs/maintain), il répond à de nombreux cas d’utilisation.
 
@@ -32,11 +33,10 @@ Libreboot s’appuie sur  [Coreboot](https://www.Coreboot.org) pour
 
 Une documentation détaillée est disponible.
 
-
 Quelles sont les différences entre Libreboot et Coreboot?
 ------------------------------------------------
 
-<img tabindex=1 class="l" style="max-width:25%;" src="https://av.Libreboot.org/thinkpadcollection/thinkpadcollection1-min.jpg" /><span class="f"><img src="https://av.Libreboot.org/thinkpadcollection/thinkpadcollection1-min.jpg" /></span>
+<img tabindex=1 class="r" style="max-width:25%;" src="https://av.libreboot.org/thinkpadcollection/thinkpadcollection1-min.jpg" /><span class="f"><img src="https://av.libreboot.org/thinkpadcollection/thinkpadcollection1-min.jpg" /></span>
 
 Contrairement à l'opinion populaire, le but principal de Libreboot n'est pas de fournir un Coreboot sans blobs propriétaires ; ceci n'est qu'une des politiques de Libreboot, certes importante, mais qui reste un aspect mineur de son projet.
 
@@ -49,7 +49,7 @@ Les versions de Libreboot fournissent des images ROM pré-compilées que vous po
 Comment aider
 -----------
 
-<img tabindex=1 class="l" style="max-width:15%;" src="https://av.Libreboot.org/hp8200sff/grub_open.jpg" /><span class="f"><img src="https://av.Libreboot.org/hp8200sff/grub_open.jpg" /></span>
+<img tabindex=1 class="r" style="max-width:25%;" src="https://av.libreboot.org/t1650/t1650_grub.jpg" /><span class="f"><img src="https://av.libreboot.org/t1650/t1650_grub.jpg" /></span>
 
 La meilleure façon d'aider le projet est d’ajouter de nouvelles cartes mères au projet Libreboot en soumettant une configuration. Tout ce qui est pris en charge par Coreboot peut être intégré à Libreboot, avec des images ROM fournies dans les versions publiées. Voir :
 
@@ -62,6 +62,8 @@ Ensuite, il y a la maintenance du système de compilation (voir ci-dessus) ainsi
 Le support utilisateur est également crucial. Restez actif sur IRC et, si vous êtes dans la capacité d'aider quelqu'un avec son problème, cela rendra un grand service au projet. De nombreuses personnes demandent également du support utilisateur sur le subreddit r/Libreboot.
 
 Vous pouvez allez voir les bugs listés sur le [traqueur de bugs](https://codeberg.org/Libreboot/lbmk/issues).
+
+<img tabindex=1 class="l" style="max-width:15%;" src="https://av.libreboot.org/hp8200sff/grub_open.jpg" /><span class="f"><img src="https://av.libreboot.org/hp8200sff/grub_open.jpg" /></span>
 
 Vous pouvez nous signaler les bugs que vous trouverez. Vous pouvez également proposer un correctif en [suivant ces instructions pour envoyer des patchs](git.md),
 Par ailleurs, ce site est écrit en Markdown et hébergé dans un [dépôt séparé](https://codeberg.org/Libreboot/lbwww) où

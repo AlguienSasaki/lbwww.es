@@ -13,7 +13,7 @@ Firmware. Hilfe ist verfügbar
 via [\#libreboot](https://web.libera.chat/#libreboot)
 und [Libera](https://libera.chat/) IRC.
 
-<img tabindex=1 class="r" src="https://av.libreboot.org/hp9470m/9470m+2560p.jpg" /><span class="f"><img src="https://av.libreboot.org/hp9470m/9470m+2560p.jpg" /></span>
+<img tabindex=1 class="r" src="https://av.libreboot.org/t480/t480.jpg" /><span class="f"><img src="https://av.libreboot.org/t480/t480.jpg" /></span>
 
 You can also [buy Libreboot preinstalled](https://minifree.org/) from Minifree Ltd,
 on select hardware, aswell as send your compatible hardware
@@ -27,6 +27,8 @@ Siehe auch: [Libreboot 20241206 release announcement](news/libreboot20241206.md)
 
 Warum solltest Du *Libreboot* verwenden?
 ----------------------------
+
+<img tabindex=1 class="l" src="https://av.libreboot.org/hp9470m/9470m+2560p.jpg" /><span class="f"><img src="https://av.libreboot.org/hp9470m/9470m+2560p.jpg" /></span>
 
 Libreboot gibt dir [Freiheit](https://writefreesoftware.org/) welche
 Du mit den meisten Boot Firmwares nicht hast, und zusätzlich schnellere Boot
@@ -59,7 +61,7 @@ Dokumentation ist verfügbar.
 Libreboot ist kein Coreboot Fork
 -----------------------------------
 
-<img tabindex=1 class="l" style="max-width:25%;" src="https://av.libreboot.org/thinkpadcollection/thinkpadcollection1-min.jpg" /><span class="f"><img src="https://av.libreboot.org/thinkpadcollection/thinkpadcollection1-min.jpg" /></span>
+<img tabindex=1 class="r" style="max-width:25%;" src="https://av.libreboot.org/thinkpadcollection/thinkpadcollection1-min.jpg" /><span class="f"><img src="https://av.libreboot.org/thinkpadcollection/thinkpadcollection1-min.jpg" /></span>
 
 Tatsächlich versucht Libreboot so nah am regulären Coreboot zu bleiben wie möglich,
 für jedes Board, aber mit vielen automatisch durch das Libreboot Build System zur 
@@ -88,7 +90,7 @@ Kenntnisse oder Fertigkeiten abgesehen von der Fähigkeit einer
 Wie kann ich helfen
 -----------
 
-<img tabindex=1 class="l" style="max-width:15%;" src="https://av.libreboot.org/hp8200sff/grub_open.jpg" /><span class="f"><img src="https://av.libreboot.org/hp8200sff/grub_open.jpg" /></span>
+<img tabindex=1 class="r" style="max-width:25%;" src="https://av.libreboot.org/t1650/t1650_grub.jpg" /><span class="f"><img src="https://av.libreboot.org/t1650/t1650_grub.jpg" /></span>
 
 Der beste Weg wie Du helfen kannst, ist das *hinzufügen* neuer Mainboards in 
 Libreboot, indem Du eine Konfiguration zur Verfügung stellst. Alles was von 
@@ -106,6 +108,8 @@ welche wir sehr ernst nehmen. Dokumentation ist wichtig, in jedem Projekt.
 kompetent genug bist jemandem bei seinem Problem zu helfen (oder bereit mit
 der Person gemeinsam zu lernen), dann ist dies ein wichtiger Beitrag zum 
 Projekt. Viele Leute fragen zudem unter dem Subreddit `r/libreboot` nach Hilfe.
+
+<img tabindex=1 class="l" style="max-width:15%;" src="https://av.libreboot.org/hp8200sff/grub_open.jpg" /><span class="f"><img src="https://av.libreboot.org/hp8200sff/grub_open.jpg" /></span>
 
 Eine Liste mit Bugs gibt es
 unter [Bug Tracker](https://codeberg.org/libreboot/lbmk/issues).

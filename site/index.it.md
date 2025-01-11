@@ -12,7 +12,7 @@ memoria, CPU, periferiche) e avvia un bootloader per il tuo sistema operativo.
 L'aiuto e' disponibile sul canale IRC [\#libreboot](https://web.libera.chat/#libreboot)
 su [Libera](https://libera.chat/).
 
-<img tabindex=1 class="r" src="https://av.libreboot.org/hp9470m/9470m+2560p.jpg" /><span class="f"><img src="https://av.libreboot.org/hp9470m/9470m+2560p.jpg" /></span>
+<img tabindex=1 class="r" src="https://av.libreboot.org/t480/t480.jpg" /><span class="f"><img src="https://av.libreboot.org/t480/t480.jpg" /></span>
 
 You can also [buy Libreboot preinstalled](https://minifree.org/) from Minifree Ltd,
 on select hardware, aswell as send your compatible hardware
@@ -25,6 +25,8 @@ Vedi: [Libreboot 20241206 annuncio di rilascio](news/libreboot20241206.md).**
 
 Per quale ragione utilizzare *Libreboot*?
 -----------------------------------------
+
+<img tabindex=1 class="l" src="https://av.libreboot.org/hp9470m/9470m+2560p.jpg" /><span class="f"><img src="https://av.libreboot.org/hp9470m/9470m+2560p.jpg" /></span>
 
 Libreboot ti permette [liberta'](https://writefreesoftware.org/) che non potresti ottenere
 con altri firmware di boot, velocita' di avvio maggiori
@@ -57,7 +59,7 @@ installazione piu' robusta. Viene fornito con apposita documentazione.
 Libreboot non deriva da coreboot
 --------------------------------
 
-<img tabindex=1 class="l" style="max-width:25%;" src="https://av.libreboot.org/thinkpadcollection/thinkpadcollection1-min.jpg" /><span class="f"><img src="https://av.libreboot.org/thinkpadcollection/thinkpadcollection1-min.jpg" /></span>
+<img tabindex=1 class="r" style="max-width:25%;" src="https://av.libreboot.org/thinkpadcollection/thinkpadcollection1-min.jpg" /><span class="f"><img src="https://av.libreboot.org/thinkpadcollection/thinkpadcollection1-min.jpg" /></span>
 
 In effetti, Libreboot tenta di essere il piu' possibile simile alla versione *ufficiale* di coreboot,
 per ogni scheda, ma con diversi tipi di configurazione forniti automaticamente dal sistema di
@@ -82,7 +84,7 @@ particolari ad eccezione del seguire [semplici istruzioni scritte per chiunque](
 Come essere d'aiuto
 -------------------
 
-<img tabindex=1 class="l" style="max-width:15%;" src="https://av.libreboot.org/hp8200sff/grub_open.jpg" /><span class="f"><img src="https://av.libreboot.org/hp8200sff/grub_open.jpg" /></span>
+<img tabindex=1 class="r" style="max-width:25%;" src="https://av.libreboot.org/t1650/t1650_grub.jpg" /><span class="f"><img src="https://av.libreboot.org/t1650/t1650_grub.jpg" /></span>
 
 Il *modo migliore* col quale puoi aiutarci e' quello di *aggiungere* nuove schede condividendone
 la configurazione. Qualunque cosa sia supportata da coreboot puo' essere integrata in Libreboot,
@@ -99,6 +101,8 @@ automatica (guarda sopra), e la *documentazione*. La documentazione e' critica i
 esperienza puoi aiutare qualcuno in difficolta' (o anche imparare insieme a loro), in questo modo
 sarai di grande aiuto al progetto. Un sacco di persone chiedono inoltre aiuto nel subreddit
 `r/libreboot`.
+
+<img tabindex=1 class="l" style="max-width:15%;" src="https://av.libreboot.org/hp8200sff/grub_open.jpg" /><span class="f"><img src="https://av.libreboot.org/hp8200sff/grub_open.jpg" /></span>
 
 Puoi controllare l'elenco dei bugs sul
 [bug tracker](https://codeberg.org/libreboot/lbmk/issues).

@@ -5,7 +5,7 @@ x-toc-enable: true
 
 *Libreboot* 项目提供基于 coreboot 的[自由且开源](https://writefreesoftware.org/zh-cn/)的引导固件，以替代基于 Intel/AMD x86 和 ARM 的特定主板（包括笔记本和台式电脑）上的专有 BIOS/UEFI 固件。它首先初始化硬件（如内存控制器、CPU、外设），然后为操作系统启动引导加载程序（bootloader）。本项目对 [Linux](docs/linux/) 和 [BSD](docs/bsd/) 支持良好。如果需要寻求帮助，可以前往 [Libera](https://libera.chat/) IRC 上的 [\#libreboot](https://web.libera.chat/#libreboot) 频道。
 
-<img tabindex=1 class="r" src="https://av.libreboot.org/hp9470m/9470m+2560p.jpg" /><span class="f"><img src="https://av.libreboot.org/hp9470m/9470m+2560p.jpg" /></span>
+<img tabindex=1 class="r" src="https://av.libreboot.org/t480/t480.jpg" /><span class="f"><img src="https://av.libreboot.org/t480/t480.jpg" /></span>
 
 你也可以从 Minifree Ltd [购买特定硬件的 Libreboot 电脑](https://minifree.org/)，
 或者将兼容硬件寄来预装 Libreboot。
@@ -26,7 +26,7 @@ Libreboot 项目使用 [coreboot](https://www.coreboot.org/) 来[初始化硬件
 Libreboot 不是 coreboot 的分支
 -----------------------------------
 
-<img tabindex=1 class="l" style="max-width:25%;" src="https://av.libreboot.org/thinkpadcollection/thinkpadcollection1-min.jpg" /><span class="f"><img src="https://av.libreboot.org/thinkpadcollection/thinkpadcollection1-min.jpg" /></span>
+<img tabindex=1 class="l" src="https://av.libreboot.org/hp9470m/9470m+2560p.jpg" /><span class="f"><img src="https://av.libreboot.org/hp9470m/9470m+2560p.jpg" /></span>
 
 事实上，Libreboot 对每一块主板，都尽可能保持与*原版*的 coreboot 接近，但 Libreboot 构建系统也自动提供了许多不同类型的配置。
 
@@ -39,7 +39,7 @@ Libreboot 的常规二进制版本提供了这些预编译的 ROM 映像。按�
 如何帮助
 -----------
 
-<img tabindex=1 class="l" style="max-width:15%;" src="https://av.libreboot.org/hp8200sff/grub_open.jpg" /><span class="f"><img src="https://av.libreboot.org/hp8200sff/grub_open.jpg" /></span>
+<img tabindex=1 class="r" style="max-width:25%;" src="https://av.libreboot.org/thinkpadcollection/thinkpadcollection1-min.jpg" /><span class="f"><img src="https://av.libreboot.org/thinkpadcollection/thinkpadcollection1-min.jpg" /></span>
 
 要帮助的话，*最*最好的方式，就是通过提交配置文件，来为 Libreboot *添加*新的主板。coreboot 支持的任何主板都能收录到 Libreboot，并在发布版本中附带 ROM 映像。见：
 
@@ -50,6 +50,8 @@ Libreboot 的常规二进制版本提供了这些预编译的 ROM 映像。按�
 然后，就是构建系统的维护（见下）以及重要的*文档*。文档十分重要，在任何项目都是如此。
 
 *用户支持*也十分重要。多瞧一瞧 IRC，如果你有能力帮别人解决问题（或者愿意跟他们一起学习），那对本项目的贡献会很大。许多人也在 reddit 版块 `r/libreboot` 寻求用户支持。
+
+<img tabindex=1 class="l" style="max-width:15%;" src="https://av.libreboot.org/hp8200sff/grub_open.jpg" /><span class="f"><img src="https://av.libreboot.org/hp8200sff/grub_open.jpg" /></span>
 
 可以检查[缺陷追踪系统](https://codeberg.org/libreboot/lbmk/issues)列出的缺陷。
 

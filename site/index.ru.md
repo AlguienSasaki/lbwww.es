@@ -5,7 +5,7 @@ x-toc-enable: true
 
 Проект *Libreboot* предоставляет [свободную, с открытым исходным кодом](https://writefreesoftware.org/) загрузочную прошивку, основанную на coreboot, заменяющую проприетарные BIOS/UEFI на [некоторых Intel/AMD x86 и ARM материнских платах](docs/install/#which-systems-are-supported-by-libreboot), включая ноутбуки и десктопы. Она инициализирует аппаратное обеспечение компьютера (например, контроллер памяти, процессор, переферию) и запускает загрузчик для вашей операционный системы. [Linux](docs/linux/) и [BSD](docs/bsd/) хорошо поддерживаются. Можно попросить помощь через [\#libreboot](https://web.libera.chat/#libreboot) на [Libera](https://libera.chat/) IRC. [Страница с заданиями](tasks/) показывают, над чем мы работаем (мы приветствуем ваши предложения, если вы хотите поработать над некоторыми задачами самостоятельно).
 
-<img tabindex=1 class="r" src="https://av.libreboot.org/hp9470m/9470m+2560p.jpg" /><span class="f"><img src="https://av.libreboot.org/hp9470m/9470m+2560p.jpg" /></span>
+<img tabindex=1 class="r" src="https://av.libreboot.org/t480/t480.jpg" /><span class="f"><img src="https://av.libreboot.org/t480/t480.jpg" /></span>
 
 Вы также можете купить [Libreboot предустановленным](https://minifree.org) от Minifree Ltd, а также присылать нам свои совместимые устройства для [установки Libreboot](https://minifree.org/product/installation-service/). Основатель и ведущий разработчик Libreboot, Лия Роу, также владеет и управляет Minifree; продажи обеспечивают финансирование для Libreboot.
 
@@ -16,7 +16,7 @@ x-toc-enable: true
 Обзор устройства Libreboot
 ============================
 
-<img tabindex=1 class="l" style="max-width:25%;" src="https://av.libreboot.org/thinkpadcollection/thinkpadcollection1-min.jpg" /><span class="f"><img src="https://av.libreboot.org/thinkpadcollection/thinkpadcollection1-min.jpg" /></span>
+<img tabindex=1 class="l" src="https://av.libreboot.org/hp9470m/9470m+2560p.jpg" /><span class="f"><img src="https://av.libreboot.org/hp9470m/9470m+2560p.jpg" /></span>
 
 Libreboot предоставляет [coreboot](https://coreboot.org/) для [инициализации машины](https://doc.coreboot.org/getting_started/architecture.html), которая затем переходит к [полезной нагрузке](https://doc.coreboot.org/payloads.html) в загрузочной флэш-памяти; coreboot работает со многими программами, но Libreboot предоставляет только SeaBIOS, GNU GRUB и U-Boot. Memtest86+ также предоставляется, но только на некоторых материнских платах. Полезная нагрузка - программа во флэш-памяти, которая предоставляет "ранний" пользовательский интерфейс для загрузки операционной системы. Это значит, что вы можете запустить все что угодно из загрузочной флэш-памяти (даже Linux!).
 
@@ -25,7 +25,7 @@ Libreboot - это *дистрибутив coreboot* также, как и Debia
 Почему стоит использовать Libreboot?
 ==================
 
-<img tabindex=1 class="r" style="max-width:25%;" src="https://av.libreboot.org/hp2170p/hp2170p.jpg" /><span class="f"><img src="https://av.libreboot.org/hp2170p/hp2170p.jpg" /></span>
+<img tabindex=1 class="r" style="max-width:25%;" src="https://av.libreboot.org/thinkpadcollection/thinkpadcollection1-min.jpg" /><span class="f"><img src="https://av.libreboot.org/thinkpadcollection/thinkpadcollection1-min.jpg" /></span>
 
 Если вы уже склоняетесь к свободному программному обеспечению, возможно, вы уже пользователь coreboot, Libreboot помогает проще начать использовать или поддерживать coreboot на вашей машине, с помощью автоматизированной сборки. Мы предоставляем регулярные протестированные релизы, предварительно собранные, часто с некоторыми патчами coreboot (и другим кодом) для того, чтобы гарантировать стабильность. Для сравнения, coreboot использует модель плавающих релизов, со снимками кода каждые несколько месяцев, он скорее всего ориентирован на разработчиков, когда как Libreboot специально сделан для конечных пользователей. По-другому, цель Libreboot - *просто работать*. Конфигурация и установка coreboot также возможна, но Libreboot делает процесс *намного* проще.
 

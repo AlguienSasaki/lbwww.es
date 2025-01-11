@@ -13,7 +13,7 @@ x-toc-enable: true
 через [\#libreboot](https://web.libera.chat/#libreboot)
 на [Libera](https://libera.chat/) IRC.
 
-<img tabindex=1 class="r" src="https://av.libreboot.org/hp9470m/9470m+2560p.jpg" /><span class="f"><img src="https://av.libreboot.org/hp9470m/9470m+2560p.jpg" /></span>
+<img tabindex=1 class="r" src="https://av.libreboot.org/t480/t480.jpg" /><span class="f"><img src="https://av.libreboot.org/t480/t480.jpg" /></span>
 
 You can also [buy Libreboot preinstalled](https://minifree.org/) from Minifree Ltd,
 on select hardware, aswell as send your compatible hardware
@@ -26,6 +26,8 @@ Minifree; sales provide funding for Libreboot.
 
 Чому вам варто використовувати *Libreboot*?
 ----------------------------
+
+<img tabindex=1 class="l" src="https://av.libreboot.org/hp9470m/9470m+2560p.jpg" /><span class="f"><img src="https://av.libreboot.org/hp9470m/9470m+2560p.jpg" /></span>
 
 Libreboot надає вам [свободи](https://writefreesoftware.org/), які в
 іншому випадку ви не можете отримати з більшістю інших завантажувальних
@@ -55,7 +57,7 @@ Coreboot помітно складний для встановлення для 
 Чим Libreboot відрізняється від звичайного coreboot?
 ---------------------------------------------
 
-<img tabindex=1 class="l" style="max-width:25%;" src="https://av.libreboot.org/thinkpadcollection/thinkpadcollection1-min.jpg" /><span class="f"><img src="https://av.libreboot.org/thinkpadcollection/thinkpadcollection1-min.jpg" /></span>
+<img tabindex=1 class="r" style="max-width:25%;" src="https://av.libreboot.org/thinkpadcollection/thinkpadcollection1-min.jpg" /><span class="f"><img src="https://av.libreboot.org/thinkpadcollection/thinkpadcollection1-min.jpg" /></span>
 
 Таким же самим чином, як *Debian* це дистрибутив Linux, Libreboot це
 *дистрибутив coreboot*. Якщо ви хочете зібрати образ ROM з нуля, вам
@@ -79,7 +81,7 @@ Coreboot помітно складний для встановлення для 
 Як допомогти
 -----------
 
-<img tabindex=1 class="l" style="max-width:15%;" src="https://av.libreboot.org/hp8200sff/grub_open.jpg" /><span class="f"><img src="https://av.libreboot.org/hp8200sff/grub_open.jpg" /></span>
+<img tabindex=1 class="r" style="max-width:25%;" src="https://av.libreboot.org/t1650/t1650_grub.jpg" /><span class="f"><img src="https://av.libreboot.org/t1650/t1650_grub.jpg" /></span>
 
 *Єдиний* найбільший шлях, яким ви можете допомогти є *додавання* нових материнських плат до Libreboot,
 за допомогою відправки конфігурації. Що завгодно, що підтримує coreboot може бути інтегровано в
@@ -99,6 +101,8 @@ Libreboot, з образами ROM наданими в випусках. Див�
 
 Ви можете перевірити помилки, перелічені
 в [системі відстеження помилок](https://codeberg.org/libreboot/lbmk/issues).
+
+<img tabindex=1 class="l" style="max-width:15%;" src="https://av.libreboot.org/hp8200sff/grub_open.jpg" /><span class="f"><img src="https://av.libreboot.org/hp8200sff/grub_open.jpg" /></span>
 
 Якщо ви помітили помилку і маєте виправлення, [ось інструкції щодо надсилання виправлень](git.uk.md), а також ви можете повідомити про це. Також, весь цей веб-сайт
 написаний Markdown та розміщений в [окремому
