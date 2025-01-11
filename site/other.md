@@ -24,6 +24,9 @@ Libreboot was the *first* coreboot distro,
 existing [since December 2013](news/10.md). Many Libreboot users exist today,
 who would otherwise not use coreboot at all.
 
+It's thanks to the various coreboot distros that many people use coreboot today;
+without them, many otherwise non-technical users might not use coreboot at all.
+
 Why list other distros?
 -----------------------
 
@@ -35,7 +38,6 @@ be listed. Quality over quantity.
 Libreboot tries to support as much hardware as possible, and focuses on providing
 the easiest possible experience for non-technical users; it's also
 highly [configurable](docs/maintain/) for power users.
-
 Several other projects exist that target different kinds of users, and support
 different types of hardware; for example, Libreboot mostly doesn't target
 Chromebooks, except for a few.
