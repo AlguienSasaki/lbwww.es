@@ -47,7 +47,7 @@ Overview of Libreboot design
 Libreboot provides [coreboot](https://coreboot.org/) for [machine
 initialisation](https://doc.coreboot.org/getting_started/architecture.html),
 which then jumps to a [payload](https://doc.coreboot.org/payloads.html) in
-the boot flash; coreboot works with many programs, but Libreboot specifically
+the boot flash; coreboot works with many payloads, but Libreboot specifically
 provides SeaBIOS, GNU GRUB and U-Boot as options. Memtest86+ is also provided
 in flash, on some mainboards. The payload is the program in flash that provides
 the early user interface, for booting an operating system. This *payload*
