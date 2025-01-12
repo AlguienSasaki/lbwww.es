@@ -3,7 +3,8 @@ title: Libreboot projekt
 x-toc-enable: true
 ...
 
-Das *Libreboot* Projekt bietet
+*Libreboot* ist ein [Coreboot-Distribution](docs/maintain/) (coreboot distro),
+so wie Debian eine Linux-Distribution ist. Das *Libreboot* Projekt bietet
 eine [freie](https://writefreesoftware.org/) *Boot
 Firmware* welche auf [bestimmten Intel/AMD x86 und ARM Geräten](docs/install/#which-systems-are-supported-by-libreboot)
 die Hardware initialisiert (z.b. Speicher-Controller, CPU, Peripherie),
