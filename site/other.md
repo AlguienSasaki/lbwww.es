@@ -24,6 +24,10 @@ Libreboot was the *first* coreboot distro,
 existing [since December 2013](news/10.md). Many Libreboot users exist today,
 who would otherwise not use coreboot at all.
 
+Coreboot is highly flexible for many configurations. It is quite possible build
+to [your own coreboot image](https://doc.coreboot.org/getting_started/index.html)
+but most non-technical users should probably use a coreboot distro.
+
 It's thanks to the various coreboot distros that many people use coreboot today;
 without them, many otherwise non-technical users might not use coreboot at all.
 
