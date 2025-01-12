@@ -109,6 +109,18 @@ With Chultrabook's guidance, you can have a completely up to date UEFI firmware
 on your machine, and get good use out of your Chromebook for many more years,
 with regular security updates.
 
+One of Chultrabook's maintainers, Elly, did this talk at 37C3 conference,
+demonstrating Chultrabook:
+<https://www.youtube.com/watch?v=7HFIQi835wY> - and also did this more general
+talk about coreboot at 38C3: <https://www.youtube.com/watch?v=LD9tOcf4OkA>. It's
+very good reference material if you want to know more about coreboot, and
+coreboot distros more generally.
+
+Elly also did this interview with Brodie Robertson, about coreboot, and
+explains the concept of a coreboot distro in more detail in one part of
+the interview:
+<https://www.youtube.com/watch?v=4Am_1MzJ6ZA>
+
 Libreboot largely avoids supporting Chromebooks, precisely because Chultrabook
 and MrChromebox are perfectly viable options on these machines.
 
