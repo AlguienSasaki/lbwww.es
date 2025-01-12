@@ -250,14 +250,7 @@ Skulls provides simple coreboot images with SeaBIOS payload, on a handful of
 Thinkpads. Libreboot *also* provides similar SeaBIOS configurations, on all
 of the same machines, but Libreboot's design does mean that there are a few
 additional steps for installation.
-
 If you just want the simplest, most barebones setup, Skulls is a great choice.
-
-The reason Skulls is simpler is that they include certain vendor files such
-as `me.bin` pre-inserted into images; while risky indeed, this does in fact
-make installation easier for users. Libreboot takes a more conservative
-approach, excluding such files on release images and instead providing you with
-an [automated script](docs/install/ivy_has_common.md) to insert these.
 
 Libreboot *also* provides U-Boot and GRUB, and has other ambitions. Libreboot
 aims to provide ease of use while also providing great power and flexibility.
