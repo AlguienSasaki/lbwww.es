@@ -177,8 +177,62 @@ exist, for example, the work done by Sam Zeloof and the Libre Silicon project:
 
 (Sam literally makes CPUs in his garage)
 
-Why?
-====
+More detailed insight about microcode
+=====================================
+
+To be clear: it is preferable that microcode be free.
+Not including CPU microcode updates is an absolute disaster for system
+stability and security, so Libreboot *includes microcode updates by default, in
+all modern release images, where possible to do so*.
+
+The CPU already has microcode burned into mask ROM. The microcode configures
+logic gates in the CPU, to implement an instruction set, via special *decoders*
+which are fixed-function; it is not possible, for example, to implement a RISCV
+ISA on an otherwise x86 processor. It is only possible for the microcode to
+implement x86, or *broken* x86, and the default microcode is almost always
+*broken x86* on Intel/AMD CPUs; it is inevitable, due to the complexity of
+these processors.
+
+These processors provide a way to supply microcode *updates*. These updates
+are volatile, and consequently must be applied during every boot cycle. The
+updates fix stability/reliability/security bugs, and their *absence*
+is *technically incorrect*, so you are strongly advised to install them.
+Examples of where these updates fix bugs: on ASUS KCMA-D8/KGPE-D16
+and ThinkPad X200/T400/T500/W500/X200T/X200/R500/X301, the updates make
+hardware-based virtualization (via `kvm`) completely stable, where it would
+otherwise lead to a kernel panic. They allow those same thinkpads to be run with
+high CPU usage and I/O (RAM usage), without crashing (otherwise, it's very
+likely to encounter a kernel panic caused by a *Machine Check Exception*).
+
+Not including these updates will result in an unstable/undefined state. Intel
+themselves define which bugs affect which CPUs, and they define workarounds, or
+provide fixes in microcode. Based on this, software such as the Linux kernel
+can work around those bugs/quirks. Also, upstream versions of the Linux kernel
+can update the microcode at boot time (however, it is recommend still to do it
+from coreboot, for more stable memory controller initialization or “raminit”).
+Similar can be said about AMD CPUs.
+
+Once upon a time, Libreboot *excluded* microcode updates by default, but this
+lead to broken behaviour. Here are some examples:
+
+<https://browse.libreboot.org/lbmk.git/plain/resources/coreboot/default/patches/0012-fix-speedstep-on-x200-t400-Revert-cpu-intel-model_10.patch?id=9938fa14b1bf54db37c0c18bdfec051cae41448e>
+
+<https://browse.libreboot.org/lbmk.git/plain/resources/coreboot/default/patches/0018-Revert-cpu-intel-Configure-IA32_FEATURE_CONTROL-for-.patch?id=4b7be665968b67463ec36b9afc7e8736be0c9b51>
+
+These patches revert *bug fixes* in coreboot, fixes that happen to break other
+functionality but only when microcode updates are excluded. The most
+technically correct solution is to *not* apply the above patches, and instead
+supply microcode updates!
+
+You *need* microcode updates, or you will have a broken CPU; broken, because
+it literally behaves differently than it's supposed to, so software will have
+unpredictable bugs that could even cause data corruption - or worse.
+
+Why was this page written?
+==========================
+
+Many of the topics discussed here are actually hotly contested, by different
+sections of the free software movement. Libreboot has taken a firm stance.
 
 Firstly, observe the following graphic:
 
