@@ -31,38 +31,11 @@ but most non-technical users should probably use a coreboot distro.
 It's thanks to the various coreboot distros that many people use coreboot today;
 without them, many otherwise non-technical users might not use coreboot at all.
 
-Why list other distros?
------------------------
-
-Over the years, several other coreboot distros have come and gone. It has been
-decided that this page will be written, to document some of them. Not every
-distro is listed; only those of high quality, or otherwise of interest, will
-be listed. Quality over quantity.
-
-Libreboot tries to support as much hardware as possible, and focuses on providing
-the easiest possible experience for non-technical users; it's also
-highly [configurable](docs/maintain/) for power users.
-Several other projects exist that target different kinds of users, and support
-different types of hardware; for example, Libreboot mostly doesn't target
-Chromebooks, except for a few.
-
-Libreboot's main priority is to provide users with free/opensource boot
-firmware, to help more users achieve a higher level
-of [software freedom](https://writefreesoftware.org/learn). Well, Libreboot is
-one of the most well-known coreboot distros out there, so it is our duty to
-therefore cover the other projects, because it may be that Libreboot isn't for
-you; these other projects may support features and mainboards that Libreboot
-doesn't, that you may find preferable.
-
-We in the Libreboot project greatly admire and respect the other distros, and
-will gladly work with them.
-
-Without further ado,
-
 List of coreboot distros
 ========================
 
-In alphabetical order:
+Not all distros are listed; only those of high quality or otherwise of interest;
+quality, not quantity. In alphabetical order:
 
 Canoeboot
 ---------
@@ -271,3 +244,30 @@ upstreamed into the regular coreboot project.
 
 System76 provides the coreboot firmware, along with EDK2 UEFI payload. It can
 boot Linux distros, BSD systems and even Windows perfectly.
+
+Is your distro unlisted?
+========================
+
+Please get in touch! We'd love to link your project here.
+
+The coreboot project also maintains its own list of coreboot distros:
+
+<https://coreboot.org/users.html>
+
+Libreboot maintains its own list, because it is felt that distros should also
+link to each other, since many people who find coreboot for the first time may
+find it through a distro (such as Libreboot) and not check coreboot's own
+website. We in the Libreboot project wish to see everyone using free boot
+firmware, which was the primary motivation behind this page, in promoting the
+various projects.
+
+Non-coreboot free firmware
+==========================
+
+Several other projects besides coreboot provide free hardware initialisation,
+such as [U-Boot](https://www.u-boot.org/) (as own firmware, distinct from U-Boot
+as a coreboot payload), [Trusted Firmware](https://www.trustedfirmware.org/) and
+so on.
+
+We would like to list various distros of these too. If you know of a cool
+project, please get in touch with the Libreboot project!
