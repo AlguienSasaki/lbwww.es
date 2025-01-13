@@ -76,7 +76,6 @@ $endif$
 <li><a href="/docs/">Dokumentation</a></li>
 <li><a href="/news/">Neuigkeiten</a></li>
 <li><a href="https://codeberg.org/libreboot/lbmk/issues">Bugs</a></li>
-<li><a href="/tasks/">TODO</a></li>
 <li><a href="/contact.de.html">Kontakt</a></li>
 <li style="font-size:1.3em;"><em><strong><a href="https://www.patreon.com/libreleah">Spenden</a></strong></em></li>
 <li><a href="/other.html">Andere Coreboot-Distributionen</a></li>

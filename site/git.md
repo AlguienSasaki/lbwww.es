@@ -17,6 +17,9 @@ You can also *browse* lbmk on Libreboot's own cgit instance, though it is not
 intended for development (use codeberg for that):\
 <https://browse.libreboot.org/lbmk.git/>
 
+The [tasks](tasks/) page lists some (not all) of the things we wish to
+implement, if not already implemented. Patches welcome!
+
 If the main Git repositories are down, mirrors of `lbmk` and `lbwww` are listed
 further down in this page
 

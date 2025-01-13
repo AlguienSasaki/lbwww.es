@@ -17,6 +17,9 @@ x-toc-enable: true
 для розробки (використовуйте codeberg для цього):\
 <https://browse.libreboot.org/lbmk.git/>
 
+The [tasks](tasks/) page lists some (not all) of the things we wish to
+implement, if not already implemented. Patches welcome!
+
 Якщо основні репозиторії Git лежать, дзеркала `lbmk` та `lbwww` є зазначеними
 далі знизу на цій сторінці
 
