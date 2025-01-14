@@ -186,34 +186,6 @@ with regular security updates.
 Libreboot largely avoids supporting Chromebooks, precisely because Chultrabook
 and MrChromebox are perfectly viable options on these machines.
 
-Ownerboot
----------
-
-Git repository: <https://codeberg.org/amjoseph/ownerboot>
-
-Ownerboot is an interesting one; it uses the Nix package manager to compile
-coreboot images, with a Linux-based payload on supported x86 and ARM64
-devices. Similar conceptually to Heads, but with a *much* cleaner build system
-design.
-
-It comes with the LVM2 and cryptsetup sources included in builds by default, so
-it can easily be used to create a fully encrypted system, much like Libreboot's
-own [hardened GRUB](docs/linux/grub_hardening.md) setup.
-
-Since it uses Nix, reproducible builds are quite feasible and this is one of
-the project's primary goals. Interestingly enough, it also supports both the
-gru kevin chromebook and the ASUS KGPE-D16 boards, which Libreboot supports but
-Libreboot uses U-Boot and a combination of SeaBIOS/GRUB, respectively, on these
-boards.
-
-Ownerboot's build system can also cross compile everything, so it's quite
-portable across various host CPUs. It also extends coreboot's normal/fallback
-payload scheme. See: <https://codeberg.org/amjoseph/ownerboot/src/branch/master/doc/fallback.md>
-
-All of this combined makes for a highly configurable boot setup, and the Linux
-payload in flash (using kexec to boot another kernel) is highly flexible,
-offering many opportunities for security hardening (like Heads).
-
 Skulls
 ------
 
