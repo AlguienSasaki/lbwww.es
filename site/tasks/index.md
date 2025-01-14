@@ -394,11 +394,6 @@ Linuxboot
 could be built. With a stripped down kernel, it already provides a sensible
 build system for ARM64 and AMD64.**
 
-See for inspiration: [Heads project](https://osresearch.net/)
-and [Ownerboot project](https://sr.ht/~amjoseph/ownerboot/), these are other
-coreboot distros similar to Libreboot, but they provide Linux-based payloads.
-Also see more in general, the [Linuxboot](https://www.linuxboot.org/) project.
-
 Libreboot's build system is documented, see: [lbmk
 documentation](../docs/maintain/).
 
