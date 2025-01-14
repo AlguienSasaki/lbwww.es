@@ -67,40 +67,6 @@ you could consider Canoeboot to be *legacy Libreboot*. Libreboot adopted the
 Binary Blob Reduction Policy in November 2022, as part of a general desire to
 support more - and newer - hardware.
 
-Chultrabook
------------
-
-Website: <https://docs.chrultrabook.com/>
-
-Git repositories: <https://github.com/chrultrabook>
-
-Provides a tailored EDK2(UEFI) payload on supported *Chromebooks*. You can use
-this to replace ChromeOS with a regular Linux distro or BSD system - even
-Windows - if you wish.
-
-The benefit of using *Chultrabook* is that it provides up to date EDK2, unlike
-proprietary vendors who often provide old, CVE-ridden versions of EDK2 forks
-such as InsydeH2O.
-
-With Chultrabook's guidance, you can have a completely up to date UEFI firmware
-on your machine, and get good use out of your Chromebook for many more years,
-with regular security updates.
-
-One of Chultrabook's maintainers, Elly, did this talk at 37C3 conference,
-demonstrating Chultrabook:
-<https://www.youtube.com/watch?v=7HFIQi835wY> - and also did this more general
-talk about coreboot at 38C3: <https://www.youtube.com/watch?v=LD9tOcf4OkA>. It's
-very good reference material if you want to know more about coreboot, and
-coreboot distros more generally.
-
-Elly also did this interview with Brodie Robertson, about coreboot, and
-explains the concept of a coreboot distro in more detail in one part of
-the interview:
-<https://www.youtube.com/watch?v=4Am_1MzJ6ZA>
-
-Libreboot largely avoids supporting Chromebooks, precisely because Chultrabook
-and MrChromebox are perfectly viable options on these machines.
-
 Dasharo
 -------
 
@@ -183,8 +149,23 @@ With MrChromebox's guidance, you can have a completely up to date UEFI firmware
 on your machine, and get good use out of your Chromebook for many more years,
 with regular security updates.
 
-Libreboot largely avoids supporting Chromebooks, precisely because Chultrabook
-and MrChromebox are perfectly viable options on these machines.
+You can also use the [Chrultrabook Docs](https://docs.chrultrabook.com/) which
+make use of MrChromebox and might prove useful.
+
+One of Chultrabook's maintainers, Elly, did this talk at 37C3 conference,
+demonstrating Chultrabook:
+<https://www.youtube.com/watch?v=7HFIQi835wY> - and also did this more general
+talk about coreboot at 38C3: <https://www.youtube.com/watch?v=LD9tOcf4OkA>. It's
+very good reference material if you want to know more about coreboot, and
+coreboot distros more generally.
+
+Elly also did this interview with Brodie Robertson, about coreboot, and
+explains the concept of a coreboot distro in more detail in one part of
+the interview:
+<https://www.youtube.com/watch?v=4Am_1MzJ6ZA>
+
+Libreboot largely avoids supporting Chromebooks, precisely because
+MrChromebox is a perfectly viable option on these machines.
 
 Skulls
 ------
