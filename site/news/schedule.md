@@ -22,7 +22,7 @@ In other words, the following Libreboot releases will come out in 2025:
 
 So, two testing releases and two stable releases. Each release can have any
 number of revisions, whereby the tarballs are re-generated and re-uploaded,
-replacing old ones, must like what was done on the 20241206 and 20240612
+replacing old ones, as was done on the 20241206 and 20240612
 releases.
 
 Releases will have codenames too; please read further down this article, for
