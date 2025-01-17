@@ -13,10 +13,19 @@ planned for 2025 onward:
 * April/October will be for testing releases.
 * June/December will be for stable releases.
 
+In other words, the following Libreboot releases will come out in 2025:
+
+* Libreboot 25.04
+* Libreboot 25.06
+* Libreboot 25.10
+* Libreboot 25.12
+
 So, two testing releases and two stable releases. Each release can have any
 number of revisions, whereby the tarballs are re-generated and re-uploaded,
 replacing old ones, must like what was done on the 20241206 and 20240612
 releases.
+
+This .4, .6, .10 and .12 scheme will continue in 2026 and beyond.
 
 Rules for revisions:
 --------------------
