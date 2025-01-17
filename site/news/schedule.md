@@ -15,15 +15,19 @@ planned for 2025 onward:
 
 In other words, the following Libreboot releases will come out in 2025:
 
-* Libreboot 25.04
-* Libreboot 25.06
-* Libreboot 25.10
-* Libreboot 25.12
+* Libreboot 25.04 (testing release)
+* Libreboot 25.06 (stable release)
+* Libreboot 25.10 (testing release)
+* Libreboot 25.12 (stable release)
 
 So, two testing releases and two stable releases. Each release can have any
 number of revisions, whereby the tarballs are re-generated and re-uploaded,
 replacing old ones, must like what was done on the 20241206 and 20240612
 releases.
+
+Releases will have codenames too; please read further down this article, for
+information about that. The April 2025 release will
+be: Libreboot 25.04 "Corny Calamity".
 
 This .4, .6, .10 and .12 scheme will continue in 2026 and beyond.
 
