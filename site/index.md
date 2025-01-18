@@ -37,17 +37,6 @@ matters.
 you continue to use your hardware, with continued firmware updates. All of this
 is *why* Libreboot exists.
 
-Libreboot provides [GRUB](docs/linux/) and SeaBIOS payloads on x86/x86\_64
-Intel/AMD mainboards, and a [U-Boot UEFI payload](docs/uboot/) *for coreboot*
-on ARM64(Aarch64) mainboards.
-An [x86/x86\_64 U-Boot UEFI payload](docs/uboot/uboot-x86.md) is also available
-on some boards. The x86, x86\_64 and arm64 U-Boot payloads provide a lightweight
-UEFI boot implementation, which can boot many Linux distros and BSD systems.
-The SeaBIOS and GRUB payloads also boot Linux/BSD systems. Which one you use
-depends on your preferences. Libreboot's design incorporates all of these boot
-methods in a single image, so you can choose which one you use at boot time,
-and more payloads (e.g. Linux kexec payload) are planned for future releases.
-
 Overview of Libreboot design
 ============================
 
@@ -56,12 +45,16 @@ Overview of Libreboot design
 Libreboot provides [coreboot](https://coreboot.org/) for [machine
 initialisation](https://doc.coreboot.org/getting_started/architecture.html),
 which then jumps to a [payload](https://doc.coreboot.org/payloads.html) in
-the boot flash; coreboot works with many payloads, but Libreboot specifically
-provides SeaBIOS, GRUB and U-Boot as options. Memtest86+ is also provided
-in flash, on some mainboards. The payload is the program in flash that provides
-the early user interface, for booting an operating system. This *payload*
-infrastructure means you can run whatever you want (even Linux!) from the
-boot flash.
+the boot flash; coreboot works with many payloads, which boot your operating
+system e.g. Linux/BSD.
+
+Libreboot provides [GRUB](docs/linux/) and SeaBIOS payloads on x86/x86\_64
+Intel/AMD mainboards, and a [U-Boot UEFI payload](docs/uboot/) *for coreboot*
+on ARM64(Aarch64) mainboards.
+An [x86/x86\_64 U-Boot UEFI payload](docs/uboot/uboot-x86.md) is also available
+on some boards. The x86, x86\_64 and arm64 U-Boot payloads provide a lightweight
+UEFI boot implementation. Libreboot's [design](docs/maintain/) incorporates all
+of these payloads in a single image, and you choose one at boot time.
 
 Libreboot makes coreboot easy to use for
 non-technical users, by providing a [fully automated build
