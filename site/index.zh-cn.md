@@ -14,6 +14,17 @@ Libreboot 的创始人和主要开发者，Leah Rowe，也是 Minifree 的所有
 
 **新版发布: 最新版本 Libreboot 20241206 已在 2024 年 12 月 06 日发布。详见: [Libreboot 20241206 发布公告](news/libreboot20241206.md).**
 
+Libreboot provides [GRUB](docs/linux/) and SeaBIOS payloads on x86/x86\_64
+Intel/AMD mainboards, and a [U-Boot UEFI payload](docs/uboot/) *for coreboot*
+on ARM64(Aarch64) mainboards.
+An [x86/x86\_64 U-Boot UEFI payload](docs/uboot/uboot-x86.md) is also available
+on some boards. The x86, x86\_64 and arm64 U-Boot payloads provide a lightweight
+UEFI boot implementation, which can boot many Linux distros and BSD systems.
+The SeaBIOS and GRUB payloads also boot Linux/BSD systems. Which one you use
+depends on your preferences. Libreboot's design incorporates all of these boot
+methods in a single image, so you can choose which one you use at boot time,
+and more payloads (e.g. Linux kexec payload) are planned for future releases.
+
 为什么要使用 *Libreboot*?
 ----------------------------
 

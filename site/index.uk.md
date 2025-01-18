@@ -24,6 +24,17 @@ Minifree; sales provide funding for Libreboot.
 **НОВИЙ ВИПУСК: Останній випуск Libreboot 20241206, випущено 6 December 2024.
 Дивіться: [Оголошення про випуск Libreboot 20241206](news/libreboot20241206.md).**
 
+Libreboot provides [GRUB](docs/linux/) and SeaBIOS payloads on x86/x86\_64
+Intel/AMD mainboards, and a [U-Boot UEFI payload](docs/uboot/) *for coreboot*
+on ARM64(Aarch64) mainboards.
+An [x86/x86\_64 U-Boot UEFI payload](docs/uboot/uboot-x86.md) is also available
+on some boards. The x86, x86\_64 and arm64 U-Boot payloads provide a lightweight
+UEFI boot implementation, which can boot many Linux distros and BSD systems.
+The SeaBIOS and GRUB payloads also boot Linux/BSD systems. Which one you use
+depends on your preferences. Libreboot's design incorporates all of these boot
+methods in a single image, so you can choose which one you use at boot time,
+and more payloads (e.g. Linux kexec payload) are planned for future releases.
+
 Чому вам варто використовувати *Libreboot*?
 ----------------------------
 
