@@ -665,9 +665,8 @@ about here:
 util/spkmodem\_recv/
 ---------------
 
-FSF has original copyright on this; it was imported from coreboot, who in turn
-imported it from GRUB with very little modification. Therefore, this code is
-canonically based on what is provided in GNU GRUB.
+Libreboot imported this from coreboot, who is turn imported it from GRUB with
+little to no modification.
 
 This is a receiving client for spkmodem, which is a method of providing serial
 consoles via pulses on the PC speaker. The `spkmodem_recv` client will *decode*
