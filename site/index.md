@@ -60,9 +60,9 @@ Libreboot makes coreboot easy to use for
 non-technical users, by providing a [fully automated build
 system](docs/maintain/), [automated build process](docs/build/) and
 [user-friendly installation instructions](docs/install/), in addition to
-regular binary releases that provide pre-compiled ROM images for installation
-on supported hardware. Without automation such as that provided by Libreboot,
-coreboot would be inaccessible for most users; you can also
+regular [binary releases](download.md) that provide pre-compiled ROM images for
+installation on supported hardware. Without automation such as that provided by
+Libreboot, coreboot would be inaccessible for most users; you can also
 still [reconfigure](docs/maintain/) Libreboot however you wish.
 
 Why use Libreboot?
