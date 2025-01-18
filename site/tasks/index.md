@@ -405,7 +405,7 @@ the [u-root](https://github.com/u-root/u-root) project.
 Libreboot's current choice of coreboot payloads are:
 
 * SeaBIOS (x86 only), provides a traditional PC BIOS implementation
-* GNU GRUB (x86 only), provides a multiboot implementation, can boot Linux and
+* GRUB (x86 only), provides a multiboot implementation, can boot Linux and
   BSD. This is the preferred default payload on x86, especially for Linux
   distros, because it provides many security features like GPG signature
   checking on Linux kernels, and password protection.
@@ -418,7 +418,7 @@ Libreboot's current choice of coreboot payloads are:
 
 U-Root in particular (not to be confused with U-boot has parsers in it for
 GRUB and Syslinux config files. GRUB also has a parser for syslinux configs.
-This makes it a useful drop-in replacement for the GNU GRUB payload that
+This makes it a useful drop-in replacement for the GRUB bootloader payload that
 Libreboot currently uses. Linux has much better drivers than GRUB, especially
 for things like LUKS2 and networking.
 
@@ -1211,9 +1211,7 @@ Sanity checks
 -------------
 
 We basically should have startup sanity checks in general, such as checking
-whether all the right dependencies are installed on the host system - similar
-to autoconf setups used by many GNU projects, though we don't want to use
-autoconf, it's bloat.
+whether all the right dependencies are installed on the host system.
 
 If a sanity check is passed, a configuration file can then be provided, which
 can be used to control how lbmk runs. For example, if a certain version of a

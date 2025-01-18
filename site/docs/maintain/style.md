@@ -307,10 +307,9 @@ In addition to not using bashisms, commands that lbmk uses must also
 be portable; where possible, third party projects should be tweaked.
 
 This is actually something that is currently lacking or otherwise untested
-in Libreboot; it's currently assumed that only Linux (specifically GNU+Linux)
+in Libreboot; it's currently assumed that only common Linux distributions
 will work, because many of the projects that Libreboot makes use of will use
-bashisms, or other GNUisms (e.g. GNU-specific C extensions or GNU Make specific
-behaviour in Makefiles).
+bashisms, and/or rely on idiosyncrasies of glibc.
 
 Work+testing is sorely needed, in this area. It would be nice if Libreboot
 could be built on BSD systems, for example.

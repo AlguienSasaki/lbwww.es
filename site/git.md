@@ -189,7 +189,7 @@ proprietary, subject to all of the same restrictions.
 
 The MIT license is a good one to start with, and it is the preferred license
 for all new works in Libreboot, but we're not picky. Libreboot has historically
-used GNU licensing such as GPL; much of that remains, and is likely to remain.
+used mostly GPL licensing; much of that remains, and is likely to remain.
 It's your work; obviously, if you're deriving from an existing work,
 it may make sense to use the same license on your contribution, for license
 compatibility.

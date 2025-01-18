@@ -8,7 +8,7 @@ Background
 
 ArchLinuxARM Latest (as of May 1st 2023) boots and can be installed successfully using libreboot 20230319 on a gru_bob chromebook.
 
-The following process should theoretically be applicable to other U-Boot devices and GNU/Linux distributions, but the focus here is specifically on ArchLinuxARM.
+The following process should theoretically be applicable to other U-Boot devices and Linux distributions, but the focus here is specifically on ArchLinuxARM.
 
 Sources used for this guide include the [following guide to install ArchLinuxARM on a RockPro64,](https://jforberg.se/blog/posts/2023-02-19-rockpro64/rockpro64.html)
 
@@ -85,7 +85,7 @@ In the fdisk tui, create two partitions on a Master Boot Record:
 - set type to fat32 (ext2 is also supported by extlinux I believe, but I used fat32)
 - create a second partition of up to 15.8GB
 
-You will find the appropriate options by typing `m` when using the fdisk tui on GNU/Linux distros.
+You will find the appropriate options by typing `m` when using the fdisk tui on Linux distros.
 
 Now make the filesystems:
 ```

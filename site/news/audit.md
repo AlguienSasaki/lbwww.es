@@ -106,10 +106,10 @@ spkmodem-recv
 -------------
 
 This utility was *added* after the last release. It was imported from coreboot,
-which in turn previously forked it from GNU GRUB. It is a receiving client for
+which in turn previously forked it from GRUB. It is a receiving client for
 spkmodem, to provide a serial console via pulses on the standard *PC speaker*.
 
-Libreboot's version is *heavily* re-factored, doing away with the GNU coding
+Libreboot's version is *heavily* re-factored, doing away with the messy GNU coding
 style and replacing it with a BSD coding style (the licensing is unchanged).
 
 For reference, here is the original version from GRUB:

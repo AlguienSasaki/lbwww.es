@@ -385,7 +385,7 @@ have more - for now.
 
 Let's take an extreme example: what if coreboot was entirely binary blobs
 for a given mainboard? Coreboot itself only initialises the hardware, and
-jumps to a payload in the flash; in this case, the payload (e.g. GNU GRUB)
+jumps to a payload in the flash; in this case, the payload (e.g. GRUB)
 would still be free software. Surely, all free firmware would be better,
 but this is still an improvement over the original vendor firmware. The
 original vendor firmware will have non-free boot firmware *and* its analog

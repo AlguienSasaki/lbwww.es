@@ -58,7 +58,7 @@ build system can be found in the [lbmk maintenance manual](../maintain/),
 and information about porting new systems in
 the [porting manual](../maintain/porting.md).
 
-With x86 machines, you can use the SeaBIOS or GNU GRUB payloads. On ARM
+With x86 machines, you can use the SeaBIOS or GRUB bootloader payloads. On ARM
 systems, you can use the U-Boot payload (coreboot still initialises hardware).
 
 Libreboot currently supports the following systems:

@@ -44,7 +44,7 @@ linked above tells you how to apply your modifications for flashing.**
 Flash write protection
 ======================
 
-Although not strictly related to GNU GRUB, flash protection will prevent anyone
+Although not strictly related to GRUB, flash protection will prevent anyone
 except you from overwriting the flash without permission. This is important,
 because you don't want some malicious software running as root from overwriting
 your flash, thus removing any of the above protections.

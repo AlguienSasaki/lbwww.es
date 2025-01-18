@@ -30,13 +30,13 @@ operating system (e.g. Linux/BSD). It is specifically
 a *[coreboot distribution](../docs/maintain/)*,
 in the same way that Debian is a Linux distribution. It provides an automated
 build system to produce coreboot ROM images with a variety of payloads such as
-GNU GRUB or SeaBIOS, with regular well-tested releases to make coreboot as easy
+GRUB or SeaBIOS, with regular well-tested releases to make coreboot as easy
 to use as possible for non-technical users. From a project management perspective,
 this works in *exactly* the same way as a Linux distro, providing a source-based
 package manager (called lbmk) which patches sources and compiles coreboot images.
 It makes use of [coreboot](https://www.coreboot.org/) for hardware initialisation,
 and then a payload such as [SeaBIOS](https://www.seabios.org/SeaBIOS)
-or [GNU GRUB](https://www.gnu.org/software/grub/) to boot your operating
+or [GRUB](https://www.gnu.org/software/grub/) to boot your operating
 system; on ARM(chromebooks), we provide *U-Boot* (as a coreboot payload).
 
 U-Boot UEFI payload on x86\_64

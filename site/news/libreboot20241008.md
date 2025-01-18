@@ -19,13 +19,13 @@ operating system (e.g. Linux/BSD). It is specifically
 a *[coreboot distribution](../docs/maintain/)*,
 in the same way that Debian is a Linux distribution. It provides an automated
 build system to produce coreboot ROM images with a variety of payloads such as
-GNU GRUB or SeaBIOS, with regular well-tested releases to make coreboot as easy
+GRUB or SeaBIOS, with regular well-tested releases to make coreboot as easy
 to use as possible for non-technical users. From a project management perspective,
 this works in *exactly* the same way as a Linux distro, providing a source-based
 package manager (called lbmk) which patches sources and compiles coreboot images.
 It makes use of [coreboot](https://www.coreboot.org/) for hardware initialisation,
 and then a payload such as [SeaBIOS](https://www.seabios.org/SeaBIOS)
-or [GNU GRUB](https://www.gnu.org/software/grub/) to boot your operating
+or [GRUB](https://www.gnu.org/software/grub/) to boot your operating
 system; on ARM(chromebooks), we provide *U-Boot* (as a coreboot payload).
 
 The changes of the recent [6th build system audit](audit6.md) are included, in
@@ -450,8 +450,8 @@ The changes are as follows:
   where the BIOS region ends at 4MB; you would then flash the full image
   internally, after the fact.
 * Relative to audit6: Patch uefitool for musl libc. The code was making use
-  of `ACCESSPERMS`, which is a define in BSD libc (also available in the GNU
-  C Library) for use with chmod when setting 777 permission on files. The musl
+  of `ACCESSPERMS`, which is a define in BSD libc (also available in glibc)
+  for use with chmod when setting 777 permission on files. The musl
   libc doesn't have this, so the code was modified to explicitly define it in
   the same way, but only if not already defined. Useful for Alpine Linux users.
 * Relative to audit6: Don't dry-run `mkcorebootbin` when using the `-d` switch

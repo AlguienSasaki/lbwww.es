@@ -429,7 +429,7 @@ Mate Kukri
 
 Mate Kukri is a *major* contributor to Libreboot, and several of the upstreams
 that it uses; he is a coreboot developer, and also contributes heavily to the
-GNU GRUB project.
+GRUB bootloader project.
 
 Off the top of my head, here are just a few of the contributions that he has
 made:

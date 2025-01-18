@@ -453,7 +453,7 @@ src/grub/TREE
 
 Please also visit: <https://www.gnu.org/software/grub/>
 
-The GNU GRUB bootloader, a reference multiboot implementation with its own
+The GRUB bootloader, a reference multiboot implementation with its own
 small kernel/OS and drivers (e.g. file systems, cryptography). This is the
 default recommended [coreboot payload](https://doc.coreboot.org/payloads.html)
 on x86-based Libreboot systems. GRUB will load and execute your Linux kernel,
@@ -681,7 +681,7 @@ directly into `lbmk.git`, and thoroughly cleaned. The lbmk version has been
 more or less re-written, using the original logic as a base; variables are
 more clearly named. A top-down, OpenBSD-inspired coding style is used,
 replacing the GNU coding style implemented in the original code. The [OpenBSD
-coding style][https://man.openbsd.org/style.9] is much easier to read.
+coding style](https://man.openbsd.org/style.9) is much easier to read.
 
 This code has been modified to make use of the `pledge()` system call, when used
 on [OpenBSD](https://www.openbsd.org/); the original version from GRUB did not
