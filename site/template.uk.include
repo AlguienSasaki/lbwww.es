@@ -7,6 +7,8 @@
   <meta name="generator" content="pandoc">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+  <link rel="canonical" href="$antisocialcanon$" />
+
 <!-- anti-social media tags -->
   <meta property="og:title" content="$if(title-prefix)$$title-prefix$ – $endif$$pagetitle$">
   <meta property="og:type" content="article" />
