@@ -1,2 +1,3 @@
+Sitemap: https://libreboot.org/sitemap.xml
 User-agent: *
 Disallow:
