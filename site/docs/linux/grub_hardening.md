@@ -7,7 +7,7 @@ What is Secure libreBoot?
 -------------------------
 
 Libreboot provides open source BIOS/UEFI firmware, replacing proprietary
-BIOS/UEFI firmware, and that precisely is Libreboot primary mission; Libreboot
+BIOS/UEFI firmware, and that precisely is Libreboot's primary mission; Libreboot
 is a [Free Software](https://writefreesoftware.org/learn) project, *first*.
 Our *next* priority is to provide you with *highly secure* boot firmware, free
 from backdoors and with well-audited code. *This* document does just that, by
