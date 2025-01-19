@@ -9,8 +9,9 @@ Open source BIOS/UEFI firmware
 ------------------------------
 
 This document will teach you how to install Libreboot, on your
-ASUS KCMA-D8 server/workstation motherboard. Libreboot replaces proprietary
-BIOS/UEFI firmware.
+ASUS KCMA-D8 server/workstation motherboard.
+Libreboot is a [Free Software](https://writefreesoftware.org/learn) project
+that replaces proprietary BIOS/UEFI firmware.
 
 Specifications available here:
 <https://www.asus.com/uk/Commercial-Servers-Workstations/KCMAD8/>

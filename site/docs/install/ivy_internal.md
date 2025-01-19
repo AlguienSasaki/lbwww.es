@@ -7,8 +7,9 @@ Open source BIOS/UEFI firmware
 ------------------------------
 
 This document will teach you how to install Libreboot, on your
-Lenovo ThinkPad X230 laptop motherboard. Libreboot replaces proprietary
-BIOS/UEFI firmware.
+Lenovo ThinkPad X230 laptop motherboard.
+Libreboot is a [Free Software](https://writefreesoftware.org/learn) project
+that replaces proprietary BIOS/UEFI firmware.
 
 This document demonstrates an *internal flashing* method, by exploiting a
 little-known security vulnerability in Lenovo's original UEFI firmware.

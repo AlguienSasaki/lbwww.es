@@ -8,7 +8,9 @@ Open source BIOS/UEFI firmware
 
 This article will teach you how to install Libreboot, on any of the supported
 laptop, desktop and server motherboards of Intel/AMD x86/x86\_64 and ARM64
-platform. Libreboot replaces proprietary BIOS/UEFI firmware.
+platform.
+Libreboot is a [Free Software](https://writefreesoftware.org/learn) project
+that replaces proprietary BIOS/UEFI firmware.
 
 **ALWAYS remember to make a backup of the current flash, when overwriting it,
 regardless of what firmware you currently have and what firmware you're

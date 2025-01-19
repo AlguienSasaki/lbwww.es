@@ -55,8 +55,9 @@ Open source BIOS/UEFI firmware
 ------------------------------
 
 This document will teach you how to install Libreboot, on your
-HP Elite 8200 SFF desktop motherboard. Libreboot replaces proprietary
-BIOS/UEFI firmware.
+HP Elite 8200 SFF desktop motherboard.
+Libreboot is a [Free Software](https://writefreesoftware.org/learn) project
+that replaces proprietary BIOS/UEFI firmware.
 
 Libreboot has support for this, in the Git repository and release versions
 from 20230423 onwards.

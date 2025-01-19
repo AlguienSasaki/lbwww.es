@@ -7,8 +7,9 @@ Open source BIOS/UEFI firmware
 -------------------------
 
 This document will teach you how to install Libreboot, on your
-Lenovo ThinkPad T440p laptop motherboard. Libreboot replaces proprietary
-BIOS/UEFI firmware.
+Lenovo ThinkPad T440p laptop motherboard.
+Libreboot is a [Free Software](https://writefreesoftware.org/learn) project
+that replaces proprietary BIOS/UEFI firmware.
 
 Buy Libreboot preinstalled
 --------------------------

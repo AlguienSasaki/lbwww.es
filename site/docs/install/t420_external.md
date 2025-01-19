@@ -7,8 +7,9 @@ Open source BIOS/UEFI firmware
 ------------------------------
 
 This document will teach you how to install Libreboot, on your
-Lenovo ThinkPad T420 laptop motherboard. Libreboot replaces proprietary
-BIOS/UEFI firmware.
+Lenovo ThinkPad T420 laptop motherboard.
+Libreboot is a [Free Software](https://writefreesoftware.org/learn) project
+that replaces proprietary BIOS/UEFI firmware.
 
 The following instructions expect you to have these on hand:
 

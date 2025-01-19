@@ -7,8 +7,9 @@ Open source BIOS/UEFI firmware
 ------------------------------
 
 This document will teach you how to install Libreboot, on your
-ASUS KGPE-D16 server/workstation motherboard. Libreboot replaces proprietary
-BIOS/UEFI firmware.
+ASUS KGPE-D16 server/workstation motherboard.
+Libreboot is a [Free Software](https://writefreesoftware.org/learn) project
+that replaces proprietary BIOS/UEFI firmware.
 
 TODO: OLD page. TODO: check that all the info is still valid.
 

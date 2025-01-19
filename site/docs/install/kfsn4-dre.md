@@ -52,8 +52,9 @@ Open source BIOS/UEFI firmware
 ------------------------------
 
 This document will teach you how to install Libreboot, on your
-ASUS KFSN4-DRE server/workstation motherboard. Libreboot replaces proprietary
-BIOS/UEFI firmware.
+ASUS KFSN4-DRE server/workstation motherboard.
+Libreboot is a [Free Software](https://writefreesoftware.org/learn) project
+that replaces proprietary BIOS/UEFI firmware.
 
 This is a server board using AMD hardware (Fam10h). It can also be used
 for building a high-powered workstation. Powered by libreboot.

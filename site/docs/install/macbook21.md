@@ -55,8 +55,9 @@ Open source BIOS/UEFI firmware
 -------------------------
 
 This document will teach you how to install Libreboot, on your
-Apple MacBook 2,1 2005-2007 laptop motherboard. Libreboot replaces proprietary
-BIOS/UEFI firmware.
+Apple MacBook 2,1 2005-2007 laptop motherboard.
+Libreboot is a [Free Software](https://writefreesoftware.org/learn) project
+that replaces proprietary BIOS/UEFI firmware.
 
 The MacBook1,1 and MacBook2,1 are very similar to the 
 ThinkPad X60. It shares some hardware with the X60 such as the chipset.

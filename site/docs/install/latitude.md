@@ -10,7 +10,8 @@ This document will teach you how to install Libreboot, on various models of
 Dell Latitude laptop motherboard, namely Dell Latitude E4300, E6400, E6400 XFR,
 E6400 ATG, E5420, E5520, E5530, E6420, E6430, E6520, E6530, E6230, E6330
 and E6220; you must only install Libreboot on models with *Intel graphics*.
-Libreboot replaces proprietary BIOS/UEFI firmware.
+Libreboot is a [Free Software](https://writefreesoftware.org/learn) project
+that replaces proprietary BIOS/UEFI firmware.
 
 In case any models are unlisted in the above paragraph, you should also check
 the full list of supported Dell Latitude models on the [Libreboot hardware

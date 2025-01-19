@@ -6,7 +6,8 @@ x-toc-enable: true
 Open source BIOS/UEFI firmware
 ------------------------------
 
-Libreboot replaces proprietary BIOS/UEFI firmware, but some newer boards still
+Libreboot is a [Free Software](https://writefreesoftware.org/learn) project
+that replaces proprietary BIOS/UEFI firmware, but some newer boards still
 occasionally need code from the hardware manufacturer in order to boot properly.
 This document will teach you how to handle such a scenario, and how to check
 for it. For more context, please read Libreboot's [Binary Blob Reduction

@@ -57,8 +57,9 @@ Open source BIOS/UEFI firmware
 -------------------------
 
 This document will teach you how to install Libreboot, on your
-Dell OptiPlex 780 desktop motherboard. Libreboot replaces proprietary
-BIOS/UEFI firmware.
+Dell OptiPlex 780 desktop motherboard.
+Libreboot is a [Free Software](https://writefreesoftware.org/learn) project
+that replaces proprietary BIOS/UEFI firmware.
 
 **Unavailable in Libreboot 20240612 or earlier. You must [compile from
 source](../build/), or use a version newer than Libreboot 20240612.**

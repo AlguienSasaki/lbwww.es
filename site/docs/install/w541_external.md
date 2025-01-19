@@ -7,8 +7,9 @@ Open source BIOS/UEFI firmware
 -------------------------
 
 This document will teach you how to install Libreboot, on your
-Lenovo ThinkPad W541 and/or W540 laptop motherboard. Libreboot replaces
-proprietary BIOS/UEFI firmware.
+Lenovo ThinkPad W541 and/or W540 laptop motherboard.
+Libreboot is a [Free Software](https://writefreesoftware.org/learn) project
+that replaces proprietary BIOS/UEFI firmware.
 
 NOTE: The same image for W541 also works on the W540, as the motherboards are
 identical for coreboot purposes.

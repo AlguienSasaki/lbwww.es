@@ -52,8 +52,9 @@ Open source BIOS/UEFI firmware
 ------------------------------
 
 This document will teach you how to install Libreboot, on your
-Gigabyte GA-G41M-ES2L desktop motherboard. Libreboot replaces proprietary
-BIOS/UEFI firmware.
+Gigabyte GA-G41M-ES2L desktop motherboard.
+Libreboot is a [Free Software](https://writefreesoftware.org/learn) project
+that replaces proprietary BIOS/UEFI firmware.
 
 This is a desktop board using intel hardware (circa \~2009, ICH7
 southbridge, similar performance-wise to the ThinkPad X200. It can make

@@ -52,8 +52,9 @@ Open source BIOS/UEFI firmware
 ------------------------------
 
 This document will teach you how to install Libreboot, on your
-Intel D945GCLF and/or D945GCLF2 desktop motherboard. Libreboot replaces
-proprietary BIOS/UEFI firmware.
+Intel D945GCLF and/or D945GCLF2 desktop motherboard.
+Libreboot is a [Free Software](https://writefreesoftware.org/learn) project
+that replaces proprietary BIOS/UEFI firmware.
 
 If you just want flashing instructions, go to
 [../install/d945gclf.md](../install/d945gclf.md)

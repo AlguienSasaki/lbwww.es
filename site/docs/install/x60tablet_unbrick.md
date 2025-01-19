@@ -7,8 +7,9 @@ Open source BIOS/UEFI firmware
 ------------------------------
 
 This document will teach you how to install Libreboot, on your
-Lenovo Thinkpad X60 Tablet laptop motherboard. Libreboot replaces proprietary
-BIOS/UEFI firmware.
+Lenovo Thinkpad X60 Tablet laptop motherboard.
+Libreboot is a [Free Software](https://writefreesoftware.org/learn) project
+that replaces proprietary BIOS/UEFI firmware.
 
 **NOTE: Libreboot standardises on [flashprog](https://flashprog.org/wiki/Flashprog)
 now, as of 27 January 2024, which is a fork of flashrom.
