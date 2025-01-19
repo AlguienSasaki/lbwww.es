@@ -110,7 +110,8 @@ restrictions, and you hear them talk about "security", they are only talking
 about *their* security, not yours. In the Libreboot project, it is reversed; we
 see Intel Boot Guard and similar such technologies as an attack on your freedom
 over your own property (your computer), and so, we make it our mission to help
-you [wrest](https://trmm.net/TOCTOU/) back such control.
+you [wrest](docs/install/deguard.md) [back](https://trmm.net/TOCTOU/) such
+control.
 
 Libreboot is not a fork of coreboot
 -----------------------------------
