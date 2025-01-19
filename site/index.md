@@ -14,7 +14,7 @@ system. [Linux](docs/linux/) and [BSD](docs/bsd/) are well-supported. Help is
 available via [\#libreboot](https://web.libera.chat/#libreboot)
 on [Libera](https://libera.chat/) IRC.
 
-<img tabindex=1 class="r" src="https://av.libreboot.org/t480/t480.jpg" /><span class="f"><img src="https://av.libreboot.org/t480/t480.jpg" /></span>
+<img tabindex=1 class="r" alt="ThinkPad T480 running Libreboot" title="ThinkPad T480" src="https://av.libreboot.org/t480/t480.jpg" /><span class="f"><img alt="ThinkPad T480 running Libreboot" src="https://av.libreboot.org/t480/t480.jpg" /></span>
 
 You can also [buy Libreboot preinstalled](https://minifree.org/) from Minifree Ltd,
 on select hardware, aswell as send your compatible hardware
@@ -40,7 +40,7 @@ is *why* Libreboot exists.
 Overview of Libreboot design
 ----------------------------
 
-<img tabindex=1 class="l" src="https://av.libreboot.org/hp9470m/9470m+2560p.jpg" /><span class="f"><img src="https://av.libreboot.org/hp9470m/9470m+2560p.jpg" /></span>
+<img tabindex=1 class="l" alt="HP EliteBook 2560p and Folio 9470m running Libreboot" src="https://av.libreboot.org/hp9470m/9470m+2560p.jpg" /><span class="f"><img src="https://av.libreboot.org/hp9470m/9470m+2560p.jpg" /></span>
 
 Libreboot provides [coreboot](https://coreboot.org/) for [machine
 initialisation](https://doc.coreboot.org/getting_started/architecture.html),
@@ -68,7 +68,7 @@ still [reconfigure](docs/maintain/) Libreboot however you wish.
 Why use Libreboot?
 ------------------
 
-<img tabindex=1 class="r" style="max-width:25%;" src="https://av.libreboot.org/thinkpadcollection/thinkpadcollection1-min.jpg" /><span class="f"><img src="https://av.libreboot.org/thinkpadcollection/thinkpadcollection1-min.jpg" /></span>
+<img tabindex=1 class="r" alt="Various Lenovo ThinkPads running Libreboot" style="max-width:25%;" src="https://av.libreboot.org/thinkpadcollection/thinkpadcollection1-min.jpg" /><span class="f"><img src="https://av.libreboot.org/thinkpadcollection/thinkpadcollection1-min.jpg" /></span>
 
 If you're already inclined towards free software, maybe already a coreboot user,
 Libreboot makes it easier to either get started or otherwise maintain coreboot
@@ -115,7 +115,7 @@ you [wrest](https://trmm.net/TOCTOU/) back such control.
 Libreboot is not a fork of coreboot
 -----------------------------------
 
-<img tabindex=1 class="r" style="max-width:25%;" src="https://av.libreboot.org/t1650/t1650_grub.jpg" /><span class="f"><img src="https://av.libreboot.org/t1650/t1650_grub.jpg" /></span>
+<img tabindex=1 class="r" alt="Dell Precision T1650 running Libreboot" style="max-width:25%;" src="https://av.libreboot.org/t1650/t1650_grub.jpg" /><span class="f"><img src="https://av.libreboot.org/t1650/t1650_grub.jpg" /></span>
 
 In fact, Libreboot tries to stay as close to *stock* coreboot as possible,
 for each board, but with many different types of configuration provided
@@ -146,7 +146,7 @@ The [tasks page](tasks/) lists tasks that could (will) be worked on. It will
 be updated over time as more tasks are added/completede. If you want to help,
 you could pick one of these tasks and work on it.
 
-<img tabindex=1 class="l" style="max-width:15%;" src="https://av.libreboot.org/hp8200sff/grub_open.jpg" /><span class="f"><img src="https://av.libreboot.org/hp8200sff/grub_open.jpg" /></span>
+<img tabindex=1 class="l" style="max-width:15%;" alt="GRUB boot loader in Libreboot" src="https://av.libreboot.org/hp8200sff/grub_open.jpg" /><span class="f"><img src="https://av.libreboot.org/hp8200sff/grub_open.jpg" /></span>
 
 The *single* biggest way you can help is to *add* new motherboards in Libreboot,
 by submitting a config. Anything coreboot supports can be integrated in
