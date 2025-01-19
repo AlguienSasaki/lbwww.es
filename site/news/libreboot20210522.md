@@ -3,10 +3,9 @@
 % 22 May 2021
 
 Join us now and flash the firmware!
-===================================
+----------------------------------
 
-You'll be free!
----------------
+### You'll be free!
 
 Libreboot is [free](https://writefreesoftware.org/) (as in freedom) boot
 firmware, which initializes the hardware
@@ -26,8 +25,7 @@ mirrors. If you check in the `stable` directory, you'll still only find
 the 20160907 release in there, so please ensure that you check the `testing`
 directory!
 
-Tested boards
--------------
+### Tested boards
 
 More testing is needed, for this release. Frequent update releases are planned
 after this release, fixing any issues that people may come across.
@@ -40,31 +38,28 @@ as ThinkPad X60/T60 and Macbook2,1 have been tested, and should work fine.
 Intel D510MO and D945GCLF boards are untested! Acer G43T-AM3 is untested!
 
 New boards
-==========
+---------
 
-Desktops
---------
+### Desktops
 
-### Acer G43T-AM3
+#### Acer G43T-AM3
 
 This is a desktop mainboard, with similar hardware to the already supported
 Gigabyte GA-G41M-ES2L
 
-Laptops
--------
+### Laptops
 
-### Lenovo ThinkPad R500
+#### Lenovo ThinkPad R500
 
 This is another Intel GM45 target, similar to the ThinkPad T500 that Libreboot
 already supports.
 
-### Lenovo ThinkPad X301
+#### Lenovo ThinkPad X301
 
 This is another Intel GM45 target, similar to the ThinkPad X200 that Libreboot
 already supports.
 
-List of supported boards
-------------------------
+### List of supported boards
 
 This release has focused on the build system, and updating to the latest
 coreboot release. This Libreboot release uses coreboot 4.14. Only a few boards
@@ -73,7 +68,7 @@ release is planned soon, specifically an update release with ROM images in it
 for more boards, while being built from the Libreboot 20210522 source code.
 Visit the [tasks page](/tasks/) to know which machines are on the TODO list.
 
-### Desktops (AMD, Intel, x86)
+#### Desktops (AMD, Intel, x86)
 
 -   Gigabyte GA-G41M-ES2L motherboard
 -   Intel D510MO and D410PT motherboards
@@ -81,13 +76,13 @@ Visit the [tasks page](/tasks/) to know which machines are on the TODO list.
 -   Apple iMac 5,2
 -   Acer G43T-AM3
 
-### Servers/workstations (AMD, x86)
+#### Servers/workstations (AMD, x86)
 
 -   ASUS KCMA-D8 motherboard
 -   ASUS KGPE-D16 motherboard
 -   ASUS KFSN4-DRE motherboard
 
-### Laptops (Intel, x86)
+#### Laptops (Intel, x86)
 
 -   ThinkPad X60 / X60S / X60 Tablet
 -   ThinkPad T60 (with Intel GPU)
@@ -100,14 +95,12 @@ Visit the [tasks page](/tasks/) to know which machines are on the TODO list.
 -   Lenovo ThinkPad X301
 -   Apple MacBook1,1 and MacBook2,1
 
-Dropped boards
---------------
+### Dropped boards
 
 ASUS Chromebook C201 was dropped. It will be re-added at a later date, when
 the build system in Libreboot has better integration for ARM hardware.
 
-More boards coming soon!
-------------------------
+### More boards coming soon!
 
 I had planned to add a lot more boards before doing a new release, but the
 existing boards are greatly improved already (lots of new fixes and features
@@ -118,7 +111,7 @@ referencing this release (Libreboot 20210522) for the source code. See the
 tasks page on libreboot.org for a list of the boards I plan to add.
 
 lbmk
-====
+----
 
 The build system in libreboot is called `lbmk`, short for Libreboot Make. In
 the previous Libreboot release, this build system had no name. It was simply
@@ -224,7 +217,7 @@ compared to the Libreboot 20160907 build system:
   It's better documented, and easier for the average person to maintain.
 
 Documentation
-=============
+----------------
 
 Generally, the documentation is much improved. In particular, the "maintain"
 page has been reintroduced, which describes every aspect of the build system
@@ -252,7 +245,7 @@ support, rather than build system changes. As such, the installation guides
 are greatly improved and there are *more* systems documented now.
 
 GRUB
-====
+----
 
 In GRUB payloads, a much more recent version is used. The difference is
 literally: the GRUB version that Libreboot 20160907 uses was released 5 years
@@ -296,7 +289,7 @@ Download GRUB from the upstream repository and check every commit
 since then.
 
 GM45/X4X now set 352MiB VRAM by default
-=======================================
+--------------------------------------
 
 In the previous Libreboot release, PCI MMIO size was set to 1GiB. It is now
 set to 2GiB, allowing for 352MiB VRAM to be allocated when using the onboard
@@ -309,7 +302,7 @@ The following patch in coreboot allowed that (shortly after the Libreboot
 <https://review.coreboot.org/c/coreboot/+/16831>
 
 Quad-core CPU mod on ThinkPad T500 etc
-=======================================
+-----------------------------------
 
 NOTE: The actual modification (to the hardware) is only documented for T500,
 but it should be possible to adapt those instructions for similar GM45 laptops
@@ -334,7 +327,7 @@ This is necessary, for a special mod that is possible on these machines, to
 enable quad-core CPUs (core2quad).
 
 libgfxinit
-==========
+----------
 
 In Libreboot 20160907, *native graphics initialization* was C code implemented
 on each platform, and it was very messy, but it *worked*.
@@ -614,7 +607,7 @@ running `git submodule update --init` in a coreboot git clone:
 ````
 
 coreboot release logs
-=====================
+---------------------
 
 The following is a page linking to release logs for coreboot, upstream:\
 <https://doc.coreboot.org/releases/index.html>
@@ -624,8 +617,7 @@ are most relevant to Libreboot. Roughly speaking, Libreboot 20160907 (the
 previous release, 4 years and 8 months ago) used revisions of coreboot near or
 around coreboot version 4.4 and 4.5, depending on the board.
 
-coreboot 4.14
--------------
+### coreboot 4.14
 
 Lots of random fixes, too many to list. Instead, see git logs on this page for
 specific boards/platforms.
@@ -639,8 +631,7 @@ However, the following fixes were made for Lenovo X200 recently:
 * <https://review.coreboot.org/c/coreboot/+/51118>
 * <https://review.coreboot.org/c/coreboot/+/51123>
 
-coreboot 4.13
--------------
+### coreboot 4.13
 
 * Mostly re-factoring and minor bug fixes, but it has some interesting fixes
   that benefit libreboot
@@ -651,8 +642,7 @@ coreboot 4.13
   interesting in the future on x86 targets
 * New resource allocator: enables more efficient use of memory during bootup
 
-coreboot 4.12
--------------
+### coreboot 4.12
 
 * SMMSTORE is now a thing. See: <https://doc.coreboot.org/drivers/smmstore.html>.
   This is relevant for Tianocore, a UEFI payload, which libreboot currently
@@ -663,8 +653,7 @@ coreboot 4.12
   configurations, in SPI flash. it's handled via SMM interrupts (SMIs). NOTE:
   SMMSTOREv2 is also becoming a thing now
 
-coreboot 4.11
--------------
+### coreboot 4.11
 
 * C\_ENVIRONMENTAL\_BOOTBLOCK is now preferred, instead of the old romcc
   bootblocks. i945, x4x and gm45 platforms have been adapted to use this (this
@@ -673,14 +662,12 @@ coreboot 4.11
 * Generally, this was another "code cleanup release" of coreboot. A lot of code
   in coreboot was re-factored
 
-coreboot 4.10
--------------
+### coreboot 4.10
 
 * nothing noteworthy to libreboot, this was mainly a "code cleanup" release in
   coreboot
 
-coreboot 4.9
-------------
+### coreboot 4.9
 
 * Less repetition in the codebase, for similar boards. For example, X200
   thinkpad is its own codebase, and similar boards are "variants" where only
@@ -689,8 +676,7 @@ coreboot 4.9
 * Intel X4X platform: Add DDR3 support (raminit)
 * 
 
-coreboot 4.8
-------------
+### coreboot 4.8
 
 * Improved VBT implementations in libgfxinit
 * i945 (X60/T60/macbook21 etc): native video initialization is now skipped
@@ -699,8 +685,7 @@ coreboot 4.8
   of this coreboot release, the framebuffer driver couldn't. this will need to
   be tested!
 
-coreboot 4.7
-------------
+### coreboot 4.7
 
 * GM45 laptops: set display backlight PWM correctly
 * Add romstage timings
@@ -710,8 +695,7 @@ coreboot 4.7
 * Intel X4X: Rework and fixSPD reading and decoding
 * Intel X4X: Allow external GPU to take VGA cycles
 
-coreboot 4.6
-------------
+### coreboot 4.6
 
 * fix buggy S3 suspend/resume on Gigabyte GA-G41M-ES2L mainboard, and fix bugs
   in raminit
@@ -724,7 +708,7 @@ coreboot 4.6
 
 
 Detailed coreboot git logs
-==========================
+--------------------------
 
 The following are lists of changes in coreboot 4.14, versus coreboot revisions
 used in various platforms/mainboards from Libreboot 20160907. These lists are
@@ -744,8 +728,7 @@ There are many other aspects of coreboot that can be shown here, but it's not
 useful to list all of them. Listing just the platform/board changes gives an
 excellent picture overall.
 
-Northbridge changes
--------------------
+### Northbridge changes
 
 For all intents and purposes, the northbridge and southbridge code *is* the
 platform for a given board, and then you have board specific code.

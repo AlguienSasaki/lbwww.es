@@ -13,7 +13,7 @@ and several practises may persist in spite of it; nonetheless, this article
 shall serve as a reference for lbmk development.
 
 NO BASHISMS
-===========
+-----------
 
 Libreboot's build system was previously written in Bash, and actually used
 Bash-specific behaviour. This was later *corrected*, thanks largely to work
@@ -27,15 +27,14 @@ and an even more excellent introduction:
 (seriously, it's good. Read it!)
 
 Design
-======
+------
 
 Libreboot's build system design is very simple: put as much as possible
 under `config/`, and keep actual logic to a minimum.
 
 You can read about that design in the [lbmk maintenance manual](index.md).
 
-No Makefiles
-------------
+### No Makefiles
 
 We have Makefiles in some C programs, under `util/`, and projects that we import
 may use Makefiles, but lbmk itself does not contain any Makefiles. Instead, we
@@ -46,7 +45,7 @@ code is more readable. It's easier to implement a cleaner coding style, which
 the next sections will cover.
 
 Coding style
-============
+------------
 
 Read <https://man.openbsd.org/style.9> and go read a few userland program source
 trees in OpenBSD's main CVS tree. This is the style that inspires the lbmk
@@ -60,19 +59,17 @@ Libreboot scripts, and also C programs like `nvmutil`, are heavily inspired by
 this style. We insist on its use, because this style is extremely readable and
 forces you to write better code.
 
-main on top
------------
+### main on top
 
 In every lbmk script, it is our intention that there be a `main()` function.
 All logic should be inside a function, and `main()` should be the function that
 executes first; at the bottom of each script, insert this line:
 
-	main $@
+	main "$@"
 
 This will execute `main()`, passing any arguments (from the user's shell) to it.
 
-Top-down logic
---------------
+### Top-down logic
 
 *Every* function called from main should always be *below* the calling function.
 Therefore, if multiple functions call a given function, that function should be
@@ -118,11 +115,10 @@ complicated_function()
 	do_some_complicated_stuff || return 1
 }
 
-main $@
+main "$@"
 ```
 
-PWD is always root of lbmk
---------------------------
+### PWD is always root of lbmk
 
 In any script executed by lbmk, under `script/`, the work directory is relative
 to the main `lbmk` script. In other words, all scripts under `script/` also
@@ -131,8 +127,7 @@ assume this.
 This is actually one of the reasons for that design, as also alluded to in
 the main [lbmk maintenance manual](index.md).
 
-main should only be a simple skeleton
--------------------------------------
+### main should only be a simple skeleton
 
 The `main()` function should not implement much logic itself. Each script in
 lbmk is its own program. The `main()` function should contain the overall
@@ -144,7 +139,7 @@ be below a function that builds ROM images with SeaBIOS payloads inside them,
 when building coreboot ROM images.
 
 One task, one script
-====================
+--------------------
 
 Not literally *one task*, but one theme, one *kind* of overall task. For
 example, `script/build/roms` builds final ROM images of coreboot,
@@ -155,7 +150,7 @@ another program that does another thing very well; programs communicate with
 each other via the universal method, namely text.
 
 Error handling
-==============
+--------------
 
 Where feasible, a script should do:
 
@@ -183,8 +178,7 @@ For example:
 
 	$err "function_name: this shit doesn't work. fix it."
 
-Do not directly exit
---------------------
+### Do not directly exit
 
 Please try to use `err` for all error exits.
 
@@ -196,8 +190,7 @@ A script should either return zero status, or call `err()`.
 An individual function may, in some cases, return 1 or 0 itself, which would
 then be handled accordingly by the calling function.
 
-How to handle errors
---------------------
+### How to handle errors
 
 There are some instances where errors should be *ignored*, in which case you
 might do:
@@ -211,7 +204,7 @@ command succeeded, then do this.
 Never mix `&&` and `||`
 
 If/else blocks
-==============
+--------------
 
 Keep these simple, and where possible, maybe don't use them at all! For
 example:
@@ -236,8 +229,7 @@ or
 	do something
 ```
 
-Warnings
---------
+### Warnings
 
 In C, the `stderr` file is 2 as represented by `int fd` style. In shell scripts,
 it's the same: 1 for standard output, 2 for errors/warnings. The `err` function
@@ -249,25 +241,24 @@ should not yield an exit, you should do something like this:
 	printf "function_name: this is dodgy stuff. fix it maybe?\n" 1>&2
 
 Avoid passing arguments excessively
-===================================
+-----------------------------------
 
 In functions, use of arguments passed to them can be useful, but in general,
 they should be avoided; use global variables when feasible.
 
 Do not exceed 80 characters per line
-====================================
+------------------------------------
 
 See: RFC 3676
 
 Excessively long code lines are really annoying to read.
 
 Use tab-based indendation
-=========================
+-------------------------
 
 A new line should begin with tab indentation, in a function.
 
-Multi-line commands
--------------------
+### Multi-line commands
 
 Use \\ at the end, as you would, but use *four spaces* to indent on the
 follow-up line. For example:
@@ -281,14 +272,14 @@ function_name()
 ```
 
 Use printf!
-===========
+-----------
 
 Don't use `echo` unless there's some compelling reason to do so.
 
 The `printf` functionality is more standard, across various sh implementations.
 
 env
-===
+---
 
 Don't do:
 
@@ -301,7 +292,7 @@ Do:
 This is more portable, between various Unix systems.
 
 Be portable!
-============
+------------
 
 In addition to not using bashisms, commands that lbmk uses must also
 be portable; where possible, third party projects should be tweaked.
@@ -315,7 +306,7 @@ Work+testing is sorely needed, in this area. It would be nice if Libreboot
 could be built on BSD systems, for example.
 
 Do as little as possible
-========================
+------------------------
 
 Don't over-engineer anything. Write as simply as you can, to perform a single
 task. This is basically the same as what has been written elsewhere, but it's

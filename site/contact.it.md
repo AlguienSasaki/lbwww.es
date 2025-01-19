@@ -4,7 +4,7 @@ x-toc-enable: true
 ...
 
 Buy Libreboot pre-installed
-==========
+---------------------------
 
 If you want professional installation, Minifree Ltd sells [Libreboot
 pre-installed](https://minifree.org/) on select hardware, and it also provides
@@ -18,14 +18,14 @@ If you're installing Libreboot yourself, support for that is also available.
 Contact information (IRC, mailing list etc) is below:
 
 Supporto utenti
-===============
+---------------
 
 IRC o Reddit sono consigliati, sebbene preferiamo che usi il canale IRC
 per avere o per offrire supporto tecnico. Continua a leggere per avere
 ulteriori informazioni.
 
 Mailing list
-============
+------------
 
 Libreboot has this mailing list:
 <https://lists.sr.ht/~libreboot/libreboot>
@@ -33,7 +33,7 @@ Libreboot has this mailing list:
 The email address is [~libreboot/libreboot@lists.sr.ht](mailto:~libreboot/libreboot@lists.sr.ht)
 
 Discussione sullo sviluppo
-==========================
+--------------------------
 
 Per ora dai un occhiata sulla
 [pagina Git](git.md) per avere maggiori informazioni su come puoi
@@ -43,7 +43,7 @@ Su quella stessa pagina puoi trovare informazioni su come inviare
 correzioni (patches) tramite pull requests.
 
 Canale IRC
-==========
+----------
 
 IRC e' il modo principale per contattare chi collabora con il progetto libreboot.
 Il canale ufficiale e' `#libreboot` su Libera IRC.
@@ -73,26 +73,22 @@ di Libera spiegano come:
 Comunque dovresti sempre controllare la documentazione del tuo client IRC preferito.
 
 Reti sociali online
-===================
+-------------------
 
 Libreboot esiste ufficialmente in molte piattaforme.
 
-Mastodon
---------
+### Mastodon
 
 Il fondatore e sviluppatore principale, Leah Rowe, e' su Mastodon:
 
 * <https://mas.to/@libreleah>
 
-Posta elettronica
------------------
+### Posta elettronica
 
 Leah puo' essere contattata anche via email a questo indirizzo:
 [leah@libreboot.org](mailto:leah@libreboot.org)
 
-Reddit
-------
+### Reddit
 
 Usato principalmente come canale di supporto e per annunciare notizie:
 <https://www.reddit.com/r/libreboot/>
-

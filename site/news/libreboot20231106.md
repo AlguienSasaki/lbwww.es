@@ -7,8 +7,8 @@ YOU MAY BRICK YOUR MACHINE!! - Please click the link and follow the instructions
 there, before flashing. For posterity,
 [here is the link again](../docs/install/ivy_has_common.md).**
 
-Introduction
-============
+Free your BIOS today!
+-------------------
 
 *This* new release, Libreboot 20231106, released today 6 November 2023, is
 a new *testing* release of Libreboot. The previous release was
@@ -38,13 +38,12 @@ firmware, but not Libreboot! Booting Linux/BSD is also [well](../docs/linux/)
 [supported](../docs/bsd/).
 
 Work done since last release
-============================
+--------------------
 
 This is largely a bugfix release. Most notably, boot issues on GM45 thinkpads
 present in the 20231101 release have been resolved.
 
-Dell E6400 on its own tree
------------------------------
+### Dell E6400 on its own tree
 
 Libreboot contains a DDR2 raminit patch for Dell Latitude E6400, that increases
 reliability on coldboot, but it negatively affects other GM45 machines that use
@@ -61,8 +60,7 @@ when using on GM45 ThinkPads (ROM images for those machines were then deleted
 from the 20231021 and 20231101 release archives). Today's Libreboot release
 solves that problem, so these machines can be used reliably once again.
 
-Coreboot, GRUB, U-Boot and SeaBIOS revisions
-------------------------------------
+### Coreboot, GRUB, U-Boot and SeaBIOS revisions
 
 Libreboot 20231106 and 20231101 are both based on these revisions:
 
@@ -77,8 +75,7 @@ Libreboot 20231106 and 20231101 are both based on these revisions:
 Several other fixes and tweaks have been made, in addition to this and the
 E6400 patch mentioned above.
 
-Build system tweaks
-===================
+### Build system tweaks
 
 These changes were made:
 
@@ -151,7 +148,7 @@ is in progress, and rapid development towards a new stable release; it is very
 much planned that 12 December 2023 will have a new stable release of Libreboot.
 
 Hardware supported in this release
-==================================
+----------------------------------
 
 All of the following are believed to *boot*, but if you have any issues,
 please contact the Libreboot project. They are:
@@ -161,8 +158,7 @@ please contact the Libreboot project. They are:
 -   [ASUS KFSN4-DRE motherboard](../docs/install/kfsn4-dre.md)
 -   [ASUS KGPE-D16 motherboard](../docs/install/kgpe-d16.md)
 
-Desktops (AMD, Intel, x86)
------------------------
+### Desktops (AMD, Intel, x86)
 
 -   [Gigabyte GA-G41M-ES2L motherboard](../docs/install/ga-g41m-es2l.md)
 -   [Acer G43T-AM3](../docs/install/acer_g43t-am3.md)
@@ -211,17 +207,16 @@ Desktops (AMD, Intel, x86)
 -   [Samsung Chromebook Plus (v1) (gru-kevin)](../docs/install/chromebooks.md)
 
 Downloads
-=========
+----------
 
 You can find this release on the downloads page. At the time of this
 announcement, some of the rsync mirrors may not have it yet, so please check
 another one if your favourite one doesn't have it.
 
 Post-release errata
-===================
-
-S3 on GM45/i945
 ---------------
+
+### S3 on GM45/i945
 
 GM45 ThinkPads still have buggy S3 behaviour, ditto i945. x4x and Pineview
 untested, other Intel platforms work; AMD untested but should work.
@@ -230,8 +225,7 @@ If you're using a GM45 ThinkPad (e.g. X200, T400), don't try putting your
 laptop to sleep. S3 suspend/resume is broken. The intention is that this will
 be fixed before the next stable release.
 
-E6430 VBT config
-----------------
+### E6430 VBT config
 
 See: <https://browse.libreboot.org/lbmk.git/commit/?id=a02c7e316370409e985fa634fec5a59326e3b4fd>
 
@@ -243,7 +237,7 @@ now, you can build Libreboot from `lbmk.git`. See:
 [Building Libreboot from source](../docs/build/)
 
 Errata
-======
+-------
 
 Many modules were removed from GRUB, to save space in flash, but the ones that
 are actually needed were carefully retained.

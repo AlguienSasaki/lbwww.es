@@ -6,7 +6,7 @@ x-toc-enable: true
 TODO: this page could do with an update. More info, about more boards
 
 Introduction
-============
+------------
 
 This document lists product codenames for some hardware.
 Please note that just because a certain device is listed here does NOT mean
@@ -28,7 +28,7 @@ of reliability):
     they will appear silver.
 
 List of models and codenames
-============================
+----------------------------
 
 ### Codenames
 
@@ -101,6 +101,7 @@ under RAM sticks.
     -   Port Replicator II - Seville-lite
 
 ### Miscellaneous
+
 -   [Calistoga](https://ark.intel.com/products/codename/5950/Calistoga):
 945GM/945PM chipset family name
 -   Napa: calistoga based platform
@@ -118,7 +119,8 @@ GM45/GS45/PM45 chipset family name.
     of it fully describes its operation.
 
 See also
-========
+--------
+
 -   Many more Intel codenames can be found at
     [Wikipedia](https://en.wikipedia.org/wiki/List_of_Intel_codenames).
 -   For ThinkPads see [Documentation/thinkpad/codenames.csv @ Coreboot]

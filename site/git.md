@@ -3,8 +3,8 @@ title: Code review
 x-toc-enable: true
 ...
 
-libreboot repositories
-===================
+Libreboot repositories
+----------------------
 
 The `libreboot` project has 3 main Git repositories:
 
@@ -64,8 +64,7 @@ also work for other systems using the same platform/chipset.
 Documentation for `ich9utils` is available here:\
 [ich9utils documentation](docs/install/ich9utils.md)
 
-lbmk (libreboot-make)
----------------------
+### lbmk (libreboot-make)
 
 This is the core build system in libreboot. You could say that `lbmk` *is*
 libreboot! Download the Git repository:
@@ -83,8 +82,7 @@ build `lbmk`, refer to the [build instructions](docs/build/).
 Information about the build system itself, and how it works, is available in
 the [lbmk maintenance guide](docs/maintain/).
 
-lbwww and lbwww-img
--------------------
+### lbwww and lbwww-img
 
 The *entire* libreboot website and documentation is hosted in a Git repository.
 Download it like so:
@@ -149,8 +147,7 @@ repository there. Configure your local HTTP server accordingly.
 
 Again, instructions are available on the Untitled website for this purpose.
 
-Name not required
------------------
+### Name not required
 
 Contributions that you make are publicly recorded, in a Git repository which
 everyone can access. This includes the name and email address of the
@@ -175,8 +172,7 @@ should be fairly anonymous. Use
 and [git show](https://git-scm.com/docs/git-show) to confirm that before you
 push changes to a public Git repository.
 
-Licenses (for contributors)
---------
+### Licenses (for contributors)
 
 Make sure to freely license your work, under a libre license. Libreboot no
 longer sets arbitrary restrictions on what licenses are accepted, and many
@@ -205,8 +201,7 @@ sublicense) that other licenses do not:
 
 <https://opensource.org/licenses/MIT>
 
-Send patches
-------------
+### Send patches
 
 Make an account on <https://codeberg.org/> and navigate (while logged in) to the
 repository that you wish to work on. Click *Fork* and in your account,
@@ -232,8 +227,7 @@ Another way to submit patches is to email Leah Rowe directly:
 However, for transparency of the code review process, it's recommended that you
 use Codeberg, for the time being.
 
-Mailing list
-------------
+### Mailing list
 
 Libreboot has this mailing list:
 <https://lists.sr.ht/~libreboot/libreboot>
@@ -241,7 +235,7 @@ Libreboot has this mailing list:
 The email address is [~libreboot/libreboot@lists.sr.ht](mailto:~libreboot/libreboot@lists.sr.ht)
 
 Mirrors of lbmk.git
-===================
+-------------------
 
 The `lbmk` repository contains Libreboot's automated build system, which
 produces Libreboot releases (including compiled ROM images).
@@ -260,12 +254,11 @@ to view changes in your Web browser):
 * <https://rocketgit.com/libreboot/libreboot>
 
 Mirrors of pico-serprog.git
-=========================
+--------------------------
 
 * <https://notabug.org/libreboot/pico-serprog>
 
-lbwww.git mirror
-----------------
+### lbwww.git mirror
 
 The `lbwww` repository contains Markdown files (pandoc variant), for use
 with the [Untitled Static Site Generator](https://untitled.vimuser.org/); this
@@ -290,7 +283,7 @@ and it is not the intention of the Libreboot project to bog down *mirrors*
 with additional traffic by hosting images.
 
 Notabug repositories
-====================
+--------------------
 
 Commits that go to codeberg are also still pushed to notabug, in addition to
 the other mirrors. Notabug is considered a *mirror* since 8 April 2023, when

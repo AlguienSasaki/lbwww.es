@@ -3,6 +3,13 @@ title: ThinkPad X230/X230T external flashing
 x-toc-enable: true
 ...
 
+Open source BIOS/UEFI firmware
+------------------------------
+
+This document will teach you how to install Libreboot, on your
+Lenovo ThinkPad X230 laptop motherboard. Libreboot replaces proprietary
+BIOS/UEFI firmware.
+
 **Minifree now sells the Libreboot T480, instead of the Libreboot X230. See:
 <https://minifree.org/product/libreboot-t480/>**
 

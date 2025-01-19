@@ -1,16 +1,23 @@
 ---
-title: ThinkPad T440p external flashing
+title: Install Libreboot on Lenovo ThinkPad T440p
 x-toc-enable: true
 ...
 
+Open source BIOS/UEFI firmware
+-------------------------
+
+This document will teach you how to install Libreboot, on your
+Lenovo ThinkPad T440p laptop motherboard. Libreboot replaces proprietary
+BIOS/UEFI firmware.
+
 Buy Libreboot preinstalled
-==========================
+--------------------------
 
 **Minifree now sells the Libreboot T480, instead of the Libreboot T440p. See:
 <https://minifree.org/product/libreboot-t480/>**
 
-Introduction
-============
+Safety advice
+-------------
 
 **NOTE: Libreboot standardises on [flashprog](https://flashprog.org/wiki/Flashprog)
 now, as of 27 January 2024, which is a fork of flashrom.
@@ -31,8 +38,7 @@ root of that project. To do so, run
 
 You can now follow the rest of the instructions.
 
-Preparing a release Rom
------------------------
+### Preparing a release Rom
 
 **Please follow this prior to flashing, or you may brick your machine.**
 
@@ -41,8 +47,7 @@ use this guide to change the built-in MAC address for your Intel Gigabit
 Ethernet device; doing so is advisable, because otherwise you will have a
 default, generic MAC address.
 
-Splitting The Rom
------------------
+### Splitting The Rom
 
 You can use `dd` to easily split your rom into the two separate portions for
 external flashing.
@@ -54,9 +59,7 @@ Flash the top chip with top.rom, and tho bottom chip with bottom.rom.
 Don't worry about knowing which chip is which on a standard setup; flashprog will let you know if the 
 image size is incorrect for the chip you're flashing.
 
-
-Disassembly
------------
+### Disassembly
 
 Start by removing the back cover screws and the main battery.\
 <img tabindex=1 src="https://av.libreboot.org/board/t440p/t440p_back.jpg" /><span class="f"><img src="https://av.libreboot.org/board/t440p/t440p_back_orig.jpg" /></span>
@@ -82,16 +85,17 @@ You should now be able to see the two flash chips near the RAM.\
 
 You can now proceed to [flashing](/docs/install/spi.html) this machine.
 
-`thinkpad_acpi` issues {#thinkpad-acpi}
----------------------------------------
+Errata
+------
+
+### thinkpad\_acpi issues {#thinkpad-acpi}
 
 It has been reported by that `thinkpad_acpi` does not load correctly on the T440p.
 
 If you encounter this, check [this page](../../faq.md#thinkpad-acpi)
 for details as to how to fix this.
 
-Errata
-======
+### target names
 
 NOTE: As of Libreboot releases from May 2024 onward, the Intel MRC is no longer
 included for Haswell; MRC is a blob for raminit, but we now provide libre

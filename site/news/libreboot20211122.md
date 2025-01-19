@@ -3,7 +3,7 @@
 % 22 November 2021
 
 Free your BIOS today!
-=====================
+--------------------
 
 Libreboot is [free](https://writefreesoftware.org/) (as in freedom) boot
 firmware, which initializes the hardware
@@ -27,8 +27,7 @@ This is a *bug fix* release, relative to 20210522. No new boards or major
 features have been added, but several problems that existed in the previous
 release have now been fixed.
 
-Work done since the 20210522 release:
--------------------------------------
+### Work done since the 20210522 release:
 
 * Updated to newer coreboot, SeaBIOS and GRUB versions. The 20210522
   release was using coreboot 4.14, on most boards, from May 2021. This release
@@ -75,7 +74,7 @@ Work done since the 20210522 release:
 * Turkish keyboard layout added on GRUB payloads
 
 New release schedule under consideration
-========================================
+-------------------------------------
 
 The 20210522 release happened to coincide with coreboot 4.14's release, more
 or less.

@@ -5,20 +5,22 @@ x-toc-enable: true
 
 GRUB already has excellent
 documentation, but there are aspects of libreboot that deserve special
-treatment. libreboot provides the option to boot GRUB directly, running on
+treatment. Libreboot provides the option to boot GRUB directly, running on
 bare metal (instead of using BIOS or UEFI services).
+
+Boot Linux from GRUB
+--------------------
 
 [The Linux section](../linux/) also has libreboot-specific guides for
 dealing with Linux distributions when using GRUB directly, in this
 setup. [A similar section exists for BSD operating systems](../bsd/)
 
 GRUB keyboard layouts
-=====================
+---------------------
 
 It is possible to use *any* keymap in GRUB.
 
-Custom keyboard layout
-----------------------
+### Custom keyboard layout
 
 Keymaps are stored in `config/grub/keymap/`
 

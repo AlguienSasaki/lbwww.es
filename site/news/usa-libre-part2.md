@@ -2,8 +2,8 @@
 % Leah Rowe
 % 12 February 2023
 
-Introduction
-============
+Free software in your government?
+--------------------------
 
 This article makes use of the term *libre software*, which has the same meaning
 as more popular terms such as *open source software* 
@@ -38,8 +38,7 @@ With your help, libre software could suddenly find itself in a much stronger
 position, with more users and more developers, encouraged by such positive
 changes.
 
-When, who, what and where?
-------------------
+### When, who, what and where?
 
 Eric Gallager, the representative behind the previous bill, has continued his
 efforts and now has a new hearing for the following bill very soon:
@@ -59,8 +58,7 @@ the bill, and to defend it against any opposition.
 
 The bill's hearing shall take place in room 306-308.
 
-Who to contact
---------------
+### Who to contact
 
 Eric Gallager is the representative in charge of the proposed bill, and you can
 contact him in the following ways:
@@ -76,7 +74,7 @@ to its proprietary nature - use Mastodon or email if you can): \
 <https://twitter.com/cooljeanius>
 
 Why should you support this bill?
-=================================
+------------------------------
 
 If this newly proposed bill is passed, it will provide the libre software
 movement a *foot in the door*, that could lead to greater reform at a later

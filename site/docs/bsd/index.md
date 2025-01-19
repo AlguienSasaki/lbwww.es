@@ -1,26 +1,120 @@
 ---
-title: BSD operating systems
+title: Install a BSD operating system on Libreboot
 x-toc-enable: true
 ...
 
-Guide last updated on 16 November 2022.
+It is assumed here that you are using the *SeaBIOS* payload, *not* the GRUB
+payload; the U-Boot payload may also work, but that is not covered here. The
+SeaBIOS payload must ideally run in text mode (`txtmode` images from Libreboot
+releases).
 
-NOTE: This guide pertains to x86 hosts, and does not cover supported CrOS/ARM
-chromebooks. For ARM targets, you should refer to u-boot documentation.
+This guide pertains to x86 hosts, and does not cover supported CrOS/ARM
+chromebooks. For ARM targets, you should refer to [u-boot
+documentation](../uboot/) - and [U-Boot x86](../uboot/uboot-x86.md) is also
+available. The U-Boot x86 payload is interesting, because it can in fact boot
+OpenBSD via UEFI method (U-Boot provides a lightweight UEFI implementation
+independently of, say, EDK2).
 
-libreboot is capable of booting many BSD systems. This section mostly documents
-the peculiarities of libreboot as it pertains to BSD; you can otherwise refer to
-the official documentation for whatever BSD system you would like to use.
+What is BSD?
+------------
 
-Kernel Mode Setting
-===================
+In our context, we are referring to those descendents of 4.4BSD-Lite starting
+in the early 1990s. On balance, they are about equal to Linux in many ways,
+and some would argue that they are *better* (higher code quality). It can be
+said that the BSDs are the closest we have to *true* open source Unix systems,
+since they ultimately descend from that code lineage. For example, the
+FreeBSD project briefly covers its own history in the Hand Book:
+<https://docs.freebsd.org/en/books/handbook/introduction/#history>
+
+Chief among them are:
+
+* [FreeBSD](https://www.freebsd.org/) (HardenedBSD probably also works)
+* [NetBSD](https://netbsd.org/)
+* [OpenBSD](https://www.openbsd.org/)
+* [DragonFlyBSD](https://www.dragonflybsd.org/) (UNTESTED)
+
+**TODO: DragonFlyBSD is untested, as of January 2025. It ought to be tested.**
+
+Many other BSD systems exist, that are largely derived from these.
+
+Why use BSD (instead of Linux)?
+-------------------------------
+
+BSD operating systems are in wide use today, powering much of the world's
+most critical infrastructure, and they're quite competent laptop/desktop or
+workstation systems. Some of them have unique features that you can't find
+anywhere else (e.g. FreeBSD jails, OpenBSD's numerous security enhancements,
+NetBSD's rump kernel design and clean code quality).
+
+BSD systems are superfically similar to Linux systems, but they are very
+different under the hood (different kernel designs, different userspace
+implementations, and so on). However, almost all of the Linux userspace programs
+that you enjoy using are probably available in the various BSD *ports trees*,
+or they can be compiled with little to no modification. This is because, despite
+the actual differences under the hood, the BSDs and various Linux distros all
+adhere to the same basic standards (e.g. Single Unix Specification).
+
+If you want to enjoy using a high quality operating system, with many unique
+features, BSD systems can be quite fun to use, and quite challenging. They tend
+to have a much more conservative take on implementations, compared to Linux
+distros, instead opting for technical correctness and minimalism; this is a
+good thing, because lots of Linux distros these days are extremely bloated.
+Using a BSD system feels like Linux did in the year 2005, just with much better
+hardware support, and that's a *good thing*; the reason why is that BSD systems
+simply have fewer users, and a higher concentration of *technical* users, and
+this *shows* when you use it. Linux is *much* more mass market and has to cater
+to all sorts of people, and these days Linux distros have to *Just Work*.
+
+You can look at the documentation of each BSD system and try each one out, to
+see which one is right for you. Be warned, BSD systems *are* typically harder
+to use than Linux systems. Even the most seasoned Linux user will often have a
+hard time with any BSD, if it's their first time using a BSD system. This is
+mitigated by excellent documentation, which is one of the things that the BSDs
+excel at, but you are expected to *read* the documentation; many Linux distros
+try to hold your hand ("it Just Works"), but the BSDs generally don't do that.
+
+If you're already a power user on Linux, and comfortable with the more hands-on
+distros like Arch Linux or Gentoo Linux, you'll have a much easier time
+learning a BSD. FreeBSD for example comes completely barebones by default, and
+you add packages to it, configuring it to your liking, much like Arch Linux; if
+you're wily enough, you might also use the CURRENT tree and install all packages
+by building them from *ports* (akin to how Gentoo Linux is used).
+
+BSD systems also have much more relaxed licensing than Linux systems, by and
+large; most of the software in the base system, on any BSD project, will use
+a permissive license instead of copyleft. They can be regarded as Free Software,
+but it's a very different ideology than, say, GNU. Some might argue that this
+is better, because licensing conflicts are common among copyleft licenses, even
+among different versions of the GPL. A BSD-style license permits *anyone* to
+use the code, *without* requiring modified versions to ship source code, so it
+can be said that the BSD license model contains [far fewer
+restrictions](https://docs.freebsd.org/en/articles/bsdl-gpl/). One might say
+that the BSD systems are *more free* than GNU/Linux systems.
+
+Basically, your choice to use BSD will likely be based on a combination of
+technical and/or ideological preferences. But don't say we didn't warn you.
+BSD is hard. On the flip side of that coin, BSD is *easy*, because it forces
+you to really learn how your system works; when you become proficient with
+BSD, you'll learn everything else much easier, and you may find yourself doing
+things more efficiently *in Linux* as well!
+
+That's enough BSD fanaticism. Please read the following sections, *before*
+you embark on your BSD Libreboot journey:
+
+Common issues with BSD+Libreboot
+--------------------------------
+
+This page will not tell you how to install BSD systems; that is best left to
+the documentation for your BSD system. Instead, these next sections cover only
+the idiosyncrasies of Libreboot as they relate to BSD:
+
+### Kernel Mode Setting
 
 Your BSD system *must* support Kernel Mode Setting for your graphics
 device (most of them do nowadays). The reasons will become apparent, as
 you read this article.
 
-Boot BSD, using SeaBIOS
-=======================
+### Boot BSD, using SeaBIOS
 
 On x86 platforms, Libreboot provides the choice of GRUB and/or
 SeaBIOS payload. GRUB can technically boot BSD kernels, but the code is
@@ -37,8 +131,18 @@ If you don't plan to set up Xorg/Wayland, then that's all you really need to
 do. For example, you might want to run a headless server, in which case you
 probably don't mind running in text mode all the time.
 
-OpenBSD and corebootfb
-----------------------
+#### GRUB payload
+
+GRUB *can* directly boot many BSD systems, but this is ill advisable. You are
+advised to use either SeaBIOS, and boot a BIOS-based BSD bootloader, or use
+Libreboot's [U-Boot payload](../uboot/) and use it to boot via UEFI; U-Boot's
+bootflow menu can achieve this.
+
+The U-Boot coreboot payload is still experimental, on ARM64 *and* x86/x86\_64,
+so you should probably use SeaBIOS for now (on x86). U-Boot is the *only*
+coreboot payload for Libreboot on ARM64 motherboards.
+
+### OpenBSD and corebootfb
 
 It's still recommended to use SeaBIOS in text mode, but OpenBSD specifically
 can work with SeaBIOS booting in a coreboot framebuffer, with SeaVGABIOS. In
@@ -46,19 +150,22 @@ Libreboot ROM images, this would be SeaBIOS images with `corebootfb` in the
 file name.
 
 Make sure to select MBR-style partitioning on the installer, and it will
-Just Work.
+Just Work. **GPT partitioning won't work in OpenBSD, if you use the SeaBIOS
+payload, but will work if you boot/install it via UEFI boot method with
+Libreboot's [U-Boot UEFI payload](../uboot/uboot-x86.md) instead.**
 
 If you're using the GRUB payload but SeaBIOS is available in the boot menu,
 you can just select SeaBIOS at said menu, and OpenBSD will work fine.
 
-FreeBSD and corebootfb
-----------------------
+### FreeBSD and corebootfb
 
 Assumed broken, so please ensure that you boot with SeaBIOS payload in text
 mode (lbmk ROM images with `txtmode` in the file name, not `corebootfb`).
 
-Warnings for X11 users
-----------------------
+Please boot in *text mode*. FreeBSD can be configured to use KMS, if you need
+Xorg or wayland.
+
+### Warnings for X11 users
 
 One important peculiarity of most libreboot systems is: VGA mode
 support exists, if booting with corebootfb (coreboot's own framebuffer) and
@@ -113,43 +220,7 @@ You should not rely on the above instruction (for FreeBSD), because the exact
 step might change, and it does not go into full detail either. Refer to the
 documentation provided by your system, to know how KMS is configured.
 
-ALWAYS READ THE MANUAL
-----------------------
-
-All of the BSDs have *excellent* documentation; it's one of the defining
-characteristics, versus typical Linux distros.
-
-Aside from this quirk in coreboot, regarding *BIOS* video modes, the BSDs
-otherwise work in exactly the same way as you would expect, and you can
-follow along to their official documentation without much fuss.
-
-No specific or detailed guides will be provided here, because SeaBIOS is
-fairly self-explanatory; you can otherwise refer to the SeaBIOS
-documentation.
-
-If you're flashing a ROM for a machine where `seabios_withgrub`
-and `seabios_grubfirst` ROMs are available, choose `seabios_withgrub`.
-
-DO NOT USE ROM IMAGES WITH `seabios_grubfirst` IN THE FILE NAME! These were
-present in older Libreboot releases, and supported in previous revisions
-of the build system, but they did not work for the intended purpose. More
-info is written on the [Libreboot installation guide](../install/). ROM
-images with `seabios_grubfirst` in the filename will NOT be included in
-future Libreboot releases.
-
-Dubious mention: Tianocore
---------------------------
-
-Tianocore is extremely bloated, and unauditable, so it is not included
-in Libreboot firmware, but it is the reference UEFI implementation by
-Intel and contributors. It can boot most BSD systems very well.
-
-More robust ways to provide UEFI services in Libreboot are to be investigated.
-Tianocore integration will not be provided officially, in any current or future
-releases of Libreboot.
-
-Desktop users
--------------
+### Desktop users
 
 NOTE: This section may not be full accurate; for example, the hardware page
 about HP Elite 8200 SFF talks about use of graphics cards on both corebootfb
@@ -173,3 +244,36 @@ extremely expensive computationally speaking. This is why modern kernels
 You can learn more about INT10H text/VGA modes here:
 
 <https://en.wikipedia.org/wiki/INT_10H>
+
+If you use the *U-Boot* payload, INT10H is irrelevant because you will rely on
+an EFI framebuffer instead, which U-Boot does provide (piggybacking off of the
+coreboot framebuffer where one is available).
+
+Regardless of whether you have an EFI framebuffer or INT10H VGA interrupts,
+the various BSD systems all support KMS so you should be able to use Xorg or
+Wayland just fine.
+
+ALWAYS READ THE MANUAL
+----------------------
+
+All of the BSDs have *excellent* documentation; it's one of the defining
+characteristics, versus typical Linux distros. This is precisely *because*
+the BSDs develop everything in-house, so the various components of a BSD
+system are much more heavily integrated, and this means that they can provide
+much more reliable documentation; reliable from both the user's perspective
+and from the perspective of technical correctness.
+
+Aside from these and other quirks when installing BSD *on Libreboot*, the BSDs
+otherwise work in exactly the same way as you would expect, and you can
+follow along to their official documentation without much fuss.
+
+No specific or detailed guides will be provided here, because SeaBIOS is
+fairly self-explanatory; you can otherwise refer to the SeaBIOS
+documentation.
+
+DO NOT USE ROM IMAGES WITH `seabios_grubfirst` IN THE FILE NAME! These were
+present in older Libreboot releases, and supported in previous revisions
+of the build system, but they did not work for the intended purpose. More
+info is written on the [Libreboot installation guide](../install/). ROM
+images with `seabios_grubfirst` in the filename will NOT be included in
+future Libreboot releases.

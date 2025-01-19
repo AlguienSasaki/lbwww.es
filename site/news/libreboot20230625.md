@@ -7,8 +7,8 @@ YOU MAY BRICK YOUR MACHINE!! - Please click the link and follow the instructions
 there, before flashing. For posterity,
 [here is the link again](../docs/install/ivy_has_common.md).**
 
-Introduction
-============
+Free software BIOS/UEFI
+------------------------
 
 Libreboot provides boot firmware for supported x86/ARM machines, starting a
 bootloader that then loads your operating system. It replaces proprietary
@@ -36,8 +36,7 @@ firmware, but not Libreboot! Booting Linux/BSD is also [well](../docs/linux/)
 a new *stable* release of Libreboot. The previous stable release was
 Libreboot 20220710, released on 10 July 2022.
 
-A note about the changelog
---------------------------
+### A note about the changelog
 
 The changes listed here are relative to Libreboot *20230423*, *not* 20220710.
 Therefore, to get a full list of changes since 20220710 (the previous stable
@@ -47,17 +46,15 @@ the [20221214](libreboot20221214.md), [20230319](libreboot20230319.md),
 announcements before reading the *20230625* change log, in order to get
 a complete picture.
 
-Build from source
------------------
+### Build from source
 
 *This* release was build-tested on Debian *Sid*, as of 25 June 2023. Your
 mileage may vary, with other distros. Refer to Libreboot documentation.
 
 Work done since last release
-============================
+----------------------------
 
-New mainboards now supported:
------------------------------
+### New mainboards now supported:
 
 These boards were added to Libreboot:
 
@@ -73,8 +70,7 @@ thus hardware support is not greatly improved since the last release. Moving
 forward, the next Libreboot release will be a *testing* release and *will*
 focus on hardware support in addition to payloads (linux boot, UEFI etc).
 
-No-microcode ROMs available
----------------------------
+### No-microcode ROMs available
 
 Since Libreboot 20221214 and up, CPU microcode is
 included by default on all applicable x86 mainboards. However,
@@ -89,8 +85,7 @@ and [Freedom Status](../freedom-status.md).
 
 An earlier article was written about this, [here](microcode.md)
 
-Massive build system audit
---------------------------
+### Massive build system audit
 
 The full change log below will list all build system changes,
 but may not provide the overall picture, so to be clear: the
@@ -101,8 +96,7 @@ based on the OpenBSD coding style) and many bugs are fixed.
 
 An earlier article was written about this, [here](audit.md)
 
-Full list of build system changes
---------------------
+### Full list of build system changes
 
 Certain build system changes will not be listed here in detail, if they
 pertain to general code style cleanup/re-factoring, as already alluded to
@@ -264,13 +258,12 @@ Newest changes first, oldest changes last:
   the 20230423 release)
 
 Hardware supported in this release
-==================================
+----------------------------------
 
 All of the following are believed to *boot*, but if you have any issues,
 please contact the Libreboot project. They are:
 
-Desktops (AMD, Intel, x86)
------------------------
+### Desktops (AMD, Intel, x86)
 
 -   [Gigabyte GA-G41M-ES2L motherboard](../docs/install/ga-g41m-es2l.md)
 -   [Acer G43T-AM3](../docs/install/acer_g43t-am3.md)
@@ -313,14 +306,14 @@ Desktops (AMD, Intel, x86)
 -   [Samsung Chromebook Plus (v1) (gru-kevin)](../docs/install/chromebooks.md)
 
 Downloads
-=========
+---------
 
 You can find this release on the downloads page. At the time of this
 announcement, some of the rsync mirrors may not have it yet, so please check
 another one if your favourite one doesn't have it.
 
 Post-release errata
-===================
+-------------------
 
 When building ROM images from the release archives, the following error
 is observed in some cases, depending on distro:

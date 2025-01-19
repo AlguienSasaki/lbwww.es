@@ -7,16 +7,15 @@
 HP EliteBook 8470p](../docs/install/hp8470p.md) and also
 [Dell Precision T1650](../docs/install/t1650.md).**
 
-Introduction
-============
+Free your BIOS today!
+-------------------
 
 I've ported and tested two new boards, and merged them into the `lbmk` master
 branch. They will be available in the next regular release:
 
 <img tabindex=1 class="r" style="max-width:25%" src="https://av.libreboot.org/hp8470p/hp8470p.jpg" /><span class="f"><img src="https://av.libreboot.org/hp8470p/hp8470p.jpg" /></span>
 
-HP EliteBook 8470p
-------------------
+### HP EliteBook 8470p
 
 HP EliteBook 8470p is another IvyBridge platform, similar to other EliteBooks
 that Libreboot already supports, such as the HP EliteBook 9470m that Riku
@@ -35,8 +34,7 @@ Another quirk: SOIC16 flash IC, but it's 16MB in size (Winbond W25Q128).
 There is currently no documentation on the coreboot website, but installation
 instructions will be written for the Libreboot website.
 
-Dell Precision T1650
---------------------
+### Dell Precision T1650
 
 This machine is truly unique, among most desktop boards in coreboot. It's yet
 another IvyBridge desktop, same platform as [HP 8300
@@ -83,14 +81,13 @@ would be a boon. Stick 32GB of ECC RAM with RAID10 HDDs on FreeBSD and run
 OpenBSD virtual servers in bhyve!
 
 Other works currently in progress
-=================================
+-------------------------------
 
 A similar report was made in the [HP EliteBook 2170p news
 page](hp2170p.md). Some of that is now done, so the list is updated (and more
 work is also being done):
 
-More boards coming soon
------------------------
+### More boards coming soon
 
 I'm *still* on a spree, adding more boards to Libreboot, especially HP
 EliteBooks. These boards are of interest, to the Libreboot project, at this

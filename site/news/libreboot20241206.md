@@ -19,8 +19,8 @@ YOU MAY BRICK YOUR MACHINE!! - Please click the link and follow the instructions
 there, before flashing. For posterity,
 [here is the link again](../docs/install/ivy_has_common.md).**
 
-Introduction
-============
+Open source BIOS/UEFI firmware
+----------------------------
 
 <img tabindex=1 class="r" src="https://av.libreboot.org/t480/t480.jpg" /><span class="f"><img src="https://av.libreboot.org/t480/t480.jpg" /></span>
 
@@ -39,8 +39,7 @@ and then a payload such as [SeaBIOS](https://www.seabios.org/SeaBIOS)
 or [GRUB](https://www.gnu.org/software/grub/) to boot your operating
 system; on ARM(chromebooks), we provide *U-Boot* (as a coreboot payload).
 
-U-Boot UEFI payload on x86\_64
-------------------------------
+### U-Boot UEFI payload on x86\_64
 
 For Libreboot 20241206, today's release, U-Boot is *also* provided as an
 optional coreboot payload on x86 machines. This provides a sensible UEFI
@@ -60,10 +59,9 @@ on fixing bugs and in general polishing, though several interesting features
 have been added, in addition to numerous new mainboards.
 
 Summarised list of changes
-==========================
+-------------------------
 
-Board support
--------------
+### Board support
 
 The following boards have been added since the Libreboot 20241008 release:
 
@@ -78,8 +76,7 @@ The following boards have been added since the Libreboot 20241008 release:
 * **[Dell OptiPlex 780 MT](../docs/install/dell780.md)** support, implemented by
   Nicholas Chin with testing and hardware logs provided by Lorenzo Aloe.
 
-Revision updates
-================
+### Revision updates
 
 In descending order from latest changes to earliest changes:
 
@@ -103,8 +100,7 @@ In descending order from latest changes to earliest changes:
 * Bumped flashrom to revision d128a0a, which includes a fix for Macronix flash
   chips on ThinkPad W500 whereby it had previously used incorrect erase commands.
 
-Feature changes
----------------
+### Feature changes
 
 In descending order from latest changes to earliest changes:
 
@@ -139,8 +135,7 @@ In descending order from latest changes to earliest changes:
   on mobile graphics cards. This was used when implementing MXM support on
   the HP EliteBook 8560w.
 
-Configuration changes
----------------------
+### Configuration changes
 
 In descending order from the latest changes to the earliest changes:
 
@@ -173,8 +168,7 @@ In descending order from the latest changes to the earliest changes:
   machines can make use of 8th-gen Coffee Lake CPUs, which offer greater
   performance and power efficiency.
 
-Bug fixes
----------
+### Bug fixes
 
 The following bug fixes have been merged (in descending order from the latest
 changes to the earliest changes):
@@ -236,8 +230,7 @@ changes to the earliest changes):
   of it is much more robust**)
 * Added missing `python3-devel` to Fedora 40 build dependencies.
 
-General code cleanup
---------------------
+### General code cleanup
 
 In descending order from the latest changes to the earliest changes:
 
@@ -250,7 +243,7 @@ In descending order from the latest changes to the earliest changes:
   because lbmk now handles this outside of coreboot.
 
 Git log
-=======
+-------
 
 This log is relative to Libreboot 20241008:
 

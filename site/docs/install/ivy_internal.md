@@ -3,13 +3,23 @@ title: Ivybridge internal flashing
 x-toc-enable: true
 ...
 
+Open source BIOS/UEFI firmware
+------------------------------
+
+This document will teach you how to install Libreboot, on your
+Lenovo ThinkPad X230 laptop motherboard. Libreboot replaces proprietary
+BIOS/UEFI firmware.
+
+This document demonstrates an *internal flashing* method, by exploiting a
+little-known security vulnerability in Lenovo's original UEFI firmware.
+
 **[PLEASE READ THESE INSTRUCTIONS BEFORE INSTALLING](ivy_has_common.md), OR
 YOU MAY BRICK YOUR MACHINE!! - Please click the link and follow the instructions
 there, before flashing. For posterity,
 [here is the link again](ivy_has_common.md).**
 
 Ch1p's guide
-============
+------------
 
 This page tells you how to flash an ivybridge ThinkPad with Libreboot,
 internally, when it has the Lenovo firmware on it. It was written independently
@@ -36,9 +46,6 @@ coreboot patch:
 Anyway, follow ch1p's guide or this one. Ch1p was on Libreboot IRC and linked
 the above guide, so it has been added here to honour him.
 
-Introduction
-============
-
 External flashing still recommended
 -----------------------------------
 
@@ -58,7 +65,7 @@ or just a dead ThinkPad. Proceed at your own risk!
 If you prefer external flashing, see: [external flashing](x230_external.md)
 
 Internal flashing from vendor firmware (ThinkPads only)
-----------------------------------------
+-------------------------------------------------------
 
 IVYBRIDGE ONLY:
 

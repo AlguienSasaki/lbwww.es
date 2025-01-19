@@ -5,7 +5,9 @@
 Libreboot releases will now be on a much stricter timeline than in the past.
 
 Testing/Stable release cycle
-============================
+----------------------------
+
+### April/June and October/December
 
 As alluded to in the Libreboot 20241206 release, a new release schedule is
 planned for 2025 onward:
@@ -31,8 +33,7 @@ be: Libreboot 25.04 "Corny Calamity".
 
 This .4, .6, .10 and .12 scheme will continue in 2026 and beyond.
 
-Rules for revisions:
---------------------
+### Rules for revisions
 
 Testing releases come out two months before stable; any number of non-breaking
 or otherwise relatively safe changes can be made, and testing releases will
@@ -46,8 +47,7 @@ releases post-release will be critical bug fixes; in a few cases, special
 additions will be made when desirable and safe (e.g. Pico 2 support was added
 to Libreboot 20241206 post-release, in the revision 8 update from 2025-01-06).
 
-Why?
-----
+### Why?
 
 In the past, a problem Libreboot has had was that we'd do testing releases,
 but not do revisions on them; then by the time a stable release came around,
@@ -64,10 +64,9 @@ This decision is part of a much larger initiative to boost Libreboot's
 popularity and therefore use within the free software world.
 
 Release version numbers
-=======================
+-----------------------
 
-Libreboot YY.MM releases
-------------------------
+### Libreboot YY.MM releases
 
 Libreboot YYYYMMDD was the previous version number scheme.
 
@@ -85,16 +84,14 @@ With this new scheme, and given Libreboot's expansion plans, it won't matter
 even if a release build takes 2 days to complete, because the day of the month
 will no longer be included in a given release number.
 
-Y2.1k compliance
-----------------
+### Y2.1k compliance
 
 If Libreboot still exists in the year 2100, then those releases will be
 e.g. Libreboot 100.04 for April 2100 release.
 
 It could happen. Even if I'm no longer around by then, Libreboot might still be.
 
-Release codenames
------------------
+### Release codenames
 
 The release codename for Libreboot 25.04 will be "Corny Calamity", which is a
 nod of respect to an equally gutsy release codename that *Fedora* used in
@@ -104,7 +101,7 @@ The rules for Libreboot release codenames are: two words, each starting with
 the same letter.
 
 Credit
-======
+------
 
 [Britney Lozza](https://janethemotherfucker.github.io/) was the one who suggested
 to me that I use this new release number and codename scheme, and I previously

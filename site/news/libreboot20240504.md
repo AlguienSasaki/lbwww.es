@@ -7,7 +7,7 @@ reference, but there were problems with this release. Please instead use
 the [Libreboot 20240612 release](libreboot20240612.md).**
 
 Introduction
-============
+-------------
 
 Libreboot is a free/open source BIOS/UEFI replacement on x86 and ARM, providing
 boot firmware that initialises the hardware in your computer, to then load an
@@ -55,7 +55,7 @@ The main purpose of this release has been to fix bugs. A lot more work will now
 go into Libreboot for another release in the summer of 2024.
 
 Hardware supported in this release
-==================================
+----------------------------------
 
 This release supports the following hardware:
 
@@ -130,21 +130,21 @@ This release supports the following hardware:
 -   [Samsung Chromebook Plus (v1) (gru-kevin)](../docs/install/chromebooks.md)
 
 New mainboard added
-====================
+-------------------
 
 This release adds support for the following mainboard:
 
 * Dell Latitude E5420, courtesy of Nicholas Chin
 
 Dell Latitude laptops: S3 resume fixed
-================================
+----------------------------------
 
 Nicholas Chin sent in a patch just before the release, fixing suspend/resume
 on sandy bridge and ivy bridge Dell laptops. According to him, resume on open
 is still broken and therefore disabled, but pressing the power button works.
 
 Work done since Libreboot 20230625
-============================
+-------------------------------
 
 To know the full set of differences between Libreboot 20230625
 and Libreboot 20240405, first you must read the changelogs of those interim
@@ -275,7 +275,7 @@ are highlighted in bold:
 * Enable the serial console by default, on AMD boards (kgpe-d16, kcma-d8)
 
 Exact git log (versus Libreboot 20240225)
-======================================
+------------------------------------
 
 The following is an exact log of commits in the Git repository, on the master
 branch, relative to the previous January 2024 release. There are 99 changes:
@@ -409,7 +409,7 @@ You may find archives of this release, by looking at the Libreboot download
 page. Support is available on IRC or Reddit if you need help.
 
 Disabled boards
-===============
+---------------
 
 Libreboot's build system can be configured to exclude certain boards in
 release archives, while still permitting them to be re-built.
@@ -431,7 +431,7 @@ is believed to be stable and has been tested repeatedly)
 *All other boards have ROM images in this release.*
 
 eDP mods (ThinkPad X230/X220)
-==========================
+--------------------------
 
 The `x230edp_12mb` and `x220edp_8mb` targets were removed, but
 the `x230_12mb` and `x220_8mb` targets were retained. Only the original
@@ -457,7 +457,7 @@ to the Libreboot project.
 That is all.
 
 Errata
-======
+------
 
 See: <https://codeberg.org/libreboot/lbmk/issues/216>
 

@@ -7,8 +7,8 @@ YOU MAY BRICK YOUR MACHINE!! - Please click the link and follow the instructions
 there, before flashing. For posterity,
 [here is the link again](../docs/install/ivy_has_common.md).**
 
-Introduction
-============
+Open source BIOS/UEFI firmware
+-----------------------------
 
 Libreboot is a free/open source BIOS/UEFI replacement on x86 and ARM, providing
 boot firmware that initialises the hardware in your computer, to then load an
@@ -40,7 +40,7 @@ this release, in addition to a few minor fixes made since that date. The audit
 was completed on 9 June 2024 and today is 12 June 2024. The release came unstuck.
 
 Changes since Audit 5
-=====================
+--------------------
 
 Audit 5 was only recent, and forms most of the changes in this release, so look
 further down for a list of those changes or read [the audit 5 page](audit5.md).
@@ -74,13 +74,12 @@ precisely to avoid any potential issues if a board doesn't need it. The NVMe
 patch has been extensively tested, on all of the boards that actually have it.
 
 Audit 5 changes
-===============
+---------------
 
 Since the recent audit 5 changes are included in this release, the changelog
 of that audit has simply been copied for sake of efficiency. Firstly:
 
-Modest code size reduction
---------------------------
+### Modest code size reduction
 
 There are 1482 lines of shell script in the build system, versus 1680 in the
 Libreboot 20240504 release. Libreboot's build system is written purely in
@@ -90,12 +89,11 @@ This is a difference of 198 lines, or a 12% reduction. Despite the reduction,
 numerous features have been added and a large number of bugs were fixed.
 
 Summarised list of changes
-==========================
+--------------------------
 
 Changes are in order per category, from newest to oldest:
 
-Feature changes
----------------
+### Feature changes
 
 * **Download crossgcc tarballs as dependencies, when cloning coreboot.** We
   previously relied on the coreboot build system, which automatically fetches
@@ -230,8 +228,7 @@ Feature changes
 * Removed all status checks from script/roms (formerly script/build/roms),
   because it's better to document this instead, and rely on testing regardless.
 
-Bug fixes
----------
+### Bug fixes
 
 Some of these changes fix actual issues that were found in testing, while
 others were fixed *before* being triggered/reported and are thus *preventative
@@ -466,8 +463,7 @@ The changes are, from newest to earliest:
 * Main build script: exit (with error status) if not running directly from
   the root of the lbmk work directory.
 
-General code cleanup
---------------------
+### General code cleanup
 
 In addition to *general* very sweeping code cleanup, condensing code lines
 where possible and so on:
@@ -593,13 +589,12 @@ where possible and so on:
 * script/build/roms: split up `main()` into multiple smaller functions
 
 Revision updates
-================
+----------------
 
 Some revisions were updated as part of standard routine, but happened to be
 done during this audit. Those updates are as follows:
 
-SeaBIOS
--------
+### SeaBIOS
 
 Bump SeaBIOS to revision `e5f2e4c69643bc3cd385306a9e5d29e11578148c`, which has
 these changes relative to the old one:
@@ -629,8 +624,7 @@ these changes relative to the old one:
 * a6ed6b70 limit address space used for pci devices.
 ```
 
-Flashprog
----------
+### Flashprog
 
 Updated to revision 5b4fdd1 from 2 May 2024, rebasing the MX workaround patch.
 
@@ -701,7 +695,7 @@ Flashrom, lead by Nico Huber after a dispute with the new leadership of
 Flashrom, and it was felt that Flashprog is a better choice for Libreboot.
 
 Git log
-=======
+------
 
 This entire set of changelogs is based on the precise Git history in lbmk,
 relative to Libreboot 20240504 which is from where the audit began.
@@ -946,10 +940,9 @@ The latest changes are listed first, going all the way down to earlier changes:
 This is 211 changes, since Libreboot 20240504.
 
 Errata
-======
+------
 
-Revision 1
-----------
+### Revision 1
 
 A bug was found, where booting GRUB (payload) on Haswell ThinkPads with a USB
 device plugged in would sometimes cause GRUB to hang. This was fixed with the
@@ -980,8 +973,7 @@ auto-load when GRUB starts.
 A full investigation is still required, but this workaround fixes the issue as
 far as the user is concerned.
 
-Revision 2
-----------
+### Revision 2
 
 NOTE: Source code archive not available for rev2, because another revision
 was made that also includes the rev2 change; a 'rev3` source archive is
@@ -993,8 +985,7 @@ which caused issues when flashing. The
 file `libreboot-20240612rev2_hp8200sff_4mb.tar.xz` is available,
 replacing `libreboot-20240612_hp8200sff_4mb.tar.xz`, on Libreboot rsync.
 
-Revision 3
-----------
+### Revision 3
 
 Removed `util/autoport/`, becaues it's not required in release archives.
 

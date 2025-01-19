@@ -1,7 +1,18 @@
 ---
-title: Chromebook flashing instructions
+title: Install Libreboot on a Chromebook
 x-toc-enable: true
 ...
+
+Open source BIOS/UEFI firmware
+------------------------------
+
+This document will teach you how to install Libreboot, on various ARM64-based
+Chromebook laptops. Libreboot replaces proprietary BIOS/UEFI firmware, though
+it should be noted that Google already ships coreboot and their own payload
+called Depthcharge, which is all free software; the difference with Libreboot
+is that it replaces Depthcharge with *U-Boot* (as a coreboot payload), which
+provides a lightweight UEFI boot implementation that can boot regular Linux and
+BSD systems more easily than Depthcharge.
 
 NOTE: daisy, peach and veyron boards were temporarily removed from
 lbmk. They should be re-added to Libreboot at a later date. The reasons
@@ -13,7 +24,7 @@ custom firmware on ChromeOS devices. This guide usually refers to all of
 them as "Chromebook"s since it's the most common form factor.
 
 Flashrom
-========
+--------
 
 A special fork of flashrom, maintained by Google, is required for flashing
 these Chromebook devices. See:
@@ -23,7 +34,7 @@ these Chromebook devices. See:
 You must then compile this from source, and run it.
 
 Enable ChromeOS "Developer Mode"
-================================
+--------------------------------
 
 Chromebooks are locked-down by default to only run ChromeOS. Most things
 you will want to do on these require you unlock it by enabling their
@@ -44,7 +55,7 @@ where you can run programs. Most of the root file system is read-only,
 except for `/usr/local` and any mounted drives under `/media/removable`.
 
 Identify your device
-====================
+--------------------
 
 It's more common to refer to ChromeOS boards by their codenames, and
 many compatible devices can share a single codename. Libreboot ROM
@@ -56,7 +67,7 @@ device's. There are a number of ways to find it, some are:
 - Run `crossystem hwid` or `crossystem fwid` in a terminal
 
 Back up stock firmware
-======================
+----------------------
 
 The stock firmware on your device comes with some irreplaceable data
 that is unique to your device. This can include the serial number and
@@ -78,7 +89,7 @@ If you can already boot a conventional Linux distro on your Chromebook,
 you may be able to use `flashrom -p linux_mtd` on that system instead.
 
 Check external flashability
-===========================
+---------------------------
 
 If a ROM image you flash is broken, you may need to restore the stock
 firmware to fix the board to get internal flashing working. Refer to the
@@ -93,7 +104,7 @@ mechanism that lets you flash externally using a special USB debugging
 cable. However, most boards that Libreboot supports do not have this.
 
 Disable write protection
-========================
+------------------------
 
 Chromebooks have the SPI flash chip partially write-protected by
 default, but thankfully this protection can be disabled by the device
@@ -128,7 +139,7 @@ compile and use that flashrom fork to disable write-protection. There is
 no `lbmk` support yet for automatically building it.
 
 Prepare the ROM image
-=====================
+---------------------
 
 Libreboot ROM image layouts are currently incompatible with the regions
 that should be carried over from the stock firmware. However, the
@@ -143,7 +154,7 @@ keep backups of the original firmware.
 TODO: Instructions to preserve vital data when FMAPs are compatible.
 
 Flash the ROM image
-===================
+-------------------
 
 WARNING: Although none are supported yet, make sure not to flash ROM
 images on x86 Chromebooks without injecting non-redistributable code
@@ -163,7 +174,7 @@ If you can already boot a conventional Linux distro on your Chromebook,
 you may be able to use `flashrom -p linux_mtd` on that system instead.
 
 Install an operating system (experimental research)
-===========================
+------------------------------------------------
 
 In general, ARM-compatible distros targeting U-boot can be used.  There are
 three general methods for installing that vary depending on the distribution:
@@ -173,25 +184,22 @@ three general methods for installing that vary depending on the distribution:
 3. extlinux.conf - a newer flat, bootloader-spec text file that typically lives
    in /boot/extlinux/extlinux.conf
 
-Successful installations:
--------------------------
+### Successful installations:
 
 * [ArchLinuxARM on RK3399-based Chromebooks](../uboot/uboot-archlinux.md).
 * [Debian Bookworm on Samsung Chromebook Plus XE513C24](../uboot/uboot-debian-bookworm.md).
 * [Debian on Asus Chromebook C201](https://wiki.debian.org/InstallingDebianOn/Asus/C201).
 
-Unsuccessful installations:
----------------------------
+### Unsuccessful installations:
 
 * [OpenBSD on Samsung Chromebook Plus XE513C24](../uboot/uboot-openbsd.md).
 
-Other promising ARM-compatible distros:
----------------------------------------
+### Other promising ARM-compatible distros:
 
 * [Armbian](https://www.armbian.com/uefi-arm64/).
 
 See also
-========
+--------
 
 * [ChromiumOS Documentation](https://chromium.googlesource.com/chromiumos/docs/+/HEAD/)
 * [ChromiumOS Firmware Test Manual](https://chromium.googlesource.com/chromiumos/docs/+/HEAD/firmware_test_manual.md)

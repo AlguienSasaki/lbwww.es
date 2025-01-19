@@ -7,8 +7,8 @@ Today's Libreboot 20241206 revision, which is the 8th revision in the Libreboot
 to Libreboot 20241206 revision 7 which was released on 18 December 2024.
 The *original* Libreboot 20241206 release came out on 6 December 2024.
 
-What is Libreboot?
-============
+Open source BIOS/UEFI firmware
+------------------------------
 
 <img tabindex=1 class="r" src="https://av.libreboot.org/t480/t480.jpg" /><span class="f"><img src="https://av.libreboot.org/t480/t480.jpg" /></span>
 
@@ -30,8 +30,7 @@ system; on ARM(chromebooks), we provide *U-Boot* (as a coreboot payload).
 We also provide an experimental U-Boot setup on x86, as a coreboot payload for
 providing a minimal UEFI implementation.
 
-Regarding revision 8
-====================
+### Regarding revision 8
 
 Normally, revisions would only be documented on
 the [Libreboot 20241206 revisions page](libreboot20241206.Revisions.md), but
@@ -50,8 +49,7 @@ You will find the tar archives (including sources and ROM images) for this
 release, in the *same* directory under `stable/20241206/` on release mirrors.
 The old archives (from rev6) were replaced entirely; rev7 was never released.
 
-Regarding revision 7
---------------------
+### Regarding revision 7
 
 The only meaningful addition in *revision 7* was the feature whereby T480/T480s
 ThunderBolt firmware can be separately downloaded, for external flashing instead
@@ -63,12 +61,10 @@ YOU MAY BRICK YOUR MACHINE!! - Please click the link and follow the instructions
 there, before flashing. For posterity,
 [here is the link again](../docs/install/ivy_has_common.md).**
 
-
 Summarised list of changes
-==========================
+------------------------
 
-Board support
--------------
+### Board support
 
 RP2530 devices now supported in `pico-serprog`, e.g. Raspberry Pi Pico 2.
 
@@ -79,8 +75,7 @@ The documentation has been updated, to reflect this improvement. Libreboot also
 now imports `picotool` which is now used to compile the UF2 binaries for
 installation, when building them from `pico-sdk`.
 
-Revision updates
-----------------
+### Revision updates
 
 In descending order from latest changes to earliest changes:
 
@@ -95,8 +90,7 @@ In descending order from latest changes to earliest changes:
 * Bumped flashprog to revision eb2c041 (14 Nov 2024). This brings in several
   important fixes from upstream.
 
-Feature changes
----------------
+### Feature changes
 
 In descending order from latest changes to earliest changes:
 
@@ -136,8 +130,7 @@ In descending order from latest changes to earliest changes:
   on any boards, nor will it be, on release images, but the user can do it
   themselves when compiling from source.
 
-Configuration changes
----------------------
+### Configuration changes
 
 In descending order from the latest changes to the earliest changes:
 
@@ -146,8 +139,7 @@ In descending order from the latest changes to the earliest changes:
   can turn it back on and build from source, if they wish, for a roughly 15
   percent performance boost under highly multi-threaded workloads.
 
-Bug fixes
----------
+### Bug fixes
 
 Several fixes were made to prevent build errors on the latest Debian Sid
 and Arch Linux, as of 6 January 2025. Fedora 41 was also tested, fixing
@@ -258,8 +250,7 @@ changes to the earliest changes):
 * `lib.sh`: Safer exit when running `./mk dependencies` (don't rely on the
   exit statuses of chained commands being zero).
 
-General code cleanup
---------------------
+### General code cleanup
 
 In descending order from the latest changes to the earliest changes:
 
@@ -273,7 +264,7 @@ In descending order from the latest changes to the earliest changes:
   currently used by anything.
 
 Git log
-=======
+------
 
 This log is relative to Libreboot 20241206 *revision 7*:
 
@@ -389,14 +380,14 @@ This log is relative to Libreboot 20241206 *revision 7*:
 This is roughly 100 changes.
 
 Older revisions
-=========
+--------------
 
 Please review the
 original [Libreboot 20241206 announcement](libreboot20241206.md), and
 the [Libreboot 20241206 revisions page](libreboot20241206.Revisions.md).
 
 Formalised release schedule
-=================
+---------------
 
 UPDATE: the text of this section was removed on 17 January 2025.
 

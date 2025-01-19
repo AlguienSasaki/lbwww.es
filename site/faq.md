@@ -11,7 +11,7 @@ the [Libreboot 20240225 release](news/libreboot20240225.md#flashprog-now-used-in
 AKA Frequently Questioned Answers
 
 Disable security before flashing
-================================
+--------------------------------
 
 Before internal flashing, you must first disable `/dev/mem` protections. Make
 sure to re-enable them after you're finished.
@@ -19,7 +19,7 @@ sure to re-enable them after you're finished.
 See: [Disabling /dev/mem protection](docs/install/devmem.md)
 
 Buy Libreboot pre-installed
-=============================
+---------------------------
 
 If you want professional installation, Minifree Ltd sells [Libreboot
 pre-installed](https://minifree.org/) on select hardware, and it also provides
@@ -30,20 +30,17 @@ Leah Rowe, the founder and lead developer of Libreboot, also owns and
 operates Minifree Ltd; sales provide funding for the Libreboot project.
 
 Important issues
-================
+----------------
 
-How to compile libreboot from source
-------------------------------------
+### How to compile libreboot from source
 
 Refer to the [lbmk build instructions](docs/build/).
 
-How does the build system work?
--------------------------------
+### How does the build system work?
 
 Refer to the [lbmk maintenance manual](docs/maintain/).
 
-Do not use CH341A!
-------------------
+### Do not use CH341A!
 
 This SPI flasher will damage your chip, and the mainboard that it is connected
 to.
@@ -51,8 +48,7 @@ to.
 Read the notes about CH341A on [docs/install/spi.md](docs/install/spi.md) to
 learn more.
 
-How Can I Help
---------------
+### How Can I Help
 
 You do not need to be a skilled developer in order to help the project
 substantially.
@@ -65,8 +61,7 @@ Testing involves minimal effort and really helps out the project.
 See the [board maintainers documentation](/docs/maintain/testing.md)
 if you are interested in testing roms before they are released.
 
-Uneven backlight on GM45 ThinkPads
-----------------------------------
+### Uneven backlight on GM45 ThinkPads
 
 We don't know how to detect the correct PWM value to use in
 coreboot, so we just use the default one in coreboot which has
@@ -75,8 +70,7 @@ this issue on some CCFL panels, but not LED panels.
 You can work around this in your distribution, by following the notes at
 [docs: backlight control](../docs/misc/#finetune-backlight-control-on-intel-gpus).
 
-GM45 thinkpad ethernet port doesn't autoconnect
------------------------------------------------
+### GM45 thinkpad ethernet port doesn't autoconnect
 
 This was observed on some systems using network-manager. This happens
 both on the original BIOS and in libreboot. It's a quirk in the
@@ -92,8 +86,7 @@ On systemd-based distros, you might try:
 (the service name might be different for you, depending on your
 configuration)
 
-PIKE2008 module hangs KGPE-D16 / KCMA-D8
------------------------------------------
+### PIKE2008 module hangs KGPE-D16 / KCMA-D8
 
 Loading the option ROM from the PIKE2008 module on either ASUS KCMA-D8
 or KGPE-D16 causes the system to hang at boot. It's possible to use
@@ -102,8 +95,7 @@ or to boot (with SeaGRUB and/or SeaBIOS) from regular SATA and then use
 it in Linux. The Linux kernel is capable of using the PIKE2008
 module without loading the option ROM.
 
-How to save kernel panic logs on thinkpad laptops?
---------------------------------------------------
+### How to save kernel panic logs on thinkpad laptops?
 
 The easiest method of doing so is by using the kernel's netconsole
 and reproducing the panic. Netconsole requires two machines, the one that is
@@ -168,23 +160,21 @@ the target (`target$`):
 7.  Try to reproduce the kernel panic.
 
 Hardware compatibility
-======================
+----------------------
 
-What systems are compatible with libreboot?
---------------------------------------------
+### What systems are compatible with libreboot?
 
 Any system can easily be added, so *compatibility* merely refers to whatever
 boards are integrated in the `lbmk` build system, which libreboot uses.
 
 The [installation page](docs/install/) lists compatible machines.
 
-Freedom pitfalls with modern Intel hardware {#intel}
-----------------------------------------------------
+### Freedom pitfalls with modern Intel hardware {#intel}
 
 Coreboot is nominally Free Software, but requires certain vendor code on some x86
 targets that it supports, on both Intel and AMD.
 
-### Intel Management Engine (ME) {#intelme}
+#### Intel Management Engine (ME) {#intelme}
 
 NOTE: The information below is slightly out of date. Nowadays, Intel ME does
 not run on an ARC coprocessor, but instead runs on a modified Intel 486 based
@@ -353,7 +343,7 @@ If you're stuck with the ME (non-libreboot system), you might find this
 interesting:
 <https://hardenedlinux.github.io/firmware/2016/11/17/neutralize_ME_firmware_on_sandybridge_and_ivybridge.html>
 
-### Firmware Support Package (FSP) {#fsp}
+#### Firmware Support Package (FSP) {#fsp}
 
 On all recent Intel systems, coreboot support has revolved around
 integrating a vendor file (for each system) called the *FSP* (firmware support
@@ -367,7 +357,7 @@ Since the FSP is responsible for the early hardware initialization, that
 means it also handles SMM (System Management Mode). This is a special
 mode that operates below the operating system level.
 
-### CPU microcode updates {#microcode}
+#### CPU microcode updates {#microcode}
 
 The microcode configures logic gates in your CPU, to implement an instruction
 set architecture. Your CPU will already contain them, but it also supplies a
@@ -393,8 +383,7 @@ The git repository for that project is here:
 Both the video and the repository give some further insight about CPU
 microcode. The way it works on AMD will be very similar to Intel.
 
-Freedom pitfalls to consider on AMD hardware {#amd}
-----------------------------------------------------------------------------
+### Freedom pitfalls to consider on AMD hardware {#amd}
 
 NOTE: Nowadays there's openSIL <https://github.com/openSIL/openSIL> - it's
 AMD's attempt to provide some source code again, that projects like coreboot
@@ -404,7 +393,7 @@ be "neutered" (nothing like `me_cleaner`, or *psp\_cleaner*) exists yet.
 AMD has more or less the same problem as Intel, when it comes to software
 freedom.
 
-### AMD Platform Security Processor (PSP) 
+#### AMD Platform Security Processor (PSP) 
 
 This is basically AMD's own version of the [Intel Management
 Engine](#intelme). It has all of the same basic security and freedom
@@ -447,13 +436,13 @@ anecdotal reports indicate that AMD's boot guard counterpart will be
 used on most OEM hardware, disabled only on so-called "enthusiast"
 CPUs.
 
-### AMD IMC firmware 
+#### AMD IMC firmware 
 
 Read <https://www.coreboot.org/AMD_IMC>.
 
 NOTE: This section is oudated, and it is in need of cleanup.
 
-### AMD SMU firmware 
+#### AMD SMU firmware 
 
 NOTE: This section may be outdated, and it is in need of cleanup.
 
@@ -471,7 +460,7 @@ and based on this work, Damien Zammit (another coreboot hacker)
 firmware, but on the relevant system (ASUS F2A85-M) there were still
 other such files present (Video BIOS, and others).
 
-### AMD AGESA firmware 
+#### AMD AGESA firmware 
 
 NOTE: More needs to be written about this, to reflect the current reality.
 The situation with AMD has evolved in recent years. The information on this FAQ
@@ -483,7 +472,7 @@ project, releasing this as source code under a free license. In 2014,
 they stopped releasing source code and started releasing AGESA as vendor
 blobs instead. This makes AGESA now equivalent to [Intel FSP](#fsp).
 
-### AMD CPU microcode updates 
+#### AMD CPU microcode updates 
 
 Read the Intel section 
 practically the same, though it was found with much later hardware in
@@ -493,8 +482,7 @@ the updates are needed on all AMD boards (depends on CPU).
 The libreboot project does not consider microcode updates a problem, and it
 enables them by default on all supported hardware.
 
-Hi, I have &lt;insert random system here&gt;, is it supported?
---------------------------------------------------------------------------------------------------------
+### Hi, I have &lt;insert random system here&gt;, is it supported?
 
 If it's supported by coreboot, you can add it immediately.
 Read the [porting guide](/docs/maintain/porting.html) for how to port for a new board.
@@ -505,15 +493,13 @@ If coreboot lacks support for your hardware, you must add support for it.
 Please consult the coreboot project for guidance.
 
 General questions
-=================
+-----------------
 
-How do I install libreboot?
--------------------------------------------------------
+### How do I install libreboot?
 
 See [installation guide](docs/install/)
 
-How do I program an SPI flash chip?
----------------------------------------------------------------------------------
+### How do I program an SPI flash chip?
 
 Refer to:\
 [Externally rewrite 25xx NOR flash via SPI protocol](docs/install/spi.md)
@@ -521,8 +507,7 @@ Refer to:\
 It's possible to use a 16-pin SOIC test clip on an 8-pin SOIC chip, if you
 align the pins properly. The connection is generally more sturdy.
 
-How do I write-protect the flash chip?
-----------------------------------------------------------------------------
+### How do I write-protect the flash chip?
 
 By default, there is no write-protection on a libreboot system. This is
 for usability reasons, because most people do not have easy access to an
@@ -542,8 +527,7 @@ welcome to submit patches adding these instructions.
 TODO: Document PRx based flash protection on Intel platforms, and investigate
 other methods on AMD systems.
 
-How do I change the BIOS settings?
-------------------------------------------------------------------------
+### How do I change the BIOS settings?
 
 Most libreboot setups actually use the [GRUB
 payload](http://www.coreboot.org/GRUB2). More information about payloads
@@ -577,8 +561,7 @@ To get a full list of available options, do this:
 This will change the default inside that ROM image, and then you can
 re-flash it.
 
-How do I pad a ROM before flashing?
--------------------------------------
+### How do I pad a ROM before flashing?
 
 It is advisable to simply use a larger ROM image. This section was written
 mostly for ASUS KCMA-D8 and KGPE-D16 mainboards, where previously we only
@@ -617,8 +600,7 @@ padded 16MiB image do the following:
 
 With padding removed cbfstool will be able to operate on the image as usual.
 
-Do I need to install a bootloader when installing a distribution?
------------------------------------------------------------------
+### Do I need to install a bootloader when installing a distribution?
 
 Most libreboot setups integrate the GRUB bootloader already, as a
 *[payload](http://www.coreboot.org/Payloads)*. This means that the GRUB
@@ -636,8 +618,7 @@ Nowadays, other payloads are also provided. If you're using the SeaBIOS payload,
 then the normal MBR bootsector is used on your HDD or SSD, like you would
 expect. So the above paragraphs only apply to the GRUB payload.
 
-Do I need to re-flash when I re-install a distribution?
--------------------------------------------------------
+### Do I need to re-flash when I re-install a distribution?
 
 Not anymore. Recent versions of libreboot (using the GRUB payload) will
 automatically switch to a GRUB configuration on the HDD or SSD, if it
@@ -649,14 +630,13 @@ more information, see
 If you're using the SeaBIOS payload, it's even easier. It works just like you
 would expect. SeaBIOS implements a normal x86 BIOS interface.
 
-What does a flash chip look like?
------------------------------------------------------------------
+### What does a flash chip look like?
 
 You can find photos of various chip types on the following page:\
 [External 25xx NOR flashing guide](docs/install/spi.md)
 
 Inability to load `thinkpad_acpi` on post-haswell systems {#thinkpad-acpi}
-==========================================================================
+--------------------------------------------------------------------------
 
 Reported by a user on Debian 11 (on a ThinkPad T440p) and a user
 on Void Linux (ThinkPad T480), Linux (or modprobe) may fail to load
@@ -697,8 +677,7 @@ thinkpad_acpi.force_load=1
 
 to your kernel parameters (in GRUB, or your preferred linux-capable bootloader).
 
-tlp
----
+### tlp
 
 You can install the `tlp` package and start that service. For example, on
 Debian:
@@ -724,7 +703,7 @@ tlp-stat -b
 This will provide information about the battery.
 
 What other firmware exists outside of libreboot?
-==================================================
+------------------------------------------------
 
 You can also read information about these in the [libreboot binary blob
 reduction policy](news/policy.md), where it goes into more detail about some
@@ -940,10 +919,9 @@ Use of ethernet or wifi is recommended, as opposed to mobile networks,
 as these are generally much safer.
 
 Operating Systems
-=================
+-----------------
 
-Can I use Linux?
---------------------------------------------------
+### Can I use Linux?
 
 Absolutely! It is well-tested in libreboot, and highly recommended. See
 [installing Linux](../docs/linux/grub_boot_installer.md) and
@@ -952,15 +930,13 @@ Absolutely! It is well-tested in libreboot, and highly recommended. See
 Any recent distribution should work, as long as it uses KMS (kernel mode
 setting) for the graphics.
 
-Fedora won't boot? (may also be applicable to Redhat/CentOS)
------------------------------------------------------------
+### Fedora won't boot? (may also be applicable to Redhat/CentOS)
 
 On Fedora, by default the grub.cfg tries to boot linux in 16-bit mode. You
 just have to modify Fedora's GRUB configuration.
 Refer to [the Linux page](docs/linux/).
 
-Can I use BSD?
-----------------------------------
+### Can I use BSD?
 
 Absolutely! The libreboot firmware has good support for FreeBSD, NetBSD and
 OpenBSD. Other systems are untested, but should work just fine.
@@ -968,8 +944,7 @@ OpenBSD. Other systems are untested, but should work just fine.
 See:
 [docs/bsd/](docs/bsd/)
 
-Windows??
----------
+### Windows??
 
 Yes, you can use Windows 10 and 11. They are not officially supported and the
 Libreboot project recommends that you *avoid* this choice, because Windows is
@@ -1006,13 +981,12 @@ SeaBIOS, with the coreboot framebuffer initialised at startup, on an Intel GPU
 initialised via coreboot's *libgfxinit*, on November 2023 versions of Libreboot.
 We do not yet support booting with UEFI on x86 machines.
 
-Are other operating systems compatible?
--------------------------------------------------------------------
+### Are other operating systems compatible?
 
 Unknown. Perhaps so, but it's impossible to say without further testing.
 
 What level of software freedom does libreboot give me?
-===================================================
+--------------------------------------------------
 
 Please read the [libreboot binary blob minimalisation policy](news/policy.md).
 
@@ -1062,7 +1036,7 @@ exist, for example, the work done by Sam Zeloof and the Libre Silicon project:
 (Sam literally makes CPUs in his garage)
 
 Where can I learn more about electronics
-==========================================
+----------------------------------------
 
 * Basics of soldering and rework by PACE  
     Both series of videos are mandatory regardless of your soldering skill.

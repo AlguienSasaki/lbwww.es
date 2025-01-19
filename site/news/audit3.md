@@ -7,8 +7,8 @@ now, as of 27 January 2024, which is a fork of flashrom.
 The reason why was explained, in
 the [Libreboot 20240225 release](libreboot20240225.md#flashprog-now-used-instead-of-flashrom)**
 
-Introduction
-============
+Free software BIOS/UEFI
+------------------------
 
 This article pertains to the current Libreboot (lbmk) revision at this time
 of writing, which is `c7e764a3f088e2dbcacb507995476ce3082451ef` from 20
@@ -24,8 +24,7 @@ decided that I would perform *another* audit immediately, so there have been
 two audits (this audit, dubbed audit 3, and the previous audit 2) between now
 and the Libreboot 20230625 release.
 
-Massive code size reduction
----------------------------
+### Massive code size reduction
 
 The focus has been improved error handling, general bug fixing and improving
 the efficiency of lbmk (in terms of speed). Reduced complexity. The focus has

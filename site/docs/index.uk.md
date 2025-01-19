@@ -9,7 +9,7 @@ libreboot. Новини, включаючи оголошення про випу
 [Відповіді на поширені запитання про libreboot](../faq.md).
 
 Need help?
-==========
+----------
 
 Help is available on [Libreboot IRC](../contact.md) and other channels.
 
@@ -22,18 +22,18 @@ Leah Rowe, the founder and lead developer of Libreboot, also owns and
 operates Minifree Ltd; sales provide funding for the Libreboot project.
 
 Встановлення libreboot
-====================
+----------------------
 
 -   [Як встановити libreboot](install/)
 
 Документація, яка має відношення до операційних систем
-============================
+-----------------------------------------------------
 
 -   [Як встановити BSD на x86 хостову систему](bsd/)
 -   [Керівництва Linux](linux/)
 
 Інформація для розробників
-==========================
+--------------------------
 
 -   [Як зібрати джерельний код libreboot](build/)
 -   [Документація розробника системи побудови](maintain/)
@@ -41,7 +41,7 @@ operates Minifree Ltd; sales provide funding for the Libreboot project.
 -   [Корисне навантаження U-Boot](uboot/)
 
 Інша інформація
-=================
+---------------
 
 -   [Різне](misc/)
 -   [Список кодових назв](misc/codenames.md)

@@ -1,18 +1,47 @@
 ---
-title: Hardening GRUB
+title: Hardening GRUB (i.e. Secure libreBoot)
 x-toc-enable: true
 ...
 
+What is Secure libreBoot?
+-------------------------
+
+Libreboot provides open source BIOS/UEFI firmware, replacing proprietary
+BIOS/UEFI firmware, and that precisely is Libreboot primary mission; Libreboot
+is a [Free Software](https://writefreesoftware.org/learn) project, *first*.
+Our *next* priority is to provide you with *highly secure* boot firmware, free
+from backdoors and with well-audited code. *This* document does just that, by
+telling you how to *harden* your Libreboot installation against various physical
+access attacks.
+
+### Not UEFI SecureBoot!
+
+UEFI SecureBoot was invented by Microsoft for booting Microsoft Windows. We
+don't use UEFI SecureBoot in the Libreboot project, because UEFI SecureBoot
+is *completely inferior* to Libreboot's security model. We call our own
+security model *Secure libreBoot* and we use neither BIOS nor UEFI; we use GRUB!
+
+*Strong encryption* is the name of the game. You will use the *GRUB payload*.
 GRUB supports various security mechanisms that are not enabled by default.
 This page will tell you how to enable them, for the purpose of boot security,
 both detecting and attempting to prevent certain types of attack.
 
+Please also expect to brick your machine at least once, because many of these
+changes are highly invasive and may even require you to *modify source code*.
 **Make sure you have an [external SPI programmer](../install/spi.md), for
 recovery purposes, just in case you brick your machine. The modifications
-documented here are highly invasive and it would be easy to make mistakes.**
+documented here are highly invasive. An external SPI programmer can be used
+to restore the previous working state, should a brick occur.**
+
+Libreboot's design philosophy is that the most non-technical user must be
+catered to first, which means that certain security hardening steps are skipped
+by default. With the steps documented here, you will be able to thwart many
+types of physical attack on your machine. Many of the types of configurations
+documented here are *unique*, and available only in Libreboot! (or otherwise
+only *practical* in Libreboot)
 
 Full disk encryption
-====================
+--------------------
 
 [Encrypted /boot with LUKS2 on argon2 key derivation is now
 possible](../../news/argon2.md) - the work is based on that done by
@@ -33,7 +62,7 @@ You are advised to do this *first*, because steps below depend on certain
 configuration changes to be made on your installed Linux distro.
 
 **Dependencies (do this first)**
-=============================
+--------------------------------
 
 **Please read this: [Modifying GRUB in CBFS](grub_cbfs.md)**
 
@@ -42,15 +71,14 @@ which tells you what modifications to actually perform, whereas the guide
 linked above tells you how to apply your modifications for flashing.**
 
 Flash write protection
-======================
+----------------------
 
 Although not strictly related to GRUB, flash protection will prevent anyone
 except you from overwriting the flash without permission. This is important,
 because you don't want some malicious software running as root from overwriting
 your flash, thus removing any of the above protections.
 
-Build-time write protect
----------------------------
+### Build-time write protect
 
 Let's assume your board is `x200_8mb`, do:
 
@@ -82,8 +110,7 @@ Anyway, when you're done, save the config and then build it from source in lbmk.
 
 See: [build from source](../build/)
 
-IFD-based flash protection
---------------------------
+### IFD-based flash protection
 
 **NOTE: This CAN cause bricks on a lot of machines. You should use this with
 care. The FLILL and/or PRx based methods are more reliable - also SMM methods.
@@ -103,8 +130,7 @@ version matching the coreboot tree for your mainboard.
 Note that this only works for Intel-based systems that use an Intel Flash
 Descriptor, which is actually most Intel systems that Libreboot supports.
 
-Other facts
------------
+### Other facts
 
 Strapping `HDA_SDO` or `HDA_DOCK_EN` requires physical access, because you have
 to short a pin on the HDA chip on the motherboard, or there will be a header
@@ -121,8 +147,7 @@ Enable `CONFIG_STRICT_DEVMEM` in your Linux kernel, or set `securelevel` above
 zero on your BSD setup (but BSD cannot be booted with GRUB very easily so
 it's a moot point).
 
-FLILL
------
+### FLILL
 
 On Intel Flash Descriptor, you can insert up to four (4) commands on a list
 within, called *FLILL*; not yet documented, but any SPI command listed here
@@ -130,14 +155,13 @@ would no longer work during internal flash operations. For example, you could
 use it to disable certain erase/write commands. You could also use it to
 disable *reads*.
 
-PRx registers
--------------
+### PRx registers
 
 Protected Range registers are available on Intel platforms, to disable flash
 writes. This is not yet documented, and it varies per platform.
 
-GRUB Password
-=============
+GRUB password
+-------------
 
 The security of this setup depends on a good GRUB password as GPG signature
 checking can be disabled through the GRUB console with this command:
@@ -175,7 +199,7 @@ GRUB will also ask for a username in addition to the password; the "root" user
 is specified above, but you can cahnge it to whatever you want.
 
 Unset superusers
-================
+----------------
 
 Find this line in `grub.cfg`:
 
@@ -190,7 +214,7 @@ because `unset superusers` in fact disables passwordh authentication, so it's
 very important that you comment out this line.
 
 Disable the SeaBIOS menu
-====================
+------------------------
 
 **Very important. Make sure you read this carefully.**
 
@@ -218,8 +242,7 @@ Release images with `seagrub` in the name already have this bootorder file,
 so you only need to disable the menu on these images. If you have the
 image with `seabios` in the name (instead of `seagrub`), you must do both.
 
-SeaBIOS option ROMs
--------------------
+### SeaBIOS option ROMs
 
 SeaBIOS will also still execute PCI option ROMs. Depending on your preference,
 you may wish to disable this, but please note that this will break certain
@@ -229,8 +252,7 @@ things like graphics cards. More information is available here:
 
 If you're using a graphics card, you *need* VGA option ROMs at least.
 
-GRUBSEA
--------
+### GRUBSEA
 
 Another option is to make it so that GRUB is the primary payload on your board.
 In this setup, SeaBIOS and U-Boot are still available.
@@ -250,7 +272,7 @@ and disable the SeaBIOS menu, making SeaBIOS load only GRUB; SeaGRUB is useful
 because GRUB will piggyback off of the VGA setup done by SeaBIOS first.
 
 GPG keys
-========
+--------
 
 First, generate a GPG keypair to use for signing. Option RSA (sign only)
 is ok.
@@ -292,7 +314,7 @@ into CBFS, using instructions already provided on the GRUB CBFS guide linked
 above, earlier on in this guide.
 
 Enforce GPG check in GRUB
-=========================
+-------------------------
 
 The following must be present in `grub.cfg`, but please note that the
 background image used by GRUB is in the memdisk by default, not CBFS, so you
@@ -311,7 +333,7 @@ the GRUB CBFS guide that was also linked above, earlier on in the article
 you're currently reading.
 
 Install the new image
-=====================
+---------------------
 
 Now simply flash the new image, using
 the [flashing instructions](../install/).
@@ -322,8 +344,29 @@ and the system is now unbootable, that's OK because you can use an
 external flasher; please
 read [external flashing instructions](../install/spi.md)
 
+Linux kernel hardening
+----------------------
+
+You may also wish to compile your own kernel, because distro kernels will always
+have code in the same place, so attackers are more easily able to know exactly
+where to attack your kernel (ROP-based attacks).
+
+The Whonix/KickSecure Linux projects have guidance about Linux kernel
+hardening:
+
+* <https://www.kicksecure.com/wiki/System_Hardening_Checklist>
+* <https://www.whonix.org/wiki/System_Hardening_Checklist>
+* <https://www.kicksecure.com/wiki/Operating_System_Hardening>
+
+There's info there about userspace too, but start with kernel first. Libreboot
+is a boot firmware project, so Linux kernel hardening is beyond the scope of
+the Libreboot project documentation, **for now**.
+
+(for now, because Libreboot may in fact provide a Linux distro in the flash
+at some point, and this page will definitely be updated when that happens)
+
 References
-==========
+----------
 
 * [GRUB manual](https://www.gnu.org/software/grub/manual/html_node/Security.html#Security)
 * [GRUB info pages](http://git.savannah.gnu.org/cgit/grub.git/tree/docs/grub.texi)

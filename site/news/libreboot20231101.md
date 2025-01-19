@@ -7,8 +7,8 @@ YOU MAY BRICK YOUR MACHINE!! - Please click the link and follow the instructions
 there, before flashing. For posterity,
 [here is the link again](../docs/install/ivy_has_common.md).**
 
-Introduction
-============
+Free Software Boot
+------------------
 
 *This* new release, Libreboot 20231101, released today 1 November 2023, is
 a new *testing* release of Libreboot. The previous release was
@@ -37,10 +37,9 @@ firmware, but not Libreboot! Booting Linux/BSD is also [well](../docs/linux/)
 [supported](../docs/bsd/).
 
 Work done since last release
-============================
+----------------------------
 
-ThinkPad X201 support added
------------------------------
+### ThinkPad X201 support added
 
 **UPDATE: SUPPORT WAS REMOVED on 12 January 2024, because it was found that fans
 fail when using a neutered ME, on this platform - this bug only affects the
@@ -48,8 +47,7 @@ older arrandales like X201, but newer platforms are not affected.**
 
 Intel D945GCLF was also re-added, in this release.
 
-Coreboot, GRUB, U-Boot and SeaBIOS revisions
-------------------------------------
+### Coreboot, GRUB, U-Boot and SeaBIOS revisions
 
 Libreboot 20231021 and 20231101 are both based on these revisions:
 
@@ -65,7 +63,7 @@ of these, that fix certain bugs or improve certain functionalities. More
 information is available elsewhere in this page.
 
 Build system tweaks
-===================
+-------------------
 
 These changes were made:
 
@@ -162,7 +160,7 @@ time has passed since then. The focus of this Libreboot 20231101 release has
 been to fix bugs.
 
 Hardware supported in this release
-==================================
+----------------------------------
 
 All of the following are believed to *boot*, but if you have any issues,
 please contact the Libreboot project. They are:
@@ -172,8 +170,7 @@ please contact the Libreboot project. They are:
 -   [ASUS KFSN4-DRE motherboard](../docs/install/kfsn4-dre.md)
 -   [ASUS KGPE-D16 motherboard](../docs/install/kgpe-d16.md)
 
-Desktops (AMD, Intel, x86)
------------------------
+### Desktops (AMD, Intel, x86)
 
 -   [Gigabyte GA-G41M-ES2L motherboard](../docs/install/ga-g41m-es2l.md)
 -   [Acer G43T-AM3](../docs/install/acer_g43t-am3.md)
@@ -222,17 +219,16 @@ Desktops (AMD, Intel, x86)
 -   [Samsung Chromebook Plus (v1) (gru-kevin)](../docs/install/chromebooks.md)
 
 Downloads
-=========
+---------
 
 You can find this release on the downloads page. At the time of this
 announcement, some of the rsync mirrors may not have it yet, so please check
 another one if your favourite one doesn't have it.
 
 Post-release errata
-===================
+-------------------
 
-S3 suspend/resume
-------------------
+### S3 suspend/resume
 
 The previous release broke suspend/resume on all Intel platforms, but it's
 fixed in this release on Sandybridge (e.g. ThinkPad X220),

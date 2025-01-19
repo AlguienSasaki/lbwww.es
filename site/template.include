@@ -92,7 +92,7 @@ $return$
 $endif$
 $if(toc)$
 <nav id="$idprefix$TOC">
-<h1>Navigate this page:</h1>
+<h2>Navigate this page:</h2>
 $toc$
 </nav>
 $endif$

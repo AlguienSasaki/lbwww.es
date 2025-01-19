@@ -1,12 +1,16 @@
 ---
-title: ASUS KCMA-D8 desktop/workstation board 
+title: Install Libreboot on ASUS KCMA-D8
 x-toc-enable: true
 ...
 
 TODO: this page is OLD. check that the info is still valid.
 
-Introduction
-============
+Open source BIOS/UEFI firmware
+------------------------------
+
+This document will teach you how to install Libreboot, on your
+ASUS KCMA-D8 server/workstation motherboard. Libreboot replaces proprietary
+BIOS/UEFI firmware.
 
 Specifications available here:
 <https://www.asus.com/uk/Commercial-Servers-Workstations/KCMAD8/>
@@ -36,7 +40,7 @@ If you currently have the ASUS firmware, please ignore the above link and
 instead refer to the section below:
 
 Flashing
-========
+--------
 
 The default ASUS firmware write-protects the flash, so you have to remove the
 chip and re-flash it using external hardware.
@@ -56,7 +60,7 @@ Refer to the following guide:\
 [Externally rewrite 25xx NOR flash via SPI protocol](../install/spi.md)
 
 PCI option ROMs
-===============
+---------------
 
 Unlike Libreboot 20160907, Libreboot in newer releases now supports finding and
 loading PCI option ROMs automatically, both in GRUB and SeaBIOS on this machine.
@@ -66,21 +70,21 @@ So for example, if you wish to use an add-on graphics card, you can! It's no
 problem, and should work just fine.
 
 CPU coolers
-===========
+-----------
 
 With some creativity, standard AM3+ coolers will work fine.
 
 2 x Socket C32 (LGA1207) available, so you can use 2 CPUs. (up to 32GiB per CPU)
 
 CPU compatibility
-=================
+-----------------
 
 - Opteron 4100 series: Incompatible
 - Opteron 4200 series: Compatible
 - Opteron 4300 series: Compatible
 
 Board status (compatibility) {#boardstatus}
-============================
+-------------------------------------
 
 There are two ways to identify a supported KCMA-D8 board:
 
@@ -99,14 +103,14 @@ For more detailed information regarding the coreboot port, see
 <https://raptorengineeringinc.com/coreboot/kcma-d8-status.php>
 
 Form factor {#formfactor}
-===========
+-----------------------
 
 This board is ATX form factor. While the [ATX standard, version 2.2](https://web.archive.org/web/20120725150314/http://www.formfactors.org/developer/specs/atx2_2.pdf)
 specifies board dimensions 305mm x 244mm, this board measures 305mm x 253mm;
 please ensure that your case supports this extra ~cm in width.
 
 IPMI iKVM module add-on {#ipmi}
-=======================
+----------------------------
 
 Don't use it. It uses proprietary firmware and adds a backdoor (remote
 out-of-band management chip, similar to the [Intel Management
@@ -116,7 +120,7 @@ mainboard since it's on the add-on module, which you don't have to
 install.
 
 Flash chips {#flashchips}
-===========
+-----------------------
 
 2MiB flash chips are included by default, on these boards. It's on a
 P-DIP 8 slot (SPI chip). The flash chip can be upgraded to higher sizes:
@@ -133,7 +137,7 @@ Ideally, you should not hot-swap. Only remove the IC when the system is
 powered down and disconnected from mains.
 
 Native graphics initialization {#graphics}
-==============================
+-----------------------------------------
 
 Only text-mode is known to work, but linux(kernel) can initialize the
 framebuffer display (if it has KMS - kernel mode setting).
@@ -147,7 +151,7 @@ because the Nouveau driver can't increase the GPU clock (it doesn't know how,
 as of 18 March 2021).
 
 Current issues {#issues}
-==============
+----------------------
 
 -   Opteron 4100 series CPUs are currently incompatible
 -   LRDIMM memory modules are currently incompatible

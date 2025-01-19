@@ -5,7 +5,7 @@
 <img tabindex=1 class="r" src="https://av.libreboot.org/grub/argon2.jpg" /><span class="f"><img src="https://av.libreboot.org/grub/argon2.jpg" /></span>
 
 Вступ
-============
+------
 
 Корисне навантаження GRUB підтримувало LUKSv2 протягом довгого часу, але тільки з
 старосвітовським методом формування ключа PBKDF2; більшість Linux dm-crypt встановлень на LUKSv2
@@ -28,8 +28,7 @@ AUR](https://aur.archlinux.org/cgit/aur.git/tree/?h=grub-improved-luks2-git&id=1
 The work on AUR, and Nicholas's update based on it, was ultimately based on
 the work done by Patrick Steinhardt for the GRUB project, importing PHC Argon2.
 
-Чому це має значення?
----------------------
+### Чому це має значення?
 
 Libreboot раніше документував, як завантажувати дистрибутиви з зашифрованого `/boot`,
 що є добрим для безпеки, тому що складніше скомпрометувати машину, яка має
@@ -49,8 +48,7 @@ Argon2 є новішим формуванням ключа, якому нада�
 ви *оновились* на argon2id, в точності, для вашого
 встановлення.
 
-Як отримати це
--------------
+### Як отримати це
 
 Це є недоступним для поточного випуску Libreboot 20230625, але буде
 доступним в наступному випуску Libreboot. Наразі, ви можете зібрати образ ROM
@@ -59,18 +57,16 @@ Argon2 є новішим формуванням ключа, якому нада�
 [Як побудувати образи ROM Libreboot з джерела](../docs/build/index.uk.md)
 
 Наступне читання
-===============
+----------------
 
-Реалізація PHC argon2
--------------------------
+### Реалізація PHC argon2
 
 Це реалізація argon2 для посилання, що тепер використовується Libreboot,
 і апстрім проект для цього розміщено тут:
 
 <https://github.com/P-H-C/phc-winner-argon2>
 
-Стаття Метью Гарретт
---------------------------
+### Стаття Метью Гарретт
 
 [PSA: оновіть ваш LUKS метод формування
 ключа](https://mjg59.dreamwidth.org/66429.html) від Метью Гарретт, розповідає

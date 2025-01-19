@@ -16,7 +16,7 @@ in coreboot, on this mainboard.**
 <img tabindex=1 class="r" style="max-width:35%" src="https://av.libreboot.org/e6400/e6400xfr-seabios.jpg" /><span class="f"><img src="https://av.libreboot.org/e6400/e6400xfr-seabios.jpg" /></span>
 
 Introduction
-============
+------------
 
 [Dell Latitude E6400 *with Intel GMA 4500MHD* graphics](e6400.md) was added, and
 included in Libreboot release 20230423 or newer. *Today*, support is now
@@ -31,8 +31,7 @@ than Libreboot 20231021 only support the Intel GPU variant.**
 The 6400 XFR testing+photo was provided, courtesy Mark Cornick (`mcornick` on
 Libreboot IRC).
 
-Preparing a release Rom
------------------------
+### Preparing a release Rom
 
 NOTE: Not strictly required on Intel graphics models, but still useful for
 changing the MAC address.
@@ -45,7 +44,7 @@ Ethernet device; doing so is advisable, because otherwise you will have a
 default, generic MAC address.
 
 Dell Latitude E6400 with Nvidia GPU
-===================================
+-----------------------------------
 
 This section *also* applies to E6400 XFS and ATG models. [Testers are
 needed!](../docs/maintain/testing.md).
@@ -70,8 +69,7 @@ following pages (which have been updated, while publishing this news article):
 
 * [Dell Latitude E6400 information](../docs/install/latitude.md)
 
-Nouveau(in Linux) currently broken
-----------------------------------
+### Nouveau(in Linux) currently broken
 
 Nouveau is the libre driver in Linux, for Nvidia graphics. Nvidia themselves
 do not provide binary drivers anymore, for these GPUs. It crashes in Linux,
@@ -85,8 +83,7 @@ Development discussion, for Nvidia variants of E6400, is available here:
 
 <https://codeberg.org/libreboot/lbmk/issues/14>
 
-OpenBSD's Nvidia driver works perfectly
----------------------------------------
+### OpenBSD's Nvidia driver works perfectly
 
 OpenBSD 7.3 was tested, on my Nvidia-model E6400, and Xorg works OK with
 the `nv` driver.
@@ -103,8 +100,7 @@ main guide:
 
 * [BSD Operating Systems](../docs/bsd/)
 
-FreeBSD and newer Linux (e.g. Archlinux) untested!
---------------------------------------------------
+### FreeBSD and newer Linux (e.g. Archlinux) untested!
 
 [Testers needed! Please get in touch!](../docs/maintain/testing.html)
 
@@ -113,8 +109,7 @@ and newer Linux have not yet been tested** (I plan to test *Arch Linux*), but
 the older Linux/Mesa version in Debian 11.6 works just fine in the Dell BIOS,
 and I've confirmed that it uses the exact same Video BIOS Option ROM.
 
-Dell Latitude E6400 ATG model
------------------------------
+### Dell Latitude E6400 ATG model
 
 [Testers needed! Please get in touch!](../docs/maintain/testing.html)
 

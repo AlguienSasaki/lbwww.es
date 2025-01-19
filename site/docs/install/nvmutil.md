@@ -1,10 +1,11 @@
 ---
-title: nvmutil manual
+title: nvmutil usage instructions
 x-toc-enable: true
 ...
 
 With this software, you can change the MAC address inside GbE regions
-on any system that uses an Intel Flash Descriptor.
+on any system that uses an Intel Flash Descriptor. This software works well
+on most/all of the major Linux or BSD operating systems.
 
 This is the reference documentation for `nvmutil`, but an automated script
 using nvmutil is available for ivy/sandybridge and haswell hardware, when
@@ -15,37 +16,26 @@ inserting vendor files, which you can use to change the MAC address. See:
 You can use the documentation below, if you wish to use `nvmutil` manually.
 Continue reading...
 
-Introduction
-============
+Change the Intel GbE MAC address
+--------------------------------
 
-This is the manual for `nvmutil`, included in the Libreboot,
-build system (lbmk) under `util/nvmutil/`. This program lets you modify
-the MAC address, correct/verify/invalidate checksums,
-swap/copy and dump regions on Intel PHY NVM images,
-which are small binary configuration files that go
-in flash, for Gigabit (ethernet) Intel NICs.
+This is the manual for `nvmutil`, included within the [Libreboot build
+system](../maintain/) (lbmk) under `util/nvmutil/`. This program lets you modify
+the MAC address, correct/verify/invalidate checksums, swap/copy and dump regions
+on Intel PHY NVM images, which are small binary configuration files that go in
+flash, for Gigabit (ethernet) Intel NICs.
 
 **Please [install build dependencies](../build/) before you do this.**
 
-This software is largely targeted at coreboot users,
-but it can be used on most modern Intel systems, or
-most systems from about 2008/2009 onwards.
+This software is largely targeted at coreboot users, but it can be used on most
+modern Intel systems, or most systems from about 2008/2009 onwards, regardless
+of which boot firmware they have.
 
-NOTE: Libreboot X200/X200T/X200S/T400/T400S/T500/W500/R400
-users should know that this software does *not*
-replace `ich9gen`, because that program generates entire
-ICH9M IFD+GbE regions, in addition to letting you set the
-MAC address. *This* program, `nvmutil`, can *also* set
-the MAC address on those machines, but it operates on a
-single GbE dump that is already created.
-
-This program is operated on dumps of the GbE NVM image,
-which normally goes in the boot flash (alongside BIOS/UEFI
-or coreboot, IFD and other regions in the flash). The first
-half of this README is dedicated to precisely this, telling
-you how to dump or otherwise acquire that file; the second
-half of this README then tells you how to operate on it,
-using `nvmutil`.
+This program is operated on dumps of the GbE NVM image, which normally goes in
+the boot flash (alongside BIOS/UEFI or coreboot, IFD and other regions in
+the flash). The first half of this README is dedicated to precisely this,
+telling you how to dump or otherwise acquire that file; the second half of this
+README then tells you how to operate on it, using `nvmutil`.
 
 Automatic MAC address changer
 -----------------------------
@@ -73,14 +63,20 @@ is provided without argument, or no argument is given, the MAC address is
 randomised. Otherwise, you can specify an arbitrary address.
 
 The `?` character is random, and you can specify that any of them be random,
-while setting others (or all of them) arbitrarily.
+while setting others (or all of them) arbitrarily. On the corresponding nibble,
+the bit for unicast/multicast and global/local are set accordingly, so that
+randomly generated addresses are *always* unicast and *local*, unless the
+corresponding nibble is set arbitrarily; if the latter, then an error is thrown
+if the arbitrary nibble corresponds to a multicast MAC address (and when errors
+are thrown, the file shall remain unchanged). More information about error
+handling is provided, later in this document.
 
 The `restore` option restores the original one. The command works by using a
 reference GbE image file present in Libreboot's build system, for the given
 mainboard.
 
 How to download newer versions
-==============================
+------------------------------
 
 Simply pull down the latest changes in `lbmk.git`. The `nvmutil`
 software is now part of lbmk, since 17 November 2022.
@@ -90,7 +86,7 @@ More info about git:
 * <https://git-scm.com/>
 
 Context
-=======
+-------
 
 On many Intel systems with an IFD (Intel Flash Descriptor), the
 Intel PHY (Gigabit Ethernet) stores its configuration, binary
@@ -121,8 +117,7 @@ This 4KB region is then repeated, to make an 8KB region in
 flash, known as the *GbE region*. In `nvmutil`, the first part
 is referred to as *part 0* and the second part as *part 1*.
 
-Known compatible PHYs
----------------------
+### Known compatible PHYs
 
 TODO: write a full list her ofe what actual PHYs are known to work.
 
@@ -135,7 +130,7 @@ files; it is assumed that intel would later change the
 file size and/or checksum value and/or checksum location.
 
 How to obtain the GbE file
-==========================
+--------------------------
 
 The chip containing your BIOS/UEFI firmware (or coreboot) has
 it, if you have an Intel PHY for gigabit ethernet.
@@ -145,8 +140,7 @@ containing your NIC's configuration. This is the part that
 many people will struggle with, so we will dedicated an
 entire next section to it:
 
-Use flashprog
-------------
+### Use flashprog
 
 **NOTE: Libreboot standardises on [flashprog](https://flashprog.org/wiki/Flashprog)
 now, as of 27 January 2024, which is a fork of flashrom.
@@ -197,8 +191,7 @@ option should be changed accordingly. Read flashprog
 documentation, and make sure you have everything
 properly configured.
 
-Use ifdtool
------------
+### Use ifdtool
 
 NOTE: This has only been tested on systems that use IFDv1
 (Intel Flash Descriptor, version 1). This distinction, between
@@ -311,7 +304,7 @@ SPI1. You should adjust the above parameters, according
 to your configuration.
 
 How to compile source code
-==========================
+--------------------------
 
 The nvmutil source code is located under `util/nvmutil/` in the
 lbmk repository. A makefile is included there, for you to build an
@@ -336,8 +329,7 @@ The `nvmutil` software has been build-tested on `Clang`, `GCC`
 and `tcc`. Only standard library functions (plus `err.h`) are
 used, so you don't need any extra libraries.
 
-How to compile it
------------------
+### How to compile nvmutil
 
 First, ensure that the current working directory is your
 copy of the nvmutil source code!
@@ -353,7 +345,7 @@ whatever is in your `$PATH` for userspace programs).
 TODO: Add `make install` to the Makefile, portably.
 
 How to use nvmutil
-==================
+------------------
 
 You run it, passing as argument the path to a file, and you run
 commands on that file. This section will tell you how to
@@ -365,8 +357,7 @@ done that, you could still run it in cwd for instance:
 
 	./nvm bla bla bla
 
-Exit status
------------
+### Exit status
 
 The `nvmutil` program uses `errno` extensively. The best error
 handling is done this way, the Unix way. Error handling is extremely
@@ -392,8 +383,7 @@ of size *8KB*.
 Additional rules regarding exit status shall apply, depending on
 what command you use. Commands are documented in the following sections:
 
-Change MAC address
-------------------
+### Change MAC address
 
 The `nvm` program lets you change the MAC address. It sets
 a valid checksum, after changing the MAC address. This program
@@ -458,8 +448,7 @@ corrected if you use the `setchecksum` command
 in `nvmutil`. It is common for vendor gbe files to contain
 one valid part and one invalid part, per checksum rules.
 
-Verify checksums (and show MAC addresses)
------------------------------------------
+### Verify checksums (and show MAC addresses)
 
 This command *only* requires *read* access on files.
 
@@ -475,8 +464,7 @@ NOTE: This will exit with zero status if at least one part
 contains a valid checksum. If both parts are invalid, nvmutil
 will exit with non-zero status.
 
-Copy part
----------
+### Copy part
 
 This command requires read *and* write access on files.
 
@@ -496,8 +484,7 @@ will be performed, and nvmutil will exit with non-zero status.
 Otherwise, it will (if all other conditions are met) exit with
 zero status.
 
-Swap parts
-----------
+### Swap parts
 
 This command requires read *and* write access on files.
 
@@ -516,8 +503,7 @@ If *at least one* part is valid, nvmutil will return
 with zero exit status. If both parts are invalid, it will
 return non-zero.
 
-Set valid checksum
-------------------
+### Set valid checksum
 
 This command requires read *and* write access on files.
 
@@ -537,8 +523,7 @@ set the checksum. There is no feasible way to guard against
 use on the wrong file, unlike with the other commands. Please
 make SURE you're running this on the correct file!*
 
-Set invalid checksum
---------------------
+### Set invalid checksum
 
 This command requires read *and* write access on files.
 
@@ -568,7 +553,7 @@ Intel gigabit NICs that don't have a valid checksum. This
 is software-defined, and not enforced by the hardware.
 
 History
-=======
+-------
 
 A historical change log
 is included at [docs/install/nvmutilimport.md](nvmutilimport.md),
@@ -596,5 +581,14 @@ it was part of osboot, is still available (for reference) here:
 
 * <https://notabug.org/osboot/nvmutil/>
 
-Please use the latest nvmutil version. The above information is provided
-only for reference.
+Please use the latest nvmutil version *from lbmk*. The above information is
+provided only for reference; it may be useful for future auditing.
+
+TODO
+----
+
+* Support higher block sizes e.g. 8KB blocks for GbE part sections
+* Adapt this into a manpage (useful for Linux package repositories / BSD ports)
+* Send nvmutil upstream to coreboot, for inclusion under `util/`
+* In addition to the manpage, when sending to coreboot, also adapt this page
+  for inclusion into doc.coreboot.org

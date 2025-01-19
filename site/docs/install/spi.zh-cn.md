@@ -4,7 +4,7 @@ x-toc-enable: true
 ...
 
 Need help?
-==========
+----------
 
 Help is available on [Libreboot IRC](../../contact.md) and other channels.
 
@@ -16,14 +16,14 @@ if you want to send your machine in to have Libreboot installed for you.
 Leah Rowe, the founder and lead developer of Libreboot, also owns and
 operates Minifree Ltd; sales provide funding for the Libreboot project.
 
-Introduction
-============
+Install open source BIOS/UEFI firmware
+------------
 
 **[安装之前请先阅读这些指示](ivy_has_common.md)，否则你的机器可能会成砖：[安全措施](ivy_has_common.md)**
 
 本指南将教你怎样使用各种工具，通过 SPI 协议对 25xx NOR flash 进行外部再编程。这是 coreboot 所支持的计算机中，最常见的 flash IC 类型。目前 libreboot 支持的每个系统，基本都使用这种类型的引导 flash；唯一的例外就是 ASUS KFSN4-DRE，它在 PLCC32 芯片座中使用了 LPC flash，你可以在供应商固件启动后，对其进行热切换，然后再内部刷入。十分简单！
 
-我们会用到 [flashprog](https://flashprog.org/Flashrom) 软件，这个软件可以读出、擦除及重写这些 flash 芯片。
+我们会用到 [flashprog](https://flashprog.org/) 软件，这个软件可以读出、擦除及重写这些 flash 芯片。
 
 libreboot 目前记录了这些 SPI 编程器的使用方法：
 
@@ -41,10 +41,9 @@ libreboot 目前记录了这些 SPI 编程器的使用方法：
 你在读的*这个*教程，使用的是*外部*编程器。之所以叫*外部*，是因为用的不是主板上的*内部*编程器。
 
 Raspberry Pi Pico
-=================
+-----------------
 
-RP2040/RP2530 both supported
-----------------------------
+### RP2040/RP2530 both supported
 
 **Pico 2 and other RP2530 dongles also supported, on Libreboot 20241206 rev8
 or higher. Releases before this only supported the original Pico, and other
@@ -62,8 +61,7 @@ Additionally, all the software running on it is free, down to the full
 versions (Pico W & Pico WH) need vendor firmware to use the Wi-Fi chip,
 but that is not needed for following this guide.
 
-Download serprog firmware pre-compiled
--------------------------
+### Download serprog firmware pre-compiled
 
 Download the pico serprog tarball from Libreboot releases. For example, the
 Libreboot 20241206rev8 one would be
@@ -71,8 +69,7 @@ named: `libreboot-20241206rev8_pico_serprog.tar.xz` - it's available under
 the `roms/` directory in each release. With these binaries, you can easily
 get started.
 
-Build serprog firmware from source
-----------------------------------
+### Build serprog firmware from source
 
 You can alternatively download the serprog firmware here:\
 <https://codeberg.org/libreboot/pico-serprog>\
@@ -95,8 +92,7 @@ at `bin/serprog_pico/serprog_pico.uf2`
 and `bin/serprog_pico/serprog_pico_w.uf2` - images with `pico2` in the
 file name are for the Pico 2, and they can also be used.
 
-Install the serprog firmware
-----------------------------
+### Install the serprog firmware
 
 First, connect just the Pico to your computer with a micro-USB cable.
 Mount it like any other USB flash drive. If it isn't detected, you might need
@@ -112,8 +108,7 @@ release tarball.
 **NOTE: Other RP2040/2530 devices will also work. You just have to match
 the right pins and use the correct firmware file!**
 
-Logic levels
-------------
+### Logic levels
 
 A Pico has proper 3.3V logic levels, unlike a ch341a. Which means it won't
 destroy your board by sending 5V to it. If you have a 1.8V flash chip,
@@ -121,8 +116,7 @@ you need to add a logic level converter. **Please ensure that you have matched
 the voltage of your programmer to the voltage of your chip; both the data lines
 and power lines to the chip must match.**
 
-Wiring
-------
+### Wiring
 
 Disconnect the Pico and proceed to wire it to your
 [flash chip](/docs/install/spi.html#identify-which-flash-type-you-have).
@@ -159,7 +153,7 @@ not worth it. The 12Mbps USB port is limiting the actual speed here.
 Higher speeds might work nicely, on Pico 2.
 
 不要使用 CH341A！
-==================
+----------------
 
 libreboot 支持的机器，NOR flash 使用的是 3.3V DC 或 1.8V DC，这也包括了数据线路。CH341A 在数据线路上有 5V 逻辑电平，这会损伤 SPI flash 和它连接的南桥，以及它连接的其它任何东西。
 
@@ -190,26 +184,23 @@ libreboot 支持的机器，NOR flash 使用的是 3.3V DC 或 1.8V DC，这也�
 绿色版本（上面未展示）可能已经连接了 3.3v 逻辑电平，但仍然需要为 WP/HOLD 增加上拉电阻。
 
 识别你的 flash 类型
-==================================
+-------------------
 
 每一个 flash，都会有一个点或者标记，表明这是第 1 引脚（如 WSON8 的第 1 焊盘）。
 
 参考下面的图片，再看看你的主板。搞清楚你的芯片类型之后，根据你了解的情况及本教程剩下的部分，来实现你的目标，即对你的引导 flash 进行读/写。
 
-SOIC8
------
+### SOIC8
 
 ![](https://av.libreboot.org/chip/soic8.jpg)
 
-SOIC16
-------
+### SOIC16
 
 ![](https://av.libreboot.org/chip/soic16.jpg)
 
 SOIC8 和 SOIC16 是最常见的类型，但也有其他的类型：
 
-WSON8
------
+### WSON8
 
 X200S 或 X200 Tablet 上是像这样的：\
 ![](https://av.libreboot.org/x200t_flash/X200T-flashchip-location.jpg)
@@ -218,28 +209,24 @@ T400S 上，是在 RAM 附近的这个位置：\
 ![](https://av.libreboot.org/t400s/soic8.jpg)\
 注意: 本照片中的芯片换成了 SOIC8
 
-DIP8
-----
+### DIP8
 
 ![](https://av.libreboot.org/dip8/dip8.jpg)
 
-电源电压
---------------
+### 电源电压
 
 之前，Libreboot 支持的所有主板，刚好都有在 3.3V DC 下工作的 SPI NOR 芯片。因为最近添加了额定 1.8V DC 芯片的 Chromebook，所以就不再是这么回事了。
 
 检查主板上芯片的元件型号，再查找一下它的数据表。找出它需要的电源电压并记下来。如果它和你外部刷写硬件的输出电压不匹配，那你只能通过适配器或者逻辑电平转换器，把它连至芯片，而绝不能直接连接。
 
 软件配置
-======================
+--------
 
-通用/Le potato
------------------
+### 通用/Le potato
 
 [通用指南](spi_generic.md)可以帮助你使用本指南未列出的 SBC（单板电脑）。不过，那份指南会使用 libre computer 'Le Potato' 作为参考板。如果你有那块板子，你应该参考 [通用指南](spi_generic.md)。
 
-BeagleBone Black（BBB）
-----------------------
+### BeagleBone Black（BBB）
 
 SSH 连接到你的 BeagleBone Black。假定你在 BBB 上用的是 Debian 9。你将在 BBB 上运行 `flashprog`。
 
@@ -296,15 +283,13 @@ Note: flashprog can never write if the flash chip isn't found automatically.
 
 这表示正常工作了（夹子没连接任何 flash 芯片，所以出错是正常的）。
 
-BBB 注意事项
------------------
+### BBB 注意事项
 
 不建议使用 BeagleBone Black，因为拿它来进行 SPI 刷写，速度很慢而且不稳定，并且现在有更好的选择了。我们以前建议使用 BBB，因为它可以完全运行自由软件，但现在有了更佳的选择。
 
 计划：讲解其他 SPI 刷写工具
 
-Rasberry Pi（RPi）
------------------
+### Rasberry Pi（RPi）
 
 SSH 连接到树莓派。你将在树莓派上运行 `flashprog`。
 
@@ -321,8 +306,7 @@ SSH 连接到树莓派。你将在树莓派上运行 `flashprog`。
 
 用于 SPI 通讯的设备位于 `/dev/spidev0.0`。
 
-RPi 驱动强度（Drive Strength）
-------------------
+### RPi 驱动强度（Drive Strength）
 
 RPi 的 flashprog 可能无法检测到一些系统的 SPI flash，即使你已经完美地连好了线并夹住了芯片。这可能是因为树莓派 GPIO 的驱动强度，它默认是 8mA。驱动强度本质上就是，在保持高电平最低电压的同时，引脚最高能输出的电流。对树莓派而言，这个电压是 3.0 V。
 
@@ -352,8 +336,7 @@ RPi 的 flashprog 可能无法检测到一些系统的 SPI flash，即使你已�
 
 见 <https://www.raspberrypi.com/documentation/computers/raspberry-pi.html#gpio-pads-control> 了解树莓派上的驱动强度控制。
 
-RPi 注意事项
------------------
+### RPi 注意事项
 
 基本上，Raspbian 项目，即现在的 Raspberry Pi OS，对其仓库进行了更新，增加了一个新的“受信任”仓库，这刚好是一个微软软件仓库。他们这么做，似乎是为了 VS Code，但问题在于，这可以让微软自由地控制他们喜欢的依赖（根据 apt-get 规则）。每当你更新，你都会对微软的服务器发送请求。不觉得这很奇怪吗？
 
@@ -366,8 +349,7 @@ RPi 注意事项
 * <https://github.com/RPi-Distro/raspberrypi-sys-mods/commit/ed96790e6de281bc393b575c38aa8071ce39b555>
 * <https://github.com/RPi-Distro/raspberrypi-sys-mods/commit/4d1afece91008f3787495b520ac03b53fef754c6>
 
-RPi 的自由固件
----------------------
+### RPi 的自由固件
 
 旧款树莓派的引导固件可以替换成完全自由的固件。对有些用户而言，这额外的一步可能很有用。参见：
 
@@ -377,12 +359,11 @@ RPi 的自由固件
 
 <https://librerpi.github.io/>
 
-安装 flashprog
-----------------
+### 安装 flashprog
 
 如果你在使用 BBB 或者 RPi，你需要在 SSH 进去之后再这么做。
 
-Flashrom 是用来读出、擦除、重写 NOR flash 内容的软件。
+Flashprog 是用来读出、擦除、重写 NOR flash 内容的软件。
 
 使用 Git 仓库中的 libreboot 构建系统，你可以下载并安装 flashprog。首先下载 [lbmk Git 仓库](https://codeberg.org/libreboot/lbmk)，然后执行：
 
@@ -397,19 +378,18 @@ Flashrom 是用来读出、擦除、重写 NOR flash 内容的软件。
 
 接下来，会出现一个 `flashprog/` 目录，其中有一个 `flashprog` 可执行文件。如果你在运行上面的依赖命令的时候，出现了缺失包的错误，则修改 `config/dependencies/ubuntu2004`。那个脚本会在 apt-get 中下载并安装构建依赖，它是为运行 Ubuntu 的 x86-64 系统写的，但在树莓派上的 Raspbian 应该能用。
 
-或者，你可以直接从上游下载 flashprog，位于：<https://flashprog.org/Flashrom>
+或者，你可以直接从上游下载 flashprog，位于：<https://flashprog.org/>
 
 如果你是在 ThinkPad X200 上刷写 Macronix flash 芯片，则要使用一个 flashprog 的特别修改版，下载地址在这里：<https://vimuser.org/hackrom.tar.xz> —— 其中有修改版的源代码，也有可以直接运行的二进制文件。将 `--workaround-mx` 参数传给 flashprog。这会缓解稳定性问题。
 
 如果你直接下载了 flashprog 源代码，你可以进入目录并直接运行 `make`。在 libreboot 构建系统中，`config/dependencies/` 处的脚本写明了构建依赖，你可以直接使用 `apt-get` 软件安装。
 
 如何使用 flashprog
-===================
+------------------
 
 请先阅读本页更下方的部分，了解特定的芯片类型及其接线方法。
 
-读出
--------
+### 读出
 
 刷入新的 ROM 镜像之前，强烈建议你将当前芯片的内容读出到一个文件。
 
@@ -449,8 +429,7 @@ BBB 的话，这样：
 
 注意，如果你要手动提取 blob，那你就需要这个组合而成的 rom。
 
-写入
--------
+### 写入
 
 接下来，运行这个命令（RPi）：
 
@@ -483,12 +462,11 @@ Verifying flash... VERIFIED.
 
 
 硬件配置
-======================
+--------
 
 软件配置请参考上面的教程。下面的建议会教你如何为每种 flash 芯片接线。
 
-警告
---------
+### 警告
 
 在芯片还没有正确接好线时，先不要连接电源。例如，不要连接到接通电源的测试夹。
 
@@ -500,13 +478,11 @@ Verifying flash... VERIFIED.
 
 也不要给你的 flash 芯片连接超过 1 个 DC 电源！那样混合电压的话，很容易损伤你的设备及芯片/主板。
 
-MISO/MOSI/CS/CLK 接线
-----------------------
+### MISO/MOSI/CS/CLK 接线
 
 在刷写这些芯片的时候，你可能也想增加 47 欧姆的串联电阻（不是加在 VCC 或 GND 线上）。这可以提供一些过流保护。在 Intel 平台上，SPI flash 直接连接到南桥芯片组时，通常会通过这样的电阻。
 
-ISP 编程及 VCC 二极管
------------------------------
+### ISP 编程及 VCC 二极管
 
 ISP 即系统内编程（in-system programming）。它指的是，一块芯片已经装在了你想安装 libreboot 的电脑的主板上，而你要对这块芯片进行刷写。
 
@@ -522,22 +498,19 @@ ISP 即系统内编程（in-system programming）。它指的是，一块芯片�
 
 计划：在 libreboot.org 创建一个页面，讲怎么在 libreboot 支持的所有主板这么做。
 
-BeagleBone Black（BBB）上的 GPIO 引脚
------------------------------------
+### BeagleBone Black（BBB）上的 GPIO 引脚
 
 把 pomona 夹子连接到 BBB 时，参考这张图片：<https://beagleboard.org/Support/bone101#headers> （D0 = MISO 或连接到 MISO）。
 
 如果你要用 *P9 排针*来连接芯片刷写的话，请看那个页面的那个部分。
 
-40 引脚树莓派（RPi）的 GPIO 引脚
---------------------------------------
+### 40 引脚树莓派（RPi）的 GPIO 引脚
 
 下图展示了大多数现代树莓派及其衍生版的引脚分配。图中右边是 RPi 的引脚，左边是两个 SOIC 夹。
 
 ![](https://av.libreboot.org/rpi/wiring.webp)
 
-26 引脚树莓派（RPi）的 GPIO 引脚
--------------------------------
+### 26 引脚树莓派（RPi）的 GPIO 引脚
 
 树莓派 B 款 26 GPIO 引脚图（对 40 引脚的 B+ 款而言，从右边开始数，剩下 14 个引脚）：
 
@@ -545,8 +518,7 @@ BeagleBone Black（BBB）上的 GPIO 引脚
 
 此处的信息，也请在阅读以下其他部分时参考：
 
-SOIC8/DIP8/WSON8 接线图
--------------------------------
+### SOIC8/DIP8/WSON8 接线图
 
 参考此表：
 
@@ -567,8 +539,7 @@ SOIC8/DIP8/WSON8 接线图
 
 注意：在 X60/T60 thinkpad 上，不要连接第 8 引脚。而是将你的 PSU 接在主板供电口上，但不要启动主板。这会提供稳定的 3.3V 电压及足够的电流。在这些笔记本上，这是必要的，因为 flash 和其他许多 IC 共用一路 3.3V DC 电源，这些 IC 都会分走很多电流。
 
-SOIC16 接线图（树莓派）
-------------------------------------
+### SOIC16 接线图（树莓派）
 
 RPi GPIO 排针：\
 ![](https://av.libreboot.org/rpi/0009.webp)
@@ -604,8 +575,7 @@ BBB P9 排针：\
 
 注意：第 1 和第 9 引脚是 WP/HOLD 引脚。在面包板上刷写芯片时，请对它们使用上拉电阻（见上面的注记），并在第 2 引脚（VCC）使用去耦电容。
 
-上拉电阻和去耦电容
--------------------------------------------
+### 上拉电阻和去耦电容
 
 **如果芯片是装在面包板上的，那请遵循这里的步骤。如果你要刷写的芯片已经焊接在了主板上，那请忽略这一部分。**
 
@@ -626,8 +596,7 @@ SOIC8/WSON8/DIP8：如果芯片在主板上，那第 8 引脚，即 VCC，就已
 
 SOIC16：同上，但在面包板上使用 SOIC16 socket。在 SOIC16 上，WP/HOLD 不同于上面的第 3/7 引脚，而是第 1 和第 9 引脚，所以要把上拉电阻接到那里。SOIC16 上的 VCC 是第 2 引脚，所以要把去耦电容接到那里。
 
-SOIC8/WSON8/DIP8/SOIC16 未安装在主板上
---------------------------------------------------
+### SOIC8/WSON8/DIP8/SOIC16 未安装在主板上
 
 如果你的机器的 SPI flash 容量较低，那你可以升级。在*大多数*机器上，SPI flash 是经过映射的内存，而（实际上）你最大可以使用 16MiB 的芯片。例如，libreboot 的 KGPE-D16 和 KCMA-D8 主板默认有 2MiB flash，但你可以对它们轻松升级。另一个例子是 ThinkPad X200S、X200 Tablet 和 T400S，它们都有 WSON8，而最佳的方案就是将它替换为 SOIC8 flash 芯片。
 
@@ -664,8 +633,7 @@ SOIC8/WSON8/DIP8/SOIC16 未安装在主板上
 ![](https://av.libreboot.org/dip8/adapter.jpg)
 ![](https://av.libreboot.org/dip8/sop8todip8.jpg)
 
-SOIC8/SOIC16 焊接在主板上
-------------------------------------
+### SOIC8/SOIC16 焊接在主板上
 
 这是*系统内编程*或 *ISP* 的一个简短例子。
 
@@ -681,8 +649,7 @@ Pomona 5252 是一个 SOIC16 测试夹。也有其他的可以用，但这个是
 SOIC8 例子的照片如下：\
 ![](https://av.libreboot.org/x60/th_bbb_flashing.jpg)
 
-DIP8 焊接在主板上
-------------------------------
+### DIP8 焊接在主板上
 
 把 DIP8 直接焊接在主板上怪异至极。它通常是安装在芯片座上的。
 
@@ -692,8 +659,7 @@ DIP8 焊接在主板上
 
 DIP8 IC 的引脚分配和 SOIC8 IC 一样。
 
-使用 SOIC8 替换 WSON8 IC
----------------------------
+### 使用 SOIC8 替换 WSON8 IC
 
 **NOTE: You can alternatively purchase WSON8 probes from a site like Aliexpress.
 They look similar to SOIC8 clips, and they work similarly.**
@@ -759,7 +725,7 @@ WSON8 IC：\
 -------------------------------------------------------------------------------
 
 许可证
-=========
+------
 
 本页面发布所使用的版权条款，不同于本网站上大多数其他页面。
 

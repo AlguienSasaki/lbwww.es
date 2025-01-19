@@ -1,5 +1,5 @@
 ---
-title: Documentation
+title: Libreboot documentation
 ...
 
 Always check [libreboot.org](https://libreboot.org/) for the latest updates to
@@ -9,7 +9,7 @@ the [main news section](../news/).
 [Answers to Frequently Asked Questions about libreboot](../faq.md).
 
 Need help?
-==========
+----------
 
 Help is available on [Libreboot IRC](../contact.md) and other channels.
 
@@ -22,18 +22,18 @@ Leah Rowe, the founder and lead developer of Libreboot, also owns and
 operates Minifree Ltd; sales provide funding for the Libreboot project.
 
 Installing libreboot
-====================
+--------------------
 
 -   [How to install libreboot](install/)
 
-Documentation related to operating systems
-============================
+Installing operating systems
+----------------------------
 
 -   [How to install BSD on an x86 host system](bsd/)
 -   [Linux Guides](linux/)
 
 Information for developers
-==========================
+--------------------------
 
 -   [How to compile the libreboot source code](build/)
 -   [Build system developer documentation](maintain/)
@@ -41,7 +41,7 @@ Information for developers
 -   [U-Boot payload](uboot/)
 
 Other information
-=================
+-----------------
 
 -   [Miscellaneous](misc/)
 -   [List of codenames](misc/codenames.md)

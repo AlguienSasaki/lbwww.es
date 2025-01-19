@@ -4,7 +4,7 @@ x-toc-enable: true
 ...
 
 Buy Libreboot pre-installed
-==========
+---------------------------
 
 If you want professional installation, Minifree Ltd sells [Libreboot
 pre-installed](https://minifree.org/) on select hardware, and it also provides
@@ -18,13 +18,13 @@ If you're installing Libreboot yourself, support for that is also available.
 Contact information (IRC, mailing list etc) is below:
 
 Підтримка користувачів
-============
+----------------------
 
 IRC або Reddit рекомендовані, якщо ви бажаєте попросити про допомогу (найкраще IRC).
 Дивіться інформацію нижче щодо IRC та Reddit.
 
 Mailing list
-============
+------------
 
 Libreboot has this mailing list:
 <https://lists.sr.ht/~libreboot/libreboot>
@@ -32,7 +32,7 @@ Libreboot has this mailing list:
 The email address is [~libreboot/libreboot@lists.sr.ht](mailto:~libreboot/libreboot@lists.sr.ht)
 
 Обговорення розробки
-======================
+--------------------
 
 Зараз, подивіться нотатки
 на [сторінці Git](git.md) для інформації щодо допомоги з розробкою.
@@ -40,7 +40,7 @@ The email address is [~libreboot/libreboot@lists.sr.ht](mailto:~libreboot/libreb
 На цій сторінці також знаходяться інструкції по відправці патчів (через pull request'и).
 
 Кімната IRC
-============
+-----------
 
 IRC це головний спосіб зв'язку з проектом Libreboot. `#libreboot` на Libera
 IRC.
@@ -71,12 +71,11 @@ Libera є однією з найбільших мереж IRC, використ�
 Взагалі, вам варто перевірити документацію, яка передбачена вашою програмою IRC.
 
 Соціальні мережі
-============
+----------------
 
 Libreboot офіційно існує в багатьох місцях.
 
-Mastodon
---------------------
+### Mastodon
 
 Засновник та головний розробник, Лія Роу, є в Mastodon:
 
@@ -85,8 +84,7 @@ Mastodon
 Також можливо зв'язатися з Лією за ії електронною адресою:
 [leah@libreboot.org](mailto:leah@libreboot.org)
 
-Reddit
-------
+### Reddit
 
 Найбільше використовується як канал підтримки, та також для оголошення новин:
 <https://www.reddit.com/r/libreboot/>

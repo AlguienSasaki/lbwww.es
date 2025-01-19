@@ -3,7 +3,7 @@
 % 10 July 2022
 
 Free your BIOS today!
-=====================
+---------------------
 
 Libreboot is [free](https://writefreesoftware.org/) (as in freedom) boot
 firmware, which initializes the hardware
@@ -21,14 +21,12 @@ This is a *bug fix* release, relative to 20211122. No new boards or major
 features have been added, but several problems that existed in the previous
 release have now been fixed.
 
-Build from source
------------------
+### Build from source
 
 *This* release was build-tested on Debian 11. Your mileage may vary, with
 other distros.
 
-Work done since the 20211122 release:
--------------------------------------
+### Work done since the 20211122 release:
 
 * Lots and lots of improvements to the documentation. Previous 2021 testing
   releases did not include snapshots of the documentation (which is actually
@@ -68,8 +66,7 @@ Work done since the 20211122 release:
 * lbmk: Preliminary fix for git credentials check. Set a placeholder name/email
   if one is not set.
 
-Caveats
--------
+### Caveats
 
 Due to reported issues by users, these boards do not have ROM images
 available in the Libreboot 20220710 release:
@@ -90,19 +87,17 @@ All other boards are reasonably stable, and shouldn't provide any issues (no
 major issues reported, and/or non-blocking issues only).
 
 Planned future work
-===================
+-------------------
 
 In general, you should also check the issue tracker to find other notes.
 There is always more work to do, to improve Libreboot.
 
-Support for non-x86 platforms
------------------------------
+### Support for non-x86 platforms
 
 This is still on hold, but will be done as part of a future release.
 The coreboot firmware does support other platforms.
 
-Linux distro in flash
----------------------
+### Linux distro in flash
 
 This is another project that has been on hold for a while. The issue
 has been that I need a decent userland project. I've looked at many
@@ -116,8 +111,7 @@ so as to allow any number of packages to be downloaded. It could also provide
 lots of utils in general, to be a live *rescue system* of sorts. Linux system
 in flash, that can bootstrap other systems.
 
-Re-factor and optimize GRUB
----------------------------
+### Re-factor and optimize GRUB
 
 GRUB is full of unused bloat that almost nobody uses, yet is in the current
 Libreboot builds. It's been on TODO for some time, but work has not yet

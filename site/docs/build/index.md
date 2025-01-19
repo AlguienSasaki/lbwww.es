@@ -1,19 +1,12 @@
 ---
-title: Build from source
+title: Compile Libreboot from source
 x-toc-enable: true
 ...
 
-WARNING: eCryptfs file name limits
-=================================
-
-Do not run the build system on a eCryptfs file system, because it has
-very short file name limits and Libreboot's build system deals with very
-long file names. We commonly get reports from this by Linux Mint users
-who encrypt their home directory with eCryptfs; regular LUKS encryption will
-do nicely.
+If you need to build Libreboot from source, this guide is for you.
 
 Introduction
-============
+------------
 
 Libreboot's build system is named `lbmk`, short for `LibreBoot MaKe`, and this
 document describes how to use it. With this guide, you can know how to compile
@@ -22,8 +15,16 @@ libreboot from the available source code.
 The following document describes how `lbmk` works, and how you can make changes
 to it: [libreboot maintenance manual](../maintain/)
 
+### WARNING: eCryptfs file name limits
+
+Do not run the build system on a eCryptfs file system, because it has
+very short file name limits and Libreboot's build system deals with very
+long file names. We commonly get reports from this by Linux Mint users
+who encrypt their home directory with eCryptfs; regular LUKS encryption will
+do nicely.
+
 System requirements
-===================
+-------------------
 
 You must ensure that you have the correct operating system, CPU, RAM, disk space
 and so on.
@@ -32,7 +33,7 @@ System requirements are documented in
 the [lbmk maintenance manual](../maintain/#system-requirements).
 
 Multi-threaded builds
-=====================
+---------------------
 
 Libreboot's build system defaults to a single build thread, but you can change
 it by doing e.g.
@@ -46,7 +47,7 @@ is passed, where THREADS is the number of threads. This is also set when running
 xz commands for compression, using the `-t` option.
 
 Environmental variables
-=======================
+-----------------------
 
 Please read about environmental variables in [the build
 instructions](../maintain/), before running lbmk. You should set
@@ -54,14 +55,14 @@ your variables accordingly, though you do not technically need to; some
 of them may be useful, e.g. `XBMK_THREADS` (sets the number of build threads).
 
 Sources
-=======
+-------
 
 This version, if hosted live on libreboot.org, assumes that you are using
 the `lbmk` git repository, which
 you can download using the instructions on [the code review page](../../git.md).
 
 Git
-===
+---
 
 Libreboot's build system uses Git, extensively. You should perform the steps
 below, *even if you're using a release archive*.
@@ -81,21 +82,19 @@ You may also want to follow more of the steps here:
 <https://git-scm.com/book/en/v2/Getting-Started-First-Time-Git-Setup>
 
 How to compile Libreboot
-========================
+------------------------
 
 Actual development/testing is always done using lbmk directly, and this
 includes when building from source. Here are some instructions to get you
 started:
 
-Zero..st, check time/date
--------------------------
+### Zero..st, check time/date
 
 Make sure date/hwclock report the correct time and date on your system,
 because parts of the build process download from HTTPS servers and wrong
 time or date can cause connections to be dropped during negotiation.
 
-First, install build dependencies
----------------------------------
+### First, install build dependencies
 
 Libreboot includes a script that automatically installs build dependencies
 according to the selected linux distro. 
@@ -133,8 +132,7 @@ Technically, any Linux distribution can be used to build libreboot.
 However, you will have to write your own script for installing build
 dependencies. 
 
-Debian Trixie/Sid
------------------
+### Debian Trixie/Sid
 
 Debian Trixie, the testing release as of 3 January 2025, and Debian Sid,
 provide `gnat` and `gcc` as you expect, but `gnat` resolves to `gnat-13` and
@@ -171,8 +169,7 @@ When we tested with this configuration, the KGPE-D16 images also compiled.
 NOTE: Ubuntu 24.10 also has the issue described above. Some other distros may
 also have it, if they're based on Debian Testing/Sid or Ubuntu 24.10.
 
-MIPS cross compiler
--------------------
+### MIPS cross compiler
 
 Libreboot has support for the Sony PlayStation (PS1/PSX), based on
 the PCSX-Redux Open BIOS. If you're doing a full release build, and/or
@@ -187,8 +184,7 @@ If your distro doesn't have the MIPS compiler available,
 the [PlayStation](../install/playstation.md) page provides instructions for
 manual installation; please do this in addition to the normal dependencies.
 
-Next, build ROM images
-----------------------
+### Next, build ROM images
 
 Libreboot MaKe (lbmk) automatically runs all necessary commands; for
 example, `./mk -b coreboot` will automatically build the required payloads
@@ -207,8 +203,7 @@ or get a list of supported build targets:
 
 	./mk -b coreboot list
 
-Or maybe just build payloads?
------------------------------
+### Or maybe just build payloads?
 
 If you wish to build payloads, you can also do that. For example:
 
@@ -235,7 +230,7 @@ Or perhaps add a new board! The maintenance manual will teach you how the
 Libreboot build system (lbmk) works!
 
 A note about documentation (and this page)
-==========================================
+-------------------------------
 
 From Libreboot 20231021 onwards, *all* releases (including 20231021)
 have `lbwww.git` (the website) and `lbwww-img.git` (images for the website)

@@ -3,6 +3,14 @@ title: ThinkPad T60 Recovery guide
 x-toc-enable: true
 ...
 
+Open source BIOS/UEFI firmware
+------------------------------
+
+This document will teach you how to install Libreboot, on your
+Lenovo Thinkpad T60 motherboard. Libreboot replaces proprietary
+BIOS/UEFI firmware. *This* version of the guide shows you how to
+flash using external hardware, which can be useful for un-bricking.
+
 **NOTE: Libreboot standardises on [flashprog](https://flashprog.org/wiki/Flashprog)
 now, as of 27 January 2024, which is a fork of flashrom.
 The reason why was explained, in

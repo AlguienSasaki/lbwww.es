@@ -5,8 +5,8 @@
 Heavy amount of code reduction in this audit, and general cleanup. A new
 Libreboot release is planned, for the early days of August 2024.
 
-Introduction
-============
+Efficient software freedom
+--------------------------
 
 Libreboot is a free/opensource boot firmware project. It replaces your
 proprietary BIOS/UEFI firmware, on supported x86 and ARM computers. It does
@@ -38,8 +38,7 @@ revision `31f1e4dadfcc1ceecacec50dd2a14e63a44364bd` from 19 July 2024.
 You can read about the *previous* audit in the article
 for [Libreboot Build System Audit 5](audit5.md).
 
-Notable code size reduction
---------------------------
+### Notable code size reduction
 
 There are 1109 lines of shell script in the build system, versus 1482 in the
 Libreboot 20240612 release. Libreboot's build system is written *entirely* in
@@ -67,7 +66,7 @@ A *lot* of work on new ports is planned. There are a number of new mainboards
 that will be available, in the next Libreboot release.
 
 Summarised list of changes
-==========================
+--------------------------
 
 The most interesting changes are marked in **bold**. "Interesting" means that
 the change greatly improves the usefulness/reliability of Libreboot, or that it
@@ -75,8 +74,7 @@ affects the user in a profound and noticeable way.
 
 Changes are in order per category, from newest to oldest:
 
-Feature changes
----------------
+### Feature changes
 
 Some unused features have been removed, and yet more added. The overall focus of
 Audit 6 has been to remove legacy cruft from lbmk, and in general to simplify
@@ -257,8 +255,7 @@ The changes are as follows:
   possible to create such a broken setup. Libreboot mitigates this fact, by
   avoiding such configurations.
 
-Configuration changes
----------------------
+### Configuration changes
 
 This pertains to anything under `config/`, for any changes that are of note,
 but it does not pertain to *revisions* for specific projects, nor does it
@@ -301,8 +298,7 @@ The changes are as follows:
   which is loaded per-project on multi-tree projects, before each target
   file. It allows easier configuration tree-wide on multi-tree projects.
 
-Bug fixes
----------
+### Bug fixes
 
 There are fewer *acute* bug fixes in Audit 6, because bugfixes was the primary
 focus of *Audit 5*. The word *acute* is used, referring to triggered bugs, because
@@ -464,8 +460,7 @@ The changes are as follows:
   could create situations where the user can longer run lbmk without intervention
   such as changing permission on certain files. Avoid the issue entirely.
 
-General code cleanup
---------------------
+### General code cleanup
 
 Extensive code cleanup has been performed, as was the main purpose of Audit 6.
 
@@ -820,10 +815,9 @@ The changes are as follows:
 * `script/roms`: shorter variable names, condensed several functions.
 
 Revision updates
-================
+----------------
 
-U-Boot
-------
+### U-Boot
 
 Alper Nebi Yasak is the maintainer of U-Boot, within Libreboot, and submitted
 a patch updating U-Boot to v2024.07, on the `gru_bob` and `gru_kevin`
@@ -837,7 +831,7 @@ is announced, as a priority for further work that is to be completed for
 the next Libreboot release, ETA August 2024.
 
 Git log
-=======
+--------
 
 This git log covers all changes in this audit, relative to Libreboot 20240612.
 

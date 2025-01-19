@@ -2,8 +2,8 @@
 % Leah Rowe
 % 7 July 2023
 
-New safety features
-===============
+UPDATE 2025-01-03: New safety features
+-------------------
 
 NOTE: This page is mostly completely obsolete, as of 3 January 2025; changes
 made in the vendor inject script for Libreboot 20241206 rev8 or higher (and
@@ -39,7 +39,7 @@ still [insert vendor files](../docs/install/ivy_has_common.md) regardless,
 prior to Libreboot installation, if required on your board.**
 
 Article
-=======
+------
 
 **Please also follow this guide if using Dell Latitude laptops.**
 
@@ -54,7 +54,7 @@ The reason why was explained, in
 the [Libreboot 20240225 release](libreboot20240225.md#flashprog-now-used-instead-of-flashrom)**
 
 Introduction
-============
+-------------
 
 **UPDATE (21 August 2023): None of the proposals below have yet been
 implemented, and this page is still relevant for Libreboot 20231021. It applies
@@ -74,8 +74,7 @@ users have been bricking their machines, on the following mainboards:
 * Ivybridge platforms (e.g. ThinkPad X230, T430)
 * Haswell platforms (e.g. ThinkPad T440p, W541, OptiPlex 9020)
 
-Why?
-----
+### Why?
 
 On these platforms, the following binary vendor files are required:
 
@@ -116,8 +115,7 @@ automatically download and insert all of the following:
 
 More information is available in the guide.
 
-What can be done to reduce the risk?
-------------------------------------
+### What can be done to reduce the risk?
 
 Like I said, there's technically nothing wrong with recent Libreboot releases.
 
@@ -127,8 +125,7 @@ prominently displayed. Such warnings are now littered all throughout the
 Libreboot documentation, even mentioned in bold lettering at the top of the
 downloads page, so there's no way a user can miss it.
 
-Other mitigations considered
------------------------------
+### Other mitigations considered
 
 See: <https://codeberg.org/libreboot/lbmk/issues/92>
 

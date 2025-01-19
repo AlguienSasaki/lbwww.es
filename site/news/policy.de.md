@@ -3,7 +3,7 @@
 % 4 January 2022 (updated 15 November 2022)
 
 Einleitung
-============
+------------
 
 Dieser Artikel beschreibt die *Prinzipien* die das Libreboot Projekt definieren.
 Für Informationen darüber *wie diese Prinzipien in der Praxis angewendet
@@ -33,7 +33,7 @@ technische Informationen schau in die [Libreboot build system
 documentation](../docs/maintain/).
 
 Derzeitiger Projektrahmen
-=====================
+-------------------------
 
 Das Libreboot Projekt ist besorgt um das was in den Haupt Boot Flash IC geht,
 aber es gibt andere Firmware Teile welche in Betracht gezogen werden sollten,
@@ -45,8 +45,7 @@ Die kritischsten hiervon sind:
 * HDD/SSD firmware
 * Intel Management Engine / AMD PSP firmware
 
-Was ist ein binärer Blob?
-----------------------
+### Was ist ein binärer Blob?
 
 Ein binärer Blob, in diesem Zusammenhang, ist jegliches Ausführbares für
 welches kein Quelltext existiert, welchen Du nicht in einer angemessenen
@@ -62,10 +61,9 @@ Für Informationen über die Intel Management Engine und AMD PSP, schau unter
 FAQ.
 
 Blob *reduction* policy
-=======================
+---------------------
 
-Default configurations
-----------------------
+### Default configurations
 
 Coreboot, upon which Libreboot is based, is mostly libre software but does
 require vendor files on some platforms. A most common example might be raminit
@@ -126,8 +124,7 @@ Libreboot's pragmatic policies will inevitably result in more people becoming
 coreboot developers in the future, by acting as that crucial *bridge* between
 *it* and non-technical people who just need a bit of help to get started.
 
-Configuration
--------------
+### Configuration
 
 The principles above should apply to *default* configurations. However, libreboot
 is to be *configurable*, allowing the user to do whatever they like.
@@ -142,7 +139,7 @@ problem! The goal of the libreboot project is simply to make coreboot more
 accessible for otherwise non-technical users.
 
 FREEDOM CATALOG
-===============
+--------------
 
 A *[freedom status](../freedom-status.md)* page should also be made available,
 educating people about the software freedom status on each machine supported by
@@ -178,7 +175,7 @@ exist, for example, the work done by Sam Zeloof and the Libre Silicon project:
 (Sam literally makes CPUs in his garage)
 
 More detailed insight about microcode
-=====================================
+---------------------------------
 
 To be clear: it is preferable that microcode be free.
 Not including CPU microcode updates is an absolute disaster for system
@@ -229,7 +226,7 @@ it literally behaves differently than it's supposed to, so software will have
 unpredictable bugs that could even cause data corruption - or worse.
 
 Why was this page written?
-==========================
+--------------------------
 
 Many of the topics discussed here are actually hotly contested, by different
 sections of the free software movement. Libreboot has taken a firm stance.

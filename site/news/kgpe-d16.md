@@ -5,7 +5,7 @@
 **UPDATE: I have this board now. I do not require donation anymore.**
 
 Please donate a D16 machine if you can
-======================================
+-----------------------------------
 
 If someone can donate one to me, that would be a great service to the Libreboot
 project. Preferably assembled, with CPU, cooler, working RAM (in coreboot), in
@@ -23,15 +23,14 @@ and (especially) the coolers is a challenge, to say the least.
 If you would like to help, and have a machine to spare, please can you contact
 me at my email address: [info@minifree.org](mailto:info@minifree.org)
 
-KCMA-D8 also needed
--------------------
+### KCMA-D8 also needed
 
 I'm also arranging for an assembled machine with KCMA-D8 in it to be sent to
 me - though I'm not yet sure if that will go through, so if you have one of
 those aswell, I'd be interested too.
 
 How I plan to re-add
-====================
+--------------------
 
 Dasharo produces updated coreboot images for KGPE-D16, with source code. They
 took coreboot from release 4.11 and updated the code. I plan to add support in

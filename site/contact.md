@@ -4,7 +4,7 @@ x-toc-enable: true
 ...
 
 Buy Libreboot pre-installed
-==========
+--------------------------
 
 If you want professional installation, Minifree Ltd sells [Libreboot
 pre-installed](https://minifree.org/) on select hardware, and it also provides
@@ -18,13 +18,13 @@ If you're installing Libreboot yourself, support for that is also available.
 Contact information (IRC, mailing list etc) is below:
 
 User support
-============
+-------------
 
 IRC or Reddit are recommended, if you wish to ask for support (IRC recommended).
 See below for information about IRC and Reddit.
 
 Mailing list
-============
+------------
 
 Libreboot has this mailing list:
 <https://lists.sr.ht/~libreboot/libreboot>
@@ -32,7 +32,7 @@ Libreboot has this mailing list:
 The email address is [~libreboot/libreboot@lists.sr.ht](mailto:~libreboot/libreboot@lists.sr.ht)
 
 Development discussion
-======================
+--------------------
 
 See notes
 on [the Git page](git.md) for information about how to assist with development.
@@ -40,7 +40,7 @@ on [the Git page](git.md) for information about how to assist with development.
 Instructions are also on that page for sending patches (via pull requests).
 
 IRC chatroom
-============
+-------------
 
 IRC is the main way to contact the libreboot project. `#libreboot` on Libera
 IRC.
@@ -71,12 +71,11 @@ website tells you how:
 In general, you should check the documentation provided by your IRC software.
 
 Social media
-============
+-------------
 
 libreboot exists officially on many places.
 
-Mastodon
---------
+### Mastodon
 
 The founder and lead developer, Leah Rowe, is on Mastodon:
 
@@ -85,8 +84,7 @@ The founder and lead developer, Leah Rowe, is on Mastodon:
 Leah can also be contacted by this email address:
 [leah@libreboot.org](mailto:leah@libreboot.org)
 
-Reddit
-------
+### Reddit
 
 Mostly used as a support channel, and also for news announcements:
 <https://www.reddit.com/r/libreboot/>

@@ -6,7 +6,7 @@
 about the [Libreboot 20240612 release](libreboot20240612.md).**
 
 Introduction
-============
+------------
 
 Libreboot is a free/opensource boot firmware project. It replaces your
 proprietary BIOS/UEFI firmware, on supported x86 and ARM computers. It does
@@ -32,8 +32,7 @@ revision `2ee186aee3aa3ab9619ed9549bd3b82909dcfbd0` from 9 June 2024.
 You can read about the *previous* audit in the article
 for [Libreboot Build System Audit 4](audit4.md).
 
-Modest code size reduction
---------------------------
+### Modest code size reduction
 
 There are 1482 lines of shell script in the build system, versus 1680 in the
 Libreboot 20240504 release. Libreboot's build system is written purely in
@@ -43,12 +42,11 @@ This is a difference of 198 lines, or a 12% reduction. Despite the reduction,
 numerous features have been added and a large number of bugs were fixed.
 
 Summarised list of changes
-==========================
+--------------------------
 
 Changes are in order per category, from newest to oldest:
 
-Feature changes
----------------
+### Feature changes
 
 * **Download crossgcc tarballs as dependencies, when cloning coreboot.** We
   previously relied on the coreboot build system, which automatically fetches
@@ -183,8 +181,7 @@ Feature changes
 * Removed all status checks from script/roms (formerly script/build/roms),
   because it's better to document this instead, and rely on testing regardless.
 
-Bug fixes
----------
+### Bug fixes
 
 Some of these changes fix actual issues that were found in testing, while
 others were fixed *before* being triggered/reported and are thus *preventative
@@ -418,8 +415,7 @@ The changes are, from newest to earliest:
 * Main build script: exit (with error status) if not running directly from
   the root of the lbmk work directory.
 
-General code cleanup
---------------------
+### General code cleanup
 
 In addition to *general* very sweeping code cleanup, condensing code lines
 where possible and so on:
@@ -545,13 +541,12 @@ where possible and so on:
 * script/build/roms: split up `main()` into multiple smaller functions
 
 Revision updates
-================
+----------------
 
 Some revisions were updated as part of standard routine, but happened to be
 done during this audit. Those updates are as follows:
 
-SeaBIOS
--------
+### SeaBIOS
 
 Bump SeaBIOS to revision `e5f2e4c69643bc3cd385306a9e5d29e11578148c`, which has
 these changes relative to the old one:
@@ -581,8 +576,7 @@ these changes relative to the old one:
 * a6ed6b70 limit address space used for pci devices.
 ```
 
-Flashprog
----------
+### Flashprog
 
 Updated to revision 5b4fdd1 from 2 May 2024, rebasing the MX workaround patch.
 
@@ -653,7 +647,7 @@ Flashrom, lead by Nico Huber after a dispute with the new leadership of
 Flashrom, and it was felt that Flashprog is a better choice for Libreboot.
 
 Git log
-=======
+-------
 
 This entire set of changelogs is based on the precise Git history in lbmk,
 relative to Libreboot 20240504 which is from where the audit began.

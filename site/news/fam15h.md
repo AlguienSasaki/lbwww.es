@@ -2,8 +2,8 @@
 % Leah Rowe
 % 16 July 2023
 
-Introduction
-============
+Freedom as in... again
+-------------------------
 
 [Libreboot 20211122](libreboot20211122.md) was the last release to officially
 support these boards: ASUS KFSN4-DRE, KCMA-D8 and KGPE-D16; they were removed
@@ -20,8 +20,7 @@ release of Libreboot.
 It was implemented with this patch:
 <https://browse.libreboot.org/lbmk.git/commit/?id=af084014f04602f570a23b0cc23a112401348faf>
 
-Differences now, versus Libreboot 20211122
-------------------------------------------
+### Differences now, versus Libreboot 20211122
 
 The following changes have been made, relative to Libreboot 20211122:
 
@@ -50,8 +49,7 @@ The PIKE2008 fix from Libreboot 20211122 was retained, and it is included in
 today's change. This inserts an empty option ROM in CBFS, without which SeaBIOS
 would hang; the empty option ROM prevents SeaBIOS from loading the real one.
 
-Dasharo firmware
-----------------
+### Dasharo firmware
 
 **Libreboot does not yet integrate Dasharo.**
 

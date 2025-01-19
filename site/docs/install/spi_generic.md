@@ -13,6 +13,9 @@ YOU MAY BRICK YOUR MACHINE!! - Please click the link and follow the instructions
 there, before flashing. For posterity,
 [here is the link again](ivy_has_common.md).**
 
+Background information
+----------------------
+
 There are a plethora of single board computers with which you can flash libreboot to a SOIC chip.
 Some users might be daunted by the price of a raspberry pi.
 This guide is intended to help users looking to use a programmer which is not listed in the [main guide.](spi.md)
@@ -29,7 +32,7 @@ All of this means that you should try to find a board that is *known* to support
 It is *not* enough to know that the board itself supports SPI.
 
 Selecting an Operating System
-=============================
+-----------------------------
 
 In theory, any linux based operating system will do.
 In practice, many distros are highly limited when it comes to single-board-computers.
@@ -43,7 +46,7 @@ If your SBC supports [Raspbian](https://www.raspberrypi.com/software/) then usin
 As a bonus, you may refer to the [main guide](spi.md) if the SBC you have supports raspbian, should you get confused with this guide.
 
 Connecting to your Programmer
-=============================
+-----------------------------
 
 Many SBC operating systems enable ssh by default.
 If the OS you chose does not enable ssh on first boot, try checking the distro documentation and looking for terms such as 'headless install.'
@@ -61,10 +64,10 @@ SSH to your programmer using the default credentials as specified in your distro
 The IP address is the one determined in the earlier step.
 For example:
 
-`ssh root@192.168.0.167`
+	ssh root@192.168.0.167
 
 Finding GPIO Pins
-=================
+-----------------
 
 If you have determined that a board supports SPI then the only step left is to
 determine the correct location of the SPI pins.
@@ -76,7 +79,7 @@ Match each of the categories in the 'signal' column with those in the 'pin' colu
 Using this method, you can theoretically use any single board computer with SPI support.
 
 Enabling SPI
-============
+------------
 
 The modules needed and methods to enable SPI vary based on the SBC you choose.
 You should always make sure there is a well documented method for enabling SPI on your SBC before purchasing.
@@ -87,8 +90,8 @@ sudo ldto enable spicc spicc-spidev
 sudo ldto merge spicc spicc-spidev
 ```
 
-Using Flashrom
-==============
+Using flashprog
+--------------
 
 Most linux distros will provide flashprog in their default repositories.
 You can also download flashprog in binary form with [libreboot utils.](https://libreboot.org/download.html#https)

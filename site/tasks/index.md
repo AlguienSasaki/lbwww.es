@@ -16,7 +16,7 @@ You may also benefit from *assimilating* all knowledge contained in
 the *[lbmk maintenance manual](../docs/maintain/).*
 
 Rockchip RK3588 SoCs in coreboot
-================================
+--------------------------------
 
 See:
 <https://www.collabora.com/news-and-blog/blog/2024/02/21/almost-a-fully-open-source-boot-chain-for-rockchips-rk3588/>
@@ -26,8 +26,7 @@ to coreboot.
 
 Also:
 
-Add TF-A support to Libreboot
------------------------------
+### Add TF-A support to Libreboot
 
 Yes. We already provide other non-coreboot firmware, such as the serprog
 images. We even integrate U-Boot, albeit as a coreboot payload with some init
@@ -41,7 +40,7 @@ It is essentially an analog of coreboot; coreboot even uses parts of this, on
 some boards.
 
 general auditing
-================
+----------------
 
 Libreboot's build system design is already extremely efficient. See:
 [lbmk build system documentation](../docs/maintain/)
@@ -68,7 +67,7 @@ I say again:
 Code equals bugs, so fewer lines of code will cause fewer bugs.
 
 Interesting board ports
-=======================
+-----------------------
 
 **Any board port is interesting. These are just a few that happened to be
 noticed at a given time. The list below is by no means complete!**
@@ -77,8 +76,7 @@ Libreboot can support any board from coreboot, in principle. It would also be
 feasible to integrate other (libre) boot firmware, if desirable. The list below
 is not exhaustive, it just lists boards that are interesting to us at this time:
 
-Boards
-------
+### Boards
 
 * HP EliteBook 2760p
 * HP ProBook 6360b
@@ -96,8 +94,7 @@ Boards
   not much different code-wise to the D16 mainboard, so differences
   in coreboot `4.11_branch` could be adapted to provide a Dasharo port.
 
-ThinkPad T430s and T431s
--------------------------
+### ThinkPad T430s and T431s
 
 These are interesting; the T431s in particular has soldered RAM, so we'd need
 to take care of SPDs (not done automatically yet, in coreboot). The schematics
@@ -109,8 +106,7 @@ machine).
 
 Both are supported by coreboot.
 
-840 G2 (possible 820 G2)
--------------------------
+### 840 G2 (possible 820 G2)
 
 These notes are based on a chat on Libreboot IRC.
 
@@ -121,8 +117,7 @@ newer TPM version - SLB9665 firmware can meet TPM 2.0 specification.
 
 (we do not yet use the TPM in any meaningful way on Libreboot machines)
 
-Blobless boards
------------
+### Blobless boards
 
 Not yet supported, but interesting for the project. Separated thus:
 
@@ -133,8 +128,7 @@ already supported by coreboot:
 * Scan coreboot code for ICH9/ICH10 systems, or boards with x4x/gm45 based
   northbridges. Many of these can boot blobless.
 
-Dell Latitude/Precision:
------------------------
+### Dell Latitude/Precision:
 
 * Dell Latitude laptops: E4200, E4300, E5400, E5500, E6500, Precision M4400,
 
@@ -153,13 +147,11 @@ SuperIO: at least M6500 is known to use ECE5028. I have a bunch of these
 Dells at my lab, they are high priority for porting because they would be
 easily flashable.
 
-Broadwell Dell
---------------
+### Broadwell Dell
 
 E5450 uses MEC5085, currently untested for dell-flash-unlock.
 
-Skylake Dell
-------------
+### Skylake Dell
 
 <https://en.wikipedia.org/wiki/Dell_Latitude#Exx70_Models_(2016)>
 
@@ -168,8 +160,7 @@ Non-E models don't have the MEC ECs. The E models have MEC5085.
 Nicholas isn't sure whether these have bootguard. TODO: test, and also
 test with dell-flash-unlock.
 
-Dell Latitude E7240
--------------------
+### Dell Latitude E7240
 
 See: <https://review.coreboot.org/c/coreboot/+/79746>
 
@@ -180,8 +171,7 @@ libremrc in lbmk.
 
 NOTE: Iru Cai is the person working on this.
 
-Dell Precision M4800 and M6800
---------------------
+### Dell Precision M4800 and M6800
 
 Also M6800, though no port is available yet. 17.3 inch display.
 
@@ -196,8 +186,7 @@ for entry into coreboot due to copyright reasons.
 This port is worth looking at. When the issues are fixed, this will make a
 fine addition to lbmk.
 
-E4200 SPD
----------
+### E4200 SPD
 
 NOTE: Some of this may be inaccurate, because it's copied from handwritten
 notes that were written very hastily and are barely legible.
@@ -229,8 +218,7 @@ see <https://unix.stackexchange.com/questions/92037/how-to-view-rams-spd-timings
 modprobe i2c-dev and sudo i2cdump 0 0x50 works in libreboot, but not the
 vendor bios.
 
-Other Dells (Ivybridge and Sandybridge)
-------------------------
+### Other Dells (Ivybridge and Sandybridge)
 
 Nicholas Chin is interested in these:
 
@@ -251,8 +239,7 @@ Look at the page:
 It lists Dell Latitude models, though "Precision" brand is also available
 on some models that may be Libreboot-feasible.
 
-ARM-based CrOS devices
-----------------------
+### ARM-based CrOS devices
 
 Alper Nebi Yasak ported several of these to Libreboot, but only
 the `gru_bob` and `gru_kevin` machines are known to be stable.
@@ -278,8 +265,7 @@ on `gru` chromebooks.
 Caleb is interested in the `krane` chromebooks, but has had problems with vboot,
 getting it to boot reliably on custom firmware builds.
 
-OpenSIL and AMD Ryzen
----------------------
+### OpenSIL and AMD Ryzen
 
 Coreboot is importing OpenSIL code from AMD, to support Epyc Genoa (server
 platform).
@@ -297,8 +283,7 @@ coreboot, under the direction of Arthur Heymans.
 
 also <https://www.youtube.com/watch?v=gAZw0fTKdYg>
 
-AMD Family16 boards
--------------------
+### AMD Family16 boards
 
 See: <https://review.coreboot.org/c/coreboot/+/71607>
 
@@ -315,8 +300,7 @@ Also referenced there: Biostar A68N-5200 mainboard. Check
 coreboot `4.18_branch` for these boards. Coreboot started removing the
 AGESA boards after release 4.11.
 
-Lenovo G505s
-------------
+### Lenovo G505s
 
 Old board, removed from coreboot ages ago, but one of the fastest pre-PSP
 AMD laptops, has full init in coreboot - it does require a VGA ROM for
@@ -326,8 +310,7 @@ graphics. Anyway:
 This page was linked to me ages ago by Mike Banon. It contains instructions
 for how to configure the machine. It might be worth integrating into lbmk.
 
-RISC-V hardware
----------------
+### RISC-V hardware
 
 See: <https://github.com/oreboot/oreboot>
 
@@ -340,19 +323,16 @@ oreboot is still a good project.
 (though, whenever possible, lbmk should stick to coreboot, to keep things
 simpler - are there efforts to implement oreboot ports in coreboot/C?)
 
-LoongArch support
------------------
+### LoongArch support
 
 Ariadne Conill has been working on bringup for coreboot. Work also being done
 with edk2; U-Boot also desirable here.
 
-RockPro64
----------
+### RockPro64
 
 Another interesting board that coreboot supports. We could add this.
 
-uefistub
---------
+### uefistub
 
 Currently [under review](https://review.coreboot.org/c/coreboot/+/78913) in
 the coreboot project, this provides an *incomplete* UEFI implementation, but
@@ -369,8 +349,7 @@ uefistub will remain mentioned here for the time being. The context for
 uefistub is linuxboot-only setups; this is where uefistub can truly shine,
 specifically on ARM64 devices.
 
-Videos (plus RISCV)
-------
+### Videos (plus RISCV)
 
 The *Open Source Firmware Conference* (OSFC) in 2023 had several interesting
 talks pertaining to ARM, secureboot, linuxboot, UEFI and everything in between.
@@ -388,7 +367,7 @@ In general, there are many interesting talks:
 The talks go all the way back to 2018. They're all worth watching.
 
 Linuxboot
-=========
+---------
 
 **NOTE: Stali Linux is a useful base, on top of which any Linux-based setup
 could be built. With a stripped down kernel, it already provides a sensible
@@ -422,8 +401,7 @@ This makes it a useful drop-in replacement for the GRUB bootloader payload that
 Libreboot currently uses. Linux has much better drivers than GRUB, especially
 for things like LUKS2 and networking.
 
-Ideas for how to implement in lbmk
------------------------------------
+### Ideas for how to implement in lbmk
 
 Look at the [lbmk documentation](../docs/maintain/) for context. The most
 logical way to implement Linux payloads in Libreboot's build system, lbmk,
@@ -462,14 +440,12 @@ build system would not increase much. It's mainly the addition of
 musl-cross-make. Most of the generic build logic already exists in lbmk, for
 projects that use cmake and/or make. It could be done with minimal complexity.
 
-Flash size limitations
-----------------------
+### Flash size limitations
 
 With a stripped down kernel, and sensible configuration, about 6-8MB of flash
 space would be required in this setup. The Heads setup is just under 8MB.
 
-Why Linux in flash?
--------------------
+### Why Linux in flash?
 
 Linux has better drivers than GRUB, has netboot, and it's much more practical
 when you want to control the boot process. For example, you could more easily
@@ -478,15 +454,13 @@ implement measured boot and make use of TPM-based security mechanisms.
 For the everyday user, it probably doesn't make much difference if they're
 already happy with SeaBIOS, GRUB or SeaBIOS.
 
-x86 implementation
-------------------
+### x86 implementation
 
 Coreboot can directly execute it as a payload, but we would also execute it
 from the GRUB payload - if running from the GRUB payload, we could just provide
 it as a vmlinuz and initramfs file.
 
-ARM implementation
-------------------
+### ARM implementation
 
 We already standardise on U-Boot, for ARM machines. It's debateable whether
 Linuxboot is even desirable here, U-Boot is quite competent, but the SPL mode
@@ -505,8 +479,7 @@ correct UEFI implementation.
 (then again, linux on bare metal providing kexec as main bootloader method is
 also quite non-standard, at least on x86 and ARM).
 
-Netboot.xyz
------------
+### Netboot.xyz
 
 It's unlikely that this will actually be used in lbmk, but this provides a really
 nice way to boot Linux distros over the network:
@@ -515,8 +488,7 @@ nice way to boot Linux distros over the network:
 
 It uses iPXE, whereas we would be using Linux and kexec.
 
-Zfsbootmenu
------------
+### Zfsbootmenu
 
 See: <https://docs.zfsbootmenu.org/en/v2.3.x/>
 
@@ -527,7 +499,7 @@ This was briefly documented on the Libreboot website,
 before [argon2 kdf support](../news/argon2.md) was merged in Libreboot GRUB.
 
 Seek QUBES endorsement
-======================
+----------------------
 
 Libreboot is compatible with Qubes, on several supported mainboards. This could
 be audited, to provide a complete list. Qubes has a page on their website which
@@ -538,7 +510,7 @@ the same time, which is an excellent project. We could host a page specifically
 for it, saying what works on our end, and basically copy that to their wiki.
 
 GRUB VGA modes
-==============
+--------------
 
 VGA support is not universal in Libreboot. We typically rely on GRUB to start
 in console mode (`GRUB_TERMINAL=console`), which means GRUB won't change
@@ -557,7 +529,7 @@ menu works is, it scans for GRUB and Syslinux/Extlinux configs on the user's
 HDD/SSD, switching to the first one found.
 
 GRUB configs menu
-================
+-----------------
 
 Libreboot systematically scans for GRUB/Syslinux/Extlinux configs provided by
 the user's operating system, by scanning partitions. It can also scan
@@ -577,10 +549,9 @@ This pertains to the GRUB *payload* provided in the flash, by Libreboot. It is
 currently the preferred payload in Libreboot, at least for x86 machines.
 
 Document flash write protection
-============================
+-------------------------------
 
-IFD-based method
-----------------
+### IFD-based method
 
 Already covered, but could be documented more prominently.
 Use `ifdtool --lock libreboot.rom` to lock the IFD.
@@ -593,8 +564,7 @@ useless; on the E6400, the EC firmware can be instructed to override the
 IFD settings, by enabling the Flash Descriptor Override (in fact, this is part
 of what the `dell-flash-unlock` utility does).
 
-FLILL-based method
-------------------
+### FLILL-based method
 
 We already vaguely mention Intel Flash Descriptor settings ta enable
 write protection. This documentation should be expanded on.
@@ -621,13 +591,11 @@ Flash Descriptor Override, will not affect FLILL entries.
 
 We could document this on the Libreboot website.
 
-SMM write protection
---------------------
+### SMM write protection
 
 system management mode can also be used, to implement flash write protection.
 
-PR (Protected Range) registers
-------------------------------
+### PR (Protected Range) registers
 
 Differing per platform but defined by Intel datasheets, the Protected Range
 registers can be set, to enable flash write protection. Once written, these
@@ -657,21 +625,19 @@ protecting `/dev/mem` by default, that the user can turn off at boot time when
 they want to flash (e.g. cmdline option `iomem=relaxed` in Linux,
 or `kern.securelevel=-1` in OpenBSD).
 
-Chip-specific
--------------
+### Chip-specific
 
 Some flash chips support their own write protection scheme, covered in their
 datasheets, but this is usually unreliable or inconsistent. This method is
 not to be relied upon.
 
-Layers!
--------
+### Layers!
 
 Security is all about layers. When you want to lock down the flash, use every
 method available to you.
 
 lbwww: Document MXM graphics
-============================
+----------------------------
 
 MXM graphics modules are present, on some laptops that we do not yet support,
 because certain functionality is needed on them that we do not implement yet.
@@ -688,7 +654,7 @@ Several more high-end HP EliteBook machines use MXM graphics modules,
 e.g. HP EliteBook 8560w.
 
 lbmk-c: clustered builds
-========================
+------------------------
 
 I had an idea on IRC when we were talking about how to optimise the build
 speed in Libreboot. Most of the time is spent simply compiling the ROM images,
@@ -715,13 +681,12 @@ distcc is probably useful here:
 
 <https://www.distcc.org/scenarios.html>
 
-ccache
-------
+### ccache
 
 not directly related, but this can speed up coreboot builds
 
 Fixdep
-======
+------
 
 This would be something to implement in coreboot's build system, but could also
 benefit lbmk. Currently, any changes to the coreboot's config results in Make
@@ -753,22 +718,22 @@ config.
 
 Consider:
 
-- Board A, which sets CONFIG_TEST=y
-- Board B, which sets CONFIG_TEST=n
-- Board C, which sets CONFIG_TEST=y
-- test.c, which uses the value of CONFIG_TEST
+- Board A, which sets CONFIG\_TEST=y
+- Board B, which sets CONFIG\_TEST=n
+- Board C, which sets CONFIG\_TEST=y
+- test.c, which uses the value of CONFIG\_TEST
 
-An order such as A->C->B would be most efficient:
+An order such as A-\>C-\>B would be most efficient:
 
-1. A: test.c compiled for the first time with CONFIG_TEST=y
-2. C: CONFIG_TEST hasn't changed, so test.o can be reused from step 1
-3. B: test.c recompiled, since CONFIG_TEST changed back to n
+1. A: test.c compiled for the first time with CONFIG\_TEST=y
+2. C: CONFIG\_TEST hasn't changed, so test.o can be reused from step 1
+3. B: test.c recompiled, since CONFIG\_TEST changed back to n
 
-An order such as A->B->C would be least efficient:
+An order such as A-\>B-\>C would be least efficient:
 
-1. A: test.c compiled for the first time with CONFIG_TEST=y
-2. B: test.c recompiled, since CONFIG_TEST changed to n
-3. C: test.c recompiled again, since CONFIG_TEST changed back to y, even though
+1. A: test.c compiled for the first time with CONFIG\_TEST=y
+2. B: test.c recompiled, since CONFIG\_TEST changed to n
+3. C: test.c recompiled again, since CONFIG\_TEST changed back to y, even though
    this configuration was previously built in step 1.
 
 Given the number of possible configs, the ideal order is likely impractical to
@@ -787,7 +752,7 @@ the header "Dependency tracking":
 Nicholas Chin is looking at this in coreboot.
 
 Use crossgcc for SeaBIOS and GRUB
-=================================
+---------------------------------
 
 We currently use hostcc for the SeaBIOS and GRUB payloads. This, among other
 things, means lbmk is currently only supported for amd64 machines.
@@ -802,7 +767,7 @@ GRUB specifically, we should therefore use musl-cross-make. SeaBIOS can be
 built using crossgcc.
 
 Port lbmk to BSD systems
-========================
+------------------------
 
 In particular, FreeBSD is of interest.
 
@@ -836,7 +801,7 @@ Libreboot already has excellent support for booting all of the BSDs. Having the
 build system be compatible would just be another great boon.
 
 Package lbmk in distros
-=======================
+-----------------------
 
 Providing binaries of Libreboot in distros wouldn't make sense, because we
 do that anyway, on Libreboot RSYNC, but having ports of the build system on
@@ -863,10 +828,9 @@ system itself. A distro could package lbmk to build for a specific Libreboot
 version, and handle all of the dependencies and everything.
 
 Vendor scripts
-==============
+--------------
 
-Bruteforce more files
----------------------
+### Bruteforce more files
 
 We bruteforce extract IME but some other firmwares are more or less
 hardcoded in config.
@@ -885,7 +849,7 @@ time. This work began mostly after mid-2022, and has since been expanded to
 cover many types of firmwares, used on various mainboards.
 
 Investigate 16MB flash setups
-=============================
+-----------------------------
 
 On some ivybridge and sandybridge boards, where flash is 8MB or 12MB,
 it is feasible (with some soldering) to upgrade it to 16MB setups.
@@ -912,7 +876,7 @@ MOSI/MISO are shared, and the PCH/southbridge will enable or disable the given
 flash IC to access the region needed.
 
 ME Cleaner status page
-======================
+----------------------
 
 See: <https://github.com/corna/me_cleaner/issues/3>
 
@@ -920,7 +884,7 @@ It's a good reference, though far from complete. People post there saying
 whether their hardware works with `me_cleaner`.
 
 Overclocking
-============
+------------
 
 See: <https://review.coreboot.org/c/coreboot/+/42547>
 
@@ -932,7 +896,7 @@ It might be useful on some machines. The research here (by Angel Pons) may be
 transferrable to other platforms.
 
 Detect module changes
-=====================
+---------------------
 
 When a given package is already downloaded and built in some way, lbmk
 currently works on the assumption that it doesn't change. During development,
@@ -949,7 +913,7 @@ In practise, revisions don't change very often in Libreboot, and they're
 normally updated all at once, when they are updated.
 
 Normal/fallback scheme
-======================
+----------------------
 
 Libreboot currently does not handle the normal/fallback payload scheme at all.
 Instead, it is assumed that the user will always be booting from the fallback
@@ -960,7 +924,7 @@ Coreboot supports configuring which scheme to use, at boot time, but we don't
 use it. Coreboot's default is to always load the fallback, so we use that.
 
 Improved payload documentation
-===============================
+------------------------------
 
 The actual payload documentation is quite sparse in Libreboot, especially SeaBIOS
 but also GRUB. We don't need to repeat what is said by upstream docs, but we
@@ -970,7 +934,7 @@ We should start writing about the payloads in more detail, referencing upstream
 documentation whenever possible.
 
 Static compiled utils in releases
-=================================
+---------------------------------
 
 We curerntly only provide binaries of the firmware itself, for each mainboard,
 but we do not provide utilities compiled. We provide only source code, and the
@@ -981,7 +945,7 @@ download scripts. This should be done alongside providing musl-cross-make for
 the linuxboot builds.
 
 Download repositories in bulk
-=============================
+-----------------------------
 
 At present, lbmk does what it needs to do, and downloads repositories only as
 required, upon each stage of the boot process. For example, it may download
@@ -994,8 +958,7 @@ but for very long builds (ones that take hours, which some do), it may be that
 the user's internet goes down, and a latter part of the build fails, where it
 might have succeeded if packages were downloaded much earlier and in bulk.
 
-Optimisation
-------------
+### Optimisation
 
 So, TODO: Make lbmk determine precisely what packages would later be downloaded
 through various parts of a build, for a given command, and do it all at once,
@@ -1011,7 +974,7 @@ recommended that you run lbmk an on internet connection that is at least 100Mbps
 You can still use slower connections, it'll just take longer.
 
 Don't copy src trees
-====================
+--------------------
 
 For multi-tree projects, lbmk currently copies the source code per tree,
 e.g. `coreboot/default`, `coreboot/dell`. What could be done instead is to
@@ -1037,10 +1000,9 @@ provided, they would just use whatever revision is used in the defined submodule
 for the main target project that lbmk is downloading for.
 
 Vendor scripts
-==============
+--------------
 
-Check hashes of resulting files
--------------------------------
+### Check hashes of resulting files
 
 Libreboot extracts the files from vendor updates, and those updates are checked
 against known hashes, but lbmk only defines such hashes for the larger updates
@@ -1050,7 +1012,7 @@ to current behaviour (only check the main file) if individual checksums for
 inside files are not defined.
 
 Reproducible builds
-===================
+-------------------
 
 We can't focus on this reliably, because we use hostcc extensively for many
 parts of the build process. Other parts of this TODO page talk about how to
@@ -1060,8 +1022,7 @@ Cross compilation is the first step to reproducibility, because then we only
 have to worry about the toolchain, which is easier to control. We can start
 focusing specifically on reproducibility once all of that has been done.
 
-Tarballs
---------
+### Tarballs
 
 We already have partial reproducibility, though we currently use the `-T0`
 option in xz, whereas `-T1` is more appropriate; forcing it to run on 1 core
@@ -1079,7 +1040,7 @@ Also: <https://lists.debian.org/debian-dpkg/2016/10/msg00012.html>
 This post writes about the rationale for `-T1` when using xz.
 
 VGA: Run-time, not build-time
-=============================
+-----------------------------
 
 In coreboot, configuration of video initialisation is done at build time. This
 has several disadvantages, in that you now need multiple ROM images for multiple
@@ -1123,10 +1084,9 @@ possible to change the payload at runtime for instance (manually), by running
 cbfstool.
 
 Modularise the coreboot stages
-==============================
+------------------------------
 
-ie. generate cbfs in lbmk
--------------------------
+### ie. generate cbfs in lbmk
 
 We currently use the coreboot build system which is designed to build all
 stages, such as the bootblock, car, ramstage, romstage etc. The coreboot build
@@ -1156,7 +1116,7 @@ We might have to backport to some older revisions, because lbmk uses certain
 older revisions on some machines, e.g. AMD AGESA platforms.
 
 Macbook21 C-states patch
-========================
+------------------------
 
 See: <https://review.coreboot.org/c/coreboot/+/63587>
 
@@ -1168,8 +1128,7 @@ is described there), we can expand it to configure c-states differently on
 imac52. This config is used to enable efficient power management, on these
 machines.
 
-How to dump c-state config
---------------------------
+### How to dump c-state config
 
 ```
 i2cdump 0x69
@@ -1187,7 +1146,7 @@ these machines, doesn't work well in apple's firmware. mentioned by avph in
 the gerrit link (see above)
 
 Check file ownership in builds
-==============================
+------------------------------
 
 When lbmk is running, it is assumed that the current user has ownership of
 the files. If lbmk is operated on a clone that is under different ownership,
@@ -1207,8 +1166,7 @@ warning message to the user, so that they know what to do to fix it. Lbmk
 would also then exit earlier, rather than trying to run something, which
 might result in very unpredictable behaviour.
 
-Sanity checks
--------------
+### Sanity checks
 
 We basically should have startup sanity checks in general, such as checking
 whether all the right dependencies are installed on the host system.
@@ -1229,7 +1187,7 @@ is basically the same thing as the other entry on this page about porting
 to BSD. So tackle both.
 
 Software Bill of Materials
-==========================
+--------------------------
 
 Generate an SBOM for all of Libreboot, on release builds specifically; it can
 be skipped for performance/convenience reasons on regular development builds
@@ -1294,7 +1252,7 @@ NOTE: the `-z` option in ./update trees is not yet implemented. Again, the
 above just a concept.
 
 Re-use build artifacts
-======================
+-----------------------
 
 Libreboot's build system, lbmk, does not re-use artifacts well. It largely
 assumes that you are building everything from scratch, which is great for
@@ -1309,8 +1267,7 @@ most projects only get built once, unless they are modified (by a developer).
 
 This might be useful for:
 
-Partial coreboot re-builds
---------------------------
+### Partial coreboot re-builds
 
 A lot of the time in lbmk, we are building multiple variants of the same
 mainboard, for different setups. We could skip a lot of the re-building.
@@ -1318,8 +1275,7 @@ This pretty much goes hand in hand with the other entry on this TODO page,
 about spliting up the various stages in coreboot, and handling CBFS generation
 within lbmk.
 
-Notes about Git
----------------
+### Notes about Git
 
 See: <https://github.blog/2020-12-21-get-up-to-speed-with-partial-clone-and-shallow-clone/>
 
@@ -1332,7 +1288,7 @@ reducing the amount of deltas that need to be resolved when cloning).
 In particular, Git Work Trees are a useful feature that we might use in lbmk.
 
 Chinese users can't run lbmk
-==========================
+----------------------------
 
 Libreboot has quite a few Chinese users, but the Chinese internet blocks access
 to several sites like github - and apparently the coreboot gerrit site is also
@@ -1351,15 +1307,13 @@ copy of GitHub), but registration required a Chinese phone number, so I couldn't
 make an account. I was going to set it up for Libreboot.
 
 me cleaner is old
-=================
+-----------------
 
 From what I can tell, `me_cleaner` is not well-tested or supported on many
 newer Intel platforms. it shouldn't affect us in Libreboot for now, because we're
 not even past Haswell yet, but see for instance:
 
-
-Also: disablement
------------------
+### Also: disablement
 
 See: <https://github.com/corna/me_cleaner/issues/278>
 
@@ -1368,7 +1322,7 @@ possible to completely disable the ME (remove it from the nor flash),
 with "almost no ill effects" according to the OP on that issue page.
 
 FAQ: cover USB fuzzing attacks
-==============================
+------------------------------
 
 We write on the FAQ that SATA devices could potentially have DMA capability,
 but this has still not been proven, and it's probably not true in practise.
@@ -1389,7 +1343,7 @@ So we should cover it, and talk about ways to mitigate the risk (e.g. disable
 USB input devices and networking devices, in the user's operating system).
 
 Auto-configure IFD region limits
-================================
+--------------------------------
 
 We currently configure the ME/BIOS region sizes manually, which is fine, but
 the way it's configured is very complicated.
@@ -1429,12 +1383,12 @@ more; you can also read about them on the [lbmk maintenance
 manual](../docs/maintain/).
 
 Signed commits
-==============
+--------------
 
 Start signing commits in Git. There's nothing more to say. Just do it.
 
 Secure suspend method (LUKS setups)
-================================
+-----------------------------------
 
 See: <https://github.com/shmalebx9/luks-suspend-portable>
 
@@ -1443,7 +1397,7 @@ keys are not stored in memory. It's worth looking into. We might be able to
 provide something automated in lbmk.
 
 USB keyboard in secondary payload
-=================================
+---------------------------------
 
 We don't use secondary payloads defined here, but see:
 <https://ticket.coreboot.org/issues/484>
@@ -1452,7 +1406,7 @@ The issue page has info about the problem, and a workaround. Listed here
 for reference, in case this functionality is ever used in Libreboot.
 
 zstd in btrfs on grub
-=====================
+---------------------
 
 Reported buggy by a user on IRC. TODO: test it
 
@@ -1461,7 +1415,7 @@ information was given, other than it is "buggy". Reported
 on Libreboot 20231101.
 
 Optimise crossgcc space
-=======================
+-----------------------
 
 Re-use crossgcc from other coreboot trees, in other coreboot trees. We currently
 build several versions of it, but we probably only need one, maybe two. Audit
@@ -1469,7 +1423,7 @@ this, across various coreboot trees. Specific coreboot trees (older ones) could
 just be patched if re-using crossgcc from a newer tree.
 
 T60 /proc/acpi/ibm/thermal
-==========================
+--------------------------
 
 Reported by a user (unknown what LIbreboot version), this file is not available
 at all. It was later revealed that the user flashed a ROM image without microcode
@@ -1477,7 +1431,7 @@ updates, triggering the AE18 errata. Thermal management is buggy without the
 updates, on that platform.
 
 Link CPU errata PDFs
-=====================
+--------------------
 
 Libreboot makes reference to CPU errata in documentation, but without actually
 linking to the documents themselves. Link to the PDFs for all available CPUs,
@@ -1487,7 +1441,7 @@ microcode updates - they also generally provide information for OS developers,
 to know how certain bugs should be mitigated, whenever possible.
 
 Macbook2,1 backlight controls
-=============================
+-----------------------------
 
 Was reported broken in linux 6.1, but works in 5.x
 
@@ -1504,13 +1458,12 @@ coreboot can differ a bit from the vendor firmware on some boards.
 
 Not really a major issue, but it does need to be addressed.
 
-TODO: test other platforms too
--------------------------------
+### TODO: test other platforms too
 
 Test other platforms.
 
 Document CH341A variants
-========================
+------------------------
 
 All CH341A variants are garbage for ISP-based flashing, because of weak
 drive strength and poor board layout, also the WP/HOLD pins are often held
@@ -1530,8 +1483,7 @@ convenient, because you don't have to mess with a breadboard or anything,
 because they already have ZIF sockets on them for DIP-8 ICs, on which you can
 also use adapters for SOIC-8, SOIC-16 and WSON-8.
 
-E6400 VGA ROM (Nvidia)
-----------------------
+### E6400 VGA ROM (Nvidia)
 
 See: <https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=990662#22>
 
@@ -1542,8 +1494,7 @@ Also: `e6400nvidia_4mb` works better on that setup, nouveau is actually stable
 in some cases. Check the E6400 page for libreboot, it lists issues with nouveau
 on those machines.
 
-Test Crystalwell CPUs on T440p
-------------------------------
+### Test Crystalwell CPUs on T440p
 
 Coreboot has support for these, but they have not been tested as far as I know,
 and no reports have been made for them by Libreboot users. These offer higher
@@ -1551,8 +1502,7 @@ performance and the machine is already very nice.
 
 Ditto W541.
 
-How to extract VBT data
------------------------
+### How to extract VBT data
 
 See:
 
@@ -1573,7 +1523,7 @@ Example patch (merged in coreboot) that used this:
 <https://review.coreboot.org/c/coreboot/+/79625>
 
 Guix: use debootstrap
-=====================
+---------------------
 
 GCC-Gnat is unavailable in Guix, due to the distro's requirement for sources
 to be bootstrapped. GCC-Gnat is also required, for building GCC-Gnat. We build
@@ -1596,8 +1546,8 @@ In the logic for `./build dependencies distroname`, add an option for Guix,
 but on that one, make lbmk automatically set up debootstrap if it's being
 run for Guix (and it would detect whether the host actually is Guix System).
 
-docs/build/clean.md
-===================
+docs/build/clean*.*md
+-------------------
 
 Add this section, telling the user (of lbmk specifically) how to clean various
 directories. This isn't handled universally, due to lbmk's design. When
@@ -1619,15 +1569,14 @@ That is Libreboot's philosophy, that the user should never have to do more than
 is absolutely necessary when someonething could just as easily be done in code.
 
 E6400 security
-==============
+--------------
 
 See other section on this page about write protection.
 
 Setting PR registers for write protection is a valid way to write protect on
 Dell E6400, and it would not be affected by the flash-unlock utilitiy.
 
-SMM methods
------------
+### SMM methods
 
 Tere are two SMM write protect methods:
 
@@ -1644,7 +1593,7 @@ method.
 ^ These notes were supplied by Nicholas Chin via IRC.
 
 PCI-E REBAR
-===========
+-----------
 
 See: <https://github.com/xCuri0/ReBarUEFI>
 
@@ -1664,7 +1613,7 @@ factory firmware does not and will not enable it (and the above link is for
 UEFI systems only).
 
 Shrink FSP size (Intel)
-=========================
+-----------------------
 
 See: <https://blog.osfw.foundation/breaking-the-boundary-a-way-to-create-your-own-fsp-binary/>
 
@@ -1674,15 +1623,14 @@ but possible on other platforms.
 
 Thanks go to Nicholas Chin for linking this.
 
-Chromebooks
------------
+### Chromebooks
 
 Especially useful here, if using the default setup. In the default setup,
 there are essentially three copies of the firmware in flash: a recovery
 image, an "A" image and a "B" image, according to Nicholas Chin.
 
 Compare factory/download neutered ME
-====================================
+------------------------------------
 
 Use tools and hexdump diffs to compare neutered Intel ME images,
 comparing ones neutered from factory.bin dump, and ones from
@@ -1694,7 +1642,7 @@ doing this in osboot, and heads did it for years before we did, and
 they never had any problems).
 
 HP 820 G2 TPM
-=============
+-------------
 
 TODO: check that it can be upgraded to TPM 2.0 (default is 1.2).
 It's a SLB 9660 TPM
@@ -1712,7 +1660,7 @@ And also this, straight from the horse's mouth:
 <https://www.infineon.com/cms/en/product/security-smart-card-solutions/optiga-embedded-security-solutions/optiga-tpm/slb-9660xt1.2/>
 
 4th SSD on T440p
-================
+----------------
 
 probably possible on w541 too
 
@@ -1726,7 +1674,7 @@ be possible to use this in coreboot with linux/bsd
 todo: test it. need to actually solder it and test it.
 
 Disable ME device in devicetree
-================================
+-------------------------------
 
 We neutered, but coreboot still enables MEI1 on many boards.
 
@@ -1745,7 +1693,7 @@ we neuter anyway, so the ME interface is broken by default. Leaving it
 on in devicetree will result in a benign error message on linux dmesg.
 
 Switchable Graphics (Optimus)
-=============================
+-----------------------------
 
 Some of the Thinkpads we support have dual graphics, using Nvidia Optimus.
 It'd be nice to have. This coreboot patch enables it on Thinkpads:
@@ -1759,7 +1707,7 @@ There are other patches on Gerit, related to Optimus too:
 This should be looked into.
 
 Overclocking (CPU and RAM)
-=========================
+--------------------------
 
 Coreboot could be modified to support overclocking. Here is an example
 patch on gerrit (not merged in main):
@@ -1786,8 +1734,7 @@ on certain machines. NOTE: Page is in Russian, use a translator.
 The type of people (enthusiasts) that like Libreboot would be into this sort
 of thing. It may be interesting to study, especially on haswell machines.
 
-Haswell
--------
+### Haswell
 
 <https://www.youtube.com/watch?v=vCZiTSZutR4>
 
@@ -1801,7 +1748,7 @@ haswell overclocking would be very useful to have, on libreboot machines,
 because you can get some still-very-nice CPUs for these machines.
 
 X60/T60 alloc magic is broken at 0x7b1aedf0: 0
-===============================================
+----------------------------------------------
 
 See: <https://codeberg.org/libreboot/lbmk/issues/179>
 
@@ -1822,7 +1769,7 @@ to work around the issue, but it'll possibly be fixed before that release,
 otherwise afterward.
 
 Intel/AMD errata PDF
-====================
+--------------------
 
 List PDF links for Intel/AMD CPUs, provided by Intel/AMD, showing what is
 unpatched as of yet, in microcode updates.
@@ -1834,24 +1781,22 @@ unpatched as of yet, in microcode updates.
 Links.
 
 interesting video
-=================
+-----------------
 
 <https://www.youtube.com/watch?v=5qauRh7eTNY>
 
 Automate testing
-================
+----------------
 
 Even though there's lots of error handling, it's better to be paranoid than
 brick users' machines.
 
-Unit tests
-----------
+### Unit tests
 
 - Build time or separate?
 - me_cleaner -c: checks that ime was inserted and has valid signatures
 
-CI
---
+### CI
 
 Preferably self-hosted. Run tests for every commit. There could be tests of
 different size, and even a periodic nightly release could be done.
@@ -1860,7 +1805,7 @@ Integrating this with an automated test stand would also be doable. At the
 very least, it would assure that the ROM images boot successfully.
 
 Board status
-============
+------------
 
 As the number of ports grows, it becomes harder to keep track of what works.
 Let's build a machine-readable repo documenting every release (or commit)
@@ -1872,7 +1817,7 @@ to not install an unbootable (broken) ROM, and would inform users about any
 known problems and have meaningful options.
 
 haswell board bifircation
-=========================
+-------------------------
 
 <https://www.mouser.com/pdfDocs/4th-gen-core-family-desktop-vol-1-datasheet.pdf>
 
@@ -1883,13 +1828,12 @@ also
 <https://winraid.level1techs.com/t/bios-mod-to-enable-pcie-bifurcation/31547>
 
 ec hacking on lenovo x230
-=========================
+-------------------------
 
 <https://zmatt.net/unlocking-my-lenovo-laptop-part-2/>
 
 DELL 7th gen
-============
-
+------------
 
 3050 micro is being worked on.
 
@@ -1898,12 +1842,12 @@ DELL 7th gen
 5050 models also.
 
 Dell 3020
-=========
+---------
 
 another haswell. different to 9020, but could be added.
 
 Dell 3050 Micro century byte
-============================
+----------------------------
 
 The `CONFIG_USE_LEGACY_8254_TIMER`
 and `CONFIG_USE_PC_CMOS_ALTCENTURY` options must both be

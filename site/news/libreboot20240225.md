@@ -2,8 +2,8 @@
 % Leah Rowe
 % 25 February 2024
 
-Introduction
-============
+Free software BIOS/UEFI
+-----------------------
 
 Libreboot is a free/open source BIOS/UEFI replacement on x86 and ARM, providing
 boot firmware that initialises the hardware in your computer, to then load an
@@ -31,7 +31,7 @@ run just fine. If you spot any issues, please report them on Libreboot's bug
 tracker.
 
 Hardware supported in this release
-==================================
+----------------------------------
 
 This release supports the following hardware:
 
@@ -105,15 +105,14 @@ This release supports the following hardware:
 -   [Samsung Chromebook Plus (v1) (gru-kevin)](../docs/install/chromebooks.md)
 
 Work done since last release
-============================
+----------------------------
 
 With the exception of pico-serprog and replacing flashrom with flashprog (more
 on this later), the current upstream revisions remain unchanged, but this
 release has fixed a few issues and added more mainboards, relative to last
 month's release.
 
-New mainboards
---------------
+### New mainboards
 
 * **HP EliteBook 8560w** - added to lbmk by Riku Viitanen, using the coreboot port
   written by Iru Cai, with Riku's MXM support added on top (more on this later)
@@ -135,8 +134,7 @@ New mainboards
   coreboot for review, fixing VGA decode on discrete graphics cards when the
   Broadwell MRC is used - this patch too is not yet included in Libreboot).
 
-SeaBIOS MXM INT15H interrupt
-----------------------------
+### SeaBIOS MXM INT15H interrupt
 
 For Libreboot's new HP EliteBook 8560w support, MXM handling was added to
 SeaBIOS. This was performed by Riku Viitanen, who also wrote this tool:
@@ -159,8 +157,7 @@ had a port for some time, but without the MXM support - for now, it is only
 available in SeaBIOS, so you must use *SeaBIOS* to run the VGA Option ROM (it
 cannot yet be done directly from coreboot).
 
-U-Boot release script
----------------------
+### U-Boot release script
 
 The script at `script/update/release` now supports generating standalone
 U-Boot source archives, like so:
@@ -172,8 +169,7 @@ than `release/`. Libreboot still provides U-Boot embedded within the larger
 source release archive, and does not yet actually provide U-Boot as a
 standalone project, but some people may find this useful.
 
-Pico-serprog updates
---------------------
+### Pico-serprog updates
 
 Riku Viitanen added support for controlling multiple chip-selects. With the
 new functionality, you can set unused chipselects high. This is useful when
@@ -191,8 +187,7 @@ Riku also increased the default drive strength to 12mA on all RP2024 boards,
 increasing reliabily when externally flashing certain mainboards (e.g. PCH
 having low/no resistance on connections to the data lines for the flash).
 
-Flashprog now used, instead of flashrom
----------------------------------------
+### Flashprog now used, instead of flashrom
 
 Nico Huber was unfairly banned from participation in the flashrom project, and
 went on to create a new project called [flashprog](https://flashprog.org/). The
@@ -241,8 +236,7 @@ new features and hardware functionality - for instance, it has code for handling
 Riku Viitanen's recent changes on the RP2040 serprog images, for pulling unused
 chipselects high (useful on machines like ThinkPad W541 for external flashing).
 
-Context regarding flashprog vs flashrom
----------------------------------------
+### Context regarding flashprog vs flashrom
 
 It was suggested by a reader, on 27 March 2024, that the lack of context made
 judging this situation very difficult. Therefore, the following links have

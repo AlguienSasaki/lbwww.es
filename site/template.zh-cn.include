@@ -92,7 +92,7 @@ $return$
 $endif$
 $if(toc)$
 <nav id="$idprefix$TOC">
-<h1>本页导航:</h1>
+<h2>本页导航:</h2>
 $toc$
 </nav>
 $endif$

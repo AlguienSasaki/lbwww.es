@@ -4,9 +4,9 @@ x-toc-enable: true
 ...
 
 System Configuration
-====================
+--------------------
 
-Hardware: Samsung Chromebook Plus XE513C24 (gru_kevin)
+Hardware: Samsung Chromebook Plus XE513C24 (gru\_kevin)
 
 Libreboot: 2023-04-23
 
@@ -15,7 +15,7 @@ Operating System: Debian Bookworm RC2
 [https://wiki.debian.org/Firmware](https://wiki.debian.org/Firmware)
 
 Install Media Preparation
-=========================
+-------------------------
 
 Follow the Debian installation instructions in the link below:
 
@@ -26,16 +26,17 @@ page and I selected the DVD image to have all the packages available when
 offline (3.7 gigabyte iso).  See the notes below about alternately using the
 netinst version.
 
-[https://cdimage.debian.org/cdimage/bookworm_di_rc2/arm64/iso-dvd/](https://cdimage.debian.org/cdimage/bookworm_di_rc2/arm64/iso-dvd/)
+[https://cdimage.debian.org/cdimage/bookworm\_di\_rc2/arm64/iso-dvd/](https://cdimage.debian.org/cdimage/bookworm_di_rc2/arm64/iso-dvd/)
 
-Write the iso file to a micro sdcard.  Replace "sdcard_device" below
+Write the iso file to a micro sdcard.  Replace `sdcard_device` below
 with the appropriate device path on your system.
+
 ```
 # dd if=debian-bookworm-DI-rc2-arm64-DVD-1.img of=/dev/sdcard_device bs=1M status=progress; sync
 ```
 
 Installation
-============
+------------
 
 1. Insert the micro sdcard into the slot on the Chromebook.
 2. Power on the Chromebook.
@@ -149,7 +150,7 @@ internal emmc.
 ![](https://av.libreboot.org/xe513c24/debbook-firefox.jpg)
 
 System Functionality
-====================
+--------------------
 
 Things that work:
 

@@ -27,7 +27,7 @@ scrapped.
 Anyway, ich9utils documentation:
 
 Introduction
-============
+------------
 
 The `ich9utils` utility from Libreboot is used to manipulate Intel Flash
 Descriptors for ICH9M on laptops such as ThinkPad X200 or T400. Specifically,
@@ -75,7 +75,7 @@ More information about the ME can be found at
 Another project: <http://io.netgarage.org/me/>
 
 ich9utils
-=========
+---------
 
 You can find `ich9utils` on the [Git page](../../git.md) or you can download
 `lbmk` from the same page at an under revision (around Libreboot 20230625 or
@@ -85,7 +85,7 @@ Go in there and type `make` to get the binaries: `ich9deblob`, `ich9gen`
 and `ich9show`.
 
 ICH9 show utility {#ich9show}
-================
+---------------------------
 
 The *ich9show* utility outputs the entire contents of the descriptor and GbE
 regions in a given ROM image as supplied by the user. Output is in Markdown
@@ -93,7 +93,7 @@ format (Pandoc variant) so that it can be converted easily into various
 formats. It could even be piped *directly* into pandoc!
 
 ICH9 gen utility {#ich9gen}
-================
+---------------------------
 
 When you simply run `ich9gen` without any arguments, it generates
 descriptor+GbE images with a default MAC address in the GbE region. If you wish
@@ -185,8 +185,7 @@ Your libreboot.rom image is now ready to be flashed on the system. Refer
 back to [../install/\#flashprog](../install/#flashprog) for how to flash
 it.
 
-Write-protecting the flash chip
--------------------------------
+### Write-protecting the flash chip
 
 The `ich9gen` utility (see below) generates two types of descriptor+GbE setup:
 
@@ -200,7 +199,7 @@ the contents of flash).
 For ease of use, libreboot provides ROMs that are read-write by default.
 
 ICH9 deblob utility {#ich9deblob}
-===================
+-----------------------------------
 
 This was the tool originally used to disable the ME on X200 (later
 adapted for other systems that use the GM45 chipset).
@@ -279,7 +278,7 @@ back to [index.md/\#gm45](index.md/#gm45) for how to flash
 it.
 
 demefactory utility {#demefactory}
-===================
+----------------------------------
 
 This utility has never been tested, officially, but it *should* work.
 

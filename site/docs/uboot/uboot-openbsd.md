@@ -4,16 +4,16 @@ x-toc-enable: true
 ...
 
 System Configuration
-====================
+--------------------
 
-Hardware: Samsung Chromebook Plus XE513C24 (gru_kevin)
+Hardware: Samsung Chromebook Plus XE513C24 (gru\_kevin)
 
 Libreboot: 2023-04-23
 
 Operating System: OpenBSD 7.3
 
 Install Media Preparation
-=========================
+-------------------------
 
 Follow the OpenBSD arm64 installation instructions in the link below:
 
@@ -26,7 +26,7 @@ with the appropriate device path on your system.
 ```
 
 Installation Attempt
-====================
+--------------------
 
 1. Insert the micro sdcard into the slot on the Chromebook.
 2. Power on the Chromebook.

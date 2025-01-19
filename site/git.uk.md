@@ -4,7 +4,7 @@ x-toc-enable: true
 ...
 
 репозиторії libreboot
-===================
+---------------------
 
 Проект `libreboot` має 3 основні сховища Git:
 
@@ -64,8 +64,7 @@ Linux. Наприклад, система збірки (lbmk) не переві�
 Документація для `ich9utils` доступна тут:\
 [документація ich9utils](docs/install/ich9utils.md)
 
-lbmk (libreboot-make)
----------------------
+### lbmk (libreboot-make)
 
 Це основна система збирання в libreboot. Можна сказати, що `lbmk` *це*
 libreboot! Завантажте репозиторій Git:
@@ -83,8 +82,7 @@ libreboot! Завантажте репозиторій Git:
 Інформація про саму систему збірки та про те, як вона працює, доступна в
 [посібнику обслуговування lbmk](docs/maintain/).
 
-lbwww та lbwww-img
--------------------
+### lbwww та lbwww-img
 
 *Весь* веб-сайт і документація libreboot розміщені в репозиторії Git.
 Завантажте так:
@@ -149,8 +147,7 @@ Untitled.
 
 Знову ж таки, інструкції для цього доступні на веб-сайті Untitled.
 
-Ім'я не вимагається
------------------
+### Ім'я не вимагається
 
 Внески, які ви робите, реєструються публічно в репозиторії Git, доступ
 до якого мають всі. Це включає ім'я та електронну адресу
@@ -175,8 +172,7 @@ Untitled.
 та [git show](https://git-scm.com/docs/git-show), щоб підтвердити це перед тим, як ви
 надсилаєте зміни до загальнодоступного сховища Git.
 
-Ліцензії (для учасників)
---------
+### Ліцензії (для учасників)
 
 Обов'язково вільно ліцензуйте свою роботу, за вільною ліцензією. Libreboot більше не
 встановлює довільні обмеження на те, які ліцензії приймаються, і багато
@@ -205,8 +201,7 @@ Untitled.
 
 <https://opensource.org/licenses/MIT>
 
-Надсилайте виправлення
-------------
+### Надсилайте виправлення
 
 Створіть обліковий запис на <https://codeberg.org/> і перейдіть (увійшовши в систему) до
 репозиторію, над яким ви хочете працювати. Натисніть *Fork*, і у вашому обліковому записі,
@@ -232,8 +227,7 @@ IRC-канал libreboot і повідомити канал, які виправ
 Однак, для прозорості процесу перевірки коду, ми рекомендуємо на даний момент
 використовувати Codeberg.
 
-Mailing list
-------------
+### Mailing list
 
 Libreboot has this mailing list:
 <https://lists.sr.ht/~libreboot/libreboot>
@@ -241,7 +235,7 @@ Libreboot has this mailing list:
 The email address is [~libreboot/libreboot@lists.sr.ht](mailto:~libreboot/libreboot@lists.sr.ht)
 
 Дзеркала lbmk.git
-===================
+-----------------
 
 Репозиторій `lbmk` містить автоматизовану систему побудови Libreboot, що
 створює випуски Libreboot (включаючи зібрані образи ROM).
@@ -260,12 +254,11 @@ The email address is [~libreboot/libreboot@lists.sr.ht](mailto:~libreboot/libreb
 * <https://rocketgit.com/libreboot/libreboot>
 
 Дзеркала pico-serprog.git
-=========================
+-------------------------
 
 * <https://notabug.org/libreboot/pico-serprog>
 
-дзеркало lbwww.git
-----------------
+### дзеркало lbwww.git
 
 Репозиторій `lbwww` містить файли Markdown (варіант pandoc), для використання
 з [генератором статичних сайтів Untitled](https://untitled.vimuser.org/); це те,
@@ -290,7 +283,7 @@ The email address is [~libreboot/libreboot@lists.sr.ht](mailto:~libreboot/libreb
 в додатковий трафік шляхом розміщення зображень.
 
 Репозиторії Notabug
-====================
+-------------------
 
 Коміти, які ідуть до codeberg досі push'аться до notabug, в додаток до
 інших дзеркал. Notabug розцінюється *дзеркалом* з 8 квітня 2023 року, коли

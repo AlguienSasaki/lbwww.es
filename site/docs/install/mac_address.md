@@ -4,7 +4,7 @@ x-toc-enable: true
 ...
 
 Introduction (GM45+e1000)
-=========================
+-------------------------
 
 This section is applicable to all libreboot-supported laptops with the
 mobile 4 series chipset (as shown in `$ lspci`)
@@ -17,15 +17,11 @@ for the built-in gigabit ethernet controller is stored inside the flash chip,
 along with libreboot and other configuration data. Therefore, installing
 libreboot will overwrite it.
 
-Thus, for these laptops, prebuilt libreboot already contains a generic
-MAC address in the configuration section. This address is `00:f5:f0:40:71:fe
-in builds before 2018-01-16 and `00:4c:69:62:72:65` (see the ascii character
-set) afterwards.
+Thus, for these laptops, prebuilt libreboot images already contain a generic
+MAC address in the GbE region.
 Unless you change it, your computer will boot and use it. This can lead
 to network problems if you have more than one libreboot computer on
-the same layer2 network (e.g. on the same network switch). The switch
-(postman) will simply not know who to deliver to as the MAC (house) addresses
-will be the same.
+the same layer2 network (e.g. on the same network switch).
 
 To prevent these address clashes, you can either modify prebuilt libreboot
 to use an address of your own choosing or you can change the address in your
@@ -35,7 +31,7 @@ In either case, it is a good idea to write down the address that your
 computer originally had.
 
 Obtaining the existing MAC address
-==================================
+----------------------------------
 
 The existing MAC address may be obtained by the following methods:
 
@@ -65,7 +61,7 @@ The existing MAC address may be obtained by the following methods:
     updated.
 
 Changing the MAC address in the operating system
-================================================
+------------------------------------------------
 
 There are three portable ways of doing so:
 
@@ -91,7 +87,7 @@ configuration. Refer to your operating system's documentation for
 how to do this.
 
 Changing the MAC address on X200/T400/T500/W500
-===============================================
+-----------------------------------------------
 
 On GM45 laptops with ICH9M southbridge and Intel PHY module, the MAC address
 is hardcoded in boot flash, which means it can be changed if you re-flash.
@@ -102,7 +98,7 @@ If *all* you want to do is change the MAC address, you might try `nvmutil`
 instead. See notes below:
 
 Changing the MAC address on ivybridge/sandybridge/haswell (e.g. X230/T440p)
-=========================================================
+-----------------------------------------------------------------
 
 See [nvmutil documentation](../install/nvmutil.md)
 
@@ -122,4 +118,4 @@ which the build system automatically fetches from the internet).
 
 You can use `nvmutil` to change the existing MAC address in a GbE region. This
 sets the "hardcoded" MAC address, typically a globally assigned one set by
-the vendor.
+the vendor, but you can use local addresses, and you can use randomised MACs.

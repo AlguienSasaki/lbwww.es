@@ -12,8 +12,8 @@ YOU MAY BRICK YOUR MACHINE!! - Please click the link and follow the instructions
 there, before flashing. For posterity,
 [here is the link again](../docs/install/ivy_has_common.md).**
 
-Introduction
-============
+Free your BIOS today!
+--------------------
 
 Libreboot provides boot firmware for supported x86/ARM machines, starting a
 bootloader that then loads your operating system. It replaces proprietary
@@ -35,20 +35,18 @@ been provided pre-compiled; specifically, `daisy` and `veyron` chromebook
 boards are not available pre-compiled, but the other boards are. A few new
 boards have been added, in addition to several fixes and feature additions.
 
-Build from source
------------------
+### Build from source
 
 *This* release was build-tested on Debian *Sid*, as of 18 March 2023. Your
 mileage may vary, with other distros. Refer to Libreboot documentation.
 
 Work done since last release
-============================
+--------------------------
 
 For more detailed change logs, look at the Git repository. This is
 a summary of changes.
 
-Brief overview of changes
------------------
+### Brief overview of changes
 
 I've been very busy these last couple months, so there have been less changes
 in Libreboot lately. I'm expecting to have a lot more time throughout the
@@ -106,8 +104,7 @@ Pre-compiled ROM images will for the `t440pmrc_12mb` and `w541mrc_12mb` targets
 will be available in the next release; the `t440p_12mb` and `w541_12mb` images
 are still available in this release, pre-compiled.
 
-REMARK: libre raminit on Haswell
---------------------------------
+### REMARK: libre raminit on Haswell
 
 Upon testing, I've discovered that the libre code has the following problems:
 
@@ -137,8 +134,7 @@ The libre raminit comes from this patchset:
 The MRC vendor file (and Angel's replacement code) don't just do raminit, they
 handle a few other init tasks aswell, including USB host controller.
 
-New boards, x86
-----------
+### New boards, x86
 
 * Lenovo ThinkPad W530
 * Lenovo ThinkPad T530
@@ -154,8 +150,7 @@ add for the next release:
 ^ I would have put these in today's release, but didn't have time, and wanted
 to get this release done today.
 
-Removed boards
---------------
+### Removed boards
 
 * asus p2b\_ls/p3b\_f - they didn't boot properly in pcbox, and the real
   hardware is basically useless / impossible to find
@@ -244,90 +239,4 @@ follows:
 * 00187811 - util/nvmutil: exit non-zero if close() fails (3 months ago) <Leah Rowe>
 ```
 
-Major works planned
-===================
 
-In general, you should also check the issue tracker to find other notes.
-There is always more work to do, to improve Libreboot.
-
-Linux distro in flash
----------------------
-
-STILL ON TODO SINCE LAST RELEASE.
-
-This is another project that has been on hold for a while. The issue
-has been that I need a decent userland project. I've looked at many
-different userlands and since late June in 2022, decided to make
-my own. I want a BusyBox-like solution, but based on code from OpenBSD,
-ported to run under Linux with musl libc.
-
-I want this distro to provide a kexec bootloader in flash, similar to Heads,
-and I also want it to use apk-tools, pointing at Alpine Linux repositories
-so as to allow any number of packages to be downloaded. It could also provide
-lots of utils in general, to be a live *rescue system* of sorts. Linux system
-in flash, that can bootstrap other systems.
-
-About a week before this release, I actually started on the project for real,
-after having many false starts. I've forked a project called `lobase` which
-already ports OpenBSD's userland utilities *to glibc* under Linux, and it's
-as of today about 5 years outdated based on OpenBSD 6.3.
-
-I've ported these utilities directly from OpenBSD 7.2, in my local fork of
-lobase, superimposing the new code on top of the old and adapting according
-to musl libc (lobase is full of hacks for glibc that I don't need):
-
-`mail`, `cat`, `ls`, `head`, `rcs`, `hexdump`, `whois` and `time`
-
-I've been working on this in a dedicated Alpine Linux virtual machine,
-currently on release 3.17 of Alpine Linux. Alpine is an ideal test distro for
-such development, because it already uses musl libc and has *libressl*
-available in aports.
-
-I don't have enough to release yet, but when I have a release ready, I will
-upload it to a Git repository. When the userland port is fully complete,
-I shall then base off of Alpine Linux abuild+aports build system
-infrastructure to provide small base images. It will be similar to the Heads
-project, but built separately and not specifically targeted at Libreboot,
-but in general to any coreboot setup, on supported hardware. It won't be a
-general purpose distro, but I would at that point submit my userland port to
-Alpine, proposing it as a replacement of their busybox package in base.
-
-Unlike Heads, I don't plan yet to make this a direct coreboot payload.
-Instead, it'll be a standalone image loaded into CBFS, and chainloaded via
-the GRUB or SeaBIOS payloads, which are both capable of executing ELF binaries
-from the flash.
-
-Lobase, which my development is forked from, can be found here (archived):
-<https://github.com/Duncaen/lobase>
-
-I've been re-using lobase's build system, adapting newer code from OpenBSD.
-It's a lot of work, but I'm hopeful I can have this ready before the next
-Libreboot release.
-
-Re-factor and optimize GRUB
----------------------------
-
-STILL ON TODO SINCE LAST RELEASE.
-
-GRUB is full of unused bloat that almost nobody uses, yet is in the current
-Libreboot builds. It's been on TODO for some time, but work has not yet
-begun on this project. My efforts are currently focused on the Linux distro.
-
-What I want is a fork of GRUB, optimized to run on bare metal as a coreboot
-payload, on x86 and ARM platforms.
-
-I have an update since the last release. Paul Menzel of coreboot *has* made
-GRUB modules more configurable, making it possible to reduce the size of the
-payload. His patch is not yet used in Libreboot (not in this release, anyway),
-but the patch in GRUB is:
-
-```
-commit 6c5ee45548fcb65d7921c9fca5867b256f9a48ad
-Author: Paul Menzel <pmenzel@molgen.mpg.de>
-Date:   Thu Mar 7 12:16:06 2019 +0100
-    Makefile: Allow to set file systems modules for default_payload.elf
-```
-
-I'm going to play around with this when I get the time. Even with this
-modification, GRUB is still full of code that Libreboot will never use.
-A *GRUB Valhalla Rampage* is still in order!

@@ -1,5 +1,5 @@
 ---
-title: HP Elite 8200 SFF/MT and 6200 Pro Business
+title: Install Libreboot on HP Elite 8200 SFF/MT and 6200 Pro Business
 x-toc-enable: true
 ...
 
@@ -23,7 +23,7 @@ there, before flashing. For posterity,
 | **CPU**                   | Intel Sandy/Ivy Bridge                      |
 | **Graphics**              | Intel HD Graphics or PCI-e low profile card |
 | **Memory**                | Up to 32GB (4x8GB)                          |
-| **Architecture**          | x86_64                                      |
+| **Architecture**          | x86\_64                                      |
 | **Intel ME/AMD PSP**      | Present, neutered                           |
 | **Flash chip**            | SOIC-8 8MiB                                 |
 
@@ -51,22 +51,17 @@ P*: Partially works with vendor firmware
 | **SeaBIOS with GRUB**     | Works |
 </div>
 
-Disable security before flashing
-================================
+Open source BIOS/UEFI firmware
+------------------------------
 
-Before internal flashing, you must first disable `/dev/mem` protections. Make
-sure to re-enable them after you're finished.
-
-See: [Disabling /dev/mem protection](../install/devmem.md)
-
-Introduction
-============
+This document will teach you how to install Libreboot, on your
+HP Elite 8200 SFF desktop motherboard. Libreboot replaces proprietary
+BIOS/UEFI firmware.
 
 Libreboot has support for this, in the Git repository and release versions
 from 20230423 onwards.
 
-Brief board info
-----------------
+### Brief board info
 
 HP Elite 8200 SFF is a small-form-factor desktop of Intel Sandybridge platform
 which you can read more about here:
@@ -81,7 +76,15 @@ Here's the [Technical Reference Manual](https://web.archive.org/web/201601091432
 This system supports Ivy Bridge processors too. The original BIOS
 won't even POST with those, but with Libreboot they work fully.
 
-Installation of Libreboot
+Disable security before flashing
+--------------------------------
+
+Before internal flashing, you must first disable `/dev/mem` protections. Make
+sure to re-enable them after you're finished.
+
+See: [Disabling /dev/mem protection](../install/devmem.md)
+
+Install Libreboot
 -------------------------
 
 You can actually just compile the Libreboot ROM for this, and flash the

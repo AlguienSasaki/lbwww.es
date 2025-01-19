@@ -10,8 +10,8 @@ YOU MAY BRICK YOUR MACHINE!! - Please click the link and follow the instructions
 there, before flashing. For posterity,
 [here is the link again](../docs/install/ivy_has_common.md).**
 
-Introduction
-============
+Open source BIOS/UEFI firmware
+--------------------------
 
 Libreboot is a free/open source BIOS/UEFI replacement on x86 and ARM, providing
 boot firmware that initialises the hardware in your computer, to then load an
@@ -33,8 +33,7 @@ this release, and several changes have been made since then; for simplicity, thi
 page is essentially identical to the audit 6 changelog, but with the additional
 changes referenced.
 
-The build system is smaller
----------------------------
+### The build system is smaller
 
 The focus of audit6 was to reduce the code size, making the build system more
 efficient. The build system was 1482 source lines (of shell scripting) in the
@@ -45,7 +44,7 @@ Several bug fixes were also made, in addition to new board support, since the
 Libreboot 20240612 release.
 
 Summarised list of changes
-==========================
+-------------------------
 
 The most interesting changes are marked in **bold**. "Interesting" means that
 the change greatly improves the usefulness/reliability of Libreboot, or that it
@@ -53,8 +52,7 @@ affects the user in a profound and noticeable way.
 
 Changes are in order per category, from newest to oldest:
 
-Board support
--------------
+### Board support
 
 The following boards have been added since the Libreboot 20240612 release:
 
@@ -69,8 +67,7 @@ The following boards have been added since the Libreboot 20240612 release:
   by 3mdeb, and I added the config for it to Libreboot, based on the Dell
   Precision T1650 config)
 
-About the Dell Latitude ports
------------------------------
+### About the Dell Latitude ports
 
 These are yet more Ivybridge (Intel 3rd gen) and Sandybridge (Intel 2nd gen)
 mainboards, using the same EC as on other Latitudes supported in Libreboot, so
@@ -79,8 +76,7 @@ they are all internally flashable from the factory firmware.
 Installation instructions, pertaining to Dell Latitude models, can be found on
 the [Dell Latitude page](../docs/install/latitude.md).
 
-About the PlayStation BIOS
---------------------------
+### About the PlayStation BIOS
 
 This is *not* coreboot, but it is a fully free/opensource BIOS with source code
 under MIT license, provided by
@@ -104,8 +100,7 @@ of October 2024 or thereabouts. I'm planning to ship the *PCSX-Redux* BIOS by
 default, in the new project, which is why Libreboot has it, because I'll
 reference Libreboot from that project.
 
-About the OptiPlex 3050 Micro port
--------------------------
+### About the OptiPlex 3050 Micro port
 
 Mate Kukri's excellent *[deguard](https://review.coreboot.org/admin/repos/deguard,general)*
 utility is automatically used at build time,
@@ -146,8 +141,7 @@ Because of the SeaBIOS issue, an exception is made: this board executes
 GRUB first, directly from coreboot. The usual policy, since Libreboot 20240612,
 is to prefer *SeaGRUB* (SeaBIOS first, and execute GRUB from SeaBIOS).
 
-Feature changes
----------------
+### Feature changes
 
 The changes are as follows:
 
@@ -367,8 +361,7 @@ The changes are as follows:
   possible to create such a broken setup. Libreboot mitigates this fact, by
   avoiding such configurations.
 
-Configuration changes
----------------------
+### Configuration changes
 
 This pertains to anything under `config/`, for any changes that are of note,
 but it does not pertain to *revisions* for specific projects, nor does it
@@ -417,8 +410,7 @@ The changes are as follows:
   which is loaded per-project on multi-tree projects, before each target
   file. It allows easier configuration tree-wide on multi-tree projects.
 
-Bug fixes
----------
+### Bug fixes
 
 The changes are as follows:
 
@@ -635,8 +627,7 @@ The changes are as follows:
   could create situations where the user can longer run lbmk without intervention
   such as changing permission on certain files. Avoid the issue entirely.
 
-General code cleanup
---------------------
+### General code cleanup
 
 Extensive code cleanup has been performed, as was one of the main focuses in
 this release (in addition to newer hardware support):
@@ -992,10 +983,9 @@ The changes are as follows:
 * `script/roms`: shorter variable names, condensed several functions.
 
 Revision updates
-================
+----------------
 
-Coreboot
---------
+### Coreboot
 
 The `default` tree was updated to commit ID `97bc693ab` from 29 July 2024.
 Several patches were merged upstream and therefore no longer needed in lbmk.
@@ -1015,8 +1005,7 @@ a single `fam15h` tree. This contains the ASUS KGPE-D16 and KCMA-D8 ports,
 based on coreboot's `4.11_branch` tree, with Libreboot's special build fixes
 that make it compile on modern distros, such as Debian Sid or Arch Linux.
 
-U-Boot
-------
+### U-Boot
 
 Alper Nebi Yasak is the maintainer of U-Boot, within Libreboot, and submitted
 a patch updating U-Boot to v2024.07, on the `gru_bob` and `gru_kevin`
@@ -1024,15 +1013,13 @@ Chromebooks. Several improvements have been merged upstream, like Alper's
 patches for Qemu, so these patches have been dropped in lbmk because they're
 now included by default, in the new U-Boot revision.
 
-GRUB
-----
+### GRUB
 
 Updated the revision to commit ID b53ec06a1 from 17 June 2024. This fixes
 several bugs in the LUKS implementation. Several virtual memory fixes, and
 numerous fixes to file system drivers in the GRUB kernel.
 
-SeaBIOS
--------
+### SeaBIOS
 
 Updated the revision to commit ID `ec0bc256` from 24 June 2024. This brings
 in only a single change:
@@ -1048,13 +1035,11 @@ in only a single change:
 This fixes buggy handling for 32-bit (i686) hosts, when allocating memory
 for the PCI devices.
 
-Flashprog
----------
+### Flashprog
 
 Updated the revision to commit ID `639d563` from 2 August 2024.
 
-PCSX Redux
-----------
+### PCSX Redux
 
 This was added git commit ID `6ec5348058413619b290b069adbdae68180ce8c0`. It is
 a *Sony PlayStation* emulator, but we only need one part of it: the BIOS.
@@ -1066,7 +1051,7 @@ the open BIOS image, which is compatible with every PlayStation emulator and
 also real PlayStations (soldering required).
 
 Git log
-=======
+-------
 
 This git log covers all changes in this audit, relative to Libreboot 20240612.
 

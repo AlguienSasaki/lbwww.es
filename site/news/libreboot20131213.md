@@ -3,18 +3,16 @@
 % 13 December 2013
 
 r20131213 (2nd release) {#release20131213}
-=======================
+-----------------------------------------
 
 -   13th December 2013
 
-Supported:
-----------
+### Supported:
 
 -   ThinkPad X60
 -   ThinkPad X60s
 
-Development notes
------------------
+### Development notes
 
 -   added background image to GRUB2
 -   added memtest86+ payload to grub2

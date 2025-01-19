@@ -4,7 +4,7 @@ x-toc-enable: true
 ...
 
 Où acheter du matériel avec Libreboot pré-installé
-==========
+---------------------------------------------
 
 Si vous souhaitez une installation professionnelle,  Minifree Ltd vend des ordinateurs avec [Libreboot pré-installé](https://minifree.org/). L'entreprise propose également [un service d'installation de Libreboot](https://minifree.org/product/installation-service/) si vous voulez l'installer sur votre propre machine.
 
@@ -14,25 +14,26 @@ Si vous installez Libreboot vous-même, un support est disponible via différent
 
 
 Suport utilisateur
-============
+------------------
 
 IRC et Reddit sont recommandés pour demander de l'aide (IRC est à privilégier) :
 
 
 Mail
-============
+----
 
 Libreboot dispose d'une liste de diffusion : <https://lists.sr.ht/~libreboot/libreboot>
 
 L'adresse mail est [~libreboot/libreboot@lists.sr.ht](mailto:~libreboot/libreboot@lists.sr.ht)
 
 Discussion sur le developpement
-======================
+-------------------------------
 
 Pour participer au développement, consultez la pag [GIT](git.md)  du projet. Vous y trouverez des instructions détaillées sur l'envoi de patchs via pull request.
 
 IRC chatroom
-============
+------------
+
 Le chat IRC est le principal moyen de contact pour le projet Libreboot via `#libreboot` sur Libera IRC.
 
 Webchat:
@@ -59,12 +60,11 @@ De manière générale, reportez-vous à la documentation de votre logiciel IRC.
 
 
 Réseaux sociaux
-============
+---------------
 
 Libreboot existe officiellement sur différents réseaux sociaux.
 
-Mastodon
---------
+### Mastodon
 
 Le fondateur et principal developpeur, Leah Rowe, est sur Mastodon:
 
@@ -73,8 +73,7 @@ Le fondateur et principal developpeur, Leah Rowe, est sur Mastodon:
 Leah peut également être contacté par mail :
 [leah@libreboot.org](mailto:leah@libreboot.org)
 
-Reddit
-------
+### Reddit
 
 Généralement utilisé pour le support mais aussi pour l'annonces des dernières nouveautés :
 <https://www.reddit.com/r/libreboot/>

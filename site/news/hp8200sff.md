@@ -2,8 +2,8 @@
 % Leah Rowe
 % 15 April 2023
 
-Introduction
-============
+Free software BIOS/UEFI
+----------------------------
 
 Today, Libreboot gains its *first* desktop machine for nearly 2 years. The
 last one added was Acer G43T-AM3.
@@ -21,8 +21,7 @@ readily available on merchant sites such as eBay. Desktop support has
 traditionally been much weaker in Libreboot, and this is something that
 should (can, and will) change.
 
-HP EliteBook 2560p (laptop)
-------------------
+### HP EliteBook 2560p (laptop)
 
 Riku is also interested in adding HP EliteBook 2560p support in Libreboot.
 Coreboot has support for that board. For *that* board, I committed this
@@ -42,8 +41,7 @@ in the Libreboot [blobs reduction policy](policy.md), because it makes the EC
 firmware easier to replace with libre code (based on reverse engineering,
 perhaps).
 
-Dell Optiplex 7020/9020 probably soon (testing needed)
--------------------------------------
+### Dell Optiplex 7020/9020 probably soon (testing needed)
 
 I've purchased Dell Optiplex 7020 and 9020 workstations (Haswell gen), which is
 available for coreboot with this gerrit patch:
@@ -52,8 +50,7 @@ available for coreboot with this gerrit patch:
 
 Libreboot will eventually support *all* coreboot targets.
 
-Want to help add boards yourself?
----------------------------------
+### Want to help add boards yourself?
 
 Libreboot has the following documentation available:
 

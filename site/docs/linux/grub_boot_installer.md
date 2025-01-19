@@ -1,9 +1,10 @@
 ---
-title: Installing Linux
+title: Boot Linux distro installers on Libreboot
 x-toc-enable: true
 ...
 
-# Introduction
+GRUB payload assumed
+--------------------
 
 This guide assumes that you are using the GRUB bootloader directly.
 If you're using SeaBIOS, it's quite intuitive and works similarly to other BIOS
@@ -17,7 +18,9 @@ Linux distributions, by default).
 These instructions are intended to be generic, applicable to just about any
 Linux distribution.
 
-## Prepare the USB Drive in Linux
+Prepare the USB Drive in Linux
+------------------------------
+
 If you downloaded your ISO while on an existing Linux system, here is how
 to create the bootable Linux USB drive:
 
@@ -40,19 +43,25 @@ folder, this is the command we would run:
 That's it! You should now be able to boot the installer from your USB drive
 (the instructions for doing so will be given later).
 
-## Prepare the USB drive in NetBSD
+Prepare the USB drive in NetBSD
+-------------------------------
+
 [This page](https://wiki.netbsd.org/tutorials/how_to_install_netbsd_from_an_usb_memory_stick/)
 on the NetBSD website shows how to create a NetBSD bootable USB drive, from
 within NetBSD itself. You should the `dd` method documented there. This will
 work with any Linux ISO image.
 
-## Prepare the USB drive in FreeBSD
+Prepare the USB drive in FreeBSD
+--------------------------------
+
 [This page](https://www.freebsd.org/doc/handbook/bsdinstall-pre.html) on the
 FreeBSD website shows how to create a bootable USB drive for installing
 FreeBSD. Use the `dd` method documented. This will work with any Linux ISO
 image.
 
-## Prepare the USB drive in LibertyBSD or OpenBSD
+Prepare the USB drive in OpenBSD
+--------------------------------
+
 If you downloaded your ISO on a LibertyBSD or OpenBSD system, here is how to
 create the bootable Linux USB drive:
 
@@ -78,14 +87,17 @@ the OpenBSD installer to it with `dd`. Here's an example:
 That's it! You should now be able to boot the installer from your USB drive
 (the instructions for doing so will be given later).
 
-## GRUB2 config on external media
+GRUB2 config on external media
+-------------------------------
 
 Pick the menu option: *Search for GRUB2 configuration on external media*
 
 If the distro installer image has a `grub.cfg` file inside, this menuentry is
 scripted to find it. This works well for many distros.
 
-## Debian or Devuan net install
+Debian or Devuan net installation
+---------------------------------
+
 Download the Debian or Devuan net installer. You can download the Debian ISO
 from [the Debian homepage](https://www.debian.org/), or the Devuan ISO from
 [the Devuan homepage](https://www.devuan.org/).
@@ -97,12 +109,16 @@ You can select the option, in the Libreboot GRUB menu, to load GRUB config
 from external media, and that should work just fine. Alternatively, pick one
 of the ISOLINUX-related menu options.
 
-## Booting ISOLINUX Images (Automatic Method)
+Booting ISOLINUX Images (Automatic Method)
+------------------------------------------
+
 Boot it in GRUB using the `Parse ISOLINUX config (USB)` option. A new menu
 should appear in GRUB, showing the boot options for that distro; this is a GRUB
 menu, converted from the usual ISOLINUX menu provided by that distro.
 
-## Booting ISOLINUX Images (Manual Method)
+Booting ISOLINUX Images (Manual Method)
+---------------------------------------
+
 These are generic instructions. They may or may not be correct for your
 distribution. You must adapt them appropriately, for whatever Linux
 distribution it is that you are trying to install.
@@ -152,7 +168,11 @@ to see a list of USB devices/partitions. Of course, this will vary from distro
 to distro. If you did all of that correctly, then it should now be booting your
 USB drive in the way that you specified.
 
-## Troubleshooting
+Troubleshooting
+---------------
+
+### Display modes
+
 Most of these issues occur when using libreboot with coreboot's `text-mode`
 with libgfxinit for video initialization. This mode is useful for text mode
 payloads, like `MemTest86+`, which expect `text-mode`, but for Linux
@@ -162,6 +182,7 @@ do Kernel Mode Setting, so they are able to initialize a frame buffer in bare
 metal regardless of whatever coreboot is doing).
 
 ### debian-installer Graphical Corruption in Text-Mode (Debian and Devuan)
+
 When using the ROM images that use Coreboot's `text mode`, instead of the
 coreboot framebuffer, while using libgfxinit, booting the Debian or Devuan net
 installer results in graphical corruption, because it is trying to switch to a

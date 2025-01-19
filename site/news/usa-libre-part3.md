@@ -3,7 +3,7 @@
 % 20 February 2023
 
 Introduction
-============
+------------
 
 You may recall last year's article: [New Hampshire (USA) may soon enshrine
 Software Freedom into law](usa-libre.md) - a proposed bill, if it passed,
@@ -26,15 +26,14 @@ contact your house representative, and ask them to support this bill! This
 web page can let you find who your representative is:\
 <https://www.gencourt.state.nh.us/house/members/>*
 
-Can't attend?
--------------
+### Can't attend?
 
 That's OK! You can still help. Please tell as many people about this as
 possible, and spread the news on as many websites/blogs as possible. Post it
 on your social media account, if you have one. Write to the media!
 
 When and where?
-===============
+---------------
 
 **This bill's hearing is on 21 February 2023 at 9AM in the Legislative Office
 Building, 33 N. State Ct., Concord, New Hampshire:**\
@@ -48,7 +47,7 @@ the goal of the movement, and that of the Libreboot project which is a part of
 said movement.
 
 Who to contact
-==============
+--------------
 
 Eric Gallager is the representative in charge of the proposed bill, and you can
 contact him in the following ways:
@@ -64,7 +63,7 @@ to its proprietary nature - use Mastodon or email if you can): \
 <https://twitter.com/cooljeanius>
 
 What does house bill 556-FN say?
-================================
+--------------------------------
 
 The actual text of the bill is provided here:\
 <https://gencourt.state.nh.us/lsr_search/billText.aspx?id=193&type=4>
@@ -81,7 +80,7 @@ copyleft versus permissive (BSD-style) licensing, the advancement of *any*
 libre software on such massive scale will help the entire movement.
 
 Live streams
-============
+------------
 
 Although not mentioned in previous articles on this agenda, the New Hampshire
 court building provides live streams of hearings.
@@ -99,8 +98,7 @@ Per the text of HB-556, the stream for *that* bill will be on:
 
 The links change, for each stream, so you should check them on the day.
 
-Use invidious!
---------------
+### Use invidious!
 
 The Youtube.com link is provided, above, for the sake of completion. However,
 you should use an Invidious instance. Invidious acts as a proxy for Youtube,

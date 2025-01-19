@@ -2,8 +2,8 @@
 % Leah Rowe
 % 4 January 2022 (updated 15 November 2022)
 
-Introduction
-============
+Free as in freedom!
+-----------------
 
 This article describes the *principles* that govern the Libreboot project. For
 information about *how those principles are applied in practise*, please read
@@ -31,7 +31,7 @@ ideology and it is therefore (mostly) non-technical; for technical information,
 you can refer to the [Libreboot build system documentation](../docs/maintain/).
 
 Current project scope
-=====================
+---------------------
 
 The libreboot project is concerned with what goes in the main boot flash IC, but
 there are other pieces of firmware to take into consideration, as covered
@@ -43,8 +43,7 @@ Most critical of these are:
 * HDD/SSD firmware
 * Intel Management Engine / AMD PSP firmware
 
-What is a binary blob?
-----------------------
+### What is a binary blob?
 
 A binary blob, in this context, is any executable for which no source code
 exists, that you cannot study and modify in a reasonable manner. By definition,
@@ -53,10 +52,9 @@ all such blobs are *proprietary* in nature, and should be avoided if possible.
 For information about Intel Management Engine and AMD PSP, refer to the FAQ.
 
 Blob *reduction* policy
-=======================
+---------------------
 
-Default configurations
-----------------------
+### Default configurations
 
 Coreboot, upon which Libreboot is based, is mostly libre software but does
 require certain vendor code on some platforms. A most common example might be raminit
@@ -117,8 +115,7 @@ Libreboot's pragmatic policies will inevitably result in more people becoming
 coreboot developers in the future, by acting as that crucial *bridge* between
 *it* and non-technical people who just need a bit of help to get started.
 
-Configuration
--------------
+### Configuration
 
 The principles above should apply to *default* configurations. However, libreboot
 is to be *configurable*, allowing the user to do whatever they like.
@@ -134,7 +131,7 @@ problem! The goal of the libreboot project is simply to make coreboot more
 accessible for otherwise non-technical users.
 
 Examples of Libreboot policy in action
-======================================
+-----------------------------------
 
 More information about this is also available on
 the [freedom status](../freedom-status.md) page.
@@ -207,7 +204,7 @@ examples of how this very policy is implemented in Libreboot:
   operating of a free operating system.
 
 FREEDOM CATALOG
-===============
+--------------
 
 A *[freedom status](../freedom-status.md)* page should also be made available,
 educating people about the software freedom status on each machine supported by
@@ -243,7 +240,7 @@ exist, for example, the work done by Sam Zeloof and the Libre Silicon project:
 (Sam literally makes CPUs in his garage)
 
 More detailed insight about microcode
-=====================================
+---------------------------------
 
 To be clear: it is preferable that microcode be free.
 Not including CPU microcode updates is an absolute disaster for system
@@ -294,7 +291,7 @@ it literally behaves differently than it's supposed to, so software will have
 unpredictable bugs that could even cause data corruption - or worse.
 
 Why was this page written?
-==========================
+----------------------------
 
 Firstly, observe the following graphic:
 

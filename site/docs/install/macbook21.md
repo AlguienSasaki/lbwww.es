@@ -1,5 +1,5 @@
 ---
-title: MacBook2,1 and MacBook1,1
+title: Install Libreboot on MacBook2,1 and MacBook1,1
 x-toc-enable: true
 ...
 
@@ -20,7 +20,7 @@ x-toc-enable: true
 | **Graphics**               | Intel GMA 950                                  |
 | **Display**                | 1280x800 TFT                                   |
 | **Memory**                 | 512MB, 1GB (upgradable to 4GB with 3GB usable) |
-| **Architecture**           | x86_64                                         |
+| **Architecture**           | x86\_64                                         |
 | **EC**                     | Proprietary                                    |
 | **Original boot firmware** | Apple EFI                                      |
 | **Intel ME/AMD PSP**       | Not present.                                   |
@@ -50,6 +50,14 @@ P*: Partially works with vendor firmware
 | **SeaBIOS**               | Works     |
 | **SeaBIOS with GRUB** | Works     |
 </div>
+
+Open source BIOS/UEFI firmware
+-------------------------
+
+This document will teach you how to install Libreboot, on your
+Apple MacBook 2,1 2005-2007 laptop motherboard. Libreboot replaces proprietary
+BIOS/UEFI firmware.
+
 The MacBook1,1 and MacBook2,1 are very similar to the 
 ThinkPad X60. It shares some hardware with the X60 such as the chipset.
 
@@ -63,15 +71,14 @@ uses Core Duo processors (supports 32-bit OS but not 64-bit), and it is
 believed that this is the only difference.
 
 Compatibility
-=============
+-------------
 
 The following pages list many models of MacBook1,1 and MacBook2,1:
 
 * <http://www.everymac.com/ultimate-mac-lookup/?search_keywords=MacBook1,1>
 * <http://www.everymac.com/ultimate-mac-lookup/?search_keywords=MacBook2,1>
 
-Models
-------
+### Models
 
 Specifically (Order No. / Model No. / CPU) for the MacBook1,1:
 
@@ -99,7 +106,7 @@ then don't forget to [send a patch](../../git.md), confirming that it
 actually works!
 
 Internal flashing
-=================
+-----------------
 
 MacBook2,1 can always be flashed internally, even if running Apple firmware:
 
@@ -114,7 +121,7 @@ The MacBook1,1 can't be flashed internally if running the Apple EFI firmware.
 You must flash externally.
 
 External flashing
-=================
+-----------------
 
 MacBook1,1 requires external flashing, if running the default Apple firmware.
 MacBook2,1 can be flashed internally, regardless.
@@ -134,7 +141,7 @@ Refer to the following guide:\
 [Externally rewrite 25xx NOR flash via SPI protocol](../install/spi.md)
 
 OSes using Linux on Apple EFI firmware
-======================================
+--------------------------------------
 
 You have 2 choices for booting up OSes using Linux as their kernel 
 on the MacBook:
@@ -143,8 +150,7 @@ on the MacBook:
 
 * Boot via a CD or DVD.
 
-Boot via a CD or DVD
---------------------
+### Boot via a CD or DVD
 
 The Apple EFI firmware contains a PC BIOS emulation layer for booting 
 Microsoft Windows on CDs and DVDs. That emulation layer **only** works 
@@ -174,8 +180,7 @@ should boot up properly automatically.
 to it using GRUB, despite the fact that it does sometimes show up. You 
 also won't be able to boot it up when using Libreboot.*
 
-Boot via USB
-------------
+### Boot via USB
 
 This method is harder than booting from a CD/DVD and may soft-brick your 
 MacBook but it's the only way to boot up successfully from a USB.
@@ -213,14 +218,14 @@ the CMOS/PRAM battery, wait a few minutes, and put it back in.
 to reconfigure GRUB2 correctly, else your system won't boot.*
 
 Coreboot wiki page
-==================
+------------------
 
 The following page has some information:
 
 * <https://www.coreboot.org/Board:apple/macbook21>
 
 Issues and solutions/workarounds
-================================
+--------------------------------
 
 There is one mouse button only, however multiple finger tapping
 works. The Apple logo on the
@@ -231,8 +236,7 @@ should [cover it up](http://cweiske.de/tagebuch/tuxbook.htm).
 software. Webcams are a privacy and security risk; cover it up! Or
 remove it.*
 
-Make it overheat less
----------------------
+### Make it overheat less
 
 NOTE: on newer libreboot revisions, this section is less relevant, because C3
 states are supported now. However, this section may still be useful, so it will
@@ -272,8 +276,7 @@ PLATFORM_PROFILE_ON_BAT=low-power
 
 The MacBook will still overheat, just less.
 
-Enable AltGr
-------------
+### Enable AltGr
 
 The keyboard has a keypad enter instead of an AltGr. The first key on
 the right side of the spacebar is the Apple "command" key. On its
@@ -297,12 +300,11 @@ line:
 
 to the file /etc/vconsole.conf and then restart the computer.
 
-Make touchpad more responsive
------------------------------
+### Make touchpad more responsive
 
 Linux kernels of version 3.15 or lower might make the touchpad
 extremely sluggish. A user reported that they could get better
-response from the touchpad with the following in their xorg.conf:
+response from the touchpad with the following in their `xorg.conf`:
 
 ```
 	Section "InputClass"

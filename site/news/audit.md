@@ -3,7 +3,7 @@
 % 13 June 2023
 
 Introduction
-============
+------------
 
 Literally about 200+ changes have been made to the Libreboot build system,
 since the last release of Libreboot. This has been the primary focus, thus far.
@@ -24,8 +24,7 @@ and compiles everything from scratch, but in a way that is simplified from the
 perspective of the end user (almost everything is just a single command, where
 users are typically not required to edit any files unless they want to).
 
-Brief summary of changes
-------------------------
+### Brief summary of changes
 
 In short, the following work has been performed:
 
@@ -50,8 +49,7 @@ is usually *why* (or *when*). Libreboot's build system tries to avoid bloat
 and *feature creep* when possible, intentionally refusing to implement certain
 features that are considered superfluous.
 
-Example of BSD coding style on shell scripts
---------------------------------------------
+### Example of BSD coding style on shell scripts
 
 One of the most common practises in BSD style in *top-down* logic, which
 makes programs much easier to read (in my opinion). Here is an example
@@ -79,7 +77,7 @@ in the Libreboot build system, with existing scripts modified accordingly. This
 and other work is ongoing.
 
 Auditing of utilities
-=====================
+---------------------
 
 This process has *also* been applied to some of the utilities (written in C)
 that Libreboot includes as part of lbmk. The following utilities have been
@@ -89,8 +87,7 @@ audited:
 * `e6400-flash-unlock` (minor cleanup, basically removing one unused function)
 * `nvmutil` (massive code size reduction, minor fixes here and there)
 
-Pledge
-------
+### Pledge
 
 The `nvmutil` program was already pledged, when compiled on OpenBSD, but it was
 not handled well. It is now handled correctly (correct ifdef rule), and it
@@ -102,8 +99,7 @@ The code has also been unveiled. See manpages:
 
 <https://man.openbsd.org/unveil.2>
 
-spkmodem-recv
--------------
+### spkmodem-recv
 
 This utility was *added* after the last release. It was imported from coreboot,
 which in turn previously forked it from GRUB. It is a receiving client for
@@ -130,7 +126,7 @@ code is conditionally *pledged* if you compile it on OpenBSD (for OpenBSD),
 see: <https://man.openbsd.org/pledge.2>
 
 Other plans for next release
-============================
+----------------------------
 
 I have a bunch of Dell/HP boards that I plan to add, which I would have added
 already but I've focused on the audit (which is more or less complete, now).
@@ -153,7 +149,7 @@ Besides this, I also wish to:
   with Libreboots u-boot payload, at present).
 
 FULL list of changes so far since last release
-==============================================
+----------------------------------------------
 
 Not all patches are listed below, if they are patches not relevant, or patches
 not currently pushed to upstream Libreboot git mirrors. The following patches

@@ -4,7 +4,7 @@ x-toc-enable: true
 ...
 
 Need help?
-==========
+----------
 
 Help is available on [Libreboot IRC](../../contact.md) and other channels.
 
@@ -16,8 +16,41 @@ if you want to send your machine in to have Libreboot installed for you.
 Leah Rowe, the founder and lead developer of Libreboot, also owns and
 operates Minifree Ltd; sales provide funding for the Libreboot project.
 
-Introduction
-============
+Install open source BIOS/UEFI firmware
+--------------------------------------
+
+This guide is predominantly about *installing Libreboot* (flashing it) onto
+your motherboard's main system flash. You can also adapt this guide for dumping,
+erasing and verifying firmware images; this guide shows you how to use
+the [flashprog](https://flashprog.org/) software with various external
+25XX NOR flash programmers. This guide is written for *Linux* users, but BSD
+operating systems are also compatible with flashprog; Windows might be feasible,
+ditto Apple's MacOS, as flashprog can also run on those, but they are not
+officially supported by Libreboot, and *we recommend* that you use Linux/BSD.
+
+Although this documentation is written *for the Libreboot project*, it can be
+used on any compatible 25xx NOR flash, on any number of devices, such as home
+routers and even certain videogame systems. If you're a refurbisher, and not
+a Libreboot-based one, but just a regular refurbisher e.g. on eBay, dealing
+with proprietary UEFI firmware (and perhaps Windows installations), it may be
+that on some of them, SMM-based flash writes are performed to store UEFI firmware
+configurations (instead of the old NVRAM/CMOS memory); you could adapt this
+guide (and read flashprog documentation) to erase/flash custom configurations,
+for example when unlocking boot passwords on the computers that you sell. This
+is the power of [Free Software](https://writefreesoftware.org/learn); flashprog
+is a Free Software project. The use-case scenario of the humble eBay seller is
+real; several of them have in fact used this guide in the past.
+
+So keep that in mind; this is part of the Libreboot installation instructions,
+but it can be used for *any* flashing operation on *any* 25xx NOR flash, with
+all sorts of firmware; you could also use this to *reverse* a Libreboot
+installation, re-flashing the original vendor firmware if you made a dump of it,
+**and we definitely recommend backing that up prior to Libreboot installation**.
+
+**Please ensure that your programmer's voltage matches that of the flash IC,
+and read this guide carefully to account for proper electrical safety. In
+general, these programmers operate at 3.3v, so you'll need a logic level
+adapter and e.g. buck converter, if you're dealing with a 1.8V flash IC.**
 
 **NOTE: Libreboot standardises on [flashprog](https://flashprog.org/wiki/Flashprog)
 now, as of 27 January 2024, which is a fork of flashrom.
@@ -37,10 +70,10 @@ which uses LPC flash in a PLCC32 socket, which you can simply hot-swap after
 booting the vendor firmware, and then flash internally. Simple!
 
 We will be using
-the [flashprog](https://flashprog.org/Flashrom) software which is written to
+the [flashprog](https://flashprog.org/) software which is written to
 dump, erase and rewrite these flash chips.
 
-libreboot currently documents how to use these SPI programmers:
+Libreboot currently documents how to use these SPI programmers:
 
 * Raspberry Pi Pico / Pico 2
 * Raspberry Pi (RPi) single-board computers
@@ -65,10 +98,9 @@ from Linux, with flashprog.
 is called *external* because it's not the *internal* one on your mainboard.
 
 Raspberry Pi Pico
-=================
+-----------------
 
-RP2040/RP2530 both supported
-----------------------------
+### RP2040/RP2530 both supported
 
 **Pico 2 and other RP2530 dongles also supported, on Libreboot 20241206 rev8
 or higher. Releases before this only supported the original Pico, and other
@@ -86,8 +118,7 @@ Additionally, all the software running on it is free, down to the full
 versions (Pico W & Pico WH) need vendor firmware to use the Wi-Fi chip,
 but that is not needed for following this guide.
 
-Download serprog firmware pre-compiled
--------------------------
+### Download serprog firmware pre-compiled
 
 Download the pico serprog tarball from Libreboot releases. For example, the
 Libreboot 20241206rev8 one would be
@@ -95,8 +126,9 @@ named: `libreboot-20241206rev8_pico_serprog.tar.xz` - it's available under
 the `roms/` directory in each release. With these binaries, you can easily
 get started.
 
-Build serprog firmware from source
-----------------------------------
+### Build serprog firmware from source (OPTIONAL)
+
+**Pre-compiled binaries are also available, in Libreboot releases.**
 
 You can alternatively download the serprog firmware here:\
 <https://codeberg.org/libreboot/pico-serprog>\
@@ -119,8 +151,7 @@ at `bin/serprog_pico/serprog_pico.uf2`
 and `bin/serprog_pico/serprog_pico_w.uf2` - images with `pico2` in the
 file name are for the Pico 2, and they can also be used.
 
-Install the serprog firmware
-----------------------------
+### Install the serprog firmware
 
 First, connect just the Pico to your computer with a micro-USB cable.
 Mount it like any other USB flash drive. If it isn't detected, you might need
@@ -136,8 +167,7 @@ release tarball.
 **NOTE: Other RP2040/2530 devices will also work. You just have to match
 the right pins and use the correct firmware file!**
 
-Logic levels
-------------
+### Logic levels
 
 A Pico has proper 3.3V logic levels, unlike a ch341a. Which means it won't
 destroy your board by sending 5V to it. If you have a 1.8V flash chip,
@@ -145,8 +175,7 @@ you need to add a logic level converter. **Please ensure that you have matched
 the voltage of your programmer to the voltage of your chip; both the data lines
 and power lines to the chip must match.**
 
-Wiring
-------
+### Wiring
 
 Disconnect the Pico and proceed to wire it to your
 [flash chip](/docs/install/spi.html#identify-which-flash-type-you-have).
@@ -182,11 +211,16 @@ not worth it. The 12Mbps USB port is limiting the actual speed here.
 
 Higher speeds might work nicely, on Pico 2.
 
-Do not use CH341A!
-==================
+Do not buy CH341A!
+------------------
+
+This section was heavily expanded, on 19 January 2025, because we see many
+people online still talking about the CH341a. Therefore, the hatred has been
+amplified. Please read this section carefully, to know why we advise against
+use of this particular programmer.
 
 NOR flashes on libreboot systems run on 3.3V DC or 1.8V DC, and this includes
-data lines. CH341A has 5V logic levels on data lines, which will damage your
+data lines. CH341A can have 5V logic levels on data lines, which can damage your
 SPI flash and also the southbridge that it's connected to, plus anything else
 that it's connected to.
 
@@ -246,8 +280,80 @@ resistors) performed, on the black CH341A:\
 The green version (not shown above) may come with 3.3v logic already wired, but
 still needs to have pull-up resistors placed for WP/HOLD.
 
+Disclaimer: A few (not many, but wily) people have criticised this section of the
+documentation, due to a misconception about what it really means and also because
+this section was previously very poorly written. So to be clear:
+
+Yes, we are quite well aware that the CH341A can in fact operate at 3.3v,
+even unmodified black models; the VCC line is 3.3v, and if when you either
+directly wire VCC to WP/HOLD pins yourself, or a pull-up resistor on the
+motherboard you're flashing pulls these high at 3.3v, then the logic levels
+on the data lines do in fact switch to 3V *during an erase, read or write cycle*.
+When no flashing operation is underway, the data lines are outputting at almost
+negligable current, so the actual amount of heat generated will be negligable,
+and therefore damage is unlikely. However, as stated above and as we will state
+again:
+
+* This is bad electrical design. The CH341A can switch flexibly between 3V
+  and 5V operation, but most flashes today are 1.8V or 5V anyway, and there are
+  all kinds of scenarios (such as over-current or surge event) where this 5V
+  idle logic level could still be applied. Modifying your CH341a to 3.3v
+  only, as defined in the datasheet (and by this page) is highly recommended.
+* The drive level is extremely poor anyway, on CH341a, making ISP-based
+  flashing ill advisable in many cases, such as where the PCH (Intel platforms)
+  is partly active and the data lines have lower resistance, because some
+  boards have 0ohms or very low resistance on these lines.
+* No pull-ups on the WP/hold lines, when flashing in the socket; they are high
+  via 0ohm trace to VCC, whereas you are advised to use a pull-up resistor to
+  mitigate over-current events.
+* Crap LDO on the board, and no ESD/overcurrent protection; the CH341a probably
+  can't provide much current on the VCC line, especially for ISP-based flashing
+  where the flash shares a common power rail with many other components.
+
+CH341a is cheap junk. Get yourself a Raspberry Pi Pico instead; it's about the
+same price, but of much higher quality from an electrical design perspective,
+supports much higher (12mA!) drive levels on data lines, can control multiple
+chip selects at once; it's just better, in every way. And the Raspberry Pi is
+completely reprogrammable, so you can use it for something else when you're
+done, e.g. UART dongle, or if you're wily enough, [PlayStation 1 Optical Disc
+Emulator](https://github.com/paulocode/picostation) - the Pico is simply a
+highly versatile tool, much better value for money than the piece of junk
+CH341a.
+
+There is only one instance where the CH341a is *good*, and that is when you're
+actually flashing a loose (not soldered) chip, in the ZIF socket on the CH341a
+board. It's a DIP-8 socket, and you can also buy WSON-8 and SOIC-8 or SOIC-16
+adapters for it; you can also plug a special adapter board into it that converts
+the voltages (VCC and data lines) to 1.8V, for 1.8V flashes (you could also
+use that same 1.8V adapter circuit in a breadboard wired to your Pico). On
+socket-based flashing, *which is specifically what the CH341a was designed
+for*, you don't have to worry about weak drive level because there is nothing
+contending with it on the flash IC's data pins.
+
+The *socket-based* flashing operation is what we recommend this programmer
+for, *only if you already have one*. We still recommend fixing the issue with
+the WP/HOLD pins as described above; if you're doing this, note that there are
+also newer models that have a voltage switch and logic level shifter already
+on the board, which can be very useful. *Clip-based* flashing (ISP / in-system
+programming) is, specifically, what we advise against using the CH341a for.
+
+Even if you *are* doing socket-based flashing, we still suggest buying the Pico
+instead, though the Pico doesn't come with a ZIF socket; you can wire the Pico
+to a breadboard instead, if you want to use a socket for flashing. Then you
+will also have a good ISP device, and the overall cost covering both use-case
+scenarios is *lower* (cheaper part cost) than buying a CH341a *and* Pico; and
+the Pico can also emulate the PlayStation Optical Disc Drive in your
+playstation to boot from SD card instead of your dead CD drive, or could even
+be a [JTAG adapter](https://hackaday.com/2022/04/11/need-a-jtag-adapter-use-your-pico/) -
+again, the Pico is a reprogrammable device! Whereas, the CH341a is a fixed-function
+device (and performs poorly).
+
+Why pay $10 for a CH341a when you can pay $10 for a Raspberry Pi Pico which is
+electrically and functionally superior in every way? And the Pico is completely
+open source, right down to the boot rom.
+
 Identify which flash type you have
-==================================
+----------------------------------
 
 In all of them, a dot or marking shows pin 1 (in the case of WSON8, pad 1).
 
@@ -255,8 +361,7 @@ Use the following photos and then look at your board. When you've figured out
 what type of chip you have, use that knowledge and the rest of this guide, to
 accomplish your goal, which is to read from and/or write to the boot flash.
 
-SOIC8
------
+### SOIC8
 
 ![](https://av.libreboot.org/chip/soic8.jpg)
 
@@ -271,8 +376,7 @@ SOIC8
 |   7 | HOLD     |
 |   8 | VCC      |
 
-SOIC16
-------
+### SOIC16
 
 ![](https://av.libreboot.org/chip/soic16.jpg)
 
@@ -289,8 +393,7 @@ SOIC16
 
 SOIC8 and SOIC16 are the most common types, but there are others:
 
-WSON8
------
+### WSON8
 
 It will be like this on an X200S or X200 Tablet:\
 
@@ -301,15 +404,13 @@ On T400S, it is in this location near the RAM:\
 ![](https://av.libreboot.org/t400s/soic8.jpg)\
 NOTE: in this photo, the chip has been replaced with SOIC8.
 
-DIP8
-----
+### DIP8
 
 ![](https://av.libreboot.org/dip8/dip8.jpg)
 
 Pinout is the same as SOIC8 above.
 
-Supply Voltage
---------------
+### Supply Voltage
 
 Historically, all boards that Libreboot supports happened to have SPI NOR chips
 which work at 3.3V DC. With the recent addition of Chromebooks whose chips are
@@ -322,18 +423,16 @@ connect it to the chip through an adapter or logic level converter, never
 directly.
 
 Software configuration
-======================
+----------------------
 
-General/Le potato
------------------
+### General/Le potato
 
 The [generic guide](spi_generic.md) is intended to help those looking to use an
 SBC which is not listed in this guide.
 The guide will, however, use the libre computer 'Le Potato' as a reference board.
 If you have that board, you should refer to the [generic guide.](spi_generic.md)
 
-BeagleBone Black (BBB)
-----------------------
+### BeagleBone Black (BBB)
 
 SSH into your BeagleBone Black. It is assumed that you are running Debian 9 on
 your BBB. You will run `flashprog` from your BBB.
@@ -395,8 +494,7 @@ Note: flashprog can never write if the flash chip isn't found automatically.
 This means that it's working (the clip isn't connected to any flash
 chip, so the error is fine).
 
-Caution about BBB
------------------
+### Caution about BBB
 
 BeagleBone Black is not recommended, because it's very slow and unstable for
 SPI flashing, and nowadays much better options exist. We used to mainly
@@ -405,8 +503,7 @@ Software on it, but nowadays there are superior options.
 
 TODO: document other SPI flashers
 
-Rasberry Pi (RPi)
------------------
+### Rasberry Pi (RPi)
 
 SSH into your Raspberry Pi. You will run `flashprog` from your Raspberry Pi.
 
@@ -425,9 +522,9 @@ Under the Interface section, you can enable SPI.
 
 The device for communicating via SPI as at `/dev/spidev0.0`
 
-RPi Drive Strength
-------------------
-Flashrom on the RPi may not be able to detect the SPI flash chip on some
+### RPi Drive Strength
+
+Flashprog on the RPi may not be able to detect the SPI flash chip on some
 systems, even if your wiring and clip are set up perfectly. This may be due to
 the drive strength of the Raspberry Pi GPIOs, which is 8mA by default. Drive
 strength is essentially the maximum current the pin can output while also
@@ -483,8 +580,7 @@ See
 <https://www.raspberrypi.com/documentation/computers/raspberry-pi.html#gpio-pads-control>
 for more information about the drive strength control on the Pi.
 
-Caution about RPi
------------------
+### Caution about RPi
 
 Basically, the Raspbian project, now called Raspberry Pi OS, put in their repo
 an update that added a new "trusted" repository, which just so happened to be
@@ -504,8 +600,7 @@ They then removed it, after a public backlash, via the following commits:
 * <https://github.com/RPi-Distro/raspberrypi-sys-mods/commit/ed96790e6de281bc393b575c38aa8071ce39b555>
 * <https://github.com/RPi-Distro/raspberrypi-sys-mods/commit/4d1afece91008f3787495b520ac03b53fef754c6>
 
-Libre firmware on RPi
----------------------
+### Libre firmware on RPi
 
 The boot firmware on older Raspberry Pi models can be replaced, with entirely
 libre firmware. This may be a useful additional step, for some users. See:
@@ -516,12 +611,11 @@ Website:
 
 <https://librerpi.github.io/>
 
-Install flashprog
-----------------
+### Install flashprog
 
 If you're using a BBB or RPi, you will do this while SSH'd into those.
 
-Flashrom is the software that you will use, for dumping, erasing and rewriting
+Flashprog is the software that you will use, for dumping, erasing and rewriting
 the contents of your NOR flash.
 
 In the libreboot build system, from the Git repository, you can download and
@@ -550,7 +644,7 @@ for use on x86-64 systems running Ubuntu 20.04, but it should work in Raspbian
 on the Raspberry Pi.
 
 Alternatively, you may download flashprog directly from upstream
-at <https://flashprog.org/Flashrom>
+at <https://flashprog.org/Flashprog>
 
 If you're flashing a Macronix flashchip on a ThinkPad X200, you will want to
 use a special patched version of flashprog, which you can download here:
@@ -565,13 +659,12 @@ at `config/dependencies/` which you can install
 using the `apt-get` software.
 
 How to use flashprog
-===================
+--------------------
 
 Read past these sections, further down this page, to learn about specific chip
 types and how to wire them.
 
-Reading
--------
+### Reading
 
 Before flashing a new ROM image, it is highly advisable that you dump the
 current chip contents to a file.
@@ -631,8 +724,7 @@ You can combine both flashes together with `cat` for example:
 Note that you will need this combined rom if you intend to manually extract vendor
 files, which is a method not officially supported by Libreboot's build system.
 
-Writing
--------
+### Writing
 
 Next, run this command (RPi):
 
@@ -668,15 +760,13 @@ For example, to split a rom for the x230, t430, t530, or t440p run:
 
 Flash the resulting roms to each of their respective chips according to the above instructions.
 
-
 Hardware configuration
-======================
+----------------------
 
 Refer to the above guidance about software configuration. The following advice
 will teach you how to wire each type of flash chip.
 
-WARNINGS
---------
+### WARNINGS
 
 Do not connect the power source until your chip is otherwise properly
 wired. For instance, do not connect a test clip that has power attached.
@@ -701,16 +791,14 @@ DO NOT connect more than 1 DC power source to your flash chip either!
 Mixing voltages like that can easily cause damage to your equipment, and to
 your chip/mainboard.
 
-MISO/MOSI/CS/CLK lines
-----------------------
+### MISO/MOSI/CS/CLK lines
 
 You may want to add 47ohm series resistors on these lines, when flashing the
 chips. Only do it on those lines (NOT the VCC or GND lines). This provides
 some protection from over-current. On Intel platforms, the SPI flash is usually
 connected via such resistors, directly to the Southbridge chipset.
 
-ISP programming and VCC diode
------------------------------
+### ISP programming and VCC diode
 
 ISP means in-system programming. It's when you flash a chip that is already
 mounted to the mainboard of your computer that you wish to install libreboot
@@ -750,8 +838,7 @@ the flash into a breadboard when flashing.
 TODO: Make a page on libreboot.org, showing how to do this on all mainboards
 supported by libreboot.
 
-GPIO pins on BeagleBone Black (BBB)
------------------------------------
+### GPIO pins on BeagleBone Black (BBB)
 
 Use this image for reference when connecting the pomona to the BBB:
 <https://beagleboard.org/Support/bone101#headers> (D0 = MISO or connects
@@ -760,8 +847,7 @@ to MISO).
 On that page, look at the *P9 header*. It is what you will use to wire up your
 chip for flashing.
 
-GPIO pins on Raspberry Pi (RPi) 40 Pin
---------------------------------------
+### GPIO pins on Raspberry Pi (RPi) 40 Pin
 
 This diagram shows the pinout for most modern Pi's and Pi derivatives.
 The diagram shows the pins of an RPi on the left and the two SOIC clips
@@ -769,8 +855,7 @@ on the left.
 
 ![](https://av.libreboot.org/rpi/wiring.webp)
 
-GPIO pins on Raspberry Pi (RPi) 26 Pin
--------------------------------
+### GPIO pins on Raspberry Pi (RPi) 26 Pin
 
 Diagram of the 26 GPIO Pins of the Raspberry Pi Model B (for the Model
 B+ with 40 pins, start counting from the right and leave 14 pins):
@@ -779,8 +864,7 @@ B+ with 40 pins, start counting from the right and leave 14 pins):
 
 Use this as a reference for the other sections in this page, seen below:
 
-SOIC8/DIP8/WSON8 wiring diagram
--------------------------------
+### SOIC8/DIP8/WSON8 wiring diagram
 
 Refer to this diagram:
 
@@ -807,8 +891,7 @@ will provide a stable 3.3V voltage, with adequate current levels. On those
 laptops, this is necessary because the flash shares a common 3.3V DC rail with
 many other ICs that all draw quite a lot of current.
 
-SOIC16 wiring diagram (Raspberry Pi)
-------------------------------------
+### SOIC16 wiring diagram (Raspberry Pi)
 
 RPi GPIO header:\
 ![](https://av.libreboot.org/rpi/0009.webp)
@@ -846,8 +929,7 @@ NOTE: pins 1 and 9 are WP/HOLD pins. If flashing a chip on a breadboard, please
 use pull-up resistors on those (see notes below), and decoupling capacitor on
 pin 2 (VCC).
 
-Pull-up resistors and decoupling capacitors
--------------------------------------------
+### Pull-up resistors and decoupling capacitors
 
 **Do this for chips mounted to a breadboard. Ignore this section if you're
 flashing a chip that is already soldered to a mainboard.**
@@ -895,8 +977,7 @@ WP/HOLD are not pin 3/7 like above, but instead pins 1 and 9, so wire your
 pull-up resistors on those. VCC on SOIC16 is pin 2, so wire your decoupling
 capacitors up on that.
 
-SOIC8/WSON8/DIP8/SOIC16 not mounted to a mainboard
---------------------------------------------------
+### SOIC8/WSON8/DIP8/SOIC16 not mounted to a mainboard
 
 If your system has lower capacity SPI flash, you can upgrade. On *most* systems,
 SPI flash is memory mapped and the maximum (in practise) that you can use is a
@@ -968,8 +1049,7 @@ and good 60/40 or 63/37 leaded solder (don't use lead-free):
 ![](https://av.libreboot.org/dip8/adapter.jpg)
 ![](https://av.libreboot.org/dip8/sop8todip8.jpg)
 
-SOIC8/SOIC16 soldered to a mainboard
-------------------------------------
+### SOIC8/SOIC16 soldered to a mainboard
 
 This is an example of *in-system programming* or *ISP* for short.
 
@@ -994,8 +1074,7 @@ Here is an example of a test clip connected for SOIC16:\
 And here is an example photo for SOIC8:\
 ![](https://av.libreboot.org/x60/th_bbb_flashing.jpg)
 
-DIP8 soldered to the mainboard
-------------------------------
+### DIP8 soldered to the mainboard
 
 It is extremely cursed for DIP8 to be soldered directly to the mainboard. It is
 usually mounted to a socket.
@@ -1010,8 +1089,7 @@ directly soldered. It is almost always mounted in a socket.
 
 Your DIP8 IC has the same pinout as a SOIC8 IC.
 
-Replace WSON8 IC with SOIC8
----------------------------
+### Replace WSON8 IC with SOIC8
 
 **NOTE: You can alternatively purchase WSON8 probes from a site like Aliexpress.
 They look similar to SOIC8 clips, and they work similarly.**
@@ -1126,7 +1204,7 @@ evaporates quickly and it does not leave a corrosive residue.
 -------------------------------------------------------------------------------
 
 LICENSING
-=========
+---------
 
 This page is released under different copyright terms than most other pages
 on this website.

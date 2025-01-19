@@ -7,8 +7,8 @@ YOU MAY BRICK YOUR MACHINE!! - Please click the link and follow the instructions
 there, before flashing. For posterity,
 [here is the link again](../docs/install/ivy_has_common.md).**
 
-Introduction
-============
+Free software BIOS/UEFI
+------------------------
 
 *This* new release, Libreboot 20231021, released today 21 October 2023, is
 a new *testing* release of Libreboot. The previous release was
@@ -37,10 +37,9 @@ firmware, but not Libreboot! Booting Linux/BSD is also [well](../docs/linux/)
 [supported](../docs/bsd/).
 
 Work done since last release
-============================
+--------------------------
 
-New mainboards now supported:
------------------------------
+### New mainboards now supported:
 
 The *primary* focus of this release has been build system improvements, and new
 build system features. However, these boards were added to Libreboot:
@@ -64,8 +63,7 @@ they compile properly on modern distros/toolchains. More info can be found in a
 previous news article: [ASUS KGPE-D16, KCMA-D8 and KFSN4-DRE re-added to
 Libreboot](fam15h.md)
 
-GRUB LUKS2 now supported (with argon2 key derivation)
----------------------------------------------------
+### GRUB LUKS2 now supported (with argon2 key derivation)
 
 This was covered in a [previous article](argon2.md), which you should read.
 GRUB *2.12* is now the version that Librebooot uses, although it's currently in
@@ -95,8 +93,7 @@ These libreboot patches added argon2 support:
 This means that you can now boot from encrypted `/boot` partitions. I'm very
 grateful to everyone who made this possible!
 
-Simplified commands (build system)
--------------------------
+### Simplified commands (build system)
 
 Simply put, lbmk (the Libreboot build system) is now *easier to use*; there
 are only *12* shell scripts in this release, versus 50 or so in the previous
@@ -109,8 +106,7 @@ As always, you can find information about *using* the build system in
 the [Libreboot build instructions](../docs/build/) and in the [lbmk
 maintenance manual](../docs/maintain/).
 
-TWO massive audits. 50% code size reduction in lbmk.
---------------------------------------------
+### TWO massive audits. 50% code size reduction in lbmk.
 
 Libreboot's build system, lbmk, is written entirely in shell scripts. It is
 an automatic build system that downloads, patches, configures and compiles
@@ -132,8 +128,7 @@ Their changes will also be listed here. The Libreboot build system (lbmk) has
 been completely re-designed, since the last release. It's the same fundamental
 design, but all of the commands have changed, and everything is much simpler.
 
-Serprog firmware building (RP2040 and STM32)
------------------------------------
+### Serprog firmware building (RP2040 and STM32)
 
 In addition to coreboot firmware, the Libreboot build system (lbmk) can now
 build *serprog* firmware, specifically `pico-serprog` and `stm32-vserprog`, on
@@ -147,8 +142,7 @@ Pre-compiled firmware images are available, for many of these devices, under
 the `roms/` directory in this Libreboot 20231021 release! Riku Viitanen is the
 one who added this capability to Libreboot.
 
-Updated U-Boot revision (2023.10)
-----------------------------
+### Updated U-Boot revision (2023.10)
 
 Alper Nebi Yasak submitted patches that update the U-Boot revision in
 Libreboot, on `gru_bob` and `gru_kevin` chromebooks. Additionally, the `cros`
@@ -175,8 +169,7 @@ reading these diffs:
 
 Thank you, Alper!
 
-Coreboot, GRUB, U-Boot and SeaBIOS revisions
-------------------------------------
+### Coreboot, GRUB, U-Boot and SeaBIOS revisions
 
 In Libreboot 20231021 (*this release*):
 
@@ -199,10 +192,9 @@ In Libreboot 20230625 (*previous release*):
 As you can see, all revisions are quite new in this release.
 
 Build system tweaks
-===================
+-----------------
 
-resources/ now config/
-----------------------
+### resources/ now config/
 
 The `resources/scripts/` directory is now `script/`, and what was `resources/`
 now only contains configuration data plus code patches for various projects,
@@ -1052,7 +1044,7 @@ The log is as follows, relative to Libreboot 20230625:
 This is 445 changes in total, since Libreboot 20230625.
 
 Hardware supported in this release
-==================================
+--------------------------------------
 
 All of the following are believed to *boot*, but if you have any issues,
 please contact the Libreboot project. They are:
@@ -1062,8 +1054,7 @@ please contact the Libreboot project. They are:
 -   [ASUS KFSN4-DRE motherboard](../docs/install/kfsn4-dre.md)
 -   [ASUS KGPE-D16 motherboard](../docs/install/kgpe-d16.md)
 
-Desktops (AMD, Intel, x86)
------------------------
+### Desktops (AMD, Intel, x86)
 
 -   [Gigabyte GA-G41M-ES2L motherboard](../docs/install/ga-g41m-es2l.md)
 -   [Acer G43T-AM3](../docs/install/acer_g43t-am3.md)
@@ -1111,14 +1102,13 @@ Desktops (AMD, Intel, x86)
 -   [Samsung Chromebook Plus (v1) (gru-kevin)](../docs/install/chromebooks.md)
 
 Downloads
-=========
+---------
 
 You can find this release on the downloads page. At the time of this
 announcement, some of the rsync mirrors may not have it yet, so please check
 another one if your favourite one doesn't have it.
 
-Post-release fix
-================
+### Post-release fix
 
 There was a minor problem in the original Libreboot 20231021 release, namely:
 keymap configurations were not properly generated inside the ROM images, so
@@ -1136,10 +1126,9 @@ because the main mirror that it downloads from was offline during the build,
 so the relevant acpica tarball was mirrored to Libreboot rsync at last minute.
 
 Post-release errata
-===================
-
-S3 suspend/resume
 ------------------
+
+### S3 suspend/resume
 
 Broken on tested boards: i945, gm45, sandybridge and ivybridge (probably
 haswell too, but untested as I write this).
@@ -1150,8 +1139,7 @@ be issued, along with several other fixes made in lbmk since this release.
 If you're using Libreboot 20231021, you should not try to put your machine
 to sleep. You should only turn it on or power it off (power cycle / coldboot).
 
-Insertion of PIKE2008 ROMs, i945 bootblock copy
------------------------------------------------
+### Insertion of PIKE2008 ROMs, i945 bootblock copy
 
 Empty PIKE2008 ROMs not inserted in KCMA-D8 and KGPE-D16 ROMs.
 
@@ -1183,8 +1171,7 @@ And without the bootblock copied on X60/T60 ROMs, flashing will result in a bric
 under these conditions: bucts not reset and ROM flashed successfully, and/or
 flashing the ROM from LenovoBIOS to Libreboot.
 
-Fam15h microcode wrongly not detected as inserted
--------------------------------------------------
+### Fam15h microcode wrongly not detected as inserted
 
 On those boards, `target.cfg` files specified `microcode_required="n"`, and
 the logic in the release script renames ROM images according to this rule:

@@ -40,7 +40,7 @@ provide testing for the same mainboard if that's what you have. The more the
 merrier!
 
 Be Contactable
-==============
+--------------
 
 You should monitor whatever email you provide in your application.
 There is no specific time-frame for how long it should take after
@@ -50,7 +50,7 @@ If you are the *only* maintainer for your board then please take
 into consideration that your input is especially vital.
 
 Have External Flashing Equipment
-================================
+--------------------------------
 
 The roms you test will of course be untested.
 To avoid having a bricked machine, you need to have external flashing
@@ -62,7 +62,7 @@ Refer to [Coreboot's documentation](https://doc.coreboot.org/)
 or ask on IRC if you are unsure.
 
 Testing Procedure
-=================
+-----------------
 
 You will receive an email when roms are ready for testing.
 The email will link to an open issue on our [current git hosting platform.](/git.html#lbmk-libreboot-make)
@@ -83,6 +83,6 @@ note: [insert any notes if relevant]
 
 For example, a board status comment might look like this:
 
-    board: t440p_12mb
-    status: fail
-    note: GRUB throws error 'something_is_b0rked'
+	board: t440p_12mb
+	status: fail
+	note: GRUB throws error 'something_is_b0rked'

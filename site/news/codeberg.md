@@ -3,7 +3,7 @@
 % 8 April 2023
 
 RIP Notabug
-===========
+-------------
 
 Git repositories provided by Libreboot are still available via Notabug, but
 the Notabug site has been quite unreliable for some time now. I notice it
@@ -18,8 +18,7 @@ admin (single) would fix issues, but I can't keep waiting.
 Libreboot was originally a member of the Peers Community, which hosts Notabug.
 So I had an affinity for Notabug.
 
-Libreboot repos now hosted by Codeberg
---------------------------------------
+### Libreboot repos now hosted by Codeberg
 
 I've decided to set up an account on Codeberg. You can find it here:
 
@@ -37,8 +36,7 @@ under `util/ich9utils`, so the ich9utils repository was not
 needed on Codeberg (it still exists on Notabug). I'll add bucts
 to Libreboot's lbmk repo too (under `util/bucts/`).
 
-Codeberg has nicer features
----------------------------
+### Codeberg has nicer features
 
 Codeberg runs on forgejo, itself a fork of Gitea, which *itself* is a fork
 of Gogs. *Notabug* runs on an older, modified version of Gogs, which lacks a
@@ -54,8 +52,7 @@ You can send issue reports and pull requests in much the same way as before,
 but you will need to make a new account on codeberg.org if you don't already
 have one.
 
-Notabug still available
------------------------
+### Notabug still available
 
 The notabug repositories are *still* available, and I'll still push new code
 to them. I push to several repositories, not just codeberg/notabug, but those
@@ -66,7 +63,7 @@ so it's no longer viable for production use, but it's still viable as a backup.
 If codeberg is ever down, at least you'd be able to download from Notabug.
 
 Why not self-host?
-==================
+------------------
 
 Forgejo, based on Gitea, is what runs on Codeberg. They host the project, on
 behalf of the developers. Forgejo is working on federating the git forge, so
@@ -86,8 +83,7 @@ When federation becomes available, I assume Codeberg's forgejo instance will
 become part of that, so it just makes practical sense for Libreboot to
 use Codeberg.
 
-Why not sourcehut?
-------------------
+### Why not sourcehut?
 
 I considered sourcehut. I like the concept of it (mailing lists made easier,
 email-based collaboration) but I don't think most people will want to use that.

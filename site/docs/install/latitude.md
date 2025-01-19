@@ -1,14 +1,27 @@
 ---
-title: Flashing Libreboot on Dell Latitude laptops
+title: Install Libreboot on Dell Latitude laptops
 x-toc-enable: true
 ...
+
+Open source BIOS/UEFI firmware
+------------------------------
+
+This document will teach you how to install Libreboot, on various models of
+Dell Latitude laptop motherboard, namely Dell Latitude E4300, E6400, E6400 XFR,
+E6400 ATG, E5420, E5520, E5530, E6420, E6430, E6520, E6530, E6230, E6330
+and E6220; you must only install Libreboot on models with *Intel graphics*.
+Libreboot replaces proprietary BIOS/UEFI firmware.
+
+In case any models are unlisted in the above paragraph, you should also check
+the full list of supported Dell Latitude models on the [Libreboot hardware
+compatibility](./#which-systems-are-supported-by-libreboot) page.
 
 All of the Dell Latitude models can be flashed internally, which means that
 you do not need to disassemble them. You can do it from Linux/BSD, using the
 instructions on this page.
 
 Disable security before flashing
-================================
+--------------------------------
 
 **[PLEASE READ THESE INSTRUCTIONS BEFORE INSTALLING](ivy_has_common.md), OR
 YOU MAY BRICK YOUR MACHINE!! - Please click the link and follow the instructions
@@ -24,13 +37,13 @@ Note that Libreboot does not currently implement UEFI on x86 platforms, but
 you can set up [Secure libreBoot](../linux/grub_hardening.md) after flashing.
 
 MAC address
-===========
+-----------
 
 Make sure to set your own MAC address in the ROM image before flashing.
 Please read the [nvmutil manual](nvmutil.md) which says how to do this.
 
 Thermal safety
-==============
+--------------
 
 **Thermal safety**: this machine shuts down very quickly, when the machine
 exceeds 80c CPU temperature, which is far more conservative than on most
@@ -39,18 +52,16 @@ excellent. More info available [here](../install/dell_thermal.md). This is a
 known bug, but otherwise the machine will be mostly stable.
 
 Machine-specific notes
-======================
+----------------------
 
-Latitude E6400
---------------
+### Latitude E6400
 
 Vendor files not required for Dell Latitude E6400 if you have the Intel GPU.
 
 If you have the Nvidia model, please use the `e6400nvidia_4mb` target, and
 make sure to run the [inject script](ivy_has_common.md) prior to flashing.
 
-E6400 nvidia issues
--------------------
+### E6400 nvidia issues
 
 See: <https://codeberg.org/libreboot/lbmk/issues/14#issuecomment-907758>
 
@@ -59,8 +70,7 @@ The `nv` drivers on BSD systems generally work, but can have severe performance
 issues; use of a tiling window manager is recommended, on BSD systems, because
 moving windows around can literally lag a lot otherwise, on most window managers.
 
-dGPU variants
--------------
+### dGPU variants
 
 On everything except E6400, Libreboot only supports the variant with an Intel
 GPU. Therefore, you must *only* purchase a Dell Latitude that has the Intel
@@ -68,7 +78,7 @@ graphics; even on E6400, this is good advice, due to issues with the Nvidia
 GPU on E6400, documented later in this guide.
 
 Internal flashing
-=================
+-----------------
 
 You can simply boot Linux/BSD, on the Dell Latitude you wish to flash, and
 run `flashprog` from there, for Libreboot installation. Certain other steps
@@ -130,12 +140,11 @@ successful. If you don't see that, or you're unsure, please [contact the
 Libreboot project via IRC](../../contact.md).
 
 External flashing
-=================
+-----------------
 
-General guidance
-----------------
+### General guidance
 
-Machine-specific disassembly instructions not provided, but you can find
+Machine-specific disassembly instructions are not provided, but you can find
 the hardware maintenance manual for your Latitude module online. Just search
 for it. The flash chips(s) is/are usually under the keyboard/palmrest. Near
 to the PCH/southbridge.
@@ -153,10 +162,9 @@ Please read the [external SPI flash guide](spi.md)
 
 External flashing is usually not required, on these machines.
 
-Chip size guidance
-------------------
+### Chip size guidance
 
-SOme Dell Latitudes use a single flash chip, so you can
+Some Dell Latitudes use a single flash chip, so you can
 just use the ROM images as-is.
 
 If there are two flash chips, you must split the ROM images. Check the silk

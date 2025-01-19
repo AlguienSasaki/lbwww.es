@@ -6,32 +6,20 @@ x-toc-enable: true
 **NOTE: This documentation refers only to ARM64. For AMD64/i386 (Intel/AMD)
 U-Boot setups, please read [uboot-x86.md](uboot-x86.md).**
 
-Libreboot has experimental support for using U-Boot as a coreboot
-payload since the [20221214](../../news/libreboot20221214.md) release, on ARM64
-systems, and on x86 since late 2024.
-
-U-Boot integration in Libreboot is currently at a proof-of-concept
-stage, with most boards completely untested and most likely not working.
 ROM images for them are mostly intended for further testing and
 development. If you have one of these machines and want to help fix
 things, you can ping `alpernebbi` on Libera IRC, who ported these boards
 to Libreboot.
 
-As of 14 December 2022, building of U-Boot images has been tested on
-Debian. Make sure you have the latest `lbmk` from the Git repository,
-and the build dependencies are installed like so, from `lbmk/` as root:
-
-	./mk dependencies debian
-
-This installs everything needed for `./mk -b coreboot`, and part of the
-build process makes use of coreboot's own cross-compile toolchain.
+Emulation
+---------
 
 [QEMU x86/ARM64 virtual machines](../misc/emulation.md) are also
 supported, which should be easy targets to start tinkering on if you
 want to contribute.
 
 Usage
-=====
+-----
 
 When your board is powered on, U-Boot will ideally turn on the display
 and start printing console messages there. After a countdown of a few
@@ -65,7 +53,7 @@ table, unexpected parts of the SPI ROM image, or do something else
 entirely.
 
 Known issues
-============
+------------
 
 U-Boot integration in Libreboot is incomplete. Here is a list of known
 issues that affect all boards:
@@ -83,7 +71,8 @@ issues that affect all boards:
 - UEFI support is incomplete
 
 See also
-========
+--------
+
 - [U-Boot documentation](https://u-boot.readthedocs.io/en/latest/)
 - [U-Boot documentation (unmigrated files)](https://source.denx.de/u-boot/u-boot/-/tree/master/doc)
 - [U-Boot and generic distro boot](https://marcin.juszkiewicz.com.pl/2021/03/14/u-boot-and-generic-distro-boot/)

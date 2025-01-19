@@ -3,7 +3,7 @@
 % 11 September 2014
 
 6th release (pre-release, 7th beta)
-===================================
+----------------------------
 
 -   Released 11th July 2014 (pre-release) 1st beta
 -   Revised (pre-release, 2nd beta) 16th July 2014
@@ -14,15 +14,13 @@
 -   Revised (pre-release, 6th beta) 3rd September 2014
 -   Revised (pre-release, 7th beta) 11th September 2014
 
-Machines still supported (compared to previous release):
---------------------------------------------------------
+### Machines still supported (compared to previous release):
 
 -   **Lenovo ThinkPad X60/X60s**
     -   You can also remove the motherboard from an X61/X61s and replace
         it with an X60/X60s motherboard.
 
-New systems supported in this release:
---------------------------------------
+### New systems supported in this release:
 
 -   **Lenovo ThinkPad X60 Tablet** (1024x768 and 1400x1050) with
     digitizer support
@@ -43,13 +41,11 @@ New systems supported in this release:
     MB063LL/A, MB062LL/A)
     -   See **hardware/\#macbook21**.
 
-Machines no longer supported (compared to previous release):
-------------------------------------------------------------
+### Machines no longer supported (compared to previous release):
 
 -   **All previous systems still supported!**
 
-Revisions for r20140911 (7th beta) (11th September 2014)
---------------------------------------------------------
+### Revisions for r20140911 (7th beta) (11th September 2014)
 
 -   The changes below were made in a git repository, unlike in previous
     releases. Descriptions below are copied from 'git log'.

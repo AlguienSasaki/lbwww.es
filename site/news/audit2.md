@@ -2,8 +2,8 @@
 % Leah Rowe
 % 11 September 2023
 
-Introduction
-============
+Free as in freedom!
+--------------------
 
 This article pertains to the current Libreboot (lbmk) revision at this time
 of writing, which is `c400916e33b8870384c30b83a9ecb9cdf7121917` from 11

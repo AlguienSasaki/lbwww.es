@@ -3,11 +3,11 @@ title: Software and hardware freedom status for each mainboard supported by Libr
 x-toc-enable: true
 ...
 
-Introduction
-============
+Free as in freedom
+------------------
 
-This page documents how Libreboot's [binary blob reduction
-policy](news/policy.md), adopted in November 2022, is implemented in practise,
+This page documents how Libreboot's [Binary Blob Reduction
+Policy](news/policy.md), adopted in November 2022, is implemented in practise,
 especially that line which says: *"if free software can be used, it must be
 used."*
 
@@ -38,15 +38,14 @@ possible* for normal, non-technical users who like the idea of coreboot but
 who are otherwise not competent to configure it from scratch. Such harm
 was *corrected*, in November 2022.
 
-Coreboot architecture
----------------------
+### Coreboot architecture
 
 For context about certain topics, please read:
 
 <https://doc.coreboot.org/getting_started/architecture.html>
 
 100% libre init in coreboot
-===========================
+---------------------------
 
 The reason this distinction matters (referring specifically to coreboot's side
 of the initialisation) will become clearer, in the following sections:
@@ -62,10 +61,9 @@ are **OK**](news/policy.md#more-detailed-insight-about-microcode)
 excluded, alongside default ones with microcode included.](news/microcode.md)
 
 Intel platforms
-===============
+---------------
 
-Descriptor vs descriptorless setup
-----------------------------------
+### Descriptor vs descriptorless setup
 
 Libreboot supports several mainboards using Intel platforms. Of these, there
 are essentially two class of machine (for the purposes of this article):
@@ -116,8 +114,7 @@ datasheets, but those datasheets often contain *reserved* sections where
 parts are left undocumented. Reverse engineering efforts over the years have
 documented some of these blank spots.
 
-Libreboot does *not* distribute Intel ME images
------------------------------------------------
+### Libreboot does *not* distribute Intel ME images
 
 Libreboot does *not* distribute the Intel ME firmware in any way, whether in
 the Git repository or in releases. Where it is needed, Libreboot provides
@@ -151,8 +148,7 @@ The ME firmware is *required* on almost all Intel platforms, or the machine
 will turn *off* after 30 minutes (or it will not boot, if the ME also controls
 whether the CPU comes out of reset).
 
-More about Intel ME removal/disabling
-----------------------------------
+### More about Intel ME removal/disabling
 
 *Libreboot* provides a way to fully remove the ME firmware, while retaining
 full use of the machine, on GM45 platforms with ICH9M southbridge. These are
@@ -165,10 +161,9 @@ specifically written by Leah Rowe, in 2014 and improved incrementally since.
 On newer platforms as alluded to above, `me_cleaner` is used instead.
 
 Notes about specific types of vendor file
-===================================
+-----------------------------------------
 
-VGA option ROMs
----------------
+### VGA option ROMs
 
 *Native* video initialisation is supported and *enabled*, for all supported
 Intel platforms that have it. The source code is provided by coreboot, under
@@ -200,8 +195,7 @@ of the following paragraph in Libreboot policy:
 libreboot is to be configurable, allowing the user to do whatever they like."* -
 configurable, it most certainly is! See: [docs/maintain/](docs/maintain/)
 
-Memory controller initialisation
---------------------------------
+### Memory controller initialisation
 
 Libreboot has *fully libre* initialisation available for all Intel memory
 controllers up to and including Haswell (ThinkPad T440p
@@ -209,7 +203,7 @@ and W541) as of Libreboot 20230319 or higher; on Broadwell, Intel MRC is used
 and on Skylake/newer, FSP-M is used.
 
 ARM platforms (chromebooks)
-=============
+---------------------------
 
 Mostly free software, except for the requirement on `daisy` and `peach` mainboards
 to include BL1 bootloader files from the vendor. These are:
@@ -223,7 +217,7 @@ to include BL1 bootloader files from the vendor. These are:
   Libreboot
 
 List of vendor files, specifically for each board
-=================================================
+-------------------------------------------------
 
 This article has thoroughly explained, in a detailed overview, the precise
 nature as to *what* vendor files are accomodated for in Libreboot. Again,
@@ -234,10 +228,9 @@ the main flash IC which (in some cases) contains software outside of coreboot.
 
 Here is a list, *for each* board, of those files:
 
-Intel/x86
----------
+### Intel/x86
 
-### Intel ME:
+#### Intel ME:
 
 Neutered ME required on these targets:
 
@@ -251,7 +244,7 @@ disabled. This is done using `me_cleaner`. See:
 On MEv11-based platforms, such as the ThinkPad T480 and Dell OptiPlex 3050 Micro,
 we also use [deguard](docs/install/deguard.md) to disable the Intel Boot Guard.
 
-### KBC1126 EC firmware (HP laptops):
+#### KBC1126 EC firmware (HP laptops):
 
 This applies to the following targets: `hp2170p_16mb`, `hp2560p_8mb`,
 `hp2570p_16mb`, `hp8470pintel_16mb`, `hp9470m_16mb`.
@@ -265,7 +258,7 @@ it during the build process. Libreboot 20230423 onwards does scrub EC firmware
 and provide functionality in a special script, to insert them with `cbfstool`
 at the correct offset as defined by coreboot config for each board.
 
-### Intel FSP
+#### Intel FSP
 
 Provides romstage and raminit, used by coreboot on some boards. In Libreboot,
 we use it for the following build targets:
@@ -273,11 +266,11 @@ we use it for the following build targets:
 `t480_fsp_16mb`, `t480_vfsp_16mb`, `t480s_fsp_16mb`, `t480s_vfsp_16mb`,
 `dell3050micro_fsp_16mb`, `dell3050micro_vfsp_16mb`
 
-### SMSC SCH5545 Environmental Control
+#### SMSC SCH5545 Environmental Control
 
 This is a tiny firmware required for fan control, on Dell Precision T1650.
 
-### CPU microcode:
+#### CPU microcode:
 
 [*Microcode* updates](faq.md#microcode)
 for CPU provided on *all* x86 platforms, by default. Not
@@ -302,7 +295,7 @@ CPU microcode files included by default, on all x86 boards. While not needed
 in most cases, their use is highly recommended. For reasons why, see:
 [news/policy.md#more-detailed-insight-about-microcode](news/policy.md#more-detailed-insight-about-microcode)
 
-### Intel Flash Descriptor (IFD):
+#### Intel Flash Descriptor (IFD):
 
 Intel Flash Descriptors are provided as blobs on some boards, but these are
 not *software* blobs. They are configurations provided in a binary format,
@@ -322,10 +315,9 @@ Intel GbE NVM config (configuration data, binary-encoded, for gigabit NIC):
   for Intel NICs used in GM45 thinkpads.
 * Libreboot's `nvmutil` program can manipulate GbE NVM images
 
-ARM/chromebooks
----------------
+### ARM/chromebooks
 
-### BL1 bootloader (peach/daisy):
+#### BL1 bootloader (peach/daisy):
 
 BL1 bootloader needed on: `daisy_snow`, `daisy_spring` and `peach_pit`.
 
@@ -334,7 +326,7 @@ because the build system does not yet auto-insert the BL1 files. The boards
 are otherwise believed to work, using Alper's port of U-Boot in Libreboot.
 
 Conclusion
-==========
+----------
 
 From the above, you can see that Libreboot really *does* implement a *binary
 blobs reduction policy*, with the emphasis on *reduction* being most critical.
@@ -348,8 +340,7 @@ power that proprietary software developers have over users.
 
 I hope this article provided food for thought.
 
-An aside: hardware freedom
---------------------------
+### An aside: hardware freedom
 
 None of the currently supported Libreboot machines have libre *hardware*, in
 the sense that ICs do not come with publicly available *verilog* files and the
@@ -361,7 +352,7 @@ them yourself; one day, the Right To Repair movement will hopefully bring
 about universal access to such documents by the public.
 
 Further reading
-===============
+---------------
 
 This article has described code what goes in the *main boot flash*, but any
 computer you buy will have *tons* of firmware elsewhere in the system. Some

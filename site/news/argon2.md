@@ -4,8 +4,8 @@
 
 <img tabindex=1 class="r" src="https://av.libreboot.org/grub/argon2.jpg" /><span class="f"><img src="https://av.libreboot.org/grub/argon2.jpg" /></span>
 
-Introduction
-============
+Free as in... PHC
+------------------------
 
 The GRUB payload has supported LUKSv2 for a long time, but only with the
 old-school PBKDF2 key derivation method; most Linux dm-crypt setups on LUKSv2
@@ -28,8 +28,7 @@ the original work that Nicholas imported from Archlinux AUR.
 The work on AUR, and Nicholas's update based on it, was ultimately based on
 the work done by Patrick Steinhardt for the GRUB project, importing PHC Argon2.
 
-Why does this matter?
----------------------
+### Why does this matter?
 
 Libreboot previously documented how to boot distros from encrypted `/boot`,
 which is a boon for security because it's harder to compromise a machine that
@@ -49,8 +48,7 @@ Argon2 is the newer key derivation preferred on modern LUKSv2 setups. It is
 strongly recommended that you *upgrade* to argon2id, specifically, for your
 setup.
 
-How to get it
--------------
+### How to get it
 
 This is unavailable in the Libreboot 20230625 release, but will be
 available in the next Libreboot release.
@@ -62,18 +60,16 @@ you may still compile a ROM image yourself from the Libreboot build system. See:
 **[How to build Libreboot ROM images from source](../docs/build/)**
 
 Further reading
-===============
+----------------
 
-PHC argon2 implementation
--------------------------
+### PHC argon2 implementation
 
 This is the reference argon2 implementation, now used by Libreboot,
 and the upstream project for that is hosted here:
 
 <https://github.com/P-H-C/phc-winner-argon2>
 
-Article by Matthew Garrett
---------------------------
+### Article by Matthew Garrett
 
 [PSA: upgrade your LUKS key derivation
 function](https://mjg59.dreamwidth.org/66429.html) by Matthew Garrett, talks

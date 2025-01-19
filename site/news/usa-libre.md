@@ -2,8 +2,8 @@
 % Leah Rowe
 % 8 January 2022
 
-Introduction
-============
+Free software in your government?
+----------------------------------
 
 This event of such global importance to libre software projects, and the
 libre movement as a whole, has made me decide to write an article. **The
@@ -36,7 +36,7 @@ of Libreboot is to help users *avoid* proprietary software at the firmware
 level, whenever feasible.
 
 What's happening in New Hampshire?
-==================================
+---------------------------
 
 An important bill is being proposed in New Hampshire, which would enshrine
 much of what we know as Open Source *into law*. Here is the proposed bill,
@@ -115,10 +115,9 @@ which could redefine our movement and give *libre software* real power
 instead.
 
 HOW TO HELP
-===========
+------------
 
-TESTIFY IN SUPPORT OF THE BILL
-------------------------------
+### TESTIFY IN SUPPORT OF THE BILL
 
 **The reading of the bill is happening on 11 January 2022. This is when you
 should go to New Hampshire.**
@@ -151,8 +150,7 @@ This thread on Twitter is where Eric announced that the reading of the bill is
 to proceed (original Twitter URL):\
 <https://twitter.com/cooljeanius/status/1479555737223413760>
 
-More states/countries will follow
----------------------------------
+### More states/countries will follow
 
 If this bill is passed in New Hampshire, more states will likely follow. It
 will lead to a massively renewed drive to liberate all computer users, and US
@@ -164,8 +162,7 @@ global level.
 You *must* support this bill. If you want to see it pass, please go to New
 Hampshire on 11 January 2022 to make sure your voice is heard.
 
-OUR ENEMIES WILL BE THERE
--------------------------
+### OUR ENEMIES WILL BE THERE
 
 The *proprietary* software companies like Microsoft and Apple will also be
 there, trying to argue the case *against* the use of Libre Software.
@@ -238,14 +235,6 @@ They will try to trick the law makers by claiming things such as:
   very sentence. In fact, Libre Software *is* controlled, but it's not controlled
   by some external entity; *your* installation of libre software is controlled
   by *you*.
-
-If you're familiar with the *Matrix* films, proprietary operating systems like
-Windows/MacOS are basically like the Matrix; bland, no individuality, no
-independent thought, everything tightly controlled. By contrast, libre operating
-systems (such as Linux distributions or the BSDs) are like zion/io; vibrant,
-full of life, buzzing with activity, everything loose and free, and everyone
-is different (a highly diverse culture of people from all walks of life, acting
-in common cause but nonetheless individuals).
 
 Meanwhile, Windows is known to have backdoors. Microsoft actively informs the
 NSA about how to exploit them, so that it can break into people's computers

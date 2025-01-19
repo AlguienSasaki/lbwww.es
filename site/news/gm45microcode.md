@@ -18,8 +18,8 @@ updates using the instructions on this page, *or* if you need pre-built ROM
 images, Libreboot 20220710 had no-microcode ROMs by default and it has the
 mitigation patches described by this article.
 
-Introduction
-============
+Free as in freedom
+------------
 
 Microcode updates provide stability and security fixes, using the files
 provided by coreboot, which are assembled at boot time. CPUs have microcode
@@ -70,8 +70,7 @@ The patch re-adding these mitigations can be seen here:
 
 <https://browse.libreboot.org/lbmk.git/commit/?id=bd4ea9a02845b22a09b73ebb015ce134234d100b>
 
-Why?
-----
+### Why?
 
 Free choice, that's why. We don't lecture anyone. We just help people.
 
@@ -94,8 +93,7 @@ This change, today, fixes a practical violation of Libreboot policy by once
 again restoring such practical choice to the user. It is already said how to
 do so elsewhere, but I'll repeat it here in this news article for posterity:
 
-How to add/remove microcode updates from ROM
---------------------------------------------
+### How to add/remove microcode updates from ROM
 
 Extract to file on disk:
 

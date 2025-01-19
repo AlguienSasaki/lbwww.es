@@ -1,5 +1,5 @@
 ---
-title: Downloads
+title: Download Libreboot
 x-toc-enable: true
 ...
 

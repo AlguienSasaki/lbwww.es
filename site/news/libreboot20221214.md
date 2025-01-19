@@ -2,6 +2,9 @@
 % Leah Rowe
 % 14 December 2022
 
+Free as in freedom!
+--------------------
+
 The last Libreboot release, version 20220710, was released on 10 July
 in 2022. *This* new release, Libreboot 20221214, is released today on December
 14th, 2022. This is intended to be a *testing* release.
@@ -14,20 +17,18 @@ YOU MAY BRICK YOUR MACHINE!! - Please click the link and follow the instructions
 there, before flashing. For posterity,
 [here is the link again](../docs/install/ivy_has_common.md).**
 
-Build from source
------------------
+### Build from source
 
 *This* release was build-tested on Debian 11. Your mileage may vary, with
 other distros.
 
 Work done since last release
-============================
+--------------------
 
 For more detailed change logs, look at the Git repository. This is
 a summary of changes.
 
-New boards, x86
-----------
+### New boards, x86
 
 This list *may not be complete*, but it is as follows:
 
@@ -44,8 +45,7 @@ This list *may not be complete*, but it is as follows:
 * lenovo/t420 (thinkpad)
 * lenovo/x230 tablet (thinkpad)
 
-GA-G41M-ES2L ROMs
-------------
+### GA-G41M-ES2L ROMs
 
 GA-G41M-ES2L ROM images are back, but your mileage may vary. Only the
 SeaBIOS payload is enabled, on this board.
@@ -58,8 +58,7 @@ well. GA-G41M-ES2L support is therefore stable, for all intents and purposes.
 This section of the release announcement previously alluding to issues, but
 those speculations were premature, based on limited prior testing.**
 
-New boards, ARM
-----------
+### New boards, ARM
 
 NOTE: These boards use u-boot payload, instead of depthcharge.
 
@@ -83,8 +82,7 @@ of Alper Nebi Yasak (`alpernebbi` on libreboot IRC).
 
 In these configurations, u-boot is a *payload of coreboot*.
 
-Removed boards
---------------
+### Removed boards
 
 ASUS KGPE-D16, KCMA-D8 and KFSN4-DRE are removed, because raminit
 never worked reliably on these boards to begin with and they were
@@ -437,10 +435,9 @@ would simply merge)
 ```
 
 Known issues
-============
+------------
 
-Intel ME firmware missing in ROMs that need it
-----------------------------------------------
+### Intel ME firmware missing in ROMs that need it
 
 If you compile ROM images with lbmk directly, the build system
 automatically fetches ME images from the internet and neuters
@@ -456,14 +453,12 @@ e.g. X220, T420, X230, T430, T440p. On *older* Intel platforms such
 as GM45+ICH9M (X200, T400, etc) the Intel ME image isn't needed and
 Libreboot ships with ME-disabled configuration.
 
-MRC image missing in Haswell ROMs
----------------------------------
+### MRC image missing in Haswell ROMs
 
 Ditto ME images. To re-insert, follow
 the [guide](../docs/install/ivy_has_common.md).
 
-Internal flashing on 16MB X230 images
--------------------------------------
+### Internal flashing on 16MB X230 images
 
 The X230 has two ways of upgrading the default 12MB (8MB and 4MB chips)
 flash to 16MB: remove a bunch of resistors and capacitors on the board
@@ -483,8 +478,7 @@ So, 16MB images on X230 are experimental. When these ROM images are built,
 the required IFD modification is already done in Libreboot's IFD for this
 setup.
 
-S3 suspend/resume on Haswell (T440p/W541)
------------------------------------------
+### S3 suspend/resume on Haswell (T440p/W541)
 
 Totally broken. The suspected cause is component2density setting in IFD
 being wrong: ifdtool reports it as being too big for what's actually
@@ -502,43 +496,7 @@ When X230 16MB was experimented with, Haswell was also looked at, and what
 seemed to be the same component density bits were set, also resulting in
 a brick (it's why only 12MB images are available for haswell in libreboot).
 
-Chromebook boards mostly untested
----------------------------------
+### Chromebook boards mostly untested
 
 Alper has tested the `gru_kevin` ROM images produced by lbmk, but
 the other images are untested as of this day.
-
-Planned future work
-===================
-
-In general, you should also check the issue tracker to find other notes.
-There is always more work to do, to improve Libreboot.
-
-Linux distro in flash
----------------------
-
-STILL ON TODO SINCE LAST RELEASE.
-
-This is another project that has been on hold for a while. The issue
-has been that I need a decent userland project. I've looked at many
-different userlands and recently (as of late June) decided to make
-my own. I want a BusyBox-like solution, but based on code from OpenBSD,
-ported to run under Linux with musl libc.
-
-I want this distro to provide a kexec bootloader in flash, similar to Heads,
-and I also want it to use apk-tools, pointing at Alpine Linux repositories
-so as to allow any number of packages to be downloaded. It could also provide
-lots of utils in general, to be a live *rescue system* of sorts. Linux system
-in flash, that can bootstrap other systems.
-
-Re-factor and optimize GRUB
----------------------------
-
-STILL ON TODO SINCE LAST RELEASE.
-
-GRUB is full of unused bloat that almost nobody uses, yet is in the current
-Libreboot builds. It's been on TODO for some time, but work has not yet
-begun on this project. My efforts are currently focused on the Linux distro.
-
-What I want is a fork of GRUB, optimized to run on bare metal as a coreboot
-payload, on x86 and ARM platforms.

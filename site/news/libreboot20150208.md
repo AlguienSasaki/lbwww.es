@@ -3,7 +3,7 @@
 % 8 February 2015
 
 Machines supported in this release:
-===================================
+-------------------------------------
 
 -   **Lenovo ThinkPad X60/X60s**
     -   You can also remove the motherboard from an X61/X61s and replace
@@ -38,8 +38,7 @@ Machines supported in this release:
     MB063LL/A, MB062LL/A)
     -   See **hardware/\#macbook21**.
 
-Revisions for r20150208 (relative to r20150126)
------------------------------------------------
+### Revisions for r20150208 (relative to r20150126)
 
 This is a maintenance release (polishing) based on r20150126. Users who
 installed r20150126 don't really need to update to this release.

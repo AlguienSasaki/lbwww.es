@@ -7,8 +7,8 @@ now, as of 27 January 2024, which is a fork of flashrom.
 The reason why was explained, in
 the [Libreboot 20240225 release](libreboot20240225.md#flashprog-now-used-instead-of-flashrom)**
 
-Introduction
-============
+Free/open source BIOS
+--------------------
 
 This article pertains to the current Libreboot (lbmk) revision at this time
 of writing, which is `11a821637d8a36f4a72001ef8d8c41952f066cc3` from 31
@@ -22,8 +22,7 @@ Audit 3](audit3.md), which coincided with
 the [Libreboot 20231021](libreboot20231021.md) release, right up
 to [Libreboot 20231106](libreboot20231106).
 
-Modest code size reduction
---------------------------
+### Modest code size reduction
 
 The main purpose of audit 4 has been to *finish* audit 3. More logic has been
 generalised, and *another* sloccount reduction has been observed: 1618 SLOC in
@@ -286,7 +285,7 @@ And now, specific changes:
   re-used by other planned ports for Dell latitudes in lbmk. Patch courtesy of
   Nicholas Chin.
 
-Exact git log, relative to 20231106:
+### Exact git log, relative to 20231106:
 
 ```
 * 11a82163 Bump GRUB to 2.12 release

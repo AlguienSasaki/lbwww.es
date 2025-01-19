@@ -2,8 +2,8 @@
 % Riku Viitanen
 % 23 April 2023
 
-Introduction
-============
+Free software BIOS
+------------------
 
 ![Two HP EliteBooks side by side, both running Libreboot](https://av.libreboot.org/hp9470m/9470m+2560p.jpg)
 
@@ -19,8 +19,7 @@ Additionally, a [long-standing bug](https://browse.libreboot.org/lbmk.git/plain/
 with GRUB on coreboot now has a functional workaround
 which is applied automatically by Libreboot.
 
-More to come
-------------
+### More to come!
 
 Leah Rowe has recently been on a buying spree, so more Sandy/Ivy Bridge and
 Haswell EliteBooks are making their way to Libreboot soon. Libreboot's goal

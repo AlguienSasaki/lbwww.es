@@ -1,12 +1,16 @@
 ---
-title: lbmk maintenance manual
+title: LibreBoot MaKe (lbmk) build system design and maintenance manual
 x-toc-enable: true
 ...
 
-**NOTE: Libreboot standardises on [flashprog](https://flashprog.org/wiki/Flashprog)
-now, as of 27 January 2024, which is a fork of flashrom.
-The reason why was explained, in
-the [Libreboot 20240225 release](../../news/libreboot20240225.md#flashprog-now-used-instead-of-flashrom)**
+Open source BIOS/UEFI firmware
+------------------------------
+
+Libreboot is a [Free Software](https://writefreesoftware.org/learn) project,
+replacing proprietary BIOS/UEFI firmware. It provides coreboot and a number
+of *payloads* such as GRUB, U-Boot or SeaBIOS, which boot your operating system.
+This document describes the very essence of Libreboot's design, how the project
+functions and how releases are made.
 
 In addition to this manual, you should also refer to [porting.md](porting.md)
 and [testing.md](testing.md).
@@ -14,7 +18,7 @@ and [testing.md](testing.md).
 Please also read about the [lbmk coding style and design](style.md).
 
 Automated coreboot build system
-===============================
+-------------------------------
 
 This document describes the entire Libreboot build system, its design philosophy
 and how it's used to prepare Libreboot releases; it is provided as a *reference*
@@ -40,7 +44,7 @@ first, it will do so automatically. Therefore, you can run any part of lbmk
 on its own, and the entire design is modular.
 
 Use Free Software when possible
-===============================
+-------------------------------
 
 The coreboot software is nominally free, but occasionally requires an
 additional file or two from the vendor on a few systems. The libreboot
@@ -50,7 +54,7 @@ project *allows* them, only when they are absolutely required.
 the [freedom status page](../../freedom-status.md) provides additional details.
 
 Best practises for learning lbmk
-================================
+--------------------------------
 
 The follow sections will cover subdirectories, within lbmk. Contrary to what
 some may otherwise assume, it's best to learn about everything *except* scripts
@@ -68,8 +72,7 @@ bottom-up; most documents take the latter approach, in other projects, but
 most people naturally want to learn how a specific thing works first, hence
 the approach taken here.
 
-Don't be deceived by simplicity
--------------------------------
+### Don't be deceived by simplicity
 
 Libreboot's build system is powerful, and highly configurable, yet deceptively
 simple at the same time. Remember this rule, a rule that applies to *all*
@@ -80,12 +83,11 @@ Many people will be shocked by how *small* Libreboot is, at its core. You will
 be surprised by just how much can be done with so little. Continue reading!
 
 System requirements
-===================
+-------------------
 
 This concerns system requirements when *building* Libreboot.
 
-Operating system
-----------------
+### Operating system
 
 Any sensible Linux distribution will do. Libreboot's build system is regularly
 testing on all the major distros. Please do report bugs if you encounter
@@ -104,16 +106,14 @@ build dependencies for these distros.
 NOTE: **Linux** is assumed. BSD systems may work, for parts of the build system,
 but BSD systems are currently not well-tested with lbmk.
 
-**Dependencies**
-----------------
+### **Dependencies**
 
 **Make sure you have dependencies installed!**
 
 **The [main build guide](../build) will tell you how to install dependencies,
 such as GNU toolchains and various libraries.**
 
-Host CPU
---------
+### Host CPU
 
 At least an Intel Core 2 Duo, though we recommend much faster CPUs if building
 entire release archives, e.g. quad-core Haswell CPU or better.
@@ -128,8 +128,7 @@ NOTE3: *32-bit* x86 (i686) machines can be used to compile Libreboot, but
 MemTest86\+ is only compiled for 64-bit, and not cross compiled, so builds
 are disabled when lbmk detects a 32-bit host CPU.
 
-Memory
-------
+### Memory
 
 At least 2GB per CPU core, ideally 4GB; for example, 16GB RAM is recommended
 if you're compiling an a quad-core CPU.
@@ -140,8 +139,7 @@ For example, when you're building on a quad-core, do this prior to building:
 
 	export XBMK_THREADS=4
 
-Disk space
-----------
+### Disk space
 
 About 20GB bare minimum, if only compiling for 1 board. The sources take up a
 lot of space. However, Libreboot is always expanding as it's developed.
@@ -157,10 +155,9 @@ fast NVMe (PCI-E) SSD if you can.
 project that Libreboot imports, such as coreboot.**
 
 Environmental variables
-=======================
+-----------------------
 
-XBMK\_THREADS
--------------
+### XBMK\_THREADS
 
 For example:
 
@@ -171,8 +168,7 @@ This would build on two threads, when running lbmk. It defaults to 1.
 Previous revisions of lbmk used `nproc` by default, but this was set to 1
 instead, because nproc is not available on every operating system.
 
-XBMK\_RELEASE
--------------
+### XBMK\_RELEASE
 
 If set to `y`, it signals to `script/roms` that a release is being built,
 and it will honour `release="n"` in target.cfg files. You could also set this
@@ -182,7 +178,7 @@ behaves running it in release mode. Do this if you want to:
 	export XBMK_RELEASE=y
 
 Projects/files downloaded/generated by lbmk
-===========================================
+--------------------------------------------
 
 The following sections will describe files and directories that are not
 included in `lbmk.git`, but *are* created by running various lbmk commands;
@@ -191,8 +187,7 @@ many of these will also be provided, pre-generated, under release archives.
 Some of these are *downloaded* by Libreboot's build system, automatically, while
 others are created during the build process based on these downloaded programs.
 
-bin/
----------------
+### bin/
 
 This directory is created when running any of the following commands, with the
 right arguments:
@@ -216,14 +211,12 @@ now only puts coreboot images in `bin/`, with payloads included.
 If you still have `elf/` coreboot images in your lbmk tree, please do not
 use them (and you may aswell delete them).
 
-cache/
----------------
+### cache/
 
 Certain files are cached here automatically, by lbmk. The user need not touch
 these files.
 
-cache/app
---------------
+### cache/app/
 
 When vendor updates are extracted, they go here, which is then processed to
 find individual files for use in coreboot images (e.g. KBC1126 EC firmware).
@@ -231,8 +224,7 @@ find individual files for use in coreboot images (e.g. KBC1126 EC firmware).
 This directory is constantly over-written, so it's essentially another temporary
 directory used by the build system.
 
-cache/file/
---------------
+### cache/file/
 
 Files that are downloaded are hashed, and the cached version of the file
 is stored there, named as the SHA512 checksum. This is used for vendor file
@@ -246,8 +238,7 @@ files relative to the directory locations for those repositories, but subfiles
 are not downloaded to the *cached git repository*, only the work directory used
 for building in lbmk.
 
-cache/hash
----------------
+### cache/hash/
 
 When lbmk is handling any project, it sorts a list of files under `config/`
 including `config/project` (or `config/project/TREE`) and `config/data/project`.
@@ -260,20 +251,17 @@ If the currently stored hash differs from what's calculated, it means that
 the project has changed, and the source directories plus builds are deleted.
 The project source is then re-prepared and re-build.
 
-cache/repo
---------------
+### cache/repo/
 
 Git repositories are cached here. This avoids wasting bandwidth, when downloading
 multiple repositories. **Git submodules are also cached here!**
 
-ec/
----------------
+### ec/
 
 KBC1126 EC firmware goes here, required on HP EliteBook laptops. These images
 are inserted into those coreboot images, under `elf/` *and* `bin/`.
 
-elf/
----------------
+### elf/
 
 **DO NOT flash coreboot ROM images contained under `elf/`. Please use ROM images
 under `bin/` instead! - In modern lbmk, only the ones under `bin/` are ever
@@ -308,23 +296,20 @@ As of Libreboot 20240612, the `elf/` directory must be used by default for all
 builds, in an effort to make exclusive use of *out-of-source builds*. As such,
 the `cbutils` directory is no longer used.
 
-mrc/
----------------
+### mrc/
 
 Intel System Agent downloaded at build time for HP EliteBook 820 G2.
 
 The *Haswell* MRC file is no longer downloaded here, because Haswell machines
 now use native raminit *exclusively*; only Broadwell uses MRC, at present.
 
-pciroms/
----------------
+### pciroms/
 
 PCI Option ROMs, currently used only for the VGA ROM on models of Dell Latitude
 E6400 containing an Nvidia GPU; it provides video initialisation, where coreboot
 currently only initialises Intel GPUs natively, on Libreboot systems.
 
-release/
----------------
+### release/
 
 The script at `build` create tarballs in here, which
 constitute regular Libreboot releases. It is meticulously maintained, as per
@@ -356,13 +341,11 @@ Or with a custom directory:
 The build system expects there to be a *git tag*, so make sure there is one.
 This is used to create the version number for a given release.
 
-src/
-----
+### src/
 
 Third-party source trees are downloaded into this directory, by lbmk.
 
-src/bios\_extract/
----------------
+### src/bios\_extract/
 
 Used by the vendor file handler scripts. The upstream that we use is here:
 <https://review.coreboot.org/bios_extract>
@@ -371,8 +354,7 @@ The `dell_inspiron_1100_unpacker.py` script is used here, to extract from Dell
 BIOS updates, to get at the VGA ROM for Nvidia GPU on certain models of Dell
 Latitude E6400.
 
-src/biosutilities/
----------------
+### src/biosutilities/
 
 Used by the vendor file handler scripts. The upstream that we use is here:
 <https://github.com/platomav/BIOSUtilities>
@@ -380,8 +362,7 @@ Used by the vendor file handler scripts. The upstream that we use is here:
 Specifically: the pfs extract utility from this is used on Dell vendor updates,
 to extract SCH5545 EC (Environment Control) firmware.
 
-src/coreboot/
----------------
+### src/coreboot/
 
 Please also visit: <https://coreboot.org/>
 
@@ -400,8 +381,7 @@ This may be less efficient on disk usage, but it simplifies the logic greatly.
 Coreboot also uses its own toolchain called *crossgcc*, and crossgcc is in fact
 compiled *per tree* in Libreboot.
 
-src/deguard/
-------------
+### src/deguard/
 
 Mate Kukri's utility that disables the Intel Boot Guard on Intel MEv11-based
 PCH. More info available on the [deguard page](../install/deguard.md).
@@ -426,18 +406,16 @@ out and replaced by deguard, with one specific to the target machine. More
 information is available on the deguard page, and in the deguard README,
 which when downloading in lbmk in the `src/deguard/` directory.
 
-src/flashprog/
----------------
+### src/flashprog/
 
 Please also visit: <https://flashprog.org/>
 
 Although currently unused by any part of lbmk, we provide flashprog for the
-convenience of users, and this is copied to release archives. Flashrom is the
+convenience of users, and this is copied to release archives. Flashprog is the
 program that you will use to read, erase and write the flash, containing
 coreboot firmware.
 
-src/gpio-scripts
-----------------
+### src/gpio-scripts
 
 This is a fork of the original gpio-scripts. The fork is maintained by Riku
 Viitanen, based on code written by Angel Pons (author of the Haswell native
@@ -448,8 +426,7 @@ machines, when porting new boards to coreboot.
 NOTE: Not included in Libreboot yet, but `intelp2m` is used instead for this
 purpose, on much newer Intel systems (from around Skylake era or later).
 
-src/grub/TREE
----------------
+### src/grub/TREE
 
 Please also visit: <https://www.gnu.org/software/grub/>
 
@@ -482,22 +459,19 @@ tree contains NVMe SSD support but not xHCI support. The `default` tree contains
 no NVMe or xHCI support. All trees otherwise have the same fixes on top of
 upstream GRUB, e.g. fix for Dell Latitude keyboard controllers.
 
-src/int/
---------
+### src/int/
 
 Riku Viitanen wrote this tool for debugging, when implementing MXM option ROM
 support in coreboot and SeaBIOS, for the HP EliteBook 8560w.
 
-src/memtest86plus/
----------------
+### src/memtest86plus/
 
 Please also visit: <https://www.memtest.org/>
 
 This is provided inside ROM images, as a payload executed from main GRUB or
 SeaBIOS payload. It checks for corrupted memory.
 
-src/mxmdump/
-------------
+### src/mxmdump/
 
 Riku Viitanen wrote this utility, for dumping the MXM config on graphics cards
 that use it. The HP EliteBook 8560w uses these cards, and normally you would
@@ -510,8 +484,7 @@ SeaBIOS. If the MXM data is not handled, the VGA option ROM (when executed)
 will often complain and refuse to boot; some of them can be hacked to bypass
 this fact, but such hacks are no longer required because of Riku's tool.
 
-src/seabios/
----------------
+### src/seabios/
 
 Please also visit: <https://www.seabios.org/SeaBIOS>
 
@@ -523,8 +496,7 @@ particular, the BSD bootloaders can be executed from SeaBIOS.
 This is provided as a coreboot payload, either as first payload or it can be
 executed from GRUB (if GRUB is the main payload, on a given target).
 
-src/u-boot/
----------------
+### src/u-boot/
 
 Please also visit: <https://www.denx.de/project/u-boot/>
 
@@ -541,8 +513,7 @@ More information can be found on the [U-Boot x86 page](../uboot/uboot-x86.md);
 it is available as an alternative to the traditional SeaBIOS and GRUB payloads,
 and it can successfully boot UEFI applications on x86 Libreboot systems.
 
-src/uefitool/
----------------
+### src/uefitool/
 
 Please also visit: <https://github.com/LongSoft/UEFITool>
 
@@ -553,8 +524,7 @@ firmware (used for fan control on Dell Precision T1650).
 This has also been modified to build reliably on non-glibc-based systems e.g.
 Alpine Linux, which uses musl libc.
 
-src/pcsx-redux
-----------------
+### src/pcsx-redux/
 
 PCSX-Redux is a Sony Playstation (PS1/PSX) emulator, but Libreboot only uses
 one part from it: the Open BIOS. This is used by Libreboot to provide an
@@ -565,8 +535,7 @@ More information available on the [PlayStation page](../install/playstation.md).
 This is automatically compiled by the main build script, and the resulting
 BIOS image is provided in Libreboot release archives.
 
-src/pico-serprog
----------------------------
+### src/pico-serprog/
 
 Used by lbmk, to build firmware for serprog-based SPI flashers with RP2040 SoC.
 Alongside this, `util-fw/rp2040/pico-sdk` is imported which is required for
@@ -577,8 +546,7 @@ Please visit these pages:
 * <https://github.com/raspberrypi/pico-sdk>
 * <https://codeberg.org/libreboot/pico-serprog>
 
-src/stm32-vserprog
-----------------------
+### src/stm32-vserprog/
 
 Used by lbmk, to build firmware for serprog-based SPI flashers with STM32 MCU.
 Alongside this, `libopencm3` is imported which is required for building it.
@@ -593,8 +561,7 @@ Before moving onto configurations, we will now cover *utilities* provided by
 Libreboot itself (included within lbmk, rather than being downloaded like the
 third party projects listed above):
 
-tmp/
----------------
+### tmp/
 
 The `TMPDIR` environmental variable is set by lbmk, to a location under `/tmp`,
 but some users may have `/tmp` mounted as a *tmpfs* (file system in RAM), and
@@ -603,8 +570,7 @@ may not have much RAM.
 Where large files (or a large number of files) are handled by lbmk on a
 temporary basis, this `tmp/` directory is created and then used.
 
-vendorfiles/
----------------
+### vendorfiles/
 
 Used by the vendor file handler scripts, referenced in certain coreboot configs.
 
@@ -613,7 +579,7 @@ here; not all such files are downloaded here however, as some are handled under
 separate directories.
 
 util/
-===============
+-----
 
 If a codebase is not frequently used by Libreboot, is actively developed (making
 it not viable to maintain in Libreboot) or the codebase is very large, we would
@@ -623,8 +589,7 @@ where the intention is that `lbmk.git` itself should be small and efficient.
 Where appropriate, and where the code is small enough, or it is otherwise deemed
 desirable, `lbmk.git` provides a few utilities as part of itself, namely:
 
-util/dell-flash-unlock/
----------------
+### util/dell-flash-unlock/
 
 This program, written by Nicholas Chin, unlocks the boot flash on Dell Latitude
 E6400; it permits internal flashing, from factory firmware to Libreboot, so that
@@ -633,8 +598,7 @@ the user need not disassemble and flash externally.
 It also supports several other Dell laptops, with similar ECs. Check the
 README file included in this directory, for more information.
 
-util/me7\_update\_parser/
----------------
+### util/me7\_update\_parser/
 
 This is a special fork of `me_cleaner`, specifically for parsing and neutering
 Intel ME images provided by Lenovo for ThinkPad X220 and other Lenovo
@@ -650,8 +614,7 @@ auto-neuters Intel ME images, during build, so that the user does not have to
 manually extract such images from dumps of the original vendor firmware (in
 the flash) on a given machine.
 
-util/nvmutil/
----------------
+### util/nvmutil/
 
 The `nvmutil` software allows you to set the MAC address on Intel GbE NVM
 files. It also allows you to set *random* MAC addresses, in addition to
@@ -662,8 +625,7 @@ about here:
 
 [nvmutil manual](../install/nvmutil.md)
 
-util/spkmodem\_recv/
----------------
+### util/spkmodem\_recv/
 
 Libreboot imported this from coreboot, who is turn imported it from GRUB with
 little to no modification.
@@ -700,13 +662,12 @@ do this. Other improvemnts include:
 by lbmk:
 
 config/
-=======
+-------
 
 This directory contains configuration files, used by the Libreboot build
 system. These next sections will cover specific configuration files.
 
-config/PROJECT\*/nuke.list
---------------------------
+### config/PROJECT\*/nuke.list
 
 The script `include/git.sh` handles deletion of certain files, for downloaded
 projects, based on a `nuke.list` file that can (for single-tree projects) be
@@ -724,8 +685,7 @@ foo/bar.txt
 Ditto `src/flashprog/`, if you wanted to delete a file from in there, as one
 other example. Deletions occur when the source tree is created.
 
-config/vendor/
----------------
+### config/vendor/
 
 URLs and hashes for vendor files containing Intel ME images within them. Where
 feasible, backup URLs are also provided. SHA512 checksums are defined, so that
@@ -741,10 +701,9 @@ installing Libreboot or any other spin of coreboot.
 This file is also used to define the VGA ROM, on Nvidia models of Dell Latitude
 E6400.
 
-config/coreboot
----------------
+### config/coreboot/
 
-### config/coreboot/BOARDNAME/
+#### config/coreboot/BOARDNAME/
 
 Each target name (e.g. `x200_8mb`) has its own directory under here. Targets
 that do not define defconfigs also exist here; for example, the `default`
@@ -759,14 +718,14 @@ the vendor scripts, for adding or removing certain vendor firmware (for example,
 a config will define where `me.bin` is located, and if it doesn't exist, the
 vendor scripts will look up that file and download/process it with `me_cleaner`).
 
-### config/coreboot/BOARDNAME/patches/
+#### config/coreboot/BOARDNAME/patches/
 
 For any given coreboot tree, patches with the `patch` file extension are placed
 here, alphanumerically in the order that they should be applied.
 
 These patches are then so applied, when lbmk downloads the given source tree.
 
-### config/coreboot/BOARDNAME/target.cfg
+#### config/coreboot/BOARDNAME/target.cfg
 
 This file can contain several configuration lines, each being a string, such
 as:
@@ -876,7 +835,7 @@ by this variable, to also be present.
 The `grubtree` option specifies which GRUB tree to use. If unset, it defers to
 the `default` GRUB tree.
 
-### config/coreboot/BOARDNAME/config/
+#### config/coreboot/BOARDNAME/config/
 
 Files in this directory are *coreboot* configuration files. 
 
@@ -954,8 +913,7 @@ Even if your board doesn't actually use `libgfxinit`, the config for it should
 still be named as such. From a user's perspective, it really makes no
 difference.
 
-config/dependencies/
----------------
+### config/dependencies/
 
 Files here are so named, and called like so: e.g. the `debian` file would be
 referenced when running:
@@ -966,8 +924,7 @@ These files define a list of packages, and the correct package manager command
 to use on a given distro. This can be used to install build dependencies, which
 are required for compiling Libreboot from source code.
 
-config/git/
----------------
+### config/git/
 
 Configuration related to third-party Git repositories, that Libreboot makes
 use of.
@@ -982,8 +939,7 @@ of their own; for example, `config/grub/` exists.
 Multiple files exist here, and they are *concatenated* in a temporary file by
 lbmk, which is then scanned to find information about projects.
 
-config/data/PROJECT/mkhelper.cfg
---------------------------------
+### config/data/PROJECT/mkhelper.cfg
 
 These `mkhelper.cfg` files define common configuration that can be supplied
 for any single- or multi-tree project. Arguments available are as follows:
@@ -1028,18 +984,17 @@ In the simplest of terms, you may regard mkhelpers as *plugins*, of a sort.
 They simply extend the core functionality of the build system, in a way that
 can differ flexibly between projects.
 
-GRUB config
----------------
+### GRUB config
 
-### config/data/grub/background
+#### config/data/grub/background/
 
 Splash screen images applied duing startup when using the GRUB payload.
 
-### config/data/grub/background/background1024x768.png
+#### config/data/grub/background/background1024x768.png
 
 Used on ThinkPad X60 and T60.
 
-### config/data/grub/background/background1280x800.png
+#### config/data/grub/background/background1280x800.png
 
 Used on all other machines, besides X60 and T60 thinkpads.
 
@@ -1049,23 +1004,23 @@ example, `config/coreboot/x60/target.cfg` specifies this:
 
 	grub_background="background1024x768.png"
 
-### config/data/grub/background/COPYING
+#### config/data/grub/background/COPYING
 
 Licensing info for GRUB bootsplash images.
 
-### config/grub/TREE/config/
+#### config/grub/TREE/config/
 
 GRUB configuration files.
 
-### config/grub/config/AUTHORS
+#### config/grub/config/AUTHORS
 
 Author info for GRUB configuration files.
 
-### config/grub/config/COPYING
+#### config/grub/config/COPYING
 
 Licensing info for GRUB configuration files.
 
-### config/grub/TREE/config/payload
+#### config/grub/TREE/config/payload
 
 This is a configuration file. It is used to program GRUB's shell.
 
@@ -1079,7 +1034,7 @@ A `grubtest.cfg` can be inserted into CBFS, but it will not override the
 default `grub.cfg` (either in CBFS or on memdisk); however, the one in memdisk
 will provide a menuentry for switching to this, if available.
 
-### config/data/grub/memdisk.cfg
+#### config/data/grub/memdisk.cfg
 
 This GRUB configuration checks whether `grub.cfg` exists in CBFS and switches
 to that first (not provided by default) or, if one is not available in CBFS,
@@ -1089,12 +1044,12 @@ The GRUB memdisk is a file system within `grub.elf`, itself stored within the
 coreboot file system named *CBFS*, which is part of the coreboot ROM image on
 every coreboot target.
 
-### config/data/grub/keymap/
+#### config/data/grub/keymap/
 
 Keymap files used by GRUB. They can alter the character set corresponding to
 inputted scancodes.
 
-### config/data/grub/keymap/\*.gkb
+#### config/data/grub/keymap/\*.gkb
 
 The keymap files themselves. These are inserted into the GRUB memdisk, and
 the `grub.cfg` file can specify which one is to be used.
@@ -1103,7 +1058,7 @@ These files are binary-encoded, defining which characters correspond to which
 scancodes. It is handled by `grub-core/commands/keylayouts.c` in the GRUB source
 code.
 
-### config/data/grub/module/TREE
+#### config/data/grub/module/TREE
 
 This defines which modules are inserted into `grub.elf`. These modules can be
 anything from file systems, small applications/utilities, launchers (e.g.
@@ -1117,7 +1072,7 @@ This list is used by lbmk when it runs `grub-mkstandalone`, which is the utility
 from GRUB that generates `grub.elf` files (to be compressed inside CBFS and then
 executed as a coreboot payload).
 
-### config/grub/TREE/patches/
+#### config/grub/TREE/patches/
 
 For a given GRUB revision, patches with the `patch` file extension are placed
 here, alphanumerically in the order that they should be applied. For example,
@@ -1126,69 +1081,66 @@ partitions to be decrypted by GRUB.
 
 These patches are then so applied, when lbmk downloads the given source tree.
 
-config/ifd/\*
----------------
+### config/ifd/\*
 
 Intel Flash Descriptors and GbE NVM images, which are binary-encoded
 configuration files. These files are referenced in coreboot defconfigs, used
 by lbmk to build coreboot ROM images.
 
-config/seabios/
----------------
+### config/seabios/
 
-### config/data/seabios/build.list
+#### config/data/seabios/build.list
 
 When a given SeaBIOS tree is compiled, for a given target, this file defines
 which files to copy from the `seabios/` directory, which are then copied to
 a location under `elf/seabios`.
 
-### config/seabios/default/
+#### config/seabios/default/
 
 Currently the only tree in use, this defines what SeaBIOS revision is to be
 used, when the SeaBIOS payload is enabled on a given coreboot target.
 
-### config/seabios/default/config/
+#### config/seabios/default/config/
 
 Configuration files go in here.
 
-### config/seabios/default/config/libgfxinit
+#### config/seabios/default/config/libgfxinit
 
 Configuration file for when native video initialisation is available in
 coreboot.
 
-### config/seabios/default/config/normal
+#### config/seabios/default/config/normal
 
 Configuration file for when native video initialisation is unavailable in
 coreboot, and VGA ROM initialisation is also not provided by coreboot (in
 this configuration, the usual setup will be that *SeaBIOS* finds and
 executes them, instead of coreboot).
 
-### config/seabios/default/config/vgarom
+#### config/seabios/default/config/vgarom
 
 Configuration file for when native video initialisation is unavailable in
 coreboot, and VGA ROM initialisation is provided by coreboot; in this setup,
 SeaBIOS should not execute VGA ROMs.
 
-### config/seabios/default/target.cfg
+#### config/seabios/default/target.cfg
 
 Similar concept to `target.cfg` files provided by coreboot. This specifies
 which SeaBIOS revision (from Git) is to be used, when compiling SeaBIOS images.
 
-config/u-boot/
----------------
+### config/u-boot/
 
 This directory contains configuration, patches and so on, for each mainboard
 that can use U-Boot as a payload in the `lbmk` build system. U-Boot doesn't yet
 have reliable generic configurations that can work across all coreboot boards
 (per-architecture), so these are used to build it per-board.
 
-### config/data/u-boot/build.list
+#### config/data/u-boot/build.list
 
 When a given U-Boot tree is compiled, for a given target, this file defines
 which files to copy from the U-Boot source build, which are then copied to
 a location under `elf/u-boot/`.
 
-### config/u-boot/TREENAME/
+#### config/u-boot/TREENAME/
 
 Each `TREENAME` directory defines configuration for a corresponding mainboard.
 It doesn't actually have to be for a board; it can also be used to just define
@@ -1196,14 +1148,14 @@ a U-Boot revision, with patches and so on. To enable use as a payload in ROM
 images, this must have the same name as its `config/coreboot/TREENAME/`
 counterpart.
 
-### config/u-boot/TREENAME/patches/
+#### config/u-boot/TREENAME/patches/
 
 For any given U-Boot tree, patches with the `patch` file extension are placed
 here, alphanumerically in the order that they should be applied.
 
 These patches are then so applied, when lbmk downloads the given source tree.
 
-### config/u-boot/TREENAME/target.cfg
+#### config/u-boot/TREENAME/target.cfg
 
 This file can contain several configuration lines, each being a string, such
 as:
@@ -1239,7 +1191,7 @@ to a non-native arch means that necessary crossgcc-arch will be compiled and be
 available when building roms, but not necessarily built or discovered when
 individual scripts are called manually.*
 
-### config/u-boot/TREENAME/config/
+#### config/u-boot/TREENAME/config/
 
 Files in this directory are *U-Boot* configuration files. Configuration file
 names can be anything, but for now `default` is the only one used.
@@ -1269,8 +1221,7 @@ Another interesting config option is `CONFIG_POSITION_INDEPENDENT` for ARM
 boards, which has been so far enabled in the ones `lbmk` supports, just to be
 safe.
 
-config/submodule
-----------------
+### config/submodule/
 
 In here you can find submodule configurations for projects. It works for both
 single- and multi-tree projects. Use the existing examples as reference.
@@ -1313,14 +1264,12 @@ because files are not extracted, only placed at their configured destination).
 The destination path in `module.list` is relative to the location of the main
 Git repository under which it is placed.
 
-config/data/PROJECT
--------------------
+### config/data/PROJECT/
 
 Random configuration data provided on a per-project basis. Complements
 the `config/PROJECT` directory.
 
-U-Boot build system
--------------------
+### U-Boot build system
 
 If you wish to know about U-Boot, refer here:\
 <https://u-boot.readthedocs.io/en/latest/>
@@ -1352,28 +1301,24 @@ configs, but not for adding them. Adding them is to be done manually, based on
 the above guidance.
 
 Config files in lbmk root directory
-===================================
+-----------------------------------
 
-projectsite
--------------
+### projectsite
 
 Domain name linking to the project home page (e.g. libreboot.org).
 
-projectname
----------------
+### projectname
 
 This is a text file, containing a single line that says `libreboot`. This string
 is used by the build system, when naming releases alongside the version number.
 
-version
----------------
+### version
 
 Updated each time lbmk runs, based on either `git describe` or, on release
 archives, this file is static and never changes. It says what Libreboot revision
 is currently in use (or was in use, if lbmk isn't running).
 
-versiondate
----------------
+### versiondate
 
 Updated each time lbmk runs, based on either `git describe` or, on release
 archives, this file is static and never changes. It says the *time* of
@@ -1383,10 +1328,9 @@ At last, you will now learn about the *scripts* (exclusively written as
 posix shell scripts) that constitute the entire Libreboot build system, lbmk:
 
 Scripts in root directory of lbmk
-=================================
+---------------------------------
 
-build
----------------
+### build
 
 This is the main build script.
 
@@ -1410,14 +1354,13 @@ You can also know what build system revision you have by running:
 This script is the beating heart of Libreboot. Break it and you break Libreboot.
 
 include/
-===============
+--------
 
 This directory contains *helper scripts*, to be included
 by main scripts using the `.` command (called the `source`
 command in `bash`, but we rely upon posix `sh` only).
 
-include/git.sh
---------------
+### include/git.sh
 
 These functions in here previously existed as independent scripts, but they
 were unified here, and they are used when you pass the `-f` argument
@@ -1427,8 +1370,7 @@ These functions deal with git cloning, submodule updates, revision resets and
 the application of patch files via `git am`. *Every* git repository downloaded
 by lbmk is handled by the functions in this file.
 
-include/mrc.sh
---------------
+### include/mrc.sh
 
 This was previously a separate script. The download logic was removed, and
 now the logic under `include/vendor.sh` is used for downloads. This file now
@@ -1442,8 +1384,7 @@ it is provided as an include to bypass license incompatibility. It has been
 heavily modified to use the same style of logic and general control flow used
 in the script at `include/vendor.sh`, and it is used from there.
 
-include/lib.sh
----------------
+### include/lib.sh
 
 Several other parts of lbmk also use this file. It is added to as little as
 possible, and contains miscallaneous functions that don't belong anywhere else.
@@ -1468,8 +1409,7 @@ so if for example you say `mk coreboot`, it would build every coreboot target.
 This is useful for the release build logic, because now it can much more simply
 build all of Libreboot, while still being flexible about it.
 
-include/rom.sh
------------
+### include/rom.sh
 
 This builds coreboot ROM images. Specifically, this contains mkhelper functions.
 It also builds serprog images, and it could be used to provide functions for
@@ -1540,8 +1480,7 @@ CCACHE is automatically used, when building coreboot, but not currently for
 other projects. This is done by cooking coreboot configs at build time, enabling
 coreboot's build option for it.
 
-Serprog images:
---------------
+### Serprog images:
 
 Build firmware images for serprog-based SPI programmers, where they use an
 STM32 MCU. It also builds for RP2040-based programmers like Raspberry Pi Pico.
@@ -1553,8 +1492,7 @@ Example command: `./mk -b stm32-vserprog`
 This also uses `rom.sh` as with the coreboot image build logic. It's all
 defined in that file, so read the main section pertaining to this file.
 
-include/vendor.sh
------------------
+### include/vendor.sh
 
 Helper functions for downloading and injecting vendor files. How to use:
 
@@ -1565,10 +1503,9 @@ Refer elsewhere in the documentation for how to handle vendor files, and/or
 read [the guide](../install/ivy_has_common.md).
 
 script/
-=======
+-------
 
-script/trees
-------------
+### script/trees
 
 *This* is the other beating heart of Libreboot. Used heavily by Libreboot, this
 script is what handles defconfig files for SeaBIOS, U-Boot *and* coreboot; it

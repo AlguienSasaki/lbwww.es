@@ -3,12 +3,13 @@ title: ThinkPad T420 external flashing
 x-toc-enable: true
 ...
 
-**[PLEASE READ THESE INSTRUCTIONS BEFORE INSTALLING](ivy_has_common.md), OR
-YOU MAY BRICK YOUR MACHINE!! - Please click the link and follow the instructions
-there, before flashing. For posterity,
-[here is the link again](ivy_has_common.md).**
+Open source BIOS/UEFI firmware
+------------------------------
 
-Read the [Ivybridge/Haswell common guide](/docs/install/ivy_has_common.html) if you want more information. Please note, for Thinkpad T420, splitting the rom is not required.
+This document will teach you how to install Libreboot, on your
+Lenovo ThinkPad T420 laptop motherboard. Libreboot replaces proprietary
+BIOS/UEFI firmware.
+
 The following instructions expect you to have these on hand:
 
 + a clone of lbmk, can be obtained from `https://codeberg.org/libreboot/lbmk`
@@ -19,6 +20,11 @@ The following instructions expect you to have these on hand:
 
 Preparing a release Rom
 -----------------------
+
+**[PLEASE READ THESE INSTRUCTIONS BEFORE INSTALLING](ivy_has_common.md), OR
+YOU MAY BRICK YOUR MACHINE!! - Please click the link and follow the instructions
+there, before flashing. For posterity,
+[here is the link again](ivy_has_common.md).**
 
 **Please follow this prior to flashing, or you may brick your machine.**
 

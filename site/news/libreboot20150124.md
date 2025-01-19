@@ -3,7 +3,7 @@
 % 24 January 2015
 
 Machines supported in this release:
-===================================
+---------------------------------
 
 -   **Lenovo ThinkPad X60/X60s**
     -   You can also remove the motherboard from an X61/X61s and replace
@@ -38,8 +38,7 @@ Machines supported in this release:
     MB063LL/A, MB062LL/A)
     -   See **hardware/\#macbook21**.
 
-Changes for this release (latest changes first, earliest changes last)
-----------------------------------------------------------------------
+### Changes for this release (latest changes first, earliest changes last)
 
 -   grub.cfg: Added (ahci1) to list of devices for ISOLINUX parser
     (CD/DVD) (this is needed for the X200 docking station).

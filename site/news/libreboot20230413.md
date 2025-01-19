@@ -8,7 +8,7 @@ there, before flashing. For posterity,
 [here is the link again](../docs/install/ivy_has_common.md).**
 
 Introduction
-============
+------------
 
 Libreboot provides boot firmware for supported x86/ARM machines, starting a
 bootloader that then loads your operating system. It replaces proprietary
@@ -35,14 +35,12 @@ existing supported hardware; the focus is going to be on adding *more* boards
 to Libreboot, to support more hardware. I've been on a spree, buying lots of
 mainboards that coreboot supports, that would be interesting in Libreboot.
 
-Build from source
------------------
+### Build from source
 
 *This* release was build-tested on Debian *Sid*, as of 13 April 2023. Your
 mileage may vary, with other distros. Refer to Libreboot documentation.
 
-KCMA-D8 and KGPE-D16 wanted!
-----------------------------
+### KCMA-D8 and KGPE-D16 wanted!
 
 [ASUS KGPE-D16 and KCMA-D8 needed for testing!](kgpe-d16.md)
 
@@ -52,13 +50,12 @@ with one (or both) of these, I would appreciate it. Please
 [get in touch](../contact.md)!
 
 Work done since last release
-============================
+----------------------------
 
 For more detailed change logs, look at the Git repository. This is
 a summary of changes.
 
-Summary of changes:
--------------------
+### Summary of changes:
 
 Zero code changes within coreboot on any boards, but the build system went
 through a mild overhaul:
@@ -80,8 +77,7 @@ through a mild overhaul:
   images need `mrc.bin` for raminit. More info about this is in the previous
   release.
 
-MRC W541/T440p ROM images re-added
-----------------------------------
+### MRC W541/T440p ROM images re-added
 
 As alluded to and applied by the above text, T440p/W541 thinkpad images that
 use `mrc.bin` have been re-added. Libreboot supports experimental raminit on
@@ -91,8 +87,7 @@ that use it, so that users can choose which one they want.
 More information this is available, in the *previous*
 [Libreboot 20230319 release announcement](libreboot20230319.md).
 
-Detailed descriptions of changes
---------------------------------
+### Detailed descriptions of changes
 
 Changelog:
 
@@ -145,13 +140,12 @@ Changelog:
   patch courtesy of Andreas Hartmann.
 
 Hardware supported in this release
-==================================
+----------------------------------
 
 All of the following are believed to *boot*, but if you have any issues,
 please contact the Libreboot project. They are:
 
-Desktops (AMD, Intel, x86)
------------------------
+### Desktops (AMD, Intel, x86)
 
 -   [Gigabyte GA-G41M-ES2L motherboard](../docs/install/ga-g41m-es2l.md)
 -   [Acer G43T-AM3](../docs/install/acer_g43t-am3.md)
@@ -190,7 +184,7 @@ Desktops (AMD, Intel, x86)
 -   [Samsung Chromebook Plus (v1) (gru-kevin)](../docs/install/chromebooks.md)
 
 Downloads
-=========
+---------
 
 You can find this release on the downloads page. At the time of this
 announcement, some of the rsync mirrors may not have it yet, so please check

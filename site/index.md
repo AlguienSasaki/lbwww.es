@@ -38,7 +38,7 @@ you continue to use your hardware, with continued firmware updates. All of this
 is *why* Libreboot exists.
 
 Overview of Libreboot design
-============================
+----------------------------
 
 <img tabindex=1 class="l" src="https://av.libreboot.org/hp9470m/9470m+2560p.jpg" /><span class="f"><img src="https://av.libreboot.org/hp9470m/9470m+2560p.jpg" /></span>
 
@@ -66,7 +66,7 @@ Libreboot, coreboot would be inaccessible for most users; you can also
 still [reconfigure](docs/maintain/) Libreboot however you wish.
 
 Why use Libreboot?
-==================
+------------------
 
 <img tabindex=1 class="r" style="max-width:25%;" src="https://av.libreboot.org/thinkpadcollection/thinkpadcollection1-min.jpg" /><span class="f"><img src="https://av.libreboot.org/thinkpadcollection/thinkpadcollection1-min.jpg" /></span>
 
@@ -80,7 +80,7 @@ whereas Libreboot is specifically crafted for end users. In other words, the
 purpose of Libreboot is to *Just Work*. Direct configuration and installation
 of coreboot is also possible, but Libreboot makes it *much* easier.
 
-Libreboot gives you [freedoms](https://writefreesoftware.org/) that
+Libreboot gives you [Free Software](https://writefreesoftware.org/) that
 you otherwise can't get with most other boot firmware, plus faster boot speeds
 and [better security](docs/linux/grub_hardening.md). It's extremely powerful
 and [configurable](docs/maintain/) for many use cases. If you're unhappy with
@@ -113,7 +113,7 @@ over your own property (your computer), and so, we make it our mission to help
 you [wrest](https://trmm.net/TOCTOU/) back such control.
 
 Libreboot is not a fork of coreboot
-===================================
+-----------------------------------
 
 <img tabindex=1 class="r" style="max-width:25%;" src="https://av.libreboot.org/t1650/t1650_grub.jpg" /><span class="f"><img src="https://av.libreboot.org/t1650/t1650_grub.jpg" /></span>
 
@@ -140,8 +140,7 @@ knowledge or skill except the ability to
 follow [simplified instructions, written for non-technical
 users](docs/install/).
 
-How to help
------------
+### How to help
 
 The [tasks page](tasks/) lists tasks that could (will) be worked on. It will
 be updated over time as more tasks are added/completede. If you want to help,
@@ -176,8 +175,7 @@ repository](https://codeberg.org/libreboot/lbwww) where you can send patches.
 Any and all development discussion and user support are all done on the IRC
 channel. More information is on the [contact page](contact.md).
 
-Translations needed, for libreboot.org
---------------------------------------
+### Translations needed, for libreboot.org
 
 Libreboot currently has translated Web pages in Ukrainian and French (but not
 for all pages, yet, on either language).

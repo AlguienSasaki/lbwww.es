@@ -2,8 +2,8 @@
 % Leah Rowe
 % 26 January 2024
 
-Introduction
-============
+Open source BIOS/UEFI firmware
+------------------------------
 
 *This* new release, Libreboot 20240126, released today 26 January 2024, is
 a new *testing* release of Libreboot. The previous release was
@@ -32,16 +32,15 @@ firmware, but not Libreboot! Booting Linux/BSD is also [well](../docs/linux/)
 [supported](../docs/bsd/).
 
 Testing needed!
-===============
+---------------
 
 The coreboot revision has been updated very recently. Make sure to
 have [external flashing gear](../docs/install/spi.md) ready just in case!
 
 Work done since last release
-============================
+----------------------------
 
-New mainboards supported
-------------------------
+### New mainboards supported
 
 These new mainboards have been added:
 
@@ -57,29 +56,25 @@ These new mainboards have been added:
 
 Conversely, the [ThinkPad X201 was removed](x201.md).
 
-S3 fixed on GM45 thinkpads
---------------------------
+### S3 fixed on GM45 thinkpads
 
 The new coreboot revision includes a fix within it that fixes S3 suspend/resume
 on GM45 thinkpads (e.g. X200, T400). This was broken in the previous Libreboot
 release, but now it works again.
 
-Modest code size reduction
---------------------------
+### Modest code size reduction
 
 See: [Libreboot build system audit 4](audit4.md)
 
 These and subsequent changes are included in today's release. The build system
 has been further optimised, both in terms of code size and performance.
 
-GRUB 2.12 revision now used
----------------------------
+### GRUB 2.12 revision now used
 
 The previous Libreboot release used a revision from GRUB 2.12-rc1, but now
 it uses the GRUB 2.12 released during December 2023.
 
-GRUB support for EFI System Partition
--------------------------------------
+### GRUB support for EFI System Partition
 
 We don't use UEFI on x86, but the GRUB config in Libreboot's GRUB payload
 has now been modified, to also scan `grub.cfg` from `EFI/` directories.
@@ -356,7 +351,7 @@ changes first):
   re-used by other planned ports for Dell latitudes in lbmk. Patch courtesy of
   Nicholas Chin.
 
-Exact git log, relative to 20231106:
+### Exacit git log, relative to 20231106
 
 ```
 * 7f0ca545 Libreboot 20240126 
@@ -562,7 +557,7 @@ Exact git log, relative to 20231106:
 ```
 
 Errata
-======
+------
 
 Vendorfile inject script will report an error when inserting for HP 820 G2,
 because the refcode is compressed via `-c lzma` option in cbfstool (or it is

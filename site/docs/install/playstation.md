@@ -27,16 +27,16 @@ if you want it to, and you can!
 | **Original boot firmware** | Sony PS1 BIOS (USA/JPN/EU)                     |
 | **Flash chip**             | 512KB Mask ROM                                 |
 </div>
-Introduction
-============
+
+Open source playstation (PS1/PSX) BIOS
+---------------------------------
 
 This uses the free/opensource BIOS developed by the PCSX-Redux team, which you
 can learn more about here:
 
 <https://github.com/grumpycoders/pcsx-redux/tree/main/src/mips/openbios>
 
-Build from source
------------------
+### Build from source
 
 Pre-compiled builds will be in the next Libreboot release, after
 version 20240612. For now, you must compile it from source, but the Libreboot
@@ -67,7 +67,7 @@ This commonly only builds the BIOS part. If you want to build all of PCSX-Redux,
 you can, but lbmk does not provide automation for this.
 
 Installation
-============
+------------
 
 If all went well, you should see `openbios.bin` located
 under the `bin/playstation/` (within lbmk). Alternatively, you may be using
@@ -75,8 +75,7 @@ a release *after* Libreboot 20240612 that has it pre-built. Either way is fine.
 
 The `openbios.bin` file is your new BIOS build.
 
-Emulators
----------
+### Emulators
 
 Most PlayStation emulators rely on low-level emulation to execute the real BIOS.
 The Open BIOS by PCSX-Redux (as distributed by Libreboot) can also be used, and
@@ -91,8 +90,7 @@ provided with your chosen PlayStation emulator. You can even freely
 redistribute this BIOS, because it's free software (released under MIT license),
 which is a major advantage over Sony's original BIOS.
 
-Hardware
---------
+### Hardware
 
 Not yet tested by the Libreboot project, but the PCSX-Redux developers have
 stated that it will work on the real console. *It should be noted that the Open
@@ -116,7 +114,7 @@ BIOS much more polished, but a number of games have been tested and it's more
 or less fully reliable in most cases.
 
 Game compatibility
-==================
+------------------
 
 The upstream maintains a compatibility list, here:
 
@@ -126,7 +124,7 @@ NOTE: Google Docs, but an option exists on there to export it for LibreOffice
 Calc. The list is provided as a spreadsheet.
 
 Remarks about hardware
-====================
+----------------------
 
 Modern NOR flash can be used. You specifically want a TSOP-32 SMD/SMT type device,
 one that operates at 3.3v (tolerance 2.7 to 3.6v), organised into 512KB blocks,
@@ -146,10 +144,9 @@ We do not yet provide instructions for how to install this on real hardware, in
 the Libreboot project, but this can be done at a future date.
 
 Other mods (hardware)
-===============
+---------------------
 
-Video timings
--------------
+### Video timings
 
 The Open BIOS will not implement any DRM, so it's possible that you might boot
 out of region games. In an emulator, this is no problem, but it can prove
@@ -199,8 +196,7 @@ By fixing the timings in this way, your region-free console will also have
 correct timings, thus maximum game compatibility, and colours will always be
 correct no matter what video cable you're using.
 
-Modchips
---------
+### Modchips
 
 If using hardware, you will probably still want a modchip. Many proprietary
 modchip firmwares exist, such as Old crow, MultiMode3 and Mayumi; these run on
@@ -228,8 +224,7 @@ not yet been confirmed by the Libreboot project.
 More hardware testing is planned, but the Open BIOS works perfectly in emulators.
 Give it a try!
 
-Boot games on SD cards
------------------------
+### Boot games on SD cards
 
 The [PicoStation](https://github.com/paulocode/picostation) project provides
 free firmware for RP2040 devices, which you can solder into a modboard which
@@ -240,8 +235,7 @@ real playstation (the picostation replaces your CD drive).
 Not only is this useful in a development context, but it can also be used when
 your CD drive has worn out and no longer reads discs properly.
 
-Final remarks
--------------
+### Final remarks
 
 Combined with PsNee and PicoStation, the Open BIOS from PCSX-Redux team will
 turn your 90s PlayStation into a very hackable machine. There is
@@ -253,7 +247,7 @@ simply computers, fully reprogrammable and as such, Libreboot is happy to provid
 this support, for the Sony PlayStation
 
 Credit
-======
+------
 
 Thanks go to the PCSX-Redux team for their excellent work reverse engineering
 the Sony PS1 BIOS.

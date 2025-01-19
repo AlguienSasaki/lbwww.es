@@ -11,8 +11,8 @@ As I write this, I'm quite close to providing a new stable release of Libreboot.
 The final push to get it out the door is underway, with round-the-clock build
 testing and general polishing.
 
-Introduction
-============
+Free as in freedom?
+-------------------
 
 Firstly, what is microcode? In this context, CPU microcode is what configures
 logic gates in the CPU to implement an instruction set. You can learn more
@@ -50,8 +50,7 @@ announced that Libreboot had re-added certain mitigations, working around bugs
 caused when microcode is removed on certain Intel GM45 platforms (e.g. X200 or
 T400 ThinkPads).
 
-Why?
-----
+### Why?
 
 Freedom of choice, that's why. Libreboot's policy explicitly
 [states](policy.md#configuration), in the context of *adding* vendor files:
@@ -76,8 +75,7 @@ features. The CPU already has older, buggier microcode burned into mask ROM,
 so the choice is to either update it, or encounter more bugs. Regardless,
 this is a point of contention for some people.
 
-How?
-----
+### How?
 
 The change was implemented by [this
 patch](https://browse.libreboot.org/lbmk.git/commit/?id=f338697b96757977d2a14da00a91236595704fed)
@@ -164,7 +162,7 @@ ROM images there are named simply according to what is already
 the case.
 
 Removing microcode also possible on older releases
-==================================================
+---------------------------------------------------
 
 Libreboot releases *before* 20221214 excluded microcode by default, and did
 not provide ROMs *with* microcode.

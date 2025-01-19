@@ -1,24 +1,26 @@
 ---
-title: ThinkPad W541/W540 external flashing
+title: Install Libreboot on Lenovo ThinkPad W541 and/or W540
 x-toc-enable: true
 ...
 
-NOTE: The same image for W541 also works on the W540, as the motherboard is
-identical.
+Open source BIOS/UEFI firmware
+-------------------------
+
+This document will teach you how to install Libreboot, on your
+Lenovo ThinkPad W541 and/or W540 laptop motherboard. Libreboot replaces
+proprietary BIOS/UEFI firmware.
+
+NOTE: The same image for W541 also works on the W540, as the motherboards are
+identical for coreboot purposes.
 
 Buy Libreboot preinstalled
-==========================
+--------------------------
 
 **Minifree now sells the Libreboot T480, instead of the Libreboot W541. See:
 <https://minifree.org/product/libreboot-t480/>**
 
-Introduction
-============
-
-**NOTE: Libreboot standardises on [flashprog](https://flashprog.org/wiki/Flashprog)
-now, as of 27 January 2024, which is a fork of flashrom.
-The reason why was explained, in
-the [Libreboot 20240225 release](../../news/libreboot20240225.md#flashprog-now-used-instead-of-flashrom)**
+Safety advice
+-------------
 
 **[PLEASE READ THESE INSTRUCTIONS BEFORE INSTALLING](ivy_has_common.md), OR
 YOU MAY BRICK YOUR MACHINE!! - Please click the link and follow the instructions
@@ -33,6 +35,11 @@ root of that project. To do so, run
 	cd lbmk
 
 You can now follow the rest of the instructions.
+
+**NOTE: Libreboot standardises on [flashprog](https://flashprog.org/wiki/Flashprog)
+now, as of 27 January 2024, which is a fork of flashrom.
+The reason why was explained, in
+the [Libreboot 20240225 release](../../news/libreboot20240225.md#flashprog-now-used-instead-of-flashrom)**
 
 Preparing a release Rom
 -----------------------
@@ -99,7 +106,7 @@ used when flashing either of the chips.
 
 You can now proceed to [flashing](/docs/install/spi.html) this machine.
 
-`thinkpad_acpi` issues {#thinkpad-acpi}
+thinkpad\_acpi issues {#thinkpad-acpi}
 ---------------------------------------
 
 It has been reported by a user that `thinkpad_acpi` does not load correctly on
@@ -110,7 +117,7 @@ If you encounter this, check [this page](../../faq.md#thinkpad-acpi)
 for details as to how to fix this.
 
 Errata
-======
+------
 
 NOTE: As of Libreboot releases from May 2024 onward, the Intel MRC is no longer
 included for Haswell; MRC is a blob for raminit, but we now provide libre

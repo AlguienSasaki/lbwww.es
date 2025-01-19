@@ -1,5 +1,5 @@
 ---
-title: Gigabyte GA-G41M-ES2L desktop board 
+title: Install Libreboot on Gigabyte GA-G41M-ES2L
 ...
 
 <div class="specs">
@@ -48,8 +48,12 @@ P*: Partially works with vendor firmware
 | **SeaBIOS with GRUB** | Works |
 </div>
 
-Introduction
-============
+Open source BIOS/UEFI firmware
+------------------------------
+
+This document will teach you how to install Libreboot, on your
+Gigabyte GA-G41M-ES2L desktop motherboard. Libreboot replaces proprietary
+BIOS/UEFI firmware.
 
 This is a desktop board using intel hardware (circa \~2009, ICH7
 southbridge, similar performance-wise to the ThinkPad X200. It can make
@@ -89,7 +93,7 @@ You can learn more about using the build system, lbmk, here:\
 [libreboot build instructions](../build/)
 
 RAM
-===
+---
 
 **This board is very picky with RAM. If it doesn't boot, try an EHCI debug
 dongle, serial usb adapter and null modem cable, or spkmodem, to get a
@@ -105,7 +109,7 @@ Many other modules will probably work just fine, but raminit is very picky on
 this board. Your mileage *will* fluctuate, wildly.
 
 MAC ADDRESS
-===========
+-----------
 
 NOTE: due to a bug in the hardware, the MAC address is hardcoded in
 coreboot. Therefore, you must set your own MAC address in your
@@ -116,14 +120,14 @@ distro, to set a valid MAC address. By doing this, your NIC should
 work nicely.
 
 Flash chip size {#flashchips}
-===============
+---------------------
 
 Use this to find out:
 
 	flashprog -p internal
 
 Flashing instructions {#clip}
-=====================
+--------------------------
 
 Refer to [spi.md](spi.md) for how to set up an SPI programmer for
 external flashing. *You can only externally reprogram one of the chips

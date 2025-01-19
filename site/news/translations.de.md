@@ -13,7 +13,7 @@ HTML Seiten.
 Die Seite die Du gerade liest wurde auf diese Weise erstellt!
 
 Vorbereitung
-===============
+--------------------
 
 Die Libreboot Webseite ist verfügbar, in Markdown, über ein Git Repository:\
 <https://codeberg.org/libreboot/lbwww>
@@ -34,9 +34,8 @@ dort jedesmal vermerken wenn ich Änderungen an der Seite vornehme, und
 zeigen wo diese Änderungen dann auf übersetzten Seiten erledigt werden
 müssen für jede Seite die ich ändere.
  
-
 Wie übersetzt man libreboot.org
-==============================
+------------------------
 
 Die Dokumentation auf <https://untitled.vimuser.org/> erläutert wie Du
 Übersetzungen handhaben kannst. 

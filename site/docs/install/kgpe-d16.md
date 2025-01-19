@@ -3,10 +3,17 @@ title: ASUS KGPE-D16 server/workstation board
 x-toc-enable: true
 ...
 
+Open source BIOS/UEFI firmware
+------------------------------
+
+This document will teach you how to install Libreboot, on your
+ASUS KGPE-D16 server/workstation motherboard. Libreboot replaces proprietary
+BIOS/UEFI firmware.
+
 TODO: OLD page. TODO: check that all the info is still valid.
 
-Introduction
-============
+Free your BIOS today!
+---------------------
 
 This is a server board using AMD hardware (Fam10h *and Fam15h* CPUs
 available). It can also be used for building a high-powered workstation.
@@ -26,24 +33,24 @@ possible to re-flash using software running in Linux on the
 KGPE-D16, without using external hardware.
 
 CPU compatibility
-=================
+-----------------
 
 Opteron 62xx and 63xx CPUs work just fine.
 
 Board status (compatibility) {#boardstatus}
-============================
+---------------------
 
 See <https://raptorengineeringinc.com/coreboot/kgpe-d16-status.php>.
 
 Form factor {#formfactor}
-===========
+----------------------
 
 These boards use the SSI EEB 3.61 form factor; make sure that your case
 supports this. This form factor is similar to E-ATX in that the size is
 identical, but the position of the screws are different.
 
 IPMI iKVM module add-on {#ipmi}
-=======================
+--------------------------
 
 Don't use it. It uses proprietary firmware and adds a backdoor (remote
 out-of-band management chip, similar to the [Intel Management
@@ -53,7 +60,7 @@ mainboard since it's on the add-on module, which you don't have to
 install.
 
 Flash chips {#flashchips}
-===========
+--------------------------
 
 2MiB flash chips are included by default, on these boards. It's on a
 P-DIP 8 slot (SPI chip). The flash chip can be upgraded to higher sizes:
@@ -72,13 +79,13 @@ This guide shows how to flash the chip:\
 [25xx NOR flashing guide](../install/spi.md)
 
 Native graphics initialization {#graphics}
-==============================
+----------------------------------
 
 Only text-mode is known to work, but linux(kernel) can initialize the
 framebuffer display (if it has KMS - kernel mode setting).
 
 Current issues {#issues}
-==============
+----------------------------------
 
 -   LRDIMM memory modules are currently incompatible
 	(IT MAY WORK NOWADAYS, TODO TEST)

@@ -3,6 +3,16 @@ title: Insert vendor files not included in release images
 x-toc-enable: true
 ...
 
+Open source BIOS/UEFI firmware
+------------------------------
+
+Libreboot replaces proprietary BIOS/UEFI firmware, but some newer boards still
+occasionally need code from the hardware manufacturer in order to boot properly.
+This document will teach you how to handle such a scenario, and how to check
+for it. For more context, please read Libreboot's [Binary Blob Reduction
+Policy](../../news/policy.md) and [Freedom Status](../../freedom-status.md)
+pages.
+
 **PLEASE MAKE SURE you read and follow the instructions on this page, prior
 to flashing Libreboot, if required for your mainboard; failure to heed this
 warning can and will result in a soft-brick, which would then necessitate
@@ -15,7 +25,7 @@ guide to change the GbE MAC address in the flash, if your board has an Intel
 Gigabit Ethernet device (where an Intel Flash Descriptor is used).
 
 WARNING: eCryptfs file name limits
-=================================
+----------------------------------
 
 Do not run the build system on a eCryptfs file system, because it has
 very short file name limits and Libreboot's build system deals with very
@@ -23,8 +33,8 @@ long file names. We commonly get reports from this by Linux Mint users
 who encrypt their home directory with eCryptfs; regular LUKS encryption will
 do nicely.
 
-**Install build dependencies first**
-================================
+Install build dependencies first
+------------------------------------
 
 **You will be compiling several small utilities from source code. This means
 you need the compilers and various libraries.**
@@ -37,7 +47,7 @@ working. The insertion must work correctly, prior to Libreboot installation,
 if your board requires it, otherwise your board simply will not boot.**
 
 Introduction
-============
+------------
 
 On *some* boards, but certainly not all of them, certain files are required from
 the hardware vendor. Libreboot has strict [rules](../../news/policy.md)
@@ -55,8 +65,7 @@ the [Freedom Status](../../freedom-status.md) page.
 **If in doubt, you should simply follow these instructions. If your board
 doesn't need vendor files, the tar archive won't be modified.**
 
-MAC address
------------
+### MAC address
 
 Regardless of whether your board needs vendorfiles or not, you can also use
 this command to change the MAC address on systems with Intel GbE regions in
@@ -65,8 +74,7 @@ the flash, where an Intel gigabit ethernet device is used.
 For example, a Lenovo ThinkPad X200 doesn't need any files added, but can still
 have the mac address changed; please continue reading!
 
-Injecting vendor files into tarballs
-------------------------------------
+### Injecting vendor files into tarballs
 
 In order to inject the necessary files into a rom image, run the script from the root of lbmk and point to the rom image.
 
@@ -131,8 +139,7 @@ Older versions left the tarball unmodified, and extracted the modified images
 to `bin/release/` - on current behaviour, you inject the tarball and then
 extract the tarball yourself afterward, to flash the modified images.
 
-Behaviour changes in Libreboot 20241206 rev8
---------------------------------------------
+### Behaviour changes in Libreboot 20241206 rev8
 
 *Older* versions of this script would have produced the injected images under
 the `bin/release/` directory, and/or allow you to do it on specific ROM images.
@@ -201,10 +208,9 @@ for Libreboot to retroactively modify the official images in this way, since
 using the older tarballs.
 
 Check that the files were inserted
-==================================
+----------------------------------
 
-Automatic verification
-----------------------
+### Automatic verification
 
 You *must* ensure that the files were inserted. The inject command automatically
 verifies checksums of the complete images, when you run it directly on a
@@ -215,8 +221,7 @@ be modified. If you're using newer release images with `DO_NOT_FLASH` and
 the one-byte padding (as described above), that's a good indicator, but older
 release images didn't have this modification.
 
-Manual inspection
------------------
+### Manual inspection
 
 You could check the files manually, if you're paranoid, after insertion.
 
@@ -266,7 +271,7 @@ uses MEv11 with Intel Boot Guard, the boot guard is automatically disabled
 by processing the MEv11 image with Mate Kukri's [deguard](deguard.md) utility.
 
 Errata
-======
+------
 
 This section should not concern you, if you're using newer Libreboot releases.
 This section largely concerns *bugs* which existed in older releases, pertaining

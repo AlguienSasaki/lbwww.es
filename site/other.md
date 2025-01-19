@@ -3,8 +3,8 @@ title: Other coreboot distributions
 x-toc-enable: true
 ...
 
-Introduction
-============
+What is a coreboot distro?
+--------------------------
 
 Libreboot is a *coreboot distribution* or *coreboot distro*, in the same way
 that Debian is a *Linux distro*. Its purpose is to provide free/opensource boot
@@ -32,13 +32,12 @@ It's thanks to the various coreboot distros that many people use coreboot today;
 without them, many otherwise non-technical users might not use coreboot at all.
 
 List of coreboot distros
-========================
+------------------------
 
 Not all distros are listed; only those of high quality or otherwise of interest;
 quality, not quantity. In alphabetical order:
 
-Canoeboot
----------
+### Canoeboot
 
 Website: <https://canoeboot.org/>
 
@@ -67,8 +66,7 @@ you could consider Canoeboot to be *legacy Libreboot*. Libreboot adopted the
 Binary Blob Reduction Policy in November 2022, as part of a general desire to
 support more - and newer - hardware.
 
-Dasharo
--------
+### Dasharo
 
 Website: <https://docs.dasharo.com/>
 
@@ -88,8 +86,7 @@ coreboot images for each supported mainboard, with an emphasis on stability.
 It's a very different approach than Libreboot's approach; Libreboot provides
 a more generalised design in its build system and infrastructure.
 
-Heads
------
+### Heads
 
 Website: <https://osresearch.net/>
 
@@ -130,8 +127,7 @@ but they target different kinds of users and use-case scenarios, with Libreboot
 targeting a more general audience (while providing security hardening options),
 whereas Heads specifically targets security-conscious users.
 
-MrChromeBox
------------
+### MrChromeBox
 
 Website: <https://docs.mrchromebox.tech/>
 
@@ -167,8 +163,7 @@ the interview:
 Libreboot largely avoids supporting Chromebooks, precisely because
 MrChromebox is a perfectly viable option on these machines.
 
-Skulls
-------
+### Skulls
 
 Git repositories: <https://github.com/merge/skulls>
 
@@ -183,8 +178,7 @@ aims to provide ease of use while also providing great power and flexibility.
 So Libreboot is aimed specifically at power users, while also trying to
 accomodate non-technical users; Skulls largely targets the latter.
 
-System76 Open Firmware
-----------------------
+### System76 Open Firmware
 
 Git repository: <https://github.com/system76/firmware-open>
 
@@ -199,7 +193,7 @@ System76 provides the coreboot firmware, along with EDK2 UEFI payload. It can
 boot Linux distros, BSD systems and even Windows perfectly.
 
 Is your distro unlisted?
-========================
+------------------------
 
 Please get in touch! We'd love to link your project here.
 
@@ -215,7 +209,7 @@ firmware, which was the primary motivation behind this page, in promoting the
 various projects.
 
 Non-coreboot free firmware
-==========================
+--------------------------
 
 Several other projects besides coreboot provide free hardware initialisation,
 such as [U-Boot](https://www.u-boot.org/) (as own firmware, distinct from U-Boot

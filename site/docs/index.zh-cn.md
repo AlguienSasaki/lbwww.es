@@ -7,7 +7,7 @@ libreboot 的最新更新，可以在 [libreboot.org](https://libreboot.org) 上
 [libreboot 常见问题解答](../faq.md).
 
 Need help?
-==========
+----------
 
 Help is available on [Libreboot IRC](../contact.md) and other channels.
 
@@ -20,18 +20,18 @@ Leah Rowe, the founder and lead developer of Libreboot, also owns and
 operates Minifree Ltd; sales provide funding for the Libreboot project.
 
 安装 libreboot
-====================
+--------------
 
 -   [如何安装 libreboot](install/)
 
 操作系统相关文档
-============================
+----------------
 
 -   [如何在 x86 机器上安装 BSD](bsd/)
 -   [Linux 指南](linux/)
 
 开发者信息
-==========================
+----------
 
 -   [如何编译 libreboot 源代码](build/)
 -   [构建系统开发者文档](maintain/)
@@ -39,7 +39,7 @@ operates Minifree Ltd; sales provide funding for the Libreboot project.
 -   [U-Boot payload](uboot/)
 
 其它信息
-=================
+--------
 
 -   [杂项](misc/)
 -   [代号列表](misc/codenames.md)

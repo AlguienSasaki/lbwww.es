@@ -6,7 +6,7 @@ x-toc-enable: true
 TODO: this page is very old, and could do with an update.
 
 High Pitched Whining Noise on Idle in Arch-based distros
-==============================================================
+--------------------------------------------------------
 
 The following removes most of the noise. It reduces what is a high
 frequency whine (that not everyone can hear) to a slight buzz (which
@@ -62,7 +62,6 @@ using [this guide](../linux/grub_cbfs.md).
 X60/T60: Serial port - how to use (for dock owners)
 
 [Note: using a grsec enabled kernel will disable the powertop function. ](https://en.wikibooks.org/wiki/Grsecurity/Appendix/Grsecurity_and_PaX_Configuration_Options)
-===================================================
 
 For the Thinkpad X60 you can use the "UltraBase X6" dock (for the
 X60 Tablet it is called X6 Tablet UltraBase). For the ThinkPad T60, you
@@ -97,8 +96,8 @@ Note: part of the tutorial above requires changing your grub.cfg. Just
 change the `linux` line to add instructions for enabling getty. See
 [../linux/grub\_cbfs.md](../linux/grub_cbfs.md).
 
-Finetune backlight control on intel gpu's
-=========================================
+Finetune backlight control on intel GPUs
+----------------------------------------
 
 Sometimes the backlight control value (BLC\_PWM\_CTL) set by libreboot
 is not ideal. The result is either flicker, which could cause nausea or
@@ -190,7 +189,7 @@ on page 94. More research needs to be done on this target so proceed
 with care.
 
 Power Management Beeps on Thinkpads
-===================================
+-----------------------------------
 
 When disconnecting or connecting the charger, a beep occurs. When the
 battery goes to a critically low charge level, a beep occurs. Nvramtool
@@ -225,7 +224,7 @@ Finally, you need to flash the rom with this new image. See here
 for a detailed explanation.
 
 Get EDID: Find out the name (model) of your LCD panel
-=====================================================
+-----------------------------------------------------
 
 Get the panel name:
 
@@ -248,7 +247,7 @@ removing the LCD panel is an option. Usually, there will be information
 printed on the back.
 
 e1000e driver trouble shooting (Intel NICs)
-===========================================
+-------------------------------------------
 
 Example error, ¿may happen on weird and complex routing schemes(citation
 needed for cause):

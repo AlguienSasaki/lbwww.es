@@ -12,7 +12,7 @@ access once you no longer need it, as this is a useful security layer against
 any wrongful operations that you may later inadvertently run as root.
 
 Also disable SecureBoot
-=======================
+-----------------------
 
 If you're using a UEFI setup, it's probably because you're using
 a latter Intel platform and want to flash Libreboot internally, from
@@ -23,7 +23,7 @@ using the factory firmware, please ensure that *SecureBoot* is disabled,
 because it will interfere with lower memory accesses if left enabled.
 
 FLASH ERRORS (and workarounds)
-=======================
+------------------------------
 
 **NOTE: Libreboot standardises on [flashprog](https://flashprog.org/wiki/Flashprog)
 now, as of 27 January 2024, which is a fork of flashrom.
@@ -35,8 +35,7 @@ This section relates to installing libreboot on supported targets.
 Right out of the gate, some users may experience errors with flashprog when
 using the internal programmer. They are:
 
-/dev/mem access error
----------------------
+### /dev/mem access error
 
 NOTE: if running `flashprog -p internal` for software based flashing, and you
 get an error related to `/dev/mem` access, you should reboot with
@@ -48,8 +47,7 @@ is `kernel.securelevel=-1`; see [NetBSD securelevel
 manual](https://wiki.netbsd.org/tutorials/kernel_secure_levels/)
 and [OpenBSD securelevel manual](https://man.openbsd.org/securelevel).
 
-ERROR: Could not get I/O privileges
-------------------------------------
+### ERROR: Could not get I/O privileges
 
 Error message: `ERROR: Could not get I/O privileges (Function not implemented)`
 

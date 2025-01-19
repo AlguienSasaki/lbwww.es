@@ -1,5 +1,5 @@
 ---
-title: Intel D945GCLF desktop board 
+title: Install Libreboot on Intel D945GCLF and/or D945GCLF2
 x-toc-enable: true
 ...
 
@@ -18,7 +18,7 @@ x-toc-enable: true
 | **Graphics**               | ?                                              |
 | **Display**                | None.                                          |
 | **Memory**                 | Up to 2GB                                      |
-| **Architecture**           | x86_64                                         |
+| **Architecture**           | x86\_64                                        |
 | **Original boot firmware** | Intel BIOS                                     |
 | **Intel ME/AMD PSP**       | Not present.                                   |
 | **Flash chip**             | SOIC-8 512KiB                                  |
@@ -47,13 +47,21 @@ P*: Partially works with vendor firmware
 | **SeaBIOS**               | Works        |
 | **SeaBIOS with GRUB** | Doesn't work |
 </div>
+
+Open source BIOS/UEFI firmware
+------------------------------
+
+This document will teach you how to install Libreboot, on your
+Intel D945GCLF and/or D945GCLF2 desktop motherboard. Libreboot replaces
+proprietary BIOS/UEFI firmware.
+
 If you just want flashing instructions, go to
 [../install/d945gclf.md](../install/d945gclf.md)
 
 D945GCLF2D also reported working by a user.
 
 Introduction
-============
+------------
 
 This board is a mini-itx desktop board for 2008. It uses an atom 230,
 which is a singe core CPU but it is hyperthreaded so it appears to have
@@ -76,8 +84,7 @@ hyperthreaded). Since the board is almost identical (and coreboot code
 seem to indicate that it works, since MAX\_CPU=4 is set), it is believed
 that it should also work but this is untested.
 
-Remarks about vendor bios:
---------------------------
+### Remarks about vendor bios:
 
 -   Without coreboot/libreboot this board is completely useless, since the
     vendor bios is very bad. It cannot boot from any HDD whether it is
@@ -96,15 +103,14 @@ And SPI SOIC8 flash chip\
 ![](https://av.libreboot.org/d945gclf/20160923_141550.jpg){width="50%" height="50%"}
 
 Flashing instructions {#clip}
-=====================
+-----------------------------
 
 Refer to [spi.md](spi.md) for how to re-flash externally.
 
 Here is an image of the flash chip:\
 ![](https://av.libreboot.org/d945gclf/d945gclf_spi.jpg)
 
-How to replace thermal paste and fan
-------------------------------------
+### How to replace thermal paste and fan
 
 This board comes with very crappy disposable loud fan, that one has no
 bearings, which can not be repaired or oiled properly, do not waste your

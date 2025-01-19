@@ -3,34 +3,30 @@
 % 22 June 2014
 
 Release 20140622 (5th release)
-==============================
+--------------------------
 
 -   7th March 2014
 -   revised 22nd June 2014
 
-Officially supported
---------------------
+### Officially supported
 
 -   ThinkPad X60
 -   ThinkPad X60s
 
-Revision (22nd June 2014 - extra)
----------------------------------
+### Revision (22nd June 2014 - extra)
 
 -   Documentation: added X60 Unbricking tutorial
 -   Documentation: added info about enabling or disabling wifi
 -   Documentation: added info about enabling or disabling trackpoint
 
-Revision (22nd June 2014 - extra)
----------------------------------
+### Revision (22nd June 2014 - extra)
 
 -   Documentation: Improved the instructions for using flashprog
 -   Documentation: Improved the instructions for using cbfstool (to
     change the default GRUB menu)
 -   Documentation: Numerous small fixes.
 
-Revision notes (22nd June 2014)
--------------------------------
+### Revision notes (22nd June 2014)
 
 -   updated GRUB (git 4b8b9135f1676924a8458da528d264bbc7bbb301, 20th
     April 2014)

@@ -7,8 +7,8 @@ YOU MAY BRICK YOUR MACHINE!! - Please click the link and follow the instructions
 there, before flashing. For posterity,
 [here is the link again](../docs/install/ivy_has_common.md).**
 
-Introduction
-============
+Free software BIOS/UEFI
+---------------------
 
 Libreboot provides boot firmware for supported x86/ARM machines, starting a
 bootloader that then loads your operating system. It replaces proprietary
@@ -34,14 +34,12 @@ The *priority* for Libreboot is to add as many new boards as possible, from now
 to the next stable release (ETA Q3 2023), with many testing releases in
 between. Release early, release often. Rigorious testing ensues.
 
-Build from source
------------------
+### Build from source
 
 *This* release was build-tested on Debian *Sid*, as of 23 April 2023. Your
 mileage may vary, with other distros. Refer to Libreboot documentation.
 
-KCMA-D8 and KGPE-D16 wanted!
-----------------------------
+### KCMA-D8 and KGPE-D16 wanted!
 
 [ASUS KGPE-D16 and KCMA-D8 needed for testing!](kgpe-d16.md)
 
@@ -51,15 +49,14 @@ with one (or both) of these, I would appreciate it. Please
 [get in touch](../contact.md)!
 
 Work done since last release
-============================
+--------------------------
 
 This is in the last *10 days*, since the previous release was 10 days ago!
 Ergo, this is a very conservative changelog. It seems Libreboot has been
 releasing almost fortnightly, as of late; perhaps this could continue from
 now on.
 
-New mainboards now supported:
------------------------------
+### New mainboards now supported:
 
 * **Dell Latitude E6400 (laptop)** (GM45, blob-free, flashable entirely in
   software, no disassembly required!) - courtesy Nicholas Chin, `nic3-14159` on
@@ -71,8 +68,7 @@ New mainboards now supported:
 * HP EliteBook 2560p (laptop), courtesy Riku Viitanen (*seriously* cool guy) -
   Sandybridge hardware gen
 
-Build system changes:
----------------------
+### Build system changes:
 
 * **GM45 no-microcode bug mitigations re-added: revert to old SMRR handling
   and disable PECI (for e.g. X200/T400 users who want to [remove microcode
@@ -115,13 +111,12 @@ Build system changes:
   Leah Rowe.
 
 Hardware supported in this release
-==================================
+---------------------------------
 
 All of the following are believed to *boot*, but if you have any issues,
 please contact the Libreboot project. They are:
 
-Desktops (AMD, Intel, x86)
------------------------
+### Desktops (AMD, Intel, x86)
 
 -   [Gigabyte GA-G41M-ES2L motherboard](../docs/install/ga-g41m-es2l.md)
 -   [Acer G43T-AM3](../docs/install/acer_g43t-am3.md)
@@ -165,7 +160,7 @@ Desktops (AMD, Intel, x86)
 -   [Samsung Chromebook Plus (v1) (gru-kevin)](../docs/install/chromebooks.md)
 
 More boards soon!
-=================
+---------------
 
 I've purchased about ~10 HP mainboards, all of the viable sandybridge,
 ivybridge and haswell ones from coreboot. I'm going to add them all.
@@ -179,7 +174,7 @@ available on ThinkPad T440p and W541 as an option in Libreboot (including in
 this release!)
 
 Downloads
-=========
+-------
 
 You can find this release on the downloads page. At the time of this
 announcement, some of the rsync mirrors may not have it yet, so please check

@@ -3,7 +3,7 @@
 % 15 October 2014
 
 Machines supported in this release:
-===================================
+---------------------------------
 
 -   **Lenovo ThinkPad X60/X60s**
     -   You can also remove the motherboard from an X61/X61s and replace
@@ -29,8 +29,7 @@ Machines supported in this release:
     MB063LL/A, MB062LL/A)
     -   See **hardware/\#macbook21**.
 
-Changes for this release (latest changes first, earliest changes last)
-----------------------------------------------------------------------
+### Changes for this release (latest changes first, earliest changes last)
 
 -   Updated coreboot (git commit
     8ffc085e1affaabbe3dca8ac6a89346b71dfc02e), the latest at the time of
