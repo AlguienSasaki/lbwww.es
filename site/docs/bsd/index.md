@@ -46,7 +46,7 @@ workstation systems. Some of them have unique features that you can't find
 anywhere else (e.g. FreeBSD jails, OpenBSD's numerous security enhancements,
 NetBSD's rump kernel design and clean code quality).
 
-BSD systems are superfically similar to Linux systems, but they are very
+BSD systems are superficially similar to Linux systems, but they are very
 different under the hood (different kernel designs, different userspace
 implementations, and so on). However, almost all of the Linux userspace programs
 that you enjoy using are probably available in the various BSD *ports trees*,
