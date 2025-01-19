@@ -295,7 +295,7 @@ and therefore damage is unlikely. However, as stated above and as we will state
 again:
 
 * This is bad electrical design. The CH341A can switch flexibly between 3V
-  and 5V operation, but most flashes today are 1.8V or 5V anyway, and there are
+  and 5V operation, but most flashes today are 1.8V or 3V anyway, and there are
   all kinds of scenarios (such as over-current or surge event) where this 5V
   idle logic level could still be applied. Modifying your CH341a to 3.3v
   only, as defined in the datasheet (and by this page) is highly recommended.
