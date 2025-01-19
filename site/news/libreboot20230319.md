@@ -58,7 +58,7 @@ The changes can be summarised, thus:
 * **LIBRE** raminit code now available, on Haswell boards (ThinkPad T440p and
   ThinkPad W541). This is using patches from Angel Pons (hell on coreboot IRC),
   that are currently still in review on coreboot master. The *old* configs
-  that use `mrc.bin` for raminit are still available aswell, so this release
+  that use `mrc.bin` for raminit are still available as well, so this release
   contains ROMs with libre raminit *and* ROMs with vendor raminit. The reasons
   are explained below.
 * **FIXED S3 suspend/resume on Haswell (T440p/W541)** - but only on configs
@@ -132,7 +132,7 @@ The libre raminit comes from this patchset:
 <https://review.coreboot.org/c/coreboot/+/64198/5>
 
 The MRC vendor file (and Angel's replacement code) don't just do raminit, they
-handle a few other init tasks aswell, including USB host controller.
+handle a few other init tasks as well, including USB host controller.
 
 ### New boards, x86
 

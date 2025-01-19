@@ -213,7 +213,7 @@ Newest changes first, oldest changes last:
 * gitclone (script): Check whether a given patch exists before applying. Works
   around a quirk in most shells where `*` will error out if no files exist.
 * download/grub (script): If downloading `gnulib` fails, scrap the *grub*
-  download aswell, and exit with non-zero status (fail). This is done because
+  download as well, and exit with non-zero status (fail). This is done because
   gnulib is a dependency of GRUB.
 * blobutil/inject (script): When inserting `gbe.bin`, check that the file
   actually exists, and exit with non-zero status (fail) otherwise.

@@ -143,7 +143,7 @@ examples of how this very policy is implemented in Libreboot:
   graphics card enabled; more about Intel graphics is covered below. We could
   provide the VGA ROM for those extra chips, e.g. Nvidia graphics chips, but
   we don't. We configure the machines in such a way where the Intel graphics
-  is used, exclusively, so the dedicated GPU may aswell be turned off, and
+  is used, exclusively, so the dedicated GPU may as well be turned off, and
   it *is* turned off in such circumstances. The Intel graphics provide good
   enough performance and reliable operation for most people, and native
   initialisation code is available from coreboot to make use of the Intel GPU

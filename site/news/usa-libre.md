@@ -60,7 +60,7 @@ detail. It's not very long.
 
 At first glance, it may not seem that the bill affects individuals, but don't
 be fooled; this is a hugely positive step forward for everyone! If the state is
-using Libre Software, that most likely means it'll be used in education aswell.
+using Libre Software, that most likely means it'll be used in education as well.
 
 Although perhaps not immediately and readily apparent, this is a stake in the
 heart of proprietary software's current dominance, because it would remove one

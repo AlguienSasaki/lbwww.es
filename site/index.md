@@ -17,7 +17,7 @@ on [Libera](https://libera.chat/) IRC.
 <img tabindex=1 class="r" alt="ThinkPad T480 running Libreboot" title="ThinkPad T480" src="https://av.libreboot.org/t480/t480.jpg" /><span class="f"><img alt="ThinkPad T480 running Libreboot" src="https://av.libreboot.org/t480/t480.jpg" /></span>
 
 You can also [buy Libreboot preinstalled](https://minifree.org/) from Minifree Ltd,
-on select hardware, aswell as send your compatible hardware
+on select hardware, as well as send your compatible hardware
 for [Libreboot preinstallation](https://minifree.org/product/installation-service/).
 The founder and lead developer of Libreboot, Leah Rowe, also owns and operates
 Minifree; sales provide funding for Libreboot.
@@ -143,7 +143,7 @@ users](docs/install/).
 ### How to help
 
 The [tasks page](tasks/) lists tasks that could (will) be worked on. It will
-be updated over time as more tasks are added/completede. If you want to help,
+be updated over time as more tasks are added/completed. If you want to help,
 you could pick one of these tasks and work on it.
 
 <img tabindex=1 class="l" style="max-width:15%;" alt="GRUB boot loader in Libreboot" src="https://av.libreboot.org/hp8200sff/grub_open.jpg" /><span class="f"><img src="https://av.libreboot.org/hp8200sff/grub_open.jpg" /></span>

@@ -268,7 +268,7 @@ These are takes from the git log of `lbmk.git`:
 osbmk Git changes
 -------------
 
-It's important to show the osboot changes aswell. Osboot only became part of
+It's important to show the osboot changes as well. Osboot only became part of
 Libreboot last month, but the "reboot" of the osboot project happened around
 the start of 2022, when it was put back in sync with Libreboot at the time,
 so changes from then to now will be showed. The *last* change in osboot as

@@ -648,7 +648,7 @@ However, the following fixes were made for Lenovo X200 recently:
   This is relevant for Tianocore, a UEFI payload, which libreboot currently
   does not integrate for any boards, but Tianocore integration is planned in
   the future. Tianocore provides the option to use any UEFI-compliant operating
-  system, and this benefits Linux distributions aswell (it Just Works).
+  system, and this benefits Linux distributions as well (it Just Works).
   SMMSTORE is basically UEFI's answer to CMOS "NVRAM". it is a way to store
   configurations, in SPI flash. it's handled via SMM interrupts (SMIs). NOTE:
   SMMSTOREv2 is also becoming a thing now

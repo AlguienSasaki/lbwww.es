@@ -209,7 +209,7 @@ into copies of these images in files under `bin/`. However, modern lbmk
 now only puts coreboot images in `bin/`, with payloads included.
 
 If you still have `elf/` coreboot images in your lbmk tree, please do not
-use them (and you may aswell delete them).
+use them (and you may as well delete them).
 
 ### cache/
 

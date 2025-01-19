@@ -172,7 +172,7 @@ or Apple's profits. No, I'm referring to *yours*. With libre software, *you*
 have the freedom to make real money; I'm just one of many examples of people
 who do just that. With *software freedom*, you can take existing technology
 and build something completely new that becomes the Next Best Thing; everyone
-else has this freedom aswell, and people share knowledge freely because of the
+else has this freedom as well, and people share knowledge freely because of the
 culture that type of world inspires. It's the world we live in, now.
 
 The people of New Hampshire will benefit greatly, if such freedoms are

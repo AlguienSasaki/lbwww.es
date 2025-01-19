@@ -17,7 +17,7 @@ Great care is always taken when writing for [lbmk](../docs/maintain/), which
 is Libreboot's build system, but in the past, auditing was always done ad-hoc.
 Since the start of 2023, auditing is now a main aspect of Libreboot development,
 and the result has been that the *quality* of Libreboot's build system has
-improved greatly. The same care has been given to documentation aswell.
+improved greatly. The same care has been given to documentation as well.
 
 Many bugs have been fixed, and the Libreboot build system (lbmk) is generally
 much more efficient now, compared to the Libreboot 20230625 release. The main

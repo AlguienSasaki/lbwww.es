@@ -209,7 +209,7 @@ not rely on dumping the factory.rom image (whereas, ich9deblob does).
 Simply speaking, `ich9deblob` takes an original dump of the boot flash, where
 that boot flash contains a descriptor that defines the existence of Intel ME,
 and modifies it. The Intel Flash Descriptor is modified to disable the ME
-region. It disables the ME itself aswell. The GbE region is moved to the
+region. It disables the ME itself as well. The GbE region is moved to the
 location just after the descriptor. The BIOS region is specified as being
 after the descriptor+GbE regions, filling the rest of the boot flash.
 

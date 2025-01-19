@@ -38,7 +38,7 @@ Revisions for r20140720 (3rd beta) (20th July 2014)
     (resources/grub/background/)
 -   Updated buildrom-withgrub to use background.jpg instead of
     background.png
--   Updated buildrom-withgrub to use gnulove.jpg aswell
+-   Updated buildrom-withgrub to use gnulove.jpg as well
 -   Updated resources/grub/config/macbook21/grub\*cfg to use gnulove.jpg
     background.
 -   Updated resources/grub/config/{x60,t60,x60t}/grub\*cfg to use

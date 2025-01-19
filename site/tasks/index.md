@@ -344,7 +344,7 @@ For UEFI purposes, U-Boot seems more mature, and it offers other features
 like SPL. As already stated, this is the preferred UEFI implementation for
 Libreboot, but uefistub is listed too because it's interesting.
 
-Probably useless, since U-Boot is more complete. We may aswell use U-Boot, but
+Probably useless, since U-Boot is more complete. We may as well use U-Boot, but
 uefistub will remain mentioned here for the time being. The context for
 uefistub is linuxboot-only setups; this is where uefistub can truly shine,
 specifically on ARM64 devices.
@@ -1059,7 +1059,7 @@ We currently do this on each motherboard:
 
 This is often literally 3 different ROM images, for all of the above. It is
 possible to have a libgfxinit setup where SeaBIOS is the payload, so that VGA
-ROMs can be executed aswell, but this has several issues, covered elsewhere on
+ROMs can be executed as well, but this has several issues, covered elsewhere on
 this page.
 
 It would be nice if all of this could be runtime options instead. By "runtime",

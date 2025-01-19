@@ -27,7 +27,7 @@ me at my email address: [info@minifree.org](mailto:info@minifree.org)
 
 I'm also arranging for an assembled machine with KCMA-D8 in it to be sent to
 me - though I'm not yet sure if that will go through, so if you have one of
-those aswell, I'd be interested too.
+those as well, I'd be interested too.
 
 How I plan to re-add
 --------------------
