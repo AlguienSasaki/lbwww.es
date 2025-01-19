@@ -103,10 +103,10 @@ the same letter.
 Credit
 ------
 
-[Britney Lozza](https://janethemotherfucker.github.io/) was the one who suggested
+[Jane Arkanian](https://janethemotherfucker.github.io/) was the one who suggested
 to me that I use this new release number and codename scheme, and I previously
 came up with the plan to use an April/June and October/December testing/stable
 release schedule.
 
-Britney also came up with the codename that I've decided to use for
+Jane also came up with the codename that I've decided to use for
 the June 2025 stable release - stay tuned!
