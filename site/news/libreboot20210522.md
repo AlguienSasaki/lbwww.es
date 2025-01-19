@@ -44,7 +44,7 @@ New boards
 
 #### Acer G43T-AM3
 
-This is a desktop mainboard, with similar hardware to the already supported
+This is a desktop motherboard, with similar hardware to the already supported
 Gigabyte GA-G41M-ES2L
 
 ### Laptops
@@ -635,7 +635,7 @@ However, the following fixes were made for Lenovo X200 recently:
 
 * Mostly re-factoring and minor bug fixes, but it has some interesting fixes
   that benefit libreboot
-* Acer G43T-AM3 mainboard added. This is also in the Libreboot release. This
+* Acer G43T-AM3 motherboard added. This is also in the Libreboot release. This
   board was also present in Libreboot, prior to it updating to use coreboot
   4.14, but now it is in the latest coreboot stable release
 * Initial support for x86\_64. Not yet used by Libreboot, but it might be
@@ -697,7 +697,7 @@ However, the following fixes were made for Lenovo X200 recently:
 
 ### coreboot 4.6
 
-* fix buggy S3 suspend/resume on Gigabyte GA-G41M-ES2L mainboard, and fix bugs
+* fix buggy S3 suspend/resume on Gigabyte GA-G41M-ES2L motherboard, and fix bugs
   in raminit
 * intel x4x/gm45/i945 boards: improvements/fixes to raminit and native video 
   initialization
@@ -711,11 +711,11 @@ Detailed coreboot git logs
 --------------------------
 
 The following are lists of changes in coreboot 4.14, versus coreboot revisions
-used in various platforms/mainboards from Libreboot 20160907. These lists are
+used in various platforms/motherboards from Libreboot 20160907. These lists are
 mostly pulled directly from the coreboot git log.
 
 These logs are made by copying the coreboot git log, on specific directories
-such as directories for mainboards, or entire platforms, in the git log of
+such as directories for motherboards, or entire platforms, in the git log of
 coreboot.
 
 These changes will be split into distinct categories:
@@ -803,7 +803,7 @@ i945 hardware that Libreboot supports.
 * fd054bc7d4 nb/intel/i945: Simplify GMA SSDT generator
 * 68680dd7cd Trim `.acpi_fill_ssdt_generator` and `.acpi_inject_dsdt_generator`
 * 95cdd9f21b nb/intel/i945: Make some cosmetic changes
-* f3f36faf35 src (minus soc and mainboard): Remove copyright notices
+* f3f36faf35 src (minus soc and motherboard): Remove copyright notices
 * b4d9f229d4 nb/intel/i945/raminit: Simplify if condition
 * d789b658f7 nb/intel/i945/raminit: Use boolean type for helper variables
 * 842dd3328d nb/intel/i945/raminit: Remove space for correct alignment
@@ -1022,7 +1022,7 @@ i945 hardware that Libreboot supports.
 
 ### git log src/northbridge/intel/pineview/
 
-This benefits the Intel D510MO / D410PT mainboards, and any other pineview
+This benefits the Intel D510MO / D410PT motherboards, and any other pineview
 board that Libreboot has added or will add.
 
 ````
@@ -1090,7 +1090,7 @@ board that Libreboot has added or will add.
 * deeccbf4e9 Drop explicit NULL initializations from `device_operations`
 * affd771ba3 nb/intel/pineview: drop intel_gma_get_controller_info()
 * 68680dd7cd Trim `.acpi_fill_ssdt_generator` and `.acpi_inject_dsdt_generator`
-* f3f36faf35 src (minus soc and mainboard): Remove copyright notices
+* f3f36faf35 src (minus soc and motherboard): Remove copyright notices
 * 39ff703aa9 nb/intel/pineview: Clean up code and comments
 * 8247cc3328 northbridge: Remove unused include <device/pci.h>
 * 2119d0ba43 treewide: Capitalize 'CMOS'
@@ -1161,7 +1161,7 @@ board that Libreboot has added or will add.
 * 20f71369d9 nb/intel/pineview: Put stage cache in TSEG
 * 84fdda3812 nb/intel/pineview: Use parallel MP init
 * da44e34743 nb/intel/pineview: Select 1M TSEG
-* c6ff1ac29e nb/intel/pineview: Move the boilerplate mainboard_romstage_entry
+* c6ff1ac29e nb/intel/pineview: Move the boilerplate motherboard_romstage_entry
 * b31aee9973 nb/intel/{i945,pineview}: Remove unused function
 * c70eed1e62 device: Use pcidev_on_root()
 * 66b462dd4f nb/intel/pineview/raminit.c: Remove unused variable
@@ -1286,7 +1286,7 @@ This benefits GM45 ThinkPads in Libreboot e.g. X200, T400, T500, R500, W500 etc
 * 68680dd7cd Trim `.acpi_fill_ssdt_generator` and `.acpi_inject_dsdt_generator`
 * 6343cd846a drivers/intel/gma: fold gma.asl into default_brightness_levels.asl
 * 612a867677 drivers/intel/gma/acpi: Add Kconfigs for backlight registers
-* f3f36faf35 src (minus soc and mainboard): Remove copyright notices
+* f3f36faf35 src (minus soc and motherboard): Remove copyright notices
 * 8247cc3328 northbridge: Remove unused include <device/pci.h>
 * 2119d0ba43 treewide: Capitalize 'CMOS'
 * ef90609cbb src: capitalize 'RAM'
@@ -1448,7 +1448,7 @@ This benefits GM45 ThinkPads in Libreboot e.g. X200, T400, T500, R500, W500 etc
 
 ### git log src/northbridge/intel/x4x/
 
-This benefits mainly the Gigabyte GA-G41M-ES2L mainboard in Libreboot, and other
+This benefits mainly the Gigabyte GA-G41M-ES2L motherboard in Libreboot, and other
 x4x boards that have now been added. In Libreboot 20160907, the only x4x board
 was the Gigabyte GA-G41M-ES2L
 
@@ -1549,7 +1549,7 @@ was the Gigabyte GA-G41M-ES2L
 * 68680dd7cd Trim `.acpi_fill_ssdt_generator` and `.acpi_inject_dsdt_generator`
 * 6343cd846a drivers/intel/gma: fold gma.asl into default_brightness_levels.asl
 * 612a867677 drivers/intel/gma/acpi: Add Kconfigs for backlight registers
-* f3f36faf35 src (minus soc and mainboard): Remove copyright notices
+* f3f36faf35 src (minus soc and motherboard): Remove copyright notices
 * 8247cc3328 northbridge: Remove unused include <device/pci.h>
 * 2119d0ba43 treewide: Capitalize 'CMOS'
 * ef90609cbb src: capitalize 'RAM'
@@ -1810,7 +1810,7 @@ Running `git log src/northbridge/amd/amdfam10/` we get these commits:
 * 1f4cb326fa northbridge: Remove useless include <device/pci_ids.h>
 * 586f24dab4 northbridge: Remove unneeded include <pc80/mc146818rtc.h>
 * 134da98a51 amd/{nb/amdfam10,cpu/pi}/Kconfig: Remove unused symbols
-* 414779db10 src/mainboard: Remove unused "HW_MEM_HOLE_SIZE_AUTO_INC"
+* 414779db10 src/motherboard: Remove unused "HW_MEM_HOLE_SIZE_AUTO_INC"
 * f765d4f275 src: Remove unneeded include <lib.h>
 * e9a0130879 src: Remove unneeded include <console/console.h>
 * d2b9ec1362 src: Remove unneeded include "{arch,cpu}/cpu.h"
@@ -1952,7 +1952,7 @@ Running `git log src/mainboard/asus/kgpe-d16/` we get:
 * cb3e16f287 AMD fam10: Remove HAVE_ACPI_RESUME support
 * 04d025cf50 amdfam10: Declare get_sysinfo()
 * 8560db6116 amdfam10: Declare empty activate_spd_rom() stub
-* e39db681df src/mainboard: Add missing 'include <types.h>'
+* e39db681df src/motherboard: Add missing 'include <types.h>'
 * a1e22b8192 src: Use 'include <string.h>' when appropriate
 * cd49cce7b7 coreboot: Replace all IS_ENABLED(CONFIG_XXX) with CONFIG(XXX)
 * 13f66507af device/mmio.h: Add include file for MMIO ops
@@ -1979,7 +1979,7 @@ Running `git log src/mainboard/asus/kgpe-d16/` we get:
 * 1db4e3a358 amdfam10 boards: Declare get_pci1234() just once
 * a79b3f1c63 amdfam10 boards: Drop unused mb_sysconf.h
 * a26b02466e drivers/aspeed/ast: Select `MAINBOARD_HAS_NATIVE_VGA_INIT`
-* 21c8f9cab3 mainboard: Remove useless include <device/pci_ids.h>
+* 21c8f9cab3 motherboard: Remove useless include <device/pci_ids.h>
 * 472d68b066 mb/asus/kgpe-d16: Set ASpeed GPIO SPD mux lines during boot
 * f0c5be2a4f mb/*/*/Kconfig: Remove useless comment
 * 6d19a20f5f mb: Set coreboot as DSDT's manufacturer model ID
@@ -1987,7 +1987,7 @@ Running `git log src/mainboard/asus/kgpe-d16/` we get:
 * f765d4f275 src: Remove unneeded include <lib.h>
 * ead574ed02 src: Get rid of duplicated includes
 * d2b9ec1362 src: Remove unneeded include "{arch,cpu}/cpu.h"
-* 1156b35a23 mainboard: Remove unneeded include <console/console.h>
+* 1156b35a23 motherboard: Remove unneeded include <console/console.h>
 * 718c6faff4 reset: Finalize move to new API
 * e20dd19dde amdfam10: Convert to `board_reset()`
 * 2c5652d72b mb: Fix non-local header treated as local
@@ -1996,7 +1996,7 @@ Running `git log src/mainboard/asus/kgpe-d16/` we get:
 * 068253c369 mb/*/*/cmos.default: Harmonise CMOS files syntax
 * f716f2ac1a mb/*/*/cmos.default: Decrease debug_level to 'Debug'
 * 65bb5434f6 src: Get rid of non-local header treated as local
-* 08fc8fff25 src/mainboard: Fix typo
+* 08fc8fff25 src/motherboard: Fix typo
 * db70f3bb4d drivers/tpm: Add TPM ramstage driver for devices without vboot.
 * 95bca33efa src/mb: Use "foo *bar" instead of "foo* bar"
 * c07f8fbe6f security/tpm: Unify the coreboot TPM software stack
@@ -2006,7 +2006,7 @@ Running `git log src/mainboard/asus/kgpe-d16/` we get:
 * 02b05d1f6b mb/asus: Get rid of device_t
 * d88fb36e61 security/tpm: Change TPM naming for different layers.
 * 64e2d19082 security/tpm: Move tpm TSS and TSPI layer to security section
-* 482d16fb0a src/mainboard: Fix various typos
+* 482d16fb0a src/motherboard: Fix various typos
 * ec48c749c2 AMD boards: Fix function name (soft_reset) in message
 * 74bd2b0e4c mb/asus/kcma-d8,kgde-d16: Don't select SPI_FLASH_WINBOND
 * b29078e401 mb/*/*: Remove rtc nvram configurable baud rate
@@ -2022,7 +2022,7 @@ Running `git log src/mainboard/asus/kgpe-d16/` we get:
 * eca093ecfe mainboard/asus/kgpe-d16: Remove obsolete reference to TPM ASL file
 * 06a629e4b1 arch/x86: do not define type of SPIN_LOCK_UNLOCKED
 * 75a3d1fb7c amdfam10: Perform major include ".c" cleanup
-* a8025db49f amd-based mainboards: Fix whitespace in _PTS comments
+* a8025db49f amd-based motherboards: Fix whitespace in _PTS comments
 * 3a0cb458dc cpu/amd/mtrr.h: Drop excessive includes
 * 4607cacf30 cpu/x86/msr.h: Drop excessive includes
 * 425890e59a AMD fam10h-15h: MMCONF_SUPPORT_DEFAULT is already set
@@ -2032,10 +2032,10 @@ Running `git log src/mainboard/asus/kgpe-d16/` we get:
 * 6350a2e43f src/mainboard/a-trend - emulation: Add space around operators
 * 7931c6a81d mb/asus/kgpe-d16: Add TPM support
 * 64444268e2 mb/asus/[kgpe-d16|kcma-d8]: Fix whitespace errors in devicetree.cb
-* d23ee5de22 mainboard: Clean up boot_option/reboot_bits in cmos.layout
-* 8ab989e315 src/mainboard: Capitalize ROM, RAM, CPU and APIC
+* d23ee5de22 motherboard: Clean up boot_option/reboot_bits in cmos.layout
+* 8ab989e315 src/motherboard: Capitalize ROM, RAM, CPU and APIC
 * bb9722bd77 Add newlines at the end of all coreboot files
-* 95fe8fb1e0 mainboard: Format irq_tables.c
+* 95fe8fb1e0 motherboard: Format irq_tables.c
 * 150f476c96 timestamp: Drop duplicate TS_END_ROMSTAGE entries
 * ca543396a7 mainboard/asus/[kgpe-d16|kcma-d8]: Enable secondary serial port header
 * 99894127ab mainboard/asus/[kgpe-di6|kcma-d8]: Fix board ROM information
@@ -2049,7 +2049,7 @@ Running `git log src/mainboard/asus/kcma-d8/` we get:
 * cb3e16f287 AMD fam10: Remove HAVE_ACPI_RESUME support
 * 04d025cf50 amdfam10: Declare get_sysinfo()
 * 8560db6116 amdfam10: Declare empty activate_spd_rom() stub
-* e39db681df src/mainboard: Add missing 'include <types.h>'
+* e39db681df src/motherboard: Add missing 'include <types.h>'
 * a1e22b8192 src: Use 'include <string.h>' when appropriate
 * cd49cce7b7 coreboot: Replace all IS_ENABLED(CONFIG_XXX) with CONFIG(XXX)
 * 13f66507af device/mmio.h: Add include file for MMIO ops
@@ -2074,14 +2074,14 @@ Running `git log src/mainboard/asus/kcma-d8/` we get:
 * 1db4e3a358 amdfam10 boards: Declare get_pci1234() just once
 * a79b3f1c63 amdfam10 boards: Drop unused mb_sysconf.h
 * a26b02466e drivers/aspeed/ast: Select `MAINBOARD_HAS_NATIVE_VGA_INIT`
-* 21c8f9cab3 mainboard: Remove useless include <device/pci_ids.h>
+* 21c8f9cab3 motherboard: Remove useless include <device/pci_ids.h>
 * f0c5be2a4f mb/*/*/Kconfig: Remove useless comment
 * 6d19a20f5f mb: Set coreboot as DSDT's manufacturer model ID
 * 0cca6e24b7 ACPI: Fix DSDT's revision field
 * f765d4f275 src: Remove unneeded include <lib.h>
 * ead574ed02 src: Get rid of duplicated includes
 * d2b9ec1362 src: Remove unneeded include "{arch,cpu}/cpu.h"
-* 1156b35a23 mainboard: Remove unneeded include <console/console.h>
+* 1156b35a23 motherboard: Remove unneeded include <console/console.h>
 * 718c6faff4 reset: Finalize move to new API
 * e20dd19dde amdfam10: Convert to `board_reset()`
 * 2c5652d72b mb: Fix non-local header treated as local
@@ -2090,13 +2090,13 @@ Running `git log src/mainboard/asus/kcma-d8/` we get:
 * 068253c369 mb/*/*/cmos.default: Harmonise CMOS files syntax
 * f716f2ac1a mb/*/*/cmos.default: Decrease debug_level to 'Debug'
 * 65bb5434f6 src: Get rid of non-local header treated as local
-* 08fc8fff25 src/mainboard: Fix typo
+* 08fc8fff25 src/motherboard: Fix typo
 * 95bca33efa src/mb: Use "foo *bar" instead of "foo* bar"
 * e0e1e64855 amdfam10: Drop tests for LATE_CBMEM_INIT
 * d54e859ace mb/asus: Get rid of whitespace before tab
 * 1bad4ce421 sb/amd/sr5650: Fix invalid function declarations
 * 02b05d1f6b mb/asus: Get rid of device_t
-* 482d16fb0a src/mainboard: Fix various typos
+* 482d16fb0a src/motherboard: Fix various typos
 * ec48c749c2 AMD boards: Fix function name (soft_reset) in message
 * 74bd2b0e4c mb/asus/kcma-d8,kgde-d16: Don't select SPI_FLASH_WINBOND
 * b29078e401 mb/*/*: Remove rtc nvram configurable baud rate
@@ -2109,7 +2109,7 @@ Running `git log src/mainboard/asus/kcma-d8/` we get:
 * 00b9f4c4b1 mb/*/*/cmos.layout: Make multibyte options byte aligned
 * 06a629e4b1 arch/x86: do not define type of SPIN_LOCK_UNLOCKED
 * 75a3d1fb7c amdfam10: Perform major include ".c" cleanup
-* a8025db49f amd-based mainboards: Fix whitespace in _PTS comments
+* a8025db49f amd-based motherboards: Fix whitespace in _PTS comments
 * 3a0cb458dc cpu/amd/mtrr.h: Drop excessive includes
 * 4607cacf30 cpu/x86/msr.h: Drop excessive includes
 * 425890e59a AMD fam10h-15h: MMCONF_SUPPORT_DEFAULT is already set
@@ -2118,10 +2118,10 @@ Running `git log src/mainboard/asus/kcma-d8/` we get:
 * b87a734771 mainboard/*/*/dsdt.asl: Use tabs for indents
 * 6350a2e43f src/mainboard/a-trend - emulation: Add space around operators
 * 64444268e2 mb/asus/[kgpe-d16|kcma-d8]: Fix whitespace errors in devicetree.cb
-* d23ee5de22 mainboard: Clean up boot_option/reboot_bits in cmos.layout
-* 8ab989e315 src/mainboard: Capitalize ROM, RAM, CPU and APIC
+* d23ee5de22 motherboard: Clean up boot_option/reboot_bits in cmos.layout
+* 8ab989e315 src/motherboard: Capitalize ROM, RAM, CPU and APIC
 * bb9722bd77 Add newlines at the end of all coreboot files
-* 95fe8fb1e0 mainboard: Format irq_tables.c
+* 95fe8fb1e0 motherboard: Format irq_tables.c
 * 150f476c96 timestamp: Drop duplicate TS_END_ROMSTAGE entries
 * ca543396a7 mainboard/asus/[kgpe-d16|kcma-d8]: Enable secondary serial port header
 * 99894127ab mainboard/asus/[kgpe-di6|kcma-d8]: Fix board ROM information
@@ -2132,7 +2132,7 @@ Running `git log src/mainboard/asus/kcma-d8/` we get:
 Running `git log src/mainboard/asus/kfsn4-dre/` we get:
 
 ````
-* ad0f485361 src/mainboard: change "unsigned" to "unsigned int"
+* ad0f485361 src/motherboard: change "unsigned" to "unsigned int"
 * 12ef4f2d71 mb/asus/kfsn4-dre: Return early if CK804 not found
 * 04d025cf50 amdfam10: Declare get_sysinfo()
 * 8560db6116 amdfam10: Declare empty activate_spd_rom() stub
@@ -2156,13 +2156,13 @@ Running `git log src/mainboard/asus/kfsn4-dre/` we get:
 * a2cfe9e900 amdfam10 boards: Add Makefiles and fix resourcemap.c
 * d482c7dace amdfam10 boards: Drop global bus_isa variable
 * 1db4e3a358 amdfam10 boards: Declare get_pci1234() just once
-* 21c8f9cab3 mainboard: Remove useless include <device/pci_ids.h>
+* 21c8f9cab3 motherboard: Remove useless include <device/pci_ids.h>
 * f0c5be2a4f mb/*/*/Kconfig: Remove useless comment
 * 6d19a20f5f mb: Set coreboot as DSDT's manufacturer model ID
 * f765d4f275 src: Remove unneeded include <lib.h>
 * ead574ed02 src: Get rid of duplicated includes
 * d2b9ec1362 src: Remove unneeded include "{arch,cpu}/cpu.h"
-* 1156b35a23 mainboard: Remove unneeded include <console/console.h>
+* 1156b35a23 motherboard: Remove unneeded include <console/console.h>
 * 718c6faff4 reset: Finalize move to new API
 * e20dd19dde amdfam10: Convert to `board_reset()`
 * 400ce55566 cpu/amd: Use common AMD's MSR
@@ -2171,7 +2171,7 @@ Running `git log src/mainboard/asus/kfsn4-dre/` we get:
 * 068253c369 mb/*/*/cmos.default: Harmonise CMOS files syntax
 * f716f2ac1a mb/*/*/cmos.default: Decrease debug_level to 'Debug'
 * 65bb5434f6 src: Get rid of non-local header treated as local
-* 08fc8fff25 src/mainboard: Fix typo
+* 08fc8fff25 src/motherboard: Fix typo
 * b0f1988f89 src: Get rid of unneeded whitespace
 * 448d9fb431 src: Use "foo *bar" instead of "foo* bar"
 * 7f268eab78 mainboard/asus: Add license headers
@@ -2185,7 +2185,7 @@ Running `git log src/mainboard/asus/kfsn4-dre/` we get:
 * 00b9f4c4b1 mb/*/*/cmos.layout: Make multibyte options byte aligned
 * ce642f08b9 Kconfig: Rework MAINBOARD_HAS_NATIVE_VGA_INIT_TEXTMODECFG
 * 75a3d1fb7c amdfam10: Perform major include ".c" cleanup
-* a8025db49f amd-based mainboards: Fix whitespace in _PTS comments
+* a8025db49f amd-based motherboards: Fix whitespace in _PTS comments
 * 3a0cb458dc cpu/amd/mtrr.h: Drop excessive includes
 * 4607cacf30 cpu/x86/msr.h: Drop excessive includes
 * 425890e59a AMD fam10h-15h: MMCONF_SUPPORT_DEFAULT is already set
@@ -2193,8 +2193,8 @@ Running `git log src/mainboard/asus/kfsn4-dre/` we get:
 * b87a734771 mainboard/*/*/dsdt.asl: Use tabs for indents
 * 6350a2e43f src/mainboard/a-trend - emulation: Add space around operators
 * 837618bf20 mainboard/asus/*: transition away from device_t
-* d23ee5de22 mainboard: Clean up boot_option/reboot_bits in cmos.layout
-* 8ab989e315 src/mainboard: Capitalize ROM, RAM, CPU and APIC
+* d23ee5de22 motherboard: Clean up boot_option/reboot_bits in cmos.layout
+* 8ab989e315 src/motherboard: Capitalize ROM, RAM, CPU and APIC
 * bb9722bd77 Add newlines at the end of all coreboot files
 ````
 

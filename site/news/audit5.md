@@ -101,10 +101,10 @@ Changes are in order per category, from newest to oldest:
 * **GRUB is now a multi-tree project.** Each given coreboot target can
   specify which GRUB tree it wants to use, each containing its own revision
   and patches, with its own GRUB configuration file. This can be used later on
-  to provide specific optimisations on each given mainboard, but it is used
+  to provide specific optimisations on each given motherboard, but it is used
   at present to exclude xHCI patches on boards that don't need it; please also
   read the bugfix section (of this audit report) pertaining to this same topic,
-  for more context. Before this change was implemented, all mainboards used
+  for more context. Before this change was implemented, all motherboards used
   the exact same GRUB revision, with the same patches and the same config.
 * grub.cfg: scan `grub2/` last, on each given device/partition; this speeds
   up the boot time in most tests, because most setups use `grub/`,
@@ -138,7 +138,7 @@ Changes are in order per category, from newest to oldest:
 * script/roms: Allow to override `grub_scan_disk` via `-s`, for
   example: `./build roms -s nvme t1650_12mb`
 * **grub.cfg: Use `grub_scan_disk` to set boot order (rather, boot order by
-  device type).** It is possible now to configure each mainboard with this
+  device type).** It is possible now to configure each motherboard with this
   variable, so that certain types of devices are scanned in a precise order;
   for example, scan NVMe SSDs first.
 * **include/git.sh: Allow manual override of `git submodule` handling**, instead
@@ -153,7 +153,7 @@ Changes are in order per category, from newest to oldest:
   later changed so as to be the ONLY method for downloading submodules, skipping
   the actual git-submodule-update command entirely, on all projects.*
 * **Native NVMe driver added to the GRUB payload**, allowing users to boot from
-  NVMe SSDs where present on a given mainboard. The patch is courtesy of
+  NVMe SSDs where present on a given motherboard. The patch is courtesy of
   Mate Kukri, who ported SeaBIOS's own NVMe driver, converting all of the
   code to run properly within GRUB's own kernel. NVMe SSDs are now fully
   bootable on all machines that can have them, offering vastly superior
@@ -297,12 +297,12 @@ The changes are, from newest to earliest:
   one you're reading about now so that they can be fixed, like this one was!)
 * **Re-configured GRUB so that only the Haswell and Broadwell machines contain
   xHCI support**, where it doesn't cause any issues (and is required), while
-  other mainboards use a version of GRUB that lacks support for xHCI. This is a
+  other motherboards use a version of GRUB that lacks support for xHCI. This is a
   mitigations against the bug reported in [lbmk
   issue 216](https://codeberg.org/libreboot/lbmk/issues/216). This is done, by
   using the new *multi-tree* GRUB handling, which is mentioned above in
   in the section (of this audit report) pertaining to *feature changes*, whereby
-  each mainboard can have its own GRUB revisions and patches, with its own
+  each motherboard can have its own GRUB revisions and patches, with its own
   GRUB configuration file (that could be uniquely optimised for it).
 * **Fix vboot build issue when running lbmk in i686 (32-bit) host machines**.
   The patch, courtesy of *Luke T. Schumaker*, adapts vboot's vmlinuz extract
@@ -346,12 +346,12 @@ The changes are, from newest to earliest:
   supported a configuration whereby SeaBIOS reads a `bootorder` file in CBFS,
   making it try to run the GRUB payload first, while still allowing you to
   interrupt by pressing ESC to bring up an alternative boot select menu. This
-  is now the *default*, on all x86 mainboards. This is a mitigation against
+  is now the *default*, on all x86 motherboards. This is a mitigation against
   future instability in GRUB because, if such issues happen again, it will not
   cause a brick since you can just use SeaBIOS instead, and skip booting to
   the GRUB payload (on the affected machines, BIOS GRUB still worked, which
   your distro provides and SeaBIOS executes it). *NOTE: GRUB was later made
-  into a multi-tree project, with certain mainboards using a version that
+  into a multi-tree project, with certain motherboards using a version that
   has the xHCI patches, if required, because the machines that actually need
   xHCI support were not affected by the bug referenced in issue 216.*
 * Main build script: Check SUID before checking Git name/email, otherwise the

@@ -11,7 +11,7 @@ build lbmk from source, and it gets inserted automatically via download. The
 same ROM, if it contains the Nvidia VGA ROM, supports both variants; if the VGA
 ROM is missing, then only the Intel GPU variant is supported. The same ROM
 will work on both variants, provided for by Libreboot patching the devicetree
-in coreboot, on this mainboard.**
+in coreboot, on this motherboard.**
 
 <img tabindex=1 class="r" style="max-width:35%" src="https://av.libreboot.org/e6400/e6400xfr-seabios.jpg" /><span class="f"><img src="https://av.libreboot.org/e6400/e6400xfr-seabios.jpg" /></span>
 

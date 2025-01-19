@@ -35,13 +35,13 @@ Machines supported in this release:
     support
     -   See ***docs/hardware/\#supported\_x60t\_list*** for list of supported
         LCD panels
-    -   It is unknown whether an X61 Tablet can have it's mainboard
+    -   It is unknown whether an X61 Tablet can have it's motherboard
         replaced with an X60 Tablet motherboard.
 -   **ThinkPad T60** (Intel GPU) (there are issues; see below):
     -   See notes below for exceptions, and
         ***docs/hardware/\#supported\_t60\_list*** for known working LCD
         panels.
-    -   It is unknown whether a T61 can have it's mainboard replaced
+    -   It is unknown whether a T61 can have it's motherboard replaced
         with a T60 motherboard.
     -   See ***docs/future/\#t60\_cpu\_microcode***.
     -   T60p (and T60 laptops with ATI GPU) will likely never be

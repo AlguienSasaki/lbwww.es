@@ -21,9 +21,9 @@ about microcode on the [FAQ](../faq.md#microcode) and
 
 In the next Libreboot releases, ROM images that *exclude* CPU microcode updates
 will once again be available. Libreboot's [Binary Blob Reduction
-Policy](policy.md) dictates that each mainboard must be provided with **as few**
+Policy](policy.md) dictates that each motherboard must be provided with **as few**
 binary blobs as possible, ideally **none**. *At present*, *all* x86 and ARM
-mainboards supported in Libreboot (in `lbmk.git` and in releases) can boot
+motherboards supported in Libreboot (in `lbmk.git` and in releases) can boot
 with entirely [free software](https://writefreesoftware.org/),
 requiring *zero* vendor files of any kind within *coreboot*.
 
@@ -37,7 +37,7 @@ these, or mitigate their existence (for example, `me_cleaner` is used on newer
 Intel platforms).
 
 One exception made in that policy is that CPU microcode updates *must* be
-provided by default, on all x86 mainboards. The ARM platforms do not use
+provided by default, on all x86 motherboards. The ARM platforms do not use
 microcode at all. This is a correct policy, because these updates fix critical
 security and stability issues in the silicon; more information about that
 can be found [here](policy.md#more-detailed-insight-about-microcode). Since
@@ -81,7 +81,7 @@ The change was implemented by [this
 patch](https://browse.libreboot.org/lbmk.git/commit/?id=f338697b96757977d2a14da00a91236595704fed)
 on 19 June 2023, in the Libreboot build system.
 
-In `board.cfg` for each mainboard defined (in Libreboot's build system, lbmk),
+In `board.cfg` for each motherboard defined (in Libreboot's build system, lbmk),
 the following entries are available:
 
 * `microcode_required="n" or "y"` (it's "n" on ALL boards)
@@ -102,14 +102,14 @@ If `microcode_required="n"`, the given ROM image `filename.rom`
 is either:
 
 * If no microcode file exists within it already, such as on ARM
-  mainboards, the ROM is simply copied to: `filename_nomicrocode.rom`
+  motherboards, the ROM is simply copied to: `filename_nomicrocode.rom`
 * If the ROM contains microcode (default on most x86 boards, except Qemu
   or in rare cases where none are advised), `filename.rom` is retained and
   is copied to `filename_nomicrocode.rom`, and the CPU microcode update file
   shall be removed from `filename_nomicrocode.rom`.
 
 What this means is that ROMs *with* OR *without* microcode will be present,
-where applicable, on ROM images for each given mainboard. This will be the case
+where applicable, on ROM images for each given motherboard. This will be the case
 by default, for ROM images provided in the next release of Libreboot and all
 releases that follow.
 
@@ -119,7 +119,7 @@ Example:
 * `seabios_e6400_4mb_libgfxinit_txtmode_noblobs_nomicrocode.rom`
 
 It is *strongly* recommended, by the Libreboot project, that you
-do *not* use the `_nomicrocode` ROMs on x86 mainboards. These updates
+do *not* use the `_nomicrocode` ROMs on x86 motherboards. These updates
 are *required* to implement stable x86 ISA, otherwise your CPU will behave
 in strange, unpredictable ways, which could cause severe bugs in software
 that cause *real* issues. Issues such as data loss.
@@ -143,7 +143,7 @@ is what people would otherwise use; thus, Libreboot's modern policy is
 pragmatic, advancing further the cause of *software freedom*.
 
 By contrast, Libreboot's previous policy was to *ban all binary blobs*, which
-meant that many mainboards from coreboot were excluded. This resulted in less
+meant that many motherboards from coreboot were excluded. This resulted in less
 people achieving a level of software freedom, because to this day, nothing
 quite like Libreboot exists with the scope and ambition that it has. Libreboot
 makes coreboot as easy to use as possible for normal, non-technical people who
@@ -152,7 +152,7 @@ like the idea of coreboot, but are not competent to configure it from scratch.
 Accordingly, the old Libreboot policy, prior to November 2022, *harmed* the
 Free Software movement. Such harm was *corrected* in November 2022 and, going
 forward, it is the intention of the Libreboot project to eventually have
-build targets *for every mainboard that coreboot supports!*
+build targets *for every motherboard that coreboot supports!*
 
 ARM platforms
 -------------

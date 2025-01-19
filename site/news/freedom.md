@@ -19,7 +19,7 @@ of the community, about what the policy means in practise.
 
 Refer here to the new article, thus:
 
-[Software and hardware freedom status for each mainboard supported by
+[Software and hardware freedom status for each motherboard supported by
 Libreboot](../freedom-status.md)
 
 The article describes, in great detail, the current status of licensing for
@@ -47,12 +47,12 @@ Also, a new version of Libreboot was *released* yesterday. See:
 It made several major fixes, and massively updated the revisions for each
 part used in ROM images (containing coreboot, GRUB and SeaBIOS).
 
-I have a bunch of mainboards that I'm working on, and I hope to make another
+I have a bunch of motherboards that I'm working on, and I hope to make another
 release available as soon as possible. My priority for the next Libreboot
 release is to add as many new boards as possible from coreboot, with minimal
 changes to the build system itself; another focus this time is on improvements
 to the documentation. Several installation guides are missing, for example, on
-specific mainboards.
+specific motherboards.
 
 Specifically, I have focus on some AMD platforms, Intel sandybridge/ivybridge,
 Intel Haswell and (more) GM45 platforms. Several boards exist in coreboot that

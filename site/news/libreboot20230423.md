@@ -26,7 +26,7 @@ in 2023. *This* new release, Libreboot 20230423, is released today on
 April 23rd, 2023.
 
 This is marked as a *testing* release, though it is *basically stable*.
-We've been going at it like crazy, on a big spree adding more mainboards from
+We've been going at it like crazy, on a big spree adding more motherboards from
 coreboot. Some fixes to the build system were also made, since the last release
 only *10 days ago*.
 
@@ -56,7 +56,7 @@ Ergo, this is a very conservative changelog. It seems Libreboot has been
 releasing almost fortnightly, as of late; perhaps this could continue from
 now on.
 
-### New mainboards now supported:
+### New motherboards now supported:
 
 * **Dell Latitude E6400 (laptop)** (GM45, blob-free, flashable entirely in
   software, no disassembly required!) - courtesy Nicholas Chin, `nic3-14159` on
@@ -162,7 +162,7 @@ please contact the Libreboot project. They are:
 More boards soon!
 ---------------
 
-I've purchased about ~10 HP mainboards, all of the viable sandybridge,
+I've purchased about ~10 HP motherboards, all of the viable sandybridge,
 ivybridge and haswell ones from coreboot. I'm going to add them all.
 
 I also have Dell Optiplex 7020 and 9020; these are on coreboot gerrit and

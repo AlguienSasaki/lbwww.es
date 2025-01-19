@@ -14,8 +14,8 @@ x-toc-enable: true
 *Мы* верим, что свобода [изучать, делиться, модифицировать и использовать программное обеспечение](https://writefreesoftware.org/) без каких-либо ограничений, является одним из основных человеческих прав, который должен иметь каждый. В этом контексте, *свобода программного обеспечения* важна. Ваша свобода важна. Образование важно. [Право на ремонт](https://en.wikipedia.org/wiki/Right_to_repair) важно; Libreboot позволяет вам продолжить использовать ваше оборудование. Вот *почему* Libreboot существует.
 
 Libreboot provides [GRUB](docs/linux/) and SeaBIOS payloads on x86/x86\_64
-Intel/AMD mainboards, and a [U-Boot UEFI payload](docs/uboot/) *for coreboot*
-on ARM64(Aarch64) mainboards.
+Intel/AMD motherboards, and a [U-Boot UEFI payload](docs/uboot/) *for coreboot*
+on ARM64(Aarch64) motherboards.
 An [x86/x86\_64 U-Boot UEFI payload](docs/uboot/uboot-x86.md) is also available
 on some boards. The x86, x86\_64 and arm64 U-Boot payloads provide a lightweight
 UEFI boot implementation, which can boot many Linux distros and BSD systems.

@@ -40,9 +40,9 @@ have [external flashing gear](../docs/install/spi.md) ready just in case!
 Work done since last release
 ----------------------------
 
-### New mainboards supported
+### New motherboards supported
 
-These new mainboards have been added:
+These new motherboards have been added:
 
 * [HP EliteBook 820 G2](hp820g2.md), added by Leah Rowe to lbmk, using the
   coreboot port done by Iru Cai.
@@ -107,7 +107,7 @@ changes first):
   using the `xtree` and `tree_depend` variables in `target.cfg` files, for
   each coreboot tree and, in the case of xtree, it can be defined in a given
   coreboot board target.
-* Removed mainboard: Lenovo X201 (due to thermal safety issues on this machine,
+* Removed motherboard: Lenovo X201 (due to thermal safety issues on this machine,
   when using a neutered ME - this issue only affects systems that use ME6,
   whereas older/newer platfroms are unaffected).
 * coreboot/fam15h: More fixes, e.g. disable `-Werror` on binutils 2.32, and
@@ -147,7 +147,7 @@ changes first):
 * `script/build/serprog`: Return error status (exit) if basename fails, when
   processing various board targets available on stm32/rp2040 projects. Patch
   courtesy of Leah Rowe.
-* **NEW BOARD:** HP 8300 CMT mainboard, added by Riku Viitanen, who worked
+* **NEW BOARD:** HP 8300 CMT motherboard, added by Riku Viitanen, who worked
   on it with a tester in the IRC channel.
 * Fixed implicit typecasting bug on flashprog 1.2 source code, thus preventing
   a build issue (tested on Debian 12.2). Patch courtesy of Leah Rowe.
@@ -366,7 +366,7 @@ changes first):
 * dcf7da9a coreboot/fam15h_udimm: define xtree 
 * f72a72af don't download projects on release archives 
 * 435441d0 update/release: generate changelogs 
-* a225e4d5 fix amd mainboard configs 
+* a225e4d5 fix amd motherboard configs 
 * c9961182 git.sh: fix bad call to ./update 
 * 3e7e0c7d git.sh: support downloading dependency trees 
 * 8f3d3ead re-use crossgcc builds on the coreboot trees 

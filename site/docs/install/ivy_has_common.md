@@ -14,7 +14,7 @@ Policy](../../news/policy.md) and [Freedom Status](../../freedom-status.md)
 pages.
 
 **PLEASE MAKE SURE you read and follow the instructions on this page, prior
-to flashing Libreboot, if required for your mainboard; failure to heed this
+to flashing Libreboot, if required for your motherboard; failure to heed this
 warning can and will result in a soft-brick, which would then necessitate
 recovery via [external flashing](spi.md) - regardless, you are advised to
 also read the external flashing guide just in caes, and have an external

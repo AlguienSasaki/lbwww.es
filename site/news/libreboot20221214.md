@@ -402,7 +402,7 @@ would simply merge)
 | * 7fdfb07 added ability to detect if the board needs the mrc and download it
 | * b8bd895 added mrc download script from old osbmk but changed to agnostic shebang
 | * d80bcfb added x230 coreboot config as an example of a config using the blobs extracted with the extraction script
-| * d40b01c add script to extract blobs from the vendor rom image for ivy bridge lenovo boards. Could possible work/be extended for other mainboards
+| * d40b01c add script to extract blobs from the vendor rom image for ivy bridge lenovo boards. Could possible work/be extended for other motherboards
 | * c3dfcf4 re-add me_cleaner and change to agnostic shebang
 * | f70c5cc lenovo/x230: set me_state=Disabled in cmos.default
 * | 9b4afd1 x230_12mb: set cbfs back to 7mb. i will add special truncated configs instead

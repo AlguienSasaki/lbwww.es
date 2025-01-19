@@ -122,7 +122,7 @@ Revision 7 (18 December 2024)
 ----------
 
 Added support for fetching ThunderBolt firmware and padding it, on ThinkPad
-T480 and T480s mainboards. This can be used for externally flashing the newer
+T480 and T480s motherboards. This can be used for externally flashing the newer
 firmware update, without the need to boot Windows to use Lenovo's own updater.
 
 Revision 8 (6 January 2025)

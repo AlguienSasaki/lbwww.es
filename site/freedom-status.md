@@ -1,5 +1,5 @@
 ---
-title: Software and hardware freedom status for each mainboard supported by Libreboot
+title: Software and hardware freedom status for each motherboard supported by Libreboot
 x-toc-enable: true
 ...
 
@@ -18,8 +18,8 @@ all) platforms, coreboot *requires* certain
 [vendor files](https://en.wikipedia.org/wiki/Binary_blob)
 for things like raminit. *All* boards currently supported by Libreboot can be
 initialised entirely with *free*, *libre* or *open source* code from *coreboot*
-itself, because Libreboot currently only focuses on such mainboards. Libreboot's
-goal is to eventually support *all* mainboards from coreboot.
+itself, because Libreboot currently only focuses on such motherboards. Libreboot's
+goal is to eventually support *all* motherboards from coreboot.
 
 A more *pragmatic* [binary blob reduction policy](news/policy.md) was adopted
 by Libreboot during November 2022, as part of an ongoing campaign to support
@@ -65,7 +65,7 @@ Intel platforms
 
 ### Descriptor vs descriptorless setup
 
-Libreboot supports several mainboards using Intel platforms. Of these, there
+Libreboot supports several motherboards using Intel platforms. Of these, there
 are essentially two class of machine (for the purposes of this article):
 
 * Descriptorless configuration
@@ -183,7 +183,7 @@ documentation for this, but it has been tested. Example: Dual Intel/Nvidia
 graphics on some ivybridge or haswell thinkpads.
 
 For *add-on* GPUs, SeaBIOS (payload) can typically scan a VGA ROM present on
-the card and execute it. This has been tested on certain desktop mainboards
+the card and execute it. This has been tested on certain desktop motherboards
 that Libreboot supports, and works just fine; Libreboot does not need to handle
 these files at all.
 
@@ -205,7 +205,7 @@ and on Skylake/newer, FSP-M is used.
 ARM platforms (chromebooks)
 ---------------------------
 
-Mostly free software, except for the requirement on `daisy` and `peach` mainboards
+Mostly free software, except for the requirement on `daisy` and `peach` motherboards
 to include BL1 bootloader files from the vendor. These are:
 
 * HP Chromebook 11 G1 (daisy-spring) **(board removed from Libreboot, due to

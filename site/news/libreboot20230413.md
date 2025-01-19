@@ -33,7 +33,7 @@ The priority of this release has been build system fixes/improvements. For the
 time being, no more code changes will be made unless needed, in coreboot, for
 existing supported hardware; the focus is going to be on adding *more* boards
 to Libreboot, to support more hardware. I've been on a spree, buying lots of
-mainboards that coreboot supports, that would be interesting in Libreboot.
+motherboards that coreboot supports, that would be interesting in Libreboot.
 
 ### Build from source
 
@@ -95,7 +95,7 @@ Changelog:
   ROM image archives in releases now contain lists of SHA1 hashes, matching
   what each file should be when running `blobutil/inject`
 * `blobutil/inject`: It is now possible to insert MRC and neutered ME images,
-  where required on specific mainboards, into *all* ROM images of a given
+  where required on specific motherboards, into *all* ROM images of a given
   tar archive, in addition to single ROM images. The patch for this is
   courtesy of Caleb La Grange (`shmalebx9` on libreboot IRC)
 * Removed daisy/peach chromebooks: The machines are believed to boot properly,
@@ -134,7 +134,7 @@ Changelog:
   the script easier to read/work on.
 * `blobutil/inject`: use correct offset for insertion of `mrc.bin` (Haswell
   platform, e.g. ThinkPad T440p) - as written above.
-* Removed mainboard: `d945gclf` - known to be problematic at boot. I have one,
+* Removed motherboard: `d945gclf` - known to be problematic at boot. I have one,
   and I'm going to test it for re-entry in a future release.
 * Added missing dependency in Arch Linux dependencies installation script,
   patch courtesy of Andreas Hartmann.

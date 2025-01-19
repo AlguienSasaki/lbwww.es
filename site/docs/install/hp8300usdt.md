@@ -69,7 +69,7 @@ Install Libreboot
 -----------------
 
 These next sections will teach you how to install Libreboot on your
-HP Elite 8300 USDT mainboard.
+HP Elite 8300 USDT motherboard.
 
 ### Internal flashing
 

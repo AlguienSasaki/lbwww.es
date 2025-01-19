@@ -62,7 +62,7 @@ will be new payloads and boards, in addition to testing newer upstream revisions
 of projects such as coreboot, on every machine supported by Libreboot. A release
 is planned for early August 2024.
 
-A *lot* of work on new ports is planned. There are a number of new mainboards
+A *lot* of work on new ports is planned. There are a number of new motherboards
 that will be available, in the next Libreboot release.
 
 Summarised list of changes
@@ -97,7 +97,7 @@ The changes are as follows:
   enabling `CONFIG_PAYLOAD_NONE` exclusively. However, advanced users may
   wish to use something else such as Tianocore, which Libreboot may/will not
   provide (with Tianocore it's **will not**). Simply set `build_depend=""`
-  in the `target.cfg` file for a given mainboard, and then enable a payload
+  in the `target.cfg` file for a given motherboard, and then enable a payload
   under coreboot's menuconfig interface, or by direct modification of
   the defconfig file. When `CONFIG_PAYLOAD_NONE` is not set, lbmk will skip
   adding a payload, because it's a given that then coreboot's own build system
@@ -146,7 +146,7 @@ The changes are as follows:
   downloading of vendor files, without needing specific hacks to be hardcoded
   in `script/trees`. The `./update trees -b coreboot TREE utils` command is
   no longer available; instead, do `./update trees -d coreboot TREE`; if
-  the TREE argument is instead an actual mainboard target, it also does the
+  the TREE argument is instead an actual motherboard target, it also does the
   vendor file download, if required. The `./vendor download` command is still
   available, and multiple board names can now be provided as argument, because
   for example, `./build roms x220_8mb x230_12mb` would
@@ -203,12 +203,12 @@ The changes are as follows:
   single-tree projects, defined *by argument*, but it was quite error prone
   and there's no clean way to otherwise do it. We don't use the script this
   way, anywhere in lbmk, and users are advised the same.
-* **`script/roms`: *Only* Support SeaBIOS and Sea*GRUB*, on x86 mainboards**.
+* **`script/roms`: *Only* Support SeaBIOS and Sea*GRUB*, on x86 motherboards**.
   SeaGRUB is a configuration whereby SeaBIOS starts first, but immediately tries
   to load GRUB from the flash. This complements the other change, listed below.
   We will no longer provide configurations where GRUB is the primary payload,
   precisely to mitigate the same issue as described below (lbmk issue 216).
-  If *GRUB* is enabled, on a given mainboard, SeaBIOS-only setups are not
+  If *GRUB* is enabled, on a given motherboard, SeaBIOS-only setups are not
   provided; only SeaGRUB is provided. You can press ESC in the SeaGRUB menu,
   to access other boot methods besides *GRUB from flash*, so you can use it
   in the same way; additionally, you can remove the `bootorder` file from CBFS
@@ -269,7 +269,7 @@ The changes are as follows:
   This mkhelper config also integrates `include/rom.sh`, containing these
   functions. This replicates the functionality originally provided
   by `script/roms`.
-* coreboot: Set `build_depend` on `target.cfg` files for specific mainboards.
+* coreboot: Set `build_depend` on `target.cfg` files for specific motherboards.
   This is used to manually specify which GRUB and SeaBIOS trees should be
   compiled, required when compiling for a specific target, for the next
   stage where a payload is added to the coreboot image, because lbmk does

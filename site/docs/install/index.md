@@ -202,7 +202,7 @@ example, they might fix power issues that could then enhance battery life.
 See: <http://www.thinkwiki.org/wiki/BIOS_update_without_optical_disk>
 
 Otherwise, check the Lenovo website to find the update utility for your
-mainboard.
+motherboard.
 
 ### HP EliteBooks
 
@@ -257,7 +257,7 @@ flash internally. If that is the case, you must [flash externally](spi.md).
 
 ### Updating an existing installation
 
-Unless otherwise stated, in sections pertaining to each mainboard below,
+Unless otherwise stated, in sections pertaining to each motherboard below,
 an existing Libreboot installation can be updated via internal flashing,
 without any special steps; simply follow the general internal flashing
 guide, in the final section further down this page.
@@ -269,7 +269,7 @@ If you currently have the factory firmware, you probably need to flash
 externally; on *some* machines, internal flashing is possible, usually with
 special steps required that differ from updating an existing installation.
 
-The next sections will pertain to specific mainboards, where indicated,
+The next sections will pertain to specific motherboards, where indicated,
 followed by general internal flashing instructions where applicable.
 
 ### HP EliteBook 820 G2 (internal and external)
@@ -590,7 +590,7 @@ Install via host CPU (internal flashing)
 NOTE: This mainly applies to the x86 machines.
 
 Please check other sections listed above, to see if there is anything
-pertaining to your mainboard. Internal flashing means that you boot Linux or
+pertaining to your motherboard. Internal flashing means that you boot Linux or
 BSD on the target machine, and run `flashprog` there, flashing the machine
 directly.
 

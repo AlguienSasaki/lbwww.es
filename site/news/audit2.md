@@ -22,7 +22,7 @@ improved greatly. The same care has been given to documentation aswell.
 Many bugs have been fixed, and the Libreboot build system (lbmk) is generally
 much more efficient now, compared to the Libreboot 20230625 release. The main
 focus has been this audit, now concluded, and the next focus shall once again
-be adding more mainboards to Libreboot, with a view to making a full new release
+be adding more motherboards to Libreboot, with a view to making a full new release
 some time during September 2023.
 
 Before diving into details, here is a brief summary of the recent audit, and
@@ -96,7 +96,7 @@ exhaustive:
 * A lot of scripts have been removed entirely, and their logic not replaced;
   in many cases, Libreboot's build system contained logic that had gone unused
   for many years.
-* More reliable configs now used on desktop mainboards: SeaBIOS-only for start,
+* More reliable configs now used on desktop motherboards: SeaBIOS-only for start,
   but GRUB still available where feasible (in the SeaBIOS menu). This makes it
   more fool proof for a user who might use integrated graphics and then switch
   to a graphics card; the very same images will work.
@@ -115,7 +115,7 @@ FULL list of changes (from lbmk git log)
 
 Almost all of the changes are post-20230625 release, and almost all of them
 are audit-related, so I've simply pasted every commit between the last release
-and now. A few of them, e.g. the new mainboard ports, are not audited-related.
+and now. A few of them, e.g. the new motherboard ports, are not audited-related.
 
 Entries that give time frames such as *"14 hours ago"* are relative to
 today, 11 September 2023, at some time around 3PM UK time. Changes on top are
@@ -135,7 +135,7 @@ newer, and changes further down are older:
 * d28ad6aa - build/release/roms: use -T0 on serprog tarballs (23 hours ago) <Leah Rowe>
 * 308c21dd - build/boot/roms stragglers: properly handle errors (23 hours ago) <Leah Rowe>
 * c16b28ef - build/release/src: re-create symlinks, don't copy (2 days ago) <Leah Rowe>
-* 32dcf9e5 - coreboot/qemu_x86_12mb: re-add this mainboard (2 days ago) <Leah Rowe>
+* 32dcf9e5 - coreboot/qemu_x86_12mb: re-add this motherboard (2 days ago) <Leah Rowe>
 * 5aef8156 - scripts: use printf, not echo, where appropriate (2 days ago) <Leah Rowe>
 * 76e12cd4 - update/blobs printf statements: use double quotes (2 days ago) <Leah Rowe>
 * 84bf47b5 - scripts: better handling of printf: stdout/stderr (2 days ago) <Leah Rowe>
@@ -184,8 +184,8 @@ newer, and changes further down are older:
 * da3c9bb3 - merge config/ and resources/ (8 days ago) <Leah Rowe>
 * a0501050 - blobs/download: don't handle ifd/gbe files (8 days ago) <Leah Rowe>
 * 03788d14 - move ifd/gbe configs into config/ifd/ (8 days ago) <Leah Rowe>
-* 6ddb0e09 - run make oldconfig on coreboot/default mainboards (8 days ago) <Leah Rowe>
-* 19efdf9e - ich9m mainboards: use pre-assembled ifd/gbe files (8 days ago) <Leah Rowe>
+* 6ddb0e09 - run make oldconfig on coreboot/default motherboards (8 days ago) <Leah Rowe>
+* 19efdf9e - ich9m motherboards: use pre-assembled ifd/gbe files (8 days ago) <Leah Rowe>
 * af8d8cda - add ich9m ifd/gbe files (8 days ago) <Leah Rowe>
 * d554efae - build/release/src: copy e6430 ifd/gbe (8 days ago) <Leah Rowe>
 * 09aae7be - build/rpi-pico-serprog: better error handling (8 days ago) <Leah Rowe>

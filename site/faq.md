@@ -42,7 +42,7 @@ Refer to the [lbmk maintenance manual](docs/maintain/).
 
 ### Do not use CH341A!
 
-This SPI flasher will damage your chip, and the mainboard that it is connected
+This SPI flasher will damage your chip, and the motherboard that it is connected
 to.
 
 Read the notes about CH341A on [docs/install/spi.md](docs/install/spi.md) to
@@ -260,8 +260,8 @@ the CPU, and prevent the CPU from executing boot firmware that isn't
 signed with their private key. This means that ***coreboot and libreboot
 are impossible to port*** to such PCs, without the OEM's private
 signing key. Note that systems assembled from separately purchased
-mainboard and CPU parts are unaffected, since the vendor of the
-mainboard (on which the boot firmware is stored) can't possibly affect
+motherboard and CPU parts are unaffected, since the vendor of the
+motherboard (on which the boot firmware is stored) can't possibly affect
 the public key stored on the CPU.
 
 ME firmware versions 4.0 and later (Intel 4 Series and later chipsets)
@@ -564,7 +564,7 @@ re-flash it.
 ### How do I pad a ROM before flashing?
 
 It is advisable to simply use a larger ROM image. This section was written
-mostly for ASUS KCMA-D8 and KGPE-D16 mainboards, where previously we only
+mostly for ASUS KCMA-D8 and KGPE-D16 motherboards, where previously we only
 provided 2MiB ROM images in libreboot, but we now provide 16MiB ROM images.
 Other sizes are not provided because in practise, someone upgrading one of
 these chips will just use a 16MiB one. Larger sizes are available, but 16MiB
@@ -646,7 +646,7 @@ on Void Linux (ThinkPad T480), Linux (or modprobe) may fail to load
 modprobe: ERROR: could not insert 'thinkpad_acpi': "No such device"
 ```
 
-It is suspected that at least these mainboards are affected:
+It is suspected that at least these motherboards are affected:
 
  * [ThinkPad W541](docs/install/w541_external.md)
  * [ThinkPad T440p](docs/install/t440p_external.md)
@@ -991,12 +991,12 @@ What level of software freedom does libreboot give me?
 Please read the [libreboot binary blob minimalisation policy](news/policy.md).
 
 Please also read:
-[Software and hardware freedom status for each mainboard supported by
+[Software and hardware freedom status for each motherboard supported by
 Libreboot](software-freedom.md)
 
 The libreboot firmware provides host hardware initialisation inside ROM files,
 that can be written to NOR flash, but on many systems there exist
-a lot more small computers on the mainboard running blob firmware.
+a lot more small computers on the motherboard running blob firmware.
 Some of them are not practicable to replace due to being located on Mask ROM.
 Most laptops have EC (Embedded Controller) firmware, for example.
 

@@ -49,8 +49,8 @@ the boot flash; coreboot works with many payloads, which boot your operating
 system e.g. Linux/BSD.
 
 Libreboot provides [GRUB](docs/linux/) and SeaBIOS payloads on x86/x86\_64
-Intel/AMD mainboards, and a [U-Boot UEFI payload](docs/uboot/) *for coreboot*
-on ARM64(Aarch64) mainboards.
+Intel/AMD motherboards, and a [U-Boot UEFI payload](docs/uboot/) *for coreboot*
+on ARM64(Aarch64) motherboards.
 An [x86/x86\_64 U-Boot UEFI payload](docs/uboot/uboot-x86.md) is also available
 on some boards. The x86, x86\_64 and arm64 U-Boot payloads provide a lightweight
 UEFI boot implementation. Libreboot's [design](docs/maintain/) incorporates all
@@ -148,12 +148,12 @@ you could pick one of these tasks and work on it.
 
 <img tabindex=1 class="l" style="max-width:15%;" src="https://av.libreboot.org/hp8200sff/grub_open.jpg" /><span class="f"><img src="https://av.libreboot.org/hp8200sff/grub_open.jpg" /></span>
 
-The *single* biggest way you can help is to *add* new mainboards in Libreboot,
+The *single* biggest way you can help is to *add* new motherboards in Libreboot,
 by submitting a config. Anything coreboot supports can be integrated in
 Libreboot, with ROM images provided in releases. See:
 
 * [Apply to become a board maintainer/tester](docs/maintain/testing.md)
-* [Porting guide for new mainboards](docs/maintain/porting.md)
+* [Porting guide for new motherboards](docs/maintain/porting.md)
 * [Libreboot build system documentation](docs/maintain/)
 
 After that, there is build system maintenance (see above), and *documentation*

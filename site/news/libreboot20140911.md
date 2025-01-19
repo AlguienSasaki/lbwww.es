@@ -26,12 +26,12 @@
     digitizer support
     -   See **hardware/\#supported\_x60t\_list** for list of supported LCD
         panels
-    -   It is unknown whether an X61 Tablet can have its mainboard
+    -   It is unknown whether an X61 Tablet can have its motherboard
         replaced with an X60 Tablet motherboard.
 -   **Lenovo ThinkPad T60** (Intel GPU) (there are issues; see below)
     -   See notes below for exceptions, and
         **hardware/\#supported\_t60\_list** for known working LCD panels.
-    -   It is unknown whether a T61 can have its mainboard replaced with
+    -   It is unknown whether a T61 can have its motherboard replaced with
         a T60 motherboard.
     -   T60p (and T60 variants with ATI GPU) will likely never be supported:
         **hardware/\#t60\_ati\_intel**

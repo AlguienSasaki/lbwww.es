@@ -7,7 +7,7 @@ Free as in freedom!
 
 This article describes the *principles* that govern the Libreboot project. For
 information about *how those principles are applied in practise*, please read
-this article instead: [Software and hardware freedom status for each mainboard
+this article instead: [Software and hardware freedom status for each motherboard
 supported by Libreboot](../freedom-status.md)
 
 Libreboot's policy is to provide as much
@@ -59,8 +59,8 @@ Blob *reduction* policy
 Coreboot, upon which Libreboot is based, is mostly libre software but does
 require certain vendor code on some platforms. A most common example might be raminit
 (memory controller initialisation) or video framebuffer initialisation. The
-coreboot firmware uses certain vendor code for some of these tasks, on some mainboards,
-but some mainboards from coreboot can be initialised with 100% libre source
+coreboot firmware uses certain vendor code for some of these tasks, on some motherboards,
+but some motherboards from coreboot can be initialised with 100% libre source
 code, which you can inspect, and compile for your use.
 
 Libreboot deals with this situation in a *strict* and *principled* way. The
@@ -88,8 +88,8 @@ The libreboot project has the following policy:
   fact *required* as per libreboot policy. These updates fix CPU bugs, including
   security bugs, and since the CPU already has non-libre microcode burned into
   ROM anyway, the only choice is either *x86* or *broken x86*. Thus, libreboot
-  will only allow coreboot mainboard configurations where microcode updates
-  are *enabled*, if available for the CPU on that mainboard.
+  will only allow coreboot motherboard configurations where microcode updates
+  are *enabled*, if available for the CPU on that motherboard.
   [Releases after 20230423 will provide separate ROM images with microcode
   excluded, alongside the default ones that include microcode.](microcode.md)
 * Intel Management Engine: in the libreboot documentation, words *must* be written
@@ -209,7 +209,7 @@ FREEDOM CATALOG
 A *[freedom status](../freedom-status.md)* page should also be made available,
 educating people about the software freedom status on each machine supported by
 the Libreboot build system. Please read:
-[Software and hardware freedom status for each mainboard supported by
+[Software and hardware freedom status for each motherboard supported by
 Libreboot](../freedom-status.md).
 
 It is desirable to see a world where all hardware and software is libre, under
@@ -323,7 +323,7 @@ You may ask: should the other firmwares be free too? The answer is **yes**, but
 it's complicated: it's not always practical to even study those firmwares. For
 example, there are so many webcams out there, so many SSDs, so many devices
 all doing the same thing, but implemented differently. Coreboot is already
-hard enough, and there are so many mainboards out there.
+hard enough, and there are so many motherboards out there.
 
 For example: every SSD has its own controller, and it has to do a lot of
 error correction at great speed, to mitigate the inherent unreliability of
@@ -443,7 +443,7 @@ proprietary software at all, but in order to have less of it, we have to
 have more - for now.
 
 Let's take an extreme example: what if coreboot was entirely binary blobs
-for a given mainboard? Coreboot itself only initialises the hardware, and
+for a given motherboard? Coreboot itself only initialises the hardware, and
 jumps to a payload in the flash; in this case, the payload (e.g. GRUB)
 would still be free software. Surely, all free firmware would be better,
 but this is still an improvement over the original vendor firmware. The

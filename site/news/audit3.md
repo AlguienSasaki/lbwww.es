@@ -121,7 +121,7 @@ are also repeated below but in more detail:
 * All helper scripts are now under `include/`, and main scripts in `script/`,
   called by the main `build` script
 * Intel ME extraction is now provided in one function, instead of two, when
-  downloading vendor files per mainboard, before running it
+  downloading vendor files per motherboard, before running it
   through `me_cleaner`
 * Unified checking of the destination file, when downloading vendor updates.
   This results in more reliable checking of whether a vendor file has already
@@ -164,7 +164,7 @@ are also repeated below but in more detail:
 * SECURITY: Use sha512sum (not sha1sum) when verifying certain downloads. This
   reduces the chance for collisions, during checksum verification.
 * Set GRUB timout to 5s by default, but allow override and set to 10s or 15s
-  on some mainboards.
+  on some motherboards.
 * Vendor scripts: don't use `/tmp` for ROM images when inserting vendor files.
   In case `/tmp` is a tmpfs and not much RAM is available, it is paramount that
   the user's file system is used instead, where there is likely greater capacity;
@@ -635,7 +635,7 @@ The commits are, thus:
 * d28ad6aa build/release/roms: use -T0 on serprog tarballs 
 * 308c21dd build/boot/roms stragglers: properly handle errors 
 * c16b28ef build/release/src: re-create symlinks, don't copy 
-* 32dcf9e5 coreboot/qemu_x86_12mb: re-add this mainboard 
+* 32dcf9e5 coreboot/qemu_x86_12mb: re-add this motherboard 
 * 5aef8156 scripts: use printf, not echo, where appropriate 
 * 76e12cd4 update/blobs printf statements: use double quotes 
 * 84bf47b5 scripts: better handling of printf: stdout/stderr 
@@ -684,8 +684,8 @@ The commits are, thus:
 * da3c9bb3 merge config/ and resources/ 
 * a0501050 blobs/download: don't handle ifd/gbe files 
 * 03788d14 move ifd/gbe configs into config/ifd/ 
-* 6ddb0e09 run make oldconfig on coreboot/default mainboards 
-* 19efdf9e ich9m mainboards: use pre-assembled ifd/gbe files 
+* 6ddb0e09 run make oldconfig on coreboot/default motherboards 
+* 19efdf9e ich9m motherboards: use pre-assembled ifd/gbe files 
 * af8d8cda add ich9m ifd/gbe files 
 * d554efae build/release/src: copy e6430 ifd/gbe 
 * 09aae7be build/rpi-pico-serprog: better error handling 

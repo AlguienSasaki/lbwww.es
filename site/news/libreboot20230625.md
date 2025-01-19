@@ -54,7 +54,7 @@ mileage may vary, with other distros. Refer to Libreboot documentation.
 Work done since last release
 ----------------------------
 
-### New mainboards now supported:
+### New motherboards now supported:
 
 These boards were added to Libreboot:
 
@@ -73,12 +73,12 @@ focus on hardware support in addition to payloads (linux boot, UEFI etc).
 ### No-microcode ROMs available
 
 Since Libreboot 20221214 and up, CPU microcode is
-included by default on all applicable x86 mainboards. However,
+included by default on all applicable x86 motherboards. However,
 Libreboot provided (and still provides) documentation for how
 to manually remove it.
 
 Such removal is still possible, but *this* release now provides
-two sets of ROM images for each x86 mainboard: one set of ROMs
+two sets of ROM images for each x86 motherboard: one set of ROMs
 will *contain* CPU microcode, and another set *excludes* them.
 For more context, see [Binary Blob Reduction Policy](policy.md)
 and [Freedom Status](../freedom-status.md).
@@ -118,7 +118,7 @@ Newest changes first, oldest changes last:
 * `u-boot`: Increase EFI variable buffer size. This fixes an error where
   Debian's signed shim allocates too many EFI variables to fit in the space
   provided, breaking the boot process in Debian. Patch courtesy Alper Nebi Yasak
-* Re-added Gigabyte GA-G41M-ES2L mainboard. It actually does boot, but we have
+* Re-added Gigabyte GA-G41M-ES2L motherboard. It actually does boot, but we have
   always known that raminit is quite experimental on this board. You just have
   to cycle through RAM until you find modules that work.
 * `nyan` chromebooks: Removed for now (not yet stable) - this release only
@@ -137,8 +137,8 @@ Newest changes first, oldest changes last:
   ROMs that include microcode by default. This change is also alluded to in
   the sections above.
 * `blobutil/download`: Cache downloads based on checksum, to avoid needlessly
-  re-downloading files per mainboard. This is useful when compiling multiple
-  ROM images, for multiple mainboards. Patch courtesy Riku Viitanen.
+  re-downloading files per motherboard. This is useful when compiling multiple
+  ROM images, for multiple motherboards. Patch courtesy Riku Viitanen.
 * Dell Latitude E6400 (board): Fix SD cards (SD cards now work fine). Patch
   courtesy Nicholas Chin.
 * `util/nvmutil`: Vastly more efficient code (part of the audit, referenced in
@@ -199,8 +199,8 @@ Newest changes first, oldest changes last:
   an `extra.sh` script, but it can be used to extend the default functionality
   of lbmk where lots of custom logic is needed for a given board. For example,
   if you needed to apply lots of patches from gerrit in a specific order, in a
-  way that could not be generalised for other mainboards where it's really
-  only applicable to that mainboard, you might use `extra.sh`. This was briefly
+  way that could not be generalised for other motherboards where it's really
+  only applicable to that motherboard, you might use `extra.sh`. This was briefly
   used in the erstwhile osboot project, on a few boards.
 * download/coreboot: Use the `gitclone` script for actually cloning coreboot,
   while still using the main script for handling trees/revisions and such.

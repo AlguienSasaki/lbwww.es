@@ -109,10 +109,10 @@ Work done since last release
 
 With the exception of pico-serprog and replacing flashrom with flashprog (more
 on this later), the current upstream revisions remain unchanged, but this
-release has fixed a few issues and added more mainboards, relative to last
+release has fixed a few issues and added more motherboards, relative to last
 month's release.
 
-### New mainboards
+### New motherboards
 
 * **HP EliteBook 8560w** - added to lbmk by Riku Viitanen, using the coreboot port
   written by Iru Cai, with Riku's MXM support added on top (more on this later)
@@ -184,7 +184,7 @@ fixed this issue:
 <https://codeberg.org/libreboot/lbmk/issues/182>
 
 Riku also increased the default drive strength to 12mA on all RP2024 boards,
-increasing reliabily when externally flashing certain mainboards (e.g. PCH
+increasing reliabily when externally flashing certain motherboards (e.g. PCH
 having low/no resistance on connections to the data lines for the flash).
 
 ### Flashprog now used, instead of flashrom

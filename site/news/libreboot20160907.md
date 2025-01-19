@@ -6,7 +6,7 @@ In comparison to Libreboot 20160902:
 
 For existing boards, there are no new board specific changes.
 
-This release adds one new mainboard to libreboot:
+This release adds one new motherboard to libreboot:
 
 -   Intel D945GCLF desktop motherboard (thanks to Arthur Heymans)
 

@@ -46,7 +46,7 @@ Article
 **If unsure, just follow this guide. If you follow this guide on a board that
 does not need vendor files, the resulting ROM images will be identical and
 therefore nothing will have happened. The inject script is designed to insert
-certain files, only if required on a given mainboard.**
+certain files, only if required on a given motherboard.**
 
 **NOTE: Libreboot standardises on [flashprog](https://flashprog.org/wiki/Flashprog)
 now, as of 27 January 2024, which is a fork of flashrom.
@@ -64,11 +64,11 @@ to any system that requires vendor code to be inserted inside ROM images.**
 20240612, 20241008 and 20241206)
 
 **UPDATE (16 August 2023): This also applies to the recently added Dell
-Precision T1650 mainboard.**
+Precision T1650 motherboard.**
 
 As I write this post, [Libreboot 20230625](libreboot20230625.md) recently came
 out. There's technically nothing unsafe about the release itself, but certain
-users have been bricking their machines, on the following mainboards:
+users have been bricking their machines, on the following motherboards:
 
 * Sandybridge platforms (e.g. ThinkPad X220, T420)
 * Ivybridge platforms (e.g. ThinkPad X230, T430)
@@ -102,7 +102,7 @@ Instructions are given here, for how to insert these files on release ROMs:
 [Insert vendor files on Sandybridge/Ivybridge/Haswell](../docs/install/ivy_has_common.md)
 
 The linked guide makes use of vendor scripts, that
-handles *all* firmwares, automatically for each given mainboard. It can
+handles *all* firmwares, automatically for each given motherboard. It can
 automatically download and insert all of the following:
 
 * Intel ME firmware

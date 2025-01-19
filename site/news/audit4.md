@@ -81,7 +81,7 @@ And now, specific changes:
 * `script/build/serprog`: Return error status (exit) if basename fails, when
   processing various board targets available on stm32/rp2040 projects. Patch
   courtesy of Leah Rowe.
-* **NEW BOARD:** HP 8300 CMT mainboard, added by Riku Viitanen, who worked
+* **NEW BOARD:** HP 8300 CMT motherboard, added by Riku Viitanen, who worked
   on it with a tester in the IRC channel.
 * Fixed implicit typecasting bug on flashprog 1.2 source code, thus preventing
   a build issue (tested on Debian 12.2). Patch courtesy of Leah Rowe.

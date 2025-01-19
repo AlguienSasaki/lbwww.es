@@ -24,8 +24,8 @@ Minifree; sales provide funding for Libreboot.
 Vedi: [Libreboot 20241206 annuncio di rilascio](news/libreboot20241206.md).**
 
 Libreboot provides [GRUB](docs/linux/) and SeaBIOS payloads on x86/x86\_64
-Intel/AMD mainboards, and a [U-Boot UEFI payload](docs/uboot/) *for coreboot*
-on ARM64(Aarch64) mainboards.
+Intel/AMD motherboards, and a [U-Boot UEFI payload](docs/uboot/) *for coreboot*
+on ARM64(Aarch64) motherboards.
 An [x86/x86\_64 U-Boot UEFI payload](docs/uboot/uboot-x86.md) is also available
 on some boards. The x86, x86\_64 and arm64 U-Boot payloads provide a lightweight
 UEFI boot implementation, which can boot many Linux distros and BSD systems.

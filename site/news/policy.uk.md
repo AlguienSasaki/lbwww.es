@@ -252,7 +252,7 @@ You may ask: should the other firmwares be free too? The answer is **yes**, but
 it's complicated: it's not always practical to even study those firmwares. For
 example, there are so many webcams out there, so many SSDs, so many devices
 all doing the same thing, but implemented differently. Coreboot is already
-hard enough, and there are so many mainboards out there.
+hard enough, and there are so many motherboards out there.
 
 For example: every SSD has its own controller, and it has to do a lot of
 error correction at great speed, to mitigate the inherent unreliability of
@@ -372,7 +372,7 @@ proprietary software at all, but in order to have less of it, we have to
 have more - for now.
 
 Let's take an extreme example: what if coreboot was entirely binary blobs
-for a given mainboard? Coreboot itself only initialises the hardware, and
+for a given motherboard? Coreboot itself only initialises the hardware, and
 jumps to a payload in the flash; in this case, the payload (e.g. GRUB)
 would still be free software. Surely, all free firmware would be better,
 but this is still an improvement over the original vendor firmware. The

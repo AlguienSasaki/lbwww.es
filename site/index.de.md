@@ -27,8 +27,8 @@ am 6 December 2024.
 Siehe auch: [Libreboot 20241206 release announcement](news/libreboot20241206.md).**
 
 Libreboot provides [GRUB](docs/linux/) and SeaBIOS payloads on x86/x86\_64
-Intel/AMD mainboards, and a [U-Boot UEFI payload](docs/uboot/) *for coreboot*
-on ARM64(Aarch64) mainboards.
+Intel/AMD motherboards, and a [U-Boot UEFI payload](docs/uboot/) *for coreboot*
+on ARM64(Aarch64) motherboards.
 An [x86/x86\_64 U-Boot UEFI payload](docs/uboot/uboot-x86.md) is also available
 on some boards. The x86, x86\_64 and arm64 U-Boot payloads provide a lightweight
 UEFI boot implementation, which can boot many Linux distros and BSD systems.
@@ -104,13 +104,13 @@ Wie kann ich helfen
 
 <img tabindex=1 class="r" style="max-width:25%;" src="https://av.libreboot.org/t1650/t1650_grub.jpg" /><span class="f"><img src="https://av.libreboot.org/t1650/t1650_grub.jpg" /></span>
 
-Der beste Weg wie Du helfen kannst, ist das *hinzufügen* neuer Mainboards in 
+Der beste Weg wie Du helfen kannst, ist das *hinzufügen* neuer Motherboards in 
 Libreboot, indem Du eine Konfiguration zur Verfügung stellst. Alles was von 
 Coreboot unterstützt wird kann auch in Libreboot integriert werden, mithilfe
 von ROM Images in den Veröffentlichungen. Siehe auch: 
 
 * [Bewerbe dich um Boards zu testen oder zu pflegen](docs/maintain/testing.md)
-* [Anleitung um neue Mainboards hinzuzufügen](docs/maintain/porting.md)
+* [Anleitung um neue Motherboards hinzuzufügen](docs/maintain/porting.md)
 * [Libreboot Build System Dokumentation](docs/maintain/)
 
 Zudem ist da noch Pflege des Build Systems (siehe oben), sowie *Dokumentation*

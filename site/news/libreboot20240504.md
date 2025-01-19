@@ -48,7 +48,7 @@ a major new release of Libreboot. The previous stable release was
 Libreboot 20230625 released on 25 June 2023, and the previous *testing* release
 was Libreboot 20240225 released on 25 February 2024. Extreme care has been
 taken with this release, but it adds a host of new features such as USB3
-support in the GRUB payload, and a slew of mainboard fixes. *Read on* to learn
+support in the GRUB payload, and a slew of motherboard fixes. *Read on* to learn
 more.
 
 The main purpose of this release has been to fix bugs. A lot more work will now
@@ -129,10 +129,10 @@ This release supports the following hardware:
 -   [ASUS Chromebook Flip C101 (gru-bob)](../docs/install/chromebooks.md)
 -   [Samsung Chromebook Plus (v1) (gru-kevin)](../docs/install/chromebooks.md)
 
-New mainboard added
+New motherboard added
 -------------------
 
-This release adds support for the following mainboard:
+This release adds support for the following motherboard:
 
 * Dell Latitude E5420, courtesy of Nicholas Chin
 
@@ -262,7 +262,7 @@ are highlighted in bold:
 * Simpler, safer error handling in the build system
 * **util/autoport:** New utility, imported from coreboot's version but with extra
   patches merged for Haswell platforms. This can be used in future, tied heavily
-  to Libreboot's own coreboot trees, to more easily add new mainboards.
+  to Libreboot's own coreboot trees, to more easily add new motherboards.
 * **util/dell-flash-unlock: NetBSD support added**, courtesy of the developer
   who goes by the name *Linear Cannon*. Here is that person's website as of
   today: <https://linear.network/>
@@ -482,7 +482,7 @@ It is now the default behaviour, in the next release, that certain images
 contain a bootorder file in CBFS, making SeaBIOS try GRUB first, but you can
 still press ESC to access the SeaBIOS boot menu if you want to directly boot
 an OS from that. This, and the other change mentioned above, will guarantee
-stability. GRUB is *no longer* the primary payload, on any mainboard.
+stability. GRUB is *no longer* the primary payload, on any motherboard.
 
 However, it was later decided to put this release in the `testing`
 directory instead; it was initially designated as a stable release.

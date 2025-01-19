@@ -70,7 +70,7 @@ The following boards have been added since the Libreboot 20240612 release:
 ### About the Dell Latitude ports
 
 These are yet more Ivybridge (Intel 3rd gen) and Sandybridge (Intel 2nd gen)
-mainboards, using the same EC as on other Latitudes supported in Libreboot, so
+motherboards, using the same EC as on other Latitudes supported in Libreboot, so
 they are all internally flashable from the factory firmware.
 
 Installation instructions, pertaining to Dell Latitude models, can be found on
@@ -106,7 +106,7 @@ Mate Kukri's excellent *[deguard](https://review.coreboot.org/admin/repos/deguar
 utility is automatically used at build time,
 to modify the ME, which has a bug on that platform allowing arbitrary execution.
 Using this bug, Mate was able to disable the Intel Boot Guard, on this 7th gen
-mainboard. Without such a hack, coreboot would have previously been impossible!
+motherboard. Without such a hack, coreboot would have previously been impossible!
 
 I've made some fixes on top of it myself: adding HDA verb configuration, and
 a VBT file. Mate will incorporate these changes in the patchset, which is still
@@ -119,7 +119,7 @@ is also working on a ThinkPad T480 port, that is not yet ready on this day (the
 port is on Gerrit but lacks EC support at the moment).
 
 It may be possible to add many more Dell OptiPlex and other 7th gen (Intel
-Kaby Lake) mainboards to coreboot, using this hack. The *Boot Guard* is Intel
+Kaby Lake) motherboards to coreboot, using this hack. The *Boot Guard* is Intel
 DRM that normally checks a cryptographic signature on the bootblock in the
 machine, and that bootblock cannot be changed. Various other hacks have also
 been discovered in the past, such as Trammell
@@ -168,7 +168,7 @@ The changes are as follows:
   A bug in MEv11, on earlier revisions, enables arbitrary code execution. Mate
   was able to exploit this bug, to disable the Intel Boot Guard, which is
   handled by the Intel ME. Currently used on the Dell OptiPlex 3050 Micro, but
-  could be expanded to support more mainboards. (**yes, you could have a libre
+  could be expanded to support more motherboards. (**yes, you could have a libre
   ME firmware in the future, because of this bug! Though the Intel ME is
   still required, albeit it with this hack and lbmk also runs `me_cleaner`**)
 * Relative to audit6: `lib.sh`: New `mk()` function can be used as shorthand
@@ -203,7 +203,7 @@ The changes are as follows:
   enabling `CONFIG_PAYLOAD_NONE` exclusively. However, advanced users may
   wish to use something else such as Tianocore, which Libreboot may/will not
   provide (with Tianocore it's **will not**). Simply set `build_depend=""`
-  in the `target.cfg` file for a given mainboard, and then enable a payload
+  in the `target.cfg` file for a given motherboard, and then enable a payload
   under coreboot's menuconfig interface, or by direct modification of
   the defconfig file. When `CONFIG_PAYLOAD_NONE` is not set, lbmk will skip
   adding a payload, because it's a given that then coreboot's own build system
@@ -252,7 +252,7 @@ The changes are as follows:
   downloading of vendor files, without needing specific hacks to be hardcoded
   in `script/trees`. The `./update trees -b coreboot TREE utils` command is
   no longer available; instead, do `./update trees -d coreboot TREE`; if
-  the TREE argument is instead an actual mainboard target, it also does the
+  the TREE argument is instead an actual motherboard target, it also does the
   vendor file download, if required. The `./vendor download` command is still
   available, and multiple board names can now be provided as argument, because
   for example, `./build roms x220_8mb x230_12mb` would
@@ -309,12 +309,12 @@ The changes are as follows:
   single-tree projects, defined *by argument*, but it was quite error prone
   and there's no clean way to otherwise do it. We don't use the script this
   way, anywhere in lbmk, and users are advised the same.
-* **`script/roms`: *Only* Support SeaBIOS and Sea*GRUB*, on x86 mainboards**.
+* **`script/roms`: *Only* Support SeaBIOS and Sea*GRUB*, on x86 motherboards**.
   SeaGRUB is a configuration whereby SeaBIOS starts first, but immediately tries
   to load GRUB from the flash. This complements the other change, listed below.
   We will no longer provide configurations where GRUB is the primary payload,
   precisely to mitigate the same issue as described below (lbmk issue 216).
-  If *GRUB* is enabled, on a given mainboard, SeaBIOS-only setups are not
+  If *GRUB* is enabled, on a given motherboard, SeaBIOS-only setups are not
   provided; only SeaGRUB is provided. You can press ESC in the SeaGRUB menu,
   to access other boot methods besides *GRUB from flash*, so you can use it
   in the same way; additionally, you can remove the `bootorder` file from CBFS
@@ -381,7 +381,7 @@ The changes are as follows:
   This mkhelper config also integrates `include/rom.sh`, containing these
   functions. This replicates the functionality originally provided
   by `script/roms`.
-* coreboot: Set `build_depend` on `target.cfg` files for specific mainboards.
+* coreboot: Set `build_depend` on `target.cfg` files for specific motherboards.
   This is used to manually specify which GRUB and SeaBIOS trees should be
   compiled, required when compiling for a specific target, for the next
   stage where a payload is added to the coreboot image, because lbmk does
