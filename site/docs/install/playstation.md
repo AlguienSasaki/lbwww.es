@@ -1,10 +1,12 @@
 ---
-title: Install Libreboot on Sony PlayStation (PS1/PSX)
+title: Install Libreboot Open BIOS on Sony PlayStation (PS1/PSX)
 x-toc-enable: true
 ...
 
-The PlayStation is a computer like any other. It ought to run all Free Software
-if you want it to, and you can!
+The PlayStation is a computer like any other. It ought to run
+all [Free Software](https://writefreesoftware.org/learn) if you want it to, and
+you can! In this document, you will learn how to replace the Sony BIOS on your
+PlayStation, with a fully Open Source one instead.
 
 <div class="specs">
 <center>
