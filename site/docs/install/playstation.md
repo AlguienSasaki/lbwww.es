@@ -38,7 +38,23 @@ can learn more about here:
 
 <https://github.com/grumpycoders/pcsx-redux/tree/main/src/mips/openbios>
 
+### Download pre-built BIOS
+
+Get it here:
+
+<https://www.mirrorservice.org/sites/libreboot.org/release/stable/20241206/roms/playstation/>
+
+Other mirrors are available, at the [Canoeboot download](../../download.md)
+page; look in the `roms/playstation/` directory for a given Libreboot release.
+This is built from the available sources in Libreboot releases, based on the
+information written below.
+
+You can use this in a PlayStation emulator or on real hardware - the rest of
+this page will tell you how to use it.
+
 ### Build from source
+
+OPTIONAL: You could alternatively use the pre-built version (see above).
 
 Pre-compiled builds will be in the next Libreboot release, after
 version 20240612. For now, you must compile it from source, but the Libreboot
