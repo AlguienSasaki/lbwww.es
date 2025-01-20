@@ -1,5 +1,5 @@
 ---
-title: Progetto Libreboot
+title: Libero e Open Source BIOS/UEFI firmware
 x-toc-enable: true
 ...
 

@@ -1,5 +1,5 @@
 ---
-title: Проект Libreboot
+title: свободную, с открытым исходным кодом BIOS/UEFI прошивка
 x-toc-enable: true
 ...
 

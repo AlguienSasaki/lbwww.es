@@ -1,5 +1,5 @@
 ---
-title: Libreboot 项目
+title: 自由且开源 BIOS/UEFI 固件
 x-toc-enable: true
 ...
 

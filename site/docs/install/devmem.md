@@ -22,6 +22,9 @@ If the factory firmware implements UEFI, and this is how you boot when
 using the factory firmware, please ensure that *SecureBoot* is disabled,
 because it will interfere with lower memory accesses if left enabled.
 
+If you can, boot in BIOS/CSM mode just to be sure, again with SecureBoot
+disabled.
+
 FLASH ERRORS (and workarounds)
 ------------------------------
 
