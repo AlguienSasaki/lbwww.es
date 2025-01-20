@@ -152,7 +152,7 @@ Other mods (hardware)
 
 Click the photo for full size. It shows a Mayumi v4 modchip and Dual Frequency
 Oscillator mod installed (blue board is the modchip and the black board is
-the DFO mod):
+the DFO mod). Mods installed by Leah Rowe, as a proof of concept:
 
 <img tabindex=1 alt="Sony PlayStation (PSOne) console" class="p" src="https://av.libreboot.org/playstation/mayumi.jpg" /><span class="f"><img src="https://av.libreboot.org/playstation/mayumi.jpg" /></span>
 
