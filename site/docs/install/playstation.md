@@ -148,6 +148,25 @@ the Libreboot project, but this can be done at a future date.
 Other mods (hardware)
 ---------------------
 
+### Modchip (mayumi v4) example
+
+Click the photo for full size. It shows a Mayumi v4 modchip and Dual Frequency
+Oscillator mod installed (blue board is the modchip and the black board is
+the DFO mod):
+
+<img tabindex=1 alt="Sony PlayStation (PSOne) console" class="p" src="https://av.libreboot.org/playstation/mayumi.jpg" /><span class="f"><img src="https://av.libreboot.org/playstation/mayumi.jpg" /></span>
+
+The modchip disables the copy protection and region restrictions. A modchip is
+still advised, even if using an Open BIOS. The Open BIOS could be modified to
+send commands that disable the wobble check, thus invalidating the need  for
+a modchip, but even then there are still caveats. Please read:
+
+<https://psx-spx.consoledev.net/cdromdrive/#cdrom-secret-unlock-commands>
+
+The most technically correct solution, regardless of which BIOS you have, to
+also install the modchip and DFO board, as shown. More info is written about
+these in the next sections below:
+
 ### Video timings
 
 The Open BIOS will not implement any DRM, so it's possible that you might boot
