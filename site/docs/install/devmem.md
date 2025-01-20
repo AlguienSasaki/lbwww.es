@@ -1,5 +1,5 @@
 ---
-title: Disabling /dev/mem protections
+title: Disabling /dev/mem protections on Linux and BSD
 x-toc-enable: true
 ...
 

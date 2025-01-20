@@ -1,4 +1,4 @@
-% Libreboot 20241008 released!
+% Libreboot 20241008 released! With PlayStation support!
 % Leah Rowe
 % 8 October 2024
 

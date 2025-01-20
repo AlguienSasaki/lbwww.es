@@ -1,5 +1,5 @@
 ---
-title: Other coreboot distributions
+title: Other coreboot distributions providing Open Source BIOS/UEFI firmware
 x-toc-enable: true
 ...
 

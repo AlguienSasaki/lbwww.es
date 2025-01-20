@@ -1,5 +1,5 @@
 ---
-title: ThinkPad T60 Recovery guide
+title: Install Libreboot on Lenovo ThinkPad T60
 x-toc-enable: true
 ...
 

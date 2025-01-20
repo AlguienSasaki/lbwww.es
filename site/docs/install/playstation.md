@@ -1,5 +1,5 @@
 ---
-title: Sony PlayStation (PS1/PSX)
+title: Install Libreboot on Sony PlayStation (PS1/PSX)
 x-toc-enable: true
 ...
 

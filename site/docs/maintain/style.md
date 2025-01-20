@@ -1,5 +1,5 @@
 ---
-title: lbmk coding style and design
+title: LibreBoot MaKe (lbmk) build system coding style
 x-toc-enable: true
 ...
 

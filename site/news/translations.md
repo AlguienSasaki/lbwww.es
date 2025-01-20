@@ -1,4 +1,4 @@
-% Translations wanted
+% Translations wanted for the Libreboot website
 % Leah Rowe
 % 4 January 2022
 

@@ -1,5 +1,5 @@
 ---
-title: Kontakt
+title: Kontakt der Libreboot projekt
 x-toc-enable: true
 ...
 

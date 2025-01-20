@@ -1,5 +1,5 @@
 ---
-title: ThinkPad X230/X230T external flashing
+title: Install Libreboot on Lenovo ThinkPad X230/X230T
 x-toc-enable: true
 ...
 

@@ -1,5 +1,5 @@
 ---
-title: OpenBSD Install Attempt on a Samsung Chromebook Plus
+title: OpenBSD Install Attempt on Librebooted Samsung Chromebook Plus
 x-toc-enable: true
 ...
 

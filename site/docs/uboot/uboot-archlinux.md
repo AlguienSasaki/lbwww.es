@@ -1,5 +1,5 @@
 ---
-title: Installing ArchLinuxARM on a Chromebook with U-Boot installed
+title: Installing ArchLinuxARM on a Chromebook with Libreboot and U-Boot
 x-toc-enable: true
 ...
 

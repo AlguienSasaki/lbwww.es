@@ -1,5 +1,5 @@
 ---
-title: Porting guide for new motherboards
+title: Porting Libreboot to new Intel-based motherboards
 ...
 
 **NOTE: Libreboot standardises on [flashprog](https://flashprog.org/wiki/Flashprog)

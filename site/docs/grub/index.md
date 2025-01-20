@@ -1,5 +1,5 @@
 ---
-title: GRUB payload 
+title: Libreboot GRUB payload documentation
 x-toc-enable: true
 ...
 

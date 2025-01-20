@@ -1,5 +1,5 @@
 ---
-title: U-Boot payload (x86 and ARM)
+title: U-Boot payload for Libreboot on x86 and ARM
 x-toc-enable: true
 ...
 

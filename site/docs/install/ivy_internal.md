@@ -1,5 +1,5 @@
 ---
-title: Ivybridge internal flashing
+title: Install Libreboot internally on Lenovo ThinkPad X230
 x-toc-enable: true
 ...
 

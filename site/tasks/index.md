@@ -1,5 +1,5 @@
 ---
-title: Jobs that need doing
+title: Jobs that need doing in the Libreboot project
 x-toc-enable: true
 ...
 

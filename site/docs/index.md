@@ -1,5 +1,5 @@
 ---
-title: Libreboot documentation
+title: Installing Libreboot Free/Opensource BIOS/UEFI firmware
 ...
 
 Always check [libreboot.org](https://libreboot.org/) for the latest updates to

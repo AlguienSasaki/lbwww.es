@@ -1,5 +1,5 @@
 ---
-title: Building Libreboot for Emulation
+title: Building Libreboot for Emulation e.g. QEMU
 x-toc-enable: true
 ...
 

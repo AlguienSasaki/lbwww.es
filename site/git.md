@@ -1,5 +1,5 @@
 ---
-title: Code review
+title: How to use Git and/or send patches to Libreboot
 x-toc-enable: true
 ...
 

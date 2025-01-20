@@ -1,5 +1,5 @@
 ---
-title: U-Boot payload (x86 specific)
+title: U-Boot x86 UEFI payload on Libreboot
 x-toc-enable: true
 ...
 

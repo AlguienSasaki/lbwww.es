@@ -1,5 +1,5 @@
 ---
-title: License
+title: Copyright license for the Libreboot website
 x-toc-enable: true
 ...
 

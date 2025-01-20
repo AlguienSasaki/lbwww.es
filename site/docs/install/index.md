@@ -1,5 +1,5 @@
 ---
-title: Install Libreboot
+title: Install Libreboot Open Source BIOS/UEFI firmware
 x-toc-enable: true
 ...
 

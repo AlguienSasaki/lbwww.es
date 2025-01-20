@@ -1,5 +1,5 @@
 ---
-title: Insert vendor files not included in release images
+title: Insert vendor files not included in Libreboot release images
 x-toc-enable: true
 ...
 

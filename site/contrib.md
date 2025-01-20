@@ -1,5 +1,5 @@
 ---
-title: Project contributors
+title: People who contributed to the Libreboot project
 x-toc-enable: true
 ...
 

@@ -1,4 +1,4 @@
-% New Git repositories added as backup mirrors
+% New Git repositories added as backup Libreboot mirrors
 % Leah Rowe
 % 11 April 2023
 

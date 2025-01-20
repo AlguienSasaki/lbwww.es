@@ -1,5 +1,5 @@
 ---
-title: Miscellaneous 
+title: Miscellaneous Libreboot documentation
 x-toc-enable: true
 ...
 

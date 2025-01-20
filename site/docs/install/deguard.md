@@ -1,5 +1,5 @@
 ---
-title: Disabling Intel Boot Guard on MEv11
+title: Disabling Intel Boot Guard on MEv11 for Libreboot installation
 x-toc-enable: true
 ...
 

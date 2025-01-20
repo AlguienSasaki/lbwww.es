@@ -1,5 +1,5 @@
 ---
-title: Download Libreboot
+title: Download Libreboot Free/Opensource BIOS/UEFI firmware
 x-toc-enable: true
 ...
 

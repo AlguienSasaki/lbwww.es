@@ -1,5 +1,5 @@
 ---
-title: Debian Bookworm Install on a Samsung Chromebook Plus
+title: Debian Bookworm Install on Librebooted Samsung Chromebook Plus
 x-toc-enable: true
 ...
 

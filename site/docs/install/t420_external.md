@@ -1,5 +1,5 @@
 ---
-title: ThinkPad T420 external flashing
+title: Install Libreboot on Lenovo ThinkPad T420
 x-toc-enable: true
 ...
 

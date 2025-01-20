@@ -1,5 +1,5 @@
 ---
-title: Software and hardware freedom status for each motherboard supported by Libreboot
+title: Software and hardware freedom status for Libreboot Open Source BIOS/UEFI
 x-toc-enable: true
 ...
 

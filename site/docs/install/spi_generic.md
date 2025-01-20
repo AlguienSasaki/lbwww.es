@@ -1,5 +1,5 @@
 ---
-title: Generic SPI Flashing Guide
+title: Generic SPI Flashing Guide for Libreboot Installation
 x-toc-enable: true
 ...
 
