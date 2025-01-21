@@ -92,7 +92,7 @@ Coreboot помітно складний для встановлення для 
 Як допомогти
 -----------
 
-<img tabindex=1 class="r" style="max-width:25%;" src="https://av.libreboot.org/t1650/t1650_grub.jpg" /><span class="f"><img src="https://av.libreboot.org/t1650/t1650_grub.jpg" /></span>
+<img tabindex=1 class="r" style="max-width:25%;" src="https://av.vimuser.org/uboot.png" /><span class="f"><img src="https://av.vimuser.org/uboot.png" /></span>
 
 *Єдиний* найбільший шлях, яким ви можете допомогти є *додавання* нових материнських плат до Libreboot,
 за допомогою відправки конфігурації. Що завгодно, що підтримує coreboot може бути інтегровано в

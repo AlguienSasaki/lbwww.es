@@ -60,7 +60,7 @@ Les versions de Libreboot fournissent des images ROM pré-compilées que vous po
 Comment aider
 -----------
 
-<img tabindex=1 class="r" style="max-width:25%;" src="https://av.libreboot.org/t1650/t1650_grub.jpg" /><span class="f"><img src="https://av.libreboot.org/t1650/t1650_grub.jpg" /></span>
+<img tabindex=1 class="r" style="max-width:25%;" src="https://av.vimuser.org/uboot.png" /><span class="f"><img src="https://av.vimuser.org/uboot.png" /></span>
 
 La meilleure façon d'aider le projet est d’ajouter de nouvelles cartes mères au projet Libreboot en soumettant une configuration. Tout ce qui est pris en charge par Coreboot peut être intégré à Libreboot, avec des images ROM fournies dans les versions publiées. Voir :
 

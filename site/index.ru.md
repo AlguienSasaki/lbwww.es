@@ -49,7 +49,7 @@ Libreboot ориентирован на сообщество, с фокусом 
 Libreboot это не форк coreboot
 ------------------------------
 
-<img tabindex=1 class="r" style="max-width:25%;" src="https://av.libreboot.org/t1650/t1650_grub.jpg" /><span class="f"><img src="https://av.libreboot.org/t1650/t1650_grub.jpg" /></span>
+<img tabindex=1 class="r" style="max-width:25%;" src="https://av.vimuser.org/uboot.png" /><span class="f"><img src="https://av.vimuser.org/uboot.png" /></span>
 
 По факту, Libreboot пытается быть как можно более похожей на *стоковый* coreboot для каждой материнской платы, но с множетсвом доступных опций для конфигурации, предоставляемых автоматической системой сборки.
 

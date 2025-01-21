@@ -102,7 +102,7 @@ Kenntnisse oder Fertigkeiten abgesehen von der Fähigkeit einer
 Wie kann ich helfen
 -----------
 
-<img tabindex=1 class="r" style="max-width:25%;" src="https://av.libreboot.org/t1650/t1650_grub.jpg" /><span class="f"><img src="https://av.libreboot.org/t1650/t1650_grub.jpg" /></span>
+<img tabindex=1 class="r" style="max-width:25%;" src="https://av.vimuser.org/uboot.png" /><span class="f"><img src="https://av.vimuser.org/uboot.png" /></span>
 
 Der beste Weg wie Du helfen kannst, ist das *hinzufügen* neuer Motherboards in 
 Libreboot, indem Du eine Konfiguration zur Verfügung stellst. Alles was von 

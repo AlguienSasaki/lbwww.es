@@ -116,7 +116,7 @@ control.
 Libreboot is not a fork of coreboot
 -----------------------------------
 
-<img tabindex=1 class="r" alt="Dell Precision T1650 running Libreboot" style="max-width:25%;" src="https://av.libreboot.org/t1650/t1650_grub.jpg" /><span class="f"><img src="https://av.libreboot.org/t1650/t1650_grub.jpg" /></span>
+<img tabindex=1 class="r" style="max-width:25%;" src="https://av.vimuser.org/uboot.png" /><span class="f"><img src="https://av.vimuser.org/uboot.png" /></span>
 
 In fact, Libreboot tries to stay as close to *stock* coreboot as possible,
 for each board, but with many different types of configuration provided

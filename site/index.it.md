@@ -95,7 +95,7 @@ particolari ad eccezione del seguire [semplici istruzioni scritte per chiunque](
 Come essere d'aiuto
 -------------------
 
-<img tabindex=1 class="r" style="max-width:25%;" src="https://av.libreboot.org/t1650/t1650_grub.jpg" /><span class="f"><img src="https://av.libreboot.org/t1650/t1650_grub.jpg" /></span>
+<img tabindex=1 class="r" style="max-width:25%;" src="https://av.vimuser.org/uboot.png" /><span class="f"><img src="https://av.vimuser.org/uboot.png" /></span>
 
 Il *modo migliore* col quale puoi aiutarci e' quello di *aggiungere* nuove schede condividendone
 la configurazione. Qualunque cosa sia supportata da coreboot puo' essere integrata in Libreboot,
