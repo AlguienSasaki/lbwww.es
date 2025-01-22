@@ -96,6 +96,10 @@ html, ul, #TOC
 	display: none;
 }
 
+div.title:hover {
+	cursor: pointer;
+}
+
 @media (min-width:60em)
 {
 	.title-logo{display:none; background:none;}

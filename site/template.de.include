@@ -56,9 +56,9 @@ $include-before$
 $endfor$
 $if(title)$
 <header>
-<div class="title">
+<div class="title" onclick="location.href='/index.de.html';">
 <p class="title-logo">
-<img class="title-logo" alt="Libreboot logo" src="/favicon.ico" />
+<a href="/index.de.html"><img class="title-logo" alt="Libreboot logo" src="/favicon.ico" /></a>
 </p>
 <h1 class="title">$title$</h1>
 </div>
