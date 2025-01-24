@@ -112,10 +112,23 @@ fact work nicely, but software such as Linux will check
 that this is correct. If the checksum is invalid, your
 kernel will refuse to make use of the NIC.
 
-This NVM section is the first 128 bytes of a 4KB region in flash.
-This 4KB region is then repeated, to make an 8KB region in
+This NVM section is the first 128 bytes of a *block size* KB region in flash.
+This *block size* KB region is then repeated, to make an *block size multipled
+by two* KB region in
 flash, known as the *GbE region*. In `nvmutil`, the first part
 is referred to as *part 0* and the second part as *part 1*.
+
+The block size can be 4KB, 8KB or 64KB, meaning that GbE files can
+be 8KB, 16KB or 128KB; the first half is part 0 and the second half is part 1.
+The first 4KB of each part is what we are concerned with; and in each 4KB part
+is the 128-byte NVM area at the very start, containing our configuration.
+
+**NOTE: Support for 16KB and 128KB files was only added *after* the
+Libreboot 20241206 release. It will be available in all releases after that,
+or you can simply compile nvmutil from the Libreboot Git repository lbmk,
+from directory `util/nvmutil/` - on the older releases, and older versions of
+nvmutil, only 8KB GbE files are supported, but we mostly only use 8KB files
+anyway (you're very unlikely to encounter 16KB or 128KB files).**
 
 ### Known compatible PHYs
 
@@ -378,7 +391,7 @@ command only requires read access on files. Where sufficient permission
 is not given (read and/or write), nvmutil will exit with non-zero status.
 
 Non-zero status will also be returned, if the target file is *not*
-of size *8KB*.
+of size *8KB*, *16KB* or *128KB*.
 
 Additional rules regarding exit status shall apply, depending on
 what command you use. Commands are documented in the following sections:
@@ -469,7 +482,7 @@ will exit with non-zero status.
 This command requires read *and* write access on files.
 
 The `nvm` program can copy one NVM part to another. It copies
-the *entire* 4KB part, within the 8KB file.
+the *entire* *block size* KB part, within the *two blocks* KB file.
 
 Overwrite part 0 with the contents of part 1:
 
@@ -488,7 +501,7 @@ zero status.
 
 This command requires read *and* write access on files.
 
-The `nvm` program can swap both 4KB parts in the GbE
+The `nvm` program can swap both *block size* KB parts in the GbE
 file. It does this, via simple XOR swaps.
 
 How to use:
@@ -587,7 +600,6 @@ provided only for reference; it may be useful for future auditing.
 TODO
 ----
 
-* Support higher block sizes e.g. 8KB blocks for GbE part sections
 * Adapt this into a manpage (useful for Linux package repositories / BSD ports)
 * Send nvmutil upstream to coreboot, for inclusion under `util/`
 * In addition to the manpage, when sending to coreboot, also adapt this page
