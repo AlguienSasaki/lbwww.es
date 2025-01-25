@@ -46,6 +46,10 @@ matters.
 you continue to use your hardware, with continued firmware updates. All of this
 is *why* Libreboot exists.
 
+Libreboot is also the home of the [Libreboot Static Site
+Generator](docs/sitegen/), formerly known as the *Untitled Static Site
+Generator*.
+
 Overview of Libreboot design
 ----------------------------
 

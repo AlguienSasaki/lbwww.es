@@ -41,6 +41,7 @@ operates Minifree Ltd; sales provide funding for the Libreboot project.
 其它信息
 --------
 
+-   [Libreboot Static Site Generator](sitegen/)
 -   [杂项](misc/)
 -   [代号列表](misc/codenames.md)
 

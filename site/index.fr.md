@@ -28,6 +28,10 @@ ou envoyer votre propre ordinateur [pour y installer Libreboot](https://minifree
 
 Leah Rowe, fondateur et principal développeur du projet Libreboot, est également propriétaire de Minifree Ltd. Les ventes contribuent à financer le développement du projet Libreboot.
 
+Libreboot is also the home of the [Libreboot Static Site
+Generator](docs/sitegen/), formerly known as the *Untitled Static Site
+Generator*.
+
 Pourquoi devriez-vous utiliser *Libreboot*?
 -----------------------------------
 

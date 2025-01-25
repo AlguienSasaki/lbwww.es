@@ -43,6 +43,7 @@ Information for developers
 Other information
 -----------------
 
+-   [Libreboot Static Site Generator](sitegen/)
 -   [Miscellaneous](misc/)
 -   [List of codenames](misc/codenames.md)
 

@@ -43,6 +43,7 @@ operates Minifree Ltd; sales provide funding for the Libreboot project.
 Інша інформація
 ---------------
 
+-   [Libreboot Static Site Generator](sitegen/)
 -   [Різне](misc/)
 -   [Список кодових назв](misc/codenames.md)
 

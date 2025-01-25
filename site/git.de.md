@@ -12,6 +12,9 @@ Das `libreboot` Projekt hat hauptsächlich 3 Git Repositories:
 * Webseite (+Anleitungen): <https://codeberg.org/libreboot/lbwww>
 * Bilder (für die Webseite): <https://codeberg.org/libreboot/lbwww-img>
 * Pico-serprog: <https://codeberg.org/libreboot/pico-serprog>
+* Libreboot Static Site Generator: <https://codeberg.org/libreboot/lbssg>
+
+Also see: [Libreboot Static Site Generator](docs/sitegen/).
 
 Du kannst dir lbmk auch auf Libreboot's eigener cgit Instanz *ansehen*,
 allerdings ist dies nicht für die Entwicklung gedacht (benutze hierfür bitte codeberg):\
@@ -106,8 +109,8 @@ Du kannst alles nach deinen Vorstellungen ändern. Beachte die nachfolgenden
 Informationen wie Du deine Änderungen zur Verfügung stellen kannst.
 
 Die gesamte Website ist in Markdown geschrieben, insbesondere die Pandoc Version. 
-Die statischen HTML Seiten werden mit [Untitled](https://untitled.vimuser.org/)
-generiert. Leah Rowe, die Gründerin von Libreboot, ist auch die Gründerin des Untitled static
+Die statischen HTML Seiten werden mit [lbssg](docs/sitegen/)
+generiert. Leah Rowe, die Gründerin von Libreboot, ist auch die Gründerin des Libreboot static
 site generator Projekts.
 
 Wenn Du möchtest, kannst Du einen lokalen HTTP Server einrichten und eine
@@ -151,12 +154,12 @@ Zu Entwicklungszwecken, könntest Du deine Bilder auch lokal verknüpfen, und
 anschliesend die URLs anpassen sobald Du deine Patches für die Dokumentation/Webseite schickst.
 
 Eine Anleitung wie Du eine lokale Version der Webseite herstellen kannst,
-befinden sich auf der Untitled Webseite. Lade untitled
+befinden sich auf der lbssg dokumentation. Lade untitled
 herunter, und erstelle in dem `untitled` Verzeichnis ein Verzeichnis mit
 dem Namen `www/` dann wechsle in dieses Verzeichnis und klone das `lbwww`
 Repository dorthin. Konfiguriere deinen lokalen HTTP Server entsprechend.
 
-Nochmal, Anleitungen hierfür findest Du auf der Untitled Webseite.
+Nochmal, Anleitungen hierfür findest Du auf der lbssg dokumentation.
 
 ### Name nicht erforderlich
 
@@ -281,7 +284,7 @@ Mirrors fur pico-serprog.git
 ### lbwww.git Mirror
 
 Das `lbwww` Repository enthält Markdown Dateien (Pandoc Variant), für die
-Verwendung mit dem [Untitled Static Site Generator](https://untitled.vimuser.org/);
+Verwendung mit dem [Libreboot Static Site Generator](docs/sitegen/);
 dies wird von Libreboot verwendet um HTML Web Seiten bereitzustellen, *inklusive*
 der Seite die Du gerade liest!
 

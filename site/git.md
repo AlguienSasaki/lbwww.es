@@ -12,6 +12,9 @@ The `libreboot` project has 3 main Git repositories:
 * Website (+docs): <https://codeberg.org/libreboot/lbwww>
 * Images (for website): <https://codeberg.org/libreboot/lbwww-img>
 * Pico-serprog: <https://codeberg.org/libreboot/pico-serprog>
+* Libreboot Static Site Generator: <https://codeberg.org/libreboot/lbssg>
+
+Also see: [Libreboot Static Site Generator](docs/sitegen/).
 
 You can also *browse* lbmk on Libreboot's own cgit instance, though it is not
 intended for development (use codeberg for that):\
@@ -97,8 +100,8 @@ repository:
 Make whatever changes you like. See notes below about how to send patches.
 
 The entire website is written in Markdown, specifically the Pandoc version of
-it. The static HTML pages are generated with [Untitled](https://untitled.vimuser.org/).
-Leah Rowe, the founder of libreboot, is also the founder of the Untitled static
+it. The static HTML pages are generated with [lbssg](docs/sitegen/).
+Leah Rowe, the founder of libreboot, is also the founder of the Libreboot static
 site generator project.
 
 If you like, you can set up a local HTTP server and build your own local
@@ -140,12 +143,12 @@ For example, this reduced the Libreboot boot logo from around 11k to 3k:
 For development purposes, you might make your images local links first, and
 then adjust the URLs when you submit your documentation/website patches.
 
-Instructions are on the Untitled website, for how to set up your local version
+Instructions are on the lbssg manual, for how to set up your local version
 of the website. Download untitled, and inside your `untitled` directory, create
 a directory named `www/` then go inside the www directory, and clone the `lbwww`
 repository there. Configure your local HTTP server accordingly.
 
-Again, instructions are available on the Untitled website for this purpose.
+Again, instructions are available on the lbssg manual for this purpose.
 
 ### Name not required
 
@@ -261,7 +264,7 @@ Mirrors of pico-serprog.git
 ### lbwww.git mirror
 
 The `lbwww` repository contains Markdown files (pandoc variant), for use
-with the [Untitled Static Site Generator](https://untitled.vimuser.org/); this
+with the [Libreboot Static Site Generator](docs/sitegen/); this
 is what Libreboot uses to provide HTML web pages, *including* the page that
 you are reading right now!
 
