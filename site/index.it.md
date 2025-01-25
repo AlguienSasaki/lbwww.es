@@ -14,7 +14,7 @@ su [Libera](https://libera.chat/).
 
 <img tabindex=1 class="r" src="https://av.libreboot.org/t480/t480.jpg" /><span class="f"><img src="https://av.libreboot.org/t480/t480.jpg" /></span>
 
-Libreboot provides GNU [GRUB](docs/linux/) boot loader and SeaBIOS payloads
+Libreboot provides GNU boot loader "[GRUB](docs/linux/)" and SeaBIOS payloads
 on x86/x86\_64
 Intel/AMD motherboards, and a [U-Boot UEFI payload](docs/uboot/) *for coreboot*
 on ARM64(Aarch64) motherboards.

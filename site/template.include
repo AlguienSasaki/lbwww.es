@@ -2,7 +2,7 @@
 <html$if(lang)$ lang="$lang$"$endif$$if(dir)$ dir="$dir$"$endif$>
 <head>
   <meta charset="utf-8">
-  <meta name="description" content="Libreboot is a free/opensource BIOS/UEFI firmware distribution based on coreboot, for booting Linux/BSD on x86/x86_64 and ARM64 motherboards.">
+  <meta name="description" content="Libreboot is a free/opensource BIOS/UEFI firmware distribution based on coreboot with GNU boot loader GRUB, SeaBIOS and U-Boot, for booting Linux/BSD on x86/x86_64 and ARM64 motherboards.">
   <meta name="keywords" content="libreboot, coreboot, canoeboot, opensource, libre, free software, bios, uefi">
   <meta name="generator" content="pandoc">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
