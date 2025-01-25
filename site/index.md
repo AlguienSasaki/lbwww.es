@@ -1,5 +1,5 @@
 ---
-title: Free and Open Source BIOS/UEFI firmware
+title: Free and Open Source BIOS/UEFI boot firmware
 x-toc-enable: true
 ...
 
