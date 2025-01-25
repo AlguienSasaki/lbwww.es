@@ -1,0 +1,1 @@
+Libreboot can disable the Intel Boot Guard, on any Intel 6th, 7th or 8th gen platform with Intel Management Engine version 11.x present. Intel Boot Guard would otherwise prevent coreboot from booting, by verifying the bootblock of the vendor's UEFI firmware. With this, you can use Libreboot and its various default coreboot payloads, such as the GNU boot loader named GRUB.

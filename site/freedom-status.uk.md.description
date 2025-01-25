@@ -1,0 +1,4 @@
+Libreboot is a free/opensource BIOS/UEFI boot firmware distribution based on coreboot
+for booting Linux/BSD on supported x86/ARM motherboards. It comes with GNU boot
+loader GRUB, SeaBIOS and U-Boot. This page describes how Libreboot handles vendor
+code on each supported motherboard.

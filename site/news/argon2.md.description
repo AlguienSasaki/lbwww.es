@@ -1,0 +1,1 @@
+Argon2 KDF allows greater memory hardness, which means that it is much less vulnerable to bruteforce attacks. This encryption scheme was added to the GNU boot loader named GRUB, in Libreboot's version, thereby allowing full LUKS2 support in Libreboot's GRUB payload.

@@ -1,0 +1,1 @@
+The GNU boot loader named GRUB can read from coreboot's file system, and boot Linux/BSD systems from the flash. With these guides, you will know how to configure GRUB in flash for your Libreboot system.
