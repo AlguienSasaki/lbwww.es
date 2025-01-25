@@ -14,16 +14,8 @@ su [Libera](https://libera.chat/).
 
 <img tabindex=1 class="r" src="https://av.libreboot.org/t480/t480.jpg" /><span class="f"><img src="https://av.libreboot.org/t480/t480.jpg" /></span>
 
-You can also [buy Libreboot preinstalled](https://minifree.org/) from Minifree Ltd,
-on select hardware, as well as send your compatible hardware
-for [Libreboot preinstallation](https://minifree.org/product/installation-service/).
-The founder and lead developer of Libreboot, Leah Rowe, also owns and operates
-Minifree; sales provide funding for Libreboot.
-
-**ULTIMO RILASCIO: L'ultimo rilascio e' Libreboot 20241206, rilasciato il 6 December 2024.
-Vedi: [Libreboot 20241206 annuncio di rilascio](news/libreboot20241206.md).**
-
-Libreboot provides [GRUB](docs/linux/) and SeaBIOS payloads on x86/x86\_64
+Libreboot provides GNU [GRUB](docs/linux/) boot loader and SeaBIOS payloads
+on x86/x86\_64
 Intel/AMD motherboards, and a [U-Boot UEFI payload](docs/uboot/) *for coreboot*
 on ARM64(Aarch64) motherboards.
 An [x86/x86\_64 U-Boot UEFI payload](docs/uboot/uboot-x86.md) is also available
@@ -33,6 +25,15 @@ The SeaBIOS and GRUB payloads also boot Linux/BSD systems. Which one you use
 depends on your preferences. Libreboot's design incorporates all of these boot
 methods in a single image, so you can choose which one you use at boot time,
 and more payloads (e.g. Linux kexec payload) are planned for future releases.
+
+**ULTIMO RILASCIO: L'ultimo rilascio e' Libreboot 20241206, rilasciato il 6 December 2024.
+Vedi: [Libreboot 20241206 annuncio di rilascio](news/libreboot20241206.md).**
+
+You can also [buy Libreboot preinstalled](https://minifree.org/) from Minifree Ltd,
+on select hardware, as well as send your compatible hardware
+for [Libreboot preinstallation](https://minifree.org/product/installation-service/).
+The founder and lead developer of Libreboot, Leah Rowe, also owns and operates
+Minifree; sales provide funding for Libreboot.
 
 Per quale ragione utilizzare *Libreboot*?
 -----------------------------------------

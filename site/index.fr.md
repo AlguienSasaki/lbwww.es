@@ -8,15 +8,8 @@ Il initialise le matériel (le contrôleur de mémoire, le CPU, les périphériq
 
 <img tabindex=1 class="r" src="https://av.libreboot.org/t480/t480.jpg" /><span class="f"><img src="https://av.libreboot.org/t480/t480.jpg" /></span>
 
-Vous pouvez également acheter du matériel avec [Libreboot pré-installé](https://minifree.org/) via l'entreprise Minifree Ltd,
-ou envoyer votre propre ordinateur [pour y installer Libreboot](https://minifree.org/product/installation-service/).
-
-Leah Rowe, fondateur et principal développeur du projet Libreboot, est également propriétaire de Minifree Ltd. Les ventes contribuent à financer le développement du projet Libreboot.
-
-**NOUVELLE VERSION: La dernière version est [Libreboot 20241206](news/Libreboot20241206.md), sortie
-le 6 December 2024.**
-
-Libreboot provides [GRUB](docs/linux/) and SeaBIOS payloads on x86/x86\_64
+Libreboot provides GNU [GRUB](docs/linux/) boot loader and SeaBIOS payloads
+on x86/x86\_64
 Intel/AMD motherboards, and a [U-Boot UEFI payload](docs/uboot/) *for coreboot*
 on ARM64(Aarch64) motherboards.
 An [x86/x86\_64 U-Boot UEFI payload](docs/uboot/uboot-x86.md) is also available
@@ -26,6 +19,14 @@ The SeaBIOS and GRUB payloads also boot Linux/BSD systems. Which one you use
 depends on your preferences. Libreboot's design incorporates all of these boot
 methods in a single image, so you can choose which one you use at boot time,
 and more payloads (e.g. Linux kexec payload) are planned for future releases.
+
+**NOUVELLE VERSION: La dernière version est [Libreboot 20241206](news/Libreboot20241206.md), sortie
+le 6 December 2024.**
+
+Vous pouvez également acheter du matériel avec [Libreboot pré-installé](https://minifree.org/) via l'entreprise Minifree Ltd,
+ou envoyer votre propre ordinateur [pour y installer Libreboot](https://minifree.org/product/installation-service/).
+
+Leah Rowe, fondateur et principal développeur du projet Libreboot, est également propriétaire de Minifree Ltd. Les ventes contribuent à financer le développement du projet Libreboot.
 
 Pourquoi devriez-vous utiliser *Libreboot*?
 -----------------------------------

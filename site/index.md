@@ -16,17 +16,26 @@ on [Libera](https://libera.chat/) IRC.
 
 <img tabindex=1 class="r" alt="ThinkPad T480 running Libreboot" title="ThinkPad T480" src="https://av.libreboot.org/t480/t480.jpg" /><span class="f"><img alt="ThinkPad T480 running Libreboot" src="https://av.libreboot.org/t480/t480.jpg" /></span>
 
-You can also [buy Libreboot preinstalled](https://minifree.org/) from Minifree Ltd,
-on select hardware, as well as send your compatible hardware
-for [Libreboot preinstallation](https://minifree.org/product/installation-service/).
-The founder and lead developer of Libreboot, Leah Rowe, also owns and operates
-Minifree; sales provide funding for Libreboot.
+Libreboot provides GNU [GRUB](docs/linux/) boot loader and SeaBIOS payloads
+on x86/x86\_64
+Intel/AMD motherboards, and a [U-Boot UEFI payload](docs/uboot/) *for coreboot*
+on ARM64(Aarch64) motherboards.
+An [x86/x86\_64 U-Boot UEFI payload](docs/uboot/uboot-x86.md) is also available
+on some boards. The x86, x86\_64 and arm64 U-Boot payloads provide a lightweight
+UEFI boot implementation. Libreboot's [design](docs/maintain/) incorporates all
+of these payloads in a single image, and you choose one at boot time.
 
 **NEW RELEASE: The latest release is Libreboot 20241206, released on
 6 December 2024.
 See: [Libreboot 20241206 release announcement](news/libreboot20241206.md) - the
 newest revision release, Libreboot 20241206 revision 8, is from 6
 January 2025.**
+
+You can also [buy Libreboot preinstalled](https://minifree.org/) from Minifree Ltd,
+on select hardware, as well as send your compatible hardware
+for [Libreboot preinstallation](https://minifree.org/product/installation-service/).
+The founder and lead developer of Libreboot, Leah Rowe, also owns and operates
+Minifree; sales provide funding for Libreboot.
 
 *We* believe the freedom to [study, share, modify and use
 software](https://writefreesoftware.org/), without any
@@ -47,14 +56,6 @@ initialisation](https://doc.coreboot.org/getting_started/architecture.html),
 which then jumps to a [payload](https://doc.coreboot.org/payloads.html) in
 the boot flash; coreboot works with many payloads, which boot your operating
 system e.g. Linux/BSD.
-
-Libreboot provides [GRUB](docs/linux/) and SeaBIOS payloads on x86/x86\_64
-Intel/AMD motherboards, and a [U-Boot UEFI payload](docs/uboot/) *for coreboot*
-on ARM64(Aarch64) motherboards.
-An [x86/x86\_64 U-Boot UEFI payload](docs/uboot/uboot-x86.md) is also available
-on some boards. The x86, x86\_64 and arm64 U-Boot payloads provide a lightweight
-UEFI boot implementation. Libreboot's [design](docs/maintain/) incorporates all
-of these payloads in a single image, and you choose one at boot time.
 
 Libreboot makes coreboot easy to use for
 non-technical users, by providing a [fully automated build

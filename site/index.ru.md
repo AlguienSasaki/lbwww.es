@@ -7,13 +7,8 @@ x-toc-enable: true
 
 <img tabindex=1 class="r" src="https://av.libreboot.org/t480/t480.jpg" /><span class="f"><img src="https://av.libreboot.org/t480/t480.jpg" /></span>
 
-Вы также можете купить [Libreboot предустановленным](https://minifree.org) от Minifree Ltd, а также присылать нам свои совместимые устройства для [установки Libreboot](https://minifree.org/product/installation-service/). Основатель и ведущий разработчик Libreboot, Лия Роу, также владеет и управляет Minifree; продажи обеспечивают финансирование для Libreboot.
-
-**НОВЫЙ РЕЛИЗ: Последний релиз Libreboot - 20241206, опубликован 6 December 2024 года. Смотрите: [Libreboot 20241206 release announcment](news/libreboot20241206.md).**
-
-*Мы* верим, что свобода [изучать, делиться, модифицировать и использовать программное обеспечение](https://writefreesoftware.org/) без каких-либо ограничений, является одним из основных человеческих прав, который должен иметь каждый. В этом контексте, *свобода программного обеспечения* важна. Ваша свобода важна. Образование важно. [Право на ремонт](https://en.wikipedia.org/wiki/Right_to_repair) важно; Libreboot позволяет вам продолжить использовать ваше оборудование. Вот *почему* Libreboot существует.
-
-Libreboot provides [GRUB](docs/linux/) and SeaBIOS payloads on x86/x86\_64
+Libreboot provides GNU [GRUB](docs/linux/) boot loader and SeaBIOS payloads
+on x86/x86\_64
 Intel/AMD motherboards, and a [U-Boot UEFI payload](docs/uboot/) *for coreboot*
 on ARM64(Aarch64) motherboards.
 An [x86/x86\_64 U-Boot UEFI payload](docs/uboot/uboot-x86.md) is also available
@@ -23,6 +18,13 @@ The SeaBIOS and GRUB payloads also boot Linux/BSD systems. Which one you use
 depends on your preferences. Libreboot's design incorporates all of these boot
 methods in a single image, so you can choose which one you use at boot time,
 and more payloads (e.g. Linux kexec payload) are planned for future releases.
+
+**НОВЫЙ РЕЛИЗ: Последний релиз Libreboot - 20241206, опубликован 6 December 2024 года. Смотрите: [Libreboot 20241206 release announcment](news/libreboot20241206.md).**
+
+Вы также можете купить [Libreboot предустановленным](https://minifree.org) от Minifree Ltd, а также присылать нам свои совместимые устройства для [установки Libreboot](https://minifree.org/product/installation-service/). Основатель и ведущий разработчик Libreboot, Лия Роу, также владеет и управляет Minifree; продажи обеспечивают финансирование для Libreboot.
+
+*Мы* верим, что свобода [изучать, делиться, модифицировать и использовать программное обеспечение](https://writefreesoftware.org/) без каких-либо ограничений, является одним из основных человеческих прав, который должен иметь каждый. В этом контексте, *свобода программного обеспечения* важна. Ваша свобода важна. Образование важно. [Право на ремонт](https://en.wikipedia.org/wiki/Right_to_repair) важно; Libreboot позволяет вам продолжить использовать ваше оборудование. Вот *почему* Libreboot существует.
+
 
 Обзор устройства Libreboot
 --------------------------
