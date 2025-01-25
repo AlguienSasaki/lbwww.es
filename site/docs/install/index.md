@@ -1,10 +1,15 @@
 ---
-title: Install Libreboot Open Source BIOS/UEFI firmware
+title: Install Libreboot Open Source BIOS/UEFI boot firmware
 x-toc-enable: true
 ...
 
-Open source BIOS/UEFI firmware
+Open source BIOS/UEFI boot firmware
 ------------------------------
+
+With x86 machines, you can use the SeaBIOS or the GNU boot loader named GRUB as
+a payload. On ARM
+systems, you can use the U-Boot payload (coreboot still initialises hardware).
+An x86/x86\_64 U-Boot UEFI payload is also available.
 
 This article will teach you how to install Libreboot, on any of the supported
 laptop, desktop and server motherboards of Intel/AMD x86/x86\_64 and ARM64
@@ -63,9 +68,6 @@ system is fully supported by Libreboot. More information about the Libreboot
 build system can be found in the [lbmk maintenance manual](../maintain/),
 and information about porting new systems in
 the [porting manual](../maintain/porting.md).
-
-With x86 machines, you can use the SeaBIOS or GRUB bootloader payloads. On ARM
-systems, you can use the U-Boot payload (coreboot still initialises hardware).
 
 Libreboot currently supports the following systems:
 
