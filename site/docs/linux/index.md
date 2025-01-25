@@ -1,23 +1,25 @@
 ---
-title: Install Linux on a Libreboot system
+title: Boot GNU and Linux on a Libreboot system
 x-toc-enable: true
 ...
 
-Booting Linux from GRUB payload
--------------------------------
+GNU boot loader "GRUB"
+--------
 
-NOTE: This guide pertains to x86 hosts, and does not cover supported CrOS/ARM
-chromebooks. For ARM targets, you should refer
-to [u-boot documentation](../uboot/) - separate [U-Boot x86
-documentation](../uboot/uboot-x86.md) is also available.
-
-This page is useful for those who wish to use the GRUB GRUB payload directly.
+This page is useful for those who wish to use the GNU boot loader called GRUB.
 If you're using SeaBIOS, the boot process will work similarly to traditional
 BIOS systems; refer to the SeaBIOS documentation
 on <https://seabios.org/SeaBIOS>
 
 Linux is generally assumed, especially for Libreboot development, but Libreboot
 also works quite nicely with [BSD systems](../bsd/).
+
+### Booting Linux from GRUB payload
+
+NOTE: This guide pertains to x86 hosts, and does not cover supported CrOS/ARM
+chromebooks. For ARM targets, you should refer
+to [u-boot documentation](../uboot/) - separate [U-Boot x86
+documentation](../uboot/uboot-x86.md) is also available.
 
 ### Useful links
 
