@@ -25,10 +25,6 @@ and more payloads (e.g. Linux kexec payload) are planned for future releases.
 
 *Мы* верим, что свобода [изучать, делиться, модифицировать и использовать программное обеспечение](https://writefreesoftware.org/) без каких-либо ограничений, является одним из основных человеческих прав, который должен иметь каждый. В этом контексте, *свобода программного обеспечения* важна. Ваша свобода важна. Образование важно. [Право на ремонт](https://en.wikipedia.org/wiki/Right_to_repair) важно; Libreboot позволяет вам продолжить использовать ваше оборудование. Вот *почему* Libreboot существует.
 
-Libreboot is also the home of the [Libreboot Static Site
-Generator](docs/sitegen/), formerly known as the *Untitled Static Site
-Generator*.
-
 Обзор устройства Libreboot
 --------------------------
 

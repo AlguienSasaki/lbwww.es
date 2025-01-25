@@ -36,10 +36,6 @@ for [Libreboot preinstallation](https://minifree.org/product/installation-servic
 The founder and lead developer of Libreboot, Leah Rowe, also owns and operates
 Minifree; sales provide funding for Libreboot.
 
-Libreboot is also the home of the [Libreboot Static Site
-Generator](docs/sitegen/), formerly known as the *Untitled Static Site
-Generator*.
-
 Чому вам варто використовувати *Libreboot*?
 ----------------------------
 
