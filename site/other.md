@@ -269,6 +269,11 @@ Services such as donations infrastructure, legal services (including things
 like copyright assignements and enforcement), advice/assistance about project
 governance, help with fundraising and outreach, etc.
 
+SFC also hosts an annual conference, called *FOSSY*, which projects, companies
+and peoples can go to to promote their work on free/opensource projects. See:
+
+<https://sfconservancy.org/fossy/>
+
 Although Libreboot is not affiliated with SFC in any official capacity, it is
 otherwise an excellent organisation, it is listed here in honour of the
 excellent work it does, including its support of the coreboot project.
