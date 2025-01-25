@@ -208,13 +208,147 @@ website. We in the Libreboot project wish to see everyone using free boot
 firmware, which was the primary motivation behind this page, in promoting the
 various projects.
 
-Non-coreboot free firmware
+Organisations
+-------------
+
+This list will be populated over time. Several organisations exist out there
+that pertain to *Free and Open Source firmware* development, supporting its
+existence in general. Here are just a few of them:
+
+### Open Source Firmware Foundation (OSFF)
+
+Website: <https://opensourcefirmware.foundation/>
+
+The OSFF is a non-profit organisation of Oregon, USA, whose mission it is to
+coordinate communication between the various free boot projects (projects like
+coreboot). Several coreboot developers are a part of
+its [governance](https://opensourcefirmware.foundation/team/).
+
+The OSFF also hosts an annual [Open Source Firmware
+Conference](https://www.osfc.io/), where various projects, companies and
+peoples can talk about their work in this field.
+
+The OSFF exists precisely because nothing like it has existed before; the
+world of boot firmware is largely dominated by proprietary IBVs (independent
+BIOS vendors), the likes of e.g. AMI, Phoenix.
+
+Organisations like OSFF are critical, if we ever wish to see *libre* boot
+firmware become the default firmware, on computers that normal people actually
+purchase. All the separate projects out there do great work, but it is critical
+that we have a central *sorting ground*, a *point of contact* if you will,
+to represent us, and the OSFF's mission is to be exactly that.
+
+OSFF also has their own list of projects, similar to the list on *this* page
+that you are reading now. See:
+
+<https://opensourcefirmware.foundation/projects/>
+
+Libreboot is currently not affiliated with the OSFF in any official capacity,
+but it has our *full* support, and we will do what we can to help it, when we
+can.
+
+### Software Freedom Conservancy (SFC)
+
+Although not strictly related to free/opensource firmware, the coreboot project
+is an SFC member, which you can see here:
+
+<https://sfconservancy.org/projects/current/>
+
+The SFC is a non-profit organisation of New York, USA, dedicated to the
+cause of [software freedom](https://writefreesoftware.org/learn), with a view
+towards Copyleft advocacy, especially [copyleft
+compliance enforcement](https://sfconservancy.org/copyleft-compliance/). 
+
+SFC provides services to *member projects*, such as coreboot, which you
+can read about here:
+
+* <https://sfconservancy.org/projects/>
+* <https://sfconservancy.org/projects/services/>
+
+Services such as donations infrastructure, legal services (including things
+like copyright assignements and enforcement), advice/assistance about project
+governance, help with fundraising and outreach, etc.
+
+Although Libreboot is not affiliated with SFC in any official capacity, it is
+otherwise an excellent organisation, it is listed here in honour of the
+excellent work it does, including its support of the coreboot project.
+
+Non-coreboot firmware projects
 --------------------------
 
 Several other projects besides coreboot provide free hardware initialisation,
 such as [U-Boot](https://www.u-boot.org/) (as own firmware, distinct from U-Boot
 as a coreboot payload), [Trusted Firmware](https://www.trustedfirmware.org/) and
 so on.
+
+Here are a few such projects:
+
+### fwupd
+
+fwupd is essentially a centralised repository of firmware images, that
+can be used to provide updates for your mainboard. Although not officially
+supported nor endorsed by the Libreboot project, many Linux distros make
+use of this to provide UEFI firmware updates for example.
+
+Libreboot doesn't use this, due to the many idiosyncrasies of Libreboot on
+various motherboards; however, we may use it in a limited capacity, in the
+future.
+
+### LinuxBoot
+
+Website: <https://www.linuxboot.org/>
+
+LinuxBoot can be provided as a UEFI DXE, or as a U-Boot SPL, coreboot payload
+or Slim Bootloader Stage 1B, to provide a Linux kernel at boot time, which
+kexecs into another Linux kernel.
+
+The benefit of using *Linux* to *boot Linux* is that then the bootloader part
+of your firmware doesn't need to rewrite every driver, because Linux already
+provides excellent drivers, and it also affords you many advanced
+configuration possibility such as hardened encryption setups with things
+like Measured Boot, and it could also be used to boot over a network.
+
+### OpenBMC
+
+Website: <https://github.com/openbmc/docs>
+
+Linux distro for management controllers (BMCs) used on servers,
+rack switches and RAID appliances. This provides a remote management
+feature, most useful (for example) on colocated server hosting.
+
+### Oreboot
+
+Website: <https://github.com/oreboot/oreboot>
+
+Oreboot is a special fork of coreboot, re-written in the Rust programming
+language, focusing specifically on the *LinuxBoot* payload configuration.
+
+### Trusted Firmware
+
+Website: <https://opensourcefirmware.foundation/projects/>
+
+Trusted Firmware provides boot firmware for ARMv8-A, ARMv9-A
+and ARMv8-M. Specifically tailored for use on embedded systems, and parts of
+it are also used by the coreboot project on some boards.
+
+### U-Boot
+
+Website: <https://www.u-boot.org/>
+
+U-Boot runs on a large number of embedded systems, with support for a variety
+of architectures such as ARM, x86, RISC-V and others. U-Boot provides its own
+small kernel and operating system, with drivers and applications designed to
+boot your operating system using various methods. It has an advanced *shell*,
+with excellent networking and file system support - most notably, we use it
+in Libreboot as a UEFI payload for *coreboot*, but U-Boot can also provide its
+own boot initialisation independently of coreboot.
+
+One of the nice features of U-Boot is its *licensing* (GPLv2 for the most part)
+and similar coding style to Linux; the licensing and technical design means
+that it's much easier to port existing Linux drivers, when something needs to
+be done in the U-boot project.
+
+-----------------------------------------
 
 We would like to list various distros of these too. If you know of a cool
 project, please get in touch with the Libreboot project!
