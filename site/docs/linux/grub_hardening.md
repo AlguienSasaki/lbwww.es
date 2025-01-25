@@ -1,5 +1,5 @@
 ---
-title: Hardening GRUB (i.e. Secure libreBoot)
+title: Hardened GNU boot loader (GRUB payload)
 x-toc-enable: true
 ...
 
