@@ -1,1 +1,1 @@
-Learn how to install Libreboot free/opensource BIOS/UEFI boot firmware on your HP EliteBook Folio 9470m. Libreboot provides a plethora of coreboot payloads by default, such as the GNU boot loader named GRUB.
+HP EliteBook Folio 9470m added. Libreboot is a free/opensource BIOS/UEFI boot firmware distribution based on coreboot with payloads like GNU GRUB boot loader.

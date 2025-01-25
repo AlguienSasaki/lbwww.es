@@ -1,1 +1,1 @@
-HP EliteBook 820 G2 addod to Libreboot. Libreboot is a free/opensource BIOS/UEFI firmware distribution based on coreboot with GNU boot loader GRUB, SeaBIOS and U-Boot, for booting Linux/BSD on x86/x86_64 and ARM64 motherboards.
+HP EliteBook 820 G2 added. Libreboot is a free/opensource BIOS/UEFI boot firmware distribution based on coreboot with payloads like GNU GRUB boot loader.

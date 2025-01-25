@@ -1,1 +1,1 @@
-Learn how to boot Linux distributions from the GNU boot loader named GRUB, on your Libreboot system. Libreboot provides free/opensource BIOS/UEFI firmwware based on coreboot, which has a few quirks that must be dealt with first.
+Learn how to boot Linux distro installers on your Libreboot system.

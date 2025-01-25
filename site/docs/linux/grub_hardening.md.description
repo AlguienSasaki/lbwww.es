@@ -1,1 +1,1 @@
-The GNU boot loader named GRUB provides many encryption and boot protection measures, that can be used to increase the security of your Libreboot system. This rivals many competing schemes such as UEFI SecureBoot, and we call our hardened GRUB setup Secure libreBoot.
+The GNU boot loader GRUB provides many encryption and boot protection schemes to increase security, rivalling schemes like UEFI SecureBoot.

@@ -1,1 +1,1 @@
-A number of new motherboards were added to Libreboot, thereby providing them with free/opensource BIOS/UEFI firmware based on coreboot. Libreboot is a coreboot distro, providing payloads such as the GNU boot loader named GRUB, by default.
+A number of new motherboards were added to Libreboot. Libreboot is a coreboot distro, providing payloads such as the GNU boot loader named GRUB, by default.

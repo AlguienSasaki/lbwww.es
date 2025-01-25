@@ -1,1 +1,1 @@
-Free/opensource UEFI payload for Libreboot, via U-Boot UEFI coreboot payload. This is provided by the Libreboot project on ARM64 platforms. This replaces Google's usual Depthcharge payload, on ARM64 chromebooks. Also available for x86.
+Free/opensource UEFI payload for Libreboot, via U-Boot UEFI coreboot payload. This is provided by the Libreboot project on ARM64 and x86 platforms.

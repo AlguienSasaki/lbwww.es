@@ -1,1 +1,1 @@
-Libreboot installation relies heavily on port IO and access to lower memory, which is usually restricted. This guide teaches you how to disabled such restrictions on Linux and BSD operating systems.
+Libreboot installation relies heavily on port IO and access to lower memory, which is usually restricted. Learn how to enable access on Linux and BSD.

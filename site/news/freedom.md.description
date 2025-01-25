@@ -1,1 +1,2 @@
-People ask about other firmware besides Libreboot all the time, such as Embedded Controller firmware. Libreboot is a free/opensource BIOS/UEFI firmware distribution based on coreboot with GNU boot loader GRUB, SeaBIOS and U-Boot.
+How does Libreboot handle vendor firmware, on boards that otherwise require it?
+Libreboot's strict Binary Blob Reduction Policy is observed at all times.

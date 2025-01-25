@@ -1,1 +1,1 @@
-Instructions pertaining to nvmutil, which is software that can modify the MAC address and other information inside Intel GbE NVM images, on motherboards that make use of an Intel Flash Descriptor.
+Instructions pertaining to nvmutil, which is software that can modify the MAC address and other information inside Intel GbE NVM images.

@@ -1,1 +1,1 @@
-Learn how to install Libreboot free/opensource BIOS/UEFI boot firmware by way of external flashing. This is done using SPI-compatible programmer devices such as Raspberry Pi Pico. Some warnings are also provided against the use of CH341a.
+Learn how to install Libreboot free/opensource BIOS/UEFI boot firmware by way of external flashing, using compatible 25xx NOR programmer (SPI flasher).
