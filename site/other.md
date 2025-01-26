@@ -278,6 +278,43 @@ Although Libreboot is not affiliated with SFC in any official capacity, it is
 otherwise an excellent organisation, it is listed here in honour of the
 excellent work it does, including its support of the coreboot project.
 
+### Software in the Public Interest (SPI)
+
+Website: <https://www.spi-inc.org/>
+
+The SPI is a non-profit organisation of New York, USA, dedicated to the
+cause of [software freedom](https://writefreesoftware.org/learn). It provides
+fiscal sponsorship and promotion of numerous Free and Open Source projects,
+which you can read about here:
+
+<https://www.spi-inc.org/projects/>
+
+It provides services to member projects such as donations infrastructure,
+legal services, advice/assistance and oversight of project governance and
+general help with fundraising.
+
+SFC most notably provides services to Debian, which is a member:
+
+<https://www.spi-inc.org/projects/debian/>
+
+Although SPI does not currently (at this time) sponsor any coreboot or
+firmware-related projects, several of the projects that it *does* support
+are critical for Libreboot development. For example, it also supports the
+Arch Linux project:
+
+<https://www.spi-inc.org/projects/archlinux/>
+
+Libreboot development, especially build testing, happens largely on computers
+running Debian Linux and Arch Linux, because these cover a large number of
+users; we also test many other distros such as Fedora or Ubuntu.
+
+Organisations like SPI (and indeed SFC, OSFF) are critical to the general
+health of the Free Software movement. Without them, we would not be able to
+as effectively coordinate projects, especially in terms of funding.
+
+Libreboot is not currently affiliated with the SPI in any official capacity,
+but they have our respect and they are listed here.
+
 Non-coreboot firmware projects
 --------------------------
 
