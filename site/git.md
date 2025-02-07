@@ -35,9 +35,7 @@ needed something more stable, so now Libreboot is hosted on codeberg. See:
 There are also these programs, hosted by the Libreboot project, and libreboot
 either recommends them or makes use of them:
 
-The `ich9utils` project is now available under `util/ich9utils` in lbmk, and
-lbmk uses *that*, but the old standalone repository is still available on
-notabug (bucts is also there):
+The old `ich9utils` and `bucts` repositories are available on notabug:
 
 * Bucts (utility): <https://notabug.org/libreboot/bucts>
 * ich9utils (utility): <https://notabug.org/libreboot/ich9utils>
@@ -59,13 +57,6 @@ repository on `stuge.se` is no longer available, last time we checked. The
 internally an libreboot ROM onto a ThinkPad X60 or T60 that is currently running
 the original Lenovo BIOS. Instructions for that are available here:\
 [libreboot installation guides](docs/install/)
-
-The `ich9utils` repository is used heavily, by the `lbmk` build system. However,
-you can also download `ich9utils` on its own and use it. It generates ICH9M
-descriptor+GbE images for GM45 ThinkPads that use the ICH9M southbridge. It may
-also work for other systems using the same platform/chipset.
-Documentation for `ich9utils` is available here:\
-[ich9utils documentation](docs/install/ich9utils.md)
 
 ### lbmk (libreboot-make)
 
