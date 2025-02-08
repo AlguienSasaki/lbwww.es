@@ -295,7 +295,7 @@ privacy that can't be ignored.
 Before version 6.0 (that is, on systems from 2008/2009 and earlier), the
 ME can be disabled by setting a couple of values in the SPI flash
 memory. The ME firmware can then be removed entirely from the flash
-memory space. The libreboot project [does this](docs/install/ich9utils.md) on
+memory space. The libreboot project does this on
 the Intel 4 Series systems that it supports, such as the [ThinkPad
 X200](../docs/install/x200.md) and [ThinkPad
 T400](../docs/install/t400.md). ME firmware versions 6.0 and
@@ -516,13 +516,8 @@ inconvenient to use an external programmer.
 
 On some systems, it is possible to write-protect the firmware, such that
 it is rendered read-only at the OS level (external flashing is still
-possible, using dedicated hardware). For example, on current GM45
-laptops (e.g. ThinkPad X200, T400), you can write-protect (see
-[ICH9 gen utility](docs/install/ich9utils.md#ich9gen)).
-
-It's possible to write-protect on all libreboot systems, but the instructions
-need to be written. The documentation is in the main git repository, so you are
-welcome to submit patches adding these instructions.
+possible, using dedicated hardware). [See instructions
+here.](docs/linux/grub_hardening.md#flash-write-protection)
 
 TODO: Document PRx based flash protection on Intel platforms, and investigate
 other methods on AMD systems.
