@@ -31,7 +31,10 @@ these Chromebook devices. See:
 
 <https://chromium.googlesource.com/chromiumos/third_party/flashrom/>
 
-You must then compile this from source, and run it.
+This document assumes you’ll be using ChromeOS to do the internal flashing. 
+ChromeOS already comes with this special fork of flashrom pre-installed. But if 
+you are using another OS or an external flasher, you will need to compile and 
+use the aforementioned flashrom fork.
 
 Enable ChromeOS "Developer Mode"
 --------------------------------
@@ -47,6 +50,26 @@ On your next boot, it will show you an "OS Verification is disabled"
 screen. Waiting for 30 seconds or pressing `Ctrl + D` on this screen will
 proceed to boot into ChromeOS, which then erases all data on the device
 and reboots again into a clean ChromeOS installation.
+
+Before following steps to configure your device as new in the first screen, you 
+should be able to see a “Enable debugging features” link that you should click 
+on. A confirmation dialog displays. Click Proceed. The system reboots, use 
+`Ctrl + D` again and displays a dialog with password prompts. Set the new root 
+password. Click Enable. The screen displays messages indicating success or 
+failure. Click OK. You'll see the first screen again. Follow the remaining 
+prompts to configure your Chrome device.
+
+Once you are finished configuring your device, you’ll be giving the option to 
+sign in; here you may use the guest account option in the bottom if you like. 
+
+Now in the desktop we’ll set a password to use “sudo”: Use 
+`Ctrl+Alt+Forward Arrow` (the one two key to the right of esc key, representing 
+F2) to open a “Developer console” (similar to opening a tty) where the first 
+line ends with “localhost login”. Enter root and the password you just set for 
+it. Then you must run `chromeos-setdevpassword` and set another password, which 
+is the one that is actually used when running “sudo”. Now use 
+`Ctrl+Alt+Backward Arrow` (the key next to the right of esc, representing F1) 
+to get back to the desktop.
 
 With Developer Mode enabled, you can launch a terminal emulator inside
 ChromeOS by pressing the `Ctrl + Alt + T` key combination. Run `shell`
@@ -118,6 +141,12 @@ a physical screw. When screwed in, it forms an electrical connection
 that asserts the WP pin on the flash chip. The screw can be identified
 by the fact that it bridges electrical contacts, but finding and
 removing it might require you to disassemble most of the board.
+
+In my case as an example, my kevin board had the protection screw 
+[here](https://av.libreboot.org/board/kevin/write_protection_screw.jpg). It was 
+tricky for me to find it since it was one of the screws that seemed to holds 
+the heat sink in place, which I thought made it an unlikely candidate. I 
+recommend you leave it unscrew never the less after flashing.
 
 Newer boards have a root-of-trust chip enforcing write-protection. The
 [Closed Case Debugging](https://chromium.googlesource.com/chromiumos/platform/ec/+/cr50_stab/docs/case_closed_debugging_gsc.md)
