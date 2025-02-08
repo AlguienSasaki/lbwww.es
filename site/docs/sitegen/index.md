@@ -62,10 +62,11 @@ Learn more about Free Software:\
 
 Here are some websites built using the Libreboot Static Site Generator:
 
-* <https://libreboot.org/> (Libreboot project, maintained by Leah Rowe)
 * <https://canoeboot.org/> (Libreboot fork maintained by Leah Rowe)
-* <https://trans.chat/>
-* <https://vimuser.org/> (Leah Rowe's blog)
+* <https://fedfree.org/> (Leah Rowe's self-hosted servers tutorial website)
+* <https://libreboot.org/> (Libreboot project, maintained by Leah Rowe)
+* <https://trans.chat/> (Leah Rowe's transgender advocacy website)
+* <https://vimuser.org/> (Leah Rowe's personal blog)
 
 Requirements
 ------------
