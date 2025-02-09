@@ -86,6 +86,39 @@ coreboot images for each supported motherboard, with an emphasis on stability.
 It's a very different approach than Libreboot's approach; Libreboot provides
 a more generalised design in its build system and infrastructure.
 
+### Firmware-action
+
+Website: <https://github.com/9elements/firmware-action>
+
+Documentation: <https://9elements.github.io/firmware-action/>
+
+**TODO: Link their FOSDEM 2025 talk when it becomes available on archives.**
+
+Launched at the start of 2023, this project by 9elements provides
+a source-based package manager similar conceptually to lbmk; it downloads,
+patches and compiles various upstream sources, specifically coreboot,
+Linux, Tianocore/edk2, u-root and others.
+
+It currently does not provide specific build targets pre-configured, nor
+binary releases, but it could theoretically be fashioned that way, and this
+was asked of them at their FOSDEM 2025 talk, during questions and answers - and
+much of what it's trying to do could inspire aspects of Libreboot's design in
+the future.
+
+Their build system design is interesting, and has many of the same sort of
+features lbmk has, such as tracking of build artifacts / re-use of build
+artifacts to speed up re-builds. I (Leah Rowe, Libreboot maintainer) learned
+of Firmware-action because I attended their FOSDEM 2025 talk. It is listed on
+this page, because their build system design *can* be used to provide a fully
+fledged coreboot distribution, with binary releases.
+
+The goal of the firmware-action project is to provide a fully reproducible
+build environment, for integration with a CI/CD setup during coreboot
+development. This build system has great potential to provide a useful
+competitor versus, say, Heads or LinuxBoot projects. The design of this build
+system could also be adapted to provide many different coreboot payloads,
+even ones that it currently doesn't support, such as GNU GRUB.
+
 ### Heads
 
 Website: <https://osresearch.net/>
