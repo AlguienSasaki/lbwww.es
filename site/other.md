@@ -367,7 +367,7 @@ language, focusing specifically on the *LinuxBoot* payload configuration.
 
 ### Trusted Firmware
 
-Website: <https://opensourcefirmware.foundation/projects/>
+Website: <https://www.trustedfirmware.org/>
 
 Trusted Firmware provides boot firmware for ARMv8-A, ARMv9-A
 and ARMv8-M. Specifically tailored for use on embedded systems, and parts of
