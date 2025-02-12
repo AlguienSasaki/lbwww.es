@@ -162,3 +162,23 @@ the full announcement, linked above:
   TPM drivers in SeaBIOS.
 * Better handling of dependencies, for various Linux distros.
 * Various code quality improvements for `util/nvmutil`, especially the Makefile.
+
+Revision 9 (12 February 2025)
+-----------
+
+Merged a fix from Riku Viitanen, fixing an uninitialised variable in
+pico-serprog, which caused sync issues on pico2 devices or other dongles
+that used RP2530. See:
+
+<https://codeberg.org/Riku_V/pico-serprog/issues/3>
+
+This bug page on the upstream project describes the bug, and the fix as
+mentioned there was merged in Libreboot's mirror, here in this commit:
+
+<https://codeberg.org/libreboot/pico-serprog/commit/f6c0e3b15ca5de98ad6c46b11813ca7c7a93b796>
+
+People who previously downloaded the tarball for pico-serprog images, should
+download again, choosing 20241206rev9.
+
+The coreboot tarballs have not been replaced. The source tarball *has* been
+replaced.
