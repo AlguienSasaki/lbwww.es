@@ -214,11 +214,6 @@ Higher speeds might work nicely, on Pico 2.
 Do not buy CH341A!
 ------------------
 
-This section was heavily expanded, on 19 January 2025, because we see many
-people online still talking about the CH341a. Therefore, the hatred has been
-amplified. Please read this section carefully, to know why we advise against
-use of this particular programmer.
-
 NOR flashes on libreboot systems run on 3.3V DC or 1.8V DC, and this includes
 data lines. CH341A can have 5V logic levels on data lines, which can damage your
 SPI flash and also the southbridge that it's connected to, plus anything else
@@ -278,7 +273,8 @@ resistors) performed, on the black CH341A:\
 <img tabindex=1 src="https://av.libreboot.org/ch341a/0001_th.jpg" /><span class="f"><img src="https://av.libreboot.org/ch341a/0001.jpg" /></span>
 
 The green version (not shown above) may come with 3.3v logic already wired, but
-still needs to have pull-up resistors placed for WP/HOLD.
+still needs to have pull-up resistors placed for WP/HOLD. Some of them may have
+switchable voltage instead, via a physical toggle on the board.
 
 Disclaimer: A few (not many, but wily) people have criticised this section of the
 documentation, due to a misconception about what it really means and also because
@@ -317,8 +313,7 @@ chip selects at once; it's just better, in every way. And the Raspberry Pi is
 completely reprogrammable, so you can use it for something else when you're
 done, e.g. UART dongle, or if you're wily enough, [PlayStation 1 Optical Disc
 Emulator](https://github.com/paulocode/picostation) - the Pico is simply a
-highly versatile tool, much better value for money than the piece of junk
-CH341a.
+highly versatile tool, much better value for money.
 
 There is only one instance where the CH341a is *good*, and that is when you're
 actually flashing a loose (not soldered) chip, in the ZIF socket on the CH341a
@@ -336,17 +331,6 @@ the WP/HOLD pins as described above; if you're doing this, note that there are
 also newer models that have a voltage switch and logic level shifter already
 on the board, which can be very useful. *Clip-based* flashing (ISP / in-system
 programming) is, specifically, what we advise against using the CH341a for.
-
-Even if you *are* doing socket-based flashing, we still suggest buying the Pico
-instead, though the Pico doesn't come with a ZIF socket; you can wire the Pico
-to a breadboard instead, if you want to use a socket for flashing. Then you
-will also have a good ISP device, and the overall cost covering both use-case
-scenarios is *lower* (cheaper part cost) than buying a CH341a *and* Pico; and
-the Pico can also emulate the PlayStation Optical Disc Drive in your
-playstation to boot from SD card instead of your dead CD drive, or could even
-be a [JTAG adapter](https://hackaday.com/2022/04/11/need-a-jtag-adapter-use-your-pico/) -
-again, the Pico is a reprogrammable device! Whereas, the CH341a is a fixed-function
-device (and performs poorly).
 
 Why pay $10 for a CH341a when you can pay $10 for a Raspberry Pi Pico which is
 electrically and functionally superior in every way? And the Pico is completely
