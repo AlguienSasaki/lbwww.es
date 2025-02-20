@@ -1,6 +1,6 @@
 % Libreboot 20241206, 10th revision released! GRUB security fixes, better LVM scanning, non-root USB2 hub support
 % Leah Rowe
-% 6 January 2025
+% 18 February 2025
 
 Today's Libreboot 20241206 revision is the 10th revision in the Libreboot
 20241206 stable release series. The changelog on this page is written, relative
