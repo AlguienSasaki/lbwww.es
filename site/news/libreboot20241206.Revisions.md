@@ -182,3 +182,10 @@ download again, choosing 20241206rev9.
 
 The coreboot tarballs have not been replaced. The source tarball *has* been
 replaced.
+
+Revision 10 (18 February 2025)
+-----------
+
+Several critical security fixes made to GRUB, and a few improvements to LVM
+scanning in `grub.cfg` were made. Other minor fixes. A full announcement is
+available in the [20241206rev10 announcement](libreboot20241206rev10.md).
