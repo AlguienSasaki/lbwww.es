@@ -28,8 +28,8 @@ of these payloads in a single image, and you choose one at boot time.
 **NEW RELEASE: The latest release is Libreboot 20241206, released on
 6 December 2024.
 See: [Libreboot 20241206 release announcement](news/libreboot20241206.md) - the
-newest revision release, Libreboot 20241206 revision 8, is from 6
-January 2025.**
+newest revision release, Libreboot 20241206 revision 10, is from 18
+February 2025.**
 
 You can also [buy Libreboot preinstalled](https://minifree.org/) from Minifree Ltd,
 on select hardware, as well as send your compatible hardware
