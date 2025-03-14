@@ -503,7 +503,7 @@ Please also visit: <https://www.denx.de/project/u-boot/>
 This is a bootloader provided on ARM chromebooks, within Libreboot. It also
 provides UEFI. Information about that can be found on these resources:
 
-* [U-Boot documentation](../u-boot/)
+* [U-Boot documentation](../uboot/)
 * [Chromebook documentation](../install/chromebooks.md)
 
 This is currently the only payload on *ARM* systems, within Libreboot.
@@ -1166,7 +1166,7 @@ as:
 
 These are similar in meaning to their coreboot counterparts.
 
-The tree` entry is actually a link, where its value is a directory name
+The `tree` entry is actually a link, where its value is a directory name
 under `config/u-boot`. For example, `tree="default"` would refer to
 `config/u-boot/default` and the corresponding U-Boot source tree created
 (when running `./mk u-boot`, which makes use of `target.cfg`)
