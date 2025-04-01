@@ -304,6 +304,12 @@ in the build system; these releases include `_vfsp` images instead. Newer
 targets added in the future, that need FSP, will also have `_vfsp` in the
 file name, for consistency.
 
+To eliminate any doubt: `_fsp` targets were also removed from lbmk,
+on 1 April 2025. Not everyone was aware of this change, yet the resulting build
+was identical (when compiling from source). To eliminate all questions about it,
+the `_fsp` targets were removed entirely. Please use the `_vfsp` targets from
+now on, when dealing with any machine that uses Intel FSP.
+
 This is written as errata because some users may still be using older release
 images but on the newer build system from May 2024 onward; you must use the
 Libreboot 20240225 release if you want to inject MRC and so on, for these older

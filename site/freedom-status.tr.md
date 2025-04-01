@@ -122,7 +122,7 @@ Bu makale, Libreboot'ta hangi satıcı dosyalarının yer aldığını ayrıntı
 
 Bu hedeflerde nötrleştirilmiş ME gereklidir:
 
-`dell9020mt_nri_12mb`, `dell9020sff_nri_12mb`, `e5420_6mb`, `e5520_6mb`, `e5530_12mb`, `e6220_10mb`, `e6230_12mb`, `e6320_10mb`, `e6330_12mb`, `e6420_10mb`, `e6430_12mb`, `e6520_10mb`, `e6530_12mb`, `hp2170p_16mb`, `hp2560p_8mb`, `hp2570p_16mb`, `hp8200sff_4mb`, `hp8200sff_8mb`, `hp820g2_12mb`, `hp8300cmt_16mb`, `hp8300usdt_16mb`, `hp8460pintel_8mb`, `hp8470pintel_16mb`, `hp8560w_8mb`, `hp9470m_16mb`, `t1650_12mb`, `t420_8mb`, `t420s_8mb`, `t430_12mb`, `t440plibremrc_12mb`, `t520_8mb`, `t530_12mb`, `w530_12mb`, `w541_12mb`, `x220_8mb`, `x230_12mb`, `x230_16mb`, `x230t_12mb`, `x230t_16mb`, `dell3050micro_fsp_16mb`, `dell3050micro_vfsp_16mb`, `t480_fsp_16mb`, `t480_vfsp_16mb`, `t480s_fsp_16mb`, `t480s_vfsp_16mb`
+`dell9020mt_nri_12mb`, `dell9020sff_nri_12mb`, `e5420_6mb`, `e5520_6mb`, `e5530_12mb`, `e6220_10mb`, `e6230_12mb`, `e6320_10mb`, `e6330_12mb`, `e6420_10mb`, `e6430_12mb`, `e6520_10mb`, `e6530_12mb`, `hp2170p_16mb`, `hp2560p_8mb`, `hp2570p_16mb`, `hp8200sff_4mb`, `hp8200sff_8mb`, `hp820g2_12mb`, `hp8300cmt_16mb`, `hp8300usdt_16mb`, `hp8460pintel_8mb`, `hp8470pintel_16mb`, `hp8560w_8mb`, `hp9470m_16mb`, `t1650_12mb`, `t420_8mb`, `t420s_8mb`, `t430_12mb`, `t440plibremrc_12mb`, `t520_8mb`, `t530_12mb`, `w530_12mb`, `w541_12mb`, `x220_8mb`, `x230_12mb`, `x230_16mb`, `x230t_12mb`, `x230t_16mb`, `dell3050micro_vfsp_16mb`, `t480_vfsp_16mb`, `t480s_vfsp_16mb`
 
 Belirtildiği gibi, Libreboot bunu ME'nin artık bir güvenlik tehdidi olmadığı bir durumda sağlar. Kendini başlatır, ancak sonra hiçbir şey yapmaz, bu nedenle devre dışı bırakılmıştır. Bu, `me_cleaner` kullanılarak yapılır. Bkz: <https://github.com/corna/me_cleaner/wiki/How-does-it-work%3F>
 
@@ -138,7 +138,7 @@ Bu, şu hedefler için geçerlidir: `hp2170p_16mb`, `hp2560p_8mb`, `hp2570p_16mb
 
 Coreboot tarafından bazı kartlarda kullanılan romstage ve raminit sağlar. Libreboot'ta, aşağıdaki yapı hedefleri için kullanıyoruz:
 
-`t480_fsp_16mb`, `t480_vfsp_16mb`, `t480s_fsp_16mb`, `t480s_vfsp_16mb`, `dell3050micro_fsp_16mb`, `dell3050micro_vfsp_16mb`
+`t480_vfsp_16mb`, `t480s_vfsp_16mb`, `dell3050micro_vfsp_16mb`
 
 #### SMSC SCH5545 Çevresel Kontrol
 

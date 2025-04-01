@@ -324,7 +324,7 @@ Libreboot *наразі* не розміщує ці блоби взагалі, �
 
 Нейтралізований ME потрібен на цих цілях:
 
-`dell9020mt_nri_12mb`, `dell9020sff_nri_12mb`, `e5420_6mb`, `e5520_6mb`, `e5530_12mb`, `e6220_10mb`, `e6230_12mb`, `e6320_10mb`, `e6330_12mb`, `e6420_10mb`, `e6430_12mb`, `e6520_10mb`, `e6530_12mb`, `hp2170p_16mb`, `hp2560p_8mb`, `hp2570p_16mb`, `hp8200sff_4mb`, `hp8200sff_8mb`, `hp820g2_12mb`, `hp8300cmt_16mb`, `hp8300usdt_16mb`, `hp8460pintel_8mb`, `hp8470pintel_16mb`, `hp8560w_8mb`, `hp9470m_16mb`, `t1650_12mb`, `t420_8mb`, `t420s_8mb`, `t430_12mb`, `t440plibremrc_12mb`, `t520_8mb`, `t530_12mb`, `w530_12mb`, `w541_12mb`, `x220_8mb`, `x230_12mb`, `x230_16mb`, `x230t_12mb`, `x230t_16mb`, `dell3050micro_fsp`, `dell3050micro_vfsp_16mb`, `t480_fsp_16mb`, `t480_vfsp_16mb`, `t480s_fsp_16mb`, `t480s_vfsp_16mb`
+`dell9020mt_nri_12mb`, `dell9020sff_nri_12mb`, `e5420_6mb`, `e5520_6mb`, `e5530_12mb`, `e6220_10mb`, `e6230_12mb`, `e6320_10mb`, `e6330_12mb`, `e6420_10mb`, `e6430_12mb`, `e6520_10mb`, `e6530_12mb`, `hp2170p_16mb`, `hp2560p_8mb`, `hp2570p_16mb`, `hp8200sff_4mb`, `hp8200sff_8mb`, `hp820g2_12mb`, `hp8300cmt_16mb`, `hp8300usdt_16mb`, `hp8460pintel_8mb`, `hp8470pintel_16mb`, `hp8560w_8mb`, `hp9470m_16mb`, `t1650_12mb`, `t420_8mb`, `t420s_8mb`, `t430_12mb`, `t440plibremrc_12mb`, `t520_8mb`, `t530_12mb`, `w530_12mb`, `w541_12mb`, `x220_8mb`, `x230_12mb`, `x230_16mb`, `x230t_12mb`, `x230t_16mb`, `dell3050micro_vfsp_16mb`, `t480_vfsp_16mb`, `t480s_vfsp_16mb`
 
 Як заявлено, Libreboot надає це в стані, де ME більше не є
 загрозою для безпеки. Він ініціалізує себе, але потім нічого не робить, тому його
@@ -353,8 +353,7 @@ at the correct offset as defined by coreboot config for each board.
 Provides romstage and raminit, used by coreboot on some boards. In Libreboot,
 we use it for the following build targets:
 
-`t480_fsp_16mb`, `t480_vfsp_16mb`, `t480s_fsp_16mb`, `t480s_vfsp_16mb`,
-`dell3050micro_fsp_16mb`, `dell3050micro_vfsp_16mb`
+`t480_vfsp_16mb`, `t480s_vfsp_16mb`, `dell3050micro_vfsp_16mb`
 
 #### SMSC SCH5545 Environmental Control
 
