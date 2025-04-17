@@ -165,6 +165,10 @@ Set the `sixteenbit` variable to an empty string, then run:
 
 	grub2-mkconfig -o /boot/grub2/grub.cfg
 
+**NOTE: On newer Federa versions, setting the sixteenbit variable is
+no longer required and it is no longer present. However, you should still
+deal with the BLS issue, mentioned below:**
+
 ### BLS issue
 
 With [newer versions of fedora](https://fedoraproject.org/wiki/Changes/BootLoaderSpecByDefault),
