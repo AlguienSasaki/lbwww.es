@@ -189,3 +189,10 @@ Revision 10 (18 February 2025)
 Several critical security fixes made to GRUB, and a few improvements to LVM
 scanning in `grub.cfg` were made. Other minor fixes. A full announcement is
 available in the [20241206rev10 announcement](libreboot20241206rev10.md).
+
+Revision 11 (20 April 2025)
+-----------
+
+Several regressions have been fixed, that were caused by the previous CVE
+fixes merged in Revision 10.
+See: [20241206rev11 announcement](libreboot20241206rev11.md).
