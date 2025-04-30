@@ -8,6 +8,8 @@ is *Corny Calamity*. This is the first release to have a codename, and it is
 using YY.MM format for the version number for the first time. Older releases
 used YYYYMMDD as release dates.
 
+<img tabindex=1 class="r" src="https://av.libreboot.org/t480/t480.jpg" /><span class="f"><img src="https://av.libreboot.org/t480/t480.jpg" /></span>
+
 This release was built on the latest Debian 12.10 Bookworm release, as of
 this day. It was also build-tested successfully on Debian Sid as of this
 day, *with the experimental repository enabled and lbmk dependencies installed
@@ -38,7 +40,7 @@ of these changes were also included in 20241206 revision releases.
 Open source BIOS/UEFI firmware
 ----------------------------
 
-<img tabindex=1 class="r" src="https://av.libreboot.org/t480/t480.jpg" /><span class="f"><img src="https://av.libreboot.org/t480/t480.jpg" /></span>
+<img tabindex=1 class="r" src="https://av.libreboot.org/hp9470m/grub.jpg" /><span class="f"><img src="https://av.libreboot.org/hp9470m/grub.jpg" /></span>
 
 Libreboot is a free/open source BIOS/UEFI replacement on x86 and ARM, providing
 boot firmware that initialises the hardware in your computer, to then load an
