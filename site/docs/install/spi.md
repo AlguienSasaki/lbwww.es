@@ -102,8 +102,14 @@ Raspberry Pi Pico
 
 ### RP2040/RP2530 both supported
 
-**Pico 2 and other RP2530 dongles also supported, on Libreboot 20241206 rev8
-or higher. Releases before this only supported the original Pico, and other
+NOTE: RP2530 dongles removed in the Libreboot 25.04 testing release, but will
+be re-added in future revisions. It was removed due to bugs, so Libreboot only
+supports Pico1 for now, and the Pico2 images were also removed from the December
+release of 2024, retroactively. Subsequent revisions will once again re-add
+Pico 2 support, after it has been better tested.
+
+**Pico 2 and other RP2530 dongles also supported, on Libreboot 20241206 rev8,
+but experimental. Releases before this only supported the original Pico, and other
 RP2040 dongles; newer Libreboot releases now support both RP2040 and RP2530.**
 
 The pinout on Raspberry Pi Pico and Raspberry Pi Pico 2 are identical, but you

@@ -26,8 +26,8 @@ depends on your preferences. Libreboot's design incorporates all of these boot
 methods in a single image, so you can choose which one you use at boot time,
 and more payloads (e.g. Linux kexec payload) are planned for future releases.
 
-**ULTIMO RILASCIO: L'ultimo rilascio e' Libreboot 20241206, rilasciato il 6 December 2024.
-Vedi: [Libreboot 20241206 annuncio di rilascio](news/libreboot20241206.md).**
+**ULTIMO RILASCIO: L'ultimo rilascio e' Libreboot 25.04, rilasciato il 30 April 2025.
+Vedi: [Libreboot 25.04 annuncio di rilascio](news/libreboot2504.md).**
 
 You can also [buy Libreboot preinstalled](https://minifree.org/) from Minifree Ltd,
 on select hardware, as well as send your compatible hardware

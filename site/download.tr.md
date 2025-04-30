@@ -24,7 +24,7 @@ takip edin. Hatırlatma olarak, [işte bağlantı tekrar burada](docs/install/iv
 GPG İmza Anahtarı
 ----------------
 
-**En son sürüm, `stable` dizini altındaki Libreboot 20241206'dır.**
+**En son sürüm, `testing` dizini altındaki Libreboot 25.04'dır.**
 
 ### YENİ ANAHTAR
 
@@ -69,7 +69,7 @@ Ancak, Libreboot'un en güncel sürümü için indirebileceğiniz bir Git deposu
 HTTPS Yansıları {#https}
 --------------
 
-**En son sürüm, `stable` dizini altındaki Libreboot 20241206'dır.**
+**En son sürüm, `testing` dizini altındaki Libreboot 25.04'dır.**
 
 Bu yansılar TLS (https://) şifrelemesi kullandığı için önerilir.
 
@@ -146,7 +146,7 @@ Rsync yansınızı düzenli olarak güncel tutmak istiyorsanız, bir crontab'a e
 HTTP Yansıları {#http}
 -------------
 
-**En son sürüm, `stable` dizini altındaki Libreboot 20241206'dır.**
+**En son sürüm, `testing` dizini altındaki Libreboot 25.04'dır.**
 
 UYARI: bu yansılar HTTPS olmadığı için şifrelenmemiştir. Trafiğiniz
 kötü niyetli kişiler tarafından müdahaleye uğrayabilir. Doğru anahtara sahip olduğunuzu
@@ -159,7 +159,7 @@ HTTPS kullansanız bile bunu yapmalısınız.
 FTP Yansıları {#ftp}
 ------------
 
-**En son sürüm, `stable` dizini altındaki Libreboot 20241206'dır.**
+**En son sürüm, `testing` dizini altındaki Libreboot 25.04'dır.**
 
 UYARI: FTP de HTTP gibi şifrelenmemiştir. Aynı riskler mevcuttur.
 

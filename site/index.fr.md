@@ -20,8 +20,8 @@ depends on your preferences. Libreboot's design incorporates all of these boot
 methods in a single image, so you can choose which one you use at boot time,
 and more payloads (e.g. Linux kexec payload) are planned for future releases.
 
-**NOUVELLE VERSION: La dernière version est [Libreboot 20241206](news/Libreboot20241206.md), sortie
-le 6 December 2024.**
+**NOUVELLE VERSION: La dernière version est [Libreboot 25.04](news/libreboot2504.md), sortie
+le 30 April 2025.**
 
 Vous pouvez également acheter du matériel avec [Libreboot pré-installé](https://minifree.org/) via l'entreprise Minifree Ltd,
 ou envoyer votre propre ordinateur [pour y installer Libreboot](https://minifree.org/product/installation-service/).
