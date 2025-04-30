@@ -324,7 +324,7 @@ that lbmk imports, or otherwise depends on. lbmk is *[tiny](../docs/maintain/)*.
 
 In descending order from the latest changes to the earliest changes:
 
-* `init.sh`: Generally moralised it, moving separate tasks into separate
+* `init.sh`: Generally modularised it, moving separate tasks into separate
   functions, rathher than having it be one big monolith.
 * `vendor.sh` was renamed to `inject.sh`, so that future changes can be
   in better sync between lbmk and cbmk on this file, because the cbmk version
