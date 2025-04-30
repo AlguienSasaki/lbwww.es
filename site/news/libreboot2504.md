@@ -8,6 +8,13 @@ is *Corny Calamity*. This is the first release to have a codename, and it is
 using YY.MM format for the version number for the first time. Older releases
 used YYYYMMDD as release dates.
 
+This release was built on the latest Debian 12.10 Bookworm release, as of
+this day. It was also build-tested successfully on Debian Sid as of this
+day, *with the experimental repository enabled and lbmk dependencies installed
+from the experimental repository, including the recent GCC 15 toolchain*.
+It was also tested on Fedora 42. Many fixes were made, so that it builds on the
+most bleeding edge distros, and all the popular stable distros.
+
 **[PLEASE READ THESE INSTRUCTIONS BEFORE INSTALLING](../docs/install/ivy_has_common.md), OR
 YOU MAY BRICK YOUR MACHINE!! - Please click the link and follow the instructions
 there, before flashing. For posterity,
