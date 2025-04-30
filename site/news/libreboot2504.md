@@ -49,8 +49,6 @@ or [GRUB](https://www.gnu.org/software/grub/) to boot your operating
 system; on ARM(chromebooks) and certain x86 mainboards, we provide *U-Boot* (as
 a coreboot payload), which provides a lightweight UEFI implementation..
 
-<img tabindex=1 class="r" src="https://av.vimuser.org/uboot.png" /><span class="f"><img src="https://av.vimuser.org/uboot.png" /></span>
-
 Summarised list of changes
 -------------------------
 
