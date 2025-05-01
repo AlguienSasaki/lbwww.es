@@ -155,6 +155,11 @@ h4
 	background: rgba(0, 0, 0, 0.8);
 }
 
+.f img {
+	max-width: 80%;
+	max-height: 80%;
+}
+
 *:focus + .f
 {
 	display: block;
