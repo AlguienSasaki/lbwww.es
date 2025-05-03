@@ -48,7 +48,7 @@ also use the inject command, like so (examples):
 	./mk inject libreboot-RELEASE_targetname.tar.xz
 	./mk inject libreboot-RELEASE_targetname.tar.xz setmac
 	./mk inject libreboot-RELEASE_targetname.tar.xz setmac 00:1f:16:00:11:22
-	./mk inject libreboot-RELEASE_targetname.tar.xz setmac 00:??:16:0?:1?:22
+	./mk inject libreboot-RELEASE_targetname.tar.xz setmac 00:xx:16:0x:1x:22
 	./mk inject libreboot-RELEASE_targetname.tar.xz setmac restore
 
 This writes the MAC address on the GbE region of the image. You must do this
@@ -62,7 +62,7 @@ Without argument after the tarball, it behaves the same as `setmac`. If `setmac`
 is provided without argument, or no argument is given, the MAC address is
 randomised. Otherwise, you can specify an arbitrary address.
 
-The `?` character is random, and you can specify that any of them be random,
+The `x` character is random, and you can specify that any of them be random,
 while setting others (or all of them) arbitrarily. On the corresponding nibble,
 the bit for unicast/multicast and global/local are set accordingly, so that
 randomly generated addresses are *always* unicast and *local*, unless the
@@ -410,7 +410,7 @@ The following rules are enforced in code:
 * User cannot specify multicast addresses
 * User cannot specify `00:00:00:00:00:00`
 * When generating random addresses, if the right
-  most nibble of the left-most byte is `?` (random),
+  most nibble of the left-most byte is `x` (random),
   nvmutil will (in code) force the generated MAC
   address to be local (not global), and will prevent
   a multicast address from being generated.
@@ -433,20 +433,20 @@ How to use (the MAC address in just an example):
 
 You can also set random MAC addresses:
 
-	nvm gbe.bin setmac ??:??:??:??:??:??
+	nvm gbe.bin setmac xx:xx:xx:xx:xx:xx
 
 In this example, every character is random. However, you
 can mix and match random characters with static ones. For
 example:
 
-	nvm gbe.bin setmac 00:1f:16:??:??:??
+	nvm gbe.bin setmac 00:1f:16:xx:xx:xx
 
 You can also pass it without a MAC address:
 
 	nvm gbe.bin setmac
 
 If you only type `setmac` without specifying a MAC address,
-it will do the same thing as `setmac ??:??:??:??:??:??`.
+it will do the same thing as `setmac xx:xx:xx:xx:xx:xx`.
 
 This will set the last three bytes randomly, while the
 MAC address would begin with `00:1f:16`.

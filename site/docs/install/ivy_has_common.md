@@ -121,14 +121,14 @@ running `nvmutil`; it also skips building nvmutil. Essentially, this will
 restore the default MAC address from standard release images.
 
 The above MAC address is a random example; please make sure to use one that matches
-your board, if you wish. You can also use randomisation this way; the `?` character
+your board, if you wish. You can also use randomisation this way; the `x` character
 will be randomised, e.g.:
 
-	./mk inject libreboot-RELEASE_targetname.tar.xz setmac ??:??:??:??:??:??
+	./mk inject libreboot-RELEASE_targetname.tar.xz setmac xx:xx:xx:xx:xx:xx
 
 You can mix and match arbitrary characters with random ones, e.g.:
 
-	./mk inject libreboot-RELEASE_targetname.tar.xz setmac 0?:??:12:?a:6?:69
+	./mk inject libreboot-RELEASE_targetname.tar.xz setmac 0x:xx:12:xa:6x:69
 
 The script can automatically detect the board as long as you do not change the file name.
 
