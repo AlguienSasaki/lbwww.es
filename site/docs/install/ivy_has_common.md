@@ -77,6 +77,10 @@ have the mac address changed; please continue reading!
 
 ### Injecting vendor files into tarballs
 
+**WARNING: Older versions of nvmutil used `?` for random characters. Newer
+versions use `x` instead. If you have an older version, use `?` instead,
+when generating random characters in MAC addresses.**
+
 In order to inject the necessary files into a rom image, run the script from the root of lbmk and point to the rom image.
 
 If you only wish to flash a release rom then the process of injecting the necessary files is quite simple.

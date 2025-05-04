@@ -42,6 +42,10 @@ Automatic MAC address changer
 
 **Please [install build dependencies](../build/) before you do this.**
 
+**WARNING: Older versions of nvmutil used `?` for random characters. Newer
+versions use `x` instead. If you have an older version, use `?` instead,
+when generating random characters in MAC addresses.**
+
 Instead of running nvmutil manually, like below, you can
 also use the inject command, like so (examples):
 
