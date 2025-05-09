@@ -2,6 +2,21 @@
 % Leah Rowe
 % 17 January 2025
 
+**THIS RELEASE SCHEDULE IS OBSOLETE. PLEASE READ
+THE [NEW SCHEDULE](revisions.md) instead - there will instead be just TWO
+releases annually, and a Release Candidate stage will be used. Therefore,
+the Libreboot 25.04 release, which did come out, might instead be
+considered Libreboot 25.06 RC1 - except an actual RC1 is planned, so just
+think of it as RC0 instead!.**
+
+TL DR, the new schedule is basically the same as below, but only a June and
+December release will be done; releases in-between will be either a revision
+release to the previous release, or an RC to the next release.
+
+This policy change was enacted on 9 May 2025.
+
+And now, the original article:
+
 Libreboot releases will now be on a much stricter timeline than in the past.
 
 Testing/Stable release cycle
