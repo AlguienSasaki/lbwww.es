@@ -1640,24 +1640,6 @@ tested this (no problems so far, since mid/late 2022 when we started
 doing this in osboot, and heads did it for years before we did, and
 they never had any problems).
 
-HP 820 G2 TPM
--------------
-
-TODO: check that it can be upgraded to TPM 2.0 (default is 1.2).
-It's a SLB 9660 TPM
-
-<https://community.infineon.com/t5/OPTIGA-TPM/SLB-9660-TT1-2-upgrade-TPM-1-2-to-TPM-2-0/td-p/382419>
-
-<https://support.hp.com/gb-en/document/c05792935>
-
-Apparently, this can be upgraded to TPM 2.0. Riku linked this on IRC:
-
-<https://forum.ts.fujitsu.com/forum/viewtopic.php?t=49340#p156746>
-
-And also this, straight from the horse's mouth:
-
-<https://www.infineon.com/cms/en/product/security-smart-card-solutions/optiga-embedded-security-solutions/optiga-tpm/slb-9660xt1.2/>
-
 4th SSD on T440p
 ----------------
 
