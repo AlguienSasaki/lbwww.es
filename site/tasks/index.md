@@ -83,7 +83,7 @@ is not exhaustive, it just lists boards that are interesting to us at this time:
 * HP Revolve 810 G1
 * HP EliteBook Folio 9480m
 * HP EliteBook 8770w
-* HP EliteBook 840 G2 (not in coreboot yet, but should be similar to 820 G2)
+* HP EliteBook 840 G2* (not in coreboot yet, but almost identical to 820 G2)
 * HP Z220 CMI and SFF motherboards
 * MSI PRO Z690-A motherboard (supported by Dasharo, not sure about coreboot) -
   also, Dasharo supports several more motherboards that aren't in coreboot
@@ -106,16 +106,15 @@ machine).
 
 Both are supported by coreboot.
 
-### 840 G2 (possible 820 G2)
+### Zbook 14/15u G2 / Elitebook 840/850 G2 (~820 G2)
 
-These notes are based on a chat on Libreboot IRC.
+Indistinguishably same boards (id 2216) with different gpu if included.(a bit bigger board, but almost everything is equal to the 820 G2)
 
-The TPM is Infineon SLB9660 and does TPM 1.2. We could maybe upgrade
-firmware to that of SLB9665. It would no longer work with the HP BIOS but
-maybe coreboot could be used, and then we could have
-newer TPM version - SLB9665 firmware can meet TPM 2.0 specification.
+The 840/850 G2 may have an AMD® Radeon™ R7 M260X gpu and 14/15u would have an AMD® FirePro™ M4170 gpu added, which would became useless using libreboot.
 
-(we do not yet use the TPM in any meaningful way on Libreboot machines)
+Works the same way as the 820 G2 (including flashing libreboot on it too.), but the battery indicator usually shows wrong values (for example; a quick power drain down to 25%, then rebooting the machine shows ~50%, etc..)
+
+Everything else (except the battery status and extra gpus) shall work as it is on the elitebook 820 g2.
 
 ### Blobless boards
 
