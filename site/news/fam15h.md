@@ -42,8 +42,8 @@ The following changes have been made, relative to Libreboot 20211122:
   implements video initialisation in *Ada* on many platforms, but these AMD
   boards use AST (Aspeed) framebuffer chips, where coreboot video initialisation
   is written in normal C. This avoids having to deal with build issues, when
-  [building older Gnat with newer host
-  Gnat](https://gcc.gnu.org/install/prerequisites.html)
+  building older Gnat with newer host
+  Gnat: https://gcc.gnu.org/install/prerequisites.html
 
 The PIKE2008 fix from Libreboot 20211122 was retained, and it is included in
 today's change. This inserts an empty option ROM in CBFS, without which SeaBIOS

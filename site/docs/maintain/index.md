@@ -110,8 +110,7 @@ but BSD systems are currently not well-tested with lbmk.
 
 **Make sure you have dependencies installed!**
 
-**The [main build guide](../build) will tell you how to install dependencies,
-such as GNU toolchains and various libraries.**
+**The [main build guide](../build) will tell you how to install dependencies.**
 
 ### Host CPU
 
@@ -428,8 +427,6 @@ purpose, on much newer Intel systems (from around Skylake era or later).
 
 ### src/grub/TREE
 
-Please also visit: <https://www.gnu.org/software/grub/>
-
 The GRUB bootloader, a reference multiboot implementation with its own
 small kernel/OS and drivers (e.g. file systems, cryptography). This is the
 default recommended [coreboot payload](https://doc.coreboot.org/payloads.html)
@@ -639,10 +636,11 @@ or coreboot source code and you'll find it).
 
 However, the original code from GRUB was of quite poor quality and this code
 is often used. For fun, it was decided that this utility would be imported
-directly into `lbmk.git`, and thoroughly cleaned. The lbmk version has been
-more or less re-written, using the original logic as a base; variables are
-more clearly named. A top-down, OpenBSD-inspired coding style is used,
-replacing the GNU coding style implemented in the original code. The [OpenBSD
+directly into `lbmk.git`, and thoroughly cleaned. The lbmk version has
+been re-written.
+
+A top-down, OpenBSD-inspired coding style is used,
+replacing the coding style implemented in the original code. The [OpenBSD
 coding style](https://man.openbsd.org/style.9) is much easier to read.
 
 This code has been modified to make use of the `pledge()` system call, when used

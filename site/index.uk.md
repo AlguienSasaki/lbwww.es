@@ -60,7 +60,7 @@ Libreboot надає вам [свободи](https://writefreesoftware.org/), я
 Coreboot помітно складний для встановлення для більшості нетехнічних користувачів; він
 виконує тільки базову ініціалізацію та перестрибує до окремої програми
 [корисного навантаження](https://doc.coreboot.org/payloads.html) (наприклад,
-[GRUB](https://www.gnu.org/software/grub/),
+GRUB,
 [Tianocore](https://www.tianocore.org/)), які також мають бути налаштованими.
 *Програмне забезпечення Libreboot вирішує цю проблему*; це *дистрибутив coreboot* з
 [автоматизованою системою побудови](docs/build/index.uk.md), яка збирає завершені *образи ROM*, для

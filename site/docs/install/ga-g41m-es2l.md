@@ -116,7 +116,7 @@ NOTE: due to a bug in the hardware, the MAC address is hardcoded in
 coreboot. Therefore, you must set your own MAC address in your
 operating system.
 
-Use [macchanger](http://www.gnu.org/software/macchanger) in your
+Use macchanger in your
 distro, to set a valid MAC address. By doing this, your NIC should
 work nicely.
 

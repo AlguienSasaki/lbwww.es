@@ -201,12 +201,7 @@ das deine Arbeit unter die Standard Urheberrechte fällt, was deine Arbeit
 proprietär macht und somit von denselben Einschränkungen betroffen ist.
 
 Die MIT Lizenz ist ein guter Start, und sie ist die bevorzugte Lizenz
-für sämtliche Arbeit an Libreboot, aber wir sind nicht pingelig. Libreboot 
-hat in der Vergangenheit GNU Lizenzen so wie GPL verwendet; vieles davon
-besteht nach wie vor und wird auch weiterhin bestehen.
-Es ist deine Arbeit; sofern deine Arbeit auf der Arbeit eines anderen basiert,
-ist es aufgrund der Lizenz-Kompatibilität ggfs. naheliegend diesselbe Lizenz zu
-verwenden.
+für sämtliche Arbeit an Libreboot, aber wir sind nicht pingelig.
 
 [Hier](https://opensource.org/licenses) findest Du übliche Beispiele für Lizenzen.
 

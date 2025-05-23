@@ -187,7 +187,7 @@ Newest changes first, oldest changes last:
   coding style, to replace the (very horrible, very messy) GNU coding style.
   It is also [pledged](https://man.openbsd.org/pledge.2) in
   Libreboot's version. For reference,
-  [here](https://git.savannah.gnu.org/cgit/grub.git/plain/util/spkmodem-recv.c?id=822b726b33b8dc07dd01b257a2dfcc7b07d12e2f)
+  https://git.savannah.gnu.org/cgit/grub.git/plain/util/spkmodem-recv.c?id=822b726b33b8dc07dd01b257a2dfcc7b07d12e2f
   is the GRUB version, and
   [here](https://raw.githubusercontent.com/coreboot/coreboot/8febc91b3041a1d027bf0d36d30ccb119496524f/util/spkmodem_recv/spkmodem-recv.c) is coreboot's version of it. And now to blow your mind,
   [here](https://browse.libreboot.org/lbmk.git/tree/util/spkmodem_recv/spkmodem-recv.c?id=b508245451b71b3443fa3202f3863a6de731e9c8)

@@ -63,7 +63,7 @@ Das Libreboot Projekt verwendet [Coreboot](https://www.coreboot.org/) für
 Die Coreboot Installation ist für unerfahrene Benutzer überaus schwierig; sie
 übernimmt lediglich die Basis Initialisierung und springt dann zu einem separaten
 [payload](https://doc.coreboot.org/payloads.html) Programm (z.B.
-[GRUB](https://www.gnu.org/software/grub/),
+GRUB,
 [Tianocore](https://www.tianocore.org/)), welche zusätzlich konfiguriert werden muss.
 *Libreboot löst dieses Problem*; es ist eine *Coreboot Distribution* mit
 einem [automatisierten Build System](docs/build/) welches vollständige *ROM images* 

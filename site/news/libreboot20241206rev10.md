@@ -26,7 +26,7 @@ this works in *exactly* the same way as a Linux distro, providing a source-based
 package manager (called lbmk) which patches sources and compiles coreboot images.
 It makes use of [coreboot](https://www.coreboot.org/) for hardware initialisation,
 and then a payload such as [SeaBIOS](https://www.seabios.org/SeaBIOS)
-or [GRUB](https://www.gnu.org/software/grub/) to boot your operating
+or GRUB to boot your operating
 system; on ARM(chromebooks), we provide *U-Boot* (as a coreboot payload).
 
 We also provide an experimental U-Boot setup on x86, as a coreboot payload for
@@ -47,7 +47,7 @@ Summarised list of changes
 GRUB released *73 patches* to its main branch, fixing a large number of
 security issues. You can read about them here:
 
-<https://lists.gnu.org/archive/html/grub-devel/2025-02/msg00024.html>
+https://lists.gnu.org/archive/html/grub-devel/2025-02/msg00024.html
 
 This updates GRUB to revision `4dc6166571645780c459dde2cdc1b001a5ec844c`
 from 18 February 2025. Several OOB heap writes, buffer overflows, use after

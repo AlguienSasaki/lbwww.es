@@ -110,7 +110,7 @@ style and replacing it with a BSD coding style (the licensing is unchanged).
 
 For reference, here is the original version from GRUB:
 
-<https://git.savannah.gnu.org/cgit/grub.git/plain/util/spkmodem-recv.c?id=822b726b33b8dc07dd01b257a2dfcc7b07d12e2f>
+https://git.savannah.gnu.org/cgit/grub.git/plain/util/spkmodem-recv.c?id=822b726b33b8dc07dd01b257a2dfcc7b07d12e2f
 
 And here is the version coreboot had, which Libreboot forked:
 

@@ -520,7 +520,7 @@ try to use VGA modes, or some syslinux configs (that GRUB can parse) will,
 causing weird behaviour on many Libreboot systems.
 
 TODO: modify GRUB to only have behaviour matching `GRUB_TERMINAL=console`.
-See: <https://www.gnu.org/software/grub/manual/grub/html_node/Simple-configuration.html>
+See: `https://www.gnu.org/software/grub/manual/grub/html_node/Simple-configuration.html`
 
 This will prevent the need for modification. In some cases, it is necessary
 to modify `GRUB_TERMINAL` in distro grub configs. The way Libreboot's GRUB

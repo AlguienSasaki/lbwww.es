@@ -41,7 +41,7 @@ Vous avez des droits : droit à la vie privée, liberté de pensée, liberté d�
 Libreboot, fondé en décembre 2013, a pour objectif de rendre le micrologiciel libre accessible même aux utilisateurs non techniques.
 
 Libreboot s’appuie sur  [Coreboot](https://www.Coreboot.org) pour
-[l'initialisation matérielle](https://doc.Coreboot.org/getting_started/architecture.html). Coreboot est réputé complexe à installer, en particulier pour les utilisateurs non techniques ; il se limite à l’initialisation matérielle de base avant de transmettre le contrôle à une [charge utile](https://doc.Coreboot.org/payloads.html) (comme [GRUB](https://www.gnu.org/software/grub/) ou [Tianocore](https://www.tianocore.org/)), qui nécessite également une configuration. Libreboot simplifie ce processus : il s’agit d’une distribution de Coreboot dotée d’un [système de compilation automatisé](docs/builds/), capable de créer des images ROM complètes pour une installation plus simple et fiable. 
+[l'initialisation matérielle](https://doc.Coreboot.org/getting_started/architecture.html). Coreboot est réputé complexe à installer, en particulier pour les utilisateurs non techniques ; il se limite à l’initialisation matérielle de base avant de transmettre le contrôle à une [charge utile](https://doc.Coreboot.org/payloads.html) (comme GRUB ou [Tianocore](https://www.tianocore.org/)), qui nécessite également une configuration. Libreboot simplifie ce processus : il s’agit d’une distribution de Coreboot dotée d’un [système de compilation automatisé](docs/builds/), capable de créer des images ROM complètes pour une installation plus simple et fiable. 
 
 Une documentation détaillée est disponible.
 

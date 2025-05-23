@@ -50,8 +50,8 @@ use JavaScript and more.
 lbssg is *Free Software*, released under the terms of the GNU General Public
 License, version 3 of the license or, at your option, any later version as
 published by the Free Software Foundation. You can find a copy of this license
-in the `COPYING` file, when you download lbssg, or you can read it here:\
-<https://www.gnu.org/licenses/gpl-3.0.en.html>
+in the `COPYING` file, when you download lbssg, or you can read it
+here: https://www.gnu.org/licenses/gpl-3.0.en.html
 
 (some parts of it are under the MIT license)
 

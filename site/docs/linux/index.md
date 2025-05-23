@@ -6,7 +6,7 @@ x-toc-enable: true
 GNU boot loader "GRUB"
 --------
 
-This page is useful for those who wish to use the GNU boot loader called GRUB.
+This page is useful for those who wish to use the boot loader called GRUB.
 If you're using SeaBIOS, the boot process will work similarly to traditional
 BIOS systems; refer to the SeaBIOS documentation
 on <https://seabios.org/SeaBIOS>

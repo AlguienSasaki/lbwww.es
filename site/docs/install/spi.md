@@ -1203,11 +1203,7 @@ This page and the photos on it are available under
 [CC BY SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/legalcode.txt)
 Check the Git repository for history of who owns what part of the document.
 
-Some of these resources originate from the *old* Libreboot git repository,
-before Libreboot split into separate repositories that include its `lbmk`
-repository.
-
-Photos showing a BeagleBone Black are under the normal GNU Free Documentation
+Photos showing a BeagleBone Black are under the normal GFDL
 license like other pages and images on this website, or you can use them under
 the CC-BY-SA 4.0 license if you wish (I, Leah Rowe, own all BBB photos shown
 on this page, except for the one on the beaglebone website, and that one is

@@ -21,7 +21,7 @@ this works in *exactly* the same way as a Linux distro, providing the same type
 of infrastructure, but for your boot firmware instead of your operating system.
 It makes use of [coreboot](https://www.coreboot.org/) for hardware initialisation,
 and then a payload such as [SeaBIOS](https://www.seabios.org/SeaBIOS)
-or [GRUB](https://www.gnu.org/software/grub/) to boot your operating
+or GRUB to boot your operating
 system; on ARM(chromebooks), we provide *U-Boot* (as a coreboot payload).
 
 Libreboot provides many additional benefits such as fast boot speeds, greater

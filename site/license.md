@@ -23,16 +23,9 @@ You can download the logo files from `lbwww-img.git`. See:
 These pages are static HTML, generated from Markdown files, which you can find
 a link to at the bottom of each HTML page, for the corresponding Markdown file.
 
-The terms of this license are written below, unmodified, except to change the
-formatting so that the text would integrate nicely on this website.
-
-You can also find the license here:
-<https://www.gnu.org/licenses/fdl-1.3.en.html>
-
-The markdown version, hosted by the GNU project, can be found here:
-<https://www.gnu.org/licenses/fdl-1.3.md>
-
-The *unmodified* license text is as follows:
+The terms of this license are written below, unmodified from the original
+reference, except to change the formatting so that the text would integrate
+nicely on this website:
 
 GNU Free Documentation License
 ==============================
@@ -40,7 +33,7 @@ GNU Free Documentation License
 Version 1.3, 3 November 2008
 
 Copyright (C) 2000, 2001, 2002, 2007, 2008 Free Software Foundation,
-Inc. <https://fsf.org/>
+Inc. *https://fsf.org/*
 
 Everyone is permitted to copy and distribute verbatim copies of this
 license document, but changing it is not allowed.
@@ -421,7 +414,7 @@ The Free Software Foundation may publish new, revised versions of the
 GNU Free Documentation License from time to time. Such new versions
 will be similar in spirit to the present version, but may differ in
 detail to address new problems or concerns. See
-<https://www.gnu.org/licenses/>.
+*https://www.gnu.org/licenses/*
 
 Each version of the License is given a distinguishing version number.
 If the Document specifies that a particular numbered version of this
@@ -499,3 +492,11 @@ permit their use in free software.
 The license text ended in the previous paragraph. Now you see the generic footer
 generated for every page on this website:
 
+Please also see [logo license](logo-license.md)
+
+The GFDL license copied above, was copied from the documented hosted
+here: *https://www.gnu.org/licenses/fdl-1.3.en.html*
+
+The markdown version can be found here: *https://www.gnu.org/licenses/fdl-1.3.md*
+
+The *markdown* version was adapted, to display on this page.

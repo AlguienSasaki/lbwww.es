@@ -33,7 +33,7 @@ Libreboot 赋予了你从其他大多数引导固件得不到的[自由](https:/
 
 *我们*相信，不受限制地[研究、分享、修改及使用软件](https://writefreesoftware.org/)的自由，是每个人都必须享有的基本人权的一部分。这时，*软件自由*至关重要。你的自由至关重要。教育至关重要。[修理权](https://en.wikipedia.org/wiki/Right_to_repair)至关重要。尽管许多人在用[自由的操作系统](https://www.openbsd.org/)，但他们用的引导固件却是专有（非自由）的。专有固件常常[包含](faq.html#intel)了[后门](faq.html#amd)，而且可能有很多缺陷。为了让不懂技术的用户也能使用 coreboot 固件，我们于 2013 年 12 月成立了 Libreboot 项目，
 
-Libreboot 项目使用 [coreboot](https://www.coreboot.org/) 来[初始化硬件](https://doc.coreboot.org/getting_started/architecture.html)。对大部分不懂技术的用户来说，coreboot 是出了名地难安装；它只处理了基础的初始化，然后跳转进入单独的 [payload](https://doc.coreboot.org/payloads.html) 程序（例如 [GRUB](https://www.gnu.org/software/grub/)、[Tianocore](https://www.tianocore.org/)），而后者也需要进行配置。*Libreboot 解决了上述问题*；作为 *coreboot 发行版*，配有[自动构建系统](docs/build/)，能构建完整的 *ROM 映像*，从而让安装更加稳定。另有文档可参考。
+Libreboot 项目使用 [coreboot](https://www.coreboot.org/) 来[初始化硬件](https://doc.coreboot.org/getting_started/architecture.html)。对大部分不懂技术的用户来说，coreboot 是出了名地难安装；它只处理了基础的初始化，然后跳转进入单独的 [payload](https://doc.coreboot.org/payloads.html) 程序（例如 GRUB、[Tianocore](https://www.tianocore.org/)），而后者也需要进行配置。*Libreboot 解决了上述问题*；作为 *coreboot 发行版*，配有[自动构建系统](docs/build/)，能构建完整的 *ROM 映像*，从而让安装更加稳定。另有文档可参考。
 
 Libreboot 不是 coreboot 的分支
 -----------------------------------
