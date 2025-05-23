@@ -27,7 +27,7 @@ Libreboot 的创始人和主要开发者，Leah Rowe，也是 Minifree 的所有
 销售电脑为 Libreboot 提供资金。
 
 A parallel [Libreboot fork, Canoeboot](https://canoeboot.org), also exists.
-Both Canoeboot and Libreboot are maintained by the same developed (Leah Rowe).
+Both Canoeboot and Libreboot are maintained by the same developer (Leah Rowe).
 
 为什么要使用 *Libreboot*?
 ----------------------------

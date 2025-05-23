@@ -26,7 +26,7 @@ and more payloads (e.g. Linux kexec payload) are planned for future releases.
 *Мы* верим, что свобода [изучать, делиться, модифицировать и использовать программное обеспечение](https://writefreesoftware.org/) без каких-либо ограничений, является одним из основных человеческих прав, который должен иметь каждый. В этом контексте, *свобода программного обеспечения* важна. Ваша свобода важна. Образование важно. [Право на ремонт](https://en.wikipedia.org/wiki/Right_to_repair) важно; Libreboot позволяет вам продолжить использовать ваше оборудование. Вот *почему* Libreboot существует.
 
 A parallel [Libreboot fork, Canoeboot](https://canoeboot.org), also exists.
-Both Canoeboot and Libreboot are maintained by the same developed (Leah Rowe).
+Both Canoeboot and Libreboot are maintained by the same developer (Leah Rowe).
 
 Обзор устройства Libreboot
 --------------------------
