@@ -26,6 +26,9 @@ and more payloads (e.g. Linux kexec payload) are planned for future releases.
 Libreboot 的创始人和主要开发者，Leah Rowe，也是 Minifree 的所有者和经营者；
 销售电脑为 Libreboot 提供资金。
 
+A parallel [Libreboot fork, Canoeboot](https://canoeboot.org), also exists.
+Both Canoeboot and Libreboot are maintained by the same developed (Leah Rowe).
+
 为什么要使用 *Libreboot*?
 ----------------------------
 

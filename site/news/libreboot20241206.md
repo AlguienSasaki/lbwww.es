@@ -2,6 +2,9 @@
 % Leah Rowe
 % 6 December 2024
 
+A corresponding [Canoeboot 20241207](https://canoeboot.org/news/canoeboot20241207.html)
+release is also available.
+
 Today's Libreboot 20241206 revision is a *stable release*, whereas the previous
 testing release was Libreboot 20241008, and the previous stable release was
 Libreboot 20240612. A new *revision* release became available on 5 January 2025,

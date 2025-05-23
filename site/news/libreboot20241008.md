@@ -2,6 +2,9 @@
 % Leah Rowe
 % 8 October 2024
 
+A corresponding [Canoeboot 20241102](https://canoeboot.org/news/canoeboot20241102.html)
+release is also available.
+
 This is a *testing* release, whereas the current stable release on this day
 is *Libreboot 20240612*.
 

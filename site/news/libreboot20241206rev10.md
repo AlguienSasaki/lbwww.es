@@ -2,6 +2,9 @@
 % Leah Rowe
 % 18 February 2025
 
+A corresponding [Canoeboot 20250107rev1](https://canoeboot.org/news/canoeboot20250107rev1.html)
+release is also available.
+
 Today's Libreboot 20241206 revision is the 10th revision in the Libreboot
 20241206 stable release series. The changelog on this page is written, relative
 to Libreboot 20241206 revision 9 which was released on 12 February 2025.

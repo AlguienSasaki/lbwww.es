@@ -2,6 +2,9 @@
 % Leah Rowe
 % 30 April 2025
 
+A corresponding [Canoeboot 25.04](https://canoeboot.org/news/canoeboot2504.html)
+release is also available.
+
 Today's Libreboot 25.04 revision is a *testing release*, whereas the previous
 stable release was Libreboot 20241206. The codename for this release
 is *Corny Calamity*. This is the first release to have a codename, and it is

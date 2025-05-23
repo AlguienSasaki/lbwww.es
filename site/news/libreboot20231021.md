@@ -2,6 +2,9 @@
 % Leah Rowe
 % 21 October 2023
 
+A corresponding [Canoeboot 20231026](https://canoeboot.org/news/canoeboot20231026.html)
+release is also available.
+
 **[PLEASE READ THESE INSTRUCTIONS BEFORE INSTALLING](../docs/install/ivy_has_common.md), OR
 YOU MAY BRICK YOUR MACHINE!! - Please click the link and follow the instructions
 there, before flashing. For posterity,

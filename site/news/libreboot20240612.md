@@ -2,6 +2,9 @@
 % Leah Rowe
 % 12 June 2024
 
+A corresponding [Libreboot 20240612](https://canoeboot.org/news/canoeboot20240612.html)
+release is also available.
+
 **[PLEASE READ THESE INSTRUCTIONS BEFORE INSTALLING](../docs/install/ivy_has_common.md), OR
 YOU MAY BRICK YOUR MACHINE!! - Please click the link and follow the instructions
 there, before flashing. For posterity,

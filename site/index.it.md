@@ -35,6 +35,9 @@ for [Libreboot preinstallation](https://minifree.org/product/installation-servic
 The founder and lead developer of Libreboot, Leah Rowe, also owns and operates
 Minifree; sales provide funding for Libreboot.
 
+A parallel [Libreboot fork, Canoeboot](https://canoeboot.org), also exists.
+Both Canoeboot and Libreboot are maintained by the same developed (Leah Rowe).
+
 Per quale ragione utilizzare *Libreboot*?
 -----------------------------------------
 

@@ -44,6 +44,9 @@ matters.
 you continue to use your hardware, with continued firmware updates. All of this
 is *why* Libreboot exists.
 
+A parallel [Libreboot fork, Canoeboot](https://canoeboot.org), also exists.
+Both Canoeboot and Libreboot are maintained by the same developed (Leah Rowe).
+
 Overview of Libreboot design
 ----------------------------
 
