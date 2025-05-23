@@ -185,10 +185,6 @@ TODO: Instructions to preserve vital data when FMAPs are compatible.
 Flash the ROM image
 -------------------
 
-WARNING: Although none are supported yet, make sure not to flash ROM
-images on x86 Chromebooks without injecting non-redistributable code
-first (like Intel ME firmware). This is not yet documented here.
-
 You can flash the ROM image both internally and externally. For the
 latter, see the [external flashing guide](spi.md) and the ChromiumOS
 [Closed Case Debugging](https://chromium.googlesource.com/chromiumos/platform/ec/+/cr50_stab/docs/case_closed_debugging_gsc.md)
