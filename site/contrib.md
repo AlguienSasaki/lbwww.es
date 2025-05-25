@@ -547,7 +547,7 @@ in Libreboot.
 Riku also added the HP Folio 9470m to Libreboot.
 
 Riku is also in charge of Libreboot's fork of `pico-serprog`, which is used
-to provide serprog firmware on RP2040 and RP2530 devices. These devices can
+to provide serprog firmware on Raspberry Pi Pico devices. These devices can
 be used to set up a cheap but reliable NOR flasher, which is now the default
 recommended one for flashing Libreboot externally. Riku's fork contains several
 enhancements, such as a higher default drive level of 12mA and the ability to

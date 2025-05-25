@@ -89,8 +89,7 @@ do:
 
 This will automatically build the rpi-pico firmware, and the file will be
 at `bin/serprog_pico/serprog_pico.uf2`
-and `bin/serprog_pico/serprog_pico_w.uf2` - images with `pico2` in the
-file name are for the Pico 2, and they can also be used.
+and `bin/serprog_pico/serprog_pico_w.uf2`.
 
 ### Install the serprog firmware
 

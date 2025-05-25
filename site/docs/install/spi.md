@@ -100,17 +100,16 @@ is called *external* because it's not the *internal* one on your motherboard.
 Raspberry Pi Pico
 -----------------
 
-### RP2040/RP2530 both supported
+### Pico 1 (RP2040) supported
 
-NOTE: RP2530 dongles removed in the Libreboot 25.04 testing release, but will
+Pico 2 support was removed, due to stability issues. These are the RP2530
+devices. Pico 1 dongles work just fine (RP2040).
+
+**NOTE: RP2530 dongles removed in the Libreboot 25.04 testing release, but will
 be re-added in future revisions. It was removed due to bugs, so Libreboot only
-supports Pico1 for now, and the Pico2 images were also removed from the December
-release of 2024, retroactively. Subsequent revisions will once again re-add
-Pico 2 support, after it has been better tested.
-
-**Pico 2 and other RP2530 dongles also supported, on Libreboot 20241206 rev8,
-but experimental. Releases before this only supported the original Pico, and other
-RP2040 dongles; newer Libreboot releases now support both RP2040 and RP2530.**
+supports Pico1 (RP2040) for now, and the Pico2 images were also removed from the
+December release of 2024, retroactively. Subsequent revisions will once again
+re-add Pico 2 support, after it has been better tested.**
 
 The pinout on Raspberry Pi Pico and Raspberry Pi Pico 2 are identical, but you
 must take care to flash the correct image on either device.
@@ -154,8 +153,7 @@ do:
 
 This will automatically build the rpi-pico firmware, and the file will be
 at `bin/serprog_pico/serprog_pico.uf2`
-and `bin/serprog_pico/serprog_pico_w.uf2` - images with `pico2` in the
-file name are for the Pico 2, and they can also be used.
+and `bin/serprog_pico/serprog_pico_w.uf2`.
 
 ### Install the serprog firmware
 
