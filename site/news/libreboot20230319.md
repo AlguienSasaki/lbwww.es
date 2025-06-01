@@ -150,11 +150,6 @@ add for the next release:
 ^ I would have put these in today's release, but didn't have time, and wanted
 to get this release done today.
 
-### Removed boards
-
-* asus p2b\_ls/p3b\_f - they didn't boot properly in pcbox, and the real
-  hardware is basically useless / impossible to find
-
 lbmk Git changes
 ------------
 

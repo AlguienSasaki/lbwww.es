@@ -32,9 +32,6 @@ a summary of changes.
 
 This list *may not be complete*, but it is as follows:
 
-* ASUS p2b\_ls/p3b\_f added, for testing with [PCBox](https://pcbox-emu.xyz) -
-  these ROM images achieve perfect raminit and jump to payload in the emulator,
-  but VGA ROM initialisation does not yet work.
 * QEMU (arm64 and x86\_64) images added, for testing payloads and so on.
 * lenovo/t430 (thinkpad)
 * lenovo/x230 (thinkpad)

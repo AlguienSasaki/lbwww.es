@@ -673,7 +673,6 @@ The latest changes are listed first, going all the way down to earlier changes:
 * 9cdf4192 git.sh: further simplify nuke() 
 * 1cede024 git.sh: simplify link_crossgcc() 
 * 77e482aa git.sh: simplify nuke() 
-*   42e97950 Merge pull request 'Add dependency scripts for Fedora 40 and Ubuntu 24.04' (#220) from fuel-pcbox/lbmk:master into master 
 |\  
 | * 046007b4 Add dependency scripts for Fedora 40 and Ubuntu 24.04 
 * | a0eb79df add crossgcc tarballs to config/submodules/ 
