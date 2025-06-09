@@ -12,7 +12,7 @@ Libreboot strives to make Coreboot accessible for as many users as possible.
 To accomplish this goal, we must add as many boards as possible.
 As the total number of supported boards increases it becomes more and more difficult
 for our main contributors to test every single release for every single supported board.
-We therefore need the help of the community in testing releases before they are
+We therefore need the help of users in testing releases before they are
 distributed to users.
 
 You do *not* need to be a developer in order to be a board maintainer.

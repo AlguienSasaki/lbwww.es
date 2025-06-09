@@ -308,7 +308,7 @@ that stores it, and it makes research/development more expensive; having an
 easy software update mechanism allows bugs to be fixed more quickly, during
 development and post-release, thus reducing costs. This saves the
 industry *billions*, and it is actually of benefit to the free software
-community, because it makes reverse engineering easier, and it makes 
+movement, because it makes reverse engineering easier, and it makes 
 actually updating the firmware easier, so more proprietary software can
 actually be *replaced with free software*. If some standard interface exists,
 for the firmware, then that makes reverse engineering easier *across many
@@ -404,7 +404,7 @@ accept blobs, and *not* talk about them. In Libreboot, it's the exact
 opposite: we make sure you know about them, and tell you that they are bad,
 and we say that they should be fully replaced.
 
-Unlike some in the community, we even advocate for free software in cases
+Unlike certain types of people, we even advocate for free software in cases
 where the software can't actually be replaced. For example: the RP2040 Boot ROM
 is free software, with public source code:
 

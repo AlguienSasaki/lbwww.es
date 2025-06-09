@@ -247,16 +247,3 @@ Defend freedom! Don't listen to any of the arguments against it by proprietary
 software companies; they don't care about you, and instead only care about
 profit. They fundamentally do not want you to have any sort of freedom over
 your own computer, and they actively pursue tactics (such as DRM) to thwart you.
-
-Microsoft and Apple are not your friends. There is no such thing as the
-Windows community. When you use proprietary systems, you are isolated from
-everyone around you, and so are they. *You* are the product, for the proprietary
-software to exploit at the behest of their developers who only care
-about *money*.
-
-However, there *is* such a thing as the Libre Software community. It is a
-vibrant community, consisting of millions of people collectively all over the
-world, and they are all free to work with each other infinitely. It gave us
-most of the technology that we take for granted today, including *the modern
-internet, where ISPs run libre software almost exclusively!*
-

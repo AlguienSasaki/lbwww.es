@@ -10,7 +10,7 @@ firmware based on coreboot, replacing proprietary BIOS/UEFI firmware
 on [specific Intel/AMD x86 and ARM based motherboards](docs/install/#which-systems-are-supported-by-libreboot),
 including laptop and desktop computers. It initialises the hardware (e.g. memory
 controller, CPU, peripherals) and starts a bootloader for your operating
-system. [Linux](docs/linux/) and [BSD](docs/bsd/) are well-supported. Help is
+system (OS). [Linux](docs/linux/) and [BSD](docs/bsd/) are well-supported. Help is
 available via [\#libreboot](https://web.libera.chat/#libreboot)
 on [Libera](https://libera.chat/) IRC.
 
@@ -98,7 +98,7 @@ Proprietary firmware often [contains](faq.html#intel) [backdoors](faq.html#amd),
 and can be buggy. The Libreboot project was founded in December 2013, with the
 express purpose of making coreboot firmware accessible for non-technical users.
 
-Libreboot is a community-oriented project, with a focus on helping users escape
+Libreboot is a *free software* project, with a focus on helping users escape
 proprietary boot firmware; we ourselves want to live in a world where all software
 is [free](https://writefreesoftware.org/), and so, Libreboot is an effort to
 help get closer to that world. Unlike the big vendors, we don't try to stifle
