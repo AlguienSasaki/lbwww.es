@@ -19,7 +19,7 @@ depends on your preferences. Libreboot's design incorporates all of these boot
 methods in a single image, so you can choose which one you use at boot time,
 and more payloads (e.g. Linux kexec payload) are planned for future releases.
 
-**新版发布: 最新版本 Libreboot 25.04 已在 2025 年 04 月 30 日发布。详见: [Libreboot 25.04 发布公告](news/libreboot2504.md).**
+**新版发布: 最新版本 Libreboot 25.06 已在 2025 年 06 月 30 日发布。详见: [Libreboot 25.06 发布公告](news/libreboot2506.md).**
 
 你也可以从 Minifree Ltd [购买特定硬件的 Libreboot 电脑](https://minifree.org/)，
 或者将兼容硬件寄来预装 Libreboot。

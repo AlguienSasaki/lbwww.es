@@ -9,9 +9,8 @@ x-toc-enable: true
 
 Libreboot, x86/x86_64 Intel/AMD anakartlarda GNU önyükleyici "[GRUB](docs/linux/)" ve SeaBIOS yüklerini, ARM64(Aarch64) anakartlarda ise *coreboot için* [U-Boot UEFI yükünü](docs/uboot/) sağlar. Bazı kartlarda [x86/x86_64 U-Boot UEFI yükü](docs/uboot/uboot-x86.md) de mevcuttur. x86, x86_64 ve arm64 U-Boot yükleri hafif bir UEFI önyükleme uygulaması sağlar. Libreboot'un [tasarımı](docs/maintain/) tüm bu yükleri tek bir imajda birleştirir ve önyükleme sırasında birini seçersiniz.
 
-**YENİ SÜRÜM: En son sürüm 4 April 2025'te yayınlanan Libreboot 25.04'dır.
-Bakınız: [Libreboot 25.04 sürüm duyurusu](news/libreboot2504.md) - en
-yeni revizyon sürümü olan Libreboot 25.04 revizyon 10, 18 Şubat 2025 tarihlidir.**
+**YENİ SÜRÜM: En son sürüm 30 June 2025'te yayınlanan Libreboot 25.06'dır.
+Bakınız: [Libreboot 25.06 sürüm duyurusu](news/libreboot2506.md)
 
 Ayrıca Minifree Ltd'den seçili donanımlarda [Libreboot önyüklenmiş cihazlar satın alabilir](https://minifree.org/) veya uyumlu donanımınızı [Libreboot önyükleme hizmeti](https://minifree.org/product/installation-service/) için gönderebilirsiniz. Libreboot'un kurucusu ve baş geliştiricisi Leah Rowe aynı zamanda Minifree'yi de işletmektedir; satışlar Libreboot için finansman sağlamaktadır.
 

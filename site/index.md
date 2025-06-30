@@ -25,9 +25,9 @@ on some boards. The x86, x86\_64 and arm64 U-Boot payloads provide a lightweight
 UEFI boot implementation. Libreboot's [design](docs/maintain/) incorporates all
 of these payloads in a single image, and you choose one at boot time.
 
-**NEW RELEASE: The latest release is Libreboot 25.04, released on
-30 April 2025.
-See: [Libreboot 25.04 release announcement](news/libreboot2504.md).**
+**NEW RELEASE: The latest release is Libreboot 25.06, released on
+30 June 2025.
+See: [Libreboot 25.06 release announcement](news/libreboot2506.md).**
 
 You can also [buy Libreboot preinstalled](https://minifree.org/) from Minifree Ltd,
 on select hardware, as well as send your compatible hardware

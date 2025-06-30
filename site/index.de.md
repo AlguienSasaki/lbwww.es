@@ -27,9 +27,9 @@ depends on your preferences. Libreboot's design incorporates all of these boot
 methods in a single image, so you can choose which one you use at boot time,
 and more payloads (e.g. Linux kexec payload) are planned for future releases.
 
-**NEUESTE VERSION: Die neueste Version von Libreboot ist 25.04, veröffentlicht
-am 30 April 2025.
-Siehe auch: [Libreboot 25.04 release announcement](news/libreboot2504.md).**
+**NEUESTE VERSION: Die neueste Version von Libreboot ist 25.06, veröffentlicht
+am 30 June 2025.
+Siehe auch: [Libreboot 25.06 release announcement](news/libreboot2506.md).**
 
 You can also [buy Libreboot preinstalled](https://minifree.org/) from Minifree Ltd,
 on select hardware, as well as send your compatible hardware
