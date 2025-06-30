@@ -112,10 +112,6 @@ Indistinguishably same boards (id 2216) with different gpu if included.(a bit bi
 
 The 840/850 G2 may have an AMD® Radeon™ R7 M260X gpu and 14/15u would have an AMD® FirePro™ M4170 gpu added, which would became useless using libreboot.
 
-Works the same way as the 820 G2 (including flashing libreboot on it too.), but the battery indicator usually shows wrong values (for example; a quick power drain down to 25%, then rebooting the machine shows ~50%, etc..)
-
-Everything else (except the battery status and extra gpus) shall work as it is on the elitebook 820 g2.
-
 ### Blobless boards
 
 Not yet supported, but interesting for the project. Separated thus:
