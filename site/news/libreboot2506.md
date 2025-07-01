@@ -27,8 +27,6 @@ there, before flashing. For posterity,
 Open source BIOS/UEFI firmware
 ----------------------------
 
-<img tabindex=1 class="r" src="https://av.libreboot.org/hp9470m/grub.jpg" /><span class="f"><img src="https://av.libreboot.org/hp9470m/grub.jpg" /></span>
-
 Libreboot is a free/open source BIOS/UEFI replacement on x86 and ARM, providing
 boot firmware that initialises the hardware in your computer, to then load an
 operating system (e.g. Linux/BSD). It is specifically
