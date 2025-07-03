@@ -43,7 +43,82 @@ or GRUB to boot your operating
 system; on ARM(chromebooks) and certain x86 mainboards, we provide *U-Boot* (as
 a coreboot payload), which provides a lightweight UEFI implementation..
 
-Summarised list of changes
+Sumarised list of changes
+-------------------------
+
+This section provides a brief overview, summarising all of the changes. The
+next sections (after this) show *all* changes in detail.
+
+The most important changes are, thus:
+
+New mainboards:
+
+* Acer Q45T-AM support added (similar to G43T-AM3 mainboard)
+* Dell Precision T1700 SFF and MT
+
+Revision updates:
+
+* GRUB, SeaBIOS, Untitled, flashprog, U-Boot, uefitool have all been updated
+  to newer revisions, from ~April 2025.
+
+Security:
+
+* GRUB has has *a lot* of security fixes applied to it from upstream, including
+  a very large series of *73* major security fixes, and a few minor tweaks
+  after the fact.
+* Globbing issues fixed in the Libreboot build system, lbmk. Better error
+  handling in general.
+* ThinkPad T480/3050micro: Disable hyperthreading by default
+
+Feature changes:
+
+* Better, more reliable caching of Git repositories and files during download.
+  Re-builds of sources make better use of local caching, instead of downloading
+  from scratch every time (e.g. coreboot and GRUB sources).
+* Handling of vendor files is more reliable, caching everything more aggressively
+  and even verifying checksums of *extracted* files, from inside update archives.
+* Non-root USB hub support added to GRUB, for xHCI devices
+* GRUB: better LVM scanning, for auto-boot especially with encrypted `/boot/`;
+  Linux distros are easier to handle, in general.
+* Safer handling of vendor files; release images padded to prevent flashing,
+  where such files are needed, until they have been inserted.
+* Better MAC address handling, on IFD-based systems. Insertion of MAC addresses
+  is done by default, randomised by default, unless overridden by the user.
+
+Config changes:
+
+* Removed unnecessary sources by default, to make source archives smaller. Only
+  the sources needed to build the binaries are included, in many cases.
+* Updated various dependencies configs, for installing build dependencies in
+  various Linux distros (for the `./build dependencies` command which installs
+  them in your distro).
+
+Bug fixes:
+
+* Better checksum verification for project files, when deciding whether to
+  re-build a given upstream source.
+* General build system fixes, making the build process more reliable, with
+  much stricter error handling (and some false error conditions have also been
+  removed).
+* GRUB payload: Mark E820 reserved for cbmem, which means that you no longer
+  need `iomem=relaxed` (kernel option) at boot time, to access the cbmem console.
+* Use `x` instead of `?` in nvmutil, as a character for randomness in MAC
+  addresses, to work around a design quirk in ZSH.
+* Where files are operated on post-build, e.g. coreboot images, more strictly
+  operate on them first, erroring out more reliably when a fault occurs; prevent
+  bad files from being copied to final build destinations. This reduces the
+  chance of bad/corrupt build artifacts being present in release builds.
+* HP EliteBook 820 G2 images now included in releases, because handling of
+  the refcode files was corrected so that checksum verification passes during
+  insertion.
+
+This, and more, has all been done. There was also a general focus on heavily
+auditing the build system, lbmk, so as to clean up the code. The amount of
+overall code in lbmk was *reduced*, without removing functionality.
+
+These next sections will repeat many of the above items, but in more detail.
+
+Detailed list of changes
 -------------------------
 
 ### Board support
