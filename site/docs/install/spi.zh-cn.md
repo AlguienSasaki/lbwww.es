@@ -43,14 +43,10 @@ libreboot 目前记录了这些 SPI 编程器的使用方法：
 Raspberry Pi Pico
 -----------------
 
-### RP2040/RP2530 both supported
+### Pico 1 (RP2040) supported
 
-**Pico 2 and other RP2530 dongles also supported, on Libreboot 20241206 rev8
-or higher. Releases before this only supported the original Pico, and other
-RP2040 dongles; newer Libreboot releases now support both RP2040 and RP2530.**
-
-The pinout on Raspberry Pi Pico and Raspberry Pi Pico 2 are identical, but you
-must take care to flash the correct image on either device.
+Pico 2 (RP2530) support was removed, due to stability issues.
+Pico 1 dongles work just fine (RP2040). Pinout:
 
 ![Left to right: Raspberry Pi Pico and Pico H](https://av.libreboot.org/rpi_pico/two_picos.webp)
 
@@ -99,13 +95,7 @@ to press the BOOTSEL button while you plug it in (this forces it into the
 bootloader mode).
 
 When you have the build, or if you're using a release build, copy the
-file `.uf2` file into your Pico. You must make sure to build the correct
-target, or otherwise copy the correct file, because many RP2040 and RP2530
-devices exist and Libreboot provides images for **all of them** in the same
-release tarball.
-
-**NOTE: Other RP2040/2530 devices will also work. You just have to match
-the right pins and use the correct firmware file!**
+file `.uf2` file into your Pico.
 
 ### Logic levels
 

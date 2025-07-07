@@ -102,17 +102,8 @@ Raspberry Pi Pico
 
 ### Pico 1 (RP2040) supported
 
-Pico 2 support was removed, due to stability issues. These are the RP2530
-devices. Pico 1 dongles work just fine (RP2040).
-
-**NOTE: RP2530 dongles removed in the Libreboot 25.04 testing release, but will
-be re-added in future revisions. It was removed due to bugs, so Libreboot only
-supports Pico1 (RP2040) for now, and the Pico2 images were also removed from the
-December release of 2024, retroactively. Subsequent revisions will once again
-re-add Pico 2 support, after it has been better tested.**
-
-The pinout on Raspberry Pi Pico and Raspberry Pi Pico 2 are identical, but you
-must take care to flash the correct image on either device.
+Pico 2 (RP2530) support was removed, due to stability issues.
+Pico 1 dongles work just fine (RP2040). Pinout:
 
 ![Left to right: Raspberry Pi Pico and Pico H](https://av.libreboot.org/rpi_pico/two_picos.webp)
 
@@ -164,12 +155,7 @@ bootloader mode).
 
 When you have the build, or if you're using a release build, copy the
 file `.uf2` file into your Pico. You must make sure to build the correct
-target, or otherwise copy the correct file, because many RP2040 and RP2530
-devices exist and Libreboot provides images for **all of them** in the same
-release tarball.
-
-**NOTE: Other RP2040/2530 devices will also work. You just have to match
-the right pins and use the correct firmware file!**
+target, or otherwise copy the correct file for your device.
 
 ### Logic levels
 
