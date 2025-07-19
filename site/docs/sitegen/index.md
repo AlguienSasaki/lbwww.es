@@ -67,6 +67,7 @@ Here are some websites built using the Libreboot Static Site Generator:
 * <https://libreboot.org/> (Libreboot project, maintained by Leah Rowe)
 * <https://trans.chat/> (Leah Rowe's transgender advocacy website)
 * <https://vimuser.org/> (Leah Rowe's personal blog)
+* <https://libreboob.org/> (Leah Rowe's webcomic series)
 
 Requirements
 ------------
