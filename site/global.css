@@ -183,3 +183,13 @@ img
 .p {
 	max-width: 13em;
 }
+
+ul.quicknav {
+	font-size: 1.2em;
+	font-weight: bold;
+	padding:0em;
+}
+ul.quicknav li {
+	display:inline;
+	padding-right:1em;
+}

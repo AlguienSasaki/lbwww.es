@@ -7,3 +7,6 @@
 *.sha1sum
 *.hash
 *.date
+*.link
+*.next
+*.prev
