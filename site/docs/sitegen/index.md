@@ -590,7 +590,23 @@ In this file, write the following lines:
 ```
 BLOGTITLE="The daily grind"
 BLOGDESCRIPTION="Hot takes, juicy gossip and everything inbetween!"
+BLOGINDEX="filename.md" # optional
+BLOGINDEXLATEST="y" # optional
 ```
+
+NOTE: By default, `BLOGINDEX` defaults to `index.md`. It must not contain
+any spaces or directory paths, only the given markdown file name inside
+the blog directory, for that given blog.
+
+If `BLOGINDEXLATEST="y"` is set, then the latest blog entry (as per
+the `MANIFEST`) file will be the home page (index) within that given
+blog directory; if this is set to `y` but `BLOGINDEX` is the default,
+then `BLOGINDEXLATEST="y"` will be ignored (treated as `="n"`).
+
+This BLOGINDEX and BLOGINDEXLATEST variable is useful, for example, if
+you were making a Web Comic. An example of this in use can be seen
+in the [Libreboob Adventures](https://libreboob.org/) webcomic, built
+using LBSSG.
 
 You can change these strings to whatever you want. Keep it simple! For
 example:
