@@ -398,6 +398,25 @@ SITEMAP="n"
 If you do this, the sitemap will not be generated. lbssg will otherwise
 generate a sitemap, by default.
 
+### MD\_TO\_HTML\_LINK\_REWRITE
+
+Write this in `site.cfg` for a given site:
+
+```
+MD_TO_HTML_LINK_REWRITE="n"
+```
+
+By default, if this is unset, the string will be empty. If it's set to
+something other than `n`, it will be treated as though it's empty.
+
+If it's set to `n`, Markdown links will be retained, even on HTML-generated
+pages; this means that if you intended for links to be HTML, you must specify
+those manually inside the Markdown files.
+
+If this is unitialised, or set to something other than `n`, any `md` links
+you have in your Markdown files will be converted to `html` file extensions
+instead.
+
 site/template.include
 ---------------------
 
