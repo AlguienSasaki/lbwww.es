@@ -80,6 +80,7 @@ $endif$
 <li><a href="/docs/install/">Installation</a></li>
 <li><a href="/docs/">Dokumentation</a></li>
 <li><a href="/news/">Neuigkeiten</a></li>
+<li><a href="/news/feed.xml">RSS</a></li>
 <li><a href="https://codeberg.org/libreboot/lbmk/issues">Bugs</a></li>
 <li><a href="/contact.de.html">Kontakt</a></li>
 <li style="font-size:1.3em;"><em><strong><a href="https://www.patreon.com/libreleah">Spenden</a></strong></em></li>
