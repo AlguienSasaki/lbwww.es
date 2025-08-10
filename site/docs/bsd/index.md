@@ -189,6 +189,16 @@ Regardless of whether you have an EFI framebuffer or INT10H VGA interrupts,
 the various BSD systems all support KMS so you should be able to use Xorg or
 Wayland just fine.
 
+### Speeding up suspend and resume in FreeBSD
+
+Sometimes, the suspend/resume times in FreeBSD on Librebooted laptop
+and on the laptop with proprietary BIOS may vary. The Librebooted
+laptop will show longer suspend and resume times. This may not be due
+to Libreboot but rather due to configuration quirks in FreeBSD
+configuration. Some tweaks should be performed on FreeBSD to decrease
+the suspend/resume time. [This article](suspend-resume-speedup.md)
+describes how to do that.
+
 ALWAYS READ THE MANUAL
 ----------------------
 
