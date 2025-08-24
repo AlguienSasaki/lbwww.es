@@ -372,7 +372,7 @@ disable the Boot Guard on this Intel 7th gen board.
 
 ### Dell OptiPlex 7010/9010 SFF (vendor BIOS)
 
-Refer to the [7010/9020 SFF page](dell7010.md). Internal flashing also possible.
+Refer to the [7010/9010 SFF page](dell7010.md). Internal flashing also possible.
 NOTE: If you have the *MT* variant, read the sections below instead (the SFF
 ROM is only for SFF).
 
