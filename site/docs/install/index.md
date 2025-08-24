@@ -637,7 +637,7 @@ follow the above instructions, but remove that option. So, just use `-p internal
 If that doesn't work, next try `-p internal:boardmismatch=force`. If that doesn't
 work, try `-p internal:boardmismatch=force,laptop=force_I_want_a_brick`. So long
 as you *ensure* you're using the correct ROM for your machine, it will be safe
-to run flashprog. These extra options just disable the safetyl checks in flashprog.
+to run flashprog. These extra options just disable the safety checks in flashprog.
 There is nothing to worry about.
 
 If successful, it will either say `VERIFIED` or it will say that the chip
