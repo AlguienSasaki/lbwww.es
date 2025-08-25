@@ -1,56 +1,17 @@
 ---
-title: Install Libreboot Open Source BIOS/UEFI boot firmware
-x-toc-enable: true
+title: Installing Libreboot Free/Opensource BIOS/UEFI firmware
 ...
 
-Open source BIOS/UEFI boot firmware
-------------------------------
+Always check [libreboot.org](https://libreboot.org/) for the latest updates to
+libreboot. News, including release announcements, can be found in
+the [main news section](../news/).
 
-With x86 machines, you can use the SeaBIOS or the GNU boot loader named GRUB as
-a payload. On ARM
-systems, you can use the U-Boot payload (coreboot still initialises hardware).
-An x86/x86\_64 U-Boot UEFI payload is also available.
-
-This article will teach you how to install Libreboot, on any of the supported
-laptop, desktop and server motherboards of Intel/AMD x86/x86\_64 and ARM64
-platform.
-Libreboot is a [Free Software](https://writefreesoftware.org/learn) project
-that replaces proprietary BIOS/UEFI firmware.
-
-**ALWAYS remember to make a backup of the current flash, when overwriting it,
-regardless of what firmware you currently have and what firmware you're
-re-flashing it with; this includes updates between Libreboot releases. Use
-the `-r` option in flashprog instead `-w`, to read from the flash.**
-
-SAFETY WARNING!
----------------
-
-**[PLEASE READ THESE INSTRUCTIONS BEFORE INSTALLING](ivy_has_common.md), OR
-YOU MAY BRICK YOUR MACHINE!! - Please click the link and follow the instructions
-there, before flashing. For posterity,
-[here is the link again](ivy_has_common.md).**
-
-**If you're using release ROMs, some files may be missing inside them, and must
-be added. See: [Inserting Vendor Files](ivy_has_common.md).**
-
-If you're [building from source](../build/), you can ignore the above guidance.
-
-Install Libreboot via external flashing
----------------------------------------
-
-Refer to the following article:\
-[Externally rewrite 25xx NOR flash via SPI protocol](spi.md)
-
-You are strongly advised to *have* an external flashing setup, and make sure
-it works, before attempting internal flashing. This, in addition to making
-a backup of the current flash contents, prior to flashing, whether you dump
-externally or internally - if only external flashing is available, then it's
-usually the case that only external dumping is available too.
+[Answers to Frequently Asked Questions about libreboot](../faq.md).
 
 Need help?
 ----------
 
-Help is available on [Libreboot IRC](../../contact.md) and other channels.
+Help is available on [Libreboot IRC](../contact.md) and other channels.
 
 If you want professional installation, Minifree Ltd sells [Libreboot
 pre-installed](https://minifree.org/) on select hardware, and it also provides
@@ -151,35 +112,28 @@ sure to re-enable them after you're finished.**
 ROM image file names
 --------------------
 
-Libreboot ROM images are named like
-this: `payload_board_inittype_displaytype_keymap.rom`
+-   [How to install libreboot](install/)
 
-The `payload` option can be SeaBIOS, SeaGRUB or U-Boot. If GRUB is available
-on a given board, in flash, both SeaBIOS and SeaGRUB are provided; SeaBIOS
-images still have GRUB available via the SeaBIOS menu, and SeaGRUB means that
-SeaBIOS automatically loads GRUB from flash first (but you can still choose
-something else, by pressing ESC in SeaBIOS when prompted).
+Installing operating systems
+----------------------------
 
-Inittype can be `libgfxinit`, `vgarom` or `normal`. The `libgfxinit` option
-means coreboot provides native video initialisation, for onboard graphics.
-The `vgarom` option means coreboot executes a VGA option ROM for video
-initialisation. The `normal` option means coreboot provides no video
-initialisation, via VGA ROM or native code.
+-   [Install BSD operating systems on Libreboot](bsd/)
+-   [Install Linux on a Libreboot system](linux/)
 
-Displaytype can be `txtmode` or `corebootfb` - if inittype is `normal`, this
-is ignored because `txtmode` is assumed.
+Information for developers
+--------------------------
 
-If `payload` is `seabios` instead of `seagrub`, no keymaps are inserted into
-flash and only US QWERTY is assumed, otherwise the keymap refers to what is used
-in GRUB on `seagrub` payload setups.
+-   [How to compile the libreboot source code](build/)
+-   [Build system developer documentation](maintain/)
+-   [GRUB payload](grub/)
+-   [U-Boot payload](uboot/)
 
-If you use a libgfxinit image on a desktop machine, you can still insert a
-graphics card and it'll work just fine; its own VGA option ROM will be
-executed instead, if the primary payload is SeaBIOS, whether that be pure
-SeaBIOS or a SeaGRUB setup.
+Other information
+-----------------
 
-EC firmware updates
--------------------
+-   [Libreboot Static Site Generator](sitegen/)
+-   [Miscellaneous](misc/)
+-   [List of codenames](misc/codenames.md)
 
 Obviously, free EC firmware would be preferable, but it is not the case on
 all machine. We would like to have free EC firmware on more machines, but for

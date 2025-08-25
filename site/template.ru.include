@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html$if(lang)$ lang="$lang$"$endif$$if(dir)$ dir="$dir$"$endif$>
+<head>
+  <meta charset="utf-8">
+  <meta name="description" content="$metadesc$">
+  <meta name="keywords" content="libreboot, coreboot, canoeboot, opensource, libre, свободное ПО, bios, uefi">
+  <meta name="generator" content="pandoc">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <link rel="canonical" href="$antisocialcanon$" />
+
+<!-- теги для социальных сетей -->
+  <meta property="og:title" content="$if(title-prefix)$$title-prefix$ – $endif$$pagetitle$">
+  <meta property="og:type" content="статья" />
+  <meta property="og:image" content="https://av.vimuser.org/bootmenu.jpg">
+  <meta property="og:url" content="$antisocialurl$">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta property="og:description" content="$if(title-prefix)$$title-prefix$ – $endif$$pagetitle$">
+  <meta property="og:site_name" content="$if(title-prefix)$$title-prefix$ – $endif$$pagetitle$">
+  <meta name="twitter:image:alt" content="$if(title-prefix)$$title-prefix$ – $endif$$pagetitle$">
+
+$for(author-meta)$
+  <meta name="author" content="$author-meta$">
+$endfor$
+$if(date-meta)$
+  <meta name="dcterms.date" content="$date-meta$">
+$endif$
+$if(keywords)$
+  <meta name="keywords" content="$for(keywords)$$keywords$$sep$, $endfor$">
+$endif$
+  <title>$if(title-prefix)$$title-prefix$ – $endif$$pagetitle$</title>
+$if(quotes)$
+  <style type="text/css">q { quotes: "“" "”" "‘" "’"; }</style>
+$endif$
+$if(highlighting-css)$
+  <style type="text/css">
+$highlighting-css$
+  </style>
+$endif$
+$for(css)$
+  <link rel="stylesheet" href="$css$">
+$endfor$
+$if(math)$
+  $math$
+$endif$
+$for(header-includes)$
+  $header-includes$
+$endfor$
+<link rel="alternate" type="application/rss+xml" title="RSS лента" href="/feed.xml"/>
+</head>
+<body>
+<div class="page">
+$for(include-before)$
+$include-before$
+$endfor$
+$if(title)$
+<header>
+<div class="title" onclick="location.href='/';">
+<p class="title-logo">
+<a href="/"><img class="title-logo" alt="Логотип Libreboot" src="/favicon.ico" /></a>
+</p>
+<h1 class="title">$title$</h1>
+</div>
+$if(subtitle)$
+<p class="subtitle">$subtitle$</p>
+$endif$
+$for(author)$
+<p class="author">$author$</p>
+$endfor$
+$if(date)$
+<p class="date">$date$</p>
+$endif$
+<ul>
+<li><a href="/">Главная</a></li>
+<li><a href="/faq.html">ЧаВо</a></li>
+<li><a href="/download.html">Скачать</a></li>
+<li><a href="/git.html">Git</a></li>
+<li style="font-size:1.3em;"><em><strong><a href="https://minifree.org/">Купить Libreboot с предустановкой</a></strong></em></li>
+<li><a href="/docs/install/">Установка</a></li>
+<li><a href="/docs/">Документация</a></li>
+<li><a href="/news/">Новости</a></li>
+<li><a href="/news/feed.xml">RSS</a></li>
+<li><a href="https://codeberg.org/libreboot/lbmk/issues">Ошибки</a></li>
+<li><a href="/contact.html">Контакты</a></li>
+<li style="font-size:1.3em;"><em><strong><a href="https://www.patreon.com/libreleah">Поддержать проект</a></strong></em></li>
+</ul>
+<hr/>
+</header>
+$endif$
+$if(return)$
+$return$
+$endif$
+$if(toc)$
+<nav id="$idprefix$TOC">
+<h2>Навигация по странице:</h2>
+$toc$
+</nav>
+$endif$
+$if(toc)$
+<div class="pagetext">
+$endif$
+$body$
+$for(include-after)$
+$include-after$
+$endfor$
+$if(toc)$
+</div>
+$endif$
+</div>
+</body>
+</html>
