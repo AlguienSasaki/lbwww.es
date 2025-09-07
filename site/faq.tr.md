@@ -217,7 +217,6 @@ Libreboot'a birçok şekilde katkıda bulunabilirsiniz:
 3. [Belgeleri geliştirerek](docs/maintain/)
 4. [Çeviri yaparak](news/translations.md)
 5. [Hataları düzelterek](https://codeberg.org/libreboot/lbmk/issues)
-6. [Bağış yaparak](https://www.patreon.com/libreleah)
 
 ### Libreboot'un Geleceği Nedir?
 
