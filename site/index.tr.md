@@ -7,6 +7,10 @@ x-toc-enable: true
 
 <img tabindex=1 class="r" alt="Libreboot çalıştıran ThinkPad T480" title="ThinkPad T480" src="https://av.libreboot.org/t480/t480.jpg" /><span class="f"><img alt="Libreboot çalıştıran ThinkPad T480" src="https://av.libreboot.org/t480/t480.jpg" /></span>
 
+On [8 September 2025](news/spi.html), Libreboot became an official [Associated
+Project](https://www.spi-inc.org/projects/libreboot/) at SPI ([Software in
+the Public Interest](https://www.spi-inc.org/)).
+
 Libreboot, x86/x86_64 Intel/AMD anakartlarda GNU önyükleyici "[GRUB](docs/linux/)" ve SeaBIOS yüklerini, ARM64(Aarch64) anakartlarda ise *coreboot için* [U-Boot UEFI yükünü](docs/uboot/) sağlar. Bazı kartlarda [x86/x86_64 U-Boot UEFI yükü](docs/uboot/uboot-x86.md) de mevcuttur. x86, x86_64 ve arm64 U-Boot yükleri hafif bir UEFI önyükleme uygulaması sağlar. Libreboot'un [tasarımı](docs/maintain/) tüm bu yükleri tek bir imajda birleştirir ve önyükleme sırasında birini seçersiniz.
 
 **YENİ SÜRÜM: En son sürüm 30 June 2025'te yayınlanan Libreboot 25.06'dır.

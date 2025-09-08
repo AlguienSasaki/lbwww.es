@@ -14,6 +14,10 @@ Firmware. Hilfe ist verfügbar
 via [\#libreboot](https://web.libera.chat/#libreboot)
 und [Libera](https://libera.chat/) IRC.
 
+Libreboot ist seit dem [8. September 2025](news/spi.md) ein [assoziiertes
+Projekt innerhalb](https://www.spi-inc.org/projects/libreboot/) der SPI (Software
+in the Public Interest).
+
 <img tabindex=1 class="r" src="https://av.libreboot.org/t480/t480.jpg" /><span class="f"><img src="https://av.libreboot.org/t480/t480.jpg" /></span>
 
 Libreboot provides GNU boot loader "[GRUB](docs/linux/)" and SeaBIOS payloads on
