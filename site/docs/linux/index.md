@@ -149,7 +149,7 @@ Fedora won't boot?
 ------------------
 
 This may also apply to CentOS or Redhat. Chroot guide can be found on
-[fedora website](https://docs.fedoraproject.org/en-US/quick-docs/bootloading-with-grub2/#restoring-bootloader-using-live-disk)
+[fedora website](https://docs.fedoraproject.org/en-US/quick-docs/grub2-bootloader/#_restoring_the_bootloader_using_the_live_disk)
 
 ### linux16 issue
 
