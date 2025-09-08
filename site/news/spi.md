@@ -1,4 +1,4 @@
-% Libreboot joins Software in the Public Interest (SPI) as Member Project
+% Libreboot joins Software in the Public Interest (SPI) as Associated Project
 % Leah Rowe
 % 8 September 2025
 
