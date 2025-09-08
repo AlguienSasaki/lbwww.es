@@ -86,17 +86,6 @@ will mean Libreboot can gain greater funding and support as a result. I'm
 expecting great things! Libreboot always had a strong future, but SPI membership
 now makes that future even stronger.
 
-I also submitted a proposal to SFC (Software Freedom Conservancy) as well as
-SPI, at around the same time, but the SFC application never went ahead; SFC was
-sceptical about Libreboot's governance model, since I pretty much have BDFL
-status within the project - though I wish to democratise the project, as it
-grows in the future. In practise, I tend to delegate a lot of tasks within the
-project, when other people get involved with the project, and I lean a lot on
-the advice of others, for a great many things. Indeed, parts of the Libreboot
-infrastructure are not maintained by me (e.g. Alper Nebi Yasak is in charge of
-maintaining the ARM64 U-Boot payload). SPI and SFC are quite similar in scope,
-offering similar services.
-
 At the time of this article, the SPI-based donations page for Libreboot has not
 yet been set up, but it will be online in the near future.
 
