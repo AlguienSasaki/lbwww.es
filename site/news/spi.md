@@ -1,5 +1,6 @@
-% Libreboot joins Software in the Public Interest as Member Project Leah Rowe 8
-% September 2025
+% Libreboot joins Software in the Public Interest as Member Project
+% Leah Rowe
+% 8 September 2025
 
 Libreboot is a [coreboot distribution](https://coreboot.org/) (coreboot distro),
 in the same way that Debian is a Linux distribution. Libreboot provides free,
