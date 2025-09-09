@@ -35,7 +35,7 @@ Selecting an Operating System
 -----------------------------
 
 In theory, any linux based operating system will do.
-In practice, many distros are highly limited when it comes to single-board-computers.
+In practise, many distros are highly limited when it comes to single-board-computers.
 SBCs often require specialized kernel patches which are rarely upstreamed.
 Additionally, armhf boards (like the le potato) are not supported in most modern distros.
 
