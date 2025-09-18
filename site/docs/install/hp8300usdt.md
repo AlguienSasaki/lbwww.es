@@ -47,7 +47,7 @@ These features are tested and confirmed working:
 * Libgfxinit textmode and framebuffer on both DisplayPorts and VGA
 * SeaBIOS and GRUB payloads
 * External USB2 and USB3 ports: they all work
-* USB 3.0 SuperSpeed on Linux-libre (rear, 4 ports)
+* USB 3.0 SuperSpeed on Linux (rear, 4 ports)
 * Ethernet
 * Mini-PCIe WLAN
 * SATA: 2.5" disk (6Gbps), mSATA (3Gbps), and optical drive bay

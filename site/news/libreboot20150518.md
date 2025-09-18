@@ -79,7 +79,6 @@ Changes for this release, relative to r20150208 (earliest changes last, recent c
 -   docs/install/bbb\_setup.html: Add info about wp/hold and pinouts
 -   docs/: improve the description of libreboot
 -   docs/hardware/gm45\_remove\_me.html: notes about the demefactory utility
--   docs/install/bbb\_setup.html: EHCI debug: recommend linux-libre
 -   docs/install/bbb\_setup.html: EHCI Debug logging setup guide
 -   docs/hardware/t500.html: Add screen compatibility report (TODO: fix
     incompatible screens)
