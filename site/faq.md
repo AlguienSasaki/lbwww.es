@@ -541,7 +541,7 @@ The *-a* option in nvramtool will list the available options, and *-w*
 can be used to change them. Consult the nvramtool documentation on the
 coreboot wiki for more information.
 
-In practise, you don't need to change any of those settings, in most
+In practice, you don't need to change any of those settings, in most
 cases.
 
 Default libreboot setups lock the CMOS table, to ensure consistent functionality
@@ -561,7 +561,7 @@ re-flash it.
 It is advisable to simply use a larger ROM image. This section was written
 mostly for ASUS KCMA-D8 and KGPE-D16 motherboards, where previously we only
 provided 2MiB ROM images in libreboot, but we now provide 16MiB ROM images.
-Other sizes are not provided because in practise, someone upgrading one of
+Other sizes are not provided because in practice, someone upgrading one of
 these chips will just use a 16MiB one. Larger sizes are available, but 16MiB
 is the maximum that you can use on all currently supported libreboot systems
 that use SPI flash.

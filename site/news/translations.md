@@ -52,7 +52,7 @@ quite nice:**
 	sudo apt-get install ufw
 	sudo ufw enable
 
-This will block all unsolicited incoming traffic. It's good practise anyway,
+This will block all unsolicited incoming traffic. It's good practice anyway,
 for workstations. You don't have to use ufw, but it's a nice frontend for
 iptables/ip6tables on systems that use the Linux kernel. More information
 about `ufw` available here:

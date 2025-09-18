@@ -263,7 +263,7 @@ changes to the earliest changes):
 * lbmk: Use `pwd` instead of the `PWD` variable, resetting the latter safely
   as lbmk runs. This prevents lbmk from changing directory to an erroneous
   system path, if `PWD` wasn't properly set for some reason. This is a
-  preventative bug fix, because no actual issue ever occured in practise.
+  preventative bug fix, because no actual issue ever occured in practice.
 * Much safer Python version check at lbmk startup, using data structures that
   are provided universally by all Python implementations, instead of
   relying on the output of `--version`.

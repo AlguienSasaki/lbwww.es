@@ -117,7 +117,7 @@ Changelog:
 * `util/nvmutil`: Fixed faulty check for MAC address `00:00:00:00:00:00` - the
   total was being reset for each word, wrongly. This has been corrected.
 * `blobutil/download`: now supports extracting `me.bin` from LZMA archives, in
-  addition to inno archives; in practise, lbmk still currently only supports
+  addition to inno archives; in practice, lbmk still currently only supports
   machines where inno archives are extracted from, but experimental new ports
   exist outside of `master` that will be present in future releases.
 * `blobutil/download`: no longer hardcodes the `me.bin` path, when extracting

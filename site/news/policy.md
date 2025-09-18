@@ -6,7 +6,7 @@ Free as in freedom!
 -----------------
 
 This article describes the *principles* that govern the Libreboot project. For
-information about *how those principles are applied in practise*, please read
+information about *how those principles are applied in practice*, please read
 this article instead: [Software and hardware freedom status for each motherboard
 supported by Libreboot](../freedom-status.md)
 
@@ -400,7 +400,7 @@ hardware being supported.
 Libreboot previously had its head in the sand, before November 2022. Since
 November 2022, Libreboot has been much more pragmatic, implementing the
 policy that you read now, instead of simply banning all proprietary firmware;
-the result is increased hardware support, and in practise many of the newer
+the result is increased hardware support, and in practice many of the newer
 machines we support are still entirely free in coreboot (including memory
 controller initialisation), right up to Intel Haswell generation.
 

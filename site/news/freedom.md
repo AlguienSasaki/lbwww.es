@@ -14,8 +14,8 @@ Now, *ideology* is all well and good, but it must be translated into something
 concrete that exists in the real world. You can't get there with thought!
 
 Today, I published a follow-up article that defines how the policy
-is *implemented* in practise. There has been some confusion among some fans of
-the Libreboot project, about what the policy means in practise.
+is *implemented* in practice. There has been some confusion among some fans of
+the Libreboot project, about what the policy means in practice.
 
 Refer here to the new article, thus:
 

@@ -53,7 +53,7 @@ project *allows* them, only when they are absolutely required.
 [Strict rules](../../news/policy.md) govern when this allowed, and
 the [freedom status page](../../freedom-status.md) provides additional details.
 
-Best practises for learning lbmk
+Best practices for learning lbmk
 --------------------------------
 
 The follow sections will cover subdirectories, within lbmk. Contrary to what

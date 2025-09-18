@@ -332,7 +332,7 @@ changes first):
 * main build script: set `--author` in Git, when re-initialising the Git
   history on release archives. Patch courtesy of Leah Rowe.
 * lbmk return status: don't rely on return status for unconditional returns.
-  There were some parts of lbmk that, in practise, would always exit, but could
+  There were some parts of lbmk that, in practice, would always exit, but could
   theoretically not, even when they are supposed to, regardless of exit status.
   Patch courtesy of Leah Rowe.
 * lbmk help text: support showing the Libreboot version, project name and

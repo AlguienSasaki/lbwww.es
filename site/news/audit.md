@@ -51,7 +51,7 @@ features that are considered superfluous.
 
 ### Example of BSD coding style on shell scripts
 
-One of the most common practises in BSD style in *top-down* logic, which
+One of the most common practices in BSD style in *top-down* logic, which
 makes programs much easier to read (in my opinion). Here is an example
 of the BSD coding style in use within *lbmk*. Here is the *old* coreboot
 download script in lbmk:

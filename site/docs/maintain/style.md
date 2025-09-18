@@ -9,7 +9,7 @@ For context, please also read the main [lbmk maintenance manual](index.md).
 
 You should *read* the logic in lbmk yourself, to really know what is meant by
 some of the concepts explained here. This article will no doubt be incomplete,
-and several practises may persist in spite of it; nonetheless, this article
+and several practices may persist in spite of it; nonetheless, this article
 shall serve as a reference for lbmk development.
 
 NO BASHISMS

@@ -246,7 +246,7 @@ In descending order from latest changes to earliest changes:
 * `inject.sh`: simplify kconfig scanning by using the `fe_` with a new
   function, `scankconfig()`. This new function checks *all* coreboot configs
   for a given target, whereas the old behaviour only resulted in the *first*
-  config being checked. In practise, this causes no real behaviour changes.
+  config being checked. In practice, this causes no real behaviour changes.
 * `rom.sh`: Print the rom image path being generated
 * `lib.sh`: Add warning if x_ is called without args
 * `init.sh`: More verbose error info, on non-zero exits.
@@ -586,7 +586,7 @@ changes to the earliest changes):
 * lbmk: Use `pwd` instead of the `PWD` variable, resetting the latter safely
   as lbmk runs. This prevents lbmk from changing directory to an erroneous
   system path, if `PWD` wasn't properly set for some reason. This is a
-  preventative bug fix, because no actual issue ever occured in practise.
+  preventative bug fix, because no actual issue ever occured in practice.
 * Much safer Python version check at lbmk startup, using data structures that
   are provided universally by all Python implementations, instead of
   relying on the output of `--version`.

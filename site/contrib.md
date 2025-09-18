@@ -342,7 +342,7 @@ media, in his capacity working for the employer he worked for at the time;
 I credit him specifically. Joshua was one of Libreboot's earliest supporters.
 
 He made sure everyone knew what I was doing, and he taught me a *lot* about
-licensing; many of Libreboot's practises today are still based on his lessons,
+licensing; many of Libreboot's practices today are still based on his lessons,
 such as the pitfalls of GPL compliance and how to really audit everything.
 
 ### Klemens Nanni

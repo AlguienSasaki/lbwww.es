@@ -63,10 +63,10 @@ release will be named *Luminous Lemon*.
 ### Rules for revisions
 
 RC releases come out two to three months before stable; any number of
-non-breaking or otherwise relatively safe changes can be made. In practise,
+non-breaking or otherwise relatively safe changes can be made. In practice,
 the master branch of lbmk mostly uses a branchless development model anyway.
 
-In practise, what this means is that there will be a feature freeze a little
+In practice, what this means is that there will be a feature freeze a little
 while before a given stable release, but only in that release's own branch;
 the master branch can continue to receive aggressive development.
 

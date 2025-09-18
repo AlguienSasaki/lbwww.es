@@ -332,7 +332,7 @@ The changes are as follows:
 * `script/trees`: Don't continue, when no argument is given. `main()` used to
   be the only funsction that runs, in this script, but now we source a config
   file afterward, and run the build after that. Whan a flag is provided without
-  OPTARG, this means that we are continuing such action in error; in practise,
+  OPTARG, this means that we are continuing such action in error; in practice,
   it meant that nothing was done because the command was set by `mkhelpercfg`
   and `cmd`, which would be empty in this situation, but it might cause issues
   depending on the `sh` implementation, so this fix is pre-emptive.
@@ -344,10 +344,10 @@ The changes are as follows:
 * `include/rom.sh`: Only build coreboot utilities *before* building coreboot
   itself. This prevents `coreboot.rom` from being wiped out, when building it,
   due to idiosyncrasis in coreboot's own build system. This is a pre-emptive
-  fix, because the issue didn't really cause actual trouble in practise,
+  fix, because the issue didn't really cause actual trouble in practice,
   except under certain test conditions that are unlikely in real use.
 * `include/vendor.sh`: Properly quote the filename, in a check for `ec.bin`,
-  on the `extract_kbc1126ec()` function - in practise, this caused no issue, so
+  on the `extract_kbc1126ec()` function - in practice, this caused no issue, so
   this is a pre-emptive bug fix, but quotes are now used to prevent globbing.
   Overlooked in a previous audit, where anti-globbing was actually a priority
   in that audit.
@@ -372,7 +372,7 @@ The changes are as follows:
   via variable expansion, which only yields negative if the variable was never
   declared. The intention is to check both unitialised and empty strings, per
   variable. This is a *pre-emptive* bug fix, because this bug did not seemingly
-  cause any issues in practise, but a bug is still a bug.
+  cause any issues in practice, but a bug is still a bug.
 * **`include/vendor.sh`: Re-added the `modify_gbe()` function**, seldom used but
   nonetheless required; it's called when the user specifies a MAC address,
   during vendorfile insertion on release images. Direct use of `nvmutil` is
@@ -384,7 +384,7 @@ The changes are as follows:
   build, because the check works by first checking the existence of a given
   U-Boot build file, deferring to another and then exiting if that doesn't
   exist, with error status. This is a *pre-emptive* bug fix, because this
-  bug wasn't triggered in practise since actual targets already used the
+  bug wasn't triggered in practice since actual targets already used the
   fallback build, not the first one. Therefore, this fix is pre-emptive for
   future U-Boot targets in lbmk.
 * `include/lib.sh`: Do not exceed 80 characters on the line that checks
@@ -393,13 +393,13 @@ The changes are as follows:
   the `inject_vendorfiles()` function and merge into `vendor_download()`.
   The `release` variable is included now in some `target.cfg` files, so we want
   to avoid conflicting with it. This is a pre-emptive bug fix, because the bug
-  described had not been triggered in practise, but was theoretically possible.
+  described had not been triggered in practice, but was theoretically possible.
 * `script/trees`: Exit with error status if `target.cfg` not provided, on
   multi-tree projejcts. It was already by design that this should occur,
   but we previously did not support `target.cfg` files on single-tree projects.
   Single-tree `target.cfg` support was later added, done by making `target.cfg`
   optional there, but the change accidentally made it optional on multi-tree
-  projects. In practise, all multi-tree projects included this file per target,
+  projects. In practice, all multi-tree projects included this file per target,
   so this is a pre-emptive bug fix on the theory that future maintainers might
   accidentally exclude `target.cfg` on a given tree, within a multi-tree
   project.
@@ -431,7 +431,7 @@ The changes are as follows:
 * `include/lib.sh`: Make the presence of a `projectname` file mandatory, with
   the project name inside. This prevents the theoretical issue where a project
   is nameless, because this file is used during the build process when naming
-  release tarballs; theoreticaly, because in practise, lbmk would never remove
+  release tarballs; theoreticaly, because in practice, lbmk would never remove
   this file, but the build system is designed to be as adaptable as possible.
 * **`script/trees`: If the crossgcc build fails, run it again first**, before
   returning with error status. If the second build passes, don't yield an error.

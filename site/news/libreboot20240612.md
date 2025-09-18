@@ -163,7 +163,7 @@ Changes are in order per category, from newest to oldest:
   generating the list of devices/partitions when using the `*` wildcard, so
   we can't scan `grub*/`.
 * grub.cfg: it now scans a reduced set of devices/partitions by default, while
-  still ensuring (in practise, on real systems) that all such devices and
+  still ensuring (in practice, on real systems) that all such devices and
   partitions will be scanned. We hardcode this, because the `*` wildcard in
   GRUB is *very slow* on some machines, due to the way the GRUB kernel
   constantly re-initialises the list of devices and partitions during operation.

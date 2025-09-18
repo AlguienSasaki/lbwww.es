@@ -215,7 +215,7 @@ you follow the notes here:
 
 <https://www.eevblog.com/forum/repair/ch341a-serial-memory-programmer-power-supply-fix/>
 
-In practise, most people will not fix their ch341a and instead just risk it,
+In practice, most people will not fix their ch341a and instead just risk it,
 so no documentation will be provided for ch341a on this website. It is best
 to discourage use of that device.
 
@@ -954,7 +954,7 @@ capacitors up on that.
 ### SOIC8/WSON8/DIP8/SOIC16 not mounted to a motherboard
 
 If your system has lower capacity SPI flash, you can upgrade. On *most* systems,
-SPI flash is memory mapped and the maximum (in practise) that you can use is a
+SPI flash is memory mapped and the maximum (in practice) that you can use is a
 16MiB chip. For example, KGPE-D16 and KCMA-D8 motherboards in libreboot have
 2MiB flash by default, but you can easily upgrade these. Another example is the
 ThinkPad X200S, X200 Tablet and T400S, all of which have WSON8 where the best

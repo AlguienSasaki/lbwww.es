@@ -861,7 +861,7 @@ It is recommended that you use a Git repository to host your website. Then you
 can easily keep track of changes to your site. You would use a static version
 of lbssg on your server, and just build new changes to your site whenever
 you push them. This is actually *why* the `site/` directory is enforced under
-the `www/sitename/` directory for each site, so as to encourage good practise
+the `www/sitename/` directory for each site, so as to encourage good practice
 (because by doing it this way, the `.git` directory will not be visible on your
 public web server. You do *not* want that directory to be visible!)
 

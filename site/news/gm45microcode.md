@@ -75,11 +75,11 @@ The patch re-adding these mitigations can be seen here:
 Free choice, that's why. We don't lecture anyone. We just help people.
 
 One aspect of Libreboot policy is that Libreboot must be *configurable*. In
-practise, some users want to remove microcode updates regardless of the
+practice, some users want to remove microcode updates regardless of the
 problems that it would cause. Even if I disagree with their reasoning, I
 respect their decision and this change is designed to accomodate them.
 
-in practise, such users had a choice before but they currently do not, in
+in practice, such users had a choice before but they currently do not, in
 recent Libreboot releases. This criticism was raised with me, and I've taken
 it to heart. Therefore, users now have a choice; they always did, but remember:
 

@@ -180,14 +180,14 @@ changes to the earliest changes):
   was when the script was first called. This is because PATH is manipulated
   when dealing with crossgcc, exporting it prior to running a given build
   process, if the current project/target enables cross compilation. This bug
-  didn't cause any issues in practise, so this is a preventative bug fix,
+  didn't cause any issues in practice, so this is a preventative bug fix,
   because projects that use the crossgcc compiler all set `xarch` properly,
   and none of the projects that aren't cross compiled use special prefixes
   in their toolchain references, at least as of 6 December 2024.
 * Add U-Boot first, on x86 coreboot targets, even though it doesn't execute
   first, because U-Boot has to be inserted at a specific offset. This avoids
   potential overlap errors in cbfstool, if it were to be added later on. This
-  bug didn't cause any issues in practise, so it is theoretical in nature and
+  bug didn't cause any issues in practice, so it is theoretical in nature and
   therefore a preventative bug fix.
 * `rom.sh`: Removed redundant shebang, which didn't technically cause any
   problems, but it's technically a bug since this is not provided as a main

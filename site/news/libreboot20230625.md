@@ -224,7 +224,7 @@ Newest changes first, oldest changes last:
   lbmk would insert them based on the offset as per ROM image file size, but
   it is possible (and more reliable) to have cbfstool calculate that position
   within the file based on where the ROM image would be loaded into memory.
-  The result is identical in practise (same checksum for the file), but this is
+  The result is identical in practice (same checksum for the file), but this is
   more robust for a future scenario where, for example, Libreboot might provide
   different sized images. For example, if the flash were upgraded to 16MB rather
   than 12MB on a T440p (Libreboot still only provides 12MB images for T440p).

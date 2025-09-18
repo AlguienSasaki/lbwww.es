@@ -107,7 +107,7 @@ Current issues {#issues}
     project recommends not installing the module. [This
     project](https://github.com/facebook/openbmc) might be interesting
     to derive from, for those who want to work on a free replacement. In
-    practise, out-of-band management isn't very useful anyway (or at
+    practice, out-of-band management isn't very useful anyway (or at
     the very least, it's not a major inconvenience to not have it).
 -   Graphics: only text-mode works. See [\#graphics](#graphics)
 

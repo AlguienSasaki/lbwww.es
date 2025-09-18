@@ -38,7 +38,7 @@ If you're fed up of the control that proprietary UEFI vendors have over you,
 then Libreboot is *for you*. Although many would agree that it is a major step
 forward for most users, it's actually a very old idea. Old is often better. It used to
 be that computers were much more open for learning, and tinkering. Libreboot
-implements this old idea in spirit and in practise, helping you wrest back control.
+implements this old idea in spirit and in practice, helping you wrest back control.
 
 Unlike the hardware vendors, Libreboot does not see *you* as a *security threat*;
 we regard the ability to use, study, modify and redistribute software freely to

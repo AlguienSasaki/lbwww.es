@@ -82,7 +82,7 @@ pin 1.
 
 When you wire the clip, to flash one of the ICs, the same voltage rail also
 turns on the other IC and the other IC's own chip-select is in a *floating*
-state, which in practise means *random logic state*; in other words, the other
+state, which in practice means *random logic state*; in other words, the other
 flash may or may not be active, randomly.
 
 This means that external flashing would not ordinarily work, unless you use

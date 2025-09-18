@@ -7,7 +7,7 @@ Free as in freedom
 ------------------
 
 This page documents how Libreboot's [Binary Blob Reduction
-Policy](news/policy.md), adopted in November 2022, is implemented in practise,
+Policy](news/policy.md), adopted in November 2022, is implemented in practice,
 especially that line which says: *"if free software can be used, it must be
 used."*
 
@@ -183,7 +183,7 @@ the card and execute it. This has been tested on certain desktop motherboards
 that Libreboot supports, and works just fine; Libreboot does not need to handle
 these files at all.
 
-Libreboot's default is *always* freedom, when feasible in practise. Users who
+Libreboot's default is *always* freedom, when feasible in practice. Users who
 wish to have use of these additional GPUs, on such hardware, must take stock
 of the following paragraph in Libreboot policy:
 

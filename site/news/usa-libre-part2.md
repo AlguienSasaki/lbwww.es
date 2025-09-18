@@ -102,7 +102,7 @@ If no laws exist that protect libre software projects, then they are
 vulnerable.
 
 Just as you should have the right to property, you must also have the right to
-pursue a happy, productive life - the right, in practise, to work on libre
+pursue a happy, productive life - the right, in practice, to work on libre
 software should be part of that, if computer science is something you're
 interested in.
 
@@ -186,7 +186,7 @@ remain relevant, would have to start releasing more source code themselves,
 rather than keeping everything proprietary. The people of the world will stop
 seeing them as a gold standard; they are not, and have never been. Libre
 software has always been superior, in every way, to proprietary software,
-because it allows you to actually *own* the computer you bought, in practise
+because it allows you to actually *own* the computer you bought, in practice
 and in spirit.
 
 Proprietary software is like renting a house; you have a license to use it,

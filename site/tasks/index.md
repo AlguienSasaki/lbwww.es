@@ -614,7 +614,7 @@ It could also be done earlier, in coreboot, but then there's no way to turn
 it off. Doing it from GRUB (or Linux, when a payload for that is added) seems
 wiser.
 
-In practise, this should probably not be the default. Libreboot's current
+In practice, this should probably not be the default. Libreboot's current
 default is *no write protection*, though most Linux distros and BSDs enable
 protecting `/dev/mem` by default, that the user can turn off at boot time when
 they want to flash (e.g. cmdline option `iomem=relaxed` in Linux,
@@ -904,7 +904,7 @@ automatically adjust to the new revision+patches by: 1) undoing all patches
 and 2) running git pull 3) resetting again to the new revision and applying
 new patches and 4) cleaning the previous builds
 
-In practise, revisions don't change very often in Libreboot, and they're
+In practice, revisions don't change very often in Libreboot, and they're
 normally updated all at once, when they are updated.
 
 Normal/fallback scheme
@@ -1102,7 +1102,7 @@ setups. This could then be abused, to substantially reduce the overall build
 time in lbmk. We want to build hundreds of ROM images in coreboot, and that
 takes *time* - too much time.
 
-This will require working with upstream, and in practise require that they
+This will require working with upstream, and in practice require that they
 accept such proposals. The build system design in coreboot is already ready
 for this sort of thing, and it could be done with minimal complexity - the
 current behaviour would be retained as a default.
@@ -1257,7 +1257,7 @@ this page, about lbmk checking itself when a given codebase or config gets
 updated, so that it can adapt itself.
 
 Most notably, lbmk runs distclean on most/all codebases before then running
-make-all. This is done for simplicity, and in practise usually works OK because
+make-all. This is done for simplicity, and in practice usually works OK because
 most projects only get built once, unless they are modified (by a developer).
 
 This might be useful for:
@@ -1320,7 +1320,7 @@ FAQ: cover USB fuzzing attacks
 ------------------------------
 
 We write on the FAQ that SATA devices could potentially have DMA capability,
-but this has still not been proven, and it's probably not true in practise.
+but this has still not been proven, and it's probably not true in practice.
 
 USB may not have DMA, but it's possible to perform what's called a fuzzing
 attack, whereby a USB device pretends to be something such as a keyboard,
@@ -1665,7 +1665,7 @@ Look in devicetrees within coreboot, and see:
 ```
 
 Example taken from lenovo/x230. We could just turn all of these off.
-It doesn't affect anything in practise, whether this is on or not, because
+It doesn't affect anything in practice, whether this is on or not, because
 we neuter anyway, so the ME interface is broken by default. Leaving it
 on in devicetree will result in a benign error message on linux dmesg.
 

@@ -338,7 +338,7 @@ hardware being supported.
 Libreboot previously had its head in the sand, before November 2022. Since
 November 2022, Libreboot has been much more pragmatic, implementing the
 policy that you read now, instead of simply banning all proprietary firmware;
-the result is increased hardware support, and in practise many of the newer
+the result is increased hardware support, and in practice many of the newer
 machines we support are still entirely free in coreboot (including memory
 controller initialisation), right up to Intel Haswell generation.
 
