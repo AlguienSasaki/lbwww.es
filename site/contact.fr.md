@@ -77,3 +77,6 @@ Leah peut également être contacté par mail :
 
 Généralement utilisé pour le support mais aussi pour l'annonces des dernières nouveautés :
 <https://www.reddit.com/r/libreboot/>
+
+
+[//]: # "SPDX-License-Identifier: GFDL-1.3-or-later"

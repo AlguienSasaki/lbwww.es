@@ -119,3 +119,6 @@ begun on this project. My efforts are currently focused on the Linux distro.
 
 What I want is a fork of GRUB, optimized to run on bare metal as a coreboot
 payload, on x86 and ARM platforms.
+
+
+[//]: # "SPDX-License-Identifier: GFDL-1.3-or-later"

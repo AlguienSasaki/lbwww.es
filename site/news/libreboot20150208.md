@@ -71,3 +71,6 @@ installed r20150126 don't really need to update to this release.
 -   build-release: delete the commitid file from release archives
 -   build-release: create file named commitid after build-release
 
+
+
+[//]: # "SPDX-License-Identifier: GFDL-1.3-or-later"

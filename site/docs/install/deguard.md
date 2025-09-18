@@ -134,3 +134,6 @@ great service to the Libreboot project.
 Many more machines are now possible to port to coreboot, thanks to this hack.
 
 The Libreboot project owes Mate Kukri a debt of gratitude, many times over.
+
+
+[//]: # "SPDX-License-Identifier: GFDL-1.3-or-later"

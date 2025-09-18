@@ -127,3 +127,6 @@ See also
 (https://review.coreboot.org/cgit/coreboot.git/tree/Documentation/thinkpad/codenames.csv)
 -   For Chromebooks see [Developer information for ChromeOS devices]
 (https://www.chromium.org/chromium-os/developer-information-for-chrome-os-devices/)
+
+
+[//]: # "SPDX-License-Identifier: GFDL-1.3-or-later"

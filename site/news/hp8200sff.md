@@ -61,3 +61,6 @@ Libreboot has the following documentation available:
 Riku's work was inspired by reading these. The guides themselves are also in
 need of constant maintenance and improvement, relative to the changes in
 Libreboot.
+
+
+[//]: # "SPDX-License-Identifier: GFDL-1.3-or-later"

@@ -12,3 +12,5 @@ Bu lisansın (CC-0 1.0) bir kopyasını şu adreste bulabilirsiniz:
 Çıkartma tasarımlarındaki yazı tipi `lato`'dur. Vektörlerdeki metinlerin doğru görünmesi için bu yazı tipini yüklemeniz gerekir.
 
 Logo dosyalarını burada görebilirsiniz: <https://av.libreboot.org/logo/> 
+
+[//]: # "SPDX-License-Identifier: GFDL-1.3-or-later"

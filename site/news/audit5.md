@@ -889,3 +889,6 @@ The latest changes are listed first, going all the way down to earlier changes:
 ```
 
 This is 211 changes, since Libreboot 20240504.
+
+
+[//]: # "SPDX-License-Identifier: GFDL-1.3-or-later"

@@ -93,3 +93,6 @@ Forgejo provides a web-based interface in a style that most people are used to.
 Libreboot is *not* hosted on sourcehut, officially, in any capacity.
 
 That is all.
+
+
+[//]: # "SPDX-License-Identifier: GFDL-1.3-or-later"

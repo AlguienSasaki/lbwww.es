@@ -326,3 +326,6 @@ Weil pull requests und issues in der Vergangenheit auf notabug verfügbar waren,
 macht es Sinn diese offen zu lassen, dennoch würden wir dich bitten an codeberg
 zu schicken. Sofern diese auf notabug geschlossen werden, dann werden diese PRs
 und issues ohnehin nicht mehr sichtbar, daher sollten diese offen bleiben.
+
+
+[//]: # "SPDX-License-Identifier: GFDL-1.3-or-later"

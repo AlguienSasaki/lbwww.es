@@ -164,3 +164,6 @@ For general information, please refer to [25xx NOR flash
 instructions](../install/spi.md) - that page refers to use of socketed flash.
 
 No photos yet available.
+
+
+[//]: # "SPDX-License-Identifier: GFDL-1.3-or-later"

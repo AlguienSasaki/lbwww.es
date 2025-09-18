@@ -196,3 +196,6 @@ Revision 11 (20 April 2025)
 Several regressions have been fixed, that were caused by the previous CVE
 fixes merged in Revision 10.
 See: [20241206rev11 announcement](libreboot20241206rev11.md).
+
+
+[//]: # "SPDX-License-Identifier: GFDL-1.3-or-later"

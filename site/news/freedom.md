@@ -58,3 +58,6 @@ Specifically, I have focus on some AMD platforms, Intel sandybridge/ivybridge,
 Intel Haswell and (more) GM45 platforms. Several boards exist in coreboot that
 are viable to be added, both under the *current policy* and adhering to the
 current *freedom status* in how the policy is implemented.
+
+
+[//]: # "SPDX-License-Identifier: GFDL-1.3-or-later"

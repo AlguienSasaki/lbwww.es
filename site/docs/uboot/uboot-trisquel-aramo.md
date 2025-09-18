@@ -57,3 +57,6 @@ Things that do not work:
 * Wireless internet and Bluetooth (non free software drivers are required)
 * The headphone jack does't work
 * Some times the computer stops responding with the screen shutoff while trying to hibernate or recovering from it. For this reason I disabled hibernation on my system.
+
+
+[//]: # "SPDX-License-Identifier: GFDL-1.3-or-later"

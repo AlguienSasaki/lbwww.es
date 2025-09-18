@@ -72,3 +72,6 @@ raminit).
 I would like it if people can provide testing for all of these boards, in
 today's Libreboot's revisions. [Learn here how to become a board tester for
 the Libreboot project](../docs/maintain/testing.md).
+
+
+[//]: # "SPDX-License-Identifier: GFDL-1.3-or-later"

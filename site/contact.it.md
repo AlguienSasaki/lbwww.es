@@ -92,3 +92,6 @@ Leah puo' essere contattata anche via email a questo indirizzo:
 
 Usato principalmente come canale di supporto e per annunciare notizie:
 <https://www.reddit.com/r/libreboot/>
+
+
+[//]: # "SPDX-License-Identifier: GFDL-1.3-or-later"

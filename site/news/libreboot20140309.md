@@ -39,3 +39,6 @@ Development notes
 -   (in Console-> in coreboot "make menuconfig")
 -   (and build with grub\_serial.cfg and grub\_memdisk\_serial.cfg)
 
+
+
+[//]: # "SPDX-License-Identifier: GFDL-1.3-or-later"

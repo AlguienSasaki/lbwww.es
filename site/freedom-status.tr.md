@@ -205,3 +205,6 @@ Bu makale *ana önyükleme flash*'ına giren kodu açıkladı, ancak satın ald�
 * [faq.md#what-other-firmware-exists-outside-of-libreboot](faq.md#what-other-firmware-exists-outside-of-libreboot)
 
 Bunlardan en kritik olanları HDD/SSD yazılımı ve EC yazılımıdır. Bu iki bağlantıda açıklanan sorunlar, Libreboot'lular da dahil olmak üzere birçok farklı bilgisayar ve dünyadaki neredeyse diğer tüm bilgisayarlar için geçerlidir.
+
+
+[//]: # "SPDX-License-Identifier: GFDL-1.3-or-later"

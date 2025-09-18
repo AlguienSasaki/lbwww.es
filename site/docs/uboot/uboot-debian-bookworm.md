@@ -168,3 +168,6 @@ Things that do not work:
   normal shut down sequence, but then remains on indefinitely (blue light on
   side near power button).  You have to hold the power button down for 10
   seconds or so to completely power off the system.
+
+
+[//]: # "SPDX-License-Identifier: GFDL-1.3-or-later"

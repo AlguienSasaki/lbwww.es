@@ -17,3 +17,6 @@ r20131214 (3rd release) {#release20131214}
 -   Added SeaBIOS payload to GRUB2 (for booting USB drives)
 -   new grub.cfg
 
+
+
+[//]: # "SPDX-License-Identifier: GFDL-1.3-or-later"

@@ -566,3 +566,6 @@ This is a 32K region from the factory image. It could be data
 
 It has only a 448 byte fragment different from 0x00 or 0xFF, on the X200
 thinkpads that were tested.
+
+
+[//]: # "SPDX-License-Identifier: GFDL-1.3-or-later"

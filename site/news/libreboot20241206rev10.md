@@ -69,3 +69,6 @@ Changes to the GRUB configuration have been made, to make scanning of LVM
 volume/group names more reliable, including on full-disk-encryption setups.
 More such changes are planned for the next major release; the current changes
 are very minor.
+
+
+[//]: # "SPDX-License-Identifier: GFDL-1.3-or-later"

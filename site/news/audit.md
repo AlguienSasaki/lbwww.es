@@ -437,3 +437,6 @@ on 13 June 2023)
 * f49eccee - util/e6400-flash-unlock: do void on ec_fdo_command (6 weeks ago) <Leah Rowe>
 * 6588be67 - don't force console mode in grub (7 weeks ago) <Leah Rowe>
 ```
+
+
+[//]: # "SPDX-License-Identifier: GFDL-1.3-or-later"

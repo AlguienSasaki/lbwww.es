@@ -34,3 +34,6 @@ The "Parse" options read ./isolinux/isolinux.cfg on a CD or USB, and
 automatically converts it to a grub config and switches to the boot menu
 of that distro. This makes booting ISOs \*much\* easier than before.
 
+
+
+[//]: # "SPDX-License-Identifier: GFDL-1.3-or-later"

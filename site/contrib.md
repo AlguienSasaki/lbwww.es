@@ -703,3 +703,6 @@ Translated several pages of the Libreboot website into Ukranian language.
 **Did we forget your name?**
 
 **If so, and you would like to be listed here, please contact the Libreboot project.**
+
+
+[//]: # "SPDX-License-Identifier: GFDL-1.3-or-later"

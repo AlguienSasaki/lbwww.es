@@ -200,3 +200,6 @@ try out U-Boot.
 time, and lots more bug fixes are needed for U-Boot to become stable. It is
 the intention of Libreboot that U-Boot become the DEFAULT payload on x86
 in a future release.**
+
+
+[//]: # "SPDX-License-Identifier: GFDL-1.3-or-later"

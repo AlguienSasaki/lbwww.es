@@ -40,3 +40,5 @@ Diğer bilgiler
 -   [Libreboot Statik Site Oluşturucu](sitegen/)
 -   [Çeşitli](misc/)
 -   [Kod adları listesi](misc/codenames.md) 
+
+[//]: # "SPDX-License-Identifier: GFDL-1.3-or-later"

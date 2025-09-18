@@ -155,3 +155,6 @@ Für Anleitungen, siehe bitte hier:
 
 Auch wenn jemand bereits an einer Übersetzung in einer bestimmten Sprache arbeitet,
 so können wir immer mehrere Leute gebrauchen. Desto mehr desto besser!
+
+
+[//]: # "SPDX-License-Identifier: GFDL-1.3-or-later"

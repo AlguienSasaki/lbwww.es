@@ -146,3 +146,6 @@ e condividere le tue versioni tradotte. Per saperne di piu' puoi leggere:
 
 Anche se qualcuno sta gia' lavorando sulle traduzioni in una determinata lingua,
 possiamo sempre avvalerci di piu' contributori. Piu' siamo e meglio e'!
+
+
+[//]: # "SPDX-License-Identifier: GFDL-1.3-or-later"

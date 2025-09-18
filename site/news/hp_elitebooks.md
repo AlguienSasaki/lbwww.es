@@ -35,3 +35,6 @@ Check these documents out:
 * [porting guide](../docs/maintain/porting.md) (largely Intel-centric, at
   the time of writing this post)
 
+
+
+[//]: # "SPDX-License-Identifier: GFDL-1.3-or-later"

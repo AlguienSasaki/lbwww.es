@@ -121,3 +121,6 @@ are absent. This would be checked for during machine initialisation, by
 modifying the current patches accordingly.
 
 That is all.
+
+
+[//]: # "SPDX-License-Identifier: GFDL-1.3-or-later"

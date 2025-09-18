@@ -184,3 +184,6 @@ Then generate `grub.cfg` with:
 
 These idiosyncrasies aside, Fedora is a great distro. It's well-tested with the
 Libreboot build system, and it boots up just fine.
+
+
+[//]: # "SPDX-License-Identifier: GFDL-1.3-or-later"

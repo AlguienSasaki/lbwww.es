@@ -61,3 +61,6 @@ Release 20140622 (5th release)
 -   Added libreboot\_bin.tar.gz.sha512.txt and
     libreboot\_src.tar.gz.sha512.txt files (outside of the archives)
 
+
+
+[//]: # "SPDX-License-Identifier: GFDL-1.3-or-later"

@@ -154,3 +154,6 @@ Machines supported in this release:
     html errors
 -   Documentation (macbook21 related): clean up
 
+
+
+[//]: # "SPDX-License-Identifier: GFDL-1.3-or-later"

@@ -142,3 +142,6 @@ Libreboot's [binary blob reduction policy](../../news/policy.md) is very strict,
 and states: if a blob can be avoided, it must be avoided. Therefore, the MRC
 is removed on Haswell and Libreboot will only use the libre raminit (called
 NRI, short for Native Ram Initialisation).
+
+
+[//]: # "SPDX-License-Identifier: GFDL-1.3-or-later"

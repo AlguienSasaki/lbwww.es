@@ -8,3 +8,6 @@ Revision notes (11th June 2014):
 -   removed 'CD' boot option from coreboot.rom (not needed)
 -   removed 'processor.max\_cstate=2' and 'idle=halt' options (see
     README.powertop file)
+
+
+[//]: # "SPDX-License-Identifier: GFDL-1.3-or-later"

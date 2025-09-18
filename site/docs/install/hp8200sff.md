@@ -278,3 +278,6 @@ of lbmk by running the command:
 
 Go in there and type `make` to build nvramtool. Simply run nvramtool without
 arguments, and it will show a list of options.
+
+
+[//]: # "SPDX-License-Identifier: GFDL-1.3-or-later"

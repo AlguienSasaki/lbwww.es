@@ -99,3 +99,6 @@ is used; this includes older GM45+ICH9M machines supported by Libreboot.
 You can use `nvmutil` to change the existing MAC address in a GbE region. This
 sets the "hardcoded" MAC address, typically a globally assigned one set by
 the vendor, but you can use local addresses, and you can use randomised MACs.
+
+
+[//]: # "SPDX-License-Identifier: GFDL-1.3-or-later"

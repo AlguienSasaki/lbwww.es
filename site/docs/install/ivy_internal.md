@@ -106,3 +106,6 @@ photo:
 <img tabindex=1 src="https://av.libreboot.org/x230/hda_sdo.jpg" /><span class="f"><img src="https://av.libreboot.org/x230/hda_sdo.jpg" /></span>
 
 TODO: Document other ivybridge thinkpads (just show pics)
+
+
+[//]: # "SPDX-License-Identifier: GFDL-1.3-or-later"

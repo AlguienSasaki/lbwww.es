@@ -125,3 +125,6 @@ release schedule.
 
 Jane also came up with the codename that I've decided to use for
 the June 2025 stable release - stay tuned!
+
+
+[//]: # "SPDX-License-Identifier: GFDL-1.3-or-later"

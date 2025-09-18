@@ -844,3 +844,6 @@ original 25.04 release.
 
 This revision release was committed to the `25.04_branch` branch, and any
 further revision releases will be in the same branch.
+
+
+[//]: # "SPDX-License-Identifier: GFDL-1.3-or-later"

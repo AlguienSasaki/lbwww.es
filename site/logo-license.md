@@ -16,3 +16,6 @@ The font on the sticker designs is `lato`. Install this, otherwise the vectors
 won't look correct for the text.
 
 You can see the logo files here: <https://av.libreboot.org/logo/>
+
+
+[//]: # "SPDX-License-Identifier: GFDL-1.3-or-later"

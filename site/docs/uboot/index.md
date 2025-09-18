@@ -76,3 +76,6 @@ See also
 - [U-Boot documentation](https://u-boot.readthedocs.io/en/latest/)
 - [U-Boot documentation (unmigrated files)](https://source.denx.de/u-boot/u-boot/-/tree/master/doc)
 - [U-Boot and generic distro boot](https://marcin.juszkiewicz.com.pl/2021/03/14/u-boot-and-generic-distro-boot/)
+
+
+[//]: # "SPDX-License-Identifier: GFDL-1.3-or-later"

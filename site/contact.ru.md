@@ -74,3 +74,6 @@ Libera - самая большая сеть IRC, используемая для
 
 Чаще всего используется для поддержки пользователей, а также для новостей и анонсов:
 <https://www.reddit.com/r/libreboot/>
+
+
+[//]: # "SPDX-License-Identifier: GFDL-1.3-or-later"

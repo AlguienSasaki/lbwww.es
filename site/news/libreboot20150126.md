@@ -54,3 +54,6 @@ changes:
 -   Documentation (grub\_cbfs.md): Looping in libreboot\_grub.cfg (Add
     notes about it if the user copied from grub.cfg in CBFS.)
 
+
+
+[//]: # "SPDX-License-Identifier: GFDL-1.3-or-later"

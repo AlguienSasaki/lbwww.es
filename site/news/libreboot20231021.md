@@ -1215,3 +1215,6 @@ On ASUS KFSN4-DRE, KCMA-D8 and KGPE-D16 boards, do this to remove microcode:
 
 We recommend *keeping* microcode updates, for reasons written in the [Binary
 Blob Reduction Policy](policy.md).
+
+
+[//]: # "SPDX-License-Identifier: GFDL-1.3-or-later"

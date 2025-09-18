@@ -133,3 +133,6 @@ your own machine.
 
 In the meantime, you can always externally flash a backup of your vendor rom
 to keep your machine working while development progresses on your board.
+
+
+[//]: # "SPDX-License-Identifier: GFDL-1.3-or-later"

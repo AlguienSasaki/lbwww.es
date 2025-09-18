@@ -221,3 +221,6 @@ The information here is adapted, from the ASUS website.
 
 -   \* DDR3 1600 can only be supported with AMD Opteron 6300/6200 series
     processor
+
+
+[//]: # "SPDX-License-Identifier: GFDL-1.3-or-later"

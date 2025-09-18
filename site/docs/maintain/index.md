@@ -1616,3 +1616,6 @@ Helper functions for downloading and injecting vendor files. How to use:
 
 Refer elsewhere in the documentation for how to handle vendor files, and/or
 read [the guide](../install/ivy_has_common.md).
+
+
+[//]: # "SPDX-License-Identifier: GFDL-1.3-or-later"

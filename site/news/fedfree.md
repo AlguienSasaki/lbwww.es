@@ -42,3 +42,6 @@ libreboot.org was hosted, for many years; the setup is still self-hosted, but
 it's not currently hosted in a *living room*.
 
 More information is available on the [Fedfree website](https://fedfree.org/)
+
+
+[//]: # "SPDX-License-Identifier: GFDL-1.3-or-later"

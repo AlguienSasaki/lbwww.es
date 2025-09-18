@@ -74,3 +74,6 @@ nicht unterstützt.
 Du kannst Seiten in jeder Sprache zu Untitled hinzufügen, Die Software
 generiert automatisch ein Menü zur Sprach-Auswahl, auf Seitenbasis sofern
 eine Übersetzung für die jeweilige Seite vorliegt.
+
+
+[//]: # "SPDX-License-Identifier: GFDL-1.3-or-later"

@@ -334,3 +334,6 @@ system. The fix is available here:
 <https://browse.libreboot.org/lbmk.git/patch/?id=f34e07ae27e3e6e8508cdebcbd09fdf73fca302d>
 
 Apply this patch to your local release archive, and it should fix the issue.
+
+
+[//]: # "SPDX-License-Identifier: GFDL-1.3-or-later"

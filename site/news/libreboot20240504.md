@@ -499,3 +499,6 @@ after 20240504.
 A new [audit](audit5.md) has been conducted, marked complete as of 9 June 2024,
 fixing this and many issues; a new *true* stable release will be made available
 some time in June 2024.
+
+
+[//]: # "SPDX-License-Identifier: GFDL-1.3-or-later"

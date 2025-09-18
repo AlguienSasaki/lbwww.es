@@ -185,3 +185,6 @@ likely one chip. 12MB is usually SPI1 8MB and SPI2 4MB so you would do:
 	dd if=libreboot.rom of=spi2.rom bs=1M skip=8
 
 If in doubt, just ask on Libreboot IRC.
+
+
+[//]: # "SPDX-License-Identifier: GFDL-1.3-or-later"

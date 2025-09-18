@@ -429,3 +429,6 @@ one of pragmatism without compromise; we will not lose sight of our original
 goals, namely absolute computer user freedom.
 
 The article will end here, because anything else would be more rambling.
+
+
+[//]: # "SPDX-License-Identifier: GFDL-1.3-or-later"

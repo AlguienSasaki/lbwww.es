@@ -1005,3 +1005,6 @@ The second reason for the removal is that we only intend for this to be used
 for development anyway, where it is recommended that you use `lbmk.git`, not
 the release archives, and upstream (coreboot) has merged the Haswell support
 patches that we were importing, so our copy of autoport is no longer useful.
+
+
+[//]: # "SPDX-License-Identifier: GFDL-1.3-or-later"

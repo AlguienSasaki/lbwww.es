@@ -1601,3 +1601,6 @@ This release was built on the latest Debian 12.10 Bookworm release, as of
 this day. It was also build-tested successfully on the latest Arch Linux updates
 as of 26 June 2025.
 
+
+
+[//]: # "SPDX-License-Identifier: GFDL-1.3-or-later"

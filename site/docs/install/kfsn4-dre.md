@@ -164,3 +164,6 @@ Other information
 
 [specifications](https://web.archive.org/web/20181212180051/http://ftp.tekwind.co.jp/pub/asustw/mb/Socket%20F/KFSN4-DRE/Manual/e3335_kfsn4-dre.pdf)
 
+
+
+[//]: # "SPDX-License-Identifier: GFDL-1.3-or-later"

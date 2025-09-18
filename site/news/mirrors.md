@@ -51,3 +51,6 @@ UPDATE: on 15 April 2023, Libreboot gained these additional mirrors:
 
 * <https://git.disroot.org/libreboot/lbmk>
 * <https://git.disroot.org/libreboot/lbwww>
+
+
+[//]: # "SPDX-License-Identifier: GFDL-1.3-or-later"

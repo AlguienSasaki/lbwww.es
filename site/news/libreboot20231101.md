@@ -248,3 +248,6 @@ x4x (e.g. GA-G41M-ES2L) remains untested.
 Pineview (D945GCLF) is untested for S3.
 
 The AMD boards should work fine with suspend.
+
+
+[//]: # "SPDX-License-Identifier: GFDL-1.3-or-later"

@@ -114,3 +114,6 @@ A standard lower limit is *512.*
 For example, to read on a board with a lower SPI speed, you may try:
 
 	sudo ./flashprog -p linux_spi:dev=/dev/spidev0.0,spispeed=512 -r /path/to/read.bin
+
+
+[//]: # "SPDX-License-Identifier: GFDL-1.3-or-later"

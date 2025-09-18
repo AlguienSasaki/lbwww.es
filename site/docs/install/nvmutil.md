@@ -608,3 +608,6 @@ TODO
 * Send nvmutil upstream to coreboot, for inclusion under `util/`
 * In addition to the manpage, when sending to coreboot, also adapt this page
   for inclusion into doc.coreboot.org
+
+
+[//]: # "SPDX-License-Identifier: GFDL-1.3-or-later"

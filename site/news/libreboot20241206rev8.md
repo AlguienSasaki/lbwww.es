@@ -394,3 +394,6 @@ UPDATE: the text of this section was removed on 17 January 2025.
 Please read the following new article instead:
 
 [Formalised Libreboot 2025 release schedule](schedule.md)
+
+
+[//]: # "SPDX-License-Identifier: GFDL-1.3-or-later"

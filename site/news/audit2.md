@@ -328,3 +328,6 @@ newer, and changes further down are older:
 ```
 
 A new Libreboot release is planned soon.
+
+
+[//]: # "SPDX-License-Identifier: GFDL-1.3-or-later"

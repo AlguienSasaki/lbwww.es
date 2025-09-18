@@ -71,3 +71,6 @@ You will see the eeprom on the front:\
 The flash will likely be Winbond W25Q64CV. You may double check it by looking at the silkscreen.
 
 Now, you can proceed to [flashing](/docs/install/spi.html) this machine.
+
+
+[//]: # "SPDX-License-Identifier: GFDL-1.3-or-later"

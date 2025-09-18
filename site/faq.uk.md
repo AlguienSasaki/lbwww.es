@@ -1103,3 +1103,6 @@ We do not yet support booting with UEFI on x86 machines.
 на `youtube.com`. Дивіться: <https://github.com/yt-dlp/yt-dlp>
 
 Нарешті найважливіше повідомлення для всіх, хто починає це чудове нове хобі - [Секрет вивчення електроніки](https://yewtu.be/watch?v=xhQ7d3BK3KQ)
+
+
+[//]: # "SPDX-License-Identifier: GFDL-1.3-or-later"

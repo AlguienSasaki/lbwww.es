@@ -72,3 +72,6 @@ X60 Tablet shares a common 3.3V rail with many other components on the motherboa
 which all draw a lot of current, more than most flashers can provide.
 
 Reverse the steps to re-assemble your system, after you've flashed the chip.
+
+
+[//]: # "SPDX-License-Identifier: GFDL-1.3-or-later"

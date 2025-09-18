@@ -572,3 +572,6 @@ or from `lbmk.git`.
 
 The 820 G2 ROMs have been excluded in rsync, so you must build this from source.You can build it from source via the source code tarball in the release, or
 from `lbmk.git`.
+
+
+[//]: # "SPDX-License-Identifier: GFDL-1.3-or-later"

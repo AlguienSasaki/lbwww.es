@@ -80,3 +80,6 @@ USB flashing dongles doesn't normally require root).
 NOTE: BSD kernels seem to still enable IOPL by default. However, many modern
 Linux setups disable it by default these days, so it may be in teh future
 that most users will start needing to compile their own kernels. (go BSD!)
+
+
+[//]: # "SPDX-License-Identifier: GFDL-1.3-or-later"

@@ -50,3 +50,6 @@ long term life of your CPU.
 
 Regardless, thermal shutdown is extremely reliable on this machine, but Dell
 makes it shut down *earlier*, before it can even start to CPU throttle.
+
+
+[//]: # "SPDX-License-Identifier: GFDL-1.3-or-later"

@@ -19,3 +19,6 @@ r20131213 (2nd release) {#release20131213}
 -   improvements to the documentation
 -   new grub.cfg
 
+
+
+[//]: # "SPDX-License-Identifier: GFDL-1.3-or-later"

@@ -88,3 +88,6 @@ Libreboot 目前有乌克兰语和法语的网页翻译（但两个语言都还�
 [如何提交 libreboot.org 翻译](news/translations.md)
 
 即使已经有人在进行某种语言的翻译了，我们也总是欢迎更多人。多多益善！
+
+
+[//]: # "SPDX-License-Identifier: GFDL-1.3-or-later"

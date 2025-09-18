@@ -169,3 +169,6 @@ It lives!\
 Always stress test ('stress -c 2' and xsensors. below 90C is ok) when
 replacing cpu paste/heatsink:\
 ![](https://av.libreboot.org/t60_dev/0074.JPG)
+
+
+[//]: # "SPDX-License-Identifier: GFDL-1.3-or-later"

@@ -372,3 +372,6 @@ Please see: [Libreboot 20241206 release revisions](libreboot20241206.Revisions.m
 Many revisions are planned in the run-up to next year's stable release ETA Summer
 of 2025. In particular, there is much work that still needs to be done on the
 U-Boot payloads (x86 and ARM64).
+
+
+[//]: # "SPDX-License-Identifier: GFDL-1.3-or-later"

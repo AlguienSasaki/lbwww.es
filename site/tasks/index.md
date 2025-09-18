@@ -1858,3 +1858,6 @@ relative to the above commit, that's what broke SeaBIOS again.
 
 For now, Libreboot will leave these options enabled, but this is not
 desirable.
+
+
+[//]: # "SPDX-License-Identifier: GFDL-1.3-or-later"

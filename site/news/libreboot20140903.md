@@ -144,3 +144,6 @@ Revisions for r20140903 (6th beta) (3rd September 2014)
         play 480 440 1
 -   Documentation: updated linux/grub\_cbfs.html to make it safer
     (and easier) to follow.
+
+
+[//]: # "SPDX-License-Identifier: GFDL-1.3-or-later"

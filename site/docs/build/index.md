@@ -249,3 +249,6 @@ NOTE: `av.libreboot.org` is hardcoded as the domain name where images are
 pointed to, in `lbwww.git`, so you will need to replace these references in
 your local version, unless you're happy to just continue using those.
 
+
+
+[//]: # "SPDX-License-Identifier: GFDL-1.3-or-later"

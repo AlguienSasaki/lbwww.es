@@ -277,3 +277,6 @@ of the build system, but they did not work for the intended purpose. More
 info is written on the [Libreboot installation guide](../install/). ROM
 images with `seabios_grubfirst` in the filename will NOT be included in
 future Libreboot releases.
+
+
+[//]: # "SPDX-License-Identifier: GFDL-1.3-or-later"

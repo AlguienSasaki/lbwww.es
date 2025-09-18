@@ -247,3 +247,6 @@ Initial release. It is functionally equivalent to the
 older `nvmutils`, developed for the osboot project. This
 newer version is reduced to a single source file instead
 of many, and builds as a single binary instead of many.
+
+
+[//]: # "SPDX-License-Identifier: GFDL-1.3-or-later"

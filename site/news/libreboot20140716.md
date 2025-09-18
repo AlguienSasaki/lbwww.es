@@ -9,3 +9,6 @@ Revisions for r20140716 (2nd beta) (16th July 2014)
     necessary because with those it is possible to run 'git diff'
     which shows the changes made in the form of a patch (diff format);
     this includes the blobs that were deleted during deblobbing.
+
+
+[//]: # "SPDX-License-Identifier: GFDL-1.3-or-later"

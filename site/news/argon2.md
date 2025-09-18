@@ -77,3 +77,6 @@ further about the importance of secure key derivation (specifically argon2id)
 on encrypted Linux setups.
 
 Always use encryption!
+
+
+[//]: # "SPDX-License-Identifier: GFDL-1.3-or-later"

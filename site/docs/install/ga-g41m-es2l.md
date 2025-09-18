@@ -174,3 +174,6 @@ now, as of 27 January 2024, which is a fork of flashrom.
 The reason why was explained, in
 the [Libreboot 20240225 release](../../news/libreboot20240225.md#flashprog-now-used-instead-of-flashrom)**
 
+
+
+[//]: # "SPDX-License-Identifier: GFDL-1.3-or-later"

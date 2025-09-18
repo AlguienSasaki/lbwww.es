@@ -177,3 +177,6 @@ GPL v2'ye uymak için, Libreboot projesi tarafından kaynak ISO'lar sağlanır. 
 20160907 sürümünden sonraki Libreboot sürümleri statik olarak bağlanmış ikili dosyalar dağıtmaz. Bunun yerine, bu sürümler normal Libreboot kaynak kodu arşivlerinin yeterli olduğu önceden derlenmiş ROM imajları dışında yalnızca kaynak içerir. Bu yeni sürümler bunun yerine derleme bağımlılıklarının kurulumunu otomatikleştirir ve çeşitli yardımcı programları kaynak koddan derlemek için belgelerde talimatlar sunar.
 
 Bu yürütülebilir dosyalar `flashprog` gibi yardımcı programlardır. 
+
+
+[//]: # "SPDX-License-Identifier: GFDL-1.3-or-later"

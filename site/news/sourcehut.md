@@ -29,3 +29,6 @@ just one mailing list is more efficient, for a project at Libreboot's scale.
 More information is available on the [contact page](../contact.md).
 
 That is all.
+
+
+[//]: # "SPDX-License-Identifier: GFDL-1.3-or-later"

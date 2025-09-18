@@ -199,3 +199,6 @@ Hardware specifications {#specifications}
 
 Check the ASUS website.
 
+
+
+[//]: # "SPDX-License-Identifier: GFDL-1.3-or-later"

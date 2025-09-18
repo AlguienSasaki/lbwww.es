@@ -74,3 +74,6 @@ Unplug the ribbon cable from the palmrest and pry it off as well.
 
 Pull up the protective cover to reveal the two soic chips for flashing.
 ![](https://av.libreboot.org/board/x230/chipLocation.jpg)
+
+
+[//]: # "SPDX-License-Identifier: GFDL-1.3-or-later"

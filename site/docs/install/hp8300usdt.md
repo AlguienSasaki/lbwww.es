@@ -150,3 +150,6 @@ manual (page 241) on how to remove the motherboard from the chassis.
 
 If you do this, you have to reapply thermal paste.
 That might be a good idea anyway, considering how old these are getting
+
+
+[//]: # "SPDX-License-Identifier: GFDL-1.3-or-later"

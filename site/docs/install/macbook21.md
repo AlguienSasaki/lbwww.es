@@ -351,3 +351,6 @@ response from the touchpad with the following in their `xorg.conf`:
 		Option "VertEdgeScroll" "1"
 	EndSection
 ```
+
+
+[//]: # "SPDX-License-Identifier: GFDL-1.3-or-later"

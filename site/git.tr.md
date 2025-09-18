@@ -159,3 +159,5 @@ Bu bağlantılardan herhangi biri üzerinde `git clone` çalıştırabilirsiniz 
 * <https://gitlab.com/libreboot/lbmk>
 * <https://pagure.io/libreboot>
 * <https://rocketgit.com/libreboot/libreboot> 
+
+[//]: # "SPDX-License-Identifier: GFDL-1.3-or-later"

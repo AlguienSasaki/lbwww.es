@@ -189,3 +189,6 @@ Downloads
 You can find this release on the downloads page. At the time of this
 announcement, some of the rsync mirrors may not have it yet, so please check
 another one if your favourite one doesn't have it.
+
+
+[//]: # "SPDX-License-Identifier: GFDL-1.3-or-later"

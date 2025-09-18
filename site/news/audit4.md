@@ -435,3 +435,6 @@ And now, specific changes:
 ```
 
 This is 117 changes, since Libreboot 20231106.
+
+
+[//]: # "SPDX-License-Identifier: GFDL-1.3-or-later"

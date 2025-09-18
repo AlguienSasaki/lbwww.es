@@ -356,3 +356,6 @@ insights are available in the Libreboot FAQ. See:
 Of these, the most critical are HDD/SSD firmware and EC firmware. The problems
 described in those two links apply to many different computers, including
 Libreboot ones, and virtually every other computer in the world.
+
+
+[//]: # "SPDX-License-Identifier: GFDL-1.3-or-later"

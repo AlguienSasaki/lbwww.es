@@ -71,3 +71,6 @@ cbfstool /path/to/rom add -f mynewbackground.png -n background.png -t raw
 ```
 
 Using qemu allows the user to verify that the background image renders properly before performing the same operation on their release rom.
+
+
+[//]: # "SPDX-License-Identifier: GFDL-1.3-or-later"

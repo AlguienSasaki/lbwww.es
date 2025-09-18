@@ -217,3 +217,6 @@ Changes for this release, relative to r20150208 (earliest changes last, recent c
 -   **New board:** ThinkPad R400 support added to libreboot.
 -   bbb\_setup.html: tell user to use libreboot's own flashprog
 
+
+
+[//]: # "SPDX-License-Identifier: GFDL-1.3-or-later"

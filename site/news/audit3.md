@@ -828,3 +828,6 @@ The commits are, thus:
 ```
 
 This is 445 changes in total, since Libreboot 20230625.
+
+
+[//]: # "SPDX-License-Identifier: GFDL-1.3-or-later"

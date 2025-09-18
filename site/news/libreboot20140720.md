@@ -51,3 +51,6 @@ Revisions for r20140720 (3rd beta) (20th July 2014)
 -   Documentation: added docs/security/x60\_security.html (security
     hardening for X60)
 
+
+
+[//]: # "SPDX-License-Identifier: GFDL-1.3-or-later"

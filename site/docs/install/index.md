@@ -689,3 +689,6 @@ above).
 
 WARNING: Support for ARM chromebooks is at a proof-of-concept stage. Refer
 to [docs/uboot/](../uboot/) for more info about the U-Boot payload.
+
+
+[//]: # "SPDX-License-Identifier: GFDL-1.3-or-later"

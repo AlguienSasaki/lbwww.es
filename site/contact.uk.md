@@ -88,3 +88,6 @@ Libreboot офіційно існує в багатьох місцях.
 
 Найбільше використовується як канал підтримки, та також для оголошення новин:
 <https://www.reddit.com/r/libreboot/>
+
+
+[//]: # "SPDX-License-Identifier: GFDL-1.3-or-later"

@@ -53,3 +53,6 @@ Revisions for r20140811 (5th beta) (11th August 2014)
 -   Release archives are now compressed using .tar.xz for better
     compression
 
+
+
+[//]: # "SPDX-License-Identifier: GFDL-1.3-or-later"

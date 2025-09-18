@@ -192,3 +192,6 @@ Libreboot is generally well-tested and with good release engineering, but you
 must ALWAYS read the documentation. This is true of any software, but it is
 *especially* true of Libreboot. Please take care not to brick your machine.
 Thanks!
+
+
+[//]: # "SPDX-License-Identifier: GFDL-1.3-or-later"

@@ -8,3 +8,6 @@ Revision notes (5th June 2014):
 -   added backlight support (Fn+Home and Fn+End) on X60
 -   fixed broken/unstable 3D when using kernel 3.12 or higher
 -   (see 'BACKPORT' file)
+
+
+[//]: # "SPDX-License-Identifier: GFDL-1.3-or-later"

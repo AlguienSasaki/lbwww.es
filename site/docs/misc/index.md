@@ -276,3 +276,6 @@ across subnets on the same interface (NIC).
 
 More information, including logs, can be found on [this
 page](http://web.archive.org/web/20210416010634/https://notabug.org/libreboot/libreboot/issues/23).
+
+
+[//]: # "SPDX-License-Identifier: GFDL-1.3-or-later"

@@ -319,3 +319,6 @@ user. The purpose of Libreboot is to provide coreboot ROM images as efficiently
 as possible, with desirable configurations that users want. Do that in as few
 steps as possible, in the most streamlined way possible, while still providing
 a degree of configurability - this is the mentality behind lbmk design.
+
+
+[//]: # "SPDX-License-Identifier: GFDL-1.3-or-later"

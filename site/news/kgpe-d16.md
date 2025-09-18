@@ -53,3 +53,6 @@ of 4.11 called `4.11_branch`.
 When Libreboot dropped support for D8/D16, it wasn't using `4.11_branch`.
 Instead, it was using the normal 4.11 tag in coreboot.git, with some extra
 patches on top provided by Libreboot.
+
+
+[//]: # "SPDX-License-Identifier: GFDL-1.3-or-later"

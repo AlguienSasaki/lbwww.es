@@ -86,3 +86,6 @@ For example, a board status comment might look like this:
 	board: t440p_12mb
 	status: fail
 	note: GRUB throws error 'something_is_b0rked'
+
+
+[//]: # "SPDX-License-Identifier: GFDL-1.3-or-later"

@@ -107,3 +107,6 @@ When Libreboot first started, coreboot did not have a fixed release scheduled.
 It was purely rolling release. Coreboot however has been quite reliable with
 its own release schedules in the past few years, making it viable for Libreboot
 to also have a fixed schedule.
+
+
+[//]: # "SPDX-License-Identifier: GFDL-1.3-or-later"

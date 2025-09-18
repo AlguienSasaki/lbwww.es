@@ -55,3 +55,6 @@ automatically add all keymaps in GRUB.
 
 If you've added a keymap to lbmk, and it works,
 [please submit a patch!](../../git.md)
+
+
+[//]: # "SPDX-License-Identifier: GFDL-1.3-or-later"

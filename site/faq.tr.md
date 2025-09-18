@@ -231,3 +231,6 @@ Libreboot, özgür yazılım topluluğunun bir parçası olarak gelişmeye devam
 ### Libreboot'u Ticari Olarak Kullanabilir miyim?
 
 Evet, Libreboot GNU Genel Kamu Lisansı altında lisanslanmıştır. Bu, yazılımı özgürce kullanabileceğiniz, değiştirebileceğiniz ve dağıtabileceğiniz anlamına gelir. Ancak, değişikliklerinizi de aynı lisans altında paylaşmanız gerekir. 
+
+
+[//]: # "SPDX-License-Identifier: GFDL-1.3-or-later"

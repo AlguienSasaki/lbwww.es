@@ -16,3 +16,6 @@ A copy of this license (CC-0 1.0) can be found at:
 не виглядатимуть правильно для тексту.
 
 Ви можете переглянути файли логотипів тут: <https://av.libreboot.org/logo/>
+
+
+[//]: # "SPDX-License-Identifier: GFDL-1.3-or-later"

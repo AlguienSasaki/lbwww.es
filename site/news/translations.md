@@ -71,3 +71,6 @@ your translation, if Untitled doesn't support it.
 You can add pages in any language to Untitled. The software automatically
 generates language selection menus, on a per-page basis, when a translation is
 available for a given page.
+
+
+[//]: # "SPDX-License-Identifier: GFDL-1.3-or-later"

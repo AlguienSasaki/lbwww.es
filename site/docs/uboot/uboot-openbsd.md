@@ -42,3 +42,6 @@ kernel.  Unfortunately the system then froze indefinitely.  See screen shot
 below.
 
 ![](https://av.libreboot.org/xe513c24/openbsd-attempt.jpg)
+
+
+[//]: # "SPDX-License-Identifier: GFDL-1.3-or-later"

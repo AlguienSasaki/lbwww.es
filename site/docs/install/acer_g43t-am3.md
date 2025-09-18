@@ -19,3 +19,6 @@ Although it's talking about different hardware, the steps should be the same.
 
 TODO: factory BIOS on this board works fine with the onboard NIC. study what
 that is doing
+
+
+[//]: # "SPDX-License-Identifier: GFDL-1.3-or-later"

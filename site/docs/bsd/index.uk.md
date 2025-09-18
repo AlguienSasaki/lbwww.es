@@ -173,3 +173,6 @@ long mode (x86\_64) та перемикання в Real Mode лише для в�
 Ви можете вивчити більше про режими INT10H text/VGA тут:
 
 <https://en.wikipedia.org/wiki/INT_10H>
+
+
+[//]: # "SPDX-License-Identifier: GFDL-1.3-or-later"

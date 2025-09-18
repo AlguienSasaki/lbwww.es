@@ -256,3 +256,6 @@ This has been fixed, in the following patch:
 
 This was merged *after* the Libreboot 20231106 release, and so it will be
 present in the next Libreboot release after 20231106.
+
+
+[//]: # "SPDX-License-Identifier: GFDL-1.3-or-later"

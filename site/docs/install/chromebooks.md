@@ -233,3 +233,6 @@ See also
 * [MrChromebox's Unbricking Guide](https://wiki.mrchromebox.tech/Unbricking)
 * [MrChromebox's Write-Protection Notes](https://wiki.mrchromebox.tech/Firmware_Write_Protect)
 * [Coreboot Tutorial as used in ChromeOS](https://docs.google.com/presentation/d/1eGPMu03vCxIO0a3oNX8Hmij_Qwwz6R6ViFC_1HlHOYQ/preview)
+
+
+[//]: # "SPDX-License-Identifier: GFDL-1.3-or-later"

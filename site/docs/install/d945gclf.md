@@ -137,3 +137,6 @@ After that, assemble your new fan into CPU cooler\
 ![](https://av.libreboot.org/d945gclf/20160923_141635.jpg){width="50%" height="50%"}\
 Finally assemle both coolers on both chips, do not forget put in the CPU
 fan connector back, and you are done.
+
+
+[//]: # "SPDX-License-Identifier: GFDL-1.3-or-later"

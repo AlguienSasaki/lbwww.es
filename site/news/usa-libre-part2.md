@@ -209,3 +209,6 @@ users everywhere, to their own computational property.
 
 Please, please please if you can take time out of your day, then please show
 up to to defend this bill and make sure that it gets passed!
+
+
+[//]: # "SPDX-License-Identifier: GFDL-1.3-or-later"

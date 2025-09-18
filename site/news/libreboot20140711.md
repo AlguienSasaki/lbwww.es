@@ -223,3 +223,6 @@ Revisions for r20140711 (1st beta) (11th July 2014)
     and advanced mini dock) to relevant sections.
     -   Added to docs/\#serial
 
+
+
+[//]: # "SPDX-License-Identifier: GFDL-1.3-or-later"

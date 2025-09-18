@@ -15,3 +15,6 @@ Other bugfixes:
 -   Various improvements to the documentation
 -   re-added "unset superusers" to the grub.cfg, which was needed for
     some users depending on the distros that they used
+
+
+[//]: # "SPDX-License-Identifier: GFDL-1.3-or-later"

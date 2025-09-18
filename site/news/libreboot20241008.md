@@ -1374,3 +1374,6 @@ This git log covers all changes in this audit, relative to Libreboot 20240612.
 ```
 
 This is roughly 300 changes since the last release.
+
+
+[//]: # "SPDX-License-Identifier: GFDL-1.3-or-later"

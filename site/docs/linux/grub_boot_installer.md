@@ -197,3 +197,6 @@ switch to a framebuffer.
 If selecting `text-mode` from a GRUB menu created using the ISOLINUX parser,
 you can press `E` on the menu entry to add this. Or, if you are booting
 manually (from GRUB terminal), then just add the parameters.
+
+
+[//]: # "SPDX-License-Identifier: GFDL-1.3-or-later"

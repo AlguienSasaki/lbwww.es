@@ -247,3 +247,6 @@ Defend freedom! Don't listen to any of the arguments against it by proprietary
 software companies; they don't care about you, and instead only care about
 profit. They fundamentally do not want you to have any sort of freedom over
 your own computer, and they actively pursue tactics (such as DRM) to thwart you.
+
+
+[//]: # "SPDX-License-Identifier: GFDL-1.3-or-later"

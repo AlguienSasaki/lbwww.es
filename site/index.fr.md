@@ -102,3 +102,6 @@ Si vous souhaitez participer à le traduction, vous pouvez traduire des pages, m
 [Comment proposer une traduction pour Libreboot.org](news/translations.md)
 
 Et même si quelqu'un travaille déjà sur des traductions dans une langue donnée, nous pouvons travailler à plusieurs. Plus on est de fous, plus on rit !
+
+
+[//]: # "SPDX-License-Identifier: GFDL-1.3-or-later"

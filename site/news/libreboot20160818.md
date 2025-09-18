@@ -167,3 +167,6 @@ Kocialkowski)
 Various fixes to the ich9gen utility (e.g. flash component density is
 now set correctly in the descriptor, gbe-less descriptors now supported)
 
+
+
+[//]: # "SPDX-License-Identifier: GFDL-1.3-or-later"

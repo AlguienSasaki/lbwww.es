@@ -339,3 +339,6 @@ the inject scripts cannot currently produce a reliable checksum when inserting
 vendor files on these boards, due to the non-reproducible way in which the
 refcode file is compressed during insertion. Therefore, you
 must [build it from source](../docs/build/).
+
+
+[//]: # "SPDX-License-Identifier: GFDL-1.3-or-later"

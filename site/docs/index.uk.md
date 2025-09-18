@@ -47,3 +47,6 @@ operates Minifree Ltd; sales provide funding for the Libreboot project.
 -   [Різне](misc/)
 -   [Список кодових назв](misc/codenames.md)
 
+
+
+[//]: # "SPDX-License-Identifier: GFDL-1.3-or-later"

@@ -89,3 +89,6 @@ Libreboot şu anda Ukraynaca ve Fransızca çevrilmiş web sayfalarına sahiptir
 [libreboot.org için çeviri nasıl gönderilir](news/translations.md)
 
 Belirli bir dilde biri zaten çalışıyor olsa bile, her zaman birden fazla kişi kullanabiliriz. Ne kadar çok o kadar iyi! 
+
+
+[//]: # "SPDX-License-Identifier: GFDL-1.3-or-later"

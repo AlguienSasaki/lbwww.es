@@ -155,3 +155,6 @@ instead of four. This is more efficient.
 
 So in substance, this is the same but re-fashioned to make the project cheaper
 to run.
+
+
+[//]: # "SPDX-License-Identifier: GFDL-1.3-or-later"

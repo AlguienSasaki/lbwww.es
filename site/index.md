@@ -195,3 +195,6 @@ read:
 
 Even if someone is already working on translations in a given language, we can
 always use multiple people. The more the merrier!
+
+
+[//]: # "SPDX-License-Identifier: GFDL-1.3-or-later"

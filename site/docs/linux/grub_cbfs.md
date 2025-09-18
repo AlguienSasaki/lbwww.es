@@ -164,3 +164,6 @@ Flash the modified ROM image
 
 Check the [Libreboot flashing guide](../install/) which says how to flash the
 new image.
+
+
+[//]: # "SPDX-License-Identifier: GFDL-1.3-or-later"

@@ -194,3 +194,6 @@ dd if=/dev/mmcblk0 of=/dev/mmcblk1 bs=4M status=progress
 If you did not update before `dd`-ing your drive, remember that you may still have to use the fallback initramfs to boot properly until you update the kernel.
 
 This should be everything you need to do for the time being - enjoy configuring your system!
+
+
+[//]: # "SPDX-License-Identifier: GFDL-1.3-or-later"

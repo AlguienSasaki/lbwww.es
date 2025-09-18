@@ -164,3 +164,6 @@ Power on!\
 
 Operating system:\
 ![](https://av.libreboot.org/x60_unbrick/0049.jpg)
+
+
+[//]: # "SPDX-License-Identifier: GFDL-1.3-or-later"

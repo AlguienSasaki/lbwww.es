@@ -1084,3 +1084,6 @@ Use of `yt-dlp` (an enhanced fork of `youtube-dl`) is recommended for links
 to `youtube.com`. See: <https://github.com/yt-dlp/yt-dlp>
 
 Lastly the most important message to everybody gaining this wonderful new hobby - [Secret to Learning Electronics](https://yewtu.be/watch?v=xhQ7d3BK3KQ)
+
+
+[//]: # "SPDX-License-Identifier: GFDL-1.3-or-later"

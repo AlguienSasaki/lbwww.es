@@ -28,3 +28,6 @@ Revisions for r20140729 (4th beta) (29th July 2014)
     related to LCD panel compatibility on X60 Tablet and T60. (courtesy
     of [Michał Masłowski](http://mtjm.eu))
 
+
+
+[//]: # "SPDX-License-Identifier: GFDL-1.3-or-later"

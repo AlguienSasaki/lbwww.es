@@ -60,3 +60,6 @@ Machines supported in this release:
     afterwards. Documentation and scripts updated.
 -   Documentation: added more info about wifi chipsets
 
+
+
+[//]: # "SPDX-License-Identifier: GFDL-1.3-or-later"

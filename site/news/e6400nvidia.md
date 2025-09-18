@@ -126,3 +126,6 @@ Were you expecting more?
 Well, that's all for now.
 
 Stay tuned for further development.
+
+
+[//]: # "SPDX-License-Identifier: GFDL-1.3-or-later"

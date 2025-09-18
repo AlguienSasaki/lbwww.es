@@ -884,3 +884,6 @@ The old Untitled Static Site Generator git repositories were:
 The old repositories have been retained, but are now archived. You can find
 the new *lbssg* repositories linked from the [Libreboot Git
 page](../../git.md).
+
+
+[//]: # "SPDX-License-Identifier: GFDL-1.3-or-later"

@@ -299,3 +299,6 @@ nor do they endorse Libreboot.
 
 PCSX-Redux developers are not affiliated with Libreboot in any way. We simply
 integrate their Open BIOS into Libreboot because their work is awesome.
+
+
+[//]: # "SPDX-License-Identifier: GFDL-1.3-or-later"

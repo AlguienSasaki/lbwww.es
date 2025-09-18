@@ -300,3 +300,6 @@ Because pull requests and issues were available on notabug in the past, it
 makes sense to keep them open, though we ask that you send to codeberg. If
 they were to be closed on notabug, existing PRs and issues won't be visible
 anymore either, so they have to stay open.
+
+
+[//]: # "SPDX-License-Identifier: GFDL-1.3-or-later"

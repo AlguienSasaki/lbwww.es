@@ -94,3 +94,6 @@ Libreboot will be able to achieve great things, with SPI's help, and I'm very
 much looking forward to the future.
 
 Thank you! And to my readers: watch this space.
+
+
+[//]: # "SPDX-License-Identifier: GFDL-1.3-or-later"

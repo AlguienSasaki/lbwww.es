@@ -109,3 +109,6 @@ Here's a link to the New Hampshire court channel, on an *excellent* Invidious
 instance (excellent in terms of uptime, and speed):
 
 <https://piped.kavin.rocks/channel/UCxqjz56akoWRL_5vyaQDtvQ>
+
+
+[//]: # "SPDX-License-Identifier: GFDL-1.3-or-later"

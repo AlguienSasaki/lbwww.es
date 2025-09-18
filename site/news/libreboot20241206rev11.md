@@ -131,3 +131,6 @@ The following GRUB fixes were merged from upstream:
 * f2a1f66e7 kern/i386/tsc_pmtimer: The GRUB menu gets stuck due to failed calibration
 * 13f005ed8 loader/i386/linux: Fix cleanup if kernel doesn't support 64-bit addressing
 ```
+
+
+[//]: # "SPDX-License-Identifier: GFDL-1.3-or-later"

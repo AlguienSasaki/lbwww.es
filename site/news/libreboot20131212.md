@@ -16,3 +16,6 @@ r20131212 (1st release) {#release20131212}
 
 -   initial release
 -   source code deblobbed
+
+
+[//]: # "SPDX-License-Identifier: GFDL-1.3-or-later"

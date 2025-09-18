@@ -152,3 +152,6 @@ a brick (it's why only 12MB images are available for haswell in libreboot).
 
 Alper has tested the `gru_kevin` ROM images produced by lbmk, but
 the other images are untested as of this day.
+
+
+[//]: # "SPDX-License-Identifier: GFDL-1.3-or-later"
