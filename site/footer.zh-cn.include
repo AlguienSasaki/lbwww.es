@@ -6,11 +6,19 @@
 * [自由度现状](/freedom-status.md)
 * [Canoeboot](https://canoeboot.org/)
 * [编辑本页面](/git.md)
-* [许可证](/license.md)
 * [模板](/template-license.md)
 * [图标](/logo-license.md)
 * [作者](/contrib.md)
 * Libreboot is part of [Software in the Public Interest](https://www.spi-inc.org/)
+
+This page is released under license term:
+
+```
+SPDX-License-Identifier: GFDL-1.3-or-later
+```
+
+Please check the `COPYING` file in the
+website [Markdown repository](/git.md) for more information.
 
 -------------------------------------------------------------------------------
 
