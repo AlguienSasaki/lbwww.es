@@ -99,7 +99,7 @@ time or date can cause connections to be dropped during negotiation.
 Libreboot includes a script that automatically installs build dependencies
 according to the selected linux distro. 
 The currently supported distros are: Debian/Ubuntu/Linux Mint/Pop!\_OS, 
-Fedora, Arch Linux/Parabola or Void Linux.
+Fedora, Arch Linux or Void Linux.
 
 Some examples (run them as root, use use e.g. `sudo`, `doas`):
 

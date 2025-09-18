@@ -154,8 +154,8 @@ The log is as follows, relative to Libreboot 20231021:
 |/|   
 | * 444f2899 u-boot: qemu_arm64_12mb: Enable video console 
 |/  
-* 280bcceb Merge pull request 'arch, fedora38, parabola, void: install python-setuptools' (#141) from Riku_V/lbmk:master into master 
-* 3b92ac97 arch, fedora38, parabola, void: install python-setuptools 
+* 280bcceb Merge pull request 'arch, fedora38, void: install python-setuptools' (#141) from Riku_V/lbmk:master into master 
+* 3b92ac97 arch, fedora38, void: install python-setuptools 
 ```
 
 This is much more conservative than the previous release, because not much

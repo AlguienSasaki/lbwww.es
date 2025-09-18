@@ -449,7 +449,7 @@ The commits are, thus:
 | * 724cb39f util/e6400-flash-unlock: Update to upstream version 
 * | 67ffb513 build/fw/coreboot: warning about bin/ versus elf/ 
 |/  
-* 634aac0b config/dependencies: fix unifont on arch/parabola 
+* 634aac0b config/dependencies: fix unifont on arch
 * 7e3a031a include/err.sh: don't run check_git 
 * b61e3feb config/dependencies/ubuntu: symlink to debian 
 * 4ea9b9fb config/dependencies: add popos config 

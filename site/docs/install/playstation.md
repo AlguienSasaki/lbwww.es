@@ -61,7 +61,7 @@ has been tested on Debian 12 (x86\_64) and you can do this for example, as root:
 
 	./mk dependencies debian
 
-The `arch` and `parabola` dependencies should also work nicely, if you want
+The `arch` and dependencies should also work nicely, if you want
 to replace `debian` with one of those in the above example; you need to get the
 cross compiler (mipsel one) from the AUR, which you will see when running e.g.:
 
