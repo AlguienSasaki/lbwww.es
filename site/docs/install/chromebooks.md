@@ -213,7 +213,6 @@ three general methods for installing that vary depending on the distribution:
 
 * [ArchLinuxARM on RK3399-based Chromebooks](../uboot/uboot-archlinux.md).
 * [Debian Bookworm on Samsung Chromebook Plus XE513C24](../uboot/uboot-debian-bookworm.md).
-* [Trisquel Aramo on Samsung Chromebook Plus XE513C24](../uboot/uboot-trisquel-aramo.md). 
 * [Debian on Asus Chromebook C201](https://wiki.debian.org/InstallingDebianOn/Asus/C201).
 
 ### Unsuccessful installations:

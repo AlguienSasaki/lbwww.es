@@ -380,10 +380,6 @@ changes first):
 * 37817e6b GRUB: insert only 1 keymap per board, in cbfs 
 * df007d22 build/roms: err if -k layout doesn't exist 
 * d44c9551 build/roms: regression fix: uninitialised variable 
-*   2b6beaf2 Merge pull request 'config/dependencies/trisquel: replaced package from ttf-unifont to fonts-unifont' (#177) from goodspeed/lbmk:master into master 
-|\  
-| * 59096d8d config/dependencies/trisquel: replaced package from ttf-unifont to fonts-unifont 
-|/  
 * 09bed9a4 REMOVE MAINBOARD: lenovo x201 
 * 401c0882 NEW MAINBOARD: HP EliteBook 820 G2 
 *   a8a7a51b Merge pull request 'Dell-flash-unlock README updates' (#175) from nic3-14159/lbmk:dell-flash-unlock-updates into master 

@@ -324,9 +324,7 @@ branch, relative to the previous January 2024 release:
 | * 112d2a4e flashprog: apply the good old MX25 workaround 
 |/  
 * 77770f5a remove remaining flashrom remnants (use flashprog) 
-* 36ddd6f6 update parabola dependencies for flashprog 
 * 182a029f update arch dependencies for flashprog 
-* e8523864 update trisquel dependencies for flashprog 
 * 4131981c update debian dependencies for flashprog 
 * af82d671 config/git: use flashprog instead of flashrom 
 ```
