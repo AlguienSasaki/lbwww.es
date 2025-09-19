@@ -176,3 +176,6 @@ long mode (x86\_64) та перемикання в Real Mode лише для в�
 
 
 [//]: # "SPDX-License-Identifier: GFDL-1.3-or-later"
+
+
+The Canoeboot version of this page is: <https://canoeboot.org/docs/bsd/index.uk.html>

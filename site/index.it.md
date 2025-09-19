@@ -149,3 +149,6 @@ possiamo sempre avvalerci di piu' contributori. Piu' siamo e meglio e'!
 
 
 [//]: # "SPDX-License-Identifier: GFDL-1.3-or-later"
+
+
+The Canoeboot version of this page is: <https://canoeboot.org/index.it.html>

@@ -153,3 +153,6 @@ That might be a good idea anyway, considering how old these are getting
 
 
 [//]: # "SPDX-License-Identifier: GFDL-1.3-or-later"
+
+
+The Canoeboot version of this page is: <https://canoeboot.org/docs/install/hp8300usdt.html>

@@ -123,3 +123,6 @@ NRI, short for Native Ram Initialisation).
 
 
 [//]: # "SPDX-License-Identifier: GFDL-1.3-or-later"
+
+
+The Canoeboot version of this page is: <https://canoeboot.org/docs/install/t440p_external.html>

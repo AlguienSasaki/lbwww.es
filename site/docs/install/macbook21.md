@@ -354,3 +354,6 @@ response from the touchpad with the following in their `xorg.conf`:
 
 
 [//]: # "SPDX-License-Identifier: GFDL-1.3-or-later"
+
+
+The Canoeboot version of this page is: <https://canoeboot.org/docs/install/macbook21.html>

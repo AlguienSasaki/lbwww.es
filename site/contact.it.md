@@ -95,3 +95,6 @@ Usato principalmente come canale di supporto e per annunciare notizie:
 
 
 [//]: # "SPDX-License-Identifier: GFDL-1.3-or-later"
+
+
+The Canoeboot version of this page is: <https://canoeboot.org/contact.it.html>

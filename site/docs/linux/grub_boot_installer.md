@@ -200,3 +200,6 @@ manually (from GRUB terminal), then just add the parameters.
 
 
 [//]: # "SPDX-License-Identifier: GFDL-1.3-or-later"
+
+
+The Canoeboot version of this page is: <https://canoeboot.org/docs/linux/grub_boot_installer.html>

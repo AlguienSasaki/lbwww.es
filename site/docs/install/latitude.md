@@ -188,3 +188,6 @@ If in doubt, just ask on Libreboot IRC.
 
 
 [//]: # "SPDX-License-Identifier: GFDL-1.3-or-later"
+
+
+The Canoeboot version of this page is: <https://canoeboot.org/docs/install/latitude.html>

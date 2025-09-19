@@ -187,3 +187,6 @@ Libreboot build system, and it boots up just fine.
 
 
 [//]: # "SPDX-License-Identifier: GFDL-1.3-or-later"
+
+
+The Canoeboot version of this page is: <https://canoeboot.org/docs/linux/index.html>

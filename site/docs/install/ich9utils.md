@@ -569,3 +569,6 @@ thinkpads that were tested.
 
 
 [//]: # "SPDX-License-Identifier: GFDL-1.3-or-later"
+
+
+The Canoeboot version of this page is: <https://canoeboot.org/docs/install/ich9utils.html>

@@ -303,3 +303,6 @@ anymore either, so they have to stay open.
 
 
 [//]: # "SPDX-License-Identifier: GFDL-1.3-or-later"
+
+
+The Canoeboot version of this page is: <https://canoeboot.org/git.html>

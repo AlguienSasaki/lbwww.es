@@ -1195,3 +1195,6 @@ merely linked here, instead of being hosted on the av.libreboot.org server).
 
 This version of the page is hosted in the `lbwww` git repository, with images
 for it hosted in the `lbwww-img` repository (from libreboot).
+
+
+The Canoeboot version of this page is: <https://canoeboot.org/docs/install/spi.html>

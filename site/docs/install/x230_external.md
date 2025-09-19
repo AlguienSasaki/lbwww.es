@@ -77,3 +77,6 @@ Pull up the protective cover to reveal the two soic chips for flashing.
 
 
 [//]: # "SPDX-License-Identifier: GFDL-1.3-or-later"
+
+
+The Canoeboot version of this page is: <https://canoeboot.org/docs/install/x230_external.html>

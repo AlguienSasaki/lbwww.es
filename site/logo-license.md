@@ -19,3 +19,6 @@ You can see the logo files here: <https://av.libreboot.org/logo/>
 
 
 [//]: # "SPDX-License-Identifier: GFDL-1.3-or-later"
+
+
+The Canoeboot version of this page is: <https://canoeboot.org/logo-license.html>

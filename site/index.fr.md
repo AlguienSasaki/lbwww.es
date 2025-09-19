@@ -105,3 +105,6 @@ Et même si quelqu'un travaille déjà sur des traductions dans une langue donn�
 
 
 [//]: # "SPDX-License-Identifier: GFDL-1.3-or-later"
+
+
+The Canoeboot version of this page is: <https://canoeboot.org/index.fr.html>

@@ -1106,3 +1106,6 @@ We do not yet support booting with UEFI on x86 machines.
 
 
 [//]: # "SPDX-License-Identifier: GFDL-1.3-or-later"
+
+
+The Canoeboot version of this page is: <https://canoeboot.org/faq.uk.html>

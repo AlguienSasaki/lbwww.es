@@ -53,3 +53,6 @@ makes it shut down *earlier*, before it can even start to CPU throttle.
 
 
 [//]: # "SPDX-License-Identifier: GFDL-1.3-or-later"
+
+
+The Canoeboot version of this page is: <https://canoeboot.org/docs/install/dell_thermal.html>

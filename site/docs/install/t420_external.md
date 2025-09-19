@@ -74,3 +74,6 @@ Now, you can proceed to [flashing](/docs/install/spi.html) this machine.
 
 
 [//]: # "SPDX-License-Identifier: GFDL-1.3-or-later"
+
+
+The Canoeboot version of this page is: <https://canoeboot.org/docs/install/t420_external.html>

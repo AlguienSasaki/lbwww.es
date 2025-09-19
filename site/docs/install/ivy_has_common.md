@@ -329,3 +329,6 @@ The four freedoms are absolute.
 
 
 [//]: # "SPDX-License-Identifier: GFDL-1.3-or-later"
+
+
+The Canoeboot version of this page is: <https://canoeboot.org/docs/install/ivy_has_common.html>

@@ -302,3 +302,6 @@ integrate their Open BIOS into Libreboot because their work is awesome.
 
 
 [//]: # "SPDX-License-Identifier: GFDL-1.3-or-later"
+
+
+The Canoeboot version of this page is: <https://canoeboot.org/docs/install/playstation.html>

@@ -102,3 +102,6 @@ the vendor, but you can use local addresses, and you can use randomised MACs.
 
 
 [//]: # "SPDX-License-Identifier: GFDL-1.3-or-later"
+
+
+The Canoeboot version of this page is: <https://canoeboot.org/docs/install/mac_address.html>

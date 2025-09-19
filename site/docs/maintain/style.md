@@ -322,3 +322,6 @@ a degree of configurability - this is the mentality behind lbmk design.
 
 
 [//]: # "SPDX-License-Identifier: GFDL-1.3-or-later"
+
+
+The Canoeboot version of this page is: <https://canoeboot.org/docs/maintain/style.html>

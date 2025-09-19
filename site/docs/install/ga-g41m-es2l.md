@@ -177,3 +177,6 @@ the [Libreboot 20240225 release](../../news/libreboot20240225.md#flashprog-now-u
 
 
 [//]: # "SPDX-License-Identifier: GFDL-1.3-or-later"
+
+
+The Canoeboot version of this page is: <https://canoeboot.org/docs/install/ga-g41m-es2l.html>

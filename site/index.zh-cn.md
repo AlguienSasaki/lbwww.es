@@ -91,3 +91,6 @@ Libreboot 目前有乌克兰语和法语的网页翻译（但两个语言都还�
 
 
 [//]: # "SPDX-License-Identifier: GFDL-1.3-or-later"
+
+
+The Canoeboot version of this page is: <https://canoeboot.org/index.zh-cn.html>

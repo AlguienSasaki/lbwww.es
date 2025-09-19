@@ -281,3 +281,6 @@ arguments, and it will show a list of options.
 
 
 [//]: # "SPDX-License-Identifier: GFDL-1.3-or-later"
+
+
+The Canoeboot version of this page is: <https://canoeboot.org/docs/install/hp8200sff.html>

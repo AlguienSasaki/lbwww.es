@@ -158,3 +158,6 @@ so können wir immer mehrere Leute gebrauchen. Desto mehr desto besser!
 
 
 [//]: # "SPDX-License-Identifier: GFDL-1.3-or-later"
+
+
+The Canoeboot version of this page is: <https://canoeboot.org/index.de.html>

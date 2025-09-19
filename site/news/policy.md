@@ -494,3 +494,6 @@ The article will end here, because anything else would be more rambling.
 
 
 [//]: # "SPDX-License-Identifier: GFDL-1.3-or-later"
+
+
+The Canoeboot version of this page is: <https://canoeboot.org/news/policy.html>

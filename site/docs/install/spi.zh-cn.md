@@ -725,3 +725,6 @@ WSON8 IC：\
 展示了 BeagleBone Black 的照片，以 GFDL 许可，如同本网站的其他页面和图像。如果你想的话，你也可以在 CC-BY-SA 4.0 下使用它们（我，Leah Rowe，拥有本页展示的全部 BBB 照片的所有权，除了 beaglebone 网站上的那一张以外；而那一张只是在这里链接的，而不是托管在 av.libreboot.org 服务器的）。
 
 本页面的该版本托管在 `lbwww` git 仓库，其图像托管在 `lbwww-img` 仓库（来自用户 libreboot）。
+
+
+The Canoeboot version of this page is: <https://canoeboot.org/docs/install/spi.zh-cn.html>

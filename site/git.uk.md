@@ -312,3 +312,6 @@ pull request'и досі можливі через Notabug. Поки Notabug д�
 
 
 [//]: # "SPDX-License-Identifier: GFDL-1.3-or-later"
+
+
+The Canoeboot version of this page is: <https://canoeboot.org/git.uk.html>

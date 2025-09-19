@@ -22,3 +22,6 @@ that is doing
 
 
 [//]: # "SPDX-License-Identifier: GFDL-1.3-or-later"
+
+
+The Canoeboot version of this page is: <https://canoeboot.org/docs/install/acer_g43t-am3.html>
