@@ -167,6 +167,36 @@ If you are using another OS or an external flasher, you may need to
 compile and use that flashrom fork to disable write-protection. There is
 no `lbmk` support yet for automatically building it.
 
+Have a look at MrChromebox's write protect notes linked at the bottom of
+this page, which has some useful guidance, also see the next sections.
+
+**TODO: re-write this entire page better, with streamlined guides for
+the bob/kevin machines.**
+
+### Gru BOB (ASUS Chromebook C101p)
+
+This uses a CR50-based mechanism. You must use a CR50 debug cable to
+unlock WP. This page has good information, and links to sellers:
+
+<https://github.com/ChocolateLoverRaj/gsc-debug-board>
+
+If you're manufacturing your own CR50 cable, something like this can be
+used: <https://www.amazon.com/Teansic-Connector-Housing-USB-C-Interface/dp/B0D14MDFRG>
+
+You could make a couple of these. But you may aswell just buy one from a
+seller as above, if all you need is one.
+
+**TODO: check over time if that amazon link changes, and/or find a more
+reliable link.**
+
+### Gru KEVIN (Samsung Chromebook Plus XE513C24)
+
+This doesn't use CR50. This uses the old-fashioned write protect
+screw. It's one of the screws on the heatsink, that you loosen which
+removes the grounding for the WP pin.
+
+**TODO: add pics of that here.**
+
 Prepare the ROM image
 ---------------------
 
