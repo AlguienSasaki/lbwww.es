@@ -250,36 +250,6 @@ According to git logs, TPM should work, and a commit from 2018 at revision
 ID `39d0e2a2cf45e28cdddd0fe0c88f94ce527ab1ef` in coreboot makes the TPM visible
 to operating systems.
 
-PSU Fan control
----------------
-
-See coreboot commit `9bd601584350f51f112b15a7369f9aa82f1d0919` - labelled
-by commit message `superio/nuvoton/npcd378: Add PSU fan control`.
-
-Per this commit, SuperIO-based fan control is supported on HP Elite 8200 SFF.
-
-TODO for testing the above is here:\
-<https://codeberg.org/libreboot/lbmk/issues/9>
-
-This is controlled via `nvramtool` to modify the value in sram. See:
-
-* `psu_fan_lvl=3` <-- default setting in coreboot, and Libreboot.
-
-Other values possible: from reading the source code, it is implied that the
-number can be between 0 and 7. If the value is set higher than 7, it will
-default back to 3.
-
-Libreboot locks CMOS/NVRAM settings, but you can change the default setting in
-the *ROM* by using the `-C` option in nvramtool. You can find this under the
-directory `src/coreboot/default/util/nvramtool` when downloading coreboot inside
-of lbmk by running the command:
-
-	./mk -f coreboot default
-
-Go in there and type `make` to build nvramtool. Simply run nvramtool without
-arguments, and it will show a list of options.
-
-
 [//]: # "SPDX-License-Identifier: GFDL-1.3-or-later"
 
 
