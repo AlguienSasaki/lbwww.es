@@ -83,7 +83,7 @@ Libreboot currently supports the following systems:
 ### Desktops (AMD, Intel, x86)
 
 -   [Dell OptiPlex 3050 Micro](dell3050.html) - **Also [available to buy with Libreboot pre-installed](https://minifree.org/product/libreboot-3050-micro/)**
--   [Dell OptiPlex 7020/9020 MT and SFF](dell9020.md) - Dell OptiPlex XE2 MT/SFF also known to work
+-   [Dell OptiPlex 7020/9020/XE2/T1700 MT and SFF](dell9020.md)
 -   [Acer G43T-AM3](acer_g43t-am3.md)
 -   Apple iMac 5,2
 -   [ASUS KCMA-D8 motherboard](kcma-d8.md)
@@ -92,7 +92,6 @@ Libreboot currently supports the following systems:
     be safe to flash.
 -   [Dell OptiPlex 780 variants e.g. MT, USFF](dell780.md)
 -   [Dell OptiPlex 7010/9010 SFF](dell7010.md) **(for MT, please use the T1650 image)**
--   Dell Precision T1700 (use the same ROM as 9020 MT, but it won't have ECC support)
 -   [Dell Precision T1650](t1650.md) **(the same ROM works on 7010/9010 MT variant)**
 -   [Gigabyte GA-G41M-ES2L motherboard](ga-g41m-es2l.md)
 -   [HP Elite 8200 SFF/MT](hp8200sff.md) (HP 6200 Pro Business probably works too)
