@@ -105,26 +105,97 @@ which is a major advantage over Sony's original BIOS.
 
 ### Hardware
 
-Not yet tested by the Libreboot project, but the PCSX-Redux developers have
-stated that it will work on the real console. *It should be noted that the Open
-BIOS does not seem to implement a memory card save handler at present; you can
-save and load games, in-game, but there is no built-in program for copying
-and deleting saves between memory cards.* From reading the documentation, it
-seems that this is essentially a very well-engineered proof of concept that
-happens to boot a majority of games; some polishing is still needed to make this
-really useful on a real machine.
+OpenBIOS has been tested on official hardware by third party users, but it 
+comes with some caveats.
+
+#### Limitations
+Please read this before flashing your PS1 with OpenBIOS, as OpenBIOS removes 
+some functionality from your PS1. From reading the documentation, it seems that 
+OpenBIOS is essentially a very well-engineered proof of concept that happens to 
+boot a majority of games; some polishing is still needed to make this useful on 
+a real machine.
+
+**With OpenBIOS Flashed, you will lose the following functionality**
+- Open BIOS does not seem to implement a memory card save handler at present; 
+you can save and load games, in-game, but there is no built-in program for 
+copying and deleting saves between memory cards.
+- You do not get to listen to music CDs. 
+- Not all games will boot under OpenBIOS. For a list of games, see Game
+compatibility below.
 
 The main usefulness of the Open BIOS is that it's under an MIT license, and
 therefore legal to distribute; anyone wishing to use an emulator can use a
 compiled copy of the Open BIOS, and distribute it freely without trouble.
 
-You also do not get to listen to music CDs. The quirk with memory cards is
-easily mitigated in an *emulator*, because you can simply create different
-memory card images for each game you play.
+#### Replacing the PS1 BIOS
+The PS1 BIOS is flashed to something called a mask ROM. Mask ROMs are not 
+re-writable. In order for the PS1 to boot OpenBIOS, we will need to replace the 
+mask ROM with re-writable chip. Modern NOR flash chips can be used, specifically 
+ones that operate at 3.3v (tolerance 2.7v to 3.6v), with a parallel interface, 
+that are organized into 512KB blocks with an 8 bit data bus (512KB x 8).
 
-It would be nice if a memory card manager program were available, to make this
-BIOS much more polished, but a number of games have been tested and it's more
-or less fully reliable in most cases.
+The footprint for the BIOS chip used by the PS1 is obsolete and will need to 
+be adapted for a newer chip. This can be done with a carrier board. OpenBIOS has 
+been tested on actual PS1 hardware with 
+[this carrier board](https://codeberg.org/libreboot/ps1_bios_carriers), which 
+is based around the Macronix MX29LV040CTI-70G. As of July 2025, this chip is 
+still supported and being produced.
+
+There are two variants of the PS1 mask ROM chip: a 32 pin variant and a 40 pin 
+variant. The 40 pin variant is rare and only present in extremely early versions
+of the PS1 hardware.
+
+![](https://av.libreboot.org/playstation/40pin_bios.jpg)
+
+The much more common variant is the 32 pin mask ROM. This is likely the one in 
+your PS1
+
+![](https://av.libreboot.org/playstation/bios_angle.jpg)
+
+Carrier boards exist for both mask ROM variants.
+
+#### Flashing the New Chip
+Flashing OpenBIOS to the new NOR flash will need to be done with a chip 
+programmer, like the [TL866](http://www.xgecu.com/EN/TL866_main.html). 
+You cannot flash these chips with flashrom. Flashrom is used for programming 
+serial chips. The TL866 and its variants are closed source, but they can be 
+controlled with [open source software](https://davidgriffith.gitlab.io/minipro/). 
+You will also need a TSOP adapter for the programmer.
+
+The chip can be programmed with
+
+    minipro -p "MX29LV040C@TSOP32" -w /path/to/openbios.bin
+
+You can optionally read the chip back a couple times to ensure it has been flashed 
+properly. If the chip somehow got flashed incorrectly, desoldering it to re-flash 
+will be difficult!
+
+#### Removing the Existing Mask ROM
+You can use something like a heat gun to remove the mask ROM from the PS1. 
+If you do this, make sure to shield the rest of the chips with aluminum foil. 
+
+A safer way to remove SMD chips like this is to flood the legs with a 
+[special solder](https://www.chipquik.com/store/index.php?cPath=2200) that 
+stays a liquid at very low temperatures and lets you easily remove the chip 
+without a hot air gun. Just be careful not to get it on anything you're 
+not trying to remove! This solder is manufactured by Chipquik and can be 
+purchased from many different vendors (Digikey, Mouser, etc).
+
+![](https://av.libreboot.org/playstation/bios_flooded.jpg)
+
+After pulling off the chip, clean up the remaining solder with solder braid and 
+rubbing alcohol.
+
+![](https://av.libreboot.org/playstation/bios_removed_clean.jpg)
+
+#### Soldering the Carrier Board
+Solder the new carrier board to the PS1 motherboard.
+
+![](https://av.libreboot.org/playstation/new_bios_soldered.jpg)
+
+#### Testing
+All you should have to do is plug in your PS1, turn it on, and watch the 
+screen. If you see a cube, it worked!
 
 Game compatibility
 ------------------
