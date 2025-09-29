@@ -73,7 +73,7 @@ HP Elite 8300 USDT motherboard.
 
 ### Internal flashing
 
-Internal flashing is possible. OEM BIOS versions 2.87 and 2.90 are confirmed
+Internal flashing is possible. OEM BIOS versions 2.87, 2.90, 2.99, and 3.08 are confirmed
 compatible with this guide. BIOS 2.05 is confirmed **not** to work.
 
 If you have some other BIOS version, please do tell about it on
