@@ -10,4 +10,13 @@
 * [Логотип](/logo-license.md)
 * [Авторы](/contrib.md)
 
+This page is released under license term:
+
+```
+SPDX-License-Identifier: GFDL-1.3-or-later
+```
+
+Please check the `COPYING` file in the
+website [Markdown repository](/git.md) for more information.
+
 -------------------------------------------------------------------------------

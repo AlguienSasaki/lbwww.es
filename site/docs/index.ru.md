@@ -41,3 +41,5 @@ title: Установка Libreboot — свободная/открытая пр
 -   [Разное](misc/)
 -   [Список кодовых имён](misc/codenames.md)
 
+[//]: # "SPDX-License-Identifier: GFDL-1.3-or-later"
+
