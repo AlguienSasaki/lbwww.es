@@ -172,16 +172,47 @@ will be difficult!
 
 #### Removing the Existing Mask ROM
 You can use something like a heat gun to remove the mask ROM from the PS1. 
-If you do this, make sure to shield the rest of the chips with aluminum foil. 
 
-A safer way to remove SMD chips like this is to flood the legs with a 
-[special solder](https://www.chipquik.com/store/index.php?cPath=2200) that 
-stays a liquid at very low temperatures and lets you easily remove the chip 
-without a hot air gun. Just be careful not to get it on anything you're 
-not trying to remove! This solder is manufactured by Chipquik and can be 
-purchased from many different vendors (Digikey, Mouser, etc).
+Make sure to thoroughly clean the area around the chip, and the chip itself
+and the pins on it, with 99.9% isopropyl alcohol. This is to remove any dirt
+and other contaminants that can get into the solder joints.
 
-![](https://av.libreboot.org/playstation/bios_flooded.jpg)
+Before applying the hot air, you should flux the pins and re-flow them with
+quality 64/40 leaded solder. Make sure to thoroughly wet the joints with the
+solder when reflowing; this will bring down the melting point when using hot
+air, compared to joints of surrounding components, as all of the solder on
+this board will have aged a lot since manufacture, so oxides covering them
+would raise the melting point significantly.
+
+If you do this, make sure to tack down any surrounding small components e.g.
+small resistors, capacitors, with kapton tape, so they don't move or get blown
+away. You may also want to surround the chip with aluminium foil, to protect
+surrounding components.
+
+Use a decent hot air rework station, and set the temperature to about 330C, or
+perhaps a bit higher, but 330C is likely OK. Remember, you're not heating the
+chip. Go around the chip with the heat, making sure to heat the thick ground
+and voltage planes that connect it, which will soak up a lot of heat. You're
+heating the pins on the chip. Go around the chip in quick succession, trying
+to keep the heat on all the pins as uniform as possible.
+
+When the chip is ready to come off, you'll know because you see the solder
+joints all melted. Nudging the chip a little bit will confirm if the joints
+are all fully melted, and then you can pull the chip off (a decent set of
+tweezers can be used for this).
+
+Make sure to look at lots of videos online and maybe practise first on other
+scrap boards first, if you've never done this before. We don't recommend any
+specific soldering kit.
+
+As for soldering tip used when soldering: a T12-J02 or T12-K is sufficient, if
+you're doing a drag soldering technique (pros only); otherwise, a T12-D08 will
+be acceptable also, if you feel the need to solder each individual joint.
+
+Note that when purchasing those BIOS upgrade kits, the flash may not already
+be soldered onto the adapter board. If you're not at all comfortable with
+precision soldering, you may want to ask the seller to ship it to you pre
+soldered, if you're not flashing and soldering it yourself.
 
 After pulling off the chip, clean up the remaining solder with solder braid and 
 rubbing alcohol.
