@@ -278,6 +278,19 @@ More information, including logs, can be found on [this
 page](http://web.archive.org/web/20210416010634/https://notabug.org/libreboot/libreboot/issues/23).
 
 
+Charge Thresholds Under Linux
+------------------------------
+
+Seeing that Coreboot doesn't implement SMM, charge threshold control on some
+devices requires modification.
+In case of using [TLP](https://linrunner.de/tlp/index.html) this requires changing
+the driver in TLP to NATACPI in conjunction with loading the thinkpad_acpi kernel
+module.
+
+An alternative is to manually set the thresholds with [ectool](https://doc.coreboot.org/util.html).
+Note that ECtool directly interfaces the system's EC and as such it is device-dependent as to how it is configured.
+
+
 [//]: # "SPDX-License-Identifier: GFDL-1.3-or-later"
 
 
