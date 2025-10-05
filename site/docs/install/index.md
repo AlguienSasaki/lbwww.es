@@ -98,6 +98,7 @@ Libreboot currently supports the following systems:
 -   [HP Elite 8300 USDT](hp8300usdt.md)
 -   Intel D510MO and D410PT motherboards
 -   [Intel D945GCLF](d945gclf.md)
+-   [Topton X2E N150 aka BKHD H30W-N150](x2e-n150.md)
 
 ### Laptops (Intel, x86)
 
