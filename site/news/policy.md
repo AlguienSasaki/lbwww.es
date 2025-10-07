@@ -5,11 +5,6 @@
 Free as in freedom!
 -----------------
 
-This article describes the *principles* that govern the Libreboot project. For
-information about *how those principles are applied in practice*, please read
-this article instead: [Software and hardware freedom status for each motherboard
-supported by Libreboot](../freedom-status.md)
-
 Libreboot's policy is to provide as much
 [software freedom](https://writefreesoftware.org/) as possible to each
 user, on each and every bit of hardware supported, and to *support as much
@@ -133,9 +128,6 @@ accessible for otherwise non-technical users.
 Examples of Libreboot policy in action
 -----------------------------------
 
-More information about this is also available on
-the [freedom status](../freedom-status.md) page.
-
 Context is everything, so to make the above picture more clear, here are a few
 examples of how this very policy is implemented in Libreboot:
 
@@ -203,14 +195,8 @@ examples of how this very policy is implemented in Libreboot:
   blob on any machines, because it is completeley unnecessary for everyday
   operating of a free operating system.
 
-FREEDOM CATALOG
+Free hardware
 --------------
-
-A *[freedom status](../freedom-status.md)* page should also be made available,
-educating people about the software freedom status on each machine supported by
-the Libreboot build system. Please read:
-[Software and hardware freedom status for each motherboard supported by
-Libreboot](../freedom-status.md).
 
 It is desirable to see a world where all hardware and software is libre, under
 the same ideology as the Libreboot project. Hardware!?

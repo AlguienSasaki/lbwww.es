@@ -17,11 +17,6 @@ Today, I published a follow-up article that defines how the policy
 is *implemented* in practice. There has been some confusion among some fans of
 the Libreboot project, about what the policy means in practice.
 
-Refer here to the new article, thus:
-
-[Software and hardware freedom status for each motherboard supported by
-Libreboot](../freedom-status.md)
-
 The article describes, in great detail, the current status of licensing for
 various components of Libreboot. It is the *goal* of Libreboot to promote
 *[software freedom](https://writefreesoftware.org/)*, helping as many people as

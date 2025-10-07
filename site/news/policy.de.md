@@ -5,11 +5,6 @@
 Einleitung
 ------------
 
-Dieser Artikel beschreibt die *Prinzipien* die das Libreboot Projekt definieren.
-Für Informationen darüber *wie diese Prinzipien in der Praxis angewendet
-werden*, bitte lies diesen Artikel stattdessen: [Software and hardware
-freedom status for each motherboard supported by Libreboot](../freedom-status.md)
-
 Libreboot's Richtlinie ist für jeden Benutzer so viel Software Freiheit
 zu bieten wie möglich, auf jeglichem Bit von unterstützter Hardware, und
 *so viel Hardware von Coreboot zu unterstützen wie möglich*; was dies
@@ -138,14 +133,8 @@ In other words, do not lecture the user. Just try to help them with their
 problem! The goal of the libreboot project is simply to make coreboot more
 accessible for otherwise non-technical users.
 
-FREEDOM CATALOG
+Free hardware
 --------------
-
-A *[freedom status](../freedom-status.md)* page should also be made available,
-educating people about the software freedom status on each machine supported by
-the Libreboot build system. Please read:
-[Software and hardware freedom status for each motherboard supported by
-Libreboot](../freedom-status.md).
 
 It is desirable to see a world where all hardware and software is libre, under
 the same ideology as the Libreboot project. Hardware!?

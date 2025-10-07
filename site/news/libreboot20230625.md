@@ -80,8 +80,7 @@ to manually remove it.
 Such removal is still possible, but *this* release now provides
 two sets of ROM images for each x86 motherboard: one set of ROMs
 will *contain* CPU microcode, and another set *excludes* them.
-For more context, see [Binary Blob Reduction Policy](policy.md)
-and [Freedom Status](../freedom-status.md).
+For more context, see [Binary Blob Reduction Policy](policy.md).
 
 An earlier article was written about this, [here](microcode.md)
 

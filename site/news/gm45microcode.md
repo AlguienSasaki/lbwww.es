@@ -33,26 +33,14 @@ year; before the policy change, Libreboot *excluded* these updates (but the
 code for loading them *was retained*, so you could manually add them yourself
 if you wanted to). Adding and removing them can be done by coreboot, at build
 time, or you can add/remove them from the compiled ROM image by
-running `cbfstool`; you can learn how to add/remove microcode updates here:
-[How to add/remove microcode on coreboot images](../freedom-status.md#intelx86)
+running `cbfstool`.
 
 You can learn *why* they're needed, and about microcode in general, by reading
 the [Binary Blobs Reduction Policy](policy.md) - it is a pragmatic policy,
 enacted on 15 November 2022 with a view to supporting as *much* hardware as
 possible from coreboot, reducing or eliminating binary blobs in the boot
 flash and mitigating any issues that arise - for example, Libreboot makes use
-of `me_cleaner` on some newer Intel platforms. You can read more about how the
-policy is executed by reading the [Freedom Status](../freedom-status.md) page.
-
-I've received some feedback about this, specifically by users of GM45-era
-ThinkPads (X200, T400, T500, W500, R500, R400, X301, X200S/X200T, T400S and
-R500). On *those* machines, if you [remove microcode
-updates](../freedom-status.html#intelx86), it would break SpeedStep (CPU
-frequency scaling) and the machine won't *reboot* properly (turning off and on
-would work). Additionally, the machine would crash on lots of I/O (CPU cycles
-and memory usage), due to a *Machine Check Exception* state leading to kernel
-panic in your operating system; this last issue does not have a known fix,
-except to update the microcode (which newer Libreboot releases do, by default).
+of `me_cleaner` on some newer Intel platforms.
 
 Libreboot contained mitigations for broken SpeedStep/reboot, in older releases,
 but it was decided that these mitigations would be *excluded* from the new

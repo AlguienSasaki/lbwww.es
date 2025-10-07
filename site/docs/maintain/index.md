@@ -50,8 +50,7 @@ The coreboot software is nominally free, but occasionally requires an
 additional file or two from the vendor on a few systems. The libreboot
 project *allows* them, only when they are absolutely required.
 
-[Strict rules](../../news/policy.md) govern when this allowed, and
-the [freedom status page](../../freedom-status.md) provides additional details.
+[Strict rules](../../news/policy.md) govern when this allowed.
 
 Best practices for learning lbmk
 --------------------------------

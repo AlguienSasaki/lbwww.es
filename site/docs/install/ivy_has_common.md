@@ -11,8 +11,7 @@ that replaces proprietary BIOS/UEFI firmware, but some newer boards still
 occasionally need code from the hardware manufacturer in order to boot properly.
 This document will teach you how to handle such a scenario, and how to check
 for it. For more context, please read Libreboot's [Binary Blob Reduction
-Policy](../../news/policy.md) and [Freedom Status](../../freedom-status.md)
-pages.
+Policy](../../news/policy.md).
 
 **PLEASE MAKE SURE you read and follow the instructions on this page, prior
 to flashing Libreboot, if required for your motherboard; failure to heed this
@@ -52,16 +51,12 @@ Introduction
 
 On *some* boards, but certainly not all of them, certain files are required from
 the hardware vendor. Libreboot has strict [rules](../../news/policy.md)
-governing this, and you can find more information on
-the [Freedom Status](../../freedom-status.md) page.
+governing this.
 
 Libreboot can't directly distribute *all* of these files, so some of them are
 downloaded at build-time, and processed for insertion into the firmware images.
 **On pre-compiled ROM images in releases, these files are removed, and can be
 re-added using the same automation that was applied during the build process.**
-
-Examples of these files can be found on
-the [Freedom Status](../../freedom-status.md) page.
 
 **If in doubt, you should simply follow these instructions. If your board
 doesn't need vendor files, the tar archive won't be modified.**

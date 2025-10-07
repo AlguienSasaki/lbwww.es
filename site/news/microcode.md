@@ -27,9 +27,7 @@ motherboards supported in Libreboot (in `lbmk.git` and in releases) can boot
 with entirely [free software](https://writefreesoftware.org/),
 requiring *zero* vendor files of any kind within *coreboot*.
 
-The nuance of how Libreboot *implements* this policy is described in
-the [Freedom Status](../freedom-status.md) page. Although coreboot (which
-Libreboot uses for hardware initialisation) *is* a
+Although coreboot (which Libreboot uses for hardware initialisation) *is* a
 [free software](https://writefreesoftware.org/) project,
 certain vendor files are needed on some platforms, for things like raminit
 (memory controller initialisation). Libreboot tries to reduce or eliminate
