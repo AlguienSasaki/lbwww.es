@@ -19,6 +19,16 @@ how to do this (look at the bottom of an existing Markdown file).
 A generic notice is also placed stating GFDL, in footer `.include`
 files.
 
+If in doubt, simply place this at the bottom of your new Markdown
+file when submitting it for review:
+
+```
+[//]: # "SPDX-License-Identifier: GFDL-1.3-or-later"
+```
+
+If you're working on an existing Markdown file present in the
+website repository, this will probably already be there.
+
 Libreboot repositories
 ----------------------
 
@@ -321,4 +331,4 @@ anymore either, so they have to stay open.
 [//]: # "SPDX-License-Identifier: GFDL-1.3-or-later"
 
 
-The Canoeboot version of this page is: <https://canoeboot.org/git.html>
+

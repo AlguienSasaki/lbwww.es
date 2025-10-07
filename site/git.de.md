@@ -3,6 +3,32 @@ title: Use Git and/or send patches to Libreboot
 x-toc-enable: true
 ...
 
+SPDX HEADERS
+------------
+
+When submitting new documentation pages (e.g. Markdown files), make
+sure they are explicitly licensed. You can do this by adding an SPDX
+header at the bottom of the file.
+
+Please look at other pages in the repository, to know how this is done.
+
+`GFDL-1.3-or-later` is assumed, as that is what most of the site uses.
+You can add this as a comment, in Markdown files. Existing pages show
+how to do this (look at the bottom of an existing Markdown file).
+
+A generic notice is also placed stating GFDL, in footer `.include`
+files.
+
+If in doubt, simply place this at the bottom of your new Markdown
+file when submitting it for review:
+
+```
+[//]: # "SPDX-License-Identifier: GFDL-1.3-or-later"
+```
+
+If you're working on an existing Markdown file present in the
+website repository, this will probably already be there.
+
 Libreboot Repositories
 ---------------------
 
