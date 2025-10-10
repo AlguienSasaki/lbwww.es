@@ -692,3 +692,5 @@ New suspend time is 9.69 seconds (878.95 - 869.26). Previously, it was
 
 New resume time is 7.96 seconds (900.89 - 892.93). Previously it was
 72.97 seconds.
+
+[//]: # "SPDX-License-Identifier: GFDL-1.3-or-later"
