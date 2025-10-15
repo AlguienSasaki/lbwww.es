@@ -48,98 +48,17 @@ This is a boon for security, because it's harder
 to tamper with, and you could potentially write-protect plus maybe provide
 a [password](grub_hardening.md) in GRUB at boot time.
 
+The easiest way to use it is like this: in Linux, set up your partitions like
+you would, but use LVM volume groups, with group name `grubcrypt` and either:
 
-On a typical BIOS setup, with a non-librebooted device, the full disk
-encryption boot process looks something like this:
+* `/` as volume name `rootvol` and `/boot` as volume name `bootvol`
+* `/` as volume name `rootvol` and `/boot` exists within it (no `bootvol`)
 
-Fig 1.
-```
-TRADITIONAL BIOS BOOT 
-
-BIOS
- |
- |
- V
-----(FLASH LAYER)
- |
- |
- V
-/dev/sda (GRUB)
- |
- |
- V
--->/dev/sda1 /boot (Grub finds this)
- |
- |
- V
--->/dev/sda2 / [LUKS ENCRYPTED]
-```
-
-As you can see, GRUB is installed to the hard disk and /boot is not encrypted.
-Because libreboot includes GRUB in the flash, a superior boot paradigm is
-possible.
-
-Here is an example using a typical SeaGrub configuration
-
-Fig 2.
-```
-LIBREBOOT FULL DISK ENCRYPTION
-
-SeaBIOS
-  |
-  |
-  V
-GRUB (CBFS)
-  |
------(FLASH LAYER)
-  |
-  |
-  V
-/dev/sda / [LUKS ENCRYPTED]
-```
-
-A default GRUB target in libreboot includes logic that works like this:
-
-1. Search for and unlock encrypted disks
-2. Look through lvm logical volumes inside those encrypted disks for grub.cfg
-3. Use the grub.cfg found inside the lvm volume
-
-Most Linux distros graphical or hand-hold installers expect a setup as shown in
-Fig 1. They will not allow you to setup an encrypted /boot partition as on
-traditional bios, such a machine is typically unbootable.
-
-To setup Libreboot Full Disk Encryption, you will likely need to partition and
-setup your distro from the command line using a live image, using a tool like
-debootstrap or pacstrap.
-
-Most documentation on setting up Full Disk Encryption from the command line is
-built around the inferior traditional bios boot. You will need to adapt your
-configuration to the superior paradigm.
-
-An example using LUKS+LVM might look like this
-
-* `/` as volume name `rootvol` and `/boot` exists within it 
-
-```
-/dev/sda [ENCRYPTED with LUKS]
-  |
-  -->VolumeGroup grubcrypt
-       |
-       --> LogicalVolume rootvol /
-```
-
-The way distros boot and manage initramfs and GRUB differs. You will have to
-tool your setup for your distro.
-
-If your distro installs GRUB, and provides a `grub.cfg` file
+If your distro then installs GRUB, and provides a `grub.cfg` file
 under `/boot/grub` (within the distro, on your SSD/HDD file system), it should
 work. Libreboot's GRUB will automatically give you a passphrase prompt, where
 you type your passphrase and it unlocks the volume. Then it will find your
 LVMs and it'll boot from that.
-
-If you have issues, you may want to look at the default GRUB logic for booting
-encrypted disks:
-<https://codeberg.org/libreboot/lbmk/src/branch/master/config/grub/default/config/payload>
 
 Otherwise, to manually unlock it, you drop to the GRUB shell with C and do:
 
