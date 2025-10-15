@@ -48,17 +48,72 @@ This is a boon for security, because it's harder
 to tamper with, and you could potentially write-protect plus maybe provide
 a [password](grub_hardening.md) in GRUB at boot time.
 
-The easiest way to use it is like this: in Linux, set up your partitions like
-you would, but use LVM volume groups, with group name `grubcrypt` and either:
+### Automatic LUKS/LVM boot
 
-* `/` as volume name `rootvol` and `/boot` as volume name `bootvol`
-* `/` as volume name `rootvol` and `/boot` exists within it (no `bootvol`)
+LVM is optional, but commonly used on LUKS setups. Libreboot's `grub.cfg`
+automatically unlocks any encrypted block devices by running `cryptomount -a`
+when you select the default menuentry.
 
-If your distro then installs GRUB, and provides a `grub.cfg` file
-under `/boot/grub` (within the distro, on your SSD/HDD file system), it should
-work. Libreboot's GRUB will automatically give you a passphrase prompt, where
-you type your passphrase and it unlocks the volume. Then it will find your
-LVMs and it'll boot from that.
+Once unlocked, it will scan every unlocked partition, including logical volumes.
+
+If a `grub.cfg` exists at a standard location, Libreboot's GRUB will pick it
+up and switch to it automatically.
+
+Standard locations? E.g. `/boot/grub/grub.cfg` where /boot is on the /
+partition, or `/grub/grub.cfg` if it's a separate /boot partition. Libreboot
+GRUB also detects `grub.cfg` in EFI system partition directories on common
+distros, though the latter is irrelevant in this context; ESP is going to
+be unencrypted anyway.
+
+If you had a UEFI-based GRUB setup before Librebooting, or perhaps after (if
+you installed it with e.g. U-Boot UEFI payload), it's best to convert it to
+a BIOS-based setup (e.g. `/boot/grub/grub.cfg` location).
+
+An easy way to set up encrypted `/boot` is to do unencrypted /boot first, and
+then convert it. On a Debian system for example, let's say /boot was on a
+separate partition to your encrypted rootfs. Well now, you could do this:
+
+```
+cp -R /boot /boot2
+rm -Rf /boot/*
+umount /boot
+rmdir /boot
+```
+
+Then edit your `/etc/fstab`, commenting out the section for `/boot`, and now
+rename `/boot2` to `/boot`, then re-generate `grub.cfg`; in Debian you can
+do this:
+
+```
+export PATH="$PATH:/sbin"
+update-grub
+```
+
+Or more generically, instead of `update-grub` which is a Debian thing:
+
+```
+grub-mkconfig -o /boot/grub/grub.cfg
+```
+
+The `update-grub` command in Debian is a script, that also runs `grub-mkconfig`
+but does some other Debian-specific things. The `grub-mkconfig` program
+reads several common configs e.g. `/etc/fstab` and `/etc/default/grub` to
+guess locations e.g. where Linux is.
+
+Be very careful to check the final `grub.cfg` at the end, to make sure that
+it's configured correctly after the fact, or you could end up with a system
+that doesn't boot afterward, requiring manual intervention; if that happened,
+GRUB (Libreboot) is still likely to load your distro's GRUB config, and you
+could press `E` on the entry that boots your kernel, and do some manual
+editing, than press `F10` to temporarily boot with your changes, and fix it
+up.
+
+Otherwise, you could do encrypted /boot as part of an actual installation setup,
+but note that some distros will prevent you. For example, the Debian installer
+will not let you proceed when `/boot` is unencrypted, because it doesn't account
+for this special capability of Libreboot.
+
+### Manual booting
 
 Otherwise, to manually unlock it, you drop to the GRUB shell with C and do:
 
