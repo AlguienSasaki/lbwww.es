@@ -10,7 +10,7 @@ x-toc-enable: true
 потім розпочинає завантажувач для вашої операційної системи. [Linux](docs/linux/)
 та [BSD](docs/bsd/) добре підтримуються. Це заміняє пропрієтарну BIOS/UEFI
 прошивку. Допомога доступна
-через [\#libreboot](https://web.libera.chat/#libreboot)
+через `#libreboot`
 на [Libera](https://libera.chat/) IRC.
 
 <img tabindex=1 class="r" src="https://av.libreboot.org/t480/t480.jpg" /><span class="f"><img src="https://av.libreboot.org/t480/t480.jpg" /></span>

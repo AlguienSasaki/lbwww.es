@@ -45,28 +45,14 @@ The email address is [~libreboot/libreboot@lists.sr.ht](mailto:~libreboot/libreb
 IRC це головний спосіб зв'язку з проектом Libreboot. `#libreboot` на Libera
 IRC.
 
-Веб-версія:
-<https://web.libera.chat/#libreboot>
-
 Libera є однією з найбільших мереж IRC, використовуємих для проектів вільного програмного
 забезпечення. Знайти про них більше можна тут: <https://libera.chat/>
-
-Якщо ви бажаєте під'єднатися за допомогою вашого улюбленного клієнта (такого як weechat або irssi),
-інформація для під'єднання наступна:
-
-* Сервер: `irc.libera.chat`
-* Канал: `#libreboot`
-* Порт (TLS): `6697`
-* Порт (не TLS): `6667`
-
-Ми радимо вам використовувати порт `6697` з увімкненим TLS шифруванням.  
 
 Рекомендовано використовувати SASL для аутентифікації. Ці сторінки на веб-сайті Libera
 пояснять вам як:
 
 * Керівництво WeeChat SASL: <https://libera.chat/guides/weechat>
 * Керівництво Irssi SASL: <https://libera.chat/guides/irssi>
-* Керівництво HexChat SASL: <https://libera.chat/guides/hexchat>
 
 Взагалі, вам варто перевірити документацію, яка передбачена вашою програмою IRC.
 

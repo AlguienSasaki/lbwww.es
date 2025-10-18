@@ -9,7 +9,7 @@ su [alcune schede madri basate su Intel/AMD x86 o ARM](docs/install/#which-syste
 in computer fissi e portatili. Inizializza l'hardware (controller di
 memoria, CPU, periferiche) e avvia un bootloader per il tuo sistema operativo.
 [Linux](docs/linux/) e [BSD](docs/bsd/) sono ben supportati.
-L'aiuto e' disponibile sul canale IRC [\#libreboot](https://web.libera.chat/#libreboot)
+L'aiuto e' disponibile sul canale IRC `#libreboot`
 su [Libera](https://libera.chat/).
 
 <img tabindex=1 class="r" src="https://av.libreboot.org/t480/t480.jpg" /><span class="f"><img src="https://av.libreboot.org/t480/t480.jpg" /></span>

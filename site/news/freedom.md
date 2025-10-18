@@ -28,8 +28,7 @@ libre *source code* as possible. It is the goal of the Libreboot project to
 help bring about a world where software freedom is the *default* for everyone.
 
 I hope that the article clears up any confusion, and I'm open to questions if
-people have any. My info is on the contact page, or you can find me as `leah`
-in the `#libreboot` channel on libera IRC.
+people have any.
 
 The article will be maintained over time, to reflect the status of Libreboot.
 

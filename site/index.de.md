@@ -11,7 +11,7 @@ die Hardware initialisiert (z.b. Speicher-Controller, CPU, Peripherie),
 und dann einen Bootloader für dein Betriebssystem startet. [Linux](docs/linux/)
 sowie [BSD](docs/bsd/) werden gut unterstützt. Es ersetzt proprietäre BIOS/UEFI
 Firmware. Hilfe ist verfügbar
-via [\#libreboot](https://web.libera.chat/#libreboot)
+via `#libreboot`
 und [Libera](https://libera.chat/) IRC.
 
 Libreboot ist seit dem [8. September 2025](news/spi.md) ein [assoziiertes

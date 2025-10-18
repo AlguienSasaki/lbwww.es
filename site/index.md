@@ -11,7 +11,7 @@ on [specific Intel/AMD x86 and ARM based motherboards](docs/install/#which-syste
 including laptop and desktop computers. It initialises the hardware (e.g. memory
 controller, CPU, peripherals) and starts a bootloader for your operating
 system (OS). [Linux](docs/linux/) and [BSD](docs/bsd/) are well-supported. Help is
-available via [\#libreboot](https://web.libera.chat/#libreboot)
+available via `#libreboot`
 on [Libera](https://libera.chat/) IRC.
 
 <img tabindex=1 class="r" alt="ThinkPad T480 running Libreboot" title="ThinkPad T480" src="https://av.libreboot.org/t480/t480.jpg" /><span class="f"><img alt="ThinkPad T480 running Libreboot" src="https://av.libreboot.org/t480/t480.jpg" /></span>

@@ -48,27 +48,14 @@ Canale IRC
 IRC e' il modo principale per contattare chi collabora con il progetto libreboot.
 Il canale ufficiale e' `#libreboot` su Libera IRC.
 
-Webchat:
-<https://web.libera.chat/#libreboot>
-
 Libera e' una tra le piu' grandi reti IRC usate per i progetti di software libero.
 Maggiori informazioni le trovi qui: <https://libera.chat/>
-
-Puoi usare il client IRC che preferisci (come weechat or irssi) usando le seguenti informazioni:
-
-* Server: `irc.libera.chat`
-* Canale: `#libreboot`
-* Porta (TLS): `6697`
-* Porta (non-TLS): `6667`
-
-Ti suggeriamo di usare la porta `6697` e ablitare la cifratura TLS...
 
 Inoltre ti suggeriamo di abilitare l'autenticazione SASL. Le pagine web
 di Libera spiegano come:
 
 * Guida per WeeChat: <https://libera.chat/guides/weechat>
 * Guida per Irssi: <https://libera.chat/guides/irssi>
-* Guida per HexChat: <https://libera.chat/guides/hexchat>
 
 Comunque dovresti sempre controllare la documentazione del tuo client IRC preferito.
 

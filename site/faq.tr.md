@@ -204,9 +204,8 @@ Libreboot, [Linux](docs/linux/) ve [BSD](docs/bsd/) işletim sistemlerini iyi de
 
 1. [SSS sayfasını](faq.html) kontrol edin - sorununuzun yanıtı burada olabilir.
 2. [Belgeleri](docs/) okuyun - sorununuzla ilgili bilgi burada olabilir.
-3. [IRC kanalına](https://web.libera.chat/#libreboot) katılın - burada yardım isteyebilirsiniz.
-4. [E-posta listesine](https://lists.sr.ht/~libreboot/libreboot) yazın - burada da yardım isteyebilirsiniz.
-5. [Hata takipçisinde](https://codeberg.org/libreboot/lbmk/issues) sorununuzu arayın veya yeni bir hata raporu oluşturun.
+3. [E-posta listesine](https://lists.sr.ht/~libreboot/libreboot) yazın - burada da yardım isteyebilirsiniz.
+4. [Hata takipçisinde](https://codeberg.org/libreboot/lbmk/issues) sorununuzu arayın veya yeni bir hata raporu oluşturun.
 
 ### Libreboot'a Nasıl Katkıda Bulunabilirim?
 

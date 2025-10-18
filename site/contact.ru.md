@@ -36,25 +36,12 @@ IRC и Reddit предпочительнее, если вы хотите поп�
 
 IRC - главный метод связи с проектом Libreboot. `#libreboot` на Libera IRC.
 
-Чат в вебе:
-<https://web.libera.chat/#libreboot>
-
 Libera - самая большая сеть IRC, используемая для свободных проектов. Узнайте больше здесь: <https://libera.chat/>
-
-Если вы хотите подключиться к IRC через ваш любимый клиент (например, weechat или irssi):
-
-* Сервер: `irc.libera.chat`
-* Канал: `#libreboot`
-* Порт (TLS): `6697`
-* Порт (не TLS): `6667`
-
-Мы рекомендуем использовать порт `6697` со включенным TLS шифрованием.
 
 Мы также рекомендуем использовать SASL для аутентификации. Эти страницы на сайте Libera IRC расскажут как это сделать:
 
 * WeeChat SASL guide: <https://libera.chat/guides/weechat>
 * Irssi SASL guide: <https://libera.chat/guides/irssi>
-* HexChat SASL guide: <https://libera.chat/guides/hexchat>
 
 В общем, вы должны проверить документацию вашего клиента для IRC.
 

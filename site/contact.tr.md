@@ -37,25 +37,12 @@ IRC Sohbet Odası
 
 IRC, Libreboot projesiyle iletişim kurmanın ana yoludur. Libera IRC'de `#libreboot` kanalı.
 
-Web sohbeti:
-<https://web.libera.chat/#libreboot>
-
 Libera, Özgür Yazılım projeleri için kullanılan en büyük IRC ağlarından biridir. Onlar hakkında daha fazla bilgiyi burada bulabilirsiniz: <https://libera.chat/>
-
-Tercih ettiğiniz istemciyi (weechat veya irssi gibi) kullanarak bağlanmak isterseniz, bağlantı bilgileri şu şekildedir:
-
-* Sunucu: `irc.libera.chat`
-* Kanal: `#libreboot`
-* Port (TLS): `6697`
-* Port (TLS olmayan): `6667`
-
-TLS şifrelemesi etkin olarak `6697` portunu kullanmanızı öneririz.
 
 Kimlik doğrulama için SASL kullanmanız önerilir. Libera web sitesindeki şu sayfalar size nasıl yapılacağını anlatır:
 
 * WeeChat SASL kılavuzu: <https://libera.chat/guides/weechat>
 * Irssi SASL kılavuzu: <https://libera.chat/guides/irssi>
-* HexChat SASL kılavuzu: <https://libera.chat/guides/hexchat>
 
 Genel olarak, IRC yazılımınızın sağladığı belgeleri kontrol etmelisiniz.
 

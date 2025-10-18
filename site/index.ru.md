@@ -3,7 +3,7 @@ title: свободную, с открытым исходным кодом BIOS/
 x-toc-enable: true
 ...
 
-Проект *Libreboot* предоставляет [свободную, с открытым исходным кодом](https://writefreesoftware.org/) загрузочную прошивку, основанную на coreboot, заменяющую проприетарные BIOS/UEFI на [некоторых Intel/AMD x86 и ARM материнских платах](docs/install/#which-systems-are-supported-by-libreboot), включая ноутбуки и десктопы. Она инициализирует аппаратное обеспечение компьютера (например, контроллер памяти, процессор, переферию) и запускает загрузчик для вашей операционный системы. [Linux](docs/linux/) и [BSD](docs/bsd/) хорошо поддерживаются. Можно попросить помощь через [\#libreboot](https://web.libera.chat/#libreboot) на [Libera](https://libera.chat/) IRC.
+Проект *Libreboot* предоставляет [свободную, с открытым исходным кодом](https://writefreesoftware.org/) загрузочную прошивку, основанную на coreboot, заменяющую проприетарные BIOS/UEFI на [некоторых Intel/AMD x86 и ARM материнских платах](docs/install/#which-systems-are-supported-by-libreboot), включая ноутбуки и десктопы. Она инициализирует аппаратное обеспечение компьютера (например, контроллер памяти, процессор, переферию) и запускает загрузчик для вашей операционный системы. [Linux](docs/linux/) и [BSD](docs/bsd/) хорошо поддерживаются. Можно попросить помощь через `#libreboot` на [Libera](https://libera.chat/) IRC.
 
 <img tabindex=1 class="r" src="https://av.libreboot.org/t480/t480.jpg" /><span class="f"><img src="https://av.libreboot.org/t480/t480.jpg" /></span>
 

@@ -45,28 +45,14 @@ IRC Chatraum
 IRC ist hauptsächlich der Weg um Kontakt Libreboot Projekt aufzunehmen. `#libreboot` auf Libera
 IRC.
 
-Webchat:
-<https://web.libera.chat/#libreboot>
-
 Libera ist eines der grössten IRC Netzwerke, welches für Libre Software Projekte verwendet wird.
 Mehr Infos gibt es hier: <https://libera.chat/>
-
-Wenn Du dich mit deinem bevorzugten IRC Klienten verbinden möchtest (z.B. weechat or irssi),
-anbei die Verbindungsdetails:
-
-* Server: `irc.libera.chat`
-* Channel: `#libreboot`
-* Port (TLS): `6697`
-* Port (non-TLS): `6667`
-
-Wir empfehlen, dass Du Port `6697` mit aktivierter TLS Verschlüsselung verwendest.  
 
 Es wird empfohlen SASL für die Authentifizierung zu verwenden. Diese Seiten auf der Libera
 Website erläutern wie dies funktioniert:
 
 * WeeChat SASL Anleitung: <https://libera.chat/guides/weechat>
 * Irssi SASL Anleitung: <https://libera.chat/guides/irssi>
-* HexChat SASL Anleitung: <https://libera.chat/guides/hexchat>
 
 Grundsätzlich solltest Du die Dokumentation der von Dir verwendeten IRC Software konsultieren.
 
