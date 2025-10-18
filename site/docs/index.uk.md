@@ -8,10 +8,10 @@ libreboot. Новини, включаючи оголошення про випу
 
 [Відповіді на поширені запитання про libreboot](../faq.md).
 
-Need help?
+Trouble?
 ----------
 
-Help is available on [Libreboot IRC](../contact.md) and other channels.
+Inquiries can be made via [Libreboot IRC](../contact.md) and other channels.
 
 If you want professional installation, Minifree Ltd sells [Libreboot
 pre-installed](https://minifree.org/) on select hardware, and it also provides

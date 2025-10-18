@@ -33,7 +33,7 @@ on [the Git page](git.md) for information about how to assist with development.
 
 Instructions are also on that page for sending patches (via pull requests).
 
-IRC chatroom
+IRC
 -------------
 
 IRC is the main way to contact the libreboot project. `#libreboot` on Libera

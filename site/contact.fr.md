@@ -25,7 +25,7 @@ Discussion sur le developpement
 
 Pour participer au développement, consultez la pag [GIT](git.md)  du projet. Vous y trouverez des instructions détaillées sur l'envoi de patchs via pull request.
 
-IRC chatroom
+IRC
 ------------
 
 Le chat IRC est le principal moyen de contact pour le projet Libreboot via `#libreboot` sur Libera IRC.

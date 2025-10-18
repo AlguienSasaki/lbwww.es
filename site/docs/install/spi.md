@@ -3,10 +3,10 @@ title: Read/write 25XX NOR flash via SPI protocol
 x-toc-enable: true
 ...
 
-Need help?
+Trouble?
 ----------
 
-Help is available on [Libreboot IRC](../../contact.md) and other channels.
+Inquiries can be made via [Libreboot IRC](../../contact.md) and other channels.
 
 If you want professional installation, Minifree Ltd sells [Libreboot
 pre-installed](https://minifree.org/) on select hardware, and it also provides

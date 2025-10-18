@@ -6,10 +6,10 @@ libreboot 的最新更新，可以在 [libreboot.org](https://libreboot.org) 上
 
 [libreboot 常见问题解答](../faq.md).
 
-Need help?
+Trouble?
 ----------
 
-Help is available on [Libreboot IRC](../contact.md) and other channels.
+Inquiries can be made via [Libreboot IRC](../contact.md) and other channels.
 
 If you want professional installation, Minifree Ltd sells [Libreboot
 pre-installed](https://minifree.org/) on select hardware, and it also provides

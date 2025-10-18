@@ -47,10 +47,10 @@ a backup of the current flash contents, prior to flashing, whether you dump
 externally or internally - if only external flashing is available, then it's
 usually the case that only external dumping is available too.
 
-Need help?
+Trouble?
 ----------
 
-Help is available on [Libreboot IRC](../../contact.md) and other channels.
+Inquiries can be done via [Libreboot IRC](../../contact.md) and other channels.
 
 If you want professional installation, Minifree Ltd sells [Libreboot
 pre-installed](https://minifree.org/) on select hardware, and it also provides

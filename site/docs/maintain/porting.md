@@ -43,7 +43,6 @@ If you have determined that `board` is supported by coreboot, but is not
 supported by libreboot, then follow the rest of this guide to try to port it yourself.
 If you're still unable to port the board, or anything in this guide is
 unclear, then contact libreboot developers.
-The best way to get in touch is via [libreboot irc.](/contact.html#irc-chatroom)
 
 Cloning lbmk
 ------------
