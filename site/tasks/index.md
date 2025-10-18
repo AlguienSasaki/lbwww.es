@@ -1482,7 +1482,7 @@ also use adapters for SOIC-8, SOIC-16 and WSON-8.
 
 See: <https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=990662#22>
 
-Although we couldn't reproduce it after testing, a redditor did report that
+Although we couldn't reproduce it after testing, a user did report that
 following these steps caused nouveau to work.
 
 Also: `e6400nvidia_4mb` works better on that setup, nouveau is actually stable

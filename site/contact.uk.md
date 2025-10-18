@@ -17,12 +17,6 @@ operates Minifree Ltd; sales provide funding for the Libreboot project.
 If you're installing Libreboot yourself, support for that is also available.
 Contact information (IRC, mailing list etc) is below:
 
-Підтримка користувачів
-----------------------
-
-IRC або Reddit рекомендовані, якщо ви бажаєте попросити про допомогу (найкраще IRC).
-Дивіться інформацію нижче щодо IRC та Reddit.
-
 Mailing list
 ------------
 
@@ -69,11 +63,6 @@ Libreboot офіційно існує в багатьох місцях.
 
 Також можливо зв'язатися з Лією за ії електронною адресою:
 [leah@libreboot.org](mailto:leah@libreboot.org)
-
-### Reddit
-
-Найбільше використовується як канал підтримки, та також для оголошення новин:
-<https://www.reddit.com/r/libreboot/>
 
 
 [//]: # "SPDX-License-Identifier: GFDL-1.3-or-later"

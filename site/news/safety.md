@@ -167,9 +167,6 @@ then just run flashprog on ROM images as-is, and it won't work. This will cause
 one of three possible scenarios:
 
 * They don't bother updating, and therefore avoid bricking their machine
-* They complain on IRC/reddit, and we point them to instructions for how to
-  deal with it - then they update their machine, and likely don't brick it
-  anymore.
 * They read the documentation from the start.
 
 Under this regime, some users may still brick their machines. For example,

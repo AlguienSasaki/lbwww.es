@@ -126,7 +126,7 @@ welche wir sehr ernst nehmen. Dokumentation ist wichtig, in jedem Projekt.
 *Hilfe für Benutzer* ist ebenso wichtig. Bleibe im IRC Chat, und falls Du 
 kompetent genug bist jemandem bei seinem Problem zu helfen (oder bereit mit
 der Person gemeinsam zu lernen), dann ist dies ein wichtiger Beitrag zum 
-Projekt. Viele Leute fragen zudem unter dem Subreddit `r/libreboot` nach Hilfe.
+Projekt.
 
 <img tabindex=1 class="l" style="max-width:15%;" src="https://av.libreboot.org/hp8200sff/grub_open.jpg" /><span class="f"><img src="https://av.libreboot.org/hp8200sff/grub_open.jpg" /></span>
 

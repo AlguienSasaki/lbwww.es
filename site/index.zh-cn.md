@@ -68,7 +68,7 @@ Libreboot 的常规二进制版本提供了这些预编译的 ROM 映像。按�
 
 然后，就是构建系统的维护（见下）以及重要的*文档*。文档十分重要，在任何项目都是如此。
 
-*用户支持*也十分重要。多瞧一瞧 IRC，如果你有能力帮别人解决问题（或者愿意跟他们一起学习），那对本项目的贡献会很大。许多人也在 reddit 版块 `r/libreboot` 寻求用户支持。
+*用户支持*也十分重要。多瞧一瞧 IRC，如果你有能力帮别人解决问题（或者愿意跟他们一起学习），那对本项目的贡献会很大。
 
 <img tabindex=1 class="l" style="max-width:15%;" src="https://av.libreboot.org/hp8200sff/grub_open.jpg" /><span class="f"><img src="https://av.libreboot.org/hp8200sff/grub_open.jpg" /></span>
 

@@ -17,12 +17,6 @@ operates Minifree Ltd; sales provide funding for the Libreboot project.
 If you're installing Libreboot yourself, support for that is also available.
 Contact information (IRC, mailing list etc) is below:
 
-User support
-------------
-
-IRC oder Reddit werden bevorzugt, sofern Du eine Support Anfrage hast (IRC empfohlen).
-Für Informationen bzgl. IRC and Reddit siehe unten.
-
 Mailing list
 ------------
 
@@ -69,11 +63,6 @@ Gründerin und Haupt-Entwicklerin, Leah Rowe, ist auf Mastodon:
 
 Leah kann zudem unter dieser eMail kontaktiert werden:
 [leah@libreboot.org](mailto:leah@libreboot.org)
-
-### Reddit
-
-Hauptsächlich verwendet als Support Kanal und für Veröffentlichung von Neuigkeiten: 
-<https://www.reddit.com/r/libreboot/>
 
 
 [//]: # "SPDX-License-Identifier: GFDL-1.3-or-later"

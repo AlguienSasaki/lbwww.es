@@ -118,8 +118,7 @@ automatica (guarda sopra), e la *documentazione*. La documentazione e' critica i
 
 *Il supporto utente* e' inoltre un fattore critico. Resta collegato su IRC, e se hai sufficiente
 esperienza puoi aiutare qualcuno in difficolta' (o anche imparare insieme a loro), in questo modo
-sarai di grande aiuto al progetto. Un sacco di persone chiedono inoltre aiuto nel subreddit
-`r/libreboot`.
+sarai di grande aiuto al progetto.
 
 <img tabindex=1 class="l" style="max-width:15%;" src="https://av.libreboot.org/hp8200sff/grub_open.jpg" /><span class="f"><img src="https://av.libreboot.org/hp8200sff/grub_open.jpg" /></span>
 

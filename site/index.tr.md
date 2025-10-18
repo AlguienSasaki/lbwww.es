@@ -72,7 +72,7 @@ Yardımcı olabileceğiniz *en büyük* yol, bir yapılandırma göndererek Libr
 
 Bunun ardından, derleme sistemi bakımı (yukarıya bakın) ve ciddiye aldığımız *belgelendirme* var. Belgelendirme, herhangi bir projede kritik öneme sahiptir.
 
-*Kullanıcı desteği* de kritik öneme sahiptir. IRC'de kalın ve eğer birine sorunuyla yardımcı olabilecek yetkinliğe sahipseniz (veya onlarla birlikte öğrenecek kadar kurnazysanız), bu projeye büyük bir hizmettir. Birçok kişi ayrıca `r/libreboot` subreddit'inde kullanıcı desteği istemektedir.
+*Kullanıcı desteği* de kritik öneme sahiptir. IRC'de kalın ve eğer birine sorunuyla yardımcı olabilecek yetkinliğe sahipseniz (veya onlarla birlikte öğrenecek kadar kurnazysanız), bu projeye büyük bir hizmettir.
 
 [Hata takipçisinde](https://codeberg.org/libreboot/lbmk/issues) listelenen hataları kontrol edebilirsiniz.
 

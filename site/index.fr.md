@@ -78,7 +78,7 @@ La meilleure façon d'aider le projet est d’ajouter de nouvelles cartes mères
 
 Ensuite, il y a la maintenance du système de compilation (voir ci-dessus) ainsi que la **documentation**, que nous prenons très au sérieux. La documentation est essentielle dans tout projet.
 
-Le support utilisateur est également crucial. Restez actif sur IRC et, si vous êtes dans la capacité d'aider quelqu'un avec son problème, cela rendra un grand service au projet. De nombreuses personnes demandent également du support utilisateur sur le subreddit r/Libreboot.
+Le support utilisateur est également crucial. Restez actif sur IRC et, si vous êtes dans la capacité d'aider quelqu'un avec son problème, cela rendra un grand service au projet.
 
 Vous pouvez allez voir les bugs listés sur le [traqueur de bugs](https://codeberg.org/Libreboot/lbmk/issues).
 

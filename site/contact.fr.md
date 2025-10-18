@@ -13,12 +13,6 @@ Leah Rowe, fondateur et principal développeur du projet Libreboot, est égaleme
 Si vous installez Libreboot vous-même, un support est disponible via différents canaux de communication (IRC, mail, etc.) :
 
 
-Suport utilisateur
-------------------
-
-IRC et Reddit sont recommandés pour demander de l'aide (IRC est à privilégier) :
-
-
 Mail
 ----
 
@@ -60,10 +54,6 @@ Le fondateur et principal developpeur, Leah Rowe, est sur Mastodon:
 Leah peut également être contacté par mail :
 [leah@libreboot.org](mailto:leah@libreboot.org)
 
-### Reddit
-
-Généralement utilisé pour le support mais aussi pour l'annonces des dernières nouveautés :
-<https://www.reddit.com/r/libreboot/>
 
 
 [//]: # "SPDX-License-Identifier: GFDL-1.3-or-later"

@@ -117,7 +117,7 @@ month's release.
 * **HP EliteBook 8560w** - added to lbmk by Riku Viitanen, using the coreboot port
   written by Iru Cai, with Riku's MXM support added on top (more on this later)
 * **Dell Latitude E5520** - added to lbmk by Nicholas Chin, using his own coreboot
-  port for this board (testing provided by `Minimum_Baseball_629` on reddit)
+  port for this board (testing provided by a user, alias `Minimum_Baseball_629`)
 * **Dell Latitude E5530** - added to lbmk by Nicholas Chin, using his own coreboot
   port for this board (testing provided by Martin Dawson)
 * **Dell Latitude E6520** - added to lbmk by Nicholas Chin, using his own coreboot
@@ -330,7 +330,7 @@ branch, relative to the previous January 2024 release:
 ```
 
 You may find archives of this release, by looking at the Libreboot download
-page. Support is available on IRC or Reddit if you need help.
+page. Support is available on IRC.
 
 NOTE: As in the previous release, HP 820 G2 images are not provided, because
 the inject scripts cannot currently produce a reliable checksum when inserting

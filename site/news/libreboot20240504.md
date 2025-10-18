@@ -409,7 +409,7 @@ branch, relative to the previous January 2024 release. There are 99 changes:
 ```
 
 You may find archives of this release, by looking at the Libreboot download
-page. Support is available on IRC or Reddit if you need help.
+page. Support is available on IRC.
 
 Disabled boards
 ---------------

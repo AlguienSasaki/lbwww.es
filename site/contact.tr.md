@@ -12,11 +12,6 @@ Libreboot'un kurucusu ve baş geliştiricisi Leah Rowe aynı zamanda Minifree Lt
 
 Libreboot'u kendiniz kuruyorsanız, bunun için de destek mevcuttur. İletişim bilgileri (IRC, e-posta listesi vb.) aşağıdadır:
 
-Kullanıcı Desteği
-----------------
-
-Destek istemek istiyorsanız IRC veya Reddit önerilir (IRC önerilir). IRC ve Reddit hakkında bilgi için aşağıya bakın.
-
 E-posta Listesi
 --------------
 
@@ -60,9 +55,5 @@ Kurucu ve baş geliştirici Leah Rowe, Mastodon'da:
 Leah'ya ayrıca şu e-posta adresinden ulaşılabilir:
 [leah@libreboot.org](mailto:leah@libreboot.org)
 
-### Reddit
-
-Çoğunlukla destek kanalı olarak ve ayrıca haber duyuruları için kullanılır:
-<https://www.reddit.com/r/libreboot/> 
 
 [//]: # "SPDX-License-Identifier: GFDL-1.3-or-later"
