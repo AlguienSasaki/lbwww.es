@@ -3,6 +3,15 @@ title: Read/write 25XX NOR flash via SPI protocol
 x-toc-enable: true
 ...
 
+**VOLTAGE WARNING**
+------------------
+
+**WARNING: Do NOT assume that the voltage is 3.3v on what you're flashing.
+Lots of modern flash chips today are 1.8v on a lot of newer systems. Please
+always check the letting on the chip and then look up a datasheet, to tell
+exactly what voltage it's rated for; measuring with a volt meter would also
+be prudent.**
+
 Trouble?
 ----------
 
