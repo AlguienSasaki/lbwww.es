@@ -52,7 +52,7 @@ hr {
 	color: #666;
 }
 
-code,pre, #TOC, a:hover, img
+code,pre, #TOC, a:hover, img, blockquote
 {
 	background: #4e324e;
 	border-radius:0.25em;
