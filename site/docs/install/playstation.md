@@ -351,9 +351,19 @@ one chip or the other off, so that you can pick which BIOS you want at boot.
 This might be useful, in case you run into any compatibility issues with the
 Open BIOS.
 
-A modchip is still desirable, to mitigate copy and region protection in the
-original BIOS; it may still be required when using the Open BIOS, but this has
-not yet been confirmed by the Libreboot project.
+A modchip is still desirable on OpenBIOS. The region lock and DRM is present 
+in the disc mech firmware, and this DRM must be defeated with a modchip or 
+by using the BIOS to send an unlock command to the disc mech on NTSC-US 
+systems. OpenBIOS aims to be a fully compatible replacement for the stock 
+BIOS, and thus it does not send the unlock command to the disc mech. The 
+unlock command is not present in non NTSC-US systems like PAL or NTSC-J. 
+Modchip installation on systems from these regions require the soldering of 
+additional wires from the modchip to the BIOS chip so it can do some patching 
+on the fly.
+
+The PsNee modchip has been confirmed to work on real NTSC-US hardware with 
+OpenBIOS. It is not known if the on the fly PsNee BIOS patching will be 
+compatible with OpenBIOS.
 
 More hardware testing is planned, but the Open BIOS works perfectly in emulators.
 Give it a try!
@@ -365,6 +375,13 @@ free firmware for RP2040 devices, which you can solder into a modboard which
 then emulates the PS1 CD drive. It then lets you boot software (including
 many games) from an SD card instead of a CD, using disc image files, on a
 real playstation (the picostation replaces your CD drive).
+
+PicoStation has been confirmed to work with OpenBIOS on NTSC-US systems. Since 
+it replaces the disc mech entirely, it very effectively defeats its DRM. If 
+you also replace the BIOS with OpenBIOS, the only nonfree software running 
+on the PlayStation is in the SYSCON and any early bootrom code within the 
+silicon itself. Perhaps someday we can get a free as in freedom replacement 
+for the SYSCON firmware and achieve a more open gaming experience.
 
 Not only is this useful in a development context, but it can also be used when
 your CD drive has worn out and no longer reads discs properly.
