@@ -20,16 +20,12 @@ in the Public Interest).
 
 <img tabindex=1 class="r" src="https://av.libreboot.org/t480/t480.jpg" /><span class="f"><img src="https://av.libreboot.org/t480/t480.jpg" /></span>
 
-Libreboot provides GNU boot loader "[GRUB](docs/linux/)" and SeaBIOS payloads on
-x86/x86\_64 Intel/AMD motherboards, and
-a [U-Boot UEFI payload](docs/uboot/) *for coreboot* on ARM64(Aarch64) motherboards.
-An [x86/x86\_64 U-Boot UEFI payload](docs/uboot/uboot-x86.md) is also available
-on some boards. The x86, x86\_64 and arm64 U-Boot payloads provide a lightweight
-UEFI boot implementation, which can boot many Linux distros and BSD systems.
-The SeaBIOS and GRUB payloads also boot Linux/BSD systems. Which one you use
-depends on your preferences. Libreboot's design incorporates all of these boot
-methods in a single image, so you can choose which one you use at boot time,
-and more payloads (e.g. Linux kexec payload) are planned for future releases.
+Libreboot liefert GNU *Bootloader* "[GRUB](docs/linux/)" und SeaBIOS *Payload* um
+x86/x86\_64 Intel/AMD,
+die eine [U-Boot UEFI-Payload](docs/uboot/) *für coreboot* auf ARM64(Aarch64).
+und [x86/x86\_64 U-Boot UEFI](docs/uboot/uboot-x86.md) für x86.
+Die x86, x86\_64 oder arm64 U-Boot *Payload* hast gibt eine klein klein
+UEFI boot, gab es Rechner starttung, die BSD oder Linux betriebsystem konnte.
 
 **NEUESTE VERSION: Die neueste Version von Libreboot ist 25.06, veröffentlicht
 am 30 June 2025.
