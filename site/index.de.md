@@ -40,7 +40,7 @@ Minifree; sales provide funding for Libreboot.
 A parallel [Libreboot fork, Canoeboot](https://canoeboot.org), also exists.
 Both Canoeboot and Libreboot are maintained by the same developer (Leah Rowe).
 
-Warum solltest Du *Libreboot* verwenden?
+Warum sollten Sie Libreboot verwenden?
 ----------------------------
 
 <img tabindex=1 class="l" src="https://av.libreboot.org/hp9470m/9470m+2560p.jpg" /><span class="f"><img src="https://av.libreboot.org/hp9470m/9470m+2560p.jpg" /></span>
