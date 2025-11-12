@@ -25,7 +25,7 @@ x86/x86\_64 Intel/AMD,
 die eine [U-Boot UEFI-Payload](docs/uboot/) *für coreboot* auf ARM64(Aarch64).
 und [x86/x86\_64 U-Boot UEFI](docs/uboot/uboot-x86.md) für x86.
 Die x86, x86\_64 oder arm64 U-Boot *Payload* hast gibt eine klein klein
-UEFI boot, gab es Rechner starttung, die BSD oder Linux betriebsystem konnte.
+UEFI-Bootloader, gab es Rechner starttung, die BSD oder Linux betriebsystem konnte.
 
 **NEUESTE VERSION: Die neueste Version von Libreboot ist 25.06, veröffentlicht
 am 30 June 2025.
