@@ -159,7 +159,10 @@ the [Libreboot 20240225 release](../../news/libreboot20240225.md#flashprog-now-u
 
 Now, run this command:
 
-	flashprog -p internal -c MX25L6406E/MX25L6408E
+	flashprog -p internal
+
+NOTE: If flashprog complains, detecting multiple chips, just pick one, and
+specify it using the `-c` option as indicated by flashprog.
 
 The output should contain the text "The Flash Descriptor Override
 Pin-Strap is set". If it doesn't, start again from the beginning.
@@ -185,7 +188,7 @@ We'll refer to it as `libreboot4.rom`. We need to pad it to 8 MiB:
 Flash the Libreboot image with a tweaked layout:
 
 	ifdtool libreboot4.rom -f layout
-	flashprog -p internal -c MX25L6406E/MX25L6408E -w libreboot4.rom -l layout -i fd -i gbe -i bios -i me
+	flashprog -p internal -w libreboot4.rom -l layout -i fd -i gbe -i bios -i me
 
 Power off the computer. Make sure to power off, rebooting is not enough!
 
@@ -199,7 +202,7 @@ now, as of 27 January 2024, which is a fork of flashrom.
 Pick a Libreboot image of your choice from `bin/hp8200sff_8mb`
 or from a release archive. We'll refer to it as `libreboot8.rom`.
 
-	flashprog -p internal -c MX25L6406E/MX25L6408E -w libreboot8.rom
+	flashprog -p internal -w libreboot8.rom
 
 Power cycle the computer again.
 
