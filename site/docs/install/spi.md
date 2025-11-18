@@ -494,7 +494,7 @@ You must configure `spidev` on your Raspberry Pi. This is a special driver in
 the Linux kernel; technically, the driver name is `spi-bcm2835`.
 
 This page has info:\
-<https://www.raspberrypi.org/documentation/hardware/raspberrypi/spi/README.md>
+<https://www.raspberrypi.com/documentation/computers/raspberry-pi.html#spi-overview>
 
 In your Raspberry Pi, which we assume you're running the latest Raspbian version
 on, do this:
