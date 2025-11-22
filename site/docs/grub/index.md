@@ -55,7 +55,7 @@ is concerned, but it's decompressed on-the-fly in memory.
 
 You can use or not use compression. It's up to you. Libreboot's build system
 stores them pre-compressed, so that they don't have to be compressed at build
-time. Because we build so many images, this actually saves a signification
+time. Because we build so many images, this actually saves a significant
 amount of computational time!
 
 Place the newly created `.gkb` file under `config/grub/keymap` in lbmk. When
