@@ -43,6 +43,11 @@ Libera - самая большая сеть IRC, используемая для
 Социальные сети
 ---------------
 
+### Matrix
+
+Libreboot itself does not officially exist on Matrix, but Leah Rowe
+is `@libreleah:matrix.org` on that network.
+
 ### Mastodon
 
 Основатель и велущий разработчик, Лия Роу, есть на Mastodon:

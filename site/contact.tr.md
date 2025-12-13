@@ -46,6 +46,11 @@ Sosyal Medya
 
 Libreboot resmi olarak birçok yerde bulunmaktadır.
 
+### Matrix
+
+Libreboot itself does not officially exist on Matrix, but Leah Rowe
+is `@libreleah:matrix.org` on that network.
+
 ### Mastodon
 
 Kurucu ve baş geliştirici Leah Rowe, Mastodon'da:

@@ -55,6 +55,11 @@ Social media
 
 libreboot exists officially on many places.
 
+### Matrix
+
+Libreboot itself does not officially exist on Matrix, but Leah Rowe
+is `@libreleah:matrix.org` on that network.
+
 ### Mastodon
 
 The founder and lead developer, Leah Rowe, is on Mastodon:

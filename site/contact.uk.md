@@ -55,6 +55,11 @@ Libera є однією з найбільших мереж IRC, використ�
 
 Libreboot офіційно існує в багатьох місцях.
 
+### Matrix
+
+Libreboot itself does not officially exist on Matrix, but Leah Rowe
+is `@libreleah:matrix.org` on that network.
+
 ### Mastodon
 
 Засновник та головний розробник, Лія Роу, є в Mastodon:
