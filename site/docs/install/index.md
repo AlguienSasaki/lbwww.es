@@ -102,7 +102,8 @@ Libreboot currently supports the following systems:
 
 ### Laptops (Intel, x86)
 
--   [Lenovo ThinkPad T480 and ThinkPad T480s](t480.html) - Also **[available to buy with Libreboot pre-installed](https://minifree.org/product/libreboot-t480/)**
+-   [Lenovo ThinkPad T480 and ThinkPad T480s](t480.html) - Also **[available to buy with Libreboot pre-installed](https://minifree.org/product/libreboot-t480.html)**
+-   [Lenovo ThinkPad T580](t480.html) - Also **[available to buy with Libreboot pre-installed](https://minifree.org/product/libreboot-t580.html)**
 -   Lenovo ThinkPad T440p
 -   Lenovo ThinkPad W541
 -   Lenovo ThinkPad X230 - *Also* available on Minifree: <https://minifree.org/product/libreboot-x230/>
