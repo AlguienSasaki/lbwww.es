@@ -100,6 +100,7 @@ of Kent, UK)
 * <https://mirror.koddos.net/libreboot/> (koddos.net, Netherlands)
 * <https://mirror-hk.koddos.net/libreboot/> (koddos.net, Hong Kong)
 * <https://mirror.cyberbits.eu/libreboot/> (cyberbits.eu, France)
+* <https://mirror.diyarciftci.xyz/libreboot/> (diyarciftci.xyz, Deutschland)
 
 RSYNC mirrors {#rsync}
 -------------

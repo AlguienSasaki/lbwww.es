@@ -99,6 +99,7 @@ key (see above) for the releases after Libreboot 20240126.
 * <https://mirror.koddos.net/libreboot/> (koddos.net, Нідерланди)
 * <https://mirror-hk.koddos.net/libreboot/> (koddos.net, Гонконг)
 * <https://mirror.cyberbits.eu/libreboot/> (cyberbits.eu, Франція)
+* <https://mirror.diyarciftci.xyz/libreboot/> (diyarciftci.xyz, Deutschland)
 
 Дзеркала RSYNC {#rsync}
 -------------
