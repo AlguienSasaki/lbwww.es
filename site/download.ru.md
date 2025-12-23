@@ -97,6 +97,7 @@ gpg --verify sha512sum.txt.sig
 - <rsync://ftp.linux.ro/libreboot/> (linux.ro, Румыния)  
 - <rsync://mirror.koddos.net/libreboot/> (koddos.net, Нидерланды)  
 - <rsync://mirror-hk.koddos.net/libreboot/> (koddos.net, Гонконг)  
+- <rsync://rsync.libreboot.org/mirrormirror/> (Libreboot.org)
 
 ### Хотите создать своё зеркало?
 
@@ -137,20 +138,12 @@ gpg --verify sha512sum.txt.sig
 Очень важно иметь конечный слеш (/) в конце каждого пути
 в команде rsync выше. Иначе rsync будет вести себя очень странно.
 
-ПРИМЕЧАНИЕ: rsync.libreboot.org не доступен напрямую для общественности, 
-кроме тех, чьи IP-адреса внесены в белый список. По причинам пропускной способности,
-фаервол на libreboot.org блокирует входящие rsync-запросы, кроме конкретных IP.
-
-Если вы хотите запустить rsync-зеркало, синхронизируйтесь с одним из сторонних зеркал выше
-и настройте ваше зеркало. Затем вы можете связаться с Leah Rowe, чтобы добавить ваши IP
-в белый список для использования rsync — если IP совпадают с DNS A/AAAA
-записями вашего rsync-хоста, это можно использовать. На libreboot.org запускается скрипт
-в почасовом crontab, который получает A/AAAA записи для белых rsync-зеркал и автоматически
-добавляет правила, разрешающие им проходить через фаервол.
-
 Если вы хотите регулярно обновлять ваше rsync-зеркало, вы можете добавить это в crontab.
 Эта страница рассказывает, как использовать crontab:
 <https://man7.org/linux/man-pages/man5/crontab.5.html>
+
+**NOTE: Some people use systemd timers now instead of crontab. That's OK
+too! Whatever floats your boat.**
 
 HTTP зеркала {#http}
 ------------

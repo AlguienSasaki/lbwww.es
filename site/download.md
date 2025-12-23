@@ -114,23 +114,16 @@ UK)
 * <rsync://mirror.koddos.net/libreboot/> (koddos.net, Netherlands)
 * <rsync://mirror-hk.koddos.net/libreboot/> (koddos.net, Hong Kong)
 
-Are you running a mirror? Contact the libreboot project, and the link will be
-added to this page!
+The *official* RSYNC server for Libreboot
+is: <rsync://rsync.libreboot.org/mirrormirror/>
 
-You can make your rsync mirror available via your web server, and also configure
-your *own* mirror to be accessible via rsync. There are many resources online
-that show you how to set up an rsync server.
+You can mirror from the official Libreboot server, and then [contact the
+Libreboot project](contact.md) informing about your new mirror. It will then
+be listed on this page.
 
-How to create your own rsync mirror:
-
-Useful for mirroring Libreboot's entire set of release archives. You can put
-an rsync command into crontab and pull the files into a directory on your
-web server.
-
-If you are going to mirror the entire set, it is recommended that you allocate
-at least 25GiB. Libreboot's rsync is currently about 12GiB, so allocating 25GiB
-will afford you plenty of space for the future. At minimum, you should ensure
-that at least 15-20GiB of space is available, for your Libreboot mirror.
+It is requested, by the Libreboot project, that only mirrors pull from the
+official Rsync. Everyone else should use one of the third party mirrors.
+Thank you.
 
 *It is highly recommended that you use the libreboot.org mirror*, if you wish
 to host an official mirror. Otherwise, if you simply want to create your own
@@ -157,21 +150,12 @@ Then in crontab, add this line and save/exit (hourly crontab):
 **It's extremely important to have the final forward slash (/) at the end of each path,
 in the above rsync command. Otherwise, rsync will behave very strangely.**
 
-**NOTE: `rsync.libreboot.org` is not directly accessible by the public, except
-those whose IPs are whitelisted. For bandwidth reasons, the firewall running
-on libreboot.org blocks incoming rsync requests, except by specific IPs.**
-
-**If you wish to run an rsync mirror, sync from one of the third party mirrors
-above and set up your mirror. You can then contact Leah Rowe, to have your IP
-addresses whitelisted for rsync usage - if the IP addresses match DNS A/AAAA
-records for your rsync host, this can be used. A script runs in an hourly
-crontab on libreboot.org, that fetches the A/AAAA records of whitelisted
-rsync mirrors, automatically adding rules permitting them to get through the
-firewall.**
-
 If you wish to regularly keep your rsync mirror updated, you can add it to a
 crontab. This page tells you how to use crontab:
 <https://man7.org/linux/man-pages/man5/crontab.5.html>
+
+**NOTE: Some people use systemd timers now instead of crontab. That's OK
+too! Whatever floats your boat.**
 
 HTTP mirrors {#http}
 ------------

@@ -97,6 +97,7 @@ BK)
 * <rsync://ftp.linux.ro/libreboot/> (linux.ro, Romanya)
 * <rsync://mirror.koddos.net/libreboot/> (koddos.net, Hollanda)
 * <rsync://mirror-hk.koddos.net/libreboot/> (koddos.net, Hong Kong)
+- <rsync://rsync.libreboot.org/mirrormirror/> (Libreboot.org)
 
 Bir yansı mı çalıştırıyorsunuz? Libreboot projesiyle iletişime geçin, bağlantı bu sayfaya eklenecektir!
 
@@ -128,17 +129,6 @@ Ardından crontab'a bu satırı ekleyin ve kaydedin/çıkın (saatlik crontab):
 
 **Yukarıdaki rsync komutunda her yolun sonunda ileri eğik çizginin (/) olması son derece önemlidir.
 Aksi takdirde, rsync çok garip davranacaktır.**
-
-**NOT: `rsync.libreboot.org` doğrudan halka açık değildir, yalnızca
-IP'leri beyaz listeye alınanlar erişebilir. Bant genişliği nedeniyle, libreboot.org'da çalışan
-güvenlik duvarı, belirli IP'ler dışında gelen rsync isteklerini engeller.**
-
-**Bir rsync yansısı çalıştırmak istiyorsanız, yukarıdaki üçüncü taraf yansılarından birinden senkronize edin
-ve yansınızı kurun. Ardından IP adreslerinizin rsync kullanımı için beyaz listeye alınması için
-Leah Rowe ile iletişime geçebilirsiniz - IP adresleri rsync ana bilgisayarınızın DNS A/AAAA
-kayıtlarıyla eşleşiyorsa, bu kullanılabilir. libreboot.org'da saatlik bir crontab'da çalışan bir betik,
-beyaz listeye alınmış rsync yansılarının A/AAAA kayıtlarını otomatik olarak alır ve güvenlik duvarından
-geçmelerine izin veren kurallar ekler.**
 
 Rsync yansınızı düzenli olarak güncel tutmak istiyorsanız, bir crontab'a ekleyebilirsiniz. Bu sayfa size crontab'ın nasıl kullanılacağını anlatır:
 <https://man7.org/linux/man-pages/man5/crontab.5.html>
