@@ -85,10 +85,17 @@ Libreboot'u bu yansılardan indirebilirsiniz:
 * <https://mirror-hk.koddos.net/libreboot/> (koddos.net, Hong Kong)
 * <https://mirror.cyberbits.eu/libreboot/> (cyberbits.eu, Fransa)
 * <https://mirror.diyarciftci.xyz/libreboot/> (diyarciftci.xyz, Deutschland)
+* <http://5gxsihf4vjdhimiotrhchihrfujoanondrplizofwparrtmgbwsafhid.onion/libreboot/> (diyarciftci.xyz Hidden Mirror)
+* <http://iue4ubnjvskey5gop7n3odkylyjvelb5sl7z4cx6xjwdnthv2hba.b32.i2p/libreboot/> (diyarciftci.xyz Hidden Mirror)
 * <https://ca.mirrors.cicku.me/libreboot/> (cicku, Canada)
 * <https://au.mirrors.cicku.me/libreboot/> (cicku, Australia)
 * <https://in.mirrors.cicku.me/libreboot/> (cicku, India)
 * <https://za.mirrors.cicku.me/libreboot/> (cicku, South Africa)
+
+NOTE: the "hidden" mirrors are encrypted by virtue of the network they're on,
+so they're still listed under the HTTPS (encrypted) section, despite actually
+using plain HTTP, because i2p and/or Tor provide encryption instead; on these
+networks, it's normal to use plain HTTP.
 
 RSYNC Yansıları {#rsync}
 --------------
@@ -102,7 +109,8 @@ BK)
 * <rsync://ftp.linux.ro/libreboot/> (linux.ro, Romanya)
 * <rsync://mirror.koddos.net/libreboot/> (koddos.net, Hollanda)
 * <rsync://mirror-hk.koddos.net/libreboot/> (koddos.net, Hong Kong)
-- <rsync://rsync.libreboot.org/mirrormirror/> (Libreboot.org)
+* <rsync://mirror.diyarciftci.xyz/libreboot/> (diyarciftci.xyz, Deutschland)
+* <rsync://rsync.libreboot.org/mirrormirror/> (Libreboot.org)
 
 Bir yansı mı çalıştırıyorsunuz? Libreboot projesiyle iletişime geçin, bağlantı bu sayfaya eklenecektir!
 

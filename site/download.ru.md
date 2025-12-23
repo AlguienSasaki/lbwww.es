@@ -87,10 +87,17 @@ gpg --verify sha512sum.txt.sig
 - <https://mirror-hk.koddos.net/libreboot/> (koddos.net, Гонконг)  
 - <https://mirror.cyberbits.eu/libreboot/> (cyberbits.eu, Франция)  
 - <https://mirror.diyarciftci.xyz/libreboot/> (diyarciftci.xyz, Deutschland)
+- <http://5gxsihf4vjdhimiotrhchihrfujoanondrplizofwparrtmgbwsafhid.onion/libreboot/> (diyarciftci.xyz Hidden Mirror)
+- <http://iue4ubnjvskey5gop7n3odkylyjvelb5sl7z4cx6xjwdnthv2hba.b32.i2p/libreboot/> (diyarciftci.xyz Hidden Mirror)
 - <https://ca.mirrors.cicku.me/libreboot/> (cicku, Canada)
 - <https://au.mirrors.cicku.me/libreboot/> (cicku, Australia)
 - <https://in.mirrors.cicku.me/libreboot/> (cicku, India)
 - <https://za.mirrors.cicku.me/libreboot/> (cicku, South Africa)
+
+NOTE: the "hidden" mirrors are encrypted by virtue of the network they're on,
+so they're still listed under the HTTPS (encrypted) section, despite actually
+using plain HTTP, because i2p and/or Tor provide encryption instead; on these
+networks, it's normal to use plain HTTP.
 
 ## Зеркала RSYNC {#rsync}
 
@@ -102,6 +109,7 @@ gpg --verify sha512sum.txt.sig
 - <rsync://ftp.linux.ro/libreboot/> (linux.ro, Румыния)  
 - <rsync://mirror.koddos.net/libreboot/> (koddos.net, Нидерланды)  
 - <rsync://mirror-hk.koddos.net/libreboot/> (koddos.net, Гонконг)  
+- <rsync://mirror.diyarciftci.xyz/libreboot/> (diyarciftci.xyz, Deutschland)
 - <rsync://rsync.libreboot.org/mirrormirror/> (Libreboot.org)
 
 ### Хотите создать своё зеркало?
