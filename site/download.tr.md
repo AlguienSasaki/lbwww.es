@@ -85,6 +85,10 @@ Libreboot'u bu yansılardan indirebilirsiniz:
 * <https://mirror-hk.koddos.net/libreboot/> (koddos.net, Hong Kong)
 * <https://mirror.cyberbits.eu/libreboot/> (cyberbits.eu, Fransa)
 * <https://mirror.diyarciftci.xyz/libreboot/> (diyarciftci.xyz, Deutschland)
+* <https://ca.mirrors.cicku.me/libreboot/> (cicku, Canada)
+* <https://au.mirrors.cicku.me/libreboot/> (cicku, Australia)
+* <https://in.mirrors.cicku.me/libreboot/> (cicku, India)
+* <https://za.mirrors.cicku.me/libreboot/> (cicku, South Africa)
 
 RSYNC Yansıları {#rsync}
 --------------

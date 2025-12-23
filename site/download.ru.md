@@ -87,6 +87,10 @@ gpg --verify sha512sum.txt.sig
 - <https://mirror-hk.koddos.net/libreboot/> (koddos.net, Гонконг)  
 - <https://mirror.cyberbits.eu/libreboot/> (cyberbits.eu, Франция)  
 - <https://mirror.diyarciftci.xyz/libreboot/> (diyarciftci.xyz, Deutschland)
+- <https://ca.mirrors.cicku.me/libreboot/> (cicku, Canada)
+- <https://au.mirrors.cicku.me/libreboot/> (cicku, Australia)
+- <https://in.mirrors.cicku.me/libreboot/> (cicku, India)
+- <https://za.mirrors.cicku.me/libreboot/> (cicku, South Africa)
 
 ## Зеркала RSYNC {#rsync}
 
