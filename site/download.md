@@ -93,6 +93,7 @@ These mirrors are recommended, since they use TLS (https://) encryption.
 
 You can download Libreboot from these mirrors:
 
+* <https://rsync.libreboot.org/> (Libreboot.org official mirror, UK)
 * <https://mirror.math.princeton.edu/pub/libreboot/> (Princeton
 university, USA)
 * <https://mirror.shapovalov.website/libreboot/> (shapovalov.website, Ukraine)

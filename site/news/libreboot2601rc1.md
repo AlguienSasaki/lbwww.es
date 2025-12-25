@@ -3,7 +3,9 @@
 % 25 December 2025
 
 The codename for this release series is *Tenacious Tomato*. Today's release is
-a beta/RC.
+a beta/RC. You can find it here: \
+<https://rsync.libreboot.org/testing/26.01rc1/> \
+Or you can find it on a [mirror](../download.md).
 
 This is the first RC release in the Libreboot 26.01 release series. It is
 expected that a new RC will be issued weekly between now and the end of January
