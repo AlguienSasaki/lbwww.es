@@ -1,6 +1,6 @@
-% Libreboot 26.01rc1 "Luminous Lemon" released!
+% Libreboot 26.01rc1 "Tenacious Tomato" released!
 % Leah Rowe
-% 30 June 2025
+% 25 December 2025
 
 The codename for this release series is *Tenacious Tomato*. Today's release is
 a beta/RC.
