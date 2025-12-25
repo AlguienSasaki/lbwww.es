@@ -33,6 +33,9 @@ of these payloads in a single image, and you choose one at boot time.
 30 June 2025.
 See: [Libreboot 25.06 release announcement](news/libreboot2506.md).**
 
+**[Libreboot 26.01 RC1 release testers required](news/libreboot2601rc1.md) -
+this is an RC for the upcoming Libreboot 26.01 release of January 2026.**
+
 You can also [buy Libreboot preinstalled](https://minifree.org/) from Minifree Ltd,
 on select hardware, as well as send your compatible hardware
 for [Libreboot preinstallation](https://minifree.org/product/installation-service/).
