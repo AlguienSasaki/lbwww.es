@@ -185,9 +185,6 @@ also won't be able to boot it up when using Libreboot.*
 
 ### Boot via USB
 
-This method is harder than booting from a CD/DVD and may soft-brick your 
-MacBook but it's the only way to boot up successfully from a USB.
-
 The PC BIOS emulation layer found in the Apple EFI firmware doesn't work 
 when booting up from a USB stick. Despite the fact that the 
 MacBook2,1 does use a 64-Bit processor, the firmware only supports booting 
