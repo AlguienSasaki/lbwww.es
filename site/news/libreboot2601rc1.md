@@ -11,7 +11,7 @@ December 2024.
 <https://rsync.libreboot.org/testing/26.01rc1/> or you can use one of
 the [mirrors](../download.md).**
 
-<img tabindex=1 class="r" src="https://av.minifree.org/t580.jpg" /><span class="f"><img src="https://av.libreboot.org/t480/t480.jpg" /></span>
+<img tabindex=1 class="r" src="https://av.minifree.org/t480.jpg" /><span class="f"><img src="https://av.libreboot.org/t480/t480.jpg" /></span>
 <img tabindex=1 class="r" src="https://av.minifree.org/t580.jpg" /><span class="f"><img src="https://av.libreboot.org/t580/t580.jpg" /></span>
 
 This is the *first* Release Candidate (RC1) in the Libreboot 26.01 release
