@@ -4,14 +4,15 @@
 
 Today's Libreboot 26.01 RC1 revision is a *testing release*, whereas the previous
 stable release was Libreboot 20241206. This revised release log lists all
-changes as of today, 30 June 2025, since the Libreboot 20241206 release of
+changes as of today, 25 December 2025, since the Libreboot 20241206 release of
 December 2024.
 
 **You can find today's release in 
 <https://rsync.libreboot.org/testing/26.01rc1/> or you can use one of
 the [mirrors](../download.md).**
 
-<img tabindex=1 class="r" src="https://av.libreboot.org/t480/t480.jpg" /><span class="f"><img src="https://av.libreboot.org/t480/t480.jpg" /></span>
+<img tabindex=1 class="r" src="https://av.minifree.org/t580.jpg" /><span class="f"><img src="https://av.libreboot.org/t480/t480.jpg" /></span>
+<img tabindex=1 class="r" src="https://av.minifree.org/t580.jpg" /><span class="f"><img src="https://av.libreboot.org/t580/t580.jpg" /></span>
 
 This is the *first* Release Candidate (RC1) in the Libreboot 26.01 release
 series, codenamed "Tenacious Tomato". It is expected that new RCs will be
@@ -40,46 +41,6 @@ and then a payload such as [SeaBIOS](https://www.seabios.org/SeaBIOS)
 or GRUB to boot your operating
 system; on ARM(chromebooks) and certain x86 mainboards, we provide *U-Boot* (as
 a coreboot payload), which provides a lightweight UEFI implementation..
-
-Sumarised list of changes
--------------------------
-
-This section provides a brief overview, summarising all of the changes. The
-next sections (after this) show *all* changes in detail.
-
-The most important changes are, thus:
-
-New mainboards:
-
-* Topton XE2 N150
-* HP Pro 3500 Series
-* Lenovo ThinkPad T580
-
-Revision updates:
-
-* GRUB, SeaBIOS, flashprog, and so on have all been updated
-  to newer revisions, up to date as of December 2025.
-
-Security:
-
-* TODO write this after doing the detailed list
-
-Feature changes:
-
-In descending order from latest to earliest:
-
-* TODO write this after doing the detailed list
-
-Config changes:
-
-* TODO write this after doing the detailed list
-
-Bug fixes:
-
-* TODO write this after doing the detailed list.
-
-These are the most critical changes in the release. Now you will
-read about all changes, in detail.
 
 Detailed list of changes
 -------------------------
