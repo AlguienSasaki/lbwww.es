@@ -12,7 +12,7 @@ December 2024.
 the [mirrors](../download.md).**
 
 <img tabindex=1 class="r" src="https://av.libreboot.org/t480/t480.jpg" /><span class="f"><img src="https://av.libreboot.org/t480/t480.jpg" /></span>
-<img tabindex=1 class="r" src="https://av.minifree.org/t580.jpg" /><span class="f"><img src="https://av.libreboot.org/t580/t580.jpg" /></span>
+<img tabindex=1 class="r" src="https://av.minifree.org/t580.jpg" /><span class="f"><img src="https://av.minifree.org/t580.jpg" /></span>
 
 This is the *first* Release Candidate (RC1) in the Libreboot 26.01 release
 series, codenamed "Tenacious Tomato". It is expected that new RCs will be
@@ -783,9 +783,6 @@ since the Libreboot 20241206 release of 6 December 2025:
 | * 587af4a7b6 Add HP Pro 3500 Series 
 * d25aaac9ad lib.sh: remove erroneous break from fx_ 
 ```
-
-This is about 650 changes.
-
 
 Build testing
 -------------
