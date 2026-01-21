@@ -3,7 +3,7 @@ title: Download Libreboot Free/Opensource BIOS/UEFI firmware
 x-toc-enable: true
 ...
 
-**[Libreboot 26.01 RC1 release testers required](news/libreboot2601rc1.md).**
+**[Libreboot 26.01 RC4 release testers required](news/libreboot2601rc4.md).**
 
 New releases are announced in the [main news section](news/).
 

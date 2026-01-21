@@ -1,11 +1,15 @@
-% Libreboot 26.01 RC1 "Tenacious Tomato" released!
+% Libreboot 26.01 RC4 "Magnanimous Max" released! (was: RC1)
 % Leah Rowe
-% 25 December 2025
+% 25 December 2025 (updated 20 January 2026)
 
 UPDATE: Libreboot 26.01 RC4
 ----------------------
 
 RC2 and RC3 were not uploaded. RC4 includes all of the RC2 and RC3 changes.
+
+**You can find today's release in 
+<https://rsync.libreboot.org/testing/26.01rc4/> or you can use one of
+the [mirrors](../download.md).**
 
 The RC4 changes since RC1 are as follows:
 
@@ -56,10 +60,6 @@ Today's Libreboot 26.01 RC1 revision is a *testing release*, whereas the previou
 stable release was Libreboot 20241206. This revised release log lists all
 changes as of today, 25 December 2025, since the Libreboot 20241206 release of
 December 2024.
-
-**You can find today's release in 
-<https://rsync.libreboot.org/testing/26.01rc1/> or you can use one of
-the [mirrors](../download.md).**
 
 <img tabindex=1 class="r" src="https://av.libreboot.org/t480/t480.jpg" /><span class="f"><img src="https://av.libreboot.org/t480/t480.jpg" /></span>
 <img tabindex=1 class="r" src="https://av.minifree.org/t580.jpg" /><span class="f"><img src="https://av.minifree.org/t580.jpg" /></span>
