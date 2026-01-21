@@ -2,6 +2,56 @@
 % Leah Rowe
 % 25 December 2025
 
+UPDATE: Libreboot 26.01 RC4
+----------------------
+
+RC2 and RC3 were not uploaded. RC4 includes all of the RC2 and RC3 changes.
+
+The RC4 changes since RC1 are as follows:
+
+```
+* a808333c04 Libreboot 26.01 RC4 Magnanimous Max 
+* baeec45f50 use newer ME on e7240 
+* fc2a521446 Libreboot 26.01 RC3 Magnanimous Max 
+* e91377b509 cb/default: new rev fcd716d9a2, 14 January 2026 
+* 86cbf66b78 NEW MAINBOARD: Dell Latitude E7240 from Iru Cai 
+* a494c3c2e2 Revert "coreboot/default: don't remove fsp files" 
+* f22d4b1c49 u-boot: update configs 
+* 778ae1653a fix grub version name in xhci_nvme 
+* 9ea35f3866 Libreboot 26.01 RC2, or: Magnanimous Max 
+* b538749c83 remove T480/T580 thunderbolt driver 
+* 4e33b40655 re-add deleted grub border patch 
+* d22f7f9633 update grub to 2.14 
+* 21d5050fb4 delete x230* corebootfb configs for now 
+* 2e6f6e2579 coreboot/default: don't remove fsp files 
+* bbfee155ba fix fsp extraction for topton x2e n150 
+* d5351aee37 inject: fix mac address insertion
+```
+
+Essentially:
+
+* MAC address insertion was broken in RC1. RC2 fixed this. (when injecting
+  tarballs using `./mk inject`)
+* GRUB updated to version 2.14 (stable release) - it's not that many changes
+  since the 2.14 RC release previously used.
+* X230 corebootfb configs were deleted - text mode configs still available. A
+  user reported black screen on corebootfb, so this will be investigated
+  either prior to the full 26.01 release, or issued as a hotfix after the fact.
+* Removed the T480/T580 Thunderbolt driver for now, as it caused S3 resume to
+  fail in some tests (more testing needed before re-adding this driver)
+* Updated coreboot to a newer revision from January 2026, which contains
+  several fixes (nothing major, for boards actually supported by Librbeoot)
+* Codename for the release series is now *Magnanimous Max*, which is a much
+  cooler release codename.
+* **NEW MAINBOARD: Dell Latitude E7240**
+
+That E7240 is attractive because it's Haswell generation (Intel 4th gen), which
+is still quite useful to a lot of people, and internal flashing is possible
+via use of `dell-flash-unlock`.
+
+Libreboot 26.01 RC1
+------------------
+
 Today's Libreboot 26.01 RC1 revision is a *testing release*, whereas the previous
 stable release was Libreboot 20241206. This revised release log lists all
 changes as of today, 25 December 2025, since the Libreboot 20241206 release of
