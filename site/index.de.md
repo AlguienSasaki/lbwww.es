@@ -37,9 +37,6 @@ for [Libreboot preinstallation](https://minifree.org/product/installation-servic
 The founder and lead developer of Libreboot, Leah Rowe, also owns and operates
 Minifree; sales provide funding for Libreboot.
 
-A parallel [Libreboot fork, Canoeboot](https://canoeboot.org), also exists.
-Both Canoeboot and Libreboot are maintained by the same developer (Leah Rowe).
-
 Warum sollten Sie Libreboot verwenden?
 ----------------------------
 
@@ -155,5 +152,7 @@ so können wir immer mehrere Leute gebrauchen. Desto mehr desto besser!
 
 [//]: # "SPDX-License-Identifier: GFDL-1.3-or-later"
 
+A parallel [Libreboot fork, Canoeboot](https://canoeboot.org), also exists.
+Both Canoeboot and Libreboot are maintained by the same developer (Leah Rowe).
 
 The Canoeboot version of this page is: <https://canoeboot.org/index.de.html>

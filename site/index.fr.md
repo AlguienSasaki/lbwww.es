@@ -32,9 +32,6 @@ ou envoyer votre propre ordinateur [pour y installer Libreboot](https://minifree
 
 Leah Rowe, fondateur et principal développeur du projet Libreboot, est également propriétaire de Minifree Ltd. Les ventes contribuent à financer le développement du projet Libreboot.
 
-A parallel [Libreboot fork, Canoeboot](https://canoeboot.org), also exists.
-Both Canoeboot and Libreboot are maintained by the same developer (Leah Rowe).
-
 Pourquoi devriez-vous utiliser *Libreboot*?
 -----------------------------------
 
@@ -106,5 +103,7 @@ Et même si quelqu'un travaille déjà sur des traductions dans une langue donn�
 
 [//]: # "SPDX-License-Identifier: GFDL-1.3-or-later"
 
+A parallel [Libreboot fork, Canoeboot](https://canoeboot.org), also exists.
+Both Canoeboot and Libreboot are maintained by the same developer (Leah Rowe).
 
 The Canoeboot version of this page is: <https://canoeboot.org/index.fr.html>

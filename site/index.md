@@ -51,9 +51,6 @@ matters.
 you continue to use your hardware, with continued firmware updates. All of this
 is *why* Libreboot exists.
 
-A parallel [Libreboot fork, Canoeboot](https://canoeboot.org), also exists.
-Both Canoeboot and Libreboot are maintained by the same developer (Leah Rowe).
-
 Overview of Libreboot design
 ----------------------------
 
@@ -201,5 +198,7 @@ always use multiple people. The more the merrier!
 
 [//]: # "SPDX-License-Identifier: GFDL-1.3-or-later"
 
+A parallel [Libreboot fork, Canoeboot](https://canoeboot.org), also exists.
+Both Canoeboot and Libreboot are maintained by the same developer (Leah Rowe).
 
 The Canoeboot version of this page is: <https://canoeboot.org/>

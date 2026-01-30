@@ -30,9 +30,6 @@ and more payloads (e.g. Linux kexec payload) are planned for future releases.
 Libreboot 的创始人和主要开发者，Leah Rowe，也是 Minifree 的所有者和经营者；
 销售电脑为 Libreboot 提供资金。
 
-A parallel [Libreboot fork, Canoeboot](https://canoeboot.org), also exists.
-Both Canoeboot and Libreboot are maintained by the same developer (Leah Rowe).
-
 为什么要使用 *Libreboot*?
 ----------------------------
 
@@ -92,5 +89,7 @@ Libreboot 目前有乌克兰语和法语的网页翻译（但两个语言都还�
 
 [//]: # "SPDX-License-Identifier: GFDL-1.3-or-later"
 
+A parallel [Libreboot fork, Canoeboot](https://canoeboot.org), also exists.
+Both Canoeboot and Libreboot are maintained by the same developer (Leah Rowe).
 
 The Canoeboot version of this page is: <https://canoeboot.org/index.zh-cn.html>

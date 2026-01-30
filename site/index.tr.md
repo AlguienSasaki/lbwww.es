@@ -20,9 +20,6 @@ Ayrıca Minifree Ltd'den seçili donanımlarda [Libreboot önyüklenmiş cihazla
 
 *Biz*, yazılımı [inceleme, paylaşma, değiştirme ve kullanma özgürlüğünün](https://writefreesoftware.org/), herhangi bir kısıtlama olmaksızın, herkesin sahip olması gereken temel insan haklarından biri olduğuna inanıyoruz. Bu bağlamda, *yazılım özgürlüğü* önemlidir. Özgürlüğünüz önemlidir. Eğitim önemlidir. [Onarım hakkı](https://en.wikipedia.org/wiki/Right_to_repair) önemlidir; Libreboot, donanımınızı sürekli yazılım güncellemeleriyle kullanmaya devam etmenizi sağlar. Tüm bunlar Libreboot'un *var olma nedenidir*.
 
-A parallel [Libreboot fork, Canoeboot](https://canoeboot.org), also exists.
-Both Canoeboot and Libreboot are maintained by the same developer (Leah Rowe).
-
 Libreboot Tasarımına Genel Bakış
 --------------------------------
 
@@ -90,5 +87,7 @@ Libreboot şu anda Ukraynaca ve Fransızca çevrilmiş web sayfalarına sahiptir
 
 Belirli bir dilde biri zaten çalışıyor olsa bile, her zaman birden fazla kişi kullanabiliriz. Ne kadar çok o kadar iyi! 
 
+A parallel [Libreboot fork, Canoeboot](https://canoeboot.org), also exists.
+Both Canoeboot and Libreboot are maintained by the same developer (Leah Rowe).
 
 [//]: # "SPDX-License-Identifier: GFDL-1.3-or-later"
