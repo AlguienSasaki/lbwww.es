@@ -140,7 +140,6 @@ In descending order from latest changes to earliest changes:
 
 In descending order from latest changes to earliest changes:
 
-* ThinkPad T480/s: Add ThunderBolt PCI-E support.
 * ThinkPad T480/s: fix headphone jack detection. You previously had to switch
   the port manually, using a program such as `pavucontrol`. This is now fixed,
   in 
