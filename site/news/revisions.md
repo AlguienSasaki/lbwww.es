@@ -32,7 +32,8 @@ years beyond 2025.
 In other words, the following Libreboot releases will come out in 2025:
 
 * Libreboot 25.06 (stable release)
-* Libreboot 25.12 (stable release)
+* Libreboot 25.12 (stable release) **NOTE: This ended up being the
+  Libreboot 26.01 release instead.**
 
 A [Libreboot 25.04](libreboot2504.md) release was also made, under the
 previous plan. It won't actually be renamed, but you might now therefore

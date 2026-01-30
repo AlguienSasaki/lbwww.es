@@ -35,7 +35,8 @@ In other words, the following Libreboot releases will come out in 2025:
 * Libreboot 25.04 (testing release)
 * Libreboot 25.06 (stable release)
 * Libreboot 25.10 (testing release)
-* Libreboot 25.12 (stable release)
+* Libreboot 25.12 (stable release) - **NOTE: This ended up being
+  Libreboot 26.01 instead.**
 
 So, two testing releases and two stable releases. Each release can have any
 number of revisions, whereby the tarballs are re-generated and re-uploaded,

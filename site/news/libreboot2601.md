@@ -1,72 +1,18 @@
-% Libreboot 26.01 RC4 "Magnanimous Max" released! (was: RC1)
+% Libreboot 26.01 "Magnanimous Max" released!
 % Leah Rowe
-% 25 December 2025 (updated 20 January 2026)
-
-UPDATE: Libreboot 26.01 RC4
-----------------------
-
-RC2 and RC3 were not uploaded. RC4 includes all of the RC2 and RC3 changes.
+% 30 January 2026
 
 **You can find today's release in 
-<https://rsync.libreboot.org/testing/26.01rc4/> or you can use one of
+<https://rsync.libreboot.org/stable/26.01/> or you can use one of
 the [mirrors](../download.md).**
 
-The RC4 changes since RC1 are as follows:
-
-```
-* a808333c04 Libreboot 26.01 RC4 Magnanimous Max 
-* baeec45f50 use newer ME on e7240 
-* fc2a521446 Libreboot 26.01 RC3 Magnanimous Max 
-* e91377b509 cb/default: new rev fcd716d9a2, 14 January 2026 
-* 86cbf66b78 NEW MAINBOARD: Dell Latitude E7240 from Iru Cai 
-* a494c3c2e2 Revert "coreboot/default: don't remove fsp files" 
-* f22d4b1c49 u-boot: update configs 
-* 778ae1653a fix grub version name in xhci_nvme 
-* 9ea35f3866 Libreboot 26.01 RC2, or: Magnanimous Max 
-* b538749c83 remove T480/T580 thunderbolt driver 
-* 4e33b40655 re-add deleted grub border patch 
-* d22f7f9633 update grub to 2.14 
-* 21d5050fb4 delete x230* corebootfb configs for now 
-* 2e6f6e2579 coreboot/default: don't remove fsp files 
-* bbfee155ba fix fsp extraction for topton x2e n150 
-* d5351aee37 inject: fix mac address insertion
-```
-
-Essentially:
-
-* MAC address insertion was broken in RC1. RC2 fixed this. (when injecting
-  tarballs using `./mk inject`)
-* GRUB updated to version 2.14 (stable release) - it's not that many changes
-  since the 2.14 RC release previously used.
-* X230 corebootfb configs were deleted - text mode configs still available. A
-  user reported black screen on corebootfb, so this will be investigated
-  either prior to the full 26.01 release, or issued as a hotfix after the fact.
-* Removed the T480/T580 Thunderbolt driver for now, as it caused S3 resume to
-  fail in some tests (more testing needed before re-adding this driver)
-* Updated coreboot to a newer revision from January 2026, which contains
-  several fixes (nothing major, for boards actually supported by Librbeoot)
-* Codename for the release series is now *Magnanimous Max*, which is a much
-  cooler release codename.
-* **NEW MAINBOARD: Dell Latitude E7240**
-
-That E7240 is attractive because it's Haswell generation (Intel 4th gen), which
-is still quite useful to a lot of people, and internal flashing is possible
-via use of `dell-flash-unlock`.
-
-Libreboot 26.01 RC1
-------------------
-
-Today's Libreboot 26.01 RC1 revision is a *testing release*, whereas the previous
-stable release was Libreboot 20241206. This revised release log lists all
-changes as of today, 25 December 2025, since the Libreboot 20241206 release of
-December 2024.
+Today's Libreboot 26.01 revision is a *stable release*, whereas the previous
+stable release was Libreboot 25.06. This revised release log lists all
+changes as of today, 30 January 2026, since the Libreboot 25.06 release of
+June 2025.
 
 <img tabindex=1 class="r" src="https://av.libreboot.org/t480/t480.jpg" /><span class="f"><img src="https://av.libreboot.org/t480/t480.jpg" /></span>
 <img tabindex=1 class="r" src="https://av.minifree.org/t580.jpg" /><span class="f"><img src="https://av.minifree.org/t580.jpg" /></span>
-
-This is the *first* Release Candidate (RC1) in the Libreboot 26.01 release
-series, codenamed "Tenacious Tomato". It is expected that new RCs will be
-issued weekly, between now and the time of the full release.
 
 **[PLEASE READ THESE INSTRUCTIONS BEFORE INSTALLING](../docs/install/ivy_has_common.md), OR
 YOU MAY BRICK YOUR MACHINE!! - Please click the link and follow the instructions
@@ -102,52 +48,81 @@ As stated above, the following boards have been added:
 * HP Pro 3500 Series (board port by *Vesek*)
 * Topton XE2 N150 (board port by Riku Viitanen)
 * ThinkPad T580 (board port by Johann C. Rode).
-
-More boards are planned, for the final release in late January 2026. Boards
-will be added when feasible, in each new RC.
+* Dell Latitude E7240 support (board added by Iru Cai)
 
 Work is ongoing to integrate Google Chromebooks, by integrating the
 MrChromebox distribution of coreboot into Libreboot's build system.
 
-### Revision updates
+That E7240 is attractive because it's Haswell generation (Intel 4th gen), which
+is still quite useful to a lot of people, and internal flashing is possible
+via use of `dell-flash-unlock`.
 
-**TODO: Only include the latest rev updates. Don't mention earlier duplicates,
-  unless there's something special about them.**
+### Held back changes
+
+There were some additional changes planned for this release, but they've been
+held back and will be commited to Libreboot's master branch post-release:
+
+* Integration of Intel/AMD x86-64 chromebooks via integration script provided
+  by Libreboot, that converts and adapts configurations from the MrChromebox
+  build system.
+* Switch ASUS KCMA-D8 and KGPE-D16 to the <https://15h.org/> fork of coreboot.
+* Newer Intel Alderlake boards added to Libreboot
+
+This work exists privately, not pushed yet, because:
+
+* Integrated downloading of Intel ME (at build time) and processing through
+  the `me_cleaner` program has not yet been figured out, for newer AlderLake
+  machines, with the exception of the Topton X2E N150 which was already added
+  to master.
+* Most x86 chromebooks are untested at the moment, for Libreboot.
+* 15h fork of coreboot not yet tested by the Libreboot project, on hardware
+
+It was initially decided that these boards *would* be pushed, for the release,
+but set to `release="n"` in the build system, so that ROM images are not
+provided pre-compiled, but so that they can still be built from the release
+archive. This would only cause confusion, so these will be in the next testing
+release, probably Libreboot 26.06 RC1 (some time in April 2026 probably), and
+pushed into lbmk master in late January or likely early February 2026 for
+testing.
+
+The changes actually present in this release are substantial, focusing on
+stability improvements and bug testing. Notably, the GNU GRUB payload has
+support now for additional cryptographic ciphers (better LUKS2 support than
+in the previous Libreboot release).
+
+*Now, we will show the actual changes in this release:*
+
+### Libreboot 26.04 RC4 users
+
+There are *no* changes in the Libreboot 26.01 release, versus 26.01 RC4, which
+was released about a week before the 26.01 release. This is essentially just
+a re-brand. RC4 was declared stable, after further testing, so it is now the
+stable release. Therefore, if you already flashed RC4, there is no reason to
+flash the official 26.01 release.
+
+### Revision updates
 
 In descending order from latest changes to earliest changes:
 
-* Updated PCSX-Redux to rev `b745534eb231d3699ec57949f16a9a7bd5b79385`, which
-  contains various bug fixes and feature improvements.
-* Updated flashprog to revision `ffcf92fb`.
-* Updated GRUB to revision `25b7f6b93` from December 2025. This is a little bit
+* Updated the main coreboot revision to upstream from mid-January 2026.
+  As of this release, Libreboot's version of coreboot is essentially up to
+  date.
+* Updated GRUB to the stable release, version `2.14`. This is a little bit
   after 2.14-rc1 and adds a lot of bug fixes and new features. For example,
   the PHC argon2 implementation could be dropped because GRUB now imports a
   newer version of libgcrypt, which supports argon2. Other improvements as well,
   such as a general support for more ciphers, or support for things like BLS
   and UKIs; BLS and UKIs are untested in the the 26.01 release, but there is no
   reason in principle why they shouldn't work..
+* Updated PCSX-Redux to rev `b745534eb231d3699ec57949f16a9a7bd5b79385`, which
+  contains various bug fixes and feature improvements.
+* Updated flashprog to revision `ffcf92fb`.
 * Updated deguard to the latest revision, which adds files for the other recently
   added Kabylake ThinkPads e.g. ThinkPad X280, T580, T470s.
-* coreboot/default: Update to revision `def7aa7094` from December 2025.
-* coreboot/default: rev 9e41c7cec7, 18 July 2025. **NOTE: later updated
-  again, before RC**
-* pcsx-redux: bump rev 8f8cc3d5, 20 June 2025. **NOTE: later updated again,
-  before RC.**
-* coreboot/default: bump rev 812d0e2f62, 5 Apr 2025. **NOTE: later updated
-  again before the RC.**
-* deguard: bump to rev 0ed3e4f. **NOTE: Later updated again before RC.**
-* GRUB: Bump to a68a7dece, 23 June 2025. **NOTE: Later updated again to
-  a December 2025 release before this RC was built.**
-* SeaBIOS: Update to rev b686f460, June 2025. **NOTE: This was updated again
-  to a December 2025 revision, just before this RC release.**
-
-### Licensing
-
-<img tabindex=1 class="r" src="https://av.libreboot.org/hp8460p/hp8460p.webp" /><span class="f"><img src="https://av.libreboot.org/hp8460p/hp8460p.webp" /></span>
-
-TODO write this section.
 
 ### Security
+
+<img tabindex=1 class="r" src="https://av.libreboot.org/hp8460p/hp8460p.webp" /><span class="f"><img src="https://av.libreboot.org/hp8460p/hp8460p.webp" /></span>
 
 In descending order from latest changes to earliest changes:
 
@@ -462,7 +437,7 @@ changes to the earliest changes):
   This behaviour has been implemented in Libreboot's version of coreboot.
 * T480/T480: Drop redundant PcieRpEnable from - otherwise, it wouldn't build.
   Note that this was only relevant when Libreboot maintained T480 support
-  patches out-of-tree. Before this RC release, the T480 was merged upstream
+  patches out-of-tree. Before the RC release, the T480 was merged upstream
   in coreboot, and Libreboot updated its coreboot version to use the port
   provided there, so now upstream maintains this code.
 * `include/lib.sh`: Don't break erroneously in a context where it's not used.
@@ -554,10 +529,27 @@ In descending order from the latest changes to the earliest changes:
 Git log
 -------
 
-This log shows all changes in today's release, from 30 June 2025, ever
-since the Libreboot 20241206 release of 6 December 2025:
+This shows all changes since the June 2025 release of Libreboot, leading up
+to today's Libreboot 26.01 release:
 
 ```
+* a808333c04 Libreboot 26.01 Magnanimous Max 
+* a808333c04 Libreboot 26.01 RC4 Magnanimous Max 
+* baeec45f50 use newer ME on e7240 
+* fc2a521446 Libreboot 26.01 RC3 Magnanimous Max 
+* e91377b509 cb/default: new rev fcd716d9a2, 14 January 2026 
+* 86cbf66b78 NEW MAINBOARD: Dell Latitude E7240 from Iru Cai 
+* a494c3c2e2 Revert "coreboot/default: don't remove fsp files" 
+* f22d4b1c49 u-boot: update configs 
+* 778ae1653a fix grub version name in xhci_nvme 
+* 9ea35f3866 Libreboot 26.01 RC2, or: Magnanimous Max 
+* b538749c83 remove T480/T580 thunderbolt driver 
+* 4e33b40655 re-add deleted grub border patch 
+* d22f7f9633 update grub to 2.14 
+* 21d5050fb4 delete x230* corebootfb configs for now 
+* 2e6f6e2579 coreboot/default: don't remove fsp files 
+* bbfee155ba fix fsp extraction for topton x2e n150 
+* d5351aee37 inject: fix mac address insertion
 * a59fc6a353 Libreboot 26.01 RC1 Tenacious Tomato 
 * b259f3493d update pcsx-redux openbios 
 * a4ad3afdbb bump flashprog rev: ffcf92fb, December 2025 

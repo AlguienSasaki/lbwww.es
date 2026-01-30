@@ -23,7 +23,7 @@ depends on your preferences. Libreboot's design incorporates all of these boot
 methods in a single image, so you can choose which one you use at boot time,
 and more payloads (e.g. Linux kexec payload) are planned for future releases.
 
-**НОВЫЙ РЕЛИЗ: Последний релиз Libreboot - 25.06, опубликован 30 June 2025 года. Смотрите: [Libreboot 25.06 release announcment](news/libreboot2506.md).**
+**НОВЫЙ РЕЛИЗ: Последний релиз Libreboot - 26.01, опубликован 30 January 2026 года. Смотрите: [Libreboot 26.01 release announcment](news/libreboot2601.md).**
 
 Вы также можете купить [Libreboot предустановленным](https://minifree.org) от Minifree Ltd, а также присылать нам свои совместимые устройства для [установки Libreboot](https://minifree.org/product/installation-service/). Основатель и ведущий разработчик Libreboot, Лия Роу, также владеет и управляет Minifree; продажи обеспечивают финансирование для Libreboot.
 
