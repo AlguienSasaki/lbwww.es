@@ -92,7 +92,7 @@ in the previous Libreboot release).
 
 *Now, we will show the actual changes in this release:*
 
-### Libreboot 26.04 RC4 users
+### Libreboot 26.01 RC4 users
 
 There are *no* changes in the Libreboot 26.01 release, versus 26.01 RC4, which
 was released about a week before the 26.01 release. This is essentially just
