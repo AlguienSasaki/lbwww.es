@@ -123,10 +123,8 @@ See also
 
 -   Many more Intel codenames can be found at
     [Wikipedia](https://en.wikipedia.org/wiki/List_of_Intel_codenames).
--   For ThinkPads see [Documentation/thinkpad/codenames.csv @ Coreboot]
-(https://review.coreboot.org/cgit/coreboot.git/tree/Documentation/thinkpad/codenames.csv)
--   For Chromebooks see [Developer information for ChromeOS devices]
-(https://www.chromium.org/chromium-os/developer-information-for-chrome-os-devices/)
+-   For ThinkPads see [Documentation/thinkpad/codenames.csv @ Coreboot](https://review.coreboot.org/cgit/coreboot.git/tree/Documentation/thinkpad/codenames.csv)
+-   For Chromebooks see [Developer information for ChromeOS devices](https://www.chromium.org/chromium-os/developer-information-for-chrome-os-devices/)
 
 
 [//]: # "SPDX-License-Identifier: GFDL-1.3-or-later"
