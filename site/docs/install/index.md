@@ -87,12 +87,8 @@ Libreboot currently supports the following systems:
 -   [Acer G43T-AM3](acer_g43t-am3.md)
 -   Apple iMac 5,2
 -   [ASUS KCMA-D8 motherboard](kcma-d8.md)
--   Dell OptiPlex 7010 **MT** (known to work, using the T1650 ROM, but more
-    research is needed) - 9010 also known to work. No GPIO changes, so it should
-    be safe to flash.
 -   [Dell OptiPlex 780 variants e.g. MT, USFF](dell780.md)
--   [Dell OptiPlex 7010/9010 SFF](dell7010.md) **(for MT, please use the T1650 image)**
--   [Dell Precision T1650](t1650.md) **(the same ROM works on 7010/9010 MT variant)**
+-   [Dell OptiPlex 7010/9010 SFF/MT +T1650](dell7010.md)
 -   [Gigabyte GA-G41M-ES2L motherboard](ga-g41m-es2l.md)
 -   [HP Elite 8200 SFF/MT](hp8200sff.md) (HP 6200 Pro Business probably works too)
 -   [HP Elite 8300 USDT](hp8300usdt.md)
