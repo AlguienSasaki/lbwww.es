@@ -116,7 +116,7 @@ See: [build from source](../build/)
 care. The FLILL and/or PRx based methods are more reliable - also SMM methods.
 You can reconfigure coreboot and enable the chipset-based flash protection there
 which accomplishes the same result, and the benefit is that it can't easily
-be overridden by an evel maid attack e.g. can't simply set the service jumper
+be overridden by an evil maid attack e.g. can't simply set the service jumper
 on desktops.**
 
 The simplest way is to just do this:
@@ -196,7 +196,7 @@ Example:
 password you entered. In other words, *do not use the hash that you see above!*
 
 GRUB will also ask for a username in addition to the password; the "root" user
-is specified above, but you can cahnge it to whatever you want.
+is specified above, but you can change it to whatever you want.
 
 Unset superusers
 ----------------
@@ -210,7 +210,7 @@ Change it to this:
 	# unset superusers
 
 Commenting it, as shown above, ensures that password authentication works,
-because `unset superusers` in fact disables passwordh authentication, so it's
+because `unset superusers` in fact disables password authentication, so it's
 very important that you comment out this line.
 
 Disable the SeaBIOS menu

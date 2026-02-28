@@ -7,7 +7,7 @@ x-toc-enable: true
 
 The steps, necessary to speed up suspend/resume in FreeBSD are
 described in this article. They are not a complete guide, but rather a
-description of the principles that should be used to increase suspend
+description of the principles that should be used to decrease suspend
 and resume times on your machine.
 
 # Studying the Libreboot log

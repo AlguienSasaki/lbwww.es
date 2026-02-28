@@ -149,7 +149,7 @@ who adapted PHC's Argon2 implementation for use in GRUB; Ax33l later added it
 to Arch Linux AUR for GRUB 2.06, and Nicholas Johnson rebased *that* for
 GRUB 2.12 so that Libreboot could use it.
 
-NOTE: You should also read the instructions about about `GRUB_TERMINAL`.
+NOTE: You should also read the instructions about `GRUB_TERMINAL`.
 
 NOTE ABOUT VGA MODES and GRUB
 -----------------------------
@@ -220,7 +220,7 @@ Set the `sixteenbit` variable to an empty string, then run:
 
 	grub2-mkconfig -o /boot/grub2/grub.cfg
 
-**NOTE: On newer Federa versions, setting the sixteenbit variable is
+**NOTE: On newer Fedora versions, setting the sixteenbit variable is
 no longer required and it is no longer present. However, you should still
 deal with the BLS issue, mentioned below:**
 

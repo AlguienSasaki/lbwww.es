@@ -101,7 +101,7 @@ according to the selected linux distro.
 The currently supported distros are: Debian/Ubuntu/Linux Mint/Pop!\_OS, 
 Fedora, Arch Linux or Void Linux.
 
-Some examples (run them as root, use use e.g. `sudo`, `doas`):
+Some examples (run them as root, use e.g. `sudo`, `doas`):
 
 	./mk dependencies ubuntu
 
@@ -161,7 +161,7 @@ For better reliability, you should, after running the dependencies script,
 remove `gnat` and install `gnat-14` instead, which is available on this day
 of 3 December 2025, but currently marked experimental. When you install
 GNAT 14, GNAT 13 is removed but `gnat` (in `PATH`) still won't resolve to
-anything. Libreboot *still* accomodates this, detecting and matching the GCC
+anything. Libreboot *still* accommodates this, detecting and matching the GCC
 and GNAT versions, which would in this instance match version 14 between them,
 so that `gnat` and `gcc` are both in PATH at build time, resolving to v14.x.
 When we tested with this configuration, the KGPE-D16 images also compiled.
