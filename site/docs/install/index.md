@@ -126,7 +126,7 @@ Libreboot currently supports the following systems:
 -   Lenovo ThinkPad T530
 -   Lenovo ThinkPad T60, X60, X60S, X60 Tablet (with Intel GPU)
 -   [Lenovo ThinkPad X200 / X200S / X200 Tablet](x200.md)
--   Lenovo Thinkpad X220 / X200 Tablet
+-   Lenovo Thinkpad X220 / X220 Tablet
 -   [Lenovo Thinkpad X230 / X230 Tablet](x230_external.md)
 
 ### Laptops (ARM, with U-Boot payload)
