@@ -16,6 +16,15 @@ inserting vendor files, which you can use to change the MAC address. See:
 You can use the documentation below, if you wish to use `nvmutil` manually.
 Continue reading...
 
+**NOTE: In newer revisions, the Makefile now creates an `nvmutil` binary
+instead of `nvm`, so please remember to use `nvmutil` on your terminal
+instead of `nvm`. This change was made, so that nvmutil's binary name
+does not conflict with that of the Note Version Manager, which is not
+our project, but they also use the `nvm` binary name - and their project
+existed before nvmutil (2014, whereas nvmutil has existed since 2022).
+Apologies to [Node Version Manager](https://github.com/nvm-sh/nvm) for
+to the previous file name conflict!**
+
 Change the Intel GbE MAC address
 --------------------------------
 
@@ -355,7 +364,7 @@ You may run this in your terminal:
 
 	make
 
-This will result in a binary being created named `nvm`.
+This will result in a binary being created named `nvmutil`.
 Install this to wherever you want, such as `/usr/bin` (or
 whatever is in your `$PATH` for userspace programs).
 
@@ -369,10 +378,12 @@ commands on that file. This section will tell you how to
 perform various tasks, by using these commands.
 
 In these examples, it is assumed that you have installed
-the `nvm` binary to somewhere in your `$PATH`. If you haven't
-done that, you could still run it in cwd for instance:
+the `nvmutil` binary to somewhere in your `$PATH`. If you haven't
+done that, you could still run it in the current work directory:
 
-	./nvm bla bla bla
+	./nvmutil bla bla bla
+
+Adapt accordingly.
 
 ### Exit status
 
@@ -402,7 +413,7 @@ what command you use. Commands are documented in the following sections:
 
 ### Change MAC address
 
-The `nvm` program lets you change the MAC address. It sets
+The `nvmutil` executable lets you change the MAC address. It sets
 a valid checksum, after changing the MAC address. This program
 operates on *both* NVM parts, but it will only modify a given
 part if the existing checksum is correct. It will exit with zero
@@ -429,25 +440,25 @@ you can do that. For example, if your MAC address
 was `00:de:ad:be:ef:69` as assigned by the manufacturer,
 which is a global unicast MAC address, you would type:
 
-	nvm gbe.bin setmac 00:de:ad:be:ef:69
+	nvmutil gbe.bin setmac 00:de:ad:be:ef:69
 
 How to use (the MAC address in just an example):
 
-	nvm gbe.bin setmac 00:de:ad:be:ef:00
+	nvmutil gbe.bin setmac 00:de:ad:be:ef:00
 
 You can also set random MAC addresses:
 
-	nvm gbe.bin setmac xx:xx:xx:xx:xx:xx
+	nvmutil gbe.bin setmac xx:xx:xx:xx:xx:xx
 
 In this example, every character is random. However, you
 can mix and match random characters with static ones. For
 example:
 
-	nvm gbe.bin setmac 00:1f:16:xx:xx:xx
+	nvmutil gbe.bin setmac 00:1f:16:xx:xx:xx
 
 You can also pass it without a MAC address:
 
-	nvm gbe.bin setmac
+	nvmutil gbe.bin setmac
 
 If you only type `setmac` without specifying a MAC address,
 it will do the same thing as `setmac xx:xx:xx:xx:xx:xx`.
@@ -469,13 +480,13 @@ one valid part and one invalid part, per checksum rules.
 
 This command *only* requires *read* access on files.
 
-The `nvm` program can show a hexdump of both NVM parts, and
+The `nvmutil` program can show a hexdump of both NVM parts, and
 tell you whether each one is valid (as per checksum calculation).
 It also prints the MAC address from each part.
 
 How to use:
 
-	nvm gbe.bin dump
+	nvmutil gbe.bin dump
 
 NOTE: This will exit with zero status if at least one part
 contains a valid checksum. If both parts are invalid, nvmutil
@@ -485,16 +496,16 @@ will exit with non-zero status.
 
 This command requires read *and* write access on files.
 
-The `nvm` program can copy one NVM part to another. It copies
+The `nvmutil` executable can copy one NVM part to another. It copies
 the *entire* *block size* KB part, within the *two blocks* KB file.
 
 Overwrite part 0 with the contents of part 1:
 
-	nvm gbe.bin copy 1
+	nvmutil gbe.bin copy 1
 
 Overwrite part 1 with the contents of part 0:
 
-	nvm gbe.bin copy 0
+	nvmutil gbe.bin copy 0
 
 NOTE: If the part to be copied has a bad checksum, no operation
 will be performed, and nvmutil will exit with non-zero status.
@@ -505,12 +516,12 @@ zero status.
 
 This command requires read *and* write access on files.
 
-The `nvm` program can swap both *block size* KB parts in the GbE
+The `nvmutil` executable can swap both *block size* KB parts in the GbE
 file. It does this, via simple XOR swaps.
 
 How to use:
 
-	nvm gbe.bin swap
+	nvmutil gbe.bin swap
 
 NOTE: This operation will be aborted if BOTH checksums
 are invalid. This is to guard against accidentally
@@ -524,16 +535,16 @@ return non-zero.
 
 This command requires read *and* write access on files.
 
-The `nvm` program can calculate and sets a valid checksum, on
+The `nvmutil` executable can calculate and sets a valid checksum, on
 the desired NVM part. Usage:
 
 Fix part 0:
 
-	nvm gbe.bin setchecksum 0
+	nvmutil gbe.bin setchecksum 0
 
 Fix part 1:
 
-	nvm gbe.bin setchecksum 1
+	nvmutil gbe.bin setchecksum 1
 
 *WARNING: NO validity checks are performed. This will simply
 set the checksum. There is no feasible way to guard against
@@ -544,16 +555,16 @@ make SURE you're running this on the correct file!*
 
 This command requires read *and* write access on files.
 
-The `nvm` program can intentionally set an invalid checksum, on
+The `nvmutil` executable can intentionally set an invalid checksum, on
 the desired NVM part. Usage:
 
 Invalidate part 0:
 
-	nvm gbe.bin brick 0
+	nvmutil gbe.bin brick 0
 
 Invalidate part 1:
 
-	nvm gbe.bin brick 1
+	nvmutil gbe.bin brick 1
 
 NOTE: If the part already has an invalid checksum, no operation
 will be performed, and nvmutil will exit with non-zero status.
