@@ -30,9 +30,9 @@ Change the Intel GbE MAC address
 
 This is the manual for `nvmutil`, included within the [Libreboot build
 system](../maintain/) (lbmk) under `util/nvmutil/`. This program lets you modify
-the MAC address, correct/verify/invalidate checksums, swap/copy and dump regions
-on Intel PHY NVM images, which are small binary configuration files that go in
-flash, for Gigabit (ethernet) Intel NICs.
+the MAC address, swap/copy and dump regions on Intel PHY NVM images, which are
+small binary configuration files that go in flash, for Gigabit (ethernet) Intel
+NICs.
 
 **Please [install build dependencies](../build/) before you do this.**
 
@@ -469,12 +469,7 @@ MAC address would begin with `00:1f:16`.
 The *reason* nvmutil doesn't alter a part with an existing
 invalid checksum, is precisely so that if the algorithm
 changes in future Intel PHYs, nvmutil will just fail and
-not modify your file. This is because the checksum would
-then be invalid, at all times. However, correct NVM parts
-with otherwise invalid checksums do exist, and can be
-corrected if you use the `setchecksum` command
-in `nvmutil`. It is common for vendor gbe files to contain
-one valid part and one invalid part, per checksum rules.
+not modify your file.
 
 ### Verify checksums (and show MAC addresses)
 
@@ -530,55 +525,6 @@ using `nvmutil` on the wrong file.
 If *at least one* part is valid, nvmutil will return
 with zero exit status. If both parts are invalid, it will
 return non-zero.
-
-### Set valid checksum
-
-This command requires read *and* write access on files.
-
-The `nvmutil` executable can calculate and sets a valid checksum, on
-the desired NVM part. Usage:
-
-Fix part 0:
-
-	nvmutil gbe.bin setchecksum 0
-
-Fix part 1:
-
-	nvmutil gbe.bin setchecksum 1
-
-*WARNING: NO validity checks are performed. This will simply
-set the checksum. There is no feasible way to guard against
-use on the wrong file, unlike with the other commands. Please
-make SURE you're running this on the correct file!*
-
-### Set invalid checksum
-
-This command requires read *and* write access on files.
-
-The `nvmutil` executable can intentionally set an invalid checksum, on
-the desired NVM part. Usage:
-
-Invalidate part 0:
-
-	nvmutil gbe.bin brick 0
-
-Invalidate part 1:
-
-	nvmutil gbe.bin brick 1
-
-NOTE: If the part already has an invalid checksum, no operation
-will be performed, and nvmutil will exit with non-zero status.
-This is to guard against `nvmutil` being used on the wrong file.
-
-This may be desirable, if you've made modifications to both
-parts but you want to guarantee that only one of them is
-used. Also, the `setmac` command will only operate on
-parts that already have a valid checksum, so you could
-run `brick` before running `setmac` (or run it afterwards).
-
-The Linux kernel's `e1000` driver will refuse to initialise
-Intel gigabit NICs that don't have a valid checksum. This
-is software-defined, and not enforced by the hardware.
 
 History
 -------
