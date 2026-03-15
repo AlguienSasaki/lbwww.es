@@ -71,68 +71,106 @@ the [porting manual](../maintain/porting.md).
 
 Libreboot currently supports the following systems:
 
+Libreboot currently supports the following systems: 
+
+  Installation steps sorted into 3 ways: 
+- Simple; Installable from OS, a bios jumper might needs to be set, no extra things required.
+- Moderate; Use of a [SPI Programmer](../install/spi.md) and removing the backplate to get physical access to the flash chip.
+- Complex; Disassembly/Soldering or anything more needs to be done than using a programmer.
+
+
 ### Games consoles
 
--   [Sony Playstation](playstation.md) (PS1/PSX)
+-   [Sony Playstation](playstation.md) (Complex) (PS1/PSX)
 
-### Servers (AMD, x86)
+### Servers (AMD, x86 with ECC support)
 
--   [ASUS KFSN4-DRE motherboard](kfsn4-dre.md)
--   [ASUS KGPE-D16 motherboard](kgpe-d16.md)
+**Opteron 6300**
+-   [ASUS KGPE-D16 motherboard](kgpe-d16.md) (Moderate, DDR3)
 
-### Desktops (AMD, Intel, x86)
+**Opteron 4300/4200**
+-   [ASUS KCMA-D8 motherboard](kcma-d8.md) (Moderate, DDR3)
 
--   [Dell OptiPlex 3050 Micro](dell3050.html) - **Also [available to buy with Libreboot pre-installed](https://minifree.org/product/libreboot-3050-micro/)**
--   [Dell OptiPlex 7020/9020/XE2/T1700 MT and SFF](dell9020.md)
--   [Acer G43T-AM3](acer_g43t-am3.md)
--   Apple iMac 5,2
--   [ASUS KCMA-D8 motherboard](kcma-d8.md)
--   [Dell OptiPlex 780 variants e.g. MT, USFF](dell780.md)
--   [Dell OptiPlex 7010/9010 SFF/MT +T1650](dell7010.md)
--   [Gigabyte GA-G41M-ES2L motherboard](ga-g41m-es2l.md)
--   [HP Elite 8200 SFF/MT](hp8200sff.md) (HP 6200 Pro Business probably works too)
--   [HP Elite 8300 USDT](hp8300usdt.md)
--   Intel D510MO and D410PT motherboards
--   [Intel D945GCLF](d945gclf.md)
--   [Topton X2E N150 aka BKHD H30W-N150](x2e-n150.md)
+**Opteron 2000/8000**
+-   [ASUS KFSN4-DRE motherboard](kfsn4-dre.md) (Complex, DDR2)
+
+
+### Desktops/WorkStations (Intel, x86)
+
+**12th Gen.**
+-   [Topton X2E N150 aka BKHD H30W-N150](x2e-n150.md) (Simple, DDR4)
+
+**9th -> 6th Gen.**
+(Different generational CPUs compatible with older and newer motherboards too, 4-core ones confirmed, 6/8 core processors might work, untested.)
+-   [Dell OptiPlex 3050 Micro](dell3050.html) (Simple, DDR4) - **Also [available to buy with Libreboot pre-installed](https://minifree.org/product/libreboot-3050-micro/)**
+
+**5th -> 4th Gen. (Core + Xeon v3-4)**
+(5th gen cpus are compatible with the 4gen boards, but does not work yet.)
+-   [Dell OptiPlex 7020/9020/XE2/T1700 MT and SFF](dell9020.md) (Simple, DDR3 + ECC for T1700)
+
+**3rd -> 2nd Gen. (Core + Xeon v1-2)**
+(Processors are fully compatible with motherboards from different generations)
+-   [Dell OptiPlex 7010/9010 SFF/MT +T1650](dell7010.md) (Simple, DDR3 + ECC for T1650)
+-   [HP Elite 8300 USDT](hp8300usdt.md) (Simple, DDR3)
+-   [HP Elite 8200 SFF/MT](hp8200sff.md) (Simple, DDR3) (HP 6200 Pro Business probably works too)
+
+**Core 2**
+-   [Acer G43T-AM3](acer_g43t-am3.md) (Simple, DDR3)
+-   [Dell OptiPlex 780 variants e.g. MT, USFF](dell780.md) (Simple, DDR3)
+-   [Gigabyte GA-G41M-ES2L motherboard](ga-g41m-es2l.md) (Simple, DDR2)
+-   Apple iMac 5,2 (Simple, DDR2)
+
+**Bonnel (Atom)**
+-   [Intel D945GCLF](d945gclf.md) (Moderate, DDR2)
+-   Intel D510MO and D410PT motherboards (Moderate, DDR2)
 
 ### Laptops (Intel, x86)
 
--   [Lenovo ThinkPad T480 and ThinkPad T480s](t480.html) - Also **[available to buy with Libreboot pre-installed](https://minifree.org/product/libreboot-t480.html)**
--   [Lenovo ThinkPad T580](t480.html) - Also **[available to buy with Libreboot pre-installed](https://minifree.org/product/libreboot-t580.html)**
--   Lenovo ThinkPad T440p
--   Lenovo ThinkPad W541
--   Lenovo ThinkPad X230 - *Also* available on Minifree: <https://minifree.org/product/libreboot-x230/>
--   [Apple MacBook1,1 and MacBook2,1](macbook21.md)
--   [Dell Latitude E4300, E6400, E6400 XFR and E6400 ATG, all with Nvidia or Intel
-    GPU](latitude.md)
--   [Dell Latitude E5420, E5520, E5530, E6420, E6430, E6520, E6530, E6230, E6330, E6220, E7240](latitude.md)
+**8th Gen**
+-   [Lenovo ThinkPad T480 and ThinkPad T480s](t480.html) (Complex, DDR4) - Also **[available to buy with Libreboot pre-installed](https://minifree.org/product/libreboot-t480/)**
+-   [Lenovo ThinkPad T580](t480.html) (Complex, DDR4) - Also **[available to buy with Libreboot pre-installed](https://minifree.org/product/libreboot-t580.html)**
+
+**5th Gen.**
+-   [HP EliteBook 820 G2](hp820g2.md) (Complex, DDR3L)
+
+**4th Gen.**
+-   Lenovo ThinkPad W541 (Complex, DDR3L)
+-   Lenovo ThinkPad T440p (Complex, DDR3L)
+
+**3th Gen.**
+
+-   [HP EliteBook 2170p](hp2170p.md) (Moderate, DDR3L)
+-   [HP EliteBook 2570p](hp2570p.md) (Moderate, DDR3L)
+-   [HP EliteBook 8470p](hp8470p.md) (Moderate, DDR3L)
+-   [HP EliteBook Folio 9470m](hp9470m.md) (Complex, DDR3L)
+-   Lenovo ThinkPad T430 (**but not the T430S**) (Complex, DDR3L)
+-   Lenovo ThinkPad T530 (Complex, DDR3L)
+-   [Lenovo Thinkpad X230 / X230 Tablet](x230_external.md) (Complex, DDR3L)
+-   [HP EliteBook 2560p](hp2560p.md) (Moderate, DDR3L)
+-   [HP EliteBook 8460p](hp8460p.md) (Moderate, DDR3L)
+-   [HP EliteBook 8560w](hp8560w.md) (Moderate, DDR3L)
+-   [Dell Latitude E5420, E5520, E5530, E6420, E6430, E6520, E6530, E6230, E6330, E6220](latitude.md) (Simple, DDR3L)
     (Intel GPU variants only)
--   [HP EliteBook 2170p](hp2170p.md)
--   [HP EliteBook 2560p](hp2560p.md)
--   [HP EliteBook 2570p](hp2570p.md)
--   [HP EliteBook 820 G2](hp820g2.md)
--   [HP EliteBook 8460p](hp8460p.md)
--   [HP EliteBook 8470p](hp8470p.md)
--   [HP EliteBook 8560w](hp8560w.md)
--   [HP EliteBook Folio 9470m](hp9470m.md)
--   [Lenovo ThinkPad R400](r400.md)
--   Lenovo ThinkPad R500
--   [Lenovo ThinkPad T400 / T400S](t400.md)
--   Lenovo Thinkpad T420 / T420S
--   Lenovo ThinkPad T430 (**but not the T430S**)
--   [Lenovo ThinkPad T500 / W500](t500.md)
--   Lenovo ThinkPad T520
--   Lenovo ThinkPad T530
--   Lenovo ThinkPad T60, X60, X60S, X60 Tablet (with Intel GPU)
--   [Lenovo ThinkPad X200 / X200S / X200 Tablet](x200.md)
--   Lenovo Thinkpad X220 / X220 Tablet
--   [Lenovo Thinkpad X230 / X230 Tablet](x230_external.md)
+-   Lenovo Thinkpad T420 / T420S (Complex, DDR3L)
+-   Lenovo ThinkPad T520 (Complex, DDR3L)
+-   Lenovo Thinkpad X220 / X220 Tablet (Complex, DDR3L)
+
+**Core 2**
+
+-   [Dell Latitude E4300, E6400, E6400 XFR and E6400 ATG, all with Nvidia or Intel GPU](latitude.md) (Simple, DDR2L + DDR3L for E4300)
+-   [Lenovo ThinkPad R400](r400.md) (Complex, DDR3L)
+-   Lenovo ThinkPad R500 (Complex, DDR3L)
+-   [Lenovo ThinkPad T400 / T400S](t400.md) (Complex, DDR3L)
+-   [Lenovo ThinkPad T500 / W500](t500.md) (Complex, DDR3L)
+-   [Lenovo ThinkPad X200 / X200S / X200 Tablet](x200.md) (Complex, DDR3L)
+-   [Apple MacBook1,1 and MacBook2,1](macbook21.md) (Complex for 1.1/Simple for 2.1 - 2007, DDR2L)
+-   Lenovo ThinkPad T60, X60, X60S, X60 Tablet (with Intel GPU) (Complex, DDR2L)
+
 
 ### Laptops (ARM, with U-Boot payload)
 
--   [ASUS Chromebook Flip C101 (gru-bob)](chromebooks.md)
--   [Samsung Chromebook Plus (v1) (gru-kevin)](chromebooks.md)
+-   [ASUS Chromebook Flip C101 (gru-bob)](chromebooks.md) (Complex)
+-   [Samsung Chromebook Plus (v1) (gru-kevin)](chromebooks.md) (Complex)
 
 ### Emulation
 
@@ -367,29 +405,15 @@ Refer to the [3050 Micro page](dell3050.md). Internal flashing also possible.
 This has the Intel Boot Guard, but Libreboot uses the *deguard* utility to
 disable the Boot Guard on this Intel 7th gen board.
 
-### Dell OptiPlex 7010/9010 SFF (vendor BIOS)
+### Dell OptiPlex 7010/9010 SFF/MT + Precision T1650 MT (vendor BIOS)
 
-Refer to the [7010/9010 SFF page](dell7010.md). Internal flashing also possible.
-NOTE: If you have the *MT* variant, read the sections below instead (the SFF
-ROM is only for SFF).
-
-### Dell OptiPlex 7010/9010 MT (vendor BIOS)
-
-This board is essentially identical to the Dell Precision T1650, except that
-it does not support ECC memory. Same wiring.
-
-You can flash the T1650 image on this machine. NOTE: This applies to the MT
-variant, specifically. Do not flash T1650 images on the 7010/9010 *SFF*.
-
-### Dell Precision T1650 desktop
-
-Refer to the [T1650 hardware page](t1650.md). External flashing
-required, or you can set the Service Mode jumper and flash internally (from
-vendor firmware, to Libreboot).
+Refer to the [7010/9010 SFF/MT + Precision T1650 MT page](dell7010.md). Internal
+flashing (from vendor firmware to Libreboot) is possible if you set the Service
+Mode jumper.
 
 ### Dell OptiPlex 7020/9020/XE2 SFF/MT / Precision T1700
 
-Refer to the [7020/9020 hardware page](dell9020.md). Internal
+Refer to the [Dell OptiPlex 7020/9020/XE2/T1700 MT and SFF](dell9020.md). Internal
 flashing (from vendor firmware to Libreboot) is possible if you set the Service
 Mode jumper.
 
@@ -425,7 +449,7 @@ T420/T520: [T420 flash instructions](t420_external.md)
 
 T420s/T520 are similar, in terms of assembly/disassembly.
 
-Now, as for X220/X220:
+Now, as for X220/X220 Tablet:
 
 X220/X220 Tablet is essentially the same as the X230, but cannot be flashed
 internally; you must use [an external flasher](spi.md).
