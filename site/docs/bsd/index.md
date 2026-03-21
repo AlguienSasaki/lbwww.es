@@ -158,7 +158,7 @@ documentation provided by your system, to know how KMS is configured.
 
 ### Desktop users
 
-NOTE: This section may not be full accurate; for example, the hardware page
+NOTE: This section may not be fully accurate; for example, the hardware page
 about HP Elite 8200 SFF talks about use of graphics cards on both corebootfb
 and txtmode setups, and seems to work fine with SeaBIOS in both cases.
 

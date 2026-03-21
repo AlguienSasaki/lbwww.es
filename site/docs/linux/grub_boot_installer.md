@@ -48,7 +48,7 @@ Prepare the USB drive in NetBSD
 
 [This page](https://wiki.netbsd.org/tutorials/how_to_install_netbsd_from_an_usb_memory_stick/)
 on the NetBSD website shows how to create a NetBSD bootable USB drive, from
-within NetBSD itself. You should the `dd` method documented there. This will
+within NetBSD itself. You should use the `dd` method documented there. This will
 work with any Linux ISO image.
 
 Prepare the USB drive in FreeBSD
