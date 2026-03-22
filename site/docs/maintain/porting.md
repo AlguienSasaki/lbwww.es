@@ -37,7 +37,7 @@ libreboot as `board.`
 
 If `board` is not supported in coreboot then you need to start there first.
 Libreboot developers will generally not port new boards to coreboot on request.
-If you're not sure whether your board is in coreboot check the [coreboot table of hardware.](https://coreboot.org/status/board-status.html)
+If you're not sure whether your board is in coreboot check the [coreboot table of hardware.](https://doc.coreboot.org/mainboard/index.html)
 
 If you have determined that `board` is supported by coreboot, but is not
 supported by libreboot, then follow the rest of this guide to try to port it yourself.
