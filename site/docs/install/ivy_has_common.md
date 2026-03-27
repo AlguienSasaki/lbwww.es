@@ -70,7 +70,9 @@ the flash, where an Intel gigabit ethernet device is used.
 For example, a Lenovo ThinkPad X200 doesn't need any files added, but can still
 have the mac address changed; please continue reading!
 
-### Injecting vendor files into tarballs
+### Insert Vendor Files
+
+Otherwise known as "Injecting vendor files into tarballs".
 
 **WARNING: Older versions of nvmutil used `?` for random characters. Newer
 versions use `x` instead. If you have an older version, use `?` instead,
