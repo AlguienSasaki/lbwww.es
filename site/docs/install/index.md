@@ -602,9 +602,10 @@ usually possible when Libreboot is running (barring special circumstances).
 
 ### Run flashprog on host CPU
 
-**Always remember to [insert vendor files](ivy_has_common.md), when using
-release images. Otherwise, these files are added automatically at build
-time, when building from source (but they are not present in release images).**
+**When using release images, always remember to
+[insert vendor files](ivy_has_common.md).  When building from source,
+the vendor files are added automatically at build time (they are not
+present in release images).**
 
 #### Flash chip size
 
