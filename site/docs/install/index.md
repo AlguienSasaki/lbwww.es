@@ -85,36 +85,46 @@ Libreboot currently supports the following systems:
 
 ### Servers (AMD, x86 with ECC support)
 
-**Opteron 6300**
+#### Opteron 6300
+
 -   [ASUS KGPE-D16 motherboard](kgpe-d16.md) (Moderate, DDR3)
 
-**Opteron 4300/4200**
+#### Opteron 4300/4200
+
 -   [ASUS KCMA-D8 motherboard](kcma-d8.md) (Moderate, DDR3)
 
-**Opteron 2000/8000**
--   [ASUS KFSN4-DRE motherboard](kfsn4-dre.md) (Complex, DDR2)
+#### Opteron 2000/8000
 
+-   [ASUS KFSN4-DRE motherboard](kfsn4-dre.md) (Complex, DDR2)
 
 ### Desktops/WorkStations (Intel, x86)
 
-**12th Gen.**
+#### 12th Gen
+
 -   [Topton X2E N150 aka BKHD H30W-N150](x2e-n150.md) (Simple, DDR4)
 
-**9th -> 6th Gen.**
+#### 9th -> 6th Gen.
+
 (Different generational CPUs compatible with older and newer motherboards too, 4-core ones confirmed, 6/8 core processors might work, untested.)
+
 -   [Dell OptiPlex 3050 Micro](dell3050.html) (Simple, DDR4) - **Also [available to buy with Libreboot pre-installed](https://minifree.org/product/libreboot-3050-micro/)**
 
-**5th -> 4th Gen. (Core + Xeon v3-4)**
+#### 5th -> 4th Gen. (Core + Xeon v3-4)
+
 (5th gen cpus are compatible with the 4gen boards, but does not work yet.)
+
 -   [Dell OptiPlex 7020/9020/XE2/T1700 MT and SFF](dell9020.md) (Simple, DDR3 + ECC for T1700)
 
-**3rd -> 2nd Gen. (Core + Xeon v1-2)**
+#### 3rd -> 2nd Gen. (Core + Xeon v1-2)
+
 (Processors are fully compatible with motherboards from different generations)
+
 -   [Dell OptiPlex 7010/9010 SFF/MT +T1650](dell7010.md) (Simple, DDR3 + ECC for T1650)
 -   [HP Elite 8300 USDT](hp8300usdt.md) (Simple, DDR3)
 -   [HP Elite 8200 SFF/MT](hp8200sff.md) (Simple, DDR3) (HP 6200 Pro Business probably works too)
 
-**Core 2**
+#### Core 2
+
 -   [Acer G43T-AM3](acer_g43t-am3.md) (Simple, DDR3)
 -   [Dell OptiPlex 780 variants e.g. MT, USFF](dell780.md) (Simple, DDR3)
 -   [Gigabyte GA-G41M-ES2L motherboard](ga-g41m-es2l.md) (Simple, DDR2)
@@ -126,18 +136,21 @@ Libreboot currently supports the following systems:
 
 ### Laptops (Intel, x86)
 
-**8th Gen**
+#### 8th Gen
+
 -   [Lenovo ThinkPad T480 and ThinkPad T480s](t480.html) (Complex, DDR4) - Also **[available to buy with Libreboot pre-installed](https://minifree.org/product/libreboot-t480/)**
 -   [Lenovo ThinkPad T580](t480.html) (Complex, DDR4) - Also **[available to buy with Libreboot pre-installed](https://minifree.org/product/libreboot-t580.html)**
 
-**5th Gen.**
+#### 5th Gen.
+
 -   [HP EliteBook 820 G2](hp820g2.md) (Complex, DDR3L)
 
-**4th Gen.**
+#### 4th Gen.
+
 -   Lenovo ThinkPad W541 (Complex, DDR3L)
 -   Lenovo ThinkPad T440p (Complex, DDR3L)
 
-**3th Gen.**
+#### 3th Gen.
 
 -   [HP EliteBook 2170p](hp2170p.md) (Moderate, DDR3L)
 -   [HP EliteBook 2570p](hp2570p.md) (Moderate, DDR3L)
@@ -155,7 +168,7 @@ Libreboot currently supports the following systems:
 -   Lenovo ThinkPad T520 (Complex, DDR3L)
 -   Lenovo Thinkpad X220 / X220 Tablet (Complex, DDR3L)
 
-**Core 2**
+#### Core 2
 
 -   [Dell Latitude E4300, E6400, E6400 XFR and E6400 ATG, all with Nvidia or Intel GPU](latitude.md) (Simple, DDR2L + DDR3L for E4300)
 -   [Lenovo ThinkPad R400](r400.md) (Complex, DDR3L)
