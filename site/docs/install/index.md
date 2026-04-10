@@ -149,7 +149,7 @@ Libreboot currently supports the following systems:
 -   [HP EliteBook 2560p](hp2560p.md) (Moderate, DDR3L)
 -   [HP EliteBook 8460p](hp8460p.md) (Moderate, DDR3L)
 -   [HP EliteBook 8560w](hp8560w.md) (Moderate, DDR3L)
--   [Dell Latitude E5420, E5520, E5530, E6420, E6430, E6520, E6530, E6230, E6330, E6220](latitude.md) (Simple, DDR3L)
+-   [Dell Latitude E5420, E5520, E5530, E6420, E6430, E6520, E6530, E6230, E6330, E6220, E7240](latitude.md) (Simple, DDR3L)
     (Intel GPU variants only)
 -   Lenovo Thinkpad T420 / T420S (Complex, DDR3L)
 -   Lenovo ThinkPad T520 (Complex, DDR3L)
