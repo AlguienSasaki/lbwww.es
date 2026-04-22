@@ -248,7 +248,7 @@ SeaBIOS will also still execute PCI option ROMs. Depending on your preference,
 you may wish to disable this, but please note that this will break certain
 things like graphics cards. More information is available here:
 
-<https://www.seabios.org/Runtime_config>
+<https://seabios.org/Runtime_config.html>
 
 If you're using a graphics card, you *need* VGA option ROMs at least.
 
