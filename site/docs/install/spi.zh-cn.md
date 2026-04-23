@@ -414,7 +414,7 @@ BBB 的话，这样：
 
 有些主板有不止一个 flash 芯片，你需要从两块芯片中读取，并把它们合并成一个文件。大多数时候。两个芯片的配置包含了一块 8mb 的“下层”芯片和一块 4mb 的“上层”芯片。刚刚描述的配置适用于 x230、t430 和 t440p 的情况。对其他主板而言，请确认那块芯片包含了 rom 的下层部分和上层部分。要把两个 flash 组合起来的话，你可以用比如说 `cat`：
 
-	cat bottom_8mb.rom top_4mb.rom > full_12mb.rom
+	cat spi1_8mb.rom spi2_4mb.rom > full_12mb.rom
 
 注意，如果你要手动提取 blob，那你就需要这个组合而成的 rom。
 
@@ -444,8 +444,8 @@ Verifying flash... VERIFIED.
 
 如果你要刷写的主板有两块芯片，那你需要把 rom 分成两部分。比如说，要给 x230、t430、t530 或 t440p 分割 rom，需要运行：
 
-	dd if=libreboot_12mb.rom bs=1M of=bottom.rom count=8
-	dd if=libreboot_12mb.rom bs=1M of=top.rom skip=8
+	dd if=libreboot_12mb.rom bs=1M of=spi1_8mb.rom count=8
+	dd if=libreboot_12mb.rom bs=1M of=spi2_4mb.rom skip=8
 
 根据上面的指南，将产出的 rom 刷到其对应的芯片。
 

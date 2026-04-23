@@ -695,14 +695,14 @@ This advice is *especially* applicable to the BBB, which is highly unreliable.
 
 For boards with more than one flash chip you will need to read from both chips
 and combine them into a single file.
-Most of the time, a two chip setup includes one 8mb 'bottom' chip and one 4mb
-'top' chip.
+Most of the time, a two chip setup includes one 8mb chip (SPI1) and one 4mb (SPI2)
+chip. SPI1 is the first 8MB of the ROM image in this example.
 The setup just described applies to the x230, t430, t530, and t440p.
 For other boards, make sure you know which chip contains the lower and upper
 portions of the rom.
 You can combine both flashes together with `cat` for example:
 
-	cat bottom_8mb.rom top_4mb.rom > full_12mb.rom
+	cat spi1_8mb.rom spi2_4mb.rom > full_12mb.rom
 
 Note that you will need this combined rom if you intend to manually extract vendor
 files, which is a method not officially supported by Libreboot's build system.
@@ -738,8 +738,8 @@ If the board you are writing to has two chips you'll need to split the rom into
 two sections.
 For example, to split a rom for the x230, t430, t530, or t440p run:
 
-	dd if=libreboot_12mb.rom bs=1M of=bottom.rom count=8
-	dd if=libreboot_12mb.rom bs=1M of=top.rom skip=8
+	dd if=libreboot_12mb.rom bs=1M of=spi1_8mb.rom count=8
+	dd if=libreboot_12mb.rom bs=1M of=spi2_4mb.rom skip=8
 
 Flash the resulting roms to each of their respective chips according to the above instructions.
 

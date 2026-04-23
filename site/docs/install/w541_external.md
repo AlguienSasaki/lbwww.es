@@ -56,12 +56,13 @@ Splitting The Rom
 -----------------
 
 You can use `dd` to easily split your rom into the two separate portions for
-external flashing.
+external flashing. SPI1 is an 8MB flash, representing the first 8MB from offset
+zero, in your ROM image file. Thus:
 
-	dd if=libreboot.rom of=top.rom bs=1M skip=8
-	dd if=libreboot.rom of=bottom.rom bs=1M count=8
+	dd if=libreboot.rom of=spi1_8mb.rom bs=1M count=8
+	dd if=libreboot.rom of=spi2_4mb.rom bs=1M skip=8
 
-Flash the top chip with top.rom, and the bottom chip with bottom.rom.
+Flash the 4MB chip with `spi2_4mb.rom`, and the 8MB chip with `spi1_8mb.rom`.
 Don't worry about knowing which chip is which on a standard setup; flashprog will let you know if the 
 image size is incorrect for the chip you're flashing.
 
