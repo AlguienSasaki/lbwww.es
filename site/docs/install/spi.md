@@ -12,6 +12,34 @@ always check the letting on the chip and then look up a datasheet, to tell
 exactly what voltage it's rated for; measuring with a volt meter would also
 be prudent.**
 
+**CAN'T GET A VALID READ??**
+---------------------------
+
+On systems that have two flash chips, MISO/MOSI are shared on a common line
+hooked up to the PCH, but each flash has its own chip select. The PCH will
+turn each chip on and off as required, when reading to or writing to a certain
+chip. When externally flashing, both chip selects may be floating, so both
+chips may be active.
+
+In practice, many boards may place a small amount of resistance between
+MISO/MOSI between the two flashes, such that the floating clip select isn't
+really all that bad. When you hook up your flasher, you will typically control
+the chipselect on the one you're flashing, but again the chip select on the
+other flash may be floating.
+
+Chip select is active low, so pulling it high turns off the chip. Assuming you
+don't have other issues, e.g. bad wires, or wires too long, or unreliable
+flasher, you should rule that out and pull the other chipselect high. E.g.
+if you're flashing SPI1, make sure SPI1's chipselect is held high (shorted
+to 3.3v).
+
+Other than that, you should also check that your flasher has good drive level,
+e.g. CH341a is pretty weak for in-system programming and should not be used
+in most cases.
+
+It they both fit, you could just use a 2nd clip on the other chip you want
+to turn off, and control the chip select using that.
+
 Trouble?
 ----------
 
