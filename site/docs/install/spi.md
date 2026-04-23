@@ -30,7 +30,7 @@ other flash may be floating.
 Chip select is active low, so pulling it high turns off the chip. Assuming you
 don't have other issues, e.g. bad wires, or wires too long, or unreliable
 flasher, you should rule that out and pull the other chipselect high. E.g.
-if you're flashing SPI1, make sure SPI1's chipselect is held high (shorted
+if you're flashing SPI1, make sure SPI2's chipselect is held high (shorted
 to 3.3v).
 
 Other than that, you should also check that your flasher has good drive level,
