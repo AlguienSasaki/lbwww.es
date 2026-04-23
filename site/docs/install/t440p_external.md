@@ -55,8 +55,8 @@ external flashing. The first chip, SPI1, is 8MB, possibly labeled SPI1 on
 the board's silkscreen; it represents the first 8MB from offset zero in your
 ROM image file. Thus:
 
-	dd if=libreboot.rom of=spi1_8mb.rom bs=1M skip=8
-	dd if=libreboot.rom of=spi2_4mb.rom bs=1M count=8
+	dd if=libreboot.rom of=spi1_8mb.rom bs=1M count=8
+	dd if=libreboot.rom of=spi2_4mb.rom bs=1M skip=8
 
 Flash the top chip with `spi2_4mb.rom`, and the 8MB chip with `spi1_8mb.rom`.
 Don't worry about knowing which chip is which on a standard setup; flashprog will let you know if the 
