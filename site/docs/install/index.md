@@ -11,6 +11,12 @@ a payload. On ARM
 systems, you can use the U-Boot payload (coreboot still initialises hardware).
 An x86/x86\_64 U-Boot UEFI payload is also available.
 
+**If you want professional Libreboot installation,
+an [installation service](https://minifree.org/product/installation-service.html)
+is available; it also offers other coreboot firmware besides Libreboot. For
+example, Chromebook installation via MrChromebox coreboot distribution is
+also available.**
+
 This article will teach you how to install Libreboot, on any of the supported
 laptop, desktop and server motherboards of Intel/AMD x86/x86\_64 and ARM64
 platform.
