@@ -14,7 +14,7 @@ An x86/x86\_64 U-Boot UEFI payload is also available.
 **If you want professional Libreboot installation,
 an [installation service](https://minifree.org/product/installation-service.html)
 is available; it also offers other coreboot firmware besides Libreboot. For
-example, Chromebook installation via MrChromebox coreboot distribution is
+example, Chromebook installation via MrChromebox UEFI coreboot distribution is
 also available.**
 
 This article will teach you how to install Libreboot, on any of the supported

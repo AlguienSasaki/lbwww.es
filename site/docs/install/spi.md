@@ -3,6 +3,12 @@ title: Read/write 25XX NOR flash via SPI protocol
 x-toc-enable: true
 ...
 
+**If you want professional Libreboot installation,
+an [installation service](https://minifree.org/product/installation-service.html)
+is available; it also offers other coreboot firmware besides Libreboot. For
+example, Chromebook installation via MrChromebox UEFI coreboot distribution is
+also available.**
+
 **VOLTAGE WARNING**
 ------------------
 
