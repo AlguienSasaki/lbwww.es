@@ -76,14 +76,14 @@ $endif$
 <li><a href="/faq.html">FAQ</a></li>
 <li><a href="/download.html">Download</a></li>
 <li><a href="/git.html">Git</a></li>
-<li style="font-size:1.3em;"><em><strong><a href="https://minifree.org/">Buy Libreboot preinstalled / coreboot send-in service</a></strong></em></li>
+<li><a href="https://minifree.org/">Buy Libreboot preinstalled / coreboot send-in service</a></li>
 <li><a href="/docs/install/">Install</a></li>
 <li><a href="/docs/">Docs</a></li>
 <li><a href="/news/">News</a></li>
 <li><a href="/news/feed.xml">RSS</a></li>
 <li><a href="https://codeberg.org/libreboot/lbmk/issues">Bugs</a></li>
 <li><a href="/contact.html">Contact</a></li>
-<li style="font-size:1.3em;"><em><strong><a href="https://www.spi-inc.org/projects/libreboot/">Donate</a></strong></em></li>
+<li><a href="https://www.spi-inc.org/projects/libreboot/">Donate</a></li>
 </ul>
 <hr/>
 </header>
