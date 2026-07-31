@@ -145,6 +145,8 @@ header {
 	margin: calc(clamp(1rem, 2.5vw, 2.25rem) * -1);
 	margin-bottom: 1.5rem;
 	padding: clamp(1.1rem, 3vw, 1rem);
+	padding-left: 2.2em;
+	padding-right: 2.2em;
 	color: #fff;
 	background:
 		radial-gradient(circle at top right, rgb(255 255 255 / 13%), transparent 35%),
