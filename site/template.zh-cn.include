@@ -73,11 +73,11 @@ $if(date)$
 $endif$
 <ul>
 <li><a href="/">主页</a></li>
+<li><a href="https://minifree.org/">购买预装品</a></li>
+<li><a href="https://www.spi-inc.org/projects/libreboot/">捐赠</a></li>
 <li><a href="/faq.html">常见问题</a></li>
 <li><a href="/download.html">下载</a></li>
 <li><a href="/git.html">发送补丁</a></li>
-<li><a href="https://minifree.org/">购买预装品</a></li>
-<li><a href="https://www.spi-inc.org/projects/libreboot/">捐赠</a></li>
 <li><a href="/docs/install/">安装</a></li>
 <li><a href="/docs/">文档</a></li>
 <li><a href="/news/">新闻</a></li>

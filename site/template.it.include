@@ -73,11 +73,11 @@ $if(date)$
 $endif$
 <ul>
 <li><a href="/index.it.html">Home</a></li>
+<li><a href="https://minifree.org/">Compra un PC con libreboot gia' installato</a></li>
+<li><a href="https://www.spi-inc.org/projects/libreboot/">Donazioni</a></li>
 <li><a href="/faq.html">FAQ</a></li>
 <li><a href="/download.html">Download</a></li>
 <li><a href="/git.html">Git</a></li>
-<li><a href="https://minifree.org/">Compra un PC con libreboot gia' installato</a></li>
-<li><a href="https://www.spi-inc.org/projects/libreboot/">Donazioni</a></li>
 <li><a href="/docs/install/">Installazione</a></li>
 <li><a href="/docs/">Documentazione</a></li>
 <li><a href="/news/">Notizie</a></li>
