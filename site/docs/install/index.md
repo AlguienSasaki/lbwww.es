@@ -6,22 +6,11 @@ x-toc-enable: true
 Open source BIOS/UEFI boot firmware
 ------------------------------
 
-With x86 machines, you can use the SeaBIOS or the GNU boot loader named GRUB as
-a payload. On ARM
-systems, you can use the U-Boot payload (coreboot still initialises hardware).
-An x86/x86\_64 U-Boot UEFI payload is also available.
-
 **If you want professional Libreboot installation,
 an [installation service](https://minifree.org/product/installation-service.html)
 is available; it also offers other coreboot firmware besides Libreboot. For
 example, Chromebook installation via MrChromebox UEFI coreboot distribution is
 also available.**
-
-This article will teach you how to install Libreboot, on any of the supported
-laptop, desktop and server motherboards of Intel/AMD x86/x86\_64 and ARM64
-platform.
-Libreboot is a [Free Software](https://writefreesoftware.org/learn) project
-that replaces proprietary BIOS/UEFI firmware.
 
 **ALWAYS remember to make a backup of the current flash, when overwriting it,
 regardless of what firmware you currently have and what firmware you're
@@ -32,71 +21,27 @@ SAFETY WARNING!
 ---------------
 
 **[PLEASE READ THESE INSTRUCTIONS BEFORE INSTALLING](ivy_has_common.md), OR
-YOU MAY BRICK YOUR MACHINE!! - Please click the link and follow the instructions
-there, before flashing. For posterity,
-[here is the link again](ivy_has_common.md).**
-
-**If you're using release ROMs, some files may be missing inside them, and must
-be added. See: [Inserting Vendor Files](ivy_has_common.md).**
+YOU MAY BRICK YOUR MACHINE!!
 
 If you're [building from source](../build/), you can ignore the above guidance.
-
-Install Libreboot via external flashing
----------------------------------------
-
-Refer to the following article:\
-[Externally rewrite 25xx NOR flash via SPI protocol](spi.md)
-
-You are strongly advised to *have* an external flashing setup, and make sure
-it works, before attempting internal flashing. This, in addition to making
-a backup of the current flash contents, prior to flashing, whether you dump
-externally or internally - if only external flashing is available, then it's
-usually the case that only external dumping is available too.
-
-Trouble?
-----------
-
-Inquiries can be done via [Libreboot IRC](../../contact.md) and other channels.
-
-If you want professional installation, Minifree Ltd sells [Libreboot
-pre-installed](https://minifree.org/) on select hardware, and it also provides
-a [Libreboot preinstall service](https://minifree.org/product/installation-service/)
-if you want to send your machine in to have Libreboot installed for you.
-
-Leah Rowe, the founder and lead developer of Libreboot, also owns and
-operates Minifree Ltd; sales provide funding for the Libreboot project.
+Please take care to back up the current firmware, before flashing!
 
 Which systems are supported by Libreboot?
 -----------------------------------------
 
-Before actually reading the installation guides, please ensure that your
-system is fully supported by Libreboot. More information about the Libreboot
-build system can be found in the [lbmk maintenance manual](../maintain/),
-and information about porting new systems in
-the [porting manual](../maintain/porting.md).
-
-Libreboot currently supports the following systems:
-
-Libreboot currently supports the following systems: 
-
-  Installation steps sorted into 3 ways: 
-- Simple; Installable from OS, a bios jumper might needs to be set, no extra things required.
-- Moderate; Use of a [SPI Programmer](../install/spi.md) and removing the backplate to get physical access to the flash chip.
-- Complex; Disassembly/Soldering or anything more needs to be done than using a programmer.
-
 ### Ultra-compact desktops / USFF (Intel, x86)
 
-#### 9th -> 6th Gen.
+#### 8th gen (Kabylake Refresh).
 
 (Different generational CPUs compatible with older and newer motherboards too, 4-core ones confirmed, 6/8 core processors might work, untested.)
 
--   [Dell OptiPlex 3050 Micro](dell3050.html) (Simple, DDR4) - **Also [available to buy with Libreboot pre-installed](https://minifree.org/product/libreboot-3050-micro/)**
+-   **[Dell OptiPlex 3050 Micro](dell3050.html)** (Simple, DDR4) - **Also [available to buy with Libreboot pre-installed](https://minifree.org/product/libreboot-3050-micro/)**
 
 ### Laptops (Intel, x86)
 
-#### 8th Gen
+#### 8th Gen (Kabylake Refresh).
 
--   **Libreboot X280** - installation steps similar to T480. Also **[available to buy with Libreboot pre-installed](https://minifree.org/product/libreboot-x280.html)**
+-   *Libreboot X280* - installation steps similar to T480. Also **[available to buy with Libreboot pre-installed](https://minifree.org/product/libreboot-x280.html)**
 -   [Lenovo ThinkPad T480 and ThinkPad T480s](t480.html) (Complex, DDR4) - Also **[available to buy with Libreboot pre-installed](https://minifree.org/product/libreboot-t480.html)**
 -   [Lenovo ThinkPad T580](t480.html) (Complex, DDR4) - Also **[available to buy with Libreboot pre-installed](https://minifree.org/product/libreboot-t580.html)**
 
@@ -195,6 +140,36 @@ Libreboot currently supports the following systems:
 ### Emulation
 
 -   [Qemu x86 and arm64](../misc/emulation.md)
+
+More information about the Libreboot
+build system can be found in the [lbmk maintenance manual](../maintain/),
+and information about porting new systems in
+the [porting manual](../maintain/porting.md).
+
+Install Libreboot via external flashing
+---------------------------------------
+
+Refer to the following article:\
+[Externally rewrite 25xx NOR flash via SPI protocol](spi.md)
+
+You are strongly advised to *have* an external flashing setup, and make sure
+it works, before attempting internal flashing. This, in addition to making
+a backup of the current flash contents, prior to flashing, whether you dump
+externally or internally - if only external flashing is available, then it's
+usually the case that only external dumping is available too.
+
+Trouble?
+----------
+
+Inquiries can be done via [Libreboot IRC](../../contact.md) and other channels.
+
+If you want professional installation, Minifree Ltd sells [Libreboot
+pre-installed](https://minifree.org/) on select hardware, and it also provides
+a [Libreboot preinstall service](https://minifree.org/product/installation-service/)
+if you want to send your machine in to have Libreboot installed for you.
+
+Leah Rowe, the founder and lead developer of Libreboot, also owns and
+operates Minifree Ltd; sales provide funding for the Libreboot project.
 
 Disable security before flashing
 --------------------------------
