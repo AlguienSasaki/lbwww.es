@@ -115,10 +115,7 @@ small,
 }
 
 hr {
-	height: 1px;
-	margin: 2rem 0;
-	border: 0;
-	background: var(--border);
+	display:none !important;
 }
 
 /* Links and focus */
@@ -170,7 +167,7 @@ header h1.title {
 	margin: 0;
 	padding: 0;
 	color: #fff;
-	font-size: clamp(1.65rem, 4vw, 2.65rem);
+	font-size: clamp(1.65rem, 4vw, 2.3rem);
 	font-weight: 800;
 	letter-spacing: -0.035em;
 }
@@ -261,8 +258,7 @@ header > ul > li > strong:first-child:not(:has(a)) {
 }
 
 header hr {
-	margin-bottom: 0;
-	background: rgb(255 255 255 / 16%);
+	display: none !important;
 }
 
 /* Product cards and specification panels */
@@ -573,7 +569,7 @@ pre {
 }
 
 #footer hr {
-	margin: 1rem 0;
+	display: none !important;
 }
 
 /* Fixed purchase bar */
@@ -631,6 +627,10 @@ pre {
 /* Desktop product layout */
 
 @media (min-width: 65rem) {
+	html {
+		font-size:100%;
+	}
+
 	body {
 		padding: 2rem 1.5rem 6.5rem;
 	}
@@ -664,6 +664,12 @@ pre {
 
 	.fcc_mobile {
 		display: none !important;
+	}
+}
+
+@media (min-width: 100rem) {
+	html {
+		font-size:110%;
 	}
 }
 
@@ -786,4 +792,3 @@ pre {
 		background: #f5f2f4;
 	}
 }
-
