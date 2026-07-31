@@ -65,7 +65,7 @@ h1,
 h2,
 h3,
 h4 {
-	margin: 1.75em 0 0.55em;
+	margin: 0.5em 0 0.25em;
 	color: var(--text);
 	font-weight: 700;
 	line-height: 1.18;
@@ -143,8 +143,8 @@ button:focus-visible,
 
 header {
 	margin: calc(clamp(1rem, 2.5vw, 2.25rem) * -1);
-	margin-bottom: 2rem;
-	padding: clamp(1.1rem, 3vw, 2.2rem);
+	margin-bottom: 1.5rem;
+	padding: clamp(1.1rem, 3vw, 1rem);
 	color: #fff;
 	background:
 		radial-gradient(circle at top right, rgb(255 255 255 / 13%), transparent 35%),
@@ -640,9 +640,9 @@ pre {
 	}
 
 	header h1.title {
-		min-height: 6.2rem;
+		min-height: 5.5rem;
 		padding-right: 5.5rem;
-		background: url("/favicon.ico") no-repeat right center / 6.2rem 6.2rem;
+		background: url("/favicon.ico") no-repeat right center / 5.5rem 5.5rem;
 	}
 
 	.page > #TOC {
