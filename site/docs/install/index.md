@@ -84,61 +84,13 @@ Libreboot currently supports the following systems:
 - Moderate; Use of a [SPI Programmer](../install/spi.md) and removing the backplate to get physical access to the flash chip.
 - Complex; Disassembly/Soldering or anything more needs to be done than using a programmer.
 
-
-### Games consoles
-
--   [Sony Playstation](playstation.md) (Complex) (PS1/PSX)
-
-### Servers (AMD, x86 with ECC support)
-
-#### Opteron 6300
-
--   [ASUS KGPE-D16 motherboard](kgpe-d16.md) (Moderate, DDR3)
-
-#### Opteron 4300/4200
-
--   [ASUS KCMA-D8 motherboard](kcma-d8.md) (Moderate, DDR3)
-
-#### Opteron 2000/8000
-
--   [ASUS KFSN4-DRE motherboard](kfsn4-dre.md) (Complex, DDR2)
-
-### Desktops/WorkStations (Intel, x86)
-
-#### 12th Gen
-
--   [Topton X2E N150 aka BKHD H30W-N150](x2e-n150.md) (Simple, DDR4)
+### Ultra-compact desktops / USFF (Intel, x86)
 
 #### 9th -> 6th Gen.
 
 (Different generational CPUs compatible with older and newer motherboards too, 4-core ones confirmed, 6/8 core processors might work, untested.)
 
 -   [Dell OptiPlex 3050 Micro](dell3050.html) (Simple, DDR4) - **Also [available to buy with Libreboot pre-installed](https://minifree.org/product/libreboot-3050-micro/)**
-
-#### 5th -> 4th Gen. (Core + Xeon v3-4)
-
-(5th gen cpus are compatible with the 4gen boards, but does not work yet.)
-
--   [Dell OptiPlex 7020/9020/XE2/T1700 MT and SFF](dell9020.md) (Simple, DDR3 + ECC for T1700)
-
-#### 3rd -> 2nd Gen. (Core + Xeon v1-2)
-
-(Processors are fully compatible with motherboards from different generations)
-
--   [Dell OptiPlex 7010/9010 SFF/MT +T1650](dell7010.md) (Simple, DDR3 + ECC for T1650)
--   [HP Elite 8300 USDT](hp8300usdt.md) (Simple, DDR3)
--   [HP Elite 8200 SFF/MT](hp8200sff.md) (Simple, DDR3) (HP 6200 Pro Business probably works too)
-
-#### Core 2
-
--   [Acer G43T-AM3](acer_g43t-am3.md) (Simple, DDR3)
--   [Dell OptiPlex 780 variants e.g. MT, USFF](dell780.md) (Simple, DDR3)
--   [Gigabyte GA-G41M-ES2L motherboard](ga-g41m-es2l.md) (Simple, DDR2)
--   Apple iMac 5,2 (Simple, DDR2)
-
-**Bonnel (Atom)**
--   [Intel D945GCLF](d945gclf.md) (Moderate, DDR2)
--   Intel D510MO and D410PT motherboards (Moderate, DDR2)
 
 ### Laptops (Intel, x86)
 
@@ -186,6 +138,54 @@ Libreboot currently supports the following systems:
 -   [Apple MacBook1,1 and MacBook2,1](macbook21.md) (Complex for 1.1/Simple for 2.1 - 2007, DDR2L)
 -   Lenovo ThinkPad T60, X60, X60S, X60 Tablet (with Intel GPU) (Complex, DDR2L)
 
+### Games consoles
+
+-   [Sony Playstation](playstation.md) (Complex) (PS1/PSX)
+
+### Servers (AMD, x86 with ECC support)
+
+#### Opteron 6300
+
+-   [ASUS KGPE-D16 motherboard](kgpe-d16.md) (Moderate, DDR3)
+
+#### Opteron 4300/4200
+
+-   [ASUS KCMA-D8 motherboard](kcma-d8.md) (Moderate, DDR3)
+
+#### Opteron 2000/8000
+
+-   [ASUS KFSN4-DRE motherboard](kfsn4-dre.md) (Complex, DDR2)
+
+### Desktops/WorkStations (Intel, x86)
+
+#### 12th Gen
+
+-   [Topton X2E N150 aka BKHD H30W-N150](x2e-n150.md) (Simple, DDR4)
+
+#### 5th -> 4th Gen. (Core + Xeon v3-4)
+
+(5th gen cpus are compatible with the 4gen boards, but does not work yet.)
+
+-   [Dell OptiPlex 7020/9020/XE2/T1700 MT and SFF](dell9020.md) (Simple, DDR3 + ECC for T1700)
+
+#### 3rd -> 2nd Gen. (Core + Xeon v1-2)
+
+(Processors are fully compatible with motherboards from different generations)
+
+-   [Dell OptiPlex 7010/9010 SFF/MT +T1650](dell7010.md) (Simple, DDR3 + ECC for T1650)
+-   [HP Elite 8300 USDT](hp8300usdt.md) (Simple, DDR3)
+-   [HP Elite 8200 SFF/MT](hp8200sff.md) (Simple, DDR3) (HP 6200 Pro Business probably works too)
+
+#### Core 2
+
+-   [Acer G43T-AM3](acer_g43t-am3.md) (Simple, DDR3)
+-   [Dell OptiPlex 780 variants e.g. MT, USFF](dell780.md) (Simple, DDR3)
+-   [Gigabyte GA-G41M-ES2L motherboard](ga-g41m-es2l.md) (Simple, DDR2)
+-   Apple iMac 5,2 (Simple, DDR2)
+
+**Bonnel (Atom)**
+-   [Intel D945GCLF](d945gclf.md) (Moderate, DDR2)
+-   Intel D510MO and D410PT motherboards (Moderate, DDR2)
 
 ### Laptops (ARM, with U-Boot payload)
 
