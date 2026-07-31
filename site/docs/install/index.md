@@ -144,7 +144,8 @@ Libreboot currently supports the following systems:
 
 #### 8th Gen
 
--   [Lenovo ThinkPad T480 and ThinkPad T480s](t480.html) (Complex, DDR4) - Also **[available to buy with Libreboot pre-installed](https://minifree.org/product/libreboot-t480/)**
+-   **Libreboot X280** - installation steps similar to T480. Also **[available to buy with Libreboot pre-installed](https://minifree.org/product/libreboot-x280.html)**
+-   [Lenovo ThinkPad T480 and ThinkPad T480s](t480.html) (Complex, DDR4) - Also **[available to buy with Libreboot pre-installed](https://minifree.org/product/libreboot-t480.html)**
 -   [Lenovo ThinkPad T580](t480.html) (Complex, DDR4) - Also **[available to buy with Libreboot pre-installed](https://minifree.org/product/libreboot-t580.html)**
 
 #### 5th Gen.
