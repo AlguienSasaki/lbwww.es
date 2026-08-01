@@ -989,17 +989,11 @@ Splash screen images applied duing startup when using the GRUB payload.
 
 #### config/data/grub/background/background1024x768.png
 
-Used on ThinkPad X60 and T60.
+Not currently used.
 
 #### config/data/grub/background/background1280x800.png
 
-Used on all other machines, besides X60 and T60 thinkpads.
-
-NOTE: the `grub_background` option can be set under `target.cfg` in the
-relevant coreboot directory, under `config/coreboot/`; for
-example, `config/coreboot/x60/target.cfg` specifies this:
-
-	grub_background="background1024x768.png"
+Default GRUB background used by Libreboot.
 
 #### config/data/grub/background/COPYING
 
