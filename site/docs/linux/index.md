@@ -9,7 +9,7 @@ GNU boot loader "GRUB"
 This page is useful for those who wish to use the boot loader called GRUB.
 If you're using SeaBIOS, the boot process will work similarly to traditional
 BIOS systems; refer to the SeaBIOS documentation
-on <https://seabios.org/SeaBIOS>
+on <https://seabios.org/Developer_Documentation.html>
 
 Linux is generally assumed, especially for Libreboot development, but Libreboot
 also works quite nicely with [BSD systems](../bsd/).

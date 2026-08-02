@@ -482,7 +482,7 @@ this fact, but such hacks are no longer required because of Riku's tool.
 
 ### src/seabios/
 
-Please also visit: <https://www.seabios.org/SeaBIOS>
+Please also visit: <https://www.seabios.org>
 
 This is the PC BIOS implementation used by Libreboot, on x86 machines (not all
 of them). A BIOS/UEFI implementation is not required, because Linux and BSD

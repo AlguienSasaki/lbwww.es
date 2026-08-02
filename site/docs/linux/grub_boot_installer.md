@@ -8,7 +8,7 @@ GRUB payload assumed
 
 This guide assumes that you are using the GRUB bootloader directly.
 If you're using SeaBIOS, it's quite intuitive and works similarly to other BIOS
-software; refer to the documentation on <https://seabios.org/SeaBIOS>.
+software; refer to the documentation on <https://seabios.org/Developer_Documentation.html>.
 
 This guide explains how to prepare a bootable USB for libreboot systems that
 can be used to install several Linux distributions. For this guide, you
