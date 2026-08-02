@@ -6,12 +6,6 @@ x-toc-enable: true
 Open source BIOS/UEFI boot firmware
 ------------------------------
 
-**If you want professional Libreboot installation,
-an [installation service](https://minifree.org/product/installation-service.html)
-is available; it also offers other coreboot firmware besides Libreboot. For
-example, Chromebook installation via MrChromebox UEFI coreboot distribution is
-also available.**
-
 **ALWAYS remember to make a backup of the current flash, when overwriting it,
 regardless of what firmware you currently have and what firmware you're
 re-flashing it with; this includes updates between Libreboot releases. Use
@@ -26,16 +20,27 @@ YOU MAY BRICK YOUR MACHINE!!
 If you're [building from source](../build/), you can ignore the above guidance.
 Please take care to back up the current firmware, before flashing!
 
-Which systems are supported by Libreboot?
------------------------------------------
+Devices purchasable from [Minifree](https://minifree.org) directly;
+-------------------------------------------------------------------
 
-### Ultra-compact desktops / USFF (Intel, x86)
+### 8th gen (Kabylake Refresh) Laptops and Desktops
 
-#### 8th gen (Kabylake Refresh).
+-   **[Lenovo ThinkPad X280](https://minifree.org/product/libreboot-x280.html)**
 
-(Different generational CPUs compatible with older and newer motherboards too, 4-core ones confirmed, 6/8 core processors might work, untested.)
+-   **[Lenovo ThinkPad T480 and ThinkPad T480s](https://minifree.org/product/libreboot-t480.html)**
 
--   **[Dell OptiPlex 3050 Micro](dell3050.html)** (Simple, DDR4) - **Also [available to buy with Libreboot pre-installed](https://minifree.org/product/libreboot-3050-micro/)**
+-   **[Lenovo ThinkPad T580](https://minifree.org/product/libreboot-t580.html)**
+
+-   **[Dell OptiPlex 3050 Micro](https://minifree.org/product/libreboot-3050-micro/)**
+
+Supported by libreboot;
+-----------------------
+
+**If you want professional Libreboot installation,
+an [installation service](https://minifree.org/product/installation-service.html)
+is available; it also offers other coreboot firmware besides Libreboot. For
+example, Chromebook installation via MrChromebox UEFI coreboot distribution is
+also available.**
 
 ### Laptops (Intel, x86)
 
@@ -51,8 +56,8 @@ Which systems are supported by Libreboot?
 
 #### 4th Gen.
 
--   Lenovo ThinkPad W541 (Complex, DDR3L)
--   Lenovo ThinkPad T440p (Complex, DDR3L)
+-   [Lenovo ThinkPad W541](w541_external.md) (Complex, DDR3L)
+-   [Lenovo ThinkPad T440p](t440p_external.md) (Complex, DDR3L)
 
 #### 3th Gen.
 
@@ -68,9 +73,9 @@ Which systems are supported by Libreboot?
 -   [HP EliteBook 8560w](hp8560w.md) (Moderate, DDR3L)
 -   [Dell Latitude E5420, E5520, E5530, E6420, E6430, E6520, E6530, E6230, E6330, E6220, E7240](latitude.md) (Simple, DDR3L)
     (Intel GPU variants only)
--   Lenovo Thinkpad T420 / T420S (Complex, DDR3L)
--   Lenovo ThinkPad T520 (Complex, DDR3L)
--   Lenovo Thinkpad X220 / X220 Tablet (Complex, DDR3L)
+-   [Lenovo Thinkpad T420/T520](t420_external.md) (Complex, DDR3L)
+-   Lenovo ThinkPad T420s (Complex, DDR3L)
+-   [Lenovo ThinkPad X220/X220](x230_external.md) (Complex, DDR3L)
 
 #### Core 2
 
@@ -81,7 +86,10 @@ Which systems are supported by Libreboot?
 -   [Lenovo ThinkPad T500 / W500](t500.md) (Complex, DDR3L)
 -   [Lenovo ThinkPad X200 / X200S / X200 Tablet](x200.md) (Complex, DDR3L)
 -   [Apple MacBook1,1 and MacBook2,1](macbook21.md) (Complex for 1.1/Simple for 2.1 - 2007, DDR2L)
--   Lenovo ThinkPad T60, X60, X60S, X60 Tablet (with Intel GPU) (Complex, DDR2L)
+-   [Lenovo ThinkPad T60](t60_unbrick.md) (with Intel GPU) (Complex, DDR2L)
+-   [Lenovo ThinkPad X60](x60_unbrick.md) (with Intel GPU) (Complex, DDR2L)
+-   Lenovo ThinkPad X60S (with Intel GPU) (Complex, DDR2L)
+-   [Lenovo ThinkPad X60 Tablet](x60tablet_unbrick.md) Tablet (with Intel GPU) (Complex, DDR2L)
 
 ### Games consoles
 
@@ -105,11 +113,18 @@ Which systems are supported by Libreboot?
 
 #### 12th Gen
 
--   [Topton X2E N150 aka BKHD H30W-N150](x2e-n150.md) (Simple, DDR4)
+-   [Topton X2E N150 aka BKHD H30W-N150](x2e-n150.md) (Simple, DDR5)
+
+#### 8th gen (Kabylake Refresh).
+
+(Different gen. CPUs compatible with older and newer motherboards too, 4-core ones confirmed, 6/8 core processors might work, untested.)
+
+-   [Dell OptiPlex 3050 Micro](dell3050.html) (Simple, DDR4) - **Also [available to buy with Libreboot pre-installed](https://minifree.org/product/libreboot-3050-micro/)**
 
 #### 5th -> 4th Gen. (Core + Xeon v3-4)
 
-(5th gen cpus are compatible with the 4gen boards, but does not work yet.)
+(5th gen cpus are compatible with some the 4gen boards; C222/4/6 with Native Ram Init only and H/Z97 chipsets
+                  https://en.wikipedia.org/wiki/LGA_1150#Haswell_chipsets )
 
 -   [Dell OptiPlex 7020/9020/XE2/T1700 MT and SFF](dell9020.md) (Simple, DDR3 + ECC for T1700)
 
@@ -126,7 +141,7 @@ Which systems are supported by Libreboot?
 -   [Acer G43T-AM3](acer_g43t-am3.md) (Simple, DDR3)
 -   [Dell OptiPlex 780 variants e.g. MT, USFF](dell780.md) (Simple, DDR3)
 -   [Gigabyte GA-G41M-ES2L motherboard](ga-g41m-es2l.md) (Simple, DDR2)
--   Apple iMac 5,2 (Simple, DDR2)
+-   [Apple Apple iMac 5,2](macbook21.md) (Simple, DDR2) (Same as Macbook 2.1 to flash)
 
 **Bonnel (Atom)**
 -   [Intel D945GCLF](d945gclf.md) (Moderate, DDR2)
@@ -306,25 +321,6 @@ special steps required that differ from updating an existing installation.
 The next sections will pertain to specific motherboards, where indicated,
 followed by general internal flashing instructions where applicable.
 
-### HP EliteBook 820 G2 (internal and external)
-
-See: [HP EliteBook 820 G2 flashing guide](hp820g2.md)
-
-The flashprog command is identical, except programmer selection, on external
-and internal flashing; internal is only possible if you already have Libreboot.
-
-### HP EliteBook 8560w (vendor BIOS)
-
-If you have the factory
-firmware: [HP 8560w external flashing guide](hp8560w.md)
-
-### Dell Latitude laptops (vendor BIOS)
-
-See: [Dell Latitude flashing guide](latitude.md)
-
-This applies to all supported Dell Latitude models. Remember to [update the
-MAC address with nvmutil](nvmutil.md), before flashing.
-
 ### ThinkPad X200/T400/T500/W500/R400/R500
 
 If you're running one of these with Lenovo BIOS, you must externally flash
@@ -346,97 +342,8 @@ You can find WSON8 probes online, that are similar to a SOIC8/SOIC16 clip. Your
 mileage may very, but WSON8 has the same pinout as SOIC8 so you might have some
 luck with that.
 
-### Intel D510MO/D410PT (vendor BIOS)
-
-See: [External flashing guide](spi.md) - both boards are compatible with
-the same image.
-
-### Gigabyte GA-G41M-ES2L (vendor BIOS)
-
-Internal flashing is possible, from factory BIOS to Libreboot, but special
-steps are required.
-
-See: [Gigabyte GA-G41M-ES2L installation guide](ga-g41m-es2l.md)
-
-### Acer G43T-AM3 (vendor BIOS)
-
-See: [Acer G43T-AM3](acer_g43t-am3.md)
-
-### MacBook 1,1 / 2,1 / iMac 5,2 (vendor BIOS)
-
-MacBook *1,1* requires [external flashing](spi.md). MacBook *2,1* can always
-be flashed internally. iMac 5,2 can be flashed internally.
-
-Also check the [Macbook2,1 hardware page](macbook21.md)
-
-### ASUS KCMA-D8 / KGPE-D16 (vendor BIOS)
-
-[You must flash it externally](spi.md) (DIP-8 section) - also look at
-the [KGPE-D16 hardware page](kgpe-d16.md).
-
-Further information is available on the [KCMA-D8 page](kcma-d8.md).
-
-KGPE-D16 installation is essentially the same, with the same type of flash
-IC (DIP-8). Refer to the external flashing guide.
-
-### ASUS KFSN4-DRE (vendor BIOS)
-
-This board uses LPC flash in a PLCC32 socket. This coreboot page shows an
-example of the push pin as a proof of concept:
-<http://www.coreboot.org/Developer_Manual/Tools#Chip_removal_tools>
-
-See: [ASUS KFSN4-DRE guide](kfsn4-dre.md)
-
 Hot-swap the flash IC with another one while it's running, and flash it
 internally.
-
-### Intel D945GCLF (vendor BIOS)
-
-See: [Intel D945GCLF flashing guide](d945gclf.md)
-
-### Dell OptiPlex 3050 Micro (vendor BIOS)
-
-Refer to the [3050 Micro page](dell3050.md). Internal flashing also possible.
-This has the Intel Boot Guard, but Libreboot uses the *deguard* utility to
-disable the Boot Guard on this Intel 7th gen board.
-
-### Dell OptiPlex 7010/9010 SFF/MT + Precision T1650 MT (vendor BIOS)
-
-Refer to the [7010/9010 SFF/MT + Precision T1650 MT page](dell7010.md). Internal
-flashing (from vendor firmware to Libreboot) is possible if you set the Service
-Mode jumper.
-
-### Dell OptiPlex 7020/9020/XE2 SFF/MT / Precision T1700
-
-Refer to the [Dell OptiPlex 7020/9020/XE2/T1700 MT and SFF](dell9020.md). Internal
-flashing (from vendor firmware to Libreboot) is possible if you set the Service
-Mode jumper.
-
-### HP EliteBook laptops (vendor BIOS)
-
-Refer to the [hardware page]() for info about HP laptops, and
-read the [external flashing guide](spi.md).
-
-Links to specific HP laptop pages:
-
-* [HP EliteBook 2170p](hp2170p.md)
-* [HP EliteBook 2560p](hp2560p.md)
-* [HP EliteBook 2570p](hp2570p.md)
-* [HP EliteBook 820 G2](hp820g2.md)
-* [HP EliteBook 8460p](hp8460p.md)
-* [HP EliteBook 8470p](hp8470p.md)
-* [HP EliteBook Folio 9470m](hp9470m.md)
-
-These pages provide more info about external flashing. You must remember
-to [insert vendor files](ivy_has_common.md), if you're using release ROMs.
-
-### HP Elite 8200 SFF (vendor BIOS)
-
-See: [HP Elite 8200 SFF install guide](hp8200sff.md)
-
-### HP Elite 8300 USDT (vendor BIOS)
-
-See: [HP Elite 8200 USDT install guide](hp8300usdt.md)
 
 ### ThinkPad X220/X220T/T420/T420s/T520
 
@@ -554,39 +461,6 @@ bootblock, set bucts back to zero:
 
 The second flash can be done by simply following the general internal flashing
 guide further down on this page.
-
-### ThinkPad T480/T480S (vendor BIOS)
-
-See:
-
-* [ThinkPad T480/T480S](t480.md)
-
-### Thinkpad T440p/W541 (vendor BIOS)
-
-Guides:
-
-* [ThinkPad T440p flashing guide](t440p_external.md)
-* [ThinkPad W541 flashing guide](w541_external.md)
-
-### HP EliteBook laptops (vendor BIOS)
-
-Each machine has it's own guide:
-
-* [HP EliteBook 2170p](hp2170p.md)
-* [HP EliteBook 2560p](hp2560p.md)
-* [HP EliteBook 2570p](hp2570p.md)
-* [HP EliteBook 820 G2](hp820g2.md)
-* [HP EliteBook 8460p](hp8460p.md)
-* [HP EliteBook 8470p](hp8470p.md)
-* [HP EliteBook 8560w](hp8560w.md)
-* [HP EliteBook Folio 9470m](hp9470m.md)
-
-### HP Elite desktops (vendor BIOS)
-
-Each machine has it's own guide:
-
-* [HP Elite 8200 SFF/MT](hp8200sff.md) (HP 6200 Pro Business probably works too)
-* [HP Elite 8300 USDT](hp8300usdt.md)
 
 ### ARM-based Chromebooks
 
