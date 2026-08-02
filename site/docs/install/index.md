@@ -25,13 +25,13 @@ Devices purchasable from [Minifree](https://minifree.org) directly;
 
 ### 8th gen (Kabylake Refresh) Laptops and Desktops
 
--   **[Lenovo ThinkPad X280](x280.html)** (Complex, DDR4) - Also **[available to buy with Libreboot pre-installed](https://minifree.org/product/libreboot-x280.html)**
--   **[Lenovo ThinkPad T480 and ThinkPad T480s](t480.html)** (Complex, DDR4) - Also **[available to buy with Libreboot pre-installed](https://minifree.org/product/libreboot-t480.html)**
--   **[Lenovo ThinkPad T580](t480.html)** (Complex, DDR4) - Also **[available to buy with Libreboot pre-installed](https://minifree.org/product/libreboot-t580.html)**
+-   **[Lenovo ThinkPad X280](https://minifree.org/product/libreboot-x280.html)**
 
-(Different gen. CPUs compatible with older and newer motherboards too, 4-core ones confirmed, 6/8 core processors might work, untested.)
+-   **[Lenovo ThinkPad T480 and ThinkPad T480s](https://minifree.org/product/libreboot-t480.html)**
 
--   **[Dell OptiPlex 3050 Micro](dell3050.html)** (Simple, DDR4) - **Also [available to buy with Libreboot pre-installed](https://minifree.org/product/libreboot-3050-micro/)**
+-   **[Lenovo ThinkPad T580](https://minifree.org/product/libreboot-t580.html)**
+
+-   **[Dell OptiPlex 3050 Micro](https://minifree.org/product/libreboot-3050-micro/)**
 
 Supported by libreboot;
 -----------------------
