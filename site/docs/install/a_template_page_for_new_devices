@@ -1,4 +1,120 @@
-**[PLEASE READ THESE INSTRUCTIONS BEFORE INSTALLING](ivy_has_common.md), OR
-YOU MAY BRICK YOUR MACHINE!! - Please click the link and follow the instructions
-there, before flashing. For posterity,
-[here is the link again](ivy_has_common.md).**
+---
+title: Install Libreboot on *Device_Name*
+x-toc-enable: true
+...
+
+**[!!BACKUP everything!!](https://libreboot.org/docs/install/#howto-readwriteerase-the-boot-flash) just in case something fails.**
+
+<div class="specs">
+<center>
+<img tabindex=1 alt="*device_image*" class="p" src="https://av.libreboot.org/*devicename/picture.jpg*" /><span class="f"><img src="https://av.libreboot.org/*devicename/picture.jpg*" /></span>
+</center>
+
+| ***Specifications***       |                                                |
+|----------------------------|------------------------------------------------|
+| **Manufacturer**           | *Vendor*                                          |
+| **Name**                   | *Device_Name*                               |
+| **Variants**               | *If_there_are*                                |
+| **Released**               | *Year*                                           |
+| **Chipset**                | *Model*                                     |
+| **CPU**                    | *Supported_processors*                    |
+| **Graphics**               | *integrated_gpu_device* |
+| **Memory**                 | *ram gen* SODIMMs (max *capacity_usually_in GB*, *avaliable_slots x max_per_module*)    |
+| **Architecture**           | *Device_Arch*                                         |
+| **Original boot firmware** | *Vendor_firmware_name_with_UEFI_and_or_bios*                             |
+| **Intel ME/AMD PSP**       | *Is_it_present_in_vendor_firmware_and_removable_or_disableable*      |
+| **Flash chip**             | *type and size*           |
+
+
+```
+W+: Works without vendor firmware; 
+N: Doesn't work; 
+W*: Works with vendor firmware; 
+U: Untested; 
+P+: Partially works; 
+P*: Partially works with vendor firmware
+?: UNKNOWN AT THIS TIME
+```
+
+| ***Features***                                    |    |
+|---------------------------------------------------|----|
+| **Internal flashing with original boot firmware** | *Select_one_from_above* |
+| **Display (if Intel GPU)**                        | *Select_one_from_above* |
+| **Audio**                                         | *Select_one_from_above* |
+| **RAM Init**                                      | *Select_one_from_above* |
+
+| ***Payloads supported***   |           |
+|----------------------------|-----------|
+| **GRUB (libgfxinit only)** | *Works?*     |
+| **SeaBIOS**                | *Works?*     |
+</div>
+
+
+### Buy pre-installed (only include if Minifree sells it)
+
+** *Device_name* is available to purchase with Libreboot preinstalled.
+See: <https://minifree.org/product/*device_name*/>** 
+
+
+### Flash a ROM image
+
+#### Software
+
+*Before internal flashing, [Disable /dev/mem protection](devmem.md) first.*
+
+*In short add this kernel parameter: iomem=relaxed(linux distro)/kernel.securelevel=-1(bsd distro)*
+
+# THEN REMOVE THIS KERNEL PARAMETER TO PREVENT UNAUTHORIZED/MALICIOUS ACCESS TO YOUR SYSTEM AFTER FLASHING LIBREBOOT.
+
+(An important reminder for those who might forget to delete it, even better, replace it with lockdown=integrity / lockdown=confidentiality)
+
+*Description*
+
+#### Hardware
+
+*Description_+_picture_if_needed*
+
+
+### Build ROM image from source
+
+The build target, when building from source, is thus:
+
+	./mk -b coreboot *device_name_in_lbmk*
+
+*Include_more_if_there_are_different_variants_buildable*
+
+### Device Unique Properties
+
+*Quirks_and_warnings_and_problems_and_more_info_below*
+
+### Device_Specifications
+
+*Include_expansion_slots_and_io_ports_and_extras_if_deemed_necessary*
+
+*Different_variants_should_have_different_specs_if_not_exactly_the_same*
+
+<div class="expandedspecs">
+<center>
+<img tabindex=1 alt="*device_image_with_io+expansion_slots*" class="p" src="https://av.libreboot.org/*devicename/io+exp.jpg*" /><span class="f"><img src="https://av.libreboot.org/*devicename/io+exp.jpg*" /></span>
+</center>
+
+| ***Specifications***       |                                                |
+|----------------------------|------------------------------------------------|
+| **Manufacturer**           | *Vendor*                                          |
+| **Name/Variant**           | *Device_Name/Variant*                               |
+| **Released**               | *Year*                                           |
+| **Chipset**                | *Model*                                     |
+| **CPU**                    | *Supported_processors_with_power_limit*                    |
+| **Memory**                 | *Ram_gen_and_type* (max *capacity_usually_in GB*, *avaliable_slots x max_per_module*)  |
+| **Networking**             | *Integrated_network_chip_model*                                         |
+| **Expansion Slots**        | *List_pcie_pci_m.2_and_others* |
+| **Storage connectors**     | *List_avaliable_sata_or_m.2_ports_usually_and_others_if_there_are_more*      |
+| **Other Connectors**       | *List_other_common_ones_like_usb_usb3_audio* |
+| **I/O Ports on Front**     | *List_ports_found_there* |
+| **I/O Ports on Back**      | *List_ports_found_there* |
+
+</div>
+
+*Note here if needed*
+
+[//]: # "SPDX-License-Identifier: GFDL-1.3-or-later"
