@@ -70,6 +70,7 @@ See: <https://minifree.org/product/*device_name*/>**
 
 *Description*
 
+
 #### Hardware
 
 *Description_+_picture_if_needed*
@@ -83,11 +84,13 @@ The build target, when building from source, is thus:
 
 *Include_more_if_there_are_different_variants_buildable*
 
+
 ### Device Unique Properties
 
 *Quirks_and_warnings_and_problems_and_more_info_below*
 
-### Device_Specifications
+
+### Expanded_Specifications
 
 *Include_expansion_slots_and_io_ports_and_extras_if_deemed_necessary*
 
