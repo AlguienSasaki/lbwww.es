@@ -40,6 +40,58 @@ The `libreboot` project has 3 main Git repositories:
 * Pico-serprog: <https://codeberg.org/libreboot/pico-serprog>
 * Libreboot Static Site Generator: <https://codeberg.org/libreboot/lbssg>
 
+Mirrors of lbmk.git
+-------------------
+
+The `lbmk` repository contains Libreboot's automated build system, which
+produces Libreboot releases (including compiled ROM images).
+
+You can run `git clone` on any of these links (the links are also clickable,
+to view changes in your Web browser):
+
+* <https://git.sr.ht/~libreboot/lbmk>
+* <https://git.disroot.org/libreboot/lbmk>
+* <https://gitea.treehouse.systems/libreboot/lbmk>
+* <https://git.fosscommunity.in/libreboot/lbmk>
+* <https://0xacab.org/libreboot/lbmk/>
+* <https://framagit.org/libreboot/libreboot>
+* <https://gitlab.com/libreboot/lbmk>
+* <https://pagure.io/libreboot>
+* <https://rocketgit.com/libreboot/libreboot>
+
+Mirrors of pico-serprog.git
+--------------------------
+
+* <https://notabug.org/libreboot/pico-serprog>
+
+### lbwww.git mirror
+
+The `lbwww` repository contains Markdown files (pandoc variant), for use
+with the [Libreboot Static Site Generator](docs/sitegen/); this
+is what Libreboot uses to provide HTML web pages, *including* the page that
+you are reading right now!
+
+You can run `git clone` on these links, and/or click to view changes in your
+Web browser. See:
+
+* <https://git.sr.ht/~libreboot/lbwww>
+* <https://git.disroot.org/libreboot/lbwww>
+* <https://gitea.treehouse.systems/libreboot/lbwww>
+* <https://git.fosscommunity.in/libreboot/lbwww>
+* <https://0xacab.org/libreboot/lbwww>
+* <https://framagit.org/libreboot/lbwww/>
+* <https://gitlab.com/libreboot/lbwww>
+* <https://rocketgit.com/libreboot/lbwww>
+
+NOTE: The `lbwww-img` repository is not generally provided, on mirrors, as
+those are just image files which you can find on <https://av.libreboot.org>
+and it is not the intention of the Libreboot project to bog down *mirrors*
+with additional traffic by hosting images.
+
+
+More information
+-------------
+
 Also see: [Libreboot Static Site Generator](docs/sitegen/).
 
 You can also *browse* lbmk on Libreboot's own cgit instance, though it is not
@@ -254,56 +306,10 @@ Libreboot has this mailing list:
 
 The email address is [~libreboot/libreboot@lists.sr.ht](mailto:~libreboot/libreboot@lists.sr.ht)
 
-Mirrors of lbmk.git
--------------------
-
-The `lbmk` repository contains Libreboot's automated build system, which
-produces Libreboot releases (including compiled ROM images).
-
-You can run `git clone` on any of these links (the links are also clickable,
-to view changes in your Web browser):
-
-* <https://git.sr.ht/~libreboot/lbmk>
-* <https://git.disroot.org/libreboot/lbmk>
-* <https://gitea.treehouse.systems/libreboot/lbmk>
-* <https://git.fosscommunity.in/libreboot/lbmk>
-* <https://0xacab.org/libreboot/lbmk/>
-* <https://framagit.org/libreboot/libreboot>
-* <https://gitlab.com/libreboot/lbmk>
-* <https://pagure.io/libreboot>
-* <https://rocketgit.com/libreboot/libreboot>
-
-Mirrors of pico-serprog.git
---------------------------
-
-* <https://notabug.org/libreboot/pico-serprog>
-
-### lbwww.git mirror
-
-The `lbwww` repository contains Markdown files (pandoc variant), for use
-with the [Libreboot Static Site Generator](docs/sitegen/); this
-is what Libreboot uses to provide HTML web pages, *including* the page that
-you are reading right now!
-
-You can run `git clone` on these links, and/or click to view changes in your
-Web browser. See:
-
-* <https://git.sr.ht/~libreboot/lbwww>
-* <https://git.disroot.org/libreboot/lbwww>
-* <https://gitea.treehouse.systems/libreboot/lbwww>
-* <https://git.fosscommunity.in/libreboot/lbwww>
-* <https://0xacab.org/libreboot/lbwww>
-* <https://framagit.org/libreboot/lbwww/>
-* <https://gitlab.com/libreboot/lbwww>
-* <https://rocketgit.com/libreboot/lbwww>
-
-NOTE: The `lbwww-img` repository is not generally provided, on mirrors, as
-those are just image files which you can find on <https://av.libreboot.org>
-and it is not the intention of the Libreboot project to bog down *mirrors*
-with additional traffic by hosting images.
-
 Notabug repositories
 --------------------
+
+Notabug is broken. Sorry!
 
 Commits that go to codeberg are also still pushed to notabug, in addition to
 the other mirrors. Notabug is considered a *mirror* since 8 April 2023, when

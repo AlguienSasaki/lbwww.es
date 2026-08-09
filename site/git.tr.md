@@ -40,6 +40,27 @@ Libreboot Depoları
 * Pico-serprog: <https://codeberg.org/libreboot/pico-serprog>
 * Libreboot Statik Site Oluşturucu: <https://codeberg.org/libreboot/lbssg>
 
+lbmk.git'in Yansıları
+--------------------
+
+`lbmk` deposu, Libreboot sürümlerini (derlenmiş ROM imajları dahil) üreten Libreboot'un otomatik derleme sistemini içerir.
+
+Bu bağlantılardan herhangi biri üzerinde `git clone` çalıştırabilirsiniz (bağlantılar ayrıca Web tarayıcınızda değişiklikleri görüntülemek için tıklanabilir):
+
+* <https://git.sr.ht/~libreboot/lbmk>
+* <https://git.disroot.org/libreboot/lbmk>
+* <https://gitea.treehouse.systems/libreboot/lbmk>
+* <https://git.fosscommunity.in/libreboot/lbmk>
+* <https://0xacab.org/libreboot/lbmk/>
+* <https://framagit.org/libreboot/libreboot>
+* <https://gitlab.com/libreboot/lbmk>
+* <https://pagure.io/libreboot>
+* <https://rocketgit.com/libreboot/libreboot> 
+
+
+More information
+-------
+
 Ayrıca bakınız: [Libreboot Statik Site Oluşturucu](docs/sitegen/).
 
 Ayrıca lbmk'yi Libreboot'un kendi cgit örneğinde *gezinebilirsiniz*, ancak bu geliştirme için tasarlanmamıştır (bunun için codeberg'i kullanın):\
@@ -168,22 +189,5 @@ Libreboot'un şu e-posta listesi vardır:
 <https://lists.sr.ht/~libreboot/libreboot>
 
 E-posta adresi: [~libreboot/libreboot@lists.sr.ht](mailto:~libreboot/libreboot@lists.sr.ht)
-
-lbmk.git'in Yansıları
---------------------
-
-`lbmk` deposu, Libreboot sürümlerini (derlenmiş ROM imajları dahil) üreten Libreboot'un otomatik derleme sistemini içerir.
-
-Bu bağlantılardan herhangi biri üzerinde `git clone` çalıştırabilirsiniz (bağlantılar ayrıca Web tarayıcınızda değişiklikleri görüntülemek için tıklanabilir):
-
-* <https://git.sr.ht/~libreboot/lbmk>
-* <https://git.disroot.org/libreboot/lbmk>
-* <https://gitea.treehouse.systems/libreboot/lbmk>
-* <https://git.fosscommunity.in/libreboot/lbmk>
-* <https://0xacab.org/libreboot/lbmk/>
-* <https://framagit.org/libreboot/libreboot>
-* <https://gitlab.com/libreboot/lbmk>
-* <https://pagure.io/libreboot>
-* <https://rocketgit.com/libreboot/libreboot> 
 
 [//]: # "SPDX-License-Identifier: GFDL-1.3-or-later"

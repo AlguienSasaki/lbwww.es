@@ -40,6 +40,58 @@ website repository, this will probably already be there.
 * Pico-serprog: <https://codeberg.org/libreboot/pico-serprog>
 * Libreboot Static Site Generator: <https://codeberg.org/libreboot/lbssg>
 
+Дзеркала lbmk.git
+-----------------
+
+Репозиторій `lbmk` містить автоматизовану систему побудови Libreboot, що
+створює випуски Libreboot (включаючи зібрані образи ROM).
+
+Ви можете виконати `git clone` на будь-якому з цих посилань (посилання є також доступними для натискання,
+для перегляду змін в вашому веб-браузері):
+
+* <https://git.sr.ht/~libreboot/lbmk>
+* <https://git.disroot.org/libreboot/lbmk>
+* <https://gitea.treehouse.systems/libreboot/lbmk>
+* <https://git.fosscommunity.in/libreboot/lbmk>
+* <https://0xacab.org/libreboot/lbmk/>
+* <https://framagit.org/libreboot/libreboot>
+* <https://gitlab.com/libreboot/lbmk>
+* <https://pagure.io/libreboot>
+* <https://rocketgit.com/libreboot/libreboot>
+
+Дзеркала pico-serprog.git
+-------------------------
+
+* <https://notabug.org/libreboot/pico-serprog>
+
+### дзеркало lbwww.git
+
+Репозиторій `lbwww` містить файли Markdown (варіант pandoc), для використання
+з [генератором статичних сайтів Libreboot](docs/sitegen/); це те,
+що Libreboot використовує для надання веб-сторінок HTML, *включаючи* сторінку, яку ви
+читаєте прямо зараз!
+
+Ви можете виконати `git clone` на цих посиланнях, та/або натиснути для перегляду змін в вашому
+веб-браузері. Дивіться:
+
+* <https://git.sr.ht/~libreboot/lbwww>
+* <https://git.disroot.org/libreboot/lbwww>
+* <https://gitea.treehouse.systems/libreboot/lbwww>
+* <https://git.fosscommunity.in/libreboot/lbwww>
+* <https://0xacab.org/libreboot/lbwww>
+* <https://framagit.org/libreboot/lbwww/>
+* <https://gitlab.com/libreboot/lbwww>
+* <https://rocketgit.com/libreboot/lbwww>
+
+ПРИМІТКА: Репозиторій `lbwww-img` не зазвичай надано, на дзеркалах, оскільки
+вони лише файли зображень, які ви можете знайти на <https://av.libreboot.org>
+і це не намір проекта Libreboot втягнути *дзеркала*
+в додатковий трафік шляхом розміщення зображень.
+
+
+More information
+-------------------
+
 Also see: [Libreboot Static Site Generator](docs/sitegen/).
 
 Ви також можете *переглядати* lbmk на власному екземплярі Libreboot cgit, хоча це не призначено
@@ -262,54 +314,6 @@ Libreboot has this mailing list:
 <https://lists.sr.ht/~libreboot/libreboot>
 
 The email address is [~libreboot/libreboot@lists.sr.ht](mailto:~libreboot/libreboot@lists.sr.ht)
-
-Дзеркала lbmk.git
------------------
-
-Репозиторій `lbmk` містить автоматизовану систему побудови Libreboot, що
-створює випуски Libreboot (включаючи зібрані образи ROM).
-
-Ви можете виконати `git clone` на будь-якому з цих посилань (посилання є також доступними для натискання,
-для перегляду змін в вашому веб-браузері):
-
-* <https://git.sr.ht/~libreboot/lbmk>
-* <https://git.disroot.org/libreboot/lbmk>
-* <https://gitea.treehouse.systems/libreboot/lbmk>
-* <https://git.fosscommunity.in/libreboot/lbmk>
-* <https://0xacab.org/libreboot/lbmk/>
-* <https://framagit.org/libreboot/libreboot>
-* <https://gitlab.com/libreboot/lbmk>
-* <https://pagure.io/libreboot>
-* <https://rocketgit.com/libreboot/libreboot>
-
-Дзеркала pico-serprog.git
--------------------------
-
-* <https://notabug.org/libreboot/pico-serprog>
-
-### дзеркало lbwww.git
-
-Репозиторій `lbwww` містить файли Markdown (варіант pandoc), для використання
-з [генератором статичних сайтів Libreboot](docs/sitegen/); це те,
-що Libreboot використовує для надання веб-сторінок HTML, *включаючи* сторінку, яку ви
-читаєте прямо зараз!
-
-Ви можете виконати `git clone` на цих посиланнях, та/або натиснути для перегляду змін в вашому
-веб-браузері. Дивіться:
-
-* <https://git.sr.ht/~libreboot/lbwww>
-* <https://git.disroot.org/libreboot/lbwww>
-* <https://gitea.treehouse.systems/libreboot/lbwww>
-* <https://git.fosscommunity.in/libreboot/lbwww>
-* <https://0xacab.org/libreboot/lbwww>
-* <https://framagit.org/libreboot/lbwww/>
-* <https://gitlab.com/libreboot/lbwww>
-* <https://rocketgit.com/libreboot/lbwww>
-
-ПРИМІТКА: Репозиторій `lbwww-img` не зазвичай надано, на дзеркалах, оскільки
-вони лише файли зображень, які ви можете знайти на <https://av.libreboot.org>
-і це не намір проекта Libreboot втягнути *дзеркала*
-в додатковий трафік шляхом розміщення зображень.
 
 Репозиторії Notabug
 -------------------

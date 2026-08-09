@@ -40,6 +40,58 @@ Das `libreboot` Projekt hat hauptsächlich 3 Git Repositories:
 * Pico-serprog: <https://codeberg.org/libreboot/pico-serprog>
 * Libreboot Static Site Generator: <https://codeberg.org/libreboot/lbssg>
 
+Mirrors für lbmk.git
+--------------------
+
+Das `lbmk` Repository enthält Libreboot's automatischess build system, welches
+Libreboot Veröffentlichungen  herstellt (inklusive kompilierter ROM Images).
+
+Du kannst `git clone` für alle diese Links ausführen (die Links können auch
+angeklickt werden, um Änderungen in deinem Web Browser anzusehen):
+
+* <https://git.sr.ht/~libreboot/lbmk>
+* <https://git.disroot.org/libreboot/lbmk>
+* <https://gitea.treehouse.systems/libreboot/lbmk>
+* <https://git.fosscommunity.in/libreboot/lbmk>
+* <https://0xacab.org/libreboot/lbmk/>
+* <https://framagit.org/libreboot/libreboot>
+* <https://gitlab.com/libreboot/lbmk>
+* <https://pagure.io/libreboot>
+* <https://rocketgit.com/libreboot/libreboot>
+
+Mirrors fur pico-serprog.git
+----------------------------
+
+* <https://notabug.org/libreboot/pico-serprog>
+
+### lbwww.git Mirror
+
+Das `lbwww` Repository enthält Markdown Dateien (Pandoc Variant), für die
+Verwendung mit dem [Libreboot Static Site Generator](docs/sitegen/);
+dies wird von Libreboot verwendet um HTML Web Seiten bereitzustellen, *inklusive*
+der Seite die Du gerade liest!
+
+Du kannst `git clone` für diese Links ausführen und/oder die Links
+anklicken um Änderungen in deinem Web Browser anzusehen). Siehe:
+
+* <https://git.sr.ht/~libreboot/lbwww>
+* <https://git.disroot.org/libreboot/lbwww>
+* <https://gitea.treehouse.systems/libreboot/lbwww>
+* <https://git.fosscommunity.in/libreboot/lbwww>
+* <https://0xacab.org/libreboot/lbwww>
+* <https://framagit.org/libreboot/lbwww/>
+* <https://gitlab.com/libreboot/lbwww>
+* <https://rocketgit.com/libreboot/lbwww>
+
+HINWEIS: Das `lbwww-img` Repository wird generell nicht auf einem Mirror
+zur Verfügung gestellt, weil dies lediglich Bilder sind die Du unter 
+<https://av.libreboot.org> finden kannst und es ist nicht die Intention
+des Libreboot Projektes *Mirror* mit zusätzlichen Datenverkehr durch
+Bilder zu belasten.
+
+Mehr informationen
+----
+
 Also see: [Libreboot Static Site Generator](docs/sitegen/).
 
 Du kannst dir lbmk auch auf Libreboot's eigener cgit Instanz *ansehen*,
@@ -278,57 +330,10 @@ Libreboot has this mailing list:
 
 The email address is [~libreboot/libreboot@lists.sr.ht](mailto:~libreboot/libreboot@lists.sr.ht)
 
-Mirrors für lbmk.git
---------------------
-
-Das `lbmk` Repository enthält Libreboot's automatischess build system, welches
-Libreboot Veröffentlichungen  herstellt (inklusive kompilierter ROM Images).
-
-Du kannst `git clone` für alle diese Links ausführen (die Links können auch
-angeklickt werden, um Änderungen in deinem Web Browser anzusehen):
-
-* <https://git.sr.ht/~libreboot/lbmk>
-* <https://git.disroot.org/libreboot/lbmk>
-* <https://gitea.treehouse.systems/libreboot/lbmk>
-* <https://git.fosscommunity.in/libreboot/lbmk>
-* <https://0xacab.org/libreboot/lbmk/>
-* <https://framagit.org/libreboot/libreboot>
-* <https://gitlab.com/libreboot/lbmk>
-* <https://pagure.io/libreboot>
-* <https://rocketgit.com/libreboot/libreboot>
-
-Mirrors fur pico-serprog.git
-----------------------------
-
-* <https://notabug.org/libreboot/pico-serprog>
-
-### lbwww.git Mirror
-
-Das `lbwww` Repository enthält Markdown Dateien (Pandoc Variant), für die
-Verwendung mit dem [Libreboot Static Site Generator](docs/sitegen/);
-dies wird von Libreboot verwendet um HTML Web Seiten bereitzustellen, *inklusive*
-der Seite die Du gerade liest!
-
-Du kannst `git clone` für diese Links ausführen und/oder die Links
-anklicken um Änderungen in deinem Web Browser anzusehen). Siehe:
-
-* <https://git.sr.ht/~libreboot/lbwww>
-* <https://git.disroot.org/libreboot/lbwww>
-* <https://gitea.treehouse.systems/libreboot/lbwww>
-* <https://git.fosscommunity.in/libreboot/lbwww>
-* <https://0xacab.org/libreboot/lbwww>
-* <https://framagit.org/libreboot/lbwww/>
-* <https://gitlab.com/libreboot/lbwww>
-* <https://rocketgit.com/libreboot/lbwww>
-
-HINWEIS: Das `lbwww-img` Repository wird generell nicht auf einem Mirror
-zur Verfügung gestellt, weil dies lediglich Bilder sind die Du unter 
-<https://av.libreboot.org> finden kannst und es ist nicht die Intention
-des Libreboot Projektes *Mirror* mit zusätzlichen Datenverkehr durch
-Bilder zu belasten.
-
 Notabug Repositories
 --------------------
+
+Notabug ist kaput. Entschuldigung.
 
 Commits die zu codeberg gepusht werden, werden ebenso zu notabug gepusht, 
 zusätzlich zu den anderen Mirrors.
