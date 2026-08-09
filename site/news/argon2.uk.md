@@ -40,9 +40,9 @@ GRUB](../docs/linux/grub_hardening.md), кроки подібні перевір
 Ці виправлення імпортують реалізацію PHC argon2 в версію Libreboot
 GRUB:
 
-* <https://browse.libreboot.org/lbmk.git/commit/?id=2c0c521e2f15776fd604f8da3bc924dec95e1fd1>
-* <https://browse.libreboot.org/lbmk.git/commit/?id=fd6025321c4ae35e69a75b45d21bfbfb4eb2b3a0>
-* <https://browse.libreboot.org/lbmk.git/commit/?id=438bf2c9b113eab11439c9c65449e269e5b4b095>
+* <https://codeberg.org/libreboot/lbmk/commit/2c0c521e2f15776fd604f8da3bc924dec95e1fd1>
+* <https://codeberg.org/libreboot/lbmk/commit/fd6025321c4ae35e69a75b45d21bfbfb4eb2b3a0>
+* <https://codeberg.org/libreboot/lbmk/commit/438bf2c9b113eab11439c9c65449e269e5b4b095>
 
 Argon2 є новішим формуванням ключа, якому надається перевага на сучасних встановленнях LUKSv2. Дуже рекомендовано, щоб
 ви *оновились* на argon2id, в точності, для вашого

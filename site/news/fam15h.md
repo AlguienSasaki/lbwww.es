@@ -18,7 +18,7 @@ source](../docs/build/); otherwise, you will find them in the next regular
 release of Libreboot.
 
 It was implemented with this patch:
-<https://browse.libreboot.org/lbmk.git/commit/?id=af084014f04602f570a23b0cc23a112401348faf>
+<https://codeberg.org/libreboot/lbmk/commit/af084014f04602f570a23b0cc23a112401348faf>
 
 ### Differences now, versus Libreboot 20211122
 

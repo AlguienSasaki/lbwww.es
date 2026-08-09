@@ -76,7 +76,7 @@ this is a point of contention for some people.
 ### How?
 
 The change was implemented by [this
-patch](https://browse.libreboot.org/lbmk.git/commit/?id=f338697b96757977d2a14da00a91236595704fed)
+patch](https://codeberg.org/libreboot/lbmk/commit/f338697b96757977d2a14da00a91236595704fed)
 on 19 June 2023, in the Libreboot build system.
 
 In `board.cfg` for each motherboard defined (in Libreboot's build system, lbmk),

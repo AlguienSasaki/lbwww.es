@@ -40,9 +40,9 @@ of your installed Linux kernel.
 These patches import the PHC argon2 implementation into Libreboot's version
 of GRUB:
 
-* <https://browse.libreboot.org/lbmk.git/commit/?id=2c0c521e2f15776fd604f8da3bc924dec95e1fd1>
-* <https://browse.libreboot.org/lbmk.git/commit/?id=fd6025321c4ae35e69a75b45d21bfbfb4eb2b3a0>
-* <https://browse.libreboot.org/lbmk.git/commit/?id=438bf2c9b113eab11439c9c65449e269e5b4b095>
+* <https://codeberg.org/libreboot/lbmk/commit/2c0c521e2f15776fd604f8da3bc924dec95e1fd1>
+* <https://codeberg.org/libreboot/lbmk/commit/fd6025321c4ae35e69a75b45d21bfbfb4eb2b3a0>
+* <https://codeberg.org/libreboot/lbmk/commit/438bf2c9b113eab11439c9c65449e269e5b4b095>
 
 Argon2 is the newer key derivation preferred on modern LUKSv2 setups. It is
 strongly recommended that you *upgrade* to argon2id, specifically, for your

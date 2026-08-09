@@ -22,7 +22,7 @@ that Libreboot already supports, such as the HP EliteBook 9470m that Riku
 added.
 
 It was added in this patch:
-<https://browse.libreboot.org/lbmk.git/commit/?id=6075fed84912be82cb03a99ad5a5a82547872463>
+<https://codeberg.org/libreboot/lbmk/commit/6075fed84912be82cb03a99ad5a5a82547872463>
 
 It should be noted: there are *two* variants of this machine. One variant has
 Intel graphics, and this is what was tested. The other variant has discrete
@@ -42,7 +42,7 @@ USDT](../docs/install/hp8300usdt.html), but it supports *ECC* memory, if you
 use a Xeon E3 model CPU (ivybridge variant).
 
 It was added in this patch:
-<https://browse.libreboot.org/lbmk.git/commit/?id=f9afeb6feb289003359790e820d7e7d918937fea>
+<https://codeberg.org/libreboot/lbmk/commit/f9afeb6feb289003359790e820d7e7d918937fea>
 
 <img tabindex=1 class="l" style="max-width:25%" src="https://av.libreboot.org/t1650/t1650.jpg" /><span class="f"><img src="https://av.libreboot.org/t1650/t1650.jpg" /></span>
 

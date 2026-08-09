@@ -41,7 +41,7 @@ qemu-system-aarch64 -bios bin/qemu_arm64_12mb/uboot_payload_qemu_arm64_12mb_libg
 ```
 
 That command (above) does a serial console. Alper Nebi Yasak added this patch to Libreboot:
-<https://browse.libreboot.org/lbmk.git/commit/?id=444f2899e69e9b84fd5428625aa04b00c1341804>
+<https://codeberg.org/libreboot/lbmk/commit/444f2899e69e9b84fd5428625aa04b00c1341804>
 
 This enables a graphical display in qemu, like so (only works in releases
 after Libreboot 20231021, but not including Libreboot 20231021, so you

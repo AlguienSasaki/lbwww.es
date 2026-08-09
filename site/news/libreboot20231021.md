@@ -89,9 +89,9 @@ GRUB *2.12*, and I then imported the work done by Nicholas, with his blessing.
 
 These libreboot patches added argon2 support:
 
-* <https://browse.libreboot.org/lbmk.git/commit/?id=2c0c521e2f15776fd604f8da3bc924dec95e1fd1>
-* <https://browse.libreboot.org/lbmk.git/commit/?id=fd6025321c4ae35e69a75b45d21bfbfb4eb2b3a0>
-* <https://browse.libreboot.org/lbmk.git/commit/?id=438bf2c9b113eab11439c9c65449e269e5b4b095>
+* <https://codeberg.org/libreboot/lbmk/commit/2c0c521e2f15776fd604f8da3bc924dec95e1fd1>
+* <https://codeberg.org/libreboot/lbmk/commit/fd6025321c4ae35e69a75b45d21bfbfb4eb2b3a0>
+* <https://codeberg.org/libreboot/lbmk/commit/438bf2c9b113eab11439c9c65449e269e5b4b095>
 
 This means that you can now boot from encrypted `/boot` partitions. I'm very
 grateful to everyone who made this possible!
@@ -155,20 +155,20 @@ tree has been updated to coreboot from 12 October 2023).
 Many improvements were made to these boards, which you can learn about by
 reading these diffs:
 
-* <https://browse.libreboot.org/lbmk.git/commit/?id=eb267733fabe6c773720706539ef37f1ce591f81>
-* <https://browse.libreboot.org/lbmk.git/commit/?id=8b411963b7e4941cbd96ac874d0582eaa20ea998>
-* <https://browse.libreboot.org/lbmk.git/commit/?id=b2d84213dae4e199b4e4fa4f70dd6e3fbf5d90c4>
-* <https://browse.libreboot.org/lbmk.git/commit/?id=f459e05ecd40592d80d119d16449d40f0dfbfa78>
-* <https://browse.libreboot.org/lbmk.git/commit/?id=5b4ced3329f5fd8cb1fa166c8ac424e0bb618d67>
-* <https://browse.libreboot.org/lbmk.git/commit/?id=46e01c0e1dade74f5ce777bf8593fe2722318af2>
-* <https://browse.libreboot.org/lbmk.git/commit/?id=7afe2f39189fa196547c3dd9f9f617cfab91d835>
-* <https://browse.libreboot.org/lbmk.git/commit/?id=f7db91c848f1fbf6bea93b62dfa4313ff550eeec>
-* <https://browse.libreboot.org/lbmk.git/commit/?id=f9bad4449aa97aa2eb21f2254c0ad1515119888a>
-* <https://browse.libreboot.org/lbmk.git/commit/?id=fea0cec24a1f2b03cf3c8b928259222f0bcf2357>
-* <https://browse.libreboot.org/lbmk.git/commit/?id=f08102a22731182e8ad2f678ab39b19508fd455a>
-* <https://browse.libreboot.org/lbmk.git/commit/?id=4e7e4761918d2cb04f3bf664c8c0ea8426a0e3bc>
-* <https://browse.libreboot.org/lbmk.git/commit/?id=6e65595da5301b9b8c435a9ab55e6f0d9b01a86d>
-* <https://browse.libreboot.org/lbmk.git/commit/?id=4d9567a7561df6eeb0dd81f2faf522c8526163b0>
+* <https://codeberg.org/libreboot/lbmk/commit/eb267733fabe6c773720706539ef37f1ce591f81>
+* <https://codeberg.org/libreboot/lbmk/commit/8b411963b7e4941cbd96ac874d0582eaa20ea998>
+* <https://codeberg.org/libreboot/lbmk/commit/b2d84213dae4e199b4e4fa4f70dd6e3fbf5d90c4>
+* <https://codeberg.org/libreboot/lbmk/commit/f459e05ecd40592d80d119d16449d40f0dfbfa78>
+* <https://codeberg.org/libreboot/lbmk/commit/5b4ced3329f5fd8cb1fa166c8ac424e0bb618d67>
+* <https://codeberg.org/libreboot/lbmk/commit/46e01c0e1dade74f5ce777bf8593fe2722318af2>
+* <https://codeberg.org/libreboot/lbmk/commit/7afe2f39189fa196547c3dd9f9f617cfab91d835>
+* <https://codeberg.org/libreboot/lbmk/commit/f7db91c848f1fbf6bea93b62dfa4313ff550eeec>
+* <https://codeberg.org/libreboot/lbmk/commit/f9bad4449aa97aa2eb21f2254c0ad1515119888a>
+* <https://codeberg.org/libreboot/lbmk/commit/fea0cec24a1f2b03cf3c8b928259222f0bcf2357>
+* <https://codeberg.org/libreboot/lbmk/commit/f08102a22731182e8ad2f678ab39b19508fd455a>
+* <https://codeberg.org/libreboot/lbmk/commit/4e7e4761918d2cb04f3bf664c8c0ea8426a0e3bc>
+* <https://codeberg.org/libreboot/lbmk/commit/6e65595da5301b9b8c435a9ab55e6f0d9b01a86d>
+* <https://codeberg.org/libreboot/lbmk/commit/4d9567a7561df6eeb0dd81f2faf522c8526163b0>
 
 Thank you, Alper!
 
@@ -1121,8 +1121,8 @@ This has been fixed, and the release archives were re-uploaded on 23
 October 2023. The re-uploaded archives are built with these two patches
 added:
 
-* <https://browse.libreboot.org/lbmk.git/commit/?id=e86af9a60a6165188ec069ea519eeadb1e2ad3cc>
-* <https://browse.libreboot.org/lbmk.git/commit/?id=8dda0d8654eab05eb2d2a70328ccf95cb322a52b>
+* <https://codeberg.org/libreboot/lbmk/commit/e86af9a60a6165188ec069ea519eeadb1e2ad3cc>
+* <https://codeberg.org/libreboot/lbmk/commit/8dda0d8654eab05eb2d2a70328ccf95cb322a52b>
 
 The second patch changes where Libreboot's build system downloads acpica from,
 because the main mirror that it downloads from was offline during the build,
@@ -1148,7 +1148,7 @@ Empty PIKE2008 ROMs not inserted in KCMA-D8 and KGPE-D16 ROMs.
 
 The 64KB bootblock isn't copied on ThinkPad X60 and T60 ROM images. This has
 been fixed with the following patch:
-<https://browse.libreboot.org/lbmk.git/commit/?id=5f6ba01d414e2d98d7db049347b8c5c5d125ba61>
+<https://codeberg.org/libreboot/lbmk/commit/5f6ba01d414e2d98d7db049347b8c5c5d125ba61>
 
 If you're flashing the X60/T60 ROMs from LenovoBIOS (internal flashing), please
 do this on the ROM image first (ROM image named `libreboot.rom` in this example):
@@ -1201,7 +1201,7 @@ revealed otherwise (as of 28 October 2023).
 
 This isn't really a problem, it's not a "bug" per se, just a naming error.
 The fix has been implemented with *this* patch:
-<https://browse.libreboot.org/lbmk.git/commit/?id=83bf23766040d5e1642b8c80d975953c1c34f876>
+<https://codeberg.org/libreboot/lbmk/commit/83bf23766040d5e1642b8c80d975953c1c34f876>
 
 To put it simply: this will not be fixed. Instead, the above patch
 unsets `microcode_required`, so it defaults to `y`. Therefore, the ROM images

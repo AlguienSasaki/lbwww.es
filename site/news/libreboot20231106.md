@@ -230,7 +230,7 @@ be fixed before the next stable release.
 
 ### E6430 VBT config
 
-See: <https://browse.libreboot.org/lbmk.git/commit/?id=a02c7e316370409e985fa634fec5a59326e3b4fd>
+See: <https://codeberg.org/libreboot/lbmk/commit/a02c7e316370409e985fa634fec5a59326e3b4fd>
 
 This patch, linked, enables the VBT setup on Dell Latitude E6430, but this
 patch was not merged before the Libreboot 20231106 release. VBT wasn't actually
@@ -252,7 +252,7 @@ Apparently, some distros use FAT-based file systems for `/boot`, and this meant
 that a user with such a distro could not boot their kernel on the latest release.
 
 This has been fixed, in the following patch:
-<https://browse.libreboot.org/lbmk.git/commit/?id=39aad57873b9e6265d089ef7dbb4dc5add5c659f>
+<https://codeberg.org/libreboot/lbmk/commit/39aad57873b9e6265d089ef7dbb4dc5add5c659f>
 
 This was merged *after* the Libreboot 20231106 release, and so it will be
 present in the next Libreboot release after 20231106.

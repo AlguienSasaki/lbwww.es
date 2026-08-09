@@ -74,7 +74,7 @@ now on.
   and disable PECI (for e.g. X200/T400 users who want to [remove microcode
   updates](gm45microcode.md), using `cbfstool`) - fixes broken reboot/speedstep
   CPU scaling in such configuration.** - Patch:
-  <https://browse.libreboot.org/lbmk.git/commit/?id=bd4ea9a02845b22a09b73ebb015ce134234d100b>
+  <https://codeberg.org/libreboot/lbmk/commit/bd4ea9a02845b22a09b73ebb015ce134234d100b>
   (patch by Leah Rowe) - this also affects Dell Latitude E6400, and it can be
   used there on that board. We recommend *keeping* microcode updates, but these
   mitigations were re-added to satisfy users of older releases that excluded

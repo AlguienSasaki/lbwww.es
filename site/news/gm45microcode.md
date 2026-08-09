@@ -56,7 +56,7 @@ Mitigations patches restored!
 
 The patch re-adding these mitigations can be seen here:
 
-<https://browse.libreboot.org/lbmk.git/commit/?id=bd4ea9a02845b22a09b73ebb015ce134234d100b>
+<https://codeberg.org/libreboot/lbmk/commit/bd4ea9a02845b22a09b73ebb015ce134234d100b>
 
 ### Why?
 

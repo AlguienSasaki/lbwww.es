@@ -240,7 +240,7 @@ And now, specific changes:
   of Leah Rowe.
 * lbmk scripts: Did a general sweep with shellcheck, fixing errors that it
   flagged, such as lack of double quotes in some places, and non-standard
-  behaviour being used. The actual [patch](https://browse.libreboot.org/lbmk.git/commit/?id=1eb4df6748f94a08d44c623a56417199b99b371d)
+  behaviour being used. The actual [patch](https://codeberg.org/libreboot/lbmk/commit/1eb4df6748f94a08d44c623a56417199b99b371d)
   shows what is meant by this. Patch courtesy of Leah Rowe.
 * lbmk scripts: Handle exit status correctly, when dealing with subshells. This
   continues on from the other fix below, after doing a sweep of the entire
@@ -261,7 +261,7 @@ And now, specific changes:
   Libreboot 20231106 will once again work correctly on such setups. Patch
   courtesy of Leah Rowe.
 * **GRUB revision:** bumped it to November 2023 revision, which contains
-  several important fixes. Look at the [patch](https://browse.libreboot.org/lbmk.git/commit/?id=47ef411efb6b669b7befd2a1cf22f999d4521999)
+  several important fixes. Look at the [patch](https://codeberg.org/libreboot/lbmk/commit/47ef411efb6b669b7befd2a1cf22f999d4521999)
   for actual fixes, listed in the code import. It's a lot.
 * main build script: set `--author` in Git, when re-initialising the Git
   history on release archives. Patch courtesy of Leah Rowe.
