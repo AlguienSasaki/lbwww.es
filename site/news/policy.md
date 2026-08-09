@@ -263,9 +263,9 @@ Similar can be said about AMD CPUs.
 Once upon a time, Libreboot *excluded* microcode updates by default, but this
 lead to broken behaviour. Here are some examples:
 
-<https://browse.libreboot.org/lbmk.git/plain/resources/coreboot/default/patches/0012-fix-speedstep-on-x200-t400-Revert-cpu-intel-model_10.patch?id=9938fa14b1bf54db37c0c18bdfec051cae41448e>
+<https://codeberg.org/libreboot/lbmk/src/commit/9938fa14b1bf54db37c0c18bdfec051cae41448e/resources/coreboot/default/patches/0012-fix-speedstep-on-x200-t400-Revert-cpu-intel-model_10.patch>
 
-<https://browse.libreboot.org/lbmk.git/plain/resources/coreboot/default/patches/0018-Revert-cpu-intel-Configure-IA32_FEATURE_CONTROL-for-.patch?id=4b7be665968b67463ec36b9afc7e8736be0c9b51>
+<https://codeberg.org/libreboot/lbmk/src/commit/4b7be665968b67463ec36b9afc7e8736be0c9b51/resources/coreboot/default/patches/0018-Revert-cpu-intel-Configure-IA32_FEATURE_CONTROL-for-.patch>
 
 These patches revert *bug fixes* in coreboot, fixes that happen to break other
 functionality but only when microcode updates are excluded. The most

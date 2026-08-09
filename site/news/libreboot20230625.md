@@ -184,15 +184,7 @@ Newest changes first, oldest changes last:
   of serial console provided via pulses over PC speaker. Libreboot's version
   greatly improves the error handling, and it has been re-factored for OpenBSD
   coding style, to replace the (very horrible, very messy) GNU coding style.
-  It is also [pledged](https://man.openbsd.org/pledge.2) in
-  Libreboot's version. For reference,
-  https://git.savannah.gnu.org/cgit/grub.git/plain/util/spkmodem-recv.c?id=822b726b33b8dc07dd01b257a2dfcc7b07d12e2f
-  is the GRUB version, and
-  [here](https://raw.githubusercontent.com/coreboot/coreboot/8febc91b3041a1d027bf0d36d30ccb119496524f/util/spkmodem_recv/spkmodem-recv.c) is coreboot's version of it. And now to blow your mind,
-  [here](https://browse.libreboot.org/lbmk.git/tree/util/spkmodem_recv/spkmodem-recv.c?id=b508245451b71b3443fa3202f3863a6de731e9c8)
-  is the Libreboot version present in release 20230625. A very much GNU program,
-  but you wouldn't know it by looking! This fork was mostly done for fun, very
-  much a *because we can* affair. BONUS: BSD-style error handling (`err.h`)
+  It is also [pledged](https://man.openbsd.org/pledge.2).
 * download/coreboot: Run `extra.sh` directly from the directory for the given
   coreboot tree, if the script exists. No board in Libreboot has ever included
   an `extra.sh` script, but it can be used to extend the default functionality
@@ -330,7 +322,7 @@ src/lib/version.c:35:46: note: in expansion of macro 'COREBOOT_MAJOR_VERSION'
 This happened when a user tried to build for ThinkPad W541 on an Arch Linux
 system. The fix is available here:
 
-<https://browse.libreboot.org/lbmk.git/patch/?id=f34e07ae27e3e6e8508cdebcbd09fdf73fca302d>
+<https://codeberg.org/libreboot/lbmk/commit/f34e07ae27e3e6e8508cdebcbd09fdf73fca302d>
 
 Apply this patch to your local release archive, and it should fix the issue.
 

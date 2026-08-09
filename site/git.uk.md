@@ -94,10 +94,6 @@ More information
 
 Also see: [Libreboot Static Site Generator](docs/sitegen/).
 
-Ви також можете *переглядати* lbmk на власному екземплярі Libreboot cgit, хоча це не призначено
-для розробки (використовуйте codeberg для цього):\
-<https://browse.libreboot.org/lbmk.git/>
-
 The [tasks](tasks/) page lists some (not all) of the things we wish to
 implement, if not already implemented. Patches welcome!
 

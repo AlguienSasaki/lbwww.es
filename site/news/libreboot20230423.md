@@ -86,7 +86,7 @@ now on.
 * GRUB patch: fix hanging on HP EliteBooks, by implementing a 200ms timeout
   for PS/2 keyboard initialisation. Patch courtesy of Riku Viitanen, and it
   fixes this issue which has existed in coreboot *for years*:
-  <https://browse.libreboot.org/lbmk.git/plain/resources/grub/patches/0005-at-keyboard-timeout.patch?id=20192c08488104f5cacc1f3842ae8e0ee74c44ef>
+  <https://codeberg.org/libreboot/lbmk/src/commit/6ff0284a510e8d7a8721dd769ba6a773610c2cad/resources/grub/patches/0005-at-keyboard-timeout.patch>
 * `build/release/roms`: HP KBC1126 EC firmware scrubbed from release ROMs, for
   re-insertion later via `./update blobs download` and `./update blobs inject` like
   with ME images via `me_cleaner` - for HP laptops. Patch courtesy Leah Rowe.
@@ -99,7 +99,7 @@ now on.
   SMM BIOS lock protection by disabling SMIs, and since Dell's own BIOS offers
   no other protections, the machine can be flashed *entirely with software on
   the host CPU*, from Dell BIOS to Libreboot! See:
-  <https://browse.libreboot.org/lbmk.git/tree/util/e6400-flash-unlock>
+  <https://codeberg.org/libreboot/lbmk/src/branch/master/util/dell-flash-unlock>
 * GRUB payload: `grub.cfg` menu timeout now 30s, not 5s (courtesy Leah Rowe)
 * `blobutil/download`: support downloading KBC1126-based EC firmware for HP
   laptops. (patch by Leah Rowe)

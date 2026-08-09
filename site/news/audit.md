@@ -49,33 +49,6 @@ is usually *why* (or *when*). Libreboot's build system tries to avoid bloat
 and *feature creep* when possible, intentionally refusing to implement certain
 features that are considered superfluous.
 
-### Example of BSD coding style on shell scripts
-
-One of the most common practices in BSD style in *top-down* logic, which
-makes programs much easier to read (in my opinion). Here is an example
-of the BSD coding style in use within *lbmk*. Here is the *old* coreboot
-download script in lbmk:
-
-<https://browse.libreboot.org/lbmk.git/plain/resources/scripts/download/coreboot?id=7f5dfebf7d37c56d9c7993aaa17c59070cb5aec9>
-
-And here is that same script, after auditing and cleanup with the BSD style
-adapted:
-
-<https://browse.libreboot.org/lbmk.git/plain/resources/scripts/download/coreboot?id=52d87f5f086041c94340d460d74d77a2253e9d7f>
-
-The trick is to have a `main()` at top, and add this line at the bottom of
-the script:
-
-	main $@
-
-This will pass all arguments on the shell, to the `main()` function. Where
-possible, only *global* variables are written outside functions, with no
-other logic written (all logic is to be written inside functions).
-
-Where feasible, and desirable, this style will now be used for all new scripts
-in the Libreboot build system, with existing scripts modified accordingly. This
-and other work is ongoing.
-
 Auditing of utilities
 ---------------------
 
@@ -107,18 +80,6 @@ spkmodem, to provide a serial console via pulses on the standard *PC speaker*.
 
 Libreboot's version is *heavily* re-factored, doing away with the messy GNU coding
 style and replacing it with a BSD coding style (the licensing is unchanged).
-
-For reference, here is the original version from GRUB:
-
-https://git.savannah.gnu.org/cgit/grub.git/plain/util/spkmodem-recv.c?id=822b726b33b8dc07dd01b257a2dfcc7b07d12e2f
-
-And here is the version coreboot had, which Libreboot forked:
-
-<https://raw.githubusercontent.com/coreboot/coreboot/8febc91b3041a1d027bf0d36d30ccb119496524f/util/spkmodem_recv/spkmodem-recv.c>
-
-And here is the *Libreboot* version, as of today, 13 June 2023:
-
-<https://browse.libreboot.org/lbmk.git/plain/util/spkmodem_recv/spkmodem-recv.c?id=5be3d67ced51236cb4e370d8ea755d905a905e1d>
 
 In addition to code style changes, certain variables are renamed for clarity,
 and certain redundant variables removed. Logic split into functions, and the

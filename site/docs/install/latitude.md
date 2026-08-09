@@ -103,7 +103,7 @@ Go in there:
 is writeable. Information about how to use it is in the `README.md` file which
 is included in that program's directory, or you can read it online here:**
 
-**<https://browse.libreboot.org/lbmk.git/plain/util/dell-flash-unlock/README.md>**
+**<https://codeberg.org/libreboot/lbmk/src/branch/master/util/dell-flash-unlock/README.md>**
 
 **Please make sure that you do fully read the README, because it contains
 useful information.**

@@ -63,9 +63,6 @@ More information
 
 Ayrıca bakınız: [Libreboot Statik Site Oluşturucu](docs/sitegen/).
 
-Ayrıca lbmk'yi Libreboot'un kendi cgit örneğinde *gezinebilirsiniz*, ancak bu geliştirme için tasarlanmamıştır (bunun için codeberg'i kullanın):\
-<https://browse.libreboot.org/lbmk.git/>
-
 [Görevler](tasks/) sayfası, uygulamak istediğimiz (hepsi değil) bazı şeyleri listeler, henüz uygulanmamışsa. Yamalar hoş karşılanır!
 
 Ana Git depoları çalışmıyorsa, `lbmk` ve `lbwww`'nin yansıları bu sayfada aşağıda listelenmiştir.

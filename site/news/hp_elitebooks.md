@@ -15,7 +15,7 @@ for them, making it simple to install libre firmware on these laptops and
 take control of your own devices. Check out the links above for more details,
 including installation details.
 
-Additionally, a [long-standing bug](https://browse.libreboot.org/lbmk.git/plain/resources/grub/patches/0005-at-keyboard-timeout.patch?id=6ff0284a510e8d7a8721dd769ba6a773610c2cad)
+Additionally, a [long-standing bug](https://codeberg.org/libreboot/lbmk/src/commit/6ff0284a510e8d7a8721dd769ba6a773610c2cad/resources/grub/patches/0005-at-keyboard-timeout.patch)
 with GRUB on coreboot now has a functional workaround
 which is applied automatically by Libreboot.
 
