@@ -3,9 +3,9 @@ title: Install Libreboot on Dell OptiPlex 780 MT/USFF
 x-toc-enable: true
 ...
 
-Libreboot is compatible with the Dell OptiPlex 780, of variants: MT and USFF.
-SFF and DT may be supported in a future revision. These instructions are
-identical both the MT and USFF variants.
+
+**[!!BACKUP everything!!](https://libreboot.org/docs/install/#howto-readwriteerase-the-boot-flash) just in case something fails.**
+
 
 <div class="specs">
 <center>
@@ -15,17 +15,17 @@ Dell OptiPlex 780
 | ***Specifications***       |                                                |
 |----------------------------|------------------------------------------------|
 | **Manufacturer**           | Dell                                           |
-| **Name**                   | OptiPlex 780                                |
+| **Name**                   | OptiPlex 780                                   |
 | **Variants**               | OptiPlex 780 MT, OptiPlex 780 USFF             |
 | **Released**               | 2009                                           |
-| **Chipset**                | Intel X4X                                     |
-| **CPU**                    | Core 2 Duo (e.g. E8400)                         |
-| **Graphics**               | Discrete graphics card, or Intel HD Graphics model |
-| **Memory**                 | DDR3 DIMMs (max 16GB on MT 4x4GB, 8GB USFF 2x4GB)    |
-| **Architecture**           | x86\_64                                         |
+| **Chipset**                | Q45                                            |
+| **CPU**                    | Core 2 Duo + Quad on MT                        |
+| **Graphics**               | GMA 4500                                       |
+| **Memory**                 | DDR3 SODIMMs (max 16GB on MT 4x4GB, 8GB USFF 2x4GB)    |
+| **Architecture**           | x86\_64                                        |
 | **Original boot firmware** | Dell UEFI firmware                             |
-| **Intel ME/AMD PSP**       | Present. Entire ME firmware can be removed.      |
-| **Flash chip**             | SOIC-16 and/or SOIC-8 8MiB (64Mbit)           |
+| **Intel ME/AMD PSP**       | Present, Fully removable.                      |
+| **Flash chip**             | SOIC-16 and/or SOIC-8 8MiB (64Mbit)            |
 
 
 ```
@@ -53,71 +53,20 @@ P*: Partially works with vendor firmware
 | **SeaBIOS with GRUB**      | Works     |
 </div>
 
-Open source BIOS/UEFI firmware
--------------------------
+### Flash a ROM image
 
-This document will teach you how to install Libreboot, on your
-Dell OptiPlex 780 desktop motherboard.
-Libreboot is a [Free Software](https://writefreesoftware.org/learn) project
-that replaces proprietary BIOS/UEFI firmware.
+#### Software
 
-**Unavailable in Libreboot 20240612 or earlier. You must [compile from
-source](../build/), or use a version newer than Libreboot 20240612.**
+*Before internal flashing, [Disable /dev/mem protection](devmem.md) first.*
 
-Official information about the computer can be found here:
-<https://www.dell.com/support/manuals/en-uk/optiplex-7010-plus-small-ff/opti_7010_sff_plus_om/specifications-of-optiplex-small-form-factor-plus-7010?guid=guid-7c9f07ce-626e-44ca-be3a-a1fb036413f9&lang=en-us>
+*In short add this kernel parameter: iomem=relaxed(linux distro)/kernel.securelevel=-1(bsd distro)*
 
-### Build ROM image from source
+# THEN REMOVE THIS KERNEL PARAMETER TO PREVENT UNAUTHORIZED/MALICIOUS ACCESS TO YOUR SYSTEM AFTER FLASHING LIBREBOOT.
 
-The build target, when building from source, is thus:
+(An important reminder for those who might forget to delete it, even better, replace it with lockdown=integrity / lockdown=confidentiality)
 
-	./mk -b coreboot dell780mt_truncate_8mb
-	./mk -b coreboot dell780mt_8mb
-	./mk -b coreboot dell780usff_truncate_8mb
-	./mk -b coreboot dell780usff_8mb
 
-The `_truncate` image is needed if you're flashing Libreboot internally from
-the original Dell firmware. Otherwise, you only need the regular images that
-lack `_truncate` in the file name.
-
-Alternatively, you can use release images instead of compiling from source.
-
-### 100% FREE / OPEN SOURCE!
-
-This motherboard is entirely free software in the main boot flash. It is using
-the Intel X4X / ICH10 platform, same as on the already supported
-Gigabyte GA-G41M-ES2L motherboard.
-
-Install Libreboot
------------------
-
-These next sections will teach you how to install Libreboot, on your
-Dell OptiPlex 780 motherboard.
-
-### Set MAC address
-
-This platform uses an Intel Flash Descriptor, and defines an Intel GbE NVM
-region. As such, release/build ROMs will contain the same MAC address. To
-change the MAC address, please read [nvmutil documentation](../install/nvmutil.md).
-
-### WARNING about CPU/GPU compatibility
-
-Coreboot has libre initialisation code for Intel graphics, but libre
-initialisation code is not available for most graphics cards. This machine can
-take any graphics card that fits in the PCI-E slot. When a graphics card is
-used, SeaBIOS executes its VGA ROM which provides video init, instead of
-coreboot's native Intel video init. GRUB piggybacks off of what SeaBIOS did,
-so the GRUB payload will also work.
-
-### Flash a ROM image (software)
-
-**Always make sure to dump a copy of the current flash first. ALSO: [make
-sure /dev/mem protection is disabled](devmem.md) for the flashing to work!**
-
-If you're already running Libreboot, and you don't have flash protection
-turned on, [internal flashing](../install/) is possible.
-
-If you have factory firmware (Dell), you can short the service jumper. It's a
+Short the service jumper. It's a
 2-pin header located somewhere on the board (no photos available yet).
 
 With the service jumper set, all flash protections are disabled on the first
@@ -158,13 +107,83 @@ the full image; the one without `_truncate` in the file name uses all of the
 flash, with the BIOS region ending at the 8MB limit, so the BIOS region is
 therefore 2MB larger on those images.
 
-### Flash a ROM image (hardware)
+
+#### Hardware
 
 For general information, please refer to [25xx NOR flash
 instructions](../install/spi.md) - that page refers to use of socketed flash.
 
 No photos yet available.
 
+
+### Build ROM image from source
+
+The build target, when building from source, is thus:
+
+	./mk -b coreboot dell780mt_truncate_8mb
+	./mk -b coreboot dell780mt_8mb
+	./mk -b coreboot dell780usff_truncate_8mb
+	./mk -b coreboot dell780usff_8mb
+
+The `_truncate` image is needed if you're flashing Libreboot internally from
+the original Dell firmware. Otherwise, you only need the regular images that
+lack `_truncate` in the file name.
+
+Alternatively, you can use release images instead of compiling from source.
+
+
+### Set MAC address
+
+This platform uses an Intel Flash Descriptor, and defines an Intel GbE NVM
+region. As such, release/build ROMs will contain the same MAC address. To
+change the MAC address, please read [nvmutil documentation](../install/nvmutil.md).
+
+
+### Expanded_Specifications
+
+<div class="expandedspecs">
+<center>
+<img tabindex=1 alt="dell780mt" src="https://av.libreboot.org/*devicename/io+exp.jpg*" />
+</center>
+
+| ***Specifications***       |                                                |
+|----------------------------|------------------------------------------------|
+| **Manufacturer**           | Dell                                           |
+| **Name/Variant**           | OptiPlex 780 MT                                |
+| **Released**               | 2009                                           |
+| **Chipset**                | Q45                                            |
+| **CPU**                    | Core 2 (Duo+Quad)                              |
+| **Memory**                 | DDR3 SODIMMs (max 16 GB, 4x4 GB)               |
+| **Networking**             | Intel 82567LM                                  |
+| **Expansion Slots**        | PCIe 2.0; x16 , x1 , PCI                       |
+| **Storage connectors**     | 4x SATA II                                     |
+| **Other Connectors**       | Headers; audio , dual USB 2.0                  |
+| **I/O Ports on Front**     | 2x USB 2.0 , 2x Line-in (stereo/microphone)    |
+| **I/O Ports on Back**      | 2x Line-out (headphone/speaker) , 6x USB 2.0 , 1GbE Ethernet , SCOM , VGA , Parallel , eSATA  |
+
+</div>
+
+<div class="expandedspecs2">
+<center>
+<img tabindex=1 alt="dell780ussf" src="https://av.libreboot.org/*devicename/io+exp.jpg*" />
+</center>
+
+| ***Specifications***       |                                                |
+|----------------------------|------------------------------------------------|
+| **Manufacturer**           | Dell                                           |
+| **Name/Variant**           | OptiPlex 780 USSF                              |
+| **Released**               | 2009                                           |
+| **Chipset**                | Q45                                            |
+| **CPU**                    | Core 2 Duo                                     |
+| **Memory**                 | DDR3 SODIMMs (max 16 GB, 4x4 GB)               |
+| **Networking**             | Intel 82567LM                                  |
+| **Expansion Slots**        | PCIe 2.0 Minicard                              |
+| **Storage connectors**     | 2x SATA II                                     |
+| **Other Connectors**       | Frontpanel header; audio + dual USB 2.0                  |
+| **I/O Ports on Front**     | 2x USB 2.0 , 2x Line-in (stereo/microphone) |
+| **I/O Ports on Back**      | 2x Line-out (headphone/speaker) , 5x USB 2.0 , 1GbE Ethernet , SCOM , VGA , DisplayPort , eSATA  |
+
+</div>
 
 [//]: # "SPDX-License-Identifier: GFDL-1.3-or-later"
 
