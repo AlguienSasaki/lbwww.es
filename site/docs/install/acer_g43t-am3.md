@@ -126,7 +126,7 @@ DDR3 memory with 512Mx8 chips (G43 limitation), 4x4GB sticks (works, but showed 
 | **Networking**             | Intel 82567V-2                                          |
 | **Expansion Slots**        | PCIe gen. 2; x16 , x1 , 2x PCI |
 | **Storage connectors**     | 6x SATA II       |
-| **Other Connectors**       | Audio , 4x dual USB 2.0 , SCOM |
+| **Other Connectors**       | Headers; Audio , 4x dual USB 2.0 , SCOM |
 | **I/O Ports on Back**      | PS/2 Mouse+Keyboard , VGA , HMDI , 4x USB 2.0 , IEEE 1394 (Firewire) , 1GbE Ethernet |
 
 </div>
