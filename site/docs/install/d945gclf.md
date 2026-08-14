@@ -1,23 +1,23 @@
 ---
-title: Install Libreboot on Intel D945GCLF and/or D945GCLF2
+title: Install Libreboot on Intel D945GCLF(2/D)
 x-toc-enable: true
 ...
 
 <div class="specs">
 <center>
-<img tabindex=1 alt="D945GCLF" class="p" src="https://av.libreboot.org/d945gclf/d945gclf.jpg" /><span class="f"><img src="https://av.libreboot.org/d945gclf/d945gclf.jpg" /></span>
+<img tabindex=1 alt="D945GCLF" src="https://av.libreboot.org/d945gclf/d945gclf.jpg" />
 </center>
 
 | ***Specifications***       |                                                |
 |----------------------------|------------------------------------------------|
 | **Manufacturer**           | Intel                                          |
-| **Name**                   | D945GCLF/D945GCLF2D                            | 
+| **Name**                   | D945GCLF(2/D)                                  |
+| **Variants**               | D945GCLF, D945GCLF2, D945GCLFD                 |
 | **Released**               | 2008                                           |
-| **Chipset**                | Intel Calistoga 945GC                          |
-| **CPU**                    | Intel Atom                                     | 
-| **Graphics**               | ?                                              |
-| **Display**                | None.                                          |
-| **Memory**                 | Up to 2GB                                      |
+| **Chipset**                | 945GC                                          |
+| **CPU**                    | Atom 230 (D945GCLF) / 330 (D945GCLF2/D)        | 
+| **Graphics**               | GMA 950                                        |
+| **Memory**                 | DDR2 SODIMM max. 2 GB, 1x2GB                   |
 | **Architecture**           | x86\_64                                        |
 | **Original boot firmware** | Intel BIOS                                     |
 | **Intel ME/AMD PSP**       | Not present.                                   |
@@ -39,105 +39,142 @@ P*: Partially works with vendor firmware
 | **Audio**                                         | W+ |       |
 | **RAM Init**                                      | W+ |       |
 | **External output**                               | W+ |       |
-| **Display brightness**                            | -  |       |
 
 | ***Payloads supported***  |              |
 |---------------------------|--------------|
 | **GRUB**              | Doesn't work |
-| **SeaBIOS**               | Works        |
+| **SeaBIOS**           |    Works     |
 | **SeaBIOS with GRUB** | Doesn't work |
 </div>
 
-Open source BIOS/UEFI firmware
-------------------------------
+### Flash a ROM image
 
-This document will teach you how to install Libreboot, on your
-Intel D945GCLF and/or D945GCLF2 desktop motherboard.
-Libreboot is a [Free Software](https://writefreesoftware.org/learn) project
-that replaces proprietary BIOS/UEFI firmware.
+#### Software
 
-If you just want flashing instructions, go to
-[../install/d945gclf.md](../install/d945gclf.md)
+*Before internal flashing, [Disable /dev/mem protection](devmem.md) first.*
 
-D945GCLF2D also reported working by a user.
+*In short add this kernel parameter: iomem=relaxed(linux distro)/kernel.securelevel=-1(bsd distro)*
 
-Introduction
-------------
+# THEN REMOVE THIS KERNEL PARAMETER TO PREVENT UNAUTHORIZED/MALICIOUS ACCESS TO YOUR SYSTEM AFTER FLASHING LIBREBOOT.
 
-This board is a mini-itx desktop board for 2008. It uses an atom 230,
-which is a singe core CPU but it is hyperthreaded so it appears to have
-2 thread to the OS. The flash chip is very small, 512KiB, so grub2 does
-not fit, which is why libreboot has to use seabios on this target. Full
-disk encryption like on other supported targets will not be possible, so
-plan accordingly.
+(An important reminder for those who might forget to delete it, even better, replace it with lockdown=integrity / lockdown=confidentiality)
 
-This board has a 945gc chipset which is the desktop equivalent of 945gm
-which can be found in the Lenovo x60/t60 or macbook2,1. This chipset
-features an ICH7 southbridge. It has 1 DIMM slot that can accommodate up
-to 2G of DDR2 RAM.
 
-Connectivity-wise it has 1 PCI slot, a 10/100 ethernet port, 4 usb slot
-and 4 usb ports, with one internal header and 2 SATA ports.
 
-The D945GCLF2 is an upgraded version of this board. The differences are:
-1 more USB header, 10/100/1000 ethernet and a dual core cpu (also
-hyperthreaded). Since the board is almost identical (and coreboot code
-seem to indicate that it works, since MAX\_CPU=4 is set), it is believed
-that it should also work but this is untested.
+If you're already running Libreboot, and you don't have flash protection turned on, internal flashing is possible.
 
-### Remarks about vendor bios:
 
--   Without coreboot/libreboot this board is completely useless, since the
-    vendor bios is very bad. It cannot boot from any HDD whether it is
-    connected to the SATA port or USB. With libreboot it works just
-    fine.
+#### Hardware
 
--   The vendor bios write protects the flash so it requires external
-    flashing to install libreboot on this device. Once libreboot is
-    flashed there is no problem to update the firmware internally
+For general information, please refer to [25xx NOR flash
+instructions](../install/spi.md) - that page refers to use of socketed flash.
 
-Here is an image of the board:\
-![](https://av.libreboot.org/d945gclf/d945gclf.jpg)\
-Here is an image of the D945GCLF2 board:\
-![](https://av.libreboot.org/d945gclf/20160923_141521.jpg){width="80%" height="80%"}\
-And SPI SOIC8 flash chip\
-![](https://av.libreboot.org/d945gclf/20160923_141550.jpg){width="50%" height="50%"}
+The vendor bios write protects the flash so it requires external flashing to install libreboot on this device;
 
-Flashing instructions {#clip}
------------------------------
+<img tabindex=1 alt="Intel D945GCLF flash chip position" src="https://av.libreboot.org/d945gclf/20160923_141550.jpg" />
 
-Refer to [spi.md](spi.md) for how to re-flash externally.
 
-Here is an image of the flash chip:\
-![](https://av.libreboot.org/d945gclf/d945gclf_spi.jpg)
+### Build ROM image from source
+
+The build target, when building from source, is thus:
+
+	./mk -b coreboot d945gclf_512kb
+
+with a 8mb flash;
+
+	./mk -b coreboot d945gclf_8mb
+
+
+### Remarks about vendor bios and small flash chip
+
+Without coreboot/libreboot this board is completely useless, since the vendor bios is very bad. It cannot boot from any HDD whether it is connected to the SATA port or USB.
+
+With libreboot it works fine, but the flash chip is very small, 512KiB, so grub2 does not fit, which is why libreboot has to use seabios
+
 
 ### How to replace thermal paste and fan
 
 This board comes with very crappy disposable loud fan, that one has no
-bearings, which can not be repaired or oiled properly, do not waste your
-time trying to fix it, just buy one chinese same size fan\
-![](https://av.libreboot.org/d945gclf/20160923_141620.jpg){width="50%" height="50%"}
-![](https://av.libreboot.org/d945gclf/20160923_141614.jpg){width="50%" height="50%"}\
-Make sure that new one has same wiring\
-![](https://av.libreboot.org/d945gclf/20160923_142618.jpg){width="50%" height="50%"}\
-This is a new one, with bearing and maintenable\
-![](https://av.libreboot.org/d945gclf/20160923_141738.jpg){width="50%" height="50%"}
-![](https://av.libreboot.org/d945gclf/20160923_141814.jpg){width="50%" height="50%"}\
+bearings, which can not be repaired or oiled properly. 
+
+DO NOT waste your time trying to fix it, just buy one chinese same size fan
+![](https://av.libreboot.org/d945gclf/20160923_141620.jpg)\
+![](https://av.libreboot.org/d945gclf/20160923_141614.jpg)\
+Make sure that new one has same wiring
+
+![](https://av.libreboot.org/d945gclf/20160923_142618.jpg)\
+This is a new one, with bearing and maintenable
+
+![](https://av.libreboot.org/d945gclf/20160923_141738.jpg)\
+![](https://av.libreboot.org/d945gclf/20160923_141814.jpg)\
 Now remove the both coolers rotating them a bit, slowly, then clean both
-silicons and both coolers (removing cmos battery first is recommended)\
-![](https://av.libreboot.org/d945gclf/20160923_141601.jpg){width="50%" height="50%"}\
+silicons and both coolers (removing cmos battery first is recommended)
+
+![](https://av.libreboot.org/d945gclf/20160923_141601.jpg)\
 Put a little bit of non conductive thermal paste on both silicons (only
-cpu silicon iis shown on that image)\
-![](https://av.libreboot.org/d945gclf/20160923_142031.jpg){width="50%" height="50%"}\
+cpu silicon iis shown on that image)
+
+![](https://av.libreboot.org/d945gclf/20160923_142031.jpg)\
 
 Before assembling new fan, some need new longer screws, make sure having
-these (on the left is original one, too short for new fan)\
-![](https://av.libreboot.org/d945gclf/20160923_141659.jpg){width="50%" height="50%"}\
-After that, assemble your new fan into CPU cooler\
-![](https://av.libreboot.org/d945gclf/20160923_141635.jpg){width="50%" height="50%"}\
+these (on the left is original one, too short for new fan)
+
+![](https://av.libreboot.org/d945gclf/20160923_141659.jpg)\
+After that, assemble your new fan into CPU cooler
+
+![](https://av.libreboot.org/d945gclf/20160923_141635.jpg)\
 Finally assemle both coolers on both chips, do not forget put in the CPU
 fan connector back, and you are done.
 
+
+
+### Expanded_Specifications
+
+<div class="expandedspecs">
+<center>
+<img tabindex=1 alt="d945gclf_io+exp" src="https://av.libreboot.org/d945gclf/d945gclf.jpg" />
+</center>
+
+| ***Specifications***       |                                                |
+|----------------------------|------------------------------------------------|
+| **Manufacturer**           | Intel                                          |
+| **Name/Variant**           | D945GCLF                                       |
+| **Released**               | 2008                                           |
+| **Chipset**                | 945GC                                          |
+| **CPU**                    | Atom 230                                       |
+| **Memory**                 | DDR2 SODIMM max. 2 GB, 1x2GB                   |
+| **Audio**                  | Realtek ALC662                   |
+| **Networking**             | RealTek RTL8102EL                              |
+| **Expansion Slots**        | PCI |
+| **Storage connectors**     | 2x SATA II , IDE     |
+| **Other Connectors**       | Headers; USB 2.0  |
+| **I/O Ports on Back**      | PS/2 Mouse+Keyboard , SCOM , VGA , Parallel , 4x USB 2.0 , 100Mbit Ethernet  |
+
+</div>
+
+<div class="expandedspecs2">
+<center>
+<img tabindex=1 alt="d945gclf2_io+exp" src="https://av.libreboot.org/d945gclf/20160923_141521.jpg" />
+</center>
+
+| ***Specifications***       |                                                |
+|----------------------------|------------------------------------------------|
+| **Manufacturer**           | Intel                                          |
+| **Name/Variant**           | D945GCLF2(D)                                   |
+| **Released**               | 2008                                           |
+| **Chipset**                | 945GC                                          |
+| **CPU**                    | Atom 330                                       |
+| **Memory**                 | DDR2 SODIMM max. 2 GB, 1x2GB                   |
+| **Audio**                  | Realtek ALC662                   |
+| **Networking**             | Realtek RTL8111C                               |
+| **Expansion Slots**        | PCIe 2.0 x16 wired in x4 , PCI |
+| **Storage connectors**     | 2x SATA II , IDE      |
+| **Other Connectors**       | Headers; 2x dual USB 2.0  |
+| **I/O Ports on Back**      | PS/2 Mouse+Keyboard , SCOM , VGA , Parallel , 4x USB 2.0 , 1GbE Ethernet , S-VIDEO*1  , S/PDIF |
+
+</div>
+
+*1 D945GCLF2D does not have it
 
 [//]: # "SPDX-License-Identifier: GFDL-1.3-or-later"
 
