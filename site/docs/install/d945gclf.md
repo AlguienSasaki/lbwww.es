@@ -149,7 +149,7 @@ fan connector back, and you are done.
 | **Networking**             | RealTek RTL8102EL                              |
 | **Expansion Slots**        | PCI |
 | **Storage connectors**     | 2x SATA II , IDE     |
-| **Other Connectors**       | Headers; USB 2.0  |
+| **Other Connectors**       | Headers; dual USB 2.0  |
 | **I/O Ports on Back**      | PS/2 Mouse+Keyboard , SCOM , VGA , Parallel , 4x USB 2.0 , 100Mbit Ethernet  |
 
 </div>
