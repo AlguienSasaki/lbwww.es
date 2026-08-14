@@ -3,6 +3,8 @@ title: Install Libreboot on Intel D945GCLF(2/D)
 x-toc-enable: true
 ...
 
+**[!!BACKUP everything!!](https://libreboot.org/docs/install/#howto-readwriteerase-the-boot-flash) just in case something fails.**
+
 <div class="specs">
 <center>
 <img tabindex=1 alt="D945GCLF" src="https://av.libreboot.org/d945gclf/d945gclf.jpg" />
