@@ -78,7 +78,11 @@ It might be necessary to specify the chip type; MX25L1605D/MX25L1608D/MX25L1673E
 
 ### Build ROM image from source
 
-The build target, when building from source, is thus:
+For one only:
+
+	./mk -b coreboot g43t_am3
+
+To build it to use both flash chips:
 
 	./mk -b coreboot g43t_am3_16mb
 
