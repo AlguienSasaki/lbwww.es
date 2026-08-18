@@ -16,7 +16,7 @@ x-toc-enable: true
 | **Name**                   | G43T-AM3                               |
 | **Released**               | 2009                                           |
 | **Chipset**                | G43                                     |
-| **CPU**                    | LGA 775 , Core 2 (Duo & Quad)                   |
+| **CPU**                    | LGA 775, Core 2 (Duo & Quad)                   |
 | **Graphics**               | GMA X4500 |
 | **Memory**                 | DDR3 SODIMMs (max 8 GB, 4x2GB)    |
 | **Architecture**           | x86_64                                         |
@@ -124,15 +124,16 @@ DDR3 memory with 512Mx8 chips (G43 limitation), 4x4GB sticks (works, but showed 
 | **Manufacturer**           | Acer                                          |
 | **Name/Variant**           | G43t-AM3                               |
 | **Released**               | 2009                                           |
-| **Chipset**                | G43                                     |
-| **CPU**                    | LGA 775 , Core 2 (Duo & Quad)                     |
-| **Graphics**               | GMA X4500 |
+| **Chipset**                | Intel [G43](https://en.wikipedia.org/wiki/List_of_Intel_chipsets#Core_2_chipsets) |
+| **CPU**                    | LGA775, Intel [Core 2](https://en.wikipedia.org/wiki/List_of_Intel_processors#Intel_Core_2)        |
+| **Graphics**               | [GMA X4500](https://www.techpowerup.com/gpu-specs/gma-x4500.c3116)                                       |
+| **Audio**                  | Realtek ALC888S |
 | **Memory**                 | DDR3 SODIMMs (max 8 GB, 4x2GB)                      |
 | **Networking**             | Intel 82567V-2                                          |
-| **Expansion Slots**        | PCIe gen. 2; x16 , x1 , 2x PCI |
+| **Expansion Slots**        | PCIe gen. 2; x16, x1, 2x PCI |
 | **Storage connectors**     | 6x SATA II       |
-| **Other Connectors**       | Headers; Audio , 4x dual USB 2.0 , SCOM |
-| **I/O Ports on Back**      | PS/2 Mouse+Keyboard , VGA , HMDI , 4x USB 2.0 , IEEE 1394 (Firewire) , RJ-45 1GbE (Ethernet) |
+| **Other Connectors**       | Headers; Audio, 4x dual USB 2.0, SCOM |
+| **I/O Ports on Back**      | PS/2 Mouse+Keyboard, VGA, HDMI, 4x USB 2.0, IEEE 1394 (Firewire), RJ-45 1GbE (Ethernet) |
 
 </div>
 
