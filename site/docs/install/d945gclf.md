@@ -144,13 +144,14 @@ fan connector back, and you are done.
 | **Released**               | 2008                                           |
 | **Chipset**                | 945GC                                          |
 | **CPU**                    | Atom 230                                       |
+| **Graphics**               | GMA 950                                        |
 | **Memory**                 | DDR2 SODIMM max. 2 GB, 1x2GB                   |
 | **Audio**                  | Realtek ALC662                   |
 | **Networking**             | RealTek RTL8102EL                              |
 | **Expansion Slots**        | PCI |
 | **Storage connectors**     | 2x SATA II , IDE     |
 | **Other Connectors**       | Headers; dual USB 2.0  |
-| **I/O Ports on Back**      | PS/2 Mouse+Keyboard , SCOM , VGA , Parallel , 4x USB 2.0 , 100Mbit Ethernet  |
+| **I/O Ports on Back**      | PS/2 Mouse+Keyboard , SCOM , VGA , Parallel , 4x USB 2.0 , RJ-45 100Mbit (Ethernet)  |
 
 </div>
 
@@ -166,13 +167,14 @@ fan connector back, and you are done.
 | **Released**               | 2008                                           |
 | **Chipset**                | 945GC                                          |
 | **CPU**                    | Atom 330                                       |
+| **Graphics**               | GMA 950                                        |
 | **Memory**                 | DDR2 SODIMM max. 2 GB, 1x2GB                   |
 | **Audio**                  | Realtek ALC662                   |
 | **Networking**             | Realtek RTL8111C                               |
 | **Expansion Slots**        | PCIe 2.0 x16 wired in x4 , PCI |
 | **Storage connectors**     | 2x SATA II , IDE      |
 | **Other Connectors**       | Headers; 2x dual USB 2.0  |
-| **I/O Ports on Back**      | PS/2 Mouse+Keyboard , SCOM , VGA , Parallel , 4x USB 2.0 , 1GbE Ethernet , S-VIDEO*1  , S/PDIF |
+| **I/O Ports on Back**      | PS/2 Mouse+Keyboard , SCOM , VGA , Parallel , 4x USB 2.0 , RJ-45 1GbE (Ethernet) , S-VIDEO*1  , S/PDIF |
 
 </div>
 
