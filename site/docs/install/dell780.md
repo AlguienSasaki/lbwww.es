@@ -153,13 +153,14 @@ change the MAC address, please read [nvmutil documentation](../install/nvmutil.m
 | **Released**               | 2009                                           |
 | **Chipset**                | Q45                                            |
 | **CPU**                    | Core 2 (Duo+Quad)                              |
+| **Graphics**               | GMA 4500                                       |
 | **Memory**                 | DDR3 SODIMMs (max 16 GB, 4x4 GB)               |
 | **Networking**             | Intel 82567LM                                  |
-| **Expansion Slots**        | PCIe 2.0; x16 , x1 , PCI                       |
+| **Expansion Slots**        | PCIe 2.0; x16, x1, PCI                       |
 | **Storage connectors**     | 4x SATA II                                     |
-| **Other Connectors**       | Headers; audio , dual USB 2.0                  |
+| **Other Connectors**       | Headers; audio, dual USB 2.0                  |
 | **I/O Ports on Front**     | 2x USB 2.0 , 2x Line-in (stereo/microphone)    |
-| **I/O Ports on Back**      | 2x Line-out (headphone/speaker) , 6x USB 2.0 , 1GbE Ethernet , SCOM , VGA , Parallel , eSATA  |
+| **I/O Ports on Back**      | 2x Line-out (headphone/speaker) , 6x USB 2.0 , RJ-45 1GbE (Ethernet) , SCOM , VGA , Parallel , eSATA  |
 
 </div>
 
@@ -175,13 +176,14 @@ change the MAC address, please read [nvmutil documentation](../install/nvmutil.m
 | **Released**               | 2009                                           |
 | **Chipset**                | Q45                                            |
 | **CPU**                    | Core 2 Duo                                     |
+| **Graphics**               | GMA 4500                                       |
 | **Memory**                 | DDR3 SODIMMs (max 16 GB, 4x4 GB)               |
 | **Networking**             | Intel 82567LM                                  |
 | **Expansion Slots**        | PCIe 2.0 Minicard                              |
 | **Storage connectors**     | 2x SATA II                                     |
-| **Other Connectors**       | Frontpanel header; audio + dual USB 2.0                  |
-| **I/O Ports on Front**     | 2x USB 2.0 , 2x Line-in (stereo/microphone) |
-| **I/O Ports on Back**      | 2x Line-out (headphone/speaker) , 5x USB 2.0 , 1GbE Ethernet , SCOM , VGA , DisplayPort , eSATA  |
+| **Other Connectors**       | Frontpanel header; audio, dual USB 2.0                  |
+| **I/O Ports on Front**     | 2x USB 2.0, 2x Line-in (stereo/microphone) |
+| **I/O Ports on Back**      | 2x Line-out (headphone/speaker), 5x USB 2.0, RJ-45 1GbE (Ethernet), SCOM ,VGA ,DisplayPort, eSATA  |
 
 </div>
 
