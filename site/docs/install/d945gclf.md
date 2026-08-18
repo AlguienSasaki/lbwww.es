@@ -16,8 +16,8 @@ x-toc-enable: true
 | **Name**                   | D945GCLF(2/D)                                  |
 | **Variants**               | D945GCLF, D945GCLF2, D945GCLFD                 |
 | **Released**               | 2008                                           |
-| **Chipset**                | 945GC                                          |
-| **CPU**                    | Atom 230 (D945GCLF) / 330 (D945GCLF2/D)        | 
+| **Chipset**                | Intel 945GC                                          |
+| **CPU**                    | Intel Atom 230 (D945GCLF) / 330 (D945GCLF2/D)        | 
 | **Graphics**               | GMA 950                                        |
 | **Memory**                 | DDR2 SODIMM max. 2 GB, 1x2GB                   |
 | **Architecture**           | x86\_64                                        |
@@ -142,16 +142,16 @@ fan connector back, and you are done.
 | **Manufacturer**           | Intel                                          |
 | **Name/Variant**           | D945GCLF                                       |
 | **Released**               | 2008                                           |
-| **Chipset**                | 945GC                                          |
-| **CPU**                    | Atom 230                                       |
-| **Graphics**               | GMA 950                                        |
+| **Chipset**                | Intel [945GC](https://en.wikipedia.org/wiki/List_of_Intel_chipsets#Pentium_4/Pentium_D/Pentium_XE_chipsets) |
+| **CPU**                    | Intel [Atom 230](https://en.wikipedia.org/wiki/List_of_Intel_Atom_processors#%22Diamondville%22_(45_nm))|
+| **Graphics**               | [GMA 950](https://www.techpowerup.com/gpu-specs/gma-950.c3127)                   |
+| **Audio**                  | Realtek ALC662                                 |
 | **Memory**                 | DDR2 SODIMM max. 2 GB, 1x2GB                   |
-| **Audio**                  | Realtek ALC662                   |
 | **Networking**             | RealTek RTL8102EL                              |
 | **Expansion Slots**        | PCI |
-| **Storage connectors**     | 2x SATA II , IDE     |
+| **Storage connectors**     | 2x SATA II, IDE     |
 | **Other Connectors**       | Headers; dual USB 2.0  |
-| **I/O Ports on Back**      | PS/2 Mouse+Keyboard , SCOM , VGA , Parallel , 4x USB 2.0 , RJ-45 100Mbit (Ethernet)  |
+| **I/O Ports on Back**      | PS/2 Mouse+Keyboard, SCOM, VGA, Parallel, 4x USB 2.0, RJ-45 100Mbit (Ethernet)  |
 
 </div>
 
@@ -165,20 +165,19 @@ fan connector back, and you are done.
 | **Manufacturer**           | Intel                                          |
 | **Name/Variant**           | D945GCLF2(D)                                   |
 | **Released**               | 2008                                           |
-| **Chipset**                | 945GC                                          |
-| **CPU**                    | Atom 330                                       |
-| **Graphics**               | GMA 950                                        |
+| **Chipset**                | Intel [945GC](https://en.wikipedia.org/wiki/List_of_Intel_chipsets#Pentium_4/Pentium_D/Pentium_XE_chipsets) |
+| **CPU**                    | Intel [Atom 330](https://en.wikipedia.org/wiki/List_of_Intel_Atom_processors#%22Diamondville%22_(45_nm))|
+| **Graphics**               | [GMA 950](https://www.techpowerup.com/gpu-specs/gma-950.c3127)                   |
+| **Audio**                  | Realtek ALC662                                 |
 | **Memory**                 | DDR2 SODIMM max. 2 GB, 1x2GB                   |
-| **Audio**                  | Realtek ALC662                   |
 | **Networking**             | Realtek RTL8111C                               |
-| **Expansion Slots**        | PCIe 2.0 x16 wired in x4 , PCI |
-| **Storage connectors**     | 2x SATA II , IDE      |
+| **Expansion Slots**        | PCI |
+| **Storage connectors**     | 2x SATA II, IDE      |
 | **Other Connectors**       | Headers; 2x dual USB 2.0  |
-| **I/O Ports on Back**      | PS/2 Mouse+Keyboard , SCOM , VGA , Parallel , 4x USB 2.0 , RJ-45 1GbE (Ethernet) , S-VIDEO*1  , S/PDIF |
+| **I/O Ports on Back**      | PS/2 Mouse+Keyboard, SCOM, VGA, Parallel, 4x USB 2.0, RJ-45 1GbE (Ethernet), S-VIDEO (D945GCLF2 only) , S/PDIF |
 
 </div>
 
-*1 D945GCLF2D does not have it
 
 [//]: # "SPDX-License-Identifier: GFDL-1.3-or-later"
 
