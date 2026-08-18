@@ -194,12 +194,13 @@ PWM fan speed is not changing in depend of CPU temperature based on SuperIO fan 
 | **Released**               | 2009                                           |
 | **Chipset**                | G41                                     |
 | **CPU**                    | LGA775 , Core 2 (Duo+Quad)                     |
+| **Graphics**               | GMA X4500                                      |
 | **Memory**                 | DDR2 SODIMMs max. 8GB (2 x 4GB)   |
 | **Networking**             | Realtek RTL8111C                                        |
 | **Expansion Slots**        | PCIe 2.0; x16 , x1 , PCI |
 | **Storage connectors**     | 2x SATA II , IDE , Floppy (iTE IT8718 chip)      |
 | **Other Connectors**       | Headers; Audio , 2x dual USB 2.0 , SCOM ,  S/PDIF |
-| **I/O Ports on Back**      | PS/2 Mouse+Keyboard , VGA , Parallel , 4x USB 2.0 , D-SUB , 1GbE Ethernet , 3 x audio jacks |
+| **I/O Ports on Back**      | PS/2 Mouse+Keyboard , VGA , Parallel , 4x USB 2.0 , D-SUB , RJ-45 1GbE (Ethernet), 3 x audio jacks |
 
 </div>
 
