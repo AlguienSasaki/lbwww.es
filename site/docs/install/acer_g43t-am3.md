@@ -126,12 +126,13 @@ DDR3 memory with 512Mx8 chips (G43 limitation), 4x4GB sticks (works, but showed 
 | **Released**               | 2009                                           |
 | **Chipset**                | G43                                     |
 | **CPU**                    | LGA 775 , Core 2 (Duo & Quad)                     |
+| **Graphics**               | GMA X4500 |
 | **Memory**                 | DDR3 SODIMMs (max 8 GB, 4x2GB)                      |
 | **Networking**             | Intel 82567V-2                                          |
 | **Expansion Slots**        | PCIe gen. 2; x16 , x1 , 2x PCI |
 | **Storage connectors**     | 6x SATA II       |
 | **Other Connectors**       | Headers; Audio , 4x dual USB 2.0 , SCOM |
-| **I/O Ports on Back**      | PS/2 Mouse+Keyboard , VGA , HMDI , 4x USB 2.0 , IEEE 1394 (Firewire) , 1GbE Ethernet |
+| **I/O Ports on Back**      | PS/2 Mouse+Keyboard , VGA , HMDI , 4x USB 2.0 , IEEE 1394 (Firewire) , RJ-45 1GbE (Ethernet) |
 
 </div>
 
