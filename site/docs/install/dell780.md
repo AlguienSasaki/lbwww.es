@@ -18,8 +18,8 @@ Dell OptiPlex 780
 | **Name**                   | OptiPlex 780                                   |
 | **Variants**               | OptiPlex 780 MT, OptiPlex 780 USFF             |
 | **Released**               | 2009                                           |
-| **Chipset**                | Q45                                            |
-| **CPU**                    | Core 2 Duo + Quad on MT                        |
+| **Chipset**                | Intel Q45                                            |
+| **CPU**                    | Intel Core 2 Duo + Quad on MT                        |
 | **Graphics**               | GMA 4500                                       |
 | **Memory**                 | DDR3 SODIMMs (max 16GB on MT 4x4GB, 8GB USFF 2x4GB)    |
 | **Architecture**           | x86\_64                                        |
@@ -151,9 +151,10 @@ change the MAC address, please read [nvmutil documentation](../install/nvmutil.m
 | **Manufacturer**           | Dell                                           |
 | **Name/Variant**           | OptiPlex 780 MT                                |
 | **Released**               | 2009                                           |
-| **Chipset**                | Q45                                            |
-| **CPU**                    | Core 2 (Duo+Quad)                              |
-| **Graphics**               | GMA 4500                                       |
+| **Chipset**                | Intel [Q45](https://en.wikipedia.org/wiki/List_of_Intel_chipsets#Core_2_chipsets) |
+| **CPU**                    | Intel [Core 2](https://en.wikipedia.org/wiki/List_of_Intel_processors#Intel_Core_2)                            |
+| **Graphics**               | [GMA 4500](https://www.techpowerup.com/gpu-specs/gma-x4500.c3116)                                       |
+| **Audio**                  | Analog Devices ADI 1984A                       |
 | **Memory**                 | DDR3 SODIMMs (max 16 GB, 4x4 GB)               |
 | **Networking**             | Intel 82567LM                                  |
 | **Expansion Slots**        | PCIe 2.0; x16, x1, PCI                       |
@@ -174,9 +175,10 @@ change the MAC address, please read [nvmutil documentation](../install/nvmutil.m
 | **Manufacturer**           | Dell                                           |
 | **Name/Variant**           | OptiPlex 780 USSF                              |
 | **Released**               | 2009                                           |
-| **Chipset**                | Q45                                            |
-| **CPU**                    | Core 2 Duo                                     |
-| **Graphics**               | GMA 4500                                       |
+| **Chipset**                | Intel [Q45](https://en.wikipedia.org/wiki/List_of_Intel_chipsets#Core_2_chipsets) |
+| **CPU**                    | Intel [Core 2](https://en.wikipedia.org/wiki/List_of_Intel_processors#Intel_Core_2)                            |
+| **Graphics**               | [GMA 4500](https://www.techpowerup.com/gpu-specs/gma-x4500.c3116)                                       |
+| **Audio**                  | Analog Devices ADI 1984A                       |
 | **Memory**                 | DDR3 SODIMMs (max 16 GB, 4x4 GB)               |
 | **Networking**             | Intel 82567LM                                  |
 | **Expansion Slots**        | PCIe 2.0 Minicard                              |
