@@ -50,15 +50,27 @@ P*: Partially works with vendor firmware
 </div>
 
 
+### Get the ROM image
+
+**[Download](https://libreboot.org/download.html) from release**
+
+
+**[Build](https://libreboot.org/docs/build/) from source**
+
+The build target, when building from source, is thus:
+
+	./mk -b coreboot ga_g41m_es2l
+
+
 ### Flash a ROM image
 
-#### Software
+**Software**
 
 *Before internal flashing, [Disable /dev/mem protection](devmem.md) first.*
 
 *In short add this kernel parameter: iomem=relaxed(linux distro)/kernel.securelevel=-1(bsd distro)*
 
-# THEN REMOVE THIS KERNEL PARAMETER TO PREVENT UNAUTHORIZED/MALICIOUS ACCESS TO YOUR SYSTEM AFTER FLASHING LIBREBOOT.
+**THEN REMOVE THIS KERNEL PARAMETER TO PREVENT UNAUTHORIZED/MALICIOUS ACCESS TO YOUR SYSTEM AFTER FLASHING LIBREBOOT.**
 
 (An important reminder for those who might forget to delete it, even better, replace it with lockdown=integrity / lockdown=confidentiality)
 
@@ -82,7 +94,7 @@ connected, after desoldering the backup chip. This has been tested while
 libreboot was already installed onto the main chip.
 
 
-#### Hardware
+**Hardware**
 
 Refer to [spi.md](spi.md) for how to set up an SPI programmer for
 external flashing. *You can only externally reprogram one of the chips
@@ -103,13 +115,6 @@ connection to the CS pin. This is to protect from over-current.
 
 Here is an image of the flash chip:\
 ![](https://av.libreboot.org/ga-g41m-es2l/ga-g41m-es2l.jpg)
-
-
-### Build ROM image from source
-
-The build target, when building from source, is thus:
-
-	./mk -b coreboot ga_g41m_es2l
 
 
 ### Networking (might be Outdated)
