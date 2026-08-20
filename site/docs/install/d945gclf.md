@@ -49,34 +49,13 @@ P*: Partially works with vendor firmware
 | **SeaBIOS with GRUB** | Doesn't work |
 </div>
 
-### Flash a ROM image
 
-#### Software
+### Get the ROM image
 
-*Before internal flashing, [Disable /dev/mem protection](devmem.md) first.*
-
-*In short add this kernel parameter: iomem=relaxed(linux distro)/kernel.securelevel=-1(bsd distro)*
-
-# THEN REMOVE THIS KERNEL PARAMETER TO PREVENT UNAUTHORIZED/MALICIOUS ACCESS TO YOUR SYSTEM AFTER FLASHING LIBREBOOT.
-
-(An important reminder for those who might forget to delete it, even better, replace it with lockdown=integrity / lockdown=confidentiality)
+**[Download](https://libreboot.org/download.html) from release**
 
 
-
-If you're already running Libreboot, and you don't have flash protection turned on, internal flashing is possible.
-
-
-#### Hardware
-
-For general information, please refer to [25xx NOR flash
-instructions](../install/spi.md) - that page refers to use of socketed flash.
-
-The vendor bios write protects the flash so it requires external flashing to install libreboot on this device;
-
-<img tabindex=1 alt="Intel D945GCLF flash chip position" src="https://av.libreboot.org/d945gclf/20160923_141550.jpg" />
-
-
-### Build ROM image from source
+**[Build](https://libreboot.org/docs/build/) from source**
 
 The build target, when building from source, is thus:
 
@@ -85,6 +64,33 @@ The build target, when building from source, is thus:
 with a 8mb flash;
 
 	./mk -b coreboot d945gclf_8mb
+
+    
+### Flash a ROM image
+
+**Software**
+
+*Before internal flashing, [Disable /dev/mem protection](devmem.md) first.*
+
+*In short add this kernel parameter: iomem=relaxed(linux distro)/kernel.securelevel=-1(bsd distro)*
+
+**THEN REMOVE THIS KERNEL PARAMETER TO PREVENT UNAUTHORIZED/MALICIOUS ACCESS TO YOUR SYSTEM AFTER FLASHING LIBREBOOT.**
+
+(An important reminder for those who might forget to delete it, even better, replace it with lockdown=integrity / lockdown=confidentiality)
+
+
+
+If you're already running Libreboot, and you don't have flash protection turned on, internal flashing is possible.
+
+
+**Hardware**
+
+For general information, please refer to [25xx NOR flash
+instructions](../install/spi.md) - that page refers to use of socketed flash.
+
+The vendor bios write protects the flash so it requires external flashing to install libreboot on this device;
+
+<img tabindex=1 alt="Intel D945GCLF flash chip position" src="https://av.libreboot.org/d945gclf/20160923_141550.jpg" />
 
 
 ### Remarks about vendor bios and small flash chip
