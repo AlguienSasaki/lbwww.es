@@ -56,33 +56,40 @@ P*: Partially works with vendor firmware
 See: <https://minifree.org/product/*device_name*/>** 
 
 
+### Get the ROM image
+
+**[Download](https://libreboot.org/download.html) from release**
+
+If you're using a release ROM, please ensure that you've inserted extra firmware
+required refer to the [guide](../install/ivy_has_common.md) for that. (failure
+to adhere to this advice will result in a bricked machine)
+
+
+**[Build](https://libreboot.org/docs/build/) from source**
+
+	./mk -b coreboot *device_name_in_lbmk*
+
+*Include_more_if_there_are_different_variants_buildable*
+
+
 ### Flash a ROM image
 
-#### Software
+**Software**
 
 *Before internal flashing, [Disable /dev/mem protection](devmem.md) first.*
 
 *In short add this kernel parameter: iomem=relaxed(linux distro)/kernel.securelevel=-1(bsd distro)*
 
-# THEN REMOVE THIS KERNEL PARAMETER TO PREVENT UNAUTHORIZED/MALICIOUS ACCESS TO YOUR SYSTEM AFTER FLASHING LIBREBOOT.
+**THEN REMOVE THIS KERNEL PARAMETER TO PREVENT UNAUTHORIZED/MALICIOUS ACCESS TO YOUR SYSTEM AFTER FLASHING LIBREBOOT.**
 
 (An important reminder for those who might forget to delete it, even better, replace it with lockdown=integrity / lockdown=confidentiality)
 
 *Description*
 
 
-#### Hardware
+**Hardware**
 
 *Description_+_picture_if_needed*
-
-
-### Build ROM image from source
-
-The build target, when building from source, is thus:
-
-	./mk -b coreboot *device_name_in_lbmk*
-
-*Include_more_if_there_are_different_variants_buildable*
 
 
 ### Device Unique Properties
