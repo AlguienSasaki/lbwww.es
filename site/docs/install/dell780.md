@@ -53,15 +53,36 @@ P*: Partially works with vendor firmware
 | **SeaBIOS with GRUB**      | Works     |
 </div>
 
+
+### Get the ROM image
+
+The `_truncate` image is needed if you're flashing Libreboot internally from
+the original Dell firmware. Otherwise, you only need the regular images that
+lack `_truncate` in the file name.
+
+
+**[Download](https://libreboot.org/download.html) from release**
+
+
+**[Build](https://libreboot.org/docs/build/) from source**
+
+The build target, when building from source, is thus:
+
+	./mk -b coreboot dell780mt_truncate_8mb
+	./mk -b coreboot dell780mt_8mb
+	./mk -b coreboot dell780usff_truncate_8mb
+	./mk -b coreboot dell780usff_8mb
+
+
 ### Flash a ROM image
 
-#### Software
+**Software**
 
 *Before internal flashing, [Disable /dev/mem protection](devmem.md) first.*
 
 *In short add this kernel parameter: iomem=relaxed(linux distro)/kernel.securelevel=-1(bsd distro)*
 
-# THEN REMOVE THIS KERNEL PARAMETER TO PREVENT UNAUTHORIZED/MALICIOUS ACCESS TO YOUR SYSTEM AFTER FLASHING LIBREBOOT.
+**THEN REMOVE THIS KERNEL PARAMETER TO PREVENT UNAUTHORIZED/MALICIOUS ACCESS TO YOUR SYSTEM AFTER FLASHING LIBREBOOT.**
 
 (An important reminder for those who might forget to delete it, even better, replace it with lockdown=integrity / lockdown=confidentiality)
 
@@ -108,28 +129,12 @@ flash, with the BIOS region ending at the 8MB limit, so the BIOS region is
 therefore 2MB larger on those images.
 
 
-#### Hardware
+**Hardware**
 
 For general information, please refer to [25xx NOR flash
 instructions](../install/spi.md) - that page refers to use of socketed flash.
 
 No photos yet available.
-
-
-### Build ROM image from source
-
-The build target, when building from source, is thus:
-
-	./mk -b coreboot dell780mt_truncate_8mb
-	./mk -b coreboot dell780mt_8mb
-	./mk -b coreboot dell780usff_truncate_8mb
-	./mk -b coreboot dell780usff_8mb
-
-The `_truncate` image is needed if you're flashing Libreboot internally from
-the original Dell firmware. Otherwise, you only need the regular images that
-lack `_truncate` in the file name.
-
-Alternatively, you can use release images instead of compiling from source.
 
 
 ### Set MAC address
