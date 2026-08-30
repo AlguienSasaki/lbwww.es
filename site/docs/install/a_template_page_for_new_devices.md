@@ -17,13 +17,13 @@ x-toc-enable: true
 | **Variants**               | *If_there_are*                                |
 | **Released**               | *Year*                                           |
 | **Chipset**                | *Model*                                     |
-| **CPU**                    | *Supported_processors*                    |
+| **CPU**                    | *Socket_type_if_replacable,_Supported_processors*                    |
 | **Graphics**               | *integrated_gpu_device* |
-| **Memory**                 | *ram gen* SODIMMs (max *capacity_usually_in GB*, *avaliable_slots x max_per_module*)    |
+| **Memory**                 | *ram_gen* SODIMMs (max_*capacity_usually_in_GB*,_*avaliable_slots_x_max_per_module*)    |
 | **Architecture**           | *Device_Arch*                                         |
 | **Original boot firmware** | *Vendor_firmware_name_with_UEFI_and_or_bios*                             |
 | **Intel ME/AMD PSP**       | *Is_it_present_in_vendor_firmware_and_removable_or_disableable*      |
-| **Flash chip**             | *type and size*           |
+| **Flash chip**             | *type_and_size*           |
 
 
 ```
@@ -117,7 +117,7 @@ instructions](../install/spi.md) - that page refers to use of socketed flash.
 | **Name/Variant**           | *Device_Name/Variant*                               |
 | **Released**               | *Year*                                           |
 | **Chipset**                | *Model*                                     |
-| **CPU**                    | *Supported_processors_with_power_limit*                    |
+| **CPU**                    | *Socket_type_if_replacable,_Supported_processors_and_power_limit*                    |
 | **Memory**                 | *Ram_gen_and_type* (max *capacity_usually_in GB*, *avaliable_slots x max_per_module*)  |
 | **Graphics**               | *Supported iGPU* |
 | **Audio**                  | *Integrated audio chip* |
