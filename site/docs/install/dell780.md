@@ -144,6 +144,28 @@ region. As such, release/build ROMs will contain the same MAC address. To
 change the MAC address, please read [nvmutil documentation](../install/nvmutil.md).
 
 
+### Custom Mods
+
+**Chassis Mod (MT only) for bigger Cards** (GPUs, Accelerators, ...)
+
+Remove the plastic 3.5" drive cage to fit bigger GPUs that exceed the stock 10-inch length limit.
+
+Video walktrough [here](https://www.youtube.com/watch?v=b_M2GGunaYM). (just found, not my)
+
+A guide might be here soon with pictures.
+
+
+**Power On Mod for normal towers**
+
+Just in case any of these motherboards would be used in a different case with a 2 pin power(on) cable, connect it to the 1 (yellow/red) & 4 (Black/black) pins. (Black to black, red to yellow)
+
+For LEDs, 2 (-/black) & 3 (+/red)
+
+|    Pin layout   |
+|  1  |  2  |  3  |
+|  4  |  5  | N/A |
+
+
 ### Expanded_Specifications
 
 <div class="expandedspecs">
