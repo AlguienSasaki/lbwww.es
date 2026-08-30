@@ -89,6 +89,9 @@ to adhere to this advice will result in a bricked machine)
 
 **Hardware**
 
+For general information, please refer to [25xx NOR flash
+instructions](../install/spi.md) - that page refers to use of socketed flash.
+
 *Description_+_picture_if_needed*
 
 
@@ -116,6 +119,8 @@ to adhere to this advice will result in a bricked machine)
 | **Chipset**                | *Model*                                     |
 | **CPU**                    | *Supported_processors_with_power_limit*                    |
 | **Memory**                 | *Ram_gen_and_type* (max *capacity_usually_in GB*, *avaliable_slots x max_per_module*)  |
+| **Graphics**               | *Supported iGPU* |
+| **Audio**                  | *Integrated audio chip* |
 | **Networking**             | *Integrated_network_chip_model*                                         |
 | **Expansion Slots**        | *List_pcie_pci_m.2_and_others* |
 | **Storage connectors**     | *List_avaliable_sata_or_m.2_ports_usually_and_others_if_there_are_more*      |
@@ -126,5 +131,6 @@ to adhere to this advice will result in a bricked machine)
 </div>
 
 *Note here if needed*
+
 
 [//]: # "SPDX-License-Identifier: GFDL-1.3-or-later"
