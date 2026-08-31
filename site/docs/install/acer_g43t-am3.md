@@ -138,7 +138,7 @@ DDR3 memory with 512Mx8 chips (G43 limitation), 4x4GB sticks (works, but showed 
 | **Expansion Slots**        | PCIe gen. 2; x16, x1, 2x PCI |
 | **Storage connectors**     | 6x SATA II       |
 | **Other Connectors**       | Headers; Audio, 4x dual USB 2.0, SCOM |
-| **I/O Ports on Back**      | PS/2 Mouse+Keyboard, VGA, HDMI, 4x USB 2.0, IEEE 1394 (Firewire), RJ-45 1GbE (Ethernet) |
+| **I/O Ports on Back**      | PS/2 Mouse+Keyboard, VGA, HDMI, 4x USB 2.0, Firewire (IEEE 1394), RJ-45 1GbE (Ethernet) |
 
 </div>
 
