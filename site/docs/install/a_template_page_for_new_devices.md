@@ -61,9 +61,11 @@ See: <https://minifree.org/product/*device_name*/>**
 **[Download](https://libreboot.org/download.html) from release**
 
 If you're using a release ROM, please ensure that you've inserted extra firmware
-required refer to the [guide](../install/ivy_has_common.md) for that. (failure
-to adhere to this advice will result in a bricked machine)
+required refer to the [guide](../install/ivy_has_common.md) for that (, failure
+to adhere to this advice will result in a bricked machine):
 
+- *include the needed firmware blobs, like Intel ME, Intel FSP for skylake =<*
+- 
 
 **[Build](https://libreboot.org/docs/build/) from source**
 
