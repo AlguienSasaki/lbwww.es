@@ -75,6 +75,23 @@ The build target, when building from source, is thus:
 (An important reminder for those who might forget to delete it, even better, replace it with lockdown=integrity / lockdown=confidentiality)
 
 
+Backup the previous (*working*) firmware (atleast) twice (to check and compare if reading it gone wrong and backups differs.)
+
+	flashprog -p internal:dualbiosindex=0 -r Backup1.bin
+
+	flashprog -p internal:dualbiosindex=0 -r Backup2.bin
+
+Check and compare those if reading from the flash were successful:
+
+	diff Backup1.bin Backup2.bin
+
+For more than 2:
+
+	shasum Backup1.bin Backup2.bin Backup3.bin
+
+If those differs, something gone wrong and proceeding further may **(DON'T) leave your device unrecoverable** (without a reliable backup) if flashing fails as well.
+
+
 There are 2 flash chips (one is backup).
 
 Flash the first chip:
@@ -115,6 +132,23 @@ connection to the CS pin. This is to protect from over-current.
 
 Here is an image of the flash chip:\
 ![](https://av.libreboot.org/ga-g41m-es2l/ga-g41m-es2l.jpg)
+
+
+Backup the previous (*working*) firmware twice (to check and compare if reading it gone wrong and backups differs.)
+
+	flashprog -p serprog:dev=/dev/ttyACM0,spispeed=16M -r Backup1.bin
+
+	flashprog -p serprog:dev=/dev/ttyACM0,spispeed=16M -r Backup2.bin
+
+Check and compare those if reading from the flash were successful:
+
+	diff Backup1.bin Backup2.bin
+
+For more than 2:
+
+	shasum Backup1.bin Backup2.bin Backup3.bin
+
+If those differs, something gone wrong and proceeding further may **(DON'T) leave your device unrecoverable** (without a reliable backup) if flashing fails as well.
 
 
 ### Networking (might be Outdated)
