@@ -87,6 +87,23 @@ The build target, when building from source, is thus:
 (An important reminder for those who might forget to delete it, even better, replace it with lockdown=integrity / lockdown=confidentiality)
 
 
+Backup the previous (*working*) firmware (atleast) twice (to check and compare if reading it gone wrong and backups differs.)
+
+	flashprog -p internal -r Backup1.bin
+
+	flashprog -p internal -r Backup2.bin
+
+Check and compare those if reading from the flash were successful:
+
+	diff Backup1.bin Backup2.bin
+
+For more than 2:
+
+	shasum Backup1.bin Backup2.bin Backup3.bin
+
+If those differs, something gone wrong and proceeding further may **(DON'T) leave your device unrecoverable** (without a reliable backup) if flashing fails as well.
+
+
 Short the service jumper. It's a
 2-pin header located somewhere on the board (no photos available yet).
 
@@ -133,6 +150,24 @@ therefore 2MB larger on those images.
 
 For general information, please refer to [25xx NOR flash
 instructions](../install/spi.md) - that page refers to use of socketed flash.
+
+
+Backup the previous (*working*) firmware twice (to check and compare if reading it gone wrong and backups differs.)
+
+	flashprog -p serprog:dev=/dev/ttyACM0,spispeed=16M -r Backup1.bin
+
+	flashprog -p serprog:dev=/dev/ttyACM0,spispeed=16M -r Backup2.bin
+
+Check and compare those if reading from the flash were successful:
+
+	diff Backup1.bin Backup2.bin
+
+For more than 2:
+
+	shasum Backup1.bin Backup2.bin Backup3.bin
+
+If those differs, something gone wrong and proceeding further may **(DON'T) leave your device unrecoverable** (without a reliable backup) if flashing fails as well.
+
 
 No photos yet available.
 
