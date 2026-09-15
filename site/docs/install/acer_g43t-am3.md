@@ -78,12 +78,51 @@ To build it to use both flash chips:
 
 (An important reminder for those who might forget to delete it, even better, replace it with lockdown=integrity / lockdown=confidentiality)
 
+
+Backup the previous (*working*) firmware (atleast) twice (to check and compare if reading it gone wrong and backups differs.)
+
+	flashprog -p internal -r Backup1.bin
+
+	flashprog -p internal -r Backup2.bin
+
+Check and compare those if reading from the flash were successful:
+
+	diff Backup1.bin Backup2.bin
+
+For more than 2:
+
+	shasum Backup1.bin Backup2.bin Backup3.bin
+
+If those differs, something gone wrong and proceeding further may **(DON'T) leave your device unrecoverable** (without a reliable backup) if flashing fails as well.
+
+
 External header and internal flashing works. 
 
 It might be necessary to specify the chip type; MX25L1605D/MX25L1608D/MX25L1673E is the correct one, not MX25L1605.
 
 
 **Hardware**
+
+For general information, please refer to [25xx NOR flash
+instructions](../install/spi.md) - that page refers to use of socketed flash.
+
+
+Backup the previous (*working*) firmware twice (to check and compare if reading it gone wrong and backups differs.)
+
+	flashprog -p serprog:dev=/dev/ttyACM0,spispeed=16M -r Backup1.bin
+
+	flashprog -p serprog:dev=/dev/ttyACM0,spispeed=16M -r Backup2.bin
+
+Check and compare those if reading from the flash were successful:
+
+	diff Backup1.bin Backup2.bin
+
+For more than 2:
+
+	shasum Backup1.bin Backup2.bin Backup3.bin
+
+If those differs, something gone wrong and proceeding further may **(DON'T) leave your device unrecoverable** (without a reliable backup) if flashing fails as well.
+
 
 To flash it externally, turn the board off and leave it plugged in with the psu on and then use a programmer WITHOUT the *3.3v connected* to flash. 
 
