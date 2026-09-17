@@ -2,7 +2,10 @@
 % Leah Rowe
 % 9 May 2025
 
-**THIS REPLACES THE [original 2025 release schedule](schedule.md).**
+**This was scrapped in September 2026. Libreboot now uses the previous
+release model: release when ready. See: [resolutions](resolutions.md).**
+
+The following article is now obsolete:
 
 This policy change was enacted on 9 May 2025. The original plan was to
 have April/June and October/December releases each for, for testing and
