@@ -24,7 +24,7 @@ Dell OptiPlex 780
 | **Memory**                 | DDR3 SODIMMs (max 16GB on MT 4x4GB, 8GB USFF 2x4GB)    |
 | **Architecture**           | x86\_64                                        |
 | **Original boot firmware** | Dell UEFI firmware                             |
-| **Intel ME/AMD PSP**       | Present, Fully removable.                      |
+| **Intel ME/AMD PSP**       | Present, Fully removable firmware.                     |
 | **Flash chip**             | SOIC-16 and/or SOIC-8 8MiB (64Mbit)            |
 
 
