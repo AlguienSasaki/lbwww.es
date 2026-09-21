@@ -120,6 +120,7 @@ also available.**
 (Different gen. CPUs compatible with older and newer motherboards too, 4-core ones confirmed, 6/8 core processors might work, untested.)
 
 -   [Dell OptiPlex 3050 Micro](dell3050.html) (Simple, DDR4) - **Also [available to buy with Libreboot pre-installed](https://minifree.org/product/libreboot-3050-micro/)**
+-   [Dell OptiPlex 5050 SFF](dell5050.html) (Simple, DDR4)
 
 #### 5th -> 4th Gen. (Core + Xeon v3-4)
 
