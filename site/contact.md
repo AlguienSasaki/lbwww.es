@@ -48,6 +48,8 @@ website tells you how:
 * WeeChat SASL guide: <https://libera.chat/guides/weechat>
 * Irssi SASL guide: <https://libera.chat/guides/irssi>
 
+For easier setup, try the [Halloy](https://halloy.chat/) client. (Supports all Major OS-s)
+
 In general, you should check the documentation provided by your IRC software.
 
 Social media
