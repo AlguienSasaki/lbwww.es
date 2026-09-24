@@ -80,3 +80,6 @@ Remove the plastic 3.5" drive cage to fit bigger GPUs that exceed the stock 10-i
 Video walktrough [here](https://www.youtube.com/watch?v=b_M2GGunaYM). (just found, not my)
 
 A guide might be here soon with pictures.
+
+
+[//]: # "SPDX-License-Identifier: GFDL-1.3-or-later"
