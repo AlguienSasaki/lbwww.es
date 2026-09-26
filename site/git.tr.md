@@ -50,11 +50,9 @@ Bu bağlantılardan herhangi biri üzerinde `git clone` çalıştırabilirsiniz 
 * <https://git.sr.ht/~libreboot/lbmk>
 * <https://git.disroot.org/libreboot/lbmk>
 * <https://gitea.treehouse.systems/libreboot/lbmk>
-* <https://0xacab.org/libreboot/lbmk/>
-* <https://framagit.org/libreboot/libreboot>
-* <https://gitlab.com/libreboot/lbmk>
 * <https://rocketgit.com/libreboot/libreboot> 
 
+<!-- will re-add 0xacab later * <https://0xacab.org/libreboot/lbmk/> -->
 
 More information
 -------
