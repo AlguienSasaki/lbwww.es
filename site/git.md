@@ -59,8 +59,6 @@ to view changes in your Web browser):
 Mirrors of pico-serprog.git
 --------------------------
 
-* <https://notabug.org/libreboot/pico-serprog>
-
 ### lbwww.git mirror
 
 The `lbwww` repository contains Markdown files (pandoc variant), for use
@@ -74,10 +72,6 @@ Web browser. See:
 * <https://git.sr.ht/~libreboot/lbwww>
 * <https://git.disroot.org/libreboot/lbwww>
 * <https://gitea.treehouse.systems/libreboot/lbwww>
-* <https://git.fosscommunity.in/libreboot/lbwww>
-* <https://0xacab.org/libreboot/lbwww>
-* <https://framagit.org/libreboot/lbwww/>
-* <https://gitlab.com/libreboot/lbwww>
 * <https://rocketgit.com/libreboot/lbwww>
 
 NOTE: The `lbwww-img` repository is not generally provided, on mirrors, as
@@ -105,11 +99,6 @@ needed something more stable, so now Libreboot is hosted on codeberg. See:
 
 There are also these programs, hosted by the Libreboot project, and libreboot
 either recommends them or makes use of them:
-
-The old `ich9utils` and `bucts` repositories are available on notabug:
-
-* Bucts (utility): <https://notabug.org/libreboot/bucts>
-* ich9utils (utility): <https://notabug.org/libreboot/ich9utils>
 
 You can download any of these repositories, make whatever changes you like, and
 then submit your changes using the instructions below.
@@ -298,33 +287,6 @@ Libreboot has this mailing list:
 <https://lists.sr.ht/~libreboot/libreboot>
 
 The email address is [~libreboot/libreboot@lists.sr.ht](mailto:~libreboot/libreboot@lists.sr.ht)
-
-Notabug repositories
---------------------
-
-Notabug is broken. Sorry!
-
-Commits that go to codeberg are also still pushed to notabug, in addition to
-the other mirrors. Notabug is considered a *mirror* since 8 April 2023, when
-Libreboot's main development site moved to *Codeberg*.
-
-OLD notabug repos are still pushed to as backup, but the codeberg mirror is
-considered to be main/official now, as of the [announcement on 8
-April 2023](news/codeberg.md). See:
-
-* Build system: <https://notabug.org/libreboot/lbmk>
-* Website (+docs): <https://notabug.org/libreboot/lbwww>
-* Images (for website): <https://notabug.org/libreboot/lbwww-img>
-
-For sending patches, it is now preferred that you use *codeberg*. Technically,
-pull requests are still possible via Notabug. While Notabug still exists,
-Libreboot patches will continue be pushed there, mirroring what gets pushed
-on Notabug.
-
-Because pull requests and issues were available on notabug in the past, it
-makes sense to keep them open, though we ask that you send to codeberg. If
-they were to be closed on notabug, existing PRs and issues won't be visible
-anymore either, so they have to stay open.
 
 
 [//]: # "SPDX-License-Identifier: GFDL-1.3-or-later"

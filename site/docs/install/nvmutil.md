@@ -526,38 +526,6 @@ If *at least one* part is valid, nvmutil will return
 with zero exit status. If both parts are invalid, it will
 return non-zero.
 
-History
--------
-
-A historical change log
-is included at [docs/install/nvmutilimport.md](nvmutilimport.md),
-but this simply lists historical changes to nvmutil when it
-was a separate project. Future changes to nvmutil can be found by
-running `git log util/nvmutil` in `lbmk.git`. No more changes
-to `nvmutilimport.md` will be applied, but future releases of
-Libreboot announced in `news/` will mention any nvmutil changes.
-
-The *older* `nvmutils` is still available, for reference. See:
-
-* <https://notabug.org/osboot/nvmutils/>
-
-The `nvmutil` software is a clean re-write of `nvmutils`,
-which is compiled to a single binary instead of multiple
-binaries. It contains many fixes and enhancements that
-are absent in the *original* `nvmutils` programs. The
-old `nvmutils` project has been deprecated, and
-abandoned. All new development shall now be performed
-on `nvmutil`.
-
-Libreboot's version of nvmutil is located at `util/nvmutil` in
-the `lbmk.git` repository. The original nvmutil project, when
-it was part of osboot, is still available (for reference) here:
-
-* <https://notabug.org/osboot/nvmutil/>
-
-Please use the latest nvmutil version *from lbmk*. The above information is
-provided only for reference; it may be useful for future auditing.
-
 TODO
 ----
 

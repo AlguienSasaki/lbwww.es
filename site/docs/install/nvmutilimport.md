@@ -14,11 +14,6 @@ Future changes to nvmutil (in `lbmk.git`) shall be included in regular
 Libreboot release announcements, under `news/`, so please be sure to
 check that from now on.
 
-For historical and reference purposes, the original nvmutil repository
-shall be preserved on notabug. See:
-
-<https://notabug.org/osboot/nvmutil>
-
 Version history (osboot)
 ------------------------
 

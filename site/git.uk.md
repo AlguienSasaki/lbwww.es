@@ -59,8 +59,6 @@ website repository, this will probably already be there.
 Дзеркала pico-serprog.git
 -------------------------
 
-* <https://notabug.org/libreboot/pico-serprog>
-
 ### дзеркало lbwww.git
 
 Репозиторій `lbwww` містить файли Markdown (варіант pandoc), для використання
@@ -75,9 +73,6 @@ website repository, this will probably already be there.
 * <https://git.disroot.org/libreboot/lbwww>
 * <https://gitea.treehouse.systems/libreboot/lbwww>
 * <https://git.fosscommunity.in/libreboot/lbwww>
-* <https://0xacab.org/libreboot/lbwww>
-* <https://framagit.org/libreboot/lbwww/>
-* <https://gitlab.com/libreboot/lbwww>
 * <https://rocketgit.com/libreboot/lbwww>
 
 ПРИМІТКА: Репозиторій `lbwww-img` не зазвичай надано, на дзеркалах, оскільки
@@ -105,13 +100,6 @@ Libreboot раніше використовував NotABug, але він ма�
 
 Є також ці програми, розміщені в проекті Libreboot, і libreboot
 або рекомендує їх, або використовує їх:
-
-Проект `ich9utils` тепер доступний під `util/ich9utils` в lbmk, і
-lbmk використовує *це*, але старий окремий репозиторій досі доступний на
-notabug (bucts також там):
-
-* Bucts (утиліта): <https://notabug.org/libreboot/bucts>
-* ich9utils (утиліта): <https://notabug.org/libreboot/ich9utils>
 
 Ви можете завантажити будь-яке з цих сховищ, внести будь-які зміни, і
 потім надіслати свої зміни, дотримуючись інструкцій нижче.
@@ -307,31 +295,6 @@ Libreboot has this mailing list:
 <https://lists.sr.ht/~libreboot/libreboot>
 
 The email address is [~libreboot/libreboot@lists.sr.ht](mailto:~libreboot/libreboot@lists.sr.ht)
-
-Репозиторії Notabug
--------------------
-
-Коміти, які ідуть до codeberg досі push'аться до notabug, в додаток до
-інших дзеркал. Notabug розцінюється *дзеркалом* з 8 квітня 2023 року, коли
-основний сайт розробки Libreboot переїхав на *Codeberg*.
-
-До СТАРИХ репозиторіїв notabug досі push'иться в якості резервної копії, але дзеркало codeberg
-розцінюється в якості основного/офіційного зараз, як в [оголошенні 8
-квітня 2023 року](news/codeberg.md). Дивіться:
-
-* Система побудови: <https://notabug.org/libreboot/lbmk>
-* Веб-сайт (+документація): <https://notabug.org/libreboot/lbwww>
-* Зображення (для веб-сайта): <https://notabug.org/libreboot/lbwww-img>
-
-Для відправлення виправлень, тепер віддається перевага тому, щоб ви використовували *codeberg*. Технічно,
-pull request'и досі можливі через Notabug. Поки Notabug досі існує,
-виправлення Libreboot буде продовжено push'ити там, відзеркалюючи що push'иться
-на Notabug.
-
-Тому що pull request'и та проблемні питання були доступними на notabug в минулому, має
-сенс тримати їх відкритими, хоча наше прохання, щоб ви відправляли до codeberg. Якщо
-їх було би закрито на notabug, або існуючі PR та проблемні питання не були би доступними для перегляду
-більше, тому вони мусять залишатись відкритими.
 
 
 [//]: # "SPDX-License-Identifier: GFDL-1.3-or-later"

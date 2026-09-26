@@ -67,11 +67,6 @@ Libreboot daha önce NotABug'ı kullanıyordu, ancak muhtemelen çok fazla kişi
 
 Ayrıca Libreboot projesi tarafından barındırılan ve libreboot'un ya önerdiği ya da kullandığı şu programlar da var:
 
-Eski `ich9utils` ve `bucts` depoları notabug'da mevcuttur:
-
-* Bucts (yardımcı program): <https://notabug.org/libreboot/bucts>
-* ich9utils (yardımcı program): <https://notabug.org/libreboot/ich9utils>
-
 Bu depolardan herhangi birini indirebilir, istediğiniz değişiklikleri yapabilir ve ardından aşağıdaki talimatları kullanarak değişikliklerinizi gönderebilirsiniz.
 
 Libreboot'u (tüm parçalarını) bir Linux dağıtımında derlemeniz önerilir. Örneğin, derleme sistemi (lbmk) BSD sistemlerinde test edilmemiştir. Linux sisteminize `git`'i kurun ve depolardan birini indirin.

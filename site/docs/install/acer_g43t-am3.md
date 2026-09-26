@@ -7,7 +7,7 @@ This is similar to Gigabyte GA-G41M-ES2L but uses an Intel NIC rather than
 Realtek. Some problems with Linux on this NIC, on this board, with Libreboot,
 were observed; see:
 
-<https://notabug.org/libreboot/lbmk/issues/125>
+<https://web.archive.org/web/20230730111707/https://notabug.org/libreboot/lbmk/issues/125>
 
 That page (on notabug) has some notes about workarounds. It links to this:
 

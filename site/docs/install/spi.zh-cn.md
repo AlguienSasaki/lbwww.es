@@ -70,9 +70,7 @@ get started.
 ### Build serprog firmware from source
 
 You can alternatively download the serprog firmware here:\
-<https://codeberg.org/libreboot/pico-serprog>\
-or here:\
-<https://notabug.org/libreboot/pico-serprog>
+<https://codeberg.org/libreboot/pico-serprog>
 
 You can also find the source code for these, under `src/` in Libreboot release
 archives (source code tarball), and/or under `src/` in `lbmk.git` if downloading

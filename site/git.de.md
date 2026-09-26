@@ -59,8 +59,6 @@ angeklickt werden, um Änderungen in deinem Web Browser anzusehen):
 Mirrors fur pico-serprog.git
 ----------------------------
 
-* <https://notabug.org/libreboot/pico-serprog>
-
 ### lbwww.git Mirror
 
 Das `lbwww` Repository enthält Markdown Dateien (Pandoc Variant), für die
@@ -74,10 +72,6 @@ anklicken um Änderungen in deinem Web Browser anzusehen). Siehe:
 * <https://git.sr.ht/~libreboot/lbwww>
 * <https://git.disroot.org/libreboot/lbwww>
 * <https://gitea.treehouse.systems/libreboot/lbwww>
-* <https://git.fosscommunity.in/libreboot/lbwww>
-* <https://0xacab.org/libreboot/lbwww>
-* <https://framagit.org/libreboot/lbwww/>
-* <https://gitlab.com/libreboot/lbwww>
 * <https://rocketgit.com/libreboot/lbwww>
 
 HINWEIS: Das `lbwww-img` Repository wird generell nicht auf einem Mirror
@@ -106,13 +100,6 @@ stabilere Lösung benötigt, daher verwendet Libreboot nun codeberg. Siehe
 
 Zudem gibt es noch diese vom Libreboot Projekt gehosteten Programme, welche
 von libreboot entweder empfohlen oder verwendet werden:  
-
-Das `ich9utils` Projekt ist nun unter `util/ich9utils` in lbmk verfügbar,
-und lbmk verdendet *dies*, aber das alte standalone Repository ist nach
-wie vor verfügbar unter notabug (bucts is also there):
-
-* Bucts (Utility): <https://notabug.org/libreboot/bucts>
-* ich9utils (Utility): <https://notabug.org/libreboot/ich9utils>
 
 Du kannst diese Repositories herunterladen, sie nach deinen Wünschen ändern,
 und dann deine Änderungen zur Verfügung stellen mithilfe der folgenden
@@ -322,34 +309,6 @@ Libreboot has this mailing list:
 <https://lists.sr.ht/~libreboot/libreboot>
 
 The email address is [~libreboot/libreboot@lists.sr.ht](mailto:~libreboot/libreboot@lists.sr.ht)
-
-Notabug Repositories
---------------------
-
-Notabug ist kaput. Entschuldigung.
-
-Commits die zu codeberg gepusht werden, werden ebenso zu notabug gepusht, 
-zusätzlich zu den anderen Mirrors.
-Notabug wird seit dem 8. April 2023 als *Mirror* betrachtet, seitdem
-Libreboot's Haupt Entwicklung zu *Codeberg* gewechselt hat.
-
-In die ALTEN notabug Repositories wird zu Backup Zwecken nach wie vor gepusht, 
-aber der codeberg mirror wird nun als der hauptsächliche/offizielle betrachtet, 
-wie in dieser [Ankündigung vom 8. April 2023](news/codeberg.md). Siehe:
-
-* Build system: <https://notabug.org/libreboot/lbmk>
-* Webseite (+Dokumentation): <https://notabug.org/libreboot/lbwww>
-* Bilder (für die Webseite): <https://notabug.org/libreboot/lbwww-img>
-
-Um Patches zu senden, wird nun bevorzugt wenn Du *codeberg* verwendest. 
-Technisch gesehen sind pull requests via Notabug nach wie vor möglich. 
-Während Notabug nach wie vor existiert, werden Libreboot Patches nach wie
-vor dorthin gepushed, als Mirror für Änderungen die auf Notabug gepushed werden.
-
-Weil pull requests und issues in der Vergangenheit auf notabug verfügbar waren, 
-macht es Sinn diese offen zu lassen, dennoch würden wir dich bitten an codeberg
-zu schicken. Sofern diese auf notabug geschlossen werden, dann werden diese PRs
-und issues ohnehin nicht mehr sichtbar, daher sollten diese offen bleiben.
 
 
 [//]: # "SPDX-License-Identifier: GFDL-1.3-or-later"

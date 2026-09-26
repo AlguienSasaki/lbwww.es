@@ -67,8 +67,7 @@ release have now been fixed.
   vitali64 on IRC for this fix
 * Reset bug fixed, on GM45 platforms (ThinkPad X200/T400/T500 and so on). These
   laptops did not reliably reboot, on the Libreboot 20210522 testing release.
-  They now reboot reliably, with this fix. See:
-  <https://notabug.org/libreboot/lbmk/issues/3>
+  They now reboot reliably, with this fix.
 * `lbmk`: Use `env` instead of hardcoding the bash path, in bash scripts. This
   should make the build system slightly more portable between distros.
 * Turkish keyboard layout added on GRUB payloads

@@ -878,8 +878,6 @@ The old Untitled Static Site Generator git repositories were:
 
 * <https://codeberg.org/vimuser/untitled>
 * <https://codeberg.org/vimuser/untitled-website>
-* <https://notabug.org/untitled/untitled>
-* <https://notabug.org/untitled/untitled-website>
 
 The old repositories have been retained, but are now archived. You can find
 the new *lbssg* repositories linked from the [Libreboot Git

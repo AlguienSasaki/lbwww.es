@@ -124,11 +124,6 @@ that ultimately never reached a stable state, and he abandoned the project
 after his work was replaced, but the feeling of disgust that he had was not
 mutual.
 
-I, Leah Rowe, am very grateful to Andrew Robbins for his numerous contributions
-over the years. Anyone who contributes to Libreboot is a hero. Look at the
-old Libreboot repository on [notabug](https://notabug.org/libreboot) to find
-his contributions.
-
 ### Angel Pons
 
 Angel is a coreboot developer. Their contributions are numerous, in that and
