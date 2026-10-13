@@ -11,6 +11,10 @@ regardless of what firmware you currently have and what firmware you're
 re-flashing it with; this includes updates between Libreboot releases. Use
 the `-r` option in flashprog instead `-w`, to read from the flash.**
 
+These documents will teach you how to install Libreboot, on these devices/motherboards.
+Libreboot is a [Free Software](https://writefreesoftware.org/learn) project
+that replaces proprietary BIOS/UEFI firmware.
+
 SAFETY WARNING!
 ---------------
 
@@ -23,7 +27,7 @@ Please take care to back up the current firmware, before flashing!
 Devices purchasable from [Minifree](https://minifree.org) directly;
 -------------------------------------------------------------------
 
-### 8th gen (Kabylake Refresh) Laptops and Desktops
+**Laptops and Desktops**
 
 -   **[Lenovo ThinkPad X280](https://minifree.org/product/libreboot-x280.html)**
 
@@ -33,7 +37,7 @@ Devices purchasable from [Minifree](https://minifree.org) directly;
 
 -   **[Dell OptiPlex 3050 Micro](https://minifree.org/product/libreboot-3050-micro/)**
 
-Supported by libreboot;
+Devices supported by libreboot;
 -----------------------
 
 **If you want professional Libreboot installation,
@@ -42,34 +46,44 @@ is available; it also offers other coreboot firmware besides Libreboot. For
 example, Chromebook installation via MrChromebox UEFI coreboot distribution is
 also available.**
 
-### Laptops (Intel, x86)
+*Before internal flashing, [Disable /dev/mem protection](devmem.md) first.*
 
-#### 8th Gen (Kabylake Refresh).
+*In short add this kernel parameter: iomem=relaxed(linux distro)/kernel.securelevel=-1(bsd distro)*
+
+**THEN REMOVE THIS KERNEL PARAMETER TO PREVENT UNAUTHORIZED/MALICIOUS ACCESS TO YOUR SYSTEM AFTER FLASHING LIBREBOOT.**
+
+(An important reminder for those who might forget to delete it, even better, replace it with lockdown=integrity / lockdown=confidentiality)
+
+### Laptops (x86/_64)
+
+Intel
+
+**8th Gen.**
 
 -   [Lenovo ThinkPad X280](t480.html) (Complex, DDR4) - Also **[available to buy with Libreboot pre-installed](https://minifree.org/product/libreboot-x280.html)**
 -   [Lenovo ThinkPad T480 and ThinkPad T480s](t480.html) (Complex, DDR4) - Also **[available to buy with Libreboot pre-installed](https://minifree.org/product/libreboot-t480.html)**
 -   [Lenovo ThinkPad T580](t480.html) (Complex, DDR4) - Also **[available to buy with Libreboot pre-installed](https://minifree.org/product/libreboot-t580.html)**
 
-#### 5th Gen.
+**5th Gen.**
 
 -   [HP EliteBook 820 G2](hp820g2.md) (Complex, DDR3L)
 
-#### 4th Gen.
+**4th Gen.**
 
 -   [Lenovo ThinkPad W541](w541_external.md) (Complex, DDR3L)
 -   [Lenovo ThinkPad T440p](t440p_external.md) (Complex, DDR3L)
 
-#### 3th Gen.
+**3rd -> 2nd Gen.**
+
+(Socketed processors are fully compatible with motherboards from different generations)
 
 -   [HP EliteBook 2170p](hp2170p.md) (Moderate, DDR3L)
--   [HP EliteBook 2570p](hp2570p.md) (Moderate, DDR3L)
--   [HP EliteBook 8470p](hp8470p.md) (Moderate, DDR3L)
+-   [HP EliteBook 2570p/2560p](hp2560p.md) (Moderate, DDR3L)
+-   [HP EliteBook 8470p/8460p](hp8460p.md) (Moderate, DDR3L)
 -   [HP EliteBook Folio 9470m](hp9470m.md) (Complex, DDR3L)
 -   Lenovo ThinkPad T430 (**but not the T430S**) (Complex, DDR3L)
 -   Lenovo ThinkPad T530 (Complex, DDR3L)
 -   [Lenovo Thinkpad X230 / X230 Tablet](x230_external.md) (Complex, DDR3L)
--   [HP EliteBook 2560p](hp2560p.md) (Moderate, DDR3L)
--   [HP EliteBook 8460p](hp8460p.md) (Moderate, DDR3L)
 -   [HP EliteBook 8560w](hp8560w.md) (Moderate, DDR3L)
 -   [Dell Latitude E5420, E5520, E5530, E6420, E6430, E6520, E6530, E6230, E6330, E6220, E7240](latitude.md) (Simple, DDR3L)
     (Intel GPU variants only)
@@ -77,7 +91,7 @@ also available.**
 -   Lenovo ThinkPad T420s (Complex, DDR3L)
 -   [Lenovo ThinkPad X220/X220](x230_external.md) (Complex, DDR3L)
 
-#### Core 2
+**Core 2**
 
 -   [Dell Latitude E4300, E6400, E6400 XFR and E6400 ATG, all with Nvidia or Intel GPU](latitude.md) (Simple, DDR2L + DDR3L for E4300)
 -   [Lenovo ThinkPad R400](r400.md) (Complex, DDR3L)
@@ -91,53 +105,71 @@ also available.**
 -   Lenovo ThinkPad X60S (with Intel GPU) (Complex, DDR2L)
 -   [Lenovo ThinkPad X60 Tablet](x60tablet_unbrick.md) Tablet (with Intel GPU) (Complex, DDR2L)
 
+**ARM, with U-Boot payload**
+
+-   [ASUS Chromebook Flip C101 (gru-bob)](chromebooks.md) (Complex)
+-   [Samsung Chromebook Plus (v1) (gru-kevin)](chromebooks.md) (Complex)
+
+
 ### Games consoles
 
 -   [Sony Playstation](playstation.md) (Complex) (PS1/PSX)
 
-### Servers (AMD, x86 with ECC support)
+### Servers (x86_64 with ECC support)
 
-#### Opteron 6300
+Intel
+
+**9th -> 6th gen** (Xeon v5-6 and Core up to the 9th gen ones)
+
+(Different gen. CPUs compatible with older and newer motherboards too, on older ones 8th-9th Core with B0 stepping; i3, Pentium Gold, Celeron. 6/8 core processors might work with pin-mod, untested.)
+
+-   [Supermicro X11SSH-(LN4)F](supermicro_x11ssh_f_ln4f.md) (Moderate, DDR4)
+
+AMD
+
+**Opteron 6300**
 
 -   [ASUS KGPE-D16 motherboard](kgpe-d16.md) (Moderate, DDR3)
 
-#### Opteron 4300/4200
+**Opteron 4300/4200**
 
 -   [ASUS KCMA-D8 motherboard](kcma-d8.md) (Moderate, DDR3)
 
-#### Opteron 2000/8000
+**Opteron 2000/8000**
 
 -   [ASUS KFSN4-DRE motherboard](kfsn4-dre.md) (Complex, DDR2)
 
-### Desktops/WorkStations (Intel, x86)
+### Desktops/WorkStations (x86/_64)
 
-#### 12th Gen
+**12th Gen**
 
 -   [Topton X2E N150 aka BKHD H30W-N150](x2e-n150.md) (Simple, DDR5)
 
-#### 8th gen (Kabylake Refresh).
+**9th -> 6th gen** (Xeon v5-6 and Core up to the 9th gen ones)
 
-(Different gen. CPUs compatible with older and newer motherboards too, 4-core ones confirmed, 6/8 core processors might work, untested.)
+(Different gen. CPUs compatible with older and newer motherboards too, on older ones 8th-9th Core with B0 stepping;
+i3, Pentium Gold, Celeron. 6/8 core processors might work with pin-mod, untested.)
 
 -   [Dell OptiPlex 3050 Micro](dell3050.html) (Simple, DDR4) - **Also [available to buy with Libreboot pre-installed](https://minifree.org/product/libreboot-3050-micro/)**
--   [Dell OptiPlex 5050 SFF](dell5050.html) (Simple, DDR4)
+- [Dell OptiPlex 5050 SFF](dell5050.html) (Simple, DDR4)
 
-#### 5th -> 4th Gen. (Core + Xeon v3-4)
 
-(5th gen cpus are compatible with some the 4gen boards; C222/4/6 with Native Ram Init only and H/Z97 chipsets
-                  https://en.wikipedia.org/wiki/LGA_1150#Haswell_chipsets )
+**5th -> 4th Gen.** (Core + Xeon v3-4)
 
--   [Dell OptiPlex 7020/9020/XE2/T1700 MT and SFF](dell9020.md) (Simple, DDR3 + ECC for T1700)
+(5th gen cpus are compatible with some the 4gen boards; C222/4/6 and H/Z97 chipsets 
+https://en.wikipedia.org/wiki/LGA_1150#Haswell_chipsets )
 
-#### 3rd -> 2nd Gen. (Core + Xeon v1-2)
+-   [Dell OptiPlex 7020/9020/XE2/T1700 MT and SFF](dell9020.md) (Simple, DDR3 + ECC for T1700, Broadwell processors does not works with this motherboard yet)
+
+**3rd -> 2nd Gen.** (Core + Xeon v1-2)
 
 (Processors are fully compatible with motherboards from different generations)
 
 -   [Dell OptiPlex 7010/9010 SFF/MT +T1650](dell7010.md) (Simple, DDR3 + ECC for T1650)
--   [HP Elite 8300 USDT](hp8300usdt.md) (Simple, DDR3)
--   [HP Elite 8200 SFF/MT](hp8200sff.md) (Simple, DDR3) (HP 6200 Pro Business probably works too)
+-   [HP Compaq Elite 8300 USDT](hp8300usdt.md) (Simple, DDR3)
+-   [HP Compaq Elite 8200/Compaq 6200 Pro SFF/MT](hp8200sff.md) (Simple, DDR3)
 
-#### Core 2
+**Core 2**
 
 -   [Acer G43T-AM3](acer_g43t-am3.md) (Simple, DDR3)
 -   [Dell OptiPlex 780 variants e.g. MT, USFF](dell780.md) (Simple, DDR3)
@@ -147,11 +179,6 @@ also available.**
 **Bonnel (Atom)**
 -   [Intel D945GCLF](d945gclf.md) (Moderate, DDR2)
 -   Intel D510MO and D410PT motherboards (Moderate, DDR2)
-
-### Laptops (ARM, with U-Boot payload)
-
--   [ASUS Chromebook Flip C101 (gru-bob)](chromebooks.md) (Complex)
--   [Samsung Chromebook Plus (v1) (gru-kevin)](chromebooks.md) (Complex)
 
 ### Emulation
 
@@ -187,13 +214,6 @@ if you want to send your machine in to have Libreboot installed for you.
 Leah Rowe, the founder and lead developer of Libreboot, also owns and
 operates Minifree Ltd; sales provide funding for the Libreboot project.
 
-Disable security before flashing
---------------------------------
-
-**Before internal flashing, you must first disable `/dev/mem` protections. Make
-sure to re-enable them after you're finished.**
-
-**See: [Disabling /dev/mem protection](devmem.md)**
 
 ROM image file names
 --------------------
@@ -260,6 +280,8 @@ EC firmware is required in the main boot flash, but Libreboot's build system
 automatically downloads this from HP for each machine, and inserts it, so
 you don't have to worry. Just make sure that [vendor files are
 inserted](ivy_has_common.md) if using release images.
+
+Except for the hp820g2.
 
 ### Other
 
