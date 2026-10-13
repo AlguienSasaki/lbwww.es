@@ -1,5 +1,5 @@
 ---
-title: Libreboot Extras; collection of appliable Mods & Tweaks (included, but not limited to libreboot).
+title: Collection of appliable Mods & Tweaks (included, but not limited to libreboot).
 x-toc-enable: true
 ...
 
