@@ -1,12 +1,11 @@
 ---
-title: Install Libreboot on HP Elite 8200 SFF/MT and 6200 Pro Business
+title: Install Libreboot on HP Compaq Elite 8200 SFF/MT & 6200 Pro
 x-toc-enable: true
 ...
 
-**[PLEASE READ THESE INSTRUCTIONS BEFORE INSTALLING](ivy_has_common.md), OR
-YOU MAY BRICK YOUR MACHINE!! - Please click the link and follow the instructions
-there, before flashing. For posterity,
-[here is the link again](ivy_has_common.md).**
+
+**[!!BACKUP everything!!](https://libreboot.org/docs/install/#howto-readwriteerase-the-boot-flash) just in case something fails.**
+
 
 <div class="specs">
 <center>
@@ -16,16 +15,15 @@ there, before flashing. For posterity,
 | ***Specifications***      |                                             |
 |---------------------------|---------------------------------------------|
 | **Manufacturer**          | HP                                          |
-| **Name**                  | Compaq 8200 Elite SFF                       |
-|                           | Compaq 8200 Elite MT                        |
+| **Name**                  | Compaq Elite 8200 & 6200 Pro MT/SFF         |
 | **Released**              | 2011                                        |
 | **Chipset**               | Intel Q67                                   |
-| **CPU**                   | Intel Sandy/Ivy Bridge                      |
-| **Graphics**              | Intel HD Graphics or PCI-e low profile card |
-| **Memory**                | Up to 32GB (4x8GB)                          |
-| **Architecture**          | x86\_64                                      |
-| **Intel ME/AMD PSP**      | Present, neutered                           |
-| **Flash chip**            | SOIC-8 8MiB                                 |
+| **CPU**                   | LGA 1155, Intel 2nd gen. (Core+Xeon e3 v1) and with Libreboot 3rd gen. (Core+Xeon e3 v2)                      |
+| **Graphics**              | Intel HD 3000                               |
+| **Memory**                | DDR3 SODIMMs (max. 32GB, 4x8GB)             |
+| **Architecture**          | x86\_64                                     |
+| **Intel ME/AMD PSP**      | Present. Can be disabled with me_cleaner.  |
+| **Flash chip**            | SOIC-8 8MiB/64Mbit                          |
 
 ```
 W+: Works without vendor firmware; 
@@ -51,86 +49,64 @@ P*: Partially works with vendor firmware
 | **SeaBIOS with GRUB**     | Works |
 </div>
 
-Open source BIOS/UEFI firmware
-------------------------------
 
-This document will teach you how to install Libreboot, on your
-HP Elite 8200 SFF desktop motherboard.
-Libreboot is a [Free Software](https://writefreesoftware.org/learn) project
-that replaces proprietary BIOS/UEFI firmware.
+*These 3 devices uses the same motherboard, regardles of the case sizes.*
 
-Libreboot has support for this, in the Git repository and release versions
-from 20230423 onwards.
 
-### Brief board info
+### Get the ROM image
 
-HP Elite 8200 SFF is a small-form-factor desktop of Intel Sandybridge platform
-which you can read more about here:
+**[Download](https://libreboot.org/download.html) from release**
 
-<https://support.hp.com/gb-en/product/hp-compaq-8200-elite-small-form-factor-pc/5037931>
+If you're using a release ROM, please ensure that you've inserted extra firmware
+required refer to the [guide](../install/ivy_has_common.md) for that (, failure
+to adhere to this advice will result in a bricked machine):
 
-MT is an identical board with a larger chassis and more powerful power supply:
+- Intel ME
 
-<https://support.hp.com/gb-en/product/hp-compaq-8200-elite-desktop-pc-series/5037940>
 
-Here's the [Technical Reference Manual](https://web.archive.org/web/20160109143257/https://h10032.www1.hp.com/ctg/Manual/c02778024.pdf).
-This system supports Ivy Bridge processors too. The original BIOS
-won't even POST with those, but with Libreboot they work fully.
+**[Build](https://libreboot.org/docs/build/) from source**
 
-Disable security before flashing
---------------------------------
+Use the first one to upgrade from the vendor firmware (MT/SFF): 
 
-Before internal flashing, you must first disable `/dev/mem` protections. Make
-sure to re-enable them after you're finished.
+	./mk -b coreboot hp8200sff_4mb
 
-See: [Disabling /dev/mem protection](../install/devmem.md)
-
-Install Libreboot
--------------------------
-
-You can actually just compile the Libreboot ROM for this, and flash the
-entire ROM.
-
-Internal flashing from OEM BIOS is possible by setting a jumper
-on the board. Step by step instructions for this are below.
-
-The *coreboot* project proper has technical details on why this works if
-you are interested. It also has external flashing instructions if you need
-to recover from an unbootable BIOS:
-
-<https://doc.coreboot.org/mainboard/hp/compaq_8200_sff.html>
-
-You can build the images for it in Libreboot like so:
+To update the Libreboot firmware on a librebooted one (MT/SFF):
 
 	./mk -b coreboot hp8200sff_8mb
 
-More information about building ROM images can be found in
-the [build guide](../build/).
 
-If you plan on using a graphics card (other than the integrated graphics of
-your CPU), choose one of the files which name contains both "seabios" and
-"txtmode".
+### Flash a ROM image
 
-This is a *Sandybridge* board which means that a neutered ME image is required
-if you wish to flash the ME region. Libreboot's build system automatically
-downloads, neuters (using `me_cleaner`) and inserts this if compiling from
-source.
+**Software**
 
-If you're using *Libreboot release* ROM images, the ME image has been scrubbed
-and you must re-insert it. Use the information on this guide to know how
-to do that:
+*Before internal flashing, [Disable /dev/mem protection](devmem.md) first.*
 
-[Insert vendor files on Intel Sandybridge/Ivybridge/Haswell
-platforms](../install/ivy_has_common.md)
+*In short add this kernel parameter: iomem=relaxed(linux distro)/kernel.securelevel=-1(bsd distro)*
 
-You may also wish to change the *default MAC address* if you're planning to
-use the onboard Intel Gigabit Ethernet. You can do this using the information
-in the same guide linked above, or read the nvmutil manual:
+**THEN REMOVE THIS KERNEL PARAMETER TO PREVENT UNAUTHORIZED/MALICIOUS ACCESS TO YOUR SYSTEM AFTER FLASHING LIBREBOOT.**
 
-[Modify MAC addresses with nvmutil](../install/nvmutil.md).
+(An important reminder for those who might forget to delete it, even better, replace it with lockdown=integrity / lockdown=confidentiality)
 
-Internal flashing from vendor BIOS
-----------------------------------
+
+Backup the previous (*working*) firmware (atleast) twice (to check and compare if reading it gone wrong and backups differs.)
+
+	flashprog -p internal -r Backup1.bin
+
+	flashprog -p internal -r Backup2.bin
+
+Check and compare those if reading from the flash were successful:
+
+	diff Backup1.bin Backup2.bin
+
+For more than 2:
+
+	shasum Backup1.bin Backup2.bin Backup3.bin
+
+If those differs, something gone wrong and proceeding further may **(DON'T) leave your device unrecoverable** (without a reliable backup) if flashing fails as well.
+
+
+Internal flashing from OEM BIOS is possible by setting a jumper
+on the board.
 
 The vendor BIOS imposes write-protections in the Flash Descriptor and
 runtime. However, the flash descriptor can be bypassed by bridging a
@@ -152,10 +128,6 @@ between the pins until you can see the normal BIOS boot screen.
 
 ![](https://av.libreboot.org/hp8200sff/fdo\_screwdriver.jpg)
 
-**NOTE: Libreboot standardises on [flashprog](https://flashprog.org/wiki/Flashprog)
-now, as of 27 January 2024, which is a fork of flashrom.
-The reason why was explained, in
-the [Libreboot 20240225 release](../../news/libreboot20240225.md#flashprog-now-used-instead-of-flashrom)**
 
 Now, run this command:
 
@@ -167,12 +139,9 @@ specify it using the `-c` option as indicated by flashprog.
 The output should contain the text "The Flash Descriptor Override
 Pin-Strap is set". If it doesn't, start again from the beginning.
 
-Now build the **4** MiB Libreboot image.
+Now build the **4** MiB Libreboot image (MT/SFF).
 
 	./mk -b coreboot hp8200sff_4mb
-
-More information about building ROM images can be found in
-the [build guide](../build/).
 
 Also build `ifdtool`. It will be needed soon.
 
@@ -193,65 +162,75 @@ Flash the Libreboot image with a tweaked layout:
 Power off the computer. Make sure to power off, rebooting is not enough!
 
 Power on the computer.
+
+If you plan on using a graphics card (other than the integrated graphics of
+your CPU), choose one of the files which name contains both "seabios" and
+"txtmode".
+
 Now we can flash the full 8 MiB image. Boot to an OS with flashprog
 again.
-
-NOTE: Libreboot standardises on [flashprog](https://flashprog.org/wiki/Flashprog)
-now, as of 27 January 2024, which is a fork of flashrom.
-
-Pick a Libreboot image of your choice from `bin/hp8200sff_8mb`
-or from a release archive. We'll refer to it as `libreboot8.rom`.
 
 	flashprog -p internal -w libreboot8.rom
 
 Power cycle the computer again.
 
-HP 6200 Pro Business PC
------------------------
+**Hardware**
 
-According to this page from the vendor, HP BIOS updates are the same on both
-the 8200 SFF Elite *and* 6200 Pro Business desktop PCs; therefore, we believe
-that the Libreboot config for 8200 SFF will *also* work on 6200 Pro Business
-PCs. That page is here:
-<https://support.hp.com/fi-fi/drivers/selfservice/swdetails/hp-compaq-8200-elite-small-form-factor-pc/5037931/swItemId/vc-229778-2>
+For general information, please refer to [25xx NOR flash
+instructions](../install/spi.md) - that page refers to use of socketed flash.
 
-The config for this board is courtesy of *Riku Viitanen* (`Riku_V` on Libreboot
-IRC), who tested and confirmed the following functionality:
 
-* Sandy Bridge (i5-2400) and Ivy Bridge (i5-3570S) CPUs
-* 4x8 GB RAM (Sandy Bridge: 1333MHz, Ivy Bridge: 1600MHz)
-* PS/2 keyboard and mouse
-* USB keyboard (a bit laggy on GRUB)
-* Boot from USB and DVD
-* Gigabit ethernet
-* VGA and DisplayPort (Intel graphics), with libgfxinit (native video init)
-* Headphone output, PC speaker
-* S3 suspend, wake on USB keyboard
-* lm\_sensors outputs CPU core temperatures only
-* Both PCIe x16 slots, external GPU works with SeaBIOS
-* PCI
-* SATA
-* USB ports
-* Serial port (RS-232)
-* Wake on LAN
+Backup the previous (*working*) firmware twice (to check and compare if reading it gone wrong and backups differs.)
 
-At the time of adding this board to Libreboot, the following is untested:
+	flashprog -p serprog:dev=/dev/ttyACM0,spispeed=16M -r Backup1.bin
 
-* Parallel port (internal header on the board)
-* Floppy drive. The case has a spot for it, but I can't find the header (P10).
+	flashprog -p serprog:dev=/dev/ttyACM0,spispeed=16M -r Backup2.bin
 
-According to the initial coreboot port from 2018, the following also works:
+Check and compare those if reading from the flash were successful:
 
-* EHCI debug (not enabled by Libreboot configs)
-* Native (libre) raminit with up to four DIMM modules (also tested by Riku and
-  confirmed working, with 32GB RAM installed as 4x8GB)
+	diff Backup1.bin Backup2.bin
 
-TPM
----
+For more than 2:
 
-According to git logs, TPM should work, and a commit from 2018 at revision
-ID `39d0e2a2cf45e28cdddd0fe0c88f94ce527ab1ef` in coreboot makes the TPM visible
-to operating systems.
+	shasum Backup1.bin Backup2.bin Backup3.bin
+
+If those differs, something gone wrong and proceeding further may **(DON'T) leave your device unrecoverable** (without a reliable backup) if flashing fails as well.
+
+
+[Instructions](https://doc.coreboot.org/mainboard/hp/compaq_8200_sff.html) (works for the MT too) if you need
+to recover from an unbootable BIOS.
+
+
+### Set MAC address
+
+This platform uses an Intel Flash Descriptor, and defines an Intel GbE NVM
+region. As such, release/build ROMs will contain the same MAC address. To
+change the MAC address, please read [nvmutil documentation](/nvmutil.md).
+
+
+### Expanded_Specifications
+
+<div class="expandedspecs">
+
+| ***Specifications***       |                                                |
+|----------------------------|------------------------------------------------|
+| **Manufacturer**           | HP                                          |
+| **Name/Variant**           | Compaq Elite 8200 & 6200 Pro MT/SFF                               |
+| **Released**               | 2011                                           |
+| **Chipset**                | Intel [Q67](https://en.wikipedia.org/wiki/List_of_Intel_chipsets#LGA_1155)                                     |
+| **CPU with venfor fw.**    | LGA 1155; Intel Sandy Bridge [Core](https://en.wikipedia.org/wiki/Sandy_Bridge#Desktop_platform)+[Xeon E3 v1](https://en.wikipedia.org/wiki/Sandy_Bridge#Server_platform) |
+| **CPU with LibreBoot fw.** | LGA 1151; vendor fw. supported cpus included and Intel Ivy Bridge [Core](https://en.wikipedia.org/wiki/Ivy_Bridge_(microarchitecture)#Desktop_processors)+[Xeon E3 v2](https://en.wikipedia.org/wiki/Ivy_Bridge_(microarchitecture)#Server_processors) |
+| **Memory**                 | DDR3 SODIMMs (max 32GB, 4x8GB)   |
+| **Graphics**               | Intel [HD 3000 1.35Ghz i7+Xeon E3](https://www.techpowerup.com/gpu-specs/hd-graphics-3000.c3196)/[HD 3000 1.1Ghz Core i5 and lower](https://www.techpowerup.com/gpu-specs/hd-graphics-3000.c1257) (Sandy Bridge) and with libreboot [HD 4000](https://www.techpowerup.com/gpu-specs/hd-graphics-4000.c1282) (Ivy Bridge) |
+| **Audio**                  | Realtek ALC261 HD |
+| **Networking**             | Intel 82579LM                                         |
+| **Expansion Slots**        | PCIe; 2.0 x16, x16 wired in x4, x1, PCI |
+| **Storage connectors**     | 2x SATA III, SATA II     |
+| **Other Connectors**       | Headers; 2x dual usb 2.0  |
+| **I/O Ports on Front**     | 2x Line-in (stereo/microphone), 4x USB 2.0 |
+| **I/O Ports on Back**      | 2x Line-in (stereo/microphone), PS/2 Mouse+Keyboard, VGA, SCOM, DisplayPort, 6x USB 2.0, RJ-45 1GbE (Ethernet)  |
+
+</div>
 
 [//]: # "SPDX-License-Identifier: GFDL-1.3-or-later"
 
