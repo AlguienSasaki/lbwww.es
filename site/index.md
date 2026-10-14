@@ -24,9 +24,9 @@ Libreboot provides GNU boot loader "[GRUB](docs/linux/)" and SeaBIOS payloads
 on x86/x86\_64
 Intel/AMD motherboards, and a [U-Boot UEFI payload](docs/uboot/) *for coreboot*
 on ARM64(Aarch64) motherboards.
-An [x86/x86\_64 EDK2 UEFI payload](docs/install/chromebooks-x86.md) is also available
-on some boards. The x86, x86\_64 and arm64 U-Boot payloads provide a lightweight
-UEFI boot implementation. Libreboot's [design](docs/maintain/) incorporates all
+An [x86/x86\_64 EDK2 UEFI payload](docs/install/chromebooks-x86.md) is enabled by default
+on most boards, which can boot nearly anything (even Windows).
+Libreboot's [design](docs/maintain/) incorporates all
 of these payloads in a single image, and you choose one at boot time.
 
 **NEW RELEASE: The latest release is Libreboot 26.01, released on

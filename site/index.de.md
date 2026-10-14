@@ -27,9 +27,9 @@ und [x86/x86\_64 EDK2 UEFI](docs/install/chromebooks-x86.md) für x86.
 Die x86, x86\_64 oder arm64 U-Boot *Payload* hast gibt eine klein klein
 UEFI-Bootloader, gab es Rechner starttung, die BSD oder Linux betriebsystem konnte.
 
-**NEUESTE VERSION: Die neueste Version von Libreboot ist 26.01, veröffentlicht
-am 30 January 2026.
-Siehe auch: [Libreboot 26.01 release announcement](news/libreboot2601.md).**
+**NEUESTE VERSION: Die neueste Version von Libreboot ist 26.10, veröffentlicht
+am 14 Oktober 2026.
+Siehe auch: [Libreboot 26.10 release announcement](news/libreboot2610.md).**
 
 You can also [buy Libreboot preinstalled](https://minifree.org/) from Minifree Ltd,
 on select hardware, as well as send your compatible hardware

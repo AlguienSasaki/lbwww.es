@@ -29,9 +29,9 @@ algunas placas. El payload U-Boot para x86, x86\_64 y arm64 proporciona una
 implementación de arranque UEFI ligera. El [diseño](docs/maintain/) de Libreboot
 incorpora todos estos payloads en una sola imagen, y tú escoges una para arrancar.
 
-**Nuevo lanzamiento: El lanzamiento más reciente es Libreboot 26.01, publicado
-el 30 de Enero del 2026.**
-Véase: [El anuncio de lanzamiento de Libreboot 26.01](news/libreboot2601.md).
+**Nuevo lanzamiento: El lanzamiento más reciente es Libreboot 26.10, publicado
+el 14 de Octubre del 2026.**
+Véase: [El anuncio de lanzamiento de Libreboot 26.10](news/libreboot2610.md).
 
 También puedes [comprar Libreboot preinstalado](https://minifree.org/) desde
 Minifree Ltd, en hardware seleccionado, así como también puedes enviar tu hardware

@@ -22,16 +22,15 @@ Libreboot provides GNU boot loader "[GRUB](docs/linux/)" and SeaBIOS payloads
 on x86/x86\_64
 Intel/AMD motherboards, and a [U-Boot UEFI payload](docs/uboot/) *for coreboot*
 on ARM64(Aarch64) motherboards.
-An [x86/x86\_64 EDK2 UEFI payload](docs/install/chromebooks-x86.md) is also available
-on some boards. The x86, x86\_64 and arm64 U-Boot payloads provide a lightweight
-UEFI boot implementation, which can boot many Linux distros and BSD systems.
+An [x86/x86\_64 EDK2 UEFI payload](docs/install/chromebooks-x86.md) is enabled by default
+on most boards, which can boot nearly anything (even Windows).
 The SeaBIOS and GRUB payloads also boot Linux/BSD systems. Which one you use
 depends on your preferences. Libreboot's design incorporates all of these boot
 methods in a single image, so you can choose which one you use at boot time,
 and more payloads (e.g. Linux kexec payload) are planned for future releases.
 
-**ULTIMO RILASCIO: L'ultimo rilascio e' Libreboot 26.01, rilasciato il 30 January 2026.
-Vedi: [Libreboot 26.01 annuncio di rilascio](news/libreboot2601.md).**
+**ULTIMO RILASCIO: L'ultimo rilascio e' Libreboot 26.10, rilasciato il 14 October 2026.
+Vedi: [Libreboot 26.10 annuncio di rilascio](news/libreboot2610.md).**
 
 You can also [buy Libreboot preinstalled](https://minifree.org/) from Minifree Ltd,
 on select hardware, as well as send your compatible hardware

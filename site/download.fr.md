@@ -33,7 +33,7 @@ qui s'y trouvent avant de flasher. Pour mémoire,
 Clés de signature GPG
 ---------------------
 
-**La dernière version est Libreboot 26.01, dans le répertoire `stable`.**
+**La dernière version est Libreboot 26.10, dans le répertoire `stable`.**
 
 ### NOUVELLE CLÉ
 
@@ -84,7 +84,7 @@ il existe des dépôts Git depuis lesquels vous pouvez la télécharger. Allez i
 Miroirs HTTPS {#https}
 -------------
 
-**La dernière version est Libreboot 26.01, dans le répertoire `stable`.**
+**La dernière version est Libreboot 26.10, dans le répertoire `stable`.**
 
 Ces miroirs sont recommandés, car ils utilisent le chiffrement TLS (https://).
 
@@ -178,7 +178,7 @@ la crontab. Cette page explique comment utiliser crontab :
 Miroirs HTTP {#http}
 ------------
 
-**La dernière version est Libreboot 26.01, dans le répertoire `stable`.**
+**La dernière version est Libreboot 26.10, dans le répertoire `stable`.**
 
 ATTENTION : ces miroirs ne sont pas en HTTPS, ce qui signifie qu'ils sont
 non chiffrés. Votre trafic peut faire l'objet d'une interception
@@ -192,7 +192,7 @@ en utilisant HTTPS.
 Miroirs FTP {#ftp}
 -----------
 
-**La dernière version est Libreboot 26.01, dans le répertoire `stable`.**
+**La dernière version est Libreboot 26.10, dans le répertoire `stable`.**
 
 ATTENTION : FTP est lui aussi non chiffré, comme HTTP. Les mêmes risques s'appliquent.
 

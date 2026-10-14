@@ -33,7 +33,7 @@ there, before flashing. For posterity,
 GPG signing key
 ---------------
 
-**The latest release is Libreboot 26.01, under the `stable` directory.**
+**The latest release is Libreboot 26.10, under the `stable` directory.**
 
 ### NEW KEY
 
@@ -85,7 +85,7 @@ there is a Git repository that you can download from. Go here:
 HTTPS mirrors {#https}
 -------------
 
-**The latest release is Libreboot 26.01, under the `stable` directory.**
+**The latest release is Libreboot 26.10, under the `stable` directory.**
 
 These mirrors are recommended, since they use TLS (https://) encryption.
 
@@ -174,7 +174,7 @@ too! Whatever floats your boat.**
 HTTP mirrors {#http}
 ------------
 
-**The latest release is Libreboot 26.01, under the `stable` directory.**
+**The latest release is Libreboot 26.10, under the `stable` directory.**
 
 WARNING: these mirrors are non-HTTPS which means that they are
 unencrypted. Your traffic could be subject to interference by
@@ -188,7 +188,7 @@ if using HTTPS.
 FTP mirrors {#ftp}
 -----------
 
-**The latest release is Libreboot 26.01, under the `stable` directory.**
+**The latest release is Libreboot 26.10, under the `stable` directory.**
 
 WARNING: FTP is also unencrypted, like HTTP. The same risks are present.
 
