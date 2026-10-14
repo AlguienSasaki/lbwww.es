@@ -1,5 +1,5 @@
 ---
-title: Libreboot Extras; collection of appliable Mods & Tweaks (included, but not limited to libreboot).
+title: Collection of appliable Mods & Tweaks (included, but not limited to libreboot).
 x-toc-enable: true
 ...
 
@@ -62,7 +62,10 @@ Usually with a right mouse click on the application reveals the selectable gpu-s
 
 ### [Reversible] Intel 8th/9th gen. processors support on older 6th/7th gen. motherboards
 
-Libreboot supports 4-core cpus (with B0 stepping) out of box without any mods needed.
+Libreboot supports 4-core cpus (with B0 stepping) out of box without any mods needed, list (8th & 9th gen. desktop processors support ecc memories);
+
+- LGA 1151; Intel 8th gen. [Core with B0 stepping; i3, Pentium Gold and Celeron](https://en.wikipedia.org/wiki/Coffee_Lake#List_of_8th_generation_Coffee_Lake_processors)
+- LGA 1151; 9th gen. [Core with B0 stepping; i3, Pentium Gold, Celeron](https://en.wikipedia.org/wiki/Coffee_Lake#List_of_9th_generation_Coffee_Lake_processors_(Coffee_Lake_Refresh))
 
 But for those, interested in using 6+ core models (with U0/P0 steppings), connect the 2 pins marked on the processor in the [picture](https://hackaday.com/wp-content/uploads/2024/05/coffeetime_detail.png) (using a pencil usually enough, but a conductive slim tape is better).
 
