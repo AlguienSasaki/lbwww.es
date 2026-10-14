@@ -15,6 +15,7 @@ security and customisation compared to proprietary firmware; its goal, plainly,
 is to rid the world of proprietary software and to do that, we therefore try
 to provide firmware that is extremely easy for non-technical users to understand.
 
+Today's release changelog is relative to the previous Libreboot 26.01 release.
 
 <img tabindex=1 class="r" src="https://av.libreboot.org/t480/t480.jpg" /><span class="f"><img src="https://av.libreboot.org/t480/t480.jpg" /></span>
 <img tabindex=1 class="r" src="https://av.minifree.org/t580.jpg" /><span class="f"><img src="https://av.minifree.org/t580.jpg" /></span>
@@ -28,22 +29,19 @@ First thing's first. (and yes, you read the previous paragraph correctly)
 A strongly anti-AI policy was added to a new file: `AGENTS.md` in lbmk. This
 is the most important change in the release. Now everything else:
 
-This changelog is for Libreboot 26.10 Ominous Olive of October 2026, relative
-to the previous Libreboot 26.01 Magnanimous Max release of January 2026. I was
-AWOL for most of the year, in a development context, but the changes in this
-release should more than make up for it.
+WARNING: MAJOR design changes were made to this release, in ways that may
+affect lots of existing setups. We now use EDK2 as the default payload, with
+GRUB/SeaBIOS provided in flash as EFI builds for backward compatibility.
+Everything works, but there are some caveats so please read this release
+changelog very carefully.
 
-WARNING: Use of this release MAY break existing setups, so please be VERY
-careful when upgrading to this release. Users installing Libreboot for the
-first time probably have less to worry about. **Several** major design changes
-have been made, with steps taken to ensure backward compatibility, but some
-nuances must be observed and you are expected to read every word of this
-changelog. Read it twice, even.
-
-I won't mince words. First, some very exciting news:
+The first major change is:
 
 233 Intel/AMD Chromebooks added
 ---
+
+MrChromebox supports nearly every Chromebook, and this release imports all
+boards from that project.
 
 Imported all 233 currently supported Chromebooks from the MrChromebox coreboot
 distro. Baytrail (Kip) tested - others need testing. Source-only in this
