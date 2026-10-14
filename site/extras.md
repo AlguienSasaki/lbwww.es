@@ -13,6 +13,33 @@ Some **physical modifications might be *UNREVERSIBLE*, only replacable**, keep i
 In case if you need any help or get another idea to include here, submit a patch on codeberg or get in contact on irc.
 
 
+### [Reversible] PCIe Rebar
+
+The EDK2-based images work with modern graphics cards, which often lack VGA
+ROMs these days; EDK2 does GOP ROM execution.
+
+We do not enable PCI-E relocatable BAR by default, because it caused stability
+issues when libgfxinit is used on Intel integrated graphics.
+
+To enable it, do:
+
+```
+./mk -m coreboot TARGET
+```
+
+Enable: Devices -> Extend resource window for PCIe devices above 4G
+
+Enable: Devices -> Support PCIe Resizable BARs
+
+Set that last one to the number of bits corresponding to your video RAM.
+Two to the power of thirty-two is 4GB; thirty-three becomes 8GB. Work it out
+accordingly. E.g. 16GB would be 33 bits. 39 bits is generally the maximum limit
+though some machines might not be stable past 36-bit.
+
+Where only graphics cards are supported, we would enable this by default. On
+systems with integrated graphics, we turn it off by default.
+
+
 ### [Reversible] Dual-GPU setup (Do not use it on processors/motherboards without integrated graphics.)
 
 Usually used for efficient power management, but can be used to focus/accelerate task/applications too on the more powerful and usually free unit.
