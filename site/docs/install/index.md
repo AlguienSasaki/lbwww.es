@@ -35,8 +35,15 @@ PCI-E rebar
 -----------
 
 The EDK2-based images work with modern graphics cards, which often lack VGA
-ROMs these days; EDK2 does GOP ROM execution. [Guide](../extras.md#reversible-pcie-rebar)
+ROMs these days; EDK2 does GOP ROM
+execution by default, in Libreboot.
 
+However, we do not enable re-locatable BAR by default. This is required
+for higher-end modern cards with large amounts of video RAM. [Please read
+the documentation for this](../extras.md#reversible-pcie-rebar).
+
+If in doubt, please just follow the link and enable rebar if you're using
+a graphics card.
 
 SMMSTORE settings
 ---------------
