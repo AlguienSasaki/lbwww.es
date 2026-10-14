@@ -31,6 +31,33 @@ Be careful as certain config in `RO_VPD` must be retained during installation
 and updates. Check [chromebooks-x86.md](chromebooks-x86.md) for guidance,
 cross-referenced with MrChromebook documentation.
 
+PCI-E rebar
+-----------
+
+The EDK2-based images work with modern graphics cards, which often lack VGA
+ROMs these days; EDK2 does GOP ROM execution.
+
+We do not enable PCI-E relocatable BAR by default, because it caused stability
+issues when libgfxinit is used on Intel integrated graphics.
+
+To enable it, do:
+
+```
+./mk -m coreboot TARGET
+```
+
+Enable: Devices -> Extend resource window for PCIe devices above 4G
+
+Enable: Devices -> Support PCIe Resizable BARs
+
+Set that last one to the number of bits corresponding to your video RAM.
+Two to the power of thirty-two is 4GB; thirty-three becomes 8GB. Work it out
+accordingly. E.g. 16GB would be 33 bits. 39 bits is generally the maximum limit
+though some machines might not be stable past 36-bit.
+
+Where only graphics cards are supported, we would enable this by default. On
+systems with integrated graphics, we turn it off by default.
+
 SMMSTORE settings
 ---------------
 
@@ -268,6 +295,11 @@ operates Minifree Ltd; sales provide funding for the Libreboot project.
 
 ROM image file names
 --------------------
+
+**Modern Libreboot standardises on EDK2 these days, not SeaBIOS/GRUB which are
+provided inside EDK2 for backward compatibility but recommended only for
+legacy use. Please use the `edk2_` images provided by modern Libreboot, where
+possible as this is much more compatible with modern operating systems.**
 
 Libreboot ROM images are named like
 this: `payload_board_inittype_displaytype_keymap.rom`

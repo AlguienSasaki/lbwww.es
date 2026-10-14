@@ -3,6 +3,19 @@ title: Операційні системи BSD
 x-toc-enable: true
 ...
 
+**This document is obsolete on modern Libreboot, which now uses EDK2 by
+default on most boards. When using EDK2, you can use normal UEFI-based BSD
+bootloaders and installation, which works perfectly without intervention. The
+rest of this document pertains to the old, now-deprecated setup of standalone
+SeaBIOS(as coreboot payload). We recommend UEFI nowadays, for BSD. Please use
+the EDK2 payload provided by Libreboot.**
+
+*Please also know: FreeBSD installed in BIOS mode still expects text mode
+startup with SeaBIOS; this is not compatible with the framebuffer-based
+CSMWrap payload provided inside Libreboot EDK2. Please convert your FreeBSD
+installation to EFI, reinstall it or re-flash with SeaBIOS text-mode; the
+latter is documented in the Libreboot 26.10 release page.*
+
 Керівництво було востаннє оновлено 16 листопада 2022 року.
 
 ПРИМІТКА: Це керівництво стосується хостів x86, і не покриває підтримувані CrOS/ARM

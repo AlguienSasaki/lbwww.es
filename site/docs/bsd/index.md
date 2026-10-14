@@ -3,6 +3,23 @@ title: Install a BSD operating system on Libreboot
 x-toc-enable: true
 ...
 
+**This document is obsolete on modern Libreboot, which now uses EDK2 by
+default on most boards. When using EDK2, you can use normal UEFI-based BSD
+bootloaders and installation, which works perfectly without intervention. The
+rest of this document pertains to the old, now-deprecated setup of standalone
+SeaBIOS(as coreboot payload). We recommend UEFI nowadays, for BSD. Please use
+the EDK2 payload provided by Libreboot.**
+
+*Please disregard this entire document, if you're doing UEFI-based BSD setup.
+The notes about KMS are still useful though, for more efficient graphical
+operation but this is true of all operating systems.*
+
+*Please also know: FreeBSD installed in BIOS mode still expects text mode
+startup with SeaBIOS; this is not compatible with the framebuffer-based
+CSMWrap payload provided inside Libreboot EDK2. Please convert your FreeBSD
+installation to EFI, reinstall it or re-flash with SeaBIOS text-mode; the
+latter is documented in the Libreboot 26.10 release page.*
+
 It is assumed here that you are using the *SeaBIOS* payload, *not* the GRUB
 payload; the U-Boot payload may also work, but that is not covered here. The
 SeaBIOS payload must ideally run in text mode (`txtmode` images from Libreboot
