@@ -24,6 +24,44 @@ YOU MAY BRICK YOUR MACHINE!!
 If you're [building from source](../build/), you can ignore the above guidance.
 Please take care to back up the current firmware, before flashing!
 
+Chromebook install/update
+----------------
+
+Be careful as certain config in `RO_VPD` must be retained during installation
+and updates. Check [chromebooks-x86.md](chromebooks-x86.md) for guidance,
+cross-referenced with MrChromebook documentation.
+
+SMMSTORE settings
+---------------
+
+Modern Libreboot releases use EDK2 with SMMSTORE.
+
+If you used an EDK2 build before Libreboot 26.10, note that SMMSTORE was set
+to 256KB. It was upped back to 512KB as is default, on most platforms. For
+safety, please flash your entire image when switching to a stable release
+with EDK2.
+
+If you're installing for first time, please also flash the whole image.
+
+If updating from an existing stable Libreboot release with EDK2, note that you
+can avoid overwriting your EFI setup config by doing this:
+
+```
+flashprog -p internal --fmap -i COREBOOT -w whatever.rom
+```
+
+This avoids flashing the SMMSTORE section, where your settings are. This is
+because the EDK2 payload writes settings to that section in the flash.
+
+Conversely, you may reset it thus:
+
+```
+flashprog -p internal --fmap -i SMMSTORE -w whatever.rom
+```
+
+Be very careful with this. Note that fmap exists inside the BIOS region on
+IFD-based systems.
+
 Devices purchasable from [Minifree](https://minifree.org) directly;
 -------------------------------------------------------------------
 
@@ -54,7 +92,16 @@ also available.**
 
 (An important reminder for those who might forget to delete it, even better, replace it with lockdown=integrity / lockdown=confidentiality)
 
-### Laptops (x86/_64)
+### Laptops (x86\_64 chromebooks)
+
+See: [x86 chromebooks](chromebooks-x86.html) - also pertains to EDK2 more
+generally, across all boards, not just Chromebooks.
+
+Libreboot 26.10 and higher have full integration of all EDK2-based MrChromebox
+Chromebook setups. That is to say: we support every Chromebook that MrChromebox
+does, in Libreboot.
+
+### Laptops (x86\_64)
 
 Intel
 
@@ -63,6 +110,8 @@ Intel
 -   [Lenovo ThinkPad X280](t480.html) (Complex, DDR4) - Also **[available to buy with Libreboot pre-installed](https://minifree.org/product/libreboot-x280.html)**
 -   [Lenovo ThinkPad T480 and ThinkPad T480s](t480.html) (Complex, DDR4) - Also **[available to buy with Libreboot pre-installed](https://minifree.org/product/libreboot-t480.html)**
 -   [Lenovo ThinkPad T580](t480.html) (Complex, DDR4) - Also **[available to buy with Libreboot pre-installed](https://minifree.org/product/libreboot-t580.html)**
+
+NOTE: X270 also supported and installation is basically identical to X280.
 
 **5th Gen.**
 
@@ -153,6 +202,8 @@ i3, Pentium Gold, Celeron. 6/8 core processors might work with pin-mod, untested
 -   [Dell OptiPlex 3050 Micro](dell3050.html) (Simple, DDR4) - **Also [available to buy with Libreboot pre-installed](https://minifree.org/product/libreboot-3050-micro/)**
 - [Dell OptiPlex 5050 SFF](dell5050.html) (Simple, DDR4)
 
+NOTE: Dell OptiPlex 3040 also supported and installation is basically identical
+to the 3050 Micro.
 
 **5th -> 4th Gen.** (Core + Xeon v3-4)
 
@@ -221,11 +272,9 @@ ROM image file names
 Libreboot ROM images are named like
 this: `payload_board_inittype_displaytype_keymap.rom`
 
-The `payload` option can be SeaBIOS, SeaGRUB or U-Boot. If GRUB is available
-on a given board, in flash, both SeaBIOS and SeaGRUB are provided; SeaBIOS
-images still have GRUB available via the SeaBIOS menu, and SeaGRUB means that
-SeaBIOS automatically loads GRUB from flash first (but you can still choose
-something else, by pressing ESC in SeaBIOS when prompted).
+The `payload` option can be EDK2, SeaBIOS, GRUB or U-Boot. U-Boot on ARM64
+and EDK2 on x86; GRUB and SeaBIOS EFI builds provided for backward compatibility
+with older releases, inside of the EDK2 build.
 
 Inittype can be `libgfxinit`, `vgarom` or `normal`. The `libgfxinit` option
 means coreboot provides native video initialisation, for onboard graphics.
@@ -235,6 +284,9 @@ initialisation, via VGA ROM or native code.
 
 Displaytype can be `txtmode` or `corebootfb` - if inittype is `normal`, this
 is ignored because `txtmode` is assumed.
+
+NOTE: modern releases also support `fspgop` which, semantics aside, works
+essentially just like `libgfxinit_corebootfb`.
 
 If `payload` is `seabios` instead of `seagrub`, no keymaps are inserted into
 flash and only US QWERTY is assumed, otherwise the keymap refers to what is used

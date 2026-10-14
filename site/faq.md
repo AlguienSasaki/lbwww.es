@@ -941,40 +941,7 @@ See:
 
 ### Windows??
 
-Yes, you can use Windows 10 and 11. They are not officially supported and the
-Libreboot project recommends that you *avoid* this choice, because Windows is
-proprietary software. What this means is that you do *not* have the freedom
-to use, study, adapt and share the software in any reasonable way. You are
-entirely at the mercy of Microsoft, whose motive is profit, as opposed to the
-general advancement of computer science and the welfare of everyone.
-
-See: [What is Free Software?](https://writefreesoftware.org/learn)
-
-In addition to being proprietary software, Windows is known to be full of bugs,
-including *backdoors*. When you *use* Windows, it will send information about
-you to third parties, used for a variety of purposes such as advertising, but
-it's quite possible that three-letter agencies may also receive your data if
-you use Windows.
-
-For the sake of your freedom, you should never, ever use Windows. Use Linux or
-BSD systems, which are well-supported. Anyway:
-
-[Video of Windows 10 booting up](https://yewtu.be/watch?v=BWq6XnWKQnM)
-
-[Video of Windows 11 booting up](https://yewtu.be/watch?v=OFHiMfVNNeA)
-
-Of note: Windows 11 officially requires at least TPM 1.2 to be supported, and
-it requires use of UEFI SecureBoot. To bypass this requirement, MajorGeeks has
-a guide, see: <https://www.majorgeeks.com/content/page/bypass_tpm.html>
-
-The person who tested this also stated that they were unable to perform an
-in-place upgrade from 10 to 11, so they had to wipe the drive and perform a
-clean (note: not clean, because Windows is full of NSA spyware) installation.
-
-In both cases, as shown above, the Windows operating system was booting from
-SeaBIOS, with the coreboot framebuffer initialised at startup, on an Intel GPU
-initialised via coreboot's *libgfxinit*, on November 2023 versions of Libreboot.
-We do not yet support booting with UEFI on x86 machines.
+[It works perfectly](docs/install/chromebooks-x86.md)
 
 ### Are other operating systems compatible?
 

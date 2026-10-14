@@ -3,6 +3,15 @@ title: Hardened GNU boot loader (GRUB payload)
 x-toc-enable: true
 ...
 
+**Modern Libreboot uses EDK2 by default now. EFI builds of GRUB are provided
+in flash, accessible from the ESC boot menu in EDK2; set a password in EDK2
+as well, setting GRUB as the only boot option in boot order menu. This
+simulates old SeaGRUB-GRUB-only setups from previous guidance. EFI GRUB works
+fine with this guide, and even reads from CBFS for example. We still recommend
+use of GRUB for hardened setup, as in this guide, hence the decision to provide
+EFI GRUB after making EDK2 the main payload. Our EFI GRUB build is modified to
+behave superficially just like the old coreboot payload.**
+
 What is Secure libreBoot?
 -------------------------
 
@@ -14,31 +23,17 @@ from backdoors and with well-audited code. *This* document does just that, by
 telling you how to *harden* your Libreboot installation against various physical
 access attacks.
 
-### Not UEFI SecureBoot!
-
-UEFI SecureBoot was invented by Microsoft for booting Microsoft Windows. We
-don't use UEFI SecureBoot in the Libreboot project, because UEFI SecureBoot
-is *completely inferior* to Libreboot's security model. We call our own
-security model *Secure libreBoot* and we use neither BIOS nor UEFI; we use GRUB!
-
-*Strong encryption* is the name of the game. You will use the *GRUB payload*.
-GRUB supports various security mechanisms that are not enabled by default.
-This page will tell you how to enable them, for the purpose of boot security,
-both detecting and attempting to prevent certain types of attack.
-
-Please also expect to brick your machine at least once, because many of these
-changes are highly invasive and may even require you to *modify source code*.
-**Make sure you have an [external SPI programmer](../install/spi.md), for
-recovery purposes, just in case you brick your machine. The modifications
-documented here are highly invasive. An external SPI programmer can be used
-to restore the previous working state, should a brick occur.**
-
-Libreboot's design philosophy is that the most non-technical user must be
-catered to first, which means that certain security hardening steps are skipped
-by default. With the steps documented here, you will be able to thwart many
-types of physical attack on your machine. Many of the types of configurations
-documented here are *unique*, and available only in Libreboot! (or otherwise
-only *practical* in Libreboot)
+NOTE: We also support SecureBoot now, if you set it up in the EDK2 payload that
+we provide. It's all fairly straight-forward. This guide was written before we
+had EDK2, and shall still be maintained for backward compatibility. You could
+reproduce much of the same benefit as this guide, by using SecureBoot with a
+Linux UKI-based setup (SecureBoot verifying your UKI bootloader). GRUB is still
+recommended, as in this guide, as it offers true full disk encryption which
+will prevent an attacker from doing anything other than merely corrupt your
+data; even if a signing mechanism is cracked, use of encryption prevents
+meaningful modification unless you have the keys for decryption, so use of
+encrypted `/boot` is a useful extra layer of security, and GRUB does have
+GPG support for verifying kernel signatures as shown in the guidance below.
 
 Full disk encryption
 --------------------
@@ -182,6 +177,11 @@ Run that program. It will ask you to choose a new passphrase. Its output will
 be a string of the following form:
 
 	grub.pbkdf2.sha512.10000.HEXDIGITS.MOREHEXDIGITS
+
+NOTE: GRUB also has an argon2 password utility now, which you could
+use instead. Use that output instead of the one below, if you want. Argon2
+is more secure against GPU-driven bruteforce attacks, due to its extremely
+high memory cost.
 
 Put this *before* the menuentries (just before) in `grub.cfg`, but note that
 you should **not** literally use what is below; the hash below is not the one

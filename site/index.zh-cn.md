@@ -3,7 +3,7 @@ title: 自由且开源 BIOS/UEFI 固件
 x-toc-enable: true
 ...
 
-*Libreboot* 项目提供基于 coreboot 的[自由且开源](https://writefreesoftware.org/zh-cn/)的引导固件，以替代基于 Intel/AMD x86 和 ARM 的特定主板（包括笔记本和台式电脑）上的专有 BIOS/UEFI 固件。它首先初始化硬件（如内存控制器、CPU、外设），然后为操作系统启动引导加载程序（bootloader）。本项目对 [Linux](docs/linux/) 和 [BSD](docs/bsd/) 支持良好。如果需要寻求帮助，可以前往 [Libera](https://libera.chat/) IRC 上的 `#libreboot` 频道。
+*Libreboot* 项目提供基于 coreboot 的[自由且开源](https://writefreesoftware.org/zh-cn/)的引导固件，以替代基于 Intel/AMD x86 和 ARM 的特定主板（包括笔记本和台式电脑）上的专有 BIOS/UEFI 固件。它首先初始化硬件（如内存控制器、CPU、外设），然后为操作系统启动引导加载程序（bootloader）。本项目对 [Linux](docs/linux/)，[BSD](docs/bsd/) 和 Windows 支持良好。如果需要寻求帮助，可以前往 [Libera](https://libera.chat/) IRC 上的 `#libreboot` 频道。
 
 <img tabindex=1 class="r" src="https://av.libreboot.org/t480/t480.jpg" /><span class="f"><img src="https://av.libreboot.org/t480/t480.jpg" /></span>
 
@@ -15,7 +15,7 @@ Libreboot provides GNU boot loader "[GRUB](docs/linux/)" and SeaBIOS payload
 on x86/x86\_64
 Intel/AMD motherboards, and a [U-Boot UEFI payload](docs/uboot/) *for coreboot*
 on ARM64(Aarch64) motherboards.
-An [x86/x86\_64 U-Boot UEFI payload](docs/uboot/uboot-x86.md) is also available
+An [x86/x86\_64 EDK2 UEFI payload](docs/install/chromebooks-x86.md) is also available
 on some boards. The x86, x86\_64 and arm64 U-Boot payloads provide a lightweight
 UEFI boot implementation, which can boot many Linux distros and BSD systems.
 The SeaBIOS and GRUB payloads also boot Linux/BSD systems. Which one you use

@@ -9,7 +9,7 @@ eine [freie](https://writefreesoftware.org/) *Boot
 Firmware* welche auf [bestimmten Intel/AMD x86 und ARM Geräten](docs/install/#which-systems-are-supported-by-libreboot)
 die Hardware initialisiert (z.b. Speicher-Controller, CPU, Peripherie),
 und dann einen Bootloader für dein Betriebssystem startet. [Linux](docs/linux/)
-sowie [BSD](docs/bsd/) werden gut unterstützt. Es ersetzt proprietäre BIOS/UEFI
+sowie [BSD](docs/bsd/) werden gut unterstützt (Windows auch). Es ersetzt proprietäre BIOS/UEFI
 Firmware. Hilfe ist verfügbar
 via `#libreboot`
 und [Libera](https://libera.chat/) IRC.
@@ -23,7 +23,7 @@ in the Public Interest).
 Libreboot liefert GNU *Bootloader* "[GRUB](docs/linux/)" und SeaBIOS *Payload* um
 x86/x86\_64 Intel/AMD,
 die eine [U-Boot UEFI-Payload](docs/uboot/) *für coreboot* auf ARM64(Aarch64).
-und [x86/x86\_64 U-Boot UEFI](docs/uboot/uboot-x86.md) für x86.
+und [x86/x86\_64 EDK2 UEFI](docs/install/chromebooks-x86.md) für x86.
 Die x86, x86\_64 oder arm64 U-Boot *Payload* hast gibt eine klein klein
 UEFI-Bootloader, gab es Rechner starttung, die BSD oder Linux betriebsystem konnte.
 

@@ -10,7 +10,7 @@ firmware based on coreboot, replacing proprietary BIOS/UEFI firmware
 on [specific Intel/AMD x86 and ARM based motherboards](docs/install/#which-systems-are-supported-by-libreboot),
 including laptop and desktop computers. It initialises the hardware (e.g. memory
 controller, CPU, peripherals) and starts a bootloader for your operating
-system (OS). [Linux](docs/linux/) and [BSD](docs/bsd/) are well-supported. Help is
+system (OS). [Linux](docs/linux/), [BSD](docs/bsd/) and Windows are well-supported. Help is
 available via `#libreboot`
 on [Libera](https://libera.chat/) IRC.
 
@@ -24,7 +24,7 @@ Libreboot provides GNU boot loader "[GRUB](docs/linux/)" and SeaBIOS payloads
 on x86/x86\_64
 Intel/AMD motherboards, and a [U-Boot UEFI payload](docs/uboot/) *for coreboot*
 on ARM64(Aarch64) motherboards.
-An [x86/x86\_64 U-Boot UEFI payload](docs/uboot/uboot-x86.md) is also available
+An [x86/x86\_64 EDK2 UEFI payload](docs/install/chromebooks-x86.md) is also available
 on some boards. The x86, x86\_64 and arm64 U-Boot payloads provide a lightweight
 UEFI boot implementation. Libreboot's [design](docs/maintain/) incorporates all
 of these payloads in a single image, and you choose one at boot time.

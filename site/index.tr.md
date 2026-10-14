@@ -3,7 +3,7 @@ title: Özgür ve Açık Kaynaklı BIOS/UEFI Önyükleme Yazılımı
 x-toc-enable: true
 ...
 
-*Libreboot*, Debian'ın bir *Linux dağıtımı* olması gibi, bir *[coreboot dağıtımıdır](docs/maintain)*. Libreboot, [belirli Intel/AMD x86 ve ARM tabanlı anakartlarda](docs/install/#which-systems-are-supported-by-libreboot) özel mülk BIOS/UEFI yazılımının yerini alan, coreboot tabanlı [özgür, açık kaynaklı](https://writefreesoftware.org/) (*libre*) önyükleme yazılımı sağlar. Bu anakartlar dizüstü ve masaüstü bilgisayarları içerir. Donanımı başlatır (örn. bellek denetleyicisi, CPU, çevre birimleri) ve işletim sisteminiz için bir önyükleyici başlatır. [Linux](docs/linux/) ve [BSD](docs/bsd/) iyi desteklenmektedir. [Libera](https://libera.chat/) IRC'deki `libreboot` kanalından yardım alabilirsiniz.
+*Libreboot*, Debian'ın bir *Linux dağıtımı* olması gibi, bir *[coreboot dağıtımıdır](docs/maintain)*. Libreboot, [belirli Intel/AMD x86 ve ARM tabanlı anakartlarda](docs/install/#which-systems-are-supported-by-libreboot) özel mülk BIOS/UEFI yazılımının yerini alan, coreboot tabanlı [özgür, açık kaynaklı](https://writefreesoftware.org/) (*libre*) önyükleme yazılımı sağlar. Bu anakartlar dizüstü ve masaüstü bilgisayarları içerir. Donanımı başlatır (örn. bellek denetleyicisi, CPU, çevre birimleri) ve işletim sisteminiz için bir önyükleyici başlatır. [Linux](docs/linux/), [BSD](docs/bsd/) ve Windows iyi desteklenmektedir. [Libera](https://libera.chat/) IRC'deki `libreboot` kanalından yardım alabilirsiniz.
 
 <img tabindex=1 class="r" alt="Libreboot çalıştıran ThinkPad T480" title="ThinkPad T480" src="https://av.libreboot.org/t480/t480.jpg" /><span class="f"><img alt="Libreboot çalıştıran ThinkPad T480" src="https://av.libreboot.org/t480/t480.jpg" /></span>
 
@@ -11,7 +11,7 @@ On [8 September 2025](news/spi.html), Libreboot became an official [Associated
 Project](https://www.spi-inc.org/projects/libreboot/) at SPI ([Software in
 the Public Interest](https://www.spi-inc.org/)).
 
-Libreboot, x86/x86_64 Intel/AMD anakartlarda GNU önyükleyici "[GRUB](docs/linux/)" ve SeaBIOS yüklerini, ARM64(Aarch64) anakartlarda ise *coreboot için* [U-Boot UEFI yükünü](docs/uboot/) sağlar. Bazı kartlarda [x86/x86_64 U-Boot UEFI yükü](docs/uboot/uboot-x86.md) de mevcuttur. x86, x86_64 ve arm64 U-Boot yükleri hafif bir UEFI önyükleme uygulaması sağlar. Libreboot'un [tasarımı](docs/maintain/) tüm bu yükleri tek bir imajda birleştirir ve önyükleme sırasında birini seçersiniz.
+Libreboot, x86/x86_64 Intel/AMD anakartlarda GNU önyükleyici "[GRUB](docs/linux/)" ve SeaBIOS yüklerini, ARM64(Aarch64) anakartlarda ise *coreboot için* [U-Boot UEFI yükünü](docs/uboot/) sağlar. Bazı kartlarda [x86/x86_64 EDK2 UEFI yükü](docs/install/chromebooks-x86.md) de mevcuttur. x86, x86_64 ve arm64 U-Boot yükleri hafif bir UEFI önyükleme uygulaması sağlar. Libreboot'un [tasarımı](docs/maintain/) tüm bu yükleri tek bir imajda birleştirir ve önyükleme sırasında birini seçersiniz.
 
 **YENİ SÜRÜM: En son sürüm 30 January 2026'te yayınlanan Libreboot 26.01'dır.
 Bakınız: [Libreboot 26.01 sürüm duyurusu](news/libreboot2601.md)

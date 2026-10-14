@@ -3,6 +3,12 @@ title: Install Libreboot on a Chromebook
 x-toc-enable: true
 ...
 
+**This document applies to ARM64 Chromebooks. Intel/AMD Chromebooks are
+covered by [chromebooks-x86](chromebooks-x86.md).**
+
+Libreboot uses EDK2 on x86 Chromebooks, and U-Boot on ARM64. This page is
+for the U-Boot version on ARM64.
+
 Open source BIOS/UEFI firmware
 ------------------------------
 

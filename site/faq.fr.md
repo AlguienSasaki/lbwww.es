@@ -981,40 +981,7 @@ Voir :
 Windows ??
 ---------
 
-Oui, vous pouvez utiliser Windows 10 et 11. Ils ne sont pas officiellement pris en charge et le
-projet Libreboot vous recommande de *l'éviter*, car Windows est un
-logiciel propriétaire. Cela signifie que vous n'avez *pas* la liberté
-d'utiliser, d'étudier, d'adapter et de partager le logiciel de manière raisonnable. Vous êtes
-entièrement à la merci de Microsoft, dont le mobile est le profit, et non
-le progrès général de l'informatique ni le bien-être de tous.
-
-Voir : [Qu'est-ce que le logiciel libre ?](https://writefreesoftware.org/learn)
-
-En plus d'être un logiciel propriétaire, Windows est connu pour être truffé de bogues,
-y compris de *portes dérobées*. Lorsque vous *utilisez* Windows, il envoie des informations vous
-concernant à des tiers, utilisées à diverses fins comme la publicité, mais
-il est tout à fait possible que des agences à trois lettres reçoivent aussi vos données si
-vous utilisez Windows.
-
-Pour votre liberté, vous ne devriez jamais, au grand jamais, utiliser Windows. Utilisez Linux ou
-les systèmes BSD, qui sont bien pris en charge. Quoi qu'il en soit :
-
-[Vidéo de Windows 10 en cours de démarrage](https://yewtu.be/watch?v=BWq6XnWKQnM)
-
-[Vidéo de Windows 11 en cours de démarrage](https://yewtu.be/watch?v=OFHiMfVNNeA)
-
-À noter : Windows 11 exige officiellement la prise en charge d'au moins TPM 1.2 et
-l'utilisation d'UEFI SecureBoot. Pour contourner cette exigence, MajorGeeks propose
-un guide, voir : <https://www.majorgeeks.com/content/page/bypass_tpm.html>
-
-La personne qui a effectué ce test a également indiqué qu'elle n'avait pas pu réaliser une
-mise à niveau sur place de 10 vers 11 ; elle a donc dû effacer le disque et effectuer une
-installation propre (note : pas si propre, car Windows est plein de logiciels espions de la NSA).
-
-Dans les deux cas, comme indiqué ci-dessus, le système d'exploitation Windows démarrait depuis
-SeaBIOS, avec le framebuffer de coreboot initialisé au démarrage, sur un GPU Intel
-initialisé via *libgfxinit* de coreboot, avec les versions de Libreboot de novembre 2023.
-Nous ne prenons pas encore en charge le démarrage en UEFI sur les machines x86.
+[It works perfectly](docs/install/chromebooks-x86.md)
 
 D'autres systèmes d'exploitation sont-ils pris en charge ?
 -------------------------------------------------------------------

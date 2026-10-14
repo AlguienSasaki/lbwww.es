@@ -8,7 +8,7 @@ grazie al firmware basato su coreboot, sostituendo cosi', firmware BIOS/UEFI pro
 su [alcune schede madri basate su Intel/AMD x86 o ARM](docs/install/#which-systems-are-supported-by-libreboot),
 in computer fissi e portatili. Inizializza l'hardware (controller di
 memoria, CPU, periferiche) e avvia un bootloader per il tuo sistema operativo.
-[Linux](docs/linux/) e [BSD](docs/bsd/) sono ben supportati.
+[Linux](docs/linux/), [BSD](docs/bsd/) e Windows sono ben supportati.
 L'aiuto e' disponibile sul canale IRC `#libreboot`
 su [Libera](https://libera.chat/).
 
@@ -22,7 +22,7 @@ Libreboot provides GNU boot loader "[GRUB](docs/linux/)" and SeaBIOS payloads
 on x86/x86\_64
 Intel/AMD motherboards, and a [U-Boot UEFI payload](docs/uboot/) *for coreboot*
 on ARM64(Aarch64) motherboards.
-An [x86/x86\_64 U-Boot UEFI payload](docs/uboot/uboot-x86.md) is also available
+An [x86/x86\_64 EDK2 UEFI payload](docs/install/chromebooks-x86.md) is also available
 on some boards. The x86, x86\_64 and arm64 U-Boot payloads provide a lightweight
 UEFI boot implementation, which can boot many Linux distros and BSD systems.
 The SeaBIOS and GRUB payloads also boot Linux/BSD systems. Which one you use

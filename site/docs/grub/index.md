@@ -3,6 +3,9 @@ title: Libreboot GRUB payload documentation
 x-toc-enable: true
 ...
 
+**NOTE: Modern Libreboot releases still provide GRUB, but as an EFI build
+inside of EDK2.**
+
 GRUB already has excellent
 documentation, but there are aspects of libreboot that deserve special
 treatment. Libreboot provides the option to boot GRUB directly, running on

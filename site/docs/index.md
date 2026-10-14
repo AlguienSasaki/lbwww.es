@@ -42,6 +42,7 @@ Information for developers
 -   [Build system developer documentation](maintain/)
 -   [GRUB payload](grub/)
 -   [U-Boot payload](uboot/)
+-   [EDK2 payload](install/chromebooks-x86.md)
 
 Other information
 -----------------

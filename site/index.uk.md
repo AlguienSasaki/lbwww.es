@@ -7,8 +7,8 @@ x-toc-enable: true
 [вільну](https://writefreesoftware.org/) *завантажувальну
 прошивку*, яка ініціалізує апаратне забезпечення (наприклад, контролер пам'яті, ЦП,
 периферію) на [конкретних цілях Intel/AMD x86 та ARM](docs/install/#which-systems-are-supported-by-libreboot), що
-потім розпочинає завантажувач для вашої операційної системи. [Linux](docs/linux/)
-та [BSD](docs/bsd/) добре підтримуються. Це заміняє пропрієтарну BIOS/UEFI
+потім розпочинає завантажувач для вашої операційної системи. [Linux](docs/linux/),
+[BSD](docs/bsd/) та Windows добре підтримуються. Це заміняє пропрієтарну BIOS/UEFI
 прошивку. Допомога доступна
 через `#libreboot`
 на [Libera](https://libera.chat/) IRC.
@@ -23,7 +23,7 @@ Libreboot provides GNU boot loader "[GRUB](docs/linux/)" and SeaBIOS payloads
 on x86/x86\_64
 Intel/AMD motherboards, and a [U-Boot UEFI payload](docs/uboot/) *for coreboot*
 on ARM64(Aarch64) motherboards.
-An [x86/x86\_64 U-Boot UEFI payload](docs/uboot/uboot-x86.md) is also available
+An [x86/x86\_64 EDK2 UEFI payload](docs/install/chromebooks-x86.md) is also available
 on some boards. The x86, x86\_64 and arm64 U-Boot payloads provide a lightweight
 UEFI boot implementation, which can boot many Linux distros and BSD systems.
 The SeaBIOS and GRUB payloads also boot Linux/BSD systems. Which one you use

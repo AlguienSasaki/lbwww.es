@@ -564,16 +564,6 @@ Added Portuguese keyboard layout to Libreboot's GRUB payload.
 Added BTRFS subvolume support to Libreboot's GRUB configuration, for auto-booting
 various Linux distros.
 
-### Simon Glass
-
-Simon Glass is principally responsible for the x86 U-Boot payload that Libreboot
-now uses as a coreboot payload. Simon provided Leah with several critical patches
-and advised Leah on several aspects of U-Boot's design, that helped a lot
-when integrating it.
-
-Without him, Libreboot would not have a functioning U-Boot implementation on
-x86.
-
 ### Snooze Function
 
 Translated several pages on the Libreboot documentation into the German

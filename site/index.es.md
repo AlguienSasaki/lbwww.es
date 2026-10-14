@@ -10,7 +10,7 @@ basado en coreboot, reemplazando firmware BIOS/UEFI propietario
 para [placas madre específicas basadas en arquitecturas Intel/AMD x86 y ARM](docs/install/#which-systems-are-supported-by-libreboot)
 incluyendo laptops y computadoras de escritorio. Inicializa el hardware (p.e., controladores
 de memoria, CPU, periféricos) e inicia un gestor de arranque (bootloader) para tu sistema
-operativo (OS). [Linux](docs/linux/) y [BSD](docs/bsd/) están bien soportados. La ayuda está 
+operativo (OS). [Linux](docs/linux/), [BSD](docs/bsd/) y Windows están bien soportados. La ayuda está 
 disponible vía `#libreboot`
 en el chat de IRC de [Libera](https://libera.chat/).
 
@@ -24,7 +24,7 @@ Libreboot proporciona el gestor de arranque de GNU "[GRUB](docs/linux/)" y SeaBI
 como payloads en placas madre de arquitectura Intel/AMD x86/x86_64, y 
 [U-Boot como payload de UEFI](docs/uboot/) *para coreboot* en placas madre de
 arquitectura ARM64(Aarch64).
-[U-Boot como Payload para UEFI en x86/x86_64] también está disponible para
+[EDK2 como Payload para UEFI en x86/x86_64](docs/install/chromebooks-x86.md) también está disponible para
 algunas placas. El payload U-Boot para x86, x86\_64 y arm64 proporciona una
 implementación de arranque UEFI ligera. El [diseño](docs/maintain/) de Libreboot
 incorpora todos estos payloads en una sola imagen, y tú escoges una para arrancar.

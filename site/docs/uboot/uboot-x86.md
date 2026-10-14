@@ -3,6 +3,17 @@ title: U-Boot x86 UEFI payload on Libreboot
 x-toc-enable: true
 ...
 
+**This documentation is OBSOLETE, applying onto to Libreboot versions from
+December 2024 up to January 2026; the following releases from October 2026
+and later use MrChromebox EDK2 instead of U-Boot, for UEFI on all boards.**
+
+For UEFI, please look instead
+at [../install/chromebooks-x86.md](../install/chromebooks-x86.md).
+
+EDK2 is much more feature-complete and generally reliable, on all platforms.
+
+Again, this is obsolete. Modern Libreboot only uses U-Boot on non-x86 platforms:
+
 U-Boot UEFI on x86
 ------------------
 
@@ -16,14 +27,6 @@ available there.
 
 **NOTE: This documentation refers only to x86. For ARM, please refer back to
 the [main U-Boot page](index.md).**
-
-More documentation about this will be written at a later date, but just before
-the Libreboot 20241206 release in December 2024, U-Boot support was added as
-a payload on x86 machines, both 32- and 64-bit. This is using the excellent work
-done by Simon Glass and others, on making U-Boot run as a generic x86 coreboot
-payload. It has several boot methods but the most interesting (in an x86
-context) is UEFI. U-Boot provides a very sensible UEFI implementation that can
-reliably boot many Linux and BSD systems.
 
 ### Availability
 
@@ -105,9 +108,7 @@ that is: setups that use the EFI framebuffer instead of a text console.
 
 ### Windows
 
-Windows was tested, and doesn't work yet. Simon Glass maintains the x86
-coreboot payload, and has informed me that he still has some work to do
-there.
+Windows was tested, and doesn't work.
 
 SecureBoot
 ----------

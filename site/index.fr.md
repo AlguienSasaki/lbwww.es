@@ -4,7 +4,7 @@ x-toc-enable: true
 ---
 
 Le projet Libreboot fournit un firmware [libre et Open-Source](https://writefreesoftware.org/) basé sur Coreboot, remplaçant le BIOS/UEFI propriétaire sur des [cartes mères Intel/AMD x86 et ARM](docs/install/#which-systems-are-supported-by-libreboot), pour des ordinateurs de bureau et des ordinateurs portables. 
-Il initialise le matériel (le contrôleur de mémoire, le CPU, les périphériques) et lance un bootloader pour votre système d’exploitation. Les systèmes [Linux](docs/linux/) et [BSD](docs/bsd/) sont bien pris en charge. De l’aide est disponible sur `#Libreboot` via [Libera](https://libera.chat/). La page des tâches répertorie les projets en cours (les contributions sont les bienvenues si vous souhaitez y travailler vous-même).
+Il initialise le matériel (le contrôleur de mémoire, le CPU, les périphériques) et lance un bootloader pour votre système d’exploitation. Les systèmes [Linux](docs/linux/), [BSD](docs/bsd/) et Windows sont bien pris en charge. De l’aide est disponible sur `#Libreboot` via [Libera](https://libera.chat/). La page des tâches répertorie les projets en cours (les contributions sont les bienvenues si vous souhaitez y travailler vous-même).
 
 <img tabindex=1 class="r" src="https://av.libreboot.org/t480/t480.jpg" /><span class="f"><img src="https://av.libreboot.org/t480/t480.jpg" /></span>
 
@@ -16,7 +16,7 @@ Libreboot provides GNU boot loader "[GRUB](docs/linux/)" and SeaBIOS payloads
 on x86/x86\_64
 Intel/AMD motherboards, and a [U-Boot UEFI payload](docs/uboot/) *for coreboot*
 on ARM64(Aarch64) motherboards.
-An [x86/x86\_64 U-Boot UEFI payload](docs/uboot/uboot-x86.md) is also available
+An [x86/x86\_64 U-EDK2 UEFI payload](docs/install/chromebooks-x86.md) is also available
 on some boards. The x86, x86\_64 and arm64 U-Boot payloads provide a lightweight
 UEFI boot implementation, which can boot many Linux distros and BSD systems.
 The SeaBIOS and GRUB payloads also boot Linux/BSD systems. Which one you use

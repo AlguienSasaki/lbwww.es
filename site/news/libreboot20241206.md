@@ -93,8 +93,7 @@ In descending order from latest changes to earliest changes:
   many other things in the future, related to Intel ME.
 * Updated U-Boot to v2024.10 release on ARM64 - and also added this revision
   for x86 coreboot payloads, to provide UEFI on 64-bit x86 machines. The ARM64
-  coreboot payload is maintained by Alper Nebi Yasak, and the x86 coreboot
-  payload is principally maintained by Simon Glass.
+  coreboot payload is maintained by Alper Nebi Yasak.
 * Updated the Dell OptiPlex 3050 Micro port to use a newer coreboot revision,
   which includes a fix adding PWM fan control, among other things. NOTE: This
   was later obsoleted, because OptiPlex 3050 Micro support was merged upstream
@@ -194,14 +193,6 @@ changes to the earliest changes):
   script, and must never be executed directly, instead only to be executed by
   other scripts.
 * Added missing `openssl-devel-engine` to Fedora 41 build dependencies.
-* U-Boot: Merged an x86 patch from Simon Glass, that makes U-Boot skip clearing
-  the VESA display an startup, since this is already done by the VESA driver.
-  In some cases, you may want to keep what was previously on the screen, like
-  for logos and such. We currently do not use U-Boot on VESA setups in Libreboot,
-  as of 6 December 2024.
-* U-Boot: Merged an x86 patch from Simon Glass, that makes U-Boot silently
-  disable serial console output, where one is not available; previously, it
-  would crash if one wasn't available, on x86 machines.
 * `script/trees`: Unset the `CROSS_COMPILE` environmental variable, to fix an
   issue whereby projects that honour it might be wrongly cross compiled where
   a previous export of that variable was made; for example, setting it on
