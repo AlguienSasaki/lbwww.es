@@ -31,7 +31,8 @@ is ill-advised; the `./mk test` feature stress-tests Libreboot's build process
 just fine, and I run this regularly.
 
 Yes. No more six-month schedule. Libreboot's new schedule is: release whenever
-I feel like it.
+I feel like it. I sometimes don't even know I'm doing one, I just wake up and
+do one. That is Libreboot's natural schedule, and so shall it remain.
 
 What hasn't changed?
 --------------------
