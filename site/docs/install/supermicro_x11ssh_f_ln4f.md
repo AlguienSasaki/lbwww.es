@@ -12,20 +12,19 @@ x-toc-enable: true
 
 | ***Specifications***       |                                                |
 |----------------------------|------------------------------------------------|
-| **Manufacturer**           | Supermicro                                          |
-| **Name**                   | X11SSH-(LN4)F                               |
-| **Variants**               | X11SSH-F / X11SSH-LN4F                                |
+| **Manufacturer**           | Supermicro                                     |
+| **Name**                   | X11SSH-(LN4)F                                  |
+| **Variants**               | X11SSH-F / X11SSH-LN4F                         |
 | **Released**               | 2017                                           |
 | **Chipset**                | Intel C236                                     |
-| **CPU**                    | LGA 1151 - Intel 6-7th gen. (Core+Xeon) and with Libreboot 8th-9th gen. b0 stepping (Core i3, Pentium Gold, Celeron) processors, up to 80W TDP   |
-| **Graphics**               | iGPU on cpu, but no display output |
-| **Memory**                 | DDR4 SODIMMs (max 64 GB, 4x16 GB)    |
+| **CPU**                    | LGA 1151 - Intel 6-9th gen. , up to 80W TDP    |
+| **Graphics**               | iGPU on cpu, but no display output             |
+| **Memory**                 | DDR4 SODIMMs (max 64 GB, 4x16 GB)              |
 | **Architecture**           | x86_64                                         |
-| **Original boot firmware** | Supermicro                             |
-| **Intel ME/AMD PSP**       | Server version present. Can be replaced & disabled with me\_cleaner. *1      |
-| **Flash chip**             | SOIC-8 16MB/128Mbit W25Q128.V           |
+| **Original boot firmware** | Supermicro                                     |
+| **Intel ME/AMD PSP**       | SPS -> replaced & disabled with me\_cleaner *1 |
+| **Flash chip**             | SOIC-8 16MB/128Mbit W25Q128.V                  |
 
-*1 The server Intel ME (SPS), which is the server version of the ME. One difference is that SPS does not support CPU replacement detection, so it always redoes DRAM training from scratch on every boot, which makes booting take longer. Libreboot replaces SPS with ME, which fixes this.
 
 ```
 W+: Works without vendor firmware; 
@@ -50,6 +49,7 @@ P*: Partially works with vendor firmware
 | **SeaBIOS**                | Works     |
 </div>
 
+*1 The server Intel ME (SPS), which is the server version of the ME. One difference is that SPS does not support CPU replacement detection, so it always redoes DRAM training from scratch on every boot, which makes booting take longer. Libreboot replaces SPS with ME, which fixes this.
 
 ### Get the ROM image
 
@@ -134,11 +134,9 @@ That 16MB soic-8 flash chip is below the battery, highlighted, usually covered w
 The other one is a 32MB soic_16 BMC flash chip next to the previous one.
 
 
-### 8/9th gen (Core) processors supported
+### 6-8 core processor Mods
 
-8th-9th gen Core i3, Pentium Gold, Celeron processors [works](https://codeberg.org/libreboot/lbwww/pulls/194#issuecomment-20790533) with b0 stepping using Libreboot firmware supported, even with ecc memories too, without any physical modding.
-
-For higher core count processors, please [Check this](https://libreboot.org/docs/install/dell3050.html#pin-mod).
+[Guide](../extras.md#reversible-intel-8th-9th-gen-processors-support-on-older-6th-7th-gen-motherboards)
 
 
 ### Replacable Baseboard Management Controller firmware
