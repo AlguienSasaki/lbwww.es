@@ -25,7 +25,7 @@ methods in a single image, so you can choose which one you use at boot time,
 and more payloads (e.g. Linux kexec payload) are planned for future releases.
 
 **NOUVELLE VERSION: La dernière version est [Libreboot 26.10](news/libreboot2610.md), sortie
-le 14 October 2026.**
+le 15 October 2026.**
 
 Vous pouvez également acheter du matériel avec [Libreboot pré-installé](https://minifree.org/) via l'entreprise Minifree Ltd,
 ou envoyer votre propre ordinateur [pour y installer Libreboot](https://minifree.org/product/installation-service/).

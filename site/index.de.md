@@ -28,7 +28,7 @@ Die x86, x86\_64 oder arm64 U-Boot *Payload* hast gibt eine klein klein
 UEFI-Bootloader, gab es Rechner starttung, die BSD oder Linux betriebsystem konnte.
 
 **NEUESTE VERSION: Die neueste Version von Libreboot ist 26.10, veröffentlicht
-am 14 Oktober 2026.
+am 15 Oktober 2026.
 Siehe auch: [Libreboot 26.10 release announcement](news/libreboot2610.md).**
 
 You can also [buy Libreboot preinstalled](https://minifree.org/) from Minifree Ltd,

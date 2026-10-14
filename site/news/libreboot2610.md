@@ -1,6 +1,6 @@
 % Libreboot 26.10 "Ominous Olive" released!
 % Leah Rowe
-% 14 October 2026
+% 15 October 2026
 
 **You can find today's release in 
 <https://rsync.libreboot.org/stable/26.10/> or you can use one of

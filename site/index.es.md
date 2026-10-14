@@ -30,7 +30,7 @@ implementación de arranque UEFI ligera. El [diseño](docs/maintain/) de Librebo
 incorpora todos estos payloads en una sola imagen, y tú escoges una para arrancar.
 
 **Nuevo lanzamiento: El lanzamiento más reciente es Libreboot 26.10, publicado
-el 14 de Octubre del 2026.**
+el 15 de Octubre del 2026.**
 Véase: [El anuncio de lanzamiento de Libreboot 26.10](news/libreboot2610.md).
 
 También puedes [comprar Libreboot preinstalado](https://minifree.org/) desde

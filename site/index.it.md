@@ -29,7 +29,7 @@ depends on your preferences. Libreboot's design incorporates all of these boot
 methods in a single image, so you can choose which one you use at boot time,
 and more payloads (e.g. Linux kexec payload) are planned for future releases.
 
-**ULTIMO RILASCIO: L'ultimo rilascio e' Libreboot 26.10, rilasciato il 14 October 2026.
+**ULTIMO RILASCIO: L'ultimo rilascio e' Libreboot 26.10, rilasciato il 15 October 2026.
 Vedi: [Libreboot 26.10 annuncio di rilascio](news/libreboot2610.md).**
 
 You can also [buy Libreboot preinstalled](https://minifree.org/) from Minifree Ltd,

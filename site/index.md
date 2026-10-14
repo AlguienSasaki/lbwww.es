@@ -30,7 +30,7 @@ Libreboot's [design](docs/maintain/) incorporates all
 of these payloads in a single image, and you choose one at boot time.
 
 **NEW RELEASE: The latest release is Libreboot 26.10, released on
-14 October 2026.
+15 October 2026.
 See: [Libreboot 26.10 release announcement](news/libreboot2610.md).**
 
 You can also [buy Libreboot preinstalled](https://minifree.org/) from Minifree Ltd,
