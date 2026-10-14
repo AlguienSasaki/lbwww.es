@@ -21,10 +21,10 @@ Dell OptiPlex 780
 | **Chipset**                | Intel Q45                                      |
 | **CPU**                    | LGA 775, Intel Core 2 Duo + Quad on MT         |
 | **Graphics**               | GMA 4500                                       |
-| **Memory**                 | DDR3 SODIMMs (max 16GB on MT 4x4GB, 8GB USFF 2x4GB)    |
+| **Memory**                 | DDR3 SODIMMs (max 16GB 4x4GB MT,8GB 2x4GB USSF)|
 | **Architecture**           | x86\_64                                        |
 | **Original boot firmware** | Dell UEFI firmware                             |
-| **Intel ME/AMD PSP**       | Present, Fully removable firmware.                     |
+| **Intel ME/AMD PSP**       | Present, Fully removable firmware.             |
 | **Flash chip**             | SOIC-16 and/or SOIC-8 8MiB (64Mbit)            |
 
 
@@ -181,24 +181,7 @@ change the MAC address, please read [nvmutil documentation](../install/nvmutil.m
 
 ### Custom Mods
 
-**Chassis Mod (MT only) for bigger Cards** (GPUs, Accelerators, ...)
-
-Remove the plastic 3.5" drive cage to fit bigger GPUs that exceed the stock 10-inch length limit.
-
-Video walktrough [here](https://www.youtube.com/watch?v=b_M2GGunaYM). (just found, not my)
-
-A guide might be here soon with pictures.
-
-
-**Power On Mod for normal towers**
-
-Just in case any of these motherboards would be used in a different case with a 2 pin power(on) cable, connect it to the 1 (yellow/red) & 4 (Black/black) pins. (Black to black, red to yellow)
-
-For LEDs, 2 (-/black) & 3 (+/red)
-
-|    Pin layout   |
-|  1  |  2  |  3  |
-|  4  |  5  | N/A |
+[Guide](../extras.md#dell-7010-9010-t1650-7020-9020-xe2-t1700-probably-other-dell-ones-too)
 
 
 ### Expanded_Specifications
