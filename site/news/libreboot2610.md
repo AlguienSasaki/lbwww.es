@@ -940,8 +940,9 @@ EDK2 input drivers work with both USB and PS/2 keyboards in Libreboot. GRUB
 is made to use `console` input instead of `at_keyboard` as it otherwise
 lacks USB keyboard support in the EFI build. Thus, layouts must be handled
 by EDK2. There is code for this in EDK2, not currently handled by either
-Libreboot or MrChromebox so it all defaults to US QWERTY in this release.
-Work will be done post-release.
+Libreboot or MrChromebox so it all defaults to UK QWERTY in this release.
+Upstream (MrChromebox) uses US QWERTY by default, but Libreboot is a British
+project, so EDK2 was patched accordingly. Work will be done post-release.
 
 Keymapped images no longer provided. There is now only one ROM image per
 config on each mainboard. This simplifies builds, and users can insert
