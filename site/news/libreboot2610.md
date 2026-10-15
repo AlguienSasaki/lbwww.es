@@ -26,7 +26,7 @@ changelog *very carefully* - and read it twice.
 
 First thing's first. (and yes, you read the previous paragraph correctly)
 
-A strongly anti-AI policy was added to a new file: `AGENTS.md` in lbmk. This
+A strongly anti-AI policy was added to a new file: AGENTS&2e;md in lbmk. This
 is the most important change in the release. Now everything else:
 
 WARNING: MAJOR design changes were made to this release, in ways that may
