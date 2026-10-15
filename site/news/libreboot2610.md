@@ -199,6 +199,32 @@ for migration purposes. For example, despite boasting about *all*, older
 32-bit-only hardware still use bare GRUB/SeaBIOS. Nearly all boards use
 EDK2 however!
 
+Modern GPU support (via EDK2)
+---
+
+Finally, some notes about graphics cards that may be of interest to the more
+demanding users.
+
+EDK2 alongside PCI-E relocatable BAR (rebar) means that you can now use modern
+graphics cards that require allocations above 4GB. Rebar is *not enabled* by
+default, but you can enable it in menuconfig (coreboot). Enabling it causes
+breakage of Intel GPU video output on libgfxinit in testing, and no fix was
+found yet, so rebar is disabled by default.
+
+PCI-E Option ROMs are enabled by default where necessary, for EDK2 builds.
+This means you can use it on desktops with graphics cards. Tested on
+several desktops (Dell OptiPlex 9020 SFF and 5050 SFF).
+
+On boards with only external GPU, rebar can be left enabled by default. On
+systems with functioning integrated graphics, accidental enablement of rebar
+can be remedied by inserting a graphics card; when the video output in the
+payload does become broken, the Linux i915 video driver still initialises
+video framebuffer properly in KMS/DRM.
+
+This will be added to general documentation, pending fixes upstream. Note that
+even with this issue, Linux video output works fine. This will be corrected and
+rebar enabled by default, on a future Libreboot release.
+
 Upstream revisions
 ---
 
@@ -899,30 +925,6 @@ It was originally intended that U-Boot would become Libreboot's primary payload
 on x86, but alas. I bit the Intel-flavoured bullet and went with EDK2.
 
 Say no to AI. AI makes you stupid. AI is the reason we can't have nice things.
-
-Modern GPU support (via EDK2)
----
-
-Finally, some notes about graphics cards that may be of interest to the more
-demanding users.
-
-EDK2 alongside PCI-E relocatable BAR (rebar) means that you can now use modern
-graphics cards that require allocations above 4GB. Rebar is *not enabled* by
-default, but you can enable it in menuconfig (coreboot). Enabling it causes
-breakage of Intel GPU video output on libgfxinit in testing, and no fix was
-found yet, so rebar is disabled by default.
-
-PCI-E Option ROMs are enabled by default where necessary, for EDK2 builds.
-This means you can use it on desktops with graphics cards. Tested on
-several desktops (Dell OptiPlex 9020 SFF and 5050 SFF).
-
-On boards with only external GPU, rebar can be left enabled by default. On
-systems with functioning integrated graphics, accidental enablement of rebar
-can be remedied by inserting a graphics card; when the video output in the
-payload does become broken, the Linux i915 video driver still initialises
-video framebuffer properly in KMS/DRM.
-
-This will be added to general documentation, pending fixes upstream.
 
 Errata
 ------
