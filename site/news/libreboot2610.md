@@ -10,7 +10,8 @@ Libreboot is free, open source boot firmware replacing proprietary BIOS/UEFI
 firmware on supported Intel/AMD and ARM64 hardware. It initialises the hardware
 inside your computer such as the CPU or memory controller, configuring the
 machine in such a way as to enable use of an operating system like Linux or BSD
-at boot - and now *Microsoft Windows* is also compatible. Libreboot offers greater
+at boot - and now *Microsoft Windows* is also compatible because Libreboot has
+added full UEFI support via MrChromebox EDK2 payload. Libreboot offers greater
 security and customisation compared to proprietary firmware; its goal, plainly,
 is to rid the world of proprietary software and to do that, we therefore try
 to provide firmware that is extremely easy for non-technical users to understand.
@@ -40,8 +41,12 @@ The first major change is:
 233 Intel/AMD Chromebooks added
 ---
 
+The full list of boards is quite long, so it's shown at the end of this
+article. All 233 of them!
+
 MrChromebox supports nearly every Chromebook, and this release imports all
-boards from that project.
+boards from that project. This includes everything up to the most recent
+Intel and AMD hardware.
 
 Imported all 233 currently supported Chromebooks from the MrChromebox coreboot
 distro. Baytrail (Kip) tested - others need testing. Source-only in this
@@ -1037,3 +1042,241 @@ when booting the FreeBSD BIOS-mode bootloader, and then FreeBSD can be set up
 for KMS in Xorg/Wayland. Otherwise, new installations should be done in EFI
 mode directly via EDK2 (no compatibility modules). More information about
 this is available in Libreboot's BSD documentation.
+
+List of Chromebooks added
+-----------
+
+* Google Anahera
+* Google Aurash
+* Google Banshee
+* Google Bujia
+* Google Caboc
+* Google Constitution
+* Google Crota
+* Google Dochi
+* Google Felwinter
+* Google Gaelin
+* Google Gimble
+* Google Gladios
+* Google Jubilant
+* Google Kano
+* Google Kinox
+* Google Kuldax
+* Google Lisbon
+* Google Lotso
+* Google Marasov
+* Google Mithrax
+* Google Moli
+* Google Moxie
+* Google Anraggar
+* Google Craaskov
+* Google Craask
+* Google Dirks
+* Google Domika
+* Google Epic
+* Google Glassway
+* Google Gothrax
+* Google Guren
+* Google Joxer
+* Google Kaladin
+* Google Meliks
+* Google Nereid
+* Google Nivviks
+* Google Nova
+* Google Pujjocento
+* Google Pujjogatwin
+* Google Pujjoga
+* Google Pujjolo
+* Google Pujjoniru
+* Google Pujjo
+* Google Quandiso2
+* Google Quandiso
+* Google Riven
+* Google Rull
+* Google Sundance
+* Google Teliks
+* Google Telith
+* Google Tereid
+* Google Tivviks
+* Google Uldrenite
+* Google Uldren
+* Google Xivu
+* Google Yaviks
+* Google Yavilla
+* Google Omnigul
+* Google Osiris
+* Google Primus
+* Google Redrix4ES
+* Google Redrix
+* Google Taeko
+* Google Taniks
+* Google Vell
+* Google Volmar
+* Google Xol
+* Google Coral
+* Google Pyro
+* Google Reef
+* Google Sand
+* Google Snappy
+* Google Auron_Paine
+* Google Auron_Yuna
+* Google Buddy
+* Google Gandof
+* Google Guado
+* Purism Librem 13 v1
+* Purism Librem 15 v2
+* Google Lulu
+* Google Rikku
+* Google Samus
+* Google Tidus
+* Google Banon
+* Google Celes
+* Google Cyan
+* Google Edgar
+* Google Kefka
+* Google Reks
+* Google Relm
+* Google Setzer
+* Google Terra
+* Google Ultima
+* Google Wizpig
+* Google Banjo
+* Google Candy
+* Google Clapper
+* Google Enguarde
+* Google Expresso
+* Google Glimmer
+* Google Gnawty
+* Google Heli
+* Google Kip
+* Google Ninja
+* Google Orco
+* Google Quawks
+* Google Squawks
+* Google Sumo
+* Google Swanky
+* Google Winky
+* Google Akemi
+* Google Ambassador
+* Google Dooly
+* Google Drallion
+* Google Dratini
+* Google Duffy
+* Google Faffy
+* Google Genesis
+* Google Helios
+* Google Jinlon
+* Google Kaisa
+* Google Kindred
+* Google Kohaku
+* Purism Librem 14
+* Purism Librem Mini v2
+* Google Moonbuggy
+* Google Nightfury
+* Google Noibat
+* Google Scout
+* Google Wyvern
+* Google Dewatt
+* Google Nipperkin
+* Google Ampton
+* Google Bloog
+* Google Bobba
+* Google Casta
+* Google Dood
+* Google Fleex
+* Google Foob
+* Google Garg
+* Google Lick
+* Google Meep
+* Google Phaser
+* Google Falco
+* Google Leon
+* Google Mccloud
+* Google Monroe
+* Google Panther
+* Google Peppy
+* Google Tricky
+* Google Wolf
+* Google Zako
+* Google Awasuki
+* Google Beadrix
+* Google Blipper
+* Google Boten
+* Google Boxy
+* Google Bugzzy
+* Google Cret
+* Google Dexi
+* Google Dibbi
+* Google Dita
+* Google Drawcia
+* Google Galtic
+* Google Kracko
+* Google Lantis
+* Google Madoo
+* Google Magolor
+* Google Metaknight
+* Google Pirika
+* Google Sasukette
+* Google Sasuke
+* Google Storo
+* Google Taranza
+* Google Atlas
+* Google Endeavour
+* Google Eve
+* Google Fizz
+* Google Karma
+* Purism Librem 13 v4
+* Purism Librem 15 v4
+* Google Nami
+* Google Nautilus
+* Google Nocturne
+* Google Rammus
+* Google Soraka
+* Google Crystaldrift
+* Google Frostflow
+* Google Markarth
+* Google Skyrim
+* Google Winterhold
+* Google Kanix
+* Google Karis
+* Google Screebo
+* Google Berknip
+* Google Dirinboz
+* Google Ezkinil
+* Google Gumboz
+* Google Morphius
+* Google Shuboz
+* Google Vilboz
+* Google Woomax
+* Google Asuka
+* Google Caroline
+* Google Cave
+* Google Chell
+* Google Lars
+* Purism Librem 13 v2
+* Purism Librem 15 v3
+* Google Sentry
+* Google Butterfly
+* Google Link
+* SAMSUNG Lumpy
+* Google Parrot
+* Google Stout
+* SAMSUNG Stumpy
+* Google Aleena
+* Google Careena
+* Google Liara
+* Google Treeya
+* Google Chronicler
+* Google Collis
+* Google Copano
+* Google Delbin
+* Google Drobit
+* Google Eldrid
+* Google Elemi
+* Google Lindar
+* Google Voema
+* Google Volet
+* Google Voxel
+* Purism Librem Mini
+* Google Sarien
+
