@@ -1275,3 +1275,15 @@ List of Chromebooks added
 * Purism Librem Mini
 * Google Sarien
 
+CSMWrap errata
+---------
+
+CSMWrap is the SeaBIOS CSM build provided inside EDK2. It hogs an entire CPU
+core at boot, so e.g. quad-core will show up as three-core inside Linux. It's
+a known limitation that will be corrected in a future release, due to the design
+of CSMWrap. If you need backward compatibility, it's better to use the GRUB EFI
+build instead which does not have this problem. Both GRUB EFI and SeaBIOS CSM
+are available in the EDK2 menu via ESC keypress at boot time.
+
+Users are best served just switching to native UEFI boot with ESP, using
+Libreboot's EDK2 payload.
