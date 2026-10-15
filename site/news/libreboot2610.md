@@ -1,4 +1,4 @@
-% Libreboot 26.10 "Ominous Olive" released!
+% Libreboot 26.10 "Ominous Olive" released! With full UEFI support.
 % Leah Rowe
 % 15 October 2026
 
