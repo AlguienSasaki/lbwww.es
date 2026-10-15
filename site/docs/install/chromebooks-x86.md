@@ -13,6 +13,48 @@ covered by [chromebooks](chromebooks.md).**
 Libreboot uses EDK2 on x86 Chromebooks, and U-Boot on ARM64. This page is
 for the EDK2 version on x86-64.
 
+Build from source
+-----------------
+
+x86 Chromebooks not provided as binaries yet - they were source-only in the
+Libreboot 26.10 release. You must [build from source](../build/).
+
+Make sure to have dependencies installed, as per that page, and then do
+this in lbmk:
+
+```
+./mk -b coreboot list | grep mrchromebox_
+```
+
+This will show all of the targets, corresponding to boards. Then pick one from
+the list and do e.g.
+
+```
+./mk -b coreboot mrchromebox_byt_kip_uefi
+```
+
+This will build a target. An image will appear under `bin/`, in this
+example `bin/mrchromebox_byt_kip_uefi/` - a lot of testing is needed before
+these appear as binaries in releases.
+
+Efforts are made to ensure tight sync with upstream at all times. We more or
+less use the same config as MrChromebox, building everything per-board in
+exactly the same way; lbmk even builds EDK2 once per mainboard, to ensure
+that the correct build flags are used.
+
+Expect possible breakage on some newer platforms as unlike MrChromebox, we
+set the Intel HAP bit by default (on Intel platforms) to disable the Intel
+ME. Please report any issues you find to the Libreboot bug tracker.
+
+The above example target, `mrchromebox_byt_kip_uefi`, was in fact tested for
+the Libreboot 26.10 release. Another issue is generally the use of vendor
+code in MrChromebox, currently done by the latter with direct distribution
+of such files in a special repository. Libreboot prefers, for release binaries,
+to scrub these at release time and insert them on release image tarballs
+via `./mk inject` scripting, to avoid direct distribution of such files. This
+can be done in a future Libreboot release, thus enabling the distribution of
+pre-compiled coreboot builds for these Chromebooks.
+
 Open source BIOS/UEFI firmware
 ------------------------------
 
