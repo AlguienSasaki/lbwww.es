@@ -287,8 +287,245 @@ See also
 * [MrChromebox's Write-Protection Notes](https://wiki.mrchromebox.tech/Firmware_Write_Protect)
 * [Coreboot Tutorial as used in ChromeOS](https://docs.google.com/presentation/d/1eGPMu03vCxIO0a3oNX8Hmij_Qwwz6R6ViFC_1HlHOYQ/preview)
 
+List of Chromebooks supported
+-----
+
+In Libreboot 26.10 Ominous Olive from 15 October 2026:
+
+* Google Anahera
+* Google Aurash
+* Google Banshee
+* Google Bujia
+* Google Caboc
+* Google Constitution
+* Google Crota
+* Google Dochi
+* Google Felwinter
+* Google Gaelin
+* Google Gimble
+* Google Gladios
+* Google Jubilant
+* Google Kano
+* Google Kinox
+* Google Kuldax
+* Google Lisbon
+* Google Lotso
+* Google Marasov
+* Google Mithrax
+* Google Moli
+* Google Moxie
+* Google Anraggar
+* Google Craaskov
+* Google Craask
+* Google Dirks
+* Google Domika
+* Google Epic
+* Google Glassway
+* Google Gothrax
+* Google Guren
+* Google Joxer
+* Google Kaladin
+* Google Meliks
+* Google Nereid
+* Google Nivviks
+* Google Nova
+* Google Pujjocento
+* Google Pujjogatwin
+* Google Pujjoga
+* Google Pujjolo
+* Google Pujjoniru
+* Google Pujjo
+* Google Quandiso2
+* Google Quandiso
+* Google Riven
+* Google Rull
+* Google Sundance
+* Google Teliks
+* Google Telith
+* Google Tereid
+* Google Tivviks
+* Google Uldrenite
+* Google Uldren
+* Google Xivu
+* Google Yaviks
+* Google Yavilla
+* Google Omnigul
+* Google Osiris
+* Google Primus
+* Google Redrix4ES
+* Google Redrix
+* Google Taeko
+* Google Taniks
+* Google Vell
+* Google Volmar
+* Google Xol
+* Google Coral
+* Google Pyro
+* Google Reef
+* Google Sand
+* Google Snappy
+* Google Auron_Paine
+* Google Auron_Yuna
+* Google Buddy
+* Google Gandof
+* Google Guado
+* Purism Librem 13 v1
+* Purism Librem 15 v2
+* Google Lulu
+* Google Rikku
+* Google Samus
+* Google Tidus
+* Google Banon
+* Google Celes
+* Google Cyan
+* Google Edgar
+* Google Kefka
+* Google Reks
+* Google Relm
+* Google Setzer
+* Google Terra
+* Google Ultima
+* Google Wizpig
+* Google Banjo
+* Google Candy
+* Google Clapper
+* Google Enguarde
+* Google Expresso
+* Google Glimmer
+* Google Gnawty
+* Google Heli
+* Google Kip
+* Google Ninja
+* Google Orco
+* Google Quawks
+* Google Squawks
+* Google Sumo
+* Google Swanky
+* Google Winky
+* Google Akemi
+* Google Ambassador
+* Google Dooly
+* Google Drallion
+* Google Dratini
+* Google Duffy
+* Google Faffy
+* Google Genesis
+* Google Helios
+* Google Jinlon
+* Google Kaisa
+* Google Kindred
+* Google Kohaku
+* Purism Librem 14
+* Purism Librem Mini v2
+* Google Moonbuggy
+* Google Nightfury
+* Google Noibat
+* Google Scout
+* Google Wyvern
+* Google Dewatt
+* Google Nipperkin
+* Google Ampton
+* Google Bloog
+* Google Bobba
+* Google Casta
+* Google Dood
+* Google Fleex
+* Google Foob
+* Google Garg
+* Google Lick
+* Google Meep
+* Google Phaser
+* Google Falco
+* Google Leon
+* Google Mccloud
+* Google Monroe
+* Google Panther
+* Google Peppy
+* Google Tricky
+* Google Wolf
+* Google Zako
+* Google Awasuki
+* Google Beadrix
+* Google Blipper
+* Google Boten
+* Google Boxy
+* Google Bugzzy
+* Google Cret
+* Google Dexi
+* Google Dibbi
+* Google Dita
+* Google Drawcia
+* Google Galtic
+* Google Kracko
+* Google Lantis
+* Google Madoo
+* Google Magolor
+* Google Metaknight
+* Google Pirika
+* Google Sasukette
+* Google Sasuke
+* Google Storo
+* Google Taranza
+* Google Atlas
+* Google Endeavour
+* Google Eve
+* Google Fizz
+* Google Karma
+* Purism Librem 13 v4
+* Purism Librem 15 v4
+* Google Nami
+* Google Nautilus
+* Google Nocturne
+* Google Rammus
+* Google Soraka
+* Google Crystaldrift
+* Google Frostflow
+* Google Markarth
+* Google Skyrim
+* Google Winterhold
+* Google Kanix
+* Google Karis
+* Google Screebo
+* Google Berknip
+* Google Dirinboz
+* Google Ezkinil
+* Google Gumboz
+* Google Morphius
+* Google Shuboz
+* Google Vilboz
+* Google Woomax
+* Google Asuka
+* Google Caroline
+* Google Cave
+* Google Chell
+* Google Lars
+* Purism Librem 13 v2
+* Purism Librem 15 v3
+* Google Sentry
+* Google Butterfly
+* Google Link
+* SAMSUNG Lumpy
+* Google Parrot
+* Google Stout
+* SAMSUNG Stumpy
+* Google Aleena
+* Google Careena
+* Google Liara
+* Google Treeya
+* Google Chronicler
+* Google Collis
+* Google Copano
+* Google Delbin
+* Google Drobit
+* Google Eldrid
+* Google Elemi
+* Google Lindar
+* Google Voema
+* Google Volet
+* Google Voxel
+* Purism Librem Mini
+* Google Sarien
+
 
 [//]: # "SPDX-License-Identifier: GFDL-1.3-or-later"
 
-
-The Canoeboot version of this page is: <https://canoeboot.org/docs/install/chromebooks.html>
