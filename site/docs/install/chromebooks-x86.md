@@ -21,7 +21,7 @@ Chromebook laptops. Libreboot replaces proprietary BIOS/UEFI firmware, though
 it should be noted that Google already ships coreboot and their own payload
 called Depthcharge, which is all free software; the difference with Libreboot
 is that it replaces Depthcharge with *EDK2* (as a coreboot payload), which
-provides a furr UEFI boot implementation that can boot regular Linux and
+provides a full UEFI boot implementation that can boot regular Linux and
 BSD systems more easily than Depthcharge. It can also boot Windows.
 
 We provide this as the default payload since Libreboot 26.10 Ominous Olive,
