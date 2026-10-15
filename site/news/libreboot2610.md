@@ -87,7 +87,7 @@ The additional payloads are, as above, available in the boot menu via ESC
 keypress at startup. iPXE is also enabled by default, as in upstream, on
 specific boards. EFI GRUB and CSM SeaBIOS have **replaced** the coreboot
 payload versions of these; bare metal SeaBIOS/GRUB are now deprecated
-and may be removed in a Libreboot future release, although they can be
+and may be removed in a future Libreboot release, although they can be
 re-enabled by those willing to build Libreboot from source.
 
 This is NOT a fork of MrChromebox, which is to be regarded as Libreboot's
@@ -234,13 +234,15 @@ Nearly all major upstream revisions updated:
 * GRUB: updated to version 2.16
 * Coreboot (default tree): Updated to 8ce4c91c41da3f042979f92095149a85bc93227d
   commit ID as of 18 September 2026.
-* SeaBIOS (non-CSM): Updated to 81ec9ec0bcf45df11fb7f98339ec9036b546fca0
-  commit ID as of 28 July 2026.
+* Coreboot (mrchromebox): imported e5997cf9384b29082a1bf3101813d8ac3dadda42
+  commit ID of MrChromebox coreboot, for use on Chromebooks.
 * Coreboot (fam15h): removed (`4.11_branch` tree) and replaced with:
 * Coreboot (fam15h_15h): 57e26bdcd959808c0171164f3c6197d4a347c3b2
   commit ID as of 27 May 2026. This is a heavily improved fork of coreboot
   from version `4.11_branch`, for improved initialisation reliability on
   AMD FAM15H hardware e.g. ASUS KGPE-D16.
+* SeaBIOS (non-CSM): Updated to 81ec9ec0bcf45df11fb7f98339ec9036b546fca0
+  commit ID as of 28 July 2026.
 
 The `4.11_branch` tree of coreboot was removed, because we now use the
 15h.org fork of coreboot on AMD Fam15h hardware. This is much improved, with
@@ -500,10 +502,6 @@ Config changes
   the custom source code written by Raptor Engineering. The modified AGESA
   code has better CPU and memory initialisation, supporting more hardware
   combinations and it supports higher amounts of RAM.
-* Removed T440p targets that use 4MB CBFS. Only the full images are provided
-  now. The 4MB images might have encouraged someone to skip overwriting the
-  extra components in Intel ME, and there's no Soft ME Temporary Disable
-  on Haswell. We don't want to encourage bad habits.
 
 Bug fixes
 ---
