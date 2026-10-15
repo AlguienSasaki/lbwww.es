@@ -271,7 +271,7 @@ adapted for use in Libreboot. They *all* compile. All of them. I repeat:
 More hardware added besides Chromebooks:
 
 * Dell OptiPlex 5050 SFF support, courtesy of Ron Nazarov.
-* Supermicro X11SSH-F mainboard support - improvements made by Ron Nazarow
+* Supermicro X11SSH-F mainboard support - improvements made by Ron Nazarov
   e.g. use of regular Intel ME neutered through `deguard` - no bootguard,
   but deguard can also be used generally to provide a pre-configured ME per board.
   This board otherwise uses SPS. With use of regular ME, we do need a larger
