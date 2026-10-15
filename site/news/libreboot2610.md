@@ -19,7 +19,6 @@ to provide firmware that is extremely easy for non-technical users to understand
 Today's release changelog is relative to the previous Libreboot 26.01 release.
 
 <img tabindex=1 class="r" src="https://av.libreboot.org/t480/t480.jpg" /><span class="f"><img src="https://av.libreboot.org/t480/t480.jpg" /></span>
-<img tabindex=1 class="r" src="https://av.minifree.org/t580.jpg" /><span class="f"><img src="https://av.minifree.org/t580.jpg" /></span>
 
 This is a very special release, with several major design changes made
 regardless of hardware changes, so users should read this
