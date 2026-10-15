@@ -369,11 +369,6 @@ A lot of major design changes have been made!
   This was done to reduce the possibility of a directory escape bug in lbmk.
 * Fixed GRUB module list no longer used per GRUB tree. Instead, all modules
   are added per target but a blacklist is applied, configured per-tree.
-* Default to 256KB SMMSTORE size in coreboot (default tree) instead of 512KB.
-  This reduces the space used in CBFS, which we want because a future release
-  will add a Linux UKI build to the flash, so every byte counts. This was done
-  universally on all boards, and some of the ones with 4MB flash need it or our
-  EDK2 build won't fit.
 * GRUB Syslinux and GRUB scanning now combined into one function, on GRUB
   configs. General simplifications to the GRUB config.
 * GRUB is now *one* source tree, with multiple targets all re-using the
