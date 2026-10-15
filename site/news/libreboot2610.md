@@ -683,11 +683,11 @@ to two major projects:
 
 This was an extension of nvmutil that later became a generalised set of
 utilities alongside a library for handling things like atomic writes, and
-userspace mitigation against various types of TOCTUO attacks. Not really
+userspace mitigation against various types of TOCTOU attacks. Not really
 critical for nvmutil itself, but...
 
 An attempt was made to implement a hardened version of mktemp called mkhtemp.
-It implemented several mitigations in userspace against TOCTUO attacks e.g.
+It implemented several mitigations in userspace against TOCTOU attacks e.g.
 directory replacement and symlink attacks.
 
 Check lbmk git log for `util/libreboot-utils` to see more (might have
