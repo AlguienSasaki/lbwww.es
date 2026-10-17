@@ -1478,17 +1478,6 @@ convenient, because you don't have to mess with a breadboard or anything,
 because they already have ZIF sockets on them for DIP-8 ICs, on which you can
 also use adapters for SOIC-8, SOIC-16 and WSON-8.
 
-### E6400 VGA ROM (Nvidia)
-
-See: <https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=990662#22>
-
-Although we couldn't reproduce it after testing, a user did report that
-following these steps caused nouveau to work.
-
-Also: `e6400nvidia_4mb` works better on that setup, nouveau is actually stable
-in some cases. Check the E6400 page for libreboot, it lists issues with nouveau
-on those machines.
-
 ### Test Crystalwell CPUs on T440p
 
 Coreboot has support for these, but they have not been tested as far as I know,

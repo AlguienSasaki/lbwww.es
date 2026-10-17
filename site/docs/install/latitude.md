@@ -3,6 +3,11 @@ title: Install Libreboot on Dell Latitude laptops
 x-toc-enable: true
 ...
 
+**DO NOT buy the Nvidia GPU variant of this board. Only use the intel GPU
+variant. The Nvidia one never worked reliably; it was removed in Libreboot
+version 26.10rev1 and higher. It never worked even when it was in the tree.
+Please just only use the Intel GPU version of this board.**
+
 Open source BIOS/UEFI firmware
 ------------------------------
 
@@ -58,25 +63,6 @@ Machine-specific notes
 ### Latitude E6400
 
 Vendor files not required for Dell Latitude E6400 if you have the Intel GPU.
-
-If you have the Nvidia model, please use the `e6400nvidia_4mb` target, and
-make sure to run the [inject script](ivy_has_common.md) prior to flashing.
-
-### E6400 nvidia issues
-
-See: <https://codeberg.org/libreboot/lbmk/issues/14#issuecomment-907758>
-
-If using Linux on Nvidia GPU variants of E6400, please boot using `nomodeset`.
-The `nv` drivers on BSD systems generally work, but can have severe performance
-issues; use of a tiling window manager is recommended, on BSD systems, because
-moving windows around can literally lag a lot otherwise, on most window managers.
-
-### dGPU variants
-
-On everything except E6400, Libreboot only supports the variant with an Intel
-GPU. Therefore, you must *only* purchase a Dell Latitude that has the Intel
-graphics; even on E6400, this is good advice, due to issues with the Nvidia
-GPU on E6400, documented later in this guide.
 
 Internal flashing
 -----------------
