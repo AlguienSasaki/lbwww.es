@@ -1287,7 +1287,7 @@ are available in the EDK2 menu via ESC keypress at boot time.
 Users are best served just switching to native UEFI boot with ESP, using
 Libreboot's EDK2 payload.
 
-Libreboot 26.10rev1 revision release
+Libreboot 26.10rev1, 17 Oct 2026
 -------------------------------
 
 A new revision release is available: Libreboot 26.10rev1. This
@@ -1346,7 +1346,7 @@ Here is the full list of changes, from recent to oldest:
 * Added `LOCALVERSION` to coreboot builds, so that dmi strings
   would say libreboot plus version number. This makes it easier
   for upstream projects to detect that someone is using Libreboot
-  when they send bug reports. This was done due to a compliant
+  when they send bug reports. This was done due to a complaint
   made by another coreboot project and rather than say all of what
   I wanted to say, I decided to honour their request. It just seemed
   like the right thing to do, as this affects all upstreams. It
@@ -1356,7 +1356,7 @@ Here is the full list of changes, from recent to oldest:
 This rev1 release essentially just fixes stability issues and makes
 minor quality of life changes to legacy hardware on Libreboot 26.10.
 
-Libreboot 26.10rev2 revision release
+Libreboot 26.10rev2, 18 Oct 2026
 ------------------------------
 
 Minor cleanup:
@@ -1366,7 +1366,7 @@ Minor cleanup:
 * EFI GRUB config: Don't load non-existent `at_keyboard` and `usb_keyboard`
   modules. We don't use these in EFI, because EDK2 handles everything.
 
-Libreboot 26.10rev3 revision release
+Libreboot 26.10rev3, 18 Oct 2026
 ------------------------------------
 
 CrabEFI was set `release="n"` in rev1, because it's not yet ready for use as
