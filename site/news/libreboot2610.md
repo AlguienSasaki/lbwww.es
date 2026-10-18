@@ -1365,3 +1365,22 @@ Minor cleanup:
   not otherwise cause any behavioural changes whatsoever in the build system.
 * EFI GRUB config: Don't load non-existent `at_keyboard` and `usb_keyboard`
   modules. We don't use these in EFI, because EDK2 handles everything.
+
+Libreboot 26.10rev3 revision release
+------------------------------------
+
+CrabEFI was set `release="n"` in rev1, because it's not yet ready for use as
+a standalone payload and is currently inserted for loading from SeaBIOS and
+GRUB; this isn't working yet, so rev1 made it such that CrabEFI is not inserted
+into images via scripting in `include/fw/rom.sh` - this alone is sufficient
+and this third revision simply removes `release="n"` - otherwise, users could
+not build images in the source code tar archive unless they set
+the `XBMK_RELEASE` environmental variable.
+
+This is because release tarballs disable source fetching, by virtue of
+whether or not a `CHANGELOG` file is prevent - absent in the Git repository
+but generated in release archives.
+
+REMARK: MrChromebox sources also do not fetch/compile in the release archive,
+but this is OK because we don't provide images for those in this release. You
+should just use the lbmk Git repository to build these.
