@@ -1355,3 +1355,13 @@ Here is the full list of changes, from recent to oldest:
 
 This rev1 release essentially just fixes stability issues and makes
 minor quality of life changes to legacy hardware on Libreboot 26.10.
+
+Libreboot 26.10rev2 revision release
+------------------------------
+
+Minor cleanup:
+
+* grub/default: Removed an errant symlink in the config directory, that did
+  not otherwise cause any behavioural changes whatsoever in the build system.
+* EFI GRUB config: Don't load non-existent `at_keyboard` and `usb_keyboard`
+  modules. We don't use these in EFI, because EDK2 handles everything.
