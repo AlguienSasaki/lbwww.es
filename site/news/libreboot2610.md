@@ -1286,3 +1286,72 @@ are available in the EDK2 menu via ESC keypress at boot time.
 
 Users are best served just switching to native UEFI boot with ESP, using
 Libreboot's EDK2 payload.
+
+Libreboot 26.10rev1 revision release
+-------------------------------
+
+A new revision release is available: Libreboot 26.10rev1. This
+has replaced the original 26.10 release.
+
+Bugs were found in the main release, on legacy hardware where
+EDK2 was not used; here, we had standalone GRUB and SeaBIOS
+payloads. On setups with GRUB, some users reported broken keyboard
+input. This is because some machines need a timeout loop during
+PS/2 keyboard initialisation, and I'd overlooked this fact when
+making GRUB a standalone payload on legacy hardware.
+
+I've thus made GRUB only available in the form of SeaGRUB once
+more. Images with GRUB now start SeaBIOS first.
+
+Here is the full list of changes, from recent to oldest:
+
+* CrabEFI payload added in legacy boards that cannot have EDK2,
+  but marked source-only as it does not yet boot from SeaBIOS
+  or GRUB payloads and thus should be provided as a standalone
+  payload, for which there has been insufficient testing - it
+  may or may not be provided in a further revision release
+  of the Libreboot 26.10 release series, or it may simply be
+  provided in the next major Libreboot release.
+* Added 32-bit memtest86plus builds on legacy hardware, where
+  previously only 64-bit builds were provided on 64-bit capable
+  hardware. This brings legacy hardware more into parity.
+* Enable use of EDK2 payload on Dell OptiPlex 780 variants, as
+  the default payload booting GRUB EFI and SeaBIOS CSM.
+* Marked q45t m target source-only due to lack of testing.
+* Marked Nvidia GPU variants of Dell Latitude E6400 source-only due
+  to lack of testing.
+* Marked Gigabyte GA-G41M-ES2L source-only due to lack of testing.
+* Enforce use of SeaGRUB on GRUB setups. Do not allow standalone
+  GRUB payload, because GRUB is not always reliable and could lead
+  to softbricks if its input drivers fail; SeaBIOS provides more
+  reliable keyboard initialisation, which mitigates GRUB issues. This
+  restores the behaviour from previous Libreboot releases.
+* Blacklist usbtest module from EFI GRUB, because GRUB EFI does
+  not handle USB (EDK2 handles USB).
+* Removed the `bsd` module from GRUB as we already removed other
+  BSD modules; BSD users are expected to boot with SeaBIOS or EDK2
+  as GRUB is not reliable for booting BSD. Also removed some
+  redundant keyboard modules on the EFI GRUB target, as GRUB does
+  not handle input drivers in EFI mode (EDK2 drivers are used).
+* Made the anti-AI policy in AGENTS&#x2e;md even more persuasive.
+* `rom.sh`: Avoid grep when scanning defconfigs, for more reliable
+  operation as grep returns non-zero status on both file system
+  error and logical error; now, we use a while read loop, and thus
+  error handling is more reliably separated from syserror and logic
+  error. This enables more fine-grained error control when processing
+  config files.
+* `rom.sh`: Always make image tarballs even when not building in
+  release mode. This makes versioned builds easier to handle, if
+  dealing with multiple versioned builds of the same mainboards.
+* Added `LOCALVERSION` to coreboot builds, so that dmi strings
+  would say libreboot plus version number. This makes it easier
+  for upstream projects to detect that someone is using Libreboot
+  when they send bug reports. This was done due to a compliant
+  made by another coreboot project and rather than say all of what
+  I wanted to say, I decided to honour their request. It just seemed
+  like the right thing to do, as this affects all upstreams. It
+  also means that Libreboot now has a voice inside your DMI strings
+  and inside the cbmem log, where it is also printed via printk.
+
+This rev1 release essentially just fixes stability issues and makes
+minor quality of life changes to legacy hardware on Libreboot 26.10.
