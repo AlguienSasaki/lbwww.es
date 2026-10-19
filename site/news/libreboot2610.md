@@ -64,11 +64,6 @@ Libreboot makes these modifications to MrChromebox coreboot, in its version:
   set the background colour to Libreboot purple, and use the Libreboot rainbow
   logo instead of the coreboot logo. Our EDK2 build is otherwise currently
   identical except for the next changes:
-* Set HAP bit by default, at build time, to disable Intel ME. It is not
-  reliably disabled in MrChromebox coreboot by default as most people using it
-  do so via software-based flashing scripts alongside disablement of Google's
-  security as shown in MrChromebox documentation. We disable it here. NOTE:
-  We also support numerous AMD Chromebooks, which are unrelated in this context.
 * Unlock IFD regions via ifdtool (with quirks properly handled), setting them
   read-write at build time. This is done instead of modifying every Intel
   Flash Descriptor provided by MrChromebox, of which there are hundreds.
@@ -406,10 +401,6 @@ A lot of major design changes have been made!
 * Always use `--mirror` git clones on `include/env/get.sh`. This makes cloning
   revisions more reliable on all projects, especially ones where we use revs
   inside branches other than main.
-* Auto-unlock IFD regions at build time on all Intel IFD-based systems; disable
-  ME automatically, by setting the HAP bit. This is how we do it on chromebooks,
-  but it's done on all boards; this mitigates the possibility that we might
-  accidentally forget to neuter the ME on specific targets in the future.
 * When building EDK2, we use coreboot's build system, but when doing it this
   way, `custom_` prefix is not used in image file names. Proper edk2 prefix is
   used. This makes it work for Chromebooks, which build edk2 per-board in this
@@ -1384,3 +1375,11 @@ but generated in release archives.
 REMARK: MrChromebox sources also do not fetch/compile in the release archive,
 but this is OK because we don't provide images for those in this release. You
 should just use the lbmk Git repository to build these.
+
+revX
+----
+
+Not yet a revision, but of note: I removed the HAP bit hardcoding in lbmk.
+Rather than break everyone's audio by default, tell the user in docs that it
+is enabled by default on chromebooks, tell them how to disable it, and warn
+against this.

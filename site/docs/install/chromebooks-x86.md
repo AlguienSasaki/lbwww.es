@@ -13,17 +13,29 @@ covered by [chromebooks](chromebooks.md).**
 Libreboot uses EDK2 on x86 Chromebooks, and U-Boot on ARM64. This page is
 for the EDK2 version on x86-64.
 
-PRE-WARNING
+Intel ME on Chromebooks
 ------
+
+Libreboot leaves the Intel ME enabled by default *on Chromebooks* - on other
+boards, we generally disable it by default. We initially disabled it in bulk
+on these Intel Chromebooks, but it was decided otherwise.
 
 Libreboot intentionally disables Intel ME on Intel-based chromebooks, by
 setting the HAP bit. This may break certain functionality on specific
 Chromebooks, e.g. SOF (Sound Open Firmware) based audio chipsets might
 break. Libreboot's [Binary Blob Reduction Policy](../../news/policy.html)
 is quite clear: we will exclude or disable any blobs that are unnecessary for
-operation on a given machine.
+operation on a given machine - however, an exception was specified there for
+cases where a blob is needed for the extra functioning of critical peripherals.
+It was decided in the Libreboot 26.10 release that your sound card is not
+an essential component, but this has since changed.
 
-DO NOT report issues upstream to MrChromebox or others e.g. Chrultrabook.
+Upstream MrChromebox also leaves Intel ME turned on by default, on Intel
+Chromebooks. The ME is required for DSP signature verification on certain
+audio chipsets.
+
+DO NOT report issues upstream Chromebooks issues to MrChromebox or
+others e.g. Chrultrabook.
 Please only report to Libreboot's issue tracker, for whatever issues you
 find. We will deal with you.
 
@@ -34,12 +46,16 @@ following software would not work with Intel ME disabled:
 * Context: <https://github.com/thesofproject/sof/issues/10317#issuecomment-3425293611>
 * More context: <https://github.com/WeirdTreeThing/chromebook-linux-audio/issues/366#issuecomment-3503041877>
 
-Do not ask Libreboot to turn the ME back on. Code exists in lbmk to turn it
-off, and you're more than welcome to modify lbmk if you wish. We value software
-freedom first. If your audio breaks, just get a cheap USB audio DAC or
-something.
-
 Thank you also to ellyq of Chrultrabook who very politely raised this issue.
+
+You can disable the ME via `--altmedisable 1` option in ifdtool, and you should
+also use `--platform PLATFORM` for your specific board; check Kconfig in coreboot
+for what the platform string should be on your board. Note that some older
+IFD versions don't require a platform string.
+
+Individual ME disablement can be done by Libreboot as time goes by, subject
+to rigorous user testing. These Chromebooks are currently marked `release="n"`
+in Libreboot's build system, so binaries of them are not yet provided.
 
 Build from source
 -----------------
