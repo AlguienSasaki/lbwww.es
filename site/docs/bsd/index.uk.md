@@ -10,6 +10,13 @@ rest of this document pertains to the old, now-deprecated setup of standalone
 SeaBIOS(as coreboot payload). We recommend UEFI nowadays, for BSD. Please use
 the EDK2 payload provided by Libreboot.**
 
+**See: [Libreboot EDK2 documentation](../install/chromebooks-x86.md)**.
+
+EDK2 works pretty much like any normal UEFI firmware and should be fairly
+self-explanatory. However, you can refer to [MrChromebox](https://docs.mrchromebox.tech/)
+our upstream for EDK2, or Intel's [tianocore](https://www.tianocore.org/)
+website for general information about EDK2.
+
 *Please also know: FreeBSD installed in BIOS mode still expects text mode
 startup with SeaBIOS; this is not compatible with the framebuffer-based
 CSMWrap payload provided inside Libreboot EDK2. Please convert your FreeBSD

@@ -3,6 +3,56 @@ title: Boot GNU and Linux on a Libreboot system
 x-toc-enable: true
 ...
 
+Libreboot 26.10 and up now default to EDK2 on 64-bit-capable Intel/AMD
+hardware. This makes booting and maintaining Linux/BSD systems much
+easier. The first section of this page was added accordingly, and the
+section about GRUB pertains to the *old* pre-EDK2 Libreboot design, which
+is still accessible via GRUB EFI provided on Libreboot EDK2 releases, when
+you press ESC to access the EDK2 boot menu.
+
+EDK2 is Intel's reference implementation of the UEFI spec, and we use the
+MrChromebox version of it.
+
+EDK2 UEFI payload
+--------
+
+**Preferred boot method since Libreboot 26.10. Please refer to
+the [Intel/AMD EDK2 documentation](../install/chromebooks-x86.md), written ostensibly
+for Chromebooks but also applies to non-Chromebook mainboards; we also
+provide a generic EDK2 build used on non-Chromebooks.**
+
+EDK2 works pretty much like any normal UEFI firmware and should be fairly
+self-explanatory. However, you can refer to [MrChromebox](https://docs.mrchromebox.tech/)
+our upstream for EDK2, or Intel's [tianocore](https://www.tianocore.org/)
+website for general information about EDK2.
+
+EDK2 is the preferred boot method, booting directly via UEFI. You can use
+modern EFI-based bootloaders e.g. systemd-boot, with full Linux UKI and you
+could even enrol your own keys to use SecureBoot(not enabled by default).
+
+Users who have existing Linux installations booting via SeaBIOS or GRUB can
+use the GRUB EFI and SeaBIOS CSM compatibility modules. Press ESC in the
+EDK menu to get the boot menu; you could also set the boot order in EDK2
+to boot one of these first.
+
+The next sections pertain to legacy setups. Please note however that the
+hardened GRUB setup is still useful even in an EFI context (support for
+encrypted /boot partition).
+
+NOTE: When booting via GRUB EFI payload, Linux installers will still detect
+that you're UEFI-based and will often default to UEFI-centric setup e.g.
+systemd-boot and UKI turned on in Arch Linux `archinstall`. In this context,
+of GRUB EFI booting, you are in fact still using UEFI but bypassing the use
+of an EFI System Partition (ESP). This may actually be useful, because it
+means that you could also have an *encrypted* ESP (LUKS-encrypted) and chain
+load EFI executables from the EFI GRUB payload.
+
+EFI GRUB in-flash is a Libreboot innovation, provided ostensibly for backward
+compatibility but its use is going to be heavily expanded in future Libreboot
+releases. It offers many advanced features otherwise normally only available
+in e.g. Linuxboot setups, but with much lower flash space usage (Linuxboot
+is also planned, for a future Libreboot release).
+
 GNU boot loader "GRUB"
 --------
 

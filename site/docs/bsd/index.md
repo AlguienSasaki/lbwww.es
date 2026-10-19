@@ -10,6 +10,13 @@ rest of this document pertains to the old, now-deprecated setup of standalone
 SeaBIOS(as coreboot payload). We recommend UEFI nowadays, for BSD. Please use
 the EDK2 payload provided by Libreboot.**
 
+**See: [Libreboot EDK2 documentation](../install/chromebooks-x86.md)**.
+
+EDK2 works pretty much like any normal UEFI firmware and should be fairly
+self-explanatory. However, you can refer to [MrChromebox](https://docs.mrchromebox.tech/)
+our upstream for EDK2, or Intel's [tianocore](https://www.tianocore.org/)
+website for general information about EDK2.
+
 *Please disregard this entire document, if you're doing UEFI-based BSD setup.
 The notes about KMS are still useful though, for more efficient graphical
 operation but this is true of all operating systems.*
