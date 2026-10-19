@@ -20,8 +20,7 @@ Libreboot leaves the Intel ME enabled by default *on Chromebooks* - on other
 boards, we generally disable it by default. We initially disabled it in bulk
 on these Intel Chromebooks, but it was decided otherwise.
 
-Libreboot intentionally disables Intel ME on Intel-based chromebooks, by
-setting the HAP bit. This may break certain functionality on specific
+Users can disable it. This may break certain functionality on specific
 Chromebooks, e.g. SOF (Sound Open Firmware) based audio chipsets might
 break. Libreboot's [Binary Blob Reduction Policy](../../news/policy.html)
 is quite clear: we will exclude or disable any blobs that are unnecessary for
@@ -56,6 +55,9 @@ IFD versions don't require a platform string.
 Individual ME disablement can be done by Libreboot as time goes by, subject
 to rigorous user testing. These Chromebooks are currently marked `release="n"`
 in Libreboot's build system, so binaries of them are not yet provided.
+
+We generally want Libreboot to be as close to MrChromebox as possible in terms
+of board behaviour, hence this policy change enacted after the 26.10 release.
 
 Build from source
 -----------------
