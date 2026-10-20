@@ -1415,7 +1415,7 @@ redundant on a handful of boards, as they'd be defined in Kconfig. I've
 restored them, and also corrected them, e.g. Dell OptiPlex 780 variants
 now have correct board names in these strings.
 
-Libeboot 26.10rev6, 20 Oct 2026
+Libreboot 26.10rev6, 20 Oct 2026
 ----------------
 
 The most pedantic revision of all, but I wanted to make everything a bit
@@ -1464,3 +1464,9 @@ on rsync. With the new naming scheme, it is much easier to find what
 you want because images are named `vendor_model_variant_size_bios` or `_uefi`.
 
 The new naming scheme is also more friendly to scripts (build systems).
+
+Libreboot 26.10rev8, 20 Oct 2026
+------------------------
+
+Renamed cros rk3399 targets to match u-boot and coreboot target names.
+This affects gru bob/kevin chromebooks.
