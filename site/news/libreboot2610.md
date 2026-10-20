@@ -1423,3 +1423,33 @@ strings, to prevent build errors. I removed these, believing them to be
 redundant on a handful of boards, as they'd be defined in Kconfig. I've
 restored them, and also corrected them, e.g. Dell OptiPlex 780 variants
 now have correct board names in these strings.
+
+Libeboot 26.10rev6, 20 Oct 2026
+----------------
+
+The most pedantic revision of all, but I wanted to make everything a bit
+more clean:
+
+* Removed Dell Latitude E6400 Nvidia support - Intel GPU variant still present.
+* Renamed board names more consistently once again. For example, the T440p
+  targets no longer say `libremrc` as it is a given now that we use native
+  raminit on these boards. Consistent with W541 which also has libremrc/nri
+  but did not specify thus.
+
+Please note: these board target names make vendor file injection break on
+older release archives. Please rename accordingly, or just use image tarballs
+from the current rev6 release and beyond. Naming scheme is stable now
+in Libreboot, thus:
+
+* `vendor_boardname_uefi`
+* `vendor_boardname_variant_uefi`
+
+For example, variant can be 8mb on `lenovo_x200_8mb_uefi`. The E6400 Nvidia
+GPU variant never worked properly from day one, since the heatsink is cooled
+with a pad and the machine regularly overheats; nouveau is also buggy in
+Libreboot, on this board. Software-based llvmpipe rendering works fine, but
+the machine is completely useless for everyday use. Rather than support it,
+I have decided to delete it.
+
+The E6400 Intel GPU variant is still supported, and it will continue to have
+support in Libreboot.
