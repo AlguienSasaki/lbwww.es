@@ -1386,6 +1386,7 @@ on one project. CrabEFI was only added experimentally anyway and wasn't provided
 as a build in rev3. Just delete it.
 
 Other changes:
+
 * Re-added SeaBIOS/GRUB classic setups, on boards that recently had EDK2
   added. The EDK2 setup is still present, and recommended; we now provide
   two tarballs per machine that has EDK2: one with EDK2, and one with SeaBIOS
