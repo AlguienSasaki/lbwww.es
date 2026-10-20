@@ -1444,3 +1444,23 @@ I have decided to delete it.
 
 The E6400 Intel GPU variant is still supported, and it will continue to have
 support in Libreboot.
+
+Libreboot 26.10rev7, 20 Oct 2026
+-----------------------
+
+Renamed more boards, for more consistent naming across all mainboards
+and platforms.
+
+Renamed chromebook_ to cros_ in coreboot chromebook boards, for more
+consistent naming across different google products.
+
+Removed untested boards from MrChromebox-imported boards, based on
+a report given to me by Matt DeVillier who leads that project.
+
+Due to Libreboot's rapidly expanding hardware support, which will include
+unlocking more Chromebooks for binary release within this very release
+series, it's important that the user be able to find images more easily
+on rsync. With the new naming scheme, it is much easier to find what
+you want because images are named `vendor_model_variant_size_bios` or `_uefi`.
+
+The new naming scheme is also more friendly to scripts (build systems).
