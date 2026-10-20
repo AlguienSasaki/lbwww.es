@@ -1376,10 +1376,40 @@ REMARK: MrChromebox sources also do not fetch/compile in the release archive,
 but this is OK because we don't provide images for those in this release. You
 should just use the lbmk Git repository to build these.
 
-revX
+Libreboot 26.10rev4, 20 Oct 2026
 ----
 
-Not yet a revision, but of note: I removed the HAP bit hardcoding in lbmk.
-Rather than break everyone's audio by default, tell the user in docs that it
-is enabled by default on chromebooks, tell them how to disable it, and warn
-against this.
+Removed CrabEFI as I plan instead now to port edk2 on 32-bit, from the
+MrChromebox tree. This will be easier as the latter is maintained on 64-bit
+anyway, and work likely already exists. It's better just to always standardise
+on one project. CrabEFI was only added experimentally anyway and wasn't provided
+as a build in rev3. Just delete it.
+
+Other changes:
+* Re-added SeaBIOS/GRUB classic setups, on boards that recently had EDK2
+  added. The EDK2 setup is still present, and recommended; we now provide
+  two tarballs per machine that has EDK2: one with EDK2, and one with SeaBIOS
+  plus GRUB. On the SeaBIOS setups, txtmode images are also present which
+  allows for use of text-mode bootloaders e.g. BIOS FreeBSD bootloader.
+* Tidied up some defconfigs (a few board name strings, VBT paths).
+* Rename all board targets to include the vendor in the name, and `_bios`
+  or `_uefi` at the name, consistent with chromebook naming; mrchromebox
+  also renamed to chromebook on chromebook builds, so that users do not draw
+  false equivalence between Libreboot/MrChromebox even if the two are currently
+  closely in sync. It's just good etiquette to rename our spin-off here.
+
+The re-addition of BIOS targets alongside UEFI, where both are present on a
+given mainboard, is likely to remain permanent even when CSMWrap bugs are
+fixed. I initially reasoned that it's best to keep things simple from my
+point of view, but it's better to just provide users choices. With this, most
+users shouldn't have any problem as the setup they've always used is still
+available, and they can otherwise upgrade to the new setup at their leisure.
+Yes, they call this: the principle of least surprise.
+
+The reason I did this was also that S3 resume is currently broken on CSMWrap
+but not the bare SeaBIOS payload. Thus, we provide actual real BIOS setups
+alongside EFI; the EFI build also has CSM, but the SeaBIOS build does not
+have EFI.
+
+Keymapped images were also re-added on the classic BIOS (SeaBIOS plus GRUB)
+targets; the EDK2 targets are still locked to only one keymap.
