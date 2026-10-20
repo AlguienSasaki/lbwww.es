@@ -1413,3 +1413,12 @@ have EFI.
 
 Keymapped images were also re-added on the classic BIOS (SeaBIOS plus GRUB)
 targets; the EDK2 targets are still locked to only one keymap.
+
+Libreboot 26.10rev5, 20 Oct 2026
+----------------
+
+Reverted some defconfig changes that changed VBT path and SMBIOS vendor
+strings, to prevent build errors. I removed these, believing them to be
+redundant on a handful of boards, as they'd be defined in Kconfig. I've
+restored them, and also corrected them, e.g. Dell OptiPlex 780 variants
+now have correct board names in these strings.
