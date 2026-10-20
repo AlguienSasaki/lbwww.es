@@ -1108,8 +1108,6 @@ List of Chromebooks added
 * Google Buddy
 * Google Gandof
 * Google Guado
-* Purism Librem 13 v1
-* Purism Librem 15 v2
 * Google Lulu
 * Google Rikku
 * Google Samus
@@ -1154,8 +1152,6 @@ List of Chromebooks added
 * Google Kaisa
 * Google Kindred
 * Google Kohaku
-* Purism Librem 14
-* Purism Librem Mini v2
 * Google Moonbuggy
 * Google Nightfury
 * Google Noibat
@@ -1210,8 +1206,6 @@ List of Chromebooks added
 * Google Eve
 * Google Fizz
 * Google Karma
-* Purism Librem 13 v4
-* Purism Librem 15 v4
 * Google Nami
 * Google Nautilus
 * Google Nocturne
@@ -1238,8 +1232,6 @@ List of Chromebooks added
 * Google Cave
 * Google Chell
 * Google Lars
-* Purism Librem 13 v2
-* Purism Librem 15 v3
 * Google Sentry
 * Google Butterfly
 * Google Link
@@ -1262,7 +1254,6 @@ List of Chromebooks added
 * Google Voema
 * Google Volet
 * Google Voxel
-* Purism Librem Mini
 * Google Sarien
 
 CSMWrap errata
