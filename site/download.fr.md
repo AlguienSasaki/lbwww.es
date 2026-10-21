@@ -90,7 +90,6 @@ Ces miroirs sont recommandés, car ils utilisent le chiffrement TLS (https://).
 
 Vous pouvez télécharger Libreboot depuis ces miroirs :
 
-* <https://rsync.libreboot.org/> (miroir officiel de Libreboot.org, Royaume-Uni)
 * <https://mirror.math.princeton.edu/pub/libreboot/> (Université de Princeton,
 États-Unis)
 * <https://mirror.shapovalov.website/libreboot/> (shapovalov.website, Ukraine)

@@ -3,7 +3,7 @@
 % 15 October 2026
 
 **You can find today's release in 
-<https://www.mirrorservice.org/sites/libreboot.org/release/stable/26.10rev9/roms/> or you can use one of
+<https://www.mirrorservice.org/sites/libreboot.org/release/stable/26.10rev9/> or you can use one of
 the [mirrors](../download.md).**
 
 Libreboot is free, open source boot firmware replacing proprietary BIOS/UEFI
