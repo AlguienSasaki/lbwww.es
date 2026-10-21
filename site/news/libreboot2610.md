@@ -37,17 +37,17 @@ changelog very carefully.
 
 The first major change is:
 
-233 Intel/AMD Chromebooks added
+Over 200 Intel/AMD Chromebooks added
 ---
 
 The full list of boards is quite long, so it's shown at the end of this
-article. All 233 of them!
+article. All of them!
 
 MrChromebox supports nearly every Chromebook, and this release imports all
 boards from that project. This includes everything up to the most recent
 Intel and AMD hardware.
 
-Imported all 233 currently supported Chromebooks from the MrChromebox coreboot
+Imported over 200 currently supported Chromebooks from the MrChromebox coreboot
 distro. Baytrail (Kip) tested - others need testing. Source-only in this
 release (must build from source, no binaries provided).
 
@@ -102,7 +102,7 @@ documentation.
 for an arbitrary number of upstreams per project. We still provide regular
 coreboot on non-Chromebook mainboards.
 
-Yes, 233. I counted. All automated. My scripting and my fastidiousness ensured
+Yes, over 200. I counted. All automated. My scripting and my fastidiousness ensured
 that what I imported and configured in lbmk closely matched upstream, and I'm
 quite careful at maintaining my own divergence from it inside Libreboot.
 
@@ -256,10 +256,10 @@ and binutils 2.46.1 on crossgcc.
 NEW hardware support
 ---
 
-All 233 chromebooks currently supported by MrChromebox have been imported and
+Over 200 chromebooks currently supported by MrChromebox have been imported and
 adapted for use in Libreboot. They *all* compile. All of them. I repeat:
 
-* 233 Chromebooks imported from MrChromebox. Every Chromebook supported by
+* More than 200 Chromebooks imported from MrChromebox. Every Chromebook supported by
   the MrChromebox project can now also be built in lbmk, with lbmk's changes.
   Thank you Matt DeVillier for your amazing project!
 
@@ -307,7 +307,7 @@ This is very much a features release. A *lot* of feature changes were made!
   without code changes, only config changes, but testing is needed on hardware.
 * New util at `util/mrimport` that is used to automatically import/update new
   configs from MrChromebox coreboot. This was also used for the initial import
-  of 233 chromebooks from MrChromebox, importing them into the Libreboot build
+  of chromebooks from MrChromebox, importing them into the Libreboot build
   system with our own modifications.
 * Added `fwsetup` command in a GRUB menuentry on the EFI version, which boots
   back into the edk2 setup menu.
@@ -985,6 +985,12 @@ release, as above. For example, the arm64 targets all say `_uefi` but actually
 use U-Boot, not EDK2; U-Boot implements a subset of the UEFI specification,
 and it is the default payload on ARM64 Chromebooks while Intel/AMD Chromebooks
 all use EDK2.
+
+FreeBSD and DragonFlyBSD users who set up on SeaBIOS txtmode before are
+advised to once again choose one of the `_bios` images, picking any SeaBIOS
+image with `txtmode` in the filename. This is for bootloader compatibility,
+irrespective of further setup - conversion to EFI is recommended, so that
+you can use the newer EDK2 setup.
 
 List of Chromebooks added
 -----------
