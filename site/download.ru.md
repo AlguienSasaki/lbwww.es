@@ -79,7 +79,6 @@ gpg --verify sha512sum.txt.sig
 
 Рекомендуется использовать следующие зеркала, так как они используют шифрование TLS (https://):
 
-- <https://rsync.libreboot.org/> (Libreboot.org official mirror, UK)
 - <https://mirror.math.princeton.edu/pub/libreboot/> (Университет Принстона, США)  
 - <https://mirror.shapovalov.website/libreboot/> (shapovalov.website, Украина)  
 - <https://www.mirrorservice.org/sites/libreboot.org/release/> (Университет Кента, Великобритания)  

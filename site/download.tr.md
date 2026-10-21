@@ -75,7 +75,6 @@ Bu yansılar TLS (https://) şifrelemesi kullandığı için önerilir.
 
 Libreboot'u bu yansılardan indirebilirsiniz:
 
-* <https://rsync.libreboot.org/> (Libreboot.org official mirror, UK)
 * <https://mirror.math.princeton.edu/pub/libreboot/> (Princeton
 üniversitesi, ABD)
 * <https://mirror.shapovalov.website/libreboot/> (shapovalov.website, Ukrayna)

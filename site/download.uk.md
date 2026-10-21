@@ -90,7 +90,6 @@ key (see above) for the releases after Libreboot 20240126.
 
 Ви можете завантажити Libreboot через дані дзеркала:
 
-* <https://rsync.libreboot.org/> (Libreboot.org official mirror, UK)
 * <https://mirror.math.princeton.edu/pub/libreboot/> (Прінстонський
 університет, США)
 * <https://mirror.shapovalov.website/libreboot/> (shapovalov.website, Україна)
