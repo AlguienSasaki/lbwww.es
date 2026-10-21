@@ -1470,3 +1470,17 @@ Libreboot 26.10rev8, 20 Oct 2026
 
 Renamed cros rk3399 targets to match u-boot and coreboot target names.
 This affects gru bob/kevin chromebooks.
+
+Libreboot 26.10rev9, 21 Oct 2026
+-----------------
+
+Enabled SATA hotplug on Dell OptiPlex 5050 SFF.
+
+Disabled ASPM L0 on PCI-E x4 slot for Dell OptiPlex 5050 SFF.
+This mitigated an AER error in Linux as tested by Ron Nazarov.
+
+Removed errant VGA ROM handling on vendor nuke function in `vendor.sh`
+that caused a build error in rev8; it was left over from when I removed
+Dell Latitude E6400 VGA ROM handling, as Libreboot now only supports the
+Intel GPU variant of this board (Nvidia model was always broken so it has
+just been deleted).
