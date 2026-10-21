@@ -68,11 +68,11 @@ to adhere to this advice will result in a bricked machine):
 
 Use the first one to upgrade from the vendor firmware (MT/SFF): 
 
-	./mk -b coreboot hp8200sff_4mb
+	./mk -b coreboot hp_elite_8200_sff_4mb_uefi
 
 To update the Libreboot firmware on a librebooted one (MT/SFF):
 
-	./mk -b coreboot hp8200sff_8mb
+	./mk -b coreboot hp_elite_8200_sff_8mb_uefi
 
 
 ### Flash a ROM image
@@ -141,7 +141,7 @@ Pin-Strap is set". If it doesn't, start again from the beginning.
 
 Now build the **4** MiB Libreboot image (MT/SFF).
 
-	./mk -b coreboot hp8200sff_4mb
+	./mk -b coreboot hp_elite_8200_sff_4mb_uefi
 
 Also build `ifdtool`. It will be needed soon.
 

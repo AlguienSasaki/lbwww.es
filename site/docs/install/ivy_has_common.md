@@ -232,7 +232,7 @@ Some examples of how to do that in lbmk:
 	./mk -d coreboot TREENAME
 
 TREENAME should be the coreboot tree corresponding to your board. Check
-this in `config/coreboot/BOARD/target.cfg` for your board, and `tree` will be
+this in `config/module/coreboot/BOARD/target.cfg` for your board, and `tree` will be
 set to e.g. `default`, or some other tree name.
 
 Now you find `elf/cbfstool`, which is a directory containing `cbfstool`

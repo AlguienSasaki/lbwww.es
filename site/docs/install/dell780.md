@@ -68,11 +68,12 @@ lack `_truncate` in the file name.
 
 The build target, when building from source, is thus:
 
-	./mk -b coreboot dell780mt_truncate_8mb
-	./mk -b coreboot dell780mt_8mb
-	./mk -b coreboot dell780usff_truncate_8mb
-	./mk -b coreboot dell780usff_8mb
-
+```
+./mk -b coreboot dell_optiplex_780_mt_truncate_8mb_uefi
+./mk -b coreboot dell_optiplex_780_mt_8mb_uefi
+./mk -b coreboot dell_optiplex_780_usff_truncate_8mb_uefi
+./mk -b coreboot dell_optiplex_780_usff_8mb_uefi
+```
 
 ### Flash a ROM image
 

@@ -447,15 +447,9 @@ NOTE: This is *only* provided for x86 machines, in Libreboot. For ARM, we ship
 U-Boot instead. Since Libreboot 20240612, the GRUB builds are *multi-tree*,
 much like, say, coreboot or SeaBIOS.
 
-As of August 2024, the following GRUB source trees can be downloaded:
-
-* `src/grub/default`
-* `src/grub/xhci`
-* `src/grub/nvme`
-
 Simplify specify the tree. For example:
 
-	./mk -b grub xhci
+	./mk -b grub default
 
 The `xhci` tree contains patches for both NVMe SSD support, and xHCI. The `nvme`
 tree contains NVMe SSD support but not xHCI support. The `default` tree contains
@@ -718,7 +712,7 @@ Each target name (e.g. `x200_8mb`) has its own directory under here. Targets
 that do not define defconfigs also exist here; for example, the `default`
 directory defines a coreboot revision and patches.
 
-Targets under `config/coreboot` can specify `tree=TREE` where `TREE` could,
+Targets under `config/module/coreboot` can specify `tree=TREE` where `TREE` could,
 for example, be `default`. In other words, they can refer to other trees.
 
 The coreboot downloads are based on scanning of these directories, and ROM
@@ -764,7 +758,7 @@ as:
   This however is used as build depend happens later in the build process,
   where we need it for EDK2.
 
-The `tree` value refers to `config/coreboot/TREE`; in other words, a given
+The `tree` value refers to `config/module/coreboot/TREE`; in other words, a given
 target could specify a name other than its own as the tree; it would then
 re-use code from that tree, rather than providing its own.
 
@@ -830,13 +824,13 @@ Configuration file names can be as follows:
 Information pertaining to this can be found on
 the [installation manual](../install/)
 
-In `lbmk`, a board-specific directory under `config/coreboot/` should never
+In `lbmk`, a board-specific directory under `config/module/coreboot/` should never
 specify a coreboot revision. Rather, a directory *without* coreboot configs
 should be created, specifying a coreboot revision. For example, the
-directory `config/coreboot/default/` specifies a coreboot revision. In the
+directory `config/module/coreboot/default/` specifies a coreboot revision. In the
 board-specific directory, your `board.cfg` could then
 specify `cbtree="default"` but without specifying a coreboot revision (this
-is specified by `config/coreboot/default/board.cfg`).
+is specified by `config/module/coreboot/default/target.cfg`).
 
 When you create a coreboot configuration, you should set the payload to *none*
 because `lbmk` itself will assume that is the case, and insert payloads itself.
@@ -857,7 +851,7 @@ to run VGA option ROMs (and perhaps other option ROMs). *This* setup is not
 strictly recommended for *SeaBIOS*, and it is recommended that you only run
 GRUB in this setup. As such, if you wish for a board to have coreboot initialize
 the VGA ROM (on an add-on graphics card, as opposed to onboard chipset), you
-should have a *separate* directory just for that, under `config/coreboot/`;
+should have a *separate* directory just for that, under `config/module/coreboot/`;
 another directory for that board will have configs with `libgfxinit`. HOWEVER:
 
 It *is* supported in lbmk to have SeaBIOS used, on either setup. In the
@@ -1105,7 +1099,7 @@ a location under `elf/u-boot/`.
 Each `TREENAME` directory defines configuration for a corresponding motherboard.
 It doesn't actually have to be for a board; it can also be used to just define
 a U-Boot revision, with patches and so on. To enable use as a payload in ROM
-images, this must have the same name as its `config/coreboot/TREENAME/`
+images, this must have the same name as its `config/module/coreboot/TREENAME/`
 counterpart.
 
 #### config/module/u-boot/TREENAME/patches/
@@ -1520,7 +1514,7 @@ inserted into the ROM images; secondary payloads like Memtest86+ are also
 handled and inserted here.
 
 It heavily makes use of the `target.cfg` file, for a given board. This script
-will *only* operate on a single target, from a directory in `config/coreboot/`.
+will *only* operate on a single target, from a directory in `config/module/coreboot/`.
 
 It automatically detects if `crossgcc` is to be compiled, on a given coreboot
 tree (in cases where it has not yet been compiled), and compiles it for a

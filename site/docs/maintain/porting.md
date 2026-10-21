@@ -61,18 +61,18 @@ Coreboot config
 
 Coreboot payloads (GRUB, Seabios, etc) are built separately.
 You therefore only need to focus on the coreboot config(s) for `board.`
-All of these configs are stored under config/coreboot/`board`
+All of these configs are stored under config/module/coreboot/`board`
 
 The easiest way to start a new configuration for a given board is to copy an existing
 configuration and make the necessary modifications.
 For example, if one wanted to port the t420s, then the t420 config would be an excellent
 starting point.
 
-	cp -r config/coreboot/t420_12mb/ config/coreboot/t420s_12mb
+	cp -r config/module/coreboot/lenovo_thinkpad_t420_8mb_uefi/ config/module/coreboot/lenovo_thinkpad_t420_8mb_uefi
 
 You can then easily modify the existing coreboot configs for you board via lbmk.
 
-	./mk -m coreboot t420s_12mb
+	./mk -m coreboot lenovo_thinkpad_t420_8mb_uefi
 
 This script will provide a curses interface through which you can easily modify the
 necessary variables and settings.
@@ -87,7 +87,7 @@ a corebootfb and txtmode config for each board (the script will handle this for 
 Now you can build and test the rom for `board.`
 Once you have finished this, you can try flashing the resulting rom to your board as a test.
 
-	./mk -b coreboot t420s_12mb
+	./mk -b coreboot lenovo_thinkpad_t420_8mb_uefi
 
 If you try to flash this rom and it fails, then there are two probable reasons:
 

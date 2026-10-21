@@ -75,9 +75,9 @@ your flash, thus removing any of the above protections.
 
 ### Build-time write protect
 
-Let's assume your board is `x200_8mb`, do:
+For example:
 
-	./mk -m coreboot x200_8mb
+	./mk -m coreboot lenovo_thinkpad_x200_8mb_uefi
 
 Find this section: Security -> Boot media protection mechanism
 
@@ -261,7 +261,7 @@ For your board's `target.cfg`, add this:
 
 	payload_grubsea="y"
 
-E.g. `config/coreboot/x200_8mb/target.cfg`
+E.g. `config/module/coreboot/x200_8mb/target.cfg`
 
 You should only do this on setups that have native graphics initialisation
 e.g. Intel graphics (or FSP-based Intel graphics initialisation like on

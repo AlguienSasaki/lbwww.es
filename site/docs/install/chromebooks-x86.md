@@ -69,14 +69,14 @@ Make sure to have dependencies installed, as per that page, and then do
 this in lbmk:
 
 ```
-./mk -b coreboot list | grep mrchromebox_
+./mk -b coreboot list | grep cros_
 ```
 
 This will show all of the targets, corresponding to boards. Then pick one from
 the list and do e.g.
 
 ```
-./mk -b coreboot mrchromebox_byt_kip_uefi
+./mk -b coreboot cros_byt_kip_uefi
 ```
 
 This will build a target. An image will appear under `bin/`, in this

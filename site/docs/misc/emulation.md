@@ -17,23 +17,17 @@ Building and Testing
 
 Libreboot can be built for qemu just like any other board.
 
-	./mk -b coreboot qemu_x86_12mb
-
-There is also a target that has 64-but U-Boot payload:
-
-	./mk -b coreboot qemu_x86_64_12mb
+	./mk -b coreboot emulation_qemu_x86_64_12mb_bios
 
 In order to test the resulting roms, you must have qemu installed on the host machine.
 Test the roms by pointing qemu to the rom in bios mode.
 For example:
 
-`qemu-system-x86_64 -bios bin/qemu_x86_12mb/grub_qemu_x86_12mb_libgfxinit_corebootfb_usqwerty.rom`
-
-`qemu-system-x86_64 -bios bin/qemu_x86_12mb/uboot_payload_qemu_x86_12mb_libgfxinit_corebootfb.rom -serial stdio`
+`qemu-system-x86_64 -bios bin/emulation_qemu_x86_64_12mb_bios/seagrub_emulation_qemu_x86_64_12mb_bios_libgfxinit_corebootfb_usqwerty.rom`
 
 There is basic support for an arm64 virtual machine as well, although the payloads are not as developed as the x86 one:
 
-	./mk -b coreboot qemu_arm64_12mb
+	./mk -b coreboot emulation_qemu_arm64_12mb_uefi
 
 ```
 qemu-system-aarch64 -bios bin/qemu_arm64_12mb/uboot_payload_qemu_arm64_12mb_libgfxinit_corebootfb.rom \

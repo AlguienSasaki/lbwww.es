@@ -59,11 +59,11 @@ P*: Partially works with vendor firmware
 
 The build target, when building from source, is thus:
 
-	./mk -b coreboot d945gclf_512kb
+	./mk -b coreboot intel_d945gclf_512kb_bios
 
 with a 8mb flash;
 
-	./mk -b coreboot d945gclf_8mb
+	./mk -b coreboot intel_d945gclf_8mb_bios
 
     
 ### Flash a ROM image

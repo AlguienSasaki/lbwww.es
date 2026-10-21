@@ -52,7 +52,7 @@ You need `cbfstool` from coreboot. For whatever board you have, check which
 coreboot tree it uses in Libreboot's build system, lbmk. For example, let's
 say your board is `x200_8mb`, you would do:
 
-	grep tree= config/coreboot/x200_8mb/target.cfg
+	grep tree= config/module/coreboot/x200_8mb/target.cfg
 
 In this example, the output might be:
 
@@ -71,7 +71,7 @@ adapt accordingly.
 ### GRUB utilities
 
 Again, let's assume the coreboot board is `x200_8mb`. Check the
-file `config/coreboot/x200_8mb/target.cfg` for `grubtree` - if it's not set,
+file `config/module/coreboot/x200_8mb/target.cfg` for `grubtree` - if it's not set,
 then the GRUB tree is `default`. We will assume `default`:
 
 	./mk -b grub default

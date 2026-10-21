@@ -195,13 +195,13 @@ just a single command, from a fresh Git clone, to build all ROM images:
 
 	./mk -b coreboot
 
-or even just build specific ROM images, e.g.:
-
-	./mk -b coreboot x60
-
-or get a list of supported build targets:
+To get a list of targets, do:
 
 	./mk -b coreboot list
+
+Then from the target list, you can pick one, for example:
+
+	./mk -b coreboot lenovo_thinkpad_x60_2mb_bios
 
 ### Or maybe just build payloads?
 
@@ -224,7 +224,7 @@ Want to modify Libreboot?
 Check the [lbmk maintenance manual](../maintain/) for guidance. You may for
 example want to modify a config, e.g.:
 
-	./mk -m coreboot x200_8mb
+	./mk -m coreboot lenovo_thinkpad_x200_8mb_bios
 
 Or perhaps add a new board! The maintenance manual will teach you how the
 Libreboot build system (lbmk) works!
