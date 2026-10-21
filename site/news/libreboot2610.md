@@ -949,84 +949,42 @@ Libreboot e.g. ThinkPad T480, X280, Dell Optiplex 3050/5050.
 Want old GRUB/SeaBIOS back?
 ----------------------
 
-The new compatibility modules in EDK2 should more than suffice for most
-users, who may still want GRUB/SeaBIOS for booting their existing Linux
-and BSD setups. It is recommended that you convert these to EFI or just
-reinstall them - use of UEFI is strongly encouraged as the default from
-now on, but Libreboot must (will) continue supporting older setups.
+Libreboot 26.10 initially shipped with only EDK2 UEFI payload on 64-bit
+boards, which meant that you needed to modify lbmk to get the old bare
+GRUB/SeaBIOS setup (SeaGRUB) back.
 
-FreeBSD users booting with SeaBIOS text mode may be interested in this,
-as BIOS-mode FreeBSD bootloaders do not boot with anything else. A UEFI-based
-FreeBSD installation will work just fine in EDK2 though, so new FreeBSD
-installations are best recommended via EDK2 (do not use the compatibility
-modules of GRUB/SeaBIOS).
+Subsequent revisions to the release restored BIOS mode images, so now you have
+a choice. Example:
 
-Some users might want it. Here are some brief notes. They won't be added
-to the main documentation as they pertain to a configuration that Libreboot
-now regards as obsolete, but some users may nonetheless find it useful in
-the short term:
+* `lenovo_thinkpad_t480_16mb_bios`
+* `lenovo_thinkpad_t480_16mb_uefi`
 
-Older mainboards that are 32-bit only or with limited flash space still use
-the standalone GRUB/SeaBIOS payloads without EDK2; some newer ones with
-weird graphics setups also still use lone SeaBIOS/GRUB e.g. HP EliteBook
-8560w.
+When select an image from the release, you will find one set ending
+with `_bios` in the name, and another with `_uefi`.
 
-To re-enable use of standalone GRUB/SeaBIOS (without edk2), modify `target.cfg`
-as follows for your board: remove `build_depend`, `payload_edk2` and `grubtree`
-variables. Then add these lines:
+The one with `_bios` uses the *old* setup, where SeaBIOS is the primary payload
+and chainloads GRUB (optionally) at boot time. This set matches the *old*
+config and does *not* implement UEFI at all.
 
-```
-payload_grub="y"
-payload_seabios="y"
-payload_memtest="y"
-```
+The one with `_uefi` uses the *new* setup, where EDK2 is the primary payload;
+GRUB EFI and SeaBIOS CSMWrap builds are available to select from the boot
+menu in EDK2, via ESC keypress at startup.
 
-This is obsolete now in Libreboot and may even be removed in a future release.
-EDK2 is much better as it boots nearly everything, and supports more
-hardware setups. It is simply much more versatile than Libreboot's old setup
-as in the previous release.
+Issues with S3 resume were found on Linux distros in the initial release,
+when booted using CSMWrap; these will of course be fixed, in addition to
+other CSMWrap errata, in a future revision. Moreover, it made sense to continue
+offering the older setup as some users may prefer it.
 
-Then you can just re-build. NOTE: In the above guidance, `build_depend`
-is assumed to be `grub/default seabios/build memtest86plus/default` by default.
-You may want to set them explicitly:
+The plan initially was to make lbmk much simpler, thus EDK2-only on most
+boards. For the time being, Libreboot will maintain dual configuration in
+this manner. Please note that some legacy boards only have `_bios`, and some
+very new boards (e.g. Chromebooks) *only* have `_uefi`.
 
-```
-build_depend="seabios/build grub/default memtest86plus/default"
-```
-
-You may also wish to set the GRUB tree explicitly:
-
-```
-grubtree="default"
-```
-
-Example config: `config/module/coreboot/t480_vfsp_16mb/target.cfg`
-
-Just do this and re-build if you want these old setups back. This will be
-supported for as long as feasible, but will probably be removed at some point,
-maybe years from now, maybe a week from now. Use it while it's there. The
-xHCI patches are still in there, and everything is configured as it should be.
-
-In setups with EDK2, please note: txtmode not provided. If wanting e.g.
-SeaBIOS txtmode, look at e.g.:
-
-* `config/module/coreboot/t480_vfsp_16mb/config/libgfxinit_corebootfb`
-
-Renamed it to `libgfxinit_txtmode` in this example and do:
-
-```
-./mk -m coreboot t480_vfsp_16mb
-./mk -s coreboot t480_vfsp_16mb
-```
-
-In the menu that appears, go into `Devices -> Display -> Framebuffer mode`
-and select `Legacy VGA text mode` - this is not recommended for any new
-setups, but the FreeBSD bootloader starts in text mode and the framebuffer
-modes in coreboot can't switch back to it. Booting in text mode is recommended
-when booting the FreeBSD BIOS-mode bootloader, and then FreeBSD can be set up
-for KMS in Xorg/Wayland. Otherwise, new installations should be done in EFI
-mode directly via EDK2 (no compatibility modules). More information about
-this is available in Libreboot's BSD documentation.
+A new, more unified naming scheme was also introduced in revisions to the
+release, as above. For example, the arm64 targets all say `_uefi` but actually
+use U-Boot, not EDK2; U-Boot implements a subset of the UEFI specification,
+and it is the default payload on ARM64 Chromebooks while Intel/AMD Chromebooks
+all use EDK2.
 
 List of Chromebooks added
 -----------
