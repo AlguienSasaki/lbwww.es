@@ -3,10 +3,11 @@ title: Simplified Software Flashing
 x-toc-enable: true
 ...
 
-*Got here from an device installation page? Good, proceed and don't be a lazy sloth by skipping if you are a *newbie*.
-Do so and get yourself bricked just fine.*
+*Got here from an device installation page? Good, If you are a *newbie* proceed step-by-step*
 
-**If your device had a Simple tag on the supported devices page, stated on that device's page it is possiblewith vendor firmware or you’re already running Libreboot, and you don’t have flash protection turned on, [internal flashing](../install/) is possible.**
+**If your device had a Simple tag on the supported devices page or stated on that device's page it is possible with vendor firmware or you’re already running Libreboot and you don’t have flash protection turned on, [internal flashing](../install/) is possible.**
+
+**Otherwise visit the [simplified-hw-flashing](https://libreboot.org/install/simplified-hw-flashing.md) guide**
 
 ### Disable /dev/mem protection
 
@@ -46,8 +47,6 @@ If those differs, something gone wrong and proceeding further may **(DON'T) leav
 
 	flashprog -p internal -w libreboot.rom
 
-
-*Made and checked those backups, aren't you? If you don't, whatever, your responsibility, but don't cry/blame others if you dont have those if anything goes wrong to fall back...*
 
 *In case if it gone wrong, feel free to ask for help on IRC.*
 
