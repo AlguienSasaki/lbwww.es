@@ -3,7 +3,6 @@ title: Simplified Software Flashing
 x-toc-enable: true
 ...
 
-*Got here from an device installation page? Good, If you are a *newbie* proceed step-by-step*
 
 **If your device had a Simple tag on the supported devices page or stated on that device's page it is possible with vendor firmware or you’re already running Libreboot and you don’t have flash protection turned on, [internal flashing](../install/) is possible.**
 
@@ -55,7 +54,7 @@ If those differs, something gone wrong and proceeding further may **(DON'T) leav
 
 ### Enable /dev/mem protection
 
-**REMOVE *iomem=relaxed(linux distro)/kernel.securelevel=-1(bsd distro)* KERNEL PARAMETER TO PREVENT UNAUTHORIZED/MALICIOUS ACCESS TO YOUR SYSTEM AFTER FLASHING LIBREBOOT.**
+**REMOVE *iomem=relaxed(linux distro)/kernel.securelevel=-1(bsd distro)* KERNEL PARAMETER TO PREVENT UNAUTHORIZED/MALICIOUS ACCESS TO YOUR SYSTEM AFTER FLASHING LIBREBOOT (and booting to your os)**
 
 (An important reminder for those who might forget to delete it, even better, replace it with lockdown=integrity / lockdown=confidentiality)
 
