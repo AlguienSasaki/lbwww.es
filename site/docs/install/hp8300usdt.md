@@ -19,11 +19,11 @@ there, before flashing. For posterity,
 | **Name**                  | Compaq 8300 Elite USDT                      |
 | **Released**              | 2012                                        |
 | **Chipset**               | Intel Q77                                   |
-| **CPU**                   | Intel Sandy/Ivy Bridge (65W max.)           |
-| **Graphics**              | Intel HD Graphics or MXM graphics card      |
-| **Memory**                | Up to 16GB (2x8GB)                          |
+| **CPU**                   | Intel Sandy/Ivy Bridge 65W TDP              |
+| **Graphics**              | Intel HD 3000/4000 + MXM gpu                |
+| **Memory**                | 16GB DDR3 SODIMMs (2x8GB)                   |
 | **Architecture**          | x86_64                                      |
-| **Intel ME/AMD PSP**      | Present, neutered                           |
+| **Intel ME/AMD PSP**      | Present. Disabled with me_cleaner.          |
 | **Flash chip**            | SOIC-16 16MiB                               |
 
 Open source BIOS/UEFI firmware
