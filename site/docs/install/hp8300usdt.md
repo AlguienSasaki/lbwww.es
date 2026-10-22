@@ -3,10 +3,7 @@ title: Install Libreboot HP Compaq Elite 8300 USDT
 x-toc-enable: true
 ...
 
-**[PLEASE READ THESE INSTRUCTIONS BEFORE INSTALLING](ivy_has_common.md), OR
-YOU MAY BRICK YOUR MACHINE!! - Please click the link and follow the instructions
-there, before flashing. For posterity,
-[here is the link again](ivy_has_common.md).**
+**[!!BACKUP everything!!](https://libreboot.org/docs/install/#howto-readwriteerase-the-boot-flash) just in case something fails.**
 
 <div class="specs">
 <center>
@@ -19,59 +16,59 @@ there, before flashing. For posterity,
 | **Name**                  | Compaq 8300 Elite USDT                      |
 | **Released**              | 2012                                        |
 | **Chipset**               | Intel Q77                                   |
-| **CPU**                   | Intel Sandy/Ivy Bridge (65W max.)           |
-| **Graphics**              | Intel HD Graphics or MXM graphics card      |
-| **Memory**                | Up to 16GB (2x8GB)                          |
+| **CPU**                   | LGA 1155, Intel Sandy/Ivy Bridge            |
+| **Graphics**              | Intel HD 3000/4000 + MXM gpu                |
+| **Memory**                | 16GB DDR3L SODIMMs (2x8GB)                  |
 | **Architecture**          | x86_64                                      |
-| **Intel ME/AMD PSP**      | Present, neutered                           |
+| **Intel ME/AMD PSP**      | Present. Disabled with me_cleaner.          |
 | **Flash chip**            | SOIC-16 16MiB                               |
 
-Open source BIOS/UEFI firmware
--------------------------
 
-This document will teach you how to install Libreboot, on your
-HP Elite 8300 USDT desktop motherboard. Libreboot replaces proprietary
-BIOS/UEFI firmware.
+### Get the ROM image
 
-This is a small but powerful desktop using Sandy or Ivy Bridge CPUs
-(of up to 65W TDP).
-It has a slot for a discrete MXM graphics card as well.
-Some cards work while others don't. Your mileage will vary.
+**[Download](https://libreboot.org/download.html) from release**
 
-Libreboot has support for this, in the Git repository and
-release versions after (but not including) 20230423.
+If you're using a release ROM, please ensure that you've inserted extra firmware
+required refer to the [guide](../install/ivy_has_common.md) for that (, failure
+to adhere to this advice will result in a bricked machine)
 
-These features are tested and confirmed working:
+- Intel ME (vendor blob)
 
-* Native raminit with both DIMMs (up to 2x8GB)
-* Libgfxinit textmode and framebuffer on both DisplayPorts and VGA
-* SeaBIOS and GRUB payloads
-* External USB2 and USB3 ports: they all work
-* USB 3.0 SuperSpeed on Linux (rear, 4 ports)
-* Ethernet
-* Mini-PCIe WLAN
-* SATA: 2.5" disk (6Gbps), mSATA (3Gbps), and optical drive bay
-* PS/2 keyboard and mouse
-* S3 suspend and resume, wake using USB keyboard
-* Headphone output, line out, internal speaker
-* Wake on LAN
-* Rebooting
 
-Disable security before flashing
---------------------------------
+**[Build](https://libreboot.org/docs/build/) from source**
 
-Before internal flashing, you must first disable `/dev/mem` protections. Make
-sure to re-enable them after you're finished.
+	./mk -b coreboot hp_elite_8300_usdt_16mb_uefi
 
-See: [Disabling /dev/mem protection](../install/devmem.md)
 
-Install Libreboot
------------------
+### Flash a ROM image
 
-These next sections will teach you how to install Libreboot on your
-HP Elite 8300 USDT motherboard.
+**Software**
 
-### Internal flashing
+*Before internal flashing, [Disable /dev/mem protection](devmem.md) first.*
+
+*In short add this kernel parameter: iomem=relaxed(linux distro)/kernel.securelevel=-1(bsd distro)*
+
+**THEN REMOVE THIS KERNEL PARAMETER TO PREVENT UNAUTHORIZED/MALICIOUS ACCESS TO YOUR SYSTEM AFTER FLASHING LIBREBOOT.**
+
+(An important reminder for those who might forget to delete it, even better, replace it with lockdown=integrity / lockdown=confidentiality)
+
+
+Backup the previous (*working*) firmware (atleast) twice (to check and compare if reading it gone wrong and backups differs.)
+
+	flashprog -p internal -r Backup1.bin
+
+	flashprog -p internal -r Backup2.bin
+
+Check and compare those if reading from the flash were successful:
+
+	diff Backup1.bin Backup2.bin
+
+For more than 2:
+
+	shasum Backup1.bin Backup2.bin Backup3.bin
+
+If those differs, something gone wrong and proceeding further may **(DON'T) leave your device unrecoverable** (without a reliable backup) if flashing fails as well.
+
 
 Internal flashing is possible. OEM BIOS versions 2.87, 2.90, 2.99, and 3.08 are confirmed
 compatible with this guide. BIOS 2.05 is confirmed **not** to work.
@@ -90,41 +87,37 @@ crystal (small metal cylinder) and the power cable for the optical drive.
 
 ![](https://av.libreboot.org/hp8300usdt/jumper_to_fdo.jpg)
 
-Boot into an OS of your choice (that has flashprog support).
-
-**NOTE: Libreboot standardises on [flashprog](https://flashprog.org/wiki/Flashprog)
-now, as of 27 January 2024, which is a fork of flashrom.
-The reason why was explained, in
-the [Libreboot 20240225 release](../../news/libreboot20240225.md#flashprog-now-used-instead-of-flashrom)**
-
 The BIOS should no longer impose any write-protections.
 You can now use `flashprog -p internal` freely.
 
-Take a backup of the original BIOS:
-
-	flashprog -p internal -r oem_bios
-
-This is an Ivy Bridge board which means that a neutered ME image
-is required if you wish to flash the ME region. Libreboot's
-build system automatically downloads, neuters (using me_cleaner)
-and inserts this if compiling from source.
-
-If you're using Libreboot release ROM images, the ME image has been
-scrubbed and you must re-insert it.
-Use the information on this guide to know how to do that:
-
-[Insert vendor files on Intel Sandybridge/Ivybridge/Haswell
-platforms](../install/ivy_has_common.md)
-
-You can now flash libreboot:
-
-	flashprog -p internal -w libreboot.rom
 
 You can now move the jumper back to its original place.
 By default, Libreboot applies no write-protection, so
 updating it can be done without the jumper anyway.
 
-### External flashing
+
+**Hardware**
+
+For general information, please refer to [25xx NOR flash
+instructions](../install/spi.md) - that page refers to use of socketed flash.
+
+
+Backup the previous (*working*) firmware twice (to check and compare if reading it gone wrong and backups differs.)
+
+	flashprog -p serprog:dev=/dev/ttyACM0,spispeed=16M -r Backup1.bin
+
+	flashprog -p serprog:dev=/dev/ttyACM0,spispeed=16M -r Backup2.bin
+
+Check and compare those if reading from the flash were successful:
+
+	diff Backup1.bin Backup2.bin
+
+For more than 2:
+
+	shasum Backup1.bin Backup2.bin Backup3.bin
+
+If those differs, something gone wrong and proceeding further may **(DON'T) leave your device unrecoverable** (without a reliable backup) if flashing fails as well.
+
 
 Unbricking is possible by external flashing. You first need to remove
 the optical disk drive and 2.5" HDD/SSD and the metal bracket that
@@ -151,6 +144,45 @@ manual (page 241) on how to remove the motherboard from the chassis.
 If you do this, you have to reapply thermal paste.
 That might be a good idea anyway, considering how old these are getting
 
+
+### Set MAC address
+
+This platform uses an Intel Flash Descriptor, and defines an Intel GbE NVM
+region. As such, release/build ROMs will contain the same MAC address. To
+change the MAC address, please read [nvmutil documentation](../install/nvmutil.md).
+
+
+### Upgradable (socketed) GPU
+
+So far, only Quadro 1000M and 2000M have been tested with Libreboot (hp8560w). [Guide](https://libreboot.org/extras.md#reversible-upgradabale-socketed-gpus-in-older-laptops)
+
+If a MXM gpu is installed, all three monitor ports should be active. The igpu will use the top DisplayPort and the MXM gpu will
+operate the bottom DisplayPort & VGA. (Untested)
+
+It should be possible to use both gpus in a [dual-gpu setup](https://libreboot.org/extras.html#reversible-dual-gpu-setup-do-not-use-it-on-processorsmotherboards-without-integrated-graphics.).
+
+
+### Expanded_Specifications
+
+<div class="expandedspecs">
+
+| ***Specifications***       |                                                |
+|----------------------------|------------------------------------------------|
+| **Manufacturer**           | HP                                          |
+| **Name/Variant**           | Compaq 8300 Elite USDT                                |
+| **Released**               | 2012                                           |
+| **Chipset**                | Intel [Q77](https://en.wikipedia.org/wiki/List_of_Intel_chipsets#LGA_1155)                                     |
+| **CPU**                    | LGA 1155, Intel Ivy Bridge [Core](https://en.wikipedia.org/wiki/Ivy_Bridge_(microarchitecture)#Desktop_processors)+[Xeon E3 v2](https://en.wikipedia.org/wiki/Ivy_Bridge_(microarchitecture)#Server_processors) & Sandy Bridge [Core](https://en.wikipedia.org/wiki/Sandy_Bridge#Desktop_platform)+[Xeon E3 v1](https://en.wikipedia.org/wiki/Sandy_Bridge#Server_platform) |
+| **Memory**                 | DDR3L SODIMMs (max 15GB, 2x8GB)   |
+| **Graphics**               | Intel [HD 4000](https://www.techpowerup.com/gpu-specs/hd-graphics-4000.c1282) (Ivy Bridge) & [HD 3000 1.35Ghz i7+Xeon E3](https://www.techpowerup.com/gpu-specs/hd-graphics-3000.c3196)/[HD 3000 1.1Ghz Core i5 and lower](https://www.techpowerup.com/gpu-specs/hd-graphics-3000.c1257) (Sandy Bridge) |
+| **Audio**                  | Realtek ALC221 HD |
+| **Networking**             | Intel 82579LM                                         |
+| **Expansion Slots**        | PCIe 3.0; x16 in MXM, mPCIe  |
+| **Storage connectors**     | SATA III, mSATA II     |
+| **I/O Ports on Front**     | 4x USB 2.0, 2x Jack (headphone+microphone/stereo) |
+| **I/O Ports on Back**      | 2x jack (in/out), 2x DisplayPort, PS/2 Mouse+Keyboard, 4x USB 3.0, 2x USB 2.0, RJ-45 1GbE (Ethernet), VGA  |
+
+</div>
 
 [//]: # "SPDX-License-Identifier: GFDL-1.3-or-later"
 
