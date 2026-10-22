@@ -19,7 +19,7 @@ x-toc-enable: true
 | **Chipset**                | Intel C236                                     |
 | **CPU**                    | LGA 1151 - Intel 6-9th gen. 80W TDP            |
 | **Graphics**               | iGPU on cpu, but no display output             |
-| **Memory**                 | 64GB DDR4 SODIMMs (4x16 GB)                    |
+| **Memory**                 | 64GB DDR4 SODIMMs (4x16 GB), ECC               |
 | **Architecture**           | x86_64                                         |
 | **Original boot firmware** | Supermicro                                     |
 | **Intel ME/AMD PSP**       | SPS->ME disabled with me_cleaner *1            |
