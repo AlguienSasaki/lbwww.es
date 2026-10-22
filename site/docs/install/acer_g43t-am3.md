@@ -10,19 +10,19 @@ x-toc-enable: true
 <img tabindex=1 alt="acer_g43t-am3" class="p" src="https://av.libreboot.org/acer_g43t-am3/picture.jpg" /><span class="f"><img src="https://av.libreboot.org/acer_g43t-am3/picture.jpg" /></span>
 </center>
 
-| ***Specifications***       |                                                |
-|----------------------------|------------------------------------------------|
-| **Manufacturer**           | Acer                                          |
-| **Name**                   | G43T-AM3                               |
-| **Released**               | 2009                                           |
-| **Chipset**                | G43                                     |
-| **CPU**                    | LGA 775, Core 2 (Duo & Quad)                   |
-| **Graphics**               | GMA X4500 |
-| **Memory**                 | DDR3 SODIMMs (max 8 GB, 4x2GB)    |
-| **Architecture**           | x86_64                                         |
-| **Original boot firmware** | Acer BIOS                             |
+| ***Specifications***       |                               |
+|----------------------------|-------------------------------|
+| **Manufacturer**           | Acer                          |
+| **Name**                   | G43T-AM3                      |
+| **Released**               | 2009                          |
+| **Chipset**                | G43                           |
+| **CPU**                    | LGA 775, Core 2 Duo & Quad    |
+| **Graphics**               | GMA X4500                     |
+| **Memory**                 | 8GB DDR3 SODIMMs (4x2GB)      |
+| **Architecture**           | x86_64                        |
+| **Original boot firmware** | Acer BIOS                     |
 | **Intel ME/AMD PSP**       | Present, Fully removable      |
-| **Flash chip**             | SOP-8 2MB/16Mbit MX25L1605D           |
+| **Flash chip**             | SOP-8 2MB/16Mbit              |
 
 
 ```
