@@ -17,13 +17,13 @@ x-toc-enable: true
 | **Variants**               | X11SSH-F / X11SSH-LN4F                         |
 | **Released**               | 2017                                           |
 | **Chipset**                | Intel C236                                     |
-| **CPU**                    | LGA 1151 - Intel 6-9th gen. , up to 80W TDP    |
+| **CPU**                    | LGA 1151 - Intel 6-9th gen. 80W TDP            |
 | **Graphics**               | iGPU on cpu, but no display output             |
-| **Memory**                 | DDR4 SODIMMs (max 64 GB, 4x16 GB)              |
+| **Memory**                 | 64GB DDR4 SODIMMs (4x16 GB)                    |
 | **Architecture**           | x86_64                                         |
 | **Original boot firmware** | Supermicro                                     |
-| **Intel ME/AMD PSP**       | SPS -> replaced & disabled with me\_cleaner *1 |
-| **Flash chip**             | SOIC-8 16MB/128Mbit W25Q128.V                  |
+| **Intel ME/AMD PSP**       | SPS->ME disabled with me_cleaner *1            |
+| **Flash chip**             | SOIC-8 16MiB                                   |
 
 
 ```
@@ -59,8 +59,8 @@ If you're using a release ROM, please ensure that you've inserted extra firmware
 required refer to the [guide](../install/ivy_has_common.md) for that (, failure
 to adhere to this advice will result in a bricked machine):
 
-- Intel ME
-- Intel FSP
+- Intel ME (vendor blob)
+- Intel FSP (vendor blob)
 
 
 **[Build](https://libreboot.org/docs/build/) from source**
@@ -134,9 +134,11 @@ That 16MB soic-8 flash chip is below the battery, highlighted, usually covered w
 The other one is a 32MB soic_16 BMC flash chip next to the previous one.
 
 
-### 6-8 core processor Mods
+### 6-8 core processor support
 
-[Guide](../extras.md#reversible-intel-8th-9th-gen-processors-support-on-older-6th-7th-gen-motherboards)
+- A pin mod is needed.
+
+[Guide for mod](https://libreboot.org/extras.md#reversible-intel-8th-9th-gen-processors-support-on-older-6th-7th-gen-motherboards)
 
 
 ### Replacable Baseboard Management Controller firmware
@@ -160,6 +162,8 @@ For desktop environment (DE) using a dedicated gpu is advised (for display outpu
 With switcheroo_control; the DE, image/video encode/decode and browser ones can be used on the integrated one, while using the more powerful one for editing,gaming,computing and/or whatever needs more horse power. (Of course, it is selectable which gpu shall be used for any program.)
 
 (Provided the iGPU is not disabled if the dGPU added or using 2 dGPUs.)
+
+[Guide for dual-gpu setup](https://libreboot.org/extras.html#reversible-dual-gpu-setup-do-not-use-it-on-processorsmotherboards-without-integrated-graphics.)
 
 
 ### Not working
