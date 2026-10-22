@@ -16,7 +16,7 @@ x-toc-enable: true
 | **Name**                  | Compaq 8300 Elite USDT                      |
 | **Released**              | 2012                                        |
 | **Chipset**               | Intel Q77                                   |
-| **CPU**                   | LGA 1155, Intel Ivy/Sandy Bridge            |
+| **CPU**                   | LGA 1155, Intel Sandy/Ivy Bridge            |
 | **Graphics**              | Intel HD 3000/4000 + MXM gpu                |
 | **Memory**                | 16GB DDR3L SODIMMs (2x8GB)                  |
 | **Architecture**          | x86_64                                      |
