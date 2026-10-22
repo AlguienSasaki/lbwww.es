@@ -16,16 +16,16 @@ Dell OptiPlex 780
 |----------------------------|------------------------------------------------|
 | **Manufacturer**           | Dell                                           |
 | **Name**                   | OptiPlex 780                                   |
-| **Variants**               | OptiPlex 780 MT, OptiPlex 780 USFF             |
+| **Variants**               | OptiPlex 780 MT, USFF                          |
 | **Released**               | 2009                                           |
 | **Chipset**                | Intel Q45                                      |
-| **CPU**                    | LGA 775, Intel Core 2 Duo + Quad on MT         |
+| **CPU**                    | LGA 775, Intel Core 2 Duo+Quad on MT           |
 | **Graphics**               | GMA 4500                                       |
-| **Memory**                 | DDR3 SODIMMs (max 16GB 4x4GB MT,8GB 2x4GB USSF)|
+| **Memory**                 | 16/8GB DDR3 SODIMMs (4x4GB,2x4GB USSF)         |
 | **Architecture**           | x86\_64                                        |
 | **Original boot firmware** | Dell UEFI firmware                             |
 | **Intel ME/AMD PSP**       | Present, Fully removable firmware.             |
-| **Flash chip**             | SOIC-16 and/or SOIC-8 8MiB (64Mbit)            |
+| **Flash chip**             | SOIC-16 or SOIC-8 8MiB/64Mbit                  |
 
 
 ```
@@ -182,7 +182,9 @@ change the MAC address, please read [nvmutil documentation](../install/nvmutil.m
 
 ### Custom Mods
 
-[Guide](../extras.md#dell-7010-9010-t1650-7020-9020-xe2-t1700-probably-other-dell-ones-too)
+Might apply for the 780 motherboards too.
+
+[Guide for mods](https://libreboot.org/extras.md#dell-7010-9010-t1650-7020-9020-xe2-t1700-probably-other-dell-ones-too)
 
 
 ### Expanded_Specifications
