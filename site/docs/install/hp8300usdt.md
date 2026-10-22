@@ -3,10 +3,7 @@ title: Install Libreboot HP Compaq Elite 8300 USDT
 x-toc-enable: true
 ...
 
-**[PLEASE READ THESE INSTRUCTIONS BEFORE INSTALLING](ivy_has_common.md), OR
-YOU MAY BRICK YOUR MACHINE!! - Please click the link and follow the instructions
-there, before flashing. For posterity,
-[here is the link again](ivy_has_common.md).**
+**[!!BACKUP everything!!](https://libreboot.org/docs/install/#howto-readwriteerase-the-boot-flash) just in case something fails.**
 
 <div class="specs">
 <center>
