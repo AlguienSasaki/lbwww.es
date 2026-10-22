@@ -18,11 +18,11 @@ x-toc-enable: true
 | **Name**                  | Compaq Elite 8200 & 6200 Pro MT/SFF         |
 | **Released**              | 2011                                        |
 | **Chipset**               | Intel Q67                                   |
-| **CPU**                   | LGA 1155, Intel 2nd gen. (Core+Xeon e3 v1) and with Libreboot 3rd gen. (Core+Xeon e3 v2)                      |
-| **Graphics**              | Intel HD 3000                               |
-| **Memory**                | DDR3 SODIMMs (max. 32GB, 4x8GB)             |
+| **CPU**                   | LGA 1155, Intel 2-3rd gen.                  |
+| **Graphics**              | Intel HD 3000/4000                          |
+| **Memory**                | 32GB DDR3 SODIMMs (4x8GB)                   |
 | **Architecture**          | x86\_64                                     |
-| **Intel ME/AMD PSP**      | Present. Can be disabled with me_cleaner.  |
+| **Intel ME/AMD PSP**      | Present. Disabled with me_cleaner.          |
 | **Flash chip**            | SOIC-8 8MiB/64Mbit                          |
 
 ```
@@ -61,7 +61,7 @@ If you're using a release ROM, please ensure that you've inserted extra firmware
 required refer to the [guide](../install/ivy_has_common.md) for that (, failure
 to adhere to this advice will result in a bricked machine):
 
-- Intel ME
+- Intel ME (vendor blob)
 
 
 **[Build](https://libreboot.org/docs/build/) from source**
