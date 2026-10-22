@@ -6,7 +6,7 @@ x-toc-enable: true
 *Got here from an device installation page? Good, proceed and don't be a lazy sloth by skipping if you are a *newbie*.
 Do so and get yourself bricked just fine.*
 
-**If your device had a Simple tag on the supported devices page or you’re already running Libreboot, and you don’t have flash protection turned on, [internal flashing](../install/) is possible.**
+**If your device had a Simple tag on the supported devices page, stated on that device's page it is possiblewith vendor firmware or you’re already running Libreboot, and you don’t have flash protection turned on, [internal flashing](../install/) is possible.**
 
 ### Disable /dev/mem protection
 
