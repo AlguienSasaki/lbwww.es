@@ -14,12 +14,12 @@ x-toc-enable: true
 |----------------------------|------------------------------------------------|
 | **Manufacturer**           | Intel                                          |
 | **Name**                   | D945GCLF(2/D)                                  |
-| **Variants**               | D945GCLF, D945GCLF2, D945GCLFD                 |
+| **Variants**               | D945GCLF, ***2, ***D                           |
 | **Released**               | 2008                                           |
-| **Chipset**                | Intel 945GC                                          |
-| **CPU**                    | Intel Atom 230 (D945GCLF) / 330 (D945GCLF2/D)        | 
+| **Chipset**                | Intel 945GC                                    |
+| **CPU**                    | Intel Atom 230 / 330 (***2/D)                  | 
 | **Graphics**               | GMA 950                                        |
-| **Memory**                 | DDR2 SODIMM max. 2 GB, 1x2GB                   |
+| **Memory**                 | 2GB DDR2 SODIMM (1x2GB)                        |
 | **Architecture**           | x86\_64                                        |
 | **Original boot firmware** | Intel BIOS                                     |
 | **Intel ME/AMD PSP**       | Not present.                                   |
