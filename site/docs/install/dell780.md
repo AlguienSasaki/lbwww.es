@@ -182,7 +182,9 @@ change the MAC address, please read [nvmutil documentation](../install/nvmutil.m
 
 ### Custom Mods
 
-[Guide](../extras.md#dell-7010-9010-t1650-7020-9020-xe2-t1700-probably-other-dell-ones-too)
+Might apply for the 780 motherboards too.
+
+[Guide for mods](https://libreboot.org/extras.md#dell-7010-9010-t1650-7020-9020-xe2-t1700-probably-other-dell-ones-too)
 
 
 ### Expanded_Specifications
