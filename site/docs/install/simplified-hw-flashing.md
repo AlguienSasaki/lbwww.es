@@ -1,5 +1,5 @@
 ---
-title: Simplified Software Flashing 
+title: Simplified Hardware Flashing 
 x-toc-enable: true
 ...
 
