@@ -17,13 +17,13 @@ GA-G41M-ES2L
 | **Name**                   | GA-G41M-ES2L                                   |
 | **Released**               | 2009                                           |
 | **Chipset**                | G41                                            |
-| **CPU**                    | LGA775, Core 2 (Duo+Quad)                     |
+| **CPU**                    | LGA775, Core 2 Duo+Quad                        |
 | **Graphics**               | GMA X4500                                      |
-| **Memory**                 | DDR2 SODIMMs max. 8GB (2 x 4GB)                |
+| **Memory**                 | 8GB DDR2 SODIMMs (2x4GB)                       |
 | **Architecture**           | x86_64                                         |
 | **Original boot firmware** | AWARD BIOS                                     |
 | **Intel ME/AMD PSP**       | Present, Fully removable                       |
-| **Flash chip**             | SOIC-8 2x 1MB/8Mbit SST25VF080B  (Dual-BIOS)   |
+| **Flash chip**             | SOIC-8 2x 1MB/8Mbit                            |
 
 ```
 W+: Works without vendor firmware; 
