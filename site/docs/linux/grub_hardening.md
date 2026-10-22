@@ -83,10 +83,10 @@ Find this section: Security -> Boot media protection mechanism
 
 In the above example, I found:
 
-* Lock boot media using the controller
-* Lock boot media using the chip
+* Lock boot media using the controller (Advised, reversible/updateable with an spi programmer)
+* Lock boot media using the chip (Do not try this, applies the flash chip's unreversible write-protection, only for extreme cases)
 
-Which one to pick depends on your board. Let's pick "controller".
+Let's pick "controller".
 
 Now we can see: Security -> Boot media protected regions
 
