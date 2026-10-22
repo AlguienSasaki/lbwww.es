@@ -10,6 +10,8 @@ instructions](../install/spi.md) gives information on how to set it up.**
 
 **Some flash chips might need it's motherboard to be powered (but turned off) from an external power source, in that case, disconnect the vcc/power cable between the clip and the programmer, or it might be damaged and fried.**
 
+*A rpi-pico is used as an expample here, but modify the lines to fit your programmer if needed.*
+
 
 ### Backup the previous (*working*) firmware
 
