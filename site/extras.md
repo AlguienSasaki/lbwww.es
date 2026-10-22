@@ -87,6 +87,27 @@ Usually with a right mouse click on the application reveals the selectable gpu-s
 [Reference and more details](https://wiki.cachyos.org/configuration/dual_gpu).
 
 
+### [Reversible] Upgradabale (socketed) GPUs in (older) laptops
+
+Before replacing (or even ordering) one, check if it compatible with your eDP/LVDS panel;
+
+X11:
+
+	xrandr
+
+Wayland:
+
+	wlr-randr
+
+For "LVDS-1 connected", AMD's 1st gen GCN cards are the newest and most powerful to support LVDS,
+According to [this forum thread](https://forums.macrumors.com/threads/2011-imac-graphics-card-upgrade.1596614/),
+
+If you have an eDP panel, you should be able to use newer cards than that.
+
+As long as the card has an onboard VBIOS, Libreboot will execute it and
+everything *should* work. **However, this is currently untested.**
+
+
 ### [Reversible] Intel 8th/9th gen. processors support on older 6th/7th gen. motherboards
 
 Libreboot supports 4-core cpus (with B0 stepping) out of box without any mods needed, list (8th & 9th gen. desktop processors support ecc memories);
