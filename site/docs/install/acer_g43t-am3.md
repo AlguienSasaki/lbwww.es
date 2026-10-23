@@ -3,8 +3,6 @@ title: Install Libreboot on Acer G43T-AM3
 x-toc-enable: true
 ...
 
-**[!!BACKUP everything!!](./#howto-readwriteerase-the-boot-flash) just in case something fails.**
-
 <div class="specs">
 <center>
 <img tabindex=1 alt="acer_g43t-am3" class="p" src="https://av.libreboot.org/acer_g43t-am3/picture.jpg" /><span class="f"><img src="https://av.libreboot.org/acer_g43t-am3/picture.jpg" /></span>
