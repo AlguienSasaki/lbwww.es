@@ -3,7 +3,6 @@ title: Install Libreboot on Intel D945GCLF(2/D)
 x-toc-enable: true
 ...
 
-**[!!BACKUP everything!!](./#howto-readwriteerase-the-boot-flash) just in case something fails.**
 
 <div class="specs">
 <center>
@@ -61,72 +60,33 @@ with a 8mb flash;
 	./mk -b coreboot intel_d945gclf_8mb_bios
 
     
-### Flash a ROM image
+### Internal/Software Flashing
 
-**Software**
-
-*Before internal flashing, [Disable /dev/mem protection](devmem.md) first.*
-
-*In short add this kernel parameter: iomem=relaxed(linux distro)/kernel.securelevel=-1(bsd distro)*
-
-**THEN REMOVE THIS KERNEL PARAMETER TO PREVENT UNAUTHORIZED/MALICIOUS ACCESS TO YOUR SYSTEM AFTER FLASHING LIBREBOOT.**
-
-(An important reminder for those who might forget to delete it, even better, replace it with lockdown=integrity / lockdown=confidentiality)
+**Default Libreboot firmwares [updatable](../install/simplified-sw-flashing.md).**
 
 
-Backup the previous (*working*) firmware (atleast) twice (to check and compare if reading it gone wrong and backups differs.)
+### External/Hardware Flashing
 
-	flashprog -p internal -r Backup1.bin
-
-	flashprog -p internal -r Backup2.bin
-
-Check and compare those if reading from the flash were successful:
-
-	diff Backup1.bin Backup2.bin
-
-For more than 2:
-
-	shasum Backup1.bin Backup2.bin Backup3.bin
-
-If those differs, something gone wrong and proceeding further may **(DON'T) leave your device unrecoverable** (without a reliable backup) if flashing fails as well.
-
-
-If you're already running Libreboot, and you don't have flash protection turned on, internal flashing is possible.
-
-
-**Hardware**
-
-For general information, please refer to [25xx NOR flash
-instructions](../install/spi.md) - that page refers to use of socketed flash.
-
-
-Backup the previous (*working*) firmware twice (to check and compare if reading it gone wrong and backups differs.)
-
-	flashprog -p serprog:dev=/dev/ttyACM0,spispeed=16M -r Backup1.bin
-
-	flashprog -p serprog:dev=/dev/ttyACM0,spispeed=16M -r Backup2.bin
-
-Check and compare those if reading from the flash were successful:
-
-	diff Backup1.bin Backup2.bin
-
-For more than 2:
-
-	shasum Backup1.bin Backup2.bin Backup3.bin
-
-If those differs, something gone wrong and proceeding further may **(DON'T) leave your device unrecoverable** (without a reliable backup) if flashing fails as well.
-
-
-The vendor bios write protects the flash so it requires external flashing to install libreboot on this device;
+The vendor bios write protects the flash,
+so it requires external flashing to install libreboot on this device;
 
 <img tabindex=1 alt="Intel D945GCLF flash chip position" src="https://av.libreboot.org/d945gclf/20160923_141550.jpg" />
+
+**Check the [hw-flashing guide](../install/simplified-hw-flashing.md) before moving onto the next step below.**
+
+Flash it: (With rpi-pico as an example, edit the line if needed.)
+
+	flashprog -p serprog:dev=/dev/ttyACM0,spispeed=16M -w filename.rom
 
 
 ### Remarks about vendor bios and small flash chip
 
-Without coreboot/libreboot this board is completely useless, since the vendor bios is very bad. It cannot boot from any HDD whether it is connected to the SATA port or USB.
+Without coreboot/libreboot this board is completely useless,
+since the vendor bios is very bad.
+It cannot boot from any HDD whether it is connected to the SATA port or USB.
 
-With libreboot it works fine, but the flash chip is very small, 512KiB, so grub2 does not fit, which is why libreboot has to use seabios
+With libreboot it works fine, but the flash chip is very small,
+512KiB, so grub2 does not fit, which is why libreboot has to use seabios
 
 
 ### How to replace thermal paste and fan
