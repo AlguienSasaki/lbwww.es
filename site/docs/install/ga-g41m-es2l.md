@@ -3,8 +3,6 @@ title: Install Libreboot on Gigabyte GA-G41M-ES2L
 ...
 
 
-**[!!BACKUP everything!!](./#howto-readwriteerase-the-boot-flash) just in case something fails.**
-
 
 <div class="specs">
 <center>
@@ -56,59 +54,31 @@ The build target, when building from source, is thus:
 
 	./mk -b coreboot gigabyte_ga_g41m_es2l_2mb_bios
 
-### Flash a ROM image
 
-**Software**
-
-*Before internal flashing, [Disable /dev/mem protection](devmem.md) first.*
-
-*In short add this kernel parameter: iomem=relaxed(linux distro)/kernel.securelevel=-1(bsd distro)*
-
-**THEN REMOVE THIS KERNEL PARAMETER TO PREVENT UNAUTHORIZED/MALICIOUS ACCESS TO YOUR SYSTEM AFTER FLASHING LIBREBOOT.**
-
-(An important reminder for those who might forget to delete it, even better, replace it with lockdown=integrity / lockdown=confidentiality)
-
-
-Backup the previous (*working*) firmware (atleast) twice (to check and compare if reading it gone wrong and backups differs.)
-
-	flashprog -p internal:dualbiosindex=0 -r Backup1.bin
-
-	flashprog -p internal:dualbiosindex=0 -r Backup2.bin
-
-Check and compare those if reading from the flash were successful:
-
-	diff Backup1.bin Backup2.bin
-
-For more than 2:
-
-	shasum Backup1.bin Backup2.bin Backup3.bin
-
-If those differs, something gone wrong and proceeding further may **(DON'T) leave your device unrecoverable** (without a reliable backup) if flashing fails as well.
-
+### Internal/Software Flashing
 
 There are 2 flash chips (one is backup).
 
-Flash the first chip:
+1st & 2nd chip:
 
-	./flashprog -p internal:dualbiosindex=0 -w libreboot.rom
+	./flashprog -p internal:dualbiosindex=0
 
-Flash the second chip:
-
-	./flashprog -p internal:dualbiosindex=1 -w libreboot.rom
+	./flashprog -p internal:dualbiosindex=1
 
 **Warning**: If you don't flash both chips, the recovery program from the default
 factory BIOS will kick in and your board will be soft bricked. Make sure that
 you **flash both** chips!
+
+**Follow the [guide](../install/simplified-sw-flashing.md) with internal:dualbiosindex= to backup and flash the libreboot.rom to both flash chips**
 
 Otherwise you can still boot the system with just the main flash chip
 connected, after desoldering the backup chip. This has been tested while
 libreboot was already installed onto the main chip.
 
 
-**Hardware**
+### External/Hardware Flashing
 
-Refer to [spi.md](spi.md) for how to set up an SPI programmer for
-external flashing. *You can only externally reprogram one of the chips
+*You can only externally reprogram one of the chips
 at a time, and you need to disable the chip that you're not flashing,
 by connecting 3v3 to /CS of that chip, so you will actually need second test
 clip or IC pin mini grabber.*
@@ -127,22 +97,11 @@ connection to the CS pin. This is to protect from over-current.
 Here is an image of the flash chip:\
 ![](https://av.libreboot.org/ga-g41m-es2l/ga-g41m-es2l.jpg)
 
+**Check the [hw-flashing guide](../install/simplified-hw-flashing.md) before moving onto the next step below.**
 
-Backup the previous (*working*) firmware twice (to check and compare if reading it gone wrong and backups differs.)
+Flash it: (With rpi-pico as an example, edit the line if needed.)
 
-	flashprog -p serprog:dev=/dev/ttyACM0,spispeed=16M -r Backup1.bin
-
-	flashprog -p serprog:dev=/dev/ttyACM0,spispeed=16M -r Backup2.bin
-
-Check and compare those if reading from the flash were successful:
-
-	diff Backup1.bin Backup2.bin
-
-For more than 2:
-
-	shasum Backup1.bin Backup2.bin Backup3.bin
-
-If those differs, something gone wrong and proceeding further may **(DON'T) leave your device unrecoverable** (without a reliable backup) if flashing fails as well.
+	flashprog -p serprog:dev=/dev/ttyACM0,spispeed=16M -w filename.rom
 
 
 ### Networking (might be Outdated)
