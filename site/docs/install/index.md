@@ -15,14 +15,19 @@ These documents will teach you how to install Libreboot, on these devices/mother
 Libreboot is a [Free Software](https://writefreesoftware.org/learn) project
 that replaces proprietary BIOS/UEFI firmware.
 
-SAFETY WARNING!
----------------
+Trouble?
+----------
 
-**[PLEASE READ THESE INSTRUCTIONS BEFORE INSTALLING](ivy_has_common.md), OR
-YOU MAY BRICK YOUR MACHINE!!
+Inquiries can be done via [Libreboot IRC](../../contact.md) and other channels.
 
-If you're [building from source](../build/), you can ignore the above guidance.
-Please take care to back up the current firmware, before flashing!
+If you want professional installation, Minifree Ltd sells [Libreboot
+pre-installed](https://minifree.org/) on select hardware, and it also provides
+a [Libreboot preinstall service](https://minifree.org/product/installation-service/)
+if you want to send your machine in to have Libreboot installed for you.
+
+Leah Rowe, the founder and lead developer of Libreboot, also owns and
+operates Minifree Ltd; sales provide funding for the Libreboot project.
+
 
 Chromebook install/update
 ----------------
@@ -30,6 +35,7 @@ Chromebook install/update
 Be careful as certain config in `RO_VPD` must be retained during installation
 and updates. Check [chromebooks-x86.md](chromebooks-x86.md) for guidance,
 cross-referenced with MrChromebook documentation.
+
 
 PCI-E rebar
 -----------
@@ -44,6 +50,7 @@ the documentation for this](../extras.md#reversible-pcie-rebar).
 
 If in doubt, please just follow the link and enable rebar if you're using
 a graphics card.
+
 
 SMMSTORE settings
 ---------------
@@ -76,35 +83,6 @@ flashprog -p internal --fmap -i SMMSTORE -w whatever.rom
 Be very careful with this. Note that fmap exists inside the BIOS region on
 IFD-based systems.
 
-Devices purchasable from [Minifree](https://minifree.org) directly;
--------------------------------------------------------------------
-
-**Laptops and Desktops**
-
--   **[Lenovo ThinkPad X280](https://minifree.org/product/libreboot-x280.html)**
-
--   **[Lenovo ThinkPad T480 and ThinkPad T480s](https://minifree.org/product/libreboot-t480.html)**
-
--   **[Lenovo ThinkPad T580](https://minifree.org/product/libreboot-t580.html)**
-
--   **[Dell OptiPlex 3050 Micro](https://minifree.org/product/libreboot-3050-micro/)**
-
-Devices supported by libreboot;
------------------------
-
-**If you want professional Libreboot installation,
-an [installation service](https://minifree.org/product/installation-service.html)
-is available; it also offers other coreboot firmware besides Libreboot. For
-example, Chromebook installation via MrChromebox UEFI coreboot distribution is
-also available.**
-
-*Before internal flashing, [Disable /dev/mem protection](devmem.md) first.*
-
-*In short add this kernel parameter: iomem=relaxed(linux distro)/kernel.securelevel=-1(bsd distro)*
-
-**THEN REMOVE THIS KERNEL PARAMETER TO PREVENT UNAUTHORIZED/MALICIOUS ACCESS TO YOUR SYSTEM AFTER FLASHING LIBREBOOT.**
-
-(An important reminder for those who might forget to delete it, even better, replace it with lockdown=integrity / lockdown=confidentiality)
 
 ### Laptops (x86\_64 chromebooks)
 
@@ -352,29 +330,28 @@ October 2026:
 * Purism Librem Mini
 * Google Sarien
 
-### Laptops (x86\_64)
+
+### Laptops
 
 Intel
 
 **8th Gen.**
 
--   [Lenovo ThinkPad X280](t480.html) (Complex, DDR4) - Also **[available to buy with Libreboot pre-installed](https://minifree.org/product/libreboot-x280.html)**
+-   [Lenovo ThinkPad X270/X280](t480.html) (Complex, DDR4) - Also **[available to buy with Libreboot pre-installed](https://minifree.org/product/libreboot-x280.html)**
 -   [Lenovo ThinkPad T480 and ThinkPad T480s](t480.html) (Complex, DDR4) - Also **[available to buy with Libreboot pre-installed](https://minifree.org/product/libreboot-t480.html)**
 -   [Lenovo ThinkPad T580](t480.html) (Complex, DDR4) - Also **[available to buy with Libreboot pre-installed](https://minifree.org/product/libreboot-t580.html)**
-
-NOTE: X270 also supported and installation is basically identical to X280.
 
 **5th Gen.**
 
 -   [HP EliteBook 720/740/750/820/840/850 G2, HP ZBook 14/15u G2](hp820g2.md) (Complex, DDR3L)
 
-**4th Gen.**
+**4th Gen.** 
 
 -   [Lenovo ThinkPad W541](w541_external.md) (Complex, DDR3L)
 -   [Lenovo ThinkPad T440p](t440p_external.md) (Complex, DDR3L)
 
-**3rd -> 2nd Gen.**
-
+ **3rd -> 2nd Gen.**
+ 
 (Socketed processors are fully compatible with motherboards from different generations)
 
 -   [HP EliteBook 2170p](hp2170p.md) (Moderate, DDR3L)
@@ -405,7 +382,9 @@ NOTE: X270 also supported and installation is basically identical to X280.
 -   Lenovo ThinkPad X60S (with Intel GPU) (Complex, DDR2L)
 -   [Lenovo ThinkPad X60 Tablet](x60tablet_unbrick.md) Tablet (with Intel GPU) (Complex, DDR2L)
 
-**ARM, with U-Boot payload**
+Arm
+
+**Chromebooks with U-Boot payload**
 
 -   [ASUS Chromebook Flip C101 (gru-bob)](chromebooks.md) (Complex)
 -   [Samsung Chromebook Plus (v1) (gru-kevin)](chromebooks.md) (Complex)
@@ -414,6 +393,7 @@ NOTE: X270 also supported and installation is basically identical to X280.
 ### Games consoles
 
 -   [Sony Playstation](playstation.md) (Complex) (PS1/PSX)
+
 
 ### Servers (x86_64 with ECC support)
 
@@ -439,6 +419,7 @@ AMD
 
 -   [ASUS KFSN4-DRE motherboard](kfsn4-dre.md) (Complex, DDR2)
 
+
 ### Desktops/WorkStations (x86/_64)
 
 **12th Gen**
@@ -450,11 +431,8 @@ AMD
 (Different gen. CPUs compatible with older and newer motherboards too, on older ones 8th-9th Core with B0 stepping;
 i3, Pentium Gold, Celeron. 6/8 core processors might work with pin-mod, untested.)
 
--   [Dell OptiPlex 3050 Micro](dell3050.html) (Simple, DDR4) - **Also [available to buy with Libreboot pre-installed](https://minifree.org/product/libreboot-3050-micro/)**
-- [Dell OptiPlex 5050 SFF](dell5050.html) (Simple, DDR4)
-
-NOTE: Dell OptiPlex 3040 also supported and installation is basically identical
-to the 3050 Micro.
+-   [Dell OptiPlex 3040/3050 Micro](dell3050.html) (Simple, DDR3L/DDR4) - **Also [available to buy with Libreboot pre-installed](https://minifree.org/product/libreboot-3050-micro/)**
+-   [Dell OptiPlex 5050 SFF](dell5050.html) (Simple, DDR4)
 
 **5th -> 4th Gen.** (Core + Xeon v3-4)
 
@@ -482,6 +460,7 @@ https://en.wikipedia.org/wiki/LGA_1150#Haswell_chipsets )
 -   [Intel D945GCLF](d945gclf.md) (Moderate, DDR2)
 -   Intel D510MO and D410PT motherboards (Moderate, DDR2)
 
+
 ### Emulation
 
 -   [Qemu x86 and arm64](../misc/emulation.md)
@@ -490,31 +469,6 @@ More information about the Libreboot
 build system can be found in the [lbmk maintenance manual](../maintain/),
 and information about porting new systems in
 the [porting manual](../maintain/porting.md).
-
-Install Libreboot via external flashing
----------------------------------------
-
-Refer to the following article:\
-[Externally rewrite 25xx NOR flash via SPI protocol](spi.md)
-
-You are strongly advised to *have* an external flashing setup, and make sure
-it works, before attempting internal flashing. This, in addition to making
-a backup of the current flash contents, prior to flashing, whether you dump
-externally or internally - if only external flashing is available, then it's
-usually the case that only external dumping is available too.
-
-Trouble?
-----------
-
-Inquiries can be done via [Libreboot IRC](../../contact.md) and other channels.
-
-If you want professional installation, Minifree Ltd sells [Libreboot
-pre-installed](https://minifree.org/) on select hardware, and it also provides
-a [Libreboot preinstall service](https://minifree.org/product/installation-service/)
-if you want to send your machine in to have Libreboot installed for you.
-
-Leah Rowe, the founder and lead developer of Libreboot, also owns and
-operates Minifree Ltd; sales provide funding for the Libreboot project.
 
 
 ROM image file names
@@ -553,6 +507,7 @@ graphics card and it'll work just fine; its own VGA option ROM will be
 executed instead, if the primary payload is SeaBIOS, whether that be pure
 SeaBIOS or a SeaGRUB setup.
 
+
 EC firmware updates
 -------------------
 
@@ -575,6 +530,7 @@ It is recommended that you update to the latest EC firmware version. The
 Updating the EC can sometimes provide benefit depending on the vendor. For
 example, they might fix power issues that could then enhance battery life.
 
+
 ### ThinkPads
 
 See: <http://www.thinkwiki.org/wiki/BIOS_update_without_optical_disk>
@@ -582,46 +538,6 @@ See: <http://www.thinkwiki.org/wiki/BIOS_update_without_optical_disk>
 Otherwise, check the Lenovo website to find the update utility for your
 motherboard.
 
-### HP EliteBooks
-
-EC firmware is required in the main boot flash, but Libreboot's build system
-automatically downloads this from HP for each machine, and inserts it, so
-you don't have to worry. Just make sure that [vendor files are
-inserted](ivy_has_common.md) if using release images.
-
-Except for the hp820g2.
-
-### Other
-
-The same wisdom applies to other laptop vendors.
-
-Non-laptops typically do not have embedded controllers in them.
-
-Libreboot installation instructions
------------------------------------
-
-In general, if Libreboot is already running, you can skip
-towards the final section on this page, which provides general internal
-flashing instructions. Internal flashing is when you flash the target machine
-from the target machine, inside an operating system running on it.
-
-Some boards require special steps, even if Libreboot is already running,
-for example if you [locked down the flash](../linux/grub_hardening.md), or
-as another example, [SureStart on HP EliteBook 820 G2](hp820g2.md)
-
-Therefore, before following generic guides, make sure to check first whether
-your board has special instructions, otherwise use the generic guide at the
-end of this article.
-
-### Intel GbE MAC address (IFD-based systems)
-
-On all Intel platforms except X4X (e.g. Gigabyte GA-G41M-ES2L) and i945
-ones (e.g. ThinkPad X60, ThinkPad T60, MacBook2,1), an Intel Flash Descriptor is
-used. If the board has Intel gigabit ethernet, the MAC address is included in
-flash, and can (must) be changed prior to installation.
-
-You can use [nvmutil](nvmutil.md) to change the MAC address. You will perform
-this modification to the ROM image, before flashing it.
 
 ### Flash lockdown / boot security
 
@@ -635,22 +551,6 @@ See: [GRUB hardening / Secure libreBoot](../linux/grub_hardening.md)
 If you already did this, it's possible that you may no longer be able to
 flash internally. If that is the case, you must [flash externally](spi.md).
 
-### Updating an existing installation
-
-Unless otherwise stated, in sections pertaining to each motherboard below,
-an existing Libreboot installation can be updated via internal flashing,
-without any special steps; simply follow the general internal flashing
-guide, in the final section further down this page.
-
-If you have an existing Libreboot installation but you *locked down the flash*,
-updating it will require external flashing.
-
-If you currently have the factory firmware, you probably need to flash
-externally; on *some* machines, internal flashing is possible, usually with
-special steps required that differ from updating an existing installation.
-
-The next sections will pertain to specific motherboards, where indicated,
-followed by general internal flashing instructions where applicable.
 
 ### ThinkPad X200/T400/T500/W500/R400/R500
 
@@ -676,6 +576,7 @@ luck with that.
 Hot-swap the flash IC with another one while it's running, and flash it
 internally.
 
+
 ### ThinkPad X220/X220T/T420/T420s/T520
 
 T420/T520: [T420 flash instructions](t420_external.md)
@@ -690,6 +591,7 @@ internally; you must use [an external flasher](spi.md).
 Otherwise, look at [X230 disassembly](x230_external.md). Note that the X220
 has a single 8MB flash, instead of 8MB and 4MB.
 
+
 ### ThinkPad X230/T430/T530/W530/X230T
 
 Internal flashing from vendor BIOS to Libreboot is possible, but not
@@ -699,6 +601,7 @@ External flashing recommended, but only documented for X230.
 See: [ThinkPad X230 install guide](x230_external.md).
 
 Otherwise, refer to [external SPI flashing](spi.md).
+
 
 ### ThinkPad T60/X60/X60Tablet/X60S
 
@@ -793,6 +696,7 @@ bootblock, set bucts back to zero:
 The second flash can be done by simply following the general internal flashing
 guide further down on this page.
 
+
 ### ARM-based Chromebooks
 
 See: [Chromebook flashing instructions](chromebooks.md)
@@ -802,6 +706,7 @@ the x86 machines, because the Chromebooks still use flashrom with
 the `-p host` argument instead of `-p internal` when flashing, and you typically
 need to flash externally, due to Google's security model.
 
+
 ### QEMU (arm64 and x86)
 
 Libreboot can be used on QEMU (virtual machine), which is useful for debugging
@@ -809,64 +714,7 @@ payloads and generally trying out Libreboot, without requiring real hardware.
 
 See: [Libreboot QEMU guide](../misc/emulation.md)
 
-Install via host CPU (internal flashing)
-----------------------------------------
 
-NOTE: This mainly applies to the x86 machines.
-
-Please check other sections listed above, to see if there is anything
-pertaining to your motherboard. Internal flashing means that you boot Linux or
-BSD on the target machine, and run `flashprog` there, flashing the machine
-directly.
-
-**If you can't flash internally, you must [flash externally](spi.md).**
-
-Internal flashing is often unavailable with the factory firmware, but it is
-usually possible when Libreboot is running (barring special circumstances).
-
-### Run flashprog on host CPU
-
-**When using release images, always remember to
-[insert vendor files](ivy_has_common.md).  When building from source,
-the vendor files are added automatically at build time (they are not
-present in release images).**
-
-#### Flash chip size
-
-Use this to find out:
-
-	flashprog -p internal
-
-In the output will be information pertaining to your boot flash.
-
-#### Howto: read/write/erase the boot flash
-
-How to read the current chip contents:
-
-	sudo flashprog -p internal:laptop=force_I_want_a_brick,boardmismatch=force -r dump.bin
-
-You should still make several dumps, even if you're flashing internally, to
-ensure that you get the same checksums. Check each dump using `sha1sum`
-
-How to erase and rewrite the chip contents:
-
-	sudo flashprog -p internal:laptop=force_I_want_a_brick,boardmismatch=force -w libreboot.rom
-
-NOTE: `force_I_want_a_brick` is not scary. Do not be scared! This merely disables
-the safety checks in flashprog. Flashprog and coreboot change a lot, over the years,
-and sometimes it's necessary to use this option. If you're scared, then just
-follow the above instructions, but remove that option. So, just use `-p internal`.
-If that doesn't work, next try `-p internal:boardmismatch=force`. If that doesn't
-work, try `-p internal:boardmismatch=force,laptop=force_I_want_a_brick`. So long
-as you *ensure* you're using the correct ROM for your machine, it will be safe
-to run flashprog. These extra options just disable the safety checks in flashprog.
-There is nothing to worry about.
-
-If successful, it will either say `VERIFIED` or it will say that the chip
-contents are identical to the requested image.
-
-NOTE: there are exceptions where the above is not possible. Read about them in
-the sections below:
 
 Removed boards
 --------------
@@ -885,6 +733,7 @@ re-adding them at a later date. They were removed due to issues. List:
 -   [Samsung Chromebook 2 13" (peach-pi)](chromebooks.md)
 -   [Samsung Chromebook XE303 (daisy-snow)](chromebooks.md)
 -   Lenovo ThinkPad X301 (still in lbmk, but with `release="n"`)
+
 
 ### NOTES about removed boards
 
