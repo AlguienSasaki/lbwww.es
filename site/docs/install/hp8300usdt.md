@@ -3,7 +3,6 @@ title: Install Libreboot HP Compaq Elite 8300 USDT
 x-toc-enable: true
 ...
 
-**[!!BACKUP everything!!](./#howto-readwriteerase-the-boot-flash) just in case something fails.**
 
 <div class="specs">
 <center>
@@ -40,35 +39,7 @@ to adhere to this advice will result in a bricked machine)
 	./mk -b coreboot hp_elite_8300_usdt_16mb_uefi
 
 
-### Flash a ROM image
-
-**Software**
-
-*Before internal flashing, [Disable /dev/mem protection](devmem.md) first.*
-
-*In short add this kernel parameter: iomem=relaxed(linux distro)/kernel.securelevel=-1(bsd distro)*
-
-**THEN REMOVE THIS KERNEL PARAMETER TO PREVENT UNAUTHORIZED/MALICIOUS ACCESS TO YOUR SYSTEM AFTER FLASHING LIBREBOOT.**
-
-(An important reminder for those who might forget to delete it, even better, replace it with lockdown=integrity / lockdown=confidentiality)
-
-
-Backup the previous (*working*) firmware (atleast) twice (to check and compare if reading it gone wrong and backups differs.)
-
-	flashprog -p internal -r Backup1.bin
-
-	flashprog -p internal -r Backup2.bin
-
-Check and compare those if reading from the flash were successful:
-
-	diff Backup1.bin Backup2.bin
-
-For more than 2:
-
-	shasum Backup1.bin Backup2.bin Backup3.bin
-
-If those differs, something gone wrong and proceeding further may **(DON'T) leave your device unrecoverable** (without a reliable backup) if flashing fails as well.
-
+### Internal/Software Flashing
 
 Internal flashing is possible. OEM BIOS versions 2.87, 2.90, 2.99, and 3.08 are confirmed
 compatible with this guide. BIOS 2.05 is confirmed **not** to work.
@@ -88,35 +59,11 @@ crystal (small metal cylinder) and the power cable for the optical drive.
 ![](https://av.libreboot.org/hp8300usdt/jumper_to_fdo.jpg)
 
 The BIOS should no longer impose any write-protections.
-You can now use `flashprog -p internal` freely.
+
+**After the jumper set, follow the [guide](../install/simplified-sw-flashing.md) to backup and flash.**
 
 
-You can now move the jumper back to its original place.
-By default, Libreboot applies no write-protection, so
-updating it can be done without the jumper anyway.
-
-
-**Hardware**
-
-For general information, please refer to [25xx NOR flash
-instructions](../install/spi.md) - that page refers to use of socketed flash.
-
-
-Backup the previous (*working*) firmware twice (to check and compare if reading it gone wrong and backups differs.)
-
-	flashprog -p serprog:dev=/dev/ttyACM0,spispeed=16M -r Backup1.bin
-
-	flashprog -p serprog:dev=/dev/ttyACM0,spispeed=16M -r Backup2.bin
-
-Check and compare those if reading from the flash were successful:
-
-	diff Backup1.bin Backup2.bin
-
-For more than 2:
-
-	shasum Backup1.bin Backup2.bin Backup3.bin
-
-If those differs, something gone wrong and proceeding further may **(DON'T) leave your device unrecoverable** (without a reliable backup) if flashing fails as well.
+### External/Hardware Flashing
 
 
 Unbricking is possible by external flashing. You first need to remove
@@ -129,9 +76,7 @@ near the group of yellow cubes. Follow the
 
 ![](https://av.libreboot.org/hp8300usdt/chip+header.jpg)
 
-You might need to power the board by plugging it in. In that case,
-do not connect the Vcc (3v3) pin of the flash chip.
-Also make sure the board doesn't fully power on (that is, boot).
+
 
 If you don't have a suitable clip, you can also use the ROM_RCVRY header
 right next to the flash chip. By default only the footprint is present,
@@ -144,6 +89,16 @@ manual (page 241) on how to remove the motherboard from the chassis.
 If you do this, you have to reapply thermal paste.
 That might be a good idea anyway, considering how old these are getting
 
+**You might need to power the board by plugging it in. In that case,
+do not connect the Vcc (3v3) pin of the flash chip.
+Also make sure the board doesn't fully power on (that is, boot).**
+
+**Check the [hw-flashing guide](../install/simplified-hw-flashing.md) before moving onto the next step below.**
+
+Flash it: (With rpi-pico as an example, edit the line if needed.)
+
+	flashprog -p serprog:dev=/dev/ttyACM0,spispeed=16M -w filename.rom
+    
 
 ### Set MAC address
 
