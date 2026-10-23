@@ -43,10 +43,6 @@ P*: Partially works with vendor firmware
 | **Audio**                                         | *Select_one_from_above* |
 | **RAM Init**                                      | *Select_one_from_above* |
 
-| ***Payloads supported***   |           |
-|----------------------------|-----------|
-| **GRUB (libgfxinit only)** | *Works?*     |
-| **SeaBIOS**                | *Works?*     |
 </div>
 
 

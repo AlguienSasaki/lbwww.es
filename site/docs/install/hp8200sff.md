@@ -42,11 +42,6 @@ P*: Partially works with vendor firmware
 | **Audio**                                         | W+ |
 | **RAM Init**                                      | W+ |
 
-| ***Payloads supported***  |       |
-|---------------------------|-------|
-| **GRUB**                  | Works |
-| **SeaBIOS**               | Works |
-| **SeaBIOS with GRUB**     | Works |
 </div>
 
 

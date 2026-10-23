@@ -44,11 +44,6 @@ P*: Partially works with vendor firmware
 | **External output**                               | W+ |
 | **Display brightness**                            | P+ |
 
-| ***Payloads supported***  |           |
-|---------------------------|-----------|
-| **GRUB**              | Works     |
-| **SeaBIOS**               | Works     |
-| **SeaBIOS with GRUB** | Works     |
 </div>
 
 Open source BIOS/UEFI firmware

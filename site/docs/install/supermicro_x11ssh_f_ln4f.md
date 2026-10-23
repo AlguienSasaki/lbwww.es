@@ -43,10 +43,6 @@ P*: Partially works with vendor firmware
 | **Audio**                                         | N |
 | **RAM Init**                                      | W* |
 
-| ***Payloads supported***   |           |
-|----------------------------|-----------|
-| **GRUB (libgfxinit only)** | Works     |
-| **SeaBIOS**                | Works     |
 </div>
 
 *1 The server Intel ME (SPS), which is the server version of the ME. One difference is that SPS does not support CPU replacement detection, so it always redoes DRAM training from scratch on every boot, which makes booting take longer. Libreboot replaces SPS with ME, which fixes this.

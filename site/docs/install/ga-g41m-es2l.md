@@ -42,11 +42,6 @@ P*: Partially works with vendor firmware
 | **RAM Init**                                      | P+ |
 | **External output**                               | W+ |
 
-| ***Payloads supported***  |       |
-|---------------------------|-------|
-| **GRUB**              | Slow! |
-| **SeaBIOS**           | Works |
-| **SeaBIOS with GRUB** | Works |
 </div>
 
 
