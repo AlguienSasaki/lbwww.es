@@ -3,7 +3,6 @@ title: Install Libreboot on *Device_Name*
 x-toc-enable: true
 ...
 
-**[!!BACKUP everything!!](./#howto-readwriteerase-the-boot-flash) just in case something fails.**
 
 <div class="specs">
 <center>
@@ -19,7 +18,7 @@ x-toc-enable: true
 | **Chipset**                | *Model*                                     |
 | **CPU**                    | *Socket_type_if_replacable,_Supported_processors*                    |
 | **Graphics**               | *integrated_gpu_device* |
-| **Memory**                 | *ram_gen* SODIMMs (max_*capacity_usually_in_GB*,_*avaliable_slots_x_max_per_module*)    |
+| **Memory**                 | *max_capacity_usually_in_GB* *ram_gen* SODIMMs (*avaliable_slots_x_max_GB_per_module*)    |
 | **Architecture**           | *Device_Arch*                                         |
 | **Original boot firmware** | *Vendor_firmware_name_with_UEFI_and_or_bios*                             |
 | **Intel ME/AMD PSP**       | *Is_it_present_in_vendor_firmware_and_removable_or_disableable*      |
@@ -60,7 +59,7 @@ If you're using a release ROM, please ensure that you've inserted extra firmware
 required refer to the [guide](../install/ivy_has_common.md) for that (, failure
 to adhere to this advice will result in a bricked machine):
 
-- *include the needed firmware blobs, like Intel ME, Intel FSP for skylake =<*
+- *include the needed firmware blobs, like Intel ME (vendor blob), Intel FSP (vendor blob) for skylake =<*
 - 
 
 **[Build](../build/) from source**
@@ -70,65 +69,15 @@ to adhere to this advice will result in a bricked machine):
 *Include_more_if_there_are_different_variants_buildable*
 
 
-### Flash a ROM image
+### Internal/Software Flashing
 
-Vendor/Libreboot, **always have a working previous firmware working** in case of failure.
-
-**Software**
-
-*Before internal flashing, [Disable /dev/mem protection](devmem.md) first.*
-
-*In short add this kernel parameter: iomem=relaxed(linux distro)/kernel.securelevel=-1(bsd distro)*
-
-**THEN REMOVE THIS KERNEL PARAMETER TO PREVENT UNAUTHORIZED/MALICIOUS ACCESS TO YOUR SYSTEM AFTER FLASHING LIBREBOOT.**
-
-(An important reminder for those who might forget to delete it, even better, replace it with lockdown=integrity / lockdown=confidentiality)
+*Description_+_picture_if_needed with [guide](../install/simplified-sw-flashing.md) included*
 
 
-Backup the previous (*working*) firmware (atleast) twice (to check and compare if reading it gone wrong and backups differs.)
-
-	flashprog -p internal -r Backup1.bin
-
-	flashprog -p internal -r Backup2.bin
-
-Check and compare those if reading from the flash were successful:
-
-	diff Backup1.bin Backup2.bin
-
-For more than 2:
-
-	shasum Backup1.bin Backup2.bin Backup3.bin
-
-If those differs, something gone wrong and proceeding further may **(DON'T) leave your device unrecoverable** (without a reliable backup) if flashing fails as well.
+### External/Hardware Flashing
 
 
-*Description*
-
-
-**Hardware**
-
-For general information, please refer to [25xx NOR flash
-instructions](../install/spi.md) - that page refers to use of socketed flash.
-
-
-Backup the previous (*working*) firmware twice (to check and compare if reading it gone wrong and backups differs.)
-
-	flashprog -p serprog:dev=/dev/ttyACM0,spispeed=16M -r Backup1.bin
-
-	flashprog -p serprog:dev=/dev/ttyACM0,spispeed=16M -r Backup2.bin
-
-Check and compare those if reading from the flash were successful:
-
-	diff Backup1.bin Backup2.bin
-
-For more than 2:
-
-	shasum Backup1.bin Backup2.bin Backup3.bin
-
-If those differs, something gone wrong and proceeding further may **(DON'T) leave your device unrecoverable** (without a reliable backup) if flashing fails as well.
-
-
-*Description_+_picture_if_needed*
+*Description_+_picture_if_needed with [guide](../install/simplified-hw-flashing.md) included*
 
 
 ### Device Unique Properties
