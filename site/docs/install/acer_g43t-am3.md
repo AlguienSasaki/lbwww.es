@@ -3,8 +3,6 @@ title: Install Libreboot on Acer G43T-AM3
 x-toc-enable: true
 ...
 
-**[!!BACKUP everything!!](./#howto-readwriteerase-the-boot-flash) just in case something fails.**
-
 <div class="specs">
 <center>
 <img tabindex=1 alt="acer_g43t-am3" class="p" src="https://av.libreboot.org/acer_g43t-am3/picture.jpg" /><span class="f"><img src="https://av.libreboot.org/acer_g43t-am3/picture.jpg" /></span>
@@ -22,7 +20,7 @@ x-toc-enable: true
 | **Architecture**           | x86_64                        |
 | **Original boot firmware** | Acer BIOS                     |
 | **Intel ME/AMD PSP**       | Present, Fully removable      |
-| **Flash chip**             | SOP-8 2MB/16Mbit              |
+| **Flash chip**             | SOP-8 2MiB                    |
 
 
 ```
@@ -62,69 +60,26 @@ To build it to use both flash chips:
 	./mk -b coreboot acer_g43t_am3_16mb_bios
 
 
-### Flash a ROM image
-
-**Software**
-
-*Before internal flashing, [Disable /dev/mem protection](devmem.md) first.*
-
-*In short add this kernel parameter: iomem=relaxed(linux distro)/kernel.securelevel=-1(bsd distro)*
-
-**THEN REMOVE THIS KERNEL PARAMETER TO PREVENT UNAUTHORIZED/MALICIOUS ACCESS TO YOUR SYSTEM AFTER FLASHING LIBREBOOT.**
-
-(An important reminder for those who might forget to delete it, even better, replace it with lockdown=integrity / lockdown=confidentiality)
-
-
-Backup the previous (*working*) firmware (atleast) twice (to check and compare if reading it gone wrong and backups differs.)
-
-	flashprog -p internal -r Backup1.bin
-
-	flashprog -p internal -r Backup2.bin
-
-Check and compare those if reading from the flash were successful:
-
-	diff Backup1.bin Backup2.bin
-
-For more than 2:
-
-	shasum Backup1.bin Backup2.bin Backup3.bin
-
-If those differs, something gone wrong and proceeding further may **(DON'T) leave your device unrecoverable** (without a reliable backup) if flashing fails as well.
-
-
-External header and internal flashing works. 
+### Internal/Software Flashing
 
 It might be necessary to specify the chip type; MX25L1605D/MX25L1608D/MX25L1673E is the correct one, not MX25L1605.
 
-
-**Hardware**
-
-For general information, please refer to [25xx NOR flash
-instructions](../install/spi.md) - that page refers to use of socketed flash.
+**Follow the [guide](../install/simplified-sw-flashing.md) to backup and flash directly from OS / using the SPI_ROM1 header.**
 
 
-Backup the previous (*working*) firmware twice (to check and compare if reading it gone wrong and backups differs.)
+### External/Hardware Flashing
 
-	flashprog -p serprog:dev=/dev/ttyACM0,spispeed=16M -r Backup1.bin
+**Turn the board off and leave it plugged in with the psu on and then use a programmer WITHOUT the *3.3v connected* to flash.**
 
-	flashprog -p serprog:dev=/dev/ttyACM0,spispeed=16M -r Backup2.bin
-
-Check and compare those if reading from the flash were successful:
-
-	diff Backup1.bin Backup2.bin
-
-For more than 2:
-
-	shasum Backup1.bin Backup2.bin Backup3.bin
-
-If those differs, something gone wrong and proceeding further may **(DON'T) leave your device unrecoverable** (without a reliable backup) if flashing fails as well.
-
-
-To flash it externally, turn the board off and leave it plugged in with the psu on and then use a programmer WITHOUT the *3.3v connected* to flash. 
-
-Another way is through the SPI_ROM1 header while the board is off and disconnected from power, HOLD# and WP# must be pulled high (to VCC) to be able to flash the chip
+**Another way is through the SPI_ROM1 header while the board is off and disconnected from power, HOLD# and WP# must be pulled high (to VCC) to be able to flash the chip.**
 
 It might be necessary to specify the chip type; MX25L1605D/MX25L1608D/MX25L1673E is the correct one, not MX25L1605.
+
+**After choosing 1 way from above, check the [hw-flashing guide](../install/simplified-hw-flashing.md) before moving onto the next step below.**
+
+Flash it: (With rpi-pico as an example, edit the line if needed.)
+
+	flashprog -p serprog:dev=/dev/ttyACM0,spispeed=16M -w filename.rom
 
 
 ### Networking (might be Outdated)
