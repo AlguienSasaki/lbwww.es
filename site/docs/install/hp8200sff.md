@@ -4,9 +4,6 @@ x-toc-enable: true
 ...
 
 
-**[!!BACKUP everything!!](./#howto-readwriteerase-the-boot-flash) just in case something fails.**
-
-
 <div class="specs">
 <center>
 <img tabindex=1 alt="HP Compaq 8200 Elite SFF" class="p" src="https://av.libreboot.org/hp8200sff/grub_open.jpg" /><span class="f"><img src="https://av.libreboot.org/hp8200sff/grub_open.jpg" /></span> <img tabindex=1 title="From left to right: SFF and MT" class="p" src="https://av.libreboot.org/hp8200sff/sff+mt.jpg" /><span class="f"><img src="https://av.libreboot.org/hp8200sff/sff+mt.jpg" /></span>
@@ -70,35 +67,7 @@ To update the Libreboot firmware on a librebooted one (MT/SFF):
 	./mk -b coreboot hp_elite_8200_sff_8mb_uefi
 
 
-### Flash a ROM image
-
-**Software**
-
-*Before internal flashing, [Disable /dev/mem protection](devmem.md) first.*
-
-*In short add this kernel parameter: iomem=relaxed(linux distro)/kernel.securelevel=-1(bsd distro)*
-
-**THEN REMOVE THIS KERNEL PARAMETER TO PREVENT UNAUTHORIZED/MALICIOUS ACCESS TO YOUR SYSTEM AFTER FLASHING LIBREBOOT.**
-
-(An important reminder for those who might forget to delete it, even better, replace it with lockdown=integrity / lockdown=confidentiality)
-
-
-Backup the previous (*working*) firmware (atleast) twice (to check and compare if reading it gone wrong and backups differs.)
-
-	flashprog -p internal -r Backup1.bin
-
-	flashprog -p internal -r Backup2.bin
-
-Check and compare those if reading from the flash were successful:
-
-	diff Backup1.bin Backup2.bin
-
-For more than 2:
-
-	shasum Backup1.bin Backup2.bin Backup3.bin
-
-If those differs, something gone wrong and proceeding further may **(DON'T) leave your device unrecoverable** (without a reliable backup) if flashing fails as well.
-
+### Internal/Software Flashing
 
 Internal flashing from OEM BIOS is possible by setting a jumper
 on the board.
@@ -131,6 +100,8 @@ Now, run this command:
 NOTE: If flashprog complains, detecting multiple chips, just pick one, and
 specify it using the `-c` option as indicated by flashprog.
 
+**After the jumper set, follow the [guide](../install/simplified-sw-flashing.md) to backup only**
+
 The output should contain the text "The Flash Descriptor Override
 Pin-Strap is set". If it doesn't, start again from the beginning.
 
@@ -158,42 +129,23 @@ Power off the computer. Make sure to power off, rebooting is not enough!
 
 Power on the computer.
 
-If you plan on using a graphics card (other than the integrated graphics of
-your CPU), choose one of the files which name contains both "seabios" and
-"txtmode".
-
-Now we can flash the full 8 MiB image. Boot to an OS with flashprog
-again.
-
-	flashprog -p internal -w libreboot8.rom
+**Boot, follow the [guide](../install/simplified-sw-flashing.md) to flash.**
 
 Power cycle the computer again.
 
-**Hardware**
 
-For general information, please refer to [25xx NOR flash
-instructions](../install/spi.md) - that page refers to use of socketed flash.
+**### External/Hardware Flashing**
 
+[Instructions and flash chips locations](https://doc.coreboot.org/mainboard/hp/compaq_8200_sff.html) (works for the MT too)
 
-Backup the previous (*working*) firmware twice (to check and compare if reading it gone wrong and backups differs.)
+**REMOVE all power sources and connectors from the machine, before doing this.
+This is to prevent short circuiting and power surges while flashing.**
 
-	flashprog -p serprog:dev=/dev/ttyACM0,spispeed=16M -r Backup1.bin
+**Check the [hw-flashing guide](../install/simplified-hw-flashing.md) before moving onto the next step below.**
 
-	flashprog -p serprog:dev=/dev/ttyACM0,spispeed=16M -r Backup2.bin
+Flash it: (With rpi-pico as an example, edit the line if needed.)
 
-Check and compare those if reading from the flash were successful:
-
-	diff Backup1.bin Backup2.bin
-
-For more than 2:
-
-	shasum Backup1.bin Backup2.bin Backup3.bin
-
-If those differs, something gone wrong and proceeding further may **(DON'T) leave your device unrecoverable** (without a reliable backup) if flashing fails as well.
-
-
-[Instructions](https://doc.coreboot.org/mainboard/hp/compaq_8200_sff.html) (works for the MT too) if you need
-to recover from an unbootable BIOS.
+	flashprog -p serprog:dev=/dev/ttyACM0,spispeed=16M -w filename.rom
 
 
 ### Set MAC address
@@ -226,6 +178,7 @@ change the MAC address, please read [nvmutil documentation](/nvmutil.md).
 | **I/O Ports on Back**      | 2x Line-in (stereo/microphone), PS/2 Mouse+Keyboard, VGA, SCOM, DisplayPort, 6x USB 2.0, RJ-45 1GbE (Ethernet)  |
 
 </div>
+
 
 [//]: # "SPDX-License-Identifier: GFDL-1.3-or-later"
 
