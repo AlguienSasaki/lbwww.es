@@ -64,7 +64,7 @@ To build it to use both flash chips:
 
 It might be necessary to specify the chip type; MX25L1605D/MX25L1608D/MX25L1673E is the correct one, not MX25L1605.
 
-**[Flash](../install/simplified-sw-flashing.md) directly from OS / using the SPI_ROM1 header.**
+**Follow the [guide](../install/simplified-sw-flashing.md) to backup and flash directly from OS / using the SPI_ROM1 header.**
 
 
 ### External/Hardware Flashing
