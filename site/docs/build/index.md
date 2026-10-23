@@ -132,43 +132,6 @@ Technically, any Linux distribution can be used to build libreboot.
 However, you will have to write your own script for installing build
 dependencies. 
 
-### Debian Trixie/Sid
-
-Debian Trixie, the testing release as of 3 January 2025, and Debian Sid,
-provide `gnat` and `gcc` as you expect, but `gnat` resolves to `gnat-13` and
-installs `gcc-13` as a dependency, while `gcc` resolves to `gcc-14` and other
-toolchain components correspond to this version.
-
-The GCC/GNAT versions need to match during build time, so Libreboot's build
-system hacks the `PATH` environmental variable, setting up symlinks, matching
-GNAT to GCC or GNAT to GCC. When you run `./mk dependencies debian`, you get
-GNAT 13 and GCC 14. This seems to make most boards compile; in our testing, the
-KGPE-D16 board failed to compile in this configuration. This PATH hack is only
-done for compiling the coreboot crossgcc toolchain, and nothing else; after that,
-coreboot's toolchain is used.
-
-GNAT is used by coreboot, because some of the Intel graphics devices are
-initialised natively, with code written in Ada spark (called `libgfxinit`).
-
-When updating from Debian stable to Debian Trixie(testing) or Sid, you should
-also check for orphaned packages, using `aptitude search '~o'`. Do this,
-removing what was leftover from the old release, and make sure to re-run the
-Debian dependencies script, but do it like this:
-
-	./mk dependencies debian --reinstall
-
-For better reliability, you should, after running the dependencies script,
-remove `gnat` and install `gnat-14` instead, which is available on this day
-of 3 December 2025, but currently marked experimental. When you install
-GNAT 14, GNAT 13 is removed but `gnat` (in `PATH`) still won't resolve to
-anything. Libreboot *still* accommodates this, detecting and matching the GCC
-and GNAT versions, which would in this instance match version 14 between them,
-so that `gnat` and `gcc` are both in PATH at build time, resolving to v14.x.
-When we tested with this configuration, the KGPE-D16 images also compiled.
-
-NOTE: Ubuntu 24.10 also has the issue described above. Some other distros may
-also have it, if they're based on Debian Testing/Sid or Ubuntu 24.10.
-
 ### MIPS cross compiler
 
 Libreboot has support for the Sony PlayStation (PS1/PSX), based on
