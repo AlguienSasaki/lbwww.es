@@ -4,9 +4,6 @@ x-toc-enable: true
 ...
 
 
-**[!!BACKUP everything!!](./#howto-readwriteerase-the-boot-flash) just in case something fails.**
-
-
 <div class="specs">
 <center>
 Dell OptiPlex 780
@@ -70,47 +67,20 @@ The build target, when building from source, is thus:
 ./mk -b coreboot dell_optiplex_780_usff_8mb_uefi
 ```
 
-### Flash a ROM image
+### Internal/Software Flashing
 
-**Software**
-
-*Before internal flashing, [Disable /dev/mem protection](devmem.md) first.*
-
-*In short add this kernel parameter: iomem=relaxed(linux distro)/kernel.securelevel=-1(bsd distro)*
-
-**THEN REMOVE THIS KERNEL PARAMETER TO PREVENT UNAUTHORIZED/MALICIOUS ACCESS TO YOUR SYSTEM AFTER FLASHING LIBREBOOT.**
-
-(An important reminder for those who might forget to delete it, even better, replace it with lockdown=integrity / lockdown=confidentiality)
-
-
-Backup the previous (*working*) firmware (atleast) twice (to check and compare if reading it gone wrong and backups differs.)
-
-	flashprog -p internal -r Backup1.bin
-
-	flashprog -p internal -r Backup2.bin
-
-Check and compare those if reading from the flash were successful:
-
-	diff Backup1.bin Backup2.bin
-
-For more than 2:
-
-	shasum Backup1.bin Backup2.bin Backup3.bin
-
-If those differs, something gone wrong and proceeding further may **(DON'T) leave your device unrecoverable** (without a reliable backup) if flashing fails as well.
-
-
-Short the service jumper. It's a
-2-pin header located somewhere on the board (no photos available yet).
-
-With the service jumper set, all flash protections are disabled on the first
-6MB of the flash; the latter 2MB part is restricted. Because we are using an
-Intel Flash Descriptor on this board, the flash will be divided into these
-parts:
+Short the service jumper
+(it's a 2-pin header located somewhere on the board (no photos available yet),
+to disable flash protections on the first 6MB of the flash; the latter 2MB part is restricted. 
+Because we are using an Intel Flash Descriptor on this board, 
+the flash will be divided into these parts:
 
 * Intel Flash Descriptor (basic machine configuration)
 * Intel Gigabit Ethernet region (e.g. MAC address configuration)
 * BIOS region (contains coreboot)
+
+**After the jumper set, [Backup](../install/simplified-sw-flashing.md) the vendor firmware before,
+but DO NOT flash it directly like at the end of the referred guide.**
 
 Before you can use the flash commands, please note that the `_truncate` images
 are 6MB in size, but they must be padded to 8MB. Normally a blank part of flash
@@ -135,6 +105,8 @@ It's very important to do this in the *exact* order as above, because
 the `--ifd` option references the *flashed* IFD, not the one in your image,
 so you must flash the IFD first.
 
+**Then skip the backup sections and [flash](../install/simplified-sw-flashing.md) the complete libreboot.rom.**
+
 If you already have Libreboot running, and you don't have flash protection
 enabled, you can omit `--ifd -i REGION` from the flashprog command, and flash
 the full image; the one without `_truncate` in the file name uses all of the
@@ -142,30 +114,19 @@ flash, with the BIOS region ending at the 8MB limit, so the BIOS region is
 therefore 2MB larger on those images.
 
 
-**Hardware**
-
-For general information, please refer to [25xx NOR flash
-instructions](../install/spi.md) - that page refers to use of socketed flash.
-
-
-Backup the previous (*working*) firmware twice (to check and compare if reading it gone wrong and backups differs.)
-
-	flashprog -p serprog:dev=/dev/ttyACM0,spispeed=16M -r Backup1.bin
-
-	flashprog -p serprog:dev=/dev/ttyACM0,spispeed=16M -r Backup2.bin
-
-Check and compare those if reading from the flash were successful:
-
-	diff Backup1.bin Backup2.bin
-
-For more than 2:
-
-	shasum Backup1.bin Backup2.bin Backup3.bin
-
-If those differs, something gone wrong and proceeding further may **(DON'T) leave your device unrecoverable** (without a reliable backup) if flashing fails as well.
-
+### External/Hardware Flashing
 
 No photos yet available.
+
+**REMOVE all power sources and connectors from the machine, before doing this.
+This is to prevent short circuiting and power surges while flashing.**
+
+**Check the [hw-flashing guide](../install/simplified-hw-flashing.md),
+before moving onto the next step below.**
+
+Flash it: (With rpi-pico as an example, edit the line if needed.)
+
+	flashprog -p serprog:dev=/dev/ttyACM0,spispeed=16M -w filename.rom
 
 
 ### Set MAC address
@@ -196,13 +157,13 @@ Might apply for the 780 motherboards too.
 | **Released**               | 2009                                           |
 | **Chipset**                | Intel [Q45](https://en.wikipedia.org/wiki/List_of_Intel_chipsets#Core_2_chipsets) |
 | **CPU**                    | LGA 775, Intel [Core 2](https://en.wikipedia.org/wiki/List_of_Intel_processors#Intel_Core_2) |
-| **Graphics**               | [GMA 4500](https://www.techpowerup.com/gpu-specs/gma-x4500.c3116)                                       |
+| **Graphics**               | [GMA 4500](https://www.techpowerup.com/gpu-specs/gma-x4500.c3116)    |
 | **Audio**                  | Analog Devices ADI 1984A                       |
 | **Memory**                 | DDR3 SODIMMs (max 16 GB, 4x4 GB)               |
 | **Networking**             | Intel 82567LM                                  |
-| **Expansion Slots**        | PCIe 2.0; x16, x1, PCI                       |
+| **Expansion Slots**        | PCIe 2.0; x16, x1, PCI                         |
 | **Storage connectors**     | 4x SATA II                                     |
-| **Other Connectors**       | Headers; audio, dual USB 2.0                  |
+| **Other Connectors**       | Headers; audio, dual USB 2.0                   |
 | **I/O Ports on Front**     | 2x USB 2.0 , 2x Line-in (stereo/microphone)    |
 | **I/O Ports on Back**      | 2x Line-out (headphone/speaker) , 6x USB 2.0 , RJ-45 1GbE (Ethernet) , SCOM , VGA , Parallel , eSATA  |
 
