@@ -3,7 +3,7 @@ title: Install Libreboot on Supermicro X11SSH-(LN4)F
 x-toc-enable: true
 ...
 
-**[!!BACKUP everything!!](https://libreboot.org/docs/install/#howto-readwriteerase-the-boot-flash) just in case something fails.**
+**[!!BACKUP everything!!](./#howto-readwriteerase-the-boot-flash) just in case something fails.**
 
 <div class="specs">
 <center>
@@ -53,7 +53,7 @@ P*: Partially works with vendor firmware
 
 ### Get the ROM image
 
-**[Download](https://libreboot.org/download.html) from release**
+**[Download](../../download.md) from release**
 
 If you're using a release ROM, please ensure that you've inserted extra firmware
 required refer to the [guide](../install/ivy_has_common.md) for that (, failure
@@ -63,7 +63,7 @@ to adhere to this advice will result in a bricked machine):
 - Intel FSP (vendor blob)
 
 
-**[Build](https://libreboot.org/docs/build/) from source**
+**[Build](../build/) from source**
 
 To build it from source for both X11SSH-F/LN4F:
 
@@ -138,7 +138,7 @@ The other one is a 32MB soic_16 BMC flash chip next to the previous one.
 
 - A pin mod is needed.
 
-[Guide for mod](https://libreboot.org/extras.md#reversible-intel-8th-9th-gen-processors-support-on-older-6th-7th-gen-motherboards)
+[Guide for mod](../../extras.md#reversible-intel-8th-9th-gen-processors-support-on-older-6th-7th-gen-motherboards)
 
 
 ### Replacable Baseboard Management Controller firmware
@@ -163,7 +163,7 @@ With switcheroo_control; the DE, image/video encode/decode and browser ones can 
 
 (Provided the iGPU is not disabled if the dGPU added or using 2 dGPUs.)
 
-[Guide for dual-gpu setup](https://libreboot.org/extras.html#reversible-dual-gpu-setup-do-not-use-it-on-processorsmotherboards-without-integrated-graphics.)
+[Guide for dual-gpu setup](../../extras.md#reversible-dual-gpu-setup-do-not-use-it-on-processorsmotherboards-without-integrated-graphics.)
 
 
 ### Not working

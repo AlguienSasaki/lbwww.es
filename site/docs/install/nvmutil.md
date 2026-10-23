@@ -210,7 +210,7 @@ and flash it using external flashing equipment. The Libreboot
 project has a handy guide for this; it can be used for reading
 from and writing to the chip. See:
 
-* <https://libreboot.org/docs/install/spi.html>
+* [Libreboot 25XX NOR flashing guide](spi.md)
 
 If you're using an external programmer, the `-p internal`
 option should be changed accordingly. Read flashprog

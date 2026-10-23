@@ -4,7 +4,7 @@ x-toc-enable: true
 ...
 
 
-**[!!BACKUP everything!!](https://libreboot.org/docs/install/#howto-readwriteerase-the-boot-flash) just in case something fails.**
+**[!!BACKUP everything!!](./#howto-readwriteerase-the-boot-flash) just in case something fails.**
 
 
 <div class="specs">
@@ -61,10 +61,10 @@ the original Dell firmware. Otherwise, you only need the regular images that
 lack `_truncate` in the file name.
 
 
-**[Download](https://libreboot.org/download.html) from release**
+**[Download](../../download.html) from release**
 
 
-**[Build](https://libreboot.org/docs/build/) from source**
+**[Build](../build/) from source**
 
 The build target, when building from source, is thus:
 
@@ -184,7 +184,7 @@ change the MAC address, please read [nvmutil documentation](../install/nvmutil.m
 
 Might apply for the 780 motherboards too.
 
-[Guide for mods](https://libreboot.org/extras.md#dell-7010-9010-t1650-7020-9020-xe2-t1700-probably-other-dell-ones-too)
+[Guide for mods](../../extras.md#dell-7010-9010-t1650-7020-9020-xe2-t1700-probably-other-dell-ones-too)
 
 
 ### Expanded_Specifications

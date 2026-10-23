@@ -6,7 +6,7 @@ x-toc-enable: true
 
 **If your device had a Simple tag on the supported devices page or stated on that device's page it is possible with vendor firmware or you’re already running Libreboot and you don’t have flash protection turned on, [internal flashing](../install/) is possible.**
 
-**Otherwise visit the [simplified-hw-flashing](https://libreboot.org/install/simplified-hw-flashing.md) guide**
+**Otherwise visit the [simplified-hw-flashing](simplified-hw-flashing.md) guide**
 
 ### Disable /dev/mem protection
 

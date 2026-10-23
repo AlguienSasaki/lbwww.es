@@ -26,7 +26,7 @@ Haswell EliteBooks are making their way to Libreboot soon. Libreboot's goal
 is to eventually support everything coreboot does.
 
 Do you want to help add new boards yourself? You totally could give it a try,
-it's fun! The Libreboot [developers](https://libreboot.org/contact.html)
+it's fun! The Libreboot [developers](../contact.md)
 are very welcoming too.
 
 Check these documents out:

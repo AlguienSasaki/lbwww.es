@@ -3,7 +3,7 @@ title: Install Libreboot HP Compaq Elite 8300 USDT
 x-toc-enable: true
 ...
 
-**[!!BACKUP everything!!](https://libreboot.org/docs/install/#howto-readwriteerase-the-boot-flash) just in case something fails.**
+**[!!BACKUP everything!!](./#howto-readwriteerase-the-boot-flash) just in case something fails.**
 
 <div class="specs">
 <center>
@@ -26,7 +26,7 @@ x-toc-enable: true
 
 ### Get the ROM image
 
-**[Download](https://libreboot.org/download.html) from release**
+**[Download](../../download.html) from release**
 
 If you're using a release ROM, please ensure that you've inserted extra firmware
 required refer to the [guide](../install/ivy_has_common.md) for that (, failure
@@ -35,7 +35,7 @@ to adhere to this advice will result in a bricked machine)
 - Intel ME (vendor blob)
 
 
-**[Build](https://libreboot.org/docs/build/) from source**
+**[Build](../build/) from source**
 
 	./mk -b coreboot hp_elite_8300_usdt_16mb_uefi
 
@@ -74,7 +74,7 @@ Internal flashing is possible. OEM BIOS versions 2.87, 2.90, 2.99, and 3.08 are 
 compatible with this guide. BIOS 2.05 is confirmed **not** to work.
 
 If you have some other BIOS version, please do tell about it on
-[IRC](https://libreboot.org/contact.html) or comment on this
+[IRC](../../contact.md) or comment on this
 [issue](https://codeberg.org/libreboot/lbwww/issues/73),
 so this guide can be updated.
 
@@ -154,12 +154,12 @@ change the MAC address, please read [nvmutil documentation](../install/nvmutil.m
 
 ### Upgradable (socketed) GPU
 
-So far, only Quadro 1000M and 2000M have been tested with Libreboot (hp8560w). [Guide](https://libreboot.org/extras.md#reversible-upgradabale-socketed-gpus-in-older-laptops)
+So far, only Quadro 1000M and 2000M have been tested with Libreboot (hp8560w). [Guide](../../extras.md#reversible-upgradabale-socketed-gpus-in-older-laptops)
 
 If a MXM gpu is installed, all three monitor ports should be active. The igpu will use the top DisplayPort and the MXM gpu will
 operate the bottom DisplayPort & VGA. (Untested)
 
-It should be possible to use both gpus in a [dual-gpu setup](https://libreboot.org/extras.html#reversible-dual-gpu-setup-do-not-use-it-on-processorsmotherboards-without-integrated-graphics.).
+It should be possible to use both gpus in a [dual-gpu setup](../../extras.md#reversible-dual-gpu-setup-do-not-use-it-on-processorsmotherboards-without-integrated-graphics.).
 
 
 ### Expanded_Specifications

@@ -21,7 +21,7 @@ The libreboot website is available, in Markdown, from a Git repository:\
 <https://codeberg.org/libreboot/lbwww>
 
 Instructions for how to send patches are available here:\
-<https://libreboot.org/git.html>
+[Git page](../git.md)
 
 If you're working on a translation, make note of the commit ID from `lbwww.git`
 and keep track of further changes (to the English website) in that repository.

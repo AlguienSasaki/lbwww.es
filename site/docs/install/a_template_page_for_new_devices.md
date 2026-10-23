@@ -3,7 +3,7 @@ title: Install Libreboot on *Device_Name*
 x-toc-enable: true
 ...
 
-**[!!BACKUP everything!!](https://libreboot.org/docs/install/#howto-readwriteerase-the-boot-flash) just in case something fails.**
+**[!!BACKUP everything!!](./#howto-readwriteerase-the-boot-flash) just in case something fails.**
 
 <div class="specs">
 <center>
@@ -58,7 +58,7 @@ See: <https://minifree.org/product/*device_name*/>**
 
 ### Get the ROM image
 
-**[Download](https://libreboot.org/download.html) from release**
+**[Download](../../download.md) from release**
 
 If you're using a release ROM, please ensure that you've inserted extra firmware
 required refer to the [guide](../install/ivy_has_common.md) for that (, failure
@@ -67,7 +67,7 @@ to adhere to this advice will result in a bricked machine):
 - *include the needed firmware blobs, like Intel ME, Intel FSP for skylake =<*
 - 
 
-**[Build](https://libreboot.org/docs/build/) from source**
+**[Build](../build/) from source**
 
 	./mk -b coreboot *device_name_in_lbmk*
 

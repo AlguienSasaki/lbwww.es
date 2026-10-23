@@ -100,7 +100,7 @@ Using flashprog
 --------------
 
 Most linux distros will provide flashprog in their default repositories.
-You can also download flashprog in binary form with [libreboot utils.](https://libreboot.org/download.html#https)
+You can also download flashprog in binary form with [libreboot utils.](../../download.md#https)
 Here is an example using raspbian:
 
 ```

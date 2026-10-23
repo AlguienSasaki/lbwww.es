@@ -3,7 +3,7 @@ title: Install Libreboot on Gigabyte GA-G41M-ES2L
 ...
 
 
-**[!!BACKUP everything!!](https://libreboot.org/docs/install/#howto-readwriteerase-the-boot-flash) just in case something fails.**
+**[!!BACKUP everything!!](./#howto-readwriteerase-the-boot-flash) just in case something fails.**
 
 
 <div class="specs">
@@ -52,10 +52,10 @@ P*: Partially works with vendor firmware
 
 ### Get the ROM image
 
-**[Download](https://libreboot.org/download.html) from release**
+**[Download](../../download.md) from release**
 
 
-**[Build](https://libreboot.org/docs/build/) from source**
+**[Build](../build/) from source**
 
 The build target, when building from source, is thus:
 
