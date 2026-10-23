@@ -42,14 +42,18 @@ systems with integrated graphics, we turn it off by default.
 
 ### [Reversible] Dual-GPU setup (Do not use it on processors/motherboards without integrated graphics.)
 
+**This documentation pertains to *desktops*, not laptops. Libreboot only makes
+use of integrated onboard graphics at present, for laptops.**
+
+Do not follow this section on *non-desktop* computers.
+
 Usually used for efficient power management, but can be used to focus/accelerate task/applications too on the more powerful and usually free unit.
 
 (Using a graphics card with 2 gpu-s on it? Feel free to skip the I. part)
 
-
 **I. Part, Libreboot Firmware**
 
-Libre-/Coreboot by default disables the integrated graphics on the processors if a dedicated graphics card is present.
+On *desktop* computers, Libreboot by default disables the integrated graphics on the processors if a dedicated graphics card is present.
 
 It needs to be force enabled in the device's menuconfig:
 
@@ -62,7 +66,7 @@ Flash the tweaked firmware and boot. Keep/connect the screen's cable to the moth
 
 **II. Part, OS**
 
-Boot into a linux distro (works with almost every distro, using systemd) and install the switcheroo-control software;
+Boot into a linux distro (works with almost every distro) and install the switcheroo-control software;
 
 Debian based:
 
@@ -76,7 +80,8 @@ Fedora based:
 
 	sudo dnf install switcheroo-control -y
 
-After installation, enable the belonging service:
+After installation, enable the belonging service (NOTE: systemd, adapt
+accordingly if you use something else):
 
 	sudo systemctl enable --now switcheroo-control
 
@@ -117,7 +122,9 @@ Libreboot supports 4-core cpus (with B0 stepping) out of box without any mods ne
 
 But for those, interested in using 6+ core models (with U0/P0 steppings), connect the 2 pins marked on the processor in the [picture](https://hackaday.com/wp-content/uploads/2024/05/coffeetime_detail.png) (using a pencil usually enough, but a conductive slim tape is better).
 
-No need to isolate or cover anything, as we are using the libreboot firmware not vendor.
+*PLEASE ENSURE* to ensule the pins as shown on the guide, as these are grounds
+and several of them must be isolated to prevent a short-circuit when using
+the new CPU with this mod. Check the linked guide for reference:
 
 [Reference](https://hackaday.com/2024/05/31/intels-anti-upgrade-tricks-defeated-with-kapton-tape/)
 
