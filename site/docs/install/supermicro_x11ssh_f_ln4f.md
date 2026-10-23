@@ -3,7 +3,6 @@ title: Install Libreboot on Supermicro X11SSH-(LN4)F
 x-toc-enable: true
 ...
 
-**[!!BACKUP everything!!](./#howto-readwriteerase-the-boot-flash) just in case something fails.**
 
 <div class="specs">
 <center>
@@ -17,7 +16,7 @@ x-toc-enable: true
 | **Variants**               | X11SSH-F / X11SSH-LN4F                         |
 | **Released**               | 2017                                           |
 | **Chipset**                | Intel C236                                     |
-| **CPU**                    | LGA 1151 - Intel 6-9th gen. 80W TDP            |
+| **CPU**                    | LGA 1151; Intel 6-9th gen. 80W TDP            |
 | **Graphics**               | iGPU on cpu, but no display output             |
 | **Memory**                 | 64GB DDR4 SODIMMs (4x16 GB), ECC               |
 | **Architecture**           | x86_64                                         |
@@ -45,7 +44,9 @@ P*: Partially works with vendor firmware
 
 </div>
 
+
 *1 The server Intel ME (SPS), which is the server version of the ME. One difference is that SPS does not support CPU replacement detection, so it always redoes DRAM training from scratch on every boot, which makes booting take longer. Libreboot replaces SPS with ME, which fixes this.
+
 
 ### Get the ROM image
 
@@ -66,70 +67,26 @@ To build it from source for both X11SSH-F/LN4F:
 	./mk -b coreboot supermicro_x11ssh_f_16mb_uefi
 
 
-### Flash the ROM image
+### Internal/Software Flashing
 
-**Software**
-
-*Before internal flashing, [Disable /dev/mem protection](devmem.md) first.*
-
-*In short add this kernel parameter: iomem=relaxed(linux distro)/kernel.securelevel=-1(bsd distro)*
-
-**THEN REMOVE THIS KERNEL PARAMETER TO PREVENT UNAUTHORIZED/MALICIOUS ACCESS TO YOUR SYSTEM AFTER FLASHING LIBREBOOT.**
-
-(An important reminder for those who might forget to delete it, even better, replace it with lockdown=integrity / lockdown=confidentiality)
+**Default Libreboot firmwares [updatable](../install/simplified-sw-flashing.md).**
 
 
-Backup the previous (*working*) firmware (atleast) twice (to check and compare if reading it gone wrong and backups differs.)
-
-	flashprog -p internal -r Backup1.bin
-
-	flashprog -p internal -r Backup2.bin
-
-Check and compare those if reading from the flash were successful:
-
-	diff Backup1.bin Backup2.bin
-
-For more than 2:
-
-	shasum Backup1.bin Backup2.bin Backup3.bin
-
-If those differs, something gone wrong and proceeding further may **(DON'T) leave your device unrecoverable** (without a reliable backup) if flashing fails as well.
-
-
-If you're already running Libreboot, and you don't have flash protection turned on, internal flashing is possible.
-
-
-**Hardware**
-
-For general information, please refer to [25xx NOR flash
-instructions](../install/spi.md) - that page refers to use of socketed flash.
-
-
-Backup the previous (*working*) firmware twice (to check and compare if reading it gone wrong and backups differs.)
-
-	flashprog -p serprog:dev=/dev/ttyACM0,spispeed=16M -r Backup1.bin
-
-	flashprog -p serprog:dev=/dev/ttyACM0,spispeed=16M -r Backup2.bin
-
-Check and compare those if reading from the flash were successful:
-
-	diff Backup1.bin Backup2.bin
-
-For more than 2:
-
-	shasum Backup1.bin Backup2.bin Backup3.bin
-
-If those differs, something gone wrong and proceeding further may **(DON'T) leave your device unrecoverable** (without a reliable backup) if flashing fails as well.
-
+### External/Hardware Flashing
 
 <img tabindex=1 alt="Supermicro X11SSh-(LN4)F flash chip position" class="p" src="https://av.libreboot.org/supermicro_x11ssh_f_ln4f/supermicro_x11ssh_f_ln4f_soic8_1.jpg" /><span class="f"><img src="https://av.libreboot.org/supermicro_x11ssh_f_ln4f/supermicro_x11ssh_f_ln4f_soic8_1.jpg" /></span>
 <img tabindex=1 alt="Supermicro X11SSh-(LN4)F flash chip with programmer" class="p" src="https://av.libreboot.org/supermicro_x11ssh_f_ln4f/supermicro_x11ssh_f_ln4f_soic8_2.jpg" /><span class="f"><img src="https://supermicro_x11ssh_f_ln4f/supermicro_x11ssh_f_ln4f_soic8_2.jpg" /></span>
 
-
 That 16MB soic-8 flash chip is below the battery, highlighted, usually covered with a sticker and sometimes socketed,
 The other one is a 32MB soic_16 BMC flash chip next to the previous one.
 
+**Check the [hw-flashing guide](../install/simplified-hw-flashing.md) before moving onto the next step below.**
 
+Flash it: (With rpi-pico as an example, edit the line if needed.)
+
+	flashprog -p serprog:dev=/dev/ttyACM0,spispeed=16M -w filename.rom
+
+    
 ### 6-8 core processor support
 
 - A pin mod is needed.
