@@ -122,7 +122,7 @@ Libreboot supports 4-core cpus (with B0 stepping) out of box without any mods ne
 
 But for those, interested in using 6+ core models (with U0/P0 steppings), connect the 2 pins marked on the processor in the [picture](https://hackaday.com/wp-content/uploads/2024/05/coffeetime_detail.png) (using a pencil usually enough, but a conductive slim tape is better).
 
-*PLEASE ENSURE* to ensule the pins as shown on the guide, as these are grounds
+*PLEASE ENSURE* to isolate the pads as shown on the guide, as these are grounds
 and several of them must be isolated to prevent a short-circuit when using
 the new CPU with this mod. Check the linked guide for reference:
 
