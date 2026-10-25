@@ -137,7 +137,7 @@ that are organized into 512KB blocks with an 8 bit data bus (512KB x 8).
 The footprint for the BIOS chip used by the PS1 is obsolete and will need to 
 be adapted for a newer chip. This can be done with a carrier board. OpenBIOS has 
 been tested on actual PS1 hardware with 
-[this carrier board](https://codeberg.org/libreboot/ps1_bios_carriers), which 
+[this carrier board](https://codeberg.org/libreboot/ps1_carriers), which 
 is based around the Macronix MX29LV040CTI-70G. As of July 2025, this chip is 
 still supported and being produced.
 
@@ -145,7 +145,7 @@ There are two variants of the PS1 mask ROM chip: a 32 pin variant and a 40 pin
 variant. The 40 pin variant is rare and only present in extremely early versions
 of the PS1 hardware.
 
-![](https://av.libreboot.org/playstation/40pin_bios.jpg)
+![](https://av.libreboot.org/playstation/40pin.jpg)
 
 The much more common variant is the 32 pin mask ROM. This is likely the one in 
 your PS1
@@ -222,7 +222,7 @@ rubbing alcohol.
 #### Soldering the Carrier Board
 Solder the new carrier board to the PS1 motherboard.
 
-![](https://av.libreboot.org/playstation/new_bios_soldered.jpg)
+![](https://av.libreboot.org/playstation/new_soldered.jpg)
 
 #### Testing
 All you should have to do is plug in your PS1, turn it on, and watch the 

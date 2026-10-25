@@ -146,7 +146,7 @@ manual installation; please do this in addition to the normal dependencies.
 
 або навіть побудувати конкретні образи ROM, такі як:
 
-	./mk -b coreboot lenovo_thinkpad_x60_2mb_bios
+	./mk -b coreboot lenovo_thinkpad_x60_2mb
 
 or get a list of supported build targets:
 

@@ -64,7 +64,7 @@ to adhere to this advice will result in a bricked machine):
 
 To build it from source for both X11SSH-F/LN4F:
 
-	./mk -b coreboot supermicro_x11ssh_f_16mb_uefi
+	./mk -b coreboot supermicro_x11ssh_f_16mb
 
 
 ### Internal/Software Flashing

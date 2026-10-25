@@ -68,11 +68,11 @@ configuration and make the necessary modifications.
 For example, if one wanted to port the t420s, then the t420 config would be an excellent
 starting point.
 
-	cp -r config/module/coreboot/lenovo_thinkpad_t420_8mb_uefi/ config/module/coreboot/lenovo_thinkpad_t420_8mb_uefi
+	cp -r config/module/coreboot/lenovo_thinkpad_t420_8mb/ config/module/coreboot/lenovo_thinkpad_t420_8mb
 
 You can then easily modify the existing coreboot configs for you board via lbmk.
 
-	./mk -m coreboot lenovo_thinkpad_t420_8mb_uefi
+	./mk -m coreboot lenovo_thinkpad_t420_8mb
 
 This script will provide a curses interface through which you can easily modify the
 necessary variables and settings.
@@ -87,7 +87,7 @@ a corebootfb and txtmode config for each board (the script will handle this for 
 Now you can build and test the rom for `board.`
 Once you have finished this, you can try flashing the resulting rom to your board as a test.
 
-	./mk -b coreboot lenovo_thinkpad_t420_8mb_uefi
+	./mk -b coreboot lenovo_thinkpad_t420_8mb
 
 If you try to flash this rom and it fails, then there are two probable reasons:
 

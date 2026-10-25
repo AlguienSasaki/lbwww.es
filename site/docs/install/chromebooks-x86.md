@@ -76,11 +76,11 @@ This will show all of the targets, corresponding to boards. Then pick one from
 the list and do e.g.
 
 ```
-./mk -b coreboot cros_byt_kip_uefi
+./mk -b coreboot cros_byt_kip
 ```
 
 This will build a target. An image will appear under `bin/`, in this
-example `bin/mrchromebox_byt_kip_uefi/` - a lot of testing is needed before
+example `bin/mrchromebox_byt_kip/` - a lot of testing is needed before
 these appear as binaries in releases.
 
 Efforts are made to ensure tight sync with upstream at all times. We more or
@@ -92,7 +92,7 @@ Expect possible breakage on some newer platforms as unlike MrChromebox, we
 set the Intel HAP bit by default (on Intel platforms) to disable the Intel
 ME. Please report any issues you find to the Libreboot bug tracker.
 
-The above example target, `mrchromebox_byt_kip_uefi`, was in fact tested for
+The above example target, `mrchromebox_byt_kip`, was in fact tested for
 the Libreboot 26.10 release. Another issue is generally the use of vendor
 code in MrChromebox, currently done by the latter with direct distribution
 of such files in a special repository. Libreboot prefers, for release binaries,

@@ -3,13 +3,15 @@ title: Dell Latitude thermal throttling
 x-toc-enable: true
 ...
 
-On some Dell Latitude laptops, you may encounter random shutdowns on
-heavy load. We believe this is because the SMSC EC is overly conservative
-by default; it is in charge of handling thermals and fan control on this
-machine. Our theory is that coreboot needs to write certain EC commands
-to allow higher temperatures; please read:
+Recent Libreboot releases fixed this, and this page is provided for reference.
+You can exceed 87C even. Dell implements much more conservative thermal
+protection by default, that you can turn off.
 
-<https://codeberg.org/libreboot/lbmk/issues/202>
+The rest of this page pertains only to older Libreboot releases, prior
+to Libreboot 26.10rev10. Newer 26.10 revisions and releases after 26.10
+fix this issue entirely, but of course you still want to make sure that
+you don't reach such high temperatures. Thermal efficiency can be a bit
+shoddy on some of these Dell laptops, so do take care:
 
 Basically, what you need to do is:
 
@@ -50,7 +52,6 @@ long term life of your CPU.
 
 Regardless, thermal shutdown is extremely reliable on this machine, but Dell
 makes it shut down *earlier*, before it can even start to CPU throttle.
-
 
 [//]: # "SPDX-License-Identifier: GFDL-1.3-or-later"
 

@@ -77,7 +77,7 @@ your flash, thus removing any of the above protections.
 
 For example:
 
-	./mk -m coreboot lenovo_thinkpad_x200_8mb_uefi
+	./mk -m coreboot lenovo_thinkpad_x200_8mb
 
 Find this section: Security -> Boot media protection mechanism
 

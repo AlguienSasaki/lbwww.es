@@ -164,7 +164,7 @@ To get a list of targets, do:
 
 Then from the target list, you can pick one, for example:
 
-	./mk -b coreboot lenovo_thinkpad_x60_2mb_bios
+	./mk -b coreboot lenovo_thinkpad_x60_2mb
 
 ### Or maybe just build payloads?
 
@@ -187,7 +187,7 @@ Want to modify Libreboot?
 Check the [lbmk maintenance manual](../maintain/) for guidance. You may for
 example want to modify a config, e.g.:
 
-	./mk -m coreboot lenovo_thinkpad_x200_8mb_bios
+	./mk -m coreboot lenovo_thinkpad_x200_8mb
 
 Or perhaps add a new board! The maintenance manual will teach you how the
 Libreboot build system (lbmk) works!

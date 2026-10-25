@@ -36,7 +36,7 @@ to adhere to this advice will result in a bricked machine)
 
 **[Build](../build/) from source**
 
-	./mk -b coreboot hp_elite_8300_usdt_16mb_uefi
+	./mk -b coreboot hp_elite_8300_usdt_16mb
 
 
 ### Internal/Software Flashing

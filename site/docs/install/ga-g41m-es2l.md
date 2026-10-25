@@ -52,7 +52,7 @@ P*: Partially works with vendor firmware
 
 The build target, when building from source, is thus:
 
-	./mk -b coreboot gigabyte_ga_g41m_es2l_2mb_bios
+	./mk -b coreboot gigabyte_ga_g41m_es2l_2mb
 
 
 ### Internal/Software Flashing

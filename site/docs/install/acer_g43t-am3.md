@@ -53,11 +53,11 @@ P*: Partially works with vendor firmware
 
 For one only:
 
-	./mk -b coreboot acer_g43t_am3_2mb_bios
+	./mk -b coreboot acer_g43t_am3_2mb
 
 To build it to use both flash chips:
 
-	./mk -b coreboot acer_g43t_am3_16mb_bios
+	./mk -b coreboot acer_g43t_am3_16mb
 
 
 ### Internal/Software Flashing

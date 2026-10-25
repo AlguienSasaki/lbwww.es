@@ -956,19 +956,14 @@ GRUB/SeaBIOS setup (SeaGRUB) back.
 Subsequent revisions to the release restored BIOS mode images, so now you have
 a choice. Example:
 
-* `lenovo_thinkpad_t480_16mb_bios`
-* `lenovo_thinkpad_t480_16mb_uefi`
+* `lenovo_thinkpad_t480_16mb`
 
-When select an image from the release, you will find one set ending
-with `_bios` in the name, and another with `_uefi`.
+The new naming scheme makes sorting through images easier. Image names with
+seabios or seagrub in the file name are BIOS-based (legacy setup).
 
-The one with `_bios` uses the *old* setup, where SeaBIOS is the primary payload
-and chainloads GRUB (optionally) at boot time. This set matches the *old*
-config and does *not* implement UEFI at all.
-
-The one with `_uefi` uses the *new* setup, where EDK2 is the primary payload;
-GRUB EFI and SeaBIOS CSMWrap builds are available to select from the boot
-menu in EDK2, via ESC keypress at startup.
+Images with `edk2` in the file name are UEFI-based; 26.10rev10 and higher
+also prefix images with `bios_` or `uefi_` - U-Boot and EDK2 images are `uefi_`,
+while SeaBIOS and SeaGRUB images are `bios_`.
 
 Issues with S3 resume were found on Linux distros in the initial release,
 when booted using CSMWrap; these will of course be fixed, in addition to
@@ -977,17 +972,16 @@ offering the older setup as some users may prefer it.
 
 The plan initially was to make lbmk much simpler, thus EDK2-only on most
 boards. For the time being, Libreboot will maintain dual configuration in
-this manner. Please note that some legacy boards only have `_bios`, and some
-very new boards (e.g. Chromebooks) *only* have `_uefi`.
+this manner.
 
 A new, more unified naming scheme was also introduced in revisions to the
-release, as above. For example, the arm64 targets all say `_uefi` but actually
+release, as above. For example, the arm64 images all say `uefi_` but actually
 use U-Boot, not EDK2; U-Boot implements a subset of the UEFI specification,
 and it is the default payload on ARM64 Chromebooks while Intel/AMD Chromebooks
 all use EDK2.
 
 FreeBSD and DragonFlyBSD users who set up on SeaBIOS txtmode before are
-advised to once again choose one of the `_bios` images, picking any SeaBIOS
+advised to once again choose one of the `bios_` images, picking any SeaBIOS
 image with `txtmode` in the filename. This is for bootloader compatibility,
 irrespective of further setup - conversion to EFI is recommended, so that
 you can use the newer EDK2 setup.
@@ -1396,10 +1390,10 @@ older release archives. Please rename accordingly, or just use image tarballs
 from the current rev6 release and beyond. Naming scheme is stable now
 in Libreboot, thus:
 
-* `vendor_boardname_uefi`
-* `vendor_boardname_variant_uefi`
+* `vendor_boardname`
+* `vendor_boardname_variant`
 
-For example, variant can be 8mb on `lenovo_x200_8mb_uefi`. The E6400 Nvidia
+For example, variant can be 8mb on `lenovo_x200_8mb`. The E6400 Nvidia
 GPU variant never worked properly from day one, since the heatsink is cooled
 with a pad and the machine regularly overheats; nouveau is also buggy in
 Libreboot, on this board. Software-based llvmpipe rendering works fine, but
@@ -1425,7 +1419,7 @@ Due to Libreboot's rapidly expanding hardware support, which will include
 unlocking more Chromebooks for binary release within this very release
 series, it's important that the user be able to find images more easily
 on rsync. With the new naming scheme, it is much easier to find what
-you want because images are named `vendor_model_variant_size_bios` or `_uefi`.
+you want because images are named `vendor_model_variant_size` for example.
 
 The new naming scheme is also more friendly to scripts (build systems).
 
@@ -1448,3 +1442,63 @@ that caused a build error in rev8; it was left over from when I removed
 Dell Latitude E6400 VGA ROM handling, as Libreboot now only supports the
 Intel GPU variant of this board (Nvidia model was always broken so it has
 just been deleted).
+
+Libreboot 26.10rev10, 25 Oct 2026
+------------------
+
+Minor fixes and usability improvements:
+
+* `mk`: Errors now properly printed to stderr, where an error occurs in lbmk.
+* `rom.sh`: Greatly simplified MAC address randomisation, now you can re-build
+  easily with `XBMK_MAC` export reset each time, or just keep using mk inject.
+  Then extract each time, for flashing; this makes it easier to handle multiples
+  of the same board with different Intel GbE MAC addresses in each.
+* General simplifications to lbmk, for example GRUB EFI and GRUB coreboot are
+  now compiled in the same coreboot targets; coreboot targets that have EFI
+  and BIOS images have just one target now, not separate `_bios` or `_uefi`
+  image sets. The same given target now has both types of images contained
+  in each tar archive.
+* inject function: the name of the tarball is now printed, making it more
+  clear to the user that a tarball was modified.
+* Dummy EDK2 builds not generated in `bin/` as they are not intended for
+  general use. Only the `UEFIPAYLOAD.fd` files from `elf/` are used anyway,
+  so to avoid confusing users, only the final real board build is provided 
+  in bin e.g. ThinkPad T480 build.
+* EFI- and non-EFI targets on x86, where EDK2 is supported, both now have
+  SMMSTORE in exactly the same configuration. This ensures that users swapping
+  between the two can do so interchangeably, while preserving SMMSTORE.
+* Removed experimental EDK2 builds on ASUS Fam15h boards as they were never
+  intended for release anyway; these targets shall continue to use the legacy
+  SeaGRUB setups as it is more rigorously tested on these machines. Users can
+  still add EDK2 to the build if they want.
+* Backwards compatibility introduced in `./mk inject` commands, such that it
+  works on tarballs from older Libreboot releases. This is to mitigate the fact
+  that the image names were changed heavily in this and other 26.10 revisions.
+
+Of note, this revision backports a major coreboot patchset from upstream:
+
+Nicholas Chin has done extensive rework on battery handling for Dell Latitude
+models. It is no longer done in SMM. It is now done in a generalised ACPI
+framework, and existing S3 fixes are done there (patching to prevent DRAM
+from powering down in S3).
+
+This patchset also adds support for battery status in EC, via the new ACPI
+patching. This means you can now monitor battery usage / charge level in
+ACPI-enabled operating systems.
+
+The following features are still broken (and previously broken too), on
+Dell Latitudes:
+
+* Brightness controls via hotkey(software-based controls work except on
+  the Latitude E4300)
+* Physical wireless switch (soft enable/disable works fine)
+* Battery charge thresholds (vendor firmware seems to have it on E6430,
+  but coreboot and Libreboot do not).
+* Wake (S3 resume) on lid open; must press power button to wake from suspend,
+  but this was already true.
+
+The new EC handler code is more efficient, on Dell Latitudes. Doing it all
+in SMM violates one of coreboot's main design criteria... putting everything
+in SMM is bloat. Doing it all in ACPI is just more performance-efficient, and
+easier to maintain. Note that these patches are still under review on the
+coreboot project, but they were deemed stable enough for a Libreboot release.

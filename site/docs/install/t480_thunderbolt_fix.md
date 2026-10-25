@@ -61,8 +61,8 @@ for you. Run the following commands in lbmk:
 
 Commands:
 
-	./mk -d coreboot lenovo_thinkpad_t480s_16mb_uefi
-	./mk -d coreboot lenovo_thinkpad_t480_16mb_uefi
+	./mk -d coreboot lenovo_thinkpad_t480s_16mb
+	./mk -d coreboot lenovo_thinkpad_t480_16mb
 
 You will find the files at these locations in lbmk:
 

@@ -62,11 +62,11 @@ libreboot як `плата.`
 Наприклад, якщо хтось хотів би перенести t420s, тоді конфігурація t420 була би відмінною
 початковою точкою.
 
-	cp -r config/module/coreboot/lenovo_thinkpad_t420s_8mb_uefi/ config/module/coreboot/lenovo_thinkpad_t420s_8mb_uefi
+	cp -r config/module/coreboot/lenovo_thinkpad_t420s_8mb/ config/module/coreboot/lenovo_thinkpad_t420s_8mb
 
 Ви можете потім легко модифікувати існуючі конфігурації coreboot для вашої плати через lbmk.
 
-	./mk -m coreboot lenovo_thinkpad_t420s_8mb_uefi
+	./mk -m coreboot lenovo_thinkpad_t420s_8mb
 
 Цей сценарій надать інтерфейс curses, через який ви можете легко модифікувати
 потрібні змінні та налаштування.

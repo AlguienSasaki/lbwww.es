@@ -130,7 +130,7 @@ on 13 June 2023)
 *   e75dafa4 - Merge pull request 'Add 4MB version of HP 8200 SFF' (#72) from Riku_V/lbmk:hp8200sff_4mb into master (3 days ago) <Leah Rowe>
 |\  
 | * 0f7a5386 - Add 4MB version of HP 8200 SFF (2 weeks ago) <Riku Viitanen>
-* |   e6d4aeb2 - Merge pull request 'Update Git revision for bios_extract' (#74) from nic3-14159/lbmk:update_bios_extract into master (3 days ago) <Leah Rowe>
+* |   e6d4aeb2 - Merge pull request 'Update Git revision for bios_extract' (#74) from nic3-14159/lbmk:update_extract into master (3 days ago) <Leah Rowe>
 |\ \  
 | * | d059fefe - Update Git revision for bios_extract (3 days ago) <Nicholas Chin>
 |/ /  

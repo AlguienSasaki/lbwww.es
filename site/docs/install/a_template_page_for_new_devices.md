@@ -20,7 +20,7 @@ x-toc-enable: true
 | **Graphics**               | *integrated_gpu_device* |
 | **Memory**                 | *max_capacity_usually_in_GB* *ram_gen* SODIMMs (*avaliable_slots_x_max_GB_per_module*)    |
 | **Architecture**           | *Device_Arch*                                         |
-| **Original boot firmware** | *Vendor_firmware_name_with_UEFI_and_or_bios*                             |
+| **Original boot firmware** | *Vendor_firmware_name_with_UEFI_and_or*                             |
 | **Intel ME/AMD PSP**       | *Is_it_present_in_vendor_firmware_and_removable_or_disableable*      |
 | **Flash chip**             | *type_and_size*           |
 

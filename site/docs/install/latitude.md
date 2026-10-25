@@ -8,6 +8,9 @@ variant. The Nvidia one never worked reliably; it was removed in the
 Libreboot 26.10 release series. It never worked even when it was in the tree.
 Please just only use the Intel GPU version of this board.**
 
+Generally, non-Intel-GPU variants are incompatible for any Dell Latitude.
+Please only ever use models that come with Intel graphics.
+
 Open source BIOS/UEFI firmware
 ------------------------------
 
@@ -47,15 +50,6 @@ MAC address
 
 Make sure to set your own MAC address in the ROM image before flashing.
 Please read the [nvmutil manual](nvmutil.md) which says how to do this.
-
-Thermal safety
---------------
-
-**Thermal safety**: this machine shuts down very quickly, when the machine
-exceeds 80c CPU temperature, which is far more conservative than on most
-laptops (non-Dell ones), so you should make sure that your thermals are
-excellent. More info available [here](../install/dell_thermal.md). This is a
-known bug, but otherwise the machine will be mostly stable.
 
 Machine-specific notes
 ----------------------
@@ -174,6 +168,43 @@ likely one chip. 12MB is usually SPI1 8MB and SPI2 4MB so you would do:
 
 If in doubt, just ask on Libreboot IRC.
 
+Improvements in Libreboot 26.10rev10
+-----------
+
+This also applies to releases newer than Libreboot 26.10rev10,
+either in the 26.10 release series, or major releases after 26.10:
+
+Nicholas Chin has done extensive rework on battery handling for Dell Latitude
+models. It is no longer done in SMM. It is now done in a generalised ACPI
+framework, and existing S3 fixes are done there (patching to prevent DRAM
+from powering down in S3).
+
+This patchset also adds support for battery status in EC, via the new ACPI
+patching. This means you can now monitor battery usage / charge level in
+ACPI-enabled operating systems.
+
+The new EC handler code is more efficient, on Dell Latitudes. Doing it all
+in SMM violates one of coreboot's main design criteria... putting everything
+in SMM is bloat. Doing it all in ACPI is just more performance-efficient, and
+easier to maintain. Note that these patches are still under review on the
+coreboot project, but they were deemed stable enough for a Libreboot release.
+
+Errata
+----
+
+The following features are still broken (and previously broken too), on
+Dell Latitudes:
+
+* Brightness controls via hotkey(software-based controls work except on
+  the Latitude E4300)
+* Physical wireless switch (soft enable/disable works fine)
+* Battery charge thresholds (vendor firmware seems to have it on E6430,
+  but coreboot and Libreboot do not).
+* Wake (S3 resume) on lid open; must press power button to wake from suspend,
+  but this was already true on earlier Libreboot releases. Please make sure
+  to press the power button instead.
+
+These can be fixed in a future release.
 
 [//]: # "SPDX-License-Identifier: GFDL-1.3-or-later"
 
