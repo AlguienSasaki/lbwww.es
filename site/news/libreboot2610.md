@@ -1502,3 +1502,27 @@ in SMM violates one of coreboot's main design criteria... putting everything
 in SMM is bloat. Doing it all in ACPI is just more performance-efficient, and
 easier to maintain. Note that these patches are still under review on the
 coreboot project, but they were deemed stable enough for a Libreboot release.
+
+Building Libreboot 26.10 sources
+---------------
+
+The Libreboot 26.10 release series has *one* extra dependency compared
+to the master branch of lbmk: 32-bit libc headers needed on 64-bit build hosts,
+for 32-bit memtest86+ builds.
+
+Memtest86+ isn't cross-compiled on lbmk, and not every distro will have 32-bit
+headers available for libc, so it's 64-bit-only in lbmk master. 32-bit memtest
+is used on 32-bit-only hardware like ThinkPad X60, as a nice-to-have.
+
+E.g. `lib32-glibc` package on Arch Linux.
+
+Use of x86-64 is assumed, when building Libreboot releases. We do also
+have 32-bit support, for building 32-bit machines on 32-bit hosts. For
+example, a Thinkpad X60 can be used to build X60 images in lbmk.
+
+Please just make sure to have 32-bit libc headers available on 64-bit hosts
+when building the 26.10 release series - maintaining this dependency in
+the main branch is unacceptable, so lbmk would have to cross-compile payloads,
+which is in fact on TODO but not currently handled (lbmk uses host toolchains
+for nearly everything except coreboot and U-Boot, which are both compiled with
+crossgcc, but non-U-Boot payloads are built with the host toolchain).
