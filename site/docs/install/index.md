@@ -96,6 +96,13 @@ does, in Libreboot.
 The MrChromebook coreboot tree contains support for the following Chromebook
 boards, most of which Libreboot now also has direct support for:
 
+**WARNING: Make/model don't always match; sometimes the same model can
+  use different hardware. Please try only to use serial numbers corresponding
+  to proper codenames when flashing, and cross reference that with what's
+  included in the Libreboot build system.***
+
+The list of models/makes for chromebooks may be incomplete. Please make sure
+to use codenames and serial numbers when identifying your device.
 
 #### Google Nyan Blaze (NVIDIA Tegra K1 (CD570M))
 
@@ -1021,7 +1028,6 @@ Codenames:
 * Volteer
 * Volteer2
 
-# Reworked Volteer2 prototype, Haven chip replaced with Dauntless demo board* Volteer2_Ti50
 * Voxel (Acer Chromebook Spin 713 (CP713-3W))
 
 #### Google Gru (Rockchip RK3399)

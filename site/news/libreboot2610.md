@@ -989,6 +989,14 @@ you can use the newer EDK2 setup.
 Chromebook list
 -----------
 
+**WARNING: Make/model don't always match; sometimes the same model can
+  use different hardware. Please try only to use serial numbers corresponding
+  to proper codenames when flashing, and cross reference that with what's
+  included in the Libreboot build system.***
+
+The list of models/makes for chromebooks may be incomplete. Please make sure
+to use codenames and serial numbers when identifying your device.
+
 The MrChromebook coreboot tree contains within it the following
 Chromebooks, most of which Libreboot has direct support for:
 
