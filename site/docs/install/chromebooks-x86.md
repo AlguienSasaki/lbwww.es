@@ -3,6 +3,9 @@ title: EDK2 payload in Libreboot, plus Chromebooks.
 x-toc-enable: true
 ...
 
+**Check [the list](chromebook-codenames.md) to get a full list of Chromebooks.
+Libreboot supports most of them!**
+
 This page also contains general guidance about EDK2 on all boards that
 use it, which is nearly all boards; many non-Chromebooks have EDK2 now
 as the default payload, in Libreboot.
