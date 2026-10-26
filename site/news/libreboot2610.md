@@ -1924,8 +1924,6 @@ Codenames:
 
 * Volteer
 * Volteer2
-
-# Reworked Volteer2 prototype, Haven chip replaced with Dauntless demo board* Volteer2_Ti50
 * Voxel (Acer Chromebook Spin 713 (CP713-3W))
 
 ### Google Gru (Rockchip RK3399)
