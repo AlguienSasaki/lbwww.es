@@ -991,7 +991,7 @@ List of Chromebooks added
 
 * Google Anahera
 * Google Aurash
-* Google Banshee
+* Google Banshee (Framework Laptop Chromebook Edition)
 * Google Bujia
 * Google Caboc
 * Google Constitution
