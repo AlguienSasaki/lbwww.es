@@ -1315,3 +1315,16 @@ the main branch is unacceptable, so lbmk would have to cross-compile payloads,
 which is in fact on TODO but not currently handled (lbmk uses host toolchains
 for nearly everything except coreboot and U-Boot, which are both compiled with
 crossgcc, but non-U-Boot payloads are built with the host toolchain).
+
+Libreboot 26.10rev11, 27 Oct 2026
+----------------
+
+Minor tweaks to RK3399 coreboot chromebooks (fix payload setup). Switching
+to defconfigs nuked `CONFIG_PAYLOAD_NONE` for some reason - more investigation
+needed, but rk3399 configs were switched back to full configs for now. This
+bug does not affect Intel/AMD boards, so they are still defconfig. Without
+this setting, lbmk's payload insertion is skipped. This is a bug upstream
+that needs to be fixed, mitigated for now in this revision release.
+
+Moved RK3399 chromebooks in coreboot to their own tree, for coreboot
+and u-boot, both trees named `cros_arm`.
