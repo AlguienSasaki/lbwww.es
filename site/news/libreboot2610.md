@@ -2,6 +2,10 @@
 % Leah Rowe
 % 15 October 2026
 
+**!!CRITICAL: Users who installed Libreboot 26.10 prior to rev13 are advised
+to install at least rev13 or higher, if using PXE boot on EDK2 as a remote
+code execution bug was fixed post-release via backport of an upstream patch.!!**
+
 **You can find today's release
 in <https://rsync.libreboot.org/stable/26.10rev12/> or you can use one of
 the [mirrors](../download.md).**
@@ -1353,3 +1357,35 @@ pointless work.
 Thus, CSMWrap was removed. It was assumed that it would be more stable in
 the release, and that we'd only do UEFI images, but this design change was
 canceled.
+
+Libreboot 26.10rev13, 28 Oct 2026
+-------------
+
+Fixed a critical remote code execution bug in EDK2, as reported by
+Intel's Tianocore Security Advisory here:
+
+<https://github.com/tianocore/edk2/security/advisories/GHSA-99cj-7hg9-mp4m>
+
+An unchecked bound on incoming ICMP packets allowed attackers to send large
+packets during the PXE boot window, which could allow the ICMP buffer in EDK2
+to overflow and, hence, the attacker could run unsigned code in an unprivileged
+context.
+
+Tianocore released this patch to fix the CVE:
+
+<https://github.com/tianocore/edk2/pull/13302> - `fixes CVE-2026-97631`; users
+who did not boot with PXE were unaffected by this issue.
+
+Libreboot 26.10rev14, 28 Oct 2026
+------------
+
+Backported a patch from MrChromebox which fixes SD card booting
+on (tested models) ThinkPad W541 and Dell Latitude E7240:
+
+<https://github.com/MrChromebox/edk2/commit/c205cebb1a534261c9aef428c37f889c3661e2cb>
+
+Fixes a hanging bug in EDK2 when booting operating systems via SD card on
+affected hardware. The fix is done by reverting a previous patch that forced
+eMMC probing as some soldered-down mmc flash may report itself as removeable;
+see notes in the patch, linked above. This patch was backported into Libreboot
+EDK2, for the 26.10 release series.
