@@ -132,7 +132,6 @@ sync with MrChromebox in such a way that the ROM images are interchangeable.
 We modify MrChromebooks in the following ways:
 
 * Added EFI GRUB build in PE32 section
-* Added EFI SeaBIOS CSM (CSMWrap) in PE32 section
 * Added Memtest86\+ in PE32 section.
 * Enabled iPXE by default on non-Chromebooks.
 

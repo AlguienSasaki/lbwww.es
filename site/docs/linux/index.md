@@ -31,9 +31,14 @@ modern EFI-based bootloaders e.g. systemd-boot, with full Linux UKI and you
 could even enrol your own keys to use SecureBoot(not enabled by default).
 
 Users who have existing Linux installations booting via SeaBIOS or GRUB can
-use the GRUB EFI and SeaBIOS CSM compatibility modules. Press ESC in the
+use the GRUB EFI compatibility module if applicable, but please note that
+Libreboot 26.10rev12 removed use of CSMWrap (SeaBIOS CSM). Press ESC in the
 EDK menu to get the boot menu; you could also set the boot order in EDK2
-to boot one of these first.
+to boot GRUB EFI first if that works for booting your Linux distro. If you
+need SeaBIOS or SeaGRUB, these images are still provided on most non-Chromebook
+boards. **Please know that EDK2 is preferred, on Intel/AMD boards, and many
+future mainboards will only have EDK2 but will always have GRUB EFI
+available in the boot menu.**
 
 The next sections pertain to legacy setups. Please note however that the
 hardened GRUB setup is still useful even in an EFI context (support for

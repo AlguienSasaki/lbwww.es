@@ -3,7 +3,7 @@
 % 15 October 2026
 
 **You can find today's release
-in <https://rsync.libreboot.org/stable/26.10rev10/> or you can use one of
+in <https://rsync.libreboot.org/stable/26.10rev12/> or you can use one of
 the [mirrors](../download.md).**
 
 Libreboot is free, open source boot firmware replacing proprietary BIOS/UEFI
@@ -40,6 +40,9 @@ The first major change is:
 Over 200 Intel/AMD Chromebooks added
 ---
 
+**Check [the list](../docs/install/chromebook-codenames.md) to get a full list
+of Chromebooks. Libreboot supports most of them!**
+
 The full list of boards is quite long, so it's shown at the end of this
 article. All of them!
 
@@ -67,8 +70,9 @@ Libreboot makes these modifications to MrChromebox coreboot, in its version:
 * Unlock IFD regions via ifdtool (with quirks properly handled), setting them
   read-write at build time. This is done instead of modifying every Intel
   Flash Descriptor provided by MrChromebox, of which there are hundreds.
-* CSMWrap added inside EDK2 (SeaBIOS CSM wrapped in EFI) for backward
-  compatibility with bare metal SeaBIOS as in older Libreboot releases.
+* ~~CSMWrap added inside EDK2 (SeaBIOS CSM wrapped in EFI) for backward
+  compatibility with bare metal SeaBIOS as in older Libreboot releases.~~
+  Removed in LIbreboot 26.10rev12
 * GRUB EFI build provided inside EDK2, for backward compatibility also - it
   behaves, from a user's perspective, exactly like the coreboot-payload
   version of GRUB and even reads configs from CBFS in the same way.
@@ -80,10 +84,7 @@ Libreboot makes these modifications to MrChromebox coreboot, in its version:
 
 The additional payloads are, as above, available in the boot menu via ESC
 keypress at startup. iPXE is also enabled by default, as in upstream, on
-specific boards. EFI GRUB and CSM SeaBIOS have **replaced** the coreboot
-payload versions of these; bare metal SeaBIOS/GRUB are now deprecated
-and may be removed in a future Libreboot release, although they can be
-re-enabled by those willing to build Libreboot from source.
+specific boards.
 
 This is NOT a fork of MrChromebox, which is to be regarded as Libreboot's
 upstream on Intel/AMD Chromebooks. Efforts will be made, as with regular
@@ -236,7 +237,7 @@ Nearly all major upstream revisions updated:
   commit ID as of 27 May 2026. This is a heavily improved fork of coreboot
   from version `4.11_branch`, for improved initialisation reliability on
   AMD FAM15H hardware e.g. ASUS KGPE-D16.
-* SeaBIOS (non-CSM): Updated to 81ec9ec0bcf45df11fb7f98339ec9036b546fca0
+* SeaBIOS (coreboot payload): Updated to 81ec9ec0bcf45df11fb7f98339ec9036b546fca0
   commit ID as of 28 July 2026.
 
 The `4.11_branch` tree of coreboot was removed, because we now use the
@@ -279,8 +280,8 @@ More hardware added besides Chromebooks:
 * Removed `release="n"` on the ThinkPad X301 target. It actually boots just
   fine, although it is quite slow. EDK2 even works.
 
-We add SeaBIOS CSM and GRUB EFI builds
-inside EDK2, for parity with Libreboot's older GRUB/SeaBIOS payload setups.
+We add a GRUB EFI build
+inside EDK2, for parity with Libreboot's older GRUB payload setup.
 The EFI payloads work very much the same.
 
 Use of EDK2 makes it easier to support newer machines, which will be the focus
@@ -295,9 +296,9 @@ This is very much a features release. A *lot* of feature changes were made!
 
 * EDK2 payload support on all Intel/AMD boards with at least 4MB flash.
   This uses the MrChromebox version of EDK2, and Libreboot has made extensive
-  modifications e.g. add GRUB EFI and SeaBIOS CSM (CSMwrap) builds to it; these
-  are provided as backward compatibility with older lone SeaBIOS/GRUB payload
-  setups and should still boot existing Linux/BSD installations.
+  modifications e.g. add GRUB EFI build; this
+  is provided as backward compatibility with older lone GRUB payload
+  setups and should still boot existing Linux distros in a manner compatible.
 * iPXE boot method added via EDK2 payload (ESC menu) - only EDK2 (not available
   in the lone SeaBIOS payload on older boards).
 * Added new command `./mk import_uboot` for auto-importing U-Boot configs
@@ -467,9 +468,9 @@ Config changes
 * Optimised GRUB modules; all FS modules now included, fewer errors shown in
   the GRUB shell at boot. Modules generally optimised to ensure that there is
   still not a lot of flash space used compared to the default upstream setup.
-* Added `xxd` to dependencies, needed by CSMWrap when making SeaBIOS EFI builds
+* ~~Added `xxd` to dependencies, needed by CSMWrap when making SeaBIOS EFI builds
   as it runs `xxd -i` on SeaBIOS CSM builds to create header files that are
-  then wrapped inside CSMWrapper's shim code.
+  then wrapped inside CSMWrapper's shim code.~~ CSMWrap removed in 26.10rev12.
 * Corrected the Dell OptiPlex 5050 DMI string code to say 5050 SFF, not
   3050 Micro.
 * Don't use dell.com as primary download mirrors in the vendor inject script.
@@ -965,10 +966,11 @@ Images with `edk2` in the file name are UEFI-based; 26.10rev10 and higher
 also prefix images with `bios_` or `uefi_` - U-Boot and EDK2 images are `uefi_`,
 while SeaBIOS and SeaGRUB images are `bios_`.
 
-Issues with S3 resume were found on Linux distros in the initial release,
+~~Issues with S3 resume were found on Linux distros in the initial release,
 when booted using CSMWrap; these will of course be fixed, in addition to
 other CSMWrap errata, in a future revision. Moreover, it made sense to continue
-offering the older setup as some users may prefer it.
+offering the older setup as some users may prefer it.~~ CSMWrap removed in
+Libreboot 26.10rev12, so you *must* use bare SeaBIOS now if you want SeaBIOS.
 
 The plan initially was to make lbmk much simpler, thus EDK2-only on most
 boards. For the time being, Libreboot will maintain dual configuration in
@@ -985,36 +987,6 @@ advised to once again choose one of the `bios_` images, picking any SeaBIOS
 image with `txtmode` in the filename. This is for bootloader compatibility,
 irrespective of further setup - conversion to EFI is recommended, so that
 you can use the newer EDK2 setup.
-
-Chromebook list
------------
-
-**WARNING: Make/model don't always match; sometimes the same model can
-  use different hardware. Please try only to use serial numbers corresponding
-  to proper codenames when flashing, and cross reference that with what's
-  included in the Libreboot build system.***
-
-The list of models/makes for chromebooks may be incomplete. Please make sure
-to use codenames and serial numbers when identifying your device.
-
-The MrChromebook coreboot tree contains within it the following
-Chromebooks, most of which Libreboot has direct support for:
-
-**Check [the list](../docs/install/chromebook-codenames.md) to get a full list
-of Chromebooks. Libreboot supports most of them!**
-
-CSMWrap errata
----------
-
-CSMWrap is the SeaBIOS CSM build provided inside EDK2. It hogs an entire CPU
-core at boot, so e.g. quad-core will show up as three-core inside Linux. It's
-a known limitation that will be corrected in a future release, due to the design
-of CSMWrap. If you need backward compatibility, it's better to use the GRUB EFI
-build instead which does not have this problem. Both GRUB EFI and SeaBIOS CSM
-are available in the EDK2 menu via ESC keypress at boot time.
-
-Users are best served just switching to native UEFI boot with ESP, using
-Libreboot's EDK2 payload.
 
 Libreboot 26.10rev1, 17 Oct 2026
 -------------------------------
@@ -1045,7 +1017,7 @@ Here is the full list of changes, from recent to oldest:
   previously only 64-bit builds were provided on 64-bit capable
   hardware. This brings legacy hardware more into parity.
 * Enable use of EDK2 payload on Dell OptiPlex 780 variants, as
-  the default payload booting GRUB EFI and SeaBIOS CSM.
+  the default payload optionally booting GRUB EFI.
 * Marked q45t m target source-only due to lack of testing.
 * Marked Nvidia GPU variants of Dell Latitude E6400 source-only due
   to lack of testing.
@@ -1328,3 +1300,56 @@ that needs to be fixed, mitigated for now in this revision release.
 
 Moved RK3399 chromebooks in coreboot to their own tree, for coreboot
 and u-boot, both trees named `cros_arm`.
+
+Libreboot 26.10rev12, 28 Oct 2026
+---------------
+
+CSMWrap payload deleted from EDK2. It was decided that Libreboot 26.10 would
+be UEFI-only in earlier revisions, but I later re-added bare SeaBIOS/SeaGRUB
+payloads which makes CSMWrap redundant. If you want SeaBIOS, then please use
+the SeaBIOS images or run CSMWrap yourself; you can use CSMWrap builds in ESP,
+booted from EDK2. Bundling it in lbmk is a maintainer burden, and several
+major bugs were reported in CSMWrap (broken S3 resume, weird graphical issues
+on some boards, etc). My OpenBSD installation, that I use for my LibreWolf
+port updates (I maintain the LibreWolf port in OpenBSD) also crashed and
+brought down my entire package database; it's possible that CSMWrap may have
+produced buggy conditions that led to this, though it could have just been a
+bad SSD.
+
+Yes, CSMWrap is a liability to maintain in lbmk. We already know that the
+bare coreboot payload of SeaBIOS works well, and this is available on most
+boards. We will provide this instead.
+
+Users are still recommended to use the new EDK2-based images. Note that the
+GRUB EFI and Memtest86+ EFI builds are still available in EDK2, and these do
+provide value. GRUB EFI especially, can be used to unlock encrypted `/boot`
+and bypass the need for an ESP, while still having an EFI runtime in the Linux
+distro of the user's choice.
+
+This change is permanent. We will no longer provide CSMWrap builds in Libreboot.
+Please note: SMMSTORE is still present, intentionally, on SeaBIOS images, so
+that the user can switch interchangeably between SeaBIOS and EDK2 images
+via FMAP-based flashing (e.g. flashing only the COREBOOT section in FMAP).
+This is an intentional design choice, on the understanding that the lesser
+amount of space used in flash by payloads (on SeaBIOS setups without EDK2)
+compared to EDK2 images, is less than the cost of a SMMSTORE region in flash.
+Therefore, this provides a sensible regime upon which the user essentially
+does have, in a roundabout way, the benefits of a CSM except that they have
+to re-flash to get a BIOS image.
+
+We're not the proprietary vendors. Users can just build whatever they want in
+Libreboot. It's better to keep setups simple, so providing two versions of
+SeaBIOS is pointless.
+
+Several major design issues exist in CSMWrap, such as hogging an entire CPU
+core, and these design issues are caused by the fact that CSMWrap is designed
+to work on proprietary UEFI firmware where they don't have access to firmware,
+for instance they can't use SMM. Here in Libreboot, we *could* properly
+integrate CSMWrap and remove many of its limitations, but this would mean
+forking CSMWrap - which then means we are maintaining a fork of SeaBIOS,
+while still using SeaBIOS upstream on bare metal. Pointless. Completely
+pointless work.
+
+Thus, CSMWrap was removed. It was assumed that it would be more stable in
+the release, and that we'd only do UEFI images, but this design change was
+canceled.

@@ -18,8 +18,8 @@ our upstream for EDK2, or Intel's [tianocore](https://www.tianocore.org/)
 website for general information about EDK2.
 
 *Please also know: FreeBSD installed in BIOS mode still expects text mode
-startup with SeaBIOS; this is not compatible with the framebuffer-based
-CSMWrap payload provided inside Libreboot EDK2. Please convert your FreeBSD
+startup with SeaBIOS; this is not compatible with the framebuffer-based init
+in EDK2, even if you would use a CSM. Please convert your FreeBSD
 installation to EFI, reinstall it or re-flash with SeaBIOS text-mode; the
 latter is documented in the Libreboot 26.10 release page.*
 
