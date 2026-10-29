@@ -16,10 +16,10 @@ x-toc-enable: true
 | **Variants**               | X11SSH-F / X11SSH-LN4F                         |
 | **Released**               | 2017                                           |
 | **Chipset**                | Intel C236                                     |
-| **CPU**                    | LGA 1151; Intel 6-9th gen. 80W TDP            |
+| **CPU**                    | LGA 1151; Intel 6-9th gen. 80W TDP             |
 | **Graphics**               | iGPU on cpu, but no display output             |
 | **Memory**                 | 64GB DDR4 SODIMMs (4x16 GB), ECC               |
-| **Architecture**           | x86_64                                         |
+| **Architecture**           | x86-64-v3                                      |
 | **Original boot firmware** | Supermicro                                     |
 | **Intel ME/AMD PSP**       | SPS->ME disabled with me_cleaner *1            |
 | **Flash chip**             | SOIC-8 16MiB                                   |
