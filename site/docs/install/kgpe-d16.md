@@ -76,12 +76,12 @@ read the [full guide](../install/spi.md) as well.
 
 ### Device Unique Properties
 
-**Form factor**
+#### Form factor
 
 -   SSI EEB 3.61 (12"x13")
 
 
-**IPMI iKVM module add-on**
+#### IPMI iKVM module add-on
 
 IPMI iKVM module (optional add-on card) uses proprietary firmware. 
 Since it's for remote out-of-band management,
@@ -95,7 +95,7 @@ In practice, out-of-band management isn't very useful anyway
 (or at the very least, it's not a major inconvenience to not have it).
 
 
-**Flash chips**
+#### Flash chips
 
 2MiB flash chips are included by default, on these boards. It's on a
 P-DIP 8 slot (SPI chip). The flash chip can be upgraded to higher sizes:
@@ -112,12 +112,12 @@ Ideally, you should not hot-swap. Only remove the IC when the system is
 powered down and disconnected from mains.
 
 
-**Graphics**
+#### Graphics
 
  Text-mode works with ast2050. See [\#graphics](#graphics)
 
  
-**Issues/Untested**
+#### Issues/Untested
 
 -   LRDIMM memory modules are currently [incompatible](https://www.coreboot.org/Board:asus/kgpe-d16)
 	(use UDIMMs please) - NOTE: might actually work nowadays.
