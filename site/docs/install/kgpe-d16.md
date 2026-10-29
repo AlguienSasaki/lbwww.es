@@ -147,7 +147,6 @@ powered down and disconnected from mains.
 
 <div class="expandedspecs">
 
-
 | ***Specifications***       |                                                |
 |----------------------------|------------------------------------------------|
 | **Manufacturer**           | ASUS                                           |
@@ -163,6 +162,7 @@ powered down and disconnected from mains.
 | **Other Connectors**       | USB-A 2.0, Headers: TPM, SCOM, BMC, 3x dual USB 2.0, 2x SMBus, PS/2 |
 | **I/O Ports on Back**      | 2x PS/2, 3x RJ-45 1GbE (Ethernets);  BMC + 2 normal, SCOM, VGA, 2x USB 2.0  |
 
+</div>
 
 [//]: # "SPDX-License-Identifier: GFDL-1.3-or-later"
 
