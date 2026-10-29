@@ -79,7 +79,7 @@ below to determine compatibility with your board.*
 
 ### Device Unique Properties
 
-**Board status**
+#### Board status
 
 There are two ways to identify a supported KCMA-D8 board:
 
@@ -98,14 +98,14 @@ For more detailed information regarding the coreboot port, see
 <https://raptorengineeringinc.com/coreboot/kcma-d8-status.php>
 
 
-**Form factor**
+#### Form factor
 
 This board is ATX form factor. While the [ATX standard, version 2.2](https://web.archive.org/web/20120725150314/http://www.formfactors.org/developer/specs/atx2_2.pdf)
 specifies board dimensions 305mm x 244mm, this board measures 305mm x 253mm;
 please ensure that your case supports this extra ~cm in width.
 
 
-**IPMI iKVM module add-on**
+#### IPMI iKVM module add-on
 
 IPMI iKVM module (optional add-on card) uses proprietary firmware. 
 Since it's for remote out-of-band management,
@@ -119,7 +119,7 @@ In practice, out-of-band management isn't very useful anyway
 (or at the very least, it's not a major inconvenience to not have it).
 
 
-**Flash chips**
+#### Flash chips
 
 2MiB flash chips are included by default, on these boards. It's on a
 P-DIP 8 slot (SPI chip). The flash chip can be upgraded to higher sizes:
@@ -136,12 +136,12 @@ Ideally, you should not hot-swap. Only remove the IC when the system is
 powered down and disconnected from mains.
 
 
-**Graphics**
+#### Graphics
 
  Text-mode works with ast2050. See [\#graphics](#graphics)
 
  
-**Issues/Untested**
+#### Issues/Untested
 
 -   Opteron 4100 series CPUs are currently incompatible (outdated, might work)
 -   LRDIMM memory modules are currently incompatible
