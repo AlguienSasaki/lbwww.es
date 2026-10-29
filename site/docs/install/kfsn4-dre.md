@@ -67,6 +67,10 @@ read the [full guide](../install/spi.md) as well.
 
 ### Device Unique Properties
 
+#### Physically backup up vendor firmware
+
+Dumping the factory bios, then hot-swapping the flash to keep to flash libreboot on it, and keep the original too.
+
 #### Form factor
 
 -   SSI EEB 3.61 (12"x13")
