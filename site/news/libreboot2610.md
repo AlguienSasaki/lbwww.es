@@ -879,9 +879,13 @@ replace U-Boot with yet another incomplete UEFI implementation, I simply
 added EDK2 which is already feature-complete as it is the reference,
 industry-standard implementation of the UEFI spec.
 
-CrabEFI was what I initially considered, to replace U-Boot. This is a new
+~~CrabEFI was what I initially considered, to replace U-Boot. This is a new
 payload written by Arthur Heymans, and the project itself is excellent, but
-rustc/cargo is inherently unreliable for several reasons:
+rustc/cargo is inherently unreliable for several reasons:~~ **It was brought
+to my attention that the author of crabEFI uses AI heavily in new works, and
+indeed crabEFI itself seems to contain AI-assisted commits. This violates
+Libreboot's rigorous anti-AI policy, and thus crabEFI will no longer even
+be remotely considered for use in lbmk.**
 
 * Unpredictable toolchain setup. Most people use e.g. rustup and they set up
   all sorts of custom environments. Much less predictive than e.g. LLVM/GCC
@@ -901,11 +905,11 @@ are in C++). It has the most amount of eyes on it, and regularly receives
 security audits. It's one of the most battle-tested codebases on the internet,
 and works well.
 
-CrabEFI will likely be merged in Libreboot at some time in the future, when
+~~CrabEFI will likely be merged in Libreboot at some time in the future, when
 Rust tooling has stabilised across distros (including BSDs). It has a much
 better design, even if it's not yet feature-complete, and use of Rust means
 that it will have fewer memory bugs. For now, Libreboot uses EDK2 to replace
-U-Boot and it has been enabled by default on all boards.
+U-Boot and it has been enabled by default on all boards.~~ Clankers are banned from Libreboot.
 
 On memory safety, we can say contrarily that EDK2 is at least stable; bugs
 are also stable. That's the point. We have stable C/C++ compilers, properly
@@ -1012,13 +1016,15 @@ more. Images with GRUB now start SeaBIOS first.
 
 Here is the full list of changes, from recent to oldest:
 
-* CrabEFI payload added in legacy boards that cannot have EDK2,
+* ~~CrabEFI payload added in legacy boards that cannot have EDK2,
   but marked source-only as it does not yet boot from SeaBIOS
   or GRUB payloads and thus should be provided as a standalone
   payload, for which there has been insufficient testing - it
   may or may not be provided in a further revision release
   of the Libreboot 26.10 release series, or it may simply be
-  provided in the next major Libreboot release.
+  provided in the next major Libreboot release.~~ Removed in later
+  revisions for technical reasons, and now banned because it was
+  found that crabEFI is an AI-assisted project.
 * Added 32-bit memtest86plus builds on legacy hardware, where
   previously only 64-bit builds were provided on 64-bit capable
   hardware. This brings legacy hardware more into parity.
@@ -1076,13 +1082,14 @@ Minor cleanup:
 Libreboot 26.10rev3, 18 Oct 2026
 ------------------------------------
 
-CrabEFI was set `release="n"` in rev1, because it's not yet ready for use as
+~~CrabEFI was set `release="n"` in rev1, because it's not yet ready for use as
 a standalone payload and is currently inserted for loading from SeaBIOS and
 GRUB; this isn't working yet, so rev1 made it such that CrabEFI is not inserted
 into images via scripting in `include/fw/rom.sh` - this alone is sufficient
 and this third revision simply removes `release="n"` - otherwise, users could
 not build images in the source code tar archive unless they set
-the `XBMK_RELEASE` environmental variable.
+the `XBMK_RELEASE` environmental variable.~~ - CrabEFI banned from Libreboot
+becrause it was found that it contains AI-assisted code.
 
 This is because release tarballs disable source fetching, by virtue of
 whether or not a `CHANGELOG` file is prevent - absent in the Git repository
