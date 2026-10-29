@@ -67,12 +67,12 @@ read the [full guide](../install/spi.md) as well.
 
 ### Device Unique Properties
 
-**Form factor**
+#### Form factor
 
 -   SSI EEB 3.61 (12"x13")
 
 
-**Flash chips**
+#### Flash chips
 
 These boards use LPC flash (not SPI), in a PLCC socket. The default
 flash size 1MiB (8Mbits), and can be upgraded to 2MiB (16Mbits).
@@ -85,7 +85,7 @@ extractor. These can be found online. See
 <http://www.coreboot.org/Developer_Manual/Tools#Chip_removal_tools>*
 
 
-**Hex-core CPUs support**
+#### Hex-core CPUs support
 
 PCB revision 1.05G is the latest version of this board and the best one
 (the revision number is be printed on the board), if you want to use
@@ -99,7 +99,7 @@ To be sure your board supports a CPU check the official ASUS website here:
 If you are running a Hex-Core CPU on any board version, please contact us.
 
 
-**Different Board configurations**
+#### Different Board configurations
 
 There are 7 different configurations of this board: "standard", 2S, iKVM,
 iKVM/IST, SAS, SAS/iKVM and SAS/iKVM/IST.
@@ -119,7 +119,7 @@ The IST versions with PCB revision 1.05G are the ones who are believed to
 support the six core Opteron Istanbul processors (2400 and 8400 series).
 
 
-**Issues/Untested**
+#### Issues/Untested
 
 -   There seems to be a 30 second bootblock delay (observed by
     tpearson); the system otherwise boots and works as expected. See
