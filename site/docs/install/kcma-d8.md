@@ -79,6 +79,10 @@ below to determine compatibility with your board.*
 
 ### Device Unique Properties
 
+#### Physically backup up vendor firmware
+
+Dumping the factory bios, then hot-swapping the flash to keep to flash libreboot on it, and keep the original too.
+
 #### Board status
 
 There are two ways to identify a supported KCMA-D8 board:
