@@ -78,8 +78,9 @@ Flash it: (With rpi-pico as an example, edit the line if needed.)
 
 	flashprog -p serprog:dev=/dev/ttyACM0,spispeed=16M -w filename.rom
 
+### Device related quirks
 
-### Remarks about vendor bios and small flash chip
+#### Remarks about vendor bios and small flash chip
 
 Without coreboot/libreboot this board is completely useless,
 since the vendor bios is very bad.
@@ -89,7 +90,7 @@ With libreboot it works fine, but the flash chip is very small,
 512KiB, so grub2 does not fit, which is why libreboot has to use seabios
 
 
-### How to replace thermal paste and fan
+#### How to replace thermal paste and fan
 
 This board comes with very crappy disposable loud fan, that one has no
 bearings, which can not be repaired or oiled properly. 
