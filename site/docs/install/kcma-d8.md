@@ -11,8 +11,8 @@ x-toc-enable: true
 | **Manufacturer**           | ASUS                                           |
 | **Name**                   | KCMA-D8                                        |
 | **Released**               | 2011                                           |
-| **Chipset**                | AMD RD870S                                     |
-| **CPU**                    | 2x LGA1207; Opteron 4200/4300                  |
+| **Chipset**                | AMD RD870S-SB700S                              |
+| **CPU**                    | 2x Socket C32; Opteron 4200/4300               |
 | **Graphics**               | ASPEED AST2050                                 |
 | **Memory (max/cpu)**       | 32GB DDR3 SODIMMs (4x8 GB) ECC                 |
 | **Architecture**           | x86_64                                         |
@@ -178,14 +178,14 @@ powered down and disconnected from mains.
 | **Manufacturer**           | ASUS                                           |
 | **Name**                   | [KCMA-D8](https://web.archive.org/web/20240803223613/https://www.asus.com/uk/commercial-servers-workstations/kcmad8/specifications/) |
 | **Released**               | 2011                                           |
-| **Chipset**                | AMD [RD870S](https://en.wikipedia.org/wiki/AMD_800_chipset_series#Southbridges) |
-| **CPU**                    | 2x LGA1207; [Opteron 4200/4300](https://en.wikipedia.org/wiki/List_of_AMD_Opteron_processors#3200-,_4200-_&_6200-series_Opterons) |
+| **Chipset**                | AMD [RD870S-SB700S](https://en.wikipedia.org/wiki/AMD_800_chipset_series#Southbridges) |
+| **CPU**                    | 2x Socket C32; [Opteron 4200/4300](https://en.wikipedia.org/wiki/List_of_AMD_Opteron_processors#Opteron_4300-series_%22Seoul%22_(32_nm)) |
 | **Memory (max/cpu)**       | 32GB DDR3 SODIMMs (4x8 GB) ECC (unregistered only) |
 | **Graphics**               | [ASPEED AST2050](https://theretroweb.com/chips/5700) |
 | **Networking**             | 2x Intel 82574L                                |
 | **Expansion Slots**        | 3x PCI-E 2.0 x16: full, x8 wired, x4 wired, 3x PCI, PIKE |
-| **Storage connectors**     | 6x SATA II (4x red, 2x black), 8x SAS (with PIKE)                  |
-| **Other Connectors**       | Headers: SCOM, BMC, 2x dual USB 2.0 |
+| **Storage connectors**     | 6x SATA II (4x red, 2x black), 8x SAS (with PIKE) |
+| **Other Connectors**       | USB-A 2.0, Headers: SCOM, BMC, 2x dual USB 2.0, 2x SMBus |
 | **I/O Ports on Back**      | 3x RJ-45 1GbE (Ethernets); 2 normal + BMC, VGA, SCOM, 2x USB 2.0, 2x PS/2 |
 
 </div>
