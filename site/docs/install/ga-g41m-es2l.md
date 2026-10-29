@@ -104,7 +104,9 @@ Flash it: (With rpi-pico as an example, edit the line if needed.)
 	flashprog -p serprog:dev=/dev/ttyACM0,spispeed=16M -w filename.rom
 
 
-### Networking (might be Outdated)
+### Device related quirks
+
+#### Networking (might be Outdated)
 
 Due to a bug in the hardware, the MAC address is hardcoded in
 coreboot. Therefore, you must set your own MAC address in your
@@ -138,7 +140,8 @@ You can learn more about using the build system, lbmk, here:\
 [libreboot build instructions](../build/)
 
 
-### Memory Modules ([might be Outdated](https://doc.coreboot.org/mainboard/gigabyte/ga-g41m-es2l.html#not-working))
+
+#### Memory Modules ([might be Outdated](https://doc.coreboot.org/mainboard/gigabyte/ga-g41m-es2l.html#not-working))
 
 **This board is very picky with RAM. If it doesn't boot, try an EHCI debug
 dongle, serial usb adapter and null modem cable, or spkmodem, to get a
@@ -154,14 +157,14 @@ Many other modules will probably work just fine, but raminit is very picky on
 this board. Your mileage *will* fluctuate, wildly.
 
 
-### Removed GRUB (might be Outdated)
+#### Removed GRUB (might be Outdated)
 
 As of Libreboot release 20221214, only SeaBIOS payload is provided in ROMs
 for this board. According to user reports, they work quite well. GRUB was
 always buggy on this board, so it was removed from lbmk.
 
 
-### SATA in IDE emulation (might be Outdated)
+#### SATA in IDE emulation (might be Outdated)
 
 IDE on the board is untested, but it might be possible to use a SATA HDD
 using an IDE SATA adapter. The SATA ports do work, but it's IDE emulation. The
@@ -169,7 +172,7 @@ emulation is slow in DMA mode sia SeaBIOS, so SeaBIOS is configured to use PIO
 mode on this board. This SeaBIOS configuration does not affect the Linux kernel.
 
 
-### Fan control issue (might be Outdated)
+#### Fan control issue (might be Outdated)
 
 PWM fan speed is not changing in depend of CPU temperature based on SuperIO fan control
 
