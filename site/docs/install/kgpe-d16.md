@@ -45,10 +45,6 @@ P*: Partially works with vendor firmware
 
 **[Download](../../download.md) from release**
 
-If you're using a release ROM, please ensure that you've inserted extra firmware
-required refer to the [guide](../install/ivy_has_common.md) for that (, failure
-to adhere to this advice will result in a bricked machine):
-
 
 **[Build](../build/) from source**
 
