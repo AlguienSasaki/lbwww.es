@@ -82,7 +82,9 @@ Flash it: (With rpi-pico as an example, edit the line if needed.)
 	flashprog -p serprog:dev=/dev/ttyACM0,spispeed=16M -w filename.rom
 
 
-### Networking (might be Outdated)
+### Device related quirks
+
+#### Networking (might be Outdated)
 
 This is similar to Gigabyte GA-G41M-ES2L but uses an Intel NIC rather than
 Realtek. Some problems with Linux on this NIC, on this board, with Libreboot,
@@ -102,7 +104,7 @@ TODO: factory BIOS on this board works fine with the onboard NIC. study what
 that is doing
 
 
-### Memory Modules ([might be Outdated](https://doc.coreboot.org/mainboard/acer/g43t-am3.html#not-working))
+#### Memory Modules ([might be Outdated](https://doc.coreboot.org/mainboard/acer/g43t-am3.html#not-working))
 
 DDR3 memory with 512Mx8 chips (G43 limitation), 4x4GB sticks (works, but showed a single bit error within one pass of Memtest86+ 5.01)
 
