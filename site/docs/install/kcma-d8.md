@@ -3,45 +3,66 @@ title: Install Libreboot on ASUS KCMA-D8
 x-toc-enable: true
 ...
 
-TODO: this page is OLD. check that the info is still valid.
 
-Open source BIOS/UEFI firmware
-------------------------------
+<div class="specs">
 
-This document will teach you how to install Libreboot, on your
-ASUS KCMA-D8 server/workstation motherboard.
-Libreboot is a [Free Software](https://writefreesoftware.org/learn) project
-that replaces proprietary BIOS/UEFI firmware.
+| ***Specifications***       |                                                |
+|----------------------------|------------------------------------------------|
+| **Manufacturer**           | ASUS                                           |
+| **Name**                   | KCMA-D8                                        |
+| **Released**               | 2011                                           |
+| **Chipset**                | AMD RD870S                                     |
+| **CPU**                    | 2x LGA1207; Opteron 4200/4300                  |
+| **Graphics**               | ASPEED AST2050                                 |
+| **Memory (max/cpu)**       | 32GB DDR3 SODIMMs (4x8 GB) ECC                 |
+| **Architecture**           | x86_64                                         |
+| **Original boot firmware** | AMI BIOS                                       |
+| **Intel ME/AMD PSP**       | None                                           |
+| **Flash chip**             | DIP-8 512KiB                                   |
 
-Specifications available here:
-<https://www.asus.com/uk/Commercial-Servers-Workstations/KCMAD8/>
 
-Quite a nice board; can have up to 16 Opteron 4200/4300 CPU cores, with up to
-64GiB of RAM. It holds its own against more modern machines, especially when
-compiling large source trees (for compilers, what you want is high RAM and more
-CPU cores).
+```
+W+: Works without vendor firmware; 
+N: Doesn't work; 
+W*: Works with vendor firmware; 
+U: Untested; 
+P+: Partially works; 
+P*: Partially works with vendor firmware
+?: UNKNOWN AT THIS TIME
+```
 
-This is a desktop board using AMD hardware (Fam10h *and Fam15h* CPUs
-available). It can also be used for building a high-powered workstation.
-libreboot also supports it. The coreboot port was done by Timothy Pearson of
-Raptor Engineering Inc. and, working with them, merged into libreboot many
-years ago.
+| ***Features***                                    |    |
+|---------------------------------------------------|----|
+| **Internal flashing with original boot firmware** | N  |
+| **Display (No 3D accel.)**                        | W+ |
+| **Audio**                                         | N  |
+| **RAM Init**                                      | W+ |
 
-Note that not all boards are compatible. See [board status](#boardstatus)
-below to determine compatibility with your board.
+</div>
 
-Flashing instructions can be found at
-[../install/](../install/) - note that external
-flashing is required (e.g. RPi), if the proprietary (ASUS) firmware is
-currently installed. If you already have Libreboot or coreboot, by default
-it is possible to re-flash using software running in Linux on the kcma-d8,
-without using external hardware.
 
-If you currently have the ASUS firmware, please ignore the above link and
-instead refer to the section below:
+### Get the ROM image
 
-Flashing
---------
+**[Download](../../download.md) from release**
+
+If you're using a release ROM, please ensure that you've inserted extra firmware
+required refer to the [guide](../install/ivy_has_common.md) for that (, failure
+to adhere to this advice will result in a bricked machine):
+
+
+**[Build](../build/) from source**
+
+	./mk -b coreboot asus_kcma_d8_2mb
+
+*Replacable and upgradeble flash chip sizes possible, if done, adjust the 2mb (max 16mb) to it*
+
+
+### Internal/Software Flashing
+
+**Default Libreboot firmwares [updatable](../install/simplified-sw-flashing.md).**
+
+
+### External/Hardware Flashing
 
 The default ASUS firmware write-protects the flash, so you have to remove the
 chip and re-flash it using external hardware.
@@ -53,39 +74,16 @@ this:
 
 The default chip is a 2MiB one, but we recommend upgrading it to a 16MiB chip.
 
-NOTE: If you're already running libreboot, you probably don't
-need to re-flash externally. Refer instead to the generic instructions on
-this page: [../install/](../install/)
+The basic [guide](../install/simplified-hw-flashing.md) is not enough for this board,
+read the [full guide](../install/spi.md) as well.
 
-Refer to the following guide:\
-[Externally rewrite 25xx NOR flash via SPI protocol](../install/spi.md)
+*Note that not all boards are compatible. See [board status](#boardstatus)
+below to determine compatibility with your board.*
 
-PCI option ROMs
----------------
 
-Unlike Libreboot 20160907, Libreboot in newer releases now supports finding and
-loading PCI option ROMs automatically, both in GRUB and SeaBIOS on this machine.
-This was inherited by libreboot, when the Libreboot project was forked.
+### Device Unique Properties
 
-So for example, if you wish to use an add-on graphics card, you can! It's no
-problem, and should work just fine.
-
-CPU coolers
------------
-
-With some creativity, standard AM3+ coolers will work fine.
-
-2 x Socket C32 (LGA1207) available, so you can use 2 CPUs. (up to 32GiB per CPU)
-
-CPU compatibility
------------------
-
-- Opteron 4100 series: Incompatible
-- Opteron 4200 series: Compatible
-- Opteron 4300 series: Compatible
-
-Board status (compatibility) {#boardstatus}
--------------------------------------
+**Board status**
 
 There are two ways to identify a supported KCMA-D8 board:
 
@@ -103,25 +101,29 @@ For help locating these identifying markers, see [ASUS documentation for determi
 For more detailed information regarding the coreboot port, see
 <https://raptorengineeringinc.com/coreboot/kcma-d8-status.php>
 
-Form factor {#formfactor}
------------------------
+
+**Form factor**
 
 This board is ATX form factor. While the [ATX standard, version 2.2](https://web.archive.org/web/20120725150314/http://www.formfactors.org/developer/specs/atx2_2.pdf)
 specifies board dimensions 305mm x 244mm, this board measures 305mm x 253mm;
 please ensure that your case supports this extra ~cm in width.
 
-IPMI iKVM module add-on {#ipmi}
-----------------------------
 
-Don't use it. It uses proprietary firmware and adds a backdoor (remote
-out-of-band management chip, similar to the [Intel Management
-Engine](../../faq.md#intelme). Fortunately, the firmware is
-unsigned (possible to replace) and physically separate from the
-motherboard since it's on the add-on module, which you don't have to
-install.
+**IPMI iKVM module add-on**
 
-Flash chips {#flashchips}
------------------------
+IPMI iKVM module (optional add-on card) uses proprietary firmware. 
+Since it's for remote out-of-band management,
+it's theoretically a backdoor similar to the [Intel Management Engine](../../faq.md#intelme).
+Fortunately, unlike the ME,
+this firmware is unsigned which means that a free replacement is theoretically possible.
+For now, the libreboot project recommends not installing the module.
+[This project](https://github.com/facebook/openbmc) might be interesting to derive from,
+for those who want to work on a free replacement.
+In practice, out-of-band management isn't very useful anyway
+(or at the very least, it's not a major inconvenience to not have it).
+
+
+**Flash chips**
 
 2MiB flash chips are included by default, on these boards. It's on a
 P-DIP 8 slot (SPI chip). The flash chip can be upgraded to higher sizes:
@@ -137,68 +139,56 @@ extractor. These can be found online. See
 Ideally, you should not hot-swap. Only remove the IC when the system is
 powered down and disconnected from mains.
 
-Native graphics initialization {#graphics}
------------------------------------------
 
-Only text-mode is known to work, but linux(kernel) can initialize the
-framebuffer display (if it has KMS - kernel mode setting).
+**Graphics**
 
-NOTE: This section relates to the onboard ASpeed GPU. You *can* use an add-on
-PCI-E GPU in one of the available slots on the motherboard. Nvidia GTX 780 cards
-are what libreboot recommends; it has excellent support in Nouveau (free Linux
-kernel / mesa driver for Nvidia cards) and generally works well; however, the
-performance won't be as high in Nouveau, compared to the non-free Nvidia driver
-because the Nouveau driver can't increase the GPU clock (it doesn't know how,
-as of 18 March 2021).
+ Text-mode works with ast2050. See [\#graphics](#graphics)
 
-Current issues {#issues}
-----------------------
+ 
+**Issues/Untested**
 
--   Opteron 4100 series CPUs are currently incompatible
+-   Opteron 4100 series CPUs are currently incompatible (outdated, might work)
 -   LRDIMM memory modules are currently incompatible
 	(use UDIMMs please) - NOTE: might actually work nowadays.
 -   Memory initialization is still problematic for some modules. We
     recommend avoiding Kingston and Super Talent modules for this reason.
+    The coreboot wiki has some information about RAM compatibility. The wiki is
+    deprecated but the info on it is still correct for this board. (outdated, might work)
+-   SAS (via PIKE 2008 module) requires non-free option ROM
+    (and SeaBIOS) to boot from it (theoretically possible to replace,
+    but you can put a kernel in CBFS or on SATA and boot from that,
+    which can be on a SAS drive. The linux kernel can use those SAS drives
+    (via PIKE module) without an option ROM). NOTE: SeaBIOS can load PCI-E option ROMs,
+    and by default it will do so inlibreboot, so you could use it.
+    However, you could *also* simplyinstall 16MiB NOR flash with linuxboot payload in it,
+    and use linuxboot which has the Linux kernel,
+    which can use SAS drives without needing that option ROM; then it can kexec another linux kernel,
+    which in turn also can can use those drives.
+    Or just put a standard linux kernel and initramfs in cbfs and chainload that from GRUB,
+    with the right parameters.
 
-The coreboot wiki has some information about RAM compatibility. The wiki is
-deprecated but the info on it is still correct for this board. Some other
-considerations:
 
--   SeaBIOS lacked serial console support out-of-the-box in release 20160907
-    and as such a workaround using SGABIOS is necessary. You can find
-    instructions on how to do this on the
-    [Notabug issue tracker](http://web.archive.org/web/20210416011941/https://notabug.org/libreboot/libreboot/issues/736)
-    TODO: test whether this is still the case in libreboot, which uses a newer
-    version of coreboot nowadays)
--   SAS (via PIKE 2008 module) requires non-free option ROM (and
-    SeaBIOS) to boot from it (theoretically possible to replace, but you
-    can put a kernel in CBFS or on SATA and boot from that, which
-    can be on a SAS drive. The linux kernel can use those SAS drives
-    (via PIKE module) without an option ROM).
-    NOTE: SeaBIOS can load PCI-E option ROMs, and by default it will do so in
-    libreboot, so you could use it. However, you could *also* simply
-    install 16MiB NOR flash with linuxboot payload in it, and use linuxboot
-    which has the Linux kernel, which can use SAS drives without needing that
-    option ROM; then it can kexec another linux kernel, which in turn also can
-    can use those drives. Or just put a standard linux kernel and initramfs
-    in cbfs and chainload that from GRUB, with the right parameters.
--   IPMI iKVM module (optional add-on card) uses proprietary firmware.
-    Since it's for remote out-of-band management, it's theoretically a
-    backdoor similar to the Intel Management Engine. Fortunately, unlike
-    the ME, this firmware is unsigned which means that a free
-    replacement is theoretically possible. For now, the libreboot
-    project recommends not installing the module. [This
-    project](https://github.com/facebook/openbmc) might be interesting
-    to derive from, for those who want to work on a free replacement. In
-    practice, out-of-band management isn't very useful anyway (or at
-    the very least, it's not a major inconvenience to not have it).
--   Graphics: only text-mode works. See [\#graphics](#graphics)
+### Expanded_Specifications
 
-Hardware specifications {#specifications}
------------------------
+<div class="expandedspecs">
 
-Check the ASUS website.
 
+| ***Specifications***       |                                                |
+|----------------------------|------------------------------------------------|
+| **Manufacturer**           | ASUS                                           |
+| **Name**                   | [KCMA-D8](https://web.archive.org/web/20240803223613/https://www.asus.com/uk/commercial-servers-workstations/kcmad8/specifications/) |
+| **Released**               | 2011                                           |
+| **Chipset**                | AMD [RD870S](https://en.wikipedia.org/wiki/AMD_800_chipset_series#Southbridges) |
+| **CPU**                    | 2x LGA1207; [Opteron 4200/4300](https://en.wikipedia.org/wiki/List_of_AMD_Opteron_processors#3200-,_4200-_&_6200-series_Opterons) |
+| **Memory (max/cpu)**       | 32GB DDR3 SODIMMs (4x8 GB) ECC (unregistered only) |
+| **Graphics**               | [ASPEED AST2050](https://theretroweb.com/chips/5700) |
+| **Networking**             | 2x Intel 82574L                                |
+| **Expansion Slots**        | 3x PCI-E 2.0 x16: full, x8 wired, x4 wired, 3x PCI, PIKE |
+| **Storage connectors**     | 6x SATA II (4x red, 2x black), 8x SAS (with PIKE)                  |
+| **Other Connectors**       | Headers: SCOM, BMC, 2x dual USB 2.0 |
+| **I/O Ports on Back**      | 3x RJ-45 1GbE (Ethernets); 2 normal + BMC, VGA, SCOM, 2x USB 2.0, 2x PS/2 |
+
+</div>
 
 
 [//]: # "SPDX-License-Identifier: GFDL-1.3-or-later"
