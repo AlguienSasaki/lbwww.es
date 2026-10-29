@@ -2,12 +2,14 @@
 % Leah Rowe
 % 15 October 2026
 
-**!!CRITICAL: Users who installed Libreboot 26.10 prior to rev13 are advised
-to install at least rev13 or higher, if using PXE boot on EDK2 as a remote
-code execution bug was fixed post-release via backport of an upstream patch.!!**
+**!!!CRITICAL: Please upgrade to Libreboot 26.10rev14 or higher as a Remote
+Code Execution security vulnerability was announced by Tianocore Security
+Advisory for the ICMP code in EDK2 when using PXE boot. This was fixed
+by merging a patch from them, which implements bound checks on incoming ICMP
+packets. Users who didn't use PXE were unaffected by this bug.!!**
 
 **You can find today's release
-in <https://rsync.libreboot.org/stable/26.10rev12/> or you can use one of
+in <https://rsync.libreboot.org/stable/26.10rev14/> or you can use one of
 the [mirrors](../download.md).**
 
 Libreboot is free, open source boot firmware replacing proprietary BIOS/UEFI
