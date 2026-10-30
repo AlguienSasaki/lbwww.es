@@ -174,8 +174,11 @@ Now, compile GRUB using lbmk as in the guide linked above:
 	./mk -b grub
 
 With this, you now have the requisite `grub-mkpasswd-argon2` utility located
-at `src/grub/default/grub-mkpasswd-argon2` - needed for setting a password
-in your GRUB configuration file.
+at `elf/grub/default/default/noconfig/grub-mkpasswd-argon2` - needed for
+setting a password in your GRUB configuration file.
+
+Please note: the `grub-mkpasswd-pbkdf2` utility is also made available in
+that directory, but you are advised to use the argon2 utility.
 
 The security of this setup depends on a good GRUB password as GPG signature
 checking can be disabled through the GRUB console with this command:
