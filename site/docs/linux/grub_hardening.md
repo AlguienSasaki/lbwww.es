@@ -164,6 +164,19 @@ argon2 offers superior protection against GPU-based bruteforce attacks due
 to high memory costs. Please consider migrating to argon2, if you still
 use PBKDF2.**
 
+Please generally check [build instructions](../build/) as you will need to
+compile GRUB. Compiling GRUB is required, so that you can use
+the `grub-mkpasswd-argon2` utility - please make sure to use the latest version
+of lbmk (from Git) for this. Get the build dependencies, as in the build guide.
+
+Now, compile GRUB using lbmk as in the guide linked above:
+
+	./mk -b grub
+
+With this, you now have the requisite `grub-mkpasswd-argon2` utility located
+at `src/grub/default/grub-mkpasswd-argon2` - needed for setting a password
+in your GRUB configuration file.
+
 The security of this setup depends on a good GRUB password as GPG signature
 checking can be disabled through the GRUB console with this command:
 
