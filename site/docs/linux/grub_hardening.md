@@ -158,6 +158,12 @@ writes. This is not yet documented, and it varies per platform.
 GRUB password
 -------------
 
+**The guidance below uses argon2 for password hashing. Please note that older
+versions of this guide recommended PBKDF2 - users are advised that use of
+argon2 offers superior protection against GPU-based bruteforce attacks due
+to high memory costs. Please consider migrating to argon2, if you still
+use PBKDF2.**
+
 The security of this setup depends on a good GRUB password as GPG signature
 checking can be disabled through the GRUB console with this command:
 
@@ -171,17 +177,13 @@ linked above tells you how to determine which GRUB tree to use.
 
 The following executable will then be available under `src/grub/default/`:
 
-	grub-mkpasswd-pbkdf2
+	grub-mkpasswd-argon2
 
 Run that program. It will ask you to choose a new passphrase. Its output will
-be a string of the following form:
+be a string of the following form. The following example is what I got when
+entering "password" as the password, in grub-mkpasswd-argon2:
 
-	grub.pbkdf2.sha512.10000.HEXDIGITS.MOREHEXDIGITS
-
-NOTE: GRUB also has an argon2 password utility now, which you could
-use instead. Use that output instead of the one below, if you want. Argon2
-is more secure against GPU-driven bruteforce attacks, due to its extremely
-high memory cost.
+	grub.argon2.5.131072.1.7FC84774FCD613915AA8643B82B2E356.8E159449557ADC7F3C0AB17E8BB23D64B266C75749ABD54E464332C98F7BF31A
 
 Put this *before* the menuentries (just before) in `grub.cfg`, but note that
 you should **not** literally use what is below; the hash below is not the one
@@ -190,10 +192,13 @@ you generated yourself. Make sure to adapt accordingly.
 Example:
 
 	set superusers="root"
-	password_pbkdf2 root grub.pbkdf2.sha512.10000.711F186347156BC105CD83A2ED7AF1EB971AA2B1EB2640172F34B0DEFFC97E654AF48E5F0C3B7622502B76458DA494270CC0EA6504411D676E6752FD1651E749.8DD11178EB8D1F633308FD8FCC64D0B243F949B9B99CCEADE2ECA11657A757D22025986B0FA116F1D5191E0A22677674C994EDBFADE62240E9D161688266A711
+	password_argon2 root grub.argon2.5.131072.1.7FC84774FCD613915AA8643B82B2E356.8E159449557ADC7F3C0AB17E8BB23D64B266C75749ABD54E464332C98F7BF31A
 
 **Again**, replace it with the correct hash that you actually obtained for the
 password you entered. In other words, *do not use the hash that you see above!*
+
+If you *did* use the hash above, please note that it corresponds to
+the following password: *password*
 
 GRUB will also ask for a username in addition to the password; the "root" user
 is specified above, but you can change it to whatever you want.
