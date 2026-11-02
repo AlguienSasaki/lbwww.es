@@ -26,20 +26,10 @@ Today's release changelog is relative to the previous Libreboot 26.01 release.
 
 <img tabindex=1 class="r" src="https://av.libreboot.org/t480/t480.jpg" /><span class="f"><img src="https://av.libreboot.org/t480/t480.jpg" /></span>
 
-This is a very special release, with several major design changes made
-regardless of hardware changes, so users should read this
-changelog *very carefully* - and read it twice.
-
 First thing's first. (and yes, you read the previous paragraph correctly)
 
 A strongly anti-AI policy was added to a new file: AGENTS&#x2e;md in lbmk. This
 is the most important change in the release. Now everything else:
-
-WARNING: MAJOR design changes were made to this release, in ways that may
-affect lots of existing setups. We now use EDK2 as the default payload, with
-GRUB/SeaBIOS provided in flash as EFI builds for backward compatibility.
-Everything works, but there are some caveats so please read this release
-changelog very carefully.
 
 The first major change is:
 
@@ -124,17 +114,17 @@ init code. It has much more reliable raminit and CPU initialisation; more RAM
 also supported. Many bugs are fixed. IOMMU works, I also saw that they
 mentioned TPM is fixed in their version, now our version also.
 
-Regular binaries with SeaBIOS and GRUB payloads provided - we also have
-experimental EDK2-based images, currently source-only (no binaries available).
-EDK2 requires a framebuffer to be set up, and the integrated AST2050 chip
-only starts in text mode on native initialisation; the vendor VGA ROM can set
-up VESA, but we will not use the VGA ROM. The EDK2-based images are source-only
-on these boards, intended for use with graphics cards.
+Regular binaries with SeaBIOS and GRUB payloads provided, with GRUB provided
+via SeaGRUB configuration.
 
 Basically, these boards actually work for the first time.
 
 EDK2 UEFI payload by default
 ---
+
+**Most boards have EDK2. You can just grep lbmk to find which target configs
+don't define `payload_edk2` to know which ones don't - nearly anyone using
+Libreboot will have EDK2 available for their board, in this current release.**
 
 EDK2 is Intel's reference implementation of the UEFI specification, for
 booting. It's typically used by vendors, in proprietary forks of Intel's
