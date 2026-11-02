@@ -1398,3 +1398,34 @@ affected hardware. The fix is done by reverting a previous patch that forced
 eMMC probing as some soldered-down mmc flash may report itself as removeable;
 see notes in the patch, linked above. This patch was backported into Libreboot
 EDK2, for the 26.10 release series.
+
+Libreboot 26.10rev15, 2 November 2026
+--------------------
+
+Removed `forx` function in the build system, removed unused `srclink`
+variable, don't use backticks on commands; general cleanup in the build
+system. More: removed trivial uses of eval and awk in the build system.
+The `build_sbase` macro is now a function.
+
+Sources only cleaned *before* doing a build, to save on build time.
+
+Simplified building of PCSX-Redux Open BIOS, by making use of
+the `cpbin` variable recently added to the Libreboot build system.
+
+Simplified building of serprog images by using `cpbin` instead of
+custom copy logic.
+
+In `get.sh`, more thorough hash checks are done based on `build_depend`
+and `fetch_depend`, which makes adding symlinks to config directories
+unnecessary (useful on Chromebooks where EDK2 is built while depending
+also on GRUB EFI - Libreboot-only, not available in Canoeboot yet).
+
+Added EDK2 build with just iPXE, nothing else, for images with 3MB of
+CBFS space. Not used in this Libreboot release, but some targets in Canoeboot
+have this smaller size compared to Libreboot, on specific boards.
+
+**NOTE: No rev15 builds will be provided, because it did not change
+any in-firmware behaviour compared to rev14. This rev15 release is
+being tagged, so as to cleanly sync up with Canoeboot - now we have
+a reference point as to how the two projects align, as
+the Canoeboot 26.11rev1 release is in sync with Libreboot 26.10rev15.**
