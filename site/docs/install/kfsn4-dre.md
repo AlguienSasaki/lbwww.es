@@ -14,7 +14,7 @@ x-toc-enable: true
 | **CPU**                    | 2x Socket F; Opteron 2300/8300                 |
 | **Graphics**               | XGI Z9s                                        |
 | **Memory (max/cpu)**       | 32GB DDR2 SODIMMs (8x4 GB) ECC                 |
-| **Architecture**           | x86_64                                         |
+| **Architecture**           | x86-64-v1                                      |
 | **Original boot firmware** | AMI BIOS                                       |
 | **Intel ME/AMD PSP**       | None                                           |
 | **Flash chip**             | PLCC 1MiB                                      |
