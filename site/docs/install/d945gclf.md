@@ -19,7 +19,7 @@ x-toc-enable: true
 | **CPU**                    | Intel Atom 230 / 330 (***2/D)                  | 
 | **Graphics**               | GMA 950                                        |
 | **Memory**                 | 2GB DDR2 SODIMM (1x2GB)                        |
-| **Architecture**           | x86\_64                                        |
+| **Architecture**           | x86-64-v1                                      |
 | **Original boot firmware** | Intel BIOS                                     |
 | **Intel ME/AMD PSP**       | Not present.                                   |
 | **Flash chip**             | SOIC-8 512KiB                                  |
