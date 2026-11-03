@@ -18,7 +18,7 @@ x-toc-enable: true
 | **CPU**                   | LGA 1155, Intel Sandy/Ivy Bridge            |
 | **Graphics**              | Intel HD 3000/4000 + MXM gpu                |
 | **Memory**                | 16GB DDR3L SODIMMs (2x8GB)                  |
-| **Architecture**          | x86_64                                      |
+| **Architecture**          | x86-64-v2 (+ older) (v1 for Sandy)          |
 | **Intel ME/AMD PSP**      | Present. Disabled with me_cleaner.          |
 | **Flash chip**            | SOIC-16 16MiB                               |
 

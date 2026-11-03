@@ -19,7 +19,7 @@ Dell OptiPlex 780
 | **CPU**                    | LGA 775, Intel Core 2 Duo+Quad on MT           |
 | **Graphics**               | GMA 4500                                       |
 | **Memory**                 | 16/8GB DDR3 SODIMMs (4x4GB,2x4GB USSF)         |
-| **Architecture**           | x86\_64                                        |
+| **Architecture**           | x86-64-v1                                      |
 | **Original boot firmware** | Dell UEFI firmware                             |
 | **Intel ME/AMD PSP**       | Present, Fully removable firmware.             |
 | **Flash chip**             | SOIC-16 or SOIC-8 8MiB/64Mbit                  |

@@ -20,7 +20,7 @@ x-toc-enable: true
 | **Graphics**               | Intel GMA 950                                  |
 | **Display**                | 1280x800 TFT                                   |
 | **Memory**                 | 512MB, 1GB (upgradable to 4GB with 3GB usable) |
-| **Architecture**           | x86\_64                                         |
+| **Architecture**           | x86-32/x86-64-v1                               |
 | **EC**                     | Proprietary                                    |
 | **Original boot firmware** | Apple EFI                                      |
 | **Intel ME/AMD PSP**       | Not present.                                   |

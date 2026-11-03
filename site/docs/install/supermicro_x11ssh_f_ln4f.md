@@ -16,10 +16,10 @@ x-toc-enable: true
 | **Variants**               | X11SSH-F / X11SSH-LN4F                         |
 | **Released**               | 2017                                           |
 | **Chipset**                | Intel C236                                     |
-| **CPU**                    | LGA 1151; Intel 6-9th gen. 80W TDP            |
+| **CPU**                    | LGA 1151; Intel 6-9th gen. 80W TDP             |
 | **Graphics**               | iGPU on cpu, but no display output             |
 | **Memory**                 | 64GB DDR4 SODIMMs (4x16 GB), ECC               |
-| **Architecture**           | x86_64                                         |
+| **Architecture**           | x86-64-v3 (+ older)                            |
 | **Original boot firmware** | Supermicro                                     |
 | **Intel ME/AMD PSP**       | SPS->ME disabled with me_cleaner *1            |
 | **Flash chip**             | SOIC-8 16MiB                                   |
@@ -86,15 +86,16 @@ Flash it: (With rpi-pico as an example, edit the line if needed.)
 
 	flashprog -p serprog:dev=/dev/ttyACM0,spispeed=16M -w filename.rom
 
-    
+
 ### 6-8 core processor support
 
 - A pin mod is needed.
 
 [Guide for mod](../../extras.md#reversible-intel-8th-9th-gen-processors-support-on-older-6th-7th-gen-motherboards)
 
+### Device related quirks
 
-### Replacable Baseboard Management Controller firmware
+#### Replacable Baseboard Management Controller firmware
 
 The Aspeed AST2400 BMC vendor firmware can be replaced with [OpenBMC](https://www.openbmc.org/)
 
@@ -105,7 +106,7 @@ To disable it instead, shorting it's jumper pins would work.
 Not yet used/tested with libreboot.
 
 
-### Display output, graphics acceleration and gpu offload
+#### Display output, graphics acceleration and gpu offload
 
 On the motherboard the BMC is used for display output. You just won't have any hardware graphics acceleration whatsoever and will be limited to 1920x1200.
 
@@ -119,11 +120,10 @@ With switcheroo_control; the DE, image/video encode/decode and browser ones can 
 [Guide for dual-gpu setup](../../extras.md#reversible-dual-gpu-setup-do-not-use-it-on-processorsmotherboards-without-integrated-graphics.)
 
 
-### Not working
+#### Not working
 
 - S3 resume not working (vendor and coreboot)
 - [No iGPU output via vga port](https://codeberg.org/libreboot/lbwww/pulls/194#issuecomment-20790470) (Wired directly to BMC and it is used for output without graphics acceleration.)
-
 
 
 ### Expanded_Specifications
