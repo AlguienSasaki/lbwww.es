@@ -3,225 +3,166 @@ title: ASUS KGPE-D16 server/workstation board
 x-toc-enable: true
 ...
 
-Open source BIOS/UEFI firmware
-------------------------------
 
-This document will teach you how to install Libreboot, on your
-ASUS KGPE-D16 server/workstation motherboard.
-Libreboot is a [Free Software](https://writefreesoftware.org/learn) project
-that replaces proprietary BIOS/UEFI firmware.
+<div class="specs">
 
-TODO: OLD page. TODO: check that all the info is still valid.
+| ***Specifications***       |                                                |
+|----------------------------|------------------------------------------------|
+| **Manufacturer**           | ASUS                                           |
+| **Name**                   | KGPE-D16                                       |
+| **Released**               | 2010                                           |
+| **Chipset**                | AMD RD890S-SB700S                              |
+| **CPU**                    | 2x Socket G34; Opteron 6200/6300               |
+| **Graphics**               | ASPEED AST2050                                 |
+| **Memory (max/cpu)**       | 32GB DDR3 SODIMMs (4x8 GB) ECC                 |
+| **Architecture**           | x86-64-v2 (+ older)                            |
+| **Original boot firmware** | AMI BIOS                                       |
+| **Intel ME/AMD PSP**       | None                                           |
+| **Flash chip**             | DIP-8 512KiB                                   |
 
-Free your BIOS today!
----------------------
 
-This is a server board using AMD hardware (Fam10h *and Fam15h* CPUs
-available). It can also be used for building a high-powered workstation.
-Powered by libreboot. The coreboot port was done by Timothy Pearson of
-Raptor Engineering Inc. and, working with them (and sponsoring the
-work), merged into libreboot.
+```
+W+: Works without vendor firmware; 
+N: Doesn't work; 
+W*: Works with vendor firmware; 
+U: Untested; 
+P+: Partially works; 
+P*: Partially works with vendor firmware
+?: UNKNOWN AT THIS TIME
+```
 
-*Memory initialization is still problematic, for some modules. We
-recommend avoiding Kingston modules.*
-*For working configurations see <https://www.coreboot.org/Board:asus/kgpe-d16>.*
+| ***Features***                                    |    |
+|---------------------------------------------------|----|
+| **Internal flashing with original boot firmware** | N  |
+| **Display (No 3D accel.)**                        | W+ |
+| **Audio**                                         | N  |
+| **RAM Init**                                      | W+ |
 
-Flashing instructions can be found at
-[../install/\#flashprog](../install/#flashprog) - note that external
-flashing is required, if the proprietary (ASUS) firmware is
-currently installed. If you already have libreboot, by default it is
-possible to re-flash using software running in Linux on the
-KGPE-D16, without using external hardware.
+</div>
 
-CPU compatibility
------------------
 
-Opteron 62xx and 63xx CPUs work just fine.
+### Get the ROM image
 
-Board status (compatibility) {#boardstatus}
----------------------
+**[Download](../../download.md) from release**
 
-See <https://raptorengineeringinc.com/coreboot/kgpe-d16-status.php>.
 
-Form factor {#formfactor}
-----------------------
+**[Build](../build/) from source**
 
-These boards use the SSI EEB 3.61 form factor; make sure that your case
-supports this. This form factor is similar to E-ATX in that the size is
-identical, but the position of the screws are different.
+	./mk -b coreboot asus_kgpe_d16_2mb
 
-IPMI iKVM module add-on {#ipmi}
---------------------------
+*Replacable and upgradeble flash chip sizes possible, if done, adjust the 2mb (max 16mb) to it*
 
-Don't use it. It uses proprietary firmware and adds a backdoor (remote
-out-of-band management chip, similar to the [Intel Management
-Engine](../../faq.md#intelme). Fortunately, the firmware is
-unsigned (possibly to replace) and physically separate from the
-motherboard since it's on the add-on module, which you don't have to
-install.
 
-Flash chips {#flashchips}
---------------------------
+### Internal/Software Flashing
+
+**Default Libreboot firmwares [updatable](../install/simplified-sw-flashing.md).**
+
+
+### External/Hardware Flashing
+
+The default ASUS firmware write-protects the flash, so you have to remove the
+chip and re-flash it using external hardware.
+
+It has a 25XX NOR flash (SPI protocol) in a P-DIP 8 socket, which looks like
+this:
+
+![](https://av.libreboot.org/dip8/dip8.jpg)
+
+The default chip is a 2MiB one, but we recommend upgrading it to a 16MiB chip.
+
+The basic [guide](../install/simplified-hw-flashing.md) is not enough for this board,
+read the [full guide](../install/spi.md) as well.
+
+
+### Device Unique Properties
+
+#### Physically backup up vendor firmware
+
+Dumping the factory bios, then hot-swapping the flash to keep to flash libreboot on it, and keep the original too.
+
+#### Form factor
+
+-   SSI EEB 3.61 (12"x13")
+
+
+#### IPMI iKVM module add-on
+
+IPMI iKVM module (optional add-on card) uses proprietary firmware. 
+Since it's for remote out-of-band management,
+it's theoretically a backdoor similar to the [Intel Management Engine](../../faq.md#intelme).
+Fortunately, unlike the ME,
+this firmware is unsigned which means that a free replacement is theoretically possible.
+For now, the libreboot project recommends not installing the module.
+[This project](https://github.com/facebook/openbmc) might be interesting to derive from,
+for those who want to work on a free replacement.
+In practice, out-of-band management isn't very useful anyway
+(or at the very least, it's not a major inconvenience to not have it).
+
+
+#### Flash chips
 
 2MiB flash chips are included by default, on these boards. It's on a
 P-DIP 8 slot (SPI chip). The flash chip can be upgraded to higher sizes:
 4MiB, 8MiB or 16MiB. With at least 8MiB, you could feasibly fit a
 compressed linux+initramfs image (BusyBox+Linux system) into CBFS and
-boot that, loading it into memory.
-
-libreboot has configs for 2, 4, 8 and 16 MiB flash chip sizes (default
-flash chip is 2MiB).
+boot that, loading it into memory (and nowadays there is LinuxBoot, for which
+we would recommend a 16MiB boot flash)
 
 *DO NOT hot-swap the chip with your bare hands. Use a P-DIP 8 chip
 extractor. These can be found online. See
 <http://www.coreboot.org/Developer_Manual/Tools#Chip_removal_tools>*
 
-This guide shows how to flash the chip:\
-[25xx NOR flashing guide](../install/spi.md)
+Ideally, you should not hot-swap. Only remove the IC when the system is
+powered down and disconnected from mains.
 
-Native graphics initialization {#graphics}
-----------------------------------
 
-Only text-mode is known to work, but linux(kernel) can initialize the
-framebuffer display (if it has KMS - kernel mode setting).
+#### Graphics
 
-Current issues {#issues}
-----------------------------------
+ Text-mode works with ast2050. See [\#graphics](#graphics)
 
--   LRDIMM memory modules are currently incompatible
-	(IT MAY WORK NOWADAYS, TODO TEST)
--   SAS (via PIKE 2008 module) requires a vendor option ROM (and
-    SeaBIOS) to boot from it (theoretically possible to replace, but you
-    can put a kernel in CBFS or on SATA and boot from that, which
-    can be on a SAS drive. The linux kernel can use those SAS drives
-    (via PIKE module) without an option ROM).
--   SeaBIOS lacked serial console support out-of-the-box in release 20160907
-    and as such a workaround using SGABIOS is necessary. You can find
-    instructions on how to do this on the
-    [Notabug issue tracker](http://web.archive.org/web/20210416011941/https://notabug.org/libreboot/libreboot/issues/736)
--   IPMI iKVM module (optional add-on card) uses proprietary firmware.
-    Since it's for remote out-of-band management, it's theoretically a
-    backdoor similar to the Intel Management Engine. Fortunately, unlike
-    the ME, this firmware is unsigned which means that a free
-    replacement is theoretically possible. For now, the libreboot
-    project recommends not installing the module. [This
-    project](https://github.com/facebook/openbmc) might be interesting
-    to derive from, for those who want to work on a free replacement. In
-    practice, out-of-band management isn't very useful anyway (or at
-    the very least, it's not a major inconvenience to not have it).
--   Graphics: only text-mode works. See [\#graphics](#graphics)
+ 
+#### Issues/Untested
 
-Hardware specifications {#specifications}
------------------------
+-   LRDIMM memory modules are currently [incompatible](https://www.coreboot.org/Board:asus/kgpe-d16)
+	(use UDIMMs please) - NOTE: might actually work nowadays.
+-   Memory initialization is still problematic for some modules. We
+    recommend avoiding Kingston and Super Talent modules for this reason.
+    The coreboot wiki has some information about RAM compatibility. The wiki is
+    deprecated but the info on it is still correct for this board. (outdated, might work)
+-   SAS (via PIKE 2008 module) requires non-free option ROM
+    (and SeaBIOS) to boot from it (theoretically possible to replace,
+    but you can put a kernel in CBFS or on SATA and boot from that,
+    which can be on a SAS drive. The linux kernel can use those SAS drives
+    (via PIKE module) without an option ROM). NOTE: SeaBIOS can load PCI-E option ROMs,
+    and by default it will do so inlibreboot, so you could use it.
+    However, you could *also* simplyinstall 16MiB NOR flash with linuxboot payload in it,
+    and use linuxboot which has the Linux kernel,
+    which can use SAS drives without needing that option ROM; then it can kexec another linux kernel,
+    which in turn also can can use those drives.
+    Or just put a standard linux kernel and initramfs in cbfs and chainload that from GRUB,
+    with the right parameters.
 
-The information here is adapted, from the ASUS website.
 
-### Processor / system bus
+### Expanded_Specifications
 
--   2 CPU sockets (G34 compatible)
--   HyperTransport™ Technology 3.0
--   CPUs supported:
-    -   AMD Opteron 6100 series (Fam10h. No IOMMU support. *Not*
-        recommended - old. View errata datasheet here:
-        <http://support.amd.com/TechDocs/41322_10h_Rev_Gd.pdf>)
-    -   AMD Opteron 6200 series (Fam15h, with full IOMMU support in
-        libreboot.
-    -   AMD Opteron 6300 series (Fam15h, with full IOMMU support in
-        libreboot.
--   6.4 GT/s per link (triple link)
+<div class="expandedspecs">
 
-### Core logic
+| ***Specifications***       |                                                |
+|----------------------------|------------------------------------------------|
+| **Manufacturer**           | ASUS                                           |
+| **Name**                   | [KGPE-D16](https://web.archive.org/web/20210206181231/https://www.asus.com/uk/Commercial-Servers-Workstations/KGPED16/specifications/) |
+| **Released**               | 2010                                           |
+| **Chipset**                | AMD [RD890S-SB700S](https://en.wikipedia.org/wiki/AMD_800_chipset_series#Southbridges) |
+| **CPU**                    | 2x Socket G34; [Opteron 6200/6300](https://en.wikipedia.org/wiki/List_of_AMD_Opteron_processors#Opteron_6300-series_%22Abu_Dhabi%22_(32_nm)) |
+| **Memory (max/cpu)**       | 128GB DDR3 SODIMMs (8x16 GB) ECC               |
+| **Graphics**               | [ASPEED AST2050](https://theretroweb.com/chips/5700) |
+| **Networking**             | 2x Intel 82574L                                |
+| **Expansion Slots**        | 5x PCI-E 2.0: 3x x16, x16 wired in x8, x8 wired in x4, PCI, PIKE |
+| **Storage connectors**     | 6x SATA II (4x red, 2x black), 8x SAS (with PIKE) |
+| **Other Connectors**       | USB-A 2.0, Headers: TPM, SCOM, BMC, 3x dual USB 2.0, 2x SMBus, PS/2 |
+| **I/O Ports on Back**      | 2x PS/2, 3x RJ-45 1GbE (Ethernets);  BMC + 2 normal, SCOM, VGA, 2x USB 2.0  |
 
--   AMD SR5690
--   AMD SP5100
-
-### Memory compatibility (with libreboot)
-
--   *Total Slots:* 16 (4-channel per CPU, 8 DIMM per CPU), ECC
--   *Capacity:* Maximum up to 256GB RDIMM (Tested max 128GB)
--   *Memory Type that is compatible:*
-    -   DDR3 1600/1333/1066/800 UDIMM\*
-    -   DDR3 1600/1333/1066/800 RDIMM\*
--   *Compatible sizes per memory module:*
-    -   16GB, 8GB, 4GB, 3GB, 2GB, 1GB RDIMM
-    -   8GB, 4GB, 2GB, 1GB UDIMM
-
-### Expansion slots
-
--   *Total slot:* 6
--   *Slot Location 1:* PCI 32bit/33MHz
--   *Slot Location 2:* PCI-E x16 (Gen2 X8 Link)
--   *Slot Location 3:* PCI-E x16 (Gen2 X16 Link), Auto switch to x8
-    link if slot 2 is occupied
--   *Slot Location 4:* PCI-E x8 (Gen2 X4 Link)
--   *Slot Location 5:* PCI-E x16 (Gen2 X16 Link)
--   *Slot Location 6:* PCI-E x16 (Gen2 X16 Link), Auto turn off if
-    slot 5 is occupied, For 1U FH/FL Card, MIO supported
--   *Additional Slot 1:* PIKE slot (for SAS drives. See notes above)
--   Follow SSI Location\#
-
-### Form factor {#form-factor}
-
--   SSI EEB 3.61 (12"x13")
-
-### ASUS features
-
--   Fan Speed Control
--   Rack Ready (Rack and Pedestal dual use)
-
-### Storage
-
--   *SATA controller:*
-    -   AMD SP5100
-    -   6 x SATA2 300MB/s
--   *SAS/SATA Controller:*
-    -   ASUS PIKE2008 3Gbps 8-port SAS card included
-
-### Networking
-
--   2 x Intel® 82574L + 1 x Mgmt LAN
-
-### Graphics
-
--   Aspeed AST2050 with 8MB VRAM
-
-### On board I/O
-
--   1 x PSU Power Connector (24-pin SSI power connector + 8-pin SSI
-    12V + 8-pin SSI 12V power connector)
--   1 x Management Connector , Onboard socket for management card
--   3 x USB pin header , Up to 6 Devices
--   1 x Internal A Type USB Port
--   8 x Fan Header , 4pin (3pin/4pin fan dual support)
--   2 x SMBus
--   1 x Serial Port Header
--   1 x TPM header
--   1 x PS/2 KB/MS port
-
-### Back I/O ports
-
--   1 x External Serial Port
--   2 x External USB Port
--   1 x VGA Port
--   2 x RJ-45
--   1 x PS/2 KB/Mouse
-
-### Environment
-
--   *Operation temperature:* 10C \~ 35C
--   *Non operation temperature:* -40C \~ 70C
--   *Non operation humidity:* 20% \~ 90% ( Non condensing)
-
-### Monitoring
-
--   CPU temperatures
--   Fan speed (RPM)
-
-### Note:
-
--   \* DDR3 1600 can only be supported with AMD Opteron 6300/6200 series
-    processor
-
+</div>
 
 [//]: # "SPDX-License-Identifier: GFDL-1.3-or-later"
 
