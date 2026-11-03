@@ -15,7 +15,7 @@ x-toc-enable: true
 | **CPU**                    | 2x Socket G34; Opteron 6200/6300               |
 | **Graphics**               | ASPEED AST2050                                 |
 | **Memory (max/cpu)**       | 32GB DDR3 SODIMMs (4x8 GB) ECC                 |
-| **Architecture**           | x86_64                                         |
+| **Architecture**           | x86-64-v2 (+ older)                            |
 | **Original boot firmware** | AMI BIOS                                       |
 | **Intel ME/AMD PSP**       | None                                           |
 | **Flash chip**             | DIP-8 512KiB                                   |
