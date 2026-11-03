@@ -19,7 +19,7 @@ x-toc-enable: true
 | **CPU**                    | LGA 1151; Intel 6-9th gen. 80W TDP             |
 | **Graphics**               | iGPU on cpu, but no display output             |
 | **Memory**                 | 64GB DDR4 SODIMMs (4x16 GB), ECC               |
-| **Architecture**           | x86-64-v3                                      |
+| **Architecture**           | x86-64-v3 (+ older)                            |
 | **Original boot firmware** | Supermicro                                     |
 | **Intel ME/AMD PSP**       | SPS->ME disabled with me_cleaner *1            |
 | **Flash chip**             | SOIC-8 16MiB                                   |
