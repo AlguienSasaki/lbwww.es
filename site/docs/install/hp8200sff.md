@@ -18,7 +18,7 @@ x-toc-enable: true
 | **CPU**                   | LGA 1155, Intel 2-3rd gen.                  |
 | **Graphics**              | Intel HD 3000/4000                          |
 | **Memory**                | 32GB DDR3 SODIMMs (4x8GB)                   |
-| **Architecture**          | x86\_64                                     |
+| **Architecture**          | x86-64-v2 (+ older) (v1 for Sandy)          |
 | **Intel ME/AMD PSP**      | Present. Disabled with me_cleaner.          |
 | **Flash chip**            | SOIC-8 8MiB/64Mbit                          |
 
