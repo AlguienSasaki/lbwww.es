@@ -18,7 +18,7 @@ GA-G41M-ES2L
 | **CPU**                    | LGA775, Core 2 Duo+Quad                        |
 | **Graphics**               | GMA X4500                                      |
 | **Memory**                 | 8GB DDR2 SODIMMs (2x4GB)                       |
-| **Architecture**           | x86_64                                         |
+| **Architecture**           | x86-64-v1                                      |
 | **Original boot firmware** | AWARD BIOS                                     |
 | **Intel ME/AMD PSP**       | Present, Fully removable                       |
 | **Flash chip**             | SOIC-8 2x 1MB/8Mbit                            |
