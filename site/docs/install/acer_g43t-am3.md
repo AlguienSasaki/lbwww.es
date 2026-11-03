@@ -17,7 +17,7 @@ x-toc-enable: true
 | **CPU**                    | LGA 775, Core 2 Duo & Quad    |
 | **Graphics**               | GMA X4500                     |
 | **Memory**                 | 8GB DDR3 SODIMMs (4x2GB)      |
-| **Architecture**           | x86_64                        |
+| **Architecture**           | x86-64-v1                     |
 | **Original boot firmware** | Acer BIOS                     |
 | **Intel ME/AMD PSP**       | Present, Fully removable      |
 | **Flash chip**             | SOP-8 2MiB                    |
