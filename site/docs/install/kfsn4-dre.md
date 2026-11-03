@@ -4,24 +4,20 @@ x-toc-enable: true
 ...
 
 <div class="specs">
-<center>
-![ASUS KFSN4-DRE]()
-</center>
 
 | ***Specifications***       |                                                |
 |----------------------------|------------------------------------------------|
 | **Manufacturer**           | ASUS                                           |
 | **Name**                   | KFSN4-DRE                                      |
 | **Released**               | 2007                                           |
-| **Chipset**                | nVIDIA nForce Professional 2200                |
-| **CPU**                    | AMD Opteron 2000 series (Barcelona Family)     |
-| **Graphics**               | XGI Z9s VGA Controller                         |
-| **Display**                | None.                                          |
-| **Memory**                 | 512MB, 1GB, 2GB, 4GB                           |
-| **Architecture**           | x86_64                                         |
-| **Original boot firmware** | AMIBIOS                                        |
-| **Intel ME/AMD PSP**       | Not present.                                   |
-| **Flash chip**             | PLCC 1MiB (Upgradable to 2MiB)                 |
+| **Chipset**                | nVIDIA nForce Pro 2200                         |
+| **CPU**                    | 2x Socket F; Opteron 2300/8300                 |
+| **Graphics**               | XGI Z9s                                        |
+| **Memory (max/cpu)**       | 32GB DDR2 SODIMMs (8x4 GB) ECC                 |
+| **Architecture**           | x86-64-v1                                      |
+| **Original boot firmware** | AMI BIOS                                       |
+| **Intel ME/AMD PSP**       | None                                           |
+| **Flash chip**             | PLCC 1MiB                                      |
 
 ```
 W+: Works without vendor firmware; 
@@ -35,42 +31,52 @@ P*: Partially works with vendor firmware
 | ***Features*** |                                       |
 |----------------|---------------------------------------|
 | **Internal flashing with original boot firmware** | W+ |
-| **Display**                                       | -  | 
+| **Display (No 3D accel.)**                        | -  | 
 | **Audio**                                         | W+ |
 | **RAM Init**                                      | W+ |
 | **External output**                               | W+ |
-| **Display brightness**                            | -  |
 
 </div>
 
-Open source BIOS/UEFI firmware
-------------------------------
+### Get the ROM image
 
-This document will teach you how to install Libreboot, on your
-ASUS KFSN4-DRE server/workstation motherboard.
-Libreboot is a [Free Software](https://writefreesoftware.org/learn) project
-that replaces proprietary BIOS/UEFI firmware.
+**[Download](../../download.md) from release**
 
-This is a server board using AMD hardware (Fam10h). It can also be used
-for building a high-powered workstation. Powered by libreboot.
 
-Flashing instructions can be found at
-[../install/\#flashprog](../install/)
+**[Build](../build/) from source**
 
-**NOTE: Libreboot standardises on [flashprog](https://flashprog.org/wiki/Flashprog)
-now, as of 27 January 2024, which is a fork of flashrom.
-The reason why was explained, in
-the [Libreboot 20240225 release](../../news/libreboot20240225.md#flashprog-now-used-instead-of-flashrom)**
+	./mk -b coreboot asus_kfsn4_dre_1mb
 
-Form factor {#formfactor}
----------------------
+*Replacable and upgradeble flash chip sizes possible, if done, adjust the 2mb to it*
 
-These boards use the SSI EEB 3.61 form factor; make sure that your case
-supports this. This form factor is similar to E-ATX in that the size is
-identical, but the position of the screws are different.
 
-Flash chips {#flashchips}
------------------------
+### Internal/Software Flashing
+
+The flash might not be protected, possibly installable from vendor firmware.
+
+**Backup and install according to the [guide](../install/simplified-sw-flashing.md)**
+
+
+### External/Hardware Flashing
+
+If it is protected, follow the instructions below.
+
+The basic [guide](../install/simplified-hw-flashing.md) is not enough for this board,
+read the [full guide](../install/spi.md) as well.
+
+
+### Device Unique Properties
+
+#### Physically backup up vendor firmware
+
+Dumping the factory bios, then hot-swapping the flash to keep to flash libreboot on it, and keep the original too.
+
+#### Form factor
+
+-   SSI EEB 3.61 (12"x13")
+
+
+#### Flash chips
 
 These boards use LPC flash (not SPI), in a PLCC socket. The default
 flash size 1MiB (8Mbits), and can be upgraded to 2MiB (16Mbits).
@@ -82,19 +88,8 @@ example of a 2MiB (16Mbits) chip, which might work. It is believed that
 extractor. These can be found online. See
 <http://www.coreboot.org/Developer_Manual/Tools#Chip_removal_tools>*
 
-Native graphics initialization {#graphics}
----------------------------------------
 
-Native graphics initialization exists (XGI Z9s) for this board.
-Framebuffer- and text-mode both work. A serial port is also available.
-
-Memory
--------
-
-DDR2 533/667 Registered ECC. 16 slots. Total capacity up to 64GiB.
-
-Hex-core CPUs {#hexcore}
----------------------
+#### Hex-core CPUs support
 
 PCB revision 1.05G is the latest version of this board and the best one
 (the revision number is be printed on the board), if you want to use
@@ -107,8 +102,8 @@ To be sure your board supports a CPU check the official ASUS website here:
 
 If you are running a Hex-Core CPU on any board version, please contact us.
 
-Board configurations {#configurations}
-----------------------------------------
+
+#### Different Board configurations
 
 There are 7 different configurations of this board: "standard", 2S, iKVM,
 iKVM/IST, SAS, SAS/iKVM and SAS/iKVM/IST.
@@ -127,8 +122,8 @@ Note: the SAS functionality is **not supported** by libreboot.
 The IST versions with PCB revision 1.05G are the ones who are believed to
 support the six core Opteron Istanbul processors (2400 and 8400 series).
 
-Current issues {#issues}
------------------------
+
+#### Issues/Untested
 
 -   There seems to be a 30 second bootblock delay (observed by
     tpearson); the system otherwise boots and works as expected. See
@@ -154,11 +149,27 @@ Current issues {#issues}
     a CD/DVD reader in order to boot a copy of the installer of your OS, since
     the USB booting doesn't work.
 
-Other information
-------------------
 
-[specifications](https://web.archive.org/web/20181212180051/http://ftp.tekwind.co.jp/pub/asustw/mb/Socket%20F/KFSN4-DRE/Manual/e3335_kfsn4-dre.pdf)
+### Expanded_Specifications
 
+<div class="expandedspecs">
+
+| ***Specifications***       |                                                |
+|----------------------------|------------------------------------------------|
+| **Manufacturer**           | ASUS                                           |
+| **Name**                   | [KFSN4-DRE](https://web.archive.org/web/20181212180051/http://ftp.tekwind.co.jp/pub/asustw/mb/Socket%20F/KFSN4-DRE/Manual/e3335_kfsn4-dre.pdf)                                      |
+| **Released**               | 2007                                           |
+| **Chipset**                | [nVIDIA nForce Pro 2200](https://en.wikipedia.org/wiki/Comparison_of_Nvidia_nForce_chipsets#nForce4) |
+| **CPU**                    | 2x Socket F; [Opteron 2300/8300](https://en.wikipedia.org/wiki/List_of_AMD_Opteron_processors#8300_series_%22Shanghai%22) |
+| **Memory (max/cpu)**       | 32GB DDR2 SODIMMs (8x4 GB) ECC                  |
+| **Graphics**               | [XGI Z9s](https://www.vgamuseum.info/index.php/cpu/item/1124-xgi-volari-z9s) |
+| **Networking**             | 2x Broadcom BCM5721                             |
+| **Expansion Slots**        | PCI-E 1a x16: 1x full (DRE) or 2x half wired in x8 (DRE/2s) or 1x half wired in x8 (DRE/SAS) |
+| **Storage connectors**     | 4x SATA II, 2x SAS (DRE/SAS only)               |
+| **Other Connectors**       | Headers: SCOM, BMC, dual USB 2.0, 2x SMBus, PS/2 |
+| **I/O Ports on Back**      | 2x PS/2, 2x USB 2.0, SCOM, VGA, 2x RJ-45 1GbE (Ethernets) |
+
+</div>
 
 
 [//]: # "SPDX-License-Identifier: GFDL-1.3-or-later"
