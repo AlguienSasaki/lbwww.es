@@ -1419,3 +1419,17 @@ any in-firmware behaviour compared to rev14. This rev15 release is
 being tagged, so as to cleanly sync up with Canoeboot - now we have
 a reference point as to how the two projects align, as
 the Canoeboot 26.11rev1 release is in sync with Libreboot 26.10rev15.**
+
+Libreboot 26.10rev16, 4 Nov 2026
+------------------
+
+Backward compatibility added for old build targets on coreboot. This lets you
+type e.g. `x200_8mb` to build `lenovo_thinkpad_x200_8mb`. This was also used
+on the `./mk inject` command, and config was added to make it backward
+compatible with Libreboot archives from multiple older releases, going
+all the way back to Libreboot 20221214.
+
+Dependencies: zlib-ng used instead of zlib, for faster operation.
+
+Fixed FSP hashes in Topton X2E N150 vendor config, otherwise you get a broken
+build and vendor injection doesn't work.
