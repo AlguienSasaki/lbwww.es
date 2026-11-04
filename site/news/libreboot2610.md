@@ -2,12 +2,6 @@
 % Leah Rowe
 % 15 October 2026
 
-**!!!CRITICAL: Please upgrade to Libreboot 26.10rev14 or higher as a Remote
-Code Execution security vulnerability was announced by Tianocore Security
-Advisory for the ICMP code in EDK2 when using PXE boot. This was fixed
-by merging a patch from them, which implements bound checks on incoming ICMP
-packets. Users who didn't use PXE were unaffected by this bug.!!**
-
 **You can find today's release
 in <https://rsync.libreboot.org/stable/26.10rev14/> or you can use one of
 the [mirrors](../download.md).**
@@ -1374,6 +1368,15 @@ Tianocore released this patch to fix the CVE:
 
 <https://github.com/tianocore/edk2/pull/13302> - `fixes CVE-2026-97631`; users
 who did not boot with PXE were unaffected by this issue.
+
+NOTE: This concerns EDK2's own PXE implementation, which is unused by iPXE
+anyway. Therefore, users were not actually affected by this if using iPXE; this
+patch was merged anyway, because there was no harm in merging it. Taken from
+EDK2 Security Advisory. It is the intention of the Libreboot project not only
+to sync with our upstream (MrChromebox) but its upstream, namely Tianocore. We
+will always import such fixes - this is because it's theoretically possible
+that the user may otherwise make use of such code, in their own modification
+of Libreboot.
 
 Libreboot 26.10rev14, 28 Oct 2026
 ------------
